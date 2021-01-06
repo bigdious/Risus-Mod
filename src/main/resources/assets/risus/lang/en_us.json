@@ -1,8 +1,15 @@
 {
-  "item.risus.smile": "Smile",
+  
   "block.risus.smiling_remains": "Smiling Remains",
-  "itemGroup.risusTab": "Risus",
+  "block.risus.ashen_remains": "Ashen Remains",
+  "block.risus.engraved_basalt": "Engraved Basalt",
+  "block.risus.maw_guts": "Maw Guts",
+
+  "item.risus.smile": "Smile",
+  "item.risus.blood_feather": "Blood Feather",
+  "item.risus.joykiller": "Joykiller",
+
   "entity.risus.angel": "Blood Angel",
-  "item.risus.angel_feather": "Blood Feather",
-  "item.risus.joykiller": "Joykiller"
+
+  "itemGroup.risusTab": "Risus"
 }
