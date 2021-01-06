@@ -2,6 +2,7 @@ package com.bigdious.risus.util;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.render.AngelRenderer;
+import com.bigdious.risus.client.render.HolderRenderer;
 import com.bigdious.risus.init.ModEntityTypes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +16,7 @@ public class ClientEventBusSubscriber {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ANGEL.get(), AngelRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ANGEL, AngelRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.HOLDER, HolderRenderer::new);
     }
 }
