@@ -1,15 +1,16 @@
 package com.bigdious.risus.tools;
 
-import com.bigdious.risus.util.RegistryHandler;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
+import com.bigdious.risus.init.ModItems;
+
 public enum ModItemTier implements IItemTier {
 
     JOY( 4, 666, 0F, 0F, 30, () -> {
-        return Ingredient.fromItems(RegistryHandler.JOYKILLER.get());});
+        return Ingredient.fromItems(ModItems.JOYKILLER);});
 
     private final int harvestLevel;
     private final int maxUses;

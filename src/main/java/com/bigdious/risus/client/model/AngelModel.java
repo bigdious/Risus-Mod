@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model;
 
-import com.bigdious.risus.entities.AngelEntity;
+import com.bigdious.risus.entity.AngelEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
