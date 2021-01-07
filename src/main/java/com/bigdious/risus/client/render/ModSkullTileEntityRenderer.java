@@ -1,37 +1,8 @@
 package com.bigdious.risus.client.render;
 
-import java.util.Map;
+public class ModSkullTileEntityRenderer {
 
-import javax.annotation.Nullable;
-
-import com.bigdious.risus.block.ModSkullBlock;
-import com.bigdious.risus.entity.tileentity.ModSkullTileEntity;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.minecraft.MinecraftProfileTexture;
-import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-
-import net.minecraft.block.AbstractSkullBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SkullBlock;
-import net.minecraft.block.WallSkullBlock;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.model.GenericHeadModel;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
-import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
-import net.minecraft.client.resources.DefaultPlayerSkin;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.tileentity.SkullTileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-
-public class ModSkullTileEntityRenderer extends TileEntityRenderer<ModSkullTileEntity>{
-
-    public ModSkullTileEntityRenderer(TileEntityRendererDispatcher p_i226006_1_) {
+/*    public ModSkullTileEntityRenderer(TileEntityRendererDispatcher p_i226006_1_) {
         super(p_i226006_1_);
     }
 
@@ -65,5 +36,5 @@ public class ModSkullTileEntityRenderer extends TileEntityRenderer<ModSkullTileE
      private static RenderType getRenderType(ModSkullBlock.SkullType skullType, @Nullable GameProfile gameProfileIn) {
         ResourceLocation resourcelocation = SKINS.get(skullType);
         return RenderType.getEntityCutoutNoCullZOffset(resourcelocation);
-     }
+     } */
 }
