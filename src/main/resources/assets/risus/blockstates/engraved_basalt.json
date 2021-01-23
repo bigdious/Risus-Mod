@@ -1,6 +1,16 @@
 {
   "variants": {
-    "": { "model": "risus:block/engraved_basalt" }
+    "axis=x": {
+      "model": "risus:block/engraved_basalt_side",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "risus:block/engraved_basalt"
+    },
+    "axis=z": {
+      "model": "risus:block/engraved_basalt_side",
+      "x": 90
+    }
   }
-
 }
