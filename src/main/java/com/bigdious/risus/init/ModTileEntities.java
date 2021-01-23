@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import java.util.ArrayList;
 
 import com.bigdious.risus.entity.tileentity.MawGutsTileEntity;
+import com.bigdious.risus.entity.tileentity.ModSkullTileEntity;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -17,6 +18,8 @@ public class ModTileEntities {
     private static final ArrayList<TileEntityType<?>> TILE_ENTITY_TYPES = new ArrayList<>();
     
     public static final TileEntityType<MawGutsTileEntity> MAW_GUTS = register("maw_guts", TileEntityType.Builder.create(MawGutsTileEntity::new, ModBlocks.MAW_GUTS));
+    
+    public static final TileEntityType<ModSkullTileEntity> BLOODWYRM = register("bloodwyrm", TileEntityType.Builder.create(ModSkullTileEntity::new, ModBlocks.BLOODWYRM_HEAD, ModBlocks.BLOODWYRM_WALL_HEAD));
     
     private static <T extends TileEntity> TileEntityType<T> register(String id, TileEntityType.Builder<T> builder)
     {

@@ -7,6 +7,7 @@ import com.bigdious.risus.Risus.RisusTab;
 import com.bigdious.risus.tools.ModItemTier;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.SkullItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +21,7 @@ public class ModItems {
     public static final Item JOYKILLER = register("joykiller", new SwordItem(ModItemTier.JOY, 3, 0.1F, (new Item.Properties().rarity(Risus.getRarity())).group(RisusTab.INSTANCE)));
     public static final Item SMILE = register("smile", new Item((new Item.Properties().rarity(Risus.getRarity()))));
     public static final Item BLOOD_FEATHER = register("blood_feather", new Item((new Item.Properties().rarity(Risus.getRarity())).group(RisusTab.INSTANCE)));
+    public static final Item BLOODWYRM_HEAD = register("bloodwyrm_head", new SkullItem(ModBlocks.BLOODWYRM_HEAD, ModBlocks.BLOODWYRM_WALL_HEAD, (new Item.Properties().rarity(Risus.getRarity())).group(RisusTab.INSTANCE)));
     
     //Template
     //public static final Item  = register("", new Item((new Item.Properties()).group(Risus.TAB)));

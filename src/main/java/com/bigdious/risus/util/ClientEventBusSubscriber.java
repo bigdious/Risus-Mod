@@ -3,9 +3,13 @@ package com.bigdious.risus.util;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.render.AngelRenderer;
 import com.bigdious.risus.client.render.HolderRenderer;
+import com.bigdious.risus.client.render.ModSkullTileEntityRenderer;
 import com.bigdious.risus.init.ModEntityTypes;
+import com.bigdious.risus.init.ModTileEntities;
+
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -18,5 +22,7 @@ public class ClientEventBusSubscriber {
     public static void onClientSetup(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ANGEL, AngelRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.HOLDER, HolderRenderer::new);
+        
+        ClientRegistry.bindTileEntityRenderer(ModTileEntities.BLOODWYRM, ModSkullTileEntityRenderer::new);
     }
 }

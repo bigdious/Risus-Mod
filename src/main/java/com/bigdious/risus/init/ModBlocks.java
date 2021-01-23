@@ -6,6 +6,8 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.block.ComplexModelBlock;
 import com.bigdious.risus.Risus.RisusTab;
 import com.bigdious.risus.block.MawGutsBlock;
+import com.bigdious.risus.block.ModSkullBlock;
+import com.bigdious.risus.block.ModWallSkullBlock;
 import com.google.common.base.Function;
 
 import net.minecraft.block.Block;
@@ -29,8 +31,8 @@ public class ModBlocks {
     public static final Block ENGRAVED_BASALT = register("engraved_basalt", new ComplexModelBlock(Block.Properties.from(Blocks.POLISHED_BASALT)));
     public static final Block MAW_GUTS = register("maw_guts", new MawGutsBlock(Block.Properties.create(Material.CAKE).hardnessAndResistance(10.0F)));
     
-//    public static final Block BLOODWYRM_HEAD = register("bloodwyrm_head", new ModSkullBlock(null, Block.Properties.from(Blocks.DRAGON_HEAD)));
-//    public static final Block BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", new ModWallSkullBlock(Block.Properties.from(Blocks.DRAGON_WALL_HEAD)));
+    public static final Block BLOODWYRM_HEAD = register("bloodwyrm_head", new ModSkullBlock(ModSkullBlock.Types.BLOODWYRM, Block.Properties.from(Blocks.DRAGON_HEAD)), (BlockItem) null);
+    public static final Block BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", new ModWallSkullBlock(ModSkullBlock.Types.BLOODWYRM, Block.Properties.from(Blocks.DRAGON_WALL_HEAD)), (BlockItem) null);
     
     // Template
     // public static final Block = register("", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.0F)));
