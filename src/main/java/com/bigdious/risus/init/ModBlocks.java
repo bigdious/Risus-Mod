@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.block.ComplexModelBlock;
+import com.bigdious.risus.Risus.RisusTab;
 import com.bigdious.risus.block.MawGutsBlock;
 import com.google.common.base.Function;
 
@@ -35,7 +36,7 @@ public class ModBlocks {
     // public static final Block = register("", new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.0F)));
 
     private static Block register(String name, Block block) {
-        return register(name, block, new Item.Properties().group(Risus.TAB));
+        return register(name, block, new Item.Properties().rarity(Risus.getRarity()).group(RisusTab.INSTANCE));
     }
 
     private static Block register(String name, Block block, Item.Properties properties) {

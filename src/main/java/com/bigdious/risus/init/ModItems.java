@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import java.util.ArrayList;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.Risus.RisusTab;
 import com.bigdious.risus.tools.ModItemTier;
 
 import net.minecraft.item.Item;
@@ -16,9 +17,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public class ModItems {
     private static final ArrayList<Item> ITEMS = new ArrayList<>();
     
-    public static final Item JOYKILLER = register("joykiller", new SwordItem(ModItemTier.JOY, 3, -0F, (new Item.Properties()).group(Risus.TAB)));
-    public static final Item SMILE = register("smile", new Item((new Item.Properties()).group(Risus.TAB)));
-    public static final Item BLOOD_FEATHER = register("blood_feather", new Item((new Item.Properties()).group(Risus.TAB)));
+    public static final Item JOYKILLER = register("joykiller", new SwordItem(ModItemTier.JOY, 3, 0.1F, (new Item.Properties().rarity(Risus.getRarity())).group(RisusTab.INSTANCE)));
+    public static final Item SMILE = register("smile", new Item((new Item.Properties().rarity(Risus.getRarity()))));
+    public static final Item BLOOD_FEATHER = register("blood_feather", new Item((new Item.Properties().rarity(Risus.getRarity())).group(RisusTab.INSTANCE)));
     
     //Template
     //public static final Item  = register("", new Item((new Item.Properties()).group(Risus.TAB)));
