@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
+
 public class HolderModel<T extends HolderEntity> extends EntityModel<T> {
 	private final ModelRenderer body;
 	private final ModelRenderer arms;
@@ -18,24 +19,24 @@ public class HolderModel<T extends HolderEntity> extends EntityModel<T> {
 
 		body = new ModelRenderer(this);
 		body.setRotationPoint(0.0F, 23.0F, 0.0F);
-		body.setTextureOffset(0, 10).addBox(-1.0F, -8.0F, -3.0F, 6.0F, 9.0F, 7.0F, 0.0F, false);
-		body.setTextureOffset(6, 15).addBox(2.0F, -5.0F, 2.0F, 4.0F, 6.0F, 4.0F, 0.0F, false);
-		body.setTextureOffset(2, 12).addBox(-4.0F, -2.0F, 0.0F, 6.0F, 3.0F, 5.0F, 0.0F, false);
-		body.setTextureOffset(5, 14).addBox(0.0F, -11.0F, -4.0F, 4.0F, 5.0F, 4.0F, 0.0F, false);
-		body.setTextureOffset(2, 14).addBox(4.0F, -1.0F, -4.0F, 3.0F, 2.0F, 8.0F, 0.0F, false);
-		body.setTextureOffset(1, 18).addBox(-6.0F, 0.0F, -5.0F, 6.0F, 1.0F, 7.0F, 0.0F, false);
-		body.setTextureOffset(5, 15).addBox(-2.0F, -3.0F, -6.0F, 6.0F, 4.0F, 5.0F, 0.0F, false);
-		body.setTextureOffset(4, 21).addBox(-1.0F, 0.0F, 5.0F, 5.0F, 1.0F, 2.0F, 0.0F, false);
-		body.setTextureOffset(13, 23).addBox(4.0F, 0.0F, -5.0F, 2.0F, 1.0F, 1.0F, 0.0F, false);
+		body.setTextureOffset(0, 10).addBox(-4.0F, -8.0F, -1.0F, 7.0F, 9.0F, 6.0F, 0.0F, false);
+		body.setTextureOffset(6, 15).addBox(-6.0F, -5.0F, 2.0F, 4.0F, 6.0F, 4.0F, 0.0F, false);
+		body.setTextureOffset(2, 12).addBox(-5.0F, -2.0F, -4.0F, 5.0F, 3.0F, 6.0F, 0.0F, false);
+		body.setTextureOffset(5, 14).addBox(0.0F, -11.0F, 0.0F, 4.0F, 5.0F, 4.0F, 0.0F, false);
+		body.setTextureOffset(2, 14).addBox(-4.0F, -1.0F, 4.0F, 8.0F, 2.0F, 3.0F, 0.0F, false);
+		body.setTextureOffset(1, 18).addBox(-2.0F, 0.0F, -6.0F, 7.0F, 1.0F, 6.0F, 0.0F, false);
+		body.setTextureOffset(5, 15).addBox(1.0F, -3.0F, -2.0F, 5.0F, 4.0F, 6.0F, 0.0F, false);
+		body.setTextureOffset(4, 21).addBox(-7.0F, 0.0F, -1.0F, 2.0F, 1.0F, 5.0F, 0.0F, false);
+		body.setTextureOffset(13, 23).addBox(4.0F, 0.0F, 4.0F, 1.0F, 1.0F, 2.0F, 0.0F, false);
 
 		arms = new ModelRenderer(this);
 		arms.setRotationPoint(1.0F, 19.0F, 4.0F);
-		arms.setTextureOffset(5, 6).addBox(-8.0F, -1.0F, -1.0F, 8.0F, 2.0F, 2.0F, 0.0F, false);
-		arms.setTextureOffset(5, 6).addBox(-8.0F, -1.0F, -8.0F, 8.0F, 2.0F, 2.0F, 0.0F, false);
+		arms.setTextureOffset(5, 6).addBox(-6.0F, -1.0F, -11.0F, 2.0F, 2.0F, 8.0F, 0.0F, false);
+		arms.setTextureOffset(5, 6).addBox(1.0F, -1.0F, -11.0F, 2.0F, 2.0F, 8.0F, 0.0F, false);
 
 		main = new ModelRenderer(this);
 		main.setRotationPoint(0.0F, 24.0F, 0.0F);
-		main.setTextureOffset(0, 0).addBox(-2.0F, -11.0F, -2.0F, 5.0F, 5.0F, 5.0F, 0.0F, false);
+		main.setTextureOffset(0, 0).addBox(-3.0F, -11.0F, -2.0F, 5.0F, 5.0F, 5.0F, 0.0F, false);
 	}
 
 	@Override

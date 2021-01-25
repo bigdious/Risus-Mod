@@ -1,26 +1,24 @@
 package com.bigdious.risus.entity.ai.goal;
 
-import java.util.EnumSet;
 import java.util.List;
 
-import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.HolderEntity;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
-public class StealItemGoal extends Goal {
+public class StealItemGoal extends MeleeAttackGoal {
     private final HolderEntity holder;
     private LivingEntity target;
     private boolean attackFlag = false;
   
-    public StealItemGoal(HolderEntity entity) {
-        this.holder = entity;
-        this.setMutexFlags(EnumSet.of(Goal.Flag.MOVE));
+    public StealItemGoal(HolderEntity entity, double speedIn, boolean longMemoryIn) {
+        super(entity, speedIn, longMemoryIn);
+    	this.holder = entity;
     }
     
     //FIXME Holder is classified as a monster, causing this to always return false
