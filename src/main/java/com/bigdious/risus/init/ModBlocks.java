@@ -3,8 +3,8 @@ package com.bigdious.risus.init;
 import java.util.ArrayList;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.block.ComplexModelBlock;
 import com.bigdious.risus.Risus.RisusTab;
+import com.bigdious.risus.block.EngravedBasaltBlock;
 import com.bigdious.risus.block.MawGutsBlock;
 import com.bigdious.risus.block.ModSkullBlock;
 import com.bigdious.risus.block.ModWallSkullBlock;
@@ -28,7 +28,7 @@ public class ModBlocks {
 
     public static final Block ASHEN_REMAINS = register("ashen_remains", new Block(Block.Properties.from(Blocks.SOUL_SOIL)));
     public static final Block SMILING_REMAINS = register("smiling_remains", new Block(Block.Properties.from(Blocks.SOUL_SAND)));
-    public static final Block ENGRAVED_BASALT = register("engraved_basalt", new ComplexModelBlock(Block.Properties.from(Blocks.POLISHED_BASALT)));
+    public static final Block ENGRAVED_BASALT = register("engraved_basalt", new EngravedBasaltBlock(Block.Properties.from(Blocks.POLISHED_BASALT)));
     public static final Block MAW_GUTS = register("maw_guts", new MawGutsBlock(Block.Properties.create(Material.CAKE).hardnessAndResistance(10.0F)));
     
     public static final Block BLOODWYRM_HEAD = register("bloodwyrm_head", new ModSkullBlock(ModSkullBlock.Types.BLOODWYRM, Block.Properties.from(Blocks.DRAGON_HEAD)), (BlockItem) null);

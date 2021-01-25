@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "risus:block/engraved_basalt_side",
+      "model": "risus:block/engraved_basalt",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "risus:block/engraved_basalt"
     },
     "axis=z": {
-      "model": "risus:block/engraved_basalt_side",
+      "model": "risus:block/engraved_basalt",
       "x": 90
     }
   }
