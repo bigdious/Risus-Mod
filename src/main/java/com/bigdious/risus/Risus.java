@@ -39,11 +39,17 @@ public class Risus {
 		RisusBlocks.BLOCKS.register(bus);
 		RisusItems.ITEMS.register(bus);
 		RisusTileEntities.TILE_ENTITIES.register(bus);
+		RisusParticles.PARTICLES.register(bus);
 
     }
 
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
+			AxeItem.BLOCK_STRIPPING_MAP = Maps.newHashMap(AxeItem.BLOCK_STRIPPING_MAP);
+			AxeItem.BLOCK_STRIPPING_MAP.put(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
+			AxeItem.BLOCK_STRIPPING_MAP.put(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+		});
 	}
 
 	@SubscribeEvent

@@ -2,14 +2,40 @@
   
   "block.risus.smiling_remains": "Smiling Remains",
   "block.risus.ashen_remains": "Ashen Remains",
+  "block.risus.laughing_obsidian": "Laughing Obsidian",
   "block.risus.engraved_basalt": "Engraved Basalt",
   "block.risus.maw_guts": "Maw Guts",
+  "block.risus.crystalized_bonds": "Crystalized Bonds",
+  "block.risus.bloodweave": "Bloodweave",
+  "block.risus.bloodwyrm_head": "Bloodwyrm Head",
+  "block.risus.bondknot_log": "Bondknot Log",
+  "block.risus.bondknot_wood": "Bondknot Wood",
+  "block.risus.stripped_bondknot_log": "Stripped Bondknot Log",
+  "block.risus.stripped_bondknot_wood": "Stripped Bondknot Wood",
+  "block.risus.bondknot_planks": "Bondknot Planks",
+  "block.risus.bondknot_slab": "Bondknot Slab",
+  "block.risus.bondknot_stairs": "Bondknot Stairs",
+  "block.risus.bondknot_fence": "Bondknot Fence",
+  "block.risus.bondknot_fence_gate": "Bondknot Fence Gate",
+  "block.risus.bondknot_pressure_plate": "Bondknot Pressure Plate",
+  "block.risus.bondknot_button": "Bondknot Button",
+  "block.risus.baby_ribcage": "Baby Ribcage",
+  "block.risus.ribcage": "Ribcage",
+  "block.risus.grimstone": "Grimstone",
+  "block.risus.grimstone_bricks": "Grimstone Bricks",
+  "block.risus.cracked_grimstone_bricks": "Cracked Grimstone Bricks",
+  "block.risus.grimstone_slab": "Grimstone Slab",
+  "block.risus.grimstone_stairs": "Grimstone Stairs",
+  "block.risus.grimstone_wall": "Grimstone Wall",
+  "block.risus.chiseled_grimstone": "Chiseled Grimstone",
+  "block.risus.polished_grimstone": "Polished Grimstone",
 
   "item.risus.smile": "Smile",
   "item.risus.blood_feather": "Blood Feather",
   "item.risus.joykiller": "Joykiller",
 
   "entity.risus.angel": "Blood Angel",
+  "entity.risus.holder": "Holder",
 
-  "itemGroup.risusTab": "Risus"
+  "itemGroup.risus": "Risus"
 }
