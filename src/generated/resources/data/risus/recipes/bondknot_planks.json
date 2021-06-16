@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "risus:bondknot_logs"
+    }
+  ],
+  "result": {
+    "item": "risus:bondknot_planks",
+    "count": 4
+  }
+}

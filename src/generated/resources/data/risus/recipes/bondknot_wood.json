@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "risus:bondknot_log"
+    }
+  },
+  "result": {
+    "item": "risus:bondknot_wood",
+    "count": 3
+  }
+}

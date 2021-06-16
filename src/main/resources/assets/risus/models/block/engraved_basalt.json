@@ -1,9 +1,9 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"texture_size": [48, 16],
 	"textures": {
-		"1": "risus:blocks/engraved_basalt",
-		"particle": "blocks/polished_basalt_side"
+		"1": "risus:block/engraved_basalt",
+		"particle": "block/polished_basalt_side"
 	},
 	"elements": [
 		{

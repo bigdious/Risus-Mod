@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "risus:grimstone_bricks"
+    }
+  },
+  "result": {
+    "item": "risus:polished_grimstone",
+    "count": 4
+  }
+}

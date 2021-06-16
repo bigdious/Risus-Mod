@@ -1,9 +1,9 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"texture_size": [16, 48],
 	"textures": {
-		"0": "risus:blocks/maw_guts",
-		"particle": "risus:blocks/maw_guts"
+		"0": "risus:block/maw_guts",
+		"particle": "risus:block/maw_guts"
 	},
 	"elements": [
 		{

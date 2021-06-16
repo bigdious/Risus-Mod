@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "risus:bondknot_planks"
+    }
+  },
+  "result": {
+    "item": "risus:bondknot_pressure_plate"
+  }
+}

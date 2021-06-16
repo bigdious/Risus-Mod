@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "risus:bondknot_log",
+    "risus:stripped_bondknot_log",
+    "risus:bondknot_wood",
+    "risus:stripped_bondknot_wood"
+  ]
+}

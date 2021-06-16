@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#risus:bondknot_logs",
+    "risus:bondknot_planks",
+    "risus:bondknot_slab",
+    "risus:bondknot_stairs",
+    "risus:bondknot_fence_gate",
+    "risus:bondknot_fence"
+  ]
+}
