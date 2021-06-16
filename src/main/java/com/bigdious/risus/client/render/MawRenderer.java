@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class MawRenderer extends MobRenderer<MawEntity, MawModel<MawEntity>>{
-    protected static final ResourceLocation TEXTURE = new ResourceLocation(Risus.MOD_ID, "textures/entity/maw.png");
+    protected static final ResourceLocation TEXTURE = Risus.risusRL("textures/entity/maw.png");
 
     public MawRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new MawModel<>(), 0.1F);

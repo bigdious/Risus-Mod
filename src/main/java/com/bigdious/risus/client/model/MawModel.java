@@ -146,7 +146,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer2 = new ModelRenderer(this);
 		bigPincer2.setRotationPoint(0.0F, 24.0F, -12.0F);
-		
 
 		cube_r12 = new ModelRenderer(this);
 		cube_r12.setRotationPoint(1.0F, -3.0F, 1.0F);
@@ -180,7 +179,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer3 = new ModelRenderer(this);
 		bigPincer3.setRotationPoint(12.0F, 24.0F, 0.0F);
-		
 
 		cube_r17 = new ModelRenderer(this);
 		cube_r17.setRotationPoint(-1.0F, -3.0F, 1.0F);
@@ -214,7 +212,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer4 = new ModelRenderer(this);
 		bigPincer4.setRotationPoint(0.0F, 24.0F, 12.0F);
-		
 
 		cube_r22 = new ModelRenderer(this);
 		cube_r22.setRotationPoint(-1.0F, -3.0F, -1.0F);
@@ -248,7 +245,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer5 = new ModelRenderer(this);
 		bigPincer5.setRotationPoint(9.0F, 24.0F, 9.0F);
-		
 
 		cube_r27 = new ModelRenderer(this);
 		cube_r27.setRotationPoint(-1.9289F, -3.0F, -0.5147F);
@@ -282,7 +278,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer6 = new ModelRenderer(this);
 		bigPincer6.setRotationPoint(-9.0F, 24.0F, 9.0F);
-		
 
 		cube_r32 = new ModelRenderer(this);
 		cube_r32.setRotationPoint(0.5147F, -3.0F, -1.9289F);
@@ -316,7 +311,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer7 = new ModelRenderer(this);
 		bigPincer7.setRotationPoint(-9.0F, 24.0F, -9.0F);
-		
 
 		cube_r37 = new ModelRenderer(this);
 		cube_r37.setRotationPoint(1.9289F, -3.0F, 0.5147F);
@@ -350,7 +344,6 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 
 		bigPincer8 = new ModelRenderer(this);
 		bigPincer8.setRotationPoint(9.0F, 24.0F, -9.0711F);
-		
 
 		cube_r42 = new ModelRenderer(this);
 		cube_r42.setRotationPoint(-0.5147F, -3.0F, 2.0F);
@@ -384,12 +377,12 @@ public class MawModel<T extends MawEntity> extends EntityModel<T> {
 	}
 
 	@Override
-	public void setRotationAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
+	public void setRotationAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		//previously the render function, render code was moved to a method below
 	}
 
 	@Override
-	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		body.render(matrixStack, buffer, packedLight, packedOverlay);
 		bigPincer1.render(matrixStack, buffer, packedLight, packedOverlay);
 		bigPincer2.render(matrixStack, buffer, packedLight, packedOverlay);

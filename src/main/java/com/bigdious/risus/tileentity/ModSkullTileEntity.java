@@ -1,9 +1,8 @@
-package com.bigdious.risus.entity.tileentity;
+package com.bigdious.risus.tileentity;
 
 import javax.annotation.Nullable;
 
-import com.bigdious.risus.init.ModBlocks;
-import com.bigdious.risus.init.ModTileEntities;
+import com.bigdious.risus.block.RisusBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -17,12 +16,13 @@ public class ModSkullTileEntity extends TileEntity implements ITickableTileEntit
     private boolean dragonAnimated;
 
     public ModSkullTileEntity() {
-       super(ModTileEntities.BLOODWYRM);
+       super(RisusTileEntities.BLOODWYRM.get());
     }
 
-    public void tick() {
+    @Override
+	public void tick() {
        BlockState blockstate = this.getBlockState();
-       if (blockstate.isIn(ModBlocks.BLOODWYRM_HEAD) || blockstate.isIn(ModBlocks.BLOODWYRM_WALL_HEAD)) {
+       if (blockstate.matchesBlock(RisusBlocks.BLOODWYRM_HEAD.get()) || blockstate.matchesBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get())) {
           if (this.world.isBlockPowered(this.pos)) {
              this.dragonAnimated = true;
              ++this.dragonAnimatedTicks;
@@ -37,7 +37,8 @@ public class ModSkullTileEntity extends TileEntity implements ITickableTileEntit
     public float getAnimationProgress(float p_184295_1_) {
        return this.dragonAnimated ? (float)this.dragonAnimatedTicks + p_184295_1_ : (float)this.dragonAnimatedTicks;
     }
-    @Nullable
+    @Override
+	@Nullable
     public SUpdateTileEntityPacket getUpdatePacket() {
        return new SUpdateTileEntityPacket(this.pos, 4, this.getUpdateTag());
     }

@@ -1,16 +1,16 @@
-package com.bigdious.risus.tools;
+package com.bigdious.risus.util;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
-import com.bigdious.risus.init.ModItems;
+import com.bigdious.risus.items.RisusItems;
 
 public enum ModItemTier implements IItemTier {
 
-    JOY( 4, 666, 0F, 0F, 30, () -> {
-        return Ingredient.fromItems(ModItems.JOYKILLER);});
+    JOY( 2, 666, 4.0F, 1.0F, 10, () -> {
+        return Ingredient.fromItems(RisusItems.JOYKILLER.get());});
 
     private final int harvestLevel;
     private final int maxUses;

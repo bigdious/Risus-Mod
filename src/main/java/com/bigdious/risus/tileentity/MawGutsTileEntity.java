@@ -1,6 +1,4 @@
-package com.bigdious.risus.entity.tileentity;
-
-import com.bigdious.risus.init.ModTileEntities;
+package com.bigdious.risus.tileentity;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ChestContainer;
@@ -8,7 +6,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -16,13 +13,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class MawGutsTileEntity extends LockableLootTileEntity implements ITickableTileEntity {
 
     private NonNullList<ItemStack> contents = NonNullList.withSize(54, ItemStack.EMPTY);
-    
-    protected MawGutsTileEntity(TileEntityType<?> p_i48284_1_) {
-        super(p_i48284_1_);
-    }
-    
+
     public MawGutsTileEntity() {
-        this(ModTileEntities.MAW_GUTS);
+        super(RisusTileEntities.MAW_GUTS.get());
     }
 
     @Override

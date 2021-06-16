@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class HolderRenderer extends MobRenderer<HolderEntity, HolderModel<HolderEntity>> {
 
-    protected static final ResourceLocation TEXTURE = new ResourceLocation(Risus.MOD_ID, "textures/entity/holder.png");
+    protected static final ResourceLocation TEXTURE = Risus.risusRL("textures/entity/holder.png");
 
     public HolderRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new HolderModel<>(), 0.0F);
@@ -21,7 +21,8 @@ public class HolderRenderer extends MobRenderer<HolderEntity, HolderModel<Holder
     public ResourceLocation getEntityTexture(HolderEntity entity) {
         return TEXTURE;
     }
-    
+
+    @Override
     protected void preRenderCallback(HolderEntity entitylivingbaseIn, MatrixStack matrixStackIn, float partialTickTime) {
         matrixStackIn.scale(0.75F, 0.75F, 0.75F);
      }

@@ -13,6 +13,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
+import javax.annotation.Nullable;
+
 
 public class AngelEntity extends AnimalEntity {
 
@@ -22,10 +24,9 @@ public class AngelEntity extends AnimalEntity {
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 1000.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 2.0D)
-                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 40.5D)
-                .createMutableAttribute(Attributes.ARMOR, 99.9D);
+                .createMutableAttribute(Attributes.MAX_HEALTH, 10.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5D)
+                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0D);
     }
 
     @Override
@@ -36,8 +37,14 @@ public class AngelEntity extends AnimalEntity {
         this.goalSelector.addGoal(4,new LookRandomlyGoal(this));
     }
 
+    @Nullable
     @Override
-    public AgeableEntity func_241840_a(ServerWorld p_241840_1_, AgeableEntity p_241840_2_) {
+    public AgeableEntity createChild(ServerWorld world, AgeableEntity mate) {
         return null;
+    }
+
+    @Override
+    public boolean canRenderOnFire() {
+        return false;
     }
 }

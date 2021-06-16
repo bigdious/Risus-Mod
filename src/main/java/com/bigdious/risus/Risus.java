@@ -1,13 +1,19 @@
 package com.bigdious.risus;
 
-import com.bigdious.risus.init.ModEntityTypes;
-import com.bigdious.risus.init.ModItems;
+import com.bigdious.risus.block.RisusBlocks;
+import com.bigdious.risus.client.ClientEventBusSubscriber;
+import com.bigdious.risus.client.particles.RisusParticles;
+import com.bigdious.risus.items.RisusItems;
+import com.bigdious.risus.tileentity.RisusTileEntities;
+import com.google.common.collect.Maps;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -18,37 +24,43 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("risus")
+import java.util.Locale;
+
+@Mod(Risus.ID)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Risus {
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final String MOD_ID = "risus";
+    public static final String ID = "risus";
     
     private static final Rarity risus = Rarity.create("RISUS", TextFormatting.DARK_RED);
 
     public Risus() {
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		RisusBlocks.BLOCKS.register(bus);
+		RisusItems.ITEMS.register(bus);
+		RisusTileEntities.TILE_ENTITIES.register(bus);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-        ModEntityTypes.entityAttributes();
-    }
+	@SubscribeEvent
+	public static void commonSetup(FMLCommonSetupEvent event) {
+	}
 
-    private void doClientStuff(final FMLClientSetupEvent event) { }
+	@SubscribeEvent
+	public void clientSetup(FMLClientSetupEvent event) {
+		ClientEventBusSubscriber.renderLayers();
+	}
 
     public static class RisusTab extends ItemGroup {
     	public static final RisusTab INSTANCE = new RisusTab();
 
     	public RisusTab() {
-    		super(MOD_ID);
+    		super(ID);
     		setNoTitle();
-    		setBackgroundImageName("risus.png");
+    		setBackgroundImage(risusRL("textures/gui/tab_risus.png"));
     	}
     	
-    	private static final ResourceLocation RISUS_TABS = new ResourceLocation("risus", "textures/gui/tabs.png");
+    	private static final ResourceLocation RISUS_TABS = risusRL("textures/gui/tabs.png");
     	@Override
     	public ResourceLocation getTabsImage() {
 			return RISUS_TABS;
@@ -57,8 +69,12 @@ public class Risus {
     	@Nonnull
     	@Override
     	public ItemStack createIcon() {
-    		return new ItemStack(ModItems.SMILE);
+    		return new ItemStack(RisusItems.SMILE.get());
     	}
+	}
+
+	public static ResourceLocation risusRL(String name) {
+		return new ResourceLocation(ID, name.toLowerCase(Locale.ROOT));
 	}
     
     public static Rarity getRarity() {

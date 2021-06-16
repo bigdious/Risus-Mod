@@ -24,10 +24,7 @@ public class StealItemGoal extends MeleeAttackGoal {
     //FIXME Holder is classified as a monster, causing this to always return false
     public boolean areMobsAround() {
         List<MonsterEntity> entityList = this.holder.world.getEntitiesWithinAABB(MonsterEntity.class, this.holder.getBoundingBox().grow((double) 12.0D));
-        if (entityList.isEmpty()) {
-            return false;
-        }
-        return true;
+        return !entityList.isEmpty();
     }
     
     @Override
@@ -36,18 +33,14 @@ public class StealItemGoal extends MeleeAttackGoal {
         if(this.target != null) {
            if(!this.holder.isAlive()) {
                return false;
-           }   
-        
-           if(this.target.getHeldItemMainhand().isEmpty()) {
-               return false;
            }
+
+            return !this.target.getHeldItemMainhand().isEmpty();
         
 //           if (this.areMobsAround()) {
  //              return false;
  //          }
-           
-           return true;
-       }
+        }
         
         return false;
     }

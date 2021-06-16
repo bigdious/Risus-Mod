@@ -4,12 +4,13 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.block.AbstractModSkullBlock;
 import com.bigdious.risus.block.ModSkullBlock;
 import com.bigdious.risus.block.ModSkullBlock.SkullType;
 import com.bigdious.risus.block.ModWallSkullBlock;
 import com.bigdious.risus.client.model.BloodWyrmHeadModel;
-import com.bigdious.risus.entity.tileentity.ModSkullTileEntity;
+import com.bigdious.risus.tileentity.ModSkullTileEntity;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -32,7 +33,7 @@ public class ModSkullTileEntityRenderer extends TileEntityRenderer<ModSkullTileE
         p_209262_0_.put(ModSkullBlock.Types.BLOODWYRM, dragonheadmodel);
      });
      private static final Map<ModSkullBlock.SkullType, ResourceLocation> SKINS = Util.make(Maps.newHashMap(), (p_209263_0_) -> {
-        p_209263_0_.put(ModSkullBlock.Types.BLOODWYRM, new ResourceLocation("risus", "textures/entity/bloodwyrm_head.png"));
+        p_209263_0_.put(ModSkullBlock.Types.BLOODWYRM, Risus.risusRL("textures/entity/bloodwyrm_head.png"));
      });
     
     public ModSkullTileEntityRenderer(TileEntityRendererDispatcher p_i226006_1_) {
@@ -55,8 +56,7 @@ public class ModSkullTileEntityRenderer extends TileEntityRenderer<ModSkullTileE
         if (directionIn == null) {
            matrixStackIn.translate(0.5D, 0.0D, 0.5D);
         } else {
-           float f = 0.25F;
-           matrixStackIn.translate((double)(0.5F - (float)directionIn.getXOffset() * 0.15F), 0.25D, (double)(0.5F - (float)directionIn.getZOffset() * 0.15F));
+            matrixStackIn.translate((double)(0.5F - (float)directionIn.getXOffset() * 0.15F), 0.25D, (double)(0.5F - (float)directionIn.getZOffset() * 0.15F));
         }
 
         matrixStackIn.scale(-1.0F, -1.0F, 1.0F);

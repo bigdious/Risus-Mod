@@ -18,11 +18,7 @@ public class DropItemGoal extends Goal {
     @Override
     public boolean shouldExecute() {
         LivingEntity attacker = this.holder.getRevengeTarget();
-        if (attacker instanceof LivingEntity) {
-            return true;
-        }
-        
-        return false;
+        return attacker != null;
     }
     
     @Override
