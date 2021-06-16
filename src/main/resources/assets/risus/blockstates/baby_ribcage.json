@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "facing=south": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    }
+  }
+}

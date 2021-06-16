@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "risus:block/grimstone",
+    "end": "risus:block/grimstone_top"
+  }
+}

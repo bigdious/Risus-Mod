@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "risus:block/bondknot_log",
+    "end": "risus:block/bondknot_log_top"
+  }
+}
