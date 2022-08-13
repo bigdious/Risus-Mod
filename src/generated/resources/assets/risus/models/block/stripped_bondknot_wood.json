@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "side": "risus:block/stripped_bondknot_log",
-    "end": "risus:block/stripped_bondknot_log"
+    "end": "risus:block/stripped_bondknot_log",
+    "side": "risus:block/stripped_bondknot_log"
   }
 }

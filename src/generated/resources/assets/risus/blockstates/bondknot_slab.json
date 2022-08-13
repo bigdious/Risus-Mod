@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "risus:block/bondknot_slab_top"
-    },
     "type=bottom": {
       "model": "risus:block/bondknot_slab"
     },
     "type=double": {
       "model": "risus:block/bondknot_planks"
+    },
+    "type=top": {
+      "model": "risus:block/bondknot_slab_top"
     }
   }
 }

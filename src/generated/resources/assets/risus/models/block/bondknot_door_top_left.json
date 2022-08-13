@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "risus:block/bondknot_door_bottom",
+    "top": "risus:block/bondknot_door_top"
+  }
+}

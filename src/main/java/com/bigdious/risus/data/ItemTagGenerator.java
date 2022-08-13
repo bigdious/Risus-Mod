@@ -1,30 +1,29 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import net.minecraft.data.BlockTagsProvider;
+import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.item.Item;
+import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import javax.annotation.Nullable;
-
 public class ItemTagGenerator extends ItemTagsProvider {
-	public static final ITag.INamedTag<Item> BONDKNOT_LOGS = ItemTags.makeWrapperTag(Risus.risusRL("bondknot_logs").toString());
+	public static final TagKey<Item> BONDKNOT_LOGS = ItemTags.create(Risus.prefix("bondknot_logs"));
 
-	public ItemTagGenerator(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
-		super(dataGenerator, blockTagProvider, Risus.ID, existingFileHelper);
+	public ItemTagGenerator(DataGenerator generator, BlockTagsProvider tags, ExistingFileHelper helper) {
+		super(generator, tags, Risus.MODID, helper);
 	}
 
 	@Override
-	protected void registerTags() {
+	protected void addTags() {
 		this.copy(BlockTagGenerator.BONDKNOT_LOGS, BONDKNOT_LOGS);
-		getOrCreateBuilder(ItemTags.LOGS).addTag(BONDKNOT_LOGS);
-		getOrCreateBuilder(ItemTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
+		this.tag(ItemTags.LOGS).addTag(BONDKNOT_LOGS);
+		this.tag(ItemTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
 		this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 
 		this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
@@ -39,6 +38,10 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
 		this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
 		this.copy(BlockTags.WOODEN_PRESSURE_PLATES, ItemTags.WOODEN_PRESSURE_PLATES);
+
+		this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
+		this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
+		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 
 	}
 }

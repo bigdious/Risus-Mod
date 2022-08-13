@@ -1,15 +1,16 @@
 {
-  
   "block.risus.smiling_remains": "Smiling Remains",
   "block.risus.ashen_remains": "Ashen Remains",
   "block.risus.laughing_obsidian": "Laughing Obsidian",
   "block.risus.engraved_basalt": "Engraved Basalt",
   "block.risus.maw_guts": "Maw Guts",
-  "block.risus.crystalized_bonds": "Crystalized Bonds",
+  "block.risus.crystallized_bonds": "Crystallized Bonds",
   "block.risus.bloodweave": "Bloodweave",
   "block.risus.bloodwyrm_head": "Bloodwyrm Head",
   "block.risus.bondknot_log": "Bondknot Log",
   "block.risus.bondknot_wood": "Bondknot Wood",
+  "block.risus.popping_bondknot_log": "Bondknot Log",
+  "block.risus.popping_bondknot_wood": "Bondknot Wood",
   "block.risus.stripped_bondknot_log": "Stripped Bondknot Log",
   "block.risus.stripped_bondknot_wood": "Stripped Bondknot Wood",
   "block.risus.bondknot_planks": "Bondknot Planks",
@@ -19,6 +20,10 @@
   "block.risus.bondknot_fence_gate": "Bondknot Fence Gate",
   "block.risus.bondknot_pressure_plate": "Bondknot Pressure Plate",
   "block.risus.bondknot_button": "Bondknot Button",
+  "block.risus.bondknot_door": "Bondknot Door",
+  "block.risus.bondknot_trapdoor": "Bondknot Trapdoor",
+  "block.risus.bondknot_sign": "Bondknot Sign",
+  "block.risus.bondknot_wall_sign": "Bondknot Wall Sign",
   "block.risus.baby_ribcage": "Baby Ribcage",
   "block.risus.ribcage": "Ribcage",
   "block.risus.grimstone": "Grimstone",
@@ -32,10 +37,25 @@
 
   "item.risus.smile": "Smile",
   "item.risus.blood_feather": "Blood Feather",
+  "item.risus.guilty_apple": "Guilty Apple",
   "item.risus.joykiller": "Joykiller",
+
+  "item.risus.angel_spawn_egg": "Blood Angel Spawn Egg",
+  "item.risus.holder_spawn_egg": "Holder Spawn Egg",
+  "item.risus.maw_spawn_egg": "Maw Spawn Egg",
+  "item.risus.weaver_spawn_egg": "Blood Weaver Spawn Egg",
+
+  "item.minecraft.potion.effect.mating_frenzy": "Potion of Mating Frenzy",
+  "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Mating Frenzy",
+  "item.minecraft.lingering_potion.effect.mating_frenzy": "Lingering Potion of Mating Frenzy",
+
+  "effect.risus.mating_frenzy": "Mating Frenzy",
+  "effect.risus.pleasure": "Pleasure",
 
   "entity.risus.angel": "Blood Angel",
   "entity.risus.holder": "Holder",
+  "entity.risus.maw": "Maw",
+  "entity.risus.weaver": "Weaver",
 
   "itemGroup.risus": "Risus"
 }

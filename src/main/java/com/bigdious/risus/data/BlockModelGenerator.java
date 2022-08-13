@@ -2,36 +2,61 @@ package com.bigdious.risus.data;
 
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.block.RisusBlocks;
-import net.minecraft.block.*;
+import com.bigdious.risus.blocks.RibcageBlock;
+import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.state.properties.AttachFace;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 
 public class BlockModelGenerator extends BlockStateProvider {
 
 	public BlockModelGenerator(DataGenerator gen, ExistingFileHelper exFileHelper) {
-		super(gen, Risus.ID, exFileHelper);
+		super(gen, Risus.MODID, exFileHelper);
 	}
 
 	@Override
 	protected void registerStatesAndModels() {
 		simpleBlock(RisusBlocks.ASHEN_REMAINS.get());
-		simpleBlock(RisusBlocks.SMILING_REMAINS.get());
+		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), new ResourceLocation("cutout"), 0, 10, false)
+				.texture("all", Risus.prefix("block/smiling_remains"))
+				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		simpleBlock(RisusBlocks.BLOODWEAVE.get(), models().getExistingFile(texture("block/bloodweave_bwb")));
+
+		getVariantBuilder(RisusBlocks.RIBCAGE.get()).forAllStates(state -> {
+			ModelFile bottom = models().getExistingFile(texture("block/ribcage_cage"));
+			ModelFile top = models().getExistingFile(texture("block/ribcage_spine"));
+			return ConfiguredModel.builder()
+					.modelFile(state.getValue(RibcageBlock.HALF) == DoubleBlockHalf.LOWER ? bottom : top)
+					.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+					.build();
+		});
+
+		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
+		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
+		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));
+		simpleBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(texture("block/maw_guts")));
 
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
 		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
-		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), texture("block/stripped_bondknot_log"), texture("block/bondknot_log_top"));
+		axisBlock(RisusBlocks.POPPING_BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
+		axisBlock(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
+		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log_top"));
 		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log"));
 		simpleBlock(RisusBlocks.BONDKNOT_PLANKS.get());
 		slabBlock(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_planks"), texture("block/bondknot_planks"));
@@ -40,6 +65,10 @@ public class BlockModelGenerator extends BlockStateProvider {
 		fenceGateBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get(), texture("block/bondknot_planks"));
 		woodPlate(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), texture("block/bondknot_planks"));
 		woodButton(RisusBlocks.BONDKNOT_BUTTON.get(), texture("block/bondknot_planks"));
+		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor"), true, new ResourceLocation("cutout"));
+		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), new ResourceLocation("cutout"));
+		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks").toString());
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks").toString());
 
 		axisBlock(RisusBlocks.GRIMSTONE.get(), texture("block/grimstone"), texture("block/grimstone_top"));
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
@@ -53,70 +82,83 @@ public class BlockModelGenerator extends BlockStateProvider {
 	}
 
 	private void woodPlate(Block plate, ResourceLocation texName) {
-		ModelFile unpressed = models().withExistingParent(plate.getRegistryName().getPath(), "pressure_plate_up").texture("texture", texName);
-		ModelFile pressed = models().withExistingParent(plate.getRegistryName().getPath() + "_down", "pressure_plate_down").texture("texture", texName);
+		ModelFile unpressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(plate).getPath(), "pressure_plate_up").texture("texture", texName);
+		ModelFile pressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(plate).getPath() + "_down", "pressure_plate_down").texture("texture", texName);
 
-		getVariantBuilder(plate).forAllStates(state -> ConfiguredModel.builder().modelFile(state.get(PressurePlateBlock.POWERED) ? pressed : unpressed).build());
+		getVariantBuilder(plate).forAllStates(state -> ConfiguredModel.builder().modelFile(state.getValue(PressurePlateBlock.POWERED) ? pressed : unpressed).build());
 	}
 
 	private void woodButton(Block button, ResourceLocation texName) {
-		ModelFile unpressed = models().withExistingParent(button.getRegistryName().getPath(), "button").texture("texture", texName);
-		ModelFile pressed = models().withExistingParent(button.getRegistryName().getPath() + "_pressed", "button_pressed").texture("texture", texName);
+		ModelFile unpressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(button).getPath(), "button").texture("texture", texName);
+		ModelFile pressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(button).getPath() + "_pressed", "button_pressed").texture("texture", texName);
 
 		getVariantBuilder(button).forAllStates(state -> {
-			ModelFile model = state.get(AbstractButtonBlock.POWERED) ? pressed : unpressed;
-			int rotX = 0;
-			switch (state.get(HorizontalFaceBlock.FACE)) {
-				case WALL:
-					rotX = 90;
-					break;
-				case FLOOR:
-					rotX = 0;
-					break;
-				case CEILING:
-					rotX = 180;
-					break;
-			}
+			ModelFile model = state.getValue(ButtonBlock.POWERED) ? pressed : unpressed;
+			int rotX = switch (state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE)) {
+				case WALL -> 90;
+				case FLOOR -> 0;
+				case CEILING -> 180;
+			};
 			int rotY = 0;
-			if (state.get(HorizontalFaceBlock.FACE) == AttachFace.CEILING) {
-				switch (state.get(HorizontalBlock.HORIZONTAL_FACING)) {
-					case NORTH:
-						rotY = 180;
-						break;
-					case SOUTH:
-						rotY = 0;
-						break;
-					case WEST:
-						rotY = 90;
-						break;
-					case EAST:
-						rotY = 270;
-						break;
+			if (state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE) == AttachFace.CEILING) {
+				switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
+					case NORTH -> rotY = 180;
+					case WEST -> rotY = 90;
+					case EAST -> rotY = 270;
 				}
 			} else {
-				switch (state.get(HorizontalBlock.HORIZONTAL_FACING)) {
-					case NORTH:
-						rotY = 0;
-						break;
-					case SOUTH:
-						rotY = 180;
-						break;
-					case WEST:
-						rotY = 270;
-						break;
-					case EAST:
-						rotY = 90;
-						break;
-				}
+				rotY = switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
+					case NORTH -> 0;
+					case SOUTH -> 180;
+					case WEST -> 270;
+					case EAST -> 90;
+					default -> rotY;
+				};
 			}
-			boolean uvlock = state.get(HorizontalFaceBlock.FACE) == AttachFace.WALL;
+			boolean uvlock = state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE) == AttachFace.WALL;
 
 			return ConfiguredModel.builder().uvLock(uvlock).rotationX(rotX).rotationY(rotY).modelFile(model).build();
 		});
 	}
 
+	protected BlockModelBuilder make2LayerCubeAllSidesSame(String name, ResourceLocation renderType, int layer1em, int layer2em, boolean shade) {
+		return this.make2LayerCube(name, renderType,
+						layer1em, layer1em, layer1em, layer1em, layer1em, layer1em,
+						layer2em, layer2em, layer2em, layer2em, layer2em, layer2em, shade)
+				.texture("north", "#all").texture("south", "#all").texture("east", "#all")
+				.texture("west", "#all").texture("top", "#all").texture("bottom", "#all")
+				.texture("north2", "#all2").texture("south2", "#all2").texture("east2", "#all2")
+				.texture("west2", "#all2").texture("top2", "#all2").texture("bottom2", "#all2");
+	}
+
+	protected BlockModelBuilder make2LayerCube(String name, ResourceLocation renderType,
+											   int layer1emN, int layer1emS, int layer1emW, int layer1emE, int layer1emU, int layer1emD,
+											   int layer2emN, int layer2emS, int layer2emW, int layer2emE, int layer2emU, int layer2emD, boolean shade) {
+		return models().withExistingParent(name, "minecraft:block/block").renderType(renderType).texture("particle", "#bottom")
+				.element().from(0.0F, 0.0F, 0.0F).to(16.0F, 16.0F, 16.0F).shade(shade)
+				.face(Direction.NORTH).texture("#north").cullface(Direction.NORTH).emissivity(layer1emN).end()
+				.face(Direction.EAST).texture("#east").cullface(Direction.EAST).emissivity(layer1emE).end()
+				.face(Direction.SOUTH).texture("#south").cullface(Direction.SOUTH).emissivity(layer1emS).end()
+				.face(Direction.WEST).texture("#west").cullface(Direction.WEST).emissivity(layer1emW).end()
+				.face(Direction.UP).texture("#top").cullface(Direction.UP).emissivity(layer1emU).end()
+				.face(Direction.DOWN).texture("#bottom").cullface(Direction.DOWN).emissivity(layer1emD).end().end()
+				.element().from(0.0F, 0.0F, 0.0F).to(16.0F, 16.0F, 16.0F).shade(shade)
+				.face(Direction.NORTH).texture("#north2").cullface(Direction.NORTH).emissivity(layer2emN).tintindex(0).end()
+				.face(Direction.EAST).texture("#east2").cullface(Direction.EAST).emissivity(layer2emE).tintindex(0).end()
+				.face(Direction.SOUTH).texture("#south2").cullface(Direction.SOUTH).emissivity(layer2emS).tintindex(0).end()
+				.face(Direction.WEST).texture("#west2").cullface(Direction.WEST).emissivity(layer2emW).tintindex(0).end()
+				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU).tintindex(0).end()
+				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD).tintindex(0).end().end();
+	}
+
+	private void builtinEntity(Block b, String particle) {
+		simpleBlock(b, models().getBuilder(ForgeRegistries.BLOCKS.getKey(b).getPath())
+				.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+				.texture("particle", particle));
+	}
+
 	private ResourceLocation texture(String name) {
-		return Risus.risusRL(name);
+		return Risus.prefix(name);
 	}
 
 	@Nonnull

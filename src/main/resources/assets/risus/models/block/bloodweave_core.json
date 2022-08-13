@@ -1,9 +1,10 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:translucent",
 	"texture_size": [32, 16],
 	"textures": {
-		"0": "delivery/bloodweave",
-		"particle": "delivery/bloodweave"
+		"0": "risus:block/bloodweave",
+		"particle": "risus:block/bloodweave"
 	},
 	"elements": [
 		{

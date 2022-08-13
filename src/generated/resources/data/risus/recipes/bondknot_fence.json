@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#/#",
-    "#/#"
-  ],
   "key": {
     "#": {
       "item": "risus:bondknot_planks"
@@ -12,8 +8,12 @@
       "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    "#/#",
+    "#/#"
+  ],
   "result": {
-    "item": "risus:bondknot_fence",
-    "count": 6
+    "count": 6,
+    "item": "risus:bondknot_fence"
   }
 }

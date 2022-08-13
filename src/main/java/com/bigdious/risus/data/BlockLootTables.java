@@ -1,67 +1,105 @@
 package com.bigdious.risus.data;
 
-import com.bigdious.risus.block.RisusBlocks;
-import com.bigdious.risus.items.RisusItems;
-import net.minecraft.block.Block;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Items;
-import net.minecraft.loot.ItemLootEntry;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.RandomValueRange;
-import net.minecraft.loot.functions.ApplyBonus;
-import net.minecraft.loot.functions.SetCount;
+import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBlocks;
+import net.minecraft.advancements.critereon.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
-public class BlockLootTables extends net.minecraft.data.loot.BlockLootTables {
+public class BlockLootTables extends BlockLoot {
 
-	private final Set<Block> knownBlocks = new HashSet<>();
-
-	@Override
-	protected void registerLootTable(Block block, LootTable.Builder builder) {
-		super.registerLootTable(block, builder);
-		knownBlocks.add(block);
-	}
+	private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
 
 	@Override
 	protected void addTables() {
-		registerDropSelfLootTable(RisusBlocks.ASHEN_REMAINS.get());
-		registerDropSelfLootTable(RisusBlocks.SMILING_REMAINS.get());
-		registerDropSelfLootTable(RisusBlocks.BLOODWEAVE.get());
-		registerSilkTouch(RisusBlocks.CRYSTALIZED_BONDS.get());
-		registerDropSelfLootTable(RisusBlocks.LAUGHING_OBSIDIAN.get());
-		registerDropSelfLootTable(RisusBlocks.ENGRAVED_BASALT.get());
-		registerDropSelfLootTable(RisusBlocks.MAW_GUTS.get());
-		registerLootTable(RisusBlocks.BABY_RIBCAGE.get(), droppingWithSilkTouch(RisusBlocks.BABY_RIBCAGE.get(), ItemLootEntry.builder(Items.BONE).acceptFunction(SetCount.builder(RandomValueRange.of(1, 3))).acceptFunction(ApplyBonus.oreDrops(Enchantments.FORTUNE))));
-		registerLootTable(RisusBlocks.RIBCAGE.get(), droppingWithSilkTouch(RisusBlocks.RIBCAGE.get(), ItemLootEntry.builder(Items.BONE).acceptFunction(SetCount.builder(RandomValueRange.of(3, 6))).acceptFunction(ApplyBonus.oreDrops(Enchantments.FORTUNE))));
-		registerDropping(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
-		registerDropping(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_LOG.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_WOOD.get());
-		registerDropSelfLootTable(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
-		registerDropSelfLootTable(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_PLANKS.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_STAIRS.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_SLAB.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_BUTTON.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_FENCE_GATE.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_FENCE.get());
-		registerDropSelfLootTable(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
-		registerDropSelfLootTable(RisusBlocks.GRIMSTONE.get());
-		registerDropSelfLootTable(RisusBlocks.GRIMSTONE_BRICKS.get());
-		registerDropSelfLootTable(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
-		registerDropSelfLootTable(RisusBlocks.GRIMSTONE_STAIRS.get());
-		registerDropSelfLootTable(RisusBlocks.GRIMSTONE_SLAB.get());
-		registerDropSelfLootTable(RisusBlocks.GRIMSTONE_WALL.get());
-		registerDropSelfLootTable(RisusBlocks.CHISELED_GRIMSTONE.get());
-		registerDropSelfLootTable(RisusBlocks.POLISHED_GRIMSTONE.get());
+		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
+		dropSelf(RisusBlocks.SMILING_REMAINS.get());
+		dropSelf(RisusBlocks.BLOODWEAVE.get());
+		dropWhenSilkTouch(RisusBlocks.CRYSTALLIZED_BONDS.get());
+		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
+		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
+		dropSelf(RisusBlocks.MAW_GUTS.get());
+		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
+		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_HEAD.get().asItem());
+		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusBlocks.BLOODWYRM_HEAD.get().asItem());
 
+		dropSelf(RisusBlocks.BONDKNOT_LOG.get());
+		dropSelf(RisusBlocks.BONDKNOT_WOOD.get());
+		dropOther(RisusBlocks.POPPING_BONDKNOT_LOG.get(), RisusBlocks.BONDKNOT_LOG.get());
+		dropOther(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), RisusBlocks.BONDKNOT_WOOD.get());
+		dropSelf(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
+		dropSelf(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+		dropSelf(RisusBlocks.BONDKNOT_PLANKS.get());
+		dropSelf(RisusBlocks.BONDKNOT_STAIRS.get());
+		dropSelf(RisusBlocks.BONDKNOT_SLAB.get());
+		dropSelf(RisusBlocks.BONDKNOT_BUTTON.get());
+		dropSelf(RisusBlocks.BONDKNOT_FENCE_GATE.get());
+		dropSelf(RisusBlocks.BONDKNOT_FENCE.get());
+		dropSelf(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
+		dropSelf(RisusBlocks.BONDKNOT_TRAPDOOR.get());
+		add(RisusBlocks.BONDKNOT_DOOR.get(), createSinglePropConditionTable(RisusBlocks.BONDKNOT_DOOR.get(), DoorBlock.HALF, DoubleBlockHalf.LOWER));
+		dropOther(RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());
+		dropOther(RisusBlocks.BONDKNOT_WALL_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());
 
+		dropSelf(RisusBlocks.GRIMSTONE.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BRICKS.get());
+		dropSelf(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
+		dropSelf(RisusBlocks.GRIMSTONE_STAIRS.get());
+		dropSelf(RisusBlocks.GRIMSTONE_SLAB.get());
+		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
+		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
+		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
+	}
+
+	protected static LootTable.Builder createRibcageDrops(Block block) {
+		LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))).when(HAS_SILK_TOUCH).otherwise(applyExplosionCondition(block, LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+		return LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.add(builder)
+						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+								.setProperties(StatePropertiesPredicate.Builder.properties()
+										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
+						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
+										.setBlock(BlockPredicate.Builder.block().of(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()),
+								new BlockPos(0, 1, 0))))
+				.withPool(LootPool.lootPool().add(builder)
+						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+								.setProperties(StatePropertiesPredicate.Builder.properties()
+										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))
+						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
+										.setBlock(BlockPredicate.Builder.block().of(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()),
+								new BlockPos(0, -1, 0))));
 	}
 
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return knownBlocks;
+		return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getNamespace().equals(Risus.MODID)).collect(Collectors.toList());
 	}
 }

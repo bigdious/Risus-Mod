@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "side": "risus:block/bondknot_planks",
     "bottom": "risus:block/bondknot_planks",
+    "side": "risus:block/bondknot_planks",
     "top": "risus:block/bondknot_planks"
   }
 }

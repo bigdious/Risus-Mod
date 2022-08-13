@@ -1,89 +1,85 @@
 package com.bigdious.risus;
 
-import com.bigdious.risus.block.RisusBlocks;
-import com.bigdious.risus.client.ClientEventBusSubscriber;
-import com.bigdious.risus.client.particles.RisusParticles;
-import com.bigdious.risus.items.RisusItems;
-import com.bigdious.risus.tileentity.RisusTileEntities;
+import com.bigdious.risus.init.*;
 import com.google.common.collect.Maps;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Rarity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextFormatting;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.crafting.PartialNBTIngredient;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import javax.annotation.Nonnull;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.Locale;
 
-@Mod(Risus.ID)
+@Mod(Risus.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Risus {
-    public static final Logger LOGGER = LogManager.getLogger();
-    public static final String ID = "risus";
-    
-    private static final Rarity risus = Rarity.create("RISUS", TextFormatting.DARK_RED);
+	public static final String MODID = "risus";
 
-    public Risus() {
+	private static final Rarity RISUS = Rarity.create("RISUS", ChatFormatting.DARK_RED);
+
+	public Risus() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		RisusBlocks.BLOCKS.register(bus);
-		RisusItems.ITEMS.register(bus);
-		RisusTileEntities.TILE_ENTITIES.register(bus);
-		RisusParticles.PARTICLES.register(bus);
 
-    }
+		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
+		RisusBlocks.BLOCKS.register(bus);
+		RisusEntities.ENTITIES.register(bus);
+		RisusItems.ITEMS.register(bus);
+		RisusMobEffects.MOB_EFFECTS.register(bus);
+		RisusParticles.PARTICLES.register(bus);
+		RisusPotions.POTIONS.register(bus);
+		RisusEntities.SPAWN_EGGS.register(bus);
+
+		MinecraftForge.EVENT_BUS.register(this);
+	}
 
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			AxeItem.BLOCK_STRIPPING_MAP = Maps.newHashMap(AxeItem.BLOCK_STRIPPING_MAP);
-			AxeItem.BLOCK_STRIPPING_MAP.put(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
-			AxeItem.BLOCK_STRIPPING_MAP.put(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+			//block stripping
+			AxeItem.STRIPPABLES = Maps.newHashMap(AxeItem.STRIPPABLES);
+			AxeItem.STRIPPABLES.put(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
+			AxeItem.STRIPPABLES.put(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+
+			//Flammable blocks
+			FireBlock fireblock = (FireBlock) Blocks.FIRE;
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_LOG.get(), 5, 5);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_WOOD.get(), 5, 5);
+			fireblock.setFlammable(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), 5, 5);
+			fireblock.setFlammable(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), 5, 5);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_PLANKS.get(), 5, 20);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_STAIRS.get(), 5, 20);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_SLAB.get(), 5, 20);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_FENCE.get(), 5, 20);
+			fireblock.setFlammable(RisusBlocks.BONDKNOT_FENCE_GATE.get(), 5, 20);
+
+			PotionBrewing.addMix(Potions.AWKWARD, RisusItems.GUILTY_APPLE.get(), RisusPotions.MATING_FRENZY.get());
+			PotionBrewing.addMix(RisusPotions.MATING_FRENZY.get(), Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY.get());
+
+			//wood types
+			WoodType.register(RisusBlocks.BONDKNOT);
 		});
 	}
 
-	@SubscribeEvent
-	public void clientSetup(FMLClientSetupEvent event) {
-		ClientEventBusSubscriber.renderLayers();
+	public static ResourceLocation prefix(String name) {
+		return new ResourceLocation(MODID, name.toLowerCase(Locale.ROOT));
 	}
 
-    public static class RisusTab extends ItemGroup {
-    	public static final RisusTab INSTANCE = new RisusTab();
-
-    	public RisusTab() {
-    		super(ID);
-    		setNoTitle();
-    		setBackgroundImage(risusRL("textures/gui/tab_risus.png"));
-    	}
-    	
-    	private static final ResourceLocation RISUS_TABS = risusRL("textures/gui/tabs.png");
-    	@Override
-    	public ResourceLocation getTabsImage() {
-			return RISUS_TABS;
-    	}
-
-    	@Nonnull
-    	@Override
-    	public ItemStack createIcon() {
-    		return new ItemStack(RisusItems.SMILE.get());
-    	}
-	}
-
-	public static ResourceLocation risusRL(String name) {
-		return new ResourceLocation(ID, name.toLowerCase(Locale.ROOT));
-	}
-    
-    public static Rarity getRarity() {
-		return risus != null ? risus : Rarity.UNCOMMON;
+	public static Rarity getRarity() {
+		return RISUS;
 	}
 }

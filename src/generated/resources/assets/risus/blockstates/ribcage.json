@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,half=lower": {
+      "model": "risus:block/ribcage_cage",
+      "y": 90
+    },
+    "facing=east,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 90
+    },
+    "facing=north,half=lower": {
+      "model": "risus:block/ribcage_cage"
+    },
+    "facing=north,half=upper": {
+      "model": "risus:block/ribcage_spine"
+    },
+    "facing=south,half=lower": {
+      "model": "risus:block/ribcage_cage",
+      "y": 180
+    },
+    "facing=south,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 180
+    },
+    "facing=west,half=lower": {
+      "model": "risus:block/ribcage_cage",
+      "y": 270
+    },
+    "facing=west,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 270
+    }
+  }
+}
