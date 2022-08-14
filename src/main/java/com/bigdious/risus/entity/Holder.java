@@ -7,10 +7,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -45,6 +42,7 @@ public class Holder extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
+		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 64.0F));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, entity -> this.avoidedPlayerUUID != null && Objects.equals(this.avoidedPlayerUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidPlayer));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));

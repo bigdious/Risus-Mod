@@ -1,5 +1,6 @@
 // 1.19.2	2022-08-13T20:54:01.6416067	Risus Item Models
 da6a8fafafb78d7491a395c7599fc3c2e90c0356 assets/risus/models/item/alteration_monolith.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
 058008f5335d2bc15ac10b5f79c6d35beca63865 assets/risus/models/item/baby_ribcage.json
 1b3ea05631dc4b732c8bce6181f842fd02f8709e assets/risus/models/item/bloodweave.json
@@ -30,6 +31,7 @@ ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_wall
 a1f9458acb5b30113a6ab7bbe1b0f46dd0f23cbe assets/risus/models/item/joykiller.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
 2f16712ae08ea3d4edd94c13c6224a3eb66bb354 assets/risus/models/item/polished_grimstone.json
 11fa7eb9262d679f1cd201e0239cdc8fe64a2a32 assets/risus/models/item/popping_bondknot_log.json
 efc8ff5ef5954d916c3fe2f924492032621589c7 assets/risus/models/item/popping_bondknot_wood.json

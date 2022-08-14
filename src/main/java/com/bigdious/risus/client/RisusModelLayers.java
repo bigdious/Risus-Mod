@@ -2,9 +2,13 @@ package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
+import com.bigdious.risus.client.model.entity.AngelModel;
 import com.bigdious.risus.client.model.entity.HolderModel;
+import com.bigdious.risus.client.model.entity.MawModel;
 import com.bigdious.risus.client.model.entity.WeaverModel;
+import com.bigdious.risus.client.render.AngelRenderer;
 import com.bigdious.risus.client.render.HolderRenderer;
+import com.bigdious.risus.client.render.MawRenderer;
 import com.bigdious.risus.client.render.WeaverRenderer;
 import com.bigdious.risus.entity.Weaver;
 import com.bigdious.risus.init.RisusBlockEntities;
@@ -40,8 +44,9 @@ public class RisusModelLayers {
 
 	@SubscribeEvent
 	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-
+		event.registerLayerDefinition(ANGEL, AngelModel::create);
 		event.registerLayerDefinition(HOLDER, HolderModel::create);
+		event.registerLayerDefinition(MAW, MawModel::create);
 		event.registerLayerDefinition(WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 	}
@@ -53,7 +58,9 @@ public class RisusModelLayers {
 
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
+		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
