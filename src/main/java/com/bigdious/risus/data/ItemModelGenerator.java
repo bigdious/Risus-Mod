@@ -26,6 +26,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		//blocks
+		toBlock(RisusBlocks.ALTERATION_MONOLITH.get());
 		toBlock(RisusBlocks.ASHEN_REMAINS.get());
 		toBlock(RisusBlocks.SMILING_REMAINS.get());
 		toBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());

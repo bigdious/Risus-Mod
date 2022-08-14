@@ -17,6 +17,7 @@ public class RisusBlockItems {
 	@SubscribeEvent
 	public static void registerBlockItems(RegisterEvent event) {
 		if (Objects.equals(ForgeRegistries.ITEMS, event.getForgeRegistry())) {
+			register(event, blockItem(RisusBlocks.ALTERATION_MONOLITH));
 			register(event, blockItem(RisusBlocks.ASHEN_REMAINS));
 			register(event, blockItem(RisusBlocks.SMILING_REMAINS));
 			register(event, blockItem(RisusBlocks.LAUGHING_OBSIDIAN));

@@ -57,6 +57,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+				RisusBlocks.ALTERATION_MONOLITH.get(),
 				RisusBlocks.ASHEN_REMAINS.get(),
 				RisusBlocks.SMILING_REMAINS.get(),
 				RisusBlocks.LAUGHING_OBSIDIAN.get(),
@@ -73,6 +74,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.CHISELED_GRIMSTONE.get(),
 				RisusBlocks.POLISHED_GRIMSTONE.get());
 
-		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get());
+		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_MONOLITH.get());
 	}
 }

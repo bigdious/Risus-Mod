@@ -18,6 +18,7 @@ public class RisusTab  extends CreativeModeTab {
 	}
 
 	private static final ResourceLocation RISUS_TABS = Risus.prefix("textures/gui/tabs.png");
+
 	@Override
 	public ResourceLocation getTabsImage() {
 		return RISUS_TABS;

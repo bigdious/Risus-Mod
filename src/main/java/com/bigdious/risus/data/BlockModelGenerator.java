@@ -29,6 +29,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
+		simpleBlock(RisusBlocks.ALTERATION_MONOLITH.get(), models().getExistingFile(texture("block/alteration_monolith")));
 		simpleBlock(RisusBlocks.ASHEN_REMAINS.get());
 		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), new ResourceLocation("cutout"), 0, 10, false)
 				.texture("all", Risus.prefix("block/smiling_remains"))

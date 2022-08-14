@@ -4,14 +4,21 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.JoyParticle;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.util.RisusSkullType;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.VertexFormat;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderStateShard;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
+import net.minecraft.client.renderer.blockentity.*;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterNamedRenderTypesEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.client.event.RenderGuiOverlayEvent;
+import net.minecraftforge.client.event.RenderHandEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -19,6 +26,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Bus.MOD)
 public class RisusClientEvents {
+
+	private static final RenderType MONOLITH_PORTAL = RenderType.create("risus:monolith_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, 256, true, false, RenderType.CompositeState.builder().setShaderState(RenderStateAccessor.getEndPortal()).setTextureState(RenderStateShard.MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION, false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false).build()).createCompositeState(false));
 
 	@SubscribeEvent
 	public static void registerFactories(RegisterParticleProvidersEvent event) {
@@ -36,5 +45,22 @@ public class RisusClientEvents {
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT);
 		});
+	}
+
+	@SubscribeEvent
+	public static void registerRenderTypes(RegisterNamedRenderTypesEvent event) {
+		//TODO must wait on forge to allow us to add custom render types to the chunk buffer
+		//event.register("monolith_portal", MONOLITH_PORTAL, RenderType.entitySolid(TheEndGatewayRenderer.END_PORTAL_LOCATION));
+	}
+
+	public static class RenderStateAccessor extends RenderStateShard {
+
+		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {
+			super(p_110161_, p_110162_, p_110163_);
+		}
+
+		public static ShaderStateShard getEndPortal() {
+			return RENDERTYPE_END_PORTAL_SHADER;
+		}
 	}
 }

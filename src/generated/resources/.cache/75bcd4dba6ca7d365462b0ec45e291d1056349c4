@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-13T09:52:08.8575201	Tags for minecraft:block
+// 1.19.2	2022-08-13T17:04:46.4964489	Tags for minecraft:block
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
@@ -7,8 +7,8 @@
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/blocks/fence_gates.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs_that_burn.json
-78e89d764d2d281ba6804947169bc71aba9d5568 data/minecraft/tags/blocks/mineable/pickaxe.json
-90246e9d74b4b2bbf5464f742536a68e568d6022 data/minecraft/tags/blocks/needs_diamond_tool.json
+88623b89fadb437705d0f75270542453b70b65ff data/minecraft/tags/blocks/mineable/pickaxe.json
+bee342d766c393410399d84b08078a15132a8d85 data/minecraft/tags/blocks/needs_diamond_tool.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/blocks/planks.json
 8775602c15152b6d5edeafa31683398321bb7243 data/minecraft/tags/blocks/signs.json
 ecc388c40f36e8a5d4349e1a596494b63223f338 data/minecraft/tags/blocks/slabs.json
