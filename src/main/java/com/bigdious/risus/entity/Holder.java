@@ -92,6 +92,13 @@ public class Holder extends Monster {
 	}
 
 	@Override
+	public void checkDespawn() {
+		if (this.getMainHandItem().isEmpty()) {
+			super.checkDespawn();
+		}
+	}
+
+	@Override
 	public InteractionResult interactAt(Player player, Vec3 vec3, InteractionHand hand) {
 		if (!player.getItemInHand(hand).isEmpty() && this.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, player.getItemInHand(hand).split(1));
