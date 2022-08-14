@@ -12,8 +12,8 @@ import net.minecraft.util.Mth;
 
 public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	private final ModelPart root;
-	private final ModelPart head;
-	private final ModelPart body;
+	private final ModelPart upperJaw;
+	private final ModelPart lowerJaw;
 	private final ModelPart memoryCore;
 
 	private final ModelPart left_leg1;
@@ -33,9 +33,11 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		this.right_leg1 = rightLegs.getChild("rightLeg1");
 		this.right_leg2 = rightLegs.getChild("rightLeg2");
 		this.right_leg3 = rightLegs.getChild("rightLeg3");
-		this.head = root.getChild("head");
-		this.body = root.getChild("body");
-		this.memoryCore = root.getChild("memoryCore");
+		ModelPart head = root.getChild("head");
+		this.upperJaw = head.getChild("top");
+		this.lowerJaw = head.getChild("bottom");
+		ModelPart coreHolder = root.getChild("memoryCore");
+		this.memoryCore = coreHolder.getChild("memoryShell");
 	}
 
 	public static LayerDefinition create() {
@@ -107,7 +109,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		.texOffs(0, 0).addBox(-3.0F, 1.5F, 1.6429F, 1.0F, 1.0F, 5.0F)
 		.texOffs(30, 6).addBox(-0.5F, -0.5F, 4.6429F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 17.5F, 3.3571F, 0.2182F, 0.0F, 0.0F));
 
-		memoryCore.addOrReplaceChild("memoryShell_r1", CubeListBuilder.create().texOffs(30, 0).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 5.1429F, -0.7854F, 0.7854F, 0.7854F));
+		memoryCore.addOrReplaceChild("memoryShell", CubeListBuilder.create().texOffs(30, 0).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 5.1429F, -0.7854F, 0.7854F, 0.7854F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
@@ -119,6 +121,47 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.right_leg1.yRot = 0.0F;
+		this.right_leg2.yRot = -25.0F * Mth.DEG_TO_RAD;
+		this.right_leg3.yRot = -52.5F * Mth.DEG_TO_RAD;
+		this.right_leg1.zRot = 0.0F;
+		this.right_leg2.zRot = 0.0F;
+		this.right_leg3.zRot = 0.0F;
+		this.left_leg1.yRot = 0.0F;
+		this.left_leg2.yRot = 25.0F * Mth.DEG_TO_RAD;
+		this.left_leg3.yRot = 52.5F * Mth.DEG_TO_RAD;
+		this.left_leg1.zRot = 0.0F;
+		this.left_leg2.zRot = 0.0F;
+		this.left_leg3.zRot = 0.0F;
+		float f3 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.4F) * limbSwingAmount;
+		float f4 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + (float)Math.PI) * 0.4F) * limbSwingAmount;
+		float f6 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + ((float)Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
+		float f7 = Math.abs(Mth.sin(limbSwing * 0.6662F + 0.0F) * 0.4F) * limbSwingAmount;
+		float f8 = Math.abs(Mth.sin(limbSwing * 0.6662F + (float)Math.PI) * 0.4F) * limbSwingAmount;
+		float f10 = Math.abs(Mth.sin(limbSwing * 0.6662F + ((float)Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
+		this.right_leg3.yRot += f3;
+		this.left_leg3.yRot += -f3;
+		this.right_leg2.yRot += f4;
+		this.left_leg2.yRot -= f4;
+		this.right_leg1.yRot += f6;
+		this.left_leg1.yRot -= f6;
+		this.right_leg3.zRot += f7;
+		this.left_leg3.zRot -= f7;
+		this.right_leg2.zRot += f8;
+		this.left_leg2.zRot -= f8;
+		this.right_leg1.zRot += f10;
+		this.left_leg1.zRot -= f10;
 
+		this.memoryCore.xRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
+		this.memoryCore.yRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
+		this.memoryCore.zRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
+
+		if (entity.getActiveAttackTarget() != null) {
+			this.upperJaw.zRot = 25.0F * Mth.DEG_TO_RAD;
+			this.lowerJaw.zRot = -22.5F * Mth.DEG_TO_RAD;
+		} else {
+			this.upperJaw.zRot = Mth.sin(ageInTicks * 0.067F) * 0.1F + (10.0F * Mth.DEG_TO_RAD);
+			this.lowerJaw.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.1F + (-10.0F * Mth.DEG_TO_RAD);
+		}
 	}
 }

@@ -2,6 +2,9 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,12 +16,20 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
+import javax.annotation.Nullable;
+import java.util.function.Predicate;
+
 public class Weaver extends Monster {
+
+	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
+	@Nullable
+	private LivingEntity clientSideCachedAttackTarget;
 
 	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
@@ -32,6 +43,12 @@ public class Weaver extends Monster {
 	}
 
 	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
+	}
+
+	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
@@ -39,8 +56,8 @@ public class Weaver extends Monster {
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setAlertOthers());
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
+		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
+		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
 	}
 
 	@Override
@@ -73,6 +90,81 @@ public class Weaver extends Monster {
 			return true;
 		} else {
 			return false;
+		}
+	}
+
+	public void setActiveAttackTarget(int target) {
+		this.entityData.set(DATA_ID_ATTACK_TARGET, target);
+	}
+
+	public boolean hasActiveAttackTarget() {
+		return this.entityData.get(DATA_ID_ATTACK_TARGET) != 0;
+	}
+
+	@Nullable
+	public LivingEntity getActiveAttackTarget() {
+		if (!this.hasActiveAttackTarget()) {
+			return null;
+		} else if (this.getLevel().isClientSide()) {
+			if (this.clientSideCachedAttackTarget != null) {
+				return this.clientSideCachedAttackTarget;
+			} else {
+				Entity entity = this.getLevel().getEntity(this.getEntityData().get(DATA_ID_ATTACK_TARGET));
+				if (entity instanceof LivingEntity) {
+					this.clientSideCachedAttackTarget = (LivingEntity)entity;
+					return this.clientSideCachedAttackTarget;
+				} else {
+					return null;
+				}
+			}
+		} else {
+			return this.getTarget();
+		}
+	}
+
+	@Override
+	public void onSyncedDataUpdated(EntityDataAccessor<?> accessor) {
+		super.onSyncedDataUpdated(accessor);
+		if (DATA_ID_ATTACK_TARGET.equals(accessor)) {
+			this.clientSideCachedAttackTarget = null;
+		}
+	}
+
+	private static class WeaverHurtByTargetGoal extends HurtByTargetGoal {
+
+		public WeaverHurtByTargetGoal(PathfinderMob mob) {
+			super(mob);
+		}
+
+		@Override
+		public void start() {
+			super.start();
+			((Weaver)this.mob).setActiveAttackTarget(this.targetMob.getId());
+		}
+
+		@Override
+		public void stop() {
+			super.stop();
+			((Weaver)this.mob).setActiveAttackTarget(0);
+		}
+	}
+
+	private static class WeaverNeastAttackableGoal extends NearestAttackableTargetGoal<LivingEntity> {
+
+		public WeaverNeastAttackableGoal(Mob mob, Class<LivingEntity> attack, boolean needsLOS, Predicate<LivingEntity> predicate) {
+			super(mob, attack, needsLOS, predicate);
+		}
+
+		@Override
+		public void start() {
+			super.start();
+			((Weaver)this.mob).setActiveAttackTarget(this.target.getId());
+		}
+
+		@Override
+		public void stop() {
+			super.stop();
+			((Weaver)this.mob).setActiveAttackTarget(0);
 		}
 	}
 }
