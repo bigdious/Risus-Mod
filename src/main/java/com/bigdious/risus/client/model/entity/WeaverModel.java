@@ -8,19 +8,31 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.util.Mth;
 
 public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	private final ModelPart root;
-	private final ModelPart rightLegs;
-	private final ModelPart leftLegs;
 	private final ModelPart head;
 	private final ModelPart body;
 	private final ModelPart memoryCore;
 
+	private final ModelPart left_leg1;
+	private final ModelPart left_leg2;
+	private final ModelPart left_leg3;
+	private final ModelPart right_leg1;
+	private final ModelPart right_leg2;
+	private final ModelPart right_leg3;
+
 	public WeaverModel(ModelPart root) {
 		this.root = root;
-		this.rightLegs = root.getChild("rightLegs");
-		this.leftLegs = root.getChild("leftLegs");
+		ModelPart rightLegs = root.getChild("rightLegs");
+		ModelPart leftLegs = root.getChild("leftLegs");
+		this.left_leg1 = leftLegs.getChild("leftLeg1");
+		this.left_leg2 = leftLegs.getChild("leftLeg2");
+		this.left_leg3 = leftLegs.getChild("leftLeg3");
+		this.right_leg1 = rightLegs.getChild("rightLeg1");
+		this.right_leg2 = rightLegs.getChild("rightLeg2");
+		this.right_leg3 = rightLegs.getChild("rightLeg3");
 		this.head = root.getChild("head");
 		this.body = root.getChild("body");
 		this.memoryCore = root.getChild("memoryCore");

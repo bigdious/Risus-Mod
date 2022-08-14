@@ -53,6 +53,23 @@ public class RisusClientEvents {
 		//event.register("monolith_portal", MONOLITH_PORTAL, RenderType.entitySolid(TheEndGatewayRenderer.END_PORTAL_LOCATION));
 	}
 
+	@EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Bus.FORGE)
+	public static class RisusForgeEvents {
+		@SubscribeEvent
+		public static void killScreenWithAmnesia(RenderGuiOverlayEvent.Pre event) {
+			if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+				event.setCanceled(true);
+			}
+		}
+
+		@SubscribeEvent
+		public static void killHandWithAmnesia(RenderHandEvent event) {
+			if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+				event.setCanceled(true);
+			}
+		}
+	}
+
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {
