@@ -8,7 +8,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -16,16 +15,15 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-public class Weaver extends Monster {
+public class Weaver extends Monster implements CacheTargetOnClient {
 
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
 	@Nullable
@@ -93,33 +91,23 @@ public class Weaver extends Monster {
 		}
 	}
 
+	@Override
+	public int getDataTarget() {
+		return this.getEntityData().get(DATA_ID_ATTACK_TARGET);
+	}
+
+	@Override
+	public @Nullable LivingEntity getCachedAttackTarget() {
+		return this.clientSideCachedAttackTarget;
+	}
+
+	@Override
+	public void setCachedAttackTarget(@Nullable LivingEntity living) {
+		this.clientSideCachedAttackTarget = living;
+	}
+
 	public void setActiveAttackTarget(int target) {
 		this.entityData.set(DATA_ID_ATTACK_TARGET, target);
-	}
-
-	public boolean hasActiveAttackTarget() {
-		return this.entityData.get(DATA_ID_ATTACK_TARGET) != 0;
-	}
-
-	@Nullable
-	public LivingEntity getActiveAttackTarget() {
-		if (!this.hasActiveAttackTarget()) {
-			return null;
-		} else if (this.getLevel().isClientSide()) {
-			if (this.clientSideCachedAttackTarget != null) {
-				return this.clientSideCachedAttackTarget;
-			} else {
-				Entity entity = this.getLevel().getEntity(this.getEntityData().get(DATA_ID_ATTACK_TARGET));
-				if (entity instanceof LivingEntity) {
-					this.clientSideCachedAttackTarget = (LivingEntity)entity;
-					return this.clientSideCachedAttackTarget;
-				} else {
-					return null;
-				}
-			}
-		} else {
-			return this.getTarget();
-		}
 	}
 
 	@Override

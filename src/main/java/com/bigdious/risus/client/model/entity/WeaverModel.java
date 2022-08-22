@@ -156,7 +156,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		this.memoryCore.yRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
 		this.memoryCore.zRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
 
-		if (entity.getActiveAttackTarget() != null) {
+		if (entity.getActiveAttackTarget(entity) != null) {
 			this.upperJaw.zRot = 25.0F * Mth.DEG_TO_RAD;
 			this.lowerJaw.zRot = -22.5F * Mth.DEG_TO_RAD;
 		} else {

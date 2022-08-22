@@ -19,6 +19,11 @@ public class MawRenderer extends MobRenderer<Maw, MawModel<Maw>> {
 	}
 
 	@Override
+	protected float getFlipDegrees(Maw maw) {
+		return 0.0F;
+	}
+
+	@Override
 	public ResourceLocation getTextureLocation(Maw maw) {
 		return TEXTURE;
 	}

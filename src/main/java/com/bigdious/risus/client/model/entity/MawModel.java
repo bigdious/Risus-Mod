@@ -4,10 +4,7 @@ import com.bigdious.risus.entity.Maw;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.CubeListBuilder;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
-import net.minecraft.client.model.geom.builders.MeshDefinition;
-import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
 public class MawModel<T extends Maw> extends HierarchicalModel<T> {
@@ -37,7 +34,7 @@ public class MawModel<T extends Maw> extends HierarchicalModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(16, 0).addBox(-11.5F, 0.0F, -11.5F, 27.0F, 0.0F, 27.0F)
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(16, 0).addBox(-11.5F, 0.0F, -11.5F, 27.0F, 0.0F, 27.0F, new CubeDeformation(0.1F))
 		.texOffs(0, 0).addBox(-3.0F, 0.0F, -11.0F, 10.0F, 2.0F, 4.0F)
 		.texOffs(0, 0).addBox(-3.0F, 0.0F, 11.0F, 10.0F, 2.0F, 4.0F), PartPose.offset(-2.0F, 24.0F, -2.0F));
 
@@ -154,14 +151,32 @@ public class MawModel<T extends Maw> extends HierarchicalModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.bigPincer1.zRot = Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer2.xRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer3.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer4.xRot = Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer5.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer6.xRot = Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer7.zRot = Mth.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bigPincer8.xRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F;
+		if (entity.isDeadOrDying()) {
+			float f = ((float)entity.deathTime + ageInTicks - 1.0F) / 20.0F * 1.6F;
+			f = Math.min(Mth.sqrt(f), 1.0F);
+			f *= 90.0F;
+
+			this.bigPincer1.zRot = -Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer2.xRot = Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer3.zRot = Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer4.xRot = -Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+
+			this.bigPincer5.zRot = Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer6.xRot = -Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer7.zRot = -Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+			this.bigPincer8.xRot = Mth.clamp(f, 0.0F, 70.0F) * Mth.DEG_TO_RAD;
+		} else {
+			float openForTarget = entity.getCachedAttackTarget() != null ? 45.0F * Mth.DEG_TO_RAD : 0.0F;
+
+			this.bigPincer1.zRot = Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer2.xRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer3.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer4.xRot = Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer5.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer6.xRot = Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer7.zRot = Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+			this.bigPincer8.xRot = -Mth.sin(ageInTicks * 0.067F) * 0.05F + openForTarget;
+		}
 	}
 
 	@Override
