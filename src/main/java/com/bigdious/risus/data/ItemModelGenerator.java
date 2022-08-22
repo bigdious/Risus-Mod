@@ -36,7 +36,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.BLOODWEAVE.get(), texture("block/bloodweave_core"));
 		toBlock(RisusBlocks.BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.BONDKNOT_WOOD.get());
-		toBlock(RisusBlocks.POPPING_BONDKNOT_LOG.get());
+		toBlockModel(RisusBlocks.POPPING_BONDKNOT_LOG.get(), texture("block/popping_bondknot_log_north"));
 		toBlock(RisusBlocks.POPPING_BONDKNOT_WOOD.get());
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());

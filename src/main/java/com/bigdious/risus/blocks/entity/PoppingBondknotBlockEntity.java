@@ -1,77 +1,68 @@
 package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.blocks.CrystallizedBondsBlock;
+import com.bigdious.risus.blocks.PoppingBondknotBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Objects;
-
 public class PoppingBondknotBlockEntity extends BlockEntity {
 
 	private int popTimer = 0;
 	private boolean popping = false;
-	public Direction popDir;
+	public final Direction popDir;
+	private int secondTicker;
 
 	public PoppingBondknotBlockEntity(BlockPos pos, BlockState state) {
 		super(RisusBlockEntities.POPPING_BONDKNOT.get(), pos, state);
+		this.popDir = state.getValue(PoppingBondknotBlock.POP_SIDE);
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, PoppingBondknotBlockEntity te) {
-		while (te.popDir == null) {
-			Direction dir = Direction.values()[level.getRandom().nextInt(Direction.values().length)];
-			if (level.getBlockState(pos.relative(dir)).isAir()) {
-				te.popDir = dir;
+		if (te.popDir != null) {
+			if (!te.popping && te.secondTicker++ >= 20) {
+				if (level.getRandom().nextInt(500) == 0) {
+					te.popping = true;
+				}
+				te.secondTicker = 0;
+			}
+
+			if (level.getBlockState(pos.relative(te.popDir)).getMaterial().isReplaceable() && te.popping) {
+				te.particles((ServerLevel) level);
+				te.popTimer++;
+			}
+
+			if (level.getBlockState(pos.relative(te.popDir)).getMaterial().isReplaceable() && te.popTimer > 5) {
+				te.createCrystal(level);
+				te.popping = false;
+				te.popTimer = 0;
 			}
 		}
-
-		if (level.getRandom().nextInt(50) == 0 && te.popDir != null && !te.popping && state.isAir()) {
-			te.popping = true;
-		}
-
-		if (te.popping) {
-			if (level.isClientSide()) te.particles();
-			te.popTimer++;
-		}
-
-		if (te.popTimer > 100) {
-			if (!level.isClientSide()) te.createCrystal();
-			te.popping = false;
-			te.popTimer = 0;
-		}
 	}
 
-	private void particles() {
-		if (this.popDir != null && Objects.requireNonNull(this.getLevel()).getBlockState(this.getBlockPos().relative(this.popDir)).isAir()) {
+	private void particles(ServerLevel level) {
+		if (this.popDir != null) {
 			BlockPos crystal = this.getBlockPos().relative(this.popDir);
-			this.getLevel().addParticle(DustParticleOptions.REDSTONE, crystal.getX() + this.getLevel().getRandom().nextFloat(), crystal.getY() + this.getLevel().getRandom().nextFloat(), crystal.getZ() + this.getLevel().getRandom().nextFloat(), 0.5D, 0.5D, 0.5D);
+			level.sendParticles(DustParticleOptions.REDSTONE,
+					crystal.getX() - (this.popDir.getStepX() * 0.5F) + 0.5F,
+					crystal.getY() - (this.popDir.getStepY() * 0.5F) + 0.5F,
+					crystal.getZ() - (this.popDir.getStepZ() * 0.5F) + 0.5F, 5,
+					0.1D, 0.1D, 0.1D, 0);
 		}
 	}
 
-	private void createCrystal() {
-		if (this.popDir != null && Objects.requireNonNull(this.getLevel()).getBlockState(this.getBlockPos().relative(this.popDir)).isAir()) {
-			this.getLevel().setBlockAndUpdate(this.getBlockPos().relative(this.popDir), RisusBlocks.CRYSTALLIZED_BONDS.get().defaultBlockState().setValue(CrystallizedBondsBlock.FACING, this.popDir));
-			this.getLevel().playSound(null, this.getBlockPos().relative(this.popDir), SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0f);
+	private void createCrystal(Level level) {
+		if (this.popDir != null) {
+			level.setBlockAndUpdate(this.getBlockPos().relative(this.popDir), RisusBlocks.CRYSTALLIZED_BONDS.get().defaultBlockState().setValue(CrystallizedBondsBlock.FACING, this.popDir));
+			level.playSound(null, this.getBlockPos().relative(this.popDir), SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0f);
 		}
-	}
-
-	@Override
-	public void load(CompoundTag nbt) {
-		super.load(nbt);
-		if (nbt.contains("direction")) this.popDir = Direction.byName(nbt.getString("direction"));
-	}
-
-	@Override
-	protected void saveAdditional(CompoundTag tag) {
-		super.saveAdditional(tag);
-		if (this.popDir != null) tag.putString("direction", this.popDir.name());
 	}
 }

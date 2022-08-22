@@ -1,10 +1,9 @@
 package com.bigdious.risus.data;
 
-
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.PoppingBondknotBlock;
 import com.bigdious.risus.blocks.RibcageBlock;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -12,10 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -55,7 +51,52 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
 		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
-		axisBlock(RisusBlocks.POPPING_BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
+		getVariantBuilder(RisusBlocks.POPPING_BONDKNOT_LOG.get()).forAllStates(state -> {
+			ModelFile baseFile = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_base", "block/cube")
+					.texture("particle", Risus.prefix("block/bondknot_log"))
+					.texture("north", Risus.prefix("block/bondknot_log")).texture("south", Risus.prefix("block/bondknot_log"))
+					.texture("west", Risus.prefix("block/bondknot_log")).texture("east", Risus.prefix("block/bondknot_log"))
+					.texture("up", Risus.prefix("block/bondknot_log_top")).texture("down", Risus.prefix("block/bondknot_log_top"));
+
+			ModelFile poppingN = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_north", baseFile.getLocation())
+					.texture("north", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingW = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_west", baseFile.getLocation())
+					.texture("west", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingS = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_south", baseFile.getLocation())
+					.texture("south", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingE = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_east", baseFile.getLocation())
+					.texture("east", Risus.prefix("block/popping_bondknot_log_side"));
+			switch (state.getValue(BlockStateProperties.AXIS)) {
+				case X -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case UP -> poppingS;
+						case NORTH -> poppingW;
+						case SOUTH -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).rotationX(90).rotationY(90).build();
+				}
+				case Z -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case UP -> poppingS;
+						case WEST -> poppingW;
+						case EAST -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).rotationX(90).build();
+				}
+				//actually case y
+				default -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case SOUTH -> poppingS;
+						case WEST -> poppingW;
+						case EAST -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).build();
+				}
+			}
+		});
 		axisBlock(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
 		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log_top"));
 		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log"));

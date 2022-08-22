@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "risus:block/bondknot_log_top",
+    "east": "risus:block/bondknot_log",
+    "north": "risus:block/bondknot_log",
+    "particle": "risus:block/bondknot_log",
+    "south": "risus:block/bondknot_log",
+    "up": "risus:block/bondknot_log_top",
+    "west": "risus:block/bondknot_log"
+  }
+}

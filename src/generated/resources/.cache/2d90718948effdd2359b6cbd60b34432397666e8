@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-13T17:04:46.4914622	Risus blockstates and models
+// 1.19.2	2022-08-22T11:37:23.1438191	Risus blockstates and models
 4bbaec640df134f5b5708b32b663ac626fadb2cc assets/risus/blockstates/alteration_monolith.json
 6c2abd3e0383e491f8369974b93264194cd9bcd0 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -30,7 +30,7 @@ a06169093b01ffb883cb1c89baac04ead230fc6f assets/risus/blockstates/grimstone_slab
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
 f53f9ea18f2a8b91592fe88e0345089410afdd92 assets/risus/blockstates/maw_guts.json
 2909a8096c350b95b8052670a5896278205b948c assets/risus/blockstates/polished_grimstone.json
-2a1efaa14f89e775c039e3b26788e11ab789362c assets/risus/blockstates/popping_bondknot_log.json
+40f5640179b903cd8f4b7617367e5aef759b1cd2 assets/risus/blockstates/popping_bondknot_log.json
 bdb236f1dd18508b8b43e102412470e8379b8afb assets/risus/blockstates/popping_bondknot_wood.json
 20c25d9d3d12fb0ba9ab70760de05eff35ca4278 assets/risus/blockstates/ribcage.json
 336dc67db6bcf81e17a0ac821516663f6f88d21f assets/risus/blockstates/smiling_remains.json
@@ -85,8 +85,11 @@ a3f7901d6adc2ec4df4a9457ef437ccf73a3daf0 assets/risus/models/block/grimstone_wal
 f133fce0c7d2a095f1e82cfc9e6bf50ad1d3f3b4 assets/risus/models/block/grimstone_wall_side_tall.json
 cd8166a62f9de1b5aab44ea81441635977dcad0a assets/risus/models/block/laughing_obsidian.json
 b737e2187b501357c3db8afd02404b04c2f37388 assets/risus/models/block/polished_grimstone.json
-fd880fee28c2ac35068b98ce813399b8b6766f95 assets/risus/models/block/popping_bondknot_log.json
-386ced4984b6ddf619dd78437fd0b4ebcb371398 assets/risus/models/block/popping_bondknot_log_horizontal.json
+15ac3341df60473f39b2079b75a6eef5babb6e81 assets/risus/models/block/popping_bondknot_log_base.json
+75089b4831e44c0d0d4d71855f64ffeff4dd6e5f assets/risus/models/block/popping_bondknot_log_east.json
+920f1da34be5677967b00c7241e9fe3ac161b2bf assets/risus/models/block/popping_bondknot_log_north.json
+8b269d90ca1ffb5a4ec65aaff11aaf5860ff59ca assets/risus/models/block/popping_bondknot_log_south.json
+5cf7f467099f0ae18234962b46a1e9e2ddf685bb assets/risus/models/block/popping_bondknot_log_west.json
 1646266b4c60811649df5324a48611ebf3e80e4a assets/risus/models/block/popping_bondknot_wood.json
 977200aca0f5647c76c398134d592a49f38eaf19 assets/risus/models/block/popping_bondknot_wood_horizontal.json
 1891e1327e7df32651669500e944cf28b97e5534 assets/risus/models/block/smiling_remains.json
