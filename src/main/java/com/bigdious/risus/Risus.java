@@ -18,6 +18,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Locale;
 
@@ -25,6 +27,7 @@ import java.util.Locale;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Risus {
 	public static final String MODID = "risus";
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	private static final Rarity RISUS = Rarity.create("RISUS", ChatFormatting.DARK_RED);
 
@@ -36,6 +39,7 @@ public class Risus {
 		RisusEntities.ENTITIES.register(bus);
 		RisusItems.ITEMS.register(bus);
 		RisusMobEffects.MOB_EFFECTS.register(bus);
+		RisusMenuTypes.MENU_TYPES.register(bus);
 		RisusParticles.PARTICLES.register(bus);
 		RisusPotions.POTIONS.register(bus);
 		RisusEntities.SPAWN_EGGS.register(bus);

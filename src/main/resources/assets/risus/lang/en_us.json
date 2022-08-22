@@ -9,8 +9,8 @@
   "block.risus.bloodwyrm_head": "Bloodwyrm Head",
   "block.risus.bondknot_log": "Bondknot Log",
   "block.risus.bondknot_wood": "Bondknot Wood",
-  "block.risus.popping_bondknot_log": "Bondknot Log",
-  "block.risus.popping_bondknot_wood": "Bondknot Wood",
+  "block.risus.popping_bondknot_log": "Popping Bondknot Log",
+  "block.risus.popping_bondknot_wood": "Popping Bondknot Wood",
   "block.risus.stripped_bondknot_log": "Stripped Bondknot Log",
   "block.risus.stripped_bondknot_wood": "Stripped Bondknot Wood",
   "block.risus.bondknot_planks": "Bondknot Planks",
@@ -34,6 +34,8 @@
   "block.risus.grimstone_wall": "Grimstone Wall",
   "block.risus.chiseled_grimstone": "Chiseled Grimstone",
   "block.risus.polished_grimstone": "Polished Grimstone",
+
+  "container.risus.maw_guts": "Maw Guts",
 
   "item.risus.smile": "Smile",
   "item.risus.blood_feather": "Blood Feather",

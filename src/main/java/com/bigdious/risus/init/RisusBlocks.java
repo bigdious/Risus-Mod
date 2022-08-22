@@ -23,7 +23,7 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new FallingBlock(Block.Properties.copy(Blocks.SOUL_SOIL)));
 	public static final RegistryObject<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.copy(Blocks.CRYING_OBSIDIAN)));
 	public static final RegistryObject<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.POLISHED_BASALT).noOcclusion()));
-	public static final RegistryObject<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new Block(Block.Properties.of(Material.CAKE).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
+	public static final RegistryObject<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of(Material.CAKE).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
 	public static final RegistryObject<Block> CRYSTALLIZED_BONDS = BLOCKS.register("crystallized_bonds", () -> new CrystallizedBondsBlock(Block.Properties.of(Material.GLASS).noOcclusion().sound(SoundType.GLASS).strength(0.25F)));
 	public static final RegistryObject<Block> BLOODWEAVE = BLOCKS.register("bloodweave", () -> new Block(Block.Properties.of(Material.DECORATION).noOcclusion().instabreak()));
 	public static final RegistryObject<Block> BLOODWYRM_HEAD = BLOCKS.register("bloodwyrm_head", () -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.copy(Blocks.DRAGON_HEAD).instabreak()));

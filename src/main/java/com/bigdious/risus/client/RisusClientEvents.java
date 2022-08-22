@@ -2,14 +2,12 @@ package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.JoyParticle;
-import com.bigdious.risus.init.RisusBlockEntities;
-import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusMobEffects;
-import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -39,6 +37,8 @@ public class RisusClientEvents {
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
+
+		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);
 
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
