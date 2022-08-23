@@ -22,9 +22,9 @@ public class RisusEntities {
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Risus.MODID);
 	public static final DeferredRegister<Item> SPAWN_EGGS = DeferredRegister.create(ForgeRegistries.ITEMS, Risus.MODID);
 
-	public static final RegistryObject<EntityType<Angel>> ANGEL = register(new ResourceLocation(Risus.MODID, "angel"), EntityType.Builder.of(Angel::new, MobCategory.MONSTER).sized(1.0F, 1.0F), 0x000000, 0x8b0000);
+	public static final RegistryObject<EntityType<Angel>> ANGEL = register(new ResourceLocation(Risus.MODID, "angel"), EntityType.Builder.of(Angel::new, MobCategory.MONSTER).sized(0.75F, 2.0F), 0x000000, 0x8b0000);
 	public static final RegistryObject<EntityType<Holder>> HOLDER = register(new ResourceLocation(Risus.MODID, "holder"), EntityType.Builder.of(Holder::new, MobCategory.MONSTER).sized(0.7F, 0.5F), 0x000000, 0x8b0000);
-	public static final RegistryObject<EntityType<Maw>> MAW = register(new ResourceLocation(Risus.MODID, "maw"), EntityType.Builder.of(Maw::new, MobCategory.MONSTER).sized(1.0F, 1.0F), 0x000000, 0x8b0000);
+	public static final RegistryObject<EntityType<Maw>> MAW = register(new ResourceLocation(Risus.MODID, "maw"), EntityType.Builder.of(Maw::new, MobCategory.MONSTER).sized(1.0F, 0.75F), 0x000000, 0x8b0000);
 	public static final RegistryObject<EntityType<Weaver>> WEAVER = register(new ResourceLocation(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
