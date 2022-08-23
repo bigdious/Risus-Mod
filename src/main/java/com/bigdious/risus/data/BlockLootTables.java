@@ -45,6 +45,8 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.MAW_GUTS.get());
 		add(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), LootTable.lootTable());
 		add(RisusBlocks.MIRAGE_SAND.get(), LootTable.lootTable());
+		add(RisusBlocks.MIRAGE_NETHERRACK.get(), LootTable.lootTable());
+		add(RisusBlocks.MIRAGE_END_STONE.get(), LootTable.lootTable());
 		add(RisusBlocks.GLUTTONY_SCALEPLATE.get(), createSilkTouchDispatchTable(RisusBlocks.GLUTTONY_SCALEPLATE.get(), LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
