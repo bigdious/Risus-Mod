@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "risus:block/alteration_catalyst_base"
+    },
+    "ring": {
+      "parent": "risus:block/alteration_catalyst_ring"
+    }
+  },
+  "item_render_order": [
+    "ring",
+    "base"
+  ],
+  "loader": "forge:composite"
+}

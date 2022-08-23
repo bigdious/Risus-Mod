@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -19,7 +18,7 @@ public class RisusBlocks {
 
 	public static final WoodType BONDKNOT = WoodType.create(Risus.prefix("bondknot").toString());
 
-	public static final RegistryObject<Block> ALTERATION_MONOLITH = BLOCKS.register("alteration_monolith", () -> new AlterationMonolithBlock(Block.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
+	public static final RegistryObject<Block> ALTERATION_CATALYST = BLOCKS.register("alteration_catalyst", () -> new AlterationCatalystBlock(Block.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
 	public static final RegistryObject<Block> ASHEN_REMAINS = BLOCKS.register("ashen_remains", () -> new Block(Block.Properties.copy(Blocks.SOUL_SOIL)));
 	public static final RegistryObject<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new FallingBlock(Block.Properties.copy(Blocks.SOUL_SOIL)));
 	public static final RegistryObject<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.copy(Blocks.CRYING_OBSIDIAN)));

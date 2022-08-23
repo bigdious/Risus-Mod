@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -25,7 +26,10 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		simpleBlock(RisusBlocks.ALTERATION_MONOLITH.get(), models().getExistingFile(texture("block/alteration_monolith")));
+		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block")
+				.customLoader(CompositeModelBuilder::begin)
+				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
+				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());
 		simpleBlock(RisusBlocks.ASHEN_REMAINS.get());
 		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), new ResourceLocation("cutout"), 0, 10, false)
 				.texture("all", Risus.prefix("block/smiling_remains"))

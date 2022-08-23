@@ -57,7 +57,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-				RisusBlocks.ALTERATION_MONOLITH.get(),
+				RisusBlocks.ALTERATION_CATALYST.get(),
 				RisusBlocks.ASHEN_REMAINS.get(),
 				RisusBlocks.SMILING_REMAINS.get(),
 				RisusBlocks.LAUGHING_OBSIDIAN.get(),

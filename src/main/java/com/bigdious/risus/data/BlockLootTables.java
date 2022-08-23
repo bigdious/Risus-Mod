@@ -35,7 +35,7 @@ public class BlockLootTables extends BlockLoot {
 
 	@Override
 	protected void addTables() {
-		dropSelf(RisusBlocks.ALTERATION_MONOLITH.get());
+		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());

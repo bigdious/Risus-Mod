@@ -7,9 +7,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AlterationMonolithBlockEntity extends BlockEntity {
-	public AlterationMonolithBlockEntity(BlockPos pos, BlockState state) {
-		super(RisusBlockEntities.ALTERATION_MONOLITH.get(), pos, state);
+public class AlterationCatalystBlockEntity extends BlockEntity {
+	public AlterationCatalystBlockEntity(BlockPos pos, BlockState state) {
+		super(RisusBlockEntities.ALTERATION_CATALYST.get(), pos, state);
 	}
 
 	public boolean shouldRenderFace(Direction direction) {

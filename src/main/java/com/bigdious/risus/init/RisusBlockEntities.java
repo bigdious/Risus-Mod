@@ -11,7 +11,7 @@ public class RisusBlockEntities {
 
 	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Risus.MODID);
 
-	public static final RegistryObject<BlockEntityType<AlterationMonolithBlockEntity>> ALTERATION_MONOLITH = BLOCK_ENTITIES.register("alteration_monolith", () -> BlockEntityType.Builder.of(AlterationMonolithBlockEntity::new, RisusBlocks.ALTERATION_MONOLITH.get()).build(null));
+	public static final RegistryObject<BlockEntityType<AlterationCatalystBlockEntity>> ALTERATION_CATALYST = BLOCK_ENTITIES.register("alteration_catalyst", () -> BlockEntityType.Builder.of(AlterationCatalystBlockEntity::new, RisusBlocks.ALTERATION_CATALYST.get()).build(null));
 	public static final RegistryObject<BlockEntityType<MawGutsBlockEntity>> MAW_GUTS = BLOCK_ENTITIES.register("maw_guts", () -> BlockEntityType.Builder.of(MawGutsBlockEntity::new, RisusBlocks.MAW_GUTS.get()).build(null));
 	public static final RegistryObject<BlockEntityType<PoppingBondknotBlockEntity>> POPPING_BONDKNOT = BLOCK_ENTITIES.register("popping_bondknot", () -> BlockEntityType.Builder.of(PoppingBondknotBlockEntity::new, RisusBlocks.POPPING_BONDKNOT_LOG.get(), RisusBlocks.POPPING_BONDKNOT_WOOD.get()).build(null));
 	public static final RegistryObject<BlockEntityType<RisusSkullBlockEntity>> RISUS_SKULL = BLOCK_ENTITIES.register("risus_skull", () -> BlockEntityType.Builder.of(RisusSkullBlockEntity::new, RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get()).build(null));

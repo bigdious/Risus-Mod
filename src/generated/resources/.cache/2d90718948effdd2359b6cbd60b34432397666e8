@@ -1,5 +1,5 @@
-// 1.19.2	2022-08-22T20:08:38.4298577	Risus blockstates and models
-4bbaec640df134f5b5708b32b663ac626fadb2cc assets/risus/blockstates/alteration_monolith.json
+// 1.19.2	2022-08-22T22:05:22.4152779	Risus blockstates and models
+6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 6c2abd3e0383e491f8369974b93264194cd9bcd0 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
 8c722684175ee5273ccd2b3d5ccec41747f235a8 assets/risus/blockstates/bloodweave.json
@@ -38,6 +38,7 @@ bdb236f1dd18508b8b43e102412470e8379b8afb assets/risus/blockstates/popping_bondkn
 336dc67db6bcf81e17a0ac821516663f6f88d21f assets/risus/blockstates/smiling_remains.json
 2e2f8827ee6e1f4ea510b2778fb3a720e4f00c07 assets/risus/blockstates/stripped_bondknot_log.json
 199cf7d93b6b2023471b9f6e088b7baef45ca166 assets/risus/blockstates/stripped_bondknot_wood.json
+6fbcba34aa23c03d8e4dbbf3f5af192739e5ed49 assets/risus/models/block/alteration_catalyst.json
 569e6e6441c2aca9d2a913395d3863348399ad4f assets/risus/models/block/ashen_remains.json
 4ce28c7324439e669d55b95664a348f127c35a8b assets/risus/models/block/bondknot_button.json
 1572c3f98b27f8678e1dd886f615bcc377b64011 assets/risus/models/block/bondknot_button_pressed.json
@@ -72,6 +73,8 @@ ecd93ad6e5604aba5a539c2f7a14268a319df776 assets/risus/models/block/bondknot_trap
 7751c2c6c69ec69ab8e7815d65695e3d600cd923 assets/risus/models/block/bondknot_wall_sign.json
 1646266b4c60811649df5324a48611ebf3e80e4a assets/risus/models/block/bondknot_wood.json
 977200aca0f5647c76c398134d592a49f38eaf19 assets/risus/models/block/bondknot_wood_horizontal.json
+118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
+40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json
 1a6b280edd03a249944c2532e5fd7421d8a72ad7 assets/risus/models/block/chiseled_grimstone.json
 bfa697fc85b0b8008ed1d9ff214e898baeada6b4 assets/risus/models/block/cracked_grimstone_bricks.json
 654f367c68a06eb86e7eceae8210fbd942a036c2 assets/risus/models/block/grimstone.json
