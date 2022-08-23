@@ -43,13 +43,13 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
 		dropSelf(RisusBlocks.MAW_GUTS.get());
-		add(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), new LootTable.Builder());
-		add(RisusBlocks.MIRAGE_SAND.get(), new LootTable.Builder());
+		add(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), LootTable.lootTable());
+		add(RisusBlocks.MIRAGE_SAND.get(), LootTable.lootTable());
 		add(RisusBlocks.GLUTTONY_SCALEPLATE.get(), createSilkTouchDispatchTable(RisusBlocks.GLUTTONY_SCALEPLATE.get(), LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
-		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_HEAD.get().asItem());
-		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusBlocks.BLOODWYRM_HEAD.get().asItem());
+		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
+		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 
 		dropSelf(RisusBlocks.BONDKNOT_LOG.get());
 		dropSelf(RisusBlocks.BONDKNOT_WOOD.get());
@@ -80,10 +80,14 @@ public class BlockLootTables extends BlockLoot {
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {
-		LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))).when(HAS_SILK_TOUCH).otherwise(applyExplosionCondition(block, LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+		LootPoolEntryContainer.Builder<?> boneBuilder = LootItem.lootTableItem(block)
+				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+				.when(HAS_SILK_TOUCH)
+				.otherwise(applyExplosionCondition(block, LootItem.lootTableItem(Items.BONE)
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6)))
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 		return LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-						.add(builder)
+				.withPool(LootPool.lootPool().add(boneBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 								.setProperties(StatePropertiesPredicate.Builder.properties()
 										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
@@ -92,7 +96,7 @@ public class BlockLootTables extends BlockLoot {
 												.setProperties(StatePropertiesPredicate.Builder.properties()
 														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()),
 								new BlockPos(0, 1, 0))))
-				.withPool(LootPool.lootPool().add(builder)
+				.withPool(LootPool.lootPool().add(boneBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 								.setProperties(StatePropertiesPredicate.Builder.properties()
 										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))

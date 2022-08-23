@@ -72,8 +72,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.GRIMSTONE_STAIRS.get(),
 				RisusBlocks.GRIMSTONE_WALL.get(),
 				RisusBlocks.CHISELED_GRIMSTONE.get(),
-				RisusBlocks.POLISHED_GRIMSTONE.get());
+				RisusBlocks.POLISHED_GRIMSTONE.get(),
+				RisusBlocks.GLUTTONY_SCALEPLATE.get());
 
-		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_MONOLITH.get());
+		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_CATALYST.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
 	}
 }
