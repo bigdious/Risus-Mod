@@ -70,6 +70,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
+		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.GLUTTONY_SCALES);
 		singleTex(RisusItems.GUILTY_APPLE);
 		singleTexTool(RisusItems.JOYKILLER);
