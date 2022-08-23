@@ -32,6 +32,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		toBlock(RisusBlocks.ENGRAVED_BASALT.get());
 		toBlock(RisusBlocks.MAW_GUTS.get());
+		toBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get());
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlockModel(RisusBlocks.BLOODWEAVE.get(), texture("block/bloodweave_core"));
 		toBlock(RisusBlocks.BONDKNOT_LOG.get());
@@ -67,12 +68,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 
-
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
+		singleTex(RisusItems.GLUTTONY_SCALES);
+		singleTex(RisusItems.GUILTY_APPLE);
 		singleTexTool(RisusItems.JOYKILLER);
 		singleTex(RisusItems.SMILE);
-		singleTex(RisusItems.GUILTY_APPLE);
 
 		//spawn eggs
 		for (Item i : Registry.ITEM) {

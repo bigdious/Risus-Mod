@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-22T11:37:23.1438191	Risus blockstates and models
+// 1.19.2	2022-08-22T20:08:38.4298577	Risus blockstates and models
 4bbaec640df134f5b5708b32b663ac626fadb2cc assets/risus/blockstates/alteration_monolith.json
 6c2abd3e0383e491f8369974b93264194cd9bcd0 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -22,6 +22,7 @@ f18f52445349a23fffffa46f957d67f0ca04533d assets/risus/blockstates/bondknot_wall_
 a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimstone_bricks.json
 29d4d8a5934d422ad4f399252a78aeab88a6c940 assets/risus/blockstates/crystallized_bonds.json
 0334039c8198fbf554420b89f960ca5c90f925b6 assets/risus/blockstates/engraved_basalt.json
+c9bdf04cbdcbc8b5f3e7df6e70dee6358399724e assets/risus/blockstates/gluttony_scaleplate.json
 14da4042b9cf9f0af2a211f5848592725f5f530c assets/risus/blockstates/grimstone.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json
 a06169093b01ffb883cb1c89baac04ead230fc6f assets/risus/blockstates/grimstone_slab.json
@@ -29,6 +30,7 @@ a06169093b01ffb883cb1c89baac04ead230fc6f assets/risus/blockstates/grimstone_slab
 6cad01a9850470a5c37ed672ae58c4afe72c3154 assets/risus/blockstates/grimstone_wall.json
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
 f53f9ea18f2a8b91592fe88e0345089410afdd92 assets/risus/blockstates/maw_guts.json
+320b65e49da8d9f97c85916fe302c422a151dd85 assets/risus/blockstates/mirage_grass_block.json
 2909a8096c350b95b8052670a5896278205b948c assets/risus/blockstates/polished_grimstone.json
 40f5640179b903cd8f4b7617367e5aef759b1cd2 assets/risus/blockstates/popping_bondknot_log.json
 bdb236f1dd18508b8b43e102412470e8379b8afb assets/risus/blockstates/popping_bondknot_wood.json
@@ -84,6 +86,7 @@ b0b4e23267bd4818ee93b3a8e791bf12d6adf885 assets/risus/models/block/grimstone_wal
 a3f7901d6adc2ec4df4a9457ef437ccf73a3daf0 assets/risus/models/block/grimstone_wall_side.json
 f133fce0c7d2a095f1e82cfc9e6bf50ad1d3f3b4 assets/risus/models/block/grimstone_wall_side_tall.json
 cd8166a62f9de1b5aab44ea81441635977dcad0a assets/risus/models/block/laughing_obsidian.json
+81c8d9fb74255ca1d996f7c275c3ee97faf4f933 assets/risus/models/block/mirage_grass_block.json
 b737e2187b501357c3db8afd02404b04c2f37388 assets/risus/models/block/polished_grimstone.json
 15ac3341df60473f39b2079b75a6eef5babb6e81 assets/risus/models/block/popping_bondknot_log_base.json
 75089b4831e44c0d0d4d71855f64ffeff4dd6e5f assets/risus/models/block/popping_bondknot_log_east.json

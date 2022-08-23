@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.loot.BlockLoot;
@@ -42,6 +43,9 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
 		dropSelf(RisusBlocks.MAW_GUTS.get());
+		add(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), new LootTable.Builder());
+		add(RisusBlocks.MIRAGE_SAND.get(), new LootTable.Builder());
+		add(RisusBlocks.GLUTTONY_SCALEPLATE.get(), createSilkTouchDispatchTable(RisusBlocks.GLUTTONY_SCALEPLATE.get(), LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_HEAD.get().asItem());

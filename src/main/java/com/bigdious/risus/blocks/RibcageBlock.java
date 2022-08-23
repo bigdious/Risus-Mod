@@ -26,12 +26,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("deprecation")
-public class RibcageBlock extends HorizontalDirectionalBlock {
+public class RibcageBlock extends BaseRotatableBlock {
 
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 
-	public RibcageBlock(Properties builder) {
-		super(builder);
+	public RibcageBlock(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(HALF, DoubleBlockHalf.LOWER));
 	}
 
@@ -51,9 +51,9 @@ public class RibcageBlock extends HorizontalDirectionalBlock {
 		BlockPos blockpos = context.getClickedPos();
 		Level level = context.getLevel();
 		if (level.getBlockState(blockpos.below()).getMaterial().isReplaceable() && blockpos.getY() > level.getMinBuildHeight() + 1) {
-			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.UPPER).setValue(FACING, context.getHorizontalDirection());
+			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.UPPER);
 		} else if (level.getBlockState(blockpos.above()).getMaterial().isReplaceable() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
-			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.LOWER).setValue(FACING, context.getHorizontalDirection());
+			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.LOWER);
 		}
 		return null;
 	}
@@ -115,7 +115,7 @@ public class RibcageBlock extends HorizontalDirectionalBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING, HALF);
+		builder.add(HALF);
 	}
 
 	@Override

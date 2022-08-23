@@ -23,6 +23,7 @@ public class RisusBlockItems {
 			register(event, blockItem(RisusBlocks.LAUGHING_OBSIDIAN));
 			register(event, blockItem(RisusBlocks.ENGRAVED_BASALT));
 			register(event, blockItem(RisusBlocks.MAW_GUTS));
+			register(event, blockItem(RisusBlocks.GLUTTONY_SCALEPLATE));
 			register(event, blockItem(RisusBlocks.CRYSTALLIZED_BONDS));
 			register(event, blockItem(RisusBlocks.BLOODWEAVE));
 			register(event, blockItem(RisusBlocks.BONDKNOT_LOG));

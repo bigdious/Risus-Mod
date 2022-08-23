@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-13T17:04:46.4954517	Risus loot tables
+// 1.19.2	2022-08-22T19:36:19.2897654	Risus loot tables
 2eaecef980984a668ebe7483eb88c7d24321313e data/risus/loot_tables/blocks/alteration_monolith.json
 84f9a6d925545617dd3acfec49d15cf1e337bc6f data/risus/loot_tables/blocks/ashen_remains.json
 599e334bbe9f444cd67ba35b440ec0632403455c data/risus/loot_tables/blocks/baby_ribcage.json
@@ -22,6 +22,7 @@ a96426437882782f82c708d0c69c3ce18f2a117d data/risus/loot_tables/blocks/chiseled_
 b76d14d0c91edce385b3d86293086ca5db78da21 data/risus/loot_tables/blocks/cracked_grimstone_bricks.json
 57e5faf7a272a1edc17cfc77f27f93ba1df56ade data/risus/loot_tables/blocks/crystallized_bonds.json
 074f5db14961552ed89db563b0039c8520fcacf1 data/risus/loot_tables/blocks/engraved_basalt.json
+10aef64afce97f92c91f16f2d8b047c763d5e96e data/risus/loot_tables/blocks/gluttony_scaleplate.json
 819cfe17c76f0abe7c94d4b530670dee87c68632 data/risus/loot_tables/blocks/grimstone.json
 a53575a941e8837815ec95f245f8bb36540cc33d data/risus/loot_tables/blocks/grimstone_bricks.json
 689a49b07b5c3b2fcd0ac34615e7e87649404fe7 data/risus/loot_tables/blocks/grimstone_slab.json
@@ -29,6 +30,8 @@ a53575a941e8837815ec95f245f8bb36540cc33d data/risus/loot_tables/blocks/grimstone
 261800d5ddaa2c7114869fc08cb3cca6bef67c6c data/risus/loot_tables/blocks/grimstone_wall.json
 df6fc1befd892841da3806df2c6d17073f38b7d7 data/risus/loot_tables/blocks/laughing_obsidian.json
 33fe0cf0ee1b76d69a5822a5314f09eadd750050 data/risus/loot_tables/blocks/maw_guts.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/mirage_grass_block.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/mirage_sand.json
 80ae958b8d0d77f83013400c1216833614554e96 data/risus/loot_tables/blocks/polished_grimstone.json
 0827e585703592d22e93998f3647e81a26337381 data/risus/loot_tables/blocks/popping_bondknot_log.json
 cd412c1dfc12fb35328b05a08b915a4be0e9177f data/risus/loot_tables/blocks/popping_bondknot_wood.json

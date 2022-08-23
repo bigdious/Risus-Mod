@@ -46,7 +46,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
 		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));
 		simpleBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(texture("block/maw_guts")));
-
+		simpleBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), models().withExistingParent(RisusBlocks.MIRAGE_GRASS_BLOCK.getId().getPath(), "block/grass_block").renderType("minecraft:cutout").texture("top", texture("block/mirage_grass_block_top")));
+		horizontalBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get(), models().getExistingFile(texture("gluttony_scaleplate")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));

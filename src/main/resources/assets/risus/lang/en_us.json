@@ -4,6 +4,9 @@
   "block.risus.laughing_obsidian": "Laughing Obsidian",
   "block.risus.engraved_basalt": "Engraved Basalt",
   "block.risus.maw_guts": "Maw Guts",
+  "block.risus.mirage_grass_block": "Grass Block",
+  "block.risus.mirage_sand": "Sand",
+  "block.risus.gluttony_scaleplate": "Gluttony Scaleplate",
   "block.risus.crystallized_bonds": "Crystallized Bonds",
   "block.risus.bloodweave": "Bloodweave",
   "block.risus.bloodwyrm_head": "Bloodwyrm Head",
@@ -40,6 +43,7 @@
 
   "item.risus.smile": "Smile",
   "item.risus.blood_feather": "Blood Feather",
+  "item.risus.gluttony_scales": "Gluttony Scales",
   "item.risus.guilty_apple": "Guilty Apple",
   "item.risus.joykiller": "Joykiller",
 

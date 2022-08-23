@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,6 +25,10 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.copy(Blocks.CRYING_OBSIDIAN)));
 	public static final RegistryObject<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.POLISHED_BASALT).noOcclusion()));
 	public static final RegistryObject<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of(Material.CAKE).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
+	public static final RegistryObject<Block> MIRAGE_GRASS_BLOCK = BLOCKS.register("mirage_grass_block", () -> new MirageBlock(Block.Properties.copy(Blocks.GRASS_BLOCK).noOcclusion()));
+	public static final RegistryObject<Block> MIRAGE_SAND = BLOCKS.register("mirage_sand", () -> new MirageBlock(Block.Properties.copy(Blocks.SAND).noOcclusion()));
+	public static final RegistryObject<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+
 	public static final RegistryObject<Block> CRYSTALLIZED_BONDS = BLOCKS.register("crystallized_bonds", () -> new CrystallizedBondsBlock(Block.Properties.of(Material.GLASS).noOcclusion().sound(SoundType.GLASS).strength(0.25F)));
 	public static final RegistryObject<Block> BLOODWEAVE = BLOCKS.register("bloodweave", () -> new Block(Block.Properties.of(Material.DECORATION).noOcclusion().instabreak()));
 	public static final RegistryObject<Block> BLOODWYRM_HEAD = BLOCKS.register("bloodwyrm_head", () -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.copy(Blocks.DRAGON_HEAD).instabreak()));
