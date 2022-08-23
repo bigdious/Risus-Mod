@@ -26,7 +26,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block")
+		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block").texture("particle", new ResourceLocation("block/netherite_block"))
 				.customLoader(CompositeModelBuilder::begin)
 				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
 				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());

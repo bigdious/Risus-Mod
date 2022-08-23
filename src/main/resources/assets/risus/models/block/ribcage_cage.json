@@ -2,7 +2,7 @@
 	"parent": "block/block",
 	"textures": {
 		"0": "risus:block/ribcage",
-		"particle": "risus:block/ribcage"
+		"particle": "block/bone_block_top"
 	},
 	"elements": [
 		{
