@@ -6,20 +6,17 @@ import com.bigdious.risus.client.model.entity.AngelModel;
 import com.bigdious.risus.client.model.entity.HolderModel;
 import com.bigdious.risus.client.model.entity.MawModel;
 import com.bigdious.risus.client.model.entity.WeaverModel;
-import com.bigdious.risus.client.render.AngelRenderer;
-import com.bigdious.risus.client.render.HolderRenderer;
-import com.bigdious.risus.client.render.MawRenderer;
-import com.bigdious.risus.client.render.WeaverRenderer;
-import com.bigdious.risus.entity.Weaver;
+import com.bigdious.risus.client.render.*;
+import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.util.RisusSkullType;
+import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -44,6 +41,9 @@ public class RisusModelLayers {
 
 	@SubscribeEvent
 	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		for (RisusBoat.Type boatType : RisusBoat.Type.values()) {
+			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), () -> BoatModel.createBodyModel(false));
+		}
 		event.registerLayerDefinition(ANGEL, AngelModel::create);
 		event.registerLayerDefinition(HOLDER, HolderModel::create);
 		event.registerLayerDefinition(MAW, MawModel::create);
@@ -63,6 +63,7 @@ public class RisusModelLayers {
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 
+		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
 	}
 }
