@@ -1,12 +1,13 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.entity.RisusBoat;
+import com.bigdious.risus.items.RisusBoatItem;
 import com.bigdious.risus.util.ModItemTier;
 import com.bigdious.risus.util.RisusTab;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,14 +18,60 @@ public class RisusItems {
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationMod(0.2F).alwaysEat().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE.get(), 90), 1.0F).build();
 
-	public static final RegistryObject<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
-	public static final RegistryObject<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(RisusBoat.Type.BONDKNOT, defaultWithRarity()));
-	public static final RegistryObject<Item> GLUTTONY_SCALES = ITEMS.register("gluttony_scales", () -> new Item(defaultWithRarity()));
-	public static final RegistryObject<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
-	public static final RegistryObject<Item> JOYKILLER = ITEMS.register("joykiller", () -> new SwordItem(ModItemTier.JOY, 3, -2.4F, defaultWithRarity()));
 	public static final RegistryObject<Item> SMILE = ITEMS.register("smile", () -> new Item(new Item.Properties().rarity(Risus.getRarity())));
+
+	public static final RegistryObject<Item> JOYKILLER = ITEMS.register("joykiller", () -> new SwordItem(ModItemTier.JOY, 3, -2.4F, defaultWithRarity()));
+
+	public static final RegistryObject<Item> BONDKNOT_LOG = ITEMS.register("bondknot_log", () -> new BlockItem(RisusBlocks.BONDKNOT_LOG.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> STRIPPED_BONDKNOT_LOG = ITEMS.register("stripped_bondknot_log", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> STRIPPED_BONDKNOT_WOOD = ITEMS.register("stripped_bondknot_wood", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_WOOD = ITEMS.register("bondknot_wood", () -> new BlockItem(RisusBlocks.BONDKNOT_WOOD.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> POPPING_BONDKNOT_LOG = ITEMS.register("popping_bondknot_log", () -> new BlockItem(RisusBlocks.POPPING_BONDKNOT_LOG.get(), defaultNoTab()));
+	public static final RegistryObject<Item> POPPING_BONDKNOT_WOOD = ITEMS.register("popping_bondknot_wood", () -> new BlockItem(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), defaultNoTab()));
+	public static final RegistryObject<Item> BONDKNOT_PLANKS = ITEMS.register("bondknot_planks", () -> new BlockItem(RisusBlocks.BONDKNOT_PLANKS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_SLAB = ITEMS.register("bondknot_slab", () -> new BlockItem(RisusBlocks.BONDKNOT_SLAB.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_STAIRS = ITEMS.register("bondknot_stairs", () -> new BlockItem(RisusBlocks.BONDKNOT_STAIRS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_FENCE = ITEMS.register("bondknot_fence", () -> new BlockItem(RisusBlocks.BONDKNOT_FENCE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_FENCE_GATE = ITEMS.register("bondknot_fence_gate", () -> new BlockItem(RisusBlocks.BONDKNOT_FENCE_GATE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_PRESSURE_PLATE = ITEMS.register("bondknot_pressure_plate", () -> new BlockItem(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_BUTTON = ITEMS.register("bondknot_button", () -> new BlockItem(RisusBlocks.BONDKNOT_BUTTON.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_TRAPDOOR = ITEMS.register("bondknot_trapdoor", () -> new BlockItem(RisusBlocks.BONDKNOT_TRAPDOOR.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_DOOR = ITEMS.register("bondknot_door", () -> new BlockItem(RisusBlocks.BONDKNOT_DOOR.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONDKNOT_SIGN = ITEMS.register("bondknot_sign", () ->  new SignItem(RisusItems.defaultWithRarity().stacksTo(16), RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()));
+	public static final RegistryObject<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(RisusBoat.Type.BONDKNOT, defaultWithRarity()));
+	public static final RegistryObject<Item> RIBCAGE = ITEMS.register("ribcage", () -> new BlockItem(RisusBlocks.RIBCAGE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BABY_RIBCAGE = ITEMS.register("baby_ribcage", () -> new BlockItem(RisusBlocks.BABY_RIBCAGE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> CRYSTALLIZED_BONDS = ITEMS.register("crystallized_bonds", () -> new BlockItem(RisusBlocks.CRYSTALLIZED_BONDS.get(), defaultWithRarity()));
+
+	public static final RegistryObject<Item> GRIMSTONE = ITEMS.register("grimstone", () -> new BlockItem(RisusBlocks.GRIMSTONE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> CRACKED_GRIMSTONE_BRICKS = ITEMS.register("cracked_grimstone_bricks", () -> new BlockItem(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_SLAB.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_STAIRS = ITEMS.register("grimstone_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_STAIRS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_WALL = ITEMS.register("grimstone_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_WALL.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> CHISELED_GRIMSTONE = ITEMS.register("chiseled_grimstone", () -> new BlockItem(RisusBlocks.CHISELED_GRIMSTONE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
+
+	public static final RegistryObject<Item> ASHEN_REMAINS = ITEMS.register("ashen_remains", () -> new BlockItem(RisusBlocks.ASHEN_REMAINS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> SMILING_REMAINS = ITEMS.register("smiling_remains", () -> new BlockItem(RisusBlocks.SMILING_REMAINS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
+
+	public static final RegistryObject<Item> MAW_GUTS = ITEMS.register("maw_guts", () -> new BlockItem(RisusBlocks.MAW_GUTS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GLUTTONY_SCALEPLATE = ITEMS.register("gluttony_scaleplate", () -> new BlockItem(RisusBlocks.GLUTTONY_SCALEPLATE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GLUTTONY_SCALES = ITEMS.register("gluttony_scales", () -> new Item(defaultWithRarity()));
+	public static final RegistryObject<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
+
+	public static final RegistryObject<Item> ALTERATION_CATALYST = ITEMS.register("alteration_catalyst", () -> new BlockItem(RisusBlocks.ALTERATION_CATALYST.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
+	public static final RegistryObject<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity()));
+	public static final RegistryObject<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);
+	}
+
+	public static Item.Properties defaultNoTab() {
+		return new Item.Properties().rarity(Risus.getRarity());
 	}
 }
