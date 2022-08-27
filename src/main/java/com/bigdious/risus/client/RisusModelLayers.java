@@ -2,10 +2,7 @@ package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
-import com.bigdious.risus.client.model.entity.AngelModel;
-import com.bigdious.risus.client.model.entity.HolderModel;
-import com.bigdious.risus.client.model.entity.MawModel;
-import com.bigdious.risus.client.model.entity.WeaverModel;
+import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.RisusBlockEntities;
@@ -27,6 +24,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation ANGEL = register("angel");
 	public static final ModelLayerLocation HOLDER = register("holder");
 	public static final ModelLayerLocation MAW = register("maw");
+	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation WEAVER = register("weaver");
 
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
@@ -47,6 +45,7 @@ public class RisusModelLayers {
 		event.registerLayerDefinition(ANGEL, AngelModel::create);
 		event.registerLayerDefinition(HOLDER, HolderModel::create);
 		event.registerLayerDefinition(MAW, MawModel::create);
+		event.registerLayerDefinition(THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 	}
@@ -61,6 +60,7 @@ public class RisusModelLayers {
 		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
+		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);

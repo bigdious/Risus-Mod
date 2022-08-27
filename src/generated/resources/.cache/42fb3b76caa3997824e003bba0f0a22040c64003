@@ -21,6 +21,8 @@ cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
 ebfb0470e5d1d59153df78a4bb72c6778648877a assets/risus/models/item/concentration_core.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
+017f8f63a9931150c396a90f681222a3a7a9fd72 assets/risus/models/item/crescent_disaster.json
+d5fe999e7e7773226e277ec645d885ac4ff9bb81 assets/risus/models/item/crescent_disaster_base.json
 b09b20217f19ddd7f8c5e579ea558e7ab5055b9e assets/risus/models/item/crystallized_bond.json
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
@@ -33,7 +35,6 @@ ad303ac58685ef969d5e334b5dda8de86d4b04f5 assets/risus/models/item/grimstone_stai
 ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_wall.json
 2d8d81da5d28afccbc5835b76a8a54bf4e7d598e assets/risus/models/item/guilty_apple.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
-a1f9458acb5b30113a6ab7bbe1b0f46dd0f23cbe assets/risus/models/item/joykiller.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
@@ -47,4 +48,6 @@ efc8ff5ef5954d916c3fe2f924492032621589c7 assets/risus/models/item/popping_bondkn
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
+9ec8ab0dc74ed14229e15c77676161870a91a395 assets/risus/models/item/unawakened_vessel.json
+e241512dc6a6b51d0196e9a17aebe4c54863c548 assets/risus/models/item/unawakened_vessel_base.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/weaver_spawn_egg.json

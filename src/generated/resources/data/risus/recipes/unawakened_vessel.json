@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "risus:crystallized_bond"
+    },
+    "C": {
+      "item": "risus:concentration_core"
+    },
+    "G": {
+      "item": "risus:gluttony_scales"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "pattern": [
+    " BG",
+    "BGC",
+    "GLL"
+  ],
+  "result": {
+    "item": "risus:unawakened_vessel"
+  }
+}

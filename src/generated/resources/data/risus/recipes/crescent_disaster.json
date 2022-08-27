@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "risus:unawakened_vessel"
+    },
+    {
+      "item": "risus:blood_feather"
+    }
+  ],
+  "result": {
+    "item": "risus:crescent_disaster"
+  }
+}

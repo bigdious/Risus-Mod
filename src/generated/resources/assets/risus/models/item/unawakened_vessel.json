@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:items/unawakened_vessel"
+    }
+  },
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/unawakened_vessel"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/unawakened_vessel"
+      }
+    },
+    "head": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/unawakened_vessel"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/unawakened_vessel"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/unawakened_vessel"
+      }
+    }
+  }
+}

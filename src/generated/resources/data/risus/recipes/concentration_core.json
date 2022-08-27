@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "risus:gluttony_scales"
+    },
+    "M": {
+      "item": "risus:memory_core"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GMG",
+    " G "
+  ],
+  "result": {
+    "item": "risus:concentration_core"
+  }
+}

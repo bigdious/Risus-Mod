@@ -146,6 +146,25 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE_BRICKS.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RisusItems.UNAWAKENED_VESSEL.get())
+				.pattern(" BG")
+				.pattern("BGC")
+				.pattern("GLL")
+				.define('B', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
+				.define('C', Ingredient.of(RisusItems.CONCENTRATION_CORE.get()))
+				.define('G', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.define('L', Ingredient.of(ItemTags.LOGS))
+				.unlockedBy("has_core", has(RisusItems.CONCENTRATION_CORE.get()))
+				.unlockedBy("has_bonds", has(RisusItems.CRYSTALLIZED_BOND.get()))
+				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RisusItems.CRESCENT_DISASTER.get())
+				.requires(RisusItems.UNAWAKENED_VESSEL.get())
+				.requires(RisusItems.BLOOD_FEATHER.get())
+				.unlockedBy("has_feather", has(RisusItems.BLOOD_FEATHER.get()))
+				.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RisusItems.CONCENTRATION_CORE.get())
 				.pattern(" G ")
 				.pattern("GMG")

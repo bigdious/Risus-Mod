@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:items/crescent_disaster"
+    }
+  },
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/crescent_disaster"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/crescent_disaster"
+      }
+    },
+    "head": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/crescent_disaster"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/crescent_disaster"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/base_axe_model",
+      "textures": {
+        "axe": "risus:entity/crescent_disaster"
+      }
+    }
+  },
+  "textures": {
+    "layer0": "risus:items/crescent_disaster"
+  }
+}

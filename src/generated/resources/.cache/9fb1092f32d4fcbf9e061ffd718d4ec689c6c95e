@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-12T21:17:00.6713193	Recipes
+// 1.19.2	2022-08-27T15:02:02.2816735	Recipes
 1fad9cd4c8bacde66f77b9b31b6b5362bebf85f3 data/risus/advancements/recipes/risus/bondknot_button.json
 0ae772bce0fcd30e6d8513e1a96184d827a77bf4 data/risus/advancements/recipes/risus/bondknot_door.json
 df1bb08e6944861199e2602188bd2158dfb3bf10 data/risus/advancements/recipes/risus/bondknot_fence.json
@@ -12,12 +12,14 @@ b1ff25a296ce64af858fa8c76b85fb1f934d3bc0 data/risus/advancements/recipes/risus/b
 0d95800a4891cb17bce7de7d75feec7c19b54a89 data/risus/advancements/recipes/risus/bondknot_wood.json
 3346b8a88f6f27ed2e7ec2d6cc2500891bd49aaa data/risus/advancements/recipes/risus/chiseled_grimstone.json
 a73426c1d9a8dcc83ec07048ee085b4f0f1c5095 data/risus/advancements/recipes/risus/concentration_core.json
+bde5adbc6521cd8e27762287642b0e37b293cc3d data/risus/advancements/recipes/risus/crescent_disaster.json
 57b102e754fa0f9c1538a912162a65dade1b7613 data/risus/advancements/recipes/risus/grimstone_bricks.json
 831ef869460937cad6c8a3f2ab723e60580bfd8d data/risus/advancements/recipes/risus/grimstone_slab.json
 39ceae8754c76b26a8158c6d31c10bc8e4e5f01a data/risus/advancements/recipes/risus/grimstone_stairs.json
 496461eb6afedd864f69659279ca516652bb3ab1 data/risus/advancements/recipes/risus/grimstone_wall.json
 f9f8be85749980dd84b7270b4fb16ca14c58a323 data/risus/advancements/recipes/risus/polished_grimstone.json
 ba6d92b0334cde2987b5f4a632b0b9cf61ef9cc3 data/risus/advancements/recipes/risus/stripped_bondknot_wood.json
+74328a954f110773515d75d14a260413712d33d3 data/risus/advancements/recipes/risus/unawakened_vessel.json
 3a8a0e5e830a0942037fa1d67b070bc89ac3ff12 data/risus/recipes/bondknot_button.json
 b388ffcc1d1f35d81510cdb7fc9cb06b94dca8e5 data/risus/recipes/bondknot_door.json
 ba43d2fa97fd05c1ab7ac9215cd0524b56a24f9f data/risus/recipes/bondknot_fence.json
@@ -31,9 +33,11 @@ e4bc513bf50f05359c7d21f8979ab7b3956b196b data/risus/recipes/bondknot_planks.json
 4f56bacf19a3ce882eca7a2e5310ebf2f6072461 data/risus/recipes/bondknot_wood.json
 9f8c98b23ef312127984962fcc6f513de7baf8ee data/risus/recipes/chiseled_grimstone.json
 1fc1ba940253c1fb476027bd1902aaf53a02b383 data/risus/recipes/concentration_core.json
+41200ee5ebd1b8ee98ee4711610f75aa7ec997f1 data/risus/recipes/crescent_disaster.json
 7ab74082897d977c9ea378213f8975fe119430c3 data/risus/recipes/grimstone_bricks.json
 294352befd41edcd4e3063d248716088d393ba75 data/risus/recipes/grimstone_slab.json
 6bb5dfbe76dbb718df2155c66798ef150d7b5a72 data/risus/recipes/grimstone_stairs.json
 77bdbd4536099f0b98b252fa5c99894d954c4648 data/risus/recipes/grimstone_wall.json
 acadbada697e7f3edb4f45ef2ce6a13ba3f2857f data/risus/recipes/polished_grimstone.json
 7f3d08fd17f7be29e14b5efe6e32557e0fba6e25 data/risus/recipes/stripped_bondknot_wood.json
+97b89baf9f3411ddcb36a806d72db2c0a307c9c6 data/risus/recipes/unawakened_vessel.json
