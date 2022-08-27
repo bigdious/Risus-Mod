@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "end": "risus:block/grimstone_top",
-    "side": "risus:block/grimstone"
+    "all": "risus:block/grimstone"
   }
 }

@@ -120,7 +120,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks").toString());
 		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks").toString());
 
-		axisBlock(RisusBlocks.GRIMSTONE.get(), texture("block/grimstone"), texture("block/grimstone_top"));
+		simpleBlock(RisusBlocks.GRIMSTONE.get());
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), texture("block/grimstone_bricks"), texture("block/grimstone_bricks"));
