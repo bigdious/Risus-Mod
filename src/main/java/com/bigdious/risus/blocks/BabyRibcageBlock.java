@@ -6,7 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -35,8 +37,13 @@ public class BabyRibcageBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext p_57070_) {
-		return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection().getOpposite());
+	public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor accessor, BlockPos pos, BlockPos newPos) {
+		return accessor.getBlockState(pos.above()).isSolidRender(accessor, pos.above()) ? super.updateShape(state, direction, newState, accessor, pos, newPos) : Blocks.AIR.defaultBlockState();
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return context.getLevel().getBlockState(context.getClickedPos().above()).isSolidRender(context.getLevel(), context.getClickedPos().above()) ? this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()) : null;
 	}
 
 	@Override

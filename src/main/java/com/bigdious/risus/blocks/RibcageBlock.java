@@ -38,10 +38,21 @@ public class RibcageBlock extends BaseRotatableBlock {
 	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
 		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-		if(doubleblockhalf == DoubleBlockHalf.UPPER) {
-			return direction == Direction.DOWN && neighborState.is(this) && neighborState.getValue(HALF) == DoubleBlockHalf.LOWER ? super.updateShape(state, direction, neighborState, accessor, pos, neighborPos) : Blocks.AIR.defaultBlockState();
+		if (direction.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (direction == Direction.UP) || neighborState.is(this) && neighborState.getValue(HALF) != doubleblockhalf) {
+			return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(accessor, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
 		} else {
-			return direction == Direction.UP && neighborState.is(this) && neighborState.getValue(HALF) == DoubleBlockHalf.UPPER ? super.updateShape(state, direction, neighborState, accessor, pos, neighborPos) : Blocks.AIR.defaultBlockState();
+			return Blocks.AIR.defaultBlockState();
+		}
+	}
+
+	@Override
+	public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
+		if (state.getValue(HALF) != DoubleBlockHalf.LOWER) {
+			BlockPos blockpos = pos.above();
+			return reader.getBlockState(blockpos).isSolidRender(reader, pos.above());
+		} else {
+			BlockState blockstate = reader.getBlockState(pos.above());
+			return blockstate.is(this) && blockstate.getValue(HALF) == DoubleBlockHalf.UPPER;
 		}
 	}
 
@@ -51,9 +62,9 @@ public class RibcageBlock extends BaseRotatableBlock {
 		BlockPos blockpos = context.getClickedPos();
 		Level level = context.getLevel();
 		if (level.getBlockState(blockpos.below()).getMaterial().isReplaceable() && blockpos.getY() > level.getMinBuildHeight() + 1) {
-			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.UPPER);
+			return level.getBlockState(blockpos.above()).isSolidRender(context.getLevel(), blockpos.above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.UPPER) : null;
 		} else if (level.getBlockState(blockpos.above()).getMaterial().isReplaceable() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
-			return super.getStateForPlacement(context).setValue(HALF, DoubleBlockHalf.LOWER);
+			return level.getBlockState(blockpos.above().above()).isSolidRender(context.getLevel(), blockpos.above().above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.LOWER) : null;
 		}
 		return null;
 	}
