@@ -71,9 +71,13 @@ public class ItemModelGenerator extends ItemModelProvider {
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
 		singleTex(RisusItems.BONDKNOT_BOAT);
+		singleTex(RisusItems.CONCENTRATION_CORE);
+		singleTex(RisusItems.CRYSTALLIZED_BOND);
 		singleTex(RisusItems.GLUTTONY_SCALES);
 		singleTex(RisusItems.GUILTY_APPLE);
 		singleTexTool(RisusItems.JOYKILLER);
+		singleTex(RisusItems.MEMORY_CORE);
+		singleTex(RisusItems.ORGANIC_MATTER);
 		singleTex(RisusItems.SMILE);
 
 		//spawn eggs
