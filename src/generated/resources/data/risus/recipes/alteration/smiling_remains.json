@@ -1,0 +1,15 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:stone"
+    },
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:netherrack"
+    }
+  ],
+  "result": "risus:smiling_remains"
+}

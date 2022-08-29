@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:golden_apple"
+  },
+  "result": "risus:guilty_apple"
+}

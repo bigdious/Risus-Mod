@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "result": "risus:organic_matter"
+}

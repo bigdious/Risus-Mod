@@ -1,7 +1,10 @@
 package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.client.particle.AlterationFinishedParticle;
+import com.bigdious.risus.client.particle.AlterationParticle;
 import com.bigdious.risus.client.particle.JoyParticle;
+import com.bigdious.risus.client.render.AlterationCatalystRenderer;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
@@ -28,6 +31,8 @@ public class RisusClientEvents {
 
 	@SubscribeEvent
 	public static void registerFactories(RegisterParticleProvidersEvent event) {
+		event.register(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
+		event.register(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
 		event.register(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
 		event.register(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
 		event.register(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
@@ -36,6 +41,7 @@ public class RisusClientEvents {
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
+		BlockEntityRenderers.register(RisusBlockEntities.ALTERATION_CATALYST.get(), context ->  new AlterationCatalystRenderer());
 
 		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);
 

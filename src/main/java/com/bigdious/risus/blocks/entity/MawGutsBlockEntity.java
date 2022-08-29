@@ -186,9 +186,8 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 
 	@Override
 	public void clearContent() {
-
+		this.items.clear();
 	}
-
 
 	@Override
 	public int[] getSlotsForFace(Direction direction) {

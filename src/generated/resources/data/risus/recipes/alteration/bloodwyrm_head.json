@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:dragon_head"
+  },
+  "result": "risus:bloodwyrm_head"
+}

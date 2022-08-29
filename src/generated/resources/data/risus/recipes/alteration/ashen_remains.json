@@ -1,0 +1,18 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:soul_sand"
+    },
+    {
+      "item": "minecraft:soul_soil"
+    },
+    {
+      "item": "minecraft:dirt"
+    }
+  ],
+  "result": "risus:ashen_remains"
+}

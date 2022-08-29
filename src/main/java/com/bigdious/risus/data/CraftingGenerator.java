@@ -1,15 +1,20 @@
 package com.bigdious.risus.data;
 
+import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.StrictNBTIngredient;
 
 import java.util.function.Consumer;
 
@@ -20,6 +25,23 @@ public class CraftingGenerator extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.STONE, Items.COBBLESTONE, Items.NETHERRACK), RisusItems.SMILING_REMAINS.get()).unlockedBy("has_stone", has(Items.STONE)).unlockedBy("has_cobble", has(Items.COBBLESTONE)).unlockedBy("has_netherrack", has(Items.NETHERRACK)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SAND, Items.SOUL_SAND, Items.SOUL_SOIL, Items.DIRT), RisusItems.ASHEN_REMAINS.get()).unlockedBy("has_sand", has(Items.SAND)).unlockedBy("has_soul_sand", has(Items.SOUL_SAND)).unlockedBy("has_soul_soil", has(Items.SOUL_SOIL)).unlockedBy("has_dirt", has(Items.DIRT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_apple", has(Items.GOLDEN_APPLE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusItems.BLOODWEAVE.get()).unlockedBy("has_cobweb", has(Items.COBWEB)).save(consumer);
+		//bookshelf to cultic shelf when implemented
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusItems.ENGRAVED_BASALT.get()).unlockedBy("has_basalt", has(Items.BASALT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DRAGON_HEAD), RisusItems.BLOODWYRM_HEAD.get()).unlockedBy("has_dragon_head", has(Items.DRAGON_HEAD)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRYING_OBSIDIAN), RisusItems.LAUGHING_OBSIDIAN.get()).unlockedBy("has_crying_obsidian", has(Items.CRYING_OBSIDIAN)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ROTTEN_FLESH), RisusItems.ORGANIC_MATTER.get()).unlockedBy("has_flesh", has(Items.ROTTEN_FLESH)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE), RisusItems.GRIMSTONE.get()).unlockedBy("has_blackstone", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE), RisusItems.POLISHED_GRIMSTONE.get()).unlockedBy("has_blackstone", has(Items.POLISHED_BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICKS), RisusItems.GRIMSTONE_BRICKS.get()).unlockedBy("has_blackstone", has(Items.POLISHED_BLACKSTONE_BRICKS)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusItems.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_blackstone", has(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CHISELED_POLISHED_BLACKSTONE), RisusItems.CHISELED_GRIMSTONE.get()).unlockedBy("has_blackstone", has(Items.CHISELED_POLISHED_BLACKSTONE)).save(consumer);
+		//TODO enchanted book to corrupt book handler
+
 		ShapedRecipeBuilder.shaped(RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")
 				.pattern("##")

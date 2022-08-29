@@ -1,0 +1,15 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:basalt"
+    },
+    {
+      "item": "minecraft:polished_basalt"
+    },
+    {
+      "item": "minecraft:smooth_basalt"
+    }
+  ],
+  "result": "risus:engraved_basalt"
+}

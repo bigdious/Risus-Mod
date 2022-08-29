@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:crying_obsidian"
+  },
+  "result": "risus:laughing_obsidian"
+}
