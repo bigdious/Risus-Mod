@@ -1,8 +1,9 @@
-// 1.19.2	2022-08-27T15:02:02.2806767	Risus Item Models
+// 1.19.2	2022-08-31T07:15:44.5154182	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
 058008f5335d2bc15ac10b5f79c6d35beca63865 assets/risus/models/item/baby_ribcage.json
+e302ccfec080cef98283bee3b13afbe034fa265d assets/risus/models/item/big_chain.json
 1b3ea05631dc4b732c8bce6181f842fd02f8709e assets/risus/models/item/bloodweave.json
 26de71fbe3346af5e14b38b68303dc9ff0f84a08 assets/risus/models/item/blood_feather.json
 628dc08096419ef7fac666ec75ba1ed2668e74e1 assets/risus/models/item/bondknot_boat.json
@@ -18,6 +19,9 @@ dfab5e33fc1b4a6458582b47ea7cac0ed3a641ec assets/risus/models/item/bondknot_log.j
 553449888a1c24b05e924c9fb47115de6e3cb4d8 assets/risus/models/item/bondknot_stairs.json
 523c6c687656d5c97791226624cc2cea28d44c23 assets/risus/models/item/bondknot_trapdoor.json
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
+acf29c9da8ba5cfdb5c1ae58830b6516514cf0ad assets/risus/models/item/bone_fence.json
+f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
+6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
 ebfb0470e5d1d59153df78a4bb72c6778648877a assets/risus/models/item/concentration_core.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
@@ -34,7 +38,11 @@ cf809d4f60040c6c19f177f9fe3a690fadd1af28 assets/risus/models/item/grimstone.json
 ad303ac58685ef969d5e334b5dda8de86d4b04f5 assets/risus/models/item/grimstone_stairs.json
 ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_wall.json
 2d8d81da5d28afccbc5835b76a8a54bf4e7d598e assets/risus/models/item/guilty_apple.json
+6162efe9fbcf4ff27f59ee930461b7f834572a15 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
+70b340a372f770dcb02fc6df428a2f1a8d3d00d1 assets/risus/models/item/joyflame_campfire.json
+c0b118e3691c4cca3b79de4ecc27f7e6418b7207 assets/risus/models/item/joyflame_lantern.json
+fff21f23077a999012036504bcff656e3ea5dbd8 assets/risus/models/item/joyflame_torch.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
@@ -48,6 +56,8 @@ efc8ff5ef5954d916c3fe2f924492032621589c7 assets/risus/models/item/popping_bondkn
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
+7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 9ec8ab0dc74ed14229e15c77676161870a91a395 assets/risus/models/item/unawakened_vessel.json
 e241512dc6a6b51d0196e9a17aebe4c54863c548 assets/risus/models/item/unawakened_vessel_base.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/weaver_spawn_egg.json
+8c5ad3232707ee120d84a4343db5ea635f468057 assets/risus/models/item/zit.json

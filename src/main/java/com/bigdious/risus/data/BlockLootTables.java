@@ -79,6 +79,20 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
 		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
+
+		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
+		dropSelf(RisusBlocks.BIG_CHAIN.get());
+		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
+		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
+		dropSelf(RisusBlocks.BONE_FENCE.get());
+		dropSelf(RisusBlocks.BONE_WALL.get());
+		dropSelf(RisusBlocks.TISSUE.get());
+		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
+		dropSelf(RisusBlocks.JOYFLAME_LANTERN.get());
+		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
+		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
+		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusItems.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
+		dropWhenSilkTouch(RisusBlocks.ZIT.get());
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {

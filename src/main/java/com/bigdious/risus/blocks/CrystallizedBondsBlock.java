@@ -1,5 +1,7 @@
 package com.bigdious.risus.blocks;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -14,22 +16,24 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Map;
 
 @SuppressWarnings("deprecation")
 public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
 
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	protected static final VoxelShape UP_SHAPE = Shapes.create(new AABB(0.25D, 0.0D, 0.25D, 0.75D, 0.5D, 0.75D));
-	protected static final VoxelShape DOWN_SHAPE = Shapes.create(new AABB(0.25D, 0.5D, 0.25D, 0.75D, 1.0D, 0.75D));
-	protected static final VoxelShape EAST_SHAPE = Shapes.create(new AABB(0.0D, 0.25D, 0.25D, 0.5D, 0.75D, 0.75D));
-	protected static final VoxelShape WEST_SHAPE = Shapes.create(new AABB(0.5D, 0.25D, 0.25D, 1.0D, 0.75D, 0.75D));
-	protected static final VoxelShape NORTH_SHAPE = Shapes.create(new AABB(0.25D, 0.25D, 0.5D, 0.75D, 0.75D, 1.0D));
-	protected static final VoxelShape SOUTH_SHAPE = Shapes.create(new AABB(0.25D, 0.25D, 0.0D, 0.75D, 0.75D, 0.5D));
+	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
+			Direction.UP, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
+			Direction.DOWN, Block.box(4.0D, 8.0D, 4.0D, 12.0D, 16.0D, 12.0D),
+			Direction.EAST, Block.box(0.0D, 4.0D, 4.0D, 8.0D, 12.0D, 12.0D),
+			Direction.WEST, Block.box(8.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D),
+			Direction.NORTH, Block.box(4.0D, 4.0D, 8.0D, 12.0D, 12.0D, 16.0D),
+			Direction.SOUTH, Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 8.0D)
+	));
 
 	public CrystallizedBondsBlock(Properties properties) {
 		super(properties);
@@ -38,14 +42,7 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return switch (state.getValue(FACING)) {
-			case DOWN -> DOWN_SHAPE;
-			default -> UP_SHAPE;
-			case NORTH -> NORTH_SHAPE;
-			case SOUTH -> SOUTH_SHAPE;
-			case WEST -> WEST_SHAPE;
-			case EAST -> EAST_SHAPE;
-		};
+		return AABBS.get(state.getValue(FACING));
 	}
 
 	@Override

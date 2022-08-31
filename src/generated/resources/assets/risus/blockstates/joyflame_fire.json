@@ -1,0 +1,55 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "risus:block/joyflame_fire_floor"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "risus:block/joyflame_fire_side"
+        },
+        {
+          "model": "risus:block/joyflame_fire_side_alt"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "risus:block/joyflame_fire_side",
+          "y": 90
+        },
+        {
+          "model": "risus:block/joyflame_fire_side_alt",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "risus:block/joyflame_fire_side",
+          "y": 180
+        },
+        {
+          "model": "risus:block/joyflame_fire_side_alt",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "risus:block/joyflame_fire_side",
+          "y": 270
+        },
+        {
+          "model": "risus:block/joyflame_fire_side_alt",
+          "y": 270
+        }
+      ]
+    }
+  ]
+}

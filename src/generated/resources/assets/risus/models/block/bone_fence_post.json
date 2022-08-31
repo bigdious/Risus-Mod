@@ -1,0 +1,7 @@
+{
+  "parent": "risus:block/template_fence_post",
+  "textures": {
+    "end": "minecraft:block/bone_block_top",
+    "texture": "minecraft:block/bone_block_side"
+  }
+}

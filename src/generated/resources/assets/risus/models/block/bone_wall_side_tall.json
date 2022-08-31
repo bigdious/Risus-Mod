@@ -1,0 +1,7 @@
+{
+  "parent": "risus:block/template_wall_side_tall",
+  "textures": {
+    "end": "minecraft:block/bone_block_top",
+    "wall": "minecraft:block/bone_block_side"
+  }
+}

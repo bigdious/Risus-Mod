@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "risus:block/joyflame_lantern"
+    },
+    "hanging=true": {
+      "model": "risus:block/joyflame_lantern_hanging"
+    }
+  }
+}

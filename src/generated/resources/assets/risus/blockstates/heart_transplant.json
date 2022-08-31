@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "risus:block/heart_transplant",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/heart_transplant"
+    },
+    "facing=south": {
+      "model": "risus:block/heart_transplant",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/heart_transplant",
+      "y": 270
+    }
+  }
+}

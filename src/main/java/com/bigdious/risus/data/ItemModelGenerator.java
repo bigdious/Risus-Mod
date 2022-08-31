@@ -69,6 +69,15 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.texture("wall", texture("block/grimstone_bricks"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
+		toBlock(RisusBlocks.BURNT_HYPHAE.get());
+		toBlock(RisusBlocks.TISSUE.get());
+		toBlock(RisusBlocks.ZIT.get());
+		getBuilder(RisusBlocks.BONE_FENCE.getId().getPath())
+				.parent(getExistingFile(new ResourceLocation("block/fence_inventory")))
+				.texture("texture", new ResourceLocation("block/bone_block_side"));
+		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
+				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+				.texture("wall", new ResourceLocation("block/bone_block_side"));
 
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
@@ -99,6 +108,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.perspective(ItemTransforms.TransformType.HEAD, unawakened)
 				.end();
 		singleTex(RisusItems.SMILE);
+		singleTex(RisusItems.JOYFLAME_CAMPFIRE);
+		singleTex(RisusItems.JOYFLAME_LANTERN);
+		singleTex(RisusItems.JOYFLAME_TORCH);
+		singleTex(RisusItems.HEART_TRANSPLANT);
+		singleTex(RisusItems.BIG_CHAIN);
 
 		//spawn eggs
 		for (Item i : Registry.ITEM) {

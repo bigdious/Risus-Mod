@@ -1,0 +1,18 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:crimson_hyphae"
+    },
+    {
+      "item": "minecraft:crimson_stem"
+    },
+    {
+      "item": "minecraft:warped_hyphae"
+    },
+    {
+      "item": "minecraft:warped_stem"
+    }
+  ],
+  "result": "risus:burnt_hyphae"
+}

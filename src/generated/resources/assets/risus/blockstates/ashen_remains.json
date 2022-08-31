@@ -1,7 +1,22 @@
 {
   "variants": {
-    "": {
-      "model": "risus:block/ashen_remains"
-    }
+    "has_eyes=false": [
+      {
+        "model": "risus:block/ashen_remains"
+      },
+      {
+        "model": "risus:block/ashen_remains",
+        "weight": 30
+      }
+    ],
+    "has_eyes=true": [
+      {
+        "model": "risus:block/ashen_remains_eyes"
+      },
+      {
+        "model": "risus:block/ashen_remains",
+        "weight": 30
+      }
+    ]
   }
 }

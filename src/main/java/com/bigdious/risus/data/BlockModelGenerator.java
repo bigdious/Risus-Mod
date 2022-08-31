@@ -1,8 +1,10 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.AshenRemainsBlock;
 import com.bigdious.risus.blocks.PoppingBondknotBlock;
 import com.bigdious.risus.blocks.RibcageBlock;
+import com.bigdious.risus.blocks.ZitBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
@@ -17,6 +19,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
+import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
 
@@ -30,7 +33,11 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.customLoader(CompositeModelBuilder::begin)
 				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
 				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());
-		simpleBlock(RisusBlocks.ASHEN_REMAINS.get());
+		getVariantBuilder(RisusBlocks.ASHEN_REMAINS.get()).forAllStates(state -> {
+			ModelFile noEyes = models().cubeAll("ashen_remains", texture("block/ashen_remains"));
+			ModelFile eyes = models().cubeAll("ashen_remains_eyes", texture("block/ashen_remains_eyes"));
+			return ConfiguredModel.builder().modelFile(state.getValue(AshenRemainsBlock.HAS_EYES) ? eyes : noEyes).weight(1).nextModel().modelFile(noEyes).weight(30).build();
+		});
 		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), new ResourceLocation("cutout"), 0, 10, false)
 				.texture("all", Risus.prefix("block/smiling_remains"))
 				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
@@ -129,6 +136,97 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 
+		simpleBlock(RisusBlocks.TISSUE.get());
+		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
+		fourWayBlock(RisusBlocks.BONE_FENCE.get(),
+				fencePost("bone_fence_post", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
+				models().fenceSide("bone_fence_side", new ResourceLocation("block/bone_block_side")));
+		wallBlock(RisusBlocks.BONE_WALL.get(), new ResourceLocation("block/bone_block_side"));
+		wallBlock(RisusBlocks.BONE_WALL.get(), wallPost("bone_wall_post", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
+				wallSide("bone_wall_side", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
+				wallSideTall("bone_wall_side_tall", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")));
+		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
+		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
+		getVariantBuilder(RisusBlocks.BIG_CHAIN.get())
+				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y)
+				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).addModel()
+				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z)
+				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).rotationX(90).addModel()
+				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X)
+				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).rotationX(90).rotationY(90).addModel();
+		torchBlock(RisusBlocks.JOYFLAME_TORCH, RisusBlocks.JOYFLAME_WALL_TORCH);
+		getVariantBuilder(RisusBlocks.JOYFLAME_CAMPFIRE.get()).forAllStatesExcept(state -> {
+			ModelFile on = models().withExistingParent("joyflame_campfire", new ResourceLocation("block/template_campfire")).texture("fire", texture("block/joyflame_campfire_fire")).texture("lit_log", texture("block/joyflame_campfire_log_lit")).renderType("minecraft:cutout");
+			ModelFile off = models().withExistingParent("joyflame_campfire_off", new ResourceLocation("block/campfire_off")).renderType("minecraft:cutout");
+			return ConfiguredModel.builder().modelFile(state.getValue(CampfireBlock.LIT) ? on : off).rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360).build();
+		}, CampfireBlock.WATERLOGGED, CampfireBlock.SIGNAL_FIRE);
+		getVariantBuilder(RisusBlocks.JOYFLAME_LANTERN.get()).forAllStatesExcept(state -> {
+			ModelFile normal = models().withExistingParent("joyflame_lantern", new ResourceLocation("block/template_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
+			ModelFile hanging = models().withExistingParent("joyflame_lantern_hanging", new ResourceLocation("block/template_hanging_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
+			return ConfiguredModel.builder().modelFile(state.getValue(LanternBlock.HANGING) ? hanging : normal).build();
+		}, LanternBlock.WATERLOGGED);
+
+		getVariantBuilder(RisusBlocks.ZIT.get()).forAllStates(state -> {
+			ModelFile normal = models().getExistingFile(texture("block/zit"));
+			ModelFile popped = models().getExistingFile(texture("block/zit_popped"));
+			int x = 0;
+			int y = 0;
+			switch (state.getValue(ZitBlock.FACING)) {
+				case DOWN -> x = 180;
+				case NORTH -> x = 90;
+				case SOUTH -> {
+					x = 90;
+					y = 180;
+				}
+				case WEST -> {
+					x = 90;
+					y = 270;
+				}
+				case EAST -> {
+					x = 90;
+					y = 90;
+				}
+			}
+			return ConfiguredModel.builder().modelFile(state.getValue(ZitBlock.POPPED) ? popped : normal).rotationX(x).rotationY(y).build();
+		});
+
+		ModelFile floor = models().withExistingParent("joyflame_fire_floor", new ResourceLocation("block/template_fire_floor")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile side = models().withExistingParent("joyflame_fire_side", new ResourceLocation("block/template_fire_side")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile sideAlt = models().withExistingParent("joyflame_fire_side_alt", new ResourceLocation("block/template_fire_side_alt")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+
+		getMultipartBuilder(RisusBlocks.JOYFLAME_FIRE.get())
+				.part().modelFile(floor).addModel().end()
+				.part().modelFile(side).nextModel().modelFile(sideAlt).addModel().end()
+				.part().modelFile(side).rotationY(90).nextModel().modelFile(sideAlt).rotationY(90).addModel().end()
+				.part().modelFile(side).rotationY(180).nextModel().modelFile(sideAlt).rotationY(180).addModel().end()
+				.part().modelFile(side).rotationY(270).nextModel().modelFile(sideAlt).rotationY(270).addModel().end();
+	}
+
+	public BlockModelBuilder fencePost(String name, ResourceLocation texture) {
+		return models().singleTexture(name, texture("block/template_fence_post"), texture);
+	}
+
+	public BlockModelBuilder wallPost(String name, ResourceLocation wall) {
+		return models().singleTexture(name, texture("block/template_wall_post"), "wall", wall);
+	}
+
+	public BlockModelBuilder wallSide(String name, ResourceLocation wall) {
+		return models().singleTexture(name, texture("block/template_wall_side"), "wall", wall);
+	}
+
+	public BlockModelBuilder wallSideTall(String name, ResourceLocation wall) {
+		return models().singleTexture(name, texture("block/template_wall_side_tall"), "wall", wall);
+	}
+
+	public void torchBlock(Supplier<? extends Block> block, Supplier<? extends Block> wall) {
+		ModelFile torch = models().torch(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), new ResourceLocation(Risus.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath())).renderType("minecraft:cutout");
+		ModelFile torchwall = models().torchWall(ForgeRegistries.BLOCKS.getKey(wall.get()).getPath(), new ResourceLocation(Risus.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath())).renderType("minecraft:cutout");
+		simpleBlock(block.get(), torch);
+		getVariantBuilder(wall.get()).forAllStates(state ->
+				ConfiguredModel.builder()
+						.modelFile(torchwall)
+						.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 90) % 360)
+						.build());
 	}
 
 	private void woodPlate(Block plate, ResourceLocation texName) {

@@ -3,11 +3,21 @@
   "block.risus.ashen_remains": "Ashen Remains",
   "block.risus.laughing_obsidian": "Laughing Obsidian",
   "block.risus.engraved_basalt": "Engraved Basalt",
+  "block.risus.big_chain": "Big Chain",
+  "block.risus.bone_fence": "Bone Fence",
+  "block.risus.bone_wall": "Bone Wall",
+  "block.risus.burnt_hyphae": "Burnt Hyphae",
+  "block.risus.tissue": "Tissue",
+  "block.risus.zit": "Zit (WIP)",
   "block.risus.maw_guts": "Maw Guts",
   "block.risus.mirage_grass_block": "Grass Block",
   "block.risus.mirage_sand": "Sand",
+  "block.risus.mirage_netherrack": "Netherrack",
+  "block.risus.mirage_end_stone": "End Stone",
   "block.risus.gluttony_scaleplate": "Gluttony Scaleplate",
   "block.risus.crystallized_bonds": "Crystallized Bonds",
+  "block.risus.heart_transplant": "Heart Transplant",
+  "block.risus.potted_heart_transplant": "Potted Heart Transplant",
   "block.risus.bloodweave": "Bloodweave",
   "block.risus.bloodwyrm_head": "Bloodwyrm Head",
   "block.risus.bondknot_log": "Bondknot Log",
@@ -38,6 +48,12 @@
   "block.risus.grimstone_wall": "Grimstone Wall",
   "block.risus.chiseled_grimstone": "Chiseled Grimstone",
   "block.risus.polished_grimstone": "Polished Grimstone",
+
+  "block.risus.joyflame_campfire": "Joyflame Campfire",
+  "block.risus.joyflame_fire": "Joyflame Fire",
+  "block.risus.joyflame_lantern": "Joyflame Lantern",
+  "block.risus.joyflame_torch": "Joyflame Torch",
+  "block.risus.joyflame_wall_torch": "Joyflame Wall Torch",
 
   "container.risus.maw_guts": "Maw Guts",
 
@@ -70,6 +86,7 @@
   "entity.risus.holder": "Holder",
   "entity.risus.maw": "Maw",
   "entity.risus.risus_boat": "Boat",
+  "entity.risus.thrown_axe": "Thrown Axe",
   "entity.risus.weaver": "Weaver",
 
   "itemGroup.risus": "Risus"

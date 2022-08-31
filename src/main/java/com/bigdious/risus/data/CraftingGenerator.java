@@ -13,6 +13,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.StrictNBTIngredient;
 
@@ -41,6 +42,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusItems.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_blackstone", has(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CHISELED_POLISHED_BLACKSTONE), RisusItems.CHISELED_GRIMSTONE.get()).unlockedBy("has_blackstone", has(Items.CHISELED_POLISHED_BLACKSTONE)).save(consumer);
 		//TODO enchanted book to corrupt book handler
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.RABBIT), RisusItems.TISSUE.get()).unlockedBy("has_pork", has(Items.PORKCHOP)).unlockedBy("has_beef", has(Items.BEEF)).unlockedBy("has_mutton", has(Items.MUTTON)).unlockedBy("has_rabbit", has(Items.RABBIT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusItems.BURNT_HYPHAE.get()).unlockedBy("has_chyphae", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_cstem", has(Items.CRIMSON_STEM)).unlockedBy("has_whyphae", has(Items.WARPED_HYPHAE)).unlockedBy("has_wstem", has(Items.WARPED_STEM)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")
@@ -195,6 +198,59 @@ public class CraftingGenerator extends RecipeProvider {
 				.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
 				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_core", has(RisusItems.MEMORY_CORE.get()))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.BIG_CHAIN.get(), 8)
+				.pattern("I I")
+				.pattern("III")
+				.pattern("I I")
+				.define('I', Ingredient.of(Items.IRON_INGOT))
+				.unlockedBy("has_item", has(Items.IRON_INGOT))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.JOYFLAME_CAMPFIRE.get())
+				.pattern(" S ")
+				.pattern("S#S")
+				.pattern("LLL")
+				.define('L', ItemTags.LOGS)
+				.define('S', Items.STICK)
+				.define('#', ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS)
+				.unlockedBy("has_stick", has(Items.STICK))
+				.unlockedBy("has_remains", has(ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.JOYFLAME_TORCH.get(), 4)
+				.pattern("X")
+				.pattern("#")
+				.pattern("S")
+				.define('X', Ingredient.of(Items.COAL, Items.CHARCOAL))
+				.define('#', Items.STICK)
+				.define('S', ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS)
+				.unlockedBy("has_remains", has(ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.JOYFLAME_LANTERN.get())
+				.pattern("XXX")
+				.pattern("X#X")
+				.pattern("XXX")
+				.define('#', RisusItems.JOYFLAME_TORCH.get())
+				.define('X', Items.IRON_NUGGET)
+				.unlockedBy("has_soul_torch", has(RisusItems.JOYFLAME_TORCH.get()))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.BONE_FENCE.get(), 3)
+				.pattern("B/B")
+				.pattern("B/B")
+				.define('B', Items.BONE_BLOCK)
+				.define('/', Items.BONE)
+				.unlockedBy("has_bone", has(Items.BONE_BLOCK))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RisusBlocks.BONE_WALL.get(), 6)
+				.pattern("BBB")
+				.pattern("BBB")
+				.define('B', Items.BONE_BLOCK)
+				.unlockedBy("has_bone", has(Items.BONE_BLOCK))
 				.save(consumer);
 	}
 }

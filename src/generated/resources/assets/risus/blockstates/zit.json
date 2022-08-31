@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,popped=false": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "facing=down,popped=true": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "facing=east,popped=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,popped=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,popped=false": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "facing=north,popped=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "facing=south,popped=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,popped=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,popped=false": {
+      "model": "risus:block/zit"
+    },
+    "facing=up,popped=true": {
+      "model": "risus:block/zit_popped"
+    },
+    "facing=west,popped=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,popped=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

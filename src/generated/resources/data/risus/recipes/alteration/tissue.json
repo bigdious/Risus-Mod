@@ -1,0 +1,18 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "item": "minecraft:mutton"
+    },
+    {
+      "item": "minecraft:rabbit"
+    }
+  ],
+  "result": "risus:tissue"
+}

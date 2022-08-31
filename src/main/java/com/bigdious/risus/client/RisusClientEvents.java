@@ -11,6 +11,7 @@ import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
@@ -35,12 +36,14 @@ public class RisusClientEvents {
 		event.register(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
 		event.register(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
 		event.register(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
+		event.register(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
 		event.register(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
 	}
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
+		BlockEntityRenderers.register(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		BlockEntityRenderers.register(RisusBlockEntities.ALTERATION_CATALYST.get(), context ->  new AlterationCatalystRenderer());
 
 		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);

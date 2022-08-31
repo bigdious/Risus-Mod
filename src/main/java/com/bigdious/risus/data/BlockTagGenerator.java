@@ -13,6 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 public class BlockTagGenerator extends BlockTagsProvider {
 
 	public static final TagKey<Block> BONDKNOT_LOGS = BlockTags.create(Risus.prefix("bondknot_logs"));
+	public static final TagKey<Block> JOYFLAME_FIRE_BASE_BLOCKS = BlockTags.create(Risus.prefix("joyflame_fire_base_blocks"));
 
 	public BlockTagGenerator(DataGenerator generator, ExistingFileHelper helper) {
 		super(generator, Risus.MODID, helper);
@@ -24,13 +25,16 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get())
 				.add(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 
+		this.tag(JOYFLAME_FIRE_BASE_BLOCKS).add(RisusBlocks.SMILING_REMAINS.get(), RisusBlocks.ASHEN_REMAINS.get());
+
 		this.tag(BlockTags.LOGS).addTag(BONDKNOT_LOGS);
 		this.tag(BlockTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
 		this.tag(BlockTags.PLANKS).add(RisusBlocks.BONDKNOT_PLANKS.get());
 
+		this.tag(BlockTags.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get(), RisusBlocks.BONE_FENCE.get());
 		this.tag(BlockTags.WOODEN_FENCES).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(BlockTags.FENCE_GATES).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
-		this.tag(Tags.Blocks.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get());
+		this.tag(Tags.Blocks.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get(), RisusBlocks.BONE_FENCE.get());
 		this.tag(Tags.Blocks.FENCE_GATES).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		this.tag(Tags.Blocks.FENCES_WOODEN).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
@@ -52,11 +56,13 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.STANDING_SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get());
 		this.tag(BlockTags.WALL_SIGNS).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
 
-		tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(BONDKNOT_LOGS)
+		this.tag(BlockTags.WALLS).add(RisusBlocks.GRIMSTONE_WALL.get(), RisusBlocks.BONE_WALL.get());
+
+		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(BONDKNOT_LOGS)
 				.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())
 				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
-		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				RisusBlocks.ALTERATION_CATALYST.get(),
 				RisusBlocks.ASHEN_REMAINS.get(),
 				RisusBlocks.SMILING_REMAINS.get(),
@@ -73,8 +79,15 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.GRIMSTONE_WALL.get(),
 				RisusBlocks.CHISELED_GRIMSTONE.get(),
 				RisusBlocks.POLISHED_GRIMSTONE.get(),
-				RisusBlocks.GLUTTONY_SCALEPLATE.get());
+				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
+				RisusBlocks.JOYFLAME_LANTERN.get(),
+				RisusBlocks.BONE_FENCE.get(),
+				RisusBlocks.BONE_WALL.get());
 
-		tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_CATALYST.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
+		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.TISSUE.get());
+
+		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get());
+
+		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_CATALYST.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
 	}
 }
