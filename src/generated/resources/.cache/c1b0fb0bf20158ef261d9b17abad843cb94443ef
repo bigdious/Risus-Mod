@@ -54,3 +54,7 @@ c07979347e6f2db91163116c638d231d485fc75a data/risus/loot_tables/blocks/potted_he
 85f3245010f0f3b8cd6441b3688547395c006b69 data/risus/loot_tables/blocks/stripped_bondknot_wood.json
 a5479e671c400d704abb14ee5af1cf79f201db73 data/risus/loot_tables/blocks/tissue.json
 cd9db9a13090c019cde5886c09aa0ae907e7986d data/risus/loot_tables/blocks/zit.json
+0ac1c9418cc2d81df2291b002b5149aa40666c4d data/risus/loot_tables/entities/angel.json
+47aedc9b9313c4a5ca352aa1b1f858bd62f22aa0 data/risus/loot_tables/entities/holder.json
+ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/risus/loot_tables/entities/maw.json
+268dc8407c605c1b434794edd93c0f0c571d92bb data/risus/loot_tables/entities/weaver.json
