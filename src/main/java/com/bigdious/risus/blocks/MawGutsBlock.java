@@ -4,9 +4,7 @@ import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -42,6 +40,19 @@ public class MawGutsBlock extends HorizontalDirectionalBlock implements EntityBl
 			if (blockentity instanceof MawGutsBlockEntity guts) {
 				guts.setCustomName(stack.getHoverName());
 			}
+		}
+	}
+
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
+		if (!state.is(newState.getBlock())) {
+			BlockEntity blockentity = level.getBlockEntity(pos);
+			if (blockentity instanceof Container container) {
+				Containers.dropContents(level, pos, container);
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, moving);
 		}
 	}
 
