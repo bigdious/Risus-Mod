@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"textures": {
 		"tissue": "risus:block/tissue",
 		"particle": "risus:block/bone_wall_side_tall",
@@ -29,8 +30,8 @@
 			}
 		},
 		{
-			"from": [10, 0, 3],
-			"to": [13, 9, 10],
+			"from": [9.99, 0, 3],
+			"to": [12.99, 9, 10],
 			"faces": {
 				"north": {"uv": [3, 7, 6, 16], "texture": "#tissue"},
 				"east": {"uv": [0, 0, 7, 9], "texture": "#tissue"},
@@ -65,8 +66,8 @@
 			}
 		},
 		{
-			"from": [2, 1, 1],
-			"to": [5, 12, 7],
+			"from": [2, 1, 0.99],
+			"to": [5, 12, 6.99],
 			"faces": {
 				"north": {"uv": [11, 4, 14, 15], "texture": "#tissue"},
 				"east": {"uv": [0, 0, 6, 11], "texture": "#tissue"},
@@ -77,8 +78,8 @@
 			}
 		},
 		{
-			"from": [11, 4, 1],
-			"to": [16, 14, 7],
+			"from": [11, 4, 0.99],
+			"to": [16, 14, 6.99],
 			"faces": {
 				"north": {"uv": [0, 0, 5, 10], "texture": "#tissue"},
 				"east": {"uv": [9, 2, 15, 12], "texture": "#tissue"},

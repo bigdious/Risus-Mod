@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"textures": {
 		"tissue": "risus:block/tissue",
 		"particle": "risus:block/bone_wall_side",
@@ -7,8 +8,8 @@
 	"elements": [
 		{
 			"name": "wall",
-			"from": [5, 0.01, 0.01],
-			"to": [11, 13.99, 8.01],
+			"from": [5, 0.02, 0.01],
+			"to": [11, 14, 8.01],
 			"faces": {
 				"north": {"uv": [8, 0, 11, 7], "texture": "#wall", "cullface": "north"},
 				"east": {"uv": [4, 0, 8, 7], "texture": "#wall"},
@@ -54,8 +55,8 @@
 			}
 		},
 		{
-			"from": [7, 6, 0],
-			"to": [14, 16, 6],
+			"from": [6.99, 6, 0],
+			"to": [13.99, 16, 6],
 			"faces": {
 				"north": {"uv": [2, 0, 9, 10], "texture": "#tissue"},
 				"east": {"uv": [10, 0, 16, 10], "texture": "#tissue"},
@@ -78,8 +79,8 @@
 			}
 		},
 		{
-			"from": [11, 4, 1],
-			"to": [16, 14, 7],
+			"from": [11, 3.99, 1.01],
+			"to": [16, 13.99, 7.01],
 			"faces": {
 				"north": {"uv": [0, 0, 5, 10], "texture": "#tissue"},
 				"east": {"uv": [9, 2, 15, 12], "texture": "#tissue"},
@@ -91,7 +92,7 @@
 		},
 		{
 			"from": [0, 7, 0],
-			"to": [6, 14, 8],
+			"to": [6, 14.01, 8],
 			"faces": {
 				"north": {"uv": [10, 2, 16, 9], "texture": "#tissue"},
 				"east": {"uv": [0, 0, 8, 7], "texture": "#tissue"},
@@ -115,7 +116,7 @@
 		},
 		{
 			"from": [8, 0, 0],
-			"to": [16, 9, 8],
+			"to": [16, 8.99, 8],
 			"faces": {
 				"north": {"uv": [0, 7, 8, 16], "texture": "#tissue"},
 				"east": {"uv": [8, 7, 16, 16], "texture": "#tissue"},

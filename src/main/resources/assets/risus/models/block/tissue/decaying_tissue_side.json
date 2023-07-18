@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"textures": {
 		"tissue": "risus:block/tissue",
 		"particle": "risus:block/bone_wall_side",
@@ -7,8 +8,8 @@
 	"elements": [
 		{
 			"name": "wall",
-			"from": [5, 0.01, 0.01],
-			"to": [11, 13.99, 8.01],
+			"from": [5, 0.02, 0.01],
+			"to": [11, 14, 8.01],
 			"faces": {
 				"north": {"uv": [8, 0, 11, 7], "texture": "#wall", "cullface": "north"},
 				"east": {"uv": [4, 0, 8, 7], "texture": "#wall"},
