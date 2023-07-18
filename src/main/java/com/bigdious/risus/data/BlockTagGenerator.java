@@ -56,7 +56,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.STANDING_SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get());
 		this.tag(BlockTags.WALL_SIGNS).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
 
-		this.tag(BlockTags.WALLS).add(RisusBlocks.GRIMSTONE_WALL.get(), RisusBlocks.BONE_WALL.get());
+		this.tag(BlockTags.WALLS).add(RisusBlocks.GRIMSTONE_WALL.get(), RisusBlocks.BONE_WALL.get(),
+				RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECAYING_TISSUE.get(),
+				RisusBlocks.ROTTED_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get());
 
 		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(BONDKNOT_LOGS)
 				.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())

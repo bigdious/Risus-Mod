@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
+import com.bigdious.risus.items.OrganicMatterItem;
 import com.bigdious.risus.items.ThrowableAxeItem;
 import com.bigdious.risus.items.RisusBoatItem;
 import com.bigdious.risus.util.ModItemTier;
@@ -60,14 +61,23 @@ public class RisusItems {
 	public static final RegistryObject<Item> JOYFLAME_LANTERN = ITEMS.register("joyflame_lantern", () -> new BlockItem(RisusBlocks.JOYFLAME_LANTERN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> JOYFLAME_CAMPFIRE = ITEMS.register("joyflame_campfire", () -> new BlockItem(RisusBlocks.JOYFLAME_CAMPFIRE.get(), defaultWithRarity()));
 
+	public static final RegistryObject<Item> TISSUE = ITEMS.register("tissue", () -> new BlockItem(RisusBlocks.TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> ROTTING_TISSUE = ITEMS.register("rotting_tissue", () -> new BlockItem(RisusBlocks.ROTTING_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> DECOMPOSING_TISSUE = ITEMS.register("decomposing_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSING_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> DECAYING_TISSUE = ITEMS.register("decaying_tissue", () -> new BlockItem(RisusBlocks.DECAYING_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
+
+	public static final RegistryObject<Item> LIVING_TISSUE = ITEMS.register("living_tissue", () -> new BlockItem(RisusBlocks.LIVING_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> ROTTED_TISSUE = ITEMS.register("rotted_tissue", () -> new BlockItem(RisusBlocks.ROTTED_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> DECOMPOSED_TISSUE = ITEMS.register("decomposed_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSED_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> DECAYED_TISSUE = ITEMS.register("decayed_tissue", () -> new BlockItem(RisusBlocks.DECAYED_TISSUE.get(), defaultWithRarity()));
+
 	public static final RegistryObject<Item> ASHEN_REMAINS = ITEMS.register("ashen_remains", () -> new BlockItem(RisusBlocks.ASHEN_REMAINS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> SMILING_REMAINS = ITEMS.register("smiling_remains", () -> new BlockItem(RisusBlocks.SMILING_REMAINS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BONE_FENCE = ITEMS.register("bone_fence", () -> new BlockItem(RisusBlocks.BONE_FENCE.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> TISSUE = ITEMS.register("tissue", () -> new BlockItem(RisusBlocks.TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BIG_CHAIN = ITEMS.register("big_chain", () -> new BlockItem(RisusBlocks.BIG_CHAIN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BURNT_HYPHAE = ITEMS.register("burnt_hyphae", () -> new BlockItem(RisusBlocks.BURNT_HYPHAE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity()));
@@ -83,7 +93,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> CRYSTALLIZED_BOND = ITEMS.register("crystallized_bond", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 	public static final RegistryObject<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new Item(defaultWithRarity()));
-	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new Item(defaultWithRarity()));
+	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity()));
 
 
 	public static Item.Properties defaultWithRarity() {

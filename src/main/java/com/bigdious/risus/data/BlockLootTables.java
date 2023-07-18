@@ -87,6 +87,13 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.BONE_FENCE.get());
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.TISSUE.get());
+		dropSelf(RisusBlocks.ROTTING_TISSUE.get());
+		dropSelf(RisusBlocks.DECOMPOSING_TISSUE.get());
+		dropSelf(RisusBlocks.DECAYING_TISSUE.get());
+		dropSelf(RisusBlocks.LIVING_TISSUE.get());
+		dropSelf(RisusBlocks.ROTTED_TISSUE.get());
+		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
+		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.JOYFLAME_LANTERN.get());
 		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());

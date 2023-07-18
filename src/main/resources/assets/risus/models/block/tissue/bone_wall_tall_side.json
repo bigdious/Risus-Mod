@@ -1,0 +1,20 @@
+{
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "risus:block/bone_wall_side_tall",
+		"wall": "risus:block/bone_wall_side_tall"
+	},
+	"elements": [
+		{
+			"from": [5, 0.01, 0.01],
+			"to": [11, 15.99, 8.01],
+			"faces": {
+				"north": {"uv": [8, 0, 11, 8], "texture": "#wall", "cullface": "north"},
+				"east": {"uv": [4, 0, 8, 8], "texture": "#wall"},
+				"west": {"uv": [0, 0, 4, 8], "texture": "#wall"},
+				"up": {"uv": [11, 4, 14, 8], "texture": "#wall", "cullface": "up"},
+				"down": {"uv": [11, 4, 14, 8], "texture": "#wall", "cullface": "down"}
+			}
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"wall": "risus:block/bone_wall_post",
+		"particle": "risus:block/bone_wall_post"
+	},
+	"elements": [
+		{
+			"from": [4, 0.01, 4],
+			"to": [12, 15.99, 12],
+			"faces": {
+				"north": {"uv": [8, 0, 16, 16], "texture": "#wall"},
+				"east": {"uv": [8, 0, 16, 16], "texture": "#wall"},
+				"south": {"uv": [8, 0, 16, 16], "texture": "#wall"},
+				"west": {"uv": [8, 0, 16, 16], "texture": "#wall"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#wall"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#wall"}
+			}
+		}
+	]
+}

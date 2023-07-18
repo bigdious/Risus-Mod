@@ -194,14 +194,20 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 
 		simpleBlock(RisusBlocks.TISSUE.get());
+		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
+		wallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
+		wallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
+		wallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+
+		simpleBlock(RisusBlocks.LIVING_TISSUE.get(), models().cubeAll("living_tissue", Risus.prefix("block/tissue")));
+		wallBlock(RisusBlocks.ROTTED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
+		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
+		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+
 		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
 		fourWayBlock(RisusBlocks.BONE_FENCE.get(),
 				fencePost("bone_fence_post", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
 				models().fenceSide("bone_fence_side", new ResourceLocation("block/bone_block_side")));
-		wallBlock(RisusBlocks.BONE_WALL.get(), new ResourceLocation("block/bone_block_side"));
-		wallBlock(RisusBlocks.BONE_WALL.get(), wallPost("bone_wall_post", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
-				wallSide("bone_wall_side", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
-				wallSideTall("bone_wall_side_tall", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")));
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
 		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
 		getVariantBuilder(RisusBlocks.BIG_CHAIN.get())

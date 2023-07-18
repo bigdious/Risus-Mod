@@ -1,0 +1,128 @@
+{
+	"textures": {
+		"tissue": "risus:block/tissue",
+		"particle": "risus:block/bone_wall_side_tall",
+		"wall": "risus:block/bone_wall_side_tall"
+	},
+	"elements": [
+		{
+			"from": [5, 0.01, 0.01],
+			"to": [11, 15.99, 8.01],
+			"faces": {
+				"north": {"uv": [8, 0, 11, 8], "texture": "#wall", "cullface": "north"},
+				"east": {"uv": [4, 0, 8, 8], "texture": "#wall"},
+				"west": {"uv": [0, 0, 4, 8], "texture": "#wall"},
+				"up": {"uv": [11, 4, 14, 8], "texture": "#wall", "cullface": "up"},
+				"down": {"uv": [11, 4, 14, 8], "texture": "#wall", "cullface": "down"}
+			}
+		},
+		{
+			"from": [3, 9, 2],
+			"to": [10, 16, 8],
+			"faces": {
+				"north": {"uv": [7, 0, 14, 7], "texture": "#tissue"},
+				"east": {"uv": [8, 0, 14, 7], "texture": "#tissue"},
+				"south": {"uv": [3, 0, 10, 7], "texture": "#tissue"},
+				"west": {"uv": [2, 0, 8, 7], "texture": "#tissue"},
+				"up": {"uv": [3, 2, 10, 8], "texture": "#tissue"},
+				"down": {"uv": [3, 8, 10, 14], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [10, 0, 3],
+			"to": [13, 9, 10],
+			"faces": {
+				"north": {"uv": [3, 7, 6, 16], "texture": "#tissue"},
+				"east": {"uv": [0, 0, 7, 9], "texture": "#tissue"},
+				"south": {"uv": [10, 7, 13, 16], "texture": "#tissue"},
+				"west": {"uv": [6, 7, 13, 16], "texture": "#tissue"},
+				"up": {"uv": [10, 3, 13, 10], "texture": "#tissue"},
+				"down": {"uv": [10, 6, 13, 13], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [4, 2, 0],
+			"to": [9, 6, 5],
+			"faces": {
+				"north": {"uv": [7, 10, 12, 14], "texture": "#tissue"},
+				"east": {"uv": [11, 10, 16, 14], "texture": "#tissue"},
+				"south": {"uv": [4, 10, 9, 14], "texture": "#tissue"},
+				"west": {"uv": [0, 10, 5, 14], "texture": "#tissue"},
+				"up": {"uv": [4, 0, 9, 5], "texture": "#tissue"},
+				"down": {"uv": [7, 0, 12, 5], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [7, 6, 0],
+			"to": [14, 16, 6],
+			"faces": {
+				"north": {"uv": [2, 0, 9, 10], "texture": "#tissue"},
+				"east": {"uv": [10, 0, 16, 10], "texture": "#tissue"},
+				"south": {"uv": [0, 0, 7, 10], "texture": "#tissue"},
+				"west": {"uv": [2, 0, 8, 10], "texture": "#tissue"},
+				"up": {"uv": [7, 0, 14, 6], "texture": "#tissue"},
+				"down": {"uv": [0, 0, 7, 6], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [2, 1, 1],
+			"to": [5, 12, 7],
+			"faces": {
+				"north": {"uv": [11, 4, 14, 15], "texture": "#tissue"},
+				"east": {"uv": [0, 0, 6, 11], "texture": "#tissue"},
+				"south": {"uv": [0, 0, 3, 11], "texture": "#tissue"},
+				"west": {"uv": [1, 4, 7, 15], "texture": "#tissue"},
+				"up": {"uv": [2, 1, 5, 7], "texture": "#tissue"},
+				"down": {"uv": [2, 9, 5, 15], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [11, 4, 1],
+			"to": [16, 14, 7],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 10], "texture": "#tissue"},
+				"east": {"uv": [9, 2, 15, 12], "texture": "#tissue"},
+				"south": {"uv": [0, 0, 5, 10], "texture": "#tissue"},
+				"west": {"uv": [0, 0, 6, 10], "texture": "#tissue"},
+				"up": {"uv": [11, 1, 16, 7], "texture": "#tissue"},
+				"down": {"uv": [8, 6, 13, 12], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [8, 0, 0],
+			"to": [16, 9, 8],
+			"faces": {
+				"north": {"uv": [0, 7, 8, 16], "texture": "#tissue"},
+				"east": {"uv": [8, 7, 16, 16], "texture": "#tissue"},
+				"south": {"uv": [0, 0, 8, 9], "texture": "#tissue"},
+				"west": {"uv": [0, 0, 8, 9], "texture": "#tissue"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#tissue"},
+				"down": {"uv": [8, 8, 16, 16], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [0, 7, 0],
+			"to": [6, 14, 8],
+			"faces": {
+				"north": {"uv": [10, 2, 16, 9], "texture": "#tissue"},
+				"east": {"uv": [0, 0, 8, 7], "texture": "#tissue"},
+				"south": {"uv": [0, 2, 6, 9], "texture": "#tissue"},
+				"west": {"uv": [0, 2, 8, 9], "texture": "#tissue"},
+				"up": {"uv": [0, 0, 6, 8], "texture": "#tissue"},
+				"down": {"uv": [0, 8, 6, 16], "texture": "#tissue"}
+			}
+		},
+		{
+			"from": [0, 0, 3],
+			"to": [8, 3, 8],
+			"faces": {
+				"north": {"uv": [8, 13, 16, 16], "texture": "#tissue"},
+				"east": {"uv": [0, 0, 5, 3], "texture": "#tissue"},
+				"south": {"uv": [0, 13, 8, 16], "texture": "#tissue"},
+				"west": {"uv": [3, 13, 8, 16], "texture": "#tissue"},
+				"up": {"uv": [0, 3, 8, 8], "texture": "#tissue"},
+				"down": {"uv": [0, 8, 8, 13], "texture": "#tissue"}
+			}
+		}
+	]
+}
