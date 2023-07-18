@@ -1,6 +1,8 @@
 package com.bigdious.risus.client.model.entity;
 
 import com.bigdious.risus.entity.Weaver;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -117,6 +119,16 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	@Override
 	public ModelPart root() {
 		return this.root;
+	}
+
+	@Override
+	public void renderToBuffer(PoseStack stack, VertexConsumer builder, int light, int overlay, float red, float green, float blue, float alpha) {
+		this.memoryCore.visible = false;
+		this.root().render(stack, builder, light, overlay, red, green, blue, alpha);
+	}
+
+	public void renderCore(PoseStack stack, VertexConsumer builder, int light, int overlay, float red, float green, float blue, float alpha) {
+		this.root.getChild("memoryCore").render(stack, builder, light, overlay, red, green, blue, alpha);
 	}
 
 	@Override

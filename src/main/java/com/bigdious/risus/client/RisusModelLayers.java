@@ -26,6 +26,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation WEAVER = register("weaver");
+	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
 
@@ -47,6 +48,7 @@ public class RisusModelLayers {
 		event.registerLayerDefinition(MAW, MawModel::create);
 		event.registerLayerDefinition(THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(WEAVER, WeaverModel::create);
+		event.registerLayerDefinition(WEAVER_CORE, WeaverModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 	}
 
