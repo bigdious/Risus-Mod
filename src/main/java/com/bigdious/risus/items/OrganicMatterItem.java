@@ -6,7 +6,13 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.ParticleUtils;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -38,7 +44,7 @@ public class OrganicMatterItem extends Item {
 		Level level = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate = level.getBlockState(blockpos);
-		return getWaxed(blockstate).map((p_238251_) -> {
+		return getWaxed(blockstate).map(state -> {
 			Player player = context.getPlayer();
 			ItemStack itemstack = context.getItemInHand();
 			if (player instanceof ServerPlayer) {
@@ -46,10 +52,11 @@ public class OrganicMatterItem extends Item {
 			}
 
 			itemstack.shrink(1);
-			level.setBlock(blockpos, p_238251_, 11);
-			level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, p_238251_));
-			level.levelEvent(player, 3003, blockpos, 0);
-			return InteractionResult.sidedSuccess(level.isClientSide);
+			level.setBlock(blockpos, state, 11);
+			level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, state));
+			ParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
+			level.playSound(null, blockpos, SoundEvents.SCULK_VEIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+			return InteractionResult.sidedSuccess(level.isClientSide());
 		}).orElse(InteractionResult.PASS);
 	}
 
