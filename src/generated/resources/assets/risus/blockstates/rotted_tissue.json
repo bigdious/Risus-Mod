@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_post"
+        "model": "risus:block/tissue/rotting_tissue_post"
       },
       "when": {
         "up": "true"
@@ -10,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_side",
+        "model": "risus:block/tissue/rotting_tissue_side",
         "uvlock": true,
         "y": 90
       },
@@ -20,7 +20,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_tall_side",
+        "model": "risus:block/tissue/rotting_tissue_tall_side",
         "uvlock": true,
         "y": 90
       },
@@ -30,7 +30,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_side",
+        "model": "risus:block/tissue/rotting_tissue_side",
         "uvlock": true
       },
       "when": {
@@ -39,7 +39,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_tall_side",
+        "model": "risus:block/tissue/rotting_tissue_tall_side",
         "uvlock": true
       },
       "when": {
@@ -48,7 +48,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_side",
+        "model": "risus:block/tissue/rotting_tissue_side",
         "uvlock": true,
         "y": 180
       },
@@ -58,7 +58,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_tall_side",
+        "model": "risus:block/tissue/rotting_tissue_tall_side",
         "uvlock": true,
         "y": 180
       },
@@ -68,7 +68,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_side",
+        "model": "risus:block/tissue/rotting_tissue_side",
         "uvlock": true,
         "y": 270
       },
@@ -78,7 +78,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/tissue/bone_wall_tall_side",
+        "model": "risus:block/tissue/rotting_tissue_tall_side",
         "uvlock": true,
         "y": 270
       },

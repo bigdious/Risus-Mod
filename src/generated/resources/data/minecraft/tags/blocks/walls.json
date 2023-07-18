@@ -1,6 +1,12 @@
 {
   "values": [
     "risus:grimstone_wall",
-    "risus:bone_wall"
+    "risus:bone_wall",
+    "risus:rotting_tissue",
+    "risus:decomposing_tissue",
+    "risus:decaying_tissue",
+    "risus:rotted_tissue",
+    "risus:decomposed_tissue",
+    "risus:decayed_tissue"
   ]
 }

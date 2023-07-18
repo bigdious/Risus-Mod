@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-29T18:53:26.0820568	Tags for minecraft:block
+// 1.19.2	2023-07-18T09:12:10.7384078	Tags for minecraft:block
 c2513f8c2f2a3a1794142741cddd78ec3c302acd data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
@@ -19,7 +19,7 @@ ecc388c40f36e8a5d4349e1a596494b63223f338 data/minecraft/tags/blocks/slabs.json
 6910eb6a5b64831a42062a77fe92f4f2cf560f7c data/minecraft/tags/blocks/stairs.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/blocks/standing_signs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/blocks/trapdoors.json
-4ebbe90964b0f0792eeec002cf8e3bb249aae42e data/minecraft/tags/blocks/walls.json
+129088241462ac2c993532551c958c7d177a3c10 data/minecraft/tags/blocks/walls.json
 e98f56bd0edb12f5acbbd746df1f53af5d86b2a7 data/minecraft/tags/blocks/wall_signs.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/blocks/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/blocks/wooden_doors.json

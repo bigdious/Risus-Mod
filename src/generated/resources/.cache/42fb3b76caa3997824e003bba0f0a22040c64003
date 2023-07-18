@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-18T08:03:18.730066	Risus Item Models
+// 1.19.2	2023-07-18T09:12:10.7369051	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
@@ -29,6 +29,10 @@ ebfb0470e5d1d59153df78a4bb72c6778648877a assets/risus/models/item/concentration_
 d5fe999e7e7773226e277ec645d885ac4ff9bb81 assets/risus/models/item/crescent_disaster_base.json
 b09b20217f19ddd7f8c5e579ea558e7ab5055b9e assets/risus/models/item/crystallized_bond.json
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
+c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decayed_tissue.json
+c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissue.json
+ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposed_tissue.json
+ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_tissue.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/gluttony_scaleplate.json
 c8c2970176e06bb06a62803a79fffca35492f7e7 assets/risus/models/item/gluttony_scales.json
@@ -44,6 +48,7 @@ ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_wall
 c0b118e3691c4cca3b79de4ecc27f7e6418b7207 assets/risus/models/item/joyflame_lantern.json
 fff21f23077a999012036504bcff656e3ea5dbd8 assets/risus/models/item/joyflame_torch.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
+06597f16771e91b6405524cef39ebacfe8e6f5be assets/risus/models/item/living_tissue.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
 006a0804e08f10503405e363bedfc6e6bb9cf48e assets/risus/models/item/memory_core.json
@@ -52,6 +57,8 @@ e7463ff36ea0e23c2556c4b84c807ed8cc9758ea assets/risus/models/item/organic_matter
 f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondknot_log.json
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
+bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
+bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
 0e3ae58ccbed2e2233a0705abdd4910314d0a274 assets/risus/models/item/smile.json
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json

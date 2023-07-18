@@ -36,7 +36,7 @@ public class ZitBlock extends DirectionalBlock {
 			Direction.DOWN, Block.box(5.0D, 15.0D, 5.0D, 11.0D, 15.0D, 11.0D),
 			Direction.EAST, Block.box(0.0D, 5.0D, 5.0D, 1.0D, 11.0D, 11.0D),
 			Direction.WEST, Block.box(15.0D, 5.0D, 5.0D, 15.0D, 11.0D, 11.0D),
-			Direction.NORTH, Block.box(5.0D, 5.0D, 15.0D, 11.0D, 11.0D, 15.0D),
+			Direction.NORTH, Block.box(5.0D, 5.0D, 15.0D, 11.0D, 11.0D, 16.0D),
 			Direction.SOUTH, Block.box(5.0D, 5.0D, 0.0D, 11.0D, 11.0D, 1.0D)
 	));
 
@@ -66,14 +66,14 @@ public class ZitBlock extends DirectionalBlock {
 			spit.shoot(d0, d1 + d3, d2, 1.5F, 11.0F);
 			level.playSound(null, pos, SoundEvents.LLAMA_SPIT, SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
 			level.addFreshEntity(spit);
-			state.setValue(POPPED, true);
+			level.setBlockAndUpdate(pos, state.setValue(POPPED, true));
 			level.scheduleTick(pos, this, 60);
 		}
 	}
 
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		state.setValue(POPPED, false);
+		level.setBlockAndUpdate(pos, state.setValue(POPPED, false));
 	}
 
 	public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
