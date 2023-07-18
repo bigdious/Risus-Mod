@@ -139,6 +139,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 						case UP -> poppingS;
 						case NORTH -> poppingW;
 						case SOUTH -> poppingE;
+						case WEST -> poppingU;
+						case EAST -> poppingD;
 						default -> poppingN;
 					};
 					return ConfiguredModel.builder().modelFile(file).rotationX(90).rotationY(90).build();
@@ -148,6 +150,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 						case UP -> poppingS;
 						case WEST -> poppingW;
 						case EAST -> poppingE;
+						case NORTH -> poppingU;
+						case SOUTH -> poppingD;
 						default -> poppingN;
 					};
 					return ConfiguredModel.builder().modelFile(file).rotationX(90).build();
@@ -158,6 +162,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 						case SOUTH -> poppingS;
 						case WEST -> poppingW;
 						case EAST -> poppingE;
+						case UP -> poppingU;
+						case DOWN -> poppingD;
 						default -> poppingN;
 					};
 					return ConfiguredModel.builder().modelFile(file).build();

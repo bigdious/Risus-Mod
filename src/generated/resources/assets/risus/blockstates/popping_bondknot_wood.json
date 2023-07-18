@@ -1,15 +1,75 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "risus:block/popping_bondknot_wood_horizontal",
+    "axis=x,pop_side=down": {
+      "model": "risus:block/popping_bondknot_wood_north",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
-      "model": "risus:block/popping_bondknot_wood"
+    "axis=x,pop_side=east": {
+      "model": "risus:block/popping_bondknot_wood_down",
+      "x": 90,
+      "y": 90
     },
-    "axis=z": {
-      "model": "risus:block/popping_bondknot_wood_horizontal",
+    "axis=x,pop_side=north": {
+      "model": "risus:block/popping_bondknot_wood_west",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,pop_side=south": {
+      "model": "risus:block/popping_bondknot_wood_east",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,pop_side=up": {
+      "model": "risus:block/popping_bondknot_wood_south",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,pop_side=west": {
+      "model": "risus:block/popping_bondknot_wood_up",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,pop_side=down": {
+      "model": "risus:block/popping_bondknot_wood_down"
+    },
+    "axis=y,pop_side=east": {
+      "model": "risus:block/popping_bondknot_wood_east"
+    },
+    "axis=y,pop_side=north": {
+      "model": "risus:block/popping_bondknot_wood_north"
+    },
+    "axis=y,pop_side=south": {
+      "model": "risus:block/popping_bondknot_wood_south"
+    },
+    "axis=y,pop_side=up": {
+      "model": "risus:block/popping_bondknot_wood_up"
+    },
+    "axis=y,pop_side=west": {
+      "model": "risus:block/popping_bondknot_wood_west"
+    },
+    "axis=z,pop_side=down": {
+      "model": "risus:block/popping_bondknot_wood_north",
+      "x": 90
+    },
+    "axis=z,pop_side=east": {
+      "model": "risus:block/popping_bondknot_wood_east",
+      "x": 90
+    },
+    "axis=z,pop_side=north": {
+      "model": "risus:block/popping_bondknot_wood_up",
+      "x": 90
+    },
+    "axis=z,pop_side=south": {
+      "model": "risus:block/popping_bondknot_wood_down",
+      "x": 90
+    },
+    "axis=z,pop_side=up": {
+      "model": "risus:block/popping_bondknot_wood_south",
+      "x": 90
+    },
+    "axis=z,pop_side=west": {
+      "model": "risus:block/popping_bondknot_wood_west",
       "x": 90
     }
   }

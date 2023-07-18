@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/popping_bondknot_wood_base",
+  "textures": {
+    "north": "risus:block/popping_bondknot_log_side"
+  }
+}
