@@ -22,14 +22,13 @@ public class MirageBlock extends Block {
 		this.mimickedBlock = mimickedBlock;
 	}
 
-	@Override
-	public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return Shapes.empty();
+	public Block getMimickedBlock() {
+		return this.mimickedBlock;
 	}
 
 	@Override
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 
 	@Override
