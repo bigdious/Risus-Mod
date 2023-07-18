@@ -112,7 +112,58 @@ public class BlockModelGenerator extends BlockStateProvider {
 				}
 			}
 		});
-		axisBlock(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
+		getVariantBuilder(RisusBlocks.POPPING_BONDKNOT_WOOD.get()).forAllStates(state -> {
+			ModelFile baseFile = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_base", "block/cube")
+					.texture("particle", Risus.prefix("block/bondknot_log"))
+					.texture("north", Risus.prefix("block/bondknot_log")).texture("south", Risus.prefix("block/bondknot_log"))
+					.texture("west", Risus.prefix("block/bondknot_log")).texture("east", Risus.prefix("block/bondknot_log"))
+					.texture("up", Risus.prefix("block/bondknot_log")).texture("down", Risus.prefix("block/bondknot_log"));
+
+			ModelFile poppingN = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_north", baseFile.getLocation())
+					.texture("north", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingW = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_west", baseFile.getLocation())
+					.texture("west", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingS = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_south", baseFile.getLocation())
+					.texture("south", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingE = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_east", baseFile.getLocation())
+					.texture("east", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingU = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_up", baseFile.getLocation())
+					.texture("up", Risus.prefix("block/popping_bondknot_log_side"));
+			ModelFile poppingD = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_WOOD.getId().getPath() + "_down", baseFile.getLocation())
+					.texture("down", Risus.prefix("block/popping_bondknot_log_side"));
+
+
+			switch (state.getValue(BlockStateProperties.AXIS)) {
+				case X -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case UP -> poppingS;
+						case NORTH -> poppingW;
+						case SOUTH -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).rotationX(90).rotationY(90).build();
+				}
+				case Z -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case UP -> poppingS;
+						case WEST -> poppingW;
+						case EAST -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).rotationX(90).build();
+				}
+				//actually case y
+				default -> {
+					ModelFile file = switch (state.getValue(PoppingBondknotBlock.POP_SIDE)) {
+						case SOUTH -> poppingS;
+						case WEST -> poppingW;
+						case EAST -> poppingE;
+						default -> poppingN;
+					};
+					return ConfiguredModel.builder().modelFile(file).build();
+				}
+			}
+		});
 		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log_top"));
 		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log"));
 		simpleBlock(RisusBlocks.BONDKNOT_PLANKS.get());

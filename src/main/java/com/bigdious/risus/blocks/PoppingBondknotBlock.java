@@ -33,7 +33,7 @@ public class PoppingBondknotBlock extends RotatedPillarBlock implements EntityBl
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState state = super.getStateForPlacement(context);
 		Direction dir = Direction.getRandom(context.getLevel().getRandom());
-		if(state.is(RisusBlocks.POPPING_BONDKNOT_LOG.get())) {
+		if(state.is(RisusBlocks.POPPING_BONDKNOT_LOG.get()) || state.is(RisusBlocks.POPPING_BONDKNOT_WOOD.get())) {
 			while (dir.getAxis() == state.getValue(AXIS)) {
 				dir = Direction.getRandom(context.getLevel().getRandom());
 			}
