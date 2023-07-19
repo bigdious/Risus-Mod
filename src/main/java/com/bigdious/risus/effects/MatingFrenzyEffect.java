@@ -1,11 +1,14 @@
 package com.bigdious.risus.effects;
 
 import com.bigdious.risus.init.RisusMobEffects;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.player.Player;
 
 public class MatingFrenzyEffect extends MobEffect {
 	public MatingFrenzyEffect(MobEffectCategory category, int color) {
@@ -21,6 +24,10 @@ public class MatingFrenzyEffect extends MobEffect {
 				animal.setInLove(null);
 				animal.setAge(0);
 			}
+		}
+		if (entity instanceof Player player) {
+			entity.removeEffect(RisusMobEffects.MATING_FRENZY.get());
+			player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "You are incapable of Love."));
 		}
 	}
 
