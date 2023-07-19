@@ -7,7 +7,7 @@
 	},
 	"elements": [
 		{
-			"from": [5, 0.01, 0.01],
+			"from": [5, 0.02, 0.01],
 			"to": [11, 15.99, 8.01],
 			"faces": {
 				"north": {"uv": [8, 0, 11, 8], "texture": "#wall", "cullface": "north"},

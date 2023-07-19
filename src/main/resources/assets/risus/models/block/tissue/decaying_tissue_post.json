@@ -1,9 +1,10 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
+		"particle": "risus:block/bone_wall_post",
 		"wall": "risus:block/bone_wall_post",
-		"tissue": "risus:block/tissue",
-		"particle": "risus:block/bone_wall_post"
+		"tissue": "risus:block/tissue"
 	},
 	"elements": [
 		{
@@ -32,7 +33,7 @@
 		},
 		{
 			"from": [8, 10, 6],
-			"to": [14, 16, 11],
+			"to": [14, 16, 11.01],
 			"faces": {
 				"north": {"uv": [2, 0, 8, 6], "texture": "#tissue"},
 				"east": {"uv": [5, 0, 10, 6], "texture": "#tissue"},
