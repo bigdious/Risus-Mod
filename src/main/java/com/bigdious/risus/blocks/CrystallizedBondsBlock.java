@@ -56,7 +56,6 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 		Direction clicked = context.getClickedFace();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		BlockState state = defaultBlockState().setValue(FACING, clicked).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
-
 		if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
 			return state;
 		}
@@ -69,7 +68,6 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 		}
 		return null;
 	}
-
 	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
 		if (state.getValue(WATERLOGGED)) {
@@ -104,4 +102,6 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 		super.createBlockStateDefinition(builder);
 		builder.add(FACING, WATERLOGGED);
 	}
+
+
 }

@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
+		"1": "risus:block/bone_wall_side_top",
 		"particle": "risus:block/bone_wall_side",
 		"wall": "risus:block/bone_wall_side"
 	},
@@ -13,8 +14,8 @@
 				"north": {"uv": [8, 0, 11, 7], "texture": "#wall", "cullface": "north"},
 				"east": {"uv": [4, 0, 8, 7], "texture": "#wall"},
 				"west": {"uv": [0, 0, 4, 7], "texture": "#wall"},
-				"up": {"uv": [11, 3, 14, 7], "texture": "#wall"},
-				"down": {"uv": [11, 3, 14, 7], "texture": "#wall", "cullface": "down"}
+				"up": {"uv": [5, 0, 11, 8], "texture": "#1"},
+				"down": {"uv": [5, 8, 11, 16], "texture": "#1", "cullface": "down"}
 			}
 		}
 	]

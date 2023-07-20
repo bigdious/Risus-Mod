@@ -69,7 +69,7 @@ public class RisusBlocks {
 	public static final RegistryObject<SlabBlock> GRIMSTONE_SLAB = BLOCKS.register("grimstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<StairBlock> GRIMSTONE_STAIRS = BLOCKS.register("grimstone_stairs", () -> new StairBlock(GRIMSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<WallBlock> GRIMSTONE_WALL = BLOCKS.register("grimstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
-	public static final RegistryObject<Block> POLISHED_GRIMSTONE = BLOCKS.register("polished_grimstone", () -> new BaseRotatableBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
+	public static final RegistryObject<Block> POLISHED_GRIMSTONE = BLOCKS.register("polished_grimstone", () -> new GlazedTerracottaBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<Block> CHISELED_GRIMSTONE = BLOCKS.register("chiseled_grimstone", () -> new Block(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 
 	public static final RegistryObject<WallBlock> TISSUE = BLOCKS.register("tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
