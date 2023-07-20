@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "risus:decayed_tissue"
+    },
+    "title": "Did you just flesh me?!",
+    "description": "Use Organic Matter on Tissue to stop the flesh from disintegrating.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "risus:first_encounter",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "risus:organic_matter"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "risus:tissue"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
