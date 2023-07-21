@@ -88,4 +88,7 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> JOYFLAME_CAMPFIRE = BLOCKS.register("joyflame_campfire", () -> new RisusCampfireBlock(true, 2, Block.Properties.copy(Blocks.CAMPFIRE)));
 	public static final RegistryObject<Block> JOYFLAME_LANTERN = BLOCKS.register("joyflame_lantern", () -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN)));
 	public static final RegistryObject<Block> JOYFLAME_FIRE = BLOCKS.register("joyflame_fire", () -> new JoyflameFireBlock(Block.Properties.copy(Blocks.FIRE)));
+
+	//big's trial
+	public static final RegistryObject<Block> NEURON = BLOCKS.register("neuron", () -> new Block(Block.Properties.copy(Blocks.TWISTING_VINES_PLANT)));
 }
