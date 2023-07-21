@@ -96,7 +96,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity()));
 
 	//big's trial
-	public static final RegistryObject<Item> NEURON = ITEMS.register("neuron", () -> new Item(defaultWithRarity()));
+	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
 
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);

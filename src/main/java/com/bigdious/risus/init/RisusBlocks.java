@@ -3,9 +3,10 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.util.RisusSkullType;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
@@ -90,5 +91,9 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> JOYFLAME_FIRE = BLOCKS.register("joyflame_fire", () -> new JoyflameFireBlock(Block.Properties.copy(Blocks.FIRE)));
 
 	//big's trial
-	public static final RegistryObject<Block> NEURON = BLOCKS.register("neuron", () -> new Block(Block.Properties.copy(Blocks.TWISTING_VINES_PLANT)));
+	public static final RegistryObject<GrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStem(Block.Properties.copy(Blocks.TWISTING_VINES_PLANT)) {
+
+	});
+	public static final RegistryObject<GrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHead(Block.Properties.copy(Blocks.TWISTING_VINES)) {
+	});
 }
