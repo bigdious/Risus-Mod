@@ -191,11 +191,12 @@ public class CraftingGenerator extends RecipeProvider {
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RisusItems.CONCENTRATION_CORE.get())
-				.pattern(" G ")
+				.pattern("BGB")
 				.pattern("GMG")
-				.pattern(" G ")
-				.define('G', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.pattern("BGB")
+				.define('G', Ingredient.of(RisusItems.NEURON_STEM.get()))
 				.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
+				.define('B', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_core", has(RisusItems.MEMORY_CORE.get()))
 				.save(consumer);

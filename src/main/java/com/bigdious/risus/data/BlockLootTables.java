@@ -100,6 +100,8 @@ public class BlockLootTables extends BlockLoot {
 		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusItems.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		dropWhenSilkTouch(RisusBlocks.ZIT.get());
+		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
+		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "risus:block/chiseled_grimstone",
+      "y": 90
+    },
+    "facing=north": {
       "model": "risus:block/chiseled_grimstone"
+    },
+    "facing=south": {
+      "model": "risus:block/chiseled_grimstone",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/chiseled_grimstone",
+      "y": 270
     }
   }
 }

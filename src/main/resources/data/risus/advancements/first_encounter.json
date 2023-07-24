@@ -8,7 +8,7 @@
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "background": "risus:textures/block/ashen)remains.png"
+    "background": "risus:textures/block/ashen_remains.png"
   },
   "criteria": {
     "requirement": {

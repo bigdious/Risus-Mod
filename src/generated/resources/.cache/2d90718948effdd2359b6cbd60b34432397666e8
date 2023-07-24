@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-18T09:12:10.7399066	Risus blockstates and models
+// 1.19.2	2023-07-24T17:23:42.5048865	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -22,7 +22,7 @@ f18f52445349a23fffffa46f957d67f0ca04533d assets/risus/blockstates/bondknot_wall_
 8f463ec07fa28a61136aa1d77432304c375966d1 assets/risus/blockstates/bone_fence.json
 9d84a35d91b7a69d92f5dda9f27ba3a59efa9f82 assets/risus/blockstates/bone_wall.json
 7d6470e8d9b8c8fd032052c931d8c515c2b91cc7 assets/risus/blockstates/burnt_hyphae.json
-661d5d853c2ae502d3e63979048ca934e3282b8f assets/risus/blockstates/chiseled_grimstone.json
+21002566e5ab5ecaf7ea8aa9166fde960a27441f assets/risus/blockstates/chiseled_grimstone.json
 a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimstone_bricks.json
 29d4d8a5934d422ad4f399252a78aeab88a6c940 assets/risus/blockstates/crystallized_bonds.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decayed_tissue.json
@@ -102,7 +102,6 @@ ce5b099005eafaf1c02bf4503d5ca1f3a0078b6a assets/risus/models/block/bone_fence_si
 6b5ec472b9f17409e80e93724e78f22e1e6b7686 assets/risus/models/block/burnt_hyphae.json
 118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
 40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json
-1a6b280edd03a249944c2532e5fd7421d8a72ad7 assets/risus/models/block/chiseled_grimstone.json
 bfa697fc85b0b8008ed1d9ff214e898baeada6b4 assets/risus/models/block/cracked_grimstone_bricks.json
 33057f977bd46161422304ee8043e0ea1e28db59 assets/risus/models/block/grimstone.json
 b50a2827be14d5417ca5b1ff0f1f4ca36af153f8 assets/risus/models/block/grimstone_bricks.json

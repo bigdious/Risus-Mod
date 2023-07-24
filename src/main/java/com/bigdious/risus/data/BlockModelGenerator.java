@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -190,8 +191,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), texture("block/grimstone_bricks"), texture("block/grimstone_bricks"));
 		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), texture("block/grimstone_bricks"));
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone_bricks"));
-		simpleBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
+		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(),models().getExistingFile(texture(("block/chiseled_grimstone"))));
+
 
 		simpleBlock(RisusBlocks.TISSUE.get());
 		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
