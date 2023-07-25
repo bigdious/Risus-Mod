@@ -11,6 +11,7 @@ public class DataGenSetup {
 
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
+		event.getGenerator().addProvider(true, new AdvancementGenerator(event.getGenerator(), event.getExistingFileHelper()));
 		event.getGenerator().addProvider(true, new BlockModelGenerator(event.getGenerator(), event.getExistingFileHelper()));
 		event.getGenerator().addProvider(true, new ItemModelGenerator(event.getGenerator(), event.getExistingFileHelper()));
 		event.getGenerator().addProvider(true, new LootGenerator(event.getGenerator()));

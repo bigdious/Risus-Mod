@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "organic": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "risus:organic_matter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "risus:textures/block/ashen_remains.png",
+    "description": {
+      "translate": "advancement.risus.first.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:smile"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "itemGroup.risus"
+    }
+  },
+  "requirements": [
+    [
+      "organic"
+    ]
+  ]
+}

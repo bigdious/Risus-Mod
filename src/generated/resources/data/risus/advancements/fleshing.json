@@ -1,0 +1,96 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "fleshing0": {
+      "conditions": {
+        "item": {
+          "items": [
+            "risus:organic_matter"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "risus:decomposing_tissue"
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    },
+    "fleshing1": {
+      "conditions": {
+        "item": {
+          "items": [
+            "risus:organic_matter"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "risus:rotting_tissue"
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    },
+    "fleshing2": {
+      "conditions": {
+        "item": {
+          "items": [
+            "risus:organic_matter"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "risus:decaying_tissue"
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    },
+    "fleshing3": {
+      "conditions": {
+        "item": {
+          "items": [
+            "risus:organic_matter"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "risus:tissue"
+            ]
+          }
+        }
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.fleshing.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:decomposed_tissue"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.fleshing"
+    }
+  },
+  "requirements": [
+    [
+      "fleshing0",
+      "fleshing1",
+      "fleshing2",
+      "fleshing3"
+    ]
+  ]
+}
