@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-29T18:22:10.5821451	Recipes
+// 1.19.2	2023-07-25T16:33:18.7289876	Recipes
 9c70ad61087799e34ed61bacd204f2daf02e4ec7 data/risus/advancements/recipes/risus/alteration/ashen_remains.json
 d43d958c0067cf6295fe9cca6aca9946b17f068a data/risus/advancements/recipes/risus/alteration/bloodweave.json
 c621eb9bae21adcf999d5d6fcbdb6130e08acc20 data/risus/advancements/recipes/risus/alteration/bloodwyrm_head.json
@@ -71,7 +71,7 @@ e4bc513bf50f05359c7d21f8979ab7b3956b196b data/risus/recipes/bondknot_planks.json
 f243ba0c20f5de9574e980796784a3ecfe1dd478 data/risus/recipes/bone_fence.json
 bde184281d43809fdd1327695015e3ddbdf9f38b data/risus/recipes/bone_wall.json
 9f8c98b23ef312127984962fcc6f513de7baf8ee data/risus/recipes/chiseled_grimstone.json
-1fc1ba940253c1fb476027bd1902aaf53a02b383 data/risus/recipes/concentration_core.json
+e6ae5110a944b0bcba7a482919b575878cbd6a56 data/risus/recipes/concentration_core.json
 41200ee5ebd1b8ee98ee4711610f75aa7ec997f1 data/risus/recipes/crescent_disaster.json
 7ab74082897d977c9ea378213f8975fe119430c3 data/risus/recipes/grimstone_bricks.json
 294352befd41edcd4e3063d248716088d393ba75 data/risus/recipes/grimstone_slab.json
