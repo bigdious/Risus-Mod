@@ -102,6 +102,7 @@ public class BlockLootTables extends BlockLoot {
 		dropWhenSilkTouch(RisusBlocks.ZIT.get());
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
+		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {

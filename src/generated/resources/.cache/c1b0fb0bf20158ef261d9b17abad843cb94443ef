@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-24T17:18:24.5589604	Risus loot tables
+// 1.19.2	2023-07-27T15:14:06.8584846	Risus loot tables
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/alteration_catalyst.json
 84f9a6d925545617dd3acfec49d15cf1e337bc6f data/risus/loot_tables/blocks/ashen_remains.json
 35e64f51387c02b429396981042cc9fd54c3dd3d data/risus/loot_tables/blocks/baby_ribcage.json
@@ -62,6 +62,7 @@ c07979347e6f2db91163116c638d231d485fc75a data/risus/loot_tables/blocks/potted_he
 4dd1e5896ee933f52b0dd10aec2cc169fb1d1e1e data/risus/loot_tables/blocks/stripped_bondknot_log.json
 85f3245010f0f3b8cd6441b3688547395c006b69 data/risus/loot_tables/blocks/stripped_bondknot_wood.json
 a5479e671c400d704abb14ee5af1cf79f201db73 data/risus/loot_tables/blocks/tissue.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/weaver_nest.json
 cd9db9a13090c019cde5886c09aa0ae907e7986d data/risus/loot_tables/blocks/zit.json
 0ac1c9418cc2d81df2291b002b5149aa40666c4d data/risus/loot_tables/entities/angel.json
 47aedc9b9313c4a5ca352aa1b1f858bd62f22aa0 data/risus/loot_tables/entities/holder.json

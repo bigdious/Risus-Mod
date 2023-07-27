@@ -17,4 +17,6 @@ public class RisusBlockEntities {
 	public static final RegistryObject<BlockEntityType<RisusCampfireBlockEntity>> RISUS_CAMPFIRE = BLOCK_ENTITIES.register("risus_campfire", () -> BlockEntityType.Builder.of(RisusCampfireBlockEntity::new, RisusBlocks.JOYFLAME_CAMPFIRE.get()).build(null));
 	public static final RegistryObject<BlockEntityType<RisusSkullBlockEntity>> RISUS_SKULL = BLOCK_ENTITIES.register("risus_skull", () -> BlockEntityType.Builder.of(RisusSkullBlockEntity::new, RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get()).build(null));
 	public static final RegistryObject<BlockEntityType<RisusSignBlockEntity>> RISUS_SIGN = BLOCK_ENTITIES.register("risus_sign", () -> BlockEntityType.Builder.of(RisusSignBlockEntity::new, RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()).build(null));
+
+	public static final RegistryObject<BlockEntityType<WeaverNestBlockEntity>> WEAVER_NEST = BLOCK_ENTITIES.register("weaver_nest", () -> BlockEntityType.Builder.of(WeaverNestBlockEntity::new, RisusBlocks.WEAVER_NEST.get(), RisusBlocks.WEAVER_NEST.get()).build(null));
 }
