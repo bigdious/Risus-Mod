@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "risus:sandy_maw",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 296434693,
+    "spacing": 10,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

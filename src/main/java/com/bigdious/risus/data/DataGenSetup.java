@@ -11,6 +11,7 @@ public class DataGenSetup {
 
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
+
 		event.getGenerator().addProvider(true, new AdvancementGenerator(event.getGenerator(), event.getExistingFileHelper()));
 		event.getGenerator().addProvider(true, new BlockModelGenerator(event.getGenerator(), event.getExistingFileHelper()));
 		event.getGenerator().addProvider(true, new ItemModelGenerator(event.getGenerator(), event.getExistingFileHelper()));
@@ -19,5 +20,6 @@ public class DataGenSetup {
 		BlockTagsProvider blocktags = new BlockTagGenerator(event.getGenerator(), event.getExistingFileHelper());
 		event.getGenerator().addProvider(true, blocktags);
 		event.getGenerator().addProvider(true, new ItemTagGenerator(event.getGenerator(), blocktags, event.getExistingFileHelper()));
+
 	}
 }

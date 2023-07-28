@@ -97,7 +97,10 @@ public class RisusItems {
 
 	//big's trial
 	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
-
+	public static final RegistryObject<Item> MIRAGE_SAND = ITEMS.register("mirage_sand", () -> new BlockItem(RisusBlocks.MIRAGE_SAND.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_GRASS_BLOCK = ITEMS.register("mirage_grass_block", () -> new BlockItem(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_NETHERRACK = ITEMS.register("mirage_netherrack", () -> new BlockItem(RisusBlocks.MIRAGE_NETHERRACK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_END_STONE = ITEMS.register("mirage_end_stone", () -> new BlockItem(RisusBlocks.MIRAGE_END_STONE.get(), defaultWithRarity()));
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);
 	}

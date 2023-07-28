@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "risus:grassy_maw",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 29134693,
+    "spacing": 10,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}
