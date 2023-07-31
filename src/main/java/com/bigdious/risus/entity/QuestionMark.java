@@ -25,7 +25,7 @@ public class QuestionMark extends Monster {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 64.0F));
+        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 1.0F));
     }
     protected SoundEvent getAmbientSound() {return SoundEvents.AMBIENT_CAVE;}
     @Override
