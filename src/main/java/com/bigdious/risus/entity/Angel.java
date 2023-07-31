@@ -35,6 +35,9 @@ public class Angel extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
+		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL.get())) {
+			return super.hurt(source, Float.MAX_VALUE);
+		}
 		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CRESCENT_DISASTER.get())) {
 			return super.hurt(source, Float.MAX_VALUE);
 		}

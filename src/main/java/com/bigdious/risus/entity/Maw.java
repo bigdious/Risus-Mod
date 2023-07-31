@@ -54,7 +54,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 300)
-				.add(Attributes.ATTACK_DAMAGE, 500);
+				.add(Attributes.ATTACK_DAMAGE, 40);
 	}
 
 	@Override

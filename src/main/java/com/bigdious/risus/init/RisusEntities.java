@@ -26,6 +26,7 @@ public class RisusEntities {
 
 	public static final RegistryObject<EntityType<Weaver>> WEAVER = register(new ResourceLocation(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
 
+	public static final RegistryObject<EntityType<QuestionMark>> QUESTION_MARK = register(new ResourceLocation(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).sized(2.0F, 2.0F), 0x000000, 0x8b0000);
 	private static <T extends Entity> RegistryObject<EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
 		return ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
 	}

@@ -28,10 +28,13 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
+	private CacheTargetOnClient entity;
 
 	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
 	}
+
+	public final AnimationState leapAnim = new AnimationState();
 
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
@@ -45,7 +48,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		super.defineSynchedData();
 		this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
 	}
-
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
@@ -57,7 +59,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
 		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
 	}
-
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
