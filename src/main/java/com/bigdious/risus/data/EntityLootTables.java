@@ -38,7 +38,7 @@ public class EntityLootTables extends EntityLoot {
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
-
+		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.WEAVER.get(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1.0F))

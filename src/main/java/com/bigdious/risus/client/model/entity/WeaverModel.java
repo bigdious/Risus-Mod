@@ -173,9 +173,8 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 			this.left_leg2.zRot -= f8;
 			this.right_leg1.zRot += f10;
 			this.left_leg1.zRot -= f10;
-
-		} else {
-			this.animate(entity.leapAnim, WeaverAnimations.WEAVER_LEAP, ageInTicks);
 		}
+			this.animate(entity.leapAnim, WeaverAnimations.WEAVER_LEAP, ageInTicks);
+
 	}
 }

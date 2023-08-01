@@ -66,9 +66,9 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 
 		partdefinition.addOrReplaceChild("topLeftWing", CubeListBuilder.create().texOffs(-13, 0).addBox(-34.0F, 2.0F, -11.0F, 29.0F, 0.0F, 13.0F), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, 1.4835F, 0.2182F, 0.5236F));
 
-		partdefinition.addOrReplaceChild("bottomRightWing", CubeListBuilder.create().texOffs(-8, 13).mirror().addBox(6.0F, 2.0F, -5.0F, 18.0F, 0.0F, 8.0F).mirror(false), PartPose.offsetAndRotation(0.0F, 6.0F, 0.0F, 1.7017F, -0.0873F, 0.3927F));
+		partdefinition.addOrReplaceChild("bottomRightWing", CubeListBuilder.create().texOffs(-8, 13).mirror().addBox(6.0F, 2.0F, -5.0F, 18.0F, 0.0F, 8.0F).mirror(false), PartPose.offsetAndRotation(0.0F, 6.0F, 0.0F, 1.7017F, -0.1873F, 0.3927F));
 
-		partdefinition.addOrReplaceChild("bottomLeftWing", CubeListBuilder.create().texOffs(-8, 13).addBox(-24.0F, 2.0F, -5.0F, 18.0F, 0.0F, 8.0F), PartPose.offsetAndRotation(0.0F, 6.0F, 0.0F, 1.7017F, 0.0873F, -0.3927F));
+		partdefinition.addOrReplaceChild("bottomLeftWing", CubeListBuilder.create().texOffs(-8, 13).addBox(-24.0F, 2.0F, -5.0F, 18.0F, 0.0F, 8.0F), PartPose.offsetAndRotation(0.0F, 6.0F, 0.0F, 1.7017F, 0.1873F, -0.3927F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

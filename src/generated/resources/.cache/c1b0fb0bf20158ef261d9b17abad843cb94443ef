@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-27T15:14:06.8584846	Risus loot tables
+// 1.19.2	2023-08-01T19:14:57.993058	Risus loot tables
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/alteration_catalyst.json
 84f9a6d925545617dd3acfec49d15cf1e337bc6f data/risus/loot_tables/blocks/ashen_remains.json
 35e64f51387c02b429396981042cc9fd54c3dd3d data/risus/loot_tables/blocks/baby_ribcage.json
@@ -67,4 +67,5 @@ cd9db9a13090c019cde5886c09aa0ae907e7986d data/risus/loot_tables/blocks/zit.json
 0ac1c9418cc2d81df2291b002b5149aa40666c4d data/risus/loot_tables/entities/angel.json
 47aedc9b9313c4a5ca352aa1b1f858bd62f22aa0 data/risus/loot_tables/entities/holder.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/risus/loot_tables/entities/maw.json
+ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/risus/loot_tables/entities/question_mark.json
 268dc8407c605c1b434794edd93c0f0c571d92bb data/risus/loot_tables/entities/weaver.json
