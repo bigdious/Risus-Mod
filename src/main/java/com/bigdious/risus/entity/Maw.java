@@ -106,7 +106,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		return source == DamageSource.OUT_OF_WORLD && super.hurt(source, amount);
+		return source.isBypassInvul() && super.hurt(source, amount);
 	}
 
 	//[VanillaCopy], but include primed TNT in pushing so we can swallow it
