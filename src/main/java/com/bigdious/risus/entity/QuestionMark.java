@@ -31,7 +31,7 @@ public class QuestionMark extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 10.0F, 1.0F));
+		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 50.0F, 1.0F));
 	}
 
 	@Override
