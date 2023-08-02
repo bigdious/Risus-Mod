@@ -22,11 +22,10 @@ public class RisusEntities {
 	public static final RegistryObject<EntityType<RisusBoat>> BOAT = registerNoEgg(new ResourceLocation(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
 	public static final RegistryObject<EntityType<Holder>> HOLDER = register(new ResourceLocation(Risus.MODID, "holder"), EntityType.Builder.of(Holder::new, MobCategory.MONSTER).sized(0.7F, 0.5F), 0x000000, 0x8b0000);
 	public static final RegistryObject<EntityType<Maw>> MAW = register(new ResourceLocation(Risus.MODID, "maw"), EntityType.Builder.of(Maw::new, MobCategory.MONSTER).sized(1.0F, 0.75F), 0x000000, 0x8b0000);
+	public static final RegistryObject<EntityType<QuestionMark>> QUESTION_MARK = register(new ResourceLocation(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).sized(2.0F, 4.0F), 0x000000, 0x8b0000);
 	public static final RegistryObject<EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(new ResourceLocation(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
-
 	public static final RegistryObject<EntityType<Weaver>> WEAVER = register(new ResourceLocation(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
 
-	public static final RegistryObject<EntityType<QuestionMark>> QUESTION_MARK = register(new ResourceLocation(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).sized(2.0F, 2.0F), 0x000000, 0x8b0000);
 	private static <T extends Entity> RegistryObject<EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
 		return ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
 	}

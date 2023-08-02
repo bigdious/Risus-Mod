@@ -94,9 +94,13 @@
   "entity.risus.angel": "Blood Angel",
   "entity.risus.holder": "Holder",
   "entity.risus.maw": "Maw",
+  "entity.risus.question_mark": "???",
   "entity.risus.risus_boat": "Boat",
   "entity.risus.thrown_axe": "Thrown Crescent Disaster",
   "entity.risus.weaver": "Weaver",
+
+  "death.attack.inexistence": "%1$s has stepped into inexistence",
+  "death.attack.inexistence.player": "%1$s has stepped into inexistence while escaping %2$s",
 
   "itemGroup.risus": "Risus",
   "advancement.risus.first.desc": "Meet the Risus",
