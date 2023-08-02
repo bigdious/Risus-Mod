@@ -29,8 +29,8 @@ public class Angel extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 64.0F));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 50.0F));
+
 	}
 
 	@Override

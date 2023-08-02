@@ -62,7 +62,7 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 		.texOffs(20, 26).addBox(1.0F, -4.0F, -3.0F, 3.0F, 3.0F, 3.0F)
 		.texOffs(20, 26).addBox(-4.0F, -1.0F, -1.0F, 3.0F, 3.0F, 3.0F), PartPose.offset(0.0F, 3.0F, 0.0F));
 
-		partdefinition.addOrReplaceChild("topRightWing", CubeListBuilder.create().texOffs(-13, 0).mirror().addBox(7.0F, 2.0F, -11.0F, 29.0F, 0.0F, 13.0F).mirror(false), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, 1.4835F, -0.2182F, -0.5236F));
+		partdefinition.addOrReplaceChild("topRightWing", CubeListBuilder.create().texOffs(-13, 0).mirror().addBox(5.0F, 2.0F, -11.0F, 29.0F, 0.0F, 13.0F).mirror(false), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, 1.4835F, -0.2182F, -0.5236F));
 
 		partdefinition.addOrReplaceChild("topLeftWing", CubeListBuilder.create().texOffs(-13, 0).addBox(-34.0F, 2.0F, -11.0F, 29.0F, 0.0F, 13.0F), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, 1.4835F, 0.2182F, 0.5236F));
 
@@ -80,19 +80,15 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 		this.headCluster2.xRot = headPitch * ((float) Math.PI / 270F);
 		this.headCluster2.yRot = netHeadYaw * ((float) Math.PI / 270F);
 		this.headCluster2.zRot = ageInTicks * 0.01F;
-		this.topLeftWing.xRot = ((float) Math.PI / 2F);
-		this.topRightWing.xRot = ((float) Math.PI / 2F);
-		this.bottomRightWing.xRot = ((float) Math.PI / 2F);
-		this.bottomLeftWing.xRot = ((float) Math.PI / 2F);
 		float circle = ageInTicks * 0.05F;
 		float flapping = Mth.sin(ageInTicks * 0.1F) * 0.1F;
 		this.innerRing.xRot = circle * 0.5F;
 		this.middleRing.yRot = circle;
 		this.outerRing.zRot = circle * 1.5F;
-		this.topRightWing.yRot = flapping;
-		this.topLeftWing.yRot = -flapping;
-		this.bottomRightWing.yRot = flapping;
-		this.bottomLeftWing.yRot = -flapping;
+		this.topRightWing.yRot = flapping - (12.5F * Mth.DEG_TO_RAD);
+		this.topLeftWing.yRot = -flapping + (12.5F * Mth.DEG_TO_RAD);
+		this.bottomRightWing.yRot = flapping - (12.5F * Mth.DEG_TO_RAD);
+		this.bottomLeftWing.yRot = -flapping + (12.5F * Mth.DEG_TO_RAD);
 	}
 
 	@Override
