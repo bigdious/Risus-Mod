@@ -26,15 +26,15 @@ import java.util.function.Predicate;
 public class Weaver extends Monster implements CacheTargetOnClient {
 
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
+
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
-	private CacheTargetOnClient entity;
+
+	public final AnimationState leapAnim = new AnimationState();
 
 	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
 	}
-
-	public final AnimationState leapAnim = new AnimationState();
 
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
@@ -48,10 +48,17 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		super.defineSynchedData();
 		this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
 	}
+
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
-		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F) {
+			@Override
+			public void start() {
+				super.start();
+				Weaver.this.leapAnim.start(Weaver.this.tickCount);
+			}
+		});
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -59,6 +66,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
 		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
 	}
+
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
@@ -119,6 +127,15 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		}
 	}
 
+	@Override
+	public void handleEntityEvent(byte id) {
+		if (id == 66) {
+			this.leapAnim.start(this.tickCount);
+		} else {
+			super.handleEntityEvent(id);
+		}
+	}
+
 	private static class WeaverHurtByTargetGoal extends HurtByTargetGoal {
 
 		public WeaverHurtByTargetGoal(PathfinderMob mob) {
@@ -128,13 +145,13 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		@Override
 		public void start() {
 			super.start();
-			((Weaver)this.mob).setActiveAttackTarget(this.targetMob.getId());
+			((Weaver) this.mob).setActiveAttackTarget(this.targetMob.getId());
 		}
 
 		@Override
 		public void stop() {
 			super.stop();
-			((Weaver)this.mob).setActiveAttackTarget(0);
+			((Weaver) this.mob).setActiveAttackTarget(0);
 		}
 	}
 
@@ -147,13 +164,13 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		@Override
 		public void start() {
 			super.start();
-			((Weaver)this.mob).setActiveAttackTarget(this.target.getId());
+			((Weaver) this.mob).setActiveAttackTarget(this.target.getId());
 		}
 
 		@Override
 		public void stop() {
 			super.stop();
-			((Weaver)this.mob).setActiveAttackTarget(0);
+			((Weaver) this.mob).setActiveAttackTarget(0);
 		}
 	}
 }
