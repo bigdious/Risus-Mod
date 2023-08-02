@@ -7,6 +7,7 @@ import com.bigdious.risus.entity.QuestionMark;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
 public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMarkModel<QuestionMark>> {
@@ -20,6 +21,11 @@ public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMark
     @Override
     protected void scale(QuestionMark questionMark, PoseStack stack, float partialTicks) {
         stack.scale(2F, 2F, 2F);
+    }
+
+    @Override
+    protected int getBlockLightLevel(QuestionMark entity, BlockPos pos) {
+        return 15;
     }
 
     @Override

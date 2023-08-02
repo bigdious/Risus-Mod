@@ -4,10 +4,7 @@ import com.bigdious.risus.init.RisusDamageSources;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -29,19 +26,19 @@ public class QuestionMark extends Monster {
 	}
 
 	@Override
-	protected void registerGoals() {
-		super.registerGoals();
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 50.0F, 1.0F));
+	protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
+		return dimensions.height * 0.5F;
 	}
 
 	@Override
 	public void aiStep() {
 		super.aiStep();
-		this.setYRot(this.getYHeadRot());
-		this.yRotO = this.getYHeadRot();
-		this.yHeadRotO = this.getYHeadRot();
-		this.yBodyRot = this.getYHeadRot();
-		this.yBodyRotO = this.getYHeadRot();
+		this.setYRot(0.0F);
+		this.yRotO = 0.0F;
+		this.setYHeadRot(0.0F);
+		this.yHeadRotO = 0.0F;
+		this.setYBodyRot(0.0F);
+		this.yBodyRotO = 0.0F;
 	}
 
 	@Override
