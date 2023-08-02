@@ -21,7 +21,7 @@ public class RisusItems {
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationMod(0.2F).alwaysEat().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE.get(), 90), 1.0F).build();
 
-	public static final RegistryObject<Item> SMILE = ITEMS.register("smile", () -> new Item(new Item.Properties().rarity(Risus.getRarity())));
+	public static final RegistryObject<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
 
 	public static final RegistryObject<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
@@ -87,6 +87,11 @@ public class RisusItems {
 	public static final RegistryObject<Item> GLUTTONY_SCALEPLATE = ITEMS.register("gluttony_scaleplate", () -> new BlockItem(RisusBlocks.GLUTTONY_SCALEPLATE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GLUTTONY_SCALES = ITEMS.register("gluttony_scales", () -> new Item(defaultWithRarity()));
 
+	public static final RegistryObject<Item> MIRAGE_SAND = ITEMS.register("mirage_sand", () -> new BlockItem(RisusBlocks.MIRAGE_SAND.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_GRASS_BLOCK = ITEMS.register("mirage_grass_block", () -> new BlockItem(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_NETHERRACK = ITEMS.register("mirage_netherrack", () -> new BlockItem(RisusBlocks.MIRAGE_NETHERRACK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> MIRAGE_END_STONE = ITEMS.register("mirage_end_stone", () -> new BlockItem(RisusBlocks.MIRAGE_END_STONE.get(), defaultWithRarity()));
+
 	public static final RegistryObject<Item> ALTERATION_CATALYST = ITEMS.register("alteration_catalyst", () -> new BlockItem(RisusBlocks.ALTERATION_CATALYST.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
@@ -94,13 +99,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 	public static final RegistryObject<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity()));
-
-	//big's trial
 	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> MIRAGE_SAND = ITEMS.register("mirage_sand", () -> new BlockItem(RisusBlocks.MIRAGE_SAND.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> MIRAGE_GRASS_BLOCK = ITEMS.register("mirage_grass_block", () -> new BlockItem(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> MIRAGE_NETHERRACK = ITEMS.register("mirage_netherrack", () -> new BlockItem(RisusBlocks.MIRAGE_NETHERRACK.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> MIRAGE_END_STONE = ITEMS.register("mirage_end_stone", () -> new BlockItem(RisusBlocks.MIRAGE_END_STONE.get(), defaultWithRarity()));
 
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);

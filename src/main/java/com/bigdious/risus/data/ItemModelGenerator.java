@@ -36,6 +36,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.MAW_GUTS.get());
 		toBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get());
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
+		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+		toBlock(RisusBlocks.MIRAGE_SAND.get());
+		toBlock(RisusBlocks.MIRAGE_NETHERRACK.get());
+		toBlock(RisusBlocks.MIRAGE_END_STONE.get());
 		toBlockModel(RisusBlocks.BLOODWEAVE.get(), texture("block/bloodweave_core"));
 		toBlock(RisusBlocks.BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.BONDKNOT_WOOD.get());
