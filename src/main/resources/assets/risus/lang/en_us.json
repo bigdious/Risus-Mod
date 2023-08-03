@@ -106,5 +106,19 @@
   "itemGroup.risus": "Risus",
   "advancement.risus.first.desc": "Meet the Risus",
   "advancement.risus.fleshing.desc": "Use Organic Matter on Tissue to stop the flesh from disintegrating.",
-  "advancement.risus.fleshing": "Did you just flesh me?!"
+  "advancement.risus.fleshing": "Did you just flesh me?!",
+  "advancement.risus.devour": "Devoured",
+  "advancement.risus.devour.desc": "Fall into a Maw's trap.",
+  "advancement.risus.satiate": "Satiated",
+  "advancement.risus.satiate.desc": "Kill a Maw.",
+  "advancement.risus.cupid": "Cupid",
+  "advancement.risus.cupid.desc": "Bring love to the world.",
+  "advancement.risus.irresistible": "Irresistible",
+  "advancement.risus.irresistible.desc": "Taste Pleasure.",
+  "advancement.risus.crusade": "Crusade",
+  "advancement.risus.crusade.desc": "Kill an Angel.",
+  "advancement.risus.potential": "Potential",
+  "advancement.risus.potential.desc": "Craft an Unawakened Vessel.",
+  "advancement.risus.unleashed": "Unleashed",
+  "advancement.risus.unleashed.desc": "Craft a Crescent Disaster."
 }

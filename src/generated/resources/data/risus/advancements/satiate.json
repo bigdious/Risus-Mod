@@ -1,0 +1,39 @@
+{
+  "parent": "risus:devour",
+  "criteria": {
+    "satiate0": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "risus:maw"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.satiate.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:gluttony_scales"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.satiate"
+    }
+  },
+  "requirements": [
+    [
+      "satiate0"
+    ]
+  ]
+}

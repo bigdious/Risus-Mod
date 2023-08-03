@@ -1,0 +1,39 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "devour0": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "risus:maw"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.devour.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:maw_guts"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.devour"
+    }
+  },
+  "requirements": [
+    [
+      "devour0"
+    ]
+  ]
+}
