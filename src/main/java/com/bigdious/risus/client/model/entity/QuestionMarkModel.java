@@ -1,8 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
 import com.bigdious.risus.entity.QuestionMark;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;

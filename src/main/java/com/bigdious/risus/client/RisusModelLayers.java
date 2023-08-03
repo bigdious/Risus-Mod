@@ -29,6 +29,8 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation WEAVER = register("weaver");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 
+	public static final ModelLayerLocation MEMORY1 = register("memory1");
+
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
 
 	private static ModelLayerLocation register(String name) {
@@ -52,6 +54,7 @@ public class RisusModelLayers {
 		event.registerLayerDefinition(WEAVER_CORE, WeaverModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(QUESTION_MARK, QuestionMarkModel::create);
+		event.registerLayerDefinition(MEMORY1, Memory1Model::create);
 	}
 
 	@SubscribeEvent
@@ -67,6 +70,7 @@ public class RisusModelLayers {
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
+		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
