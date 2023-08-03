@@ -1,0 +1,20 @@
+{
+  "parent": "risus:first",
+  "criteria": {},
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.irresistible.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:guilty_apple"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.irresistible"
+    }
+  },
+  "requirements": []
+}

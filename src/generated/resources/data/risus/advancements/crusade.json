@@ -1,0 +1,39 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "murder": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "risus:angel"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.crusade.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:blood_feather"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.crusade"
+    }
+  },
+  "requirements": [
+    [
+      "murder"
+    ]
+  ]
+}

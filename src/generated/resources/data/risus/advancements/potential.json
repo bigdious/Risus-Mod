@@ -1,0 +1,38 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "weakaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "risus:unawakened_vessel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.potential.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:unawakened_vessel",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.potential"
+    }
+  },
+  "requirements": [
+    [
+      "weakaxe"
+    ]
+  ]
+}

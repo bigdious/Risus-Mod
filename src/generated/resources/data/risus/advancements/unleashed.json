@@ -1,0 +1,38 @@
+{
+  "parent": "risus:potential",
+  "criteria": {
+    "strongaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "risus:crescent_disaster"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.unleashed.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "risus:crescent_disaster",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.unleashed"
+    }
+  },
+  "requirements": [
+    [
+      "strongaxe"
+    ]
+  ]
+}
