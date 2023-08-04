@@ -27,7 +27,7 @@ public class RisusEntities {
 	public static final RegistryObject<EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(new ResourceLocation(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final RegistryObject<EntityType<Weaver>> WEAVER = register(new ResourceLocation(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
 
-	public static final  RegistryObject<EntityType<Memory1>> MEMORY1 = register(new ResourceLocation(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F), 0x000000, 0x8b0000);
+	public static final  RegistryObject<EntityType<Memory1>> MEMORY1 = registerNoEgg(new ResourceLocation(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
 	private static <T extends Entity> RegistryObject<EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
 		return ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
 	}
