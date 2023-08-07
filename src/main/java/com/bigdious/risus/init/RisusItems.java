@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
+import com.bigdious.risus.items.Memory1Item;
 import com.bigdious.risus.items.OrganicMatterItem;
 import com.bigdious.risus.items.ThrowableAxeItem;
 import com.bigdious.risus.items.RisusBoatItem;
@@ -47,6 +48,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> BABY_RIBCAGE = ITEMS.register("baby_ribcage", () -> new BlockItem(RisusBlocks.BABY_RIBCAGE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CRYSTALLIZED_BONDS = ITEMS.register("crystallized_bonds", () -> new BlockItem(RisusBlocks.CRYSTALLIZED_BONDS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> HEART_TRANSPLANT = ITEMS.register("heart_transplant", () -> new BlockItem(RisusBlocks.HEART_TRANSPLANT.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> REGEN_ROSE = ITEMS.register("regen_rose", () -> new BlockItem(RisusBlocks.REGEN_ROSE.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> GRIMSTONE = ITEMS.register("grimstone", () -> new BlockItem(RisusBlocks.GRIMSTONE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));
@@ -101,6 +103,8 @@ public class RisusItems {
 	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity()));
 	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
 
+	public static final RegistryObject<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultvanilla()));
+
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);
 	}
@@ -108,4 +112,5 @@ public class RisusItems {
 	public static Item.Properties defaultNoTab() {
 		return new Item.Properties().rarity(Risus.getRarity());
 	}
+	public static Item.Properties defaultvanilla() {return new Item.Properties().rarity(Risus.getVanilla()).tab(RisusTab.INSTANCE);}
 }

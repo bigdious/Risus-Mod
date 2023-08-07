@@ -1,5 +1,6 @@
 {
 	"parent": "block/block",
+	"render_type": "minecraft:translucent",
 	"textures": {
 		"0": "risus:block/ribcage",
 		"particle": "block/bone_block_top"

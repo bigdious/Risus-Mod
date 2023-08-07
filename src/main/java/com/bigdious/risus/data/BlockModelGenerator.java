@@ -212,6 +212,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 				models().fenceSide("bone_fence_side", new ResourceLocation("block/bone_block_side")));
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
 		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
+		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().getExistingFile(texture("block/regen_rose")));
 		getVariantBuilder(RisusBlocks.BIG_CHAIN.get())
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y)
 				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).addModel()

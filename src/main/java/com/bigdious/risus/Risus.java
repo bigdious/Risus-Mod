@@ -31,6 +31,7 @@ public class Risus {
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	private static final Rarity RISUS = Rarity.create("RISUS", ChatFormatting.DARK_RED);
+	private static final Rarity PURE = Rarity.create("Vanilla", ChatFormatting.WHITE);
 
 	public Risus() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -88,6 +89,9 @@ public class Risus {
 	}
 
 	public static Rarity getRarity() {
+		return RISUS;
+	}
+	public static Rarity getVanilla() {
 		return RISUS;
 	}
 }

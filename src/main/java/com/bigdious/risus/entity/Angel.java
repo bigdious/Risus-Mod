@@ -43,4 +43,8 @@ public class Angel extends Monster {
 		}
 		return false;
 	}
+	@Override
+	public boolean removeWhenFarAway(double dist) {
+		return false;
+	}
 }

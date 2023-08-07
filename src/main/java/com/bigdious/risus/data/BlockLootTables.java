@@ -83,6 +83,7 @@ public class BlockLootTables extends BlockLoot {
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
 		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
+		dropSelf(RisusBlocks.REGEN_ROSE.get());
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
 		dropSelf(RisusBlocks.BONE_FENCE.get());
 		dropSelf(RisusBlocks.BONE_WALL.get());

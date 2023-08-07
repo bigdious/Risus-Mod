@@ -124,6 +124,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.JOYFLAME_TORCH);
 		singleTex(RisusItems.HEART_TRANSPLANT);
 		singleTex(RisusItems.BIG_CHAIN);
+		singleTex(RisusItems.MEMORY1_ITEM);
+		singleTex(RisusItems.REGEN_ROSE);
 
 		//spawn eggs
 		for (Item i : Registry.ITEM) {

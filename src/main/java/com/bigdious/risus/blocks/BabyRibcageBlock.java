@@ -59,7 +59,7 @@ public class BabyRibcageBlock extends HorizontalDirectionalBlock {
 
 	@Override
 	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {
-		return 1.0F;
+		return 1.F;
 	}
 
 	@Override

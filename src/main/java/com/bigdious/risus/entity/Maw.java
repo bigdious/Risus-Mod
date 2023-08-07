@@ -1,6 +1,7 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusDamageSources;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -142,6 +143,8 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			//set up the victim to think theyre being killed by a player
 			if(this.getLevel() instanceof ServerLevel server) living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
 			//then do the actual damage
+			this.hurt(RisusDamageSources.GLUTTONY, (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+			//I tried ok? Forgive the illiterate
 			this.doHurtTarget(living);
 		} else if (entity instanceof PrimedTnt tnt) {
 			tnt.discard();
