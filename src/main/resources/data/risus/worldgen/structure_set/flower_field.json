@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "risus:flower_field",
+      "weight": 100
+    }
+  ],
+  "placement": {
+    "salt": 29213393,
+    "spacing": 21,
+    "separation": 20,
+    "type": "minecraft:random_spread"
+  }
+}

@@ -1,0 +1,22 @@
+{
+
+  "name": "risus:flower_field/start_pool",
+
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "location": "risus:flower_field",
+        "processors": [{
+            "processor_type": "minecraft:block_rot",
+            "integrity": 0.2,
+            "rottable_blocks": "risus:regen_rose"
+          }] ,
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

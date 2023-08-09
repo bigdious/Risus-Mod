@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class RegenRoseBlock extends BushBlock {
-    protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 4.0D, 8.0D, 4.0D);
+    protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
 
     public RegenRoseBlock( BlockBehaviour.Properties properties) {
         super( properties);

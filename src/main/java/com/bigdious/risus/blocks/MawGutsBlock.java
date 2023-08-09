@@ -100,4 +100,9 @@ public class MawGutsBlock extends HorizontalDirectionalBlock implements EntityBl
 		super.createBlockStateDefinition(builder);
 		builder.add(FACING);
 	}
+
+	@Override
+	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {
+		return 1.F;
+	}
 }
