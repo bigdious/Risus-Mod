@@ -8,7 +8,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "risus:angel"
+              "type": "minecraft:pig"
             }
           }
         ]
@@ -24,7 +24,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:blood_feather"
+      "item": "minecraft:air"
     },
     "show_toast": true,
     "title": {

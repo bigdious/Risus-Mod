@@ -36,6 +36,7 @@ public class BlockLootTables extends BlockLoot {
 	@Override
 	protected void addTables() {
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
+		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
@@ -104,6 +105,7 @@ public class BlockLootTables extends BlockLoot {
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
 		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
+		dropSelf(RisusBlocks.SPREADING_REMAINS.get());
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {

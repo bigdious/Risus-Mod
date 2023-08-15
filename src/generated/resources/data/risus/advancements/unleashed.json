@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "risus:crescent_disaster"
+              "minecraft:air"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:crescent_disaster",
+      "item": "minecraft:air",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,

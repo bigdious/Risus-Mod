@@ -17,7 +17,8 @@
 				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
 				"up": {"uv": [0, 0, 0, 0], "texture": "#1"},
 				"down": {"uv": [0, 0, 0, 0], "texture": "#1"}
-			}
+			},
+			"shade": false
 		},
 		{
 			"from": [8, 0, 0],
@@ -30,7 +31,8 @@
 				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
 				"up": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#1"},
 				"down": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#1"}
-			}
+			},
+			"shade": false
 		}
 	]
 }

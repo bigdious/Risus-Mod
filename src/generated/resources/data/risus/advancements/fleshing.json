@@ -5,13 +5,13 @@
       "conditions": {
         "item": {
           "items": [
-            "risus:organic_matter"
+            "minecraft:air"
           ]
         },
         "location": {
           "block": {
             "blocks": [
-              "risus:decomposing_tissue"
+              "minecraft:air"
             ]
           }
         }
@@ -22,13 +22,13 @@
       "conditions": {
         "item": {
           "items": [
-            "risus:organic_matter"
+            "minecraft:air"
           ]
         },
         "location": {
           "block": {
             "blocks": [
-              "risus:rotting_tissue"
+              "minecraft:air"
             ]
           }
         }
@@ -39,13 +39,13 @@
       "conditions": {
         "item": {
           "items": [
-            "risus:organic_matter"
+            "minecraft:air"
           ]
         },
         "location": {
           "block": {
             "blocks": [
-              "risus:decaying_tissue"
+              "minecraft:air"
             ]
           }
         }
@@ -56,13 +56,13 @@
       "conditions": {
         "item": {
           "items": [
-            "risus:organic_matter"
+            "minecraft:air"
           ]
         },
         "location": {
           "block": {
             "blocks": [
-              "risus:tissue"
+              "minecraft:air"
             ]
           }
         }
@@ -78,7 +78,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:decomposed_tissue"
+      "item": "minecraft:air"
     },
     "show_toast": true,
     "title": {

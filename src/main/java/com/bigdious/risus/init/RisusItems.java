@@ -101,9 +101,10 @@ public class RisusItems {
 	public static final RegistryObject<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 	public static final RegistryObject<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity()));
-	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultvanilla()));
 
 	public static final RegistryObject<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultvanilla()));
+	public static final RegistryObject<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new GameMasterBlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
 
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);

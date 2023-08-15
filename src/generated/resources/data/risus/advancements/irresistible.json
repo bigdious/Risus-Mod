@@ -9,7 +9,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:guilty_apple"
+      "item": "minecraft:air"
     },
     "show_toast": true,
     "title": {

@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"0": "risus:block/spreading_remains",
+		"particle": "risus:block/spreading_remains"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0.02],
+			"to": [16, 16, 0.02],
+			"rotation": {"angle": 0, "axis": "x", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 0], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 0], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 0], "texture": "#0"}
+			}
+		}
+	]
+}

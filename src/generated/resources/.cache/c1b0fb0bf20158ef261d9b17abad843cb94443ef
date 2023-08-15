@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-07T19:05:33.6021258	Risus loot tables
+// 1.19.2	2023-08-15T18:33:39.7318623	Risus loot tables
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/alteration_catalyst.json
 84f9a6d925545617dd3acfec49d15cf1e337bc6f data/risus/loot_tables/blocks/ashen_remains.json
 35e64f51387c02b429396981042cc9fd54c3dd3d data/risus/loot_tables/blocks/baby_ribcage.json
@@ -25,6 +25,7 @@ b157d796f2b117e327845c974298d5f6c25e4729 data/risus/loot_tables/blocks/bone_fenc
 a96426437882782f82c708d0c69c3ce18f2a117d data/risus/loot_tables/blocks/chiseled_grimstone.json
 b76d14d0c91edce385b3d86293086ca5db78da21 data/risus/loot_tables/blocks/cracked_grimstone_bricks.json
 b5744df344119042ee6c947c22006a80af99d37c data/risus/loot_tables/blocks/crystallized_bonds.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/risus/loot_tables/blocks/darkness.json
 cc88792e7de3ce67629704285a9b4453b6af13e6 data/risus/loot_tables/blocks/decayed_tissue.json
 e615e055f1dfa713dc7448e1e80d2dd35ea63cdb data/risus/loot_tables/blocks/decaying_tissue.json
 a77ce0aafa310aae5390d569213896329586e97b data/risus/loot_tables/blocks/decomposed_tissue.json
@@ -60,6 +61,7 @@ c07979347e6f2db91163116c638d231d485fc75a data/risus/loot_tables/blocks/potted_he
 3eec0c3f184483eef258f941eb39c23492ceb84a data/risus/loot_tables/blocks/rotted_tissue.json
 90788c920bd915e9b284015fd42ebee4b09fa78b data/risus/loot_tables/blocks/rotting_tissue.json
 2822060669657df735756dc5449a3afc6a1f54f0 data/risus/loot_tables/blocks/smiling_remains.json
+ed26968cb3e8699944abab1a5581db60c7da9822 data/risus/loot_tables/blocks/spreading_remains.json
 4dd1e5896ee933f52b0dd10aec2cc169fb1d1e1e data/risus/loot_tables/blocks/stripped_bondknot_log.json
 85f3245010f0f3b8cd6441b3688547395c006b69 data/risus/loot_tables/blocks/stripped_bondknot_wood.json
 a5479e671c400d704abb14ee5af1cf79f201db73 data/risus/loot_tables/blocks/tissue.json

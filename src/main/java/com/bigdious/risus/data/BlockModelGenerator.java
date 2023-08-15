@@ -266,6 +266,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.part().modelFile(side).rotationY(90).nextModel().modelFile(sideAlt).rotationY(90).addModel().end()
 				.part().modelFile(side).rotationY(180).nextModel().modelFile(sideAlt).rotationY(180).addModel().end()
 				.part().modelFile(side).rotationY(270).nextModel().modelFile(sideAlt).rotationY(270).addModel().end();
+
 	}
 
 	public BlockModelBuilder fencePost(String name, ResourceLocation texture) {
