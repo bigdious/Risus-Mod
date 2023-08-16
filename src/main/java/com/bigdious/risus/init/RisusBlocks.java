@@ -98,5 +98,5 @@ public class RisusBlocks {
 	});
 	public static final RegistryObject<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.SCULK_VEIN)) {
 	});
-	public static final RegistryObject<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.copy(Blocks.STONE).noOcclusion()));
 }
