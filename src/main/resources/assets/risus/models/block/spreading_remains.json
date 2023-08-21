@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"render_type": "minecraft:cutout",
+	"render_type": "minecraft:translucent",
 	"textures": {
 		"0": "risus:block/spreading_remains",
 		"particle": "risus:block/spreading_remains"
