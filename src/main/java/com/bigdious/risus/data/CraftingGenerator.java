@@ -201,6 +201,19 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_core", has(RisusItems.MEMORY_CORE.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RisusItems.LIGHT_DEVOURER.get())
+				.pattern("FBS")
+				.pattern("BPB")
+				.pattern("GBL")
+				.define('F', Ingredient.of(Items.OCHRE_FROGLIGHT))
+				.define('P', Ingredient.of(Items.ENDER_PEARL))
+				.define('B', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.define('S', Ingredient.of(Items.GLOWSTONE))
+				.define('L', Ingredient.of(Items.SHROOMLIGHT))
+				.define('G', Ingredient.of(Items.SEA_LANTERN))
+				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RisusBlocks.BIG_CHAIN.get(), 8)
 				.pattern("I I")
 				.pattern("III")

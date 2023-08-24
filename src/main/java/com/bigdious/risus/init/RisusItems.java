@@ -2,10 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
-import com.bigdious.risus.items.Memory1Item;
-import com.bigdious.risus.items.OrganicMatterItem;
-import com.bigdious.risus.items.ThrowableAxeItem;
-import com.bigdious.risus.items.RisusBoatItem;
+import com.bigdious.risus.items.*;
 import com.bigdious.risus.util.ModItemTier;
 import com.bigdious.risus.util.RisusTab;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -106,6 +103,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultvanilla()));
 	public static final RegistryObject<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new GameMasterBlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
 
+	public static final RegistryObject<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(RisusBlocks.DARKNESS.get(),defaultvanilla()));
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);
 	}

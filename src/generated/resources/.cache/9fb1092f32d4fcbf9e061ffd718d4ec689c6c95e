@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-25T16:33:18.7289876	Recipes
+// 1.19.2	2023-08-24T16:12:56.4183703	Recipes
 9c70ad61087799e34ed61bacd204f2daf02e4ec7 data/risus/advancements/recipes/risus/alteration/ashen_remains.json
 d43d958c0067cf6295fe9cca6aca9946b17f068a data/risus/advancements/recipes/risus/alteration/bloodweave.json
 c621eb9bae21adcf999d5d6fcbdb6130e08acc20 data/risus/advancements/recipes/risus/alteration/bloodwyrm_head.json
@@ -41,7 +41,7 @@ e2bf18ef65479bc0a993e2d3e184a776c27c2ee9 data/risus/advancements/recipes/risus/j
 f9f8be85749980dd84b7270b4fb16ca14c58a323 data/risus/advancements/recipes/risus/polished_grimstone.json
 ba6d92b0334cde2987b5f4a632b0b9cf61ef9cc3 data/risus/advancements/recipes/risus/stripped_bondknot_wood.json
 74328a954f110773515d75d14a260413712d33d3 data/risus/advancements/recipes/risus/unawakened_vessel.json
-8349b22423867a80c4223f021f4d3ee15d4df654 data/risus/recipes/alteration/ashen_remains.json
+af86effae05c8f88611eada81ba72ccfcc848ebb data/risus/recipes/alteration/ashen_remains.json
 acce3965ed17d2094b76527afbbe6da7b7cf9370 data/risus/recipes/alteration/bloodweave.json
 928e419986355a1b547e448655099d5a8eabf80a data/risus/recipes/alteration/bloodwyrm_head.json
 1cb30fa7faff5e7bcc36aa56ea0d0d3b4a0cb38b data/risus/recipes/alteration/burnt_hyphae.json
@@ -54,7 +54,7 @@ b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipes/alteration/engraved_
 e005e01e7c5cfe89bbe0ef274be9c29a3bc28807 data/risus/recipes/alteration/laughing_obsidian.json
 a08fd9f684d22625c7bd80d20659a7e8189a745f data/risus/recipes/alteration/organic_matter.json
 dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipes/alteration/polished_grimstone.json
-ea035bbb4069d10ba80052ef856c0b28a6514248 data/risus/recipes/alteration/smiling_remains.json
+1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipes/alteration/smiling_remains.json
 75224e84e0f4155a0e3f7b529bdd3a0a503c2ed3 data/risus/recipes/alteration/tissue.json
 2d3cc868becb0a50b3166bea7845a2093261cc41 data/risus/recipes/big_chain.json
 3a8a0e5e830a0942037fa1d67b070bc89ac3ff12 data/risus/recipes/bondknot_button.json

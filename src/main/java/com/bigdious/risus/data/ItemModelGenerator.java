@@ -127,6 +127,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.SPREADING_REMAINS);
 		singleTex(RisusItems.MEMORY1_ITEM);
 		singleTex(RisusItems.REGEN_ROSE);
+		singleTex(RisusItems.LIGHT_DEVOURER);
+
+
 
 		//spawn eggs
 		for (Item i : Registry.ITEM) {
