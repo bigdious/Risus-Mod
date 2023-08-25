@@ -8,8 +8,8 @@
 	},
 	"elements": [
 		{
-			"from": [5, 0.02, -0.01],
-			"to": [11, 15.99, 7.99],
+			"from": [5, 0, 0],
+			"to": [11, 16, 8],
 			"faces": {
 				"north": {"uv": [8, 0, 11, 8], "texture": "#wall", "cullface": "north"},
 				"east": {"uv": [4, 0, 8, 8], "texture": "#wall"},

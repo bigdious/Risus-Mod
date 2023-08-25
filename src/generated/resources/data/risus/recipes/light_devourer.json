@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "risus:gluttony_scales"
+    },
+    "F": {
+      "item": "minecraft:ochre_froglight"
+    },
+    "G": {
+      "item": "minecraft:sea_lantern"
+    },
+    "L": {
+      "item": "minecraft:shroomlight"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "S": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "pattern": [
+    "FBS",
+    "BPB",
+    "GBL"
+  ],
+  "result": {
+    "item": "risus:light_devourer"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-24T16:12:56.4183703	Recipes
+// 1.19.2	2023-08-25T20:46:00.6597508	Recipes
 9c70ad61087799e34ed61bacd204f2daf02e4ec7 data/risus/advancements/recipes/risus/alteration/ashen_remains.json
 d43d958c0067cf6295fe9cca6aca9946b17f068a data/risus/advancements/recipes/risus/alteration/bloodweave.json
 c621eb9bae21adcf999d5d6fcbdb6130e08acc20 data/risus/advancements/recipes/risus/alteration/bloodwyrm_head.json
@@ -12,6 +12,7 @@ c3012fc53bb1c852c8ea9410fb04f03480ff984f data/risus/advancements/recipes/risus/a
 673cd99fb4d9ffadb9d957b92e19f82bbc886d54 data/risus/advancements/recipes/risus/alteration/laughing_obsidian.json
 8d47830289e9e208a624cc3c0104bd7eb844b3b8 data/risus/advancements/recipes/risus/alteration/organic_matter.json
 30309ee58988859a4f21fa1900d726b9e9c49db8 data/risus/advancements/recipes/risus/alteration/polished_grimstone.json
+8e132ae884565a7937f9aa3371bd44f06c15785a data/risus/advancements/recipes/risus/alteration/regen_rose.json
 a46cfe168a740dc0806683b45ad590ba6d7a53b2 data/risus/advancements/recipes/risus/alteration/smiling_remains.json
 6a4185064745769a258a3ee739df9aaf3d55075d data/risus/advancements/recipes/risus/alteration/tissue.json
 75c7dc9898c2a973ebda4ec4539163af65183dcf data/risus/advancements/recipes/risus/big_chain.json
@@ -38,6 +39,7 @@ bde5adbc6521cd8e27762287642b0e37b293cc3d data/risus/advancements/recipes/risus/c
 0609c03e26b58fdd3561a409ef0a453585d07bf2 data/risus/advancements/recipes/risus/joyflame_campfire.json
 e2bf18ef65479bc0a993e2d3e184a776c27c2ee9 data/risus/advancements/recipes/risus/joyflame_lantern.json
 2598e7b9a956d7eab05c6d14b37cffb83332b1bb data/risus/advancements/recipes/risus/joyflame_torch.json
+93b65c91394ffa87fa1d27079ffc21a97a86d16b data/risus/advancements/recipes/risus/light_devourer.json
 f9f8be85749980dd84b7270b4fb16ca14c58a323 data/risus/advancements/recipes/risus/polished_grimstone.json
 ba6d92b0334cde2987b5f4a632b0b9cf61ef9cc3 data/risus/advancements/recipes/risus/stripped_bondknot_wood.json
 74328a954f110773515d75d14a260413712d33d3 data/risus/advancements/recipes/risus/unawakened_vessel.json
@@ -54,6 +56,7 @@ b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipes/alteration/engraved_
 e005e01e7c5cfe89bbe0ef274be9c29a3bc28807 data/risus/recipes/alteration/laughing_obsidian.json
 a08fd9f684d22625c7bd80d20659a7e8189a745f data/risus/recipes/alteration/organic_matter.json
 dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipes/alteration/polished_grimstone.json
+2b9100fba2a63fbf5afe525f7312e9a34480cd06 data/risus/recipes/alteration/regen_rose.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipes/alteration/smiling_remains.json
 75224e84e0f4155a0e3f7b529bdd3a0a503c2ed3 data/risus/recipes/alteration/tissue.json
 2d3cc868becb0a50b3166bea7845a2093261cc41 data/risus/recipes/big_chain.json
@@ -80,6 +83,7 @@ e6ae5110a944b0bcba7a482919b575878cbd6a56 data/risus/recipes/concentration_core.j
 822d35a2a453f1e2520ce5537eef5cf7f2ca7456 data/risus/recipes/joyflame_campfire.json
 0f722701c4fa01b6b47a07fef6b16379646c23cb data/risus/recipes/joyflame_lantern.json
 d6f8e2e91f9291b653863a3e5d256761b5baeed4 data/risus/recipes/joyflame_torch.json
+c19be09a983b2494638726da40f82cb81c3bebf9 data/risus/recipes/light_devourer.json
 acadbada697e7f3edb4f45ef2ce6a13ba3f2857f data/risus/recipes/polished_grimstone.json
 7f3d08fd17f7be29e14b5efe6e32557e0fba6e25 data/risus/recipes/stripped_bondknot_wood.json
 97b89baf9f3411ddcb36a806d72db2c0a307c9c6 data/risus/recipes/unawakened_vessel.json

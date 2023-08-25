@@ -128,6 +128,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.MEMORY1_ITEM);
 		singleTex(RisusItems.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
+		singleTex(RisusItems.ENDLESS_PEARL);
 
 
 

@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.items.EndlessPearlItem;
 import net.minecraft.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -10,6 +11,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.StrictNBTIngredient;
 
+import java.util.Properties;
 import java.util.function.Consumer;
 
 public class CraftingGenerator extends RecipeProvider {
@@ -44,6 +47,7 @@ public class CraftingGenerator extends RecipeProvider {
 		//TODO enchanted book to corrupt book handler
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.RABBIT), RisusItems.TISSUE.get()).unlockedBy("has_pork", has(Items.PORKCHOP)).unlockedBy("has_beef", has(Items.BEEF)).unlockedBy("has_mutton", has(Items.MUTTON)).unlockedBy("has_rabbit", has(Items.RABBIT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusItems.BURNT_HYPHAE.get()).unlockedBy("has_chyphae", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_cstem", has(Items.CRIMSON_STEM)).unlockedBy("has_whyphae", has(Items.WARPED_HYPHAE)).unlockedBy("has_wstem", has(Items.WARPED_STEM)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusItems.REGEN_ROSE.get()).unlockedBy("has_wither_rose", has(Items.WITHER_ROSE)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")
@@ -213,6 +217,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.define('G', Ingredient.of(Items.SEA_LANTERN))
 				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
+
 
 		ShapedRecipeBuilder.shaped(RisusBlocks.BIG_CHAIN.get(), 8)
 				.pattern("I I")

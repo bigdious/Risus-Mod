@@ -1,0 +1,24 @@
+{
+  "result": {
+    "nbt": "{Damage:996}",
+    "item": "risus:endless_pearl",
+    "type": "minecraft:item_nbt"
+  },
+  "pattern": [
+    "PSP",
+    "SRS",
+    "PSP"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "S": {
+      "item": "risus:gluttony_scales"
+    },
+    "R": {
+      "item": "risus:regen_rose"
+    }
+  }
+}
