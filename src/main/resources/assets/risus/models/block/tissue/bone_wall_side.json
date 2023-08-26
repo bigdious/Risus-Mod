@@ -8,8 +8,8 @@
 	"elements": [
 		{
 			"name": "wall",
-			"from": [5, 0.02, -0.01],
-			"to": [11, 13.99, 7.99],
+			"from": [5, 0, 0],
+			"to": [11, 14, 8],
 			"faces": {
 				"north": {"uv": [8, 0, 11, 7], "texture": "#wall", "cullface": "north"},
 				"east": {"uv": [4, 0, 8, 7], "texture": "#wall"},

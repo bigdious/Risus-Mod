@@ -3,17 +3,15 @@
   "criteria": {
     "satiate0": {
       "conditions": {
-        "entity": [
+        "items": [
           {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type": "minecraft:pig"
-            }
+            "items": [
+              "risus:organic_matter"
+            ]
           }
         ]
       },
-      "trigger": "minecraft:player_killed_entity"
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -24,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:air"
+      "item": "risus:gluttony_scales"
     },
     "show_toast": true,
     "title": {

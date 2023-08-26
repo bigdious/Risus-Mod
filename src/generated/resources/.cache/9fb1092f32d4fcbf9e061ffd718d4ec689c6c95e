@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-25T20:46:00.6597508	Recipes
+// 1.19.2	2023-08-26T10:17:22.345555	Recipes
 9c70ad61087799e34ed61bacd204f2daf02e4ec7 data/risus/advancements/recipes/risus/alteration/ashen_remains.json
 d43d958c0067cf6295fe9cca6aca9946b17f068a data/risus/advancements/recipes/risus/alteration/bloodweave.json
 c621eb9bae21adcf999d5d6fcbdb6130e08acc20 data/risus/advancements/recipes/risus/alteration/bloodwyrm_head.json
@@ -10,10 +10,12 @@ e4d43a86c7eb1a3bf929bc98bce215cf817c3a6e data/risus/advancements/recipes/risus/a
 c3012fc53bb1c852c8ea9410fb04f03480ff984f data/risus/advancements/recipes/risus/alteration/grimstone_bricks.json
 5f0c3e8622e0c088d1875f14166abcf91349b3d4 data/risus/advancements/recipes/risus/alteration/guilty_apple.json
 673cd99fb4d9ffadb9d957b92e19f82bbc886d54 data/risus/advancements/recipes/risus/alteration/laughing_obsidian.json
+62605a4983d2be1a1bed78af874de3c8c6a30e74 data/risus/advancements/recipes/risus/alteration/neuron.json
 8d47830289e9e208a624cc3c0104bd7eb844b3b8 data/risus/advancements/recipes/risus/alteration/organic_matter.json
 30309ee58988859a4f21fa1900d726b9e9c49db8 data/risus/advancements/recipes/risus/alteration/polished_grimstone.json
 8e132ae884565a7937f9aa3371bd44f06c15785a data/risus/advancements/recipes/risus/alteration/regen_rose.json
 a46cfe168a740dc0806683b45ad590ba6d7a53b2 data/risus/advancements/recipes/risus/alteration/smiling_remains.json
+7064c9b0df7fb424b927ea350a4d65c3d9bb3a64 data/risus/advancements/recipes/risus/alteration/spreading_remains.json
 6a4185064745769a258a3ee739df9aaf3d55075d data/risus/advancements/recipes/risus/alteration/tissue.json
 75c7dc9898c2a973ebda4ec4539163af65183dcf data/risus/advancements/recipes/risus/big_chain.json
 1fad9cd4c8bacde66f77b9b31b6b5362bebf85f3 data/risus/advancements/recipes/risus/bondknot_button.json
@@ -54,10 +56,12 @@ b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipes/alteration/engraved_
 84968afdeaa5ea7c0f27ca5bff9b0f8532fa8c45 data/risus/recipes/alteration/grimstone_bricks.json
 7f859f5f546e03b5f2623a6bac0403e91f198b98 data/risus/recipes/alteration/guilty_apple.json
 e005e01e7c5cfe89bbe0ef274be9c29a3bc28807 data/risus/recipes/alteration/laughing_obsidian.json
+84a1c8a5330ad58fe0e0877181ee1be70adf3a6f data/risus/recipes/alteration/neuron.json
 a08fd9f684d22625c7bd80d20659a7e8189a745f data/risus/recipes/alteration/organic_matter.json
 dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipes/alteration/polished_grimstone.json
 2b9100fba2a63fbf5afe525f7312e9a34480cd06 data/risus/recipes/alteration/regen_rose.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipes/alteration/smiling_remains.json
+2cd00f51233e628515d72d031a8521553421353e data/risus/recipes/alteration/spreading_remains.json
 75224e84e0f4155a0e3f7b529bdd3a0a503c2ed3 data/risus/recipes/alteration/tissue.json
 2d3cc868becb0a50b3166bea7845a2093261cc41 data/risus/recipes/big_chain.json
 3a8a0e5e830a0942037fa1d67b070bc89ac3ff12 data/risus/recipes/bondknot_button.json

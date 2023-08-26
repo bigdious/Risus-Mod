@@ -58,6 +58,7 @@
   "block.risus.neuron": "Neuron",
   "block.risus.neuron_head": "Neuron",
   "block.risus.regen_rose": "Regeneration Rose",
+  "block.risus.spreading_remains": "Spreading Remains",
 
   "block.risus.joyflame_campfire": "Joyflame Campfire",
   "block.risus.joyflame_fire": "Joyflame Fire",
@@ -80,6 +81,8 @@
   "item.risus.unawakened_vessel": "Unawakened Vessel",
   "item.risus.memory1_item": "Forgotten Statue",
   "item.risus.regen_rose": "Regeneration Rose",
+  "item.risus.endless_pearl": "Endless Pearl",
+  "item.risus.light_devourer": "Light Devourer",
 
   "item.risus.angel_spawn_egg": "Blood Angel Spawn Egg",
   "item.risus.holder_spawn_egg": "Holder Spawn Egg",
@@ -117,7 +120,7 @@
   "advancement.risus.devour": "Devoured",
   "advancement.risus.devour.desc": "Fall into a Maw's trap.",
   "advancement.risus.satiate": "Satiated",
-  "advancement.risus.satiate.desc": "Kill a Maw.",
+  "advancement.risus.satiate.desc": "Obtain the Maw's Guts.",
   "advancement.risus.cupid": "Cupid",
   "advancement.risus.cupid.desc": "Bring love to the world.",
   "advancement.risus.irresistible": "Irresistible",

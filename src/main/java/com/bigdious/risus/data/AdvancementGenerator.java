@@ -61,7 +61,7 @@ public class AdvancementGenerator extends AdvancementProvider {
                         RisusItems.GLUTTONY_SCALES.get(),
                         Component.translatable("advancement.risus.satiate"),
                         Component.translatable("advancement.risus.satiate.desc"), null, FrameType.TASK, true,true,false)
-                .addCriterion("satiate0", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
+                .addCriterion("satiate0", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.ORGANIC_MATTER.get()))
                 .save(consumer, "risus:satiate");
 //TODO irresistible advancement
         Advancement irresistible = Advancement.Builder.advancement().parent(first).display(
@@ -70,13 +70,7 @@ public class AdvancementGenerator extends AdvancementProvider {
                         Component.translatable("advancement.risus.irresistible.desc"), null, FrameType.TASK, true,true,false)
                 .save(consumer, "risus:irresistible");
 
-        //TODO cupid advancement
-        Advancement cupid = Advancement.Builder.advancement().parent(first).display(
-                        RisusItems.HEART_TRANSPLANT.get(),
-                        Component.translatable("advancement.risus.cupid"),
-                        Component.translatable("advancement.risus.cupid.desc"), null, FrameType.TASK, true,true,false)
-                .addCriterion("makelove", ConsumeItemTrigger.TriggerInstance.usedItem(PotionUtils.setPotion(new ItemStack(Items.SPLASH_POTION), RisusPotions.MATING_FRENZY.get()).getItem()))
-                .save(consumer, "risus:cupid");
+
 
         Advancement crusade = Advancement.Builder.advancement().parent(first).display(
                         RisusItems.BLOOD_FEATHER.get(),

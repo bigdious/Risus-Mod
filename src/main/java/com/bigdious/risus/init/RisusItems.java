@@ -101,7 +101,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultWithNoRarity()));
-	public static final RegistryObject<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new GameMasterBlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new BlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(RisusBlocks.DARKNESS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));

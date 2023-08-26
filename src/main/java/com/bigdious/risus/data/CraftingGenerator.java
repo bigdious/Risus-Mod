@@ -3,7 +3,6 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.items.EndlessPearlItem;
 import net.minecraft.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -32,6 +31,8 @@ public class CraftingGenerator extends RecipeProvider {
 
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusItems.SMILING_REMAINS.get()).unlockedBy("has_stone", has(Items.STONE)).unlockedBy("has_cobble", has(Items.COBBLESTONE)).unlockedBy("has_netherrack", has(Items.NETHERRACK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusItems.ASHEN_REMAINS.get()).unlockedBy("has_sand", has(Items.SAND)).unlockedBy("has_soul_sand", has(Items.SOUL_SAND)).unlockedBy("has_soul_soil", has(Items.SOUL_SOIL)).unlockedBy("has_dirt", has(Items.DIRT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.VINE), RisusItems.SPREADING_REMAINS.get()).unlockedBy("has_vine", has(Items.VINE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusItems.NEURON_STEM.get()).unlockedBy("has_twisting_vine", has(Items.TWISTING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_apple", has(Items.GOLDEN_APPLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusItems.BLOODWEAVE.get()).unlockedBy("has_cobweb", has(Items.COBWEB)).save(consumer);
 		//bookshelf to cultic shelf when implemented
