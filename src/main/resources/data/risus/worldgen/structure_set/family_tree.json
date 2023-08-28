@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "risus:family_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1029739264,
+    "spacing": 20,
+    "separation": 18,
+    "type": "minecraft:random_spread"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:twisting_vines"
+  },
+  "result": "risus:neuron"
+}

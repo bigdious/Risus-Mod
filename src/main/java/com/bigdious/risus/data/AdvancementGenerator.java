@@ -63,14 +63,6 @@ public class AdvancementGenerator extends AdvancementProvider {
                         Component.translatable("advancement.risus.satiate.desc"), null, FrameType.TASK, true,true,false)
                 .addCriterion("satiate0", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.ORGANIC_MATTER.get()))
                 .save(consumer, "risus:satiate");
-//TODO irresistible advancement
-        Advancement irresistible = Advancement.Builder.advancement().parent(first).display(
-                        RisusItems.GUILTY_APPLE.get(),
-                        Component.translatable("advancement.risus.irresistible"),
-                        Component.translatable("advancement.risus.irresistible.desc"), null, FrameType.TASK, true,true,false)
-                .save(consumer, "risus:irresistible");
-
-
 
         Advancement crusade = Advancement.Builder.advancement().parent(first).display(
                         RisusItems.BLOOD_FEATHER.get(),
