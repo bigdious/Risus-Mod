@@ -19,10 +19,303 @@
               "input_predicate": {
                 "predicate_type": "minecraft:random_block_match",
                 "block": "risus:bondknot_wood",
-                "probability": 0.2
+                "probability": 0.01
               },
               "output_state": {
-                "Name": "risus:popping_bondknot_wood"
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "north"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "south"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "west"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "east"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "up"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "y",
+                  "pop_side": "down"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "north"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "south"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "east"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "west"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "up"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "x",
+                  "pop_side": "down"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "north"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "south"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "east"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "west"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "up"
+                }
+              }
+            },
+            {
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "input_predicate": {
+                "predicate_type": "minecraft:random_block_match",
+                "block": "risus:bondknot_wood",
+                "probability": 0.01
+              },
+              "output_state": {
+                "Name": "risus:popping_bondknot_wood",
+                "Properties": {
+                  "axis": "z",
+                  "pop_side": "down"
+                }
               }
             }
           ]

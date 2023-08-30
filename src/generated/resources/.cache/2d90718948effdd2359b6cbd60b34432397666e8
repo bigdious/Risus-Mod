@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-15T19:29:13.1559382	Risus blockstates and models
+// 1.19.2	2023-08-30T20:15:39.6906934	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -53,6 +53,7 @@ e94812cb276b4489d103a3484a4a90132be99f48 assets/risus/blockstates/mirage_netherr
 40f5640179b903cd8f4b7617367e5aef759b1cd2 assets/risus/blockstates/popping_bondknot_log.json
 428e525ede1149f1b72911779ea84cb14b27da5f assets/risus/blockstates/popping_bondknot_wood.json
 e480b3b5e6ac1933ecfe18ad96f358fadadb083c assets/risus/blockstates/potted_heart_transplant.json
+e480b3b5e6ac1933ecfe18ad96f358fadadb083c assets/risus/blockstates/potted_regen_rose.json
 c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.json
 20c25d9d3d12fb0ba9ab70760de05eff35ca4278 assets/risus/blockstates/ribcage.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotted_tissue.json

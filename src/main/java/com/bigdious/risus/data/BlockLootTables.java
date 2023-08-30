@@ -1,6 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.SpreadingRemainsBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
@@ -86,6 +87,7 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
 		dropSelf(RisusBlocks.REGEN_ROSE.get());
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
+		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusItems.REGEN_ROSE.get()));
 		dropSelf(RisusBlocks.BONE_FENCE.get());
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.TISSUE.get());
@@ -105,7 +107,6 @@ public class BlockLootTables extends BlockLoot {
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
 		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
-		dropSelf(RisusBlocks.SPREADING_REMAINS.get());
 	}
 
 	protected static LootTable.Builder createRibcageDrops(Block block) {
