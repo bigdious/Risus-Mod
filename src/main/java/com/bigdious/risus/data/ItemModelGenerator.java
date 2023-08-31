@@ -17,6 +17,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class ItemModelGenerator extends ItemModelProvider {
@@ -124,11 +125,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.JOYFLAME_TORCH);
 		singleTex(RisusItems.HEART_TRANSPLANT);
 		singleTex(RisusItems.BIG_CHAIN);
-		singleTex(RisusItems.SPREADING_REMAINS);
+		generatedRenderType(RisusItems.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("items/spreading_remains"));
 		singleTex(RisusItems.MEMORY1_ITEM);
 		singleTex(RisusItems.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
+		singleTex(RisusItems.TEETH);
 
 
 
@@ -168,6 +170,20 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	private ItemModelBuilder singleTexTool(RegistryObject<Item> item) {
 		return generated(item.getId().getPath(), "item/handheld", texture("items/" + item.getId().getPath()));
+	}
+	private ItemModelBuilder generatedRenderType(String name, @Nullable String renderType, ResourceLocation... layers) {
+		return buildItem(name, "item/generated" , renderType, layers);
+	}
+
+	private ItemModelBuilder buildItem(String name, String parent,  @Nullable String renderType, ResourceLocation... layers) {
+		ItemModelBuilder builder = withExistingParent(name, parent);
+		for (int i = 0; i < layers.length; i++) {
+			builder = builder.texture("layer" + i, layers[i]);
+		}
+		if (renderType != null) {
+			builder = builder.renderType(renderType);
+		}
+		return builder;
 	}
 
 	private ResourceLocation texture(String name) {

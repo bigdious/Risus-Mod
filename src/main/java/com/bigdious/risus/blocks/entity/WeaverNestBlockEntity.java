@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
+import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -33,8 +34,8 @@ public class WeaverNestBlockEntity extends BlockEntity {
         public net.minecraft.world.level.block.entity.BlockEntity getSpawnerBlockEntity(){ return WeaverNestBlockEntity.this; }
     };
 
-    public WeaverNestBlockEntity(BlockPos p_155752_, BlockState p_155753_) {
-        super(BlockEntityType.MOB_SPAWNER, p_155752_, p_155753_);
+    public WeaverNestBlockEntity(BlockPos pos, BlockState state) {
+        super(RisusBlockEntities.WEAVER_NEST.get(), pos, state);
     }
 
     public void load(CompoundTag p_155760_) {

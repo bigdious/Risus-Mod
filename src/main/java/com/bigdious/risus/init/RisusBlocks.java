@@ -97,7 +97,7 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.copy(Blocks.SPAWNER)));
 	public static final RegistryObject<GrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.copy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {
 	});
-	public static final RegistryObject<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.SCULK_VEIN)) {
-	});
+	public static final RegistryObject<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.SCULK_VEIN)));
+	public static final RegistryObject<MultifaceBlock> TEETH = BLOCKS.register("teeth", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()));
 	public static final RegistryObject<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.copy(Blocks.AIR).noOcclusion().sound(SoundType.SCULK)));
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "risus:block/potted_heart_transplant"
+      "model": "risus:block/potted_regen_rose"
     }
   }
 }
