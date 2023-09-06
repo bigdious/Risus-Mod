@@ -193,6 +193,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone_bricks"));
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(),models().getExistingFile(texture(("block/chiseled_grimstone"))));
+		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(),models().getExistingFile(texture(("block/curved_ritual_block"))));
+		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
 
 
 		simpleBlock(RisusBlocks.TISSUE.get());

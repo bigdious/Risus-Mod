@@ -56,6 +56,8 @@ public class RisusItems {
 	public static final RegistryObject<Item> GRIMSTONE_WALL = ITEMS.register("grimstone_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_WALL.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CHISELED_GRIMSTONE = ITEMS.register("chiseled_grimstone", () -> new BlockItem(RisusBlocks.CHISELED_GRIMSTONE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> LINEAR_RITUAL_BLOCK = ITEMS.register("linear_ritual_block", () -> new BlockItem(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> JOYFLAME_TORCH = ITEMS.register("joyflame_torch", () -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> JOYFLAME_LANTERN = ITEMS.register("joyflame_lantern", () -> new BlockItem(RisusBlocks.JOYFLAME_LANTERN.get(), defaultWithRarity()));

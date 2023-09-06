@@ -81,6 +81,7 @@ public class BlockLootTables extends BlockLoot {
 		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
 		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
+		dropSelf(RisusBlocks.CURVED_RITUAL_BLOCK.get());
 
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());

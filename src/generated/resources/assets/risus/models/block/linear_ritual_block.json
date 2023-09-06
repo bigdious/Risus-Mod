@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "risus:block/linear_ritual_block_top",
+    "side": "risus:block/linear_ritual_block_side"
+  }
+}

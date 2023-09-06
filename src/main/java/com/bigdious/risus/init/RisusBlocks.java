@@ -100,4 +100,7 @@ public class RisusBlocks {
 	public static final RegistryObject<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.SCULK_VEIN)));
 	public static final RegistryObject<MultifaceBlock> TEETH = BLOCKS.register("teeth", () -> new SpreadingRemainsBlock(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()));
 	public static final RegistryObject<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.copy(Blocks.AIR).noOcclusion().sound(SoundType.SCULK)));
+	public static final RegistryObject<Block> CURVED_RITUAL_BLOCK = BLOCKS.register("curved_ritual_block", () -> new ChiseledGrimstone(BlockBehaviour.Properties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)));
+	public static final RegistryObject<Block> LINEAR_RITUAL_BLOCK = BLOCKS.register("linear_ritual_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)));
+
 }

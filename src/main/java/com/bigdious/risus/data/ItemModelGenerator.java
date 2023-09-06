@@ -73,6 +73,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
 				.texture("wall", texture("block/grimstone_bricks"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
+		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
+		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 		toBlock(RisusBlocks.BURNT_HYPHAE.get());
 		toBlock(RisusBlocks.ZIT.get());
