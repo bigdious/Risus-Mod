@@ -13,6 +13,7 @@ public class Memory1 extends Monster {
 
     public Memory1(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        this.xpReward = 0;
     }
 
 

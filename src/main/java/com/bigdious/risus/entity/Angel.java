@@ -17,6 +17,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
@@ -30,11 +31,15 @@ public class Angel extends Monster {
 				.add(Attributes.ATTACK_DAMAGE, 5.0D);
 	}
 
-	public void setCharging(boolean p_32759_) {
-		this.entityData.set(DATA_IS_CHARGING, p_32759_);
+	public void setCharging(boolean charging) {
+		this.entityData.set(DATA_IS_CHARGING, charging);
 	}
 	public boolean isCharging() {
 		return this.entityData.get(DATA_IS_CHARGING);
+	}
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_IS_CHARGING, false);
 	}
 
 	@Override
@@ -76,9 +81,8 @@ public class Angel extends Monster {
 				if (livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity)) {
 					Level level = this.angel.level;
 					++this.chargeTime;
-
 					if (this.chargeTime == 20) {
-						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level );
+						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
 						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getY());
 						level.addFreshEntity(lightning);
 						this.chargeTime = -40;
