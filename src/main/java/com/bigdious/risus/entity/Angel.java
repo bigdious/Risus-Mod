@@ -1,9 +1,13 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -54,6 +58,7 @@ public class Angel extends Monster {
 	static class AngelLightningAttackGoal extends Goal {
 		private final Angel angel;
 		public int chargeTime;
+		private Level level;
 
 		public AngelLightningAttackGoal(Angel angel) {
 			this.angel = angel;
@@ -79,13 +84,14 @@ public class Angel extends Monster {
 			LivingEntity livingentity = this.angel.getTarget();
 			if (livingentity != null) {
 				if (livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity)) {
-					Level level = this.angel.level;
 					++this.chargeTime;
 					if (this.chargeTime == 20) {
+						Risus.LOGGER.info("attempting to summon lightning bolt");
 						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getY());
+						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());
 						level.addFreshEntity(lightning);
 						this.chargeTime = -40;
+						}
 					}
 				} else if (this.chargeTime > 0) {
 					--this.chargeTime;
@@ -94,7 +100,6 @@ public class Angel extends Monster {
 				this.angel.setCharging(this.chargeTime > 10);
 			}
 		}
-	}
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL.get())) {
