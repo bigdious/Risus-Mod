@@ -10,11 +10,11 @@ public interface CacheTargetOnClient {
 	default LivingEntity getActiveAttackTarget(Mob mob) {
 		if (!this.hasActiveAttackTarget()) {
 			return null;
-		} else if (mob.getLevel().isClientSide()) {
+		} else if (mob.level().isClientSide()) {
 			if (this.getCachedAttackTarget() != null) {
 				return this.getCachedAttackTarget();
 			} else {
-				Entity entity = mob.getLevel().getEntity(this.getDataTarget());
+				Entity entity = mob.level().getEntity(this.getDataTarget());
 				if (entity instanceof LivingEntity living) {
 					this.setCachedAttackTarget(living);
 					return this.getCachedAttackTarget();

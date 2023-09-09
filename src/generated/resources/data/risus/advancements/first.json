@@ -5,7 +5,7 @@
         "items": [
           {
             "items": [
-              "minecraft:air"
+              "risus:organic_matter"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:air"
+      "item": "risus:smile"
     },
     "show_toast": true,
     "title": {
@@ -33,5 +33,6 @@
     [
       "organic"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

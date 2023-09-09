@@ -69,5 +69,6 @@
     "recipes": [
       "risus:alteration/tissue"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

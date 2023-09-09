@@ -1,7 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.init.RisusBlockEntities;
-import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -28,7 +27,7 @@ public class RisusSkullBlockEntity extends SkullBlockEntity {
 	}
 
 	@Override
-	public float getMouthAnimation(float p_184295_1_) {
+	public float getAnimation(float p_184295_1_) {
 		return this.isMovingMouth ? (float) this.mouthTickCount + p_184295_1_ : (float) this.mouthTickCount;
 	}
 

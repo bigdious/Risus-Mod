@@ -1,14 +1,14 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusDamageSources;
+import com.bigdious.risus.init.RisusDamageTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -43,7 +43,7 @@ public class QuestionMark extends Monster {
 
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.AMBIENT_CAVE;
+		return SoundEvents.AMBIENT_CAVE.get();
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class QuestionMark extends Monster {
 	@Override
 	public void playerTouch(Player player) {
 		if (this.isAlive()) {
-			if (this.hasLineOfSight(player) && player.hurt(RisusDamageSources.INEXISTENCE, (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+			if (this.hasLineOfSight(player) && player.hurt(new DamageSource(player.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.INEXISTENCE)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 				this.doEnchantDamageEffects(this, player);
 			}
 		}
@@ -91,6 +91,6 @@ public class QuestionMark extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		return source.isBypassInvul() && super.hurt(source, amount);
+		return source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && super.hurt(source, amount);
 	}
 }

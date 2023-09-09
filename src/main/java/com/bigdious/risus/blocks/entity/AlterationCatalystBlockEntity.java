@@ -52,7 +52,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		if (level.isClientSide()) {
 			if (te.isCrafting) {
 				RandomSource random = level.getRandom();
-				BlockPos randomPos = pos.offset(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F), 2.0D, random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F));
+				BlockPos randomPos = pos.offset(Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)), 2, Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)));
 
 				double d0 = Mth.sin((float) (te.craftingCounter + 35) * 0.1F) / 2.0F + 0.5F;
 				d0 = (d0 * d0 + d0) * (double) 0.3F;
@@ -80,7 +80,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			if (te.isCrafting) {
 				AlterationRecipe recipe = te.getRecipe(level, te.item);
 				if (recipe != null) {
-					te.item = recipe.assemble(new SimpleContainer(te.item));
+					te.item = recipe.assemble(new SimpleContainer(te.item), level.registryAccess());
 					te.setChanged();
 					te.finishedCrafting = true;
 					te.finishedCounter = 0;

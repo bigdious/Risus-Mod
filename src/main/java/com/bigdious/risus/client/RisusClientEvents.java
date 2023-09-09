@@ -32,12 +32,12 @@ public class RisusClientEvents {
 
 	@SubscribeEvent
 	public static void registerFactories(RegisterParticleProvidersEvent event) {
-		event.register(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
-		event.register(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
-		event.register(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
-		event.register(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
-		event.register(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
-		event.register(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
+		event.registerSpriteSet(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
+		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
+		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
 	}
 
 	@SubscribeEvent
@@ -51,7 +51,7 @@ public class RisusClientEvents {
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
 
-			Sheets.addWoodType(RisusBlocks.BONDKNOT);
+			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
 		});
 	}
 

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "B": {
       "item": "risus:crystallized_bond"
@@ -21,5 +22,6 @@
   ],
   "result": {
     "item": "risus:unawakened_vessel"
-  }
+  },
+  "show_notification": true
 }

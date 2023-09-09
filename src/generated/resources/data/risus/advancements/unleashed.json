@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:air"
+              "risus:crescent_disaster"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:air",
+      "item": "risus:crescent_disaster",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,
@@ -34,5 +34,6 @@
     [
       "strongaxe"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

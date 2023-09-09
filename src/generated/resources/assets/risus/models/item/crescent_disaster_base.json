@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/crescent_disaster"
+    "layer0": "risus:item/crescent_disaster"
   }
 }

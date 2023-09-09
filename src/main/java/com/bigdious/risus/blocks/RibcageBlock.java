@@ -13,7 +13,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -61,9 +60,9 @@ public class RibcageBlock extends BaseRotatableBlock {
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockPos blockpos = context.getClickedPos();
 		Level level = context.getLevel();
-		if (level.getBlockState(blockpos.below()).getMaterial().isReplaceable() && blockpos.getY() > level.getMinBuildHeight() + 1) {
+		if (level.getBlockState(blockpos.below()).canBeReplaced() && blockpos.getY() > level.getMinBuildHeight() + 1) {
 			return level.getBlockState(blockpos.above()).isSolidRender(context.getLevel(), blockpos.above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.UPPER) : null;
-		} else if (level.getBlockState(blockpos.above()).getMaterial().isReplaceable() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
+		} else if (level.getBlockState(blockpos.above()).canBeReplaced() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
 			return level.getBlockState(blockpos.above().above()).isSolidRender(context.getLevel(), blockpos.above().above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.LOWER) : null;
 		}
 		return null;

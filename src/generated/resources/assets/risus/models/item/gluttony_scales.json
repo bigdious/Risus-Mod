@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/gluttony_scales"
+    "layer0": "risus:item/gluttony_scales"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/memory1_item"
+    "layer0": "risus:item/memory1_item"
   }
 }

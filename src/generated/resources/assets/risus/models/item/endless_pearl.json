@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/endless_pearl"
+    "layer0": "risus:item/endless_pearl"
   }
 }

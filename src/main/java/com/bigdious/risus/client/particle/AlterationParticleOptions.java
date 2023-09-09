@@ -3,21 +3,22 @@ package com.bigdious.risus.client.particle;
 import com.bigdious.risus.init.RisusParticles;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.math.Vector3f;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.particles.DustParticleOptionsBase;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Vector3f;
 
 public class AlterationParticleOptions extends DustParticleOptionsBase {
 
 	public static final Codec<AlterationParticleOptions> CODEC = RecordCodecBuilder.create((p_175763_) ->
 			p_175763_.group(
-							Vector3f.CODEC.fieldOf("fromColor").forGetter((p_175773_) -> p_175773_.color),
-							Vector3f.CODEC.fieldOf("toColor").forGetter((p_175770_) -> p_175770_.toColor),
+							ExtraCodecs.VECTOR3F.fieldOf("fromColor").forGetter((p_175773_) -> p_175773_.color),
+							ExtraCodecs.VECTOR3F.fieldOf("toColor").forGetter((p_175770_) -> p_175770_.toColor),
 							Codec.FLOAT.fieldOf("scale").forGetter((p_175765_) -> p_175765_.scale))
 					.apply(p_175763_, AlterationParticleOptions::new));
 
@@ -38,7 +39,7 @@ public class AlterationParticleOptions extends DustParticleOptionsBase {
 		}
 	};
 
-	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(new Vector3f(Vec3.fromRGB24(9868693)), new Vector3f(Vec3.fromRGB24(11012618)), 1.0F);
+	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(Vec3.fromRGB24(9868693).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
 	private final Vector3f toColor;
 
 	public AlterationParticleOptions(Vector3f fromColor, Vector3f toColor, float scale) {

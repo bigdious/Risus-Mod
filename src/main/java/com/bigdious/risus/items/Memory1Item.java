@@ -43,7 +43,7 @@ public class Memory1Item extends Item {
                     return InteractionResultHolder.pass(stack);
                 }
                 level.addFreshEntity(star);
-                level.gameEvent(player, GameEvent.ENTITY_PLACE, new BlockPos(result.getLocation()));
+                level.gameEvent(player, GameEvent.ENTITY_PLACE, BlockPos.containing(result.getLocation()));
                 star.setYRot(90);
                 if (!player.getAbilities().instabuild) {
                     player.getItemInHand(hand).shrink(1);}

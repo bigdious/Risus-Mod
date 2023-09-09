@@ -108,15 +108,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	}
 
 	private static boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
-		if (!oldStack.is(newStack.getItem())) {
-			return false;
-		} else if (oldStack.getDamageValue() != newStack.getDamageValue()) {
-			return false;
-		} else if (oldStack.getCount() > oldStack.getMaxStackSize()) {
-			return false;
-		} else {
-			return ItemStack.tagMatches(oldStack, newStack);
-		}
+		return ItemStack.isSameItemSameTags(oldStack, newStack);
 	}
 
 	@Override

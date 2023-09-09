@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/guilty_apple"
+    "layer0": "risus:item/guilty_apple"
   }
 }

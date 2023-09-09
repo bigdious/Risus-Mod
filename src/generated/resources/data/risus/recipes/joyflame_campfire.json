@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "tag": "risus:joyflame_fire_base_blocks"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "risus:joyflame_campfire"
-  }
+  },
+  "show_notification": true
 }

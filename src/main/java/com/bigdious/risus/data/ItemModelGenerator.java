@@ -3,11 +3,10 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
-import net.minecraft.core.Registry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -22,8 +21,8 @@ import java.util.Objects;
 
 public class ItemModelGenerator extends ItemModelProvider {
 
-	public ItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, Risus.MODID, existingFileHelper);
+	public ItemModelGenerator(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+		super(packOutput, Risus.MODID, existingFileHelper);
 	}
 
 	@Override
@@ -60,8 +59,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.parent(getExistingFile(new ResourceLocation("block/button_inventory")))
 				.texture("texture", texture("block/bondknot_planks"));
 		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor_bottom"));
-		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), texture("items/bondknot_door"));
-		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), texture("items/bondknot_sign"));
+		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), texture("item/bondknot_door"));
+		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), texture("item/bondknot_sign"));
 		toBlock(RisusBlocks.BABY_RIBCAGE.get());
 		toBlock(RisusBlocks.RIBCAGE.get());
 		toBlock(RisusBlocks.GRIMSTONE.get());
@@ -105,21 +104,21 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
-				.base(generated("crescent_disaster_base", Risus.prefix("items/crescent_disaster")))
-				.perspective(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND, crescent)
-				.perspective(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND, crescent)
-				.perspective(ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND, crescent)
-				.perspective(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND, crescent)
-				.perspective(ItemTransforms.TransformType.HEAD, crescent)
+				.base(generated("crescent_disaster_base", Risus.prefix("item/crescent_disaster")))
+				.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, crescent)
+				.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, crescent)
+				.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, crescent)
+				.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, crescent)
+				.perspective(ItemDisplayContext.HEAD, crescent)
 				.end();
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
-				.base(generated("unawakened_vessel_base", Risus.prefix("items/unawakened_vessel")))
-				.perspective(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND, unawakened)
-				.perspective(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND, unawakened)
-				.perspective(ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND, unawakened)
-				.perspective(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND, unawakened)
-				.perspective(ItemTransforms.TransformType.HEAD, unawakened)
+				.base(generated("unawakened_vessel_base", Risus.prefix("item/unawakened_vessel")))
+				.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, unawakened)
+				.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, unawakened)
+				.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, unawakened)
+				.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, unawakened)
+				.perspective(ItemDisplayContext.HEAD, unawakened)
 				.end();
 		singleTex(RisusItems.SMILE);
 		singleTex(RisusItems.JOYFLAME_CAMPFIRE);
@@ -127,7 +126,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.JOYFLAME_TORCH);
 		singleTex(RisusItems.HEART_TRANSPLANT);
 		singleTex(RisusItems.BIG_CHAIN);
-		generatedRenderType(RisusItems.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("items/spreading_remains"));
+		generatedRenderType(RisusItems.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
 		singleTex(RisusItems.MEMORY1_ITEM);
 		singleTex(RisusItems.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
@@ -137,7 +136,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 
 		//spawn eggs
-		for (Item i : Registry.ITEM) {
+		for (Item i : ForgeRegistries.ITEMS.getValues()) {
 			if (i instanceof SpawnEggItem && Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getNamespace().equals(Risus.MODID)) {
 				getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getPath())
 						.parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
@@ -167,11 +166,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private ItemModelBuilder singleTex(RegistryObject<Item> item) {
-		return generated(item.getId().getPath(), "item/generated", texture("items/" + item.getId().getPath()));
+		return generated(item.getId().getPath(), "item/generated", texture("item/" + item.getId().getPath()));
 	}
 
 	private ItemModelBuilder singleTexTool(RegistryObject<Item> item) {
-		return generated(item.getId().getPath(), "item/handheld", texture("items/" + item.getId().getPath()));
+		return generated(item.getId().getPath(), "item/handheld", texture("item/" + item.getId().getPath()));
 	}
 	private ItemModelBuilder generatedRenderType(String name, @Nullable String renderType, ResourceLocation... layers) {
 		return buildItem(name, "item/generated" , renderType, layers);

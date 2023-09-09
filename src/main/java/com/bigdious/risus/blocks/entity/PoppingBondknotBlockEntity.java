@@ -35,12 +35,12 @@ public class PoppingBondknotBlockEntity extends BlockEntity {
 				te.secondTicker = 0;
 			}
 
-			if (level.getBlockState(pos.relative(te.popDir)).getMaterial().isReplaceable() && te.popping) {
+			if (level.getBlockState(pos.relative(te.popDir)).canBeReplaced() && te.popping) {
 				te.particles((ServerLevel) level);
 				te.popTimer++;
 			}
 
-			if (level.getBlockState(pos.relative(te.popDir)).getMaterial().isReplaceable() && te.popTimer > 5) {
+			if (level.getBlockState(pos.relative(te.popDir)).canBeReplaced() && te.popTimer > 5) {
 				te.createCrystal(level);
 				te.popping = false;
 				te.popTimer = 0;

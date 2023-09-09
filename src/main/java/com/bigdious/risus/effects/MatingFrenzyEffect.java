@@ -3,7 +3,6 @@ package com.bigdious.risus.effects;
 import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +19,7 @@ public class MatingFrenzyEffect extends MobEffect {
 		if (entity instanceof Animal animal) {
 			if (animal.isBaby()) animal.removeEffect(RisusMobEffects.MATING_FRENZY.get());
 			if (!animal.isBaby() && animal.canFallInLove()) {
-				animal.hurt(DamageSource.MAGIC, 1.0F);
+				animal.hurt(entity.damageSources().magic(), 1.0F);
 				animal.setInLove(null);
 				animal.setAge(0);
 			}

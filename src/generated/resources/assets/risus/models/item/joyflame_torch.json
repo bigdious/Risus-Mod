@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/joyflame_torch"
+    "layer0": "risus:item/joyflame_torch"
   }
 }

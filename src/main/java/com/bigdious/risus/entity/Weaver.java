@@ -87,9 +87,9 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
 				int i = 3;
-				if (this.getLevel().getDifficulty() == Difficulty.NORMAL) {
+				if (this.level().getDifficulty() == Difficulty.NORMAL) {
 					i = 5;
-				} else if (this.getLevel().getDifficulty() == Difficulty.HARD) {
+				} else if (this.level().getDifficulty() == Difficulty.HARD) {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA.get(), i * 20, 0), this);

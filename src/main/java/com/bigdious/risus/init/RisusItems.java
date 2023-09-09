@@ -4,7 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.util.ModItemTier;
-import com.bigdious.risus.util.RisusTab;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -59,7 +59,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LINEAR_RITUAL_BLOCK = ITEMS.register("linear_ritual_block", () -> new BlockItem(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), defaultWithRarity()));
 
-	public static final RegistryObject<Item> JOYFLAME_TORCH = ITEMS.register("joyflame_torch", () -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> JOYFLAME_TORCH = ITEMS.register("joyflame_torch", () -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), defaultWithRarity(), Direction.DOWN));
 	public static final RegistryObject<Item> JOYFLAME_LANTERN = ITEMS.register("joyflame_lantern", () -> new BlockItem(RisusBlocks.JOYFLAME_LANTERN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> JOYFLAME_CAMPFIRE = ITEMS.register("joyflame_campfire", () -> new BlockItem(RisusBlocks.JOYFLAME_CAMPFIRE.get(), defaultWithRarity()));
 
@@ -82,7 +82,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BIG_CHAIN = ITEMS.register("big_chain", () -> new BlockItem(RisusBlocks.BIG_CHAIN.get(), defaultWithNoRarity()));
 	public static final RegistryObject<Item> BURNT_HYPHAE = ITEMS.register("burnt_hyphae", () -> new BlockItem(RisusBlocks.BURNT_HYPHAE.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity()));
+	public static final RegistryObject<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity(), Direction.DOWN));
 	public static final RegistryObject<Item> ZIT = ITEMS.register("zit", () -> new BlockItem(RisusBlocks.ZIT.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> MAW_GUTS = ITEMS.register("maw_guts", () -> new BlockItem(RisusBlocks.MAW_GUTS.get(), defaultWithRarity()));
@@ -110,7 +110,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
 
 	public static Item.Properties defaultWithRarity() {
-		return new Item.Properties().rarity(Risus.getRarity()).tab(RisusTab.INSTANCE);
+		return new Item.Properties().rarity(Risus.getRarity());
 	}
 
 	public static Item.Properties defaultNoTab() {
@@ -118,7 +118,7 @@ public class RisusItems {
 	}
 
 	public static Item.Properties defaultWithNoRarity() {
-		return new Item.Properties().tab(RisusTab.INSTANCE);
+		return new Item.Properties();
 	}
 }
 

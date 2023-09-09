@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/neuron"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

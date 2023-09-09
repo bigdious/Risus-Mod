@@ -3,7 +3,7 @@
   "base": {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "risus:items/crescent_disaster"
+      "layer0": "risus:item/crescent_disaster"
     }
   },
   "loader": "forge:separate_transforms",
@@ -40,6 +40,6 @@
     }
   },
   "textures": {
-    "layer0": "risus:items/crescent_disaster"
+    "layer0": "risus:item/crescent_disaster"
   }
 }

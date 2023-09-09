@@ -58,7 +58,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	@Override
 	public void tick() {
-		if (this.getLevel().isClientSide() && this.shouldSpin()) {
+		if (this.level().isClientSide() && this.shouldSpin()) {
 			this.spinTickCount++;
 		}
 
@@ -70,7 +70,7 @@ public class ThrownAxe extends AbstractArrow {
 		int i = this.entityData.get(ID_LOYALTY);
 		if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
 			if (!this.isAcceptableReturnOwner()) {
-				if (!this.getLevel().isClientSide() && this.pickup == AbstractArrow.Pickup.ALLOWED) {
+				if (!this.level().isClientSide() && this.pickup == AbstractArrow.Pickup.ALLOWED) {
 					this.spawnAtLocation(this.getPickupItem(), 0.1F);
 				}
 
@@ -79,7 +79,7 @@ public class ThrownAxe extends AbstractArrow {
 				this.setNoPhysics(true);
 				Vec3 vec3 = entity.getEyePosition().subtract(this.position());
 				this.setPosRaw(this.getX(), this.getY() + vec3.y() * 0.015D * (double) i, this.getZ());
-				if (this.getLevel().isClientSide()) {
+				if (this.level().isClientSide()) {
 					this.yOld = this.getY();
 				}
 
@@ -140,7 +140,7 @@ public class ThrownAxe extends AbstractArrow {
 		}
 
 		Entity entity1 = this.getOwner();
-		DamageSource damagesource = DamageSource.trident(this, entity1 == null ? this : entity1);
+		DamageSource damagesource = this.damageSources().trident(this, entity1 == null ? this : entity1);
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
 		if (entity.hurt(damagesource, f)) {

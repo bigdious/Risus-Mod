@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/chiseled_grimstone"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

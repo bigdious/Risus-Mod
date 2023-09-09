@@ -58,7 +58,7 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
 		this.ensureValid(id);
 		this.advancement.parent(ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-		consumer.accept(new Result(id, this.group == null ? "" : this.group, this.ingredient, this.result, this.advancement, new ResourceLocation(id.getNamespace(), "recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + id.getPath())));
+		consumer.accept(new Result(id, this.group == null ? "" : this.group, this.ingredient, this.result, this.advancement, new ResourceLocation(id.getNamespace(), "recipes/risus/" + id.getPath())));
 	}
 
 	private void ensureValid(ResourceLocation id) {

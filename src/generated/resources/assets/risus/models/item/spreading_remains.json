@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "render_type": "minecraft:translucent",
   "textures": {
-    "layer0": "risus:items/spreading_remains"
+    "layer0": "risus:item/spreading_remains"
   }
 }

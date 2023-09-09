@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "risus:bondknot_planks"
@@ -13,5 +14,6 @@
   "result": {
     "count": 8,
     "item": "risus:bondknot_stairs"
-  }
+  },
+  "show_notification": true
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/neuron_item"
+    "layer0": "risus:item/neuron_item"
   }
 }

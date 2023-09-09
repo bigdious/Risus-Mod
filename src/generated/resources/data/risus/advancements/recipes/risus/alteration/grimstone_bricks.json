@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/grimstone_bricks"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

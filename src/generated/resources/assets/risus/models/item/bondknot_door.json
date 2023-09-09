@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/bondknot_door"
+    "layer0": "risus:item/bondknot_door"
   }
 }

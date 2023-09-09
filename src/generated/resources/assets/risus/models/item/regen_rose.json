@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/regen_rose"
+    "layer0": "risus:item/regen_rose"
   }
 }

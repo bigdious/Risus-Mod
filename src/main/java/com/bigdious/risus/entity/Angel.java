@@ -2,12 +2,9 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -21,7 +18,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
@@ -86,7 +82,7 @@ public class Angel extends Monster {
 				if (livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity)) {
 					++this.chargeTime;
 					if (this.chargeTime == 20) {
-						Level level = this.angel.level;
+						Level level = this.angel.level();
 						Risus.LOGGER.info("attempting to summon lightning bolt");
 						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
 						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());

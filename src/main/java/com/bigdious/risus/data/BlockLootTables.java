@@ -1,22 +1,25 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.SpreadingRemainsBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.core.Direction;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
@@ -26,16 +29,20 @@ import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.ForgeRegistries;
-
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-public class BlockLootTables extends BlockLoot {
+public class BlockLootTables extends BlockLootSubProvider {
 
 	private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
 
+	protected BlockLootTables() {
+		super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+	}
+
 	@Override
-	protected void addTables() {
+	protected void generate() {
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
@@ -108,9 +115,20 @@ public class BlockLootTables extends BlockLoot {
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
 		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
+		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));
+		add(RisusBlocks.TEETH.get(), createMultifaceBlockDrops(RisusBlocks.TEETH.get()));
+		add(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), noDrop());
 	}
 
-	protected static LootTable.Builder createRibcageDrops(Block block) {
+	// Copied from BlockLootSubProvider#createMultifaceBlockDrops with removed LootItemCondition.Builder param
+	protected LootTable.Builder createMultifaceBlockDrops(MultifaceBlock block) {
+		LootPoolSingletonContainer.Builder<?> builder = LootItem.lootTableItem(block)
+				.apply(Direction.values(), direction -> SetItemCountFunction.setCount(ConstantValue.exactly(1.0F), true).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MultifaceBlock.getFaceProperty(direction), true))))
+				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(-1.0F), true));
+		return LootTable.lootTable().withPool(LootPool.lootPool().add(this.applyExplosionDecay(block, builder)));
+	}
+
+	protected LootTable.Builder createRibcageDrops(Block block) {
 		LootPoolEntryContainer.Builder<?> boneBuilder = LootItem.lootTableItem(block)
 				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 				.when(HAS_SILK_TOUCH)

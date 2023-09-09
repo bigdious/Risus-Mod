@@ -1,42 +1,27 @@
 package com.bigdious.risus.data;
 
+import com.bigdious.risus.Risus;
 import com.google.common.collect.ImmutableList;
-import com.mojang.datafixers.util.Pair;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 
 import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.Set;
 
 public class LootGenerator extends LootTableProvider {
-	public LootGenerator(DataGenerator generator) {
-		super(generator);
-	}
-
-	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> tables = ImmutableList.of(
-			Pair.of(BlockLootTables::new, LootContextParamSets.BLOCK),
-			Pair.of(EntityLootTables::new, LootContextParamSets.ENTITY)
+	private static final List<SubProviderEntry> tables = ImmutableList.of(
+			new SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK),
+			new SubProviderEntry(EntityLootTables::new, LootContextParamSets.ENTITY)
 	);
 
-	@Override
-	protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
-	}
+	private static final Set<ResourceLocation> BUILTIN_TABLES = Set.of(
+			Risus.prefix("blocks/spreading_remains"),
+			Risus.prefix("blocks/teeth")
+	);
 
-	@Override
-	protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
-		return this.tables;
-	}
-
-	@Override
-	public String getName() {
-		return "Risus loot tables";
+	public LootGenerator(PackOutput packOutput) {
+		super(packOutput, BUILTIN_TABLES, tables);
 	}
 }

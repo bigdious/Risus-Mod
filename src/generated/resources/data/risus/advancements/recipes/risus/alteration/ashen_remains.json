@@ -69,5 +69,6 @@
     "recipes": [
       "risus:alteration/ashen_remains"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

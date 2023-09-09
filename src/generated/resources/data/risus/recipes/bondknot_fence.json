@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "risus:bondknot_planks"
@@ -15,5 +16,6 @@
   "result": {
     "count": 6,
     "item": "risus:bondknot_fence"
-  }
+  },
+  "show_notification": true
 }

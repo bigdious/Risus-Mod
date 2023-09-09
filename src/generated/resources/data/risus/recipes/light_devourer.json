@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "B": {
       "item": "risus:gluttony_scales"
@@ -27,5 +28,6 @@
   ],
   "result": {
     "item": "risus:light_devourer"
-  }
+  },
+  "show_notification": true
 }

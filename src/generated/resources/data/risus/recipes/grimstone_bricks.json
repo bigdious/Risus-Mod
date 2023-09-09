@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "risus:grimstone"
@@ -12,5 +13,6 @@
   "result": {
     "count": 4,
     "item": "risus:grimstone_bricks"
-  }
+  },
+  "show_notification": true
 }

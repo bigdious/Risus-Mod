@@ -5,10 +5,9 @@ import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.HolderModel;
 import com.bigdious.risus.entity.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
@@ -16,6 +15,7 @@ import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
 public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
@@ -59,18 +59,18 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 					stack.scale(0.5F, 0.5F, 0.5F);
 				}
 
-				this.renderArmWithItem(holder, itemstack1, ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND, HumanoidArm.RIGHT, stack, source, light);
-				this.renderArmWithItem(holder, itemstack, ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND, HumanoidArm.LEFT, stack, source, light);
+				this.renderArmWithItem(holder, itemstack1, ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, HumanoidArm.RIGHT, stack, source, light);
+				this.renderArmWithItem(holder, itemstack, ItemDisplayContext.THIRD_PERSON_LEFT_HAND, HumanoidArm.LEFT, stack, source, light);
 				stack.popPose();
 			}
 		}
 
-		protected void renderArmWithItem(LivingEntity entity, ItemStack item, ItemTransforms.TransformType type, HumanoidArm arm, PoseStack stack, MultiBufferSource source, int light) {
+		protected void renderArmWithItem(LivingEntity entity, ItemStack item, ItemDisplayContext type, HumanoidArm arm, PoseStack stack, MultiBufferSource source, int light) {
 			if (!item.isEmpty()) {
 				stack.pushPose();
 				this.getParentModel().translateToHand(arm, stack);
-				stack.mulPose(Vector3f.XP.rotationDegrees(180.0F));
-				stack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
+				stack.mulPose(Axis.XP.rotationDegrees(180.0F));
+				stack.mulPose(Axis.YP.rotationDegrees(180.0F));
 				stack.translate(-0.29D, -0.25D, 0.25D);
 				boolean flag = arm == HumanoidArm.LEFT;
 				stack.translate((float)(flag ? -1 : 1) / 16.0F, 0.125D, -0.625D);

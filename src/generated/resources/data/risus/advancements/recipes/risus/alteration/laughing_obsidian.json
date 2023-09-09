@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/laughing_obsidian"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

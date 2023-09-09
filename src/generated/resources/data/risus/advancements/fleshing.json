@@ -3,69 +3,101 @@
   "criteria": {
     "fleshing0": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:air"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "minecraft:air"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "risus:decomposing_tissue"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "risus:organic_matter"
+              ]
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     },
     "fleshing1": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:air"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "minecraft:air"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "risus:rotting_tissue"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "risus:organic_matter"
+              ]
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     },
     "fleshing2": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:air"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "minecraft:air"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "risus:decaying_tissue"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "risus:organic_matter"
+              ]
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     },
     "fleshing3": {
       "conditions": {
-        "item": {
-          "items": [
-            "minecraft:air"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "minecraft:air"
-            ]
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "risus:tissue"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "risus:organic_matter"
+              ]
+            }
           }
-        }
+        ]
       },
       "trigger": "minecraft:item_used_on_block"
     }
@@ -78,7 +110,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:air"
+      "item": "risus:decomposed_tissue"
     },
     "show_toast": true,
     "title": {
@@ -92,5 +124,6 @@
       "fleshing2",
       "fleshing3"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

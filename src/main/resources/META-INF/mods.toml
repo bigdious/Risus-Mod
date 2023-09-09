@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[47,)"
 license="MIT license"
 
 [[mods]]
 modId="risus"
-version="1.19.2-0.0.1"
+version="1.20.1-0.0.1"
 displayName="Risus"
 updateJSONURL="http://myurl.me/"
 displayURL="http://example.com/"
@@ -17,13 +17,13 @@ A mod to make you smile.'''
 [[dependencies.risus]]
     modId="forge"
     mandatory=true
-    versionRange="[43,)"
+    versionRange="[47,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.risus]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2]"
+    versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"

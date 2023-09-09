@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/blood_feather"
+    "layer0": "risus:item/blood_feather"
   }
 }

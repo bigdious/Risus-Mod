@@ -6,8 +6,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -17,6 +16,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.joml.Quaternionf;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -44,7 +44,7 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 
 	private BoatModel createBoatModel(EntityRendererProvider.Context context, RisusBoat.Type type) {
 		ModelLayerLocation modellayerlocation = createBoatModelName(type);
-		return new BoatModel(context.bakeLayer(modellayerlocation), false);
+		return new BoatModel(context.bakeLayer(modellayerlocation));
 	}
 
 	private static String getTextureLocation(RisusBoat.Type type) {
@@ -55,7 +55,7 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 	public void render(RisusBoat entity, float yaw, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
 		poseStack.pushPose();
 		poseStack.translate(0.0D, 0.375D, 0.0D);
-		poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F - yaw));
+		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - yaw));
 		float f = (float)entity.getHurtTime() - partialTicks;
 		float f1 = entity.getDamage() - partialTicks;
 		if (f1 < 0.0F) {
@@ -63,19 +63,20 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 		}
 
 		if (f > 0.0F) {
-			poseStack.mulPose(Vector3f.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float)entity.getHurtDir()));
+			poseStack.mulPose(Axis.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float)entity.getHurtDir()));
 		}
 
-		float bubbleAngle = entity.getBubbleAngle(partialTicks);
+		float bubbleAngle = entity.getBubbleAngle(partialTicks) * ((float)Math.PI / 360F);
 		if (!Mth.equal(bubbleAngle, 0.0F)) {
-			poseStack.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entity.getBubbleAngle(partialTicks), true));
+			float sin = Mth.sin(bubbleAngle);
+			poseStack.mulPose(new Quaternionf(sin, 0.0F, sin, Mth.cos(bubbleAngle)));
 		}
 
 		Pair<ResourceLocation, BoatModel> boatResources = this.boatResources.get(entity.getRisusBoatType());
 		ResourceLocation texture = boatResources.getFirst();
 		BoatModel boat = boatResources.getSecond();
 		poseStack.scale(-1.0F, -1.0F, 1.0F);
-		poseStack.mulPose(Vector3f.YP.rotationDegrees(90.0F));
+		poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
 		boat.setupAnim(entity, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer vertexconsumer = bufferSource.getBuffer(boat.renderType(texture));
 		boat.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);

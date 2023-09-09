@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:air"
+              "risus:unawakened_vessel"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:air",
+      "item": "risus:unawakened_vessel",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,
@@ -34,5 +34,6 @@
     [
       "weakaxe"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

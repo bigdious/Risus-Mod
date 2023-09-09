@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/heart_transplant"
+    "layer0": "risus:item/heart_transplant"
   }
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "B": {
       "item": "risus:gluttony_scales"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "risus:concentration_core"
-  }
+  },
+  "show_notification": true
 }

@@ -1,6 +1,7 @@
 package com.bigdious.risus;
 
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.util.RisusTab;
 import com.google.common.collect.Maps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.resources.ResourceLocation;
@@ -47,6 +48,7 @@ public class Risus {
 		RisusRecipes.RECIPE_TYPES.register(bus);
 		RisusPotions.POTIONS.register(bus);
 		RisusEntities.SPAWN_EGGS.register(bus);
+		RisusTab.CREATIVE_TABS.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -82,7 +84,7 @@ public class Risus {
 			PotionBrewing.addMix(RisusPotions.MATING_FRENZY.get(), Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY.get());
 
 			//wood types
-			WoodType.register(RisusBlocks.BONDKNOT);
+			WoodType.register(RisusBlocks.BONDKNOT_TYPE);
 		});
 	}
 

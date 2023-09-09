@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/spreading_remains"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

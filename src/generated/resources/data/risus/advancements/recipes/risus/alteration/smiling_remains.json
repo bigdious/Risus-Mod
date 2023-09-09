@@ -56,5 +56,6 @@
     "recipes": [
       "risus:alteration/smiling_remains"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

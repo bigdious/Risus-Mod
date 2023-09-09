@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/organic_matter"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -69,5 +69,6 @@
     "recipes": [
       "risus:alteration/burnt_hyphae"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

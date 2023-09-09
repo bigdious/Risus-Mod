@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "key": {
     "#": {
       "item": "risus:bondknot_planks"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "risus:bondknot_fence_gate"
-  }
+  },
+  "show_notification": true
 }

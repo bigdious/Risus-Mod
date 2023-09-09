@@ -7,14 +7,16 @@ import com.bigdious.risus.blocks.RibcageBlock;
 import com.bigdious.risus.blocks.ZitBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,8 +26,8 @@ import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
 
-	public BlockModelGenerator(DataGenerator gen, ExistingFileHelper exFileHelper) {
-		super(gen, Risus.MODID, exFileHelper);
+	public BlockModelGenerator(PackOutput packOutput, ExistingFileHelper exFileHelper) {
+		super(packOutput, Risus.MODID, exFileHelper);
 	}
 
 	@Override
@@ -352,21 +354,23 @@ public class BlockModelGenerator extends BlockStateProvider {
 	protected BlockModelBuilder make2LayerCube(String name, ResourceLocation renderType,
 											   int layer1emN, int layer1emS, int layer1emW, int layer1emE, int layer1emU, int layer1emD,
 											   int layer2emN, int layer2emS, int layer2emW, int layer2emE, int layer2emU, int layer2emD, boolean shade) {
+		int skylightLevel = 0;
+
 		return models().withExistingParent(name, "minecraft:block/block").renderType(renderType).texture("particle", "#bottom")
 				.element().from(0.0F, 0.0F, 0.0F).to(16.0F, 16.0F, 16.0F).shade(shade)
-				.face(Direction.NORTH).texture("#north").cullface(Direction.NORTH).emissivity(layer1emN).end()
-				.face(Direction.EAST).texture("#east").cullface(Direction.EAST).emissivity(layer1emE).end()
-				.face(Direction.SOUTH).texture("#south").cullface(Direction.SOUTH).emissivity(layer1emS).end()
-				.face(Direction.WEST).texture("#west").cullface(Direction.WEST).emissivity(layer1emW).end()
-				.face(Direction.UP).texture("#top").cullface(Direction.UP).emissivity(layer1emU).end()
-				.face(Direction.DOWN).texture("#bottom").cullface(Direction.DOWN).emissivity(layer1emD).end().end()
+				.face(Direction.NORTH).texture("#north").cullface(Direction.NORTH).emissivity(layer1emN, skylightLevel).end()
+				.face(Direction.EAST).texture("#east").cullface(Direction.EAST).emissivity(layer1emE, skylightLevel).end()
+				.face(Direction.SOUTH).texture("#south").cullface(Direction.SOUTH).emissivity(layer1emS, skylightLevel).end()
+				.face(Direction.WEST).texture("#west").cullface(Direction.WEST).emissivity(layer1emW, skylightLevel).end()
+				.face(Direction.UP).texture("#top").cullface(Direction.UP).emissivity(layer1emU, skylightLevel).end()
+				.face(Direction.DOWN).texture("#bottom").cullface(Direction.DOWN).emissivity(layer1emD, skylightLevel).end().end()
 				.element().from(0.0F, 0.0F, 0.0F).to(16.0F, 16.0F, 16.0F).shade(shade)
-				.face(Direction.NORTH).texture("#north2").cullface(Direction.NORTH).emissivity(layer2emN).tintindex(0).end()
-				.face(Direction.EAST).texture("#east2").cullface(Direction.EAST).emissivity(layer2emE).tintindex(0).end()
-				.face(Direction.SOUTH).texture("#south2").cullface(Direction.SOUTH).emissivity(layer2emS).tintindex(0).end()
-				.face(Direction.WEST).texture("#west2").cullface(Direction.WEST).emissivity(layer2emW).tintindex(0).end()
-				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU).tintindex(0).end()
-				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD).tintindex(0).end().end();
+				.face(Direction.NORTH).texture("#north2").cullface(Direction.NORTH).emissivity(layer2emN, skylightLevel).tintindex(0).end()
+				.face(Direction.EAST).texture("#east2").cullface(Direction.EAST).emissivity(layer2emE, skylightLevel).tintindex(0).end()
+				.face(Direction.SOUTH).texture("#south2").cullface(Direction.SOUTH).emissivity(layer2emS, skylightLevel).tintindex(0).end()
+				.face(Direction.WEST).texture("#west2").cullface(Direction.WEST).emissivity(layer2emW, skylightLevel).tintindex(0).end()
+				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU, skylightLevel).tintindex(0).end()
+				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD, skylightLevel).tintindex(0).end().end();
 	}
 
 	private void builtinEntity(Block b, String particle) {

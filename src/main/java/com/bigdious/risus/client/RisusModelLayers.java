@@ -44,7 +44,7 @@ public class RisusModelLayers {
 	@SubscribeEvent
 	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		for (RisusBoat.Type boatType : RisusBoat.Type.values()) {
-			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), () -> BoatModel.createBodyModel(false));
+			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), BoatModel::createBodyModel);
 		}
 		event.registerLayerDefinition(ANGEL, AngelModel::create);
 		event.registerLayerDefinition(HOLDER, HolderModel::create);

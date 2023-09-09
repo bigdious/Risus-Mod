@@ -49,7 +49,7 @@ public class Holder extends Monster {
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true, living -> {
-			List<Monster> nearbyMonsters = this.getLevel().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
+			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
 			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
 	}
@@ -79,16 +79,17 @@ public class Holder extends Monster {
 			this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
 			this.take(item, itemstack.getCount());
 			item.discard();
-			if (item.getThrower() != null) {
+			var thrower = item.getOwner();
+			if (thrower != null) {
 				this.shouldAvoidPlayer = true;
-				this.avoidedPlayerUUID = item.getThrower();
+				this.avoidedPlayerUUID = thrower.getUUID();
 			}
 		}
 	}
 
 	private void dropItemStack(ItemStack stack) {
-		ItemEntity itementity = new ItemEntity(this.getLevel(), this.getX(), this.getY(), this.getZ(), stack);
-		this.getLevel().addFreshEntity(itementity);
+		ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
+		this.level().addFreshEntity(itementity);
 	}
 
 	@Override
@@ -102,7 +103,7 @@ public class Holder extends Monster {
 	public InteractionResult interactAt(Player player, Vec3 vec3, InteractionHand hand) {
 		if (!player.getItemInHand(hand).isEmpty() && this.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, player.getItemInHand(hand).split(1));
-			return InteractionResult.sidedSuccess(this.getLevel().isClientSide());
+			return InteractionResult.sidedSuccess(this.level().isClientSide());
 		}
 		return super.interactAt(player, vec3, hand);
 	}

@@ -6,8 +6,7 @@ import com.bigdious.risus.client.model.entity.ThrownAxeModel;
 import com.bigdious.risus.entity.ThrownAxe;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
-import net.minecraft.client.Minecraft;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -28,11 +27,11 @@ public class ThrownAxeRenderer extends EntityRenderer<ThrownAxe> {
 	@Override
 	public void render(ThrownAxe axe, float yaw, float partialTicks, PoseStack stack, MultiBufferSource buffer, int light) {
 		stack.pushPose();
-		stack.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(partialTicks, axe.yRotO, axe.getYRot())));
+		stack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, axe.yRotO, axe.getYRot())));
 		stack.translate(0.0D, -0.5D, 0.0D);
 		stack.translate(0.0D, 0.65D, 0.0D);
 		stack.scale(1.0F, -1.0F, -1.0F);
-		stack.mulPose(Vector3f.XP.rotationDegrees(axe.shouldSpin() ? axe.spinTickCount * 20.0F : 55.0F));
+		stack.mulPose(Axis.XP.rotationDegrees(axe.shouldSpin() ? axe.spinTickCount * 20.0F : 55.0F));
 		stack.translate(0.0D, -0.65D, 0.0D);
 		VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(this.getTextureLocation(axe)), false, axe.isFoil());
 		this.model.renderToBuffer(stack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);

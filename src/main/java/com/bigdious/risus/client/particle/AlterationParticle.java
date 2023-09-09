@@ -1,12 +1,12 @@
 package com.bigdious.risus.client.particle;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.joml.Vector3f;
 
 public class AlterationParticle extends DustParticleBase<AlterationParticleOptions> {
 	private final Vector3f fromColor;
@@ -63,7 +63,7 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 
 	private void lerpColors(float partialTicks) {
 		float f = ((float) this.age + partialTicks) / ((float) this.lifetime + 1.0F);
-		Vector3f vector3f = this.fromColor.copy();
+		Vector3f vector3f = new Vector3f(this.fromColor);
 		vector3f.lerp(this.toColor, f);
 		this.rCol = vector3f.x();
 		this.gCol = vector3f.y();

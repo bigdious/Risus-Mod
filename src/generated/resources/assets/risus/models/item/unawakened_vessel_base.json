@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:items/unawakened_vessel"
+    "layer0": "risus:item/unawakened_vessel"
   }
 }

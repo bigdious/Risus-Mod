@@ -30,5 +30,6 @@
     "recipes": [
       "risus:alteration/bloodwyrm_head"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }
