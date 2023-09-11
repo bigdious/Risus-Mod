@@ -98,6 +98,9 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
 
     implementation fg.deobf("curse.maven:jade-324717:4711195")
+
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
 }
 
 jar {
