@@ -87,6 +87,7 @@ public class RisusItems {
 
 	public static final RegistryObject<Item> MAW_GUTS = ITEMS.register("maw_guts", () -> new BlockItem(RisusBlocks.MAW_GUTS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GLUTTONY_SCALEPLATE = ITEMS.register("gluttony_scaleplate", () -> new BlockItem(RisusBlocks.GLUTTONY_SCALEPLATE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> IMITATION_SCALEPLATE = ITEMS.register("imitation_scaleplate", () -> new BlockItem(RisusBlocks.IMITATION_SCALEPLATE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GLUTTONY_SCALES = ITEMS.register("gluttony_scales", () -> new Item(defaultWithRarity()));
 
 	public static final RegistryObject<Item> MIRAGE_SAND = ITEMS.register("mirage_sand", () -> new BlockItem(RisusBlocks.MIRAGE_SAND.get(), defaultWithRarity()));

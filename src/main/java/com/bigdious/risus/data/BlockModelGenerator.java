@@ -65,6 +65,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.MIRAGE_NETHERRACK.get(), cubeAll(RisusBlocks.MIRAGE_NETHERRACK.get()));
 		simpleBlock(RisusBlocks.MIRAGE_END_STONE.get(), cubeAll(RisusBlocks.MIRAGE_END_STONE.get()));
 		horizontalBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get(), models().getExistingFile(texture("gluttony_scaleplate")));
+		horizontalBlock(RisusBlocks.IMITATION_SCALEPLATE.get(), models().getExistingFile(texture("imitation_scaleplate")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));

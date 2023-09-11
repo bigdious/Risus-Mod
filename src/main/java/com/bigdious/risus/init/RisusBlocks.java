@@ -37,6 +37,7 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> MIRAGE_END_STONE = BLOCKS.register("mirage_end_stone", () -> new MirageBlock(Block.Properties.copy(Blocks.END_STONE).noOcclusion(), Blocks.END_STONE));
 	public static final RegistryObject<Block> MIRAGE_NETHERRACK = BLOCKS.register("mirage_netherrack", () -> new MirageBlock(Block.Properties.copy(Blocks.NETHERRACK).noOcclusion(), Blocks.NETHERRACK));
 	public static final RegistryObject<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final RegistryObject<Block> IMITATION_SCALEPLATE = BLOCKS.register("imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
 	public static final RegistryObject<Block> ZIT = BLOCKS.register("zit", () -> new ZitBlock(Block.Properties.copy(Blocks.SCULK).noCollission().noOcclusion().instabreak()));
 
 	public static final RegistryObject<Block> CRYSTALLIZED_BONDS = BLOCKS.register("crystallized_bonds", () -> new CrystallizedBondsBlock(Block.Properties.of().mapColor(MapColor.NONE).instrument(NoteBlockInstrument.HAT).noOcclusion().sound(SoundType.GLASS).strength(0.25F)));

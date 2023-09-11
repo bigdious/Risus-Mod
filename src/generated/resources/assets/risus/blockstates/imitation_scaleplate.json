@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "risus:block/imitation_scaleplate",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/imitation_scaleplate"
+    },
+    "facing=south": {
+      "model": "risus:block/imitation_scaleplate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/imitation_scaleplate",
+      "y": 270
+    }
+  }
+}
