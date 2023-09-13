@@ -212,9 +212,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
 
 		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
-		fourWayBlock(RisusBlocks.BONE_FENCE.get(),
-				fencePost("bone_fence_post", new ResourceLocation("block/bone_block_side")).texture("end", new ResourceLocation("block/bone_block_top")),
-				models().fenceSide("bone_fence_side", new ResourceLocation("block/bone_block_side")));
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
 		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
 		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().getExistingFile(texture("block/regen_rose")));

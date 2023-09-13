@@ -29,7 +29,6 @@ public class RisusBlocks {
 	public static final RegistryObject<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.POLISHED_BASALT).noOcclusion()));
 	public static final RegistryObject<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.copy(Blocks.CRIMSON_HYPHAE)));
 	public static final RegistryObject<Block> BIG_CHAIN = BLOCKS.register("big_chain", () -> new BigChainBlock(Block.Properties.copy(Blocks.CHAIN)));
-	public static final RegistryObject<FenceBlock> BONE_FENCE = BLOCKS.register("bone_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.BONE_BLOCK)));
 
 	public static final RegistryObject<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
 	public static final RegistryObject<Block> MIRAGE_GRASS_BLOCK = BLOCKS.register("mirage_grass_block", () -> new MirageBlock(Block.Properties.copy(Blocks.GRASS_BLOCK).noOcclusion(), Blocks.GRASS_BLOCK));

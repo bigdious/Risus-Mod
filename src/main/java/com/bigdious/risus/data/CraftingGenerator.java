@@ -132,6 +132,16 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
 				.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LINEAR_RITUAL_BLOCK.get(), 1)
+				.requires(RisusItems.CURVED_RITUAL_BLOCK.get())
+				.unlockedBy("has_critual", has(RisusItems.CURVED_RITUAL_BLOCK.get()))
+				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CURVED_RITUAL_BLOCK.get(), 1)
+				.requires(RisusItems.LINEAR_RITUAL_BLOCK.get())
+				.unlockedBy("has_lritual", has(RisusItems.LINEAR_RITUAL_BLOCK.get()))
+				.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_STAIRS.get(), 8)
 				.pattern("#  ")
 				.pattern("## ")
@@ -249,19 +259,5 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_soul_torch", has(RisusItems.JOYFLAME_TORCH.get()))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BONE_FENCE.get(), 3)
-				.pattern("B/B")
-				.pattern("B/B")
-				.define('B', Items.BONE_BLOCK)
-				.define('/', Items.BONE)
-				.unlockedBy("has_bone", has(Items.BONE_BLOCK))
-				.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BONE_WALL.get(), 6)
-				.pattern("BBB")
-				.pattern("BBB")
-				.define('B', Items.BONE_BLOCK)
-				.unlockedBy("has_bone", has(Items.BONE_BLOCK))
-				.save(consumer);
 	}
 }

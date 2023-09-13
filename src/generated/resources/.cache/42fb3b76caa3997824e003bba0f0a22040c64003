@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-11T15:54:10.9962418	Risus Item Models
+// 1.20.1	2023-09-13T20:29:46.8922725	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
@@ -19,7 +19,6 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 553449888a1c24b05e924c9fb47115de6e3cb4d8 assets/risus/models/item/bondknot_stairs.json
 523c6c687656d5c97791226624cc2cea28d44c23 assets/risus/models/item/bondknot_trapdoor.json
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
-acf29c9da8ba5cfdb5c1ae58830b6516514cf0ad assets/risus/models/item/bone_fence.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json

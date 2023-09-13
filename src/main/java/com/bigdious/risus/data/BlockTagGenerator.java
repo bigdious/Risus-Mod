@@ -35,10 +35,10 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
 		this.tag(BlockTags.PLANKS).add(RisusBlocks.BONDKNOT_PLANKS.get());
 
-		this.tag(BlockTags.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get(), RisusBlocks.BONE_FENCE.get());
+		this.tag(BlockTags.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(BlockTags.WOODEN_FENCES).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(BlockTags.FENCE_GATES).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
-		this.tag(Tags.Blocks.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get(), RisusBlocks.BONE_FENCE.get());
+		this.tag(Tags.Blocks.FENCES).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(Tags.Blocks.FENCE_GATES).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		this.tag(Tags.Blocks.FENCES_WOODEN).add(RisusBlocks.BONDKNOT_FENCE.get());
 		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
@@ -87,7 +87,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.POLISHED_GRIMSTONE.get(),
 				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
 				RisusBlocks.JOYFLAME_LANTERN.get(),
-				RisusBlocks.BONE_FENCE.get(),
 				RisusBlocks.BONE_WALL.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.TISSUE.get());

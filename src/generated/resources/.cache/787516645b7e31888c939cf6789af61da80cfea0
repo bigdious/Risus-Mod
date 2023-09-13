@@ -1,16 +1,16 @@
-// 1.20.1	2023-09-08T16:18:54.6310653	Tags for minecraft:block mod id risus
-c2513f8c2f2a3a1794142741cddd78ec3c302acd data/forge/tags/blocks/fences.json
+// 1.20.1	2023-09-13T20:29:46.930251	Tags for minecraft:block mod id risus
+86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates/wooden.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/blocks/doors.json
-c2513f8c2f2a3a1794142741cddd78ec3c302acd data/minecraft/tags/blocks/fences.json
+86196d8d301039609134e790f381774456113206 data/minecraft/tags/blocks/fences.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/blocks/fence_gates.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs_that_burn.json
 d67c1f03be4471db0e6ca99b4c71d978309c55fe data/minecraft/tags/blocks/mineable/axe.json
 1e9a4c2925f60d6305a9727aa331c6e85bb615ad data/minecraft/tags/blocks/mineable/hoe.json
-7535411949e7943a037fbf45c5256d1bc35304fb data/minecraft/tags/blocks/mineable/pickaxe.json
+19ea745cb23f6767a1093a24e8515b4acd154b92 data/minecraft/tags/blocks/mineable/pickaxe.json
 94b506436f163aa4338a80d46ba20f053c626228 data/minecraft/tags/blocks/needs_diamond_tool.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/blocks/planks.json
 8775602c15152b6d5edeafa31683398321bb7243 data/minecraft/tags/blocks/signs.json

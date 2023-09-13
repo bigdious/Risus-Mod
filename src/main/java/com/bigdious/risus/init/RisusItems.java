@@ -78,7 +78,6 @@ public class RisusItems {
 	public static final RegistryObject<Item> SMILING_REMAINS = ITEMS.register("smiling_remains", () -> new BlockItem(RisusBlocks.SMILING_REMAINS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
-	public static final RegistryObject<Item> BONE_FENCE = ITEMS.register("bone_fence", () -> new BlockItem(RisusBlocks.BONE_FENCE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BIG_CHAIN = ITEMS.register("big_chain", () -> new BlockItem(RisusBlocks.BIG_CHAIN.get(), defaultWithNoRarity()));
 	public static final RegistryObject<Item> BURNT_HYPHAE = ITEMS.register("burnt_hyphae", () -> new BlockItem(RisusBlocks.BURNT_HYPHAE.get(), defaultWithRarity()));

@@ -97,7 +97,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.REGEN_ROSE.get());
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
 		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusItems.REGEN_ROSE.get()));
-		dropSelf(RisusBlocks.BONE_FENCE.get());
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.TISSUE.get());
 		dropSelf(RisusBlocks.ROTTING_TISSUE.get());

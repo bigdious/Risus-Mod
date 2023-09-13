@@ -86,9 +86,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.ROTTED_TISSUE.get(), Risus.prefix("block/tissue/rotting_tissue_post"));
 		toBlockModel(RisusBlocks.DECOMPOSED_TISSUE.get(), Risus.prefix("block/tissue/decomposing_tissue_post"));
 		toBlockModel(RisusBlocks.DECAYED_TISSUE.get(), Risus.prefix("block/tissue/decaying_tissue_post"));
-		getBuilder(RisusBlocks.BONE_FENCE.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/fence_inventory")))
-				.texture("texture", new ResourceLocation("block/bone_block_side"));
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
 				.texture("wall", new ResourceLocation("block/bone_block_side"));
