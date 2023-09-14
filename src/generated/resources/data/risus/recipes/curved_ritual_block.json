@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:linear_ritual_block"
+    }
+  ],
+  "result": {
+    "item": "risus:curved_ritual_block"
+  }
+}
