@@ -1,7 +1,7 @@
 package com.bigdious.risus;
 
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.util.RisusTab;
+import com.bigdious.risus.init.RisusTab;
 import com.google.common.collect.Maps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.resources.ResourceLocation;

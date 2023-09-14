@@ -1,7 +1,7 @@
 {
   "block.risus.smiling_remains": "Smiling Remains",
   "block.risus.ashen_remains": "Ashen Remains",
-  "block.risus.laughing_obsidian": "Laughing Obsidian",
+  "block.risus.laughing_obsidian": "Smiling Obsidian",
   "block.risus.engraved_basalt": "Engraved Basalt",
   "block.risus.big_chain": "Big Chain",
   "block.risus.bone_fence": "Bone Fence",
@@ -114,6 +114,7 @@
   "death.attack.gluttony.player": "%1$s was while trying to escape %2$s",
 
   "itemGroup.risus": "Risus",
+  "itemGroup.risus.main": "Risus",
   "advancement.risus.first.desc": "Meet the Risus",
   "advancement.risus.fleshing.desc": "Use Organic Matter on Tissue to stop the flesh from disintegrating.",
   "advancement.risus.fleshing": "Did you just flesh me?!",
