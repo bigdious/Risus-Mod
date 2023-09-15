@@ -11,6 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
@@ -33,7 +34,6 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                             new ResourceLocation(Risus.MODID ,"textures/block/ashen_remains.png"),
                             FrameType.TASK,
                             true, false, false)
-                    .addCriterion("organic", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.ORGANIC_MATTER.get()))
                     .save(consumer, "risus:first");
 
             Advancement fleshing = Advancement.Builder.advancement().parent(first).display(

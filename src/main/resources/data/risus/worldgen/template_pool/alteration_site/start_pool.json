@@ -1,0 +1,43 @@
+{
+
+  "name": "risus:alteration_site/start_pool",
+
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "risus:alteration_site/0",
+        "processors": [{
+          "processor_type": "minecraft:block_rot",
+          "integrity": 0.6,
+          "rottable_blocks": [
+              "minecraft:grass_block",
+              "risus:ashen_remains",
+              "risus:spreading_remains"
+            ]
+        },
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:polished_basalt",
+                  "probability": 0.2
+                },
+                "output_state": {
+                  "Name": "risus:engraved_basalt"
+                }
+              }
+        ]}],
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

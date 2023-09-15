@@ -1,18 +1,5 @@
 {
-  "criteria": {
-    "organic": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "risus:organic_matter"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    }
-  },
+  "criteria": {},
   "display": {
     "announce_to_chat": false,
     "background": "risus:textures/block/ashen_remains.png",
@@ -29,10 +16,6 @@
       "translate": "itemGroup.risus"
     }
   },
-  "requirements": [
-    [
-      "organic"
-    ]
-  ],
+  "requirements": [],
   "sends_telemetry_event": true
 }
