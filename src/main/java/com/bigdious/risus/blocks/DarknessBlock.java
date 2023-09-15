@@ -36,7 +36,7 @@ public class DarknessBlock extends Block implements SimpleWaterloggedBlock {
     }
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> state) {
         super.createBlockStateDefinition(state);
-        state.add( WATERLOGGED);
+        state.add(WATERLOGGED);
     }
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor levelacc, BlockPos pos, BlockPos neighborPos) {
         if (state.getValue(WATERLOGGED)) {

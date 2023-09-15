@@ -130,8 +130,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusItems.TEETH);
-
-
+		singleTex(RisusItems.NEURON_STEM);
 
 		//spawn eggs
 		for (Item i : ForgeRegistries.ITEMS.getValues()) {
