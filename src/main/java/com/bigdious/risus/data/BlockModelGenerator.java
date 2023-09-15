@@ -195,10 +195,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), texture("block/grimstone_bricks"));
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone_bricks"));
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
-		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(),models().getExistingFile(texture(("block/chiseled_grimstone"))));
-		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(),models().getExistingFile(texture(("block/curved_ritual_block"))));
+		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(), models().getExistingFile(Risus.prefix("block/chiseled_grimstone")));
+		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", new ResourceLocation("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
-
+		simpleBlock(RisusBlocks.DARKNESS.get(), models().cubeAll("darkness", Risus.prefix("block/darkness")).renderType("minecraft:cutout"));
+		simpleBlock(RisusBlocks.NEURON_HEAD.get(), models().cross("neuron_head", Risus.prefix("block/neuron_head")).renderType("minecraft:cutout"));
+		simpleBlock(RisusBlocks.NEURON_STEM.get(), models().cross("neuron", Risus.prefix("block/neuron")).renderType("minecraft:cutout"));
 
 		simpleBlock(RisusBlocks.TISSUE.get());
 		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
