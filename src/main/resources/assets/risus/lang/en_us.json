@@ -115,9 +115,12 @@
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
-  "advancement.risus.first.desc": "Meet the Risus",
+  "advancement.risus.first": "First Encounter",
+  "advancement.risus.first.desc": "Meet the Risus.",
   "advancement.risus.fleshing.desc": "Use Organic Matter on Tissue to stop the flesh from disintegrating.",
   "advancement.risus.fleshing": "Did you just flesh me?!",
+  "advancement.risus.step": "Watch Your Step!",
+  "advancement.risus.step.desc": "Wearing Leather Boots could save your life.",
   "advancement.risus.devour": "Devoured",
   "advancement.risus.devour.desc": "Fall into a Maw's trap.",
   "advancement.risus.satiate": "Satiated",
@@ -131,5 +134,9 @@
   "advancement.risus.potential": "Potential",
   "advancement.risus.potential.desc": "Craft an Unawakened Vessel.",
   "advancement.risus.unleashed": "Unleashed",
-  "advancement.risus.unleashed.desc": "Craft a Crescent Disaster."
+  "advancement.risus.unleashed.desc": "Craft a Crescent Disaster.",
+  "advancement.risus.site_zero": "Site Zero",
+  "advancement.risus.site_zero.desc": "Find an Alteration Site.",
+  "advancement.risus.little": "You Little F-!",
+  "advancement.risus.little.desc": "Get attacked by a Holder."
 }

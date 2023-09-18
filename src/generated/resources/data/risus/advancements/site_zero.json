@@ -1,39 +1,41 @@
 {
-  "parent": "risus:unleashed",
+  "parent": "risus:first",
   "criteria": {
-    "murder": {
+    "site": {
       "conditions": {
-        "entity": [
+        "player": [
           {
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "risus:angel"
+              "location": {
+                "structure": "risus:alteration_site"
+              }
             }
           }
         ]
       },
-      "trigger": "minecraft:player_killed_entity"
+      "trigger": "minecraft:location"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.risus.crusade.desc"
+      "translate": "advancement.risus.site_zero.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:blood_feather"
+      "item": "risus:alteration_catalyst"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.risus.crusade"
+      "translate": "advancement.risus.site_zero"
     }
   },
   "requirements": [
     [
-      "murder"
+      "site"
     ]
   ],
   "sends_telemetry_event": true

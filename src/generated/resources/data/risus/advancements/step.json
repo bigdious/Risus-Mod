@@ -1,4 +1,5 @@
 {
+  "parent": "risus:first",
   "criteria": {
     "endmaw": {
       "conditions": {
@@ -9,38 +10,6 @@
             "predicate": {
               "location": {
                 "structure": "risus:endy_maw"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "family": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structure": "risus:family_tree"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "flower": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structure": "risus:flower_field"
               }
             }
           }
@@ -79,48 +48,29 @@
         ]
       },
       "trigger": "minecraft:location"
-    },
-    "site": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structure": "risus:alteration_site"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
     }
   },
   "display": {
-    "announce_to_chat": false,
-    "background": "risus:textures/block/ashen_remains.png",
+    "announce_to_chat": true,
     "description": {
-      "translate": "advancement.risus.first.desc"
+      "translate": "advancement.risus.step.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:smile"
+      "item": "minecraft:leather_boots",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.risus.first"
+      "translate": "advancement.risus.step"
     }
   },
   "requirements": [
     [
-      "site",
       "grassmaw",
       "sandmaw",
-      "endmaw",
-      "flower",
-      "family"
+      "endmaw"
     ]
   ],
   "sends_telemetry_event": true

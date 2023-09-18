@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "risus:organic_matter"
+              "risus:maw_guts"
             ]
           }
         ]
@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:gluttony_scales"
+      "item": "risus:maw_guts"
     },
     "show_toast": true,
     "title": {

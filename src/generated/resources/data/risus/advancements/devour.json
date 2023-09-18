@@ -1,5 +1,5 @@
 {
-  "parent": "risus:first",
+  "parent": "risus:step",
   "criteria": {
     "devour0": {
       "conditions": {
@@ -24,7 +24,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:maw_guts"
+      "item": "risus:gluttony_scales"
     },
     "show_toast": true,
     "title": {

@@ -1,6 +1,7 @@
 package com.bigdious.risus.entity;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -27,6 +29,7 @@ public class Holder extends Monster {
 	private boolean shouldAvoidPlayer;
 	@Nullable
 	private UUID avoidedPlayerUUID;
+	private final List<ServerPlayer> hurtBy = new ArrayList<>();
 
 	public Holder(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
@@ -43,12 +46,12 @@ public class Holder extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 64.0F));
+		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, entity -> this.avoidedPlayerUUID != null && Objects.equals(this.avoidedPlayerUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidPlayer));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true, living -> {
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, living -> {
 			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
 			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
@@ -125,13 +128,13 @@ public class Holder extends Monster {
 		boolean flag = super.doHurtTarget(entity);
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
-			if(living instanceof Player player) {
+			if (living instanceof Player player) {
 				this.avoidedPlayerUUID = player.getUUID();
 				this.shouldAvoidPlayer = true;
-			}
+			}}
+			return flag;
 		}
-		return flag;
-	}
+
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
