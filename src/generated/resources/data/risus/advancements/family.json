@@ -1,39 +1,41 @@
 {
-  "parent": "risus:potential",
+  "parent": "risus:first",
   "criteria": {
-    "murder": {
+    "family": {
       "conditions": {
-        "entity": [
+        "player": [
           {
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "risus:angel"
+              "location": {
+                "structure": "risus:family_tree"
+              }
             }
           }
         ]
       },
-      "trigger": "minecraft:player_killed_entity"
+      "trigger": "minecraft:location"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.risus.crusade.desc"
+      "translate": "advancement.risus.family.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "risus:blood_feather"
+      "item": "risus:ribcage"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.risus.crusade"
+      "translate": "advancement.risus.family"
     }
   },
   "requirements": [
     [
-      "murder"
+      "family"
     ]
   ],
   "sends_telemetry_event": true

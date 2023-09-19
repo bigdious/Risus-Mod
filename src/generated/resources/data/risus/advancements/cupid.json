@@ -1,0 +1,48 @@
+{
+  "parent": "risus:irresistible",
+  "criteria": {
+    "love": {
+      "conditions": {
+        "items": [
+          {
+            "potion": "risus:mating_frenzy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "love2": {
+      "conditions": {
+        "items": [
+          {
+            "potion": "risus:long_mating_frenzy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.risus.cupid.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"risus:mating_frenzy\"}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.risus.cupid"
+    }
+  },
+  "requirements": [
+    [
+      "love",
+      "love2"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

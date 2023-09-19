@@ -11,17 +11,21 @@ import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -58,6 +62,13 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("alteration_site")))))
                     .save(consumer, "risus:site_zero");
 
+            Advancement family = Advancement.Builder.advancement().parent(first).display(
+                            RisusBlocks.RIBCAGE.get(),
+                            Component.translatable("advancement.risus.family"),
+                            Component.translatable("advancement.risus.family.desc"), null, FrameType.TASK, true, true, false)
+                    .addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("family_tree")))))
+                    .save(consumer, "risus:family");
+
             Advancement little = Advancement.Builder.advancement().parent(first).display(
                             RisusItems.ORGANIC_MATTER.get(),
                             Component.translatable("advancement.risus.little"),
@@ -66,7 +77,7 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                     .save(consumer, "risus:little");
 
 
-            Advancement fleshing = Advancement.Builder.advancement().parent(first).display(
+            Advancement fleshing = Advancement.Builder.advancement().parent(site_zero).display(
                             RisusBlocks.DECOMPOSED_TISSUE.get(),
                             Component.translatable("advancement.risus.fleshing"),
                             Component.translatable("advancement.risus.fleshing.desc"), null, FrameType.TASK, true,true,false)
@@ -103,26 +114,52 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("satiate0", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MAW_GUTS.get()))
                     .save(consumer, "risus:satiate");
 
-            Advancement potential = Advancement.Builder.advancement().parent(first).display(
+            Advancement potential = Advancement.Builder.advancement().parent(satiate).display(
                             RisusItems.UNAWAKENED_VESSEL.get(),
                             Component.translatable("advancement.risus.potential"),
                             Component.translatable("advancement.risus.potential.desc"), null, FrameType.TASK, true,true,false)
                     .addCriterion("weakaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.UNAWAKENED_VESSEL.get()))
                     .save(consumer, "risus:potential");
 
-            Advancement unleashed = Advancement.Builder.advancement().parent(potential).display(
+
+            Advancement crusade = Advancement.Builder.advancement().parent(potential).display(
+                            RisusItems.BLOOD_FEATHER.get(),
+                            Component.translatable("advancement.risus.crusade"),
+                            Component.translatable("advancement.risus.crusade.desc"), null, FrameType.TASK, true,true,false)
+                    .addCriterion("murder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.ANGEL.get())))
+                    .save(consumer, "risus:crusade");
+
+            Advancement unleashed = Advancement.Builder.advancement().parent(crusade).display(
                             RisusItems.CRESCENT_DISASTER.get(),
                             Component.translatable("advancement.risus.unleashed"),
                             Component.translatable("advancement.risus.unleashed.desc"), null, FrameType.TASK, true,true,false)
                     .addCriterion("strongaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CRESCENT_DISASTER.get()))
                     .save(consumer, "risus:unleashed");
 
-            Advancement crusade = Advancement.Builder.advancement().parent(unleashed).display(
-                            RisusItems.BLOOD_FEATHER.get(),
-                            Component.translatable("advancement.risus.crusade"),
-                            Component.translatable("advancement.risus.crusade.desc"), null, FrameType.TASK, true,true,false)
-                    .addCriterion("murder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.ANGEL.get())))
-                    .save(consumer, "risus:crusade");
+
+            Advancement irresistible = Advancement.Builder.advancement().parent(site_zero).display(
+                            RisusItems.GUILTY_APPLE.get(),
+                            Component.translatable("advancement.risus.irresistible"),
+                            Component.translatable("advancement.risus.irresistible.desc"), null, FrameType.TASK, true,true,false)
+                    .addCriterion("pleasure", ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(RisusItems.GUILTY_APPLE.get()).build()))
+                    .save(consumer, "risus:irresistible");
+
+            Advancement cupid = Advancement.Builder.advancement().parent(irresistible).display(
+                            potionOfLove(),
+                            Component.translatable("advancement.risus.cupid"),
+                            Component.translatable("advancement.risus.cupid.desc"), null, FrameType.TASK, true,true,false)
+                    .requirements(RequirementsStrategy.OR)
+                    .addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().isPotion(RisusPotions.MATING_FRENZY.get()).build()))
+                    .addCriterion("love2", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().isPotion(RisusPotions.LONG_MATING_FRENZY.get()).build()))
+                    .save(consumer, "risus:cupid");
+
+
+        }
+        private ItemStack potionOfLove() {
+            ItemStack itemstack = new ItemStack(Items.POTION);
+            CompoundTag compoundtag = itemstack.getOrCreateTag();
+            compoundtag.putString("Potion", ForgeRegistries.POTIONS.getKey(RisusPotions.MATING_FRENZY.get()).toString());
+            return itemstack;
         }
     }
 }
