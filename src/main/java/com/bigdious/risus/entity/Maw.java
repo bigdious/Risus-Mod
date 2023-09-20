@@ -161,11 +161,12 @@ public class Maw extends Monster implements CacheTargetOnClient {
 				this.level().destroyBlock(this.blockPosition().below(), true);
 				this.playSound(SoundEvents.WITHER_BREAK_BLOCK);
 			}
-			for (Direction dir : Direction.Plane.HORIZONTAL) {
-				if (this.level().getBlockState(this.blockPosition().below().relative(dir)).is(RisusBlocks.GLUTTONY_SCALEPLATE.get())) {
-					this.level().destroyBlock(this.blockPosition().below().relative(dir), true);
-				}
-			}
+			//Commented for now as it breaks progression
+			//for (Direction dir : Direction.Plane.HORIZONTAL) {
+				//if (this.level().getBlockState(this.blockPosition().below().relative(dir)).is(RisusBlocks.GLUTTONY_SCALEPLATE.get())) {
+					//this.level().destroyBlock(this.blockPosition().below().relative(dir), true);
+				//}
+			//}
 		}
 	}
 

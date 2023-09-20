@@ -40,7 +40,7 @@ public class ThrowableAxeItem extends AxeItem {
 
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.LOYALTY, Enchantments.IMPALING);
+		List<Enchantment> validEnchants = List.of( Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.LOYALTY, Enchantments.IMPALING);
 		return validEnchants.contains(enchantment);
 	}
 
