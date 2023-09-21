@@ -37,7 +37,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusItems.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_blackstone", has(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CHISELED_POLISHED_BLACKSTONE), RisusItems.CHISELED_GRIMSTONE.get()).unlockedBy("has_blackstone", has(Items.CHISELED_POLISHED_BLACKSTONE)).save(consumer);
 		//TODO enchanted book to corrupt book handler
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.RABBIT), RisusItems.TISSUE.get()).unlockedBy("has_pork", has(Items.PORKCHOP)).unlockedBy("has_beef", has(Items.BEEF)).unlockedBy("has_mutton", has(Items.MUTTON)).unlockedBy("has_rabbit", has(Items.RABBIT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.RABBIT, Items.CHICKEN, Items.COD, Items.TROPICAL_FISH, Items.SALMON), RisusItems.TISSUE.get()).unlockedBy("has_pork", has(Items.PORKCHOP)).unlockedBy("has_beef", has(Items.BEEF)).unlockedBy("has_mutton", has(Items.MUTTON)).unlockedBy("has_rabbit", has(Items.RABBIT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusItems.BURNT_HYPHAE.get()).unlockedBy("has_chyphae", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_cstem", has(Items.CRIMSON_STEM)).unlockedBy("has_whyphae", has(Items.WARPED_HYPHAE)).unlockedBy("has_wstem", has(Items.WARPED_STEM)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusItems.REGEN_ROSE.get()).unlockedBy("has_wither_rose", has(Items.WITHER_ROSE)).save(consumer);
 
@@ -178,9 +178,9 @@ public class CraftingGenerator extends RecipeProvider {
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
-				.pattern(" BG")
 				.pattern("BGC")
-				.pattern("GLL")
+				.pattern("BGL")
+				.pattern("BGL")
 				.define('B', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
 				.define('C', Ingredient.of(RisusItems.CONCENTRATION_CORE.get()))
 				.define('G', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
@@ -194,6 +194,18 @@ public class CraftingGenerator extends RecipeProvider {
 				.requires(RisusItems.UNAWAKENED_VESSEL.get())
 				.requires(RisusItems.BLOOD_FEATHER.get())
 				.unlockedBy("has_feather", has(RisusItems.BLOOD_FEATHER.get()))
+				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.TOOTHKNOCKER.get())
+				.pattern("BBB")
+				.pattern("LCL")
+				.pattern("LLL")
+				.define('B', Ingredient.of(RisusItems.TEETH.get()))
+				.define('C', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
+				.define('L', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.unlockedBy("has_teeth", has(RisusItems.TEETH.get()))
+				.unlockedBy("has_bonds", has(RisusItems.CRYSTALLIZED_BOND.get()))
+				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RisusItems.CONCENTRATION_CORE.get())
@@ -259,5 +271,15 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_soul_torch", has(RisusItems.JOYFLAME_TORCH.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TEETH.get())
+				.pattern("XXX")
+				.pattern("X#X")
+				.pattern("Y Y")
+				.define('#', RisusItems.TISSUE.get())
+				.define('X', Items.BONE_BLOCK)
+				.define('Y', RisusItems.BONE_WALL.get())
+				.unlockedBy("has_tissue", has(RisusItems.TISSUE.get()))
+				.unlockedBy("has_teeth", has(RisusItems.TEETH.get()))
+				.save(consumer);
 	}
 }
