@@ -17,32 +17,32 @@ import net.minecraft.world.entity.AnimationState;
 
 public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	private final ModelPart root;
-	private final ModelPart upperJaw;
-	private final ModelPart lowerJaw;
-	private final ModelPart memoryCore;
+	private final ModelPart top;
+	private final ModelPart bottom;
+	private final ModelPart memoryShell;
 
-	private final ModelPart left_leg1;
-	private final ModelPart left_leg2;
-	private final ModelPart left_leg3;
-	private final ModelPart right_leg1;
-	private final ModelPart right_leg2;
-	private final ModelPart right_leg3;
+	private final ModelPart leftLeg1;
+	private final ModelPart leftLeg2;
+	private final ModelPart leftLeg3;
+	private final ModelPart rightLeg1;
+	private final ModelPart rightLeg2;
+	private final ModelPart rightLeg3;
 
 	public WeaverModel(ModelPart root) {
 		this.root = root;
 		ModelPart rightLegs = root.getChild("rightLegs");
 		ModelPart leftLegs = root.getChild("leftLegs");
-		this.left_leg1 = leftLegs.getChild("leftLeg1");
-		this.left_leg2 = leftLegs.getChild("leftLeg2");
-		this.left_leg3 = leftLegs.getChild("leftLeg3");
-		this.right_leg1 = rightLegs.getChild("rightLeg1");
-		this.right_leg2 = rightLegs.getChild("rightLeg2");
-		this.right_leg3 = rightLegs.getChild("rightLeg3");
+		this.leftLeg1 = leftLegs.getChild("leftLeg1");
+		this.leftLeg2 = leftLegs.getChild("leftLeg2");
+		this.leftLeg3 = leftLegs.getChild("leftLeg3");
+		this.rightLeg1 = rightLegs.getChild("rightLeg1");
+		this.rightLeg2 = rightLegs.getChild("rightLeg2");
+		this.rightLeg3 = rightLegs.getChild("rightLeg3");
 		ModelPart head = root.getChild("head");
-		this.upperJaw = head.getChild("top");
-		this.lowerJaw = head.getChild("bottom");
-		ModelPart coreHolder = root.getChild("memoryCore");
-		this.memoryCore = coreHolder.getChild("memoryShell");
+		this.top = head.getChild("top");
+		this.bottom = head.getChild("bottom");
+		ModelPart memoryCore = root.getChild("memoryCore");
+		this.memoryShell = memoryCore.getChild("memoryShell");
 	}
 
 	public static LayerDefinition create() {
@@ -126,7 +126,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack stack, VertexConsumer builder, int light, int overlay, float red, float green, float blue, float alpha) {
-		this.memoryCore.visible = false;
+		this.memoryShell.visible = false;
 		this.root().render(stack, builder, light, overlay, red, green, blue, alpha);
 	}
 
