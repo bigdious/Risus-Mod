@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "risus:entity/toothknocker",
-		"particle": "risus:entity/toothknocker"
+		"0": "risus:item/toothknocker",
+		"particle": "risus:item/toothknocker"
 	},
 	"elements": [
 		{

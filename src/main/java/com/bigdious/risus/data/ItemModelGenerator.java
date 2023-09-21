@@ -132,6 +132,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.TEETH);
 		singleTex(RisusItems.NEURON_STEM);
 
+
 		//spawn eggs
 		for (Item i : ForgeRegistries.ITEMS.getValues()) {
 			if (i instanceof SpawnEggItem && Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getNamespace().equals(Risus.MODID)) {

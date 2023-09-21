@@ -23,7 +23,7 @@ public class RisusItems {
 
 	public static final RegistryObject<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
-	public static final RegistryObject<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(ModItemTier.CRESCENT, 2, -2.0F, defaultWithRarity()));
+	public static final RegistryObject<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(ModItemTier.CRESCENT, -2, 4.0F, defaultWithRarity()));
 
 	public static final RegistryObject<Item> BONDKNOT_LOG = ITEMS.register("bondknot_log", () -> new BlockItem(RisusBlocks.BONDKNOT_LOG.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> STRIPPED_BONDKNOT_LOG = ITEMS.register("stripped_bondknot_log", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), defaultWithRarity()));

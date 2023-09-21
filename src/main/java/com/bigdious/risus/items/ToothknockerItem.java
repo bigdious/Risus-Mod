@@ -24,7 +24,7 @@ public class ToothknockerItem extends SwordItem {
     }
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.MOB_LOOTING, Enchantments.VANISHING_CURSE);
+        List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.MOB_LOOTING, Enchantments.VANISHING_CURSE);
         AtomicBoolean flag = new AtomicBoolean(false);
         validEnchants.forEach(enchantment -> {
             if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
@@ -35,7 +35,7 @@ public class ToothknockerItem extends SwordItem {
     }
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        List<Enchantment> validEnchants = List.of( Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.VANISHING_CURSE);
+        List<Enchantment> validEnchants = List.of( Enchantments.UNBREAKING, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.VANISHING_CURSE);
         return validEnchants.contains(enchantment);
     }
     @Override

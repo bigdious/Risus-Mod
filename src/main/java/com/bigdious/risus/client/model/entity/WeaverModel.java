@@ -135,6 +135,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	}
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.animate(entity.walk, WeaverAnimations.WEAVER_WALKING, ageInTicks);
 		this.animate(entity.core, WeaverAnimations.WEAVER_CORE_ROTATION, ageInTicks);
 
