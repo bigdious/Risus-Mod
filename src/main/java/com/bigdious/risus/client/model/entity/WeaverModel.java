@@ -135,46 +135,13 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 	}
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.right_leg1.yRot = 0.0F;
-		this.right_leg2.yRot = -25.0F * Mth.DEG_TO_RAD;
-		this.right_leg3.yRot = -52.5F * Mth.DEG_TO_RAD;
-		this.right_leg1.zRot = 0.0F;
-		this.right_leg2.zRot = 0.0F;
-		this.right_leg3.zRot = 0.0F;
-		this.left_leg1.yRot = 0.0F;
-		this.left_leg2.yRot = 25.0F * Mth.DEG_TO_RAD;
-		this.left_leg3.yRot = 52.5F * Mth.DEG_TO_RAD;
-		this.left_leg1.zRot = 0.0F;
-		this.left_leg2.zRot = 0.0F;
-		this.left_leg3.zRot = 0.0F;
-		float f3 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.4F) * limbSwingAmount;
-		float f4 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + (float)Math.PI) * 0.4F) * limbSwingAmount;
-		float f6 = -(Mth.cos(limbSwing * 0.6662F * 2.0F + ((float)Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
-		float f7 = Math.abs(Mth.sin(limbSwing * 0.6662F + 0.0F) * 0.4F) * limbSwingAmount;
-		float f8 = Math.abs(Mth.sin(limbSwing * 0.6662F + (float)Math.PI) * 0.4F) * limbSwingAmount;
-		float f10 = Math.abs(Mth.sin(limbSwing * 0.6662F + ((float)Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
-		this.right_leg3.yRot += f3;
-		this.left_leg3.yRot += -f3;
-		this.right_leg2.yRot += f4;
-		this.left_leg2.yRot -= f4;
-		this.right_leg1.yRot += f6;
-		this.left_leg1.yRot -= f6;
-		this.right_leg3.zRot += f7;
-		this.left_leg3.zRot -= f7;
-		this.right_leg2.zRot += f8;
-		this.left_leg2.zRot -= f8;
-		this.right_leg1.zRot += f10;
-		this.left_leg1.zRot -= f10;
-		this.memoryCore.xRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
-		this.memoryCore.yRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
-		this.memoryCore.zRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
+		this.animate(entity.walk, WeaverAnimations.WEAVER_WALKING, ageInTicks);
+		this.animate(entity.core, WeaverAnimations.WEAVER_CORE_ROTATION, ageInTicks);
+
 		if (entity.getActiveAttackTarget(entity) != null) {
-			this.upperJaw.zRot = 25.0F * Mth.DEG_TO_RAD;
-			this.lowerJaw.zRot = -22.5F * Mth.DEG_TO_RAD;
+			this.animate(entity.idle, WeaverAnimations.WEAVER_MOUTH_IDLE, ageInTicks);
 		} else {
-			this.upperJaw.zRot = Mth.sin(ageInTicks * 0.067F) * 0.1F + (10.0F * Mth.DEG_TO_RAD);
-			this.lowerJaw.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.1F + (-10.0F * Mth.DEG_TO_RAD);
+			this.animate(entity.leapAnim, WeaverAnimations.WEAVER_ATTACK, ageInTicks);
 		}
-		this.animate(entity.leapAnim, WeaverAnimations.WEAVER_LEAP, ageInTicks);
 	}
 }

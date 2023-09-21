@@ -31,6 +31,9 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	private LivingEntity clientSideCachedAttackTarget;
 
 	public final AnimationState leapAnim = new AnimationState();
+	public final AnimationState idle = new AnimationState();
+	public final AnimationState walk = new AnimationState();
+	public final AnimationState core = new AnimationState();
 
 	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
