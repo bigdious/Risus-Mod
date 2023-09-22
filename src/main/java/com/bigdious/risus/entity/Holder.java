@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -27,6 +28,7 @@ import java.util.UUID;
 public class Holder extends Monster {
 
 	private boolean shouldAvoidPlayer;
+	private boolean semiTamed;
 	@Nullable
 	private UUID avoidedPlayerUUID;
 	private final List<ServerPlayer> hurtBy = new ArrayList<>();
@@ -52,8 +54,8 @@ public class Holder extends Monster {
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, living -> {
-			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
-			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
+				List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
+				return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
 	}
 
@@ -119,6 +121,7 @@ public class Holder extends Monster {
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
 			this.shouldAvoidPlayer = false;
 			this.avoidedPlayerUUID = null;
+			this.semiTamed = false;
 		}
 		return flag;
 	}
@@ -129,8 +132,12 @@ public class Holder extends Monster {
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
 			if (living instanceof Player player) {
-				this.avoidedPlayerUUID = player.getUUID();
-				this.shouldAvoidPlayer = true;
+				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
+				this.shouldAvoidPlayer = false;
+				this.semiTamed = true;}
+				else {this.avoidedPlayerUUID = player.getUUID();
+					this.shouldAvoidPlayer = true;
+					this.semiTamed = false;}
 			}}
 			return flag;
 		}

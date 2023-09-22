@@ -12,6 +12,18 @@
     },
     {
       "item": "minecraft:rabbit"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "minecraft:cod"
+    },
+    {
+      "item": "minecraft:tropical_fish"
+    },
+    {
+      "item": "minecraft:salmon"
     }
   ],
   "result": "risus:tissue"

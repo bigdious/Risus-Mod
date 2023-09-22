@@ -16,9 +16,9 @@
     }
   },
   "pattern": [
-    " BG",
     "BGC",
-    "GLL"
+    "BGL",
+    "BGL"
   ],
   "result": {
     "item": "risus:unawakened_vessel"
