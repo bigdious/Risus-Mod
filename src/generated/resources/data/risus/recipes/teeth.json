@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "risus:tissue"
+    },
+    "X": {
+      "item": "minecraft:bone_block"
+    },
+    "Y": {
+      "item": "risus:bone_wall"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "Y Y"
+  ],
+  "result": {
+    "count": 16,
+    "item": "risus:teeth"
+  },
+  "show_notification": true
+}

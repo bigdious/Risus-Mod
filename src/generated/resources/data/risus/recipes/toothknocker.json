@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "risus:teeth"
+    },
+    "C": {
+      "item": "risus:crystallized_bond"
+    },
+    "L": {
+      "item": "risus:gluttony_scales"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "LCL",
+    "LLL"
+  ],
+  "result": {
+    "item": "risus:toothknocker"
+  },
+  "show_notification": true
+}

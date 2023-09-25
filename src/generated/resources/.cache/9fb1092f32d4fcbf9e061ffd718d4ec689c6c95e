@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-22T11:08:22.2663581	Recipes
+// 1.20.1	2023-09-25T16:55:25.8245071	Recipes
 a6d14dd30107ab49159a4bf568b0f4400ebd97d6 data/risus/advancements/recipes/building_blocks/bondknot_planks.json
 46810c48ae42786122f3b59f4e4587e1c0537aaf data/risus/advancements/recipes/building_blocks/bondknot_slab.json
 f6f36b34291555e0cdfdd2a683fe5510bda0141e data/risus/advancements/recipes/building_blocks/bondknot_stairs.json
@@ -92,6 +92,6 @@ c75ac7cf4542c219f4db7848de041ce03a081431 data/risus/recipes/joyflame_lantern.jso
 b2b572d1e4abe23e21475c7685d2f8b5fb566495 data/risus/recipes/linear_ritual_block.json
 bd031cafc8fa13ac9ffd9fc7f05e13e25aac0bf3 data/risus/recipes/polished_grimstone.json
 1be060be6b724581a4c39948f3bfccaee978c058 data/risus/recipes/stripped_bondknot_wood.json
-45ae90727a23ff61d26dec881a01a58c29f25806 data/risus/recipes/teeth.json
+5c95a3c7bec0b8d616468ae8fe9b8e69f24a745d data/risus/recipes/teeth.json
 d85e398fa166c9e893ec0cbe4c4148fb726ebb6d data/risus/recipes/toothknocker.json
 065ca53c3b43d019fb95c0cdca89e1dd051cce96 data/risus/recipes/unawakened_vessel.json

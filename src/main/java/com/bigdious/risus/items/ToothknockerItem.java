@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusMobEffects;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -73,7 +74,7 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity){
         if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
-            player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 2, 0));
+            player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 1, 1));
             //if(player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
             //player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
             //} else {

@@ -271,7 +271,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_soul_torch", has(RisusItems.JOYFLAME_TORCH.get()))
 				.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TEETH.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TEETH.get(), 16)
 				.pattern("XXX")
 				.pattern("X#X")
 				.pattern("Y Y")

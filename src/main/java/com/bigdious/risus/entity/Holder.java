@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -28,7 +29,6 @@ import java.util.UUID;
 public class Holder extends Monster {
 
 	private boolean shouldAvoidPlayer;
-	private boolean semiTamed;
 	@Nullable
 	private UUID avoidedPlayerUUID;
 	private final List<ServerPlayer> hurtBy = new ArrayList<>();
@@ -121,7 +121,10 @@ public class Holder extends Monster {
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
 			this.shouldAvoidPlayer = false;
 			this.avoidedPlayerUUID = null;
-			this.semiTamed = false;
+			if(this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
+				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));}
+			if(this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d")) != null){
+					this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"));}
 		}
 		return flag;
 	}
@@ -134,10 +137,11 @@ public class Holder extends Monster {
 			if (living instanceof Player player) {
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
 				this.shouldAvoidPlayer = false;
-				this.semiTamed = true;}
+				this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Holder friendly", -3, AttributeModifier.Operation.ADDITION));
+				this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 2, AttributeModifier.Operation.MULTIPLY_BASE));}
 				else {this.avoidedPlayerUUID = player.getUUID();
 					this.shouldAvoidPlayer = true;
-					this.semiTamed = false;}
+					}
 			}}
 			return flag;
 		}
