@@ -74,15 +74,14 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity){
         if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
-            player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 1, 1));
+            player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 0, 0));
+            player.getOffhandItem().hurtAndBreak(1, player, (what) -> {
+                what.broadcastBreakEvent(player.getUsedItemHand());});
             //if(player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
             //player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
-            //} else {
-            //if (player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) == null) {
+            //} else {if (player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) == null) {
             //player.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Toothknocker attack damage", 3, AttributeModifier.Operation.ADDITION));
-            //}
-            //}
-            //} else {player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));}
+            //}}} else {player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));}
         }return super.onLeftClickEntity(stack, player, entity);
     }
 

@@ -138,7 +138,7 @@ public class Holder extends Monster {
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
 				this.shouldAvoidPlayer = false;
 				this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Holder friendly", -3, AttributeModifier.Operation.ADDITION));
-				this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 2, AttributeModifier.Operation.MULTIPLY_BASE));}
+				this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 1.8, AttributeModifier.Operation.MULTIPLY_BASE));}
 				else {this.avoidedPlayerUUID = player.getUUID();
 					this.shouldAvoidPlayer = true;
 					}
