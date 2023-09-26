@@ -26,6 +26,8 @@ public class RisusParticles {
 		}
 	});
 	public static final RegistryObject<SimpleParticleType> ALTERATION_FINISHED = PARTICLES.register("alteration_finished", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> TOOTHICAL = PARTICLES.register("toothical", () -> new SimpleParticleType(false));
+
 	public static final RegistryObject<SimpleParticleType> JOYFLAME = PARTICLES.register("joyflame", () -> new SimpleParticleType(false));
 
 }

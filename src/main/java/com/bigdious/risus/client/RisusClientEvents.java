@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.AlterationFinishedParticle;
 import com.bigdious.risus.client.particle.AlterationParticle;
 import com.bigdious.risus.client.particle.JoyParticle;
+import com.bigdious.risus.client.particle.ToothicalParticle;
 import com.bigdious.risus.client.render.AlterationCatalystRenderer;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
@@ -38,6 +39,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
 		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
+		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
 	}
 
 	@SubscribeEvent

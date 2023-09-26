@@ -3,9 +3,13 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -77,6 +81,11 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
             player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 0, 0));
             player.getOffhandItem().hurtAndBreak(1, player, (what) -> {
                 what.broadcastBreakEvent(player.getUsedItemHand());});
+            player.getMainHandItem().hurtAndBreak(1, player, (what) -> {
+                what.broadcastBreakEvent(player.getUsedItemHand());});
+                Level level = player.level();
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.TURTLE_EGG_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);;
+
             //if(player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
             //player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
             //} else {if (player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) == null) {

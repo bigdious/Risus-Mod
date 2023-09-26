@@ -2,6 +2,7 @@ package com.bigdious.risus;
 
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusTab;
+import com.bigdious.risus.network.RisusPacketHandler;
 import com.google.common.collect.Maps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.resources.ResourceLocation;
@@ -49,6 +50,7 @@ public class Risus {
 		RisusPotions.POTIONS.register(bus);
 		RisusEntities.SPAWN_EGGS.register(bus);
 		RisusTab.CREATIVE_TABS.register(bus);
+		RisusSoundEvents.SOUNDS.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -57,6 +59,7 @@ public class Risus {
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			RisusDispenserRegistry.init();
+			RisusPacketHandler.init();
 
 			//block stripping
 			AxeItem.STRIPPABLES = Maps.newHashMap(AxeItem.STRIPPABLES);
@@ -85,7 +88,10 @@ public class Risus {
 
 			//wood types
 			WoodType.register(RisusBlocks.BONDKNOT_TYPE);
-		});
+
+		}
+
+		);
 	}
 
 	public static ResourceLocation prefix(String name) {
