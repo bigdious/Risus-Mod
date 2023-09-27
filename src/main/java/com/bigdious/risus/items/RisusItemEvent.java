@@ -35,7 +35,7 @@ import net.minecraftforge.network.PacketDistributor;
         if (source instanceof Player player) {
             if (player.hasEffect(RisusMobEffects.TOOTHLUSTER.get())) {
                 if (!event.getEntity().level().isClientSide()) {
-                    RisusPacketHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new CreateCritParticlePacket(event.getEntity().getId(), 2, RisusParticles.TOOTHICAL.get()));
+                    RisusPacketHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new CreateCritParticlePacket(event.getEntity().getId(), 1, RisusParticles.TOOTHICAL.get()));
                 }
             }
         }
