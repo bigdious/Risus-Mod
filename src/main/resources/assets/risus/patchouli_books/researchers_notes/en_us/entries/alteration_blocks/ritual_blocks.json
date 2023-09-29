@@ -2,6 +2,7 @@
   "name": "Ritual Blocks",
   "icon": "risus:curved_ritual_block",
   "category": "risus:alteration",
+  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",
