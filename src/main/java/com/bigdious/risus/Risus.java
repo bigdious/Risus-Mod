@@ -6,6 +6,7 @@ import com.bigdious.risus.network.RisusPacketHandler;
 import com.google.common.collect.Maps;
 import net.minecraft.ChatFormatting;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
@@ -51,6 +52,9 @@ public class Risus {
 		RisusEntities.SPAWN_EGGS.register(bus);
 		RisusTab.CREATIVE_TABS.register(bus);
 		RisusSoundEvents.SOUNDS.register(bus);
+
+		MinecraftForge.EVENT_BUS.addGenericListener(Entity.class, RisusCapabilities::attachEntityCapability);
+		bus.addListener(RisusCapabilities::registerCapabilities);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}

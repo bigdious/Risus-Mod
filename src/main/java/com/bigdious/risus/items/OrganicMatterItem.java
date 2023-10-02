@@ -1,6 +1,8 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.capability.ExBurnCapability;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusCapabilities;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -14,6 +16,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -37,6 +40,12 @@ public class OrganicMatterItem extends Item {
 
 	public OrganicMatterItem(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+		entity.getCapability(RisusCapabilities.EX_BURN).ifPresent(ExBurnCapability::incrementHealth);
+		return super.finishUsingItem(stack, level, entity);
 	}
 
 	@Override
