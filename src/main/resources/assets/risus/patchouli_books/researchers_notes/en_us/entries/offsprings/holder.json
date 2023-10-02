@@ -1,0 +1,28 @@
+{
+  "name": "Holder",
+  "icon": "risus:organic_matter",
+  "category": "risus:offsprings",
+  "advancement": "risus:little",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. Destroying them will result in gaining a piece or two of Organic Matter."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:holder",
+      "border": "true",
+      "text": "They may be little and not really lethal, but such traits lead to easily underestimating them..."
+      },
+
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "These structures are most fascinating. As with the majority of things that are infected by the 'Joyplague', it's nearly impossible to ascertain the age, as the plague will keep them ruinous but intact. I have two main hypothesis: First, these represent the origin of the plague. In this case, these would be the ancient places where, by unknown and likely horrific methods, the plague was created and spread."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Though this doesn't quite explain why there are so many. Secondly, the Sites could have been made by cultists after the appearance of the plague. Harvesting the near divine powers of the plague would necessitate appropriate conditions and these places seem to achieve exactly that. However, this idea still leaves many questions behind. The possibility of both hypothesis being correct is not negligible either. Then come the catalysts, which are simply baffling..."
+    }
+  ]
+}

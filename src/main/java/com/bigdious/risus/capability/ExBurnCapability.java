@@ -22,14 +22,14 @@ public class ExBurnCapability implements ExBurn {
 	@Override
 	public void incrementHealth() {
 		if (this.lostHealth > 0) {
-			this.lostHealth = Math.max(0, this.lostHealth - 2);
+			this.lostHealth = Math.max(0, this.lostHealth - 1);
 			this.update();
 		}
 	}
 
 	@Override
 	public void decrementHealth() {
-		this.lostHealth = this.lostHealth + 2;
+		this.lostHealth = this.lostHealth + 1;
 		this.update();
 	}
 
