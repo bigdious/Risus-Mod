@@ -1,0 +1,32 @@
+{
+  "name": "Fragmented World",
+  "icon": "minecraft:paper",
+  "category": "risus:observations",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In the past it was believed the world we live on is a sphere-like object in a large space orbiting around similar planets. We simply cannot perceive its curvature because of its absolute size. Things like the Nether are simply another layer in the crust of the planet, situated beneath the unbreakable bedrock layer, whereas the End is present somewhere in the vast space outside of this world."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Yet now, after some people have broken through the bedrock by unorthodox means, we know this idea to be false. In reality, this existence seems to be comprised of various 'planes' or 'layers' such as this world, which is usually called the 'Overworld', separated by borders of bedrock and void. These planes exist in an endless void where a person cannot normally cross from one into another, with the exception of when these planes collide. Such examples are portals that can connect them."
+      },
+
+    {
+      "type": "patchouli:text",
+      "text": "There have also been cases where falling from one world can result in appearing in a different one. It might be better to assume that these planes do not exist on each other like layers of soil and instead either take up the same space at different instances of existence or are present in a chaotic space where the connection between two points is not necessarily a line. Either way, if this is truly how this world works, it brings to question its origin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It's clear that outside of the Overworld, all others planes embody some sort of essences. The Nether is filled with flame and undeath, the End is ruled by space and 'alien-ness' - for the lack of a better word. Meanwhile some embody the mystical twilight itself, while others can be as mundane as bees. With all these taken into consideration, two conflicting conclusions come to mind: First is that the Overworld is the center of existence where all the essences from various planes "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "converge at varying strengths and form a sort of balance. The second, which seems more probable, is that the Overworld is the original world from which all other planes were broken off from in their primordial form. Either conclusion however would imply a higher authority which enabled the balance of such a fragmented existence. There is also the possibility that an event could have caused the current state of the world. For now, I'll call this event the 'Great Rupture'."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If there was a Great Rupture, that implies that a 'Unified World' was present in the past. That could explain the various structures and ruins found throughout the Overworld and the Nether that do not have a clear history: They could be the remnants of the once Unified World, existing in their own worlds after the Great Rupture happened."
+    }
+  ]
+}
