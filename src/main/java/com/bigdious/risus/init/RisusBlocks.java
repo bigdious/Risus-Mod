@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.util.RisusSkullType;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -63,7 +64,7 @@ public class RisusBlocks {
 	public static final RegistryObject<WallSignBlock> BONDKNOT_WALL_SIGN = BLOCKS.register("bondknot_wall_sign", () -> new RisusWallSignBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion().noCollission(), BONDKNOT_TYPE));
 
 	public static final RegistryObject<Block> HEART_TRANSPLANT = BLOCKS.register("heart_transplant", () -> new HeartTransplantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final RegistryObject<Block> REGEN_ROSE = BLOCKS.register("regen_rose", () -> new RegenRoseBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final RegistryObject<Block> REGEN_ROSE = BLOCKS.register("regen_rose", () -> new RegenRoseBlock(MobEffects.REGENERATION, 1 ,BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ)));
 public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.register("potted_heart_transplant", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HEART_TRANSPLANT, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 	public static final RegistryObject<Block> POTTED_REGEN_ROSE = BLOCKS.register("potted_regen_rose", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REGEN_ROSE, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 	public static final RegistryObject<Block> BABY_RIBCAGE = BLOCKS.register("baby_ribcage", () -> new BabyRibcageBlock(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()));

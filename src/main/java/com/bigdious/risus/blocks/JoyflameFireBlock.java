@@ -1,10 +1,14 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.data.BlockTagGenerator;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -55,4 +59,12 @@ public class JoyflameFireBlock extends BaseFireBlock {
 		return true;
 	}
 
+	@Override
+	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+		if (!level.isClientSide() && entity instanceof LivingEntity living && living.isAlive() && (living.tickCount % 100 == 0 || !living.hasEffect(RisusMobEffects.EXBURN.get()))) {
+			living.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN.get(), 600));
+		}
+
+	}
 }
+
