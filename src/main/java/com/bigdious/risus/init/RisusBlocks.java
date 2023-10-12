@@ -26,7 +26,7 @@ public class RisusBlocks {
 
 	public static final RegistryObject<Block> ALTERATION_CATALYST = BLOCKS.register("alteration_catalyst", () -> new AlterationCatalystBlock(Block.Properties.copy(Blocks.OBSIDIAN).noOcclusion()));
 	public static final RegistryObject<Block> ASHEN_REMAINS = BLOCKS.register("ashen_remains", () -> new AshenRemainsBlock(Block.Properties.copy(Blocks.SOUL_SOIL)));
-	public static final RegistryObject<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new Block(Block.Properties.copy(Blocks.SOUL_SOIL)));
+	public static final RegistryObject<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new RemainsBlock(Block.Properties.copy(Blocks.NETHERRACK)));
 	public static final RegistryObject<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.copy(Blocks.CRYING_OBSIDIAN)));
 	public static final RegistryObject<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.POLISHED_BASALT).noOcclusion()));
 	public static final RegistryObject<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.copy(Blocks.CRIMSON_HYPHAE)));
