@@ -1,10 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.AshenRemainsBlock;
-import com.bigdious.risus.blocks.PoppingBondknotBlock;
-import com.bigdious.risus.blocks.RibcageBlock;
-import com.bigdious.risus.blocks.ZitBlock;
+import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
@@ -212,6 +209,11 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.ROTTED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(texture("block/eye_ender")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(texture("block/eye_bleached")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(texture("block/eye_bloodshot")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(texture("block/eye_golden")));
+		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(texture("block/eye_emerald")));
 
 		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));

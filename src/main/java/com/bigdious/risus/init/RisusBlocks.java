@@ -84,6 +84,11 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<WallBlock> ROTTING_TISSUE = BLOCKS.register("rotting_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.ROTTING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<WallBlock> DECOMPOSING_TISSUE = BLOCKS.register("decomposing_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECOMPOSING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<WallBlock> DECAYING_TISSUE = BLOCKS.register("decaying_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECAYING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> EYE_ENDER = BLOCKS.register("eye_ender", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> EYE_BLEACHED = BLOCKS.register("eye_bleached", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> EYE_BLOODSHOT = BLOCKS.register("eye_bloodshot", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> EYE_EMERALD = BLOCKS.register("eye_emerald", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> EYE_GOLDEN = BLOCKS.register("eye_golden", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<WallBlock> BONE_WALL = BLOCKS.register("bone_wall", () -> new WallBlock(Block.Properties.copy(Blocks.BONE_BLOCK)));
 
 	public static final RegistryObject<Block> LIVING_TISSUE = BLOCKS.register("living_tissue", () -> new Block(Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));

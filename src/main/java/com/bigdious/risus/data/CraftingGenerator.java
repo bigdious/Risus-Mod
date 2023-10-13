@@ -40,6 +40,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.RABBIT, Items.CHICKEN, Items.COD, Items.TROPICAL_FISH, Items.SALMON), RisusItems.TISSUE.get()).unlockedBy("has_pork", has(Items.PORKCHOP)).unlockedBy("has_beef", has(Items.BEEF)).unlockedBy("has_mutton", has(Items.MUTTON)).unlockedBy("has_rabbit", has(Items.RABBIT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusItems.BURNT_HYPHAE.get()).unlockedBy("has_chyphae", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_cstem", has(Items.CRIMSON_STEM)).unlockedBy("has_whyphae", has(Items.WARPED_HYPHAE)).unlockedBy("has_wstem", has(Items.WARPED_STEM)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusItems.REGEN_ROSE.get()).unlockedBy("has_wither_rose", has(Items.WITHER_ROSE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ENDER_EYE), RisusItems.EYE_ENDER.get()).unlockedBy("has_ender_eye", has(Items.ENDER_EYE)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")
@@ -280,6 +281,29 @@ public class CraftingGenerator extends RecipeProvider {
 				.define('Y', RisusItems.BONE_WALL.get())
 				.unlockedBy("has_tissue", has(RisusItems.TISSUE.get()))
 				.unlockedBy("has_teeth", has(RisusItems.TEETH.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLEACHED.get(), 1)
+				.requires(RisusItems.TEETH.get())
+				.requires(RisusItems.EYE_ENDER.get())
+				.requires(Items.CHARCOAL)
+				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+				.unlockedBy("has_item1", has(RisusItems.TEETH.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_GOLDEN.get(), 1)
+				.requires(RisusItems.EYE_ENDER.get())
+				.requires(Items.GOLD_INGOT)
+				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_EMERALD.get(), 1)
+				.requires(RisusItems.EYE_ENDER.get())
+				.requires(Items.EMERALD)
+				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+				.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLOODSHOT.get(), 1)
+				.requires(RisusItems.EYE_ENDER.get())
+				.requires(RisusItems.ORGANIC_MATTER.get())
+				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+				.unlockedBy("has_item1", has(RisusItems.ORGANIC_MATTER.get()))
 				.save(consumer);
 	}
 }

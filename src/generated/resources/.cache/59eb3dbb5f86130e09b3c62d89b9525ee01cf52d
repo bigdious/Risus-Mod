@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-13T20:29:46.9352478	Loot Tables
+// 1.20.1	2023-10-13T22:11:58.967014	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
 4b8a0d12048ea258e3191358136f73316374e03d data/risus/loot_tables/blocks/baby_ribcage.json
@@ -31,6 +31,11 @@ decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_tables/blocks/decayed_t
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_tables/blocks/decomposed_tissue.json
 8754ae627542419799dcff8c75e6b3a47bd78c58 data/risus/loot_tables/blocks/decomposing_tissue.json
 0848c6823beedc155b3d4e8a94adb6ba946c9dfb data/risus/loot_tables/blocks/engraved_basalt.json
+2d359175a49e732b876057db3d1b377f0f09ba73 data/risus/loot_tables/blocks/eye_bleached.json
+0dacf3b435b22e4e545ac5f3a36b5bc4e1473856 data/risus/loot_tables/blocks/eye_bloodshot.json
+60213d600d97d9246235d4ef04b8e9009debd580 data/risus/loot_tables/blocks/eye_emerald.json
+49e8ba919c098bca4005f6f3ceaeff2a257ced91 data/risus/loot_tables/blocks/eye_ender.json
+27bb7a5024fe840783f8bad4974255d7ecd9dc20 data/risus/loot_tables/blocks/eye_golden.json
 a1da6b4c56a5c470054da6148313abd7d32ad4b2 data/risus/loot_tables/blocks/gluttony_scaleplate.json
 a6a1244fd95622ea9607bfbec50ec0d7396ab4b5 data/risus/loot_tables/blocks/grimstone.json
 43a9cbbefc8b41f0b4ddd85760856fc8fd023981 data/risus/loot_tables/blocks/grimstone_bricks.json

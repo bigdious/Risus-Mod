@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-15T10:07:30.1151293	Risus blockstates and models
+// 1.20.1	2023-10-13T22:11:58.9722253	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -31,6 +31,11 @@ c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_
 124a04625066073e20e9520618dd9e50f957277f assets/risus/blockstates/decomposed_tissue.json
 124a04625066073e20e9520618dd9e50f957277f assets/risus/blockstates/decomposing_tissue.json
 0334039c8198fbf554420b89f960ca5c90f925b6 assets/risus/blockstates/engraved_basalt.json
+e0c9d48c2e2e52a716772a11fd6757a3fb796b96 assets/risus/blockstates/eye_bleached.json
+b48ffa69e5e2df592253dc0b2e96f9ddb0bf8769 assets/risus/blockstates/eye_bloodshot.json
+9ec0211dfd4a660d6f0dc73b4aebf298e54766b7 assets/risus/blockstates/eye_emerald.json
+40a6a3caf7fc62ce3ddcb42d2d857dbd50216d5b assets/risus/blockstates/eye_ender.json
+a4d9a17fc34edf01da7929518cce89457cbeb55d assets/risus/blockstates/eye_golden.json
 c9bdf04cbdcbc8b5f3e7df6e70dee6358399724e assets/risus/blockstates/gluttony_scaleplate.json
 1f463d973c1d6849035de5e8006483425d81783b assets/risus/blockstates/grimstone.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json

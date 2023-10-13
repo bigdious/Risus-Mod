@@ -69,6 +69,11 @@ public class RisusItems {
 	public static final RegistryObject<Item> ROTTING_TISSUE = ITEMS.register("rotting_tissue", () -> new BlockItem(RisusBlocks.ROTTING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> DECOMPOSING_TISSUE = ITEMS.register("decomposing_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> DECAYING_TISSUE = ITEMS.register("decaying_tissue", () -> new BlockItem(RisusBlocks.DECAYING_TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> EYE_ENDER = ITEMS.register("eye_ender", () -> new BlockItem(RisusBlocks.EYE_ENDER.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> EYE_BLEACHED = ITEMS.register("eye_bleached", () -> new BlockItem(RisusBlocks.EYE_BLEACHED.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> EYE_GOLDEN = ITEMS.register("eye_golden", () -> new BlockItem(RisusBlocks.EYE_GOLDEN.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> EYE_BLOODSHOT = ITEMS.register("eye_bloodshot", () -> new BlockItem(RisusBlocks.EYE_BLOODSHOT.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> EYE_EMERALD = ITEMS.register("eye_emerald", () -> new BlockItem(RisusBlocks.EYE_EMERALD.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> LIVING_TISSUE = ITEMS.register("living_tissue", () -> new BlockItem(RisusBlocks.LIVING_TISSUE.get(), defaultWithRarity()));

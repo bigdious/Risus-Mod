@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "risus:block/eye_bloodshot",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "risus:block/eye_bloodshot",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/eye_bloodshot",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "risus:block/eye_bloodshot",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "risus:block/eye_bloodshot"
+    },
+    "facing=west": {
+      "model": "risus:block/eye_bloodshot",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
