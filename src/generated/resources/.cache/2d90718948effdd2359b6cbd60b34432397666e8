@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-13T22:11:58.9722253	Risus blockstates and models
+// 1.20.1	2023-10-20T19:50:56.148064	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -36,6 +36,7 @@ b48ffa69e5e2df592253dc0b2e96f9ddb0bf8769 assets/risus/blockstates/eye_bloodshot.
 9ec0211dfd4a660d6f0dc73b4aebf298e54766b7 assets/risus/blockstates/eye_emerald.json
 40a6a3caf7fc62ce3ddcb42d2d857dbd50216d5b assets/risus/blockstates/eye_ender.json
 a4d9a17fc34edf01da7929518cce89457cbeb55d assets/risus/blockstates/eye_golden.json
+ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.json
 c9bdf04cbdcbc8b5f3e7df6e70dee6358399724e assets/risus/blockstates/gluttony_scaleplate.json
 1f463d973c1d6849035de5e8006483425d81783b assets/risus/blockstates/grimstone.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json
@@ -68,6 +69,7 @@ c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.jso
 20c25d9d3d12fb0ba9ab70760de05eff35ca4278 assets/risus/blockstates/ribcage.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotted_tissue.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotting_tissue.json
+935a899591662bcad8b4f12292cd307dbc964067 assets/risus/blockstates/skin.json
 336dc67db6bcf81e17a0ac821516663f6f88d21f assets/risus/blockstates/smiling_remains.json
 2e2f8827ee6e1f4ea510b2778fb3a720e4f00c07 assets/risus/blockstates/stripped_bondknot_log.json
 199cf7d93b6b2023471b9f6e088b7baef45ca166 assets/risus/blockstates/stripped_bondknot_wood.json
@@ -157,6 +159,7 @@ a941d999d5a2f01a90304d62a30e23bf12ba8729 assets/risus/models/block/popping_bondk
 a53a45d53f602493d19f51d0ff68d79e1e6441e8 assets/risus/models/block/popping_bondknot_wood_south.json
 6a2331d6d1507044cd432722359b2e2d271ee033 assets/risus/models/block/popping_bondknot_wood_up.json
 e373e5ac57e65b26bb36858654f1f9041d3b7892 assets/risus/models/block/popping_bondknot_wood_west.json
+b9d311152129a46ed0c73c3dd61d54d4fa16e8e3 assets/risus/models/block/skin.json
 5521e0debb31e36c5e502c2a3fbd9c4aa7e137ae assets/risus/models/block/smiling_remains.json
 06012968833aefbedbe7f56d903362eb7f17a7a0 assets/risus/models/block/stripped_bondknot_log.json
 d4af5924af296dbab46b3c11032c86af05f4c81b assets/risus/models/block/stripped_bondknot_log_horizontal.json
