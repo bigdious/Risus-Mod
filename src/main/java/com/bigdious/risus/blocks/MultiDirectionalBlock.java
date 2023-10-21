@@ -1,53 +1,50 @@
 package com.bigdious.risus.blocks;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.FrontAndTop;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
+public class MultiDirectionalBlock extends Block {
+	public static final EnumProperty<FrontAndTop> ORIENTATION = BlockStateProperties.ORIENTATION;
 
-public class MultiDirectionalBlock extends ActuallyUseableDirectionalBlock{
-    public static final DirectionProperty FACING = DirectionalBlock.FACING;
-    public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public MultiDirectionalBlock(Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.getStateDefinition().any().setValue(ORIENTATION, FrontAndTop.NORTH_UP));
+	}
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> state) {
-        state.add(FACING);
-        state.add(HORIZONTAL_FACING);
+	@Nullable
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		Direction direction = context.getNearestLookingDirection().getOpposite();
+		Direction direction1 = switch (direction) {
+			case DOWN -> context.getHorizontalDirection().getOpposite();
+			case UP -> context.getHorizontalDirection();
+			case NORTH, SOUTH, WEST, EAST -> Direction.UP;
+		};
 
-    }
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Direction clicked = context.getClickedFace();
-        BlockState state = defaultBlockState().setValue(FACING, clicked).setValue(HORIZONTAL_FACING, Direction.NORTH);
-        if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
-            return state;
-        }
-        for (Direction dir : context.getNearestLookingDirections()) {
-            state = defaultBlockState().setValue(FACING, dir.getOpposite()).setValue(HORIZONTAL_FACING, Direction.NORTH);
-            if (dir.getOpposite()==Direction.UP){
-                this.defaultBlockState().setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());}
-            if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
-                return state;
-            }
-        }
-        return null;
-    }
-    public MultiDirectionalBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.UP).setValue(HORIZONTAL_FACING, Direction.NORTH));
-    }
+		return this.defaultBlockState().setValue(ORIENTATION, FrontAndTop.fromFrontAndTop(direction, direction1));
+	}
+
+	@Override
+	public BlockState rotate(BlockState blockState, Rotation rotation) {
+		return blockState.setValue(ORIENTATION, rotation.rotation().rotate(blockState.getValue(ORIENTATION)));
+	}
+
+	@Override
+	public BlockState mirror(BlockState blockState, Mirror mirror) {
+		return blockState.setValue(ORIENTATION, mirror.rotation().rotate(blockState.getValue(ORIENTATION)));
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(ORIENTATION);
+	}
 }
