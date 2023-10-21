@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-20T19:50:56.148064	Risus blockstates and models
+// 1.20.1	2023-10-21T16:16:41.523551	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
 5783f6dd460665c66ab1dde4cea4198d57c368c3 assets/risus/blockstates/baby_ribcage.json
@@ -43,6 +43,7 @@ c9bdf04cbdcbc8b5f3e7df6e70dee6358399724e assets/risus/blockstates/gluttony_scale
 a06169093b01ffb883cb1c89baac04ead230fc6f assets/risus/blockstates/grimstone_slab.json
 37c0390f6cfef351425b1cb6ec8ebf0bd7fe9423 assets/risus/blockstates/grimstone_stairs.json
 6cad01a9850470a5c37ed672ae58c4afe72c3154 assets/risus/blockstates/grimstone_wall.json
+c0af7a7adc9341a925c16fa01c878d120add417b assets/risus/blockstates/hairy_fleshy_skin.json
 1098b28dc3479f755a5f15fe3bc62f3f2d5f7caa assets/risus/blockstates/heart_transplant.json
 03631806c19614b2b55de7fff880ceed561e2500 assets/risus/blockstates/imitation_scaleplate.json
 11de5e4c633c807bc1c69b8dd56e1a35b2be11cb assets/risus/blockstates/joyflame_campfire.json

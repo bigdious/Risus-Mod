@@ -107,7 +107,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
 		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
 		dropSelf(RisusBlocks.FLESHY_SKIN.get());
+		dropSelf(RisusBlocks.CURVED_FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.SKIN.get());
+		dropSelf(RisusBlocks.HAIRY_FLESHY_SKIN.get());
+		dropSelf(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+		dropSelf(RisusBlocks.HAIRY_SKIN.get());
 		dropSelf(RisusBlocks.EYE_ENDER.get());
 		dropSelf(RisusBlocks.EYE_BLEACHED.get());
 		dropSelf(RisusBlocks.EYE_BLOODSHOT.get());

@@ -96,8 +96,11 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<Block> EYE_EMERALD = BLOCKS.register("eye_emerald", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<Block> EYE_GOLDEN = BLOCKS.register("eye_golden", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<Block> FLESHY_SKIN = BLOCKS.register("fleshy_skin", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
-	//public static final RegistryObject<Block> CURVED_FLESHY_SKIN = BLOCKS.register("curved_fleshy_skin", () -> new MultiDirectionalBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
+	public static final RegistryObject<Block> CURVED_FLESHY_SKIN = BLOCKS.register("curved_fleshy_skin", () -> new MultiDirectionalBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> SKIN = BLOCKS.register("skin", () -> new Block(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
+	public static final RegistryObject<Block> HAIRY_FLESHY_SKIN = BLOCKS.register("hairy_fleshy_skin", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
+	public static final RegistryObject<Block> HAIRY_CURVED_FLESHY_SKIN = BLOCKS.register("hairy_curved_fleshy_skin", () -> new MultiDirectionalBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
+	public static final RegistryObject<Block> HAIRY_SKIN = BLOCKS.register("hairy_skin", () -> new Block(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 
 	public static final RegistryObject<Block> JOYFLAME_TORCH = BLOCKS.register("joyflame_torch", () -> new ModdedTorchBlock(Block.Properties.copy(Blocks.TORCH)));
 	public static final RegistryObject<Block> JOYFLAME_WALL_TORCH = BLOCKS.register("joyflame_wall_torch", () -> new ModdedWallTorchBlock(Block.Properties.copy(Blocks.TORCH)));

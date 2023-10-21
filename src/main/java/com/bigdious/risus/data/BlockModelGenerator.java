@@ -216,6 +216,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(texture("block/eye_emerald")));
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().getExistingFile(texture("block/fleshy_skin")));
 		simpleBlock(RisusBlocks.SKIN.get());
+		directionalBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get(), models().getExistingFile(texture("block/hairy_fleshy_skin")));
+
+
 
 
 

@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "orientation=down_east": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 90,
+      "x": 180
+    },
+    "orientation=down_north": {
+      "model": "risus:block/curved_fleshy_skin",
+      "x": 180
+    },
+    "orientation=down_south": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 180,
+      "x": 180
+    },
+    "orientation=down_west": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 270,
+      "x": 180
+
+    },
+    "orientation=east_up": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 90,
+      "x": 90
+    },
+    "orientation=north_up": {
+      "model": "risus:block/curved_fleshy_skin",
+      "x": 90
+    },
+    "orientation=south_up": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 180,
+      "x": 90
+    },
+    "orientation=up_east": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 90
+    },
+    "orientation=up_north": {
+      "model": "risus:block/curved_fleshy_skin"
+    },
+    "orientation=up_south": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 180
+    },
+    "orientation=up_west": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 270
+    },
+    "orientation=west_up": {
+      "model": "risus:block/curved_fleshy_skin",
+      "y": 270,
+      "x": 90
+    }
+  }
+}

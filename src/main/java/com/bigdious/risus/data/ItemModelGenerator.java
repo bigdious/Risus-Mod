@@ -91,7 +91,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.EYE_BLOODSHOT.get());
 		toBlock(RisusBlocks.EYE_EMERALD.get());
 		toBlock(RisusBlocks.EYE_GOLDEN.get());
+		toBlock(RisusBlocks.SKIN.get());
 		toBlock(RisusBlocks.FLESHY_SKIN.get());
+		toBlock(RisusBlocks.CURVED_FLESHY_SKIN.get());
+		toBlock(RisusBlocks.HAIRY_SKIN.get());
+		toBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get());
+		toBlock(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
 				.texture("wall", new ResourceLocation("block/bone_block_side"));
