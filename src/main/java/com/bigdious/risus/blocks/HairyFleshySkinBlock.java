@@ -21,6 +21,9 @@ public class HairyFleshySkinBlock extends ActuallyUseableDirectionalBlock {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if(player.getMainHandItem().is(Tags.Items.SHEARS)){
 			level.setBlock(pos, RisusBlocks.FLESHY_SKIN.get().defaultBlockState().setValue(ActuallyUseableDirectionalBlock.FACING, state.getValue(FACING)), 11);
+			player.getMainHandItem().hurtAndBreak(1, player, (p_43388_) -> {
+				p_43388_.broadcastBreakEvent(player.getUsedItemHand());
+			});
 			return InteractionResult.SUCCESS;
 
 		}

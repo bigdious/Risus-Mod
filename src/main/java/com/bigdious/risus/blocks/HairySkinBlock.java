@@ -23,6 +23,9 @@ public class HairySkinBlock extends Block {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if(player.getMainHandItem().is(Tags.Items.SHEARS)){
 			level.setBlock(pos, RisusBlocks.SKIN.get().defaultBlockState(), 11);
+			player.getMainHandItem().hurtAndBreak(1, player, (p_43388_) -> {
+				p_43388_.broadcastBreakEvent(player.getUsedItemHand());
+			});
 			return InteractionResult.SUCCESS;
 
 		}
