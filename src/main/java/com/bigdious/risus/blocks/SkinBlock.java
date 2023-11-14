@@ -5,6 +5,8 @@ import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
@@ -28,6 +30,7 @@ public class SkinBlock extends Block {
 			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 11);
 			player.getMainHandItem().shrink(1);
 			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
+			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
 			return InteractionResult.SUCCESS;
 
 		}

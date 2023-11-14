@@ -22,6 +22,7 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 		if(player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
 			level.setBlock(pos, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
 			player.getMainHandItem().shrink(1);
+
 			return InteractionResult.SUCCESS;
 
 		}
