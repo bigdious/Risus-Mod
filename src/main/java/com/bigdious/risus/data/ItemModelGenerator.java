@@ -142,6 +142,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusItems.TEETH);
 		singleTex(RisusItems.NEURON_STEM);
+		singleTex(RisusItems.HAIR_FOLLICLES);
 
 
 		//spawn eggs

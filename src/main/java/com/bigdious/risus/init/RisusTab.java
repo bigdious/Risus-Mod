@@ -68,6 +68,13 @@ public class RisusTab {
 					output.accept(RisusBlocks.GRIMSTONE_STAIRS.get());
 					output.accept(RisusBlocks.GRIMSTONE_SLAB.get());
 					output.accept(RisusBlocks.GRIMSTONE_WALL.get());
+					output.accept(RisusBlocks.SKIN.get());
+					output.accept(RisusBlocks.FLESHY_SKIN.get());
+					output.accept(RisusBlocks.CURVED_FLESHY_SKIN.get());
+					output.accept(RisusBlocks.HAIRY_SKIN.get());
+					output.accept(RisusBlocks.HAIRY_FLESHY_SKIN.get());
+					output.accept(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+					output.accept(RisusItems.HAIR_FOLLICLES.get());
 					output.accept(RisusBlocks.LIVING_TISSUE.get());
 					output.accept(RisusBlocks.ROTTING_TISSUE.get());
 					output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());

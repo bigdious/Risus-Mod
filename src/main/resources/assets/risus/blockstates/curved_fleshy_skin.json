@@ -2,7 +2,7 @@
   "variants": {
     "orientation=down_east": {
       "model": "risus:block/curved_fleshy_skin",
-      "y": 90,
+      "y": -90,
       "x": 180
     },
     "orientation=down_north": {
@@ -11,12 +11,12 @@
     },
     "orientation=down_south": {
       "model": "risus:block/curved_fleshy_skin",
-      "y": 180,
+      "y": -180,
       "x": 180
     },
     "orientation=down_west": {
       "model": "risus:block/curved_fleshy_skin",
-      "y": 270,
+      "y": -270,
       "x": 180
 
     },

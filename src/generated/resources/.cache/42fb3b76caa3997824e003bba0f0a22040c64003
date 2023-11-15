@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-21T15:56:56.7694855	Risus Item Models
+// 1.20.1	2023-11-15T18:04:22.9361983	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
@@ -53,6 +53,7 @@ ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_wall
 6b4a421a6f08caec212dc8f739dd3ca9a8678a75 assets/risus/models/item/hairy_curved_fleshy_skin.json
 67e94359f35a511b0b82629402b66c558675d9ec assets/risus/models/item/hairy_fleshy_skin.json
 0d96a533eaa522b90b2880cc919c43ae619ed400 assets/risus/models/item/hairy_skin.json
+194dc95b7dfa2424d85c66a27c4d3d9b8ece552b assets/risus/models/item/hair_follicles.json
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 08ad060456dce4cd9b17851442e7a18e3102a8be assets/risus/models/item/imitation_scaleplate.json
