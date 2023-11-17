@@ -38,54 +38,62 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 			level.setBlock(pos, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
 			player.getMainHandItem().shrink(1);
 			//just making sure they appear on the right faces. Could it be done nicer? Certainly, but idk how and I am not wasting more hours on this
-			if(state.getValue(ORIENTATION)== FrontAndTop.UP_EAST){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.UP, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.SOUTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
+
+			Direction directionneeded;
+			Direction directionneeded2;
+			switch (state.getValue(ORIENTATION)){
+				case UP_EAST: {
+					directionneeded = Direction.UP;
+					directionneeded2 = Direction.SOUTH;
+					break;}
+				case UP_NORTH: {
+					directionneeded = Direction.UP;
+					directionneeded2 = Direction.EAST;
+					break;}
+				case UP_SOUTH: {
+					directionneeded = Direction.UP;
+					directionneeded2 = Direction.WEST;
+					break;}
+				case UP_WEST: {
+					directionneeded = Direction.UP;
+					directionneeded2 = Direction.NORTH;
+					break;}
+				case EAST_UP: {
+					directionneeded = Direction.EAST;
+					directionneeded2 = Direction.SOUTH;
+					break;}
+				case NORTH_UP: {
+					directionneeded = Direction.NORTH;
+					directionneeded2 = Direction.EAST;
+					break;}
+				case SOUTH_UP: {
+					directionneeded = Direction.SOUTH;
+					directionneeded2 = Direction.WEST;
+					break;}
+				case WEST_UP: {
+					directionneeded = Direction.WEST;
+					directionneeded2 = Direction.NORTH;
+					break;}
+				case DOWN_EAST: {
+					directionneeded = Direction.DOWN;
+					directionneeded2 = Direction.SOUTH;
+					break;}
+				case DOWN_NORTH: {
+					directionneeded = Direction.DOWN;
+					directionneeded2 = Direction.EAST;
+					break;}
+				case DOWN_WEST: {
+					directionneeded = Direction.DOWN;
+					directionneeded2 = Direction.WEST;
+					break;}
+				default: {
+					directionneeded = Direction.DOWN;
+					directionneeded2 = Direction.NORTH;
+					break;}
 			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.UP_NORTH){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.UP, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.EAST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.UP_SOUTH){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.UP, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.WEST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.UP_WEST){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.UP, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.NORTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.EAST_UP){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.EAST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.SOUTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.NORTH_UP){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.NORTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.EAST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.SOUTH_UP){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.SOUTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.WEST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.WEST_UP){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.WEST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.NORTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.DOWN_EAST){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.DOWN, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.SOUTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.DOWN_NORTH){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.DOWN, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.EAST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.DOWN_WEST){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.DOWN, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.WEST, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
-			if(state.getValue(ORIENTATION)== FrontAndTop.UP_EAST){
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.DOWN, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-				ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), Direction.NORTH, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
-			}
+			ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
+			ParticleUtils.spawnParticlesOnBlockFace(level , pos, (ParticleOptions) new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded2, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)) , 0.6);
+
 			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
 			return InteractionResult.SUCCESS;
 

@@ -75,6 +75,11 @@ public class RisusTab {
 					output.accept(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 					output.accept(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
 					output.accept(RisusItems.HAIR_FOLLICLES.get());
+					output.accept(RisusItems.EYE_ENDER.get());
+					output.accept(RisusItems.EYE_BLEACHED.get());
+					output.accept(RisusItems.EYE_BLOODSHOT.get());
+					output.accept(RisusItems.EYE_GOLDEN.get());
+					output.accept(RisusItems.EYE_EMERALD.get());
 					output.accept(RisusBlocks.LIVING_TISSUE.get());
 					output.accept(RisusBlocks.ROTTING_TISSUE.get());
 					output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());
