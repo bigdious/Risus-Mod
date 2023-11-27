@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"render_type": "minecraft:translucent",
 	"texture_size": [32, 16],
@@ -363,7 +364,7 @@
 		},
 		{
 			"name": "innerBlood2",
-			"from": [6.9, 6.9, -0.1],
+			"from": [6.9, 6.9, 0.1],
 			"to": [9.1, 9.1, 3.1],
 			"faces": {
 				"north": {"uv": [9.5, 6, 10.5, 8], "texture": "#0"},
@@ -443,7 +444,6 @@
 			"from": [7, 0, 7],
 			"to": [8, 16, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [15, 8, 15]},
-			"color": 0,
 			"faces": {
 				"north": {"uv": [0, 0, 1, 16], "texture": "#0"},
 				"east": {"uv": [0, 0, 1, 16], "texture": "#0"},
@@ -468,7 +468,7 @@
 		},
 		{
 			"name": "innerBlood3",
-			"from": [-0.1, 6.9, 6.9],
+			"from": [0.1, 6.9, 6.9],
 			"to": [3.1, 9.1, 9.1],
 			"faces": {
 				"north": {"uv": [9.5, 8, 11, 10], "texture": "#0"},
@@ -560,7 +560,7 @@
 		{
 			"name": "innerBlood4",
 			"from": [6.9, 6.9, 12.9],
-			"to": [9.1, 9.1, 16.1],
+			"to": [9.1, 9.1, 15.9],
 			"faces": {
 				"north": {"uv": [9.5, 6, 10.5, 8], "texture": "#0"},
 				"east": {"uv": [9.5, 5, 11, 7], "texture": "#0"},
@@ -651,7 +651,7 @@
 		{
 			"name": "innerBlood5",
 			"from": [12.9, 6.9, 6.9],
-			"to": [16.1, 9.1, 9.1],
+			"to": [15.9, 9.1, 9.1],
 			"faces": {
 				"north": {"uv": [9.5, 5, 11, 7], "texture": "#0"},
 				"east": {"uv": [9.5, 6, 10.5, 8], "texture": "#0"},
@@ -742,7 +742,7 @@
 		{
 			"name": "innerBlood6",
 			"from": [6.9, 12.9, 6.9],
-			"to": [9.1, 16.1, 9.1],
+			"to": [9.1, 15.9, 9.1],
 			"faces": {
 				"north": {"uv": [9.5, 5, 11, 7], "rotation": 90, "texture": "#0"},
 				"east": {"uv": [9.5, 4, 10.5, 7], "rotation": 180, "texture": "#0"},
@@ -832,7 +832,7 @@
 		},
 		{
 			"name": "innerBlood7",
-			"from": [6.9, -0.1, 6.9],
+			"from": [6.9, 0.1, 6.9],
 			"to": [9.1, 3.1, 9.1],
 			"faces": {
 				"north": {"uv": [9.5, 5, 11, 7], "rotation": 270, "texture": "#0"},

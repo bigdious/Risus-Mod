@@ -1,9 +1,13 @@
 package com.bigdious.risus.capability;
 
+import com.bigdious.risus.init.RisusCapabilities;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.NoteBlockEvent;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -33,6 +37,7 @@ public class ExBurnCapability implements ExBurn {
 		this.update();
 	}
 
+
 	public void update() {
 		if (this.host != null && this.host.getAttribute(Attributes.MAX_HEALTH) != null) {
 			if (Objects.requireNonNull(this.host.getAttribute(Attributes.MAX_HEALTH)).getModifier(HEALTH_MODIFIER_UUID) != null) {
@@ -42,6 +47,7 @@ public class ExBurnCapability implements ExBurn {
 			this.host.setHealth(this.host.getHealth());
 		}
 	}
+
 
 	@Override
 	public CompoundTag serializeNBT() {
@@ -55,4 +61,8 @@ public class ExBurnCapability implements ExBurn {
 		this.lostHealth = nbt.getInt("lostHealth");
 		this.update();
 	}
+
+
+
 }
+

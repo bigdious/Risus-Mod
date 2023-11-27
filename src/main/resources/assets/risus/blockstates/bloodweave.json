@@ -1,0 +1,820 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_b2b"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+    "apply": {
+      "model": "risus:block/bloodweave_bw"
+    },
+    "when": {
+      "north": "false",
+      "south": "false",
+      "east": "false",
+      "west": "false",
+      "up": "true",
+      "down": "false"
+    }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_bw",
+        "x": 180
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_bw",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_bw",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_bw",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_bw",
+        "x": 90
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_w2",
+        "x": 90
+      },
+      "when": {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_w2",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      }
+    },{
+      "apply": {
+        "model": "risus:block/bloodweave_core"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_w2"
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "true"
+      }
+    }
+  ]}

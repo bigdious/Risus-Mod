@@ -42,7 +42,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.texture("all", Risus.prefix("block/smiling_remains"))
 				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
-		simpleBlock(RisusBlocks.BLOODWEAVE.get(), models().getExistingFile(texture("block/bloodweave_bwb")));
 
 		getVariantBuilder(RisusBlocks.RIBCAGE.get()).forAllStates(state -> {
 			ModelFile bottom = models().getExistingFile(texture("block/ribcage_cage"));

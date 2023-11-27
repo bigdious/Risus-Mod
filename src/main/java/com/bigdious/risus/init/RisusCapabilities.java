@@ -4,11 +4,13 @@ import com.bigdious.risus.capability.ExBurn;
 import com.bigdious.risus.capability.ExBurnCapability;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import javax.annotation.Nonnull;
 
@@ -47,4 +49,5 @@ public class RisusCapabilities {
 			});
 		}
 	}
+
 }

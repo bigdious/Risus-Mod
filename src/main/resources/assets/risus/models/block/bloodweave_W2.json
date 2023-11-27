@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"render_type": "minecraft:translucent",
 	"texture_size": [32, 16],
@@ -11,7 +12,7 @@
 			"name": "blood1",
 			"from": [7, 0, 7],
 			"to": [9, 16, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 17]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [9.5, 0, 10.5, 16], "texture": "#0"},
 				"east": {"uv": [9.5, 0, 10.5, 16], "texture": "#0"},
@@ -25,7 +26,7 @@
 			"name": "wall1",
 			"from": [6, 0, 6],
 			"to": [10, 16, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [19, 17, 12]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 2.5, 11], "texture": "#0"},
 				"east": {"uv": [0, 0, 2, 16], "texture": "#0"},
@@ -39,7 +40,7 @@
 			"name": "topDetail1",
 			"from": [10, 10, 6],
 			"to": [11, 11, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18, 18, 16]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 1], "texture": "#0"},
 				"east": {"uv": [0, 0, 2, 1], "texture": "#0"},
@@ -53,7 +54,7 @@
 			"name": "topDetail2",
 			"from": [6, 9, 10],
 			"to": [10, 11, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [17, 18, 20]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 2], "texture": "#0"},
@@ -67,7 +68,7 @@
 			"name": "topDetail3",
 			"from": [10, 12, 7],
 			"to": [11, 16, 10],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18, 21, 16]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 2], "texture": "#0"},
 				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
@@ -81,7 +82,7 @@
 			"name": "topDetail4",
 			"from": [5, 11, 7],
 			"to": [6, 12, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13, 19, 16]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 1], "texture": "#0"},
 				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
@@ -95,7 +96,7 @@
 			"name": "topDetail5",
 			"from": [10, 11, 7],
 			"to": [11, 12, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18, 19, 16]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 1], "texture": "#0"},
 				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
@@ -109,7 +110,7 @@
 			"name": "topDetail6",
 			"from": [8, 9, 5],
 			"to": [10, 10, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [17, 17, 14]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 1], "texture": "#0"},
@@ -123,7 +124,7 @@
 			"name": "drip1",
 			"from": [8, 2, 4],
 			"to": [9, 9, 5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 10, 12]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 8], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 8], "texture": "#0"},
@@ -137,7 +138,7 @@
 			"name": "drip2",
 			"from": [7, 12, 10],
 			"to": [8, 16, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [15, 18, 18]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 6], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 6], "texture": "#0"},
@@ -151,7 +152,7 @@
 			"name": "drip3",
 			"from": [10, 6, 10],
 			"to": [11, 9, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18, 9, 18]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
@@ -165,7 +166,7 @@
 			"name": "drip4",
 			"from": [4, 6, 7],
 			"to": [5, 9, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [12, 9, 15]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
@@ -179,7 +180,7 @@
 			"name": "drip5",
 			"from": [10, 0, 5],
 			"to": [11, 9, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [18, 9, 13]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 14], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 14], "texture": "#0"},
@@ -193,7 +194,7 @@
 			"name": "drip6",
 			"from": [11, 5, 7],
 			"to": [12, 11, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [19, 14, 15]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 6], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 6], "texture": "#0"},
@@ -207,7 +208,7 @@
 			"name": "drip7",
 			"from": [8, 0, 10],
 			"to": [9, 4, 11],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 7, 18]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
@@ -221,7 +222,7 @@
 			"name": "drip8",
 			"from": [7, 10, 4],
 			"to": [8, 13, 5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [15, 17, 12]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
@@ -235,7 +236,7 @@
 			"name": "drip9",
 			"from": [8, 9, 4],
 			"to": [9, 10, 5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 16, 12]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
@@ -249,7 +250,7 @@
 			"name": "drip10",
 			"from": [5, 12, 5],
 			"to": [6, 16, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13, 19, 13]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
@@ -263,7 +264,7 @@
 			"name": "drip11",
 			"from": [8, 13, 5],
 			"to": [9, 16, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 19, 13]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 4], "texture": "#0"},
@@ -277,7 +278,7 @@
 			"name": "drip12",
 			"from": [9, 0, 5],
 			"to": [10, 2, 6],
-			"rotation": {"angle": 0, "axis": "y", "origin": [17, 5, 13]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
@@ -291,7 +292,7 @@
 			"name": "drip13",
 			"from": [5, 3, 8],
 			"to": [6, 6, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13, 8, 16]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 3], "texture": "#0"},
@@ -305,7 +306,7 @@
 			"name": "drip14",
 			"from": [7, 4, 11],
 			"to": [8, 12, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [15, 13, 19]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 8], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 8], "texture": "#0"},
@@ -319,7 +320,7 @@
 			"name": "drip15",
 			"from": [5, 9, 6],
 			"to": [6, 11, 7],
-			"rotation": {"angle": 0, "axis": "y", "origin": [13, 14, 14]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7.75, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0.5, 2], "texture": "#0"},
 				"east": {"uv": [0, 0, 0.5, 2], "texture": "#0"},
@@ -334,25 +335,30 @@
 		{
 			"name": "innerBlood",
 			"origin": [8, 8, 8],
+			"color": 0,
 			"children": [0]
 		},
 		{
 			"name": "OuterBlood",
 			"origin": [8, 8, 8],
+			"color": 0,
 			"children": [
 				{
 					"name": "wall",
 					"origin": [11, 20, 11],
+					"color": 0,
 					"children": [1]
 				},
 				{
 					"name": "connectionDetail",
 					"origin": [8, 8, 8],
+					"color": 0,
 					"children": [2, 3, 4, 5, 6, 7]
 				},
 				{
 					"name": "dripDetail",
 					"origin": [8, 8, 8],
+					"color": 0,
 					"children": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
 				}
 			]
