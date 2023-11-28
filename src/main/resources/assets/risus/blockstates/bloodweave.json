@@ -2,6 +2,37 @@
   "multipart": [
     {
       "apply": {
+        "model": "risus:block/bloodweave_b2b",
+        "x": 90
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/bloodweave_b2b",
+        "y": 90
+
+      },
+      "when": {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false",
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
         "model": "risus:block/bloodweave_b2b"
       },
       "when": {
@@ -10,7 +41,8 @@
         "east": "false",
         "west": "false",
         "up": "false",
-        "down": "false"
+        "down": "false",
+        "axis": "z"
       }
     },
     {
@@ -675,7 +707,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "x": 90,
+        "y": -90
       },
       "when": {
         "north": "true",
@@ -688,7 +722,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 180,
+        "x": 90
       },
       "when": {
         "north": "true",
@@ -701,7 +737,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "x": 180,
+        "y": -90
       },
       "when": {
         "north": "true",
@@ -714,7 +752,8 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": -90
       },
       "when": {
         "north": "true",
@@ -727,7 +766,8 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "x": 90
       },
       "when": {
         "north": "false",
@@ -740,7 +780,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 180,
+        "x": -90
       },
       "when": {
         "north": "false",
@@ -753,7 +795,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 90,
+        "x": 180
       },
       "when": {
         "north": "false",
@@ -766,7 +810,8 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 90
       },
       "when": {
         "north": "false",
@@ -794,7 +839,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "x": 180
+
       },
       "when": {
         "north": "false",
@@ -807,7 +854,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw"
       },
       "when": {
         "north": "false",
@@ -820,7 +867,9 @@
     },
     {
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 180,
+        "x": 180
       },
       "when": {
         "north": "false",
@@ -832,7 +881,8 @@
       }
     },{
       "apply": {
-        "model": "risus:block/bloodweave_core"
+        "model": "risus:block/bloodweave_wcw",
+        "y": 180
       },
       "when": {
         "north": "false",
