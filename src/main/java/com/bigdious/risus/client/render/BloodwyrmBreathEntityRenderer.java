@@ -17,11 +17,10 @@ import javax.annotation.Nonnull;
 
 public class BloodwyrmBreathEntityRenderer extends EntityRenderer<BloodwyrmBreathEntity> {
 	public static final ResourceLocation BREATH_LOCATION = Risus.prefix("textures/entity/breath.png");
-	private final BloodwyrmBreathEntityModel model;
-	public BloodwyrmBreathEntityRenderer(EntityRendererProvider.Context renderManager)
+
+	public BloodwyrmBreathEntityRenderer(EntityRendererProvider.Context context)
 	{
-		super(renderManager);
-		this.model = new BloodwyrmBreathEntityModel(renderManager.bakeLayer(RisusModelLayers.BLOODWYRM_BREATH));
+		super(context);
 	}
 
 
