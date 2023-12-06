@@ -13,7 +13,9 @@ public class RisusSoundEvents {
 	public static final RegistryObject<SoundEvent> MEAT_FALL = register("block.meat.fall");
 	public static final RegistryObject<SoundEvent> MEAT_HIT = register("block.meat.hit");
 	public static final RegistryObject<SoundEvent> MEAT_PLACE = register("block.meat.place");
+	//TODO check why meatplace sound doesn't play
 	public static final RegistryObject<SoundEvent> MEAT_STEP = register("block.meat.step");
+	public static final RegistryObject<SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
     private static RegistryObject<SoundEvent> register(String name) {
         return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Risus.MODID, name)));
     }

@@ -3,7 +3,7 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.ThrownAxeModel;
-import com.bigdious.risus.entity.ThrownAxe;
+import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;

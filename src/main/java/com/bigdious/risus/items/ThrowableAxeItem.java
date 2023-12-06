@@ -1,6 +1,6 @@
 package com.bigdious.risus.items;
 
-import com.bigdious.risus.entity.ThrownAxe;
+import com.bigdious.risus.entity.projectile.ThrownAxe;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

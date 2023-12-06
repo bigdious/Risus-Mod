@@ -1,6 +1,5 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.entity.ThrownAxe;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.BlockPos;
@@ -8,12 +7,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.ItemBasedSteering;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;

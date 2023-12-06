@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 
 public class WeaverNestBlock extends BaseEntityBlock {
+	//TODO figure this weavernest shit out
     public WeaverNestBlock(BlockBehaviour.Properties p_56781_) {
         super(p_56781_);
     }

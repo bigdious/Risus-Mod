@@ -1,4 +1,4 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;

@@ -26,6 +26,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation QUESTION_MARK = register("question_mark");
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
+	public static final ModelLayerLocation BLOODWYRM_BREATH = register("bloodwyrm_breath");
 	public static final ModelLayerLocation WEAVER = register("weaver");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 
@@ -68,6 +69,7 @@ public class RisusModelLayers {
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
+		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
