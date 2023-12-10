@@ -120,6 +120,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, crescent)
 				.perspective(ItemDisplayContext.HEAD, crescent)
 				.end();
+		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 				.base(generated("unawakened_vessel_base", Risus.prefix("item/unawakened_vessel")))

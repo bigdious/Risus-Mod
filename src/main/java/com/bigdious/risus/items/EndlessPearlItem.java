@@ -30,9 +30,9 @@ public class EndlessPearlItem extends EnderpearlItem {
             }
         }
         ItemStack ammo = player.getInventory().getItem(validSlot);
-        if (validSlot !=-1 && ammo.is(Items.ENDER_PEARL) && itemstack.getDamageValue() != itemstack.getMaxDamage()-15){
+		int amount = ammo.getCount();
+        if (validSlot !=-1 && ammo.is(Items.ENDER_PEARL) && itemstack.getDamageValue() >= amount){
             //fuck you -1
-                int amount = ammo.getCount();
                 itemstack.hurt(-amount, level.getRandom(),null);
                 ammo.shrink(amount);
             }

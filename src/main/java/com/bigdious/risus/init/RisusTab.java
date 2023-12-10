@@ -32,6 +32,7 @@ public class RisusTab {
 					output.accept(RisusBlocks.JOYFLAME_LANTERN.get());
 					output.accept(RisusBlocks.JOYFLAME_TORCH.get());
 					output.accept(RisusBlocks.LAUGHING_OBSIDIAN.get());
+					output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
 					output.accept(RisusBlocks.BLOODWYRM_HEAD.get());
 					output.accept(RisusBlocks.BURNT_HYPHAE.get());
 					output.accept(RisusBlocks.CURVED_RITUAL_BLOCK.get());
