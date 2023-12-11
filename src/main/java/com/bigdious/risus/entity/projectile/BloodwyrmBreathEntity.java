@@ -154,7 +154,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 			double d6 = vec3.y;
 			double d1 = vec3.z;
 			for(int i = 0; i < 4; ++i) {
-					this.level().addParticle(ParticleTypes.FLAME, this.getX() + d5 * (double)i / 4.0D, this.getY() + d6 * (double)i / 4.0D, this.getZ() + d1 * (double)i / 4.0D, -d5, -d6 + 0.2D, -d1);
+					this.level().addParticle(ParticleTypes.FLAME, this.getX(), this.getY(), this.getZ(), 0, 0, 0);
 			}
 
 			double d7 = this.getX() + d5;

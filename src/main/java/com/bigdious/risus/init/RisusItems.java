@@ -18,7 +18,7 @@ public class RisusItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Risus.MODID);
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationMod(0.2F).alwaysEat().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE.get(), 90), 1.0F).build();
-	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEat().build();
+	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEat().saturationMod(0.1F).build();
 
 	public static final RegistryObject<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
 
@@ -92,6 +92,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> WEAVER_NEST = ITEMS.register("weaver_nest", () -> new BlockItem(RisusBlocks.WEAVER_NEST.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BIG_CHAIN = ITEMS.register("big_chain", () -> new BlockItem(RisusBlocks.BIG_CHAIN.get(), defaultWithNoRarity()));
 	public static final RegistryObject<Item> BURNT_HYPHAE = ITEMS.register("burnt_hyphae", () -> new BlockItem(RisusBlocks.BURNT_HYPHAE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity(), Direction.DOWN));
