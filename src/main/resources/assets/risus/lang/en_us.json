@@ -116,6 +116,8 @@
   "death.attack.inexistence": "%1$s has stepped into inexistence",
   "death.attack.inexistence.player": "%1$s has stepped into inexistence while trying to escape %2$s",
 
+  "death.attack.risus.melancholy": "%1$s went dancing in the acid rain",
+
   "death.attack.gluttony": "%1$s was devoured",
   "death.attack.gluttony.player": "%1$s was while trying to escape %2$s",
 

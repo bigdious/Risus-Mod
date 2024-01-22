@@ -18,6 +18,6 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
-		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(RisusDamageTypes.INEXISTENCE, RisusDamageTypes.GLUTTONY);
+		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(RisusDamageTypes.INEXISTENCE);
 	}
 }

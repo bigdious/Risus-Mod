@@ -131,7 +131,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropWhenSilkTouch(RisusBlocks.ZIT.get());
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
-		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
+//		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
 		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));
 		add(RisusBlocks.TEETH.get(), createMultifaceBlockDrops(RisusBlocks.TEETH.get()));
 		add(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), noDrop());

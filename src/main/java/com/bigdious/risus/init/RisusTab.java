@@ -39,7 +39,7 @@ public class RisusTab {
 					output.accept(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 					output.accept(RisusBlocks.ENGRAVED_BASALT.get());
 					output.accept(RisusBlocks.BLOODWEAVE.get());
-					output.accept(RisusBlocks.WEAVER_NEST.get());
+//					output.accept(RisusBlocks.WEAVER_NEST.get());
 					output.accept(RisusBlocks.BONDKNOT_LOG.get());
 					output.accept(RisusBlocks.POPPING_BONDKNOT_LOG.get());
 					output.accept(RisusBlocks.BONDKNOT_WOOD.get());

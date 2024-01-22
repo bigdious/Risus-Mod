@@ -210,6 +210,10 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		}
 
 	}
+	@Override
+	public byte getPierceLevel() {
+		return 40;
+	}
 
 	@Override
 	protected ItemStack getPickupItem() {

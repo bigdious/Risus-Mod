@@ -8,5 +8,7 @@
   "crafting_texture": "risus:textures/gui/crafting.png",
   "model": "risus:researchers_notes",
   "show_progress": false,
-  "subtitle ": "Guide to Assimilation"
+  "subtitle ": "Guide to Assimilation",
+  "advancements_tab": "risus:risusmain",
+  "text_overflow_mode": "truncate"
 }

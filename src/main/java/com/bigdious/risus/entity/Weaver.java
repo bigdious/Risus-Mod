@@ -1,12 +1,18 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -16,14 +22,17 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
-public class Weaver extends Monster implements CacheTargetOnClient {
+public class Weaver extends Spider implements CacheTargetOnClient {
 
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
 
@@ -31,11 +40,9 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	private LivingEntity clientSideCachedAttackTarget;
 
 	public final AnimationState leapAnim = new AnimationState();
-	public final AnimationState idle = new AnimationState();
-	public final AnimationState walk = new AnimationState();
-	public final AnimationState core = new AnimationState();
 
-	public Weaver(EntityType<? extends Monster> type, Level level) {
+
+	public Weaver(EntityType<? extends Spider> type, Level level) {
 		super(type, level);
 	}
 
@@ -74,10 +81,29 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
 	}
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return null;
+	}
+	@Override
+	protected SoundEvent getHurtSound(DamageSource p_33814_) {
+		return null;
+	}
 
 	@Override
 	public MobType getMobType() {
 		return MobType.ARTHROPOD;
+	}
+	@Override
+	protected float getStandingEyeHeight(Pose p_33799_, EntityDimensions p_33800_) {
+		return 0.20F;
+	}
+	@Override
+	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {
+		if (!p_33796_.is(RisusBlocks.BLOODWEAVE.get())) {
+			super.makeStuckInBlock(p_33796_, p_33797_);
+		}
+
 	}
 
 	@Override
@@ -87,8 +113,11 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 
 	@Override
 	public boolean doHurtTarget(Entity entity) {
+
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
+				Level level = living.level();
+				BlockPos pos = living.getOnPos();
 				int i = 3;
 				if (this.level().getDifficulty() == Difficulty.NORMAL) {
 					i = 5;
@@ -96,8 +125,13 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA.get(), i * 20, 0), this);
+
+				if (living.getHealth()==0 && level.getBlockState(pos.above()).is(Blocks.AIR)) {
+					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 11);}
+				EntityUtil.properlyApplyCustomDamageSource(this, entity, RisusDamageTypes.getEntityDamageSource(this.level(), RisusDamageTypes.MELANCHOLY, this));
+
 			}
-			return true;
+			return EntityUtil.properlyApplyCustomDamageSource(this, entity, RisusDamageTypes.getEntityDamageSource(this.level(), RisusDamageTypes.MELANCHOLY, this));
 		} else {
 			return false;
 		}
@@ -175,5 +209,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 			super.stop();
 			((Weaver) this.mob).setActiveAttackTarget(0);
 		}
+
 	}
 }
