@@ -167,18 +167,27 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		this.left_leg2.zRot -= f8;
 		this.right_leg1.zRot += f10;
 		this.left_leg1.zRot -= f10;
-		this.memoryCore.xRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
-		this.memoryCore.yRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
-		this.memoryCore.zRot = ageInTicks % 360 * Mth.DEG_TO_RAD;
+		this.memoryCore.xRot = ageInTicks*2 % 360 * Mth.DEG_TO_RAD;
+		this.memoryCore.yRot = ageInTicks*2 % 360 * Mth.DEG_TO_RAD;
+		this.memoryCore.zRot = ageInTicks*2 % 360 * Mth.DEG_TO_RAD;
 
-		if (entity.getActiveAttackTarget(entity) != null) {
-			this.upperJaw.zRot = 25.0F * Mth.DEG_TO_RAD;
-			this.lowerJaw.zRot = -22.5F * Mth.DEG_TO_RAD;
-		} else {
+		if (entity.getActiveAttackTarget(entity) == null) {
 			this.upperJaw.zRot = Mth.sin(ageInTicks * 0.067F) * 0.1F + (10.0F * Mth.DEG_TO_RAD);
 			this.lowerJaw.zRot = -Mth.sin(ageInTicks * 0.067F) * 0.1F + (-10.0F * Mth.DEG_TO_RAD);
 		}
 
 		this.animate(entity.leapAnim, WeaverAnimations.WEAVER_ATTACK, ageInTicks);
+	}
+	//TODO figure out why weaver won't bite
+	public void prepareMobModel(T p_102957_, float p_102958_, float p_102959_, float p_102960_) {
+		int i = p_102957_.getAttackAnimationTick();
+		if (i > 0) {
+			this.upperJaw.zRot = -2.0F;
+			this.lowerJaw.zRot = -2.0F;
+		}
+		else {
+			this.upperJaw.zRot = -0.2F;
+			this.lowerJaw.zRot = -0.2F;
+		}
 	}
 }

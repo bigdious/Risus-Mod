@@ -35,10 +35,9 @@ import java.util.function.Predicate;
 public class Weaver extends Spider implements CacheTargetOnClient {
 
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
-
+	private int attackAnimationTick;
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
-
 	public final AnimationState leapAnim = new AnimationState();
 
 
@@ -66,10 +65,10 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 			@Override
 			public void start() {
 				super.start();
-				Weaver.this.leapAnim.start(Weaver.this.tickCount);
+				Weaver.this.level().broadcastEntityEvent(Weaver.this, (byte) 66);
 			}
 		});
-		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false) );
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -77,6 +76,12 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
 	}
 
+	public void aiStep() {
+		super.aiStep();
+		if (this.attackAnimationTick > 0) {
+			--this.attackAnimationTick;
+		}
+	}
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
@@ -113,7 +118,8 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 	@Override
 	public boolean doHurtTarget(Entity entity) {
-
+		this.attackAnimationTick = 10;
+		this.level().broadcastEntityEvent(this, (byte)67);
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
 				Level level = living.level();
@@ -168,7 +174,11 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	public void handleEntityEvent(byte id) {
 		if (id == 66) {
 			this.leapAnim.start(this.tickCount);
-		} else {
+		}
+		else if (id == 67) {
+				this.attackAnimationTick = 10;
+		}
+		else {
 			super.handleEntityEvent(id);
 		}
 	}
@@ -210,5 +220,8 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 			((Weaver) this.mob).setActiveAttackTarget(0);
 		}
 
+	}
+	public int getAttackAnimationTick() {
+		return this.attackAnimationTick;
 	}
 }
