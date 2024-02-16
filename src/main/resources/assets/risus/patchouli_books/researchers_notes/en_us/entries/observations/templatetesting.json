@@ -1,0 +1,21 @@
+{
+  "name": "testing",
+  "icon": "minecraft:paper",
+  "category": "risus:observations",
+  "pages": [
+    {
+      "type": "risus:alterationtemplate5",
+      "input1": "minecraft:dirt",
+      "output1": "minecraft:cobblestone",
+      "input2": "minecraft:dirt",
+      "output2": "minecraft:cobblestone",
+      "input3": "minecraft:dirt",
+      "output3": "minecraft:cobblestone",
+      "input4": "minecraft:dirt",
+      "output4": "minecraft:cobblestone",
+      "input5": "minecraft:dirt",
+      "output5": "minecraft:cobblestone",
+      "text": "I AM ALIVE"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "components": [
+    {
+      "type": "patchouli:item",
+      "item": "#input1",
+      "x": 14,
+      "y": 5
+    },
+    {
+      "type": "patchouli:item",
+      "item": "risus:alteration_catalyst",
+      "x": 50,
+      "y": 5
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output1",
+      "x": 86,
+      "y": 5
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/crafting.png",
+      "width": 96,
+      "height": 24,
+      "u": 11,
+      "v": 71,
+      "texture_width": 128,
+      "x": 10,
+      "y": 1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input2",
+      "x": 14,
+      "y": 31
+    },
+    {
+      "type": "patchouli:item",
+      "item": "risus:alteration_catalyst",
+      "x": 50,
+      "y": 31
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output2",
+      "x": 86,
+      "y": 31
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/crafting.png",
+      "width": 96,
+      "height": 24,
+      "u": 11,
+      "v": 71,
+      "texture_width": 128,
+      "x": 10,
+      "y": 27
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input3",
+      "x": 14,
+      "y": 57
+    },
+    {
+      "type": "patchouli:item",
+      "item": "risus:alteration_catalyst",
+      "x": 50,
+      "y": 57
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#output3",
+      "x": 86,
+      "y": 57
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/crafting.png",
+      "width": 96,
+      "height": 24,
+      "u": 11,
+      "v": 71,
+      "texture_width": 128,
+      "x": 10,
+      "y": 53
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "x": 5,
+      "y": 81
+    }
+  ]
+}
