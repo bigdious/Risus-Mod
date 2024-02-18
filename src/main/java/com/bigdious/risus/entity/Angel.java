@@ -18,6 +18,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
@@ -28,7 +29,8 @@ public class Angel extends Monster {
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 1024.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.0D)
-				.add(Attributes.ATTACK_DAMAGE, 5.0D);
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.FOLLOW_RANGE, 40.0D);
 	}
 
 	public void setCharging(boolean charging) {
@@ -54,7 +56,7 @@ public class Angel extends Monster {
 	static class AngelLightningAttackGoal extends Goal {
 		private final Angel angel;
 		public int chargeTime;
-		private Level level;
+
 
 		public AngelLightningAttackGoal(Angel angel) {
 			this.angel = angel;
@@ -82,20 +84,29 @@ public class Angel extends Monster {
 				if (livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity)) {
 					++this.chargeTime;
 					if (this.chargeTime == 20) {
-						Level level = this.angel.level();
-						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());
-						level.addFreshEntity(lightning);
-						this.chargeTime = -40;
-						}
+						Level targetlevel = livingentity.level();
+						//checking for roofs on three levels before smiting
+						if (!targetlevel.getBlockState(livingentity.blockPosition().above(2)).isAir()) {
+							this.chargeTime = -40;
+						} else if (!targetlevel.getBlockState(livingentity.blockPosition().above(3)).isAir()) {
+							this.chargeTime = -40;
+						} else if (!targetlevel.getBlockState(livingentity.blockPosition().above(4)).isAir()) {
+							this.chargeTime = -40;
+						} else {
+							Level level = this.angel.level();
+							LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+							lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());
+							level.addFreshEntity(lightning);
+							this.chargeTime = -40;
+						}}}
+					} else if (this.chargeTime > 0) {
+						--this.chargeTime;
 					}
-				} else if (this.chargeTime > 0) {
-					--this.chargeTime;
-				}
 
-				this.angel.setCharging(this.chargeTime > 10);
+					this.angel.setCharging(this.chargeTime > 10);
+				}
 			}
-		}
+
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL.get())) {
