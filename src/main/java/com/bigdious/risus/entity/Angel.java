@@ -83,7 +83,6 @@ public class Angel extends Monster {
 					++this.chargeTime;
 					if (this.chargeTime == 20) {
 						Level level = this.angel.level();
-						Risus.LOGGER.info("attempting to summon lightning bolt");
 						LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
 						lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());
 						level.addFreshEntity(lightning);

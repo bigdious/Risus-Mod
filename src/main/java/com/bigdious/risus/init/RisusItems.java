@@ -110,6 +110,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> MIRAGE_END_STONE = ITEMS.register("mirage_end_stone", () -> new BlockItem(RisusBlocks.MIRAGE_END_STONE.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> ALTERATION_CATALYST = ITEMS.register("alteration_catalyst", () -> new BlockItem(RisusBlocks.ALTERATION_CATALYST.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> ANGEL_ALTAR = ITEMS.register("angel_altar", () -> new BlockItem(RisusBlocks.ANGEL_ALTAR.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
 	public static final RegistryObject<Item> CRYSTALLIZED_BOND = ITEMS.register("crystallized_bond", () -> new Item(defaultWithRarity()));

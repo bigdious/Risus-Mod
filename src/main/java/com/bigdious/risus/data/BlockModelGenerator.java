@@ -51,7 +51,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 					.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
 					.build();
 		});
-
+		simpleBlock(RisusBlocks.ANGEL_ALTAR.get(), models().getExistingFile(texture("block/angel_altar")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
 		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));

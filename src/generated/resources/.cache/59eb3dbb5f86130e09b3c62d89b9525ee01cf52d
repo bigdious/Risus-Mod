@@ -1,5 +1,6 @@
-// 1.20.1	2024-01-22T16:43:38.5854629	Loot Tables
+// 1.20.1	2024-02-18T19:32:54.6029918	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
+25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
 4b8a0d12048ea258e3191358136f73316374e03d data/risus/loot_tables/blocks/baby_ribcage.json
 c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_tables/blocks/big_chain.json

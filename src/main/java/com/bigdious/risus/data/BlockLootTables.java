@@ -44,6 +44,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 	@Override
 	protected void generate() {
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
+		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
