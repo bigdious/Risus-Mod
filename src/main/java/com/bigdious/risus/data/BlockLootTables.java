@@ -1,6 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.DepthVaseBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
@@ -45,6 +46,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 	protected void generate() {
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
+		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
