@@ -66,7 +66,7 @@ public class RisusClientEvents {
 
 		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);
 
-		MenuScreens.register(RisusMenuTypes.DEPTH_VASE.get(), DepthVaseScreen::new);
+//		MenuScreens.register(RisusMenuTypes.DEPTH_VASE.get(), DepthVaseScreen::new);
 
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
