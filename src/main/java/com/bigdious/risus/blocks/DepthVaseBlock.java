@@ -1,14 +1,18 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.blocks.entity.AlterationCatalystBlockEntity;
+
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
+import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -58,6 +62,55 @@ public class DepthVaseBlock extends BaseEntityBlock {
 				vase.setCustomName(stack.getHoverName());
 			}
 		}
+	}
+	@Override
+	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+		if (hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase))
+			return InteractionResult.PASS;
+		if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+			for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
+				if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount()<depthVase.getInputItem(i).getMaxStackSize()) {
+					if (depthVase.getInputItem(i).getCount()+player.getMainHandItem().getCount()<=depthVase.getInputItem(i).getMaxStackSize()){
+						depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
+						player.getMainHandItem().shrink(player.getMainHandItem().getCount());
+						return InteractionResult.sidedSuccess(level.isClientSide);}
+					else {
+						player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize()-depthVase.getInputItem(i).getCount());
+						depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize()-depthVase.getInputItem(i).getCount());
+						return InteractionResult.sidedSuccess(level.isClientSide);}
+				}
+				else if (depthVase.getInputItem(i).isEmpty()) {
+					depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
+					return InteractionResult.sidedSuccess(level.isClientSide);
+				}
+				if (i > depthVase.depthToSlotRatio) {
+					return InteractionResult.FAIL;
+				}
+			}
+		}
+		if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+			for (int i = depthVase.depthToSlotRatio-1; i >= 0; --i) {
+				if (!depthVase.getInputItem(i).isEmpty()) {
+					ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
+					level.addFreshEntity(item);
+					depthVase.setInputItem(i,ItemStack.EMPTY);
+					return InteractionResult.SUCCESS;
+				}
+			}
+		}
+		return InteractionResult.FAIL;
+	}
+
+
+	public void onProjectileHit(Level pLevel, BlockState pState, BlockHitResult pHit, Projectile pProjectile) {
+		BlockPos blockpos = pHit.getBlockPos();
+		if (!pLevel.isClientSide && pProjectile.mayInteract(pLevel, blockpos) && pProjectile instanceof ThrownTrident && pProjectile.getDeltaMovement().length() > 0.6D) {
+			pLevel.destroyBlock(blockpos, true);
+		}
+		if (!pLevel.isClientSide && pProjectile.mayInteract(pLevel, blockpos) && pProjectile instanceof ThrownAxe && pProjectile.getDeltaMovement().length() > 0.6D) {
+			pLevel.destroyBlock(blockpos, true);
+		}
+
 	}
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

@@ -49,6 +49,7 @@ public class AlterationCatalystBlock extends BaseEntityBlock {
 		if (alteration.getInputItem() != null) {
 			if (alteration.getInputItem().isEmpty()) {
 				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
+				InteractionResult.sidedSuccess(level.isClientSide);
 			} else {
 				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getInputItem());
 				level.addFreshEntity(item);
@@ -57,7 +58,7 @@ public class AlterationCatalystBlock extends BaseEntityBlock {
 		}
 
 		level.sendBlockUpdated(pos, state, state, 2);
-		return InteractionResult.SUCCESS;
+		return InteractionResult.sidedSuccess(level.isClientSide);
 	}
 
 	@Nullable

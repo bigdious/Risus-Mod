@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:decorated_pot"
+  },
+  "result": "risus:depth_vase"
+}

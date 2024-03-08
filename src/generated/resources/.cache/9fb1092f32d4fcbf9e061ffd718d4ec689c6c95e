@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-20T19:50:56.151062	Recipes
+// 1.20.1	2024-03-08T21:20:20.5728571	Recipes
 a6d14dd30107ab49159a4bf568b0f4400ebd97d6 data/risus/advancements/recipes/building_blocks/bondknot_planks.json
 46810c48ae42786122f3b59f4e4587e1c0537aaf data/risus/advancements/recipes/building_blocks/bondknot_slab.json
 f6f36b34291555e0cdfdd2a683fe5510bda0141e data/risus/advancements/recipes/building_blocks/bondknot_stairs.json
@@ -38,6 +38,7 @@ c9d885eeb69b20751d9736d6b23382365e947728 data/risus/advancements/recipes/risus/a
 50c9cbc562e7df7b068270ce8d642e1ef7acfd0a data/risus/advancements/recipes/risus/alteration/burnt_hyphae.json
 d3f48ae8bca7d99521f353c390796887ef8f6f10 data/risus/advancements/recipes/risus/alteration/chiseled_grimstone.json
 6bec080845017ce9d797f2bfcd1d245cae8d1a87 data/risus/advancements/recipes/risus/alteration/cracked_grimstone_bricks.json
+b897d55db82720a55c1351478d3366d46b5ac00f data/risus/advancements/recipes/risus/alteration/depth_vase.json
 967f5edaee93932cbd39ea6538fcc3b5da245e8d data/risus/advancements/recipes/risus/alteration/engraved_basalt.json
 ef70251f157f09fa30b0c4e6beafb52b789c2a44 data/risus/advancements/recipes/risus/alteration/eye_ender.json
 52d6f65126ccb7b0b99cccaf0397dbaa9eb48e53 data/risus/advancements/recipes/risus/alteration/grimstone.json
@@ -58,6 +59,7 @@ acce3965ed17d2094b76527afbbe6da7b7cf9370 data/risus/recipes/alteration/bloodweav
 1cb30fa7faff5e7bcc36aa56ea0d0d3b4a0cb38b data/risus/recipes/alteration/burnt_hyphae.json
 2e8e6d06024e5d60da75dd6b388ca7d97a3579fb data/risus/recipes/alteration/chiseled_grimstone.json
 9b2062ca00eeb2905a2d6eb2b52fee8442d90f97 data/risus/recipes/alteration/cracked_grimstone_bricks.json
+10fffbd3e17cb2f846403cc53d9c5ccb804b6d1e data/risus/recipes/alteration/depth_vase.json
 b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipes/alteration/engraved_basalt.json
 9a201205107d9838a59a85b4487a23542c3f613c data/risus/recipes/alteration/eye_ender.json
 8d7edd1d48675bafb09f520d827d17c1d474d492 data/risus/recipes/alteration/grimstone.json

@@ -3,6 +3,7 @@ package com.bigdious.risus.blocks.entity;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.DepthVaseMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
@@ -28,7 +29,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
+public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer{
 	public int depthToSlotRatio = (int) Math.round((54-(this.getBlockPos().getY()+64)/7.11));
 
 	@Nullable
@@ -84,5 +85,39 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	}
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
+	public void setItem(int pIndex, ItemStack pStack) {
+		this.unpackLootTable((Player)null);
+		this.getItems().set(pIndex, pStack);
+		if (pStack.getCount() > this.getMaxStackSize()) {
+			pStack.setCount(this.getMaxStackSize());
+		}
 
+	}
+	public boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
+		return ItemStack.isSameItemSameTags(oldStack, newStack);
+	}
+	public void setInputItem(int slot, ItemStack item) {
+		this.setItem(slot, item);
+		this.setChanged();
+
+	}
+	@org.jetbrains.annotations.Nullable
+	public ItemStack getInputItem(int slot) {
+		return this.getItem(slot);
+	}
+
+	@Override
+	public int[] getSlotsForFace(Direction direction) {
+		return direction != Direction.UP ? new int[]{0} : new int[0];
+	}
+
+	@Override
+	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @org.jetbrains.annotations.Nullable Direction direction) {
+		return Direction.Plane.HORIZONTAL.test(direction) && this.item.isEmpty();
+	}
+
+	@Override
+	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
+		return direction == Direction.DOWN && !this.item.isEmpty();
+	}
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "risus:block/depth_vase",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/depth_vase"
+    },
+    "facing=south": {
+      "model": "risus:block/depth_vase",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/depth_vase",
+      "y": 270
+    }
+  }
+}
