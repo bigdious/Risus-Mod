@@ -30,7 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 
 public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer{
-	public int depthToSlotRatio = (int) Math.round((54-(this.getBlockPos().getY()+64)/7.11));
+	public int depthToSlotRatio = (int) Math.round((81-(this.getBlockPos().getY()+64)/4.74));
 
 	@Nullable
 	private ItemStack item = ItemStack.EMPTY;

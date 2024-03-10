@@ -18,7 +18,7 @@
       "translate": "advancement.risus.little.desc"
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "risus:organic_matter"
     },

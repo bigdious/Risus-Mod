@@ -1,12 +1,16 @@
 package com.bigdious.risus.blocks;
 
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusBlockEntities;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -30,6 +34,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+import vazkii.patchouli.api.PatchouliAPI;
 
 public class DepthVaseBlock extends BaseEntityBlock {
 
@@ -67,34 +72,46 @@ public class DepthVaseBlock extends BaseEntityBlock {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase))
 			return InteractionResult.PASS;
-		if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-			for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
-				if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount()<depthVase.getInputItem(i).getMaxStackSize()) {
-					if (depthVase.getInputItem(i).getCount()+player.getMainHandItem().getCount()<=depthVase.getInputItem(i).getMaxStackSize()){
-						depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
-						player.getMainHandItem().shrink(player.getMainHandItem().getCount());
-						return InteractionResult.sidedSuccess(level.isClientSide);}
-					else {
-						player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize()-depthVase.getInputItem(i).getCount());
-						depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize()-depthVase.getInputItem(i).getCount());
-						return InteractionResult.sidedSuccess(level.isClientSide);}
-				}
-				else if (depthVase.getInputItem(i).isEmpty()) {
-					depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
-					return InteractionResult.sidedSuccess(level.isClientSide);
-				}
-				if (i > depthVase.depthToSlotRatio) {
-					return InteractionResult.FAIL;
-				}
+		if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID,"research_notes")).getItem())) {
+			if (depthVase.depthToSlotRatio==1) {
+				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
+				return InteractionResult.SUCCESS;
+			}
+			else {
+				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
+				return InteractionResult.SUCCESS;
 			}
 		}
-		if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-			for (int i = depthVase.depthToSlotRatio-1; i >= 0; --i) {
-				if (!depthVase.getInputItem(i).isEmpty()) {
-					ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
-					level.addFreshEntity(item);
-					depthVase.setInputItem(i,ItemStack.EMPTY);
-					return InteractionResult.SUCCESS;
+		else {
+			if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+				for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
+					if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
+						if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
+							depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
+							player.getMainHandItem().shrink(player.getMainHandItem().getCount());
+							return InteractionResult.sidedSuccess(level.isClientSide);
+						} else {
+							player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
+							depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
+							return InteractionResult.sidedSuccess(level.isClientSide);
+						}
+					} else if (depthVase.getInputItem(i).isEmpty()) {
+						depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
+						return InteractionResult.sidedSuccess(level.isClientSide);
+					}
+					if (i > depthVase.depthToSlotRatio) {
+						return InteractionResult.FAIL;
+					}
+				}
+			}
+			if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+				for (int i = depthVase.depthToSlotRatio - 1; i >= 0; --i) {
+					if (!depthVase.getInputItem(i).isEmpty()) {
+						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
+						level.addFreshEntity(item);
+						depthVase.setInputItem(i, ItemStack.EMPTY);
+						return InteractionResult.SUCCESS;
+					}
 				}
 			}
 		}

@@ -24,7 +24,7 @@
       "translate": "advancement.risus.family.desc"
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "risus:ribcage"
     },

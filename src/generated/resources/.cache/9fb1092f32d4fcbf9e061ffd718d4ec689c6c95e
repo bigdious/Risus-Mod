@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-08T21:20:20.5728571	Recipes
+// 1.20.1	2024-03-10T19:16:22.3674336	Recipes
 a6d14dd30107ab49159a4bf568b0f4400ebd97d6 data/risus/advancements/recipes/building_blocks/bondknot_planks.json
 46810c48ae42786122f3b59f4e4587e1c0537aaf data/risus/advancements/recipes/building_blocks/bondknot_slab.json
 f6f36b34291555e0cdfdd2a683fe5510bda0141e data/risus/advancements/recipes/building_blocks/bondknot_stairs.json
@@ -35,7 +35,7 @@ c9ad52274793b3cadd858c090bb376925601a3a7 data/risus/advancements/recipes/redston
 b162a596dd8ae470264d4d1b288a0b6a8630372c data/risus/advancements/recipes/risus/alteration/ashen_remains.json
 d8f70d0c1f3b3998705e68cbd6a76fedf9d1a540 data/risus/advancements/recipes/risus/alteration/bloodweave.json
 c9d885eeb69b20751d9736d6b23382365e947728 data/risus/advancements/recipes/risus/alteration/bloodwyrm_head.json
-50c9cbc562e7df7b068270ce8d642e1ef7acfd0a data/risus/advancements/recipes/risus/alteration/burnt_hyphae.json
+fc216d4ca6957e08063669540c34bd6b06ea8d4c data/risus/advancements/recipes/risus/alteration/burnt_hyphae.json
 d3f48ae8bca7d99521f353c390796887ef8f6f10 data/risus/advancements/recipes/risus/alteration/chiseled_grimstone.json
 6bec080845017ce9d797f2bfcd1d245cae8d1a87 data/risus/advancements/recipes/risus/alteration/cracked_grimstone_bricks.json
 b897d55db82720a55c1351478d3366d46b5ac00f data/risus/advancements/recipes/risus/alteration/depth_vase.json

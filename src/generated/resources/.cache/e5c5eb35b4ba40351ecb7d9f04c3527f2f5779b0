@@ -1,14 +1,15 @@
-// 1.20.1	2023-09-19T20:35:38.2668349	Advancements
-f6ebe6d372048de1f61d3c23ba8b4bfa14e69b67 data/risus/advancements/crusade.json
-f0053a84fd9ff4dfa837dc9cdb62a2e47fdad86f data/risus/advancements/cupid.json
-ba02558eebf7485d7b44f401f2ea18db8bbd38fa data/risus/advancements/devour.json
-eae335f9ddb932ebb62c6bb419c41ceb08706194 data/risus/advancements/family.json
+// 1.20.1	2024-03-10T19:16:22.3764284	Advancements
+52854ee6a62e6226d047ab8bf35e4fea33de05a4 data/risus/advancements/crusade.json
+110fc81e92516200f1e756cf429fc6a7d0437f1f data/risus/advancements/cupid.json
+d52765c7118d97c6fd1c4b55e14af9c001285460 data/risus/advancements/devour.json
+52f8dbba7fd79e2ea664446d99241ee9d02a82fc data/risus/advancements/family.json
 5d59e6b099bc42f1747609afbfb83eea4faaf3eb data/risus/advancements/first.json
-75774c1e6797ef8c748966403805fd8253e4eb98 data/risus/advancements/fleshing.json
-bbd56b5479eb03745fc1d1e98799934800b5a56f data/risus/advancements/irresistible.json
-0de9475fc0bd6281e8963d9958da87542d053eaa data/risus/advancements/little.json
-4cc4c211b19f4060d42c2a7e38dd0a7060f58b00 data/risus/advancements/potential.json
-881d817dce349bed7c3aeedc86d6a3a13a72584c data/risus/advancements/satiate.json
+d1d6b7f778445ba374129f5cfb3b92aebe3871e1 data/risus/advancements/fleshing.json
+dd33cbf6ef3a4d3d6c185cf3461a19331ea68be1 data/risus/advancements/irresistible.json
+6cc716fc6c5c916f11be5c923ace9ffd8c28a965 data/risus/advancements/little.json
+8b8cf538e1b97d325ea4fa346a3285c0e34fa745 data/risus/advancements/mod_book.json
+172b9ab0ef0afb8ad10f5b5222dfbad8855118c3 data/risus/advancements/potential.json
+457ce095393cff27e321f3b3410c0e55e98b4fcf data/risus/advancements/satiate.json
 1513ca4f8034f15da39bb38873c5712d5a3c84b4 data/risus/advancements/site_zero.json
 5904a2b616e5707418adeba77d133ed9d5881933 data/risus/advancements/step.json
-756f1d3b55f78712bf3793c5b8e84e6d2c77f9c9 data/risus/advancements/unleashed.json
+fd9b50203f730ff48fa864e0bec5b420b5e3df42 data/risus/advancements/unleashed.json

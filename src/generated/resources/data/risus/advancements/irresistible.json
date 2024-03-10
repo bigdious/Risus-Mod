@@ -18,7 +18,7 @@
       "translate": "advancement.risus.irresistible.desc"
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "risus:guilty_apple"
     },

@@ -28,7 +28,7 @@
       "translate": "advancement.risus.cupid.desc"
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "minecraft:potion",
       "nbt": "{Potion:\"risus:mating_frenzy\"}"

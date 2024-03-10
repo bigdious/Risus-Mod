@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chyphae": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:crimson_hyphae"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_cstem": {
       "conditions": {
         "items": [
           {
             "items": [
               "minecraft:crimson_stem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hyphae": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crimson_hyphae"
             ]
           }
         ]
@@ -58,7 +58,7 @@
   },
   "requirements": [
     [
-      "has_chyphae",
+      "has_hyphae",
       "has_cstem",
       "has_whyphae",
       "has_wstem",

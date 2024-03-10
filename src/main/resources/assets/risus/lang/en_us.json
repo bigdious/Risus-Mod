@@ -127,6 +127,8 @@
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
   "advancement.risus.first": "First Encounter",
+  "advancement.risus.mod_book": "Researcher's Notes",
+  "advancement.risus.mod_book.desc": "Alter a book to gain access to vast knowledge.",
   "advancement.risus.family": "Father...?",
   "advancement.risus.first.desc": "Meet the Risus.",
   "advancement.risus.family.desc": "Discover a Family Tree.",

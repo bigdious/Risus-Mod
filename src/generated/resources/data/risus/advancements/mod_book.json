@@ -1,12 +1,12 @@
 {
-  "parent": "risus:crusade",
+  "parent": "risus:site_zero",
   "criteria": {
-    "strongaxe": {
+    "modbook": {
       "conditions": {
         "items": [
           {
             "items": [
-              "risus:crescent_disaster"
+              "patchouli:guide_book"
             ]
           }
         ]
@@ -17,22 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.risus.unleashed.desc"
+      "translate": "advancement.risus.mod_book.desc"
     },
     "frame": "task",
-    "hidden": true,
+    "hidden": false,
     "icon": {
-      "item": "risus:crescent_disaster",
-      "nbt": "{Damage:0}"
+      "item": "patchouli:guide_book"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.risus.unleashed"
+      "translate": "advancement.risus.mod_book"
     }
   },
   "requirements": [
     [
-      "strongaxe"
+      "modbook"
     ]
   ],
   "sends_telemetry_event": true
