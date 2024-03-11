@@ -22,7 +22,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "patchouli:guide_book"
+      "item": "minecraft:book"
     },
     "show_toast": true,
     "title": {

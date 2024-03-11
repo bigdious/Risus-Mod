@@ -44,6 +44,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.MIRAGE_NETHERRACK.get());
 		toBlock(RisusBlocks.MIRAGE_END_STONE.get());
 		toBlockModel(RisusBlocks.BLOODWEAVE.get(), texture("block/bloodweave_core"));
+		toBlockModel(RisusBlocks.SCAB.get(), texture("block/scab"));
+		toBlockModel(RisusBlocks.COAGULATED_BLOOD_BLOCK.get(), texture("block/coagulated_blood_block"));
 //		toBlockModel(RisusBlocks.WEAVER_NEST.get(), Risus.prefix("block/weaver_nest"));
 		toBlock(RisusBlocks.BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.BONDKNOT_WOOD.get());
@@ -106,6 +108,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
+		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.CONCENTRATION_CORE);
 		singleTex(RisusItems.CRYSTALLIZED_BOND);

@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-05T16:32:54.3733981	Risus Item Models
+// 1.20.1	2024-03-11T19:56:30.2679629	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -23,6 +23,7 @@ cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
+2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
 fc7fa1feb5aefeb5af67b89ecc404d5e7f22f015 assets/risus/models/item/crescent_disaster.json
@@ -84,6 +85,7 @@ f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondkn
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
+6846d2ae47181489ef3caae70a1b0a86eb232ea2 assets/risus/models/item/scab.json
 64e5bd0a479d77d885d260c8f0ecf66cfcfe2e34 assets/risus/models/item/skin.json
 204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json

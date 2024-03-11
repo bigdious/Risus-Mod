@@ -101,12 +101,17 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
 		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusItems.REGEN_ROSE.get()));
 		dropSelf(RisusBlocks.BONE_WALL.get());
+		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
+		dropSelf(RisusBlocks.SCAB.get());
+		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
+
 		dropSelf(RisusBlocks.SKIN.get());
 		dropSelf(RisusBlocks.FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.CURVED_FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+
 		dropSelf(RisusBlocks.TISSUE.get());
 		dropSelf(RisusBlocks.ROTTING_TISSUE.get());
 		dropSelf(RisusBlocks.DECOMPOSING_TISSUE.get());
@@ -115,18 +120,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.ROTTED_TISSUE.get());
 		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
 		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
-		dropSelf(RisusBlocks.FLESHY_SKIN.get());
-		dropSelf(RisusBlocks.CURVED_FLESHY_SKIN.get());
-		dropSelf(RisusBlocks.SKIN.get());
-		dropSelf(RisusBlocks.HAIRY_FLESHY_SKIN.get());
-		dropSelf(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
-		dropSelf(RisusBlocks.HAIRY_SKIN.get());
+
 		dropSelf(RisusBlocks.EYE_ENDER.get());
 		dropSelf(RisusBlocks.EYE_BLEACHED.get());
 		dropSelf(RisusBlocks.EYE_BLOODSHOT.get());
 		dropSelf(RisusBlocks.EYE_GOLDEN.get());
 		dropSelf(RisusBlocks.EYE_EMERALD.get());
-		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
+
+
 		dropSelf(RisusBlocks.JOYFLAME_LANTERN.get());
 		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());

@@ -1,4 +1,4 @@
-// 1.20.1	2023-09-13T20:29:46.930251	Tags for minecraft:block mod id risus
+// 1.20.1	2024-03-11T19:48:45.889431	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
@@ -8,7 +8,7 @@
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/blocks/fence_gates.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/blocks/logs_that_burn.json
-d67c1f03be4471db0e6ca99b4c71d978309c55fe data/minecraft/tags/blocks/mineable/axe.json
+e41da3214c0018cce821842898c868613429256e data/minecraft/tags/blocks/mineable/axe.json
 1e9a4c2925f60d6305a9727aa331c6e85bb615ad data/minecraft/tags/blocks/mineable/hoe.json
 19ea745cb23f6767a1093a24e8515b4acd154b92 data/minecraft/tags/blocks/mineable/pickaxe.json
 94b506436f163aa4338a80d46ba20f053c626228 data/minecraft/tags/blocks/needs_diamond_tool.json

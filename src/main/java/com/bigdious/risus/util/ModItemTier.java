@@ -13,6 +13,6 @@ import java.util.List;
 
 public class ModItemTier {
     public static final Tier CRESCENT = TierSortingRegistry.registerTier(
-            new ForgeTier(4, 2031, 9.0F, 4.0F, 15, BlockTags.create(Risus.prefix("needs_crescent_tier")), () -> Ingredient.of(RisusItems.GLUTTONY_SCALES.get())),
+            new ForgeTier(4, 2031, 9.0F, 4.0F, 5, BlockTags.create(Risus.prefix("needs_crescent_tier")), () -> Ingredient.of(RisusItems.GLUTTONY_SCALES.get())),
             Risus.prefix("crescent"), List.of(Tiers.NETHERITE), List.of());
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-05T16:32:54.3893879	Loot Tables
+// 1.20.1	2024-03-11T19:56:30.5458041	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -23,6 +23,7 @@ ddfd7d233204c1b01626a566581fea6e0f11ecce data/risus/loot_tables/blocks/bondknot_
 00ab5e7f42299bd3cd16e75b261679dae3671cf3 data/risus/loot_tables/blocks/bone_wall.json
 61c13c60e170452a9b9598e7b7bfc66aafe24900 data/risus/loot_tables/blocks/burnt_hyphae.json
 5e256e31256ee77ac5dc6209a5c346a81ff39f13 data/risus/loot_tables/blocks/chiseled_grimstone.json
+50baafed7bfdbfa0bc4cc10f3f155422de7331b4 data/risus/loot_tables/blocks/coagulated_blood_block.json
 3ccfea10dd1d7c347a0d8b9f4fdfd5b1c4eebc47 data/risus/loot_tables/blocks/cracked_grimstone_bricks.json
 55f93cf2bc44977290fcea1a22f6c6b784ab9e63 data/risus/loot_tables/blocks/crystallized_bonds.json
 50672bfb864fadc67eb4b37fd035f162efba6681 data/risus/loot_tables/blocks/curved_fleshy_skin.json
@@ -75,6 +76,7 @@ ed6505214f674136cb0cab3b951aefaef9ef74a7 data/risus/loot_tables/blocks/regen_ros
 fe7c3b48461fe14c8d41c5fddc5a6c9a74f42c0b data/risus/loot_tables/blocks/ribcage.json
 096ff7a6a6d961e2c32abcaa703eda1f514dcf14 data/risus/loot_tables/blocks/rotted_tissue.json
 d325f14b56b619089c1a6b1c43c487884cd9416f data/risus/loot_tables/blocks/rotting_tissue.json
+ee84405cdf0338040437a5494f50892e24d0763d data/risus/loot_tables/blocks/scab.json
 c2118d753fcc9c625b35904ce2c1eaf1ad243eb2 data/risus/loot_tables/blocks/skin.json
 8e9757354a1aab3356e8365b78db4412897f14b8 data/risus/loot_tables/blocks/smiling_remains.json
 eff570b304aef39915ab0ee752004d271b50e730 data/risus/loot_tables/blocks/spreading_remains.json

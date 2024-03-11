@@ -1,5 +1,7 @@
 package com.bigdious.risus;
 
+import com.bigdious.risus.fluid.RisusFluidTypes;
+import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusTab;
 import com.bigdious.risus.network.RisusPacketHandler;
@@ -52,6 +54,8 @@ public class Risus {
 		RisusEntities.SPAWN_EGGS.register(bus);
 		RisusTab.CREATIVE_TABS.register(bus);
 		RisusSoundEvents.SOUNDS.register(bus);
+		RisusFluidTypes.FLUID_TYPES.register(bus);
+		RisusFluids.FLUIDS.register(bus);
 
 		MinecraftForge.EVENT_BUS.addGenericListener(Entity.class, RisusCapabilities::attachEntityCapability);
 		bus.addListener(RisusCapabilities::registerCapabilities);

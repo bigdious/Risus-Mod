@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-07T22:36:33.125786	Risus blockstates and models
+// 1.20.1	2024-03-11T19:48:45.8954271	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -22,6 +22,7 @@ f18f52445349a23fffffa46f957d67f0ca04533d assets/risus/blockstates/bondknot_wall_
 9d84a35d91b7a69d92f5dda9f27ba3a59efa9f82 assets/risus/blockstates/bone_wall.json
 7d6470e8d9b8c8fd032052c931d8c515c2b91cc7 assets/risus/blockstates/burnt_hyphae.json
 21002566e5ab5ecaf7ea8aa9166fde960a27441f assets/risus/blockstates/chiseled_grimstone.json
+622a8d5ef6b2850e393ca1a4f7e6686ba736d180 assets/risus/blockstates/coagulated_blood_block.json
 a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimstone_bricks.json
 29d4d8a5934d422ad4f399252a78aeab88a6c940 assets/risus/blockstates/crystallized_bonds.json
 c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_block.json
@@ -71,6 +72,7 @@ c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.jso
 20c25d9d3d12fb0ba9ab70760de05eff35ca4278 assets/risus/blockstates/ribcage.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotted_tissue.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotting_tissue.json
+672a1d812e59b0ea1ccdc5a09e15df60aa6bccbe assets/risus/blockstates/scab.json
 935a899591662bcad8b4f12292cd307dbc964067 assets/risus/blockstates/skin.json
 336dc67db6bcf81e17a0ac821516663f6f88d21f assets/risus/blockstates/smiling_remains.json
 2e2f8827ee6e1f4ea510b2778fb3a720e4f00c07 assets/risus/blockstates/stripped_bondknot_log.json
@@ -116,6 +118,7 @@ ecd93ad6e5604aba5a539c2f7a14268a319df776 assets/risus/models/block/bondknot_trap
 6b5ec472b9f17409e80e93724e78f22e1e6b7686 assets/risus/models/block/burnt_hyphae.json
 118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
 40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json
+ff7841ba6d523e79dfa98fc199ab5c5248631e3f assets/risus/models/block/coagulated_blood_block.json
 bfa697fc85b0b8008ed1d9ff214e898baeada6b4 assets/risus/models/block/cracked_grimstone_bricks.json
 d73118566362fbc4f2ac70ef9a444991202cc036 assets/risus/models/block/curved_ritual_block.json
 c764c4ae060afc94619618152825520cd07855f6 assets/risus/models/block/darkness.json
@@ -161,6 +164,7 @@ a941d999d5a2f01a90304d62a30e23bf12ba8729 assets/risus/models/block/popping_bondk
 a53a45d53f602493d19f51d0ff68d79e1e6441e8 assets/risus/models/block/popping_bondknot_wood_south.json
 6a2331d6d1507044cd432722359b2e2d271ee033 assets/risus/models/block/popping_bondknot_wood_up.json
 e373e5ac57e65b26bb36858654f1f9041d3b7892 assets/risus/models/block/popping_bondknot_wood_west.json
+d3d4ffb29795fa9e9863fa572d07bad1b5b72e22 assets/risus/models/block/scab.json
 b9d311152129a46ed0c73c3dd61d54d4fa16e8e3 assets/risus/models/block/skin.json
 5521e0debb31e36c5e502c2a3fbd9c4aa7e137ae assets/risus/models/block/smiling_remains.json
 06012968833aefbedbe7f56d903362eb7f17a7a0 assets/risus/models/block/stripped_bondknot_log.json

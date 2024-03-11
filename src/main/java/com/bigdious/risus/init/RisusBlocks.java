@@ -2,14 +2,17 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
+import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.util.RisusSkullType;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
@@ -103,6 +106,8 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<Block> HAIRY_FLESHY_SKIN = BLOCKS.register("hairy_fleshy_skin", () -> new HairyFleshySkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> HAIRY_CURVED_FLESHY_SKIN = BLOCKS.register("hairy_curved_fleshy_skin", () -> new HairyCurvedSkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> HAIRY_SKIN = BLOCKS.register("hairy_skin", () -> new HairySkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
+	public static final RegistryObject<Block> SCAB= BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> COAGULATED_BLOOD_BLOCK= BLOCKS.register("coagulated_blood_block", () -> new Block(BlockBehaviour.Properties.copy(RisusBlocks.BLOODWEAVE.get())));
 
 	public static final RegistryObject<Block> JOYFLAME_TORCH = BLOCKS.register("joyflame_torch", () -> new ModdedTorchBlock(Block.Properties.copy(Blocks.TORCH)));
 	public static final RegistryObject<Block> JOYFLAME_WALL_TORCH = BLOCKS.register("joyflame_wall_torch", () -> new ModdedWallTorchBlock(Block.Properties.copy(Blocks.TORCH)));
@@ -120,5 +125,7 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.copy(Blocks.AIR).noOcclusion().sound(SoundType.SCULK)));
 	public static final RegistryObject<Block> CURVED_RITUAL_BLOCK = BLOCKS.register("curved_ritual_block", () -> new ChiseledGrimstone(BlockBehaviour.Properties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 	public static final RegistryObject<Block> LINEAR_RITUAL_BLOCK = BLOCKS.register("linear_ritual_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)));
+
+	public static final RegistryObject<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new LiquidBlock(RisusFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 }

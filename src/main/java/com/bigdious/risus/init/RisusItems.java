@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
+import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.util.ModItemTier;
 import net.minecraft.core.Direction;
@@ -60,6 +61,8 @@ public class RisusItems {
 	public static final RegistryObject<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LINEAR_RITUAL_BLOCK = ITEMS.register("linear_ritual_block", () -> new BlockItem(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> SCAB = ITEMS.register("scab", () -> new BlockItem(RisusBlocks.SCAB.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> COAGULATED_BLOOD_BLOCK = ITEMS.register("coagulated_blood_block", () -> new BlockItem(RisusBlocks.COAGULATED_BLOOD_BLOCK.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> JOYFLAME_TORCH = ITEMS.register("joyflame_torch", () -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), defaultWithRarity(), Direction.DOWN));
 	public static final RegistryObject<Item> JOYFLAME_LANTERN = ITEMS.register("joyflame_lantern", () -> new BlockItem(RisusBlocks.JOYFLAME_LANTERN.get(), defaultWithRarity()));
@@ -126,6 +129,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(RisusBlocks.DARKNESS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
 
+	public static final RegistryObject<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", () -> new BucketItem(RisusFluids.SOURCE_BLOOD,defaultWithNoRarity().stacksTo(1).craftRemainder(Items.BUCKET)));
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(Risus.getRarity());
 	}

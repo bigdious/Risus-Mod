@@ -91,7 +91,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.TISSUE.get());
 
-		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get());
+		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusBlocks.SCAB.get());
 
 		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_CATALYST.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
 	}

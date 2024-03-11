@@ -193,9 +193,14 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone_bricks"));
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(), models().getExistingFile(Risus.prefix("block/chiseled_grimstone")));
+
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", new ResourceLocation("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
+
 		simpleBlock(RisusBlocks.DARKNESS.get(), models().cubeAll("darkness", Risus.prefix("block/darkness")).renderType("minecraft:cutout"));
+		simpleBlock(RisusBlocks.SCAB.get());
+		simpleBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
+
 		simpleBlock(RisusBlocks.NEURON_HEAD.get(), models().cross("neuron_head", Risus.prefix("block/neuron_head")).renderType("minecraft:cutout"));
 		simpleBlock(RisusBlocks.NEURON_STEM.get(), models().cross("neuron", Risus.prefix("block/neuron")).renderType("minecraft:cutout"));
 
@@ -204,16 +209,17 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
-
 		simpleBlock(RisusBlocks.LIVING_TISSUE.get(), models().cubeAll("living_tissue", Risus.prefix("block/tissue")));
 		wallBlock(RisusBlocks.ROTTED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(texture("block/eye_ender")));
 		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(texture("block/eye_bleached")));
 		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(texture("block/eye_bloodshot")));
 		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(texture("block/eye_golden")));
 		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(texture("block/eye_emerald")));
+
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().getExistingFile(texture("block/fleshy_skin")));
 		simpleBlock(RisusBlocks.SKIN.get());
 		directionalBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get(), models().getExistingFile(texture("block/hairy_fleshy_skin")));
