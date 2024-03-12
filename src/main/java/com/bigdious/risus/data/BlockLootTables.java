@@ -104,6 +104,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.SCAB.get());
 		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
+		add(RisusBlocks.BLOOD_FLUID_BLOCK.get(), LootTable.lootTable());
 
 		dropSelf(RisusBlocks.SKIN.get());
 		dropSelf(RisusBlocks.FLESHY_SKIN.get());

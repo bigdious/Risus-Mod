@@ -97,6 +97,9 @@ public class Risus {
 			//wood types
 			WoodType.register(RisusBlocks.BONDKNOT_TYPE);
 
+			//fluid
+			RisusFluids.registerFluidInteractions();
+
 		}
 
 		);

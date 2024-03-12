@@ -107,7 +107,7 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<Block> HAIRY_CURVED_FLESHY_SKIN = BLOCKS.register("hairy_curved_fleshy_skin", () -> new HairyCurvedSkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> HAIRY_SKIN = BLOCKS.register("hairy_skin", () -> new HairySkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> SCAB= BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
-	public static final RegistryObject<Block> COAGULATED_BLOOD_BLOCK= BLOCKS.register("coagulated_blood_block", () -> new Block(BlockBehaviour.Properties.copy(RisusBlocks.BLOODWEAVE.get())));
+	public static final RegistryObject<Block> COAGULATED_BLOOD_BLOCK= BLOCKS.register("coagulated_blood_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEY_BLOCK)));
 
 	public static final RegistryObject<Block> JOYFLAME_TORCH = BLOCKS.register("joyflame_torch", () -> new ModdedTorchBlock(Block.Properties.copy(Blocks.TORCH)));
 	public static final RegistryObject<Block> JOYFLAME_WALL_TORCH = BLOCKS.register("joyflame_wall_torch", () -> new ModdedWallTorchBlock(Block.Properties.copy(Blocks.TORCH)));

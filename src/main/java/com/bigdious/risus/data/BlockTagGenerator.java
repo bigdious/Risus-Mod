@@ -19,6 +19,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 	public static final TagKey<Block> BONDKNOT_LOGS = BlockTags.create(Risus.prefix("bondknot_logs"));
 	public static final TagKey<Block> JOYFLAME_FIRE_BASE_BLOCKS = BlockTags.create(Risus.prefix("joyflame_fire_base_blocks"));
 
+
 	public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, Risus.MODID, existingFileHelper);
 	}
