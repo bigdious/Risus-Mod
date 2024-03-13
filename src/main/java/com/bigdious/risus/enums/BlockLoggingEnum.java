@@ -1,6 +1,5 @@
 package com.bigdious.risus.enums;
 
-import com.bigdious.risus.fluid.RisusFluidTypes;
 import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.BlockPos;
@@ -22,18 +21,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Locale;
-
+//code from TwilightForest
 public enum BlockLoggingEnum implements StringRepresentable {
     AIR      (Blocks.AIR,      Fluids.EMPTY),
     WATER    (Blocks.WATER,    Fluids.WATER),
     LAVA     (Blocks.LAVA,     Fluids.LAVA),
-    OBSIDIAN (Blocks.OBSIDIAN, Fluids.EMPTY),
-    STONE    (Blocks.STONE,    Fluids.EMPTY),
-    BASALT   (Blocks.BASALT,   Fluids.EMPTY),
+	BLOOD	(RisusBlocks.BLOOD_FLUID_BLOCK.get(), RisusFluids.SOURCE_BLOOD.get());
 
-	BLOOD	 (RisusBlocks.BLOOD_FLUID_BLOCK.get(), RisusFluids.SOURCE_BLOOD.get()),
-	COAGULATED_BLOOD	 (RisusBlocks.COAGULATED_BLOOD_BLOCK.get(), Fluids.EMPTY),
-	SCAB	 (RisusBlocks.SCAB.get(), Fluids.EMPTY);
 
     public static final EnumProperty<BlockLoggingEnum> MULTILOGGED = EnumProperty.create("multilogged", BlockLoggingEnum.class);
 

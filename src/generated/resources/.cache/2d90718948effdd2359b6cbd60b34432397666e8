@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-11T19:48:45.8954271	Risus blockstates and models
+// 1.20.1	2024-03-13T20:19:02.0854976	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -31,7 +31,7 @@ c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decaying_tissue.json
 124a04625066073e20e9520618dd9e50f957277f assets/risus/blockstates/decomposed_tissue.json
 124a04625066073e20e9520618dd9e50f957277f assets/risus/blockstates/decomposing_tissue.json
-1c468d0ab344fda384b3dff5696293f96632b5fb assets/risus/blockstates/depth_vase.json
+62abf5db0aef9b770e3be5d0c77556735cf8a403 assets/risus/blockstates/depth_vase.json
 0334039c8198fbf554420b89f960ca5c90f925b6 assets/risus/blockstates/engraved_basalt.json
 e0c9d48c2e2e52a716772a11fd6757a3fb796b96 assets/risus/blockstates/eye_bleached.json
 b48ffa69e5e2df592253dc0b2e96f9ddb0bf8769 assets/risus/blockstates/eye_bloodshot.json

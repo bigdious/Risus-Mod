@@ -5,6 +5,8 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
+import com.bigdious.risus.fluid.RisusFluidTypes;
+import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -21,6 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -29,22 +32,26 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import vazkii.patchouli.api.PatchouliAPI;
 
-public class DepthVaseBlock extends BaseEntityBlock {
+public class DepthVaseBlock extends BaseEntityBlock implements SimpleBloodloggedBlock{
 
 	public DepthVaseBlock(Properties props) {
 		super(props);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(BLOODLOGGED, false));
 	}
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final BooleanProperty BLOODLOGGED = SimpleBloodloggedBlock.BLOODLOGGED;
 	public BlockState rotate(BlockState pState, Rotation pRot) {
-		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING))).setValue(BLOODLOGGED, Boolean.valueOf(false));
 	}
 	public BlockState mirror(BlockState pState, Mirror pMirror) {
 		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
@@ -132,11 +139,15 @@ public class DepthVaseBlock extends BaseEntityBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING).add(BLOODLOGGED);
 	}
 	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection()).setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()));
+	}
+	public FluidState getFluidState(BlockState pState) {
+		return pState.getValue(BLOODLOGGED) ? RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState() : super.getFluidState(pState);
 	}
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
@@ -150,20 +161,13 @@ public class DepthVaseBlock extends BaseEntityBlock {
 			super.onRemove(state, level, pos, newState, moving);
 		}
 	}
-//	@Nullable
-//	@Override
-//	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
-//		BlockEntity blockentity = level.getBlockEntity(pos);
-//		return blockentity instanceof MenuProvider provider ? provider : null;
-//	}
-//	@Override
-//	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-//		BlockEntity blockentity = level.getBlockEntity(pos);
-//		if (blockentity instanceof DepthVaseBlockEntity vase) {
-//			player.openMenu(vase);
-//		}
-//		return InteractionResult.sidedSuccess(level.isClientSide());
-//	}
+	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+		if (pState.getValue(BLOODLOGGED)) {
+			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
+		}
+
+		return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+	}
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {

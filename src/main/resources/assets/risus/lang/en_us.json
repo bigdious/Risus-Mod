@@ -74,11 +74,11 @@
   "block.risus.hairy_fleshy_skin": "Hairy Fleshy Skin",
   "block.risus.hairy_curved_fleshy_skin": "Hairy_Curved Fleshy Skin",
 
-  "block.risus.joyflame_campfire": "Joyflame Campfire",
-  "block.risus.joyflame_fire": "Joyflame Fire",
-  "block.risus.joyflame_lantern": "Joyflame Lantern",
-  "block.risus.joyflame_torch": "Joyflame Torch",
-  "block.risus.joyflame_wall_torch": "Joyflame Wall Torch",
+  "block.risus.joyflame_campfire": "Cinderglee Campfire",
+  "block.risus.joyflame_fire": "Cinderglee Fire",
+  "block.risus.joyflame_lantern": "Cinderglee Lantern",
+  "block.risus.joyflame_torch": "Cinderglee Torch",
+  "block.risus.joyflame_wall_torch": "Cinderglee Wall Torch",
 
   "container.risus.maw_guts": "Maw Guts",
   "container.risus.depth_vase": "Depth Vase",
