@@ -64,7 +64,7 @@ public class RisusBaseFluidType extends FluidType {
 			}
 
 			@Override
-			public @Nullable ResourceLocation getOverlayTexture() {
+			public ResourceLocation getOverlayTexture() {
 				return overlayTexture;
 			}
 

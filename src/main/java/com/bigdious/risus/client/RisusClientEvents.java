@@ -1,6 +1,7 @@
 package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.fluid.RisusFluids;
 import net.minecraft.client.gui.Gui;
 import com.bigdious.risus.client.particle.AlterationFinishedParticle;
 import com.bigdious.risus.client.particle.AlterationParticle;
@@ -19,10 +20,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.RenderStateShard;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -63,6 +61,9 @@ public class RisusClientEvents {
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		BlockEntityRenderers.register(RisusBlockEntities.ALTERATION_CATALYST.get(), context ->  new AlterationCatalystRenderer());
+
+		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
 		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);
 

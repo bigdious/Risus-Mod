@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": "risus:blood_bucket"
+}

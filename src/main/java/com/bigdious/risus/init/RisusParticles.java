@@ -30,4 +30,6 @@ public class RisusParticles {
 
 	public static final RegistryObject<SimpleParticleType> JOYFLAME = PARTICLES.register("joyflame", () -> new SimpleParticleType(false));
 
+	public static final RegistryObject<SimpleParticleType> BLOOD = PARTICLES.register("blood_particle", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> BLOOD_BIT = PARTICLES.register("blood_bit_particle", () -> new SimpleParticleType(true));
 }

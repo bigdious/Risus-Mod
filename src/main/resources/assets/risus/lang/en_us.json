@@ -65,6 +65,14 @@
   "block.risus.curved_ritual_block": "Curved Ritual Block",
   "block.risus.linear_ritual_block": "Linear Ritual Block",
   "block.risus.teeth": "Teeth",
+  "block.risus.coagulated_blood_block": "Coagulated Blood Block",
+  "block.risus.scab": "Scab",
+  "block.risus.skin": "Skin",
+  "block.risus.fleshy_skin": "Fleshy Skin",
+  "block.risus.curved_fleshy_skin": "Curved Fleshy Skin",
+  "block.risus.hairy_skin": "Hairy Skin",
+  "block.risus.hairy_fleshy_skin": "Hairy Fleshy Skin",
+  "block.risus.hairy_curved_fleshy_skin": "Hairy_Curved Fleshy Skin",
 
   "block.risus.joyflame_campfire": "Joyflame Campfire",
   "block.risus.joyflame_fire": "Joyflame Fire",
@@ -91,6 +99,8 @@
   "item.risus.endless_pearl": "Endless Pearl",
   "item.risus.light_devourer": "Light Devourer",
   "item.risus.toothknocker": "Toothknocker",
+  "item.risus.bloodwyrm_head_weapon": "Bloodwyrm Head",
+  "item.risus.blood_bucket": "Blood Bucket",
 
   "item.risus.angel_spawn_egg": "Blood Angel Spawn Egg",
   "item.risus.holder_spawn_egg": "Holder Spawn Egg",
