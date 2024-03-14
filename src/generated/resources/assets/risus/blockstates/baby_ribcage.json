@@ -1,17 +1,122 @@
 {
   "variants": {
-    "facing=east": {
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=false": {
       "model": "risus:block/baby_ribcage",
       "y": 90
     },
-    "facing=north": {
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=false": {
       "model": "risus:block/baby_ribcage"
     },
-    "facing=south": {
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=false": {
       "model": "risus:block/baby_ribcage",
       "y": 180
     },
-    "facing=west": {
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage"
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 180
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/baby_ribcage",
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=true": {
       "model": "risus:block/baby_ribcage",
       "y": 270
     }

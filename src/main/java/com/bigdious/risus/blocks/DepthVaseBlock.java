@@ -3,12 +3,9 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
-import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
-import com.bigdious.risus.fluid.RisusFluidTypes;
 import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlockEntities;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -28,7 +25,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -42,17 +38,62 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import vazkii.patchouli.api.PatchouliAPI;
 
-public class DepthVaseBlock extends BaseEntityBlock implements SimpleBloodloggedBlock{
-
+public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultiloggedBlock {
+	//start multilogging
 	public DepthVaseBlock(Properties props) {
 		super(props);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(BLOODLOGGED, false));
+		this.registerDefaultState(this.getStateDefinition().any()
+			.setValue(FACING, Direction.NORTH)
+			.setValue(BLOODLOGGED, false)
+			.setValue(WATERLOGGED, false)
+			.setValue(LAVALOGGED, false));
 	}
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	public static final BooleanProperty BLOODLOGGED = SimpleBloodloggedBlock.BLOODLOGGED;
+	public static final BooleanProperty BLOODLOGGED = SimpleMultiloggedBlock.BLOODLOGGED;
+	public static final BooleanProperty LAVALOGGED = SimpleMultiloggedBlock.LAVALOGGED;
+	public static final BooleanProperty WATERLOGGED = SimpleMultiloggedBlock.WATERLOGGED;
 	public BlockState rotate(BlockState pState, Rotation pRot) {
-		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING))).setValue(BLOODLOGGED, Boolean.valueOf(false));
+		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)))
+			.setValue(BLOODLOGGED, Boolean.valueOf(false))
+			.setValue(WATERLOGGED, Boolean.valueOf(false))
+			.setValue(LAVALOGGED, Boolean.valueOf(false));
 	}
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(FACING)
+			.add(BLOODLOGGED)
+			.add(WATERLOGGED)
+			.add(LAVALOGGED);
+	}
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection())
+			.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
+			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
+			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+	}
+	public FluidState getFluidState(BlockState pState) {
+		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
+		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
+		if (pState.getValue(WATERLOGGED)) {return Fluids.WATER.getSource().defaultFluidState();}
+		else return  super.getFluidState(pState);
+	}
+	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+		if (pState.getValue(BLOODLOGGED)) {
+			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
+		}
+		else if (pState.getValue(LAVALOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
+		}
+		else if (pState.getValue(WATERLOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+		}
+
+		return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+	}
+	//stop multilogging
 	public BlockState mirror(BlockState pState, Mirror pMirror) {
 		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
 	}
@@ -136,19 +177,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleBloodlogged
 		}
 
 	}
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(FACING).add(BLOODLOGGED);
-	}
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
-		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection()).setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()));
-	}
-	public FluidState getFluidState(BlockState pState) {
-		return pState.getValue(BLOODLOGGED) ? RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState() : super.getFluidState(pState);
-	}
+
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
 		if (!state.is(newState.getBlock())) {
@@ -161,13 +190,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleBloodlogged
 			super.onRemove(state, level, pos, newState, moving);
 		}
 	}
-	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-		if (pState.getValue(BLOODLOGGED)) {
-			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
-		}
 
-		return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
-	}
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
