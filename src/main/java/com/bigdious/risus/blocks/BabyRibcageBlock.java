@@ -25,10 +25,10 @@ import java.util.Map;
 public class BabyRibcageBlock extends HorizontalDirectionalBlock implements SimpleMultiloggedBlock{
 
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
-			Direction.NORTH, Block.box(3.5D, 1.0D, 8.5D, 12.5D, 16.0D, 16.0D),
-			Direction.SOUTH, Block.box(3.5D, 1.0D, 0.0D, 12.5D, 16.0D, 7.5D),
-			Direction.WEST, Block.box(8.5D, 1.0D, 3.5D, 16.0D, 16.0D, 12.5D),
-			Direction.EAST, Block.box(0.0D, 1.0D, 3.5D, 7.5D, 16.0D, 12.5D)));
+			Direction.NORTH, Block.box(3.5D, 1.0D, 3.5D, 12.5D, 16.0D, 11.0D),
+			Direction.SOUTH, Block.box(3.5D, 1.0D, 5.0D, 12.5D, 16.0D, 12.5D),
+			Direction.WEST, Block.box(3.5D, 1.0D, 3.5D, 11.0D, 16.0D, 12.5D),
+			Direction.EAST, Block.box(5.0D, 1.0D, 3.5D, 12.5D, 16.0D, 12.5D)));
 	//start multilogging necessities
 	public BabyRibcageBlock(Properties properties) {
 		super(properties);

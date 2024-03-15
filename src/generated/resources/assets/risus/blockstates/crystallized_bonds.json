@@ -1,53 +1,209 @@
 {
   "variants": {
-    "facing=down,waterlogged=false": {
+    "bloodlogged=false,facing=down,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds",
       "x": 180
     },
-    "facing=down,waterlogged=true": {
+    "bloodlogged=false,facing=down,lavalogged=false,waterlogged=true": {
       "model": "risus:block/crystallized_bonds",
       "x": 180
     },
-    "facing=east,waterlogged=false": {
+    "bloodlogged=false,facing=down,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 90
     },
-    "facing=east,waterlogged=true": {
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=true": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 90
     },
-    "facing=north,waterlogged=false": {
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds",
       "x": 90
     },
-    "facing=north,waterlogged=true": {
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=true": {
       "model": "risus:block/crystallized_bonds",
       "x": 90
     },
-    "facing=south,waterlogged=false": {
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 180
     },
-    "facing=south,waterlogged=true": {
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=true": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 180
     },
-    "facing=up,waterlogged=false": {
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=up,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds"
     },
-    "facing=up,waterlogged=true": {
+    "bloodlogged=false,facing=up,lavalogged=false,waterlogged=true": {
       "model": "risus:block/crystallized_bonds"
     },
-    "facing=west,waterlogged=false": {
+    "bloodlogged=false,facing=up,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=false": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 270
     },
-    "facing=west,waterlogged=true": {
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 180
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds"
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/crystallized_bonds",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=true": {
       "model": "risus:block/crystallized_bonds",
       "x": 90,
       "y": 270

@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-13T11:23:38.1345278	Recipes
+// 1.20.1	2024-03-15T16:28:38.1612503	Recipes
 a6d14dd30107ab49159a4bf568b0f4400ebd97d6 data/risus/advancements/recipes/building_blocks/bondknot_planks.json
 46810c48ae42786122f3b59f4e4587e1c0537aaf data/risus/advancements/recipes/building_blocks/bondknot_slab.json
 f6f36b34291555e0cdfdd2a683fe5510bda0141e data/risus/advancements/recipes/building_blocks/bondknot_stairs.json
@@ -22,6 +22,7 @@ e3e2c601fcb83b105d4f68fbc78d451c5840cbae data/risus/advancements/recipes/buildin
 61d0a65534dc88b7bb984fbe600916de7a9bae04 data/risus/advancements/recipes/decorations/bondknot_fence.json
 ba0ef55e19f4ebd4b5800e9b3380c6bc5294d177 data/risus/advancements/recipes/decorations/bondknot_sign.json
 100b9359a76acc11440105e28ab2e056b6d07ea6 data/risus/advancements/recipes/decorations/grimstone_wall.json
+43d6748d93fa60de21ca9b205f699fff60dd0990 data/risus/advancements/recipes/decorations/imitation_scaleplate.json
 d52347f53164f36729b3b240c9dde10722e52822 data/risus/advancements/recipes/decorations/joyflame_campfire.json
 fb426671569acea0df3a1ea8af8b661a620f2123 data/risus/advancements/recipes/decorations/joyflame_lantern.json
 a160edb8417ab127bfef181f5db0ff854aa010b1 data/risus/advancements/recipes/decorations/joyflame_torch.json
@@ -99,6 +100,7 @@ da6fd9e004f4f9f7a99f8df016f1e2962a575a6c data/risus/recipes/eye_bloodshot.json
 f23bd5ebce5b9efe5e61f782375521477b33ae8a data/risus/recipes/grimstone_slab.json
 6f9ba4e539e6102680a0ed6bc7437219c3e24f82 data/risus/recipes/grimstone_stairs.json
 b1878d8a9f7d4e06555c1269878a60cc016ef514 data/risus/recipes/grimstone_wall.json
+6c9f173f609d8a846c09ff4555d4873e13c395f0 data/risus/recipes/imitation_scaleplate.json
 bf03148ef3fc1f8244f8c27aef5478b51bcaa3d6 data/risus/recipes/joyflame_campfire.json
 c75ac7cf4542c219f4db7848de041ce03a081431 data/risus/recipes/joyflame_lantern.json
 1678ed7baa8bcb6efea987c12f03015756cdf78b data/risus/recipes/joyflame_torch.json

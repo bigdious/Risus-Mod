@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:obsidian"
+    },
+    "/": {
+      "item": "risus:gluttony_scales"
+    }
+  },
+  "pattern": [
+    "###",
+    "#/#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "item": "risus:imitation_scaleplate"
+  },
+  "show_notification": true
+}

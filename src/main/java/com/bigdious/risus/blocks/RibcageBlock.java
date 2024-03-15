@@ -1,5 +1,8 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.fluid.RisusFluids;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
@@ -17,33 +20,99 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
+
 @SuppressWarnings("deprecation")
-public class RibcageBlock extends BaseRotatableBlock {
+public class RibcageBlock extends BaseRotatableBlock implements SimpleMultiloggedBlock {
 
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
-
+	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
+		Direction.NORTH, Block.box(2.0D, 0.0D, 5.0D, 14.0D, 16.0D, 14.5D),
+		Direction.SOUTH, Block.box(2.0D, 0.0D, 1.5D, 14.0D, 16.0D, 11.0D),
+		Direction.WEST, Block.box(5.0D, 0.0D, 2.0D, 14.5D, 16.0D, 14.0D),
+		Direction.EAST, Block.box(1.5D, 0.0D, 2.0D, 11.0D, 16.0D, 14.0D)));
+	//start multilogging necessities
+	public static final BooleanProperty BLOODLOGGED = SimpleMultiloggedBlock.BLOODLOGGED;
+	public static final BooleanProperty LAVALOGGED = SimpleMultiloggedBlock.LAVALOGGED;
+	public static final BooleanProperty WATERLOGGED = SimpleMultiloggedBlock.WATERLOGGED;
 	public RibcageBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(HALF, DoubleBlockHalf.LOWER));
+		this.registerDefaultState(this.getStateDefinition().any()
+			.setValue(HALF, DoubleBlockHalf.LOWER)
+			.setValue(BLOODLOGGED, false)
+			.setValue(WATERLOGGED, false)
+			.setValue(LAVALOGGED, false));
 	}
-
 	@Override
-	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
-		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(HALF)
+			.add(BLOODLOGGED)
+			.add(WATERLOGGED)
+			.add(LAVALOGGED);
+	}
+	@Nullable
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+		BlockPos blockpos = pContext.getClickedPos();
+		Level level = pContext.getLevel();
+		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+		if (level.getBlockState(blockpos.below()).canBeReplaced() && blockpos.getY() > level.getMinBuildHeight() + 1) {
+			return level.getBlockState(blockpos.above()).isSolidRender(pContext.getLevel(), blockpos.above()) ?
+				super.getStateForPlacement(pContext)
+					.setValue(FACING, pContext.getHorizontalDirection())
+					.setValue(HALF, DoubleBlockHalf.UPPER)
+					.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
+					.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
+					.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
+				: null;
+		} else if (level.getBlockState(blockpos.above()).canBeReplaced() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
+			return level.getBlockState(blockpos.above().above()).isSolidRender(pContext.getLevel(), blockpos.above().above()) ?
+				super.getStateForPlacement(pContext)
+					.setValue(FACING, pContext.getHorizontalDirection())
+					.setValue(HALF, DoubleBlockHalf.LOWER)
+					.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
+					.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
+					.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
+				: null;
+		}
+		return null;
+	}
+	public FluidState getFluidState(BlockState pState) {
+		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
+		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
+		if (pState.getValue(WATERLOGGED)) {return Fluids.WATER.getSource().defaultFluidState();}
+		else return  super.getFluidState(pState);
+	}
+	@Override
+	public BlockState updateShape(BlockState pState, Direction direction, BlockState neighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos neighborPos) {
+		DoubleBlockHalf doubleblockhalf = pState.getValue(HALF);
+		if (pState.getValue(BLOODLOGGED)) {
+			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
+		}
+		if (pState.getValue(LAVALOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
+		}
+		if (pState.getValue(WATERLOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+		}
 		if (direction.getAxis() != Direction.Axis.Y || doubleblockhalf == DoubleBlockHalf.LOWER != (direction == Direction.UP) || neighborState.is(this) && neighborState.getValue(HALF) != doubleblockhalf) {
-			return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(accessor, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
+			return doubleblockhalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, direction, neighborState, pLevel, pPos, neighborPos);
 		} else {
 			return Blocks.AIR.defaultBlockState();
 		}
 	}
-
+	//stop
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
 		if (state.getValue(HALF) != DoubleBlockHalf.LOWER) {
@@ -55,18 +124,7 @@ public class RibcageBlock extends BaseRotatableBlock {
 		}
 	}
 
-	@Nullable
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		BlockPos blockpos = context.getClickedPos();
-		Level level = context.getLevel();
-		if (level.getBlockState(blockpos.below()).canBeReplaced() && blockpos.getY() > level.getMinBuildHeight() + 1) {
-			return level.getBlockState(blockpos.above()).isSolidRender(context.getLevel(), blockpos.above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.UPPER) : null;
-		} else if (level.getBlockState(blockpos.above()).canBeReplaced() && blockpos.getY() < level.getMaxBuildHeight() - 1) {
-			return level.getBlockState(blockpos.above().above()).isSolidRender(context.getLevel(), blockpos.above().above()) ? super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection()).setValue(HALF, DoubleBlockHalf.LOWER) : null;
-		}
-		return null;
-	}
+
 
 	@Override
 	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
@@ -122,11 +180,7 @@ public class RibcageBlock extends BaseRotatableBlock {
 		return Mth.getSeed(pos.getX(), pos.below(state.getValue(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
 	}
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(HALF);
-	}
+
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
@@ -137,5 +191,10 @@ public class RibcageBlock extends BaseRotatableBlock {
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		return AABBS.get(state.getValue(FACING));
 	}
 }

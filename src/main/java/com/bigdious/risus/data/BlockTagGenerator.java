@@ -69,6 +69,12 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())
 				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
+		this.tag(BlockTags.NYLIUM).add(RisusBlocks.EYE_BLEACHED.get())
+			.add(RisusBlocks.EYE_BLOODSHOT.get())
+			.add(RisusBlocks.EYE_EMERALD.get())
+			.add(RisusBlocks.EYE_ENDER.get())
+			.add(RisusBlocks.EYE_GOLDEN.get());
+
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				RisusBlocks.ALTERATION_CATALYST.get(),
 				RisusBlocks.ASHEN_REMAINS.get(),

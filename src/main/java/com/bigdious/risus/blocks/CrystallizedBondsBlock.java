@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.fluid.RisusFluids;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
@@ -24,9 +25,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWaterloggedBlock {
+public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleMultiloggedBlock {
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
-	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
 			Direction.UP, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D),
 			Direction.DOWN, Block.box(4.0D, 8.0D, 4.0D, 12.0D, 16.0D, 12.0D),
@@ -35,28 +36,36 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 			Direction.NORTH, Block.box(4.0D, 4.0D, 8.0D, 12.0D, 12.0D, 16.0D),
 			Direction.SOUTH, Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 8.0D)
 	));
-
+	//start multilogging necessities
+	public static final BooleanProperty BLOODLOGGED = SimpleMultiloggedBlock.BLOODLOGGED;
+	public static final BooleanProperty LAVALOGGED = SimpleMultiloggedBlock.LAVALOGGED;
+	public static final BooleanProperty WATERLOGGED = SimpleMultiloggedBlock.WATERLOGGED;
 	public CrystallizedBondsBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.UP).setValue(WATERLOGGED, false));
+		this.registerDefaultState(this.getStateDefinition().any()
+			.setValue(BLOODLOGGED, false)
+			.setValue(WATERLOGGED, false)
+			.setValue(LAVALOGGED, false)
+			.setValue(FACING, Direction.UP).setValue(WATERLOGGED, false));
 	}
-
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return AABBS.get(state.getValue(FACING));
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(FACING)
+			.add(BLOODLOGGED)
+			.add(WATERLOGGED)
+			.add(LAVALOGGED);
 	}
-
-	@Override
-	public FluidState getFluidState(BlockState state) {
-		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
-	}
-
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Direction clicked = context.getClickedFace();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		BlockState state = defaultBlockState().setValue(FACING, clicked).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		BlockState state = defaultBlockState()
+			.setValue(FACING, clicked)
+			.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
+			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
+			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
 		if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
 			return state;
 		}
@@ -69,16 +78,33 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 		}
 		return null;
 	}
+	public FluidState getFluidState(BlockState pState) {
+		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
+		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
+		if (pState.getValue(WATERLOGGED)) {return Fluids.WATER.getSource().defaultFluidState();}
+		else return  super.getFluidState(pState);
+	}
 	@Override
-	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
-		if (state.getValue(WATERLOGGED)) {
-			accessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(accessor));
+	public BlockState updateShape(BlockState pState, Direction direction, BlockState neighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos neighborPos) {
+		if (pState.getValue(BLOODLOGGED)) {
+			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
 		}
-		if (!this.canSurvive(state, accessor, pos)) {
+		if (pState.getValue(LAVALOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
+		}
+		if (pState.getValue(WATERLOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+		}
+		if (!this.canSurvive(pState, pLevel, pPos)) {
 			return Blocks.AIR.defaultBlockState();
 		} else {
-			return super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
+			return super.updateShape(pState, direction, neighborState, pLevel, pPos, neighborPos);
 		}
+	}
+	//stop
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		return AABBS.get(state.getValue(FACING));
 	}
 
 	@Override
@@ -98,11 +124,7 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleWa
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(FACING, WATERLOGGED);
-	}
+
 
 
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-11T19:48:45.889431	Tags for minecraft:block mod id risus
+// 1.20.1	2024-03-15T10:38:26.6209069	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
@@ -12,6 +12,7 @@ e41da3214c0018cce821842898c868613429256e data/minecraft/tags/blocks/mineable/axe
 1e9a4c2925f60d6305a9727aa331c6e85bb615ad data/minecraft/tags/blocks/mineable/hoe.json
 19ea745cb23f6767a1093a24e8515b4acd154b92 data/minecraft/tags/blocks/mineable/pickaxe.json
 94b506436f163aa4338a80d46ba20f053c626228 data/minecraft/tags/blocks/needs_diamond_tool.json
+86225bfdd35cb8f9a6666034cbc3f8ae42042ffa data/minecraft/tags/blocks/nylium.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/blocks/planks.json
 8775602c15152b6d5edeafa31683398321bb7243 data/minecraft/tags/blocks/signs.json
 ecc388c40f36e8a5d4349e1a596494b63223f338 data/minecraft/tags/blocks/slabs.json

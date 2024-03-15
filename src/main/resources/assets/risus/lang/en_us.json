@@ -101,6 +101,12 @@
   "item.risus.toothknocker": "Toothknocker",
   "item.risus.bloodwyrm_head_weapon": "Bloodwyrm Head",
   "item.risus.blood_bucket": "Blood Bucket",
+  "item.risus.hair_follicles": "Hair Follicles",
+  "item.risus.eye_ender": "Ender Eye Block",
+  "item.risus.eye_bleached": "Bleached Eye Block",
+  "item.risus.eye_bloodshot": "Bloodshot Eye Block",
+  "item.risus.eye_golden": "Golden Eye Block",
+  "item.risus.eye_emerald": "Emerald Eye Block",
 
   "item.risus.angel_spawn_egg": "Blood Angel Spawn Egg",
   "item.risus.holder_spawn_egg": "Holder Spawn Egg",
@@ -124,7 +130,7 @@
   "entity.risus.risus_boat": "Boat",
   "entity.risus.thrown_axe": "Thrown Crescent Disaster",
   "entity.risus.weaver": "Weaver",
-  "entity.risus.memory1": "Forgotten Statue",
+  "entity.risus.memory1": "Faded Statue",
 
   "death.attack.inexistence": "%1$s has stepped into inexistence",
   "death.attack.inexistence.player": "%1$s has stepped into inexistence while trying to escape %2$s",

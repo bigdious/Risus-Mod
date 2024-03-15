@@ -89,6 +89,15 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusBlocks.BONDKNOT_PLANKS.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.IMITATION_SCALEPLATE.get(), 32)
+			.pattern("###")
+			.pattern("#/#")
+			.pattern("###")
+			.define('#', Ingredient.of(Tags.Items.OBSIDIAN))
+			.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())
 				.pattern("/#/")
 				.pattern("/#/")
