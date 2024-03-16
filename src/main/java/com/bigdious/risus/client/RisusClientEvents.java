@@ -38,6 +38,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import snownee.jade.overlay.OverlayRenderer;
+import snownee.jade.overlay.TooltipRenderer;
 
 @EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Bus.MOD)
 public class RisusClientEvents {
@@ -92,6 +94,7 @@ public class RisusClientEvents {
 			}
 		});
 	}
+
 	private static void renderExburnHearts(int width, int height, GuiGraphics graphics, ForgeGui gui, Player player) {
 		int health = Mth.ceil(player.getHealth());
 		boolean highlight = gui.healthBlinkTime > (long) gui.getGuiTicks() && (gui.healthBlinkTime - (long) gui.getGuiTicks()) / 3L % 2L == 1L;

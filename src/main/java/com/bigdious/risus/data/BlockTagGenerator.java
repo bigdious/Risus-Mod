@@ -96,10 +96,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.JOYFLAME_LANTERN.get(),
 				RisusBlocks.BONE_WALL.get());
 
-		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.TISSUE.get());
 
-		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusBlocks.SCAB.get());
-
-		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.ALTERATION_CATALYST.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
+		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusBlocks.SCAB.get(), RisusBlocks.TISSUE.get(), RisusBlocks.SKIN.get(), RisusBlocks.FLESHY_SKIN.get(), RisusBlocks.CURVED_FLESHY_SKIN.get(), RisusBlocks.HAIRY_SKIN.get(), RisusBlocks.HAIRY_FLESHY_SKIN.get(), RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(RisusBlocks.TEETH.get());
+		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get());
 	}
 }

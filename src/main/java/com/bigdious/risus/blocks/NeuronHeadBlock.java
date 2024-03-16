@@ -2,9 +2,11 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
 import net.minecraft.world.level.block.NetherVines;
@@ -37,8 +39,7 @@ public class NeuronHeadBlock extends GrowingPlantHeadBlock implements SimpleMult
 		builder
 			.add(BLOODLOGGED)
 			.add(WATERLOGGED)
-			.add(LAVALOGGED)
-			.add(AGE);
+			.add(LAVALOGGED);
 	}
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
@@ -48,6 +49,40 @@ public class NeuronHeadBlock extends GrowingPlantHeadBlock implements SimpleMult
 			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
 			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
 	}
+	public FluidState getFluidState(BlockState pState) {
+		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
+		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
+		if (pState.getValue(WATERLOGGED)) {return Fluids.WATER.getSource().defaultFluidState();}
+		else return  super.getFluidState(pState);
+	}
+	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+		if (pState.getValue(BLOODLOGGED)) {
+			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
+		}
+		if (pState.getValue(LAVALOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
+		}
+		if (pState.getValue(WATERLOGGED)) {
+			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+		}
+		if (pDirection == this.growthDirection.getOpposite() && !pState.canSurvive(pLevel, pPos)) {
+			pLevel.scheduleTick(pPos, this, 1);
+		}
+
+		if (pDirection != this.growthDirection || !pNeighborState.is(this) && !pNeighborState.is(this.getBodyBlock())) {
+			if (this.scheduleFluidTicks) {
+				pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+			}
+
+			return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+		} else {
+			return this.updateBodyAfterConvertedFromHead(pState, this.getBodyBlock().defaultBlockState()
+				.setValue(SimpleMultiloggedBlock.WATERLOGGED, pState.getValue(SimpleMultiloggedBlock.WATERLOGGED))
+				.setValue(SimpleMultiloggedBlock.BLOODLOGGED, pState.getValue(SimpleMultiloggedBlock.BLOODLOGGED))
+				.setValue(SimpleMultiloggedBlock.LAVALOGGED, pState.getValue(SimpleMultiloggedBlock.LAVALOGGED)));
+		}
+	}
+	//stop
     protected int getBlocksToGrowWhenBonemealed(RandomSource p_222649_) {
         return NetherVines.getBlocksToGrowWhenBonemealed(p_222649_);
     }

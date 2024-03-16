@@ -19,7 +19,8 @@ import org.joml.Vector3f;
 public class RisusFluidTypes {
 	public static final ResourceLocation BLOOD_STILL_RL = new ResourceLocation(Risus.MODID, "block/blood_still");
 	public static final ResourceLocation BLOOD_FLOWING_RL = new ResourceLocation(Risus.MODID,"block/blood_flow");
-	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(Risus.MODID, "textures/block/blood_still");
+	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(Risus.MODID, "block/blood_flow");
+	public static final ResourceLocation BLOOD_OVERLAY_RENDER = new ResourceLocation(Risus.MODID, "textures/misc/blood_fluid_block");
 
 	public static final DeferredRegister<FluidType> FLUID_TYPES =
 		DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, Risus.MODID);
@@ -28,7 +29,7 @@ public class RisusFluidTypes {
 		FluidType.Properties.create().canHydrate(true).canDrown(false).canSwim(true).density(10).viscosity(15).canPushEntity(true).sound(SoundAction.get("drink"),
 			SoundEvents.HONEY_DRINK));
 	private static RegistryObject<FluidType> register(String name, FluidType.Properties properties){
-		return FLUID_TYPES.register(name, () -> new RisusBaseFluidType(BLOOD_STILL_RL, BLOOD_FLOWING_RL, BLOOD_OVERLAY_RL,  0xffe60e07, new Vector3f(54f / 255f, 4f / 255f, 4f / 255f), properties));
+		return FLUID_TYPES.register(name, () -> new RisusBaseFluidType(BLOOD_STILL_RL, BLOOD_FLOWING_RL, BLOOD_OVERLAY_RL,BLOOD_OVERLAY_RENDER,  0xffe60e07, new Vector3f(54f / 255f, 4f / 255f, 4f / 255f), properties));
 	}
 
 

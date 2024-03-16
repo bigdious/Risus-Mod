@@ -41,7 +41,9 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusItems.REGEN_ROSE.get()).unlockedBy("has_wither_rose", has(Items.WITHER_ROSE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ENDER_EYE), RisusItems.EYE_ENDER.get()).unlockedBy("has_ender_eye", has(Items.ENDER_EYE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusItems.DEPTH_VASE.get()).unlockedBy("has_decorated_pot", has(Items.DECORATED_POT)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WATER_BUCKET), RisusItems.BLOOD_BUCKET.get()).unlockedBy("has_water_bucket", has(Items.WATER_BUCKET)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.MILK_BUCKET), RisusItems.BLOOD_BUCKET.get()).unlockedBy("has_milk_bucket", has(Items.MILK_BUCKET)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusItems.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_gluttony_scales", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_leather", has(Items.LEATHER)).unlockedBy("has_rabbit_hide", has(Items.RABBIT_HIDE)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")

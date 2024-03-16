@@ -1,0 +1,12 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:rabbit_hide"
+    }
+  ],
+  "result": "risus:skin"
+}

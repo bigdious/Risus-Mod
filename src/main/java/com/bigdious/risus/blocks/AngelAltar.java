@@ -71,10 +71,10 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock{
 		if (pState.getValue(BLOODLOGGED)) {
 			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
 		}
-		else if (pState.getValue(LAVALOGGED)) {
+		if (pState.getValue(LAVALOGGED)) {
 			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
 		}
-		else if (pState.getValue(WATERLOGGED)) {
+		if (pState.getValue(WATERLOGGED)) {
 			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
 		}
 

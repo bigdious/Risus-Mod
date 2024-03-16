@@ -2,6 +2,13 @@
   "values": [
     "risus:burnt_hyphae",
     "risus:joyflame_campfire",
-    "risus:scab"
+    "risus:scab",
+    "risus:tissue",
+    "risus:skin",
+    "risus:fleshy_skin",
+    "risus:curved_fleshy_skin",
+    "risus:hairy_skin",
+    "risus:hairy_fleshy_skin",
+    "risus:hairy_curved_fleshy_skin"
   ]
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_milk_bucket": {
+    "has_gluttony_scales": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:milk_bucket"
+              "risus:gluttony_scales"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:alteration/blood_bucket"
+        "recipe": "risus:alteration/gluttony_scaleplate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_milk_bucket",
+      "has_gluttony_scales",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "risus:alteration/blood_bucket"
+      "risus:alteration/gluttony_scaleplate"
     ]
   },
   "sends_telemetry_event": true

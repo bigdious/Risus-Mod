@@ -1,12 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_milk_bucket": {
+    "has_leather": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:milk_bucket"
+              "minecraft:leather"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rabbit_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:rabbit_hide"
             ]
           }
         ]
@@ -15,20 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:alteration/blood_bucket"
+        "recipe": "risus:alteration/skin"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_milk_bucket",
+      "has_leather",
+      "has_rabbit_hide",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "risus:alteration/blood_bucket"
+      "risus:alteration/skin"
     ]
   },
   "sends_telemetry_event": true

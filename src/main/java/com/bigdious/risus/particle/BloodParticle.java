@@ -235,7 +235,7 @@ public class BloodParticle extends TextureSheetParticle {
 		int light = 15728880;
 		double ageMultiplier = 1 - Math.pow(Mth.clamp(age + p_225606_3_, 0, lifetime), 3) / Math.pow(lifetime, 3);
 
-		RenderSystem._setShaderTexture(0, TEXTURE);
+		RenderSystem.setShaderTexture(0, TEXTURE);
 
 		for (int i = 0; i < CUBE.length / 4; i++) {
 			for (int j = 0; j < 4; j++) {

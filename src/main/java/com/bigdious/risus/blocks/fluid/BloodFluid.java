@@ -40,7 +40,7 @@ public class BloodFluid extends ForgeFlowingFluid {
 
 	@Override
 	public int getAmount(FluidState pState) {
-		return 0;
+		return 6;
 	}
 
 

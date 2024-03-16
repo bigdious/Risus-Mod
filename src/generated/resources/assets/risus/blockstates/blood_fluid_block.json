@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "risus:block/blood_fluid_block"
+    }
+  }
+}
