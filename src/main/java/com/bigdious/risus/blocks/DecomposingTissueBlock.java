@@ -11,7 +11,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class DecomposingTissueBlock extends WallBlock implements DecomposingBlock {
+public class DecomposingTissueBlock extends RisusWallBlock implements DecomposingBlock {
 
 	private final DecomposeState state;
 

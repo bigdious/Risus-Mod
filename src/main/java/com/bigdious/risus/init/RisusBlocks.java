@@ -58,9 +58,9 @@ public class RisusBlocks {
 	public static final RegistryObject<RotatedPillarBlock> STRIPPED_BONDKNOT_LOG = BLOCKS.register("stripped_bondknot_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<RotatedPillarBlock> STRIPPED_BONDKNOT_WOOD = BLOCKS.register("stripped_bondknot_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> BONDKNOT_PLANKS = BLOCKS.register("bondknot_planks", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-	public static final RegistryObject<StairBlock> BONDKNOT_STAIRS = BLOCKS.register("bondknot_stairs", () -> new StairBlock(BONDKNOT_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
-	public static final RegistryObject<SlabBlock> BONDKNOT_SLAB = BLOCKS.register("bondknot_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
-	public static final RegistryObject<FenceBlock> BONDKNOT_FENCE = BLOCKS.register("bondknot_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
+	public static final RegistryObject<StairBlock> BONDKNOT_STAIRS = BLOCKS.register("bondknot_stairs", () -> new RisusStairBlock(BONDKNOT_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
+	public static final RegistryObject<Block> BONDKNOT_SLAB = BLOCKS.register("bondknot_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
+	public static final RegistryObject<Block> BONDKNOT_FENCE = BLOCKS.register("bondknot_fence", () -> new RisusFenceBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get())));
 	public static final RegistryObject<FenceGateBlock> BONDKNOT_FENCE_GATE = BLOCKS.register("bondknot_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_TYPE));
 	public static final RegistryObject<PressurePlateBlock> BONDKNOT_PRESSURE_PLATE = BLOCKS.register("bondknot_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_SET));
 	public static final RegistryObject<ButtonBlock> BONDKNOT_BUTTON = BLOCKS.register("bondknot_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_SET, 30, true));
@@ -78,18 +78,18 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<RotatedPillarBlock> GRIMSTONE = BLOCKS.register("grimstone", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	public static final RegistryObject<Block> GRIMSTONE_BRICKS = BLOCKS.register("grimstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<Block> CRACKED_GRIMSTONE_BRICKS = BLOCKS.register("cracked_grimstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
-	public static final RegistryObject<SlabBlock> GRIMSTONE_SLAB = BLOCKS.register("grimstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
-	public static final RegistryObject<StairBlock> GRIMSTONE_STAIRS = BLOCKS.register("grimstone_stairs", () -> new StairBlock(GRIMSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRIMSTONE.get())));
-	public static final RegistryObject<WallBlock> GRIMSTONE_WALL = BLOCKS.register("grimstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
+	public static final RegistryObject<Block> GRIMSTONE_SLAB = BLOCKS.register("grimstone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
+	public static final RegistryObject<StairBlock> GRIMSTONE_STAIRS = BLOCKS.register("grimstone_stairs", () -> new RisusStairBlock(GRIMSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GRIMSTONE.get())));
+	public static final RegistryObject<Block> GRIMSTONE_WALL = BLOCKS.register("grimstone_wall", () -> new RisusWallBlock(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<Block> POLISHED_GRIMSTONE = BLOCKS.register("polished_grimstone", () -> new Block(BlockBehaviour.Properties.copy(GRIMSTONE.get())));
 	public static final RegistryObject<Block> CHISELED_GRIMSTONE = BLOCKS.register("chiseled_grimstone", () -> new ChiseledGrimstone(BlockBehaviour.Properties.copy(GRIMSTONE.get())) {
 	});
 
 	public static final RegistryObject<DecomposingTissueBlock> TISSUE = BLOCKS.register("tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
-	public static final RegistryObject<WallBlock> ROTTING_TISSUE = BLOCKS.register("rotting_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.ROTTING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
-	public static final RegistryObject<WallBlock> DECOMPOSING_TISSUE = BLOCKS.register("decomposing_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECOMPOSING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
-	public static final RegistryObject<WallBlock> DECAYING_TISSUE = BLOCKS.register("decaying_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECAYING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
-	public static final RegistryObject<WallBlock> BONE_WALL = BLOCKS.register("bone_wall", () -> new WallBlock(Block.Properties.copy(Blocks.BONE_BLOCK)));
+	public static final RegistryObject<Block> ROTTING_TISSUE = BLOCKS.register("rotting_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.ROTTING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> DECOMPOSING_TISSUE = BLOCKS.register("decomposing_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECOMPOSING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> DECAYING_TISSUE = BLOCKS.register("decaying_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECAYING, Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
+	public static final RegistryObject<Block> BONE_WALL = BLOCKS.register("bone_wall", () -> new RisusWallBlock(Block.Properties.copy(Blocks.BONE_BLOCK)));
 
 	public static final RegistryObject<Block> LIVING_TISSUE = BLOCKS.register("living_tissue", () -> new Block(Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));
 	public static final RegistryObject<WallBlock> ROTTED_TISSUE = BLOCKS.register("rotted_tissue", () -> new WallBlock(Block.Properties.copy(Blocks.NETHER_WART_BLOCK)));

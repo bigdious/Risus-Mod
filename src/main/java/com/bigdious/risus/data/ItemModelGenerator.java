@@ -54,7 +54,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 		toBlock(RisusBlocks.BONDKNOT_PLANKS.get());
-		toBlock(RisusBlocks.BONDKNOT_SLAB.get());
+		toBlockModel(RisusBlocks.BONDKNOT_SLAB.get(),texture("block/bondknot_slab"));
 		toBlock(RisusBlocks.BONDKNOT_STAIRS.get());
 		toBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		toBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());

@@ -33,9 +33,9 @@ public class ZitBlock extends DirectionalBlock {
 
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
 			Direction.UP, Block.box(5.0D, 0.0D, 5.0D, 11.0D, 1.0D, 11.0D),
-			Direction.DOWN, Block.box(5.0D, 15.0D, 5.0D, 11.0D, 15.0D, 11.0D),
+			Direction.DOWN, Block.box(5.0D, 15.0D, 5.0D, 11.0D, 16.0D, 11.0D),
 			Direction.EAST, Block.box(0.0D, 5.0D, 5.0D, 1.0D, 11.0D, 11.0D),
-			Direction.WEST, Block.box(15.0D, 5.0D, 5.0D, 15.0D, 11.0D, 11.0D),
+			Direction.WEST, Block.box(15.0D, 5.0D, 5.0D, 16.0D, 11.0D, 11.0D),
 			Direction.NORTH, Block.box(5.0D, 5.0D, 15.0D, 11.0D, 11.0D, 16.0D),
 			Direction.SOUTH, Block.box(5.0D, 5.0D, 0.0D, 11.0D, 11.0D, 1.0D)
 	));
@@ -58,12 +58,30 @@ public class ZitBlock extends DirectionalBlock {
 	public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos newPos, boolean moving) {
 		if (!state.getValue(POPPED) && this.hasNeighborSignal(level, pos, state)) {
 			LlamaSpit spit = new LlamaSpit(EntityType.LLAMA_SPIT, level);
-			double d0 = pos.getX() - (state.getValue(FACING).getStepX() * 0.5F) + 0.5F;
-			double d1 = pos.getY() + 0.5F;
-			double d2 = pos.getZ() - (state.getValue(FACING).getStepZ() * 0.5F) + 0.5F;
-			double d3 = Math.sqrt(d0 * d0 + d2 * d2) * (double)0.2F;
-			spit.setPosRaw(d0, d1, d2);
-			spit.shoot(d0, d1 + d3, d2, 1.5F, 11.0F);
+			if (state.getValue(FACING)==Direction.UP) {
+				spit.setPosRaw(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+				spit.shoot(0, 10, 0, 1.5F, 11.0F);
+			}
+			else if (state.getValue(FACING)==Direction.DOWN) {
+				spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
+				spit.shoot(0, - 10, 0, 1.5F, 11.0F);
+			}
+			else if (state.getValue(FACING)==Direction.NORTH) {
+				spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 1);
+				spit.shoot(0, 0, pos.getZ()-10, 1.5F, 11.0F);
+			}
+			else if (state.getValue(FACING)==Direction.SOUTH) {
+				spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ()+ 1);
+				spit.shoot(0, 0, +10, 1.5F, 11.0F);
+			}
+			else if (state.getValue(FACING)==Direction.EAST) {
+				spit.setPosRaw(pos.getX(), pos.getY()+ 0.5, pos.getZ() + 0.5);
+				spit.shoot(10, 0, 0, 1.5F, 11.0F);
+			}
+			else if (state.getValue(FACING)==Direction.WEST) {
+				spit.setPosRaw(pos.getX() + 1, pos.getY()+ 0.5, pos.getZ() + 0.5);
+				spit.shoot(-10, 0, 0, 1.5F, 11.0F);
+			}
 			level.playSound(null, pos, SoundEvents.LLAMA_SPIT, SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
 			level.addFreshEntity(spit);
 			level.setBlockAndUpdate(pos, state.setValue(POPPED, true));
