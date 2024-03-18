@@ -9,6 +9,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -19,6 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public class ItemTagGenerator extends ItemTagsProvider {
 	public static final TagKey<Item> BONDKNOT_LOGS = ItemTags.create(Risus.prefix("bondknot_logs"));
 	public static final TagKey<Item> JOYFLAME_FIRE_BASE_BLOCKS = ItemTags.create(Risus.prefix("joyflame_fire_base_blocks"));
+	public static final TagKey<Item> FROGLIGHT_BLOCKS = ItemTags.create(Risus.prefix("froglight_blocks"));
 
 	public ItemTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagLookup, @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, blockTagLookup, Risus.MODID, existingFileHelper);
@@ -30,6 +32,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS, JOYFLAME_FIRE_BASE_BLOCKS);
 		this.tag(ItemTags.LOGS).addTag(BONDKNOT_LOGS);
 		this.tag(ItemTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
+		this.tag(ItemTagGenerator.FROGLIGHT_BLOCKS).add(Items.OCHRE_FROGLIGHT).add(Items.VERDANT_FROGLIGHT).add(Items.PEARLESCENT_FROGLIGHT);
 		this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 
 		this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);

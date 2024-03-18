@@ -6,7 +6,7 @@
       "item": "risus:gluttony_scales"
     },
     "F": {
-      "item": "minecraft:ochre_froglight"
+      "tag": "risus:froglight_blocks"
     },
     "G": {
       "item": "minecraft:sea_lantern"

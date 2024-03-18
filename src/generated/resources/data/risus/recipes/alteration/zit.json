@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:sea_pickle"
+  },
+  "result": "risus:zit"
+}

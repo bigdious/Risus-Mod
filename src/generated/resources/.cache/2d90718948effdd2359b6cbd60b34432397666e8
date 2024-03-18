@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-17T14:51:57.4665809	Risus blockstates and models
+// 1.20.1	2024-03-18T17:56:59.9935251	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -10,11 +10,13 @@
 badf719560afc4db975b2337322543addaa694ee assets/risus/blockstates/bondknot_button.json
 6e430b0e9f9b14b48bf3bc05fc7256052ac3e21f assets/risus/blockstates/bondknot_door.json
 d17652e455a3dc00789bb3ed773d62b4781d497a assets/risus/blockstates/bondknot_fence_gate.json
+dc234717ee8c257fea796cbafcab06ac72c63164 assets/risus/blockstates/bondknot_hanging_sign.json
 f08f893ad861e281983727816320eacd060121de assets/risus/blockstates/bondknot_log.json
 4e6a86354a47221e8545848fb5056d774bea838b assets/risus/blockstates/bondknot_planks.json
 ec04db83c3d5f190de5dfde8e619c260039b2696 assets/risus/blockstates/bondknot_pressure_plate.json
 b332a4b7321ee028d5efa648ac567ab05bae1406 assets/risus/blockstates/bondknot_sign.json
 773965e0aef90dca54f4696300b220571825b5ff assets/risus/blockstates/bondknot_trapdoor.json
+2110b318ff187ded2933052aa95b25eeeb488d75 assets/risus/blockstates/bondknot_wall_hanging_sign.json
 f18f52445349a23fffffa46f957d67f0ca04533d assets/risus/blockstates/bondknot_wall_sign.json
 939e589e6e253f96547fcba70952e11b65462dc2 assets/risus/blockstates/bondknot_wood.json
 7d6470e8d9b8c8fd032052c931d8c515c2b91cc7 assets/risus/blockstates/burnt_hyphae.json
@@ -85,6 +87,7 @@ f8001207338ec1d42e70dfb309f006135e15d7f6 assets/risus/models/block/bondknot_fenc
 432016c38219bf4f27cd7b68154ef7fd53540e2f assets/risus/models/block/bondknot_fence_gate_open.json
 c443f83a6d481ed82f3d2676479932cac5d713aa assets/risus/models/block/bondknot_fence_gate_wall.json
 80dbc807e5dc0afa5c7f8d11d0f67318d02b354b assets/risus/models/block/bondknot_fence_gate_wall_open.json
+6732864bc6fe25faebda38a1d36d3cd44108f7a4 assets/risus/models/block/bondknot_hanging_sign.json
 fd880fee28c2ac35068b98ce813399b8b6766f95 assets/risus/models/block/bondknot_log.json
 386ced4984b6ddf619dd78437fd0b4ebcb371398 assets/risus/models/block/bondknot_log_horizontal.json
 e5ffe1026e2338f8491a63a38c6f4a7b048ad37e assets/risus/models/block/bondknot_planks.json
@@ -94,6 +97,7 @@ e5ffe1026e2338f8491a63a38c6f4a7b048ad37e assets/risus/models/block/bondknot_plan
 6e441ba43ff2d43650ab003b7993c55c2d655fca assets/risus/models/block/bondknot_trapdoor_bottom.json
 ecd93ad6e5604aba5a539c2f7a14268a319df776 assets/risus/models/block/bondknot_trapdoor_open.json
 3fe4aa193702d18fe49059a4e0a9f9ca1762a320 assets/risus/models/block/bondknot_trapdoor_top.json
+6732864bc6fe25faebda38a1d36d3cd44108f7a4 assets/risus/models/block/bondknot_wall_hanging_sign.json
 7751c2c6c69ec69ab8e7815d65695e3d600cd923 assets/risus/models/block/bondknot_wall_sign.json
 1646266b4c60811649df5324a48611ebf3e80e4a assets/risus/models/block/bondknot_wood.json
 977200aca0f5647c76c398134d592a49f38eaf19 assets/risus/models/block/bondknot_wood_horizontal.json

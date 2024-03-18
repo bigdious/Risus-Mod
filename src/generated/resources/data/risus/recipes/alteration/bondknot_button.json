@@ -1,0 +1,30 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:oak_button"
+    },
+    {
+      "item": "minecraft:dark_oak_button"
+    },
+    {
+      "item": "minecraft:birch_button"
+    },
+    {
+      "item": "minecraft:spruce_button"
+    },
+    {
+      "item": "minecraft:jungle_button"
+    },
+    {
+      "item": "minecraft:acacia_button"
+    },
+    {
+      "item": "minecraft:mangrove_button"
+    },
+    {
+      "item": "minecraft:cherry_button"
+    }
+  ],
+  "result": "risus:bondknot_button"
+}

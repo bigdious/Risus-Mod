@@ -1,0 +1,30 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:oak_wood"
+    },
+    {
+      "item": "minecraft:dark_oak_wood"
+    },
+    {
+      "item": "minecraft:birch_wood"
+    },
+    {
+      "item": "minecraft:spruce_wood"
+    },
+    {
+      "item": "minecraft:jungle_wood"
+    },
+    {
+      "item": "minecraft:acacia_wood"
+    },
+    {
+      "item": "minecraft:mangrove_wood"
+    },
+    {
+      "item": "minecraft:cherry_wood"
+    }
+  ],
+  "result": "risus:bondknot_wood"
+}

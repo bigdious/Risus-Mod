@@ -2,12 +2,14 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.RisusSignBlockEntity;
 import com.bigdious.risus.fluid.RisusFluids;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -107,21 +109,88 @@ public class RisusWallSignBlock extends WallSignBlock implements SimpleMultilogg
 
 	@Override
 	public boolean canPlaceLiquid(BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
-		return super.canPlaceLiquid(pLevel, pPos, pState, pFluid);
+		return pFluid == RisusFluids.SOURCE_BLOOD.get() || pFluid == Fluids.LAVA || pFluid == Fluids.WATER;
 	}
 
 	@Override
 	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
-		return super.placeLiquid(pLevel, pPos, pState, pFluidState);
+		//blood
+		if (!pState.getValue(SimpleMultiloggedBlock.BLOODLOGGED) && pFluidState.getType() == RisusFluids.SOURCE_BLOOD.get()) {
+			if (!pLevel.isClientSide()) {
+				pLevel.setBlock(pPos, pState
+						.setValue(SimpleMultiloggedBlock.BLOODLOGGED, Boolean.valueOf(true))
+						.setValue(SimpleMultiloggedBlock.LAVALOGGED, Boolean.valueOf(false))
+						.setValue(SimpleMultiloggedBlock.WATERLOGGED, Boolean.valueOf(false))
+					, 3);
+				pLevel.scheduleTick(pPos, pFluidState.getType(), pFluidState.getType().getTickDelay(pLevel));
+			}
+			return true;
+		}
+		//lava
+		if (!pState.getValue(SimpleMultiloggedBlock.LAVALOGGED) && pFluidState.getType() == Fluids.LAVA) {
+			if (!pLevel.isClientSide()) {
+				pLevel.setBlock(pPos, pState
+						.setValue(SimpleMultiloggedBlock.LAVALOGGED, Boolean.valueOf(true))
+						.setValue(SimpleMultiloggedBlock.BLOODLOGGED, Boolean.valueOf(false))
+						.setValue(SimpleMultiloggedBlock.WATERLOGGED, Boolean.valueOf(false))
+					, 3);
+				pLevel.scheduleTick(pPos, pFluidState.getType(), pFluidState.getType().getTickDelay(pLevel));
+			}
+			return true;
+		}
+		//water
+		if (!pState.getValue(SimpleMultiloggedBlock.WATERLOGGED) && pFluidState.getType() == Fluids.WATER) {
+			if (!pLevel.isClientSide()) {
+				pLevel.setBlock(pPos, pState
+						.setValue(SimpleMultiloggedBlock.WATERLOGGED, Boolean.valueOf(true))
+						.setValue(SimpleMultiloggedBlock.BLOODLOGGED, Boolean.valueOf(false))
+						.setValue(SimpleMultiloggedBlock.LAVALOGGED, Boolean.valueOf(false))
+					, 3);
+				pLevel.scheduleTick(pPos, pFluidState.getType(), pFluidState.getType().getTickDelay(pLevel));
+			}
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
 	public ItemStack pickupBlock(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-		return super.pickupBlock(pLevel, pPos, pState);
+		//blood
+		if (pState.getValue(SimpleMultiloggedBlock.BLOODLOGGED)) {
+			pLevel.setBlock(pPos, pState.setValue(SimpleMultiloggedBlock.BLOODLOGGED, Boolean.valueOf(false)), 3);
+			if (!pState.canSurvive(pLevel, pPos)) {
+				pLevel.destroyBlock(pPos, true);
+			}
+
+			return new ItemStack(RisusItems.BLOOD_BUCKET.get());
+		}
+		//lava
+		if (pState.getValue(SimpleMultiloggedBlock.LAVALOGGED)) {
+			pLevel.setBlock(pPos, pState.setValue(SimpleMultiloggedBlock.LAVALOGGED, Boolean.valueOf(false)), 3);
+			if (!pState.canSurvive(pLevel, pPos)) {
+				pLevel.destroyBlock(pPos, true);
+			}
+
+			return new ItemStack(Items.LAVA_BUCKET);
+		}
+		//water
+		if (pState.getValue(SimpleMultiloggedBlock.WATERLOGGED)) {
+			pLevel.setBlock(pPos, pState.setValue(SimpleMultiloggedBlock.WATERLOGGED, Boolean.valueOf(false)), 3);
+			if (!pState.canSurvive(pLevel, pPos)) {
+				pLevel.destroyBlock(pPos, true);
+			}
+
+			return new ItemStack(Items.WATER_BUCKET);
+		} else
+		{
+			return ItemStack.EMPTY;
+		}
 	}
 
 	@Override
 	public Optional<SoundEvent> getPickupSound() {
-		return super.getPickupSound();
+		return Fluids.WATER.getPickupSound();
 	}
 }

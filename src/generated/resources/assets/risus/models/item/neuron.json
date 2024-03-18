@@ -1,6 +1,14 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "risus:item/renamed_neuron",
+      "predicate": {
+        "risus:named": 1.0
+      }
+    }
+  ],
   "textures": {
-    "layer0": "risus:item/neuron"
+    "layer0": "risus:item/weapons/neuron"
   }
 }

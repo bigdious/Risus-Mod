@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-12T16:33:41.8245142	Risus Item Models
+// 1.20.1	2024-03-18T19:32:15.9976431	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -13,6 +13,7 @@ b565c0d2d9d018aec0aa853f6aa8a7fa0b19bd55 assets/risus/models/item/bondknot_boat.
 0b55b5062c369b09c3f4570aafa3b08dfb75cbc7 assets/risus/models/item/bondknot_door.json
 cd185125e3b6feb6e44df43a33a2d77e5412f30a assets/risus/models/item/bondknot_fence.json
 d189e059818a3394869353977e8b0eb8b8043587 assets/risus/models/item/bondknot_fence_gate.json
+85e3f8dc9cc470d66ad65bda196dc981c188aa6f assets/risus/models/item/bondknot_hanging_sign.json
 dfab5e33fc1b4a6458582b47ea7cac0ed3a641ec assets/risus/models/item/bondknot_log.json
 9265cac1622db5a51f085b53a2ae55c393362f5f assets/risus/models/item/bondknot_planks.json
 6f15a00d1feac570d8078fbcc3ef0e52901e7a19 assets/risus/models/item/bondknot_pressure_plate.json
@@ -76,13 +77,14 @@ e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.j
 4f9af2019320b5a9761a720842dd4512c6ec0050 assets/risus/models/item/mirage_grass_block.json
 7bf54dbd9f1f9f6927207adfaf44e33318592463 assets/risus/models/item/mirage_netherrack.json
 619695f332002d5722967c437debd7b603da0865 assets/risus/models/item/mirage_sand.json
-4df150286ef75c5ab4ce31111fcf440ad34a1dce assets/risus/models/item/neuron.json
+568df591e71e68d0e165708b3c8516db9f1a2d28 assets/risus/models/item/neuron.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 2f16712ae08ea3d4edd94c13c6224a3eb66bb354 assets/risus/models/item/polished_grimstone.json
 f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondknot_log.json
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 06f695423b6813ef3cd11a76d7606414c416ee90 assets/risus/models/item/regen_rose.json
+5da3dd592d2a064d01b9c148d92593cb5061b7f3 assets/risus/models/item/renamed_neuron.json
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json

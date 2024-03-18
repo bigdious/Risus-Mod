@@ -1,0 +1,30 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:oak_fence"
+    },
+    {
+      "item": "minecraft:dark_oak_fence"
+    },
+    {
+      "item": "minecraft:birch_fence"
+    },
+    {
+      "item": "minecraft:spruce_fence"
+    },
+    {
+      "item": "minecraft:jungle_fence"
+    },
+    {
+      "item": "minecraft:acacia_fence"
+    },
+    {
+      "item": "minecraft:mangrove_fence"
+    },
+    {
+      "item": "minecraft:cherry_fence"
+    }
+  ],
+  "result": "risus:bondknot_fence"
+}

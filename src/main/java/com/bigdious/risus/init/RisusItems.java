@@ -43,6 +43,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> BONDKNOT_TRAPDOOR = ITEMS.register("bondknot_trapdoor", () -> new BlockItem(RisusBlocks.BONDKNOT_TRAPDOOR.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BONDKNOT_DOOR = ITEMS.register("bondknot_door", () -> new BlockItem(RisusBlocks.BONDKNOT_DOOR.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BONDKNOT_SIGN = ITEMS.register("bondknot_sign", () -> new SignItem(RisusItems.defaultWithRarity().stacksTo(16), RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()));
+	public static final RegistryObject<Item> BONDKNOT_HANGING_SIGN = ITEMS.register("bondknot_hanging_sign", () -> new HangingSignItem(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), RisusItems.defaultWithRarity().stacksTo(16)));
 	public static final RegistryObject<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(RisusBoat.Type.BONDKNOT, defaultWithRarity()));
 	public static final RegistryObject<Item> RIBCAGE = ITEMS.register("ribcage", () -> new BlockItem(RisusBlocks.RIBCAGE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BABY_RIBCAGE = ITEMS.register("baby_ribcage", () -> new BlockItem(RisusBlocks.BABY_RIBCAGE.get(), defaultWithRarity()));

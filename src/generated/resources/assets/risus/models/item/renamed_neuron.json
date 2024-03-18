@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "risus:item/weapons/renamed_neuron"
+  }
+}

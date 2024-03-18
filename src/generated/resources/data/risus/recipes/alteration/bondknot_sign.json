@@ -1,0 +1,30 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:oak_sign"
+    },
+    {
+      "item": "minecraft:dark_oak_sign"
+    },
+    {
+      "item": "minecraft:birch_sign"
+    },
+    {
+      "item": "minecraft:spruce_sign"
+    },
+    {
+      "item": "minecraft:jungle_sign"
+    },
+    {
+      "item": "minecraft:acacia_sign"
+    },
+    {
+      "item": "minecraft:mangrove_sign"
+    },
+    {
+      "item": "minecraft:cherry_sign"
+    }
+  ],
+  "result": "risus:bondknot_sign"
+}

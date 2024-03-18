@@ -182,6 +182,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), new ResourceLocation("cutout"));
 		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks").toString());
 		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks").toString());
+		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), texture("block/stripped_bondknot_log").toString());
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), texture("block/stripped_bondknot_log").toString());
 
 		simpleBlock(RisusBlocks.GRIMSTONE.get());
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());

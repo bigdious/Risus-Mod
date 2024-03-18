@@ -61,6 +61,7 @@ public class RisusClientEvents {
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
+		BlockEntityRenderers.register(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);
 		BlockEntityRenderers.register(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		BlockEntityRenderers.register(RisusBlockEntities.ALTERATION_CATALYST.get(), context ->  new AlterationCatalystRenderer());
 

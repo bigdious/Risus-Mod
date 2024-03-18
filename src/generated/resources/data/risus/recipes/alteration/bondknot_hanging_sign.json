@@ -1,0 +1,30 @@
+{
+  "type": "risus:alteration",
+  "input": [
+    {
+      "item": "minecraft:oak_hanging_sign"
+    },
+    {
+      "item": "minecraft:dark_oak_hanging_sign"
+    },
+    {
+      "item": "minecraft:birch_hanging_sign"
+    },
+    {
+      "item": "minecraft:spruce_hanging_sign"
+    },
+    {
+      "item": "minecraft:jungle_hanging_sign"
+    },
+    {
+      "item": "minecraft:acacia_hanging_sign"
+    },
+    {
+      "item": "minecraft:mangrove_hanging_sign"
+    },
+    {
+      "item": "minecraft:cherry_hanging_sign"
+    }
+  ],
+  "result": "risus:bondknot_hanging_sign"
+}

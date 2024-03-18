@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -67,6 +68,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor_bottom"));
 		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), texture("item/bondknot_door"));
 		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), texture("item/bondknot_sign"));
+		generated(RisusBlocks.BONDKNOT_HANGING_SIGN.getId().getPath(), texture("item/bondknot_hanging_sign"));
 		toBlock(RisusBlocks.BABY_RIBCAGE.get());
 		toBlock(RisusBlocks.RIBCAGE.get());
 		toBlock(RisusBlocks.GRIMSTONE.get());
@@ -148,8 +150,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusItems.TEETH);
-		singleTex(RisusItems.NEURON_STEM);
+		nameableWeapon(RisusItems.NEURON_STEM.get(), "weapons/", "renamed_neuron");
 		singleTex(RisusItems.HAIR_FOLLICLES);
+
 
 
 		//spawn eggs
@@ -203,9 +206,28 @@ public class ItemModelGenerator extends ItemModelProvider {
 		}
 		return builder;
 	}
-
 	private ResourceLocation texture(String name) {
 		return Risus.prefix(name);
+	}
+	//from Aether
+	public String itemName(Item item) {
+		ResourceLocation location = BuiltInRegistries.ITEM.getKey(item);
+		if (location != null) {
+			return location.getPath();
+		} else {
+			throw new IllegalStateException("Unknown item: " + item.toString());
+		}
+	}
+
+	public void item(Item item, String location) {
+		this.withExistingParent(this.itemName(item), mcLoc("item/generated"))
+			.texture("layer0", modLoc("item/" + location + this.itemName(item)));
+	}
+	public void nameableWeapon(Item item, String location, String renamedVariant) {
+		this.withExistingParent(renamedVariant, this.mcLoc("item/handheld")).texture("layer0", this.modLoc("item/" + location + renamedVariant));
+		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
+			.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
+			.override().predicate(new ResourceLocation(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
 	}
 
 	@Override
@@ -213,3 +235,4 @@ public class ItemModelGenerator extends ItemModelProvider {
 		return "Risus Item Models";
 	}
 }
+

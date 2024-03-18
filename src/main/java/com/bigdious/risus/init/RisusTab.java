@@ -65,6 +65,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.BONDKNOT_DOOR.get());
 						output.accept(RisusBlocks.BONDKNOT_TRAPDOOR.get());
 						output.accept(RisusBlocks.BONDKNOT_SIGN.get());
+						output.accept(RisusBlocks.BONDKNOT_HANGING_SIGN.get());
 						output.accept(RisusBlocks.BONDKNOT_FENCE.get());
 						output.accept(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 						output.accept(RisusItems.BONDKNOT_BOAT.get());
