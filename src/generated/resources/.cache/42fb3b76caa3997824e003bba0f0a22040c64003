@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-18T19:32:15.9976431	Risus Item Models
+// 1.20.1	2024-03-19T21:37:30.6898261	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -23,6 +23,7 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 523c6c687656d5c97791226624cc2cea28d44c23 assets/risus/models/item/bondknot_trapdoor.json
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
+3c4010ec05956ec210ff14e938a5c9d1ae52e257 assets/risus/models/item/budding_imitation_scaleplate.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
@@ -46,7 +47,10 @@ ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.j
 277cca67835288839864d857e33bdec3c0bcefff assets/risus/models/item/eye_emerald.json
 fdc8c128323eb2e27060fb82a5b741e669dea66e assets/risus/models/item/eye_ender.json
 c3b6162d362fbbc5855d5d6b4c8624830d8a7f33 assets/risus/models/item/eye_golden.json
+77ec3b1c1f63a0795a12729d78ab6298e8e93ddd assets/risus/models/item/flattened_imitation_scales_block.json
+c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scales_block.json
 3bc38e51ed584679a51f10e9c8983d430b1e46d0 assets/risus/models/item/fleshy_skin.json
+66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/gluttony_scaleplate.json
 64407bfe9021930d75aab764c3f2652e47e2b9aa assets/risus/models/item/gluttony_scales.json
 cf809d4f60040c6c19f177f9fe3a690fadd1af28 assets/risus/models/item/grimstone.json

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "risus:linear_ritual_block"
+          "name": "risus:flowering_imitation_scaleplate"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "risus:blocks/linear_ritual_block"
+  "random_sequence": "risus:blocks/flowering_imitation_scaleplate"
 }

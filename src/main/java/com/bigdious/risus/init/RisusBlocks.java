@@ -44,6 +44,10 @@ public class RisusBlocks {
 	public static final RegistryObject<Block> MIRAGE_NETHERRACK = BLOCKS.register("mirage_netherrack", () -> new MirageBlock(Block.Properties.copy(Blocks.NETHERRACK).noOcclusion(), Blocks.NETHERRACK));
 	public static final RegistryObject<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
 	public static final RegistryObject<Block> IMITATION_SCALEPLATE = BLOCKS.register("imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final RegistryObject<Block> FLOWERING_IMITATION_SCALEPLATE = BLOCKS.register("flowering_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final RegistryObject<Block> BUDDING_IMITATION_SCALEPLATE = BLOCKS.register("budding_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.copy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final RegistryObject<Block> FLATTENED_SCALES_BLOCK = BLOCKS.register("flattened_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.copy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
+	public static final RegistryObject<Block> FLATTENED_IMITATION_SCALES_BLOCK = BLOCKS.register("flattened_imitation_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.copy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
 	public static final RegistryObject<Block> ZIT = BLOCKS.register("zit", () -> new ZitBlock(Block.Properties.copy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak()));
 
 	public static final RegistryObject<Block> CRYSTALLIZED_BONDS = BLOCKS.register("crystallized_bonds", () -> new CrystallizedBondsBlock(Block.Properties.of().mapColor(MapColor.NONE).instrument(NoteBlockInstrument.HAT).noOcclusion().sound(SoundType.GLASS).strength(0.25F)));
@@ -64,7 +68,7 @@ public class RisusBlocks {
 	public static final RegistryObject<FenceGateBlock> BONDKNOT_FENCE_GATE = BLOCKS.register("bondknot_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_TYPE));
 	public static final RegistryObject<PressurePlateBlock> BONDKNOT_PRESSURE_PLATE = BLOCKS.register("bondknot_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_SET));
 	public static final RegistryObject<ButtonBlock> BONDKNOT_BUTTON = BLOCKS.register("bondknot_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()), BONDKNOT_SET, 30, true));
-	public static final RegistryObject<TrapDoorBlock> BONDKNOT_TRAPDOOR = BLOCKS.register("bondknot_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion(), BONDKNOT_SET));
+	public static final RegistryObject<TrapDoorBlock> BONDKNOT_TRAPDOOR = BLOCKS.register("bondknot_trapdoor", () -> new RisusTrapDoorBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion(), BONDKNOT_SET));
 	public static final RegistryObject<DoorBlock> BONDKNOT_DOOR = BLOCKS.register("bondknot_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion(), BONDKNOT_SET));
 	public static final RegistryObject<StandingSignBlock> BONDKNOT_SIGN = BLOCKS.register("bondknot_sign", () -> new RisusSignBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion().noCollission().forceSolidOn(), RisusBlocks.BONDKNOT_TYPE));
 	public static final RegistryObject<WallSignBlock> BONDKNOT_WALL_SIGN = BLOCKS.register("bondknot_wall_sign", () -> new RisusWallSignBlock(BlockBehaviour.Properties.copy(BONDKNOT_PLANKS.get()).noOcclusion().noCollission().forceSolidOn(), RisusBlocks.BONDKNOT_TYPE));

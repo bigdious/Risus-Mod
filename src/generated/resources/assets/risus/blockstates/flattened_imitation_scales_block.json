@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "risus:block/flattened_imitation_scales_block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "risus:block/flattened_imitation_scales_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/flattened_imitation_scales_block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "risus:block/flattened_imitation_scales_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "risus:block/flattened_imitation_scales_block"
+    },
+    "facing=west": {
+      "model": "risus:block/flattened_imitation_scales_block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

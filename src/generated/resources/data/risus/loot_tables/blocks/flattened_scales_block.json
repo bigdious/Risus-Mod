@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "risus:linear_ritual_block"
+          "name": "risus:flattened_scales_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "risus:blocks/linear_ritual_block"
+  "random_sequence": "risus:blocks/flattened_scales_block"
 }

@@ -61,6 +61,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.MIRAGE_END_STONE.get(), LootTable.lootTable());
 		add(RisusBlocks.GLUTTONY_SCALEPLATE.get(), createSilkTouchDispatchTable(RisusBlocks.GLUTTONY_SCALEPLATE.get(), LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		dropSelf(RisusBlocks.IMITATION_SCALEPLATE.get());
+		dropSelf(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
+		dropSelf(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
+		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
+		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(HAS_SILK_TOUCH.invert()))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
@@ -95,6 +99,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.CURVED_RITUAL_BLOCK.get());
+		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
@@ -135,13 +140,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusItems.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
-		dropWhenSilkTouch(RisusBlocks.ZIT.get());
+		dropSelf(RisusBlocks.ZIT.get());
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
 //		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
 		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));
 		add(RisusBlocks.TEETH.get(), createMultifaceBlockDrops(RisusBlocks.TEETH.get()));
-		add(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), noDrop());
 	}
 
 	// Copied from BlockLootSubProvider#createMultifaceBlockDrops with removed LootItemCondition.Builder param

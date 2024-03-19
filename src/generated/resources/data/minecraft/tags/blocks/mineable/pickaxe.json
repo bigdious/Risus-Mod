@@ -19,6 +19,13 @@
     "risus:gluttony_scaleplate",
     "risus:joyflame_lantern",
     "risus:bone_wall",
-    "risus:teeth"
+    "risus:teeth",
+    "risus:curved_ritual_block",
+    "risus:linear_ritual_block",
+    "risus:imitation_scaleplate",
+    "risus:flowering_imitation_scaleplate",
+    "risus:budding_imitation_scaleplate",
+    "risus:flattened_scales_block",
+    "risus:flattened_imitation_scales_block"
   ]
 }

@@ -12,24 +12,26 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
 import java.util.Optional;
 
-public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBlock {
-	public RisusFenceBlock(Properties p_53302_) {
-		super(p_53302_);
+public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultiloggedBlock {
+	public RisusTrapDoorBlock(Properties pProperties, BlockSetType pType) {
+		super(pProperties, pType);
 		this.registerDefaultState(this.stateDefinition.any()
-			.setValue(NORTH, Boolean.valueOf(false))
-			.setValue(EAST, Boolean.valueOf(false))
-			.setValue(SOUTH, Boolean.valueOf(false))
-			.setValue(WEST, Boolean.valueOf(false))
+			.setValue(FACING, Direction.NORTH)
+			.setValue(OPEN, Boolean.valueOf(false))
+			.setValue(HALF, Half.BOTTOM)
+			.setValue(POWERED, Boolean.valueOf(false))
 			.setValue(BLOODLOGGED, false)
 			.setValue(WATERLOGGED, false)
 			.setValue(LAVALOGGED, false));
@@ -44,30 +46,25 @@ public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBloc
 			.add(BLOODLOGGED)
 			.add(LAVALOGGED);
 	}
-	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-
-			BlockGetter blockgetter = pContext.getLevel();
-			BlockPos blockpos = pContext.getClickedPos();
-			FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
-			BlockPos blockpos1 = blockpos.north();
-			BlockPos blockpos2 = blockpos.east();
-			BlockPos blockpos3 = blockpos.south();
-			BlockPos blockpos4 = blockpos.west();
-			BlockState blockstate = blockgetter.getBlockState(blockpos1);
-			BlockState blockstate1 = blockgetter.getBlockState(blockpos2);
-			BlockState blockstate2 = blockgetter.getBlockState(blockpos3);
-			BlockState blockstate3 = blockgetter.getBlockState(blockpos4);
-			return super.getStateForPlacement(pContext)
-				.setValue(NORTH, Boolean.valueOf(this.connectsTo(blockstate, blockstate.isFaceSturdy(blockgetter, blockpos1, Direction.SOUTH), Direction.SOUTH)))
-				.setValue(EAST, Boolean.valueOf(this.connectsTo(blockstate1, blockstate1.isFaceSturdy(blockgetter, blockpos2, Direction.WEST), Direction.WEST)))
-				.setValue(SOUTH, Boolean.valueOf(this.connectsTo(blockstate2, blockstate2.isFaceSturdy(blockgetter, blockpos3, Direction.NORTH), Direction.NORTH)))
-				.setValue(WEST, Boolean.valueOf(this.connectsTo(blockstate3, blockstate3.isFaceSturdy(blockgetter, blockpos4, Direction.EAST), Direction.EAST)))
-				.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
-				.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
-				.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+		BlockState blockstate = this.defaultBlockState();
+		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+		Direction direction = pContext.getClickedFace();
+		if (!pContext.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
+			blockstate = blockstate.setValue(FACING, direction).setValue(HALF, pContext.getClickLocation().y - (double)pContext.getClickedPos().getY() > 0.5D ? Half.TOP : Half.BOTTOM);
+		} else {
+			blockstate = blockstate.setValue(FACING, pContext.getHorizontalDirection().getOpposite()).setValue(HALF, direction == Direction.UP ? Half.BOTTOM : Half.TOP);
 		}
 
+		if (pContext.getLevel().hasNeighborSignal(pContext.getClickedPos())) {
+			blockstate = blockstate.setValue(OPEN, Boolean.valueOf(true)).setValue(POWERED, Boolean.valueOf(true));
+		}
+
+		return blockstate
+			.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
+			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
+			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+	}
 	public FluidState getFluidState(BlockState pState) {
 		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
 		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
@@ -85,8 +82,10 @@ public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBloc
 			pLevel.scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
 		}
 
-		return pFacing.getAxis().getPlane() == Direction.Plane.HORIZONTAL ? pState.setValue(PROPERTY_BY_DIRECTION.get(pFacing), Boolean.valueOf(this.connectsTo(pFacingState, pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing.getOpposite()), pFacing.getOpposite()))) : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+		return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
 	}
+
+
 	@Override
 	public boolean isEnabled(FeatureFlagSet pEnabledFeatures) {
 		return super.isEnabled(pEnabledFeatures);
@@ -98,7 +97,7 @@ public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBloc
 	}
 
 	@Override
-	public  boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
+	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
 		//blood
 		if (!pState.getValue(SimpleMultiloggedBlock.BLOODLOGGED) && pFluidState.getType() == RisusFluids.SOURCE_BLOOD.get()) {
 			if (!pLevel.isClientSide()) {

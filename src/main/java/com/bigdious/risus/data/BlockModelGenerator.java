@@ -56,14 +56,15 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.DEPTH_VASE.get(), models().getExistingFile(texture("block/depth_vase")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
+
 		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));
 		horizontalBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(texture("block/maw_guts")));
 		simpleBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), models().withExistingParent(RisusBlocks.MIRAGE_GRASS_BLOCK.getId().getPath(), "block/grass_block").renderType("minecraft:cutout").texture("top", texture("block/mirage_grass_block_top")));
 		simpleBlock(RisusBlocks.MIRAGE_SAND.get(), cubeAll(RisusBlocks.MIRAGE_SAND.get()));
 		simpleBlock(RisusBlocks.MIRAGE_NETHERRACK.get(), cubeAll(RisusBlocks.MIRAGE_NETHERRACK.get()));
 		simpleBlock(RisusBlocks.MIRAGE_END_STONE.get(), cubeAll(RisusBlocks.MIRAGE_END_STONE.get()));
-		horizontalBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get(), models().getExistingFile(texture("gluttony_scaleplate")));
-		horizontalBlock(RisusBlocks.IMITATION_SCALEPLATE.get(), models().getExistingFile(texture("imitation_scaleplate")));
+		directionalBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_scales_block")));
+		directionalBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_imitation_scales_block")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));

@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.FrontAndTop;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -16,21 +17,29 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-public class ScaleplateBlock extends BaseRotatableBlock implements SimpleMultiloggedBlock{
+public class ScaleplateBlock extends MultiDirectionalBlock implements SimpleMultiloggedBlock{
 
-	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
-			Direction.NORTH, Block.box(0.0D, 0.0D, 12.0D, 16.0D, 16.0D, 16.0D),
-			Direction.SOUTH, Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4.0D),
-			Direction.EAST, Block.box(0.0D, 0.0D, 0.0D, 4.0D, 16.0D, 16.0D),
-			Direction.WEST, Block.box(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)));
+	protected static final VoxelShape SHAPE1 = Block.box(0.0D, 0.0D, 12.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 0.0D, 4.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE3 = Block.box(12.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE4 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4.0D);
+	protected static final VoxelShape SHAPE5 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	protected static final VoxelShape SHAPE6 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	protected static final VoxelShape SHAPE7 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	protected static final VoxelShape SHAPE8 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	protected static final VoxelShape SHAPE9 = Block.box(0.0D, 12.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE10 = Block.box(0.0D, 12.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE11 = Block.box(0.0D, 12.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SHAPE12 = Block.box(0.0D, 12.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 //start multilog
 	public ScaleplateBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any()
+		this.registerDefaultState(this.getStateDefinition().any().setValue(ORIENTATION, FrontAndTop.NORTH_UP)
 			.setValue(BLOODLOGGED, false)
 			.setValue(WATERLOGGED, false)
 			.setValue(LAVALOGGED, false));
@@ -46,14 +55,22 @@ public class ScaleplateBlock extends BaseRotatableBlock implements SimpleMultilo
 			.add(WATERLOGGED)
 			.add(LAVALOGGED);
 	}
+	@Nullable
 	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		Direction direction = context.getNearestLookingDirection().getOpposite();
+		Direction direction1 = switch (direction) {
+			case DOWN -> context.getHorizontalDirection().getOpposite();
+			case UP -> context.getHorizontalDirection();
+			case NORTH, SOUTH, WEST, EAST -> Direction.UP;
+		};
+
 		return this.defaultBlockState()
 			.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
 			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
 			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
-			.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+			.setValue(ORIENTATION, FrontAndTop.fromFrontAndTop(direction, direction1));
 	}
 	public FluidState getFluidState(BlockState pState) {
 		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
@@ -77,7 +94,21 @@ public class ScaleplateBlock extends BaseRotatableBlock implements SimpleMultilo
 	//stop
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return AABBS.get(state.getValue(FACING));
+		return switch(state.getValue(ORIENTATION)){
+			case NORTH_UP -> SHAPE1;
+			case EAST_UP -> SHAPE2;
+			case WEST_UP -> SHAPE3;
+			case SOUTH_UP -> SHAPE4;
+			case UP_NORTH -> SHAPE5;
+			case UP_EAST -> SHAPE6;
+			case UP_WEST -> SHAPE7;
+			case UP_SOUTH -> SHAPE8;
+			case DOWN_NORTH -> SHAPE9;
+			case DOWN_EAST -> SHAPE10;
+			case DOWN_WEST -> SHAPE11;
+			case DOWN_SOUTH -> SHAPE12;
+		};
+
 	}
 
 	@Override

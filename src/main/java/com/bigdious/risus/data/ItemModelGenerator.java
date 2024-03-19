@@ -39,6 +39,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.MAW_GUTS.get());
 		toBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get());
 		toBlock(RisusBlocks.IMITATION_SCALEPLATE.get());
+		toBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
+		toBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
+		toBlockModel(RisusBlocks.FLATTENED_SCALES_BLOCK.get(),texture("block/flattened_scales_block"));
+		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),texture("block/flattened_imitation_scales_block"));
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 		toBlock(RisusBlocks.MIRAGE_SAND.get());

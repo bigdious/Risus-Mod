@@ -113,6 +113,10 @@ public class RisusTab {
 						output.accept(RisusBlocks.MIRAGE_END_STONE.get());
 						output.accept(RisusBlocks.GLUTTONY_SCALEPLATE.get());
 						output.accept(RisusBlocks.IMITATION_SCALEPLATE.get());
+						output.accept(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
+						output.accept(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
+						output.accept(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
+						output.accept(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 						output.accept(RisusItems.BLOOD_FEATHER.get());
 						output.accept(RisusItems.GLUTTONY_SCALES.get());
 						output.accept(RisusItems.CONCENTRATION_CORE.get());

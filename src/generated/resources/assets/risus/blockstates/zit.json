@@ -1,53 +1,417 @@
 {
   "variants": {
-    "facing=down,popped=false": {
+    "bloodlogged=false,facing=down,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit",
       "x": 180
     },
-    "facing=down,popped=true": {
+    "bloodlogged=false,facing=down,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=false,popped=true,waterlogged=false": {
       "model": "risus:block/zit_popped",
       "x": 180
     },
-    "facing=east,popped=false": {
+    "bloodlogged=false,facing=down,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=false,facing=east,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit",
       "x": 90,
       "y": 90
     },
-    "facing=east,popped=true": {
+    "bloodlogged=false,facing=east,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=false,popped=true,waterlogged=false": {
       "model": "risus:block/zit_popped",
       "x": 90,
       "y": 90
     },
-    "facing=north,popped=false": {
+    "bloodlogged=false,facing=east,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit",
       "x": 90
     },
-    "facing=north,popped=true": {
+    "bloodlogged=false,facing=north,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,popped=true,waterlogged=false": {
       "model": "risus:block/zit_popped",
       "x": 90
     },
-    "facing=south,popped=false": {
+    "bloodlogged=false,facing=north,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit",
       "x": 90,
       "y": 180
     },
-    "facing=south,popped=true": {
+    "bloodlogged=false,facing=south,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,popped=true,waterlogged=false": {
       "model": "risus:block/zit_popped",
       "x": 90,
       "y": 180
     },
-    "facing=up,popped=false": {
+    "bloodlogged=false,facing=south,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=up,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit"
     },
-    "facing=up,popped=true": {
+    "bloodlogged=false,facing=up,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=false,facing=up,lavalogged=false,popped=true,waterlogged=false": {
       "model": "risus:block/zit_popped"
     },
-    "facing=west,popped=false": {
+    "bloodlogged=false,facing=up,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,popped=false,waterlogged=false": {
       "model": "risus:block/zit",
       "x": 90,
       "y": 270
     },
-    "facing=west,popped=true": {
+    "bloodlogged=false,facing=west,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 180
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped"
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,popped=true,waterlogged=true": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,popped=false,waterlogged=false": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,popped=false,waterlogged=true": {
+      "model": "risus:block/zit",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,popped=true,waterlogged=false": {
+      "model": "risus:block/zit_popped",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,popped=true,waterlogged=true": {
       "model": "risus:block/zit_popped",
       "x": 90,
       "y": 270
