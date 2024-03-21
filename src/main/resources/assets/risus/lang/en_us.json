@@ -25,6 +25,10 @@
   "block.risus.mirage_end_stone": "Mirage End Stone",
   "block.risus.gluttony_scaleplate": "Gluttonous Scaleplate",
   "block.risus.imitation_scaleplate": "Imitation Scaleplate",
+  "block.risus.flowering_imitation_scaleplate": "Flowering Imitation Scaleplate",
+  "block.risus.budding_imitation_scaleplate": "Budding Scaleplate",
+  "block.risus.flattened_scales_block": "Gluttonous Scales Block",
+  "block.risus.flattened_imitation_scales_block": "Imitation Scales Block",
   "block.risus.crystallized_bonds": "Crystallized Bonds",
   "block.risus.heart_transplant": "Heart Transplant",
   "block.risus.potted_heart_transplant": "Potted Heart Transplant",
@@ -69,12 +73,17 @@
   "block.risus.teeth": "Teeth",
   "block.risus.coagulated_blood_block": "Coagulated Blood Block",
   "block.risus.scab": "Scab",
+
   "block.risus.skin": "Skin",
   "block.risus.fleshy_skin": "Fleshy Skin",
   "block.risus.curved_fleshy_skin": "Curved Fleshy Skin",
   "block.risus.hairy_skin": "Hairy Skin",
   "block.risus.hairy_fleshy_skin": "Hairy Fleshy Skin",
   "block.risus.hairy_curved_fleshy_skin": "Hairy_Curved Fleshy Skin",
+  "block.risus.tall_hair": "Hair Strands",
+  "block.risus.bundle_of_hair": "Bundle of Hair",
+
+
   "block.risus.eye_ender": "Eye Block",
   "block.risus.eye_bleached": "Bleached Eye Block",
   "block.risus.eye_bloodshot": "Bloodshot Eye Block",

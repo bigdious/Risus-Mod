@@ -9,42 +9,7 @@
       "weight": 1,
       "element": {
         "location": "risus:endy_maw",
-        "processors": [{
-          "processor_type": "minecraft:rule",
-          "rules": [
-            {
-              "location_predicate": {
-                "predicate_type": "minecraft:always_true"
-              },
-              "input_predicate": {
-                "predicate_type": "minecraft:random_block_match",
-                "block": "risus:gluttony_scales_block",
-                "probability": 0.5
-              },
-              "output_state": {
-                "Name": "risus:imitation_gluttony_scales_block",
-                "Properties": {
-                  "facing": "up"
-                }
-              }
-            },
-            {
-              "location_predicate": {
-                "predicate_type": "minecraft:always_true"
-              },
-              "input_predicate": {
-                "predicate_type": "minecraft:random_block_match",
-                "block": "risus:gluttony_scaleplate",
-                "probability": 0.5
-              },
-              "output_state": {
-                "Name": "risus:imitation_scaleplate",
-                "Properties": {
-                  "facing": "up"
-                }
-              }
-            }
-          ]}],
+        "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

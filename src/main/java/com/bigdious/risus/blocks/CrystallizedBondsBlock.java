@@ -46,7 +46,7 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleMu
 			.setValue(BLOODLOGGED, false)
 			.setValue(WATERLOGGED, false)
 			.setValue(LAVALOGGED, false)
-			.setValue(FACING, Direction.UP).setValue(WATERLOGGED, false));
+			.setValue(FACING, Direction.UP));
 	}
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

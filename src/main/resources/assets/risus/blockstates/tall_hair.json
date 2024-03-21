@@ -1,7 +1,212 @@
 {
   "variants": {
-    "": {
+    "bloodlogged=false,facing=down,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=false,facing=down,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=false,facing=up,lavalogged=false,waterlogged=false": {
       "model": "risus:block/tall_hair"
+    },
+    "bloodlogged=false,facing=up,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair"
+    },
+    "bloodlogged=false,facing=up,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair"
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=true,facing=down,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 180
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 180
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled"
+    },
+    "bloodlogged=true,facing=up,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled"
+    },
+    "bloodlogged=true,facing=up,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled"
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=false": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
+    },
+    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=true": {
+      "model": "risus:block/tall_hair_gelled",
+      "x": 90,
+      "y": 270
     }
   }
 }

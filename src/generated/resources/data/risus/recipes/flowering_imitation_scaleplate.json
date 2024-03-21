@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": {
+      "item": "risus:imitation_scaleplate"
+    }
+  },
+  "pattern": [
+    "/ /",
+    " / ",
+    "/ /"
+  ],
+  "result": {
+    "count": 5,
+    "item": "risus:flowering_imitation_scaleplate"
+  },
+  "show_notification": true
+}

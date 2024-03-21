@@ -113,8 +113,8 @@ public static final RegistryObject<Block> POTTED_HEART_TRANSPLANT = BLOCKS.regis
 	public static final RegistryObject<Block> HAIRY_FLESHY_SKIN = BLOCKS.register("hairy_fleshy_skin", () -> new HairyFleshySkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> HAIRY_CURVED_FLESHY_SKIN = BLOCKS.register("hairy_curved_fleshy_skin", () -> new HairyCurvedSkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
 	public static final RegistryObject<Block> HAIRY_SKIN = BLOCKS.register("hairy_skin", () -> new HairySkinBlock(BlockBehaviour.Properties.copy(RisusBlocks.TISSUE.get())));
-	public static final RegistryObject<Block> TALL_HAIR = BLOCKS.register("tall_hair", () -> new RisusTallGrassBlock(Block.Properties.copy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final RegistryObject<RotatedPillarBlock> BUNDLE_OF_HAIR = BLOCKS.register("bundle_of_hair", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.KELP).ignitedByLava()));
+	public static final RegistryObject<Block> TALL_HAIR = BLOCKS.register("tall_hair", () -> new RisusTallGrassBlock(Block.Properties.copy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)));
+	public static final RegistryObject<RotatedPillarBlock> BUNDLE_OF_HAIR = BLOCKS.register("bundle_of_hair", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).ignitedByLava()));
 	public static final RegistryObject<Block> SCAB= BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> COAGULATED_BLOOD_BLOCK= BLOCKS.register("coagulated_blood_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn()));
 

@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
@@ -133,6 +134,29 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), 5)
+			.pattern("/ /")
+			.pattern(" / ")
+			.pattern("/ /")
+			.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), 5)
+			.pattern(" / ")
+			.pattern("///")
+			.pattern(" / ")
+			.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TALL_HAIR.get(), 4)
+			.pattern("##")
+			.pattern("##")
+			.define('#', Ingredient.of(RisusItems.HAIR_FOLLICLES.get()))
+			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())
 				.pattern("/#/")
 				.pattern("/#/")
@@ -170,6 +194,13 @@ public class CraftingGenerator extends RecipeProvider {
 				.define('/', Ingredient.of(Tags.Items.RODS_WOODEN))
 				.unlockedBy("has_item", has(RisusBlocks.BONDKNOT_PLANKS.get()))
 				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUNDLE_OF_HAIR.get(), 1)
+			.pattern("##")
+			.pattern("##")
+			.define('#', Ingredient.of(RisusItems.TALL_HAIR.get()))
+			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS.get(), 4)
 				.pattern("##")
@@ -222,6 +253,22 @@ public class CraftingGenerator extends RecipeProvider {
 				.define('#', Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()))
 				.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE_BRICKS.get()))
 				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLATTENED_SCALES_BLOCK.get(), 1)
+			.pattern("##")
+			.pattern("##")
+			.define('#', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), 32)
+			.pattern("###")
+			.pattern("#/#")
+			.pattern("###")
+			.define('#', Ingredient.of(Blocks.OBSIDIAN))
+			.define('/', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
 				.pattern("BGC")

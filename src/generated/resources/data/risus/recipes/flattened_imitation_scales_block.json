@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "/": {
+      "item": "risus:flattened_scales_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "#/#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "item": "risus:flattened_imitation_scales_block"
+  },
+  "show_notification": true
+}
