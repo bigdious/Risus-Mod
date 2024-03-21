@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-19T21:00:08.4398676	Risus blockstates and models
+// 1.20.1	2024-03-21T11:29:27.8512269	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -19,6 +19,7 @@ b332a4b7321ee028d5efa648ac567ab05bae1406 assets/risus/blockstates/bondknot_sign.
 2110b318ff187ded2933052aa95b25eeeb488d75 assets/risus/blockstates/bondknot_wall_hanging_sign.json
 f18f52445349a23fffffa46f957d67f0ca04533d assets/risus/blockstates/bondknot_wall_sign.json
 939e589e6e253f96547fcba70952e11b65462dc2 assets/risus/blockstates/bondknot_wood.json
+dced16f6e500a371f97d09e7ee1160701e9231f8 assets/risus/blockstates/bundle_of_hair.json
 7d6470e8d9b8c8fd032052c931d8c515c2b91cc7 assets/risus/blockstates/burnt_hyphae.json
 21002566e5ab5ecaf7ea8aa9166fde960a27441f assets/risus/blockstates/chiseled_grimstone.json
 622a8d5ef6b2850e393ca1a4f7e6686ba736d180 assets/risus/blockstates/coagulated_blood_block.json
@@ -101,6 +102,8 @@ ecd93ad6e5604aba5a539c2f7a14268a319df776 assets/risus/models/block/bondknot_trap
 7751c2c6c69ec69ab8e7815d65695e3d600cd923 assets/risus/models/block/bondknot_wall_sign.json
 1646266b4c60811649df5324a48611ebf3e80e4a assets/risus/models/block/bondknot_wood.json
 977200aca0f5647c76c398134d592a49f38eaf19 assets/risus/models/block/bondknot_wood_horizontal.json
+526563d86913a2594e833c4277ea37572b8da59a assets/risus/models/block/bundle_of_hair.json
+bce535e4d325d0075b366c5625c87628614166a7 assets/risus/models/block/bundle_of_hair_horizontal.json
 6b5ec472b9f17409e80e93724e78f22e1e6b7686 assets/risus/models/block/burnt_hyphae.json
 118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
 40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "risus:block/bundle_of_hair_top",
+    "side": "risus:block/bundle_of_hair_side"
+  }
+}

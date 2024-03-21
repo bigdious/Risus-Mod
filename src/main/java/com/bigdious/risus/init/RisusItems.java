@@ -91,6 +91,8 @@ public class RisusItems {
 	public static final RegistryObject<Item> HAIRY_CURVED_FLESHY_SKIN = ITEMS.register("hairy_curved_fleshy_skin", () -> new BlockItem(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> HAIR_FOLLICLES = ITEMS.register("hair_follicles", () -> new Item(defaultWithRarity()));
+	public static final RegistryObject<Item> TALL_HAIR = ITEMS.register("tall_hair", () -> new BlockItem(RisusBlocks.TALL_HAIR.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BUNDLE_OF_HAIR = ITEMS.register("bundle_of_hair", () -> new BlockItem(RisusBlocks.BUNDLE_OF_HAIR.get(),defaultWithRarity()));
 	public static final RegistryObject<Item> ASHEN_REMAINS = ITEMS.register("ashen_remains", () -> new BlockItem(RisusBlocks.ASHEN_REMAINS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> SMILING_REMAINS = ITEMS.register("smiling_remains", () -> new BlockItem(RisusBlocks.SMILING_REMAINS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));

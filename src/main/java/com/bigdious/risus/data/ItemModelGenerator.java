@@ -108,6 +108,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.HAIRY_SKIN.get());
 		toBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 		toBlock(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+		toBlock(RisusBlocks.TALL_HAIR.get());
+		toBlock(RisusBlocks.BUNDLE_OF_HAIR.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
 				.texture("wall", new ResourceLocation("block/bone_block_side"));

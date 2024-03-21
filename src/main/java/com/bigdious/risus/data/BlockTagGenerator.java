@@ -94,11 +94,18 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.POLISHED_GRIMSTONE.get(),
 				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
 				RisusBlocks.JOYFLAME_LANTERN.get(),
+				RisusBlocks.CURVED_RITUAL_BLOCK.get(),
+				RisusBlocks.TEETH.get(),
+				RisusBlocks.LINEAR_RITUAL_BLOCK.get(),
+				RisusBlocks.IMITATION_SCALEPLATE.get(),
+				RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),
+				RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(),
+				RisusBlocks.FLATTENED_SCALES_BLOCK.get(),
+				RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),
 				RisusBlocks.BONE_WALL.get());
 
 
 		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BONDKNOT_HANGING_SIGN.get()).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusBlocks.SCAB.get(), RisusBlocks.TISSUE.get(), RisusBlocks.SKIN.get(), RisusBlocks.FLESHY_SKIN.get(), RisusBlocks.CURVED_FLESHY_SKIN.get(), RisusBlocks.HAIRY_SKIN.get(), RisusBlocks.HAIRY_FLESHY_SKIN.get(), RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
-		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(RisusBlocks.TEETH.get()).add(RisusBlocks.CURVED_RITUAL_BLOCK.get()).add(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), RisusBlocks.IMITATION_SCALEPLATE.get(), RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.EYE_BLEACHED.get()).add(RisusBlocks.EYE_GOLDEN.get()).add(RisusBlocks.EYE_EMERALD.get()).add(RisusBlocks.EYE_BLOODSHOT.get()).add(RisusBlocks.EYE_ENDER.get());
 		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get(), RisusBlocks.IMITATION_SCALEPLATE.get(),RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 	}

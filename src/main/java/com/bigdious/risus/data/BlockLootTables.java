@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.DepthVaseBlock;
+import com.bigdious.risus.blocks.RisusTallGrassBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
@@ -119,6 +120,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.HAIRY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+		add(RisusBlocks.TALL_HAIR.get(), createShearsOnlyDrop(RisusItems.TALL_HAIR.get()));
+		dropSelf(RisusBlocks.BUNDLE_OF_HAIR.get());
 
 		dropSelf(RisusBlocks.TISSUE.get());
 		dropSelf(RisusBlocks.ROTTING_TISSUE.get());

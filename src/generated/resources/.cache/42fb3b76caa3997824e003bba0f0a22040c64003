@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-19T21:37:30.6898261	Risus Item Models
+// 1.20.1	2024-03-21T11:14:55.4576618	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -24,6 +24,7 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 3c4010ec05956ec210ff14e938a5c9d1ae52e257 assets/risus/models/item/budding_imitation_scaleplate.json
+bc2524f52eb27cd34ec72174c5c2ee66d1102477 assets/risus/models/item/bundle_of_hair.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
@@ -99,6 +100,7 @@ bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue
 8aabd6109304e1691a4a7137fe92c70c77d1ebe2 assets/risus/models/item/spreading_remains.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
+fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json
 e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
 7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 3861de62530e570bcc59094175723032b53442fa assets/risus/models/item/unawakened_vessel.json

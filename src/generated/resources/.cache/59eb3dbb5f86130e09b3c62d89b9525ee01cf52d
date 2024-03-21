@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-19T21:37:30.7038184	Loot Tables
+// 1.20.1	2024-03-21T11:14:55.4637862	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -25,6 +25,7 @@ ddfd7d233204c1b01626a566581fea6e0f11ecce data/risus/loot_tables/blocks/bondknot_
 0ed92d2bb4603ffe9d5cbdaadbeb29439b3cd0d4 data/risus/loot_tables/blocks/bondknot_wood.json
 00ab5e7f42299bd3cd16e75b261679dae3671cf3 data/risus/loot_tables/blocks/bone_wall.json
 034bf811c2b08af7c41d344e2967ef0136383455 data/risus/loot_tables/blocks/budding_imitation_scaleplate.json
+35e1800808c5564d16fd8c2dabb2814bee2d390f data/risus/loot_tables/blocks/bundle_of_hair.json
 61c13c60e170452a9b9598e7b7bfc66aafe24900 data/risus/loot_tables/blocks/burnt_hyphae.json
 5e256e31256ee77ac5dc6209a5c346a81ff39f13 data/risus/loot_tables/blocks/chiseled_grimstone.json
 50baafed7bfdbfa0bc4cc10f3f155422de7331b4 data/risus/loot_tables/blocks/coagulated_blood_block.json
@@ -89,6 +90,7 @@ c2118d753fcc9c625b35904ce2c1eaf1ad243eb2 data/risus/loot_tables/blocks/skin.json
 eff570b304aef39915ab0ee752004d271b50e730 data/risus/loot_tables/blocks/spreading_remains.json
 4377b9e0141d0d5f1284d14b90216c5cd025996b data/risus/loot_tables/blocks/stripped_bondknot_log.json
 7d2f1516305d1099351788b6dc49c85f8ca24501 data/risus/loot_tables/blocks/stripped_bondknot_wood.json
+26a62c7e2f51f50ffbe32b8863e4033415d7b089 data/risus/loot_tables/blocks/tall_hair.json
 d3464fb8496cb40085814f1eecc4e131643eaa81 data/risus/loot_tables/blocks/teeth.json
 baf8596a6d4bcb13b5afb25d16a59dc79038581b data/risus/loot_tables/blocks/tissue.json
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_tables/blocks/zit.json
