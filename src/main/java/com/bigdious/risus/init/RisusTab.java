@@ -108,6 +108,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.BONE_WALL.get());
 						output.accept(RisusBlocks.TEETH.get());
 						output.accept(RisusItems.TOOTHKNOCKER.get());
+						output.accept(RisusItems.GOLD_FIST.get());
 						output.accept(RisusBlocks.MAW_GUTS.get());
 						output.accept(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 						output.accept(RisusBlocks.MIRAGE_SAND.get());

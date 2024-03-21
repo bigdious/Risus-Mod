@@ -85,13 +85,7 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
                 what.broadcastBreakEvent(player.getUsedItemHand());});
                 Level level = player.level();
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.TURTLE_EGG_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);;
-
-            //if(player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
-            //player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
-            //} else {if (player.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) == null) {
-            //player.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Toothknocker attack damage", 3, AttributeModifier.Operation.ADDITION));
-            //}}} else {player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));}
-        }return super.onLeftClickEntity(stack, player, entity);
+		}return super.onLeftClickEntity(stack, player, entity);
     }
 
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_43274_) {

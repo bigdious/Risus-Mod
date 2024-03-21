@@ -24,6 +24,7 @@ public class RisusItems {
 	public static final RegistryObject<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
 
 	public static final RegistryObject<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
+	public static final RegistryObject<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(ModItemTier.CRESCENT, 0, -2.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(ModItemTier.CRESCENT, -2, 4.0F, defaultWithRarity()));
 
