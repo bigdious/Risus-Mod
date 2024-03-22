@@ -79,10 +79,15 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		toBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		toBlock(RisusBlocks.GRIMSTONE_SLAB.get());
+		toBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
 		toBlock(RisusBlocks.GRIMSTONE_STAIRS.get());
+		toBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
 		getBuilder(RisusBlocks.GRIMSTONE_WALL.getId().getPath())
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
-				.texture("wall", texture("block/grimstone_bricks"));
+				.texture("wall", texture("block/grimstone"));
+		getBuilder(RisusBlocks.GRIMSTONE_BRICKS_WALL.getId().getPath())
+			.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+			.texture("wall", texture("block/grimstone_bricks"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
@@ -97,6 +102,14 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.ROTTED_TISSUE.get(), Risus.prefix("block/tissue/rotting_tissue_post"));
 		toBlockModel(RisusBlocks.DECOMPOSED_TISSUE.get(), Risus.prefix("block/tissue/decomposing_tissue_post"));
 		toBlockModel(RisusBlocks.DECAYED_TISSUE.get(), Risus.prefix("block/tissue/decaying_tissue_post"));
+		toBlockModel(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue_stairs"));
+		toBlock(RisusBlocks.TISSUE_SLAB.get());
+		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
+			.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+			.texture("wall", new ResourceLocation("block/bone_block_side"));
+		toBlock(RisusBlocks.BONE_STAIRS.get());
+		toBlock(RisusBlocks.BONE_SLAB.get());
+
 		toBlock(RisusBlocks.EYE_ENDER.get());
 		toBlock(RisusBlocks.EYE_BLEACHED.get());
 		toBlock(RisusBlocks.EYE_BLOODSHOT.get());
@@ -116,6 +129,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
+		singleTex(RisusItems.HAND_OF_GREED);
 		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.CONCENTRATION_CORE);

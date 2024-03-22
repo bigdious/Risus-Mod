@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:is_mountain",
+    "#forge:is_peak",
+    "#minecraft:is_mountain",
+    "minecraft:frozen_peaks",
+    "minecraft:jagged_peaks",
+    "minecraft:savanna_plateau",
+    "minecraft:stony_peaks"
+  ]
+}

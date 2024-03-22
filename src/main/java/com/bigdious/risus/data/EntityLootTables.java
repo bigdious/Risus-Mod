@@ -44,7 +44,12 @@ public class EntityLootTables extends EntityLootSubProvider {
 				LootTable.lootTable().withPool(LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
+		.withPool(LootPool.lootPool()
+			.setRolls(ConstantValue.exactly(1.0F))
+			.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
+			.when(LootItemKilledByPlayerCondition.killedByPlayer())
+			.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());

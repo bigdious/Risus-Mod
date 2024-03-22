@@ -95,12 +95,17 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS.get());
 		dropSelf(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_STAIRS.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_SLAB.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
 		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
 		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.CURVED_RITUAL_BLOCK.get());
 		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
+
+
 
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
@@ -109,6 +114,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
 		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusItems.REGEN_ROSE.get()));
 		dropSelf(RisusBlocks.BONE_WALL.get());
+		dropSelf(RisusBlocks.BONE_STAIRS.get());
+		dropSelf(RisusBlocks.BONE_SLAB.get());
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.SCAB.get());
 		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
@@ -131,6 +138,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.ROTTED_TISSUE.get());
 		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
 		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
+		dropSelf(RisusBlocks.TISSUE_STAIRS.get());
+		dropSelf(RisusBlocks.TISSUE_SLAB.get());
 
 		dropSelf(RisusBlocks.EYE_ENDER.get());
 		dropSelf(RisusBlocks.EYE_BLEACHED.get());

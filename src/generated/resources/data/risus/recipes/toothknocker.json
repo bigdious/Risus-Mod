@@ -10,12 +10,15 @@
     },
     "L": {
       "item": "risus:gluttony_scales"
+    },
+    "V": {
+      "item": "risus:flattened_scales_block"
     }
   },
   "pattern": [
     "BBB",
     "LCL",
-    "LLL"
+    "LVL"
   ],
   "result": {
     "item": "risus:toothknocker"

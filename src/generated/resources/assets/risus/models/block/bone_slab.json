@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "risus:block/bone_block_top",
+    "side": "risus:block/bone_block_side",
+    "top": "risus:block/bone_block_top"
+  }
+}

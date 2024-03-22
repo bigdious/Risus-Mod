@@ -4,7 +4,7 @@
       "model": "risus:block/grimstone_slab"
     },
     "type=double": {
-      "model": "risus:block/grimstone_bricks"
+      "model": "risus:block/grimstone"
     },
     "type=top": {
       "model": "risus:block/grimstone_slab_top"

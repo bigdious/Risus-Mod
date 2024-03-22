@@ -32,13 +32,16 @@ public class RisusTab {
 						output.accept(RisusBlocks.ALTERATION_CATALYST.get());
 						output.accept(RisusBlocks.ANGEL_ALTAR.get());
 						output.accept(RisusBlocks.DEPTH_VASE.get());
+
 						output.accept(RisusItems.ORGANIC_MATTER.get());
 						output.accept(RisusBlocks.SMILING_REMAINS.get());
 						output.accept(RisusBlocks.ASHEN_REMAINS.get());
 						output.accept(RisusBlocks.SPREADING_REMAINS.get());
+
 						output.accept(RisusBlocks.JOYFLAME_CAMPFIRE.get());
 						output.accept(RisusBlocks.JOYFLAME_LANTERN.get());
 						output.accept(RisusBlocks.JOYFLAME_TORCH.get());
+
 						output.accept(RisusBlocks.LAUGHING_OBSIDIAN.get());
 						output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
 						output.accept(RisusBlocks.BLOODWYRM_HEAD.get());
@@ -51,6 +54,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 						output.accept(RisusBlocks.SCAB.get());
 	//					output.accept(RisusBlocks.WEAVER_NEST.get());
+
 						output.accept(RisusBlocks.BONDKNOT_LOG.get());
 						output.accept(RisusBlocks.POPPING_BONDKNOT_LOG.get());
 						output.accept(RisusBlocks.BONDKNOT_WOOD.get());
@@ -69,20 +73,26 @@ public class RisusTab {
 						output.accept(RisusBlocks.BONDKNOT_FENCE.get());
 						output.accept(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 						output.accept(RisusItems.BONDKNOT_BOAT.get());
+
 						output.accept(RisusBlocks.CRYSTALLIZED_BONDS.get());
 						output.accept(RisusItems.CRYSTALLIZED_BOND.get());
 						output.accept(RisusItems.RIBCAGE.get());
 						output.accept(RisusItems.BABY_RIBCAGE.get());
 						output.accept(RisusBlocks.HEART_TRANSPLANT.get());
 						output.accept(RisusBlocks.ZIT.get());
+
 						output.accept(RisusBlocks.GRIMSTONE.get());
+						output.accept(RisusBlocks.GRIMSTONE_STAIRS.get());
+						output.accept(RisusBlocks.GRIMSTONE_SLAB.get());
+						output.accept(RisusBlocks.GRIMSTONE_WALL.get());
 						output.accept(RisusBlocks.GRIMSTONE_BRICKS.get());
 						output.accept(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 						output.accept(RisusBlocks.POLISHED_GRIMSTONE.get());
 						output.accept(RisusBlocks.CHISELED_GRIMSTONE.get());
-						output.accept(RisusBlocks.GRIMSTONE_STAIRS.get());
-						output.accept(RisusBlocks.GRIMSTONE_SLAB.get());
-						output.accept(RisusBlocks.GRIMSTONE_WALL.get());
+						output.accept(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
+						output.accept(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
+						output.accept(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
+
 						output.accept(RisusBlocks.SKIN.get());
 						output.accept(RisusBlocks.FLESHY_SKIN.get());
 						output.accept(RisusBlocks.CURVED_FLESHY_SKIN.get());
@@ -92,11 +102,13 @@ public class RisusTab {
 						output.accept(RisusItems.HAIR_FOLLICLES.get());
 						output.accept(RisusItems.TALL_HAIR.get());
 						output.accept(RisusItems.BUNDLE_OF_HAIR.get());
+
 						output.accept(RisusItems.EYE_ENDER.get());
 						output.accept(RisusItems.EYE_BLEACHED.get());
 						output.accept(RisusItems.EYE_BLOODSHOT.get());
 						output.accept(RisusItems.EYE_GOLDEN.get());
 						output.accept(RisusItems.EYE_EMERALD.get());
+
 						output.accept(RisusBlocks.LIVING_TISSUE.get());
 						output.accept(RisusBlocks.ROTTING_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());
@@ -105,10 +117,17 @@ public class RisusTab {
 						output.accept(RisusBlocks.ROTTED_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSED_TISSUE.get());
 						output.accept(RisusBlocks.DECAYED_TISSUE.get());
+						output.accept(RisusBlocks.TISSUE_STAIRS.get());
+						output.accept(RisusBlocks.TISSUE_SLAB.get());
 						output.accept(RisusBlocks.BONE_WALL.get());
+						output.accept(RisusBlocks.BONE_STAIRS.get());
+						output.accept(RisusBlocks.BONE_SLAB.get());
+
 						output.accept(RisusBlocks.TEETH.get());
 						output.accept(RisusItems.TOOTHKNOCKER.get());
+						output.accept(RisusItems.HAND_OF_GREED.get());
 						output.accept(RisusItems.GOLD_FIST.get());
+
 						output.accept(RisusBlocks.MAW_GUTS.get());
 						output.accept(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 						output.accept(RisusBlocks.MIRAGE_SAND.get());
@@ -126,6 +145,7 @@ public class RisusTab {
 						output.accept(RisusItems.UNAWAKENED_VESSEL.get());
 						output.accept(RisusItems.CRESCENT_DISASTER.get());
 						output.accept(RisusItems.LIGHT_DEVOURER.get());
+
 						output.accept(RisusBlocks.BIG_CHAIN.get());
 						output.accept(RisusItems.MEMORY1_ITEM.get());
 						output.accept(RisusBlocks.REGEN_ROSE.get());

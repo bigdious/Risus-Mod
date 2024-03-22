@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:gold_block"
+    },
+    "C": {
+      "item": "risus:toothknocker"
+    },
+    "H": {
+      "item": "risus:hand_of_greed"
+    },
+    "L": {
+      "item": "risus:coagulated_blood_block"
+    },
+    "V": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "BVB",
+    "BCB",
+    "LHL"
+  ],
+  "result": {
+    "item": "risus:gold_fist"
+  },
+  "show_notification": true
+}

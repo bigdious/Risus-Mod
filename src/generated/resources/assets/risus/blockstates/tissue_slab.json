@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "risus:block/tissue_slab"
+    },
+    "type=double": {
+      "model": "risus:block/tissue"
+    },
+    "type=top": {
+      "model": "risus:block/tissue_slab_top"
+    }
+  }
+}

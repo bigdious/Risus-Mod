@@ -25,6 +25,7 @@ public class RisusItems {
 
 	public static final RegistryObject<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(ModItemTier.CRESCENT, 0, -2.0F, defaultWithRarity()));
+	public static final RegistryObject<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(defaultWithRarity()));
 	public static final RegistryObject<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(ModItemTier.CRESCENT, 5.0F, -3.0F, defaultWithRarity()));
 	public static final RegistryObject<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(ModItemTier.CRESCENT, -2, 4.0F, defaultWithRarity()));
 
@@ -57,8 +58,11 @@ public class RisusItems {
 	public static final RegistryObject<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CRACKED_GRIMSTONE_BRICKS = ITEMS.register("cracked_grimstone_bricks", () -> new BlockItem(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_SLAB.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_BRICKS_SLAB = ITEMS.register("grimstone_bricks_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GRIMSTONE_STAIRS = ITEMS.register("grimstone_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_STAIRS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_BRICKS_STAIRS = ITEMS.register("grimstone_bricks_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> GRIMSTONE_WALL = ITEMS.register("grimstone_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_WALL.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> GRIMSTONE_BRICKS_WALL = ITEMS.register("grimstone_bricks_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CHISELED_GRIMSTONE = ITEMS.register("chiseled_grimstone", () -> new BlockItem(RisusBlocks.CHISELED_GRIMSTONE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));
@@ -71,10 +75,14 @@ public class RisusItems {
 	public static final RegistryObject<Item> JOYFLAME_CAMPFIRE = ITEMS.register("joyflame_campfire", () -> new BlockItem(RisusBlocks.JOYFLAME_CAMPFIRE.get(), defaultWithRarity()));
 
 	public static final RegistryObject<Item> TISSUE = ITEMS.register("tissue", () -> new BlockItem(RisusBlocks.TISSUE.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> TISSUE_STAIRs = ITEMS.register("tissue_stairs", () -> new BlockItem(RisusBlocks.TISSUE_STAIRS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> TISSUE_SLAB = ITEMS.register("tissue_slab", () -> new BlockItem(RisusBlocks.TISSUE_SLAB.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ROTTING_TISSUE = ITEMS.register("rotting_tissue", () -> new BlockItem(RisusBlocks.ROTTING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> DECOMPOSING_TISSUE = ITEMS.register("decomposing_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> DECAYING_TISSUE = ITEMS.register("decaying_tissue", () -> new BlockItem(RisusBlocks.DECAYING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONE_STAIRS = ITEMS.register("bone_stairs", () -> new BlockItem(RisusBlocks.BONE_STAIRS.get(), defaultWithRarity()));
+	public static final RegistryObject<Item> BONE_SLAB = ITEMS.register("bone_slab", () -> new BlockItem(RisusBlocks.BONE_SLAB.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> LIVING_TISSUE = ITEMS.register("living_tissue", () -> new BlockItem(RisusBlocks.LIVING_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> ROTTED_TISSUE = ITEMS.register("rotted_tissue", () -> new BlockItem(RisusBlocks.ROTTED_TISSUE.get(), defaultWithRarity()));
 	public static final RegistryObject<Item> DECOMPOSED_TISSUE = ITEMS.register("decomposed_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSED_TISSUE.get(), defaultWithRarity()));

@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hand_of_greed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "risus:hand_of_greed"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "risus:gold_fist"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_toothknocker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "risus:toothknocker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_toothknocker",
+      "has_hand_of_greed",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "risus:gold_fist"
+    ]
+  },
+  "sends_telemetry_event": false
+}

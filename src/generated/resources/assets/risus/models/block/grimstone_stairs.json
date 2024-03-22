@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "risus:block/grimstone",
+    "side": "risus:block/grimstone",
+    "top": "risus:block/grimstone"
+  }
+}

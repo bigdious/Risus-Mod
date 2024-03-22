@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "risus:block/tissue",
+    "side": "risus:block/tissue",
+    "top": "risus:block/tissue"
+  }
+}

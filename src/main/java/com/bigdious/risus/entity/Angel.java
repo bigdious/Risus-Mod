@@ -50,7 +50,7 @@ public class Angel extends Monster {
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 50.0F));
 		this.goalSelector.addGoal(7, new Angel.AngelLightningAttackGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (entity) -> Math.abs(entity.getY() - this.getY()) <= 4.0D));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (entity) -> Math.abs(entity.getY() - this.getY()) <= 50.0D));
 
 	}
 	static class AngelLightningAttackGoal extends Goal {

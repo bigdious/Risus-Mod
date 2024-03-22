@@ -12,7 +12,7 @@
   "max_distance_from_center": 80,
 
 
-  "biomes": "#risus:has_structure/family_tree",
+  "biomes": "#risus:has_structure/alteration_site",
 
 
   "step": "surface_structures",

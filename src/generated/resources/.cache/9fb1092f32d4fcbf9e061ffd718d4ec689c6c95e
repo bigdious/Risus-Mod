@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-21T15:43:33.4985544	Recipes
+// 1.20.1	2024-03-22T11:27:26.1205675	Recipes
 a6d14dd30107ab49159a4bf568b0f4400ebd97d6 data/risus/advancements/recipes/building_blocks/bondknot_planks.json
 46810c48ae42786122f3b59f4e4587e1c0537aaf data/risus/advancements/recipes/building_blocks/bondknot_slab.json
 f6f36b34291555e0cdfdd2a683fe5510bda0141e data/risus/advancements/recipes/building_blocks/bondknot_stairs.json
@@ -18,6 +18,7 @@ da8370c829604f9c6313a982afa494d8a860ffef data/risus/advancements/recipes/buildin
 e3e2c601fcb83b105d4f68fbc78d451c5840cbae data/risus/advancements/recipes/building_blocks/polished_grimstone.json
 86e6ea4eb441d2260d9aa5f029b737baeb303eb9 data/risus/advancements/recipes/building_blocks/stripped_bondknot_wood.json
 767039cf1c7fb8c173e6e2de7c911254cbe559ed data/risus/advancements/recipes/combat/crescent_disaster.json
+a647b73bd3fbc5cd941c3f486f7c28e6cea54e09 data/risus/advancements/recipes/combat/gold_fist.json
 168f22579516be6390e913bf39cc54ec41eb7a41 data/risus/advancements/recipes/combat/toothknocker.json
 8ea573e775bab798350b9bf5f2564f4f58bcf3ab data/risus/advancements/recipes/combat/unawakened_vessel.json
 2afb48c43e19b5dce579c8162d426cad31c3d42b data/risus/advancements/recipes/decorations/big_chain.json
@@ -143,6 +144,7 @@ da6fd9e004f4f9f7a99f8df016f1e2962a575a6c data/risus/recipes/eye_bloodshot.json
 c75c5422c14a5179a80e9cf48c71ec393e26fa4c data/risus/recipes/flattened_imitation_scales_block.json
 fc95834e64b92f40098a66b007ed5af19cf29bc8 data/risus/recipes/flattened_scales_block.json
 a4bb3abd2613a6b45e30176d01be44e4ea419039 data/risus/recipes/flowering_imitation_scaleplate.json
+3c3e596bc50c9eb07147c9993d05a9dc90d799dd data/risus/recipes/gold_fist.json
 4518718532819d7df251f20113fc5ca272e2814f data/risus/recipes/grimstone_bricks.json
 f23bd5ebce5b9efe5e61f782375521477b33ae8a data/risus/recipes/grimstone_slab.json
 6f9ba4e539e6102680a0ed6bc7437219c3e24f82 data/risus/recipes/grimstone_stairs.json
@@ -157,5 +159,5 @@ bd031cafc8fa13ac9ffd9fc7f05e13e25aac0bf3 data/risus/recipes/polished_grimstone.j
 1be060be6b724581a4c39948f3bfccaee978c058 data/risus/recipes/stripped_bondknot_wood.json
 d23e8cab4e32b92a6b5c03b0f57e96dd26518718 data/risus/recipes/tall_hair.json
 5c95a3c7bec0b8d616468ae8fe9b8e69f24a745d data/risus/recipes/teeth.json
-d85e398fa166c9e893ec0cbe4c4148fb726ebb6d data/risus/recipes/toothknocker.json
+26634c3fef801d3a8af867e585e1785259d6da9e data/risus/recipes/toothknocker.json
 065ca53c3b43d019fb95c0cdca89e1dd051cce96 data/risus/recipes/unawakened_vessel.json
