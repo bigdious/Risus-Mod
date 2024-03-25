@@ -28,6 +28,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation BLOODWYRM_BREATH = register("bloodwyrm_breath");
 	public static final ModelLayerLocation WEAVER = register("weaver");
+	public static final ModelLayerLocation STALKER = register("stalker");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 
 	public static final ModelLayerLocation MEMORY1 = register("memory1");
@@ -53,6 +54,7 @@ public class RisusModelLayers {
 		event.registerLayerDefinition(THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(WEAVER_CORE, WeaverModel::create);
+		event.registerLayerDefinition(STALKER, StalkerModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(QUESTION_MARK, QuestionMarkModel::create);
 		event.registerLayerDefinition(MEMORY1, Memory1Model::create);
@@ -65,12 +67,14 @@ public class RisusModelLayers {
 
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		//for big: REGISTER THE LAYER ABOVE, YOU IDIOT
 		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
+		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 

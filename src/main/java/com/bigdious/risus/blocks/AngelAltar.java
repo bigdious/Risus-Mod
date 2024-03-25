@@ -91,7 +91,7 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock{
 		ItemStack held = player.getItemInHand(hand);
 		if (held.is(Items.TOTEM_OF_UNDYING)) {
 			if(level.getBlockState(pos.above()).is(Blocks.AIR)) {
-				if (level.isClientSide) {
+				if (!level.isClientSide) {
 					this.explode(level, pos);
 				}
 				Angel summonedAngel = RisusEntities.ANGEL.get().create(level);

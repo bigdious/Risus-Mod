@@ -130,8 +130,9 @@
 
 
 
-  "item.risus.angel_spawn_egg": "Blood Angel Spawn Egg",
+  "item.risus.angel_spawn_egg": "Blood Ophanim Spawn Egg",
   "item.risus.holder_spawn_egg": "Holder Spawn Egg",
+  "item.risus.stalker_spawn_egg": "Stalker Spawn Egg",
   "item.risus.maw_spawn_egg": "Maw Spawn Egg",
   "item.risus.question_mark_spawn_egg": "???",
   "item.risus.weaver_spawn_egg": "Weaver Spawn Egg",
@@ -145,7 +146,8 @@
   "effect.risus.pleasure": "Pleasure",
   "effect.risus.existential_burn": "Existential Burn",
 
-  "entity.risus.angel": "Blood Angel",
+  "entity.risus.angel": "Blood Ophanim",
+  "entity.risus.stalker": "Stalker",
   "entity.risus.holder": "Holder",
   "entity.risus.maw": "Maw",
   "entity.risus.question_mark": "???",
@@ -160,7 +162,7 @@
   "death.attack.risus.melancholy": "%1$s went dancing in the acid rain",
 
   "death.attack.gluttony": "%1$s was devoured",
-  "death.attack.gluttony.player": "%1$s was while trying to escape %2$s",
+  "death.attack.gluttony.player": "%1$s was devoured while trying to escape %2$s",
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
@@ -183,7 +185,7 @@
   "advancement.risus.irresistible": "Irresistible",
   "advancement.risus.irresistible.desc": "Taste Pleasure.",
   "advancement.risus.crusade": "Crusade",
-  "advancement.risus.crusade.desc": "Kill an Angel.",
+  "advancement.risus.crusade.desc": "Kill an Ophanim.",
   "advancement.risus.potential": "Potential",
   "advancement.risus.potential.desc": "Craft an Unawakened Vessel.",
   "advancement.risus.unleashed": "Unleashed",
