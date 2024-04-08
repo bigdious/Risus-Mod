@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-25T16:01:38.6708645	Loot Tables
+// 1.20.1	2024-04-08T15:18:14.8176144	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -103,6 +103,7 @@ baf8596a6d4bcb13b5afb25d16a59dc79038581b data/risus/loot_tables/blocks/tissue.js
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_tables/blocks/zit.json
 e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_tables/entities/angel.json
 04b7ae1a2757c5f7c38d32fc299d21c1d01a60ca data/risus/loot_tables/entities/holder.json
+ac15bf48d7a30e86f1de03e9bbe197893f6617b2 data/risus/loot_tables/entities/lover.json
 899a1181d1faf62ef9f0b2848055cda65d1288a4 data/risus/loot_tables/entities/maw.json
 43249e37e72788d275b68e5c1cf5dab074b49db0 data/risus/loot_tables/entities/memory1.json
 046b7694f2c0f2eb62a7cbf3f70d949ad90d71d6 data/risus/loot_tables/entities/question_mark.json

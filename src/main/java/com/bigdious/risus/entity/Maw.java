@@ -144,9 +144,9 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			//set up the victim to think theyre being killed by a player
 			if(this.level() instanceof ServerLevel server) living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
 			//then do the actual damage
-			this.hurt(new DamageSource(entity.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-			//I tried ok? Forgive the illiterate
-			this.doHurtTarget(living);
+			if (entity.hurt(new DamageSource(this.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+				this.doHurtTarget(living);
+			}
 		} else if (entity instanceof PrimedTnt tnt) {
 			tnt.discard();
 			this.eatenTNT = true;

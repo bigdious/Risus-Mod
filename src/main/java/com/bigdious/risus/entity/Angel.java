@@ -2,6 +2,7 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -42,6 +43,9 @@ public class Angel extends Monster {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_IS_CHARGING, false);
+	}
+	public RisusMobType getRisusMobType() {
+		return RisusMobType.OFFSPING;
 	}
 
 	@Override

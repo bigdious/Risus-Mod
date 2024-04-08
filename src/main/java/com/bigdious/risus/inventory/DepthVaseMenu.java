@@ -1,7 +1,5 @@
 package com.bigdious.risus.inventory;
 
-import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
-import com.bigdious.risus.init.RisusMenuTypes;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

@@ -3,6 +3,7 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusMobType;
 import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
@@ -78,6 +79,9 @@ public class Stalker extends Monster {
 				}
 			}
 		return false;
+	}
+	public RisusMobType getRisusMobType() {
+		return RisusMobType.OFFSPING;
 	}
 
 	protected SoundEvent getHurtSound(DamageSource pDamageSource) {

@@ -1,6 +1,7 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -58,7 +59,9 @@ public class Holder extends Monster {
 				return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
 	}
-
+	public RisusMobType getRisusMobType() {
+		return RisusMobType.OFFSPING;
+	}
 	@Override
 	public float getStepHeight() {
 		return 1.0F;

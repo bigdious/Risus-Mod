@@ -1,7 +1,7 @@
 
 package com.bigdious.risus.inventory;
 
-import com.bigdious.risus.init.RisusMenuTypes;
+import com.bigdious.risus.init.RisusMenuType;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,7 +18,7 @@ public class MawGutsMenu extends AbstractContainerMenu {
 	}
 
 	public MawGutsMenu(int id, Inventory inventory, Container container) {
-		super(RisusMenuTypes.MAW_GUTS.get(), id);
+		super(RisusMenuType.MAW_GUTS.get(), id);
 		this.mawGuts = container;
 		checkContainerSize(mawGuts, 54);
 		container.startOpen(inventory.player);

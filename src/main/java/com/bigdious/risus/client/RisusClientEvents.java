@@ -10,9 +10,7 @@ import com.bigdious.risus.client.particle.ToothicalParticle;
 import com.bigdious.risus.client.render.AlterationCatalystRenderer;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
@@ -34,12 +32,9 @@ import net.minecraftforge.client.event.*;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import snownee.jade.overlay.OverlayRenderer;
-import snownee.jade.overlay.TooltipRenderer;
 
 @EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Bus.MOD)
 public class RisusClientEvents {
@@ -68,7 +63,7 @@ public class RisusClientEvents {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
-		MenuScreens.register(RisusMenuTypes.MAW_GUTS.get(), MawGutsScreen::new);
+		MenuScreens.register(RisusMenuType.MAW_GUTS.get(), MawGutsScreen::new);
 
 //		MenuScreens.register(RisusMenuTypes.DEPTH_VASE.get(), DepthVaseScreen::new);
 

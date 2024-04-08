@@ -20,6 +20,7 @@ public class RisusEvents {
 		event.put(RisusEntities.HOLDER.get(), Holder.attributes().build());
 		event.put(RisusEntities.MAW.get(), Maw.attributes().build());
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());
+		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());

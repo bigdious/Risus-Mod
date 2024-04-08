@@ -3,8 +3,10 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusMobType;
 import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -43,6 +45,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 	public Weaver(EntityType<? extends Spider> type, Level level) {
 		super(type, level);
+		this.xpReward = 5;
 	}
 
 	public static AttributeSupplier.Builder attributes() {
@@ -95,9 +98,9 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		return null;
 	}
 
-	@Override
-	public MobType getMobType() {
-		return MobType.ARTHROPOD;
+
+	public RisusMobType getRisusMobType() {
+		return RisusMobType.OFFSPING;
 	}
 	@Override
 	protected float getStandingEyeHeight(Pose p_33799_, EntityDimensions p_33800_) {
@@ -131,16 +134,14 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA.get(), i * 20, 0), this);
-
-				if (living.getHealth()==0 && level.getBlockState(pos.above()).is(Blocks.AIR)) {
-					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 11);}
-				EntityUtil.properlyApplyCustomDamageSource(this, entity, RisusDamageTypes.getEntityDamageSource(this.level(), RisusDamageTypes.MELANCHOLY, this));
+				if (living.getHealth()==0 && level.getBlockState(pos.above()).is(Blocks.AIR) && living.hurt(new DamageSource(living.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.MELANCHOLY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 11);
+					this.doEnchantDamageEffects(this, living);}
 
 			}
-			return EntityUtil.properlyApplyCustomDamageSource(this, entity, RisusDamageTypes.getEntityDamageSource(this.level(), RisusDamageTypes.MELANCHOLY, this));
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 
 	@Override

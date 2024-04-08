@@ -162,7 +162,8 @@
   "death.attack.risus.melancholy": "%1$s went dancing in the acid rain",
 
   "death.attack.gluttony": "%1$s was devoured",
-  "death.attack.gluttony.player": "%1$s was devoured while trying to escape %2$s",
+  "death.attack.gluttony.player": "%1$s was devoured",
+  "death.attack.melancholy.player": "%1$s got their memories weaved into Bloodweave",
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",

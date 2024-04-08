@@ -52,6 +52,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 			.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
+		add(RisusEntities.LOVER.get(), LootTable.lootTable());
 		add(RisusEntities.STALKER.get(), LootTable.lootTable()
 		.withPool(LootPool.lootPool()
 			.setRolls(ConstantValue.exactly(1.0F))

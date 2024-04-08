@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Bus.MOD)
 public class RisusModelLayers {
-
+	//for big: THERE ARE THREE FUCKING SECTIONS HERE, ARE YOU BLIND?
 	public static final ModelLayerLocation ANGEL = register("angel");
 	public static final ModelLayerLocation HOLDER = register("holder");
 	public static final ModelLayerLocation MAW = register("maw");
@@ -28,6 +28,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation BLOODWYRM_BREATH = register("bloodwyrm_breath");
 	public static final ModelLayerLocation WEAVER = register("weaver");
+	public static final ModelLayerLocation LOVER = register("lover");
 	public static final ModelLayerLocation STALKER = register("stalker");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 
@@ -54,6 +55,7 @@ public class RisusModelLayers {
 		event.registerLayerDefinition(THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(WEAVER_CORE, WeaverModel::create);
+		event.registerLayerDefinition(LOVER, LoverModel::create);
 		event.registerLayerDefinition(STALKER, StalkerModel::create);
 		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(QUESTION_MARK, QuestionMarkModel::create);
@@ -74,6 +76,7 @@ public class RisusModelLayers {
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
+		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);

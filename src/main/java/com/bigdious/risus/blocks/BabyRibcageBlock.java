@@ -101,4 +101,5 @@ public class BabyRibcageBlock extends HorizontalDirectionalBlock implements Simp
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;
 	}
+
 }

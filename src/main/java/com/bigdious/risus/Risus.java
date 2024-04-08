@@ -46,7 +46,7 @@ public class Risus {
 		RisusEntities.ENTITIES.register(bus);
 		RisusItems.ITEMS.register(bus);
 		RisusMobEffects.MOB_EFFECTS.register(bus);
-		RisusMenuTypes.MENU_TYPES.register(bus);
+		RisusMenuType.MENU_TYPES.register(bus);
 		RisusParticles.PARTICLES.register(bus);
 		RisusRecipes.RECIPE_SERIALIZERS.register(bus);
 		RisusRecipes.RECIPE_TYPES.register(bus);

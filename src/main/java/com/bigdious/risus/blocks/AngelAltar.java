@@ -107,6 +107,6 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock{
 	}
 	private void explode(Level level,BlockPos pos) {
 		Vec3 vec3 = pos.getCenter().add(0,2,0);
-		level.explode((Entity)null, level.damageSources().magic(), null, vec3, 50.0F, true, Level.ExplosionInteraction.BLOCK);
+		level.explode((Entity)null, level.damageSources().magic(), null, vec3, 3.0F, true, Level.ExplosionInteraction.BLOCK);
 	}
 }

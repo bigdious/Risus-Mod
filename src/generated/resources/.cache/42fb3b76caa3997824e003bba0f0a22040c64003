@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-25T16:01:38.6648681	Risus Item Models
+// 1.20.1	2024-04-08T15:18:14.8114949	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -80,6 +80,7 @@ ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsid
 3f71090ec126de65116f5cbad0ee920b4bc67609 assets/risus/models/item/light_devourer.json
 51684b556608835ca1035a3df128d31710131489 assets/risus/models/item/linear_ritual_block.json
 06597f16771e91b6405524cef39ebacfe8e6f5be assets/risus/models/item/living_tissue.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/lover_spawn_egg.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
 e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.json
