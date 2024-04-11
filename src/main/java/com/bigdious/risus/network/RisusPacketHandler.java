@@ -2,8 +2,6 @@ package com.bigdious.risus.network;
 
 import com.bigdious.risus.Risus;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 
 public class RisusPacketHandler {
 

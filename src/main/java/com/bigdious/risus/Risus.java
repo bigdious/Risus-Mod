@@ -18,12 +18,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.neoforge.common.NeoForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -55,18 +55,17 @@ public class Risus {
 		RisusTab.CREATIVE_TABS.register(bus);
 		RisusSoundEvents.SOUNDS.register(bus);
 		RisusFluidTypes.FLUID_TYPES.register(bus);
-		RisusFluids.FLUIDS.register(bus);
+		RisusFluids.FLUID.register(bus);
 
-		MinecraftForge.EVENT_BUS.addGenericListener(Entity.class, RisusCapabilities::attachEntityCapability);
+		NeoForge.EVENT_BUS.addGenericListener(Entity.class, RisusCapabilities::attachEntityCapability);
 		bus.addListener(RisusCapabilities::registerCapabilities);
 
-		MinecraftForge.EVENT_BUS.register(this);
+		NeoForge.EVENT_BUS.register(this);
 	}
 
 	@SubscribeEvent
 	public static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			RisusDispenserRegistry.init();
 			RisusPacketHandler.init();
 
 			//block stripping

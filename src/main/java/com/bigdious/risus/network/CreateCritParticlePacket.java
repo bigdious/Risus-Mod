@@ -3,10 +3,9 @@ package com.bigdious.risus.network;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Supplier;
 
@@ -30,7 +29,7 @@ public class CreateCritParticlePacket {
     public void encode(FriendlyByteBuf buf) {
         buf.writeInt(this.id);
         buf.writeInt(this.duration);
-        buf.writeRegistryIdUnsafe(ForgeRegistries.PARTICLE_TYPES, this.particle);
+        buf.writeRegistryIdUnsafe(Registries.PARTICLE_TYPE, this.particle);
     }
 
     public static class Handler {

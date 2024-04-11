@@ -2,20 +2,22 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
+
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -176,21 +178,20 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 
 		//spawn eggs
-		for (Item i : ForgeRegistries.ITEMS.getValues()) {
-			if (i instanceof SpawnEggItem && Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getNamespace().equals(Risus.MODID)) {
-				getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(i)).getPath())
-						.parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
+		for (DeferredHolder<Item, ?> item : RisusEntities.SPAWN_EGGS.getEntries()) {
+			if (item.get() instanceof SpawnEggItem) {
+				getBuilder(item.getId().getPath()).parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
 			}
 		}
 
 	}
 
 	private void toBlock(Block b) {
-		toBlockModel(b, texture("block/" + Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(b)).getPath()));
+		toBlockModel(b, texture("block/" + Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(b)).getPath()));
 	}
 
 	private void toBlockModel(Block b, ResourceLocation model) {
-		withExistingParent(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(b)).getPath(), model);
+		withExistingParent(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(b)).getPath(), model);
 	}
 
 	private ItemModelBuilder generated(String name, String parent, ResourceLocation... layers) {
@@ -205,11 +206,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		return generated(name, "item/generated", layers);
 	}
 
-	private ItemModelBuilder singleTex(RegistryObject<Item> item) {
+	private ItemModelBuilder singleTex(DeferredHolder<Item, Item> item) {
 		return generated(item.getId().getPath(), "item/generated", texture("item/" + item.getId().getPath()));
 	}
 
-	private ItemModelBuilder singleTexTool(RegistryObject<Item> item) {
+	private ItemModelBuilder singleTexTool(DeferredHolder<Item, Item> item) {
 		return generated(item.getId().getPath(), "item/handheld", texture("item/" + item.getId().getPath()));
 	}
 	private ItemModelBuilder generatedRenderType(String name, @Nullable String renderType, ResourceLocation... layers) {

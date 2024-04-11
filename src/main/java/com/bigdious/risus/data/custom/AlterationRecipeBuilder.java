@@ -7,6 +7,7 @@ import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -52,7 +53,7 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(Consumer<FinishedRecipe> consumer) {
-		this.save(consumer, ForgeRegistries.ITEMS.getKey(this.getResult()).getNamespace() + ":alteration/" + ForgeRegistries.ITEMS.getKey(this.getResult()).getPath());
+		this.save(consumer, ForgeRegistries.ITEMS.getKey(this.getResult()).getNamespace() + ":alteration/" + BuiltInRegistries.ITEM.getKey(this.getResult()).getPath());
 	}
 
 	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {

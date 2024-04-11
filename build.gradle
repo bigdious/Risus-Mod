@@ -1,26 +1,26 @@
 plugins {
-    id 'eclipse'
-    id 'idea'
-    id 'maven-publish'
-    id 'net.neoforged.gradle' version '[6.0.18,6.2)'
-	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+	id 'java-library'
+	id 'eclipse'
+	id 'idea'
+	id 'maven-publish'
+	id 'net.neoforged.gradle.userdev' version '7.0.97'
 }
 
 def secrets = new Properties()
 def secretsFile = file('secrets.properties')
 if (secretsFile.exists()) {
-    secretsFile.withInputStream {
-        stream -> secrets.load(stream)
-    }
+	secretsFile.withInputStream {
+		stream -> secrets.load(stream)
+	}
 
-    fileTree("secrets").matching {
-        include "**/*.properties"
-    }.each {
-        File file ->
-            file.withInputStream {
-                stream -> secrets.load(stream)
-            }
-    }
+	fileTree("secrets").matching {
+		include "**/*.properties"
+	}.each {
+		File file ->
+			file.withInputStream {
+				stream -> secrets.load(stream)
+			}
+	}
 }
 
 version = project.mod_version
@@ -31,78 +31,78 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
+compileJava.options.compilerArgs << "-Xlint:all,-classfile,-processing,-deprecation" << "-Werror"
 
-minecraft {
-	mappings channel: 'parchment', version: '2023.09.03-1.20.1'
-    copyIdeResources = true
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+runs {
+	configureEach {
+		workingDirectory project.file('run')
+		systemProperty 'forge.logging.console.level', 'debug'
+		systemProperty 'fml.earlyprogresswindow', 'false'
+		systemProperty 'mixin.env.disableRefMap', 'true'
 
-    runs {
-        configureEach {
-            workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
-            property 'fml.earlyprogresswindow', 'false'
-            property 'mixin.env.disableRefMap', 'true'
+		modSource project.sourceSets.main
+	}
 
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+	client {
+//      name "Minecraft_Client_${project.minecraft_version}"
+		systemProperty 'forge.enabledGameTestNamespaces', mod_id
+		programArguments.addAll '--username', secrets.getProperty("username")?: 'Dev', secrets.getProperty("uuid") ? '--uuid' : '', secrets.getProperty("uuid")?: ''
+	}
 
-        client {
-            taskName "Minecraft_Client_${project.minecraft_version}"
-            property 'forge.enabledGameTestNamespaces', mod_id
-            args '--username', secrets.getProperty("username")?: 'Dev', secrets.getProperty("uuid") ? '--uuid' : '', secrets.getProperty("uuid")?: ''
-        }
+	server {
+//      name "Minecraft_Server_${project.minecraft_version}"
+		systemProperty 'forge.enabledGameTestNamespaces', mod_id
+		programArgument '--nogui'
+	}
 
-        server {
-            taskName "Minecraft_Server_${project.minecraft_version}"
-            property 'forge.enabledGameTestNamespaces', mod_id
-            args '--nogui'
-        }
+	gameTestServer {
+//      name "Minecraft_GameTestServer_${project.minecraft_version}"
+		systemProperty 'forge.enabledGameTestNamespaces', mod_id
+	}
 
-        gameTestServer {
-            taskName "Minecraft_GameTestServer_${project.minecraft_version}"
-            property 'forge.enabledGameTestNamespaces', mod_id
-        }
-
-        data {
-            taskName "Minecraft_Data_${project.minecraft_version}"
-            workingDirectory project.file('run-data')
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-        }
-    }
+	data {
+//      name "Minecraft_Data_${project.minecraft_version}"
+		workingDirectory project.file('run-data')
+		programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+	}
+}
+subsystems {
+	parchment {
+		minecraftVersion = "1.20.3" //parchment doesnt support 1.20.4 yet????
+		mappingsVersion = project.parchment_version
+	}
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven {
-        name 'Jared\'s Maven' // JEI and Patchouli
-        url 'https://maven.blamejared.com/'
-    }
+	maven {
+		name 'Jared\'s Maven' // JEI
+		url 'https://maven.blamejared.com/'
+	}
 
-    maven {
-        name 'Curseforge Maven' // Jade
-        url "https://www.cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
+	maven {
+		name 'Curseforge Maven' // Jade
+		url "https://www.cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
 }
 
 dependencies {
-    minecraft "net.neoforged:forge:${project.minecraft_version}-${project.neo_version}"
+	//make sure to only pick one of these when testing (switch others to compileOnly)
+	implementation "mezz.jei:jei-${project.minecraft_version}-neoforge:${project.jei_version}"
 
-    implementation fg.deobf("mezz.jei:jei-${project.minecraft_version}-forge:${project.jei_version}")
+	//curse maven
+	compileOnly "curse.maven:jade-324717:4980188"
+	//runtimeOnly "curse.maven:jeed-532286:4599236"
+	//runtimeOnly "curse.maven:museum-curator-859070:4629894"
 
-    implementation fg.deobf("curse.maven:jade-324717:4711195")
-
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}")
+	implementation "net.neoforged:neoforge:${project.neo_version}"
 }
+
 
 jar {
     manifest {
@@ -133,6 +133,21 @@ publishing {
     }
 }
 
+tasks.register('sourceJar', Jar) {
+	dependsOn 'classes'
+	from sourceSets.main.allSource
+	archiveClassifier = 'sources'
+}
+
+
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+	options.encoding = 'UTF-8'
+}
+
+idea {
+	// Tell IDEA to always download sources/javadoc artifacts from maven.
+	module {
+		downloadJavadoc = true
+		downloadSources = true
+	}
 }

@@ -4,27 +4,27 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.loaders.CompositeModelBuilder;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
-public class BlockModelGenerator extends BlockStateProvider {
+public class BlockModelGenerator extends twilightforest.data.helpers.BlockModelBuilders {
 
 	public BlockModelGenerator(PackOutput packOutput, ExistingFileHelper exFileHelper) {
-		super(packOutput, Risus.MODID, exFileHelper);
+		super(packOutput, exFileHelper);
 	}
 
 	@Override
@@ -316,28 +316,10 @@ public class BlockModelGenerator extends BlockStateProvider {
 		return models().singleTexture(name, texture("block/template_wall_side_tall"), "wall", wall);
 	}
 
-	public void torchBlock(Supplier<? extends Block> block, Supplier<? extends Block> wall) {
-		ModelFile torch = models().torch(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), new ResourceLocation(Risus.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath())).renderType("minecraft:cutout");
-		ModelFile torchwall = models().torchWall(ForgeRegistries.BLOCKS.getKey(wall.get()).getPath(), new ResourceLocation(Risus.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath())).renderType("minecraft:cutout");
-		simpleBlock(block.get(), torch);
-		getVariantBuilder(wall.get()).forAllStates(state ->
-				ConfiguredModel.builder()
-						.modelFile(torchwall)
-						.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 90) % 360)
-						.build());
-	}
-
-
-	private void woodPlate(Block plate, ResourceLocation texName) {
-		ModelFile unpressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(plate).getPath(), "pressure_plate_up").texture("texture", texName);
-		ModelFile pressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(plate).getPath() + "_down", "pressure_plate_down").texture("texture", texName);
-
-		getVariantBuilder(plate).forAllStates(state -> ConfiguredModel.builder().modelFile(state.getValue(PressurePlateBlock.POWERED) ? pressed : unpressed).build());
-	}
 
 	private void woodButton(Block button, ResourceLocation texName) {
-		ModelFile unpressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(button).getPath(), "button").texture("texture", texName);
-		ModelFile pressed = models().withExistingParent(ForgeRegistries.BLOCKS.getKey(button).getPath() + "_pressed", "button_pressed").texture("texture", texName);
+		ModelFile unpressed = models().withExistingParent(Registries.BLOCK.getKey(button).getPath(), "button").texture("texture", texName);
+		ModelFile pressed = models().withExistingParent(Registries.BLOCK.getKey(button).getPath() + "_pressed", "button_pressed").texture("texture", texName);
 
 		getVariantBuilder(button).forAllStates(state -> {
 			ModelFile model = state.getValue(ButtonBlock.POWERED) ? pressed : unpressed;
@@ -400,11 +382,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD, skylightLevel).tintindex(0).end().end();
 	}
 
-	private void builtinEntity(Block b, String particle) {
-		simpleBlock(b, models().getBuilder(ForgeRegistries.BLOCKS.getKey(b).getPath())
-				.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
-				.texture("particle", particle));
-	}
+
 
 	private ResourceLocation texture(String name) {
 		return Risus.prefix(name);

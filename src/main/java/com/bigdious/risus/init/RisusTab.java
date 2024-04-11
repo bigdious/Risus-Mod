@@ -1,16 +1,15 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
 
 import java.util.Collection;
 import java.util.Map;
@@ -21,11 +20,11 @@ public class RisusTab {
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Risus.MODID);
 	private static void createSpawnEggsAlphabetical(CreativeModeTab.Output output) {
-		Collection<? extends Item> eggs = RisusEntities.SPAWN_EGGS.getEntries().stream().map(RegistryObject::get).toList();
+		Collection<? extends Item> eggs = RisusEntities.SPAWN_EGGS.getEntries().stream().map(DeferredHolder::get).toList();
 		eggs.forEach(output::accept);
 	}
 
-	public static final RegistryObject<CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risusmain", () -> CreativeModeTab.builder()
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risusmain", () -> CreativeModeTab.builder()
 			.title(Component.translatable("itemGroup.risus.main"))
 			.displayItems(
 					(parameters, output) -> {

@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -17,6 +18,11 @@ public class ActuallyUseableDirectionalBlock extends DirectionalBlock {
 	public ActuallyUseableDirectionalBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.UP));
+	}
+
+	@Override
+	protected MapCodec<? extends DirectionalBlock> codec() {
+		return null;
 	}
 
 	@Nullable
