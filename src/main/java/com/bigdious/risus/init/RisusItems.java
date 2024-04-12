@@ -16,7 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @SuppressWarnings("unused")
 public class RisusItems {
 
-	public static final DeferredRegister<Item, Item> ITEMS = DeferredRegister.create(Registries.ITEM, Risus.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Risus.MODID);
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationMod(0.2F).alwaysEat().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE.get(), 90), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEat().saturationMod(0.1F).build();

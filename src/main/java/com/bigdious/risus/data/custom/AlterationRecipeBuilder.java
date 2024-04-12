@@ -5,17 +5,15 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -53,7 +51,7 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public void save(Consumer<FinishedRecipe> consumer) {
-		this.save(consumer, ForgeRegistries.ITEMS.getKey(this.getResult()).getNamespace() + ":alteration/" + BuiltInRegistries.ITEM.getKey(this.getResult()).getPath());
+		this.save(consumer, Registries.ITEM.getKey(this.getResult()).getNamespace() + ":alteration/" + BuiltInRegistries.ITEM.getKey(this.getResult()).getPath());
 	}
 
 	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
@@ -92,7 +90,7 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 			}
 
 			object.add("input", this.ingredient.toJson());
-			object.addProperty("result", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(this.result)).toString());
+			object.addProperty("result", Objects.requireNonNull(Registries.ITEM.getKey(this.result)).toString());
 		}
 
 		@Override

@@ -17,6 +17,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -28,6 +29,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.Nullable;
+import org.jline.utils.InfoCmp;
 
 import javax.annotation.Nonnull;
 
@@ -156,14 +158,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Nullable
 	public AlterationRecipe getRecipe(Level level, ItemStack stack) {
-		if (!inputStack.isEmpty()) {
-
-			for (RecipeHolder<UncraftingRecipe> uncraftingRecipe : world.getRecipeManager().getAllRecipesFor(TFRecipes.UNCRAFTING_RECIPE.get())) {
-				if (uncraftingRecipe.value().isItemStackAnIngredient(inputStack)) recipes.add(uncraftingRecipe.value());
-			}
-		return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).orElse(null);
-		}
-		return recipes.toArray(new Recipe<?>[0]);
+		return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).orElse(null).value();
 	}
 
 	public void attemptCraft(Level level, ItemStack item) {
@@ -247,7 +242,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, final @Nullable Direction side) {
-		if (cap == ForgeCapabilities.ITEM_HANDLER) {
+		if (cap == Capabilities.ITEM_HANDLER) {
 			return itemHandler.cast();
 		}
 		return super.getCapability(cap, side);

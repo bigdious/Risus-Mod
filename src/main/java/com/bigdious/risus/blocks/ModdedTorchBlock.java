@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class ModdedTorchBlock extends TorchBlock {
 	public ModdedTorchBlock(Properties properties) {
-		super(properties, ParticleTypes.FLAME);
+		super(ParticleTypes.FLAME, properties);
 	}
 
 	@Override

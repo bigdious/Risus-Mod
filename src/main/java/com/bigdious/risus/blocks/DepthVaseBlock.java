@@ -6,6 +6,7 @@ import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -30,13 +31,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import vazkii.patchouli.api.PatchouliAPI;
 
 public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultiloggedBlock {
 	//start multilogging
@@ -48,6 +49,12 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 			.setValue(WATERLOGGED, false)
 			.setValue(LAVALOGGED, false));
 	}
+
+	@Override
+	protected MapCodec<? extends BaseEntityBlock> codec() {
+		return null;
+	}
+
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty BLOODLOGGED = SimpleMultiloggedBlock.BLOODLOGGED;
 	public static final BooleanProperty LAVALOGGED = SimpleMultiloggedBlock.LAVALOGGED;
@@ -120,16 +127,16 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase))
 			return InteractionResult.PASS;
-		if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID,"research_notes")).getItem())) {
-			if (depthVase.depthToSlotRatio==1) {
-				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
-				return InteractionResult.SUCCESS;
-			}
-			else {
-				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
-				return InteractionResult.SUCCESS;
-			}
-		}
+//		if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID,"research_notes")).getItem())) {
+//			if (depthVase.depthToSlotRatio==1) {
+//				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
+//				return InteractionResult.SUCCESS;
+//			}
+//			else {
+//				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
+//				return InteractionResult.SUCCESS;
+//			}
+//		}
 		else {
 			if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
 				for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
@@ -207,4 +214,13 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
 	}
 
+	@Override
+	public ItemStack pickupBlock(@Nullable Player pPlayer, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+		return null;
+	}
+
+	@Override
+	public boolean canPlaceLiquid(@Nullable Player pPlayer, BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
+		return false;
+	}
 }

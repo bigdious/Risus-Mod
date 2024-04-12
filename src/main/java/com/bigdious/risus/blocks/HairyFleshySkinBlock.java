@@ -13,7 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
+
 
 public class HairyFleshySkinBlock extends ActuallyUseableDirectionalBlock {
 

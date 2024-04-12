@@ -4,7 +4,6 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.util.RisusSkullType;
-import com.bigdious.risus.util.RisusWoodTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffects;
 

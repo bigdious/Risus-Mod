@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class ModdedWallTorchBlock extends WallTorchBlock {
 	public ModdedWallTorchBlock(Properties properties) {
-		super(properties, ParticleTypes.FLAME);
+		super(ParticleTypes.FLAME, properties);
 	}
 
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {

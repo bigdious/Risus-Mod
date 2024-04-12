@@ -1,13 +1,10 @@
 package com.bigdious.risus.capability;
 
-import com.bigdious.risus.init.RisusCapabilities;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.level.NoteBlockEvent;
+
 
 import java.util.Objects;
 import java.util.UUID;

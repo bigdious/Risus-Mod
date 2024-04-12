@@ -8,6 +8,7 @@ import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -30,7 +31,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.registries.ForgeRegistries;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -222,6 +222,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getNamespace().equals(Risus.MODID)).collect(Collectors.toList());
+		return Registries.BLOCK.getValues().stream().filter(block -> Objects.requireNonNull(Registries.BLOCK.getKey(block)).getNamespace().equals(Risus.MODID)).collect(Collectors.toList());
 	}
 }

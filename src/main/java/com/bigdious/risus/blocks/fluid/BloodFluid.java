@@ -18,15 +18,17 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
+
+import java.util.Properties;
 import java.util.Random;
 
-public class BloodFluid extends ForgeFlowingFluid {
+public class BloodFluid extends FlowingFluid {
 	//Credit to JoeFoxe and his mod Hexerei for this beautiful blood fluid and particles
 	protected BloodFluid(Properties properties) {
 		super(properties);

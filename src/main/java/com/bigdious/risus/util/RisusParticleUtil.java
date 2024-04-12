@@ -5,10 +5,10 @@ import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.particle.BloodBitParticle;
 import com.bigdious.risus.particle.BloodParticle;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @Mod.EventBusSubscriber(modid = Risus.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RisusParticleUtil {

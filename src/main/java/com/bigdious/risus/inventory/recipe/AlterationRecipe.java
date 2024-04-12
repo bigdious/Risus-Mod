@@ -5,7 +5,9 @@ import com.bigdious.risus.init.RisusRecipes;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import com.mojang.serialization.Codec;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -16,8 +18,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.crafting.CraftingHelper;
 
 public record AlterationRecipe(ResourceLocation id, Ingredient input, ItemStack result) implements Recipe<Container> {
 
@@ -79,7 +80,7 @@ public record AlterationRecipe(ResourceLocation id, Ingredient input, ItemStack 
 			else {
 				String s1 = GsonHelper.getAsString(object, "result");
 				ResourceLocation resourcelocation = new ResourceLocation(s1);
-				result = new ItemStack(ForgeRegistries.ITEMS.getHolder(resourcelocation).orElseThrow(() -> new IllegalStateException("Item: " + s1 + " does not exist")));
+				result = new ItemStack(Registries.ITEM.getHolder(resourcelocation).orElseThrow(() -> new IllegalStateException("Item: " + s1 + " does not exist")));
 			}
 			return new AlterationRecipe(id, input, result);
 		}
@@ -88,6 +89,16 @@ public record AlterationRecipe(ResourceLocation id, Ingredient input, ItemStack 
 			Ingredient input = Ingredient.fromNetwork(buffer);
 			ItemStack result = buffer.readItem();
 			return new AlterationRecipe(id, input, result);
+		}
+
+		@Override
+		public Codec<AlterationRecipe> codec() {
+			return null;
+		}
+
+		@Override
+		public AlterationRecipe fromNetwork(FriendlyByteBuf pBuffer) {
+			return null;
 		}
 
 		public void toNetwork(FriendlyByteBuf buffer, AlterationRecipe recipe) {

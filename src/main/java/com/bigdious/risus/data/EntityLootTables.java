@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -15,7 +16,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerC
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.stream.Stream;
 
@@ -73,6 +73,6 @@ public class EntityLootTables extends EntityLootSubProvider {
 
 	@Override
 	public Stream<EntityType<?>> getKnownEntityTypes() {
-		return ForgeRegistries.ENTITY_TYPES.getValues().stream().filter(entities -> ForgeRegistries.ENTITY_TYPES.getKey(entities).getNamespace().equals(Risus.MODID));
+		return Registries.ENTITY_TYPE.getValues().stream().filter(entities -> Registries.ENTITY_TYPE.getKey(entities).getNamespace().equals(Risus.MODID));
 	}
 }
