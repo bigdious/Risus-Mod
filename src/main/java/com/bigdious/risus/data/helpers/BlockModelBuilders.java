@@ -1,4 +1,4 @@
-package twilightforest.data.helpers;
+package com.bigdious.risus.data.helpers;
 
 import com.bigdious.risus.data.helpers.BlockModelHelpers;
 import net.minecraft.core.Direction;

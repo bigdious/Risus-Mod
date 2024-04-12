@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
+import com.bigdious.risus.data.helpers.BlockModelBuilders;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -19,9 +20,8 @@ import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuil
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
-import java.util.function.Supplier;
 
-public class BlockModelGenerator extends twilightforest.data.helpers.BlockModelBuilders {
+public class BlockModelGenerator extends BlockModelBuilders {
 
 	public BlockModelGenerator(PackOutput packOutput, ExistingFileHelper exFileHelper) {
 		super(packOutput, exFileHelper);

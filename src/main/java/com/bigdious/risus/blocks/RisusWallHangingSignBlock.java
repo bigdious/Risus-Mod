@@ -32,7 +32,7 @@ import java.util.Optional;
 
 public class RisusWallHangingSignBlock extends WallHangingSignBlock implements SimpleMultiloggedBlock {
 	public RisusWallHangingSignBlock(Properties pProperties, WoodType pType) {
-		super(pProperties.sound(pType.hangingSignSoundType()), pType);
+		super(pType, pProperties.sound(pType.hangingSignSoundType()));
 		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(FACING, Direction.NORTH)
 			.setValue(BLOODLOGGED, false)

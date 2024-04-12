@@ -43,7 +43,7 @@ public class QuestionMark extends Monster {
 
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.AMBIENT_CAVE.get();
+		return SoundEvents.AMBIENT_CAVE.value();
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class RisusCeilingHangingSignBlock extends CeilingHangingSignBlock implem
 
 
 	public RisusCeilingHangingSignBlock(Properties pProperties, WoodType pType) {
-		super(pProperties, pType);
+		super( pType, pProperties);
 		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(ROTATION, Integer.valueOf(0))
 			.setValue(ATTACHED, Boolean.valueOf(false))

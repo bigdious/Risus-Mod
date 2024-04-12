@@ -26,7 +26,7 @@ import java.util.Optional;
 
 public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultiloggedBlock {
 	public RisusTrapDoorBlock(Properties pProperties, BlockSetType pType) {
-		super(pProperties, pType);
+		super(pType, pProperties);
 		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(FACING, Direction.NORTH)
 			.setValue(OPEN, Boolean.valueOf(false))

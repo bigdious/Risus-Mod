@@ -33,7 +33,7 @@ import java.util.Optional;
 public class RisusSignBlock extends StandingSignBlock implements SimpleMultiloggedBlock{
 
 	public RisusSignBlock(Properties properties, WoodType type) {
-		super(properties, type);
+		super(type, properties);
 		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(ROTATION, Integer.valueOf(0))
 			.setValue(BLOODLOGGED, false)
