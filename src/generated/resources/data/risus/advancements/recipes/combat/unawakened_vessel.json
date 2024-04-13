@@ -46,16 +46,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_core",
       "has_bonds",
-      "has_scales",
-      "has_the_recipe"
+      "has_scales"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:unawakened_vessel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

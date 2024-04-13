@@ -103,16 +103,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.fleshing.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:decomposed_tissue"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.fleshing"
     }

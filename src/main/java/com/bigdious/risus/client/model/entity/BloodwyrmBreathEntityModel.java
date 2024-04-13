@@ -27,9 +27,11 @@ public class BloodwyrmBreathEntityModel extends Model {
 
 		return LayerDefinition.create(meshdefinition, 16, 16);
 	}
+
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
+
 	public ModelPart root() {
 		return this.root;
 	}

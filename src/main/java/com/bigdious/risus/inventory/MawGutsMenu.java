@@ -1,4 +1,3 @@
-
 package com.bigdious.risus.inventory;
 
 import com.bigdious.risus.init.RisusMenuType;

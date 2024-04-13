@@ -17,25 +17,15 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.Nullable;
-import org.jline.utils.InfoCmp;
-
-import javax.annotation.Nonnull;
 
 public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer {
 
-	private final LazyOptional<IItemHandler> itemHandler = LazyOptional.of(() -> new InvWrapper(this));
 	protected ItemStack item = ItemStack.EMPTY;
 	public boolean isCrafting;
 	private int craftingCounter;
@@ -237,21 +227,6 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	@Override
 	public void clearContent() {
 		this.item = ItemStack.EMPTY;
-	}
-
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, final @Nullable Direction side) {
-		if (cap == Capabilities.ITEM_HANDLER) {
-			return itemHandler.cast();
-		}
-		return super.getCapability(cap, side);
-	}
-
-	@Override
-	public void invalidateCaps() {
-		itemHandler.invalidate();
-		super.invalidateCaps();
 	}
 
 	@Nullable

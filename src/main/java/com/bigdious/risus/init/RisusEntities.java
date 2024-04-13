@@ -2,7 +2,6 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.*;
-import com.bigdious.risus.entity.Memory1;
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import net.minecraft.core.registries.Registries;
@@ -13,6 +12,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -33,15 +33,15 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(new ResourceLocation(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1F), 0x000000, 0x8b0000);
 	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(new ResourceLocation(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x000000, 0x8b0000);
 
-	public static final  DeferredHolder<EntityType<?>, EntityType<Memory1>> MEMORY1 = registerNoEgg(new ResourceLocation(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
-	private static <T extends Entity> DeferredHolder<EntityType<?>,EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
+	public static final DeferredHolder<EntityType<?>, EntityType<Memory1>> MEMORY1 = registerNoEgg(new ResourceLocation(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
+
+	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
 		return ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
 	}
 
-	@SuppressWarnings("unchecked")
-	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(ResourceLocation id, EntityType.Builder<T> builder, int primary, int secondary) {
+	private static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> register(ResourceLocation id, EntityType.Builder<T> builder, int primary, int secondary) {
 		DeferredHolder<EntityType<?>, EntityType<T>> ret = ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
-		SPAWN_EGGS.register(id.getPath() + "_spawn_egg", () -> new SpawnEggItem(() -> (EntityType<? extends Mob>) ret.get(), primary, secondary, RisusItems.defaultWithRarity()));
+		SPAWN_EGGS.register(id.getPath() + "_spawn_egg", () -> new DeferredSpawnEggItem(ret, primary, secondary, RisusItems.defaultWithRarity()));
 		return ret;
 	}
 }

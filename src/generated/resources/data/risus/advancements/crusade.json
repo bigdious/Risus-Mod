@@ -17,16 +17,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.crusade.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:blood_feather"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.crusade"
     }

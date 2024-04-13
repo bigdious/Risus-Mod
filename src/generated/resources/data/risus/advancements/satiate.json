@@ -15,16 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.satiate.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:maw_guts"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.satiate"
     }

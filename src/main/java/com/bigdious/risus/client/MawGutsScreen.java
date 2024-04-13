@@ -19,16 +19,13 @@ public class MawGutsScreen extends AbstractContainerScreen<MawGutsMenu> {
 
 	@Override
 	public void render(GuiGraphics graphics, int x, int y, float partialTicks) {
-		this.renderBackground(graphics);
+		this.renderBackground(graphics, x, y, partialTicks);
 		super.render(graphics, x, y, partialTicks);
 		this.renderTooltip(graphics, x, y);
 	}
 
 	@Override
 	protected void renderBg(GuiGraphics graphics, float partialTicks, int x, int y) {
-		//RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		//RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-		//RenderSystem.setShaderTexture(0, CONTAINER_BACKGROUND);
 		int i = (this.width - this.imageWidth) / 2;
 		int j = (this.height - this.imageHeight) / 2;
 

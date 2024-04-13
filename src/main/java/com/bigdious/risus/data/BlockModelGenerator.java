@@ -1,10 +1,13 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.*;
-import com.bigdious.risus.data.helpers.BlockModelBuilders;
+import com.bigdious.risus.blocks.AshenRemainsBlock;
+import com.bigdious.risus.blocks.PoppingBondknotBlock;
+import com.bigdious.risus.blocks.RibcageBlock;
+import com.bigdious.risus.blocks.ZitBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -12,19 +15,20 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
+import java.util.function.Supplier;
 
-public class BlockModelGenerator extends BlockModelBuilders {
+public class BlockModelGenerator extends BlockStateProvider {
 
-	public BlockModelGenerator(PackOutput packOutput, ExistingFileHelper exFileHelper) {
-		super(packOutput, exFileHelper);
+	public BlockModelGenerator(PackOutput output, ExistingFileHelper helper) {
+		super(output, Risus.MODID, helper);
 	}
 
 	@Override
@@ -178,23 +182,23 @@ public class BlockModelGenerator extends BlockModelBuilders {
 		simpleBlock(RisusBlocks.BONDKNOT_PLANKS.get());
 		fenceBlock(RisusBlocks.BONDKNOT_FENCE.get(), texture("block/bondknot_planks"));
 		fenceGateBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get(), texture("block/bondknot_planks"));
-		woodPlate(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), texture("block/bondknot_planks"));
-		woodButton(RisusBlocks.BONDKNOT_BUTTON.get(), texture("block/bondknot_planks"));
+		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), texture("block/bondknot_planks"));
+		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), texture("block/bondknot_planks"));
 		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor"), true, new ResourceLocation("cutout"));
 		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), new ResourceLocation("cutout"));
-		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks").toString());
-		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks").toString());
-		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), texture("block/stripped_bondknot_log").toString());
-		builtinEntity(RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), texture("block/stripped_bondknot_log").toString());
-		stairsBlock(RisusBlocks.BONDKNOT_STAIRS.get(),texture("block/bondknot_planks"));
+		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks"));
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks"));
+		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), texture("block/stripped_bondknot_log"));
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), texture("block/stripped_bondknot_log"));
+		stairsBlock(RisusBlocks.BONDKNOT_STAIRS.get(), texture("block/bondknot_planks"));
 		slabBlock(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_planks"), texture("block/bondknot_planks"));
 
 		simpleBlock(RisusBlocks.GRIMSTONE.get());
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
-		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(),texture("block/grimstone"));
-		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),texture("block/grimstone_bricks"));
+		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), texture("block/grimstone"));
+		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), texture("block/grimstone_bricks"));
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), texture("block/grimstone"), texture("block/grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), texture("block/grimstone_bricks"), texture("block/grimstone_bricks"));
 		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(), models().getExistingFile(Risus.prefix("block/chiseled_grimstone")));
@@ -222,8 +226,8 @@ public class BlockModelGenerator extends BlockModelBuilders {
 		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
 		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
-		stairsBlock(RisusBlocks.BONE_STAIRS.get(),texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
-		slabBlock(RisusBlocks.BONE_SLAB.get(), texture("block/bone_block"), texture("block/bone_block_side"),texture("block/bone_block_top"),texture("block/bone_block_top"));
+		stairsBlock(RisusBlocks.BONE_STAIRS.get(), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
+		slabBlock(RisusBlocks.BONE_SLAB.get(), texture("block/bone_block"), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
 
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(texture("block/eye_ender")));
 		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(texture("block/eye_bleached")));
@@ -234,9 +238,7 @@ public class BlockModelGenerator extends BlockModelBuilders {
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().getExistingFile(texture("block/fleshy_skin")));
 		simpleBlock(RisusBlocks.SKIN.get());
 		directionalBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get(), models().getExistingFile(texture("block/hairy_fleshy_skin")));
-		axisBlock(RisusBlocks.BUNDLE_OF_HAIR.get(),texture("block/bundle_of_hair_side"), texture("block/bundle_of_hair_top"));
-
-
+		axisBlock(RisusBlocks.BUNDLE_OF_HAIR.get(), texture("block/bundle_of_hair_side"), texture("block/bundle_of_hair_top"));
 
 
 		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
@@ -300,54 +302,21 @@ public class BlockModelGenerator extends BlockModelBuilders {
 
 	}
 
-	public BlockModelBuilder fencePost(String name, ResourceLocation texture) {
-		return models().singleTexture(name, texture("block/template_fence_post"), texture);
+	protected void builtinEntity(Block b, ResourceLocation particle) {
+		simpleBlock(b, models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath())
+				.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+				.texture("particle", particle));
 	}
 
-	public BlockModelBuilder wallPost(String name, ResourceLocation wall) {
-		return models().singleTexture(name, texture("block/template_wall_post"), "wall", wall);
-	}
-
-	public BlockModelBuilder wallSide(String name, ResourceLocation wall) {
-		return models().singleTexture(name, texture("block/template_wall_side"), "wall", wall);
-	}
-
-	public BlockModelBuilder wallSideTall(String name, ResourceLocation wall) {
-		return models().singleTexture(name, texture("block/template_wall_side_tall"), "wall", wall);
-	}
-
-
-	private void woodButton(Block button, ResourceLocation texName) {
-		ModelFile unpressed = models().withExistingParent(Registries.BLOCK.getKey(button).getPath(), "button").texture("texture", texName);
-		ModelFile pressed = models().withExistingParent(Registries.BLOCK.getKey(button).getPath() + "_pressed", "button_pressed").texture("texture", texName);
-
-		getVariantBuilder(button).forAllStates(state -> {
-			ModelFile model = state.getValue(ButtonBlock.POWERED) ? pressed : unpressed;
-			int rotX = switch (state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE)) {
-				case WALL -> 90;
-				case FLOOR -> 0;
-				case CEILING -> 180;
-			};
-			int rotY = 0;
-			if (state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE) == AttachFace.CEILING) {
-				switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
-					case NORTH -> rotY = 180;
-					case WEST -> rotY = 90;
-					case EAST -> rotY = 270;
-				}
-			} else {
-				rotY = switch (state.getValue(HorizontalDirectionalBlock.FACING)) {
-					case NORTH -> 0;
-					case SOUTH -> 180;
-					case WEST -> 270;
-					case EAST -> 90;
-					default -> rotY;
-				};
-			}
-			boolean uvlock = state.getValue(FaceAttachedHorizontalDirectionalBlock.FACE) == AttachFace.WALL;
-
-			return ConfiguredModel.builder().uvLock(uvlock).rotationX(rotX).rotationY(rotY).modelFile(model).build();
-		});
+	public void torchBlock(Supplier<? extends Block> block, Supplier<? extends Block> wall) {
+		ModelFile torch = models().torch(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), texture("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
+		ModelFile torchwall = models().torchWall(BuiltInRegistries.BLOCK.getKey(wall.get()).getPath(), texture("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
+		simpleBlock(block.get(), torch);
+		getVariantBuilder(wall.get()).forAllStates(state ->
+				ConfiguredModel.builder()
+						.modelFile(torchwall)
+						.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 90) % 360)
+						.build());
 	}
 
 	protected BlockModelBuilder make2LayerCubeAllSidesSame(String name, ResourceLocation renderType, int layer1em, int layer2em, boolean shade) {
@@ -381,7 +350,6 @@ public class BlockModelGenerator extends BlockModelBuilders {
 				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU, skylightLevel).tintindex(0).end()
 				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD, skylightLevel).tintindex(0).end().end();
 	}
-
 
 
 	private ResourceLocation texture(String name) {

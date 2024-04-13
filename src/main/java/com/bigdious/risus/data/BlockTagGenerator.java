@@ -7,7 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -71,10 +70,10 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
 		this.tag(BlockTags.NYLIUM).add(RisusBlocks.EYE_BLEACHED.get())
-			.add(RisusBlocks.EYE_BLOODSHOT.get())
-			.add(RisusBlocks.EYE_EMERALD.get())
-			.add(RisusBlocks.EYE_ENDER.get())
-			.add(RisusBlocks.EYE_GOLDEN.get());
+				.add(RisusBlocks.EYE_BLOODSHOT.get())
+				.add(RisusBlocks.EYE_EMERALD.get())
+				.add(RisusBlocks.EYE_ENDER.get())
+				.add(RisusBlocks.EYE_GOLDEN.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				RisusBlocks.ALTERATION_CATALYST.get(),
@@ -108,6 +107,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		this.tag(BlockTags.MINEABLE_WITH_AXE).add(RisusBlocks.BONDKNOT_HANGING_SIGN.get()).add(RisusBlocks.BURNT_HYPHAE.get(), RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusBlocks.SCAB.get(), RisusBlocks.TISSUE.get(), RisusBlocks.SKIN.get(), RisusBlocks.FLESHY_SKIN.get(), RisusBlocks.CURVED_FLESHY_SKIN.get(), RisusBlocks.HAIRY_SKIN.get(), RisusBlocks.HAIRY_FLESHY_SKIN.get(), RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.EYE_BLEACHED.get()).add(RisusBlocks.EYE_GOLDEN.get()).add(RisusBlocks.EYE_EMERALD.get()).add(RisusBlocks.EYE_BLOODSHOT.get()).add(RisusBlocks.EYE_ENDER.get());
-		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get(), RisusBlocks.IMITATION_SCALEPLATE.get(),RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
+		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get(), RisusBlocks.IMITATION_SCALEPLATE.get(), RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 	}
 }

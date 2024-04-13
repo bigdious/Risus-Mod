@@ -1,8 +1,0 @@
-package com.bigdious.risus.init;
-
-import net.minecraft.world.level.block.SoundType;
-
-
-public class RisusSoundTypes {
-	public static final SoundType MEAT = new SoundType(1.0F, 1.0F, RisusSoundEvents.MEAT_BREAK, RisusSoundEvents.MEAT_STEP, RisusSoundEvents.MEAT_PLACE, RisusSoundEvents.MEAT_HIT, RisusSoundEvents.MEAT_FALL);
-}

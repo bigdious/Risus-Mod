@@ -1,30 +1,28 @@
 package com.bigdious.risus.data.custom;
 
-import com.bigdious.risus.init.RisusRecipes;
-import com.google.gson.JsonObject;
+import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
-import java.util.function.Consumer;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class AlterationRecipeBuilder implements RecipeBuilder {
 	private final Item result;
 	private final Ingredient ingredient;
-	private final Advancement.Builder advancement = Advancement.Builder.advancement();
-	@Nullable
-	private String group;
+	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
 	private AlterationRecipeBuilder(ItemLike result, Ingredient input) {
 		this.result = result.asItem();
@@ -35,84 +33,42 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 		return new AlterationRecipeBuilder(result, input);
 	}
 
-	public AlterationRecipeBuilder unlockedBy(String id, CriterionTriggerInstance instance) {
-		this.advancement.addCriterion(id, instance);
+	@Override
+	public AlterationRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
+		this.criteria.put(name, criterion);
 		return this;
 	}
 
+	@Override
 	public AlterationRecipeBuilder group(@Nullable String id) {
-		this.group = id;
 		return this;
 	}
 
+	@Override
 	public Item getResult() {
 		return this.result;
 	}
 
 	@Override
-	public void save(Consumer<FinishedRecipe> consumer) {
-		this.save(consumer, Registries.ITEM.getKey(this.getResult()).getNamespace() + ":alteration/" + BuiltInRegistries.ITEM.getKey(this.getResult()).getPath());
+	public void save(RecipeOutput output) {
+		this.save(output, BuiltInRegistries.ITEM.getKey(this.getResult()).getNamespace() + ":alteration/" + BuiltInRegistries.ITEM.getKey(this.getResult()).getPath());
 	}
 
-	public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
+	@Override
+	public void save(RecipeOutput output, ResourceLocation id) {
 		this.ensureValid(id);
-		this.advancement.parent(ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-		consumer.accept(new Result(id, this.group == null ? "" : this.group, this.ingredient, this.result, this.advancement, new ResourceLocation(id.getNamespace(), "recipes/risus/" + id.getPath())));
+		Advancement.Builder builder = output.advancement()
+				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+				.rewards(AdvancementRewards.Builder.recipe(id))
+				.requirements(AdvancementRequirements.Strategy.OR);
+		this.criteria.forEach(builder::addCriterion);
+		AlterationRecipe recipe = new AlterationRecipe(this.ingredient, new ItemStack(this.result));
+		output.accept(id, recipe, builder.build(id.withPrefix("recipes/")));
 	}
 
 	private void ensureValid(ResourceLocation id) {
-		if (this.advancement.getCriteria().isEmpty()) {
+		if (this.criteria.isEmpty()) {
 			throw new IllegalStateException("No way of obtaining recipe " + id);
-		}
-	}
-
-	public static class Result implements FinishedRecipe {
-		private final ResourceLocation id;
-		private final String group;
-		private final Ingredient ingredient;
-		private final Item result;
-		private final Advancement.Builder advancement;
-		private final ResourceLocation advancementId;
-
-		public Result(ResourceLocation id, String group, Ingredient input, Item result, Advancement.Builder builder, ResourceLocation advId) {
-			this.id = id;
-			this.group = group;
-			this.ingredient = input;
-			this.result = result;
-			this.advancement = builder;
-			this.advancementId = advId;
-		}
-
-		@Override
-		public void serializeRecipeData(JsonObject object) {
-			if (!this.group.isEmpty()) {
-				object.addProperty("group", this.group);
-			}
-
-			object.add("input", this.ingredient.toJson());
-			object.addProperty("result", Objects.requireNonNull(Registries.ITEM.getKey(this.result)).toString());
-		}
-
-		@Override
-		public RecipeSerializer<?> getType() {
-			return RisusRecipes.ALTERATION_SERIALIZER.get();
-		}
-
-		@Override
-		public ResourceLocation getId() {
-			return this.id;
-		}
-
-		@Nullable
-		@Override
-		public JsonObject serializeAdvancement() {
-			return this.advancement.serializeToJson();
-		}
-
-		@Nullable
-		@Override
-		public ResourceLocation getAdvancementId() {
-			return this.advancementId;
 		}
 	}
 }

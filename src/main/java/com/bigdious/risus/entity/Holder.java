@@ -55,13 +55,15 @@ public class Holder extends Monster {
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, living -> {
-				List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
-				return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
+			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
+			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
 	}
+
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPING;
 	}
+
 	@Override
 	public float getStepHeight() {
 		return 1.0F;
@@ -124,10 +126,12 @@ public class Holder extends Monster {
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
 			this.shouldAvoidPlayer = false;
 			this.avoidedPlayerUUID = null;
-			if(this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null){
-				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));}
-			if(this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d")) != null){
-					this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"));}
+			if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null) {
+				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
+			}
+			if (this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d")) != null) {
+				this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"));
+			}
 		}
 		return flag;
 	}
@@ -138,16 +142,18 @@ public class Holder extends Monster {
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
 			if (living instanceof Player player) {
-				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
-				this.shouldAvoidPlayer = false;
-				this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Holder friendly", -3, AttributeModifier.Operation.ADDITION));
-				this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 1.8, AttributeModifier.Operation.MULTIPLY_BASE));}
-				else {this.avoidedPlayerUUID = player.getUUID();
+				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
+					this.shouldAvoidPlayer = false;
+					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Holder friendly", -3, AttributeModifier.Operation.ADDITION));
+					this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 1.8, AttributeModifier.Operation.MULTIPLY_BASE));
+				} else {
+					this.avoidedPlayerUUID = player.getUUID();
 					this.shouldAvoidPlayer = true;
-					}
-			}}
-			return flag;
+				}
+			}
 		}
+		return flag;
+	}
 
 
 	@Override

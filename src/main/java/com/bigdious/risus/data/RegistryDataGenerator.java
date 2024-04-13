@@ -12,9 +12,9 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
-    private static final RegistrySetBuilder REGISTRIES = new RegistrySetBuilder().add(Registries.DAMAGE_TYPE, RisusDamageTypes::bootstrap);
+	private static final RegistrySetBuilder REGISTRIES = new RegistrySetBuilder().add(Registries.DAMAGE_TYPE, RisusDamageTypes::bootstrap);
 
-    public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, REGISTRIES, Set.of("minecraft", Risus.MODID));
-    }
+	public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+		super(output, registries, REGISTRIES, Set.of("minecraft", Risus.MODID));
+	}
 }

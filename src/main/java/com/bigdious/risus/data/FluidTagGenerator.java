@@ -1,7 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.fluid.RisusFluids;
+import com.bigdious.risus.init.RisusFluids;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
@@ -24,6 +24,7 @@ public class FluidTagGenerator extends FluidTagsProvider {
 	public String getName() {
 		return "Risus Fluid Tags";
 	}
+
 	public static final TagKey<Fluid> BLOODFLUID = tag("bloodfluid");
 
 	private static TagKey<Fluid> tag(String name) {

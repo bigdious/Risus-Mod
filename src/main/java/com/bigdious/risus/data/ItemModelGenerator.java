@@ -5,7 +5,6 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -17,7 +16,6 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
-
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -43,8 +41,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.IMITATION_SCALEPLATE.get());
 		toBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
 		toBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
-		toBlockModel(RisusBlocks.FLATTENED_SCALES_BLOCK.get(),texture("block/flattened_scales_block"));
-		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),texture("block/flattened_imitation_scales_block"));
+		toBlockModel(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), texture("block/flattened_scales_block"));
+		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), texture("block/flattened_imitation_scales_block"));
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 		toBlock(RisusBlocks.MIRAGE_SAND.get());
@@ -61,7 +59,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 		toBlock(RisusBlocks.BONDKNOT_PLANKS.get());
-		toBlockModel(RisusBlocks.BONDKNOT_SLAB.get(),texture("block/bondknot_slab"));
+		toBlockModel(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_slab"));
 		toBlock(RisusBlocks.BONDKNOT_STAIRS.get());
 		toBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		toBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
@@ -88,8 +86,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
 				.texture("wall", texture("block/grimstone"));
 		getBuilder(RisusBlocks.GRIMSTONE_BRICKS_WALL.getId().getPath())
-			.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
-			.texture("wall", texture("block/grimstone_bricks"));
+				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+				.texture("wall", texture("block/grimstone_bricks"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
@@ -107,8 +105,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue_stairs"));
 		toBlock(RisusBlocks.TISSUE_SLAB.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
-			.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
-			.texture("wall", new ResourceLocation("block/bone_block_side"));
+				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+				.texture("wall", new ResourceLocation("block/bone_block_side"));
 		toBlock(RisusBlocks.BONE_STAIRS.get());
 		toBlock(RisusBlocks.BONE_SLAB.get());
 
@@ -176,7 +174,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.HAIR_FOLLICLES);
 
 
-
 		//spawn eggs
 		for (DeferredHolder<Item, ?> item : RisusEntities.SPAWN_EGGS.getEntries()) {
 			if (item.get() instanceof SpawnEggItem) {
@@ -213,11 +210,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 	private ItemModelBuilder singleTexTool(DeferredHolder<Item, Item> item) {
 		return generated(item.getId().getPath(), "item/handheld", texture("item/" + item.getId().getPath()));
 	}
+
 	private ItemModelBuilder generatedRenderType(String name, @Nullable String renderType, ResourceLocation... layers) {
-		return buildItem(name, "item/generated" , renderType, layers);
+		return buildItem(name, "item/generated", renderType, layers);
 	}
 
-	private ItemModelBuilder buildItem(String name, String parent,  @Nullable String renderType, ResourceLocation... layers) {
+	private ItemModelBuilder buildItem(String name, String parent, @Nullable String renderType, ResourceLocation... layers) {
 		ItemModelBuilder builder = withExistingParent(name, parent);
 		for (int i = 0; i < layers.length; i++) {
 			builder = builder.texture("layer" + i, layers[i]);
@@ -227,9 +225,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		}
 		return builder;
 	}
+
 	private ResourceLocation texture(String name) {
 		return Risus.prefix(name);
 	}
+
 	//from Aether
 	public String itemName(Item item) {
 		ResourceLocation location = BuiltInRegistries.ITEM.getKey(item);
@@ -242,13 +242,14 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	public void item(Item item, String location) {
 		this.withExistingParent(this.itemName(item), mcLoc("item/generated"))
-			.texture("layer0", modLoc("item/" + location + this.itemName(item)));
+				.texture("layer0", modLoc("item/" + location + this.itemName(item)));
 	}
+
 	public void nameableWeapon(Item item, String location, String renamedVariant) {
 		this.withExistingParent(renamedVariant, this.mcLoc("item/handheld")).texture("layer0", this.modLoc("item/" + location + renamedVariant));
 		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
-			.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
-			.override().predicate(new ResourceLocation(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
+				.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
+				.override().predicate(new ResourceLocation(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
 	}
 
 	@Override

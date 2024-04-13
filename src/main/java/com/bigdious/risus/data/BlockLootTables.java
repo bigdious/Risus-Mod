@@ -1,8 +1,6 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.DepthVaseBlock;
-import com.bigdious.risus.blocks.RisusTallGrassBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
@@ -31,8 +29,10 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class BlockLootTables extends BlockLootSubProvider {
@@ -48,7 +48,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
-		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
@@ -106,7 +105,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 
 
-
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
 		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
@@ -119,7 +117,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.SCAB.get());
 		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
-		add(RisusBlocks.BLOOD_FLUID_BLOCK.get(), LootTable.lootTable());
 
 		dropSelf(RisusBlocks.SKIN.get());
 		dropSelf(RisusBlocks.FLESHY_SKIN.get());
@@ -189,7 +186,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
 										.setBlock(BlockPredicate.Builder.block().of(block)
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()),
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))),
 								new BlockPos(0, 1, 0))))
 				.withPool(LootPool.lootPool().add(bondBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
@@ -198,7 +195,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
 										.setBlock(BlockPredicate.Builder.block().of(block)
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()),
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))),
 								new BlockPos(0, 1, 0))))
 				.withPool(LootPool.lootPool().add(boneBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
@@ -207,7 +204,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
 										.setBlock(BlockPredicate.Builder.block().of(block)
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()),
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))),
 								new BlockPos(0, -1, 0))))
 				.withPool(LootPool.lootPool().add(bondBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
@@ -216,12 +213,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
 										.setBlock(BlockPredicate.Builder.block().of(block)
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()),
+														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))),
 								new BlockPos(0, -1, 0))));
 	}
 
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return Registries.BLOCK.getValues().stream().filter(block -> Objects.requireNonNull(Registries.BLOCK.getKey(block)).getNamespace().equals(Risus.MODID)).collect(Collectors.toList());
+		return RisusBlocks.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
 	}
 }

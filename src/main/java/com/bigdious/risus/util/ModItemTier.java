@@ -6,13 +6,13 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.common.SimpleTier;
 import net.neoforged.neoforge.common.TierSortingRegistry;
-
 
 import java.util.List;
 
 public class ModItemTier {
-    public static final Tier CRESCENT = TierSortingRegistry.registerTier(
-            new ForgeTier(4, 2031, 9.0F, 4.0F, 5, BlockTags.create(Risus.prefix("needs_crescent_tier")), () -> Ingredient.of(RisusItems.GLUTTONY_SCALES.get())),
-            Risus.prefix("crescent"), List.of(Tiers.NETHERITE), List.of());
+	public static final Tier CRESCENT = TierSortingRegistry.registerTier(
+			new SimpleTier(4, 2031, 9.0F, 4.0F, 5, BlockTags.create(Risus.prefix("needs_crescent_tier")), () -> Ingredient.of(RisusItems.GLUTTONY_SCALES.get())),
+			Risus.prefix("crescent"), List.of(Tiers.NETHERITE), List.of());
 }

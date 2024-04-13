@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_remains",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_remains"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:joyflame_torch"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -6,7 +6,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 
 public class MawModel<T extends Maw> extends HierarchicalModel<T> {
@@ -114,7 +117,7 @@ public class MawModel<T extends Maw> extends HierarchicalModel<T> {
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		if (entity.isDeadOrDying()) {
-			float f = ((float)entity.deathTime + Minecraft.getInstance().getDeltaFrameTime()) / 20.0F * 1.6F;
+			float f = ((float) entity.deathTime + Minecraft.getInstance().getDeltaFrameTime()) / 20.0F * 1.6F;
 			f = Math.min(Mth.sqrt(f), 1.0F);
 			f *= 90.0F;
 

@@ -2,7 +2,6 @@ package com.bigdious.risus.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.EntityTypeTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,7 +9,7 @@ import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.HitResult;
@@ -22,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class MirageBlock extends Block {
 
 	private final Block mimickedBlock;
-	private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, (double)0.9F, 1.0D);
+	private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, (double) 0.9F, 1.0D);
 
 	public MirageBlock(Properties properties, Block mimickedBlock) {
 		super(properties);
@@ -56,7 +55,7 @@ public class MirageBlock extends Block {
 		if (entity.getType().is(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)) {
 			return true;
 		} else {
-			return entity instanceof LivingEntity ? ((LivingEntity)entity).getItemBySlot(EquipmentSlot.FEET).canWalkOnPowderedSnow((LivingEntity)entity) : false;
+			return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).canWalkOnPowderedSnow((LivingEntity) entity);
 		}
 	}
 
@@ -66,7 +65,7 @@ public class MirageBlock extends Block {
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
+	public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
 		return new ItemStack(this.mimickedBlock.asItem());
 	}
 }

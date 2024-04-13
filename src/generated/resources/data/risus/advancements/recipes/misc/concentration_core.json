@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_scales",
-      "has_core",
-      "has_the_recipe"
+      "has_core"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:concentration_core"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

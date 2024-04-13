@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_fence_gate"
     }
   ],
-  "result": "risus:bondknot_fence_gate"
+  "result": {
+    "item": "risus:bondknot_fence_gate"
+  }
 }

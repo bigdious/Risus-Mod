@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:dragon_head"
   },
-  "result": "risus:bloodwyrm_head"
+  "result": {
+    "item": "risus:bloodwyrm_head"
+  }
 }

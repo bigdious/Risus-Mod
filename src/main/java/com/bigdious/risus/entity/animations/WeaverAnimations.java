@@ -8,7 +8,7 @@ import net.minecraft.client.animation.KeyframeAnimations;
 public class WeaverAnimations {
 // testing animations
 
-//	public static final AnimationDefinition WEAVER_CORE_ROTATION = AnimationDefinition.Builder.withLength(4.12f)
+	//	public static final AnimationDefinition WEAVER_CORE_ROTATION = AnimationDefinition.Builder.withLength(4.12f)
 //			.addAnimation("memoryShell_r1",
 //					new AnimationChannel(AnimationChannel.Targets.ROTATION,
 //							new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
@@ -163,7 +163,7 @@ public class WeaverAnimations {
 							new Keyframe(0.24f, KeyframeAnimations.degreeVec(0f, 0f, 2.5f),
 									AnimationChannel.Interpolations.LINEAR),
 							new Keyframe(0.48f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
-	AnimationChannel.Interpolations.LINEAR)))
+									AnimationChannel.Interpolations.LINEAR)))
 			.addAnimation("memoryCore",
 					new AnimationChannel(AnimationChannel.Targets.ROTATION,
 							new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
@@ -180,5 +180,5 @@ public class WeaverAnimations {
 //									AnimationChannel.Interpolations.LINEAR),
 //							new Keyframe(0.48f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
 //									AnimationChannel.Interpolations.LINEAR)))
-									.build();
+			.build();
 }

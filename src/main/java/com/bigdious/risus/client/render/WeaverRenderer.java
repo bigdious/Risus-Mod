@@ -3,7 +3,6 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.WeaverModel;
-import com.bigdious.risus.entity.Holder;
 import com.bigdious.risus.entity.Weaver;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

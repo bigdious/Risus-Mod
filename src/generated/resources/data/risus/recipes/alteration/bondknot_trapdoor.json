@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_trapdoor"
     }
   ],
-  "result": "risus:bondknot_trapdoor"
+  "result": {
+    "item": "risus:bondknot_trapdoor"
+  }
 }

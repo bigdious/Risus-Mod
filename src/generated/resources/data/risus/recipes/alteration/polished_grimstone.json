@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:polished_blackstone"
   },
-  "result": "risus:polished_grimstone"
+  "result": {
+    "item": "risus:polished_grimstone"
+  }
 }

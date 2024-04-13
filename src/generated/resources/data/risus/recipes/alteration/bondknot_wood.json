@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_wood"
     }
   ],
-  "result": "risus:bondknot_wood"
+  "result": {
+    "item": "risus:bondknot_wood"
+  }
 }

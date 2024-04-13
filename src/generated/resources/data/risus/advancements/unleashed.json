@@ -15,17 +15,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.unleashed.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:crescent_disaster",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.unleashed"
     }

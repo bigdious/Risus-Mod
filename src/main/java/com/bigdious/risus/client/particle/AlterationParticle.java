@@ -4,8 +4,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import org.joml.Vector3f;
 
 public class AlterationParticle extends DustParticleBase<AlterationParticleOptions> {
@@ -38,7 +36,7 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 		this.gCol = fromColor.y();
 		this.bCol = fromColor.z();
 		this.hasPhysics = false;
-		this.lifetime = (int)(Math.random() * 10.0D) + 30;
+		this.lifetime = (int) (Math.random() * 10.0D) + 30;
 	}
 
 	@Override
@@ -49,14 +47,14 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 		if (this.age++ >= this.lifetime) {
 			this.remove();
 		} else {
-			float f = (float)this.age / (float)this.lifetime;
+			float f = (float) this.age / (float) this.lifetime;
 			f = 1.0F - f;
 			float f1 = 1.0F - f;
 			f1 *= f1;
 			f1 *= f1;
-			this.x = this.xStart + this.xd * (double)f;
-			this.y = this.yStart + this.yd * (double)f - (double)(f1 * 1.2F);
-			this.z = this.zStart + this.zd * (double)f;
+			this.x = this.xStart + this.xd * (double) f;
+			this.y = this.yStart + this.yd * (double) f - (double) (f1 * 1.2F);
+			this.z = this.zStart + this.zd * (double) f;
 			this.setPos(this.x, this.y, this.z);
 		}
 	}
@@ -73,12 +71,12 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 	@Override
 	public int getLightColor(float p_106486_) {
 		int i = super.getLightColor(p_106486_);
-		float f = (float)this.age / (float)this.lifetime;
+		float f = (float) this.age / (float) this.lifetime;
 		f *= f;
 		f *= f;
 		int j = i & 255;
 		int k = i >> 16 & 255;
-		k += (int)(f * 15.0F * 16.0F);
+		k += (int) (f * 15.0F * 16.0F);
 		if (k > 240) {
 			k = 240;
 		}
@@ -97,8 +95,7 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 		super.render(consumer, camera, partialTicks);
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	public static record Provider(SpriteSet sprites) implements ParticleProvider<AlterationParticleOptions> {
+	public record Provider(SpriteSet sprites) implements ParticleProvider<AlterationParticleOptions> {
 
 		public Particle createParticle(AlterationParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
 			AlterationParticle particle = new AlterationParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, options, this.sprites);

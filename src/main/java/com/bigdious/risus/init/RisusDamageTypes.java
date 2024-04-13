@@ -25,11 +25,10 @@ public class RisusDamageTypes {
 	public static DamageSource getIndirectEntityDamageSource(Level level, ResourceKey<DamageType> type, @Nullable Entity attacker, @Nullable Entity indirectAttacker, EntityType<?>... toIgnore) {
 		return toIgnore.length > 0 ? new EntityExcludedDamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(type), toIgnore) : new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(type), attacker, indirectAttacker);
 	}
+
 	public static final ResourceKey<DamageType> INEXISTENCE = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("inexistence"));
 	public static final ResourceKey<DamageType> GLUTTONY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("gluttony"));
 	public static final ResourceKey<DamageType> MELANCHOLY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("melancholy"));
-
-
 
 
 	public static void bootstrap(BootstapContext<DamageType> context) {

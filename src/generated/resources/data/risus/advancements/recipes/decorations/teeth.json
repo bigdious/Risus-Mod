@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_tissue",
-      "has_teeth",
-      "has_the_recipe"
+      "has_teeth"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:teeth"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

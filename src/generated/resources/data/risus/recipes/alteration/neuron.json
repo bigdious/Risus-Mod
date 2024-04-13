@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:twisting_vines"
   },
-  "result": "risus:neuron"
+  "result": {
+    "item": "risus:neuron"
+  }
 }

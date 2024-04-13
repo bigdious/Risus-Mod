@@ -17,16 +17,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.devour.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:gluttony_scales"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.devour"
     }

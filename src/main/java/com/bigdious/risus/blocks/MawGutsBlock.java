@@ -1,8 +1,8 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
-import com.bigdious.risus.fluid.RisusFluids;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.*;
@@ -20,74 +20,71 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class MawGutsBlock extends BaseEntityBlock implements EntityBlock,SimpleMultiloggedBlock {
-	//start multilogging necessities
+public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, SimpleMultiloggedBlock {
+
+	public static final MapCodec<MawGutsBlock> CODEC = simpleCodec(MawGutsBlock::new);
+	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
+
 	public MawGutsBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any()
-				.setValue(FACING, Direction.NORTH)
-				.setValue(BLOODLOGGED, false)
-				.setValue(WATERLOGGED, false)
-				.setValue(LAVALOGGED, false));
+		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	public static final BooleanProperty BLOODLOGGED = SimpleMultiloggedBlock.BLOODLOGGED;
-	public static final BooleanProperty LAVALOGGED = SimpleMultiloggedBlock.LAVALOGGED;
-	public static final BooleanProperty WATERLOGGED = SimpleMultiloggedBlock.WATERLOGGED;
+
+	@Override
+	protected MapCodec<? extends BaseEntityBlock> codec() {
+		return CODEC;
+	}
+
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder
-			.add(FACING)
-			.add(BLOODLOGGED)
-			.add(WATERLOGGED)
-			.add(LAVALOGGED);
+		builder.add(FACING, FLUIDLOGGED);
 	}
+
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
 		FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
 		return this.defaultBlockState()
-			.setValue(BLOODLOGGED, Boolean.valueOf(fluidstate.getType() == RisusFluids.SOURCE_BLOOD.get()))
-			.setValue(LAVALOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.LAVA))
-			.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER))
-			.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+				.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
+				.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
 	}
-	public FluidState getFluidState(BlockState pState) {
-		if (pState.getValue(LAVALOGGED)) {return Fluids.LAVA.getSource().defaultFluidState();}
-		if (pState.getValue(BLOODLOGGED)) {return RisusFluids.SOURCE_BLOOD.get().getSource().defaultFluidState();}
-		if (pState.getValue(WATERLOGGED)) {return Fluids.WATER.getSource().defaultFluidState();}
-		else return  super.getFluidState(pState);
+
+	@Override
+	public FluidState getFluidState(BlockState state) {
+		return state.getValue(FLUIDLOGGED).getFluid().defaultFluidState();
 	}
-	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-		if (pState.getValue(BLOODLOGGED)) {
-			pLevel.scheduleTick(pPos, RisusFluids.SOURCE_BLOOD.get(), 5);
-		}
-		else if (pState.getValue(LAVALOGGED)) {
-			pLevel.scheduleTick(pPos, Fluids.LAVA, Fluids.LAVA.getTickDelay(pLevel));
-		}
-		else if (pState.getValue(WATERLOGGED)) {
-			pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+
+	@Override
+	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
+		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
+			accessor.scheduleTick(pos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(accessor));
 		}
 
-		return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+		return super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
 	}
-	//stop
-	public BlockState mirror(BlockState pState, Mirror pMirror) {
-		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+
+	@Override
+	public BlockState rotate(BlockState state, Rotation rotation) {
+		return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
 	}
+
+	@Override
+	public BlockState mirror(BlockState state, Mirror mirror) {
+		return state.rotate(mirror.getRotation(state.getValue(FACING)));
+	}
+
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
 	}
+
 	@Override
 	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
 		if (stack.hasCustomHoverName()) {
@@ -139,12 +136,6 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock,SimpleM
 		return level.isClientSide() ? null : createTickerHelper(type, RisusBlockEntities.MAW_GUTS.get(), MawGutsBlockEntity::tick);
 	}
 
-	@Nullable
-	@SuppressWarnings("unchecked")
-	protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> type1, BlockEntityType<E> type2, BlockEntityTicker<? super E> ticker) {
-		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
-	}
-
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;
@@ -153,6 +144,6 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock,SimpleM
 
 	@Override
 	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {
-		return 1.F;
+		return 1.0F;
 	}
 }

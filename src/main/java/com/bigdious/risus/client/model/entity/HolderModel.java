@@ -29,14 +29,14 @@ public class HolderModel<T extends Holder> extends HierarchicalModel<T> implemen
 		partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -3.0F, -2.0F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.1F)), PartPose.offset(0.0F, 16.0F, 0.0F));
 
 		partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 10).addBox(-4.0F, -8.0F, -1.0F, 7.0F, 9.0F, 6.0F)
-		.texOffs(6, 15).addBox(-6.0F, -5.0F, 2.0F, 4.0F, 6.0F, 4.0F)
-		.texOffs(2, 12).addBox(-5.0F, -2.0F, -4.0F, 5.0F, 3.0F, 6.0F)
-		.texOffs(5, 14).addBox(0.0F, -11.0F, 0.0F, 4.0F, 5.0F, 4.0F)
-		.texOffs(2, 14).addBox(-4.0F, -1.0F, 4.0F, 8.0F, 2.0F, 3.0F)
-		.texOffs(1, 18).addBox(-2.0F, 0.0F, -6.0F, 7.0F, 1.0F, 6.0F)
-		.texOffs(5, 15).addBox(1.0F, -3.0F, -2.0F, 5.0F, 4.0F, 6.0F)
-		.texOffs(4, 21).addBox(-7.0F, 0.0F, -1.0F, 2.0F, 1.0F, 5.0F)
-		.texOffs(13, 23).addBox(4.0F, 0.0F, 4.0F, 1.0F, 1.0F, 2.0F), PartPose.offset(0.0F, 23.0F, 0.0F));
+				.texOffs(6, 15).addBox(-6.0F, -5.0F, 2.0F, 4.0F, 6.0F, 4.0F)
+				.texOffs(2, 12).addBox(-5.0F, -2.0F, -4.0F, 5.0F, 3.0F, 6.0F)
+				.texOffs(5, 14).addBox(0.0F, -11.0F, 0.0F, 4.0F, 5.0F, 4.0F)
+				.texOffs(2, 14).addBox(-4.0F, -1.0F, 4.0F, 8.0F, 2.0F, 3.0F)
+				.texOffs(1, 18).addBox(-2.0F, 0.0F, -6.0F, 7.0F, 1.0F, 6.0F)
+				.texOffs(5, 15).addBox(1.0F, -3.0F, -2.0F, 5.0F, 4.0F, 6.0F)
+				.texOffs(4, 21).addBox(-7.0F, 0.0F, -1.0F, 2.0F, 1.0F, 5.0F)
+				.texOffs(13, 23).addBox(4.0F, 0.0F, 4.0F, 1.0F, 1.0F, 2.0F), PartPose.offset(0.0F, 23.0F, 0.0F));
 
 		partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(3, 15).addBox(-1.0F, -1.0F, -7.0F, 2.0F, 2.0F, 8.0F), PartPose.offset(3.0F, 19.0F, 0.0F));
 
@@ -47,8 +47,8 @@ public class HolderModel<T extends Holder> extends HierarchicalModel<T> implemen
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		this.head.yRot = netHeadYaw * ((float)Math.PI / 180F);
-		this.head.xRot = headPitch * ((float)Math.PI / 180F);
+		this.head.yRot = netHeadYaw * ((float) Math.PI / 180F);
+		this.head.xRot = headPitch * ((float) Math.PI / 180F);
 	}
 
 	@Override

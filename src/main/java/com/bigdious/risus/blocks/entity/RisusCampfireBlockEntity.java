@@ -1,7 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.init.RisusBlockEntities;
-import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.CampfireBlockEntity;

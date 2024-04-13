@@ -1,21 +1,26 @@
 package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.fluid.RisusFluids;
-import net.minecraft.client.gui.Gui;
+import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
+import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.particle.AlterationFinishedParticle;
 import com.bigdious.risus.client.particle.AlterationParticle;
 import com.bigdious.risus.client.particle.JoyParticle;
 import com.bigdious.risus.client.particle.ToothicalParticle;
-import com.bigdious.risus.client.render.AlterationCatalystRenderer;
+import com.bigdious.risus.client.render.*;
+import com.bigdious.risus.entity.RisusBoat;
+import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.particle.BloodBitParticle;
+import com.bigdious.risus.particle.BloodParticle;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
@@ -27,44 +32,45 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.VanillaGuiOverlay;
+import net.neoforged.neoforge.common.NeoForge;
 
+import java.util.List;
 
-@Mod.EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RisusClientEvents {
 
 	private static final RenderType MONOLITH_PORTAL = RenderType.create("risus:monolith_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, 256, true, false, RenderType.CompositeState.builder().setShaderState(RenderStateAccessor.getEndPortal()).setTextureState(RenderStateShard.MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION, false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false).build()).createCompositeState(false));
-	private static final ResourceLocation EXBURN_HEARTS = new ResourceLocation(Risus.MODID, "textures/hearts/exburn_hearts_0.png");
+	private static final List<ResourceLocation> HEARTS = List.of(
+			Risus.prefix("hearts/exburn_normal"),
+			Risus.prefix("hearts/exburn_normal_blinking"),
+			Risus.prefix("hearts/exburn_half"),
+			Risus.prefix("hearts/exburn_half_blinking"),
+			Risus.prefix("hearts/exburn_hardcore"),
+			Risus.prefix("hearts/exburn_hardcore_blinking"),
+			Risus.prefix("hearts/exburn_hardcore_half"),
+			Risus.prefix("hearts/exburn_hardcore_half_blinking")
+	);
 
-	@SubscribeEvent
-	public static void registerFactories(RegisterParticleProvidersEvent event) {
-		event.registerSpriteSet(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
-		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
-		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
-		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
+	public static void initEvents(IEventBus bus) {
+		bus.addListener(RisusClientEvents::clientSetup);
+		bus.addListener(RisusClientEvents::registerParticleFactories);
+		bus.addListener(RisusClientEvents::registerEntityLayers);
+		bus.addListener(RisusClientEvents::registerSkullModel);
+		bus.addListener(RisusClientEvents::registerEntityRenderers);
+		bus.addListener(RisusClientEvents::registerOverlays);
+		bus.addListener(RisusClientEvents::registerScreens);
+		bus.addListener(RisusClientEvents::registerBlockColors);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 	}
 
-	@SubscribeEvent
-	public static void clientSetup(FMLClientSetupEvent event) {
-		BlockEntityRenderers.register(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
-		BlockEntityRenderers.register(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);
-		BlockEntityRenderers.register(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
-		BlockEntityRenderers.register(RisusBlockEntities.ALTERATION_CATALYST.get(), context ->  new AlterationCatalystRenderer());
-
+	private static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
-
-		MenuScreens.register(RisusMenuType.MAW_GUTS.get(), MawGutsScreen::new);
-
-//		MenuScreens.register(RisusMenuTypes.DEPTH_VASE.get(), DepthVaseScreen::new);
 
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
@@ -73,15 +79,29 @@ public class RisusClientEvents {
 		});
 	}
 
-	@SubscribeEvent
-	public static void registerRenderTypes(RegisterNamedRenderTypesEvent event) {
+	private static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+		event.registerSpriteSet(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
+		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
+		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
+		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
+		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
+	}
+
+	private static void registerScreens(RegisterMenuScreensEvent event) {
+		event.register(RisusMenuType.MAW_GUTS.get(), MawGutsScreen::new);
+	}
+
+	private static void registerRenderTypes(RegisterNamedRenderTypesEvent event) {
 		//TODO must wait on forge to allow us to add custom render types to the chunk buffer
 		//event.register("monolith_portal", MONOLITH_PORTAL, RenderType.entitySolid(TheEndGatewayRenderer.END_PORTAL_LOCATION));
 	}
-	//I'm rendering it here, sorry giz
-	@SubscribeEvent
-	public static void registerOverlays(RegisterGuiOverlaysEvent event) {
-		event.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), "exburn_hearts", (gui, stack, partialTicks, width, height) -> {
+
+	private static void registerOverlays(RegisterGuiOverlaysEvent event) {
+		event.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), Risus.prefix("exburn_hearts"), (gui, stack, partialTicks, width, height) -> {
 			Minecraft minecraft = Minecraft.getInstance();
 			LocalPlayer player = minecraft.player;
 			if (player != null && player.hasEffect(RisusMobEffects.EXBURN.get()) && gui.shouldDrawSurvivalElements()) {
@@ -90,7 +110,64 @@ public class RisusClientEvents {
 		});
 	}
 
-	private static void renderExburnHearts(int width, int height, GuiGraphics graphics, Gui gui, Player player) {
+	private static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+		event.register((state, getter, pos, i) -> getter != null && pos != null ? BiomeColors.getAverageGrassColor(getter, pos) : GrassColor.get(0.5D, 1.0D), RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+	}
+
+	private static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		for (RisusBoat.Type boatType : RisusBoat.Type.values()) {
+			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), BoatModel::createBodyModel);
+		}
+		event.registerLayerDefinition(RisusModelLayers.ANGEL, AngelModel::create);
+		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
+		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
+		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
+		event.registerLayerDefinition(RisusModelLayers.WEAVER, WeaverModel::create);
+		event.registerLayerDefinition(RisusModelLayers.WEAVER_CORE, WeaverModel::create);
+		event.registerLayerDefinition(RisusModelLayers.LOVER, LoverModel::create);
+		event.registerLayerDefinition(RisusModelLayers.STALKER, StalkerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
+		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
+		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
+	}
+
+	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
+		event.registerSkullModel(RisusSkullType.BLOODWYRM, new BloodWyrmHeadModel(event.getEntityModelSet().bakeLayer(RisusModelLayers.BLOODWYRM_HEAD)));
+	}
+
+	private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
+		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
+		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
+		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
+		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
+		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
+		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);
+		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
+		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
+		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
+
+		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), context -> new AlterationCatalystRenderer());
+	}
+
+	private static void killScreenWithAmnesia(RenderGuiOverlayEvent.Pre event) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+			event.setCanceled(true);
+		}
+	}
+
+	private static void killHandWithAmnesia(RenderHandEvent event) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+			event.setCanceled(true);
+		}
+	}
+
+	private static void renderExburnHearts(int width, int height, GuiGraphics graphics, ExtendedGui gui, Player player) {
 		int health = Mth.ceil(player.getHealth());
 		boolean highlight = gui.healthBlinkTime > (long) gui.getGuiTicks() && (gui.healthBlinkTime - (long) gui.getGuiTicks()) / 3L % 2L == 1L;
 
@@ -132,9 +209,8 @@ public class RisusClientEvents {
 		renderHearts(graphics, gui, player, x, y, rowHeight, regen, healthMax, health, healthLast, absorb, highlight);
 	}
 
-	private static void renderHearts(GuiGraphics graphics, Gui gui, Player player, int x, int y, int height, int regen, float healthMax, int health, int healthLast, int absorb, boolean highlight) {
-		Gui.HeartType heartType = Gui.HeartType.forPlayer(player);
-		int hardcoreOffset = 9 * (player.level().getLevelData().isHardcore() ? 5 : 0);
+	private static void renderHearts(GuiGraphics graphics, ExtendedGui gui, Player player, int x, int y, int height, int regen, float healthMax, int health, int healthLast, int absorb, boolean highlight) {
+		boolean hardcore = player.level().getLevelData().isHardcore();
 		int healthAmount = Mth.ceil((double) healthMax / 2.0D);
 		int absorptionAmount = Mth.ceil((double) absorb / 2.0D);
 		int l = healthAmount * 2;
@@ -152,53 +228,48 @@ public class RisusClientEvents {
 				newY -= 2;
 			}
 
-			renderHeart(graphics, Gui.HeartType.CONTAINER, newX, newY, hardcoreOffset, highlight, false);
+			renderHeartBG(graphics, newX, newY, hardcore, highlight);
 			int j2 = i1 * 2;
 			boolean flag = i1 >= healthAmount;
 			if (flag) {
 				int k2 = j2 - l;
 				if (k2 < absorb) {
-					boolean flag1 = k2 + 1 == absorb;
-					renderHeart(graphics, heartType == Gui.HeartType.WITHERED ? heartType : Gui.HeartType.ABSORBING, newX, newY, hardcoreOffset, false, flag1);
+					boolean half = k2 + 1 == absorb;
+					renderVirulenceHeart(graphics, newX, newY, hardcore, false, half);
 				}
 			}
 
 			if (highlight && j2 < healthLast) {
-				boolean flag2 = j2 + 1 == healthLast;
-				renderHeart(graphics, heartType, newX, newY, hardcoreOffset, true, flag2);
+				boolean half = j2 + 1 == healthLast;
+				renderVirulenceHeart(graphics, newX, newY, hardcore, true, half);
 			}
 
 			if (j2 < health) {
-				boolean flag3 = j2 + 1 == health;
-				renderHeart(graphics, heartType, newX, newY, hardcoreOffset, false, flag3);
+				boolean half = j2 + 1 == health;
+				renderVirulenceHeart(graphics, newX, newY, hardcore, false, half);
 			}
 		}
 	}
 
-	private static void renderHeart(GuiGraphics graphics, Gui.HeartType type, int x, int y, int offset, boolean blinking, boolean halfHeart) {
-		graphics.blit(EXBURN_HEARTS, x, y, type.getX(halfHeart, blinking), offset, 9, 9);
+	private static void renderHeartBG(GuiGraphics graphics, int x, int y, boolean hardcore, boolean blinking) {
+		graphics.blitSprite(Gui.HeartType.CONTAINER.getSprite(hardcore, false, blinking), x, y, 9, 9);
 	}
 
-
-	@SubscribeEvent
-	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-		event.register((state, getter, pos, i) -> getter != null && pos != null ? BiomeColors.getAverageGrassColor(getter, pos) : GrassColor.get(0.5D, 1.0D), RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+	private static void renderVirulenceHeart(GuiGraphics graphics, int x, int y, boolean hardcore, boolean blinking, boolean halfHeart) {
+		graphics.blitSprite(getVirulentHeartSprite(hardcore, halfHeart, blinking), x, y, 9, 9);
 	}
 
-	@Mod.EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
-	public static class RisusForgeEvents {
-		@SubscribeEvent
-		public static void killScreenWithAmnesia(RenderGuiOverlayEvent.Pre event) {
-			if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
-				event.setCanceled(true);
+	private static ResourceLocation getVirulentHeartSprite(boolean hardcore, boolean half, boolean blinking) {
+		if (!hardcore) {
+			if (half) {
+				return blinking ? HEARTS.get(3) : HEARTS.get(2);
+			} else {
+				return blinking ? HEARTS.get(1) : HEARTS.get(0);
 			}
-		}
-
-		@SubscribeEvent
-		public static void killHandWithAmnesia(RenderHandEvent event) {
-			if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
-				event.setCanceled(true);
-			}
+		} else if (half) {
+			return blinking ? HEARTS.get(7) : HEARTS.get(6);
+		} else {
+			return blinking ? HEARTS.get(5) : HEARTS.get(4);
 		}
 	}
 

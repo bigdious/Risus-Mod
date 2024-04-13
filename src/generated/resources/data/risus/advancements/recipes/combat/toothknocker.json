@@ -46,16 +46,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_teeth",
       "has_bonds",
-      "has_scales",
-      "has_the_recipe"
+      "has_scales"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:toothknocker"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -18,22 +18,20 @@ import net.neoforged.neoforge.common.Tags;
 
 public class HairySkinBlock extends Block {
 
-	public HairySkinBlock(Properties p_49795_) {
-		super(p_49795_);
+	public HairySkinBlock(Properties properties) {
+		super(properties);
 	}
+
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if(player.getMainHandItem().is(Tags.Items.SHEARS)){
+		if (player.getMainHandItem().is(Tags.Items.SHEARS)) {
 			level.setBlock(pos, RisusBlocks.SKIN.get().defaultBlockState(), 11);
-			player.getMainHandItem().hurtAndBreak(1, player, (p_43388_) -> {
-				p_43388_.broadcastBreakEvent(player.getUsedItemHand());
-			});
+			player.getMainHandItem().hurtAndBreak(1, player, (p_43388_) -> p_43388_.broadcastBreakEvent(player.getUsedItemHand()));
 			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
 			level.addFreshEntity(hairitem);
-			level.playSound(null, pos , SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
+			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
 			return InteractionResult.SUCCESS;
-
 		}
 		return super.use(state, level, pos, player, hand, result);
-		}
 	}
+}

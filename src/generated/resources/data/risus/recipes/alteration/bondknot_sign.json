@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_sign"
     }
   ],
-  "result": "risus:bondknot_sign"
+  "result": {
+    "item": "risus:bondknot_sign"
+  }
 }

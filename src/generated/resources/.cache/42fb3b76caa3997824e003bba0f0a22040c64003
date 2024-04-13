@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-08T15:18:14.8114949	Risus Item Models
+// 1.20.4	2024-04-12T18:06:24.682302	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -32,7 +32,7 @@ bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grims
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
-fc7fa1feb5aefeb5af67b89ecc404d5e7f22f015 assets/risus/models/item/crescent_disaster.json
+8d54e4876e8191c5568b1bb973fc27711a1a0754 assets/risus/models/item/crescent_disaster.json
 aa352cb9a4f8c7f3964d9f1922250f0c4f3ae764 assets/risus/models/item/crescent_disaster_base.json
 95910e379c6d488a86764c300a4f23c4b01e8fbe assets/risus/models/item/crystallized_bond.json
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
@@ -113,7 +113,7 @@ e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
 7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 88dbd49ff61f13526dc4161377d35ab5494e4539 assets/risus/models/item/tissue_slab.json
 b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.json
-3861de62530e570bcc59094175723032b53442fa assets/risus/models/item/unawakened_vessel.json
+b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json
 593a2e82a779cb7f0b577677ce31aff17bac3884 assets/risus/models/item/unawakened_vessel_base.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/weaver_spawn_egg.json
 8c5ad3232707ee120d84a4343db5ea635f468057 assets/risus/models/item/zit.json

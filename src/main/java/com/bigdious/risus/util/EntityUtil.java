@@ -10,11 +10,11 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 public class EntityUtil {
 	public static boolean properlyApplyCustomDamageSource(Mob entity, Entity victim, DamageSource source) {
-		float f = (float)entity.getAttributeValue(Attributes.ATTACK_DAMAGE);
-		float f1 = (float)entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
+		float f = (float) entity.getAttributeValue(Attributes.ATTACK_DAMAGE);
+		float f1 = (float) entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
 		if (victim instanceof LivingEntity) {
-			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity)victim).getMobType());
-			f1 += (float)EnchantmentHelper.getKnockbackBonus(entity);
+			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity) victim).getMobType());
+			f1 += (float) EnchantmentHelper.getKnockbackBonus(entity);
 		}
 
 		int i = EnchantmentHelper.getFireAspect(entity);
@@ -25,7 +25,7 @@ public class EntityUtil {
 		boolean flag = victim.hurt(source, f);
 		if (flag) {
 			if (f1 > 0.0F && victim instanceof LivingEntity) {
-				((LivingEntity)victim).knockback(f1 * 0.5F, Mth.sin(entity.getYRot() * ((float)Math.PI / 180F)), -Mth.cos(entity.getYRot() * ((float)Math.PI / 180F)));
+				((LivingEntity) victim).knockback(f1 * 0.5F, Mth.sin(entity.getYRot() * ((float) Math.PI / 180F)), -Mth.cos(entity.getYRot() * ((float) Math.PI / 180F)));
 				entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.6D, 1.0D, 0.6D));
 			}
 

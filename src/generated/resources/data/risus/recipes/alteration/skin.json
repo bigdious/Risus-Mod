@@ -8,5 +8,7 @@
       "item": "minecraft:rabbit_hide"
     }
   ],
-  "result": "risus:skin"
+  "result": {
+    "item": "risus:skin"
+  }
 }

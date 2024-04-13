@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_slab"
     }
   ],
-  "result": "risus:bondknot_slab"
+  "result": {
+    "item": "risus:bondknot_slab"
+  }
 }

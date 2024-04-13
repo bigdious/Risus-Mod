@@ -1,122 +1,62 @@
 {
   "variants": {
-    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=false": {
+    "facing=east,fluid=blood": {
       "model": "risus:block/depth_vase",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=false,waterlogged=true": {
+    "facing=east,fluid=empty": {
       "model": "risus:block/depth_vase",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=false": {
+    "facing=east,fluid=lava": {
       "model": "risus:block/depth_vase",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=true,waterlogged=true": {
+    "facing=east,fluid=water": {
       "model": "risus:block/depth_vase",
       "y": 90
     },
-    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=false": {
+    "facing=north,fluid=blood": {
       "model": "risus:block/depth_vase"
     },
-    "bloodlogged=false,facing=north,lavalogged=false,waterlogged=true": {
+    "facing=north,fluid=empty": {
       "model": "risus:block/depth_vase"
     },
-    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=false": {
+    "facing=north,fluid=lava": {
       "model": "risus:block/depth_vase"
     },
-    "bloodlogged=false,facing=north,lavalogged=true,waterlogged=true": {
+    "facing=north,fluid=water": {
       "model": "risus:block/depth_vase"
     },
-    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=false": {
+    "facing=south,fluid=blood": {
       "model": "risus:block/depth_vase",
       "y": 180
     },
-    "bloodlogged=false,facing=south,lavalogged=false,waterlogged=true": {
+    "facing=south,fluid=empty": {
       "model": "risus:block/depth_vase",
       "y": 180
     },
-    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=false": {
+    "facing=south,fluid=lava": {
       "model": "risus:block/depth_vase",
       "y": 180
     },
-    "bloodlogged=false,facing=south,lavalogged=true,waterlogged=true": {
+    "facing=south,fluid=water": {
       "model": "risus:block/depth_vase",
       "y": 180
     },
-    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=false": {
+    "facing=west,fluid=blood": {
       "model": "risus:block/depth_vase",
       "y": 270
     },
-    "bloodlogged=false,facing=west,lavalogged=false,waterlogged=true": {
+    "facing=west,fluid=empty": {
       "model": "risus:block/depth_vase",
       "y": 270
     },
-    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=false": {
+    "facing=west,fluid=lava": {
       "model": "risus:block/depth_vase",
       "y": 270
     },
-    "bloodlogged=false,facing=west,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 90
-    },
-    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/depth_vase"
-    },
-    "bloodlogged=true,facing=north,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/depth_vase"
-    },
-    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/depth_vase"
-    },
-    "bloodlogged=true,facing=north,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/depth_vase"
-    },
-    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/depth_vase",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/depth_vase",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,lavalogged=true,waterlogged=true": {
+    "facing=west,fluid=water": {
       "model": "risus:block/depth_vase",
       "y": 270
     }

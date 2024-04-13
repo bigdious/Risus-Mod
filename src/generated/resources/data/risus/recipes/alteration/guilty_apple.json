@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:golden_apple"
   },
-  "result": "risus:guilty_apple"
+  "result": {
+    "item": "risus:guilty_apple"
+  }
 }

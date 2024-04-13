@@ -13,16 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.irresistible.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:guilty_apple"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.irresistible"
     }

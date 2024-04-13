@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_pressure_plate"
     }
   ],
-  "result": "risus:bondknot_pressure_plate"
+  "result": {
+    "item": "risus:bondknot_pressure_plate"
+  }
 }

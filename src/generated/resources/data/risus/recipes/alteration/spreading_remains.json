@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:vine"
   },
-  "result": "risus:spreading_remains"
+  "result": {
+    "item": "risus:spreading_remains"
+  }
 }

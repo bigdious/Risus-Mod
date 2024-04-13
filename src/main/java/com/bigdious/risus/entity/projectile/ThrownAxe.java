@@ -35,11 +35,11 @@ public class ThrownAxe extends AbstractArrow {
 	public int clientSideReturnAxeTickCount;
 
 	public ThrownAxe(EntityType<ThrownAxe> type, Level level) {
-		super(type, level);
+		super(type, level, ItemStack.EMPTY);
 	}
 
 	public ThrownAxe(Level level, LivingEntity owner, ItemStack stack) {
-		super(RisusEntities.THROWN_AXE.get(), owner, level);
+		super(RisusEntities.THROWN_AXE.get(), owner, level, ItemStack.EMPTY);
 		this.axeItem = stack.copy();
 		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
 		this.entityData.set(ID_FOIL, stack.hasFoil());

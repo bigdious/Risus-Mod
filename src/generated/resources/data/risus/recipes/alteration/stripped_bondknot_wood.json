@@ -26,5 +26,7 @@
       "item": "minecraft:stripped_cherry_wood"
     }
   ],
-  "result": "risus:stripped_bondknot_wood"
+  "result": {
+    "item": "risus:stripped_bondknot_wood"
+  }
 }

@@ -1,26 +1,10 @@
 package com.bigdious.risus.client;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
-import com.bigdious.risus.client.model.entity.*;
-import com.bigdious.risus.client.render.*;
-import com.bigdious.risus.entity.RisusBoat;
-import com.bigdious.risus.init.RisusBlockEntities;
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.util.RisusSkullType;
-import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-
-@Mod.EventBusSubscriber(modid = Risus.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RisusModelLayers {
-	//for big: THERE ARE THREE FUCKING SECTIONS HERE, ARE YOU BLIND?
 	public static final ModelLayerLocation ANGEL = register("angel");
 	public static final ModelLayerLocation HOLDER = register("holder");
 	public static final ModelLayerLocation MAW = register("maw");
@@ -42,46 +26,5 @@ public class RisusModelLayers {
 
 	private static ModelLayerLocation register(String name, String type) {
 		return new ModelLayerLocation(new ResourceLocation(Risus.MODID, name), type);
-	}
-
-	@SubscribeEvent
-	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		for (RisusBoat.Type boatType : RisusBoat.Type.values()) {
-			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), BoatModel::createBodyModel);
-		}
-		event.registerLayerDefinition(ANGEL, AngelModel::create);
-		event.registerLayerDefinition(HOLDER, HolderModel::create);
-		event.registerLayerDefinition(MAW, MawModel::create);
-		event.registerLayerDefinition(THROWN_AXE, ThrownAxeModel::create);
-		event.registerLayerDefinition(WEAVER, WeaverModel::create);
-		event.registerLayerDefinition(WEAVER_CORE, WeaverModel::create);
-		event.registerLayerDefinition(LOVER, LoverModel::create);
-		event.registerLayerDefinition(STALKER, StalkerModel::create);
-		event.registerLayerDefinition(BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
-		event.registerLayerDefinition(QUESTION_MARK, QuestionMarkModel::create);
-		event.registerLayerDefinition(MEMORY1, Memory1Model::create);
-	}
-
-	@SubscribeEvent
-	static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
-		event.registerSkullModel(RisusSkullType.BLOODWYRM, new BloodWyrmHeadModel(event.getEntityModelSet().bakeLayer(BLOODWYRM_HEAD)));
-	}
-
-	@SubscribeEvent
-	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		//for big: REGISTER THE LAYER ABOVE, YOU IDIOT
-		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
-		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
-		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
-		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
-		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
-		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
-		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);
-		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
-		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
-		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
-
-		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);
-		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
 	}
 }

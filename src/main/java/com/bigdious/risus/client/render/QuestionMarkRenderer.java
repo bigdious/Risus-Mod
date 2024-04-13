@@ -12,24 +12,24 @@ import net.minecraft.resources.ResourceLocation;
 
 public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMarkModel<QuestionMark>> {
 
-    protected static final ResourceLocation TEXTURE = Risus.prefix("textures/entity/question_mark.png");
+	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/entity/question_mark.png");
 
-    public QuestionMarkRenderer(EntityRendererProvider.Context context) {
-        super(context, new QuestionMarkModel<>(context.bakeLayer(RisusModelLayers.QUESTION_MARK)), 0.0F);
-    }
+	public QuestionMarkRenderer(EntityRendererProvider.Context context) {
+		super(context, new QuestionMarkModel<>(context.bakeLayer(RisusModelLayers.QUESTION_MARK)), 0.0F);
+	}
 
-    @Override
-    protected void scale(QuestionMark questionMark, PoseStack stack, float partialTicks) {
-        stack.scale(2F, 2F, 2F);
-    }
+	@Override
+	protected void scale(QuestionMark questionMark, PoseStack stack, float partialTicks) {
+		stack.scale(2F, 2F, 2F);
+	}
 
-    @Override
-    protected int getBlockLightLevel(QuestionMark entity, BlockPos pos) {
-        return 15;
-    }
+	@Override
+	protected int getBlockLightLevel(QuestionMark entity, BlockPos pos) {
+		return 15;
+	}
 
-    @Override
-    public ResourceLocation getTextureLocation(QuestionMark questionMark) {
-        return TEXTURE;
-    }
+	@Override
+	public ResourceLocation getTextureLocation(QuestionMark questionMark) {
+		return TEXTURE;
+	}
 }

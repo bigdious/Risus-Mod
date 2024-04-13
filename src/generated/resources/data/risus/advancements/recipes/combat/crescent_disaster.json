@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_feather",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_feather"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:crescent_disaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

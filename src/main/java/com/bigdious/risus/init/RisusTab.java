@@ -10,15 +10,14 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-
 import java.util.Collection;
-import java.util.Map;
 
 public class RisusTab {
 	private static final ResourceLocation RISUS_TABS = Risus.prefix("textures/gui/tabs.png");
 	private static final ResourceLocation RISUS_BACKGROUND = Risus.prefix("textures/gui/tab_risus.png");
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Risus.MODID);
+
 	private static void createSpawnEggsAlphabetical(CreativeModeTab.Output output) {
 		Collection<? extends Item> eggs = RisusEntities.SPAWN_EGGS.getEntries().stream().map(DeferredHolder::get).toList();
 		eggs.forEach(output::accept);
@@ -52,7 +51,7 @@ public class RisusTab {
 						output.accept(RisusItems.BLOOD_BUCKET.get());
 						output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 						output.accept(RisusBlocks.SCAB.get());
-	//					output.accept(RisusBlocks.WEAVER_NEST.get());
+						//					output.accept(RisusBlocks.WEAVER_NEST.get());
 
 						output.accept(RisusBlocks.BONDKNOT_LOG.get());
 						output.accept(RisusBlocks.POPPING_BONDKNOT_LOG.get());
@@ -152,11 +151,6 @@ public class RisusTab {
 						output.accept(RisusItems.NEURON_STEM.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
 						createSpawnEggsAlphabetical(output);
-
-
-
-
-
 
 
 					}

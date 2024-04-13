@@ -3,5 +3,7 @@
   "input": {
     "item": "minecraft:milk_bucket"
   },
-  "result": "risus:blood_bucket"
+  "result": {
+    "item": "risus:blood_bucket"
+  }
 }

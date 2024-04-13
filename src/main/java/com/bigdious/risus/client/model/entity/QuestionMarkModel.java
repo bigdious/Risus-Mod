@@ -359,7 +359,7 @@ public class QuestionMarkModel<T extends QuestionMark> extends HierarchicalModel
 			Vec3 vec3 = camera.getEyePosition(0.0F);
 			Vec3 vec31 = entity.getEyePosition(0.0F);
 			this.body.xRot = (float) vec31.subtract(vec3).normalize().y();
-			this.body.yRot = (float)Mth.atan2(vec3.z() - vec31.z(), vec3.x() - vec31.x()) - (90 * Mth.DEG_TO_RAD);
+			this.body.yRot = (float) Mth.atan2(vec3.z() - vec31.z(), vec3.x() - vec31.x()) - (90 * Mth.DEG_TO_RAD);
 		}
 	}
 

@@ -1,820 +1,820 @@
 {
   "variants": {
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,shape=inner_left": {
+    "facing=east,fluid=blood,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,shape=inner_right": {
+    "facing=east,fluid=blood,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,shape=outer_left": {
+    "facing=east,fluid=blood,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,shape=outer_right": {
+    "facing=east,fluid=blood,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,shape=straight": {
+    "facing=east,fluid=blood,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs"
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,shape=inner_left": {
+    "facing=east,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=empty,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,shape=inner_right": {
+    "facing=east,fluid=empty,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,shape=outer_left": {
+    "facing=east,fluid=empty,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,shape=outer_right": {
+    "facing=east,fluid=empty,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,shape=straight": {
+    "facing=east,fluid=empty,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs"
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,shape=inner_left": {
+    "facing=east,fluid=empty,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,shape=inner_right": {
+    "facing=east,fluid=empty,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,shape=outer_left": {
+    "facing=east,fluid=empty,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,shape=outer_right": {
+    "facing=east,fluid=empty,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,shape=straight": {
+    "facing=east,fluid=empty,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,shape=inner_right": {
+    "facing=east,fluid=lava,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,shape=inner_left": {
+    "facing=east,fluid=lava,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
+    "facing=east,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
-      "y": 90
+      "y": 270
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,shape=outer_left": {
+    "facing=east,fluid=lava,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner"
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer"
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner"
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer"
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,shape=straight": {
+    "facing=east,fluid=lava,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs"
     },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,shape=inner_left": {
+    "facing=east,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=water,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,shape=inner_right": {
+    "facing=east,fluid=water,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,shape=outer_left": {
+    "facing=east,fluid=water,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,shape=outer_right": {
+    "facing=east,fluid=water,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,shape=straight": {
+    "facing=east,fluid=water,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs"
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,shape=inner_left": {
+    "facing=east,fluid=water,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,shape=inner_right": {
+    "facing=east,fluid=water,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,shape=outer_left": {
+    "facing=east,fluid=water,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,shape=outer_right": {
+    "facing=east,fluid=water,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,shape=straight": {
+    "facing=east,fluid=water,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,shape=inner_left": {
+    "facing=north,fluid=blood,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 180
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,shape=inner_right": {
+    "facing=north,fluid=blood,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,shape=outer_left": {
+    "facing=north,fluid=blood,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 180
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,shape=outer_right": {
+    "facing=north,fluid=blood,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,shape=straight": {
+    "facing=north,fluid=blood,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,shape=inner_left": {
+    "facing=north,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 180
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,shape=inner_right": {
+    "facing=north,fluid=empty,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,shape=outer_left": {
+    "facing=north,fluid=empty,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 180
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,shape=outer_right": {
+    "facing=north,fluid=empty,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,shape=straight": {
+    "facing=north,fluid=empty,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,shape=inner_left": {
+    "facing=north,fluid=empty,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,shape=inner_right": {
+    "facing=north,fluid=empty,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,shape=outer_left": {
+    "facing=north,fluid=empty,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,shape=outer_right": {
+    "facing=north,fluid=empty,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180
     },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,shape=straight": {
+    "facing=north,fluid=empty,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,shape=inner_left": {
+    "facing=north,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=south,fluid=blood,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,shape=inner_right": {
+    "facing=south,fluid=blood,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,shape=outer_left": {
+    "facing=south,fluid=blood,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,shape=outer_right": {
+    "facing=south,fluid=blood,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,shape=straight": {
+    "facing=south,fluid=blood,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,shape=inner_left": {
+    "facing=south,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=bottom,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner"
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,shape=inner_right": {
+    "facing=south,fluid=empty,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,shape=outer_left": {
+    "facing=south,fluid=empty,half=bottom,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,shape=outer_right": {
+    "facing=south,fluid=empty,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,shape=straight": {
+    "facing=south,fluid=empty,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,shape=inner_left": {
+    "facing=south,fluid=empty,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,shape=inner_right": {
+    "facing=south,fluid=empty,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,shape=outer_left": {
+    "facing=south,fluid=empty,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,shape=outer_right": {
+    "facing=south,fluid=empty,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,shape=straight": {
+    "facing=south,fluid=empty,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,shape=inner_left": {
+    "facing=south,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner"
+    },
+    "facing=south,fluid=lava,half=bottom,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,shape=inner_right": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
-      "y": 180
+    "facing=south,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer"
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,shape=outer_left": {
+    "facing=south,fluid=lava,half=bottom,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,shape=straight": {
+    "facing=south,fluid=lava,half=bottom,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,shape=inner_left": {
-      "model": "risus:block/grimstone_bricks_stairs_inner",
-      "uvlock": true,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,shape=inner_right": {
+    "facing=south,fluid=lava,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,shape=outer_left": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
+      "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,shape=outer_right": {
-      "model": "risus:block/grimstone_bricks_stairs_outer",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,shape=straight": {
-      "model": "risus:block/grimstone_bricks_stairs",
-      "uvlock": true,
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,shape=inner_left": {
+    "facing=south,fluid=lava,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,shape=inner_right": {
+    "facing=south,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner"
+    },
+    "facing=south,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer"
+    },
+    "facing=south,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,shape=outer_left": {
+    "facing=west,fluid=blood,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,shape=outer_right": {
+    "facing=west,fluid=blood,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,shape=straight": {
+    "facing=west,fluid=blood,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,shape=inner_left": {
+    "facing=west,fluid=empty,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=top,shape=inner_left": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,shape=inner_right": {
+    "facing=west,fluid=empty,half=top,shape=inner_right": {
       "model": "risus:block/grimstone_bricks_stairs_inner",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,shape=outer_left": {
+    "facing=west,fluid=empty,half=top,shape=outer_left": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,shape=outer_right": {
+    "facing=west,fluid=empty,half=top,shape=outer_right": {
       "model": "risus:block/grimstone_bricks_stairs_outer",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,shape=straight": {
+    "facing=west,fluid=empty,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/grimstone_bricks_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/grimstone_bricks_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/grimstone_bricks_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,shape=straight": {
       "model": "risus:block/grimstone_bricks_stairs",
       "uvlock": true,
       "x": 180,

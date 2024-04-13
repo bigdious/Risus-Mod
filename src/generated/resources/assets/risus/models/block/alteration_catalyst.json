@@ -12,7 +12,7 @@
     "ring",
     "base"
   ],
-  "loader": "forge:composite",
+  "loader": "neoforge:composite",
   "textures": {
     "particle": "minecraft:block/netherite_block"
   }

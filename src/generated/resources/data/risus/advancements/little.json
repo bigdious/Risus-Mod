@@ -13,16 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.little.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:organic_matter"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.little"
     }

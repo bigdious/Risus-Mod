@@ -26,5 +26,7 @@
       "item": "minecraft:cherry_stairs"
     }
   ],
-  "result": "risus:bondknot_stairs"
+  "result": {
+    "item": "risus:bondknot_stairs"
+  }
 }

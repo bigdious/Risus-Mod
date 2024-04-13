@@ -1,122 +1,122 @@
 {
   "variants": {
-    "bloodlogged=false,facing=east,lavalogged=false,lit=false": {
+    "facing=east,fluid=blood,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=false,lit=true": {
+    "facing=east,fluid=blood,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=true,lit=false": {
+    "facing=east,fluid=empty,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 90
     },
-    "bloodlogged=false,facing=east,lavalogged=true,lit=true": {
+    "facing=east,fluid=empty,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 90
     },
-    "bloodlogged=false,facing=north,lavalogged=false,lit=false": {
+    "facing=east,fluid=lava,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 90
+    },
+    "facing=east,fluid=lava,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 90
+    },
+    "facing=east,fluid=water,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 90
+    },
+    "facing=east,fluid=water,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 90
+    },
+    "facing=north,fluid=blood,lit=false": {
       "model": "risus:block/joyflame_campfire_off"
     },
-    "bloodlogged=false,facing=north,lavalogged=false,lit=true": {
+    "facing=north,fluid=blood,lit=true": {
       "model": "risus:block/joyflame_campfire"
     },
-    "bloodlogged=false,facing=north,lavalogged=true,lit=false": {
+    "facing=north,fluid=empty,lit=false": {
       "model": "risus:block/joyflame_campfire_off"
     },
-    "bloodlogged=false,facing=north,lavalogged=true,lit=true": {
+    "facing=north,fluid=empty,lit=true": {
       "model": "risus:block/joyflame_campfire"
     },
-    "bloodlogged=false,facing=south,lavalogged=false,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,lavalogged=false,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,lavalogged=true,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,lavalogged=true,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,lavalogged=false,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,lavalogged=false,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,lavalogged=true,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,lavalogged=true,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,lavalogged=false,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=false,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=true,lit=false": {
-      "model": "risus:block/joyflame_campfire_off",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,lavalogged=true,lit=true": {
-      "model": "risus:block/joyflame_campfire",
-      "y": 90
-    },
-    "bloodlogged=true,facing=north,lavalogged=false,lit=false": {
+    "facing=north,fluid=lava,lit=false": {
       "model": "risus:block/joyflame_campfire_off"
     },
-    "bloodlogged=true,facing=north,lavalogged=false,lit=true": {
+    "facing=north,fluid=lava,lit=true": {
       "model": "risus:block/joyflame_campfire"
     },
-    "bloodlogged=true,facing=north,lavalogged=true,lit=false": {
+    "facing=north,fluid=water,lit=false": {
       "model": "risus:block/joyflame_campfire_off"
     },
-    "bloodlogged=true,facing=north,lavalogged=true,lit=true": {
+    "facing=north,fluid=water,lit=true": {
       "model": "risus:block/joyflame_campfire"
     },
-    "bloodlogged=true,facing=south,lavalogged=false,lit=false": {
+    "facing=south,fluid=blood,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 180
     },
-    "bloodlogged=true,facing=south,lavalogged=false,lit=true": {
+    "facing=south,fluid=blood,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 180
     },
-    "bloodlogged=true,facing=south,lavalogged=true,lit=false": {
+    "facing=south,fluid=empty,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 180
     },
-    "bloodlogged=true,facing=south,lavalogged=true,lit=true": {
+    "facing=south,fluid=empty,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 180
     },
-    "bloodlogged=true,facing=west,lavalogged=false,lit=false": {
+    "facing=south,fluid=lava,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 180
+    },
+    "facing=south,fluid=lava,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 180
+    },
+    "facing=south,fluid=water,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 180
+    },
+    "facing=south,fluid=water,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 180
+    },
+    "facing=west,fluid=blood,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 270
     },
-    "bloodlogged=true,facing=west,lavalogged=false,lit=true": {
+    "facing=west,fluid=blood,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 270
     },
-    "bloodlogged=true,facing=west,lavalogged=true,lit=false": {
+    "facing=west,fluid=empty,lit=false": {
       "model": "risus:block/joyflame_campfire_off",
       "y": 270
     },
-    "bloodlogged=true,facing=west,lavalogged=true,lit=true": {
+    "facing=west,fluid=empty,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 270
+    },
+    "facing=west,fluid=lava,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 270
+    },
+    "facing=west,fluid=lava,lit=true": {
+      "model": "risus:block/joyflame_campfire",
+      "y": 270
+    },
+    "facing=west,fluid=water,lit=false": {
+      "model": "risus:block/joyflame_campfire_off",
+      "y": 270
+    },
+    "facing=west,fluid=water,lit=true": {
       "model": "risus:block/joyflame_campfire",
       "y": 270
     }

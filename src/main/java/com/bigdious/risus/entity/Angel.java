@@ -1,6 +1,5 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -19,13 +18,14 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
 	}
+
 	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Angel.class, EntityDataSerializers.BOOLEAN);
+
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 1024.0D)
@@ -37,13 +37,16 @@ public class Angel extends Monster {
 	public void setCharging(boolean charging) {
 		this.entityData.set(DATA_IS_CHARGING, charging);
 	}
+
 	public boolean isCharging() {
 		return this.entityData.get(DATA_IS_CHARGING);
 	}
+
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_IS_CHARGING, false);
 	}
+
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPING;
 	}
@@ -57,6 +60,7 @@ public class Angel extends Monster {
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (entity) -> Math.abs(entity.getY() - this.getY()) <= 50.0D));
 
 	}
+
 	static class AngelLightningAttackGoal extends Goal {
 		private final Angel angel;
 		public int chargeTime;
@@ -102,14 +106,16 @@ public class Angel extends Monster {
 							lightning.setPos(livingentity.getX(), livingentity.getY(), livingentity.getZ());
 							level.addFreshEntity(lightning);
 							this.chargeTime = -40;
-						}}}
-					} else if (this.chargeTime > 0) {
-						--this.chargeTime;
+						}
 					}
-
-					this.angel.setCharging(this.chargeTime > 10);
 				}
+			} else if (this.chargeTime > 0) {
+				--this.chargeTime;
 			}
+
+			this.angel.setCharging(this.chargeTime > 10);
+		}
+	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
@@ -121,6 +127,7 @@ public class Angel extends Monster {
 		}
 		return false;
 	}
+
 	@Override
 	public boolean removeWhenFarAway(double dist) {
 		return false;

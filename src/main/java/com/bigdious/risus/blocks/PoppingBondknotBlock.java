@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
 
-@SuppressWarnings({"deprecation", "unchecked"})
 public class PoppingBondknotBlock extends RotatedPillarBlock implements EntityBlock {
 
 	public static final EnumProperty<Direction> POP_SIDE = EnumProperty.create("pop_side", Direction.class);
@@ -33,7 +32,7 @@ public class PoppingBondknotBlock extends RotatedPillarBlock implements EntityBl
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState state = super.getStateForPlacement(context);
 		Direction dir = Direction.getRandom(context.getLevel().getRandom());
-		if(state.is(RisusBlocks.POPPING_BONDKNOT_LOG.get())) {
+		if (state.is(RisusBlocks.POPPING_BONDKNOT_LOG.get())) {
 			while (dir.getAxis() == state.getValue(AXIS)) {
 				dir = Direction.getRandom(context.getLevel().getRandom());
 			}
@@ -57,6 +56,7 @@ public class PoppingBondknotBlock extends RotatedPillarBlock implements EntityBl
 		return level.isClientSide() ? null : createTickerHelper(type, RisusBlockEntities.POPPING_BONDKNOT.get(), PoppingBondknotBlockEntity::tick);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Nullable
 	protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> type1, BlockEntityType<E> type2, BlockEntityTicker<? super E> ticker) {
 		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;

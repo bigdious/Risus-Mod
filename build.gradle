@@ -3,7 +3,7 @@ plugins {
 	id 'eclipse'
 	id 'idea'
 	id 'maven-publish'
-	id 'net.neoforged.gradle.userdev' version '7.0.97'
+	id 'net.neoforged.gradle.userdev' version '7.0.+'
 }
 
 def secrets = new Properties()
@@ -45,32 +45,22 @@ runs {
 	}
 
 	client {
-//      name "Minecraft_Client_${project.minecraft_version}"
 		systemProperty 'forge.enabledGameTestNamespaces', mod_id
 		programArguments.addAll '--username', secrets.getProperty("username")?: 'Dev', secrets.getProperty("uuid") ? '--uuid' : '', secrets.getProperty("uuid")?: ''
 	}
 
 	server {
-//      name "Minecraft_Server_${project.minecraft_version}"
 		systemProperty 'forge.enabledGameTestNamespaces', mod_id
 		programArgument '--nogui'
 	}
 
 	gameTestServer {
-//      name "Minecraft_GameTestServer_${project.minecraft_version}"
 		systemProperty 'forge.enabledGameTestNamespaces', mod_id
 	}
 
 	data {
-//      name "Minecraft_Data_${project.minecraft_version}"
 		workingDirectory project.file('run-data')
 		programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-	}
-}
-subsystems {
-	parchment {
-		minecraftVersion = "1.20.3" //parchment doesnt support 1.20.4 yet????
-		mappingsVersion = project.parchment_version
 	}
 }
 
@@ -78,7 +68,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
 	maven {
-		name 'Jared\'s Maven' // JEI
+		name 'Jared\'s Maven' // JEI and Patchouli
 		url 'https://maven.blamejared.com/'
 	}
 
@@ -97,19 +87,19 @@ dependencies {
 
 	//curse maven
 	compileOnly "curse.maven:jade-324717:4980188"
-	//runtimeOnly "curse.maven:jeed-532286:4599236"
-	//runtimeOnly "curse.maven:museum-curator-859070:4629894"
+	compileOnly "vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}:api"
+	runtimeOnly "vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}"
 
 	implementation "net.neoforged:neoforge:${project.neo_version}"
 }
 
 
-jar {
+tasks.named('jar', Jar).configure {
     manifest {
         attributes([
                 "Specification-Title"     : "Risus",
                 "Specification-Vendor"    : "Bigdious",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "Bigdious",

@@ -19,16 +19,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.family.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "risus:ribcage"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.family"
     }

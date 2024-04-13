@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_soul_torch",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_soul_torch"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:joyflame_lantern"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

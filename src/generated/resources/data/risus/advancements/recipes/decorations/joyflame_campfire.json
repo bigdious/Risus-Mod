@@ -32,15 +32,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_stick",
-      "has_remains",
-      "has_the_recipe"
+      "has_remains"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:joyflame_campfire"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

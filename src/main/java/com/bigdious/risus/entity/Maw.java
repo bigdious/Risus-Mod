@@ -2,7 +2,6 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -142,7 +141,8 @@ public class Maw extends Monster implements CacheTargetOnClient {
 		this.level().broadcastEntityEvent(this, (byte) 66);
 		if (entity instanceof LivingEntity living && living.attackable()) {
 			//set up the victim to think theyre being killed by a player
-			if(this.level() instanceof ServerLevel server) living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
+			if (this.level() instanceof ServerLevel server)
+				living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
 			//then do the actual damage
 			if (entity.hurt(new DamageSource(this.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 				this.doHurtTarget(living);
@@ -163,16 +163,16 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			}
 			//Commented for now as it breaks progression
 			//for (Direction dir : Direction.Plane.HORIZONTAL) {
-				//if (this.level().getBlockState(this.blockPosition().below().relative(dir)).is(RisusBlocks.GLUTTONY_SCALEPLATE.get())) {
-					//this.level().destroyBlock(this.blockPosition().below().relative(dir), true);
-				//}
+			//if (this.level().getBlockState(this.blockPosition().below().relative(dir)).is(RisusBlocks.GLUTTONY_SCALEPLATE.get())) {
+			//this.level().destroyBlock(this.blockPosition().below().relative(dir), true);
+			//}
 			//}
 		}
 	}
 
 	@Override
 	public void handleEntityEvent(byte id) {
-		if(id == 66) {
+		if (id == 66) {
 			this.biteAnim.start(this.tickCount);
 		}
 		super.handleEntityEvent(id);
@@ -214,13 +214,13 @@ public class Maw extends Monster implements CacheTargetOnClient {
 		@Override
 		public void start() {
 			super.start();
-			((Maw)this.mob).setActiveAttackTarget(this.target.getId());
+			((Maw) this.mob).setActiveAttackTarget(this.target.getId());
 		}
 
 		@Override
 		public void stop() {
 			super.stop();
-			((Maw)this.mob).setActiveAttackTarget(0);
+			((Maw) this.mob).setActiveAttackTarget(0);
 		}
 	}
 }

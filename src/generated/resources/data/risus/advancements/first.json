@@ -103,12 +103,9 @@
     "description": {
       "translate": "advancement.risus.first.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "risus:smile"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.first"
     }

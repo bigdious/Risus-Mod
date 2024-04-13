@@ -23,17 +23,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.cupid.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "minecraft:potion",
       "nbt": "{Potion:\"risus:mating_frenzy\"}"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.cupid"
     }

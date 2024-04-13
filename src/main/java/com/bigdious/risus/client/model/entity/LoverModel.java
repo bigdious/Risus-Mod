@@ -59,6 +59,7 @@ public class LoverModel<T extends Lover> extends HierarchicalModel<T> {
 		this.postule6 = stalk6.getChild("postule6");
 		this.postule7 = stalk7.getChild("postule7");
 	}
+
 	public static LayerDefinition create() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
@@ -66,12 +67,12 @@ public class LoverModel<T extends Lover> extends HierarchicalModel<T> {
 		PartDefinition body0 = partdefinition.addOrReplaceChild("body0", CubeListBuilder.create(), PartPose.offset(-0.5F, 5.9125F, -0.7669F));
 
 		PartDefinition frontright = body0.addOrReplaceChild("frontright", CubeListBuilder.create().texOffs(0, 10).addBox(-2.0F, -4.5F, -5.0F, 4.0F, 9.0F, 10.0F, new CubeDeformation(0.0F))
-			.texOffs(39, 0).addBox(-3.0F, 1.5F, 0.0F, 1.0F, 0.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.5F, 0.5875F, -8.2331F, 0.0516F, 0.2112F, 0.3119F));
+				.texOffs(39, 0).addBox(-3.0F, 1.5F, 0.0F, 1.0F, 0.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.5F, 0.5875F, -8.2331F, 0.0516F, 0.2112F, 0.3119F));
 
 		PartDefinition fronttopteethright = body0.addOrReplaceChild("fronttopteethright", CubeListBuilder.create().texOffs(31, 0).addBox(-1.9306F, 0.2962F, -4.7151F, 2.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.26F, -1.7358F, -7.1915F, -0.0344F, 0.2147F, -0.09F));
 
 		PartDefinition frontleft = body0.addOrReplaceChild("frontleft", CubeListBuilder.create().texOffs(28, 10).addBox(-2.0F, -4.5F, -5.0F, 4.0F, 9.0F, 10.0F, new CubeDeformation(0.0F))
-			.texOffs(41, 0).addBox(2.0F, 1.5F, 0.0F, 1.0F, 0.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.5F, 0.5875F, -8.2331F, 0.0516F, -0.2112F, -0.3119F));
+				.texOffs(41, 0).addBox(2.0F, 1.5F, 0.0F, 1.0F, 0.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.5F, 0.5875F, -8.2331F, 0.0516F, -0.2112F, -0.3119F));
 
 		PartDefinition fronttopteethleft = body0.addOrReplaceChild("fronttopteethleft", CubeListBuilder.create().texOffs(27, 0).addBox(-0.0694F, 0.2962F, -4.7151F, 2.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.26F, -1.7358F, -7.1915F, -0.0439F, -0.213F, 0.1346F));
 
@@ -84,19 +85,19 @@ public class LoverModel<T extends Lover> extends HierarchicalModel<T> {
 		PartDefinition firstmiddleright = bodythreequarter.addOrReplaceChild("firstmiddleright", CubeListBuilder.create().texOffs(0, 29).addBox(0.0F, -7.8637F, -6.0353F, 4.0F, 8.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.637F, 4.0479F, -0.203F, 0.0886F, 0.3381F));
 
 		PartDefinition firstmiddleboteethleft = bodythreequarter.addOrReplaceChild("firstmiddleboteethleft", CubeListBuilder.create().texOffs(26, 2).addBox(0.0F, -3.8637F, -4.0353F, 1.0F, 0.0F, 6.0F, new CubeDeformation(0.0F))
-			.texOffs(28, 29).addBox(-4.0F, -7.8637F, -6.0353F, 4.0F, 8.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.637F, 4.0479F, -0.203F, -0.0886F, -0.3381F));
+				.texOffs(28, 29).addBox(-4.0F, -7.8637F, -6.0353F, 4.0F, 8.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.637F, 4.0479F, -0.203F, -0.0886F, -0.3381F));
 
 		PartDefinition firstmiddletopteethleft = bodythreequarter.addOrReplaceChild("firstmiddletopteethleft", CubeListBuilder.create().texOffs(20, 8).addBox(-0.0603F, 0.3417F, -4.0149F, 2.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.3902F, -3.2216F, 4.505F, -0.2172F, 0.0427F, 0.2591F));
 
 		PartDefinition bodytwoquarter = bodythreequarter.addOrReplaceChild("bodytwoquarter", CubeListBuilder.create(), PartPose.offset(0.0785F, 2.6071F, 7.7353F));
 
 		PartDefinition secondmiddlebottoothright = bodytwoquarter.addOrReplaceChild("secondmiddlebottoothright", CubeListBuilder.create().texOffs(22, 2).addBox(-2.0F, 1.0F, -5.0F, 1.0F, 0.0F, 6.0F, new CubeDeformation(0.0F))
-			.texOffs(0, 47).addBox(-1.0F, -3.0F, -5.0F, 4.0F, 7.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.4215F, -2.5475F, 4.5237F, -0.026F, -0.2485F, 0.4134F));
+				.texOffs(0, 47).addBox(-1.0F, -3.0F, -5.0F, 4.0F, 7.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.4215F, -2.5475F, 4.5237F, -0.026F, -0.2485F, 0.4134F));
 
 		PartDefinition secondmiddletoptoothright = bodytwoquarter.addOrReplaceChild("secondmiddletoptoothright", CubeListBuilder.create().texOffs(14, 6).addBox(-1.8876F, 0.3957F, -4.7644F, 2.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.4376F, -5.1623F, 4.0822F, 0.1331F, -0.212F, -0.2586F));
 
 		PartDefinition secondmiddlebottoothleft = bodytwoquarter.addOrReplaceChild("secondmiddlebottoothleft", CubeListBuilder.create().texOffs(24, 2).addBox(1.0F, 1.0F, -5.0F, 1.0F, 0.0F, 6.0F, new CubeDeformation(0.0F))
-			.texOffs(28, 47).addBox(-3.0F, -3.0F, -5.0F, 4.0F, 7.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.5785F, -2.5475F, 4.5237F, -0.026F, 0.2485F, -0.4134F));
+				.texOffs(28, 47).addBox(-3.0F, -3.0F, -5.0F, 4.0F, 7.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.5785F, -2.5475F, 4.5237F, -0.026F, 0.2485F, -0.4134F));
 
 		PartDefinition secondmiddletoptoothleft = bodytwoquarter.addOrReplaceChild("secondmiddletoptoothleft", CubeListBuilder.create().texOffs(10, 6).addBox(-0.1124F, 0.3957F, -4.7644F, 2.0F, 0.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.5947F, -5.1623F, 4.0822F, 0.1237F, 0.2176F, 0.2143F));
 
@@ -162,38 +163,38 @@ public class LoverModel<T extends Lover> extends HierarchicalModel<T> {
 		RandomSource random = RandomSource.create();
 		float swinging = Mth.sin(ageInTicks * 0.15F) * 0.15F;
 		float pulsing1 = Mth.sin(ageInTicks * 0.1F) * 0.1F;
-		float pulsing2 = Mth.sin((ageInTicks+4) * 0.1F) * 0.1F;
-		float pulsing3 = Mth.sin((ageInTicks+8) * 0.1F) * 0.1F;
-		float pulsing4 = Mth.sin((ageInTicks+12) * 0.1F) * 0.1F;
-		float pulsing5 = Mth.sin((ageInTicks+16) * 0.1F) * 0.1F;
-		float pulsing6 = Mth.sin((ageInTicks+20) * 0.1F) * 0.1F;
+		float pulsing2 = Mth.sin((ageInTicks + 4) * 0.1F) * 0.1F;
+		float pulsing3 = Mth.sin((ageInTicks + 8) * 0.1F) * 0.1F;
+		float pulsing4 = Mth.sin((ageInTicks + 12) * 0.1F) * 0.1F;
+		float pulsing5 = Mth.sin((ageInTicks + 16) * 0.1F) * 0.1F;
+		float pulsing6 = Mth.sin((ageInTicks + 20) * 0.1F) * 0.1F;
 		this.bodythreequarter.yRot = swinging;
 		this.bodytwoquarter.yRot = swinging;
 		this.bodytail.yRot = swinging;
-		this.postule0.zScale = 1+pulsing1;
-		this.postule0.xScale = 1+pulsing1;
-		this.postule0.yScale = 1+pulsing1;
-		this.postule1.zScale = 1+pulsing5;
-		this.postule1.xScale = 1+pulsing5;
-		this.postule1.yScale = 1+pulsing5;
-		this.postule2.zScale = 1+pulsing3;
-		this.postule2.xScale = 1+pulsing3;
-		this.postule2.yScale = 1+pulsing3;
-		this.postule3.zScale = 1+pulsing6;
-		this.postule3.xScale = 1+pulsing6;
-		this.postule3.yScale = 1+pulsing6;
-		this.postule4.zScale = 1+pulsing1;
-		this.postule4.xScale = 1+pulsing1;
-		this.postule4.yScale = 1+pulsing1;
-		this.postule5.zScale = 1+pulsing5;
-		this.postule5.xScale = 1+pulsing5;
-		this.postule5.yScale = 1+pulsing5;
-		this.postule6.zScale = 1+pulsing2;
-		this.postule6.xScale = 1+pulsing2;
-		this.postule6.yScale = 1+pulsing2;
-		this.postule7.zScale = 1+pulsing4;
-		this.postule7.xScale = 1+pulsing4;
-		this.postule7.yScale = 1+pulsing4;
+		this.postule0.zScale = 1 + pulsing1;
+		this.postule0.xScale = 1 + pulsing1;
+		this.postule0.yScale = 1 + pulsing1;
+		this.postule1.zScale = 1 + pulsing5;
+		this.postule1.xScale = 1 + pulsing5;
+		this.postule1.yScale = 1 + pulsing5;
+		this.postule2.zScale = 1 + pulsing3;
+		this.postule2.xScale = 1 + pulsing3;
+		this.postule2.yScale = 1 + pulsing3;
+		this.postule3.zScale = 1 + pulsing6;
+		this.postule3.xScale = 1 + pulsing6;
+		this.postule3.yScale = 1 + pulsing6;
+		this.postule4.zScale = 1 + pulsing1;
+		this.postule4.xScale = 1 + pulsing1;
+		this.postule4.yScale = 1 + pulsing1;
+		this.postule5.zScale = 1 + pulsing5;
+		this.postule5.xScale = 1 + pulsing5;
+		this.postule5.yScale = 1 + pulsing5;
+		this.postule6.zScale = 1 + pulsing2;
+		this.postule6.xScale = 1 + pulsing2;
+		this.postule6.yScale = 1 + pulsing2;
+		this.postule7.zScale = 1 + pulsing4;
+		this.postule7.xScale = 1 + pulsing4;
+		this.postule7.yScale = 1 + pulsing4;
 
 
 	}

@@ -56,17 +56,17 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 		poseStack.pushPose();
 		poseStack.translate(0.0D, 0.375D, 0.0D);
 		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - yaw));
-		float f = (float)entity.getHurtTime() - partialTicks;
+		float f = (float) entity.getHurtTime() - partialTicks;
 		float f1 = entity.getDamage() - partialTicks;
 		if (f1 < 0.0F) {
 			f1 = 0.0F;
 		}
 
 		if (f > 0.0F) {
-			poseStack.mulPose(Axis.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float)entity.getHurtDir()));
+			poseStack.mulPose(Axis.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float) entity.getHurtDir()));
 		}
 
-		float bubbleAngle = entity.getBubbleAngle(partialTicks) * ((float)Math.PI / 360F);
+		float bubbleAngle = entity.getBubbleAngle(partialTicks) * ((float) Math.PI / 360F);
 		if (!Mth.equal(bubbleAngle, 0.0F)) {
 			float sin = Mth.sin(bubbleAngle);
 			poseStack.mulPose(new Quaternionf(sin, 0.0F, sin, Mth.cos(bubbleAngle)));

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_scales",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_scales"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:light_devourer"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

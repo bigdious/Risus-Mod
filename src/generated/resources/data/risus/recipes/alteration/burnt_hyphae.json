@@ -14,5 +14,7 @@
       "item": "minecraft:warped_stem"
     }
   ],
-  "result": "risus:burnt_hyphae"
+  "result": {
+    "item": "risus:burnt_hyphae"
+  }
 }

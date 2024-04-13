@@ -44,7 +44,7 @@
       "faces": {
         "down": {
           "cullface": "down",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#bottom2",
@@ -52,7 +52,7 @@
         },
         "east": {
           "cullface": "east",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#east2",
@@ -60,7 +60,7 @@
         },
         "north": {
           "cullface": "north",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#north2",
@@ -68,7 +68,7 @@
         },
         "south": {
           "cullface": "south",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#south2",
@@ -76,7 +76,7 @@
         },
         "up": {
           "cullface": "up",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#top2",
@@ -84,7 +84,7 @@
         },
         "west": {
           "cullface": "west",
-          "forge_data": {
+          "neoforge_data": {
             "block_light": 10
           },
           "texture": "#west2",

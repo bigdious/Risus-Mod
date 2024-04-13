@@ -9,10 +9,7 @@ import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.fml.util.ObfuscationReflectionHelper;
-
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -62,7 +59,6 @@ public class JoyParticle extends DripParticle {
 		}
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public record JoyHangProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
 
 		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
@@ -79,7 +75,6 @@ public class JoyParticle extends DripParticle {
 		}
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	public record JoyLandProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
 
 		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {

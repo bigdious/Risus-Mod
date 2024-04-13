@@ -15,16 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "advancement.risus.mod_book.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "minecraft:book"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancement.risus.mod_book"
     }

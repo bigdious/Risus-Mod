@@ -47,7 +47,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	}
 
 	public static boolean suckInItems(Level level, MawGutsBlockEntity te) {
-		for(ItemEntity itementity : getItemsAtAndAbove(level, te)) {
+		for (ItemEntity itementity : getItemsAtAndAbove(level, te)) {
 			if (addItem(te, itementity)) {
 				return true;
 			}
@@ -76,7 +76,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	public static ItemStack addItem(Container container, ItemStack stack) {
 		int i = container.getContainerSize();
 
-		for(int j = 0; j < i && !stack.isEmpty(); ++j) {
+		for (int j = 0; j < i && !stack.isEmpty(); ++j) {
 			stack = tryMoveInItem(container, stack, j);
 		}
 
@@ -172,7 +172,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 		if (this.getLevel().getBlockEntity(this.getBlockPos()) != this) {
 			return false;
 		} else {
-			return !(player.distanceToSqr((double)this.getBlockPos().getX() + 0.5D, (double)this.getBlockPos().getY() + 0.5D, (double)this.getBlockPos().getZ() + 0.5D) > 64.0D);
+			return !(player.distanceToSqr((double) this.getBlockPos().getX() + 0.5D, (double) this.getBlockPos().getY() + 0.5D, (double) this.getBlockPos().getZ() + 0.5D) > 64.0D);
 		}
 	}
 

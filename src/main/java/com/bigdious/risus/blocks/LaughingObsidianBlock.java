@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class LaughingObsidianBlock  extends Block {
+public class LaughingObsidianBlock extends Block {
 
 	public LaughingObsidianBlock(BlockBehaviour.Properties properties) {
 		super(properties);

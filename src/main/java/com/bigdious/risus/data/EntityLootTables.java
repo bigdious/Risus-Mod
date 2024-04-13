@@ -17,6 +17,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWit
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class EntityLootTables extends EntityLootSubProvider {
@@ -42,22 +43,22 @@ public class EntityLootTables extends EntityLootSubProvider {
 
 		add(RisusEntities.HOLDER.get(),
 				LootTable.lootTable().withPool(LootPool.lootPool()
-						.setRolls(ConstantValue.exactly(1.0F))
-						.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
-		.withPool(LootPool.lootPool()
-			.setRolls(ConstantValue.exactly(1.0F))
-			.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
-			.when(LootItemKilledByPlayerCondition.killedByPlayer())
-			.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
+								.setRolls(ConstantValue.exactly(1.0F))
+								.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER.get()))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
+						.withPool(LootPool.lootPool()
+								.setRolls(ConstantValue.exactly(1.0F))
+								.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
+								.when(LootItemKilledByPlayerCondition.killedByPlayer())
+								.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
 		add(RisusEntities.STALKER.get(), LootTable.lootTable()
-		.withPool(LootPool.lootPool()
-			.setRolls(ConstantValue.exactly(1.0F))
-			.add(LootItem.lootTableItem(Items.GUNPOWDER)).
-			apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
+				.withPool(LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1.0F))
+						.add(LootItem.lootTableItem(Items.GUNPOWDER)).
+						apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
 		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.WEAVER.get(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()
@@ -73,6 +74,6 @@ public class EntityLootTables extends EntityLootSubProvider {
 
 	@Override
 	public Stream<EntityType<?>> getKnownEntityTypes() {
-		return Registries.ENTITY_TYPE.getValues().stream().filter(entities -> Registries.ENTITY_TYPE.getKey(entities).getNamespace().equals(Risus.MODID));
+		return RisusEntities.ENTITIES.getEntries().stream().map(Supplier::get);
 	}
 }

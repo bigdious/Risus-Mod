@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_lritual",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lritual"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:curved_ritual_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

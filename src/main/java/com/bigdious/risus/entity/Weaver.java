@@ -4,13 +4,11 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusMobType;
-import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
@@ -23,7 +21,6 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -71,7 +68,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 				Weaver.this.level().broadcastEntityEvent(Weaver.this, (byte) 66);
 			}
 		});
-		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false) );
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -85,14 +82,17 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 			--this.attackAnimationTick;
 		}
 	}
+
 	@Override
 	protected void playStepSound(BlockPos pos, BlockState state) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
 	}
+
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return null;
 	}
+
 	@Override
 	protected SoundEvent getHurtSound(DamageSource p_33814_) {
 		return null;
@@ -102,10 +102,12 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPING;
 	}
+
 	@Override
 	protected float getStandingEyeHeight(Pose p_33799_, EntityDimensions p_33800_) {
 		return 0.20F;
 	}
+
 	@Override
 	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {
 		if (!p_33796_.is(RisusBlocks.BLOODWEAVE.get())) {
@@ -122,7 +124,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	@Override
 	public boolean doHurtTarget(Entity entity) {
 		this.attackAnimationTick = 10;
-		this.level().broadcastEntityEvent(this, (byte)67);
+		this.level().broadcastEntityEvent(this, (byte) 67);
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
 				Level level = living.level();
@@ -134,9 +136,10 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA.get(), i * 20, 0), this);
-				if (living.getHealth()==0 && level.getBlockState(pos.above()).is(Blocks.AIR) && living.hurt(new DamageSource(living.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.MELANCHOLY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR) && living.hurt(new DamageSource(living.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.MELANCHOLY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 11);
-					this.doEnchantDamageEffects(this, living);}
+					this.doEnchantDamageEffects(this, living);
+				}
 
 			}
 		}
@@ -175,11 +178,9 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	public void handleEntityEvent(byte id) {
 		if (id == 66) {
 			this.leapAnim.start(this.tickCount);
-		}
-		else if (id == 67) {
-				this.attackAnimationTick = 10;
-		}
-		else {
+		} else if (id == 67) {
+			this.attackAnimationTick = 10;
+		} else {
 			super.handleEntityEvent(id);
 		}
 	}
@@ -222,6 +223,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		}
 
 	}
+
 	public int getAttackAnimationTick() {
 		return this.attackAnimationTick;
 	}

@@ -1,257 +1,257 @@
 {
   "variants": {
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,open=false": {
+    "facing=east,fluid=blood,half=bottom,open=false": {
       "model": "risus:block/bondknot_trapdoor_bottom",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=false,open=true": {
+    "facing=east,fluid=blood,half=bottom,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,open=false": {
+    "facing=east,fluid=blood,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=false,open=true": {
+    "facing=east,fluid=blood,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 270
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,open=false": {
+    "facing=east,fluid=empty,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 90
+    },
+    "facing=east,fluid=empty,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 90
+    },
+    "facing=east,fluid=empty,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=top,lavalogged=true,open=true": {
+    "facing=east,fluid=empty,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 270
     },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,open=false": {
+    "facing=east,fluid=lava,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top",
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 270
+    },
+    "facing=east,fluid=water,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 90
+    },
+    "facing=east,fluid=water,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 90
+    },
+    "facing=east,fluid=water,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top",
+      "y": 90
+    },
+    "facing=east,fluid=water,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=bottom,open=false": {
       "model": "risus:block/bondknot_trapdoor_bottom"
     },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=false,open=true": {
+    "facing=north,fluid=blood,half=bottom,open=true": {
       "model": "risus:block/bondknot_trapdoor_open"
     },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom"
-    },
-    "bloodlogged=false,facing=north,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open"
-    },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,open=false": {
+    "facing=north,fluid=blood,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top"
     },
-    "bloodlogged=false,facing=north,half=top,lavalogged=false,open=true": {
+    "facing=north,fluid=blood,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 180
     },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,open=false": {
+    "facing=north,fluid=empty,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom"
+    },
+    "facing=north,fluid=empty,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open"
+    },
+    "facing=north,fluid=empty,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top"
     },
-    "bloodlogged=false,facing=north,half=top,lavalogged=true,open=true": {
+    "facing=north,fluid=empty,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,open=false": {
+    "facing=north,fluid=lava,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom"
+    },
+    "facing=north,fluid=lava,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open"
+    },
+    "facing=north,fluid=lava,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top"
+    },
+    "facing=north,fluid=lava,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 180
+    },
+    "facing=north,fluid=water,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom"
+    },
+    "facing=north,fluid=water,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open"
+    },
+    "facing=north,fluid=water,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top"
+    },
+    "facing=north,fluid=water,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=blood,half=bottom,open=false": {
       "model": "risus:block/bondknot_trapdoor_bottom",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=false,open=true": {
+    "facing=south,fluid=blood,half=bottom,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,open=false": {
+    "facing=south,fluid=blood,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=top,lavalogged=false,open=true": {
+    "facing=south,fluid=blood,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180
     },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,open=false": {
+    "facing=south,fluid=empty,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 180
+    },
+    "facing=south,fluid=empty,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 180
+    },
+    "facing=south,fluid=empty,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=top,lavalogged=true,open=true": {
+    "facing=south,fluid=empty,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180
     },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=top,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=top,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 270
-    },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom"
-    },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open"
-    },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom"
-    },
-    "bloodlogged=true,facing=north,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open"
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top"
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=false,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_top"
-    },
-    "bloodlogged=true,facing=north,half=top,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "x": 180,
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,open=false": {
+    "facing=south,fluid=lava,half=bottom,open=false": {
       "model": "risus:block/bondknot_trapdoor_bottom",
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=false,open=true": {
+    "facing=south,fluid=lava,half=bottom,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,open=false": {
+    "facing=south,fluid=lava,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=false,open=true": {
+    "facing=south,fluid=lava,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,open=false": {
+    "facing=south,fluid=water,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 180
+    },
+    "facing=south,fluid=water,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 180
+    },
+    "facing=south,fluid=water,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 180
     },
-    "bloodlogged=true,facing=south,half=top,lavalogged=true,open=true": {
+    "facing=south,fluid=water,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,open=false": {
+    "facing=west,fluid=blood,half=bottom,open=false": {
       "model": "risus:block/bondknot_trapdoor_bottom",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=false,open=true": {
+    "facing=west,fluid=blood,half=bottom,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,open=false": {
-      "model": "risus:block/bondknot_trapdoor_bottom",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,half=bottom,lavalogged=true,open=true": {
-      "model": "risus:block/bondknot_trapdoor_open",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,open=false": {
+    "facing=west,fluid=blood,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=false,open=true": {
+    "facing=west,fluid=blood,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 90
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,open=false": {
+    "facing=west,fluid=empty,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 270
+    },
+    "facing=west,fluid=empty,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 270
+    },
+    "facing=west,fluid=empty,half=top,open=false": {
       "model": "risus:block/bondknot_trapdoor_top",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=top,lavalogged=true,open=true": {
+    "facing=west,fluid=empty,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,fluid=lava,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top",
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,fluid=water,half=bottom,open=false": {
+      "model": "risus:block/bondknot_trapdoor_bottom",
+      "y": 270
+    },
+    "facing=west,fluid=water,half=bottom,open=true": {
+      "model": "risus:block/bondknot_trapdoor_open",
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,open=false": {
+      "model": "risus:block/bondknot_trapdoor_top",
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,open=true": {
       "model": "risus:block/bondknot_trapdoor_open",
       "x": 180,
       "y": 90

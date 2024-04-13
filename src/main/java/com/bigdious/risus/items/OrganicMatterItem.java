@@ -1,8 +1,7 @@
 package com.bigdious.risus.items;
 
-import com.bigdious.risus.capability.ExBurnCapability;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusCapabilities;
+import com.bigdious.risus.init.RisusDataAttachments;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -44,7 +43,7 @@ public class OrganicMatterItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-		entity.getCapability(RisusCapabilities.EX_BURN).ifPresent(ExBurnCapability::incrementHealth);
+		entity.getData(RisusDataAttachments.EX_BURN).incrementHealth(entity);
 		return super.finishUsingItem(stack, level, entity);
 	}
 
@@ -57,7 +56,7 @@ public class OrganicMatterItem extends Item {
 			Player player = context.getPlayer();
 			ItemStack itemstack = context.getItemInHand();
 			if (player instanceof ServerPlayer) {
-				CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
+				CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, blockpos, itemstack);
 			}
 
 			itemstack.shrink(1);

@@ -11,5 +11,7 @@
       "item": "minecraft:smooth_basalt"
     }
   ],
-  "result": "risus:engraved_basalt"
+  "result": {
+    "item": "risus:engraved_basalt"
+  }
 }

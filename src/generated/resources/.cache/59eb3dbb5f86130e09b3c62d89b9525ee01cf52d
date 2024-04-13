@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-08T15:18:14.8176144	Loot Tables
+// 1.20.4	2024-04-12T18:06:24.6918361	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -7,7 +7,6 @@ c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_tables/blocks/big_chain
 0706b996998a5fc794ccfd7d09e70135dd97406e data/risus/loot_tables/blocks/bloodweave.json
 cb36a79a27cc5aac3243bbd05144f6a36991e0de data/risus/loot_tables/blocks/bloodwyrm_head.json
 e47ca2c08b307b5ad8ff6f47594aaebad27234d2 data/risus/loot_tables/blocks/bloodwyrm_wall_head.json
-76e0234d7bb5d877e089b9adb39a770af06c272b data/risus/loot_tables/blocks/blood_fluid_block.json
 7e47ded5e019d1f307706bde2e767b15b6ea812f data/risus/loot_tables/blocks/bondknot_button.json
 de8702a01decd5951a87dbef6e7bc8043571d987 data/risus/loot_tables/blocks/bondknot_door.json
 0bda4d9d80ce9cb175e3d35a70132cccccf3e9b0 data/risus/loot_tables/blocks/bondknot_fence.json
@@ -35,7 +34,6 @@ ddfd7d233204c1b01626a566581fea6e0f11ecce data/risus/loot_tables/blocks/bondknot_
 55f93cf2bc44977290fcea1a22f6c6b784ab9e63 data/risus/loot_tables/blocks/crystallized_bonds.json
 50672bfb864fadc67eb4b37fd035f162efba6681 data/risus/loot_tables/blocks/curved_fleshy_skin.json
 3f70b4e7ee99e9317fabd500d8fbd35c5751da29 data/risus/loot_tables/blocks/curved_ritual_block.json
-2b215889cd9907fc6952fb1d629f15ae6ca39dbb data/risus/loot_tables/blocks/darkness.json
 decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_tables/blocks/decayed_tissue.json
 46b68cae6160b2510334f558d196451c82481bc2 data/risus/loot_tables/blocks/decaying_tissue.json
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_tables/blocks/decomposed_tissue.json

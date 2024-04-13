@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_toothknocker",
-      "has_hand_of_greed",
-      "has_the_recipe"
+      "has_hand_of_greed"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:gold_fist"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

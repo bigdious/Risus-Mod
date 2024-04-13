@@ -6,7 +6,7 @@
       "layer0": "risus:item/crescent_disaster"
     }
   },
-  "loader": "forge:separate_transforms",
+  "loader": "neoforge:separate_transforms",
   "perspectives": {
     "firstperson_lefthand": {
       "parent": "risus:item/base_axe_model",

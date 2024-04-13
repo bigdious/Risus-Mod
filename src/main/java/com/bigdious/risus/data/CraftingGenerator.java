@@ -11,10 +11,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 
-
-import java.util.function.Consumer;
-
-public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataHelper {
+public class CraftingGenerator extends RecipeProvider {
 	public CraftingGenerator(PackOutput packOutput) {
 		super(packOutput);
 	}
@@ -50,35 +47,35 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE, Items.DARK_OAK_FENCE, Items.BIRCH_FENCE, Items.SPRUCE_FENCE, Items.JUNGLE_FENCE, Items.ACACIA_FENCE, Items.MANGROVE_FENCE, Items.CHERRY_FENCE), RisusItems.BONDKNOT_FENCE.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_TRAPDOOR, Items.DARK_OAK_TRAPDOOR, Items.BIRCH_TRAPDOOR, Items.SPRUCE_TRAPDOOR, Items.JUNGLE_TRAPDOOR, Items.ACACIA_TRAPDOOR, Items.MANGROVE_TRAPDOOR, Items.CHERRY_TRAPDOOR), RisusItems.BONDKNOT_TRAPDOOR.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_HANGING_SIGN, Items.DARK_OAK_HANGING_SIGN, Items.BIRCH_HANGING_SIGN, Items.SPRUCE_HANGING_SIGN, Items.JUNGLE_HANGING_SIGN, Items.ACACIA_HANGING_SIGN, Items.MANGROVE_HANGING_SIGN, Items.CHERRY_HANGING_SIGN), RisusItems.BONDKNOT_HANGING_SIGN.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_SIGN, Items.DARK_OAK_SIGN, Items.BIRCH_SIGN, Items.SPRUCE_SIGN, Items.JUNGLE_SIGN, Items.ACACIA_SIGN, Items.MANGROVE_SIGN, Items.CHERRY_SIGN), RisusItems.BONDKNOT_SIGN.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_DOOR, Items.DARK_OAK_DOOR, Items.BIRCH_DOOR, Items.SPRUCE_DOOR, Items.JUNGLE_DOOR, Items.ACACIA_DOOR, Items.MANGROVE_DOOR, Items.CHERRY_DOOR), RisusItems.BONDKNOT_DOOR.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_BUTTON, Items.DARK_OAK_BUTTON, Items.BIRCH_BUTTON, Items.SPRUCE_BUTTON, Items.JUNGLE_BUTTON, Items.ACACIA_BUTTON, Items.MANGROVE_BUTTON, Items.CHERRY_BUTTON), RisusItems.BONDKNOT_BUTTON.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_PRESSURE_PLATE, Items.DARK_OAK_PRESSURE_PLATE, Items.BIRCH_PRESSURE_PLATE, Items.SPRUCE_PRESSURE_PLATE, Items.JUNGLE_PRESSURE_PLATE, Items.ACACIA_PRESSURE_PLATE, Items.MANGROVE_PRESSURE_PLATE, Items.CHERRY_PRESSURE_PLATE), RisusItems.BONDKNOT_PRESSURE_PLATE.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_SLAB, Items.DARK_OAK_SLAB, Items.BIRCH_SLAB, Items.SPRUCE_SLAB, Items.JUNGLE_SLAB, Items.ACACIA_SLAB, Items.MANGROVE_SLAB, Items.CHERRY_SLAB), RisusItems.BONDKNOT_SLAB.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_STAIRS, Items.DARK_OAK_STAIRS, Items.BIRCH_STAIRS, Items.SPRUCE_STAIRS, Items.JUNGLE_STAIRS, Items.ACACIA_STAIRS, Items.MANGROVE_STAIRS, Items.CHERRY_STAIRS), RisusItems.BONDKNOT_STAIRS.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_PLANKS, Items.DARK_OAK_PLANKS, Items.BIRCH_PLANKS, Items.SPRUCE_PLANKS, Items.JUNGLE_PLANKS, Items.ACACIA_PLANKS, Items.MANGROVE_PLANKS, Items.CHERRY_PLANKS), RisusItems.BONDKNOT_PLANKS.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_LOG, Items.DARK_OAK_LOG, Items.BIRCH_LOG, Items.SPRUCE_LOG, Items.JUNGLE_LOG, Items.ACACIA_LOG, Items.MANGROVE_LOG, Items.CHERRY_LOG), RisusItems.BONDKNOT_LOG.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_WOOD, Items.DARK_OAK_WOOD, Items.BIRCH_WOOD, Items.SPRUCE_WOOD, Items.JUNGLE_WOOD, Items.ACACIA_WOOD, Items.MANGROVE_WOOD, Items.CHERRY_WOOD), RisusItems.BONDKNOT_WOOD.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.STRIPPED_OAK_WOOD, Items.STRIPPED_DARK_OAK_WOOD, Items.STRIPPED_BIRCH_WOOD, Items.STRIPPED_SPRUCE_WOOD, Items.STRIPPED_JUNGLE_WOOD, Items.STRIPPED_ACACIA_WOOD, Items.STRIPPED_MANGROVE_WOOD, Items.STRIPPED_CHERRY_WOOD), RisusItems.STRIPPED_BONDKNOT_WOOD.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.STRIPPED_OAK_LOG, Items.STRIPPED_DARK_OAK_LOG, Items.STRIPPED_BIRCH_LOG, Items.STRIPPED_SPRUCE_LOG, Items.STRIPPED_JUNGLE_LOG, Items.STRIPPED_ACACIA_LOG, Items.STRIPPED_MANGROVE_LOG, Items.STRIPPED_CHERRY_LOG), RisusItems.STRIPPED_BONDKNOT_LOG.get())
-			.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
+				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")
@@ -127,36 +124,36 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.IMITATION_SCALEPLATE.get(), 32)
-			.pattern("###")
-			.pattern("#/#")
-			.pattern("###")
-			.define('#', Ingredient.of(Tags.Items.OBSIDIAN))
-			.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
+				.pattern("###")
+				.pattern("#/#")
+				.pattern("###")
+				.define('#', Ingredient.of(Tags.Items.OBSIDIAN))
+				.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), 5)
-			.pattern("/ /")
-			.pattern(" / ")
-			.pattern("/ /")
-			.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
+				.pattern("/ /")
+				.pattern(" / ")
+				.pattern("/ /")
+				.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), 5)
-			.pattern(" / ")
-			.pattern("///")
-			.pattern(" / ")
-			.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
+				.pattern(" / ")
+				.pattern("///")
+				.pattern(" / ")
+				.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TALL_HAIR.get(), 4)
-			.pattern("##")
-			.pattern("##")
-			.define('#', Ingredient.of(RisusItems.HAIR_FOLLICLES.get()))
-			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
-			.save(consumer);
+				.pattern("##")
+				.pattern("##")
+				.define('#', Ingredient.of(RisusItems.HAIR_FOLLICLES.get()))
+				.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())
 				.pattern("/#/")
@@ -197,11 +194,11 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUNDLE_OF_HAIR.get(), 1)
-			.pattern("##")
-			.pattern("##")
-			.define('#', Ingredient.of(RisusItems.TALL_HAIR.get()))
-			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
-			.save(consumer);
+				.pattern("##")
+				.pattern("##")
+				.define('#', Ingredient.of(RisusItems.TALL_HAIR.get()))
+				.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS.get(), 4)
 				.pattern("##")
@@ -256,20 +253,20 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLATTENED_SCALES_BLOCK.get(), 1)
-			.pattern("##")
-			.pattern("##")
-			.define('#', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
+				.pattern("##")
+				.pattern("##")
+				.define('#', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), 32)
-			.pattern("###")
-			.pattern("#/#")
-			.pattern("###")
-			.define('#', Ingredient.of(Blocks.OBSIDIAN))
-			.define('/', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
+				.pattern("###")
+				.pattern("#/#")
+				.pattern("###")
+				.define('#', Ingredient.of(Blocks.OBSIDIAN))
+				.define('/', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
 				.pattern("BGC")
@@ -304,17 +301,17 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.GOLD_FIST.get())
-			.pattern("BVB")
-			.pattern("BCB")
-			.pattern("LHL")
-			.define('B', Ingredient.of(Blocks.GOLD_BLOCK))
-			.define('C', Ingredient.of(RisusItems.TOOTHKNOCKER.get()))
-			.define('L', Ingredient.of(RisusItems.COAGULATED_BLOOD_BLOCK.get()))
-			.define('V', Ingredient.of(Items.GOLD_INGOT))
-			.define('H', Ingredient.of(RisusItems.HAND_OF_GREED.get()))
-			.unlockedBy("has_toothknocker", has(RisusItems.TOOTHKNOCKER.get()))
-			.unlockedBy("has_hand_of_greed", has(RisusItems.HAND_OF_GREED.get()))
-			.save(consumer);
+				.pattern("BVB")
+				.pattern("BCB")
+				.pattern("LHL")
+				.define('B', Ingredient.of(Blocks.GOLD_BLOCK))
+				.define('C', Ingredient.of(RisusItems.TOOTHKNOCKER.get()))
+				.define('L', Ingredient.of(RisusItems.COAGULATED_BLOOD_BLOCK.get()))
+				.define('V', Ingredient.of(Items.GOLD_INGOT))
+				.define('H', Ingredient.of(RisusItems.HAND_OF_GREED.get()))
+				.unlockedBy("has_toothknocker", has(RisusItems.TOOTHKNOCKER.get()))
+				.unlockedBy("has_hand_of_greed", has(RisusItems.HAND_OF_GREED.get()))
+				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RisusItems.CONCENTRATION_CORE.get())
 				.pattern("BGB")
@@ -349,7 +346,7 @@ public class CraftingGenerator extends twilightforest.data.helpers.CraftingDataH
 				.unlockedBy("has_item", has(Items.IRON_INGOT))
 				.save(consumer);
 
-	ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.JOYFLAME_CAMPFIRE.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.JOYFLAME_CAMPFIRE.get())
 				.pattern(" S ")
 				.pattern("S#S")
 				.pattern("LLL")

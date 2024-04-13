@@ -10,6 +10,7 @@ public class RisusHangingSignBlockEntity extends HangingSignBlockEntity {
 	public RisusHangingSignBlockEntity(BlockPos p_250603_, BlockState p_251674_) {
 		super(p_250603_, p_251674_);
 	}
+
 	@Override
 	public BlockEntityType<?> getType() {
 		return RisusBlockEntities.RISUS_HANGING_SIGN.get();

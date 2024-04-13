@@ -1,242 +1,122 @@
 {
   "variants": {
-    "bloodlogged=false,facing=east,half=lower,lavalogged=false,waterlogged=false": {
+    "facing=east,fluid=blood,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=lower,lavalogged=false,waterlogged=true": {
+    "facing=east,fluid=blood,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 90
+    },
+    "facing=east,fluid=empty,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=lower,lavalogged=true,waterlogged=false": {
+    "facing=east,fluid=empty,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=lower,lavalogged=true,waterlogged=true": {
+    "facing=east,fluid=lava,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 90
+    },
+    "facing=east,fluid=water,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=upper,lavalogged=false,waterlogged=false": {
+    "facing=east,fluid=water,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 90
     },
-    "bloodlogged=false,facing=east,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=false,facing=east,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=false,facing=north,half=lower,lavalogged=false,waterlogged=false": {
+    "facing=north,fluid=blood,half=lower": {
       "model": "risus:block/ribcage_cage"
     },
-    "bloodlogged=false,facing=north,half=lower,lavalogged=false,waterlogged=true": {
+    "facing=north,fluid=blood,half=upper": {
+      "model": "risus:block/ribcage_spine"
+    },
+    "facing=north,fluid=empty,half=lower": {
       "model": "risus:block/ribcage_cage"
     },
-    "bloodlogged=false,facing=north,half=lower,lavalogged=true,waterlogged=false": {
+    "facing=north,fluid=empty,half=upper": {
+      "model": "risus:block/ribcage_spine"
+    },
+    "facing=north,fluid=lava,half=lower": {
       "model": "risus:block/ribcage_cage"
     },
-    "bloodlogged=false,facing=north,half=lower,lavalogged=true,waterlogged=true": {
+    "facing=north,fluid=lava,half=upper": {
+      "model": "risus:block/ribcage_spine"
+    },
+    "facing=north,fluid=water,half=lower": {
       "model": "risus:block/ribcage_cage"
     },
-    "bloodlogged=false,facing=north,half=upper,lavalogged=false,waterlogged=false": {
+    "facing=north,fluid=water,half=upper": {
       "model": "risus:block/ribcage_spine"
     },
-    "bloodlogged=false,facing=north,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=false,facing=north,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=false,facing=north,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=false,facing=south,half=lower,lavalogged=false,waterlogged=false": {
+    "facing=south,fluid=blood,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=lower,lavalogged=false,waterlogged=true": {
+    "facing=south,fluid=blood,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 180
+    },
+    "facing=south,fluid=empty,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=lower,lavalogged=true,waterlogged=false": {
+    "facing=south,fluid=empty,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 180
+    },
+    "facing=south,fluid=lava,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=lower,lavalogged=true,waterlogged=true": {
+    "facing=south,fluid=lava,half=upper": {
+      "model": "risus:block/ribcage_spine",
+      "y": 180
+    },
+    "facing=south,fluid=water,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=upper,lavalogged=false,waterlogged=false": {
+    "facing=south,fluid=water,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 180
     },
-    "bloodlogged=false,facing=south,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=false,facing=south,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=false,facing=west,half=lower,lavalogged=false,waterlogged=false": {
+    "facing=west,fluid=blood,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 270
     },
-    "bloodlogged=false,facing=west,half=lower,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=lower,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=lower,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=upper,lavalogged=false,waterlogged=false": {
+    "facing=west,fluid=blood,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 270
     },
-    "bloodlogged=false,facing=west,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 270
-    },
-    "bloodlogged=false,facing=west,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 270
-    },
-    "bloodlogged=true,facing=east,half=lower,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=lower,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=lower,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=lower,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=upper,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=true,facing=east,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 90
-    },
-    "bloodlogged=true,facing=north,half=lower,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_cage"
-    },
-    "bloodlogged=true,facing=north,half=lower,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_cage"
-    },
-    "bloodlogged=true,facing=north,half=lower,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_cage"
-    },
-    "bloodlogged=true,facing=north,half=lower,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_cage"
-    },
-    "bloodlogged=true,facing=north,half=upper,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=true,facing=north,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=true,facing=north,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=true,facing=north,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine"
-    },
-    "bloodlogged=true,facing=south,half=lower,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=lower,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=lower,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=lower,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=upper,lavalogged=false,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=upper,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=true,facing=south,half=upper,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_spine",
-      "y": 180
-    },
-    "bloodlogged=true,facing=west,half=lower,lavalogged=false,waterlogged=false": {
+    "facing=west,fluid=empty,half=lower": {
       "model": "risus:block/ribcage_cage",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=lower,lavalogged=false,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,half=lower,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,half=lower,lavalogged=true,waterlogged=true": {
-      "model": "risus:block/ribcage_cage",
-      "y": 270
-    },
-    "bloodlogged=true,facing=west,half=upper,lavalogged=false,waterlogged=false": {
+    "facing=west,fluid=empty,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=upper,lavalogged=false,waterlogged=true": {
+    "facing=west,fluid=lava,half=lower": {
+      "model": "risus:block/ribcage_cage",
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=upper,lavalogged=true,waterlogged=false": {
-      "model": "risus:block/ribcage_spine",
+    "facing=west,fluid=water,half=lower": {
+      "model": "risus:block/ribcage_cage",
       "y": 270
     },
-    "bloodlogged=true,facing=west,half=upper,lavalogged=true,waterlogged=true": {
+    "facing=west,fluid=water,half=upper": {
       "model": "risus:block/ribcage_spine",
       "y": 270
     }

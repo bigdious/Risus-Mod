@@ -21,12 +21,13 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class SkinBlock extends Block {
 
-	public SkinBlock(Properties p_49795_) {
-		super(p_49795_);
+	public SkinBlock(Properties properties) {
+		super(properties);
 	}
+
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if(player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())){
+		if (player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 11);
 			player.getMainHandItem().shrink(1);
 			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
@@ -35,5 +36,5 @@ public class SkinBlock extends Block {
 
 		}
 		return super.use(state, level, pos, player, hand, result);
-		}
 	}
+}

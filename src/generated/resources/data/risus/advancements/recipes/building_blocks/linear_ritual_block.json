@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_critual",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_critual"
     ]
   ],
   "rewards": {
     "recipes": [
       "risus:linear_ritual_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -64,11 +64,6 @@ public class RisusBoat extends Boat {
 		}
 	}
 
-	@Override
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
-	}
-
 	public enum Type {
 		BONDKNOT(RisusBlocks.BONDKNOT_PLANKS.get(), "bondknot");
 
