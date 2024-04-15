@@ -14,7 +14,7 @@ import java.util.Collection;
 
 public class RisusTab {
 	private static final ResourceLocation RISUS_TABS = Risus.prefix("textures/gui/tabs.png");
-	private static final ResourceLocation RISUS_BACKGROUND = Risus.prefix("textures/gui/tab_risus.png");
+
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Risus.MODID);
 
@@ -156,7 +156,6 @@ public class RisusTab {
 					}
 			)
 			.withTabsImage(RISUS_TABS)
-			.withBackgroundLocation(RISUS_BACKGROUND)
 			.icon(() -> new ItemStack(RisusItems.SMILE.get()))
 			.build());
 }

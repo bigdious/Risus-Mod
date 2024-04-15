@@ -1,8 +1,9 @@
-// 1.20.4	2024-04-12T18:06:24.6898323	Tags for minecraft:block mod id risus
+// 1.20.4	2024-04-15T17:49:06.3247335	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences.json
 86196d8d301039609134e790f381774456113206 data/forge/tags/blocks/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/forge/tags/blocks/fence_gates/wooden.json
+ac21c777aa73f9bacb1190ebb3997a96a3e64ad9 data/minecraft/tags/blocks/campfires.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/blocks/doors.json
 86196d8d301039609134e790f381774456113206 data/minecraft/tags/blocks/fences.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/blocks/fence_gates.json

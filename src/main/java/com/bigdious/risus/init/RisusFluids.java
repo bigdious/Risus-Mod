@@ -49,7 +49,7 @@ public class RisusFluids {
 				}
 
 				public @Nullable ResourceLocation getRenderOverlayTexture(Minecraft mc) {
-					return Risus.prefix("textures/misc/blood_fluid_block");
+					return new ResourceLocation(Risus.MODID, "textures/misc/blood_fluid_block.png");
 				}
 
 				@Override

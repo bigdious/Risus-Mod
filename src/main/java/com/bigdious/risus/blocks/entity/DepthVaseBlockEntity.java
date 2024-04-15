@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -19,9 +20,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	public int depthToSlotRatio = (int) Math.round((81 - (this.getBlockPos().getY() + 64) / 4.74));
-
+	@Nullable
+	private ItemStack item = ItemStack.EMPTY;
 	private NonNullList<ItemStack> items = NonNullList.withSize(depthToSlotRatio, ItemStack.EMPTY);
 
 	public DepthVaseBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -46,7 +48,12 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity imple
 		}
 
 	}
+	//the below needs to stay or else depthvase allows for overflow when interacted with, deleting items
 
+	public ItemStack getTheItem() {
+		this.unpackLootTable(null);
+		return this.item;
+	}
 	public int getContainerSize() {
 		return depthToSlotRatio;
 	}
@@ -66,45 +73,28 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity imple
 	protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
 		return new DepthVaseMenu(pId, pPlayer);
 	}
-
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
-
 	public void setItem(int pIndex, ItemStack pStack) {
-		this.unpackLootTable(null);
+		this.unpackLootTable((Player)null);
 		this.getItems().set(pIndex, pStack);
 		if (pStack.getCount() > this.getMaxStackSize()) {
 			pStack.setCount(this.getMaxStackSize());
 		}
 
 	}
-
 	public boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
 		return ItemStack.isSameItemSameTags(oldStack, newStack);
 	}
-
 	public void setInputItem(int slot, ItemStack item) {
 		this.setItem(slot, item);
 		this.setChanged();
-	}
 
-	@Nullable
+	}
+	@org.jetbrains.annotations.Nullable
 	public ItemStack getInputItem(int slot) {
 		return this.getItem(slot);
 	}
 
-	@Override
-	public int[] getSlotsForFace(Direction direction) {
-		return direction != Direction.UP ? new int[]{0} : new int[0];
-	}
 
-	@Override
-	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction direction) {
-		return stack.getItem().canFitInsideContainerItems();
-	}
-
-	@Override
-	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
-		return direction == Direction.DOWN;
-	}
 }

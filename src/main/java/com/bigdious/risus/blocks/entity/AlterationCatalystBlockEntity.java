@@ -148,7 +148,10 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Nullable
 	public AlterationRecipe getRecipe(Level level, ItemStack stack) {
-		return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).orElse(null).value();
+		if (level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).orElse(null) != null) {
+			return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).get().value();
+		}
+		return null;
 	}
 
 	public void attemptCraft(Level level, ItemStack item) {
@@ -241,12 +244,12 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Override
 	public int[] getSlotsForFace(Direction direction) {
-		return direction != Direction.UP ? new int[]{0} : new int[0];
+		return new int[]{0};
 	}
 
 	@Override
 	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction direction) {
-		return Direction.Plane.HORIZONTAL.test(direction) && this.item.isEmpty();
+		return this.item.isEmpty();
 	}
 
 	@Override
