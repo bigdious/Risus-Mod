@@ -244,8 +244,8 @@
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"firstperson_righthand": {
-			"rotation": [0, 45, 0],
-			"translation": [1, 2.25, 0],
+			"rotation": [-180, 50.25, -180],
+			"translation": [1, 3, -0.25],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
