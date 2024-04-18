@@ -1,75 +1,117 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.FlyingMob;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
-import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.animal.Ocelot;
+import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-public class Lover extends FlyingMob implements Enemy {
+public class Lover extends Monster {
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 		this.xpReward = 5;
-		this.moveControl = new Lover.LoverMoveControl(this);
+		this.moveControl = new FlyingMoveControl(this, 20, true);
 	}
 
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
-				.add(Attributes.MAX_HEALTH, 30.0D)
-				.add(Attributes.MOVEMENT_SPEED, 0.25D)
-				.add(Attributes.ATTACK_DAMAGE, 1.0D)
-				.add(Attributes.FOLLOW_RANGE, 30.0D);
+			.add(Attributes.MAX_HEALTH, 30.0D)
+			.add(Attributes.FLYING_SPEED, 0.1F)
+			.add(Attributes.MOVEMENT_SPEED, 0.1F)
+			.add(Attributes.ATTACK_DAMAGE, 100.0D)
+			.add(Attributes.FOLLOW_RANGE, 30.0D);
 	}
+	@Override
+	protected PathNavigation createNavigation(Level p_218342_) {
+		FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, p_218342_);
+		flyingpathnavigation.setCanOpenDoors(false);
+		flyingpathnavigation.setCanFloat(true);
+		flyingpathnavigation.setCanPassDoors(true);
+		return flyingpathnavigation;
+	}
+	@Override
+	protected void checkFallDamage(double p_218316_, boolean p_218317_, BlockState p_218318_, BlockPos p_218319_) {
+	}
+	@Override
+	public void travel(Vec3 p_218382_) {
+		if (this.isControlledByLocalInstance()) {
+			if (this.isInWater()) {
+				this.moveRelative(0.02F, p_218382_);
+				this.move(MoverType.SELF, this.getDeltaMovement());
+				this.setDeltaMovement(this.getDeltaMovement().scale(0.8F));
+			} else if (this.isInLava()) {
+				this.moveRelative(0.02F, p_218382_);
+				this.move(MoverType.SELF, this.getDeltaMovement());
+				this.setDeltaMovement(this.getDeltaMovement().scale(0.5));
+			} else {
+				this.moveRelative(this.getSpeed(), p_218382_);
+				this.move(MoverType.SELF, this.getDeltaMovement());
+				this.setDeltaMovement(this.getDeltaMovement().scale(0.91F));
+			}
+		}
+
+		this.calculateEntityAnimation(false);
+	}
+	protected void registerGoals() {
+		this.goalSelector.addGoal(4, new FloatGoal(this));
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.85D, false));
+		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+	}
+	@Override
+	public boolean killedEntity(ServerLevel p_219160_, LivingEntity entity) {
+		boolean flag = super.killedEntity(p_219160_, entity);
+		if ((entity instanceof Creeper creeper && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.STALKER.get(), (timer) -> {}))) {
+			if (p_219160_.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
+				return flag;
+			}
+
+			Stalker stalker = creeper.convertTo(RisusEntities.STALKER.get(), false);
+			if (stalker != null) {
+				stalker.finalizeSpawn(
+					p_219160_,
+					p_219160_.getCurrentDifficultyAt(stalker.blockPosition()),
+					MobSpawnType.CONVERSION,
+					new Zombie.ZombieGroupData(false, true),
+					null
+				);
+				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, stalker);
+				if (!this.isSilent()) {
+					p_219160_.levelEvent(null, 1026, this.blockPosition(), 0);
+				}
+
+				flag = false;
+			}
+		}
+
+		return flag;
+	}
+
 
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPING;
-	}
-
-	static class LoverMoveControl extends MoveControl {
-		private final Lover lover;
-		private int floatDuration;
-
-		public LoverMoveControl(Lover pLover) {
-			super(pLover);
-			this.lover = pLover;
-		}
-
-		public void tick() {
-			if (this.operation == MoveControl.Operation.MOVE_TO) {
-				if (this.floatDuration-- <= 0) {
-					this.floatDuration += this.lover.getRandom().nextInt(5) + 2;
-					Vec3 vec3 = new Vec3(this.wantedX - this.lover.getX(), this.wantedY - this.lover.getY(), this.wantedZ - this.lover.getZ());
-					double d0 = vec3.length();
-					vec3 = vec3.normalize();
-					if (this.canReach(vec3, Mth.ceil(d0))) {
-						this.lover.setDeltaMovement(this.lover.getDeltaMovement().add(vec3.scale(0.1D)));
-					} else {
-						this.operation = MoveControl.Operation.WAIT;
-					}
-				}
-
-			}
-		}
-
-		private boolean canReach(Vec3 pPos, int pLength) {
-			AABB aabb = this.lover.getBoundingBox();
-
-			for (int i = 1; i < pLength; ++i) {
-				aabb = aabb.move(pPos);
-				if (!this.lover.level().noCollision(this.lover, aabb)) {
-					return false;
-				}
-			}
-
-			return true;
-		}
 	}
 }
 

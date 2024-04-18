@@ -30,7 +30,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(new ResourceLocation(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(new ResourceLocation(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
 
-	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(new ResourceLocation(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1F), 0x000000, 0x8b0000);
+	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(new ResourceLocation(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x8b0000);
 	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(new ResourceLocation(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x000000, 0x8b0000);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Memory1>> MEMORY1 = registerNoEgg(new ResourceLocation(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
