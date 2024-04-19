@@ -1,4 +1,4 @@
-// 1.20.4	2024-04-12T18:31:00.375554	Recipes
+// 1.20.4	2024-04-19T19:54:42.9228877	Recipes
 24fcd9ca1a068078286ab43b529b7d057215b490 data/risus/advancements/recipes/alteration/ashen_remains.json
 541f5d0332baad1a5a4dcc251ad667922d87f8da data/risus/advancements/recipes/alteration/bloodweave.json
 cb7acb73b46e47c1c8cfe6fc72632bf62c7866bc data/risus/advancements/recipes/alteration/bloodwyrm_head.json
@@ -20,6 +20,7 @@ a492f5c38e3a23c966d8622358e9fec27a17a590 data/risus/advancements/recipes/alterat
 536ebd29d77db36e8082b5adcfd39d279e7e79b8 data/risus/advancements/recipes/alteration/chiseled_grimstone.json
 264bb955ae967c542754c3c50b539c9d1493f095 data/risus/advancements/recipes/alteration/cracked_grimstone_bricks.json
 e253e0d426923b9eb2b3e8e92b821c0aeddd6031 data/risus/advancements/recipes/alteration/depth_vase.json
+4050b216d20a69059766b59c4339b7cdf8a0a483 data/risus/advancements/recipes/alteration/display_notch.json
 544a2990322bcd3ad2e687153ec3006d5ec471fd data/risus/advancements/recipes/alteration/engraved_basalt.json
 db7d01e9122d0185348eb0b1d79ab9a5aecb296e data/risus/advancements/recipes/alteration/eye_ender.json
 8e81622ac039b5573540cb888d676e96cc777f1f data/risus/advancements/recipes/alteration/gluttony_scaleplate.json
@@ -44,6 +45,8 @@ f1b525c7c632037fe489ea52628c4d8fa99d7d68 data/risus/advancements/recipes/buildin
 0c5eca50956509c21981c6569c85c8670ad27d6b data/risus/advancements/recipes/building_blocks/bondknot_wood.json
 2f475d3409c4da24d8aea13f3fbbe9291c97703f data/risus/advancements/recipes/building_blocks/chiseled_grimstone.json
 ccc7aca78bad9c8795d461293467cf1cc4533bdd data/risus/advancements/recipes/building_blocks/curved_ritual_block.json
+e9408dcf5d870ab7070c6198ec1561921dfbf640 data/risus/advancements/recipes/building_blocks/display_notch.json
+598bada32e25347b6e1115f05d5c2f472b9f0569 data/risus/advancements/recipes/building_blocks/display_notch_stand.json
 9fc0fb38209230fc0ccdfe8cfc7c8656d2461ebf data/risus/advancements/recipes/building_blocks/eye_bleached.json
 f5c67ba764a69e10fb723949f27c80b8dcaf7f32 data/risus/advancements/recipes/building_blocks/eye_bloodshot.json
 b55a497e2852c08382435ba1edcbd7d762636285 data/risus/advancements/recipes/building_blocks/eye_emerald.json
@@ -101,6 +104,7 @@ b45bc6927619e98ca688bd45316208e4e90ba8cc data/risus/recipes/alteration/burnt_hyp
 20e52a637511eda83c93207be35bee5a723fdafe data/risus/recipes/alteration/chiseled_grimstone.json
 c08703d861370dc5009d391f6e0f70a2c6e33f5d data/risus/recipes/alteration/cracked_grimstone_bricks.json
 89f677ff224b5f7570d1695c82848aaf759f281a data/risus/recipes/alteration/depth_vase.json
+6326f01c9bb5e8efa8c326442d81e4cf1ee46283 data/risus/recipes/alteration/display_notch.json
 10e64e1376425aec8bae2cee47792784dd9f3191 data/risus/recipes/alteration/engraved_basalt.json
 40b3c421726b3c41ea3ee11826a0ef23de3a424c data/risus/recipes/alteration/eye_ender.json
 dfaeec21bd8eea0e66558cabec28350f9c9b111e data/risus/recipes/alteration/gluttony_scaleplate.json
@@ -137,6 +141,8 @@ d7d07a100baee2c03712da03080596a12b1eeba4 data/risus/recipes/bondknot_wood.json
 f38181e083712c79d33ae8e600b3d7c28f0b9297 data/risus/recipes/concentration_core.json
 4293f18501c32da90d1dea26ce3a39726667744c data/risus/recipes/crescent_disaster.json
 beef25f79756a58e29af622ca7d42197af2f677f data/risus/recipes/curved_ritual_block.json
+bb2157d7b6d7bd00b02aa25b8ab6587c14b4a584 data/risus/recipes/display_notch.json
+d7f4bba38c9ce463b09cb0c0ac9971a01e3bc1e3 data/risus/recipes/display_notch_stand.json
 3ba723b1c4206492c490bd544c42ec0a747c7ce5 data/risus/recipes/eye_bleached.json
 da6fd9e004f4f9f7a99f8df016f1e2962a575a6c data/risus/recipes/eye_bloodshot.json
 681da2c5346e1f169e6c810f1bcf91abebad44da data/risus/recipes/eye_emerald.json

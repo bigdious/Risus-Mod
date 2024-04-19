@@ -44,6 +44,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusItems.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_gluttony_scales", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_leather", has(Items.LEATHER)).unlockedBy("has_rabbit_hide", has(Items.RABBIT_HIDE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_sea_pickle", has(Items.SEA_PICKLE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item_frame", has(Items.ITEM_FRAME)).save(consumer);
 
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
@@ -95,6 +96,16 @@ public class CraftingGenerator extends RecipeProvider {
 				.requires(Ingredient.of(ItemTagGenerator.BONDKNOT_LOGS))
 				.unlockedBy("has_item", has(ItemTagGenerator.BONDKNOT_LOGS))
 				.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DISPLAY_NOTCH_STAND.get(), 1)
+			.requires(Ingredient.of(RisusBlocks.DISPLAY_NOTCH))
+			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DISPLAY_NOTCH.get(), 1)
+			.requires(Ingredient.of(RisusBlocks.DISPLAY_NOTCH_STAND))
+			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH_STAND))
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_STAIRS.get(), 8)
 				.pattern("#  ")

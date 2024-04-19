@@ -153,6 +153,8 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), context -> new AlterationCatalystRenderer());
+		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), context -> new DisplayNotchRenderer());
+		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH_STAND.get(), context -> new DisplayNotchStandRenderer());
 	}
 
 	private static void killScreenWithAmnesia(RenderGuiOverlayEvent.Pre event) {

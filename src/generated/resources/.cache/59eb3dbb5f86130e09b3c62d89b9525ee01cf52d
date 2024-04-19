@@ -1,4 +1,4 @@
-// 1.20.4	2024-04-12T18:06:24.6918361	Loot Tables
+// 1.20.4	2024-04-19T18:17:54.4623591	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -39,6 +39,8 @@ decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_tables/blocks/decayed_t
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_tables/blocks/decomposed_tissue.json
 8754ae627542419799dcff8c75e6b3a47bd78c58 data/risus/loot_tables/blocks/decomposing_tissue.json
 ca2326db70dfc01aeb34a908c692fca8d6c4a5cf data/risus/loot_tables/blocks/depth_vase.json
+41aeec2a7e56a1d9b385df088b16a68c630f2914 data/risus/loot_tables/blocks/display_notch.json
+161f028452d00d372649109feeff2a9a0e13ed64 data/risus/loot_tables/blocks/display_notch_stand.json
 0848c6823beedc155b3d4e8a94adb6ba946c9dfb data/risus/loot_tables/blocks/engraved_basalt.json
 2d359175a49e732b876057db3d1b377f0f09ba73 data/risus/loot_tables/blocks/eye_bleached.json
 0dacf3b435b22e4e545ac5f3a36b5bc4e1473856 data/risus/loot_tables/blocks/eye_bloodshot.json

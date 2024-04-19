@@ -1,4 +1,4 @@
-// 1.20.4	2024-04-12T18:06:24.682302	Risus Item Models
+// 1.20.4	2024-04-19T18:17:54.4563626	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -43,6 +43,8 @@ c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissu
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposed_tissue.json
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_tissue.json
 8a013eca0bf8226d48b13f57d3cb56cba3afe268 assets/risus/models/item/depth_vase.json
+ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.json
+ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch_stand.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
 ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.json

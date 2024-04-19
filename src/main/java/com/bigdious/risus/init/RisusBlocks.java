@@ -136,5 +136,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> LINEAR_RITUAL_BLOCK = BLOCKS.register("linear_ritual_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new LiquidBlock(RisusFluids.SOURCE_BLOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+	public static final DeferredBlock<Block> DISPLAY_NOTCH = BLOCKS.register("display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
 }
