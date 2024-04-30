@@ -292,6 +292,16 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.BOOMSTICK.get())
+			.pattern("TST")
+			.pattern("TST")
+			.pattern("GSG")
+			.define('T', Ingredient.of(Items.TNT))
+			.define('S', Ingredient.of(Items.STICK))
+			.define('G', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
+			.unlockedBy("has_scales", has(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, RisusItems.CRESCENT_DISASTER.get())
 				.requires(RisusItems.UNAWAKENED_VESSEL.get())
 				.requires(RisusItems.BLOOD_FEATHER.get())

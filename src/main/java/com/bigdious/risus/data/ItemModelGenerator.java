@@ -150,6 +150,16 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, crescent)
 				.perspective(ItemDisplayContext.HEAD, crescent)
 				.end();
+		singleTexTool(RisusItems.BOOMSTICK);
+		ItemModelBuilder boomstick = nested().parent(getExistingFile(Risus.prefix("item/boomstick_held"))).texture("boomstick", Risus.prefix("item/boomstick"));
+		withExistingParent(RisusItems.BOOMSTICK.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("boomstick_base", Risus.prefix("item/boomstick_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, boomstick)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, boomstick)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, boomstick)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, boomstick)
+			.perspective(ItemDisplayContext.HEAD, boomstick)
+			.end();
 		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)

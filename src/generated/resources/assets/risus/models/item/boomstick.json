@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/boomstick_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/boomstick_held",
+      "textures": {
+        "boomstick": "risus:item/boomstick"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/boomstick_held",
+      "textures": {
+        "boomstick": "risus:item/boomstick"
+      }
+    },
+    "head": {
+      "parent": "risus:item/boomstick_held",
+      "textures": {
+        "boomstick": "risus:item/boomstick"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/boomstick_held",
+      "textures": {
+        "boomstick": "risus:item/boomstick"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/boomstick_held",
+      "textures": {
+        "boomstick": "risus:item/boomstick"
+      }
+    }
+  },
+  "textures": {
+    "layer0": "risus:item/boomstick"
+  }
+}
