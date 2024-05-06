@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "risus:gluttony_scales"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "TST",
+    "TST",
+    "GSG"
+  ],
+  "result": {
+    "item": "risus:boomstick"
+  }
+}

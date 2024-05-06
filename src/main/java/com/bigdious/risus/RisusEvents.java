@@ -6,6 +6,7 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Items;
@@ -15,11 +16,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.SpawnPlacementRegisterEvent;
 import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -29,6 +32,7 @@ public class RisusEvents {
 	public static void initEvents(IEventBus bus) {
 		bus.addListener(RisusEvents::commonSetup);
 		bus.addListener(RisusEvents::registerAttributes);
+		bus.addListener(RisusEvents::registerSpawnPlacements);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
 	}
 
@@ -77,7 +81,7 @@ public class RisusEvents {
 					RisusFluids.BLOOD_FLUID_TYPE.get(),
 					fluidState -> RisusBlocks.COAGULATED_BLOOD_BLOCK.get().defaultBlockState()
 			));
-		});
+			});
 	}
 
 	private static void registerAttributes(EntityAttributeCreationEvent event) {
@@ -90,6 +94,9 @@ public class RisusEvents {
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 	}
+	private static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
+		event.register(RisusEntities.LOVER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		}
 
 	private static void knockOutSomeTeeth(LivingHurtEvent event) {
 		Entity source = event.getSource().getEntity();

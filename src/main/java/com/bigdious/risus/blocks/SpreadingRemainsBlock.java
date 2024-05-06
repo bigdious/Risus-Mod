@@ -27,7 +27,8 @@ public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMulti
 
 	public SpreadingRemainsBlock(BlockBehaviour.Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
+		this.registerDefaultState(this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
+			.setValue(FACING, Direction.DOWN));
 	}
 
 	@Override

@@ -1,11 +1,13 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -23,9 +25,14 @@ import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.Random;
 
 public class Lover extends Monster {
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
@@ -34,6 +41,13 @@ public class Lover extends Monster {
 		this.moveControl = new FlyingMoveControl(this, 20, true);
 	}
 
+	public static boolean canLoverSpawn(EntityType<? extends Lover> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+		return checkMonsterSpawnRules(entityType, level, spawnType, pos, random);
+	}
+	@Override
+	public int getMaxSpawnClusterSize() {
+		return 1;
+	}
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
 			.add(Attributes.MAX_HEALTH, 30.0D)
@@ -78,29 +92,30 @@ public class Lover extends Monster {
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.85D, false));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
-		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 	}
 	@Override
-	public boolean killedEntity(ServerLevel p_219160_, LivingEntity entity) {
-		boolean flag = super.killedEntity(p_219160_, entity);
+	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
+		boolean flag = super.killedEntity(level, entity);
 		if ((entity instanceof Creeper creeper && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.STALKER.get(), (timer) -> {}))) {
-			if (p_219160_.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
+			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
 				return flag;
 			}
 
 			Stalker stalker = creeper.convertTo(RisusEntities.STALKER.get(), false);
 			if (stalker != null) {
 				stalker.finalizeSpawn(
-					p_219160_,
-					p_219160_.getCurrentDifficultyAt(stalker.blockPosition()),
+					level,
+					level.getCurrentDifficultyAt(stalker.blockPosition()),
 					MobSpawnType.CONVERSION,
 					new Zombie.ZombieGroupData(false, true),
 					null
 				);
 				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, stalker);
 				if (!this.isSilent()) {
-					p_219160_.levelEvent(null, 1026, this.blockPosition(), 0);
+					level.levelEvent(null, 1026, this.blockPosition(), 0);
 				}
+				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR))
+				entity.level().setBlock(entity.getOnPos(), RisusBlocks.SMILING_REMAINS.get().defaultBlockState(), 3);
 
 				flag = false;
 			}
