@@ -142,6 +142,7 @@ public class RisusTab {
 						output.accept(RisusItems.BLOOD_FEATHER.get());
 						output.accept(RisusItems.GLUTTONY_SCALES.get());
 						output.accept(RisusItems.BOOMSTICK.get());
+						output.accept(RisusItems.SCYTHE.get());
 						output.accept(RisusItems.CONCENTRATION_CORE.get());
 						output.accept(RisusItems.UNAWAKENED_VESSEL.get());
 						output.accept(RisusItems.CRESCENT_DISASTER.get());

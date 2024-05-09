@@ -3,6 +3,8 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.StalkerModel;
+import com.bigdious.risus.client.render.layer.HolderFaceLayer;
+import com.bigdious.risus.client.render.layer.StalkerEyeLayer;
 import com.bigdious.risus.entity.Stalker;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -13,6 +15,7 @@ public class StalkerRenderer extends MobRenderer<Stalker, StalkerModel<Stalker>>
 
 	public StalkerRenderer(EntityRendererProvider.Context context) {
 		super(context, new StalkerModel<>(context.bakeLayer(RisusModelLayers.STALKER)), 0.0F);
+		this.addLayer(new StalkerEyeLayer<>(this));
 	}
 
 	@Override

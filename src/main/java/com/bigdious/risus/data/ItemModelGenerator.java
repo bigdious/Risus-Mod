@@ -160,6 +160,16 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, boomstick)
 			.perspective(ItemDisplayContext.HEAD, boomstick)
 			.end();
+		singleTexTool(RisusItems.SCYTHE);
+		ItemModelBuilder scythe = nested().parent(getExistingFile(Risus.prefix("item/scythe_held"))).texture("scythe", Risus.prefix("item/scythe"));
+		withExistingParent(RisusItems.SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("scythe_base", Risus.prefix("item/scythe_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, scythe)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, scythe)
+			.perspective(ItemDisplayContext.HEAD, scythe)
+			.end();
 		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)

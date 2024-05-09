@@ -3,14 +3,18 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.HolderModel;
+import com.bigdious.risus.client.render.layer.HolderFaceLayer;
 import com.bigdious.risus.entity.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.client.model.EndermanModel;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
@@ -25,6 +29,7 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 	public HolderRenderer(EntityRendererProvider.Context context) {
 		super(context, new HolderModel<>(context.bakeLayer(RisusModelLayers.HOLDER)), 0.0F);
 		this.addLayer(new HolderItemLayer(this, context.getItemInHandRenderer()));
+		this.addLayer(new HolderFaceLayer<>(this));
 	}
 
 	@Override
