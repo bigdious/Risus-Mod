@@ -26,8 +26,8 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.03125, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(180));
+						stack.mulPose(Axis.ZP.rotationDegrees(180));
+						stack.mulPose(Axis.YP.rotationDegrees(0));
 						stack.scale(1f, 1f, 1f);
 					}
 					case UP_SOUTH -> {
@@ -78,7 +78,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.96875, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
+						stack.mulPose(Axis.ZP.rotationDegrees(180));
 						stack.scale(1f, 1f, 1f);
 					}
 					case DOWN_WEST -> {
@@ -88,8 +88,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.96875, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(270));
+						stack.mulPose(Axis.ZP.rotationDegrees(90));
 						stack.scale(1f, 1f, 1f);
 					}
 					case DOWN_EAST -> {
@@ -99,8 +98,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.96875, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(90));
+						stack.mulPose(Axis.ZP.rotationDegrees(270));
 						stack.scale(1f, 1f, 1f);
 					}
 					case NORTH_UP -> {

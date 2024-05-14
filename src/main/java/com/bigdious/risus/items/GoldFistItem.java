@@ -12,7 +12,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.neoforged.neoforge.common.ToolAction;
 
-public class GoldFistItem extends SwordItem {
+public class GoldFistItem extends ToothknockerItem {
 	public GoldFistItem(Tier tier, int damage, float speed, Properties properties) {
 		super(tier, damage, speed, properties);
 	}
