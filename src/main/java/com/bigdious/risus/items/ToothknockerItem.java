@@ -5,7 +5,9 @@ import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -100,31 +102,33 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
+
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-		ItemStack itemstack = pPlayer.getItemInHand(pHand);
+	public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand pHand) {
+		ItemStack itemstack = player.getItemInHand(pHand);
 		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
 			return InteractionResultHolder.fail(itemstack);
 		} else {
-			if (!pLevel.isClientSide) {
-				float f7 = pPlayer.getYRot();
-				float f = pPlayer.getXRot();
-				float f1 = -Mth.sin(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
-				float f2 = -Mth.sin(f * (float) (Math.PI / 180.0));
-				float f3 = Mth.cos(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
-				float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
-				float f5 = 3.0F;
-				f1 *= f5 / f4;
-				f2 *= f5 / f4;
-				f3 *= f5 / f4;
-				pPlayer.push((double)f1, (double)f2, (double)f3);
-				if (pPlayer.onGround()) {
-					float f6 = 1.1999999F;
-					pPlayer.move(MoverType.SELF, new Vec3(0.0, 1.1999999F, 0.0));
-				}
-			}
+
+			float f7 = player.getYRot();
+			float f = player.getXRot();
+			float f1 = -Mth.sin(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
+			float f2 = -Mth.sin(f * (float) (Math.PI / 180.0));
+			float f3 = Mth.cos(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
+			float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
+			float f5 = 3.0F * ((1F) / 4.0F);
+			f1 *= f5 / f4;
+			f2 *= f5 / f4;
+			f3 *= f5 / f4;
+			player.push((double)f1, (double)f2, (double)f3);
+			float f6 = 1.1999999F;
+			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
+			player.getCooldowns().addCooldown(this, 30);
+			itemstack.hurtAndBreak(1, player, (p_43388_) -> {
+				p_43388_.broadcastBreakEvent(player.getUsedItemHand());
+			});
+			return InteractionResultHolder.consume(itemstack);
 		}
-		return InteractionResultHolder.fail(itemstack);
 	}
 
 
