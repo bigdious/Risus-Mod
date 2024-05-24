@@ -1,6 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBiomes;
 import com.bigdious.risus.init.RisusDamageTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -12,7 +13,9 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
-	private static final RegistrySetBuilder REGISTRIES = new RegistrySetBuilder().add(Registries.DAMAGE_TYPE, RisusDamageTypes::bootstrap);
+	private static final RegistrySetBuilder REGISTRIES = new RegistrySetBuilder()
+		.add(Registries.DAMAGE_TYPE, RisusDamageTypes::bootstrap)
+		.add(Registries.BIOME, RisusBiomes::bootstrap);
 
 	public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, REGISTRIES, Set.of("minecraft", Risus.MODID));

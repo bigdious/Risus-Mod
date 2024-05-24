@@ -133,6 +133,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> DEPTH_VASE = ITEMS.register("depth_vase", () -> new BlockItem(RisusBlocks.DEPTH_VASE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DISPLAY_NOTCH = ITEMS.register("display_notch", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DISPLAY_NOTCH_STAND = ITEMS.register("display_notch_stand", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> LAUGHING_STALK = ITEMS.register("laughing_stalk", () -> new BlockItem(RisusBlocks.LAUGHING_STALK.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> CRYSTALLIZED_BOND = ITEMS.register("crystallized_bond", () -> new Item(defaultWithRarity()));

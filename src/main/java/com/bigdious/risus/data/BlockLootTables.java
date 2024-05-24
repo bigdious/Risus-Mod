@@ -50,6 +50,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH_STAND.get());
+		dropSelf(RisusBlocks.LAUGHING_STALK.get());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());

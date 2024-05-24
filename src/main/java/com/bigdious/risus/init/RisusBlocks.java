@@ -24,6 +24,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> ALTERATION_CATALYST = BLOCKS.register("alteration_catalyst", () -> new AlterationCatalystBlock(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
 	public static final DeferredBlock<Block> ANGEL_ALTAR = BLOCKS.register("angel_altar", () -> new AngelAltar(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
 	public static final DeferredBlock<Block> DEPTH_VASE = BLOCKS.register("depth_vase", () -> new DepthVaseBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
+	public static final DeferredBlock<Block> LAUGHING_STALK = BLOCKS.register("laughing_stalk", () -> new BiomeBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
 	public static final DeferredBlock<Block> ASHEN_REMAINS = BLOCKS.register("ashen_remains", () -> new AshenRemainsBlock(Block.Properties.ofFullCopy(Blocks.SOUL_SOIL)));
 	public static final DeferredBlock<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new RemainsBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK)));
 	public static final DeferredBlock<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN)));

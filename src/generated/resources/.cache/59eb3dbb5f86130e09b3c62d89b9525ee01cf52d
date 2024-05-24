@@ -1,4 +1,4 @@
-// 1.20.4	2024-04-19T18:17:54.4623591	Loot Tables
+// 1.20.4	2024-05-24T17:33:52.0403373	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_tables/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_tables/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_tables/blocks/ashen_remains.json
@@ -71,6 +71,7 @@ c382ba88778232e13d12e9e398a6316cfe4c1483 data/risus/loot_tables/blocks/joyflame_
 795df9c1c241ea27db6aa7e825984fce3cd59e17 data/risus/loot_tables/blocks/joyflame_torch.json
 71cdcb97017aedf78971c429fa3a834934f1e9fb data/risus/loot_tables/blocks/joyflame_wall_torch.json
 4435c8cb0c257f8dfb092d9dc856f952c7fc2758 data/risus/loot_tables/blocks/laughing_obsidian.json
+c0be40aa18a2d2e6cee8f214585d1888188714ef data/risus/loot_tables/blocks/laughing_stalk.json
 4009090cc2cb6ddd585ad87e6f4f714154aa25aa data/risus/loot_tables/blocks/linear_ritual_block.json
 73e2d66249f042b584ac6043ea5590a5d22ba2d1 data/risus/loot_tables/blocks/living_tissue.json
 320374d0153b1c45e537be87ce578bfe58b000b1 data/risus/loot_tables/blocks/maw_guts.json

@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,spreading=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,spreading=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=east,spreading=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,spreading=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,spreading=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,spreading=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=south,spreading=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,spreading=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,spreading=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,spreading=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=west,spreading=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,spreading=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
