@@ -40,6 +40,7 @@ public class AlterationParticleOptions extends DustParticleOptionsBase {
 	};
 
 	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(Vec3.fromRGB24(9868693).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
+	public static final AlterationParticleOptions LETTERS_APPEAR = new AlterationParticleOptions(Vec3.fromRGB24(526343).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
 	private final Vector3f toColor;
 
 	public AlterationParticleOptions(Vector3f fromColor, Vector3f toColor, float scale) {

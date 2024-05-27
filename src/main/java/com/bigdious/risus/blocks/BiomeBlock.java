@@ -30,7 +30,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.List;
 
-public class BiomeBlock extends ActuallyUseableDirectionalBlock{
+public class BiomeBlock extends ActuallyUseableDirectionalBlock {
 	//copy from Twilight Forest TransCore
 	public static final BooleanProperty SPREADING = BooleanProperty.create("spreading");
 
@@ -62,7 +62,6 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock{
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING)) return;
 
-		this.playSound(level, pos, rand);
 		this.performConversion(level, pos, rand);
 
 		level.scheduleTick(pos, this, this.tickRate());
@@ -81,16 +80,15 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock{
 		return InteractionResult.PASS;
 	}
 
-	void performConversion(ServerLevel level, BlockPos pos, RandomSource rand){
-		ResourceKey<Biome> target = RisusBiomes.COALIFICATION;
-		Holder<Biome> biome = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(target);
+	void performConversion(ServerLevel level, BlockPos pos, RandomSource rand) {
+		Holder<Biome> biome = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(RisusBiomes.COALIFICATION);
 		int range = 20;
 		for (int i = 0; i < 16; i++) {
 			BlockPos dPos = WorldUtil.randomOffset(rand, pos, range, 0, range);
 			if (dPos.distSqr(pos) > 256.0)
 				continue;
 
-			if (level.getBiome(dPos).is(target))
+			if (level.getBiome(dPos).is(RisusBiomes.COALIFICATION))
 				continue;
 
 			int minY = QuartPos.fromBlock(level.getMinBuildHeight());
@@ -103,7 +101,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock{
 			for (LevelChunkSection section : chunkAt.getSections()) {
 				for (int sy = 0; sy < 16; sy += 4) {
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
-					if (section.getBiomes().get(x & 3, y & 3, z & 3).is(target))
+					if (section.getBiomes().get(x & 3, y & 3, z & 3).is(RisusBiomes.COALIFICATION))
 						continue;
 					if (section.getBiomes() instanceof PalettedContainer<Holder<Biome>> container)
 						container.set(x & 3, y & 3, z & 3, biome);
@@ -115,11 +113,5 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock{
 
 			break;
 		}
-	}
-
-	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
-
-
-	protected void playSound(Level level, BlockPos pos, RandomSource rand) {
 	}
 }
