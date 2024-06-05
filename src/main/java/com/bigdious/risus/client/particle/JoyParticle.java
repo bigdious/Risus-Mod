@@ -18,7 +18,7 @@ import java.lang.reflect.Field;
 public class JoyParticle extends DripParticle {
 
 	private static final MethodHandles.Lookup LOOKUP = MethodHandles.lookup();
-	private static final Field particle_Gravity = ObfuscationReflectionHelper.findField(Particle.class, "f_107226_"); //gravity
+	private static final Field particle_Gravity = ObfuscationReflectionHelper.findField(Particle.class, "gravity"); //gravity
 	private static final MethodHandle handle_particle_Gravity_set;
 	private static final MethodHandle handle_particle_Gravity_get;
 
