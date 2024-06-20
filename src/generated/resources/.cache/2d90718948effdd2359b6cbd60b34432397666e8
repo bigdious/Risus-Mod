@@ -1,4 +1,4 @@
-// 1.20.4	2024-05-24T17:33:52.0477712	Risus blockstates and models
+// 1.20.4	2024-06-20T19:52:48.548049	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -63,7 +63,7 @@ e435a565179d6af5e2fbdd7b0f6f54b84922de4a assets/risus/blockstates/heart_transpla
 128ffb02e3991bb5e9c88a51568ffea31dbd83b4 assets/risus/blockstates/joyflame_torch.json
 71b0fc2368b6578669d494238f980971f312c6b1 assets/risus/blockstates/joyflame_wall_torch.json
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
-cc47aa7c70315a2c1ae7f7e9bbf0fef249f3059c assets/risus/blockstates/laughing_stalk.json
+1b43edf9ddbe2e8172ee4f42176166213bceee10 assets/risus/blockstates/laughing_stalk.json
 50d625eef7c45a6b9ce071fd66ff5e604d04dec1 assets/risus/blockstates/linear_ritual_block.json
 8cdc3c2d14955abc1dc03367dbad553ead1a0c8c assets/risus/blockstates/living_tissue.json
 6788b1496053443e949a64b483ec2bb93ca42a2d assets/risus/blockstates/maw_guts.json
