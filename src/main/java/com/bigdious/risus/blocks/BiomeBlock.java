@@ -1,6 +1,10 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
+import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
+import com.bigdious.risus.blocks.entity.PoppingBondknotBlockEntity;
 import com.bigdious.risus.init.RisusBiomes;
+import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
@@ -18,10 +22,12 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -41,10 +47,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock{
+public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock {
 	//copy from Twilight Forest TransCore
 	public static final BooleanProperty SPREADING = BooleanProperty.create("spreading");
-	public int decaytime = 0;
 
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
@@ -129,7 +134,10 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING)) return;
-		if (decaytime==50) level.setBlockAndUpdate(pos, state.setValue(SPREADING, false));
+		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime==40) {
+			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false));
+			laughingStalk.decaytime=0;
+		}
 
 		this.performConversion(level, pos, rand, state);
 		level.scheduleTick(pos, this, this.tickRate());
@@ -179,13 +187,39 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
 			level.getChunkSource().chunkMap.resendBiomesForChunks(List.of(chunkAt));
 
-			if (state.getValue(SPREADING)) decaytime++;
+			if (state.getValue(SPREADING) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) laughingStalk.decaytime++;
 			break;
 		}
 	}
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;
+	}
+
+	@Nullable
+	@Override
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return new BiomeBlockEntity(pos, state);
+	}
+	@Override
+	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+		Direction facing = state.getValue(DirectionalBlock.FACING);
+		BlockPos restingPos = pos.relative(facing.getOpposite());
+		return canSupportCenter(world, restingPos, facing);
+	}
+	@Override
+	public BlockState rotate(BlockState state, Rotation rot) {
+		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
+	}
+	@Nullable
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+		return level.isClientSide() ? null : createTickerHelper(type, RisusBlockEntities.BIOME_BLOCK.get(), BiomeBlockEntity::tick);
+	}
+	@SuppressWarnings("unchecked")
+	@Nullable
+	protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> type1, BlockEntityType<E> type2, BlockEntityTicker<? super E> ticker) {
+		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
 	}
 }
 
