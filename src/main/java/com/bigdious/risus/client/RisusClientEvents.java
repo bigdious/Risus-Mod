@@ -3,16 +3,11 @@ package com.bigdious.risus.client;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
-import com.bigdious.risus.client.particle.AlterationFinishedParticle;
-import com.bigdious.risus.client.particle.AlterationParticle;
-import com.bigdious.risus.client.particle.JoyParticle;
-import com.bigdious.risus.client.particle.ToothicalParticle;
+import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.particle.BloodBitParticle;
-import com.bigdious.risus.particle.BloodParticle;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
@@ -87,6 +82,8 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
 		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.EmissiveProvider::new);
+		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 	}

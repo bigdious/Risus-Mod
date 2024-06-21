@@ -1,9 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
-import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
-import com.bigdious.risus.blocks.entity.PoppingBondknotBlockEntity;
-import com.bigdious.risus.init.RisusBiomes;
+import com.bigdious.risus.data.RisusBiomes;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.util.WorldUtil;
@@ -31,10 +29,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.chunk.PalettedContainer;

@@ -1,4 +1,4 @@
-package com.bigdious.risus.particle;
+package com.bigdious.risus.client.particle;
 
 import com.bigdious.risus.Risus;
 import com.mojang.blaze3d.platform.GlStateManager;

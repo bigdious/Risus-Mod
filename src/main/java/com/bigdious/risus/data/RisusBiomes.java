@@ -1,8 +1,10 @@
-package com.bigdious.risus.init;
+package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
+import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -30,15 +32,15 @@ public class RisusBiomes {
 			.downfall(0.0F)
 			.temperature(0.8F)
 			.specialEffects(generateColors(new BiomeSpecialEffects.Builder(), 526343, 1842204)
-				.ambientParticle(new AmbientParticleSettings(AlterationParticleOptions.LETTERS_APPEAR, 0.005F))
+				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.001F))
 				.build())
 			.build());
 	}
 
 	private static BiomeSpecialEffects.Builder generateColors(BiomeSpecialEffects.Builder builder, int skyFog, int grass) {
 		return builder
-			.skyColor(526343)
-			.fogColor(skyFog)
+			.skyColor(0x000000)
+			.fogColor(0x650404)
 			.waterColor(526343)
 			.waterFogColor(526343)
 			.grassColorOverride(grass)

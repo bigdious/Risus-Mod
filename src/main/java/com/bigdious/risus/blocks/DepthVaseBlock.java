@@ -5,11 +5,16 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.bigdious.risus.init.RisusParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -28,6 +33,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -115,47 +121,114 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase))
-			return InteractionResult.PASS;
-		if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID,"research_notes")).getItem())) {
-			if (depthVase.depthToSlotRatio==1) {
-				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
-				return InteractionResult.SUCCESS;
+		//it can probably be compacted but it broke the logic when I did it so it'll stay an ugly duckling
+		BlockEntity $$8 = level.getBlockEntity(pos);
+		if ($$8 instanceof DepthVaseBlockEntity depthVase) {
+			if (hand != InteractionHand.MAIN_HAND) {
+				player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
+				depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
+				return InteractionResult.PASS;
 			}
-			else {
-				player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
-				return InteractionResult.SUCCESS;
-			}
-		}
-		else {
-			if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-				for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
-					if (i == depthVase.depthToSlotRatio) {
-						return InteractionResult.FAIL;
-					}
-					if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
-						if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
-							depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
-							player.getMainHandItem().shrink(player.getMainHandItem().getCount());
-							return InteractionResult.sidedSuccess(level.isClientSide);
-						} else {
-							player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
-							depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
+			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID, "research_notes")).getItem())) {
+				if (depthVase.depthToSlotRatio == 1) {
+					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
+					return InteractionResult.SUCCESS;
+				} else {
+					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
+					return InteractionResult.SUCCESS;
+				}
+			} else {
+				if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+					for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
+						if (i == depthVase.depthToSlotRatio) {
+							player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
+							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
+							return InteractionResult.FAIL;
+						}
+						if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
+							if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
+								depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
+								player.getMainHandItem().shrink(player.getMainHandItem().getCount());
+								depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
+								if (level instanceof ServerLevel serverlevel) {
+									serverlevel.sendParticles(
+										ParticleTypes.DUST_PLUME,
+										(double)pos.getX() + 0.5,
+										(double)pos.getY() + 1.2,
+										(double)pos.getZ() + 0.5,
+										7,
+										0.0,
+										0.0,
+										0.0,
+										0.0
+									);
+								}
+								return InteractionResult.sidedSuccess(level.isClientSide);
+							} else {
+								player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
+								depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
+								depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
+								if (level instanceof ServerLevel serverlevel) {
+									serverlevel.sendParticles(
+										ParticleTypes.DUST_PLUME,
+										(double)pos.getX() + 0.5,
+										(double)pos.getY() + 1.2,
+										(double)pos.getZ() + 0.5,
+										7,
+										0.0,
+										0.0,
+										0.0,
+										0.0
+									);
+								}
+								return InteractionResult.sidedSuccess(level.isClientSide);
+							}
+						} else if (depthVase.getInputItem(i).isEmpty()) {
+							depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
+							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
+							if (level instanceof ServerLevel serverlevel) {
+								serverlevel.sendParticles(
+									ParticleTypes.DUST_PLUME,
+									(double)pos.getX() + 0.5,
+									(double)pos.getY() + 1.2,
+									(double)pos.getZ() + 0.5,
+									7,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								);
+							}
 							return InteractionResult.sidedSuccess(level.isClientSide);
 						}
-					} else if (depthVase.getInputItem(i).isEmpty()) {
-						depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
-						return InteractionResult.sidedSuccess(level.isClientSide);
 					}
 				}
-			}
-			if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-				for (int i = depthVase.depthToSlotRatio - 1; i >= 0; --i) {
-					if (!depthVase.getInputItem(i).isEmpty()) {
-						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
-						level.addFreshEntity(item);
-						depthVase.setInputItem(i, ItemStack.EMPTY);
-						return InteractionResult.SUCCESS;
+				if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
+					for (int i = depthVase.depthToSlotRatio - 1; i >= 0; --i) {
+						if (!depthVase.getInputItem(i).isEmpty()) {
+							ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
+							level.addFreshEntity(item);
+							depthVase.setInputItem(i, ItemStack.EMPTY);
+							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
+							if (level instanceof ServerLevel serverlevel) {
+								serverlevel.sendParticles(
+									ParticleTypes.DUST_PLUME,
+									(double)pos.getX() + 0.5,
+									(double)pos.getY() + 1.2,
+									(double)pos.getZ() + 0.5,
+									7,
+									0.0,
+									0.0,
+									0.0,
+									0.0
+								);
+							}
+							return InteractionResult.SUCCESS;
+						}
 					}
 				}
 			}
