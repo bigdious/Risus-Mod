@@ -21,7 +21,7 @@ public class AlterationParticleOptions extends DustParticleOptionsBase {
 							ExtraCodecs.VECTOR3F.fieldOf("toColor").forGetter((p_175770_) -> p_175770_.toColor),
 							Codec.FLOAT.fieldOf("scale").forGetter((p_175765_) -> p_175765_.scale))
 					.apply(p_175763_, AlterationParticleOptions::new));
-
+    //deserializer broke
 	public static final ParticleOptions.Deserializer<AlterationParticleOptions> DESERIALIZER = new ParticleOptions.Deserializer<>() {
 		public AlterationParticleOptions fromCommand(ParticleType<AlterationParticleOptions> p_175777_, StringReader p_175778_) throws CommandSyntaxException {
 			Vector3f vector3f = DustParticleOptionsBase.readVector3f(p_175778_);
