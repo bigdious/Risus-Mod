@@ -3,7 +3,8 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.util.EntityExcludedDamageSource;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
@@ -31,7 +32,7 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> MELANCHOLY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("melancholy"));
 
 
-	public static void bootstrap(BootstapContext<DamageType> context) {
+	public static void bootstrap(BootstrapContext<DamageType> context) {
 		context.register(INEXISTENCE, new DamageType("inexistence", 0));
 		context.register(GLUTTONY, new DamageType("gluttony", 0));
 		context.register(MELANCHOLY, new DamageType("melancholy", 0));

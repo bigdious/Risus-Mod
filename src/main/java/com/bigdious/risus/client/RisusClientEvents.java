@@ -30,8 +30,7 @@ import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
-import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
-import net.neoforged.neoforge.client.gui.overlay.VanillaGuiOverlay;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
 
 import java.util.List;
@@ -97,12 +96,12 @@ public class RisusClientEvents {
 		//event.register("monolith_portal", MONOLITH_PORTAL, RenderType.entitySolid(TheEndGatewayRenderer.END_PORTAL_LOCATION));
 	}
 
-	private static void registerOverlays(RegisterGuiOverlaysEvent event) {
-		event.registerAbove(VanillaGuiOverlay.PLAYER_HEALTH.id(), Risus.prefix("exburn_hearts"), (gui, stack, partialTicks, width, height) -> {
+	private static void registerOverlays(RegisterGuiLayersEvent event) {
+		event.registerAbove(VanillaGuiLayers.PLAYER_HEALTH, Risus.prefix("exburn_hearts"), (gui, deltaTracker) -> {
 			Minecraft minecraft = Minecraft.getInstance();
 			LocalPlayer player = minecraft.player;
-			if (player != null && player.hasEffect(RisusMobEffects.EXBURN.get()) && gui.shouldDrawSurvivalElements()) {
-				renderExburnHearts(width, height, stack, gui, player);
+			if (player != null && player.hasEffect(RisusMobEffects.EXBURN) && minecraft.gameMode.canHurtPlayer()) {
+				renderExburnHearts(gui.guiWidth(), gui.guiHeight(),  gui, minecraft.gui, player);
 			}
 		});
 	}
@@ -154,19 +153,19 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH_STAND.get(), context -> new DisplayNotchStandRenderer());
 	}
 
-	private static void killScreenWithAmnesia(RenderGuiOverlayEvent.Pre event) {
-		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+	private static void killScreenWithAmnesia(RenderGuiLayerEvent.Pre event) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {
 			event.setCanceled(true);
 		}
 	}
 
 	private static void killHandWithAmnesia(RenderHandEvent event) {
-		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA.get())) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {
 			event.setCanceled(true);
 		}
 	}
 
-	private static void renderExburnHearts(int width, int height, GuiGraphics graphics, ExtendedGui gui, Player player) {
+	private static void renderExburnHearts(int width, int height, GuiGraphics graphics, Gui gui, Player player) {
 		int health = Mth.ceil(player.getHealth());
 		boolean highlight = gui.healthBlinkTime > (long) gui.getGuiTicks() && (gui.healthBlinkTime - (long) gui.getGuiTicks()) / 3L % 2L == 1L;
 
@@ -208,7 +207,7 @@ public class RisusClientEvents {
 		renderHearts(graphics, gui, player, x, y, rowHeight, regen, healthMax, health, healthLast, absorb, highlight);
 	}
 
-	private static void renderHearts(GuiGraphics graphics, ExtendedGui gui, Player player, int x, int y, int height, int regen, float healthMax, int health, int healthLast, int absorb, boolean highlight) {
+	private static void renderHearts(GuiGraphics graphics, Gui gui, Player player, int x, int y, int height, int regen, float healthMax, int health, int healthLast, int absorb, boolean highlight) {
 		boolean hardcore = player.level().getLevelData().isHardcore();
 		int healthAmount = Mth.ceil((double) healthMax / 2.0D);
 		int absorptionAmount = Mth.ceil((double) absorb / 2.0D);
@@ -234,18 +233,18 @@ public class RisusClientEvents {
 				int k2 = j2 - l;
 				if (k2 < absorb) {
 					boolean half = k2 + 1 == absorb;
-					renderVirulenceHeart(graphics, newX, newY, hardcore, false, half);
+					renderExburnHeart(graphics, newX, newY, hardcore, false, half);
 				}
 			}
 
 			if (highlight && j2 < healthLast) {
 				boolean half = j2 + 1 == healthLast;
-				renderVirulenceHeart(graphics, newX, newY, hardcore, true, half);
+				renderExburnHeart(graphics, newX, newY, hardcore, true, half);
 			}
 
 			if (j2 < health) {
 				boolean half = j2 + 1 == health;
-				renderVirulenceHeart(graphics, newX, newY, hardcore, false, half);
+				renderExburnHeart(graphics, newX, newY, hardcore, false, half);
 			}
 		}
 	}
@@ -254,11 +253,11 @@ public class RisusClientEvents {
 		graphics.blitSprite(Gui.HeartType.CONTAINER.getSprite(hardcore, false, blinking), x, y, 9, 9);
 	}
 
-	private static void renderVirulenceHeart(GuiGraphics graphics, int x, int y, boolean hardcore, boolean blinking, boolean halfHeart) {
-		graphics.blitSprite(getVirulentHeartSprite(hardcore, halfHeart, blinking), x, y, 9, 9);
+	private static void renderExburnHeart(GuiGraphics graphics, int x, int y, boolean hardcore, boolean blinking, boolean halfHeart) {
+		graphics.blitSprite(getExburnHeartSprite(hardcore, halfHeart, blinking), x, y, 9, 9);
 	}
 
-	private static ResourceLocation getVirulentHeartSprite(boolean hardcore, boolean half, boolean blinking) {
+	private static ResourceLocation getExburnHeartSprite(boolean hardcore, boolean half, boolean blinking) {
 		if (!hardcore) {
 			if (half) {
 				return blinking ? HEARTS.get(3) : HEARTS.get(2);

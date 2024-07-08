@@ -1,25 +1,28 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
-public class ScytheItem extends SwordItem implements Vanishable,ReachItem {
+public class ScytheItem extends SwordItem {
 
 	public ScytheItem(Tier tier, Item.Properties properties) {
-		super(tier, 7, -3.5F, properties);
+
+		super(tier, properties);
 	}
-	@Override
-	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-		ImmutableMultimap.Builder<Attribute, AttributeModifier> attributeBuilder = ImmutableMultimap.builder();
-		attributeBuilder.putAll(super.getDefaultAttributeModifiers(slot));
-		attributeBuilder.put(NeoForgeMod.ENTITY_REACH.value(), new AttributeModifier(RANGE_MODIFIER, "Range modifier", 2, AttributeModifier.Operation.ADDITION));
-		return slot == EquipmentSlot.MAINHAND ? attributeBuilder.build() : super.getDefaultAttributeModifiers(slot);
+
+	public ItemAttributeModifiers createScytheAttributes(EquipmentSlot slot) {
+		return SwordItem.createAttributes(tier, damage, speed).
+		withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE.value(), new AttributeModifier("range modifier", 2, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND);
 	}
 
 	@Override

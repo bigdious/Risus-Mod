@@ -33,7 +33,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -109,15 +108,6 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 		return RenderShape.MODEL;
 	}
 
-	@Override
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-		if (stack.hasCustomHoverName()) {
-			BlockEntity blockentity = level.getBlockEntity(pos);
-			if (blockentity instanceof DepthVaseBlockEntity vase) {
-				vase.setCustomName(stack.getHoverName());
-			}
-		}
-	}
 
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {

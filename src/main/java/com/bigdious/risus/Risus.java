@@ -15,8 +15,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
-import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +28,7 @@ public class Risus {
 	public static final String MODID = "risus";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private static final Rarity RISUS = Rarity.create("RISUS", ChatFormatting.DARK_RED);
+	private static final Rarity RISUS = Rarity.create("RISUS", Risus.prefix("rarity"), ChatFormatting.DARK_RED);
 
 	public Risus(IEventBus bus, Dist dist) {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
@@ -57,10 +57,11 @@ public class Risus {
 		}
 	}
 
-	private void registerPackets(RegisterPayloadHandlerEvent event) {
-		IPayloadRegistrar registrar = event.registrar(MODID).versioned("1.0.0").optional();
-		registrar.play(CreateCritParticlePacket.ID, CreateCritParticlePacket::new, payload -> payload.client(CreateCritParticlePacket::handle));
+	public void registerPackets(RegisterPayloadHandlersEvent event) {
+		PayloadRegistrar registrar = event.registrar(MODID).versioned("1.0.0").optional();
+		registrar.playToClient(CreateCritParticlePacket.TYPE, CreateCritParticlePacket.STREAM_CODEC, CreateCritParticlePacket::handle);
 	}
+
 
 	private void gatherData(GatherDataEvent event) {
 		PackOutput packOutput = event.getGenerator().getPackOutput();

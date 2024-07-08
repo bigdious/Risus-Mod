@@ -3,7 +3,7 @@ plugins {
 	id 'eclipse'
 	id 'idea'
 	id 'maven-publish'
-	id 'net.neoforged.gradle.userdev' version '7.0.105'
+	id 'net.neoforged.gradle.userdev' version '7.0.109'
 }
 
 def secrets = new Properties()
@@ -30,7 +30,7 @@ base {
     archivesName = "${project.mod_id}-${project.minecraft_version}"
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 compileJava.options.compilerArgs << "-Xlint:all,-classfile,-processing,-deprecation" << "-Werror"
 
@@ -64,12 +64,6 @@ runs {
 	}
 }
 
-subsystems {
-	parchment {
-		minecraftVersion = "1.20.3" //parchment doesnt support 1.20.4 yet????
-		mappingsVersion = project.parchment_version
-	}
-}
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
@@ -89,11 +83,10 @@ repositories {
 }
 
 dependencies {
-	//make sure to only pick one of these when testing (switch others to compileOnly)
 	implementation "mezz.jei:jei-${project.minecraft_version}-neoforge:${project.jei_version}"
 
 	//curse maven
-	compileOnly "curse.maven:jade-324717:4980188"
+	compileOnly "curse.maven:jade-324717:5444008"
 	compileOnly "vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}:api"
 	runtimeOnly "vazkii.patchouli:Patchouli:${project.minecraft_version}-${project.patchouli_version}"
 

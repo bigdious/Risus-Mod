@@ -44,7 +44,7 @@ public class ExBurnAttachment {
 			if (Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).getModifier(HEALTH_MODIFIER_UUID) != null) {
 				Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).removeModifier(HEALTH_MODIFIER_UUID);
 			}
-			Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).addPermanentModifier(new AttributeModifier(HEALTH_MODIFIER_UUID, "ExBurn Health Loss", -this.lostHealth, AttributeModifier.Operation.ADDITION));
+			Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).addPermanentModifier(new AttributeModifier(HEALTH_MODIFIER_UUID, "ExBurn Health Loss", -this.lostHealth, AttributeModifier.Operation.ADD_VALUE));
 			entity.setHealth(entity.getHealth());
 		}
 	}

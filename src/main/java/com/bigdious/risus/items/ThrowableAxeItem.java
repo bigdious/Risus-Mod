@@ -6,6 +6,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -23,20 +24,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ThrowableAxeItem extends AxeItem {
 	public ThrowableAxeItem(Tier tier, float damage, float speed, Properties properties) {
-		super(tier, damage, speed, properties);
+		super(tier,  properties);
 	}
 
-	@Override
-	public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.LOYALTY, Enchantments.IMPALING);
-		AtomicBoolean flag = new AtomicBoolean(false);
-		validEnchants.forEach(enchantment -> {
-			if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
-				flag.set(true);
-			}
-		});
-		return flag.get();
-	}
 
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
@@ -60,9 +50,7 @@ public class ThrowableAxeItem extends AxeItem {
 			int i = this.getUseDuration(stack) - useTicks;
 			if (i >= 10) {
 				if (!level.isClientSide()) {
-					stack.hurtAndBreak(1, player, (p_43388_) -> {
-						p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
-					});
+					player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 					ThrownAxe axe = new ThrownAxe(level, player, stack);
 					axe.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
 					if (player.getAbilities().instabuild) {

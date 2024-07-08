@@ -7,7 +7,8 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.*;
@@ -22,7 +23,7 @@ public class RisusBiomes {
 		return ResourceKey.create(Registries.BIOME, new ResourceLocation(Risus.MODID, name));
 	}
 
-	public static void bootstrap(BootstapContext<Biome> context) {
+	public static void bootstrap(BootstrapContext<Biome> context) {
 		HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
 		HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 		context.register(COALIFICATION, new Biome.BiomeBuilder()

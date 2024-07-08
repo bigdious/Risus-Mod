@@ -37,7 +37,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ToothknockerItem extends TieredItem implements Vanishable {
+public class ToothknockerItem extends TieredItem {
 	private final float attackDamage;
 	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
@@ -45,8 +45,8 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
 		super(tier, properties);
 		this.attackDamage = (float) damage + tier.getAttackDamageBonus();
 		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double) this.attackDamage, AttributeModifier.Operation.ADDITION));
-		builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double) speed, AttributeModifier.Operation.ADDITION));
+		builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double) this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
+		builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double) speed, AttributeModifier.Operation.ADD_VALUE));
 		this.defaultModifiers = builder.build();
 	}
 
@@ -58,27 +58,15 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
 		return !p_43294_.isCreative();
 	}
 
-	public boolean mineBlock(ItemStack p_43282_, Level p_43283_, BlockState p_43284_, BlockPos p_43285_, LivingEntity p_43286_) {
+	public boolean mineBlock(ItemStack itemstack, Level p_43283_, BlockState p_43284_, BlockPos p_43285_, LivingEntity player) {
 		if (p_43284_.getDestroySpeed(p_43283_, p_43285_) != 0.0F) {
-			p_43282_.hurtAndBreak(2, p_43286_, (p_43276_) -> {
-				p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-			});
+			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 		}
 
 		return true;
 	}
 
-	@Override
-	public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.MOB_LOOTING, Enchantments.VANISHING_CURSE);
-		AtomicBoolean flag = new AtomicBoolean(false);
-		validEnchants.forEach(enchantment -> {
-			if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
-				flag.set(true);
-			}
-		});
-		return flag.get();
-	}
+
 
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
@@ -89,13 +77,9 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
 		if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
-			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER.get(), 0, 0));
-			player.getOffhandItem().hurtAndBreak(1, player, (what) -> {
-				what.broadcastBreakEvent(player.getUsedItemHand());
-			});
-			player.getMainHandItem().hurtAndBreak(1, player, (what) -> {
-				what.broadcastBreakEvent(player.getUsedItemHand());
-			});
+			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER, 0, 0));
+			player.getOffhandItem().hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
+			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			Level level = player.level();
 			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.TURTLE_EGG_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
 			;
@@ -124,9 +108,7 @@ public class ToothknockerItem extends TieredItem implements Vanishable {
 			float f6 = 1.1999999F;
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
 			player.getCooldowns().addCooldown(this, 30);
-			itemstack.hurtAndBreak(1, player, (p_43388_) -> {
-				p_43388_.broadcastBreakEvent(player.getUsedItemHand());
-			});
+			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}
