@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -21,17 +22,17 @@ public class HairyCurvedSkinBlock extends MultiDirectionalBlock {
 		super(properties);
 	}
 
-	@Override
+
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (player.getMainHandItem().is(Tags.Items.SHEARS)) {
+		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEARS)) {
 			level.setBlock(pos, RisusBlocks.CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
-			player.getMainHandItem().hurtAndBreak(1, player, (p_43388_) -> p_43388_.broadcastBreakEvent(player.getUsedItemHand()));
+			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
 			level.addFreshEntity(hairitem);
 			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
 			return InteractionResult.SUCCESS;
 
 		}
-		return super.use(state, level, pos, player, hand, result);
+		return use(state, level, pos, player, hand, result);
 	}
 }

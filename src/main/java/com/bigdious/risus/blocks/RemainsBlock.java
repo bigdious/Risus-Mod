@@ -20,7 +20,6 @@ public class RemainsBlock extends Block {
 
 	}
 
-	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (held.is(Items.FLINT_AND_STEEL) || held.is(Items.FIRE_CHARGE)) {
@@ -30,6 +29,6 @@ public class RemainsBlock extends Block {
 
 			}
 		}
-		return super.use(state, level, pos, player, hand, result);
+		return use(state, level, pos, player, hand, result);
 	}
 }

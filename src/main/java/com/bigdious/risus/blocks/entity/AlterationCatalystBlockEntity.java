@@ -102,7 +102,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		}
 	}
 
-	@Override
+
 	protected void saveAdditional(CompoundTag tag) {
 		super.saveAdditional(tag);
 		if (this.item != null) {
@@ -115,7 +115,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		tag.putFloat("itemRotation", this.rotationDegrees);
 	}
 
-	@Override
+
 	public void load(CompoundTag tag) {
 		this.item = ItemStack.of((CompoundTag) tag.get("item"));
 		this.isCrafting = tag.getBoolean("isCrafting");
@@ -124,7 +124,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		super.load(tag);
 	}
 
-	@Override
+
 	public CompoundTag getUpdateTag() {
 		CompoundTag tag = new CompoundTag();
 		tag.putInt("counter", this.craftingCounter);
@@ -139,6 +139,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		super.onDataPacket(net, packet);
 		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
 	}
+
 
 	@Override
 	@Nullable

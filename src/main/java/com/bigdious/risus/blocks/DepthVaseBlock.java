@@ -109,7 +109,6 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	}
 
 
-	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		//it can probably be compacted but it broke the logic when I did it so it'll stay an ugly duckling
 		BlockEntity $$8 = level.getBlockEntity(pos);

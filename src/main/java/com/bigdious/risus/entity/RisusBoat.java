@@ -46,11 +46,7 @@ public class RisusBoat extends Boat {
 		this.entityData.set(BOAT_TYPE, boatType.ordinal());
 	}
 
-	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, Type.BONDKNOT.ordinal());
-	}
+
 
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {

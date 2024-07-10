@@ -48,7 +48,7 @@ public class DisplayNotchStandBlock extends BaseEntityBlock implements SimpleMul
 		this.registerDefaultState(this.getStateDefinition().any().setValue(ORIENTATION, FrontAndTop.NORTH_UP));
 		this.registerDefaultState(this.getStateDefinition().any().setValue(ELEVATE, false));
 	}
-	@Override
+
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchStandBlockEntity notch))
 			return InteractionResult.PASS;

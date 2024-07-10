@@ -27,7 +27,6 @@ public class FleshySkinBlock extends ActuallyUseableDirectionalBlock {
 		super(properties);
 	}
 
-	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		RandomSource random = RandomSource.create();
 		if (player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
@@ -39,6 +38,6 @@ public class FleshySkinBlock extends ActuallyUseableDirectionalBlock {
 
 
 		}
-		return super.use(state, level, pos, player, hand, result);
+		return use(state, level, pos, player, hand, result);
 	}
 }

@@ -35,9 +35,9 @@ public class RegenRoseBlock extends FlowerBlock {
 		return true;
 	}
 
-	@Override
-	public boolean isPathfindable(BlockState state, BlockGetter getter, BlockPos pos, PathComputationType type) {
-		return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, getter, pos, type);
+
+	public boolean isPathfindable(BlockState state, PathComputationType type) {
+		return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state,  type);
 	}
 
 	@Override

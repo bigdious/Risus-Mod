@@ -45,12 +45,7 @@ public class ThrownAxe extends AbstractArrow {
 		this.entityData.set(ID_FOIL, stack.hasFoil());
 	}
 
-	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(ID_LOYALTY, (byte) 0);
-		this.entityData.define(ID_FOIL, false);
-	}
+
 
 	public boolean shouldSpin() {
 		return this.shouldSpin;
@@ -105,8 +100,9 @@ public class ThrownAxe extends AbstractArrow {
 		}
 	}
 
+
 	@Override
-	protected ItemStack getPickupItem() {
+	protected ItemStack getDefaultPickupItem() {
 		return this.axeItem.copy();
 	}
 
@@ -131,12 +127,12 @@ public class ThrownAxe extends AbstractArrow {
 		Entity entity = result.getEntity();
 		float f;
 		if (this.axeItem.getItem() instanceof DiggerItem digger) {
-			f = digger.getAttackDamage();
+			f = digger.getDamage(this.axeItem);
 		} else {
 			f = 5.0F;
 		}
 		if (entity instanceof LivingEntity livingentity) {
-			f += EnchantmentHelper.getDamageBonus(this.axeItem, livingentity.getMobType());
+			f += EnchantmentHelper.getDamageBonus(this.axeItem, livingentity.getType());
 		}
 
 		Entity entity1 = this.getOwner();

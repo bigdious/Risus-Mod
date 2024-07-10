@@ -64,7 +64,6 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 		return SHAPE;
 	}
 
-	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (held.is(Items.TOTEM_OF_UNDYING)) {
@@ -81,7 +80,7 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 
 		}
 
-		return super.use(state, level, pos, player, hand, result);
+		return use(state, level, pos, player, hand, result);
 	}
 
 	private void explode(Level level, BlockPos pos) {
