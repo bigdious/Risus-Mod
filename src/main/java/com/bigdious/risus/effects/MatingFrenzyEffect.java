@@ -15,9 +15,9 @@ public class MatingFrenzyEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity instanceof Animal animal) {
-			if (animal.isBaby()) animal.removeEffect(RisusMobEffects.MATING_FRENZY.get());
+			if (animal.isBaby()) animal.removeEffect(RisusMobEffects.MATING_FRENZY);
 			if (!animal.isBaby() && animal.canFallInLove()) {
 				animal.hurt(entity.damageSources().magic(), 1.0F);
 				animal.setInLove(null);
@@ -25,9 +25,10 @@ public class MatingFrenzyEffect extends MobEffect {
 			}
 		}
 		if (entity instanceof Player player) {
-			entity.removeEffect(RisusMobEffects.MATING_FRENZY.get());
+			entity.removeEffect(RisusMobEffects.MATING_FRENZY);
 			player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "You are incapable of Love."));
 		}
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

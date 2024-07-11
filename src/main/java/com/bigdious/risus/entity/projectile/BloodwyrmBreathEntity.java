@@ -54,7 +54,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		super.onHitEntity(p_37404_);
 		Entity entity = p_37404_.getEntity();
 		entity.hurt(this.damageSources().thrown(this, this.getOwner()), 1);
-		entity.setSecondsOnFire(10);
+		entity.igniteForSeconds(10);
 	}
 
 	@Override
@@ -219,6 +219,11 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 	@Override
 	protected ItemStack getPickupItem() {
 		return ItemStack.EMPTY;
+	}
+
+	@Override
+	protected ItemStack getDefaultPickupItem() {
+		return null;
 	}
 }
 

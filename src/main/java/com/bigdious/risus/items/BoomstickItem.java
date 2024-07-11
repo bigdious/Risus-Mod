@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.PrimedTnt;
@@ -42,18 +43,20 @@ public class BoomstickItem extends Item {
 		return true;
 	}
 
-	@Override
-	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
-		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING);
-		AtomicBoolean flag = new AtomicBoolean(false);
-		validEnchants.forEach(enchantment -> {
-			if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
-				flag.set(true);
-			}
-		});
-		return flag.get();
-	}
-	//TODO make it work with enemies
+	//CHECK BELOW IN FUTURE
+
+//	@Override
+//	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
+//		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING);
+//		AtomicBoolean flag = new AtomicBoolean(false);
+//		validEnchants.forEach(enchantment -> {
+//			if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
+//				flag.set(true);
+//			}
+//		});
+//		return flag.get();
+//	}
+	//TODO make it work when used by enemies
 	@Override
 	public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
 		Level level = pAttacker.level();
@@ -66,7 +69,7 @@ public class BoomstickItem extends Item {
 			&& pTarget.getType() != EntityType.MINECART)
 		if (!level.isClientSide()) {
 			this.explode(level, pTarget.getOnPos(), pAttacker);
-			itemstack.hurt(1, level.getRandom(), null);
+			itemstack.hurtAndBreak(1, pAttacker, EquipmentSlot.MAINHAND);
 
 			}
 		return super.hurtEnemy(pStack, pTarget, pAttacker);

@@ -18,6 +18,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vazkii.patchouli.api.PatchouliAPI;
@@ -36,6 +38,7 @@ public class RisusAdvancementProvider extends AdvancementProvider {
 
 		@Override
         public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
+			HolderLookup.RegistryLookup<Structure> structures = registries.lookupOrThrow(Registries.STRUCTURE);
 			AdvancementHolder first = Advancement.Builder.advancement().display(
                             RisusItems.SMILE.get(),
                             Component.translatable("advancement.risus.first"),
@@ -44,19 +47,19 @@ public class RisusAdvancementProvider extends AdvancementProvider {
                             AdvancementType.TASK,
                             true, false, false)
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("alteration_site")))))
-                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("grassy_maw")))))
-                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("sandy_maw")))))
-                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("endy_maw")))))
-                    .addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("flower_field")))))
-                    .addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("family_tree")))))
+                    .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ALTERATION_SITE))))
+                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
+                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
+                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
+                    .addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
+                    .addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
                     .save(consumer, "risus:first");
 
 			AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first).display(
                     RisusBlocks.ALTERATION_CATALYST.get(),
                     Component.translatable("advancement.risus.site_zero"),
                     Component.translatable("advancement.risus.site_zero.desc"), null, AdvancementType.TASK, true, true, false)
-                    .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("alteration_site")))))
+                    .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ALTERATION_SITE))))
                     .save(consumer, "risus:site_zero");
 
 			AdvancementHolder mod_book = Advancement.Builder.advancement().parent(site_zero).display(
@@ -71,7 +74,7 @@ public class RisusAdvancementProvider extends AdvancementProvider {
                             RisusBlocks.RIBCAGE.get(),
                             Component.translatable("advancement.risus.family"),
                             Component.translatable("advancement.risus.family.desc"), null, AdvancementType.TASK, true, true, true)
-					.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("family_tree")))))
+					.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
                     .save(consumer, "risus:family");
 
             AdvancementHolder little = Advancement.Builder.advancement().parent(first).display(
@@ -98,9 +101,9 @@ public class RisusAdvancementProvider extends AdvancementProvider {
                     Component.translatable("advancement.risus.step"),
                     Component.translatable("advancement.risus.step.desc"), null, AdvancementType.TASK, true,true,false)
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("grassy_maw")))))
-                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("sandy_maw")))))
-                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("endy_maw")))))
+                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure( structures.getOrThrow(RisusStructures.GRASSY_MAW))))
+                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
+                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
                     .save(consumer, "risus:step");
 
 
@@ -149,22 +152,25 @@ public class RisusAdvancementProvider extends AdvancementProvider {
                     .addCriterion("pleasure", ConsumeItemTrigger.TriggerInstance.usedItem(RisusItems.GUILTY_APPLE))
                     .save(consumer, "risus:irresistible");
 
-			AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
-                            potionOfLove(),
-                            Component.translatable("advancement.risus.cupid"),
-                            Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true,true,true)
-                    .requirements(AdvancementRequirements.Strategy.OR)
-                    .addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().isPotion(RisusPotions.MATING_FRENZY.get()).build()))
-                    .addCriterion("love2", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().isPotion(RisusPotions.LONG_MATING_FRENZY.get()).build()))
-                    .save(consumer, "risus:cupid");
+//			Needs help
+
+//			AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
+//                            potionOfLove(),
+//                            Component.translatable("advancement.risus.cupid"),
+//                            Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true,true,true)
+//                    .requirements(AdvancementRequirements.Strategy.OR)
+//                    .addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.MATING_FRENZY.get()).build()))
+//                    .addCriterion("love2", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.LONG_MATING_FRENZY.get()).build()))
+//                    .save(consumer, "risus:cupid");
 
 
         }
-        private ItemStack potionOfLove() {
-            ItemStack itemstack = new ItemStack(Items.POTION);
-            CompoundTag compoundtag = itemstack.getOrCreateTag();
-            compoundtag.putString("Potion", BuiltInRegistries.POTION.getKey(RisusPotions.MATING_FRENZY.get()).toString());
-            return itemstack;
-        }
+		//tag dead, help
+//        private ItemStack potionOfLove() {
+//            ItemStack itemstack = new ItemStack(Items.POTION);
+//            CompoundTag compoundtag = itemstack.getOrCreateTag();
+//            compoundtag.putString("Potion", BuiltInRegistries.POTION.getKey(RisusPotions.MATING_FRENZY.get()).toString());
+//            return itemstack;
+//        }
     }
 }

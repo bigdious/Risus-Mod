@@ -4,6 +4,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrownEnderpearl;
 import net.minecraft.world.item.EnderpearlItem;
@@ -33,7 +34,7 @@ public class EndlessPearlItem extends EnderpearlItem {
 		int amount = ammo.getCount();
 		if (validSlot != -1 && ammo.is(Items.ENDER_PEARL) && itemstack.getDamageValue() >= amount) {
 			//fuck you -1
-			itemstack.hurt(-amount, level.getRandom(), null);
+			itemstack.hurtAndBreak(-amount, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 			ammo.shrink(amount);
 		} else {
 
@@ -47,7 +48,7 @@ public class EndlessPearlItem extends EnderpearlItem {
 					thrownenderpearl.setItem(itemstack);
 					thrownenderpearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
 					level.addFreshEntity(thrownenderpearl);
-					itemstack.hurt(1, level.getRandom(), null);
+					itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 				}
 
 				return InteractionResultHolder.success(player.getItemInHand(hand));

@@ -10,9 +10,10 @@ public class PleasureEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		entity.hurt(entity.damageSources().magic(), 1);
 		entity.invulnerableTime = 0;
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

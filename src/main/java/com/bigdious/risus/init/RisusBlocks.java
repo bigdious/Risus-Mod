@@ -71,7 +71,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<WallHangingSignBlock> BONDKNOT_WALL_HANGING_SIGN = BLOCKS.register("bondknot_wall_hanging_sign", () -> new RisusWallHangingSignBlock(BlockBehaviour.Properties.ofFullCopy(BONDKNOT_PLANKS.get()).noOcclusion().forceSolidOn(), RisusBlocks.BONDKNOT_TYPE));
 
 	public static final DeferredBlock<Block> HEART_TRANSPLANT = BLOCKS.register("heart_transplant", () -> new HeartTransplantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().forceSolidOn().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final DeferredBlock<Block> REGEN_ROSE = BLOCKS.register("regen_rose", () -> new RegenRoseBlock(() -> MobEffects.REGENERATION, 1, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<Block> REGEN_ROSE = BLOCKS.register("regen_rose", () -> new RegenRoseBlock(() -> MobEffects.REGENERATION.value(), 1, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final DeferredBlock<Block> POTTED_HEART_TRANSPLANT = BLOCKS.register("potted_heart_transplant", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HEART_TRANSPLANT, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 	public static final DeferredBlock<Block> POTTED_REGEN_ROSE = BLOCKS.register("potted_regen_rose", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REGEN_ROSE, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 	public static final DeferredBlock<Block> BABY_RIBCAGE = BLOCKS.register("baby_ribcage", () -> new BabyRibcageBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion().forceSolidOn()));
@@ -136,7 +136,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = BLOCKS.register("curved_ritual_block", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 	public static final DeferredBlock<Block> LINEAR_RITUAL_BLOCK = BLOCKS.register("linear_ritual_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 
-	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new LiquidBlock(RisusFluids.SOURCE_BLOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new LiquidBlock(RisusFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
 	public static final DeferredBlock<Block> DISPLAY_NOTCH = BLOCKS.register("display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 

@@ -13,12 +13,13 @@ public class ExBurnEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		if (!entity.level().isClientSide()) {
 			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && entity.getAttribute(Attributes.MAX_HEALTH).getValue() > 6.0D) {
 				entity.getData(RisusDataAttachments.EX_BURN).decrementHealth(entity);
 			}
 		}
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

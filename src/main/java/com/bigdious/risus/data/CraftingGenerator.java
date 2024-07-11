@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
@@ -11,9 +12,13 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 
+import java.util.concurrent.CompletableFuture;
+
 public class CraftingGenerator extends RecipeProvider {
-	public CraftingGenerator(PackOutput packOutput) {
-		super(packOutput);
+	private final HolderLookup.Provider provider;
+	public CraftingGenerator(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
+		super(packOutput, provider);
+		this.provider = provider.join();
 	}
 
 	@Override
@@ -138,7 +143,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("###")
 				.pattern("#/#")
 				.pattern("###")
-				.define('#', Ingredient.of(Tags.Items.OBSIDIAN))
+				.define('#', Ingredient.of(Tags.Items.OBSIDIANS))
 				.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);

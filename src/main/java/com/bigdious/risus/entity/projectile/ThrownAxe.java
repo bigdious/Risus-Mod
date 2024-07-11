@@ -182,9 +182,9 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-		if (tag.contains("AxeInfo", 10)) {
-			this.axeItem = ItemStack.of(tag.getCompound("AxeInfo"));
-		}
+//		if (tag.contains("AxeInfo", 10)) {
+//			this.axeItem = ItemStack.of(tag.getCompound("AxeInfo"));
+//		}
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(this.axeItem));
@@ -193,7 +193,7 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
-		tag.put("AxeInfo", this.axeItem.save(new CompoundTag()));
+//		tag.put("AxeInfo", this.axeItem.save(new CompoundTag()));
 		tag.putBoolean("DealtDamage", this.dealtDamage);
 	}
 

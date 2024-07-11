@@ -12,12 +12,13 @@ public class AmnesiaMobEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity.getRandom().nextFloat() < 0.1F * (amplifier / 10.0F)) {
 			if (entity instanceof PathfinderMob mob && mob.getTarget() != null) {
 				mob.setTarget(null);
 			}
 		}
+		return super.applyEffectTick(entity, amplifier);
 	}
 
 	@Override

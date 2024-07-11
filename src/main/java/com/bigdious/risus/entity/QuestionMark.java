@@ -28,11 +28,6 @@ public class QuestionMark extends Monster {
 	}
 
 	@Override
-	protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
-		return dimensions.height * 0.5F;
-	}
-
-	@Override
 	public void aiStep() {
 		super.aiStep();
 		this.setYRot(0.0F);

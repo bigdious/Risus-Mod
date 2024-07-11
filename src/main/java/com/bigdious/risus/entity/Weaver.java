@@ -53,9 +53,9 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_ID_ATTACK_TARGET, 0);
 	}
 
 	@Override
@@ -103,10 +103,6 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		return RisusMobType.OFFSPING;
 	}
 
-	@Override
-	protected float getStandingEyeHeight(Pose p_33799_, EntityDimensions p_33800_) {
-		return 0.20F;
-	}
 
 	@Override
 	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {
@@ -135,7 +131,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 				} else if (this.level().getDifficulty() == Difficulty.HARD) {
 					i = 8;
 				}
-				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA.get(), i * 20, 0), this);
+				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA, i * 20, 0), this);
 				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR) && living.hurt(new DamageSource(living.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.MELANCHOLY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 3);
 					this.doEnchantDamageEffects(this, living);

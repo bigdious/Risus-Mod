@@ -5,6 +5,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -31,7 +32,7 @@ public class BloodwyrmHeadItem extends Item {
 				ItemStack ammo = player.getInventory().getItem(validSlot);
 				//fuck you -1
 				if (validSlot != -1 && ammo.is(Items.DRAGON_BREATH)) {
-					itemstack.hurt(-100, level.getRandom(), null);
+					itemstack.hurtAndBreak(-100, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					ammo.shrink(1);
 					level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_EMPTY, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				} else {
@@ -44,7 +45,7 @@ public class BloodwyrmHeadItem extends Item {
 							BloodwyrmBreathEntity breath = new BloodwyrmBreathEntity(level, player);
 							breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
 							level.addFreshEntity(breath);
-							stack.hurt(1, level.getRandom(), null);
+							stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 							player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, .5f, .75f);
 						}
 						return InteractionResultHolder.success(player.getItemInHand(hand));
@@ -60,7 +61,7 @@ public class BloodwyrmHeadItem extends Item {
 						BloodwyrmBreathEntity breath = new BloodwyrmBreathEntity(level, player);
 						breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
 						level.addFreshEntity(breath);
-						stack.hurt(1, level.getRandom(), null);
+						stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 						player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRECHARGE_USE, SoundSource.PLAYERS, .5f, .75f);
 					}
 					return InteractionResultHolder.success(player.getItemInHand(hand));
