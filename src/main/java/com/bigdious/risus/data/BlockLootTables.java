@@ -37,8 +37,6 @@ import java.util.stream.Collectors;
 
 public class BlockLootTables extends BlockLootSubProvider {
 
-	private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
-
 	protected BlockLootTables() {
 		super(Set.of(), FeatureFlags.REGISTRY.allFlags());
 	}
@@ -54,7 +52,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
-		add(RisusBlocks.CRYSTALLIZED_BONDS.get(), createSilkTouchDispatchTable(RisusBlocks.CRYSTALLIZED_BONDS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+		add(RisusBlocks.CRYSTALLIZED_BONDS.get(), createSilkTouchDispatchTable(RisusBlocks.CRYSTALLIZED_BONDS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.FORTUNE))));
 		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
 		dropSelf(RisusBlocks.MAW_GUTS.get());
@@ -68,7 +66,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
 		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
-		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(HAS_SILK_TOUCH.invert()))));
+		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.FORTUNE))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
@@ -174,13 +172,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.when(HAS_SILK_TOUCH)
 				.otherwise(applyExplosionCondition(block, LootItem.lootTableItem(Items.BONE)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6)))
-						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.FORTUNE))));
 		LootPoolEntryContainer.Builder<?> bondBuilder = LootItem.lootTableItem(block)
 				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
 				.when(HAS_SILK_TOUCH)
 				.otherwise(applyExplosionCondition(block, LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get())
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
-						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+						.apply(ApplyBonusCount.addOreBonusCount(Enchantments.FORTUNE))));
 		return LootTable.lootTable()
 				.withPool(LootPool.lootPool().add(boneBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)

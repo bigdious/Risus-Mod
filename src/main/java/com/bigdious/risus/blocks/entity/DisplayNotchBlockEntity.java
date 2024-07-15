@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -32,33 +33,33 @@ public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyConta
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
 	@Override
-	protected void saveAdditional(CompoundTag tag) {
-		super.saveAdditional(tag);
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		super.saveAdditional(tag, pRegistries);
 		if (this.item != null) {
 			CompoundTag reagentTag = new CompoundTag();
-			this.item.save(reagentTag);
+			this.item.save(pRegistries);
 			tag.put("item", reagentTag);
 		}
 		tag.putFloat("itemRotation", this.rotationDegrees);
 	}
 	@Override
-	public void load(CompoundTag tag) {
-		this.item = ItemStack.of((CompoundTag) tag.get("item"));
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+//		this.item = ItemStack.of((CompoundTag) tag.get("item"));
 		this.rotationDegrees = tag.getFloat("itemRotation");
-		super.load(tag);
+		super.loadAdditional(tag, pRegistries);
 	}
 	@Override
-	public CompoundTag getUpdateTag() {
+	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
 		CompoundTag tag = new CompoundTag();
 		tag.putFloat("itemRotation", this.rotationDegrees);
-		this.saveAdditional(tag);
+		this.saveAdditional(tag, pRegistries);
 		return tag;
 	}
-	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-		super.onDataPacket(net, packet);
-		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
-	}
+//	@Override
+//	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
+//		super.onDataPacket(net, packet);
+//		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
+//	}
 	@Override
 	@Nullable
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {

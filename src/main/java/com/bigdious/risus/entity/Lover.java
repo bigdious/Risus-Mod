@@ -107,8 +107,7 @@ public class Lover extends Monster {
 					level,
 					level.getCurrentDifficultyAt(stalker.blockPosition()),
 					MobSpawnType.CONVERSION,
-					new Zombie.ZombieGroupData(false, true),
-					null
+					new Zombie.ZombieGroupData(false, true)
 				);
 				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, stalker);
 				if (!this.isSilent()) {

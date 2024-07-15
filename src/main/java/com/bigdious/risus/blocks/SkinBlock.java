@@ -25,7 +25,7 @@ public class SkinBlock extends Block {
 		super(properties);
 	}
 
-	@Override
+
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 11);
@@ -35,6 +35,6 @@ public class SkinBlock extends Block {
 			return InteractionResult.SUCCESS;
 
 		}
-		return super.use(state, level, pos, player, hand, result);
+		return use(state, level, pos, player, hand, result);
 	}
 }

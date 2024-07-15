@@ -13,15 +13,12 @@ import net.minecraft.world.item.Tier;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
 public class HandOfGreedItem extends Item implements ReachItem {
+	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 	public HandOfGreedItem(Item.Properties properties) {
-		super(properties);
-	}
-	@Override
-	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-		ImmutableMultimap.Builder<Attribute, AttributeModifier> attributeBuilder = ImmutableMultimap.builder();
-		attributeBuilder.putAll(super.getDefaultAttributeModifiers(slot));
-		attributeBuilder.put(NeoForgeMod.BLOCK_REACH.value(), new AttributeModifier(REACH_MODIFIER, "Reach modifier", 3, AttributeModifier.Operation.ADDITION));
-		return slot == EquipmentSlot.OFFHAND ? attributeBuilder.build() : super.getDefaultAttributeModifiers(slot);
+		super( properties);
+		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+		builder.put(Attributes.ENTITY_INTERACTION_RANGE.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", 2, AttributeModifier.Operation.ADD_VALUE));
+		this.defaultModifiers = builder.build();
 	}
 
 	@Override

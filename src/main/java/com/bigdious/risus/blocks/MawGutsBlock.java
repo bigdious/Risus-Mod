@@ -85,15 +85,15 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, Simple
 		return RenderShape.MODEL;
 	}
 
-	@Override
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-		if (stack.hasCustomHoverName()) {
-			BlockEntity blockentity = level.getBlockEntity(pos);
-			if (blockentity instanceof MawGutsBlockEntity guts) {
-				guts.setCustomName(stack.getHoverName());
-			}
-		}
-	}
+//	@Override
+//	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
+//		if (stack.hasCustomHoverName()) {
+//			BlockEntity blockentity = level.getBlockEntity(pos);
+//			if (blockentity instanceof MawGutsBlockEntity guts) {
+//				guts.setCustomName(stack.getHoverName());
+//			}
+//		}
+//	}
 
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
@@ -115,7 +115,7 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, Simple
 		return blockentity instanceof MenuProvider provider ? provider : null;
 	}
 
-	@Override
+
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		BlockEntity blockentity = level.getBlockEntity(pos);
 		if (blockentity instanceof MawGutsBlockEntity guts) {

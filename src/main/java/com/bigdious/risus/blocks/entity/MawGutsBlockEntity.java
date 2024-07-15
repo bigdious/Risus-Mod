@@ -4,6 +4,7 @@ import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.MawGutsMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -28,6 +29,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MawGutsBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer {
+	@Override
+	protected NonNullList<ItemStack> getItems() {
+		return this.items;
+	}
+
+	@Override
+	protected void setItems(NonNullList<ItemStack> pItems) {
+		this.items = pItems;
+	}
 	private NonNullList<ItemStack> items = NonNullList.withSize(54, ItemStack.EMPTY);
 	private int cooldownTime = -1;
 
@@ -108,20 +118,20 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	}
 
 	private static boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
-		return ItemStack.isSameItemSameTags(oldStack, newStack);
+		return ItemStack.isSameItem(oldStack, newStack);
 	}
 
 	@Override
-	public void load(CompoundTag tag) {
-		super.load(tag);
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		super.loadAdditional(tag, pRegistries);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(tag, this.items);
+		ContainerHelper.loadAllItems(tag, this.items, pRegistries);
 	}
 
 	@Override
-	protected void saveAdditional(CompoundTag tag) {
-		super.saveAdditional(tag);
-		ContainerHelper.saveAllItems(tag, this.items);
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		super.saveAdditional(tag, pRegistries);
+		ContainerHelper.saveAllItems(tag, this.items, pRegistries);
 	}
 
 	@Override

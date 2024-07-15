@@ -45,8 +45,8 @@ public class ToothknockerItem extends TieredItem {
 		super(tier, properties);
 		this.attackDamage = (float) damage + tier.getAttackDamageBonus();
 		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double) this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
-		builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double) speed, AttributeModifier.Operation.ADD_VALUE));
+		builder.put(Attributes.ATTACK_DAMAGE.value(), new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double) this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
+		builder.put(Attributes.ATTACK_SPEED.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double) speed, AttributeModifier.Operation.ADD_VALUE));
 		this.defaultModifiers = builder.build();
 	}
 
@@ -65,7 +65,6 @@ public class ToothknockerItem extends TieredItem {
 
 		return true;
 	}
-
 
 
 	@Override
@@ -104,18 +103,13 @@ public class ToothknockerItem extends TieredItem {
 			f1 *= f5 / f4;
 			f2 *= f5 / f4;
 			f3 *= f5 / f4;
-			player.push((double)f1, (double)f2, (double)f3);
+			player.push((double) f1, (double) f2, (double) f3);
 			float f6 = 1.1999999F;
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
 			player.getCooldowns().addCooldown(this, 30);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			return InteractionResultHolder.consume(itemstack);
 		}
-	}
-
-
-	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_43274_) {
-		return p_43274_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(p_43274_);
 	}
 }
 

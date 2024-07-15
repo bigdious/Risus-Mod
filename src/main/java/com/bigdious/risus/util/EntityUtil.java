@@ -13,13 +13,13 @@ public class EntityUtil {
 		float f = (float) entity.getAttributeValue(Attributes.ATTACK_DAMAGE);
 		float f1 = (float) entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
 		if (victim instanceof LivingEntity) {
-			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity) victim).getMobType());
+			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity) victim).getType());
 			f1 += (float) EnchantmentHelper.getKnockbackBonus(entity);
 		}
 
 		int i = EnchantmentHelper.getFireAspect(entity);
 		if (i > 0) {
-			victim.setSecondsOnFire(i * 4);
+			victim.igniteForSeconds(i * 4);
 		}
 
 		boolean flag = victim.hurt(source, f);

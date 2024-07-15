@@ -4,6 +4,7 @@ import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.DepthVaseMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -36,20 +37,20 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	}
 
 	@Override
-	protected void saveAdditional(CompoundTag pTag) {
-		super.saveAdditional(pTag);
+	protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+		super.saveAdditional(pTag, pRegistries);
 		if (!this.trySaveLootTable(pTag)) {
-			ContainerHelper.saveAllItems(pTag, this.items);
+			ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
 		}
 
 	}
 
 	@Override
-	public void load(CompoundTag pTag) {
-		super.load(pTag);
+	public void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+		super.loadAdditional(pTag, pRegistries);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(pTag)) {
-			ContainerHelper.loadAllItems(pTag, this.items);
+			ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
 		}
 
 	}
@@ -89,7 +90,7 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 
 	}
 	public boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
-		return ItemStack.isSameItemSameTags(oldStack, newStack);
+		return ItemStack.isSameItem(oldStack, newStack);
 	}
 	public void setInputItem(int slot, ItemStack item) {
 		this.setItem(slot, item);

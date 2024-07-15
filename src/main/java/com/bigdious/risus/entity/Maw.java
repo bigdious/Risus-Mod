@@ -42,9 +42,9 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_ID_ATTACK_TARGET, 0);
 	}
 
 	@Override

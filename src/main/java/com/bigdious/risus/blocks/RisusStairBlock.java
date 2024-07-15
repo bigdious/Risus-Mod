@@ -27,7 +27,7 @@ public class RisusStairBlock extends StairBlock implements SimpleMultiloggedBloc
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
 	public RisusStairBlock(Supplier<BlockState> baseState, Properties properties) {
-		super(baseState, properties);
+		super((BlockState) baseState, properties);
 		this.registerDefaultState(this.getStateDefinition().any()
 				.setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM)
 				.setValue(SHAPE, StairsShape.STRAIGHT)

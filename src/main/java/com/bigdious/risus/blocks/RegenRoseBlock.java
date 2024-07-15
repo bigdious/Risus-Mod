@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -21,7 +22,7 @@ public class RegenRoseBlock extends FlowerBlock {
 	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
 
 	public RegenRoseBlock(Supplier<MobEffect> effect, int amp, Properties properties) {
-		super(effect, amp, properties);
+		super((Holder<MobEffect>) effect, amp, properties);
 	}
 
 

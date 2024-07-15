@@ -109,7 +109,6 @@ public class ZitBlock extends DirectionalBlock implements SimpleMultiloggedBlock
 		return direction == state.getValue(FACING).getOpposite() && !state.canSurvive(accessor, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
 	}
 
-	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (!state.getValue(POPPED)) {
 			this.pop(level, state, pos);

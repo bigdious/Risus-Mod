@@ -6,6 +6,7 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -21,6 +22,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.SpawnPlacementRegisterEvent;
 import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
@@ -60,9 +62,6 @@ public class RisusEvents {
 			FlowerPotBlock pot2 = (FlowerPotBlock) Blocks.FLOWER_POT;
 			pot2.addPlant(RisusBlocks.REGEN_ROSE.getId(), RisusBlocks.POTTED_REGEN_ROSE);
 
-			PotionBrewing.addMix(Potions.AWKWARD, RisusItems.GUILTY_APPLE.get(), RisusPotions.MATING_FRENZY.get());
-			PotionBrewing.addMix(RisusPotions.MATING_FRENZY.get(), Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY.get());
-
 			//wood types
 			WoodType.register(RisusBlocks.BONDKNOT_TYPE);
 
@@ -83,6 +82,12 @@ public class RisusEvents {
 			));
 			});
 	}
+	private static void registerPotionRecipes(RegisterBrewingRecipesEvent event) {
+		PotionBrewing.Builder builder = event.getBuilder();
+		builder.addMix(Potions.AWKWARD, RisusItems.GUILTY_APPLE.get(), RisusPotions.MATING_FRENZY);
+		builder.addMix(RisusPotions.MATING_FRENZY, Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY);
+
+	}
 
 	private static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(RisusEntities.ANGEL.get(), Angel.attributes().build());
@@ -95,16 +100,16 @@ public class RisusEvents {
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 	}
 	private static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-		event.register(RisusEntities.LOVER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, SpawnPlacementRegisterEvent.Operation.REPLACE);
+		event.register(RisusEntities.LOVER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, SpawnPlacementRegisterEvent.Operation.REPLACE);
 		}
 
 	private static void knockOutSomeTeeth(LivingHurtEvent event) {
 		Entity source = event.getSource().getEntity();
 
 		if (source instanceof Player player) {
-			if (player.hasEffect(RisusMobEffects.TOOTHLUSTER.get())) {
+			if (player.hasEffect(RisusMobEffects.TOOTHLUSTER)) {
 				if (!event.getEntity().level().isClientSide()) {
-					PacketDistributor.ALL.noArg().send(new CreateCritParticlePacket(event.getEntity().getId(), 1, RisusParticles.TOOTHICAL.get()));
+					PacketDistributor.sendToPlayersTrackingEntity(event.getEntity(), new CreateCritParticlePacket(event.getEntity().getId(), 1, RisusParticles.TOOTHICAL.get()));
 				}
 			}
 		}

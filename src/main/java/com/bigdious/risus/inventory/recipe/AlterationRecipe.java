@@ -3,9 +3,13 @@ package com.bigdious.risus.inventory.recipe;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -22,7 +26,7 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 	}
 
 	@Override
-	public ItemStack assemble(Container container, RegistryAccess registryAccess) {
+	public ItemStack assemble(Container container, HolderLookup.Provider pRegistries) {
 		return this.result.copy();
 	}
 
@@ -32,7 +36,7 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 	}
 
 	@Override
-	public ItemStack getResultItem(RegistryAccess registryAccess) {
+	public ItemStack getResultItem(HolderLookup.Provider pRegistries) {
 		return this.result;
 	}
 
@@ -60,13 +64,9 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 
 		public static final Codec<AlterationRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
 				Ingredient.CODEC_NONEMPTY.fieldOf("input").forGetter(AlterationRecipe::input),
-				ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(AlterationRecipe::result)
+				ItemStack.SIMPLE_ITEM_CODEC.fieldOf("result").forGetter(AlterationRecipe::result)
 		).apply(instance, AlterationRecipe::new));
 
-		@Override
-		public Codec<AlterationRecipe> codec() {
-			return CODEC;
-		}
 
 		@Override
 		public AlterationRecipe fromNetwork(FriendlyByteBuf buffer) {

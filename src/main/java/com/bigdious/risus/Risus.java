@@ -74,7 +74,7 @@ public class Risus {
 		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput));
+		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
 		event.getGenerator().addProvider(isServer, new CraftingGenerator(packOutput, lookupProvider));
 		var blocktags = new BlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
 		event.getGenerator().addProvider(isServer, blocktags);
