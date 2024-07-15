@@ -10,15 +10,16 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.Nullable;
 
 public class ActuallyUseableDirectionalBlock extends DirectionalBlock {
+	MapCodec<ActuallyUseableDirectionalBlock> CODEC = simpleCodec(ActuallyUseableDirectionalBlock::new);
 
 	public ActuallyUseableDirectionalBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.UP));
+		this.registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.UP));
 	}
 
 	@Override
-	protected MapCodec<? extends DirectionalBlock> codec() {
-		return null;
+	protected MapCodec<? extends ActuallyUseableDirectionalBlock> codec() {
+		return CODEC;
 	}
 
 	@Nullable

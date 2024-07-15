@@ -47,7 +47,7 @@ public class RisusAdvancementProvider extends AdvancementProvider {
                             AdvancementType.TASK,
                             true, false, false)
                     .requirements(AdvancementRequirements.Strategy.OR)
-                    .addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ALTERATION_SITE))))
+				.addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("alteration_site")))))
                     .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
                     .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
                     .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))

@@ -22,6 +22,6 @@ A mod to make you smile.'''
 [[dependencies.risus]]
     modId="minecraft"
 	type="required"
-    versionRange="[1.20.4]"
+    versionRange="[1.20.6]"
     ordering="NONE"
     side="BOTH"

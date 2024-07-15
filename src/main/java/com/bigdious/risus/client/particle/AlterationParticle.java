@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.core.particles.ScalableParticleOptionsBase;
 import org.joml.Vector3f;
 
 public class AlterationParticle extends DustParticleBase<AlterationParticleOptions> {

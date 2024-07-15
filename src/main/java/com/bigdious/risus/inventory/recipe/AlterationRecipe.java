@@ -62,23 +62,25 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 
 	public static class Serializer implements RecipeSerializer<AlterationRecipe> {
 
-		public static final Codec<AlterationRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+		public static final MapCodec<AlterationRecipe> MAPCODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 				Ingredient.CODEC_NONEMPTY.fieldOf("input").forGetter(AlterationRecipe::input),
 				ItemStack.SIMPLE_ITEM_CODEC.fieldOf("result").forGetter(AlterationRecipe::result)
 		).apply(instance, AlterationRecipe::new));
 
+		public static final StreamCodec<RegistryFriendlyByteBuf, AlterationRecipe> STREAM_CODEC = StreamCodec.composite(
+			Ingredient.CONTENTS_STREAM_CODEC, recipe -> recipe.input,
+			ItemStack.STREAM_CODEC, recipe -> recipe.result,
+			AlterationRecipe::new);
+
 
 		@Override
-		public AlterationRecipe fromNetwork(FriendlyByteBuf buffer) {
-			Ingredient input = Ingredient.fromNetwork(buffer);
-			ItemStack result = buffer.readItem();
-			return new AlterationRecipe(input, result);
+		public MapCodec<AlterationRecipe> codec() {
+			return MAPCODEC;
 		}
 
 		@Override
-		public void toNetwork(FriendlyByteBuf buffer, AlterationRecipe recipe) {
-			recipe.input.toNetwork(buffer);
-			buffer.writeItem(recipe.result);
+		public StreamCodec<RegistryFriendlyByteBuf, AlterationRecipe> streamCodec() {
+			return null;
 		}
 	}
 }
