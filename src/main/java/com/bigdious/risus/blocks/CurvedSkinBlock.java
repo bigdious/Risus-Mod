@@ -14,9 +14,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -29,7 +32,7 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 		super(p_49795_);
 	}
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		RandomSource random = RandomSource.create();
 		if (player.getItemInHand(hand).is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
@@ -93,9 +96,9 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded2, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
 
 			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 
 		}
-		return use(state, level, pos, player, hand, result);
+		return useItemOn(stack,state, level, pos, player, hand, result);
 	}
 }

@@ -14,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -140,16 +141,16 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 
 	}
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn (ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (!state.getValue(SPREADING) && held.is(RisusItems.ORGANIC_MATTER)) {
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, true));
 			level.scheduleTick(pos, this, this.tickRate());
 			player.getMainHandItem().shrink(1);
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.FAIL;
 	}
 
 	void performConversion(ServerLevel level, BlockPos pos, RandomSource rand, BlockState state) {

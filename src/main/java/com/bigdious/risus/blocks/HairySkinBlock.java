@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,15 +25,15 @@ public class HairySkinBlock extends Block {
 	}
 
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEARS)) {
 			level.setBlock(pos, RisusBlocks.SKIN.get().defaultBlockState(), 11);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
 			level.addFreshEntity(hairitem);
 			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
-		return use(state, level, pos, player, hand, result);
+		return useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

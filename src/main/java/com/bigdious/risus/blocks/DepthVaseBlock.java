@@ -15,10 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -109,22 +106,22 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	}
 
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		//it can probably be compacted but it broke the logic when I did it so it'll stay an ugly duckling
 		BlockEntity $$8 = level.getBlockEntity(pos);
 		if ($$8 instanceof DepthVaseBlockEntity depthVase) {
 			if (hand != InteractionHand.MAIN_HAND) {
 				player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
 				depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
-				return InteractionResult.PASS;
+				return ItemInteractionResult.FAIL;
 			}
 			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID, "research_notes")).getItem())) {
 				if (depthVase.depthToSlotRatio == 1) {
 					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				} else {
 					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
 			} else {
 				if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
@@ -132,7 +129,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 						if (i == depthVase.depthToSlotRatio) {
 							player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
 							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
-							return InteractionResult.FAIL;
+							return ItemInteractionResult.FAIL;
 						}
 						if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
 							if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
@@ -153,7 +150,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 										0.0
 									);
 								}
-								return InteractionResult.sidedSuccess(level.isClientSide);
+								return ItemInteractionResult.sidedSuccess(level.isClientSide);
 							} else {
 								player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
 								depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
@@ -172,7 +169,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 										0.0
 									);
 								}
-								return InteractionResult.sidedSuccess(level.isClientSide);
+								return ItemInteractionResult.sidedSuccess(level.isClientSide);
 							}
 						} else if (depthVase.getInputItem(i).isEmpty()) {
 							depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
@@ -191,7 +188,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 									0.0
 								);
 							}
-							return InteractionResult.sidedSuccess(level.isClientSide);
+							return ItemInteractionResult.sidedSuccess(level.isClientSide);
 						}
 					}
 				}
@@ -216,13 +213,13 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 									0.0
 								);
 							}
-							return InteractionResult.SUCCESS;
+							return ItemInteractionResult.SUCCESS;
 						}
 					}
 				}
 			}
 		}
-		return InteractionResult.FAIL;
+		return ItemInteractionResult.FAIL;
 	}
 
 	@Override

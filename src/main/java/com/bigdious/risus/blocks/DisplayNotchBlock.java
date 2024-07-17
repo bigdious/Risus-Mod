@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -51,17 +52,17 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 		this.registerDefaultState(this.getStateDefinition().any().setValue(ORIENTATION, FrontAndTop.NORTH_UP));
 		this.registerDefaultState(this.getStateDefinition().any().setValue(ELEVATE, false));
 	}
-	
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
-			return InteractionResult.PASS;
+			return ItemInteractionResult.FAIL;
 		if (player.isCrouching() && player.getMainHandItem().isEmpty()) {
 			if (state.getValue(ELEVATE) == false) {
 				level.setBlock(pos, state.setValue(ELEVATE, true), 3);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			} else {
 				level.setBlock(pos, state.setValue(ELEVATE, false), 3);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 		else if (notch.getInputItem() != null) {
@@ -76,7 +77,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 		}
 
 		level.sendBlockUpdated(pos, state, state, 2);
-		return InteractionResult.sidedSuccess(level.isClientSide);
+		return ItemInteractionResult.sidedSuccess(level.isClientSide);
 	}
 	@Override
 	protected MapCodec<? extends BaseEntityBlock> codec() {

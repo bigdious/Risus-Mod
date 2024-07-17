@@ -4,6 +4,7 @@ import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -20,15 +21,15 @@ public class RemainsBlock extends Block {
 
 	}
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (held.is(Items.FLINT_AND_STEEL) || held.is(Items.FIRE_CHARGE)) {
 			if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
 				level.setBlock(pos.above(), RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), 11);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 
 			}
 		}
-		return use(state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 }

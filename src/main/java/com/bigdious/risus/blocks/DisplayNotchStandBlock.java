@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -49,16 +50,16 @@ public class DisplayNotchStandBlock extends BaseEntityBlock implements SimpleMul
 		this.registerDefaultState(this.getStateDefinition().any().setValue(ELEVATE, false));
 	}
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchStandBlockEntity notch))
-			return InteractionResult.PASS;
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
+			return ItemInteractionResult.FAIL;
 		if (player.isCrouching() && player.getMainHandItem().isEmpty()) {
 			if (state.getValue(ELEVATE) == false) {
 				level.setBlock(pos, state.setValue(ELEVATE, true), 3);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			} else {
 				level.setBlock(pos, state.setValue(ELEVATE, false), 3);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 		else if (notch.getInputItem() != null) {
@@ -73,7 +74,7 @@ public class DisplayNotchStandBlock extends BaseEntityBlock implements SimpleMul
 		}
 
 		level.sendBlockUpdated(pos, state, state, 2);
-		return InteractionResult.sidedSuccess(level.isClientSide);
+		return ItemInteractionResult.sidedSuccess(level.isClientSide);
 	}
 	@Override
 	protected MapCodec<? extends BaseEntityBlock> codec() {

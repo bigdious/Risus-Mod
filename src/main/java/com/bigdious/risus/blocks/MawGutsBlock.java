@@ -116,7 +116,7 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, Simple
 	}
 
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
 		BlockEntity blockentity = level.getBlockEntity(pos);
 		if (blockentity instanceof MawGutsBlockEntity guts) {
 			player.openMenu(guts);
