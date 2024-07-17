@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "risus:bondknot_logs"
+            "items": "#risus:bondknot_logs"
           }
         ]
       },

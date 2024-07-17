@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:sea_pickle"
   },
-  "result": {
-    "item": "risus:zit"
-  }
+  "result": "risus:zit"
 }

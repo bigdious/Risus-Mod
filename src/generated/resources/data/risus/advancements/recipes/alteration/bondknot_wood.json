@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:acacia_log"
-            ]
+            "items": "minecraft:acacia_log"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:birch_log"
-            ]
+            "items": "minecraft:birch_log"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cherry_log"
-            ]
+            "items": "minecraft:cherry_log"
           }
         ]
       },
@@ -41,9 +35,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:dark_oak_log"
-            ]
+            "items": "minecraft:dark_oak_log"
           }
         ]
       },
@@ -53,9 +45,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:jungle_log"
-            ]
+            "items": "minecraft:jungle_log"
           }
         ]
       },
@@ -65,9 +55,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:mangrove_log"
-            ]
+            "items": "minecraft:mangrove_log"
           }
         ]
       },
@@ -77,9 +65,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:oak_log"
-            ]
+            "items": "minecraft:oak_log"
           }
         ]
       },
@@ -89,9 +75,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:spruce_log"
-            ]
+            "items": "minecraft:spruce_log"
           }
         ]
       },

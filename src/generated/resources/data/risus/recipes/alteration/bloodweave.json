@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:cobweb"
   },
-  "result": {
-    "item": "risus:bloodweave"
-  }
+  "result": "risus:bloodweave"
 }

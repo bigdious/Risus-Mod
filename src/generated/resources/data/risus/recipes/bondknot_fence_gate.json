@@ -6,7 +6,7 @@
       "item": "risus:bondknot_planks"
     },
     "/": {
-      "tag": "forge:rods/wooden"
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
@@ -14,6 +14,7 @@
     "/#/"
   ],
   "result": {
-    "item": "risus:bondknot_fence_gate"
+    "count": 1,
+    "id": "risus:bondknot_fence_gate"
   }
 }

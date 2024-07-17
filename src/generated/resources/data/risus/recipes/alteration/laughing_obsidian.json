@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:crying_obsidian"
   },
-  "result": {
-    "item": "risus:laughing_obsidian"
-  }
+  "result": "risus:laughing_obsidian"
 }

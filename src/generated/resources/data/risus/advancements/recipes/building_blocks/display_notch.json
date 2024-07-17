@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:display_notch_stand"
-            ]
+            "items": "risus:display_notch_stand"
           }
         ]
       },

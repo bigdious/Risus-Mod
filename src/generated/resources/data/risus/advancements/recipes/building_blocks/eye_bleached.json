@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:eye_ender"
-            ]
+            "items": "risus:eye_ender"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:teeth"
-            ]
+            "items": "risus:teeth"
           }
         ]
       },

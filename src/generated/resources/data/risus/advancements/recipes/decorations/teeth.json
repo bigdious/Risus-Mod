@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:teeth"
-            ]
+            "items": "risus:teeth"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:tissue"
-            ]
+            "items": "risus:tissue"
           }
         ]
       },

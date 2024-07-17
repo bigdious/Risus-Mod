@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "risus:joyflame_fire_base_blocks"
+            "items": "#risus:joyflame_fire_base_blocks"
           }
         ]
       },

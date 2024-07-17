@@ -71,7 +71,7 @@ public class Risus {
 		boolean isServer = event.includeServer();
 		boolean isClient = event.includeClient();
 
-		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+//		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput, lookupProvider));

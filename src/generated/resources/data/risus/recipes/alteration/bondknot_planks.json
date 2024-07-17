@@ -26,7 +26,5 @@
       "item": "minecraft:cherry_planks"
     }
   ],
-  "result": {
-    "item": "risus:bondknot_planks"
-  }
+  "result": "risus:bondknot_planks"
 }

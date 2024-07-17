@@ -26,7 +26,5 @@
       "item": "minecraft:cherry_door"
     }
   ],
-  "result": {
-    "item": "risus:bondknot_door"
-  }
+  "result": "risus:bondknot_door"
 }

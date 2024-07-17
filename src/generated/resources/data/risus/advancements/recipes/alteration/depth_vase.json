@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:decorated_pot"
-            ]
+            "items": "minecraft:decorated_pot"
           }
         ]
       },

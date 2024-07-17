@@ -8,7 +8,5 @@
       "item": "minecraft:soul_soil"
     }
   ],
-  "result": {
-    "item": "risus:ashen_remains"
-  }
+  "result": "risus:ashen_remains"
 }

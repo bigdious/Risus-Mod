@@ -62,7 +62,7 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 
 	public static class Serializer implements RecipeSerializer<AlterationRecipe> {
 
-		public static final MapCodec<AlterationRecipe> MAPCODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+		public static final MapCodec<AlterationRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 				Ingredient.CODEC_NONEMPTY.fieldOf("input").forGetter(AlterationRecipe::input),
 				ItemStack.SIMPLE_ITEM_CODEC.fieldOf("result").forGetter(AlterationRecipe::result)
 		).apply(instance, AlterationRecipe::new));
@@ -75,12 +75,12 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 
 		@Override
 		public MapCodec<AlterationRecipe> codec() {
-			return MAPCODEC;
+			return CODEC;
 		}
 
 		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, AlterationRecipe> streamCodec() {
-			return null;
+			return STREAM_CODEC;
 		}
 	}
 }

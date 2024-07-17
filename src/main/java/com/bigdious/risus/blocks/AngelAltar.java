@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -64,7 +65,7 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 		return SHAPE;
 	}
 
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (held.is(Items.TOTEM_OF_UNDYING)) {
 			if (level.getBlockState(pos.above()).isAir()) {
@@ -75,12 +76,12 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 				summonedAngel.moveTo(pos.getCenter().x, pos.getCenter().y + 1, pos.getCenter().z, 0.0F, 0.0F);
 				level.addFreshEntity(summonedAngel);
 				player.getMainHandItem().shrink(1);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 
 		}
 
-		return use(state, level, pos, player, hand, result);
+		return useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
 	private void explode(Level level, BlockPos pos) {

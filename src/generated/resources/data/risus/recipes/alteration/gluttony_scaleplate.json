@@ -3,7 +3,5 @@
   "input": {
     "item": "risus:gluttony_scales"
   },
-  "result": {
-    "item": "risus:gluttony_scaleplate"
-  }
+  "result": "risus:gluttony_scaleplate"
 }

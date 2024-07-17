@@ -26,7 +26,5 @@
       "item": "minecraft:salmon"
     }
   ],
-  "result": {
-    "item": "risus:tissue"
-  }
+  "result": "risus:tissue"
 }

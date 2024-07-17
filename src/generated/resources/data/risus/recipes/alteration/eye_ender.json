@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:ender_eye"
   },
-  "result": {
-    "item": "risus:eye_ender"
-  }
+  "result": "risus:eye_ender"
 }

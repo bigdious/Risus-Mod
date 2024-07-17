@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "forge:obsidian"
+      "tag": "c:obsidians"
     },
     "/": {
       "item": "risus:gluttony_scales"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 32,
-    "item": "risus:imitation_scaleplate"
+    "id": "risus:imitation_scaleplate"
   }
 }

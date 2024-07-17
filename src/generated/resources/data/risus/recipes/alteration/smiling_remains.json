@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:netherrack"
   },
-  "result": {
-    "item": "risus:smiling_remains"
-  }
+  "result": "risus:smiling_remains"
 }

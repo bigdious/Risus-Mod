@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:hair_follicles"
-            ]
+            "items": "risus:hair_follicles"
           }
         ]
       },

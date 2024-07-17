@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:crystallized_bond"
-            ]
+            "items": "risus:crystallized_bond"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:concentration_core"
-            ]
+            "items": "risus:concentration_core"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:gluttony_scales"
-            ]
+            "items": "risus:gluttony_scales"
           }
         ]
       },

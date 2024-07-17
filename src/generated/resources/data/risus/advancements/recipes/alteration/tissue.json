@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:beef"
-            ]
+            "items": "minecraft:beef"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:mutton"
-            ]
+            "items": "minecraft:mutton"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:porkchop"
-            ]
+            "items": "minecraft:porkchop"
           }
         ]
       },
@@ -41,9 +35,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:rabbit"
-            ]
+            "items": "minecraft:rabbit"
           }
         ]
       },

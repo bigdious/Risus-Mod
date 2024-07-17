@@ -26,7 +26,5 @@
       "item": "minecraft:cherry_log"
     }
   ],
-  "result": {
-    "item": "risus:bondknot_log"
-  }
+  "result": "risus:bondknot_log"
 }

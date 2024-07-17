@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cracked_polished_blackstone_bricks"
-            ]
+            "items": "minecraft:cracked_polished_blackstone_bricks"
           }
         ]
       },

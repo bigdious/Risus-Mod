@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:joyflame_torch"
-            ]
+            "items": "risus:joyflame_torch"
           }
         ]
       },

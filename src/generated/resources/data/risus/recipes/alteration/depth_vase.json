@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:decorated_pot"
   },
-  "result": {
-    "item": "risus:depth_vase"
-  }
+  "result": "risus:depth_vase"
 }

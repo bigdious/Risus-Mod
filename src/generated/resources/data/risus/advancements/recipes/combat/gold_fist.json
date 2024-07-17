@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:hand_of_greed"
-            ]
+            "items": "risus:hand_of_greed"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:toothknocker"
-            ]
+            "items": "risus:toothknocker"
           }
         ]
       },

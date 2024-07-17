@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:stripped_bondknot_log"
-            ]
+            "items": "risus:stripped_bondknot_log"
           }
         ]
       },

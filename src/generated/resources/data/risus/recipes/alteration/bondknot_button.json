@@ -26,7 +26,5 @@
       "item": "minecraft:cherry_button"
     }
   ],
-  "result": {
-    "item": "risus:bondknot_button"
-  }
+  "result": "risus:bondknot_button"
 }

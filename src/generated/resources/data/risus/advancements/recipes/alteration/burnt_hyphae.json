@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:crimson_stem"
-            ]
+            "items": "minecraft:crimson_stem"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:crimson_hyphae"
-            ]
+            "items": "minecraft:crimson_hyphae"
           }
         ]
       },
@@ -35,9 +31,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:warped_hyphae"
-            ]
+            "items": "minecraft:warped_hyphae"
           }
         ]
       },
@@ -47,9 +41,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:warped_stem"
-            ]
+            "items": "minecraft:warped_stem"
           }
         ]
       },

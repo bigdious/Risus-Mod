@@ -3,7 +3,5 @@
   "input": {
     "item": "minecraft:rotten_flesh"
   },
-  "result": {
-    "item": "risus:organic_matter"
-  }
+  "result": "risus:organic_matter"
 }

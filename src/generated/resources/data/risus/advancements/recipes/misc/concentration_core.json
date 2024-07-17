@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:memory_core"
-            ]
+            "items": "risus:memory_core"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "risus:gluttony_scales"
-            ]
+            "items": "risus:gluttony_scales"
           }
         ]
       },
