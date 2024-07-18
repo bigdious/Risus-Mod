@@ -34,6 +34,6 @@ public class HairyCurvedSkinBlock extends MultiDirectionalBlock {
 			return ItemInteractionResult.SUCCESS;
 
 		}
-		return useItemOn(stack, state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 }

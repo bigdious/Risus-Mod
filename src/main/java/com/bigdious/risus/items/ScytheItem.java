@@ -14,12 +14,13 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
 public class ScytheItem extends SwordItem {
-	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-	public ScytheItem(Tier tier, Item.Properties properties) {
-		super(tier, properties);
-		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		builder.put(Attributes.ENTITY_INTERACTION_RANGE.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", 2, AttributeModifier.Operation.ADD_VALUE));
-		this.defaultModifiers = builder.build();
+	public ScytheItem(Tier material, Properties properties) {
+		super(material, properties);
+	}
+
+	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
+		return SwordItem.createAttributes(tier, damage, speed)
+			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier("range_modifier", 2.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
 	}
 	@Override
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {

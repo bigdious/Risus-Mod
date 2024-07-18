@@ -47,7 +47,7 @@ public class AshenRemainsBlock extends RemainsBlock {
 
 			}
 		}
-		return super.useItemOn(stack,state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 
 	@Override

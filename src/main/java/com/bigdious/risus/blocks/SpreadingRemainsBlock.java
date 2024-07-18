@@ -21,14 +21,12 @@ import net.minecraft.world.level.material.FluidState;
 public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMultiloggedBlock {
 
 	public static final MapCodec<SpreadingRemainsBlock> CODEC = simpleCodec(SpreadingRemainsBlock::new);
-	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
 	public SpreadingRemainsBlock(BlockBehaviour.Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
-			.setValue(FACING, Direction.DOWN));
+		this.registerDefaultState(this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
 
 	@Override
@@ -39,7 +37,7 @@ public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMulti
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> state) {
 		super.createBlockStateDefinition(state);
-		state.add(FACING, FLUIDLOGGED);
+		state.add( FLUIDLOGGED);
 	}
 
 	@Override

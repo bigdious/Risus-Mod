@@ -10,12 +10,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.neoforge.common.ToolAction;
 
 public class GoldFistItem extends ToothknockerItem {
-	public GoldFistItem(Tier tier, int damage, float speed, Properties properties) {
-		super(tier, damage, speed, properties);
+	public GoldFistItem(Tier tier, Properties properties) {
+		super(tier,  properties);
 	}
+
 
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {

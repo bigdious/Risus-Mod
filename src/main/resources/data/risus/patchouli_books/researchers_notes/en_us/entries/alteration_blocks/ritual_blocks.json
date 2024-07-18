@@ -1,0 +1,17 @@
+{
+  "name": "Ritual Blocks",
+  "icon": "risus:curved_ritual_block",
+  "category": "risus:alteration",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Attained by altering Black Glazed Terracotta, Curved Ritual Blocks offer a much grander design, ideal for ritualistic needs. Additionally, it's possible to convert them to a linear design by placing one in a crafting grid."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:curved_ritual_block",
+      "recipe2": "risus:linear_ritual_block"
+    }
+  ]
+}

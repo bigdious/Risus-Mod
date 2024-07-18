@@ -4,25 +4,27 @@ import com.bigdious.risus.init.RisusItems;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
-public class HandOfGreedItem extends Item implements ReachItem {
-	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-	public HandOfGreedItem(Item.Properties properties) {
-		super( properties);
-		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		builder.put(Attributes.ENTITY_INTERACTION_RANGE.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", 2, AttributeModifier.Operation.ADD_VALUE));
-		this.defaultModifiers = builder.build();
+public class HandOfGreedItem extends TieredItem {
+	public HandOfGreedItem(Tier tier,Item.Properties properties) {
+		super(tier ,properties);
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
-		return material.is(RisusItems.GLUTTONY_SCALES) || super.isValidRepairItem(stack, material);
+	public static ItemAttributeModifiers createHandOfGreedAttributes(Tier tier) {
+		return ItemAttributeModifiers.builder()
+			.add(Attributes.BLOCK_INTERACTION_RANGE,
+				new AttributeModifier(
+					"range_modifier",
+					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND).build();
+
 	}
+
+
 }

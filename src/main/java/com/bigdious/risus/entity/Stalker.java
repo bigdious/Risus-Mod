@@ -39,7 +39,7 @@ public class Stalker extends Monster {
 		this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Ocelot.class, 6.0F, 1.0D, 1.2D));
 		this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Cat.class, 6.0F, 1.0D, 1.2D));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.85D, false));
-		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.2D));
+		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));

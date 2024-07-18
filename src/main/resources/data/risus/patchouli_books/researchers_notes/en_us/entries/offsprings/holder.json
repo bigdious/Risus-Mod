@@ -1,0 +1,28 @@
+{
+  "name": "Holder",
+  "icon": "risus:organic_matter",
+  "category": "risus:offsprings",
+  "advancement": "risus:little",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. Destroying them will result in gaining a piece or two of Organic Matter."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:holder",
+      "border": "true",
+      "text": "They may be little and not really lethal, but such traits lead to easily underestimating them..."
+      },
+
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "These little freaks infuriate me to no end sometimes. At first I thought of them as somewhat 'cute' but I quickly realized their true nature. They pop out from the ground wherever there is just a little remnant of the plague and rush toward me to relieve me of the object I am holding. They have ruined many a tests, by stealing a crucial object that I was using, and leaving me with only my own wits."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "One such example was when they took my sword as I was dealing with some Weavers. It was an unpleasant experience. Since then I learned that holding Organic Matter causes them to behave weirdly and because of this I make sure I always have some on me. They follow with haste whoever they stole it from until the victim takes it back, all the while behaving rather docile. I do admit, when they act like this, they can be rather adorable..."
+    }
+  ]
+}

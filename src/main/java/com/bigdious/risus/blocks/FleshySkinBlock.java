@@ -39,6 +39,6 @@ public class FleshySkinBlock extends ActuallyUseableDirectionalBlock {
 
 
 		}
-		return useItemOn(stack, state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 }

@@ -34,6 +34,6 @@ public class HairySkinBlock extends Block {
 			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
 			return ItemInteractionResult.SUCCESS;
 		}
-		return useItemOn(stack, state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 }

@@ -123,6 +123,12 @@ public class ThrownAxe extends AbstractArrow {
 	}
 
 	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+		super.defineSynchedData(pBuilder);
+		pBuilder.define(ID_LOYALTY, (byte)0);
+		pBuilder.define(ID_FOIL, false);
+	}
+	@Override
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
 		float f;

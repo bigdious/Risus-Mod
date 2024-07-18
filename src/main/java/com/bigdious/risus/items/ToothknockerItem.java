@@ -37,22 +37,13 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ToothknockerItem extends TieredItem {
-	private final float attackDamage;
-	private final Multimap<Attribute, AttributeModifier> defaultModifiers;
+public class ToothknockerItem extends SwordItem {
 
-	public ToothknockerItem(Tier tier, int damage, float speed, Item.Properties properties) {
+
+	public ToothknockerItem(Tier tier, Item.Properties properties) {
 		super(tier, properties);
-		this.attackDamage = (float) damage + tier.getAttackDamageBonus();
-		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		builder.put(Attributes.ATTACK_DAMAGE.value(), new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double) this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
-		builder.put(Attributes.ATTACK_SPEED.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double) speed, AttributeModifier.Operation.ADD_VALUE));
-		this.defaultModifiers = builder.build();
 	}
 
-	public float getDamage() {
-		return this.attackDamage;
-	}
 
 	public boolean canAttackBlock(BlockState p_43291_, Level p_43292_, BlockPos p_43293_, Player p_43294_) {
 		return !p_43294_.isCreative();
@@ -110,6 +101,10 @@ public class ToothknockerItem extends TieredItem {
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			return InteractionResultHolder.consume(itemstack);
 		}
+	}
+	@Override
+	public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ToolAction toolAction) {
+		return false;
 	}
 }
 

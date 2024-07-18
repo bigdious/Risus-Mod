@@ -34,6 +34,6 @@ public class HairyFleshySkinBlock extends ActuallyUseableDirectionalBlock {
 			return ItemInteractionResult.SUCCESS;
 
 		}
-		return useItemOn(stack, state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 }

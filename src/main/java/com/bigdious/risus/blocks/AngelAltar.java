@@ -80,8 +80,7 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 			}
 
 		}
-
-		return useItemOn(stack, state, level, pos, player, hand, result);
+		return ItemInteractionResult.FAIL;
 	}
 
 	private void explode(Level level, BlockPos pos) {

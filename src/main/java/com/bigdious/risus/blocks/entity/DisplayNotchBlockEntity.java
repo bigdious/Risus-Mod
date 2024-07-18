@@ -32,29 +32,29 @@ public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyConta
 	}
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
-	@Override
-	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-		super.saveAdditional(tag, pRegistries);
-		if (this.item != null) {
-			CompoundTag reagentTag = new CompoundTag();
-			this.item.save(pRegistries);
-			tag.put("item", reagentTag);
-		}
-		tag.putFloat("itemRotation", this.rotationDegrees);
-	}
-	@Override
-	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-//		this.item = ItemStack.of((CompoundTag) tag.get("item"));
-		this.rotationDegrees = tag.getFloat("itemRotation");
-		super.loadAdditional(tag, pRegistries);
-	}
-	@Override
-	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
-		CompoundTag tag = new CompoundTag();
-		tag.putFloat("itemRotation", this.rotationDegrees);
-		this.saveAdditional(tag, pRegistries);
-		return tag;
-	}
+//	@Override
+//	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+//		super.saveAdditional(tag, pRegistries);
+//		if (this.item != null) {
+//			CompoundTag reagentTag = new CompoundTag();
+//			this.item.save(pRegistries);
+//			tag.put("item", reagentTag);
+//		}
+//		tag.putFloat("itemRotation", this.rotationDegrees);
+//	}
+//	@Override
+//	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+//		this.item = ItemStack.((CompoundTag) tag.get("item"));
+//		this.rotationDegrees = tag.getFloat("itemRotation");
+//		super.loadAdditional(tag, pRegistries);
+//	}
+//	@Override
+//	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+//		CompoundTag tag = new CompoundTag();
+//		tag.putFloat("itemRotation", this.rotationDegrees);
+//		this.saveAdditional(tag, pRegistries);
+//		return tag;
+//	}
 //	@Override
 //	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
 //		super.onDataPacket(net, packet);

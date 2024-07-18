@@ -1,9 +1,11 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.blocks.SpreadingRemainsBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -24,10 +26,12 @@ import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -107,14 +111,14 @@ public class Lover extends Monster {
 					level,
 					level.getCurrentDifficultyAt(stalker.blockPosition()),
 					MobSpawnType.CONVERSION,
-					new Zombie.ZombieGroupData(false, true)
+					new Zombie.ZombieGroupData(false, false)
 				);
 				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, stalker);
 				if (!this.isSilent()) {
 					level.levelEvent(null, 1026, this.blockPosition(), 0);
 				}
-				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR))
-				entity.level().setBlock(entity.getOnPos(), RisusBlocks.SMILING_REMAINS.get().defaultBlockState(), 3);
+				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
 
 				flag = false;
 			}
