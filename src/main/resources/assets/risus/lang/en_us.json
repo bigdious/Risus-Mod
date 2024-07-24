@@ -130,7 +130,7 @@
   "item.risus.blood_bucket": "Blood Bucket",
   "item.risus.hair_follicles": "Hair Follicles",
   "item.risus.hand_of_greed": "Hand of Greed",
-  "item.risus.gold_fist": "Fraudulent Pummeler",
+  "item.risus.gold_fist": "Stripper",
   "item.risus.scythe": "Unlit Vessel",
 
 
@@ -139,8 +139,9 @@
   "item.risus.holder_spawn_egg": "Holder Spawn Egg",
   "item.risus.stalker_spawn_egg": "Stalker Spawn Egg",
   "item.risus.maw_spawn_egg": "Maw Spawn Egg",
-  "item.risus.question_mark_spawn_egg": "???",
+  "item.risus.question_mark_spawn_egg": "??? Spawn Egg",
   "item.risus.weaver_spawn_egg": "Weaver Spawn Egg",
+  "item.risus.lover_spawn_egg": "Lover Spawn Egg",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",

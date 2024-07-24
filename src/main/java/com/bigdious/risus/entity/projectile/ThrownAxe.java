@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -28,7 +29,7 @@ import javax.annotation.Nullable;
 public class ThrownAxe extends AbstractArrow {
 	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
-	private ItemStack axeItem = new ItemStack(RisusItems.UNAWAKENED_VESSEL.get());
+	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private boolean dealtDamage;
 	private boolean shouldSpin = true;
 	public int spinTickCount;
@@ -38,11 +39,11 @@ public class ThrownAxe extends AbstractArrow {
 		super(type, level, ItemStack.EMPTY);
 	}
 
-	public ThrownAxe(Level level, LivingEntity owner, ItemStack stack) {
-		super(RisusEntities.THROWN_AXE.get(), owner, level, ItemStack.EMPTY);
-		this.axeItem = stack.copy();
-		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
-		this.entityData.set(ID_FOIL, stack.hasFoil());
+	public ThrownAxe(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
+		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack);
+		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(pPickupItemStack));
+		this.entityData.set(ID_SHARPNESS, (byte) EnchantmentHelper.getLoyalty(pPickupItemStack));
+		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
 
 
@@ -93,17 +94,13 @@ public class ThrownAxe extends AbstractArrow {
 
 	private boolean isAcceptableReturnOwner() {
 		Entity entity = this.getOwner();
-		if (entity != null && entity.isAlive()) {
-			return !(entity instanceof ServerPlayer) || !entity.isSpectator();
-		} else {
-			return false;
-		}
+		return entity == null || !entity.isAlive() ? false : !(entity instanceof ServerPlayer) || !entity.isSpectator();
 	}
 
 
 	@Override
 	protected ItemStack getDefaultPickupItem() {
-		return this.axeItem.copy();
+		return new ItemStack(RisusItems.CRESCENT_DISASTER.get());
 	}
 
 	public boolean isFoil() {
@@ -126,19 +123,17 @@ public class ThrownAxe extends AbstractArrow {
 	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
 		super.defineSynchedData(pBuilder);
 		pBuilder.define(ID_LOYALTY, (byte)0);
+		pBuilder.define(ID_SHARPNESS, (byte)0);
 		pBuilder.define(ID_FOIL, false);
 	}
 	@Override
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
 		float f;
-		if (this.axeItem.getItem() instanceof DiggerItem digger) {
-			f = digger.getDamage(this.axeItem);
-		} else {
-			f = 5.0F;
-		}
+		//10 is base damage of crescent, update if it changes
+		f = 10.0F + this.entityData.get(ID_SHARPNESS);;
 		if (entity instanceof LivingEntity livingentity) {
-			f += EnchantmentHelper.getDamageBonus(this.axeItem, livingentity.getType());
+			f += EnchantmentHelper.getDamageBonus(this.getPickupItemStackOrigin(), livingentity.getType());
 		}
 
 		Entity entity1 = this.getOwner();
@@ -188,18 +183,15 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-//		if (tag.contains("AxeInfo", 10)) {
-//			this.axeItem = ItemStack.of(tag.getCompound("AxeInfo"));
-//		}
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
-		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(this.axeItem));
+		this.entityData.set(ID_LOYALTY, (byte)EnchantmentHelper.getLoyalty(this.getPickupItemStackOrigin()));
+		this.entityData.set(ID_SHARPNESS, (byte)EnchantmentHelper.getLoyalty(this.getPickupItemStackOrigin()));
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
-//		tag.put("AxeInfo", this.axeItem.save(new CompoundTag()));
 		tag.putBoolean("DealtDamage", this.dealtDamage);
 	}
 

@@ -21,11 +21,11 @@ public class RisusItems {
 
 	public static final DeferredItem<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
 
-	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, 5.0F, -3.0F, defaultWithRarity()));
+	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
 	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(Risus.getRarity())));
 	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem(-1, defaultWithRarity().durability(64)));
 	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(RisusToolMaterials.GLUTTONY, defaultWithRarity()));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
 	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(Risus.getRarity())));
 	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(Risus.getRarity())));
 
@@ -52,7 +52,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> CRYSTALLIZED_BONDS = ITEMS.register("crystallized_bonds", () -> new BlockItem(RisusBlocks.CRYSTALLIZED_BONDS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> HEART_TRANSPLANT = ITEMS.register("heart_transplant", () -> new BlockItem(RisusBlocks.HEART_TRANSPLANT.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> REGEN_ROSE = ITEMS.register("regen_rose", () -> new BlockItem(RisusBlocks.REGEN_ROSE.get(), defaultWithNoRarity()));
-	public static final DeferredItem<Item> TEETH = ITEMS.register("teeth", () -> new BlockItem(RisusBlocks.TEETH.get(), defaultWithNoRarity()));
+	public static final DeferredItem<Item> TEETH = ITEMS.register("teeth", () -> new BlockItem(RisusBlocks.TEETH.get(), defaultWithRarity()));
 
 	public static final DeferredItem<Item> GRIMSTONE = ITEMS.register("grimstone", () -> new BlockItem(RisusBlocks.GRIMSTONE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));

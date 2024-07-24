@@ -1,8 +1,10 @@
 {
   "result": {
-    "nbt": "{Damage:9996}",
-    "item": "risus:endless_pearl",
-    "type": "minecraft:item_nbt"
+    "id": "risus:endless_pearl",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 9996
+    }
   },
   "pattern": [
     "PSP",

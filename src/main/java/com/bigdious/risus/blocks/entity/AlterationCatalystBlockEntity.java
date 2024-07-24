@@ -134,11 +134,11 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		return tag;
 	}
 
-//	@Override
-//	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-//		super.onDataPacket(net, packet);
-//		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
-//	}
+	@Override
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider pRegistries) {
+		super.onDataPacket(net, packet, pRegistries);
+		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag(), pRegistries);
+	}
 
 
 	@Override

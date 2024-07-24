@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ThrowableAxeItem extends AxeItem {
-	public ThrowableAxeItem(Tier tier, float damage, float speed, Properties properties) {
+	public ThrowableAxeItem(Tier tier, Properties properties) {
 		super(tier,  properties);
 	}
 
