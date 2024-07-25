@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -112,7 +113,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 		if ($$8 instanceof DepthVaseBlockEntity depthVase) {
 			if (hand != InteractionHand.MAIN_HAND) {
 				player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-				depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
+				depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
 				return ItemInteractionResult.FAIL;
 			}
 			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID, "research_notes")).getItem())) {
@@ -128,14 +129,14 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 					for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
 						if (i == depthVase.depthToSlotRatio) {
 							player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.NEGATIVE);
+							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
 							return ItemInteractionResult.FAIL;
 						}
 						if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
 							if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
 								depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
 								player.getMainHandItem().shrink(player.getMainHandItem().getCount());
-								depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+								depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
@@ -154,7 +155,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							} else {
 								player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
 								depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
-								depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+								depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
@@ -173,7 +174,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							}
 						} else if (depthVase.getInputItem(i).isEmpty()) {
 							depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
-							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(
@@ -198,7 +199,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
 							level.addFreshEntity(item);
 							depthVase.setInputItem(i, ItemStack.EMPTY);
-							depthVase.wobble(DepthVaseBlockEntity.WobbleStyle.POSITIVE);
+							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(

@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
@@ -24,6 +25,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Function;
 
 public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer {
 
@@ -106,7 +109,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		super.saveAdditional(tag, pRegistries);
-		if (this.item != null) {
+		if (this.item != null && !this.item.isEmpty()) {
 			CompoundTag reagentTag = new CompoundTag();
 			this.item.save(pRegistries);
 			tag.put("item", reagentTag);
@@ -118,6 +121,11 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		if (tag.contains("item")) {
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+		} else {
+			this.item = ItemStack.EMPTY;
+		}
 		this.isCrafting = tag.getBoolean("isCrafting");
 		this.craftingCounter = tag.getInt("counter");
 		this.rotationDegrees = tag.getFloat("itemRotation");

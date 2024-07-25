@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
@@ -24,6 +25,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Function;
+
 public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyContainer {
 	protected ItemStack item = ItemStack.EMPTY;
 	public float rotationDegrees;
@@ -32,34 +35,38 @@ public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyConta
 	}
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
-//	@Override
-//	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-//		super.saveAdditional(tag, pRegistries);
-//		if (this.item != null) {
-//			CompoundTag reagentTag = new CompoundTag();
-//			this.item.save(pRegistries);
-//			tag.put("item", reagentTag);
-//		}
-//		tag.putFloat("itemRotation", this.rotationDegrees);
-//	}
-//	@Override
-//	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-//		this.item = ItemStack.((CompoundTag) tag.get("item"));
-//		this.rotationDegrees = tag.getFloat("itemRotation");
-//		super.loadAdditional(tag, pRegistries);
-//	}
-//	@Override
-//	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
-//		CompoundTag tag = new CompoundTag();
-//		tag.putFloat("itemRotation", this.rotationDegrees);
-//		this.saveAdditional(tag, pRegistries);
-//		return tag;
-//	}
-//	@Override
-//	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-//		super.onDataPacket(net, packet);
-//		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
-//	}
+	@Override
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		super.saveAdditional(tag, pRegistries);
+		if (this.item != null && !this.item.isEmpty()) {
+			CompoundTag reagentTag = new CompoundTag();
+			this.item.save(pRegistries);
+			tag.put("item", reagentTag);
+		}
+		tag.putFloat("itemRotation", this.rotationDegrees);
+	}
+	@Override
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
+		if (tag.contains("item")) {
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+		} else {
+			this.item = ItemStack.EMPTY;
+		}
+		this.rotationDegrees = tag.getFloat("itemRotation");
+		super.loadAdditional(tag, pRegistries);
+	}
+	@Override
+	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+		CompoundTag tag = new CompoundTag();
+		tag.putFloat("itemRotation", this.rotationDegrees);
+		this.saveAdditional(tag, pRegistries);
+		return tag;
+	}
+	@Override
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider pRegistries) {
+		super.onDataPacket(net, packet, pRegistries);
+		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag(), pRegistries);
+	}
 	@Override
 	@Nullable
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {

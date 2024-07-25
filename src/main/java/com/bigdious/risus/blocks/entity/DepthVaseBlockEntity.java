@@ -3,22 +3,21 @@ package com.bigdious.risus.blocks.entity;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.DepthVaseMenu;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+
+import static net.minecraft.world.level.block.entity.DecoratedPotBlockEntity.WobbleStyle;
 
 import javax.annotation.Nullable;
 
@@ -27,7 +26,7 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	public static final int EVENT_POT_WOBBLES = 1;
 	public long wobbleStartedAtTick;
 	@Nullable
-	public DepthVaseBlockEntity.WobbleStyle lastWobbleStyle;
+	public WobbleStyle lastWobbleStyle;
 	@Nullable
 	private ItemStack item = ItemStack.EMPTY;
 	private NonNullList<ItemStack> items = NonNullList.withSize(depthToSlotRatio, ItemStack.EMPTY);
@@ -94,6 +93,7 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	}
 	public void setInputItem(int slot, ItemStack item) {
 		this.setItem(slot, item);
+		this.wobble(WobbleStyle.POSITIVE);
 		this.setChanged();
 
 	}
@@ -101,26 +101,17 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	public ItemStack getInputItem(int slot) {
 		return this.getItem(slot);
 	}
-	public static enum WobbleStyle {
-		POSITIVE(7),
-		NEGATIVE(10);
 
-		public final int duration;
-
-		private WobbleStyle(int pDuration) {
-			this.duration = pDuration;
-		}
-	}
-	public void wobble(DepthVaseBlockEntity.WobbleStyle pStyle) {
+	public void wobble(WobbleStyle pStyle) {
 		if (this.level != null && !this.level.isClientSide()) {
-			this.level.blockEvent(this.getBlockPos(), this.getBlockState().getBlock(), 1, pStyle.ordinal());
+			this.level.blockEvent(this.getBlockPos(), this.getBlockState().getBlock(), EVENT_POT_WOBBLES, pStyle.ordinal());
 		}
 	}
 	@Override
 	public boolean triggerEvent(int pId, int pType) {
-		if (this.level != null && pId == 1 && pType >= 0 && pType < DepthVaseBlockEntity.WobbleStyle.values().length) {
+		if (this.level != null && pId == 1 && pType >= 0 && pType < WobbleStyle.values().length) {
 			this.wobbleStartedAtTick = this.level.getGameTime();
-			this.lastWobbleStyle = DepthVaseBlockEntity.WobbleStyle.values()[pType];
+			this.lastWobbleStyle = WobbleStyle.values()[pType];
 			return true;
 		} else {
 			return super.triggerEvent(pId, pType);

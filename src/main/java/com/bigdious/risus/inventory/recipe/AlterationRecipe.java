@@ -1,5 +1,6 @@
 package com.bigdious.risus.inventory.recipe;
 
+import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
 import com.mojang.serialization.Codec;
@@ -47,7 +48,7 @@ public record AlterationRecipe(Ingredient input, ItemStack result) implements Re
 
 	@Override
 	public ItemStack getToastSymbol() {
-		return new ItemStack(RisusItems.ALTERATION_CATALYST.get());
+		return new ItemStack(RisusBlocks.ALTERATION_CATALYST.get());
 	}
 
 	@Override

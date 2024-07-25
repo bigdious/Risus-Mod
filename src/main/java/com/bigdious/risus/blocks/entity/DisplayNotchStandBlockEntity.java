@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.WorldlyContainer;
@@ -14,6 +15,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Function;
 
 public class DisplayNotchStandBlockEntity extends BlockEntity implements WorldlyContainer {
 	protected ItemStack item = ItemStack.EMPTY;
@@ -26,7 +29,7 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 	@Override
 	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		super.saveAdditional(tag, pRegistries);
-		if (this.item != null) {
+		if (this.item != null && !this.item.isEmpty()) {
 			CompoundTag reagentTag = new CompoundTag();
 			this.item.save(pRegistries);
 			tag.put("item", reagentTag);
@@ -35,7 +38,11 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 	}
 	@Override
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-//		this.item = ItemStack.of((CompoundTag) tag.get("item"));
+		if (tag.contains("item")) {
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+		} else {
+			this.item = ItemStack.EMPTY;
+		}
 		this.rotationDegrees = tag.getFloat("itemRotation");
 		super.loadAdditional(tag, pRegistries);
 	}
@@ -46,11 +53,11 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 		this.saveAdditional(tag, pRegistries);
 		return tag;
 	}
-//	@Override
-//	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-//		super.onDataPacket(net, packet);
-//		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag());
-//	}
+	@Override
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider pRegistries) {
+		super.onDataPacket(net, packet, pRegistries);
+		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag(), pRegistries);
+	}
 	@Override
 	@Nullable
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
