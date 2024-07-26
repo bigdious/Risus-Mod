@@ -24,7 +24,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 
 
 public class AlterationCatalystRenderer implements BlockEntityRenderer<AlterationCatalystBlockEntity> {
-	private static final float SIZE = 0.375F;
 	private final ItemRenderer itemRenderer;
 	public AlterationCatalystRenderer(BlockEntityRendererProvider.Context pContext) {
 		this.itemRenderer = pContext.getItemRenderer();
@@ -42,8 +41,8 @@ public class AlterationCatalystRenderer implements BlockEntityRenderer<Alteratio
 		int i = (int)entity.getBlockPos().asLong();
 		if (itemstack != ItemStack.EMPTY) {
 			stack.pushPose();
-//			double yOffset = entity.getInputItem().getItem() instanceof BlockItem ? 1.0D : 0.95D;
-//			stack.translate(0.5D, yOffset, 0.5D);
+			double yOffset = entity.getInputItem().getItem() instanceof BlockItem ? 1.0D : 0.95D;
+			stack.translate(0.5D, yOffset, 0.5D);
 			stack.mulPose(Axis.XP.rotationDegrees(90.0F));
 			stack.mulPose(Axis.ZP.rotationDegrees(entity.rotationDegrees));
 			stack.scale(0.25f, 0.25f, 0.25f);

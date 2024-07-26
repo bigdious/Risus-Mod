@@ -150,7 +150,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), context -> new DepthVaseRenderer());
-		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), context -> new DisplayNotchRenderer());
+		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH_STAND.get(), context -> new DisplayNotchStandRenderer());
 	}
 

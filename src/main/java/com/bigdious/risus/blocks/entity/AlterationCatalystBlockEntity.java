@@ -45,8 +45,15 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public static void tick(Level level, BlockPos pos, BlockState state, AlterationCatalystBlockEntity te) {
 		int craftingLength = 100;
 
+		if (te.isCrafting) {
+			if (te.getRecipe(level, te.item) == null) {
+				te.isCrafting = false;
+				te.setChanged();
+			}
+			te.craftingCounter++;
+		}
 		if (level.isClientSide()) {
-			if (te.isCrafting) {
+			if (te.craftingCounter>1 && te.craftingCounter<60) {
 				RandomSource random = level.getRandom();
 				BlockPos randomPos = pos.offset(Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)), 2, Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)));
 
@@ -60,14 +67,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 				float f2 = -0.5F + random.nextFloat() + (float) blockpos1.getZ();
 				level.addParticle(AlterationParticleOptions.ALTERATION_FADE, vec3.x(), vec3.y(), vec3.z(), f, f1, f2);
 			}
-		}
 
-		if (te.isCrafting) {
-			if (te.getRecipe(level, te.item) == null) {
-				te.isCrafting = false;
-				te.setChanged();
-			}
-			te.craftingCounter++;
 		}
 
 		if (te.craftingCounter > craftingLength) {
@@ -93,6 +93,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		if (te.finishedCrafting) {
 			if (te.finishedCounter++ >= 20) {
 				te.finishedCrafting = false;
+				te.finishedCounter = 0;
 			}
 			if (level.isClientSide()) {
 				for (int i = 0; i < 7; i++) {
@@ -115,6 +116,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			tag.put("item", reagentTag);
 		}
 		tag.putBoolean("isCrafting", this.isCrafting);
+		tag.putBoolean("finishedCrafting", this.finishedCrafting);
 		tag.putInt("counter", this.craftingCounter);
 		tag.putFloat("itemRotation", this.rotationDegrees);
 	}
@@ -127,6 +129,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			this.item = ItemStack.EMPTY;
 		}
 		this.isCrafting = tag.getBoolean("isCrafting");
+		this.finishedCrafting = tag.getBoolean("finishedCrafting");
 		this.craftingCounter = tag.getInt("counter");
 		this.rotationDegrees = tag.getFloat("itemRotation");
 		super.loadAdditional(tag, pRegistries);
@@ -137,6 +140,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		CompoundTag tag = new CompoundTag();
 		tag.putInt("counter", this.craftingCounter);
 		tag.putBoolean("isCrafting", this.isCrafting);
+		tag.putBoolean("finishedCrafting", this.finishedCrafting);
 		tag.putFloat("itemRotation", this.rotationDegrees);
 		this.saveAdditional(tag, pRegistries);
 		return tag;
