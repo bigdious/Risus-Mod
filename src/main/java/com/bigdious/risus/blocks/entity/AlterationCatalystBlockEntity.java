@@ -10,12 +10,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
@@ -111,8 +113,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		super.saveAdditional(tag, pRegistries);
 		if (this.item != null && !this.item.isEmpty()) {
-			CompoundTag reagentTag = new CompoundTag();
-			this.item.save(pRegistries);
+			Tag reagentTag = this.item.save(pRegistries);
 			tag.put("item", reagentTag);
 		}
 		tag.putBoolean("isCrafting", this.isCrafting);
@@ -124,7 +125,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+			this.item = ItemStack.CODEC.parse(pRegistries.createSerializationContext(NbtOps.INSTANCE),  tag).getOrThrow();
 		} else {
 			this.item = ItemStack.EMPTY;
 		}
@@ -138,11 +139,15 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
 		CompoundTag tag = new CompoundTag();
+		if (this.item != null && !this.item.isEmpty()) {
+			Tag reagentTag = this.item.save(pRegistries);
+			tag.put("item", reagentTag);
+		}
 		tag.putInt("counter", this.craftingCounter);
 		tag.putBoolean("isCrafting", this.isCrafting);
 		tag.putBoolean("finishedCrafting", this.finishedCrafting);
 		tag.putFloat("itemRotation", this.rotationDegrees);
-		this.saveAdditional(tag, pRegistries);
+		super.saveAdditional(tag, pRegistries);
 		return tag;
 	}
 
@@ -244,7 +249,6 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public void clearContent() {
 		this.item = ItemStack.EMPTY;
 	}
-
 	@Nullable
 	public ItemStack getInputItem() {
 		return this.getItem(0);

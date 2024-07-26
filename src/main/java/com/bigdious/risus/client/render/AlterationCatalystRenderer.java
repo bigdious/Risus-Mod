@@ -30,12 +30,6 @@ public class AlterationCatalystRenderer implements BlockEntityRenderer<Alteratio
 	}
 
 	@Override
-	public int getViewDistance() {
-		return 256;
-	}
-
-
-	@Override
 	public void render(AlterationCatalystBlockEntity entity, float partialTicks, PoseStack stack, MultiBufferSource buffers, int light, int overlay) {
 		ItemStack itemstack = entity.getInputItem();
 		int i = (int)entity.getBlockPos().asLong();
