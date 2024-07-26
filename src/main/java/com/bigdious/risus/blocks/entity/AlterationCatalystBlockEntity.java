@@ -125,7 +125,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(pRegistries.createSerializationContext(NbtOps.INSTANCE),  tag).getOrThrow();
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
 		} else {
 			this.item = ItemStack.EMPTY;
 		}
