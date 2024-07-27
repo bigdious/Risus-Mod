@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlockEntity> {
 	private final ItemRenderer itemRenderer;
-
 	public DisplayNotchRenderer(BlockEntityRendererProvider.Context pContext) {
 		this.itemRenderer = pContext.getItemRenderer();
 	}

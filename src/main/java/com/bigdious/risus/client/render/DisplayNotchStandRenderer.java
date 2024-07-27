@@ -8,12 +8,18 @@ import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class DisplayNotchStandRenderer implements BlockEntityRenderer<DisplayNotchStandBlockEntity> {
+	private final ItemRenderer itemRenderer;
+	public DisplayNotchStandRenderer(BlockEntityRendererProvider.Context pContext) {
+		this.itemRenderer = pContext.getItemRenderer();
+	}
 
 	@Override
 	public void render(DisplayNotchStandBlockEntity entity, float partialTicks, PoseStack stack, MultiBufferSource buffers, int light, int overlay) {
@@ -153,7 +159,8 @@ public class DisplayNotchStandRenderer implements BlockEntityRenderer<DisplayNot
 					}
 
 				}
-				Minecraft.getInstance().getItemRenderer().renderStatic(itemstack, ItemDisplayContext.FIXED, light, OverlayTexture.NO_OVERLAY, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
+			assert itemstack != null;
+			this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, light, overlay, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
 				stack.popPose();
 			}
 		}

@@ -51,7 +51,7 @@ public class DisplayNotchStandBlock extends BaseEntityBlock implements SimpleMul
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
+		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchStandBlockEntity notch))
 			return ItemInteractionResult.FAIL;
 		if (player.isCrouching() && player.getMainHandItem().isEmpty()) {
 			if (state.getValue(ELEVATE) == false) {

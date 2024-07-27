@@ -5,10 +5,13 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity.WobbleStyle;
 
 public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEntity> {
+
 	protected static final float WOBBLE_AMPLITUDE = 0.125F;
 	public void render(DepthVaseBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 		poseStack.pushPose();

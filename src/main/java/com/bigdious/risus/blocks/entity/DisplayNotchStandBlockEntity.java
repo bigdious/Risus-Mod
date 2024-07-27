@@ -6,6 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.WorldlyContainer;
@@ -30,8 +31,7 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		super.saveAdditional(tag, pRegistries);
 		if (this.item != null && !this.item.isEmpty()) {
-			CompoundTag reagentTag = new CompoundTag();
-			this.item.save(pRegistries);
+			Tag reagentTag = this.item.save(pRegistries);
 			tag.put("item", reagentTag);
 		}
 		tag.putFloat("itemRotation", this.rotationDegrees);
@@ -39,7 +39,7 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 	@Override
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
 		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
 		} else {
 			this.item = ItemStack.EMPTY;
 		}
@@ -49,6 +49,10 @@ public class DisplayNotchStandBlockEntity extends BlockEntity implements Worldly
 	@Override
 	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
 		CompoundTag tag = new CompoundTag();
+		if (this.item != null && !this.item.isEmpty()) {
+			Tag reagentTag = this.item.save(pRegistries);
+			tag.put("item", reagentTag);
+		}
 		tag.putFloat("itemRotation", this.rotationDegrees);
 		this.saveAdditional(tag, pRegistries);
 		return tag;

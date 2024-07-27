@@ -73,7 +73,13 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
-		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof Angel)));
+		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true,
+			entity -> !(entity instanceof ArmorStand)
+				&& !(entity instanceof Holder)
+				&& !(entity instanceof QuestionMark)
+				&& !(entity instanceof Stalker)
+				&& !(entity instanceof Lover)
+				&& !(entity instanceof Angel)));
 	}
 
 	public void aiStep() {

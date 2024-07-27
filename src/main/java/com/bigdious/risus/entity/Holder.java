@@ -50,11 +50,12 @@ public class Holder extends Monster {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
+		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, entity -> this.avoidedPlayerUUID != null && Objects.equals(this.avoidedPlayerUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidPlayer));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, living -> {
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class , true, living -> {
 			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
 			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
