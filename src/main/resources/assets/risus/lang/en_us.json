@@ -39,7 +39,7 @@
   "block.risus.heart_transplant": "Heart Transplant",
   "block.risus.potted_heart_transplant": "Potted Heart Transplant",
   "block.risus.bloodweave": "Bloodweave",
-  "block.risus.bloodwyrm_head": "Bloodwyrm Head",
+  "block.risus.bloodwyrm_head": "False Bloodwyrm Head",
   "block.risus.bondknot_log": "Bondknot Log",
   "block.risus.bondknot_wood": "Bondknot Wood",
   "block.risus.popping_bondknot_log": "Popping Bondknot Log",
@@ -92,6 +92,7 @@
   "block.risus.hairy_curved_fleshy_skin": "Hairy_Curved Fleshy Skin",
   "block.risus.tall_hair": "Hair Strands",
   "block.risus.bundle_of_hair": "Bundle of Hair",
+  "block.risus.laughing_stalk": "Laughing Stalk",
 
 
   "block.risus.eye_ender": "Eye Block",
@@ -126,7 +127,7 @@
   "item.risus.light_devourer": "Light Devourer",
   "item.risus.toothknocker": "Toothknocker",
   "item.risus.boomstick": "Boomstick",
-  "item.risus.bloodwyrm_head_weapon": "Bloodwyrm Head",
+  "item.risus.bloodwyrm_head_weapon": "False Bloodwyrm Spewer",
   "item.risus.blood_bucket": "Blood Bucket",
   "item.risus.hair_follicles": "Hair Follicles",
   "item.risus.hand_of_greed": "Hand of Greed",

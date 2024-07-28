@@ -2,6 +2,7 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -28,15 +30,10 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class BoomstickItem extends Item {
-	private final float attackDamage;
+public class BoomstickItem extends TieredItem {
 
 	public BoomstickItem(int damage, Item.Properties pProperties){
-		super(pProperties);
-		this.attackDamage = -1;
-	}
-	public float getDamage() {
-		return this.attackDamage;
+		super(RisusToolMaterials.GLUTTONY, pProperties);
 	}
 	@Override
 	public boolean isEnchantable(ItemStack itemstack) {
@@ -45,28 +42,12 @@ public class BoomstickItem extends Item {
 
 	//CHECK BELOW IN FUTURE
 
-//	@Override
-//	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
-//		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.UNBREAKING);
-//		AtomicBoolean flag = new AtomicBoolean(false);
-//		validEnchants.forEach(enchantment -> {
-//			if (EnchantmentHelper.getEnchantments(book).containsKey(enchantment)) {
-//				flag.set(true);
-//			}
-//		});
-//		return flag.get();
-//	}
+
 	//TODO make it work when used by enemies
 	@Override
 	public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
 		Level level = pAttacker.level();
 		ItemStack itemstack = pAttacker.getMainHandItem();
-		if (pTarget.getType() != EntityType.ARMOR_STAND
-			&& pTarget.getType() != EntityType.BOAT
-			&& pTarget.getType() != EntityType.CHEST_BOAT
-			&& pTarget.getType() != EntityType.ITEM_FRAME
-			&& pTarget.getType() != EntityType.GLOW_ITEM_FRAME
-			&& pTarget.getType() != EntityType.MINECART)
 		if (!level.isClientSide()) {
 			this.explode(level, pTarget.getOnPos(), pAttacker);
 			itemstack.hurtAndBreak(1, pAttacker, EquipmentSlot.MAINHAND);

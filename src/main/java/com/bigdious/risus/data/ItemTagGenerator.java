@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -51,6 +52,5 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
 		this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
-
 	}
 }

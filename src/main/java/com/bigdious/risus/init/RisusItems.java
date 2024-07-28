@@ -16,18 +16,20 @@ public class RisusItems {
 
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Risus.MODID);
 
+	//TOOLS
+	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem(-1, defaultWithRarity().durability(64)));
+	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(Risus.getRarity())));
+
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).build();
 
 	public static final DeferredItem<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
 
-	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem(-1, defaultWithRarity().durability(64)));
-	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new AxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(Risus.getRarity())));
 
 	public static final DeferredItem<Item> BONDKNOT_LOG = ITEMS.register("bondknot_log", () -> new BlockItem(RisusBlocks.BONDKNOT_LOG.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> STRIPPED_BONDKNOT_LOG = ITEMS.register("stripped_bondknot_log", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), defaultWithRarity()));

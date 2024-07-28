@@ -30,9 +30,9 @@ public class BloodWyrmHeadModel extends SkullModel {
 				.texOffs(0, 0).addBox(-5.0F, -17.0F, -2.0F, 2.0F, 3.0F, 6.0F)
 				.texOffs(0, 0).addBox(3.0F, -17.0F, -2.0F, 2.0F, 3.0F, 6.0F), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		head.addOrReplaceChild("flamethrower", CubeListBuilder.create().texOffs(83, 52).addBox(-11.0F, -6.0F, 5.0F, 3.0F, 3.0F, 3.0F)
-				.texOffs(10, 38).addBox(-10.5F, -5.5F, -10.0F, 2.0F, 2.0F, 15.0F)
-				.texOffs(21, 47).addBox(-8.5F, -5.5F, -10.0F, 8.0F, 2.0F, 2.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
+//		head.addOrReplaceChild("flamethrower", CubeListBuilder.create().texOffs(83, 52).addBox(-11.0F, -6.0F, 5.0F, 3.0F, 3.0F, 3.0F)
+//				.texOffs(10, 38).addBox(-10.5F, -5.5F, -10.0F, 2.0F, 2.0F, 15.0F)
+//				.texOffs(21, 47).addBox(-8.5F, -5.5F, -10.0F, 8.0F, 2.0F, 2.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		head.addOrReplaceChild("upper_jaw", CubeListBuilder.create().texOffs(84, 47).addBox(-4.0F, -4.0F, -14.0F, 2.0F, 2.0F, 3.0F)
 				.texOffs(84, 50).addBox(2.0F, -4.0F, -14.0F, 2.0F, 2.0F, 3.0F)

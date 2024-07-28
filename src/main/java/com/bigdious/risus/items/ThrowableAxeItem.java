@@ -30,8 +30,27 @@ public class ThrowableAxeItem extends AxeItem {
 
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		List<Enchantment> validEnchants = List.of(Enchantments.UNBREAKING, Enchantments.SHARPNESS, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.LOYALTY, Enchantments.IMPALING);
+		List<Enchantment> validEnchants = List.of(
+			Enchantments.UNBREAKING,
+			Enchantments.SHARPNESS,
+			Enchantments.SMITE,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.LOYALTY,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.KNOCKBACK,
+			Enchantments.LOOTING);
 		return validEnchants.contains(enchantment);
+	}
+		@Override
+	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
+		List<Enchantment> validEnchants = List.of( Enchantments.MENDING);
+		AtomicBoolean flag = new AtomicBoolean(false);
+		validEnchants.forEach(enchantment -> {
+			if (EnchantmentHelper.canStoreEnchantments(book)) {
+				flag.set(true);
+			}
+		});
+		return flag.get();
 	}
 
 	@Override
