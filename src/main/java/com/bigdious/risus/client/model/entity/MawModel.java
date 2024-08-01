@@ -117,7 +117,7 @@ public class MawModel<T extends Maw> extends HierarchicalModel<T> {
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		if (entity.isDeadOrDying()) {
-			float f = ((float) entity.deathTime + Minecraft.getInstance().getDeltaFrameTime()) / 20.0F * 1.6F;
+			float f = ((float) entity.deathTime + Minecraft.getInstance().getTimer().getGameTimeDeltaTicks()) / 20.0F * 1.6F;
 			f = Math.min(Mth.sqrt(f), 1.0F);
 			f *= 90.0F;
 

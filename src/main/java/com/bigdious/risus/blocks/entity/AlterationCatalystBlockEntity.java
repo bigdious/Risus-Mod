@@ -22,6 +22,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -78,7 +79,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			if (te.isCrafting) {
 				AlterationRecipe recipe = te.getRecipe(level, te.item);
 				if (recipe != null) {
-					te.item = recipe.assemble(new SimpleContainer(te.item), level.registryAccess());
+					te.item = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
 					te.setChanged();
 					te.finishedCrafting = true;
 					te.finishedCounter = 0;
@@ -166,8 +167,8 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Nullable
 	public AlterationRecipe getRecipe(Level level, ItemStack stack) {
-		if (level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).orElse(null) != null) {
-			return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SimpleContainer(stack), level).get().value();
+		if (level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SingleRecipeInput(stack), level).orElse(null) != null) {
+			return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SingleRecipeInput(stack), level).get().value();
 		}
 		return null;
 	}

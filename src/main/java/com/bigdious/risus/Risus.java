@@ -28,7 +28,7 @@ public class Risus {
 	public static final String MODID = "risus";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private static final Rarity RISUS = Rarity.create("RISUS", Risus.prefix("rarity"), ChatFormatting.DARK_RED);
+	private static final Rarity RISUS = Rarity.create("risus", Risus.prefix("rarity"), ChatFormatting.DARK_RED);
 
 	public Risus(IEventBus bus, Dist dist) {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
@@ -73,6 +73,7 @@ public class Risus {
 
 //		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
+		event.getGenerator().addProvider(isClient, new StructureUpdater("structures", packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
 		event.getGenerator().addProvider(isServer, new CraftingGenerator(packOutput, lookupProvider));
@@ -89,7 +90,7 @@ public class Risus {
 	}
 
 	public static ResourceLocation prefix(String name) {
-		return new ResourceLocation(MODID, name.toLowerCase(Locale.ROOT));
+		return ResourceLocation.fromNamespaceAndPath(MODID, name.toLowerCase(Locale.ROOT));
 	}
 
 	public static Rarity getRarity() {

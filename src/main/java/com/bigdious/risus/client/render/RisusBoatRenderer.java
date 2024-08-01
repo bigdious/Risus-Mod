@@ -79,7 +79,7 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 		poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
 		boat.setupAnim(entity, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer vertexconsumer = bufferSource.getBuffer(boat.renderType(texture));
-		boat.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		boat.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1);
 		if (!entity.isUnderWater()) {
 			VertexConsumer vertexconsumer1 = bufferSource.getBuffer(RenderType.waterMask());
 			boat.waterPatch().render(poseStack, vertexconsumer1, packedLight, OverlayTexture.NO_OVERLAY);

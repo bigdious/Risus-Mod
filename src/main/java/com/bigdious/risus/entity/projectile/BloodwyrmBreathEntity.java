@@ -33,11 +33,11 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 	private int life;
 
 	public BloodwyrmBreathEntity(EntityType<BloodwyrmBreathEntity> type, Level level) {
-		super(type, level, ItemStack.EMPTY);
+		super(type, level);
 	}
 
 	public BloodwyrmBreathEntity(Level world, LivingEntity living) {
-		super(RisusEntities.BLOODWYRM_BREATH.get(), living, world, ItemStack.EMPTY);
+		super(RisusEntities.BLOODWYRM_BREATH.get(),  world);
 		this.pickup = Pickup.DISALLOWED;
 	}
 

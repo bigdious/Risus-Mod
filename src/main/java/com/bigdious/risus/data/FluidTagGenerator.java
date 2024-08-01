@@ -28,7 +28,7 @@ public class FluidTagGenerator extends FluidTagsProvider {
 	public static final TagKey<Fluid> BLOODFLUID = tag("bloodfluid");
 
 	private static TagKey<Fluid> tag(String name) {
-		return FluidTags.create(new ResourceLocation(Risus.MODID, name));
+		return FluidTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 	}
 
 	@Override

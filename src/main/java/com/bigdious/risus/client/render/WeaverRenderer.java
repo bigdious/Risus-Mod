@@ -50,7 +50,7 @@ public class WeaverRenderer extends MobRenderer<Weaver, WeaverModel<Weaver>> {
 				this.core.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 				this.core.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 				VertexConsumer buffer = buffers.getBuffer(RenderType.entityTranslucent(this.getTextureLocation(entity)));
-				this.core.renderCore(ms, buffer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1.0F, 1.0F, 1.0F, 1.0F);
+				this.core.renderCore(ms, buffer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1);
 			}
 		}
 	}

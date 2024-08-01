@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.nbt.CompoundTag;
@@ -124,11 +125,11 @@ public class Holder extends Monster {
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
 			this.shouldAvoidPlayer = false;
 			this.avoidedPlayerUUID = null;
-			if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee")) != null) {
-				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"));
+			if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(Risus.prefix("holder_friendly")) != null) {
+				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(Risus.prefix("holder_friendly"));
 			}
-			if (this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d")) != null) {
-				this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"));
+			if (this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(Risus.prefix("holder_friendly_speed")) != null) {
+				this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(Risus.prefix("holder_friendly_speed"));
 			}
 		}
 		return flag;
@@ -142,8 +143,8 @@ public class Holder extends Monster {
 			if (living instanceof Player player) {
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
 					this.shouldAvoidPlayer = false;
-					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(UUID.fromString("c4bd2a6a-67cd-4c8f-911d-559ac181b5ee"), "Holder friendly", -3, AttributeModifier.Operation.ADD_VALUE));
-					this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(UUID.fromString("c4a665d0-2fb4-4ba3-b3e9-8dc7bcdcb92d"), "Holderpet fast", 1.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly"),  -3, AttributeModifier.Operation.ADD_VALUE));
+					this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly_speed"), 1.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 				} else {
 					this.avoidedPlayerUUID = player.getUUID();
 					this.shouldAvoidPlayer = true;

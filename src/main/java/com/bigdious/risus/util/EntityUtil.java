@@ -12,15 +12,15 @@ public class EntityUtil {
 	public static boolean properlyApplyCustomDamageSource(Mob entity, Entity victim, DamageSource source) {
 		float f = (float) entity.getAttributeValue(Attributes.ATTACK_DAMAGE);
 		float f1 = (float) entity.getAttributeValue(Attributes.ATTACK_KNOCKBACK);
-		if (victim instanceof LivingEntity) {
-			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity) victim).getType());
-			f1 += (float) EnchantmentHelper.getKnockbackBonus(entity);
-		}
-
-		int i = EnchantmentHelper.getFireAspect(entity);
-		if (i > 0) {
-			victim.igniteForSeconds(i * 4);
-		}
+//		if (victim instanceof LivingEntity) {
+//			f += EnchantmentHelper.getDamageBonus(entity.getMainHandItem(), ((LivingEntity) victim).getType());
+//			f1 += (float) EnchantmentHelper.getKnockbackBonus(entity);
+//		}
+//
+//		int i = EnchantmentHelper.getFireAspect(entity);
+//		if (i > 0) {
+//			victim.igniteForSeconds(i * 4);
+//		}
 
 		boolean flag = victim.hurt(source, f);
 		if (flag) {
@@ -29,7 +29,7 @@ public class EntityUtil {
 				entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.6D, 1.0D, 0.6D));
 			}
 
-			entity.doEnchantDamageEffects(entity, victim);
+			entity.doHurtTarget(victim);
 			entity.setLastHurtMob(victim);
 		}
 

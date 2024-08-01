@@ -1,5 +1,6 @@
 package com.bigdious.risus.attachment;
 
+import com.bigdious.risus.Risus;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.world.entity.LivingEntity;
@@ -41,10 +42,10 @@ public class ExBurnAttachment {
 
 	public void update(LivingEntity entity) {
 		if (entity.getAttribute(Attributes.MAX_HEALTH) != null) {
-			if (Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).getModifier(HEALTH_MODIFIER_UUID) != null) {
-				Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).removeModifier(HEALTH_MODIFIER_UUID);
+			if (Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).getModifier(Risus.prefix("exburn_health_loss")) != null) {
+				Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).removeModifier(Risus.prefix("exburn_health_loss"));
 			}
-			Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).addPermanentModifier(new AttributeModifier(HEALTH_MODIFIER_UUID, "ExBurn Health Loss", -this.lostHealth, AttributeModifier.Operation.ADD_VALUE));
+			Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).addPermanentModifier(new AttributeModifier(Risus.prefix("exburn_health_loss"),  -this.lostHealth, AttributeModifier.Operation.ADD_VALUE));
 			entity.setHealth(entity.getHealth());
 		}
 	}

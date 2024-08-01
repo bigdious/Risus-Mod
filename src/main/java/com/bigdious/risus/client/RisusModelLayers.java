@@ -25,6 +25,6 @@ public class RisusModelLayers {
 	}
 
 	private static ModelLayerLocation register(String name, String type) {
-		return new ModelLayerLocation(new ResourceLocation(Risus.MODID, name), type);
+		return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name), type);
 	}
 }

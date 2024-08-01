@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithEnchantedBonusCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -22,8 +23,8 @@ import java.util.stream.Stream;
 
 public class EntityLootTables extends EntityLootSubProvider {
 
-	protected EntityLootTables() {
-		super(FeatureFlags.REGISTRY.allFlags());
+	protected EntityLootTables(HolderLookup.Provider provider) {
+		super(FeatureFlags.REGISTRY.allFlags(), provider);
 	}
 
 	@Override
@@ -50,7 +51,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 								.setRolls(ConstantValue.exactly(1.0F))
 								.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
 								.when(LootItemKilledByPlayerCondition.killedByPlayer())
-								.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
+								.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
@@ -69,7 +70,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 						.setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE.get()))
 						.when(LootItemKilledByPlayerCondition.killedByPlayer())
-						.when((LootItemRandomChanceWithLootingCondition.randomChanceAndLootingBoost(0.03F, 0.03F)))));
+						.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries,0.03F, 0.03F)))));
 	}
 
 	@Override

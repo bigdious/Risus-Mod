@@ -17,7 +17,7 @@ public class StalkerEyeLayer<T extends Stalker, M extends StalkerModel<T>> exten
 
 	@Override
 	public RenderType renderType() {
-		return RenderType.eyes(new ResourceLocation(Risus.MODID, "textures/entity/stalker_eye.png"));
+		return RenderType.eyes(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/stalker_eye.png"));
 	}
 }
 

@@ -20,7 +20,7 @@ public class RisusBiomes {
 	public static final ResourceKey<Biome> COALIFICATION = create("coalification");
 
 	private static ResourceKey<Biome> create(String name) {
-		return ResourceKey.create(Registries.BIOME, new ResourceLocation(Risus.MODID, name));
+		return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 	}
 
 	public static void bootstrap(BootstrapContext<Biome> context) {

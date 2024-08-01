@@ -33,7 +33,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block").texture("particle", new ResourceLocation("block/netherite_block"))
+		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block").texture("particle", ResourceLocation.withDefaultNamespace("block/netherite_block"))
 				.customLoader(CompositeModelBuilder::begin)
 				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
 				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());
@@ -42,7 +42,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 			ModelFile eyes = models().cubeAll("ashen_remains_eyes", texture("block/ashen_remains_eyes"));
 			return ConfiguredModel.builder().modelFile(state.getValue(AshenRemainsBlock.HAS_EYES) ? eyes : noEyes).weight(1).nextModel().modelFile(noEyes).weight(30).build();
 		});
-		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), new ResourceLocation("cutout"), 0, 10, false)
+		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
 				.texture("all", Risus.prefix("block/smiling_remains"))
 				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
@@ -70,8 +70,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.MIRAGE_END_STONE.get(), cubeAll(RisusBlocks.MIRAGE_END_STONE.get()));
 		directionalBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_scales_block")));
 		directionalBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_imitation_scales_block")));
-		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
-		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(new ResourceLocation("block/skull")));
+		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
+		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
 		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
 		getVariantBuilder(RisusBlocks.POPPING_BONDKNOT_LOG.get()).forAllStates(state -> {
@@ -185,8 +185,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		fenceGateBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get(), texture("block/bondknot_planks"));
 		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), texture("block/bondknot_planks"));
 		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), texture("block/bondknot_planks"));
-		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor"), true, new ResourceLocation("cutout"));
-		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), new ResourceLocation("cutout"));
+		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor"), true, ResourceLocation.withDefaultNamespace("cutout"));
+		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
 		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks"));
 		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks"));
 		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), texture("block/stripped_bondknot_log"));
@@ -206,7 +206,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone"));
 		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), texture("block/grimstone_bricks"));
 
-		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", new ResourceLocation("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
+		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
 
 		simpleBlock(RisusBlocks.DARKNESS.get(), models().cubeAll("darkness", Risus.prefix("block/darkness")).renderType("minecraft:cutout"));
@@ -256,13 +256,13 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).rotationX(90).rotationY(90).addModel();
 		torchBlock(RisusBlocks.JOYFLAME_TORCH, RisusBlocks.JOYFLAME_WALL_TORCH);
 		getVariantBuilder(RisusBlocks.JOYFLAME_CAMPFIRE.get()).forAllStatesExcept(state -> {
-			ModelFile on = models().withExistingParent("joyflame_campfire", new ResourceLocation("block/template_campfire")).texture("fire", texture("block/joyflame_campfire_fire")).texture("lit_log", texture("block/joyflame_campfire_log_lit")).renderType("minecraft:cutout");
-			ModelFile off = models().withExistingParent("joyflame_campfire_off", new ResourceLocation("block/campfire_off")).renderType("minecraft:cutout");
+			ModelFile on = models().withExistingParent("joyflame_campfire", ResourceLocation.withDefaultNamespace("block/template_campfire")).texture("fire", texture("block/joyflame_campfire_fire")).texture("lit_log", texture("block/joyflame_campfire_log_lit")).renderType("minecraft:cutout");
+			ModelFile off = models().withExistingParent("joyflame_campfire_off", ResourceLocation.withDefaultNamespace("block/campfire_off")).renderType("minecraft:cutout");
 			return ConfiguredModel.builder().modelFile(state.getValue(CampfireBlock.LIT) ? on : off).rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360).build();
 		}, CampfireBlock.WATERLOGGED, CampfireBlock.SIGNAL_FIRE);
 		getVariantBuilder(RisusBlocks.JOYFLAME_LANTERN.get()).forAllStatesExcept(state -> {
-			ModelFile normal = models().withExistingParent("joyflame_lantern", new ResourceLocation("block/template_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
-			ModelFile hanging = models().withExistingParent("joyflame_lantern_hanging", new ResourceLocation("block/template_hanging_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
+			ModelFile normal = models().withExistingParent("joyflame_lantern", ResourceLocation.withDefaultNamespace("block/template_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
+			ModelFile hanging = models().withExistingParent("joyflame_lantern_hanging", ResourceLocation.withDefaultNamespace("block/template_hanging_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
 			return ConfiguredModel.builder().modelFile(state.getValue(LanternBlock.HANGING) ? hanging : normal).build();
 		}, LanternBlock.WATERLOGGED);
 
@@ -290,9 +290,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(state.getValue(ZitBlock.POPPED) ? popped : normal).rotationX(x).rotationY(y).build();
 		});
 
-		ModelFile floor = models().withExistingParent("joyflame_fire_floor", new ResourceLocation("block/template_fire_floor")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
-		ModelFile side = models().withExistingParent("joyflame_fire_side", new ResourceLocation("block/template_fire_side")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
-		ModelFile sideAlt = models().withExistingParent("joyflame_fire_side_alt", new ResourceLocation("block/template_fire_side_alt")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile floor = models().withExistingParent("joyflame_fire_floor", ResourceLocation.withDefaultNamespace("block/template_fire_floor")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile side = models().withExistingParent("joyflame_fire_side", ResourceLocation.withDefaultNamespace("block/template_fire_side")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile sideAlt = models().withExistingParent("joyflame_fire_side_alt", ResourceLocation.withDefaultNamespace("block/template_fire_side_alt")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
 
 		getMultipartBuilder(RisusBlocks.JOYFLAME_FIRE.get())
 				.part().modelFile(floor).addModel().end()

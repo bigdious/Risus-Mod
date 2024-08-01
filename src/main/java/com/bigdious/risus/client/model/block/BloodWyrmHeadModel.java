@@ -74,11 +74,11 @@ public class BloodWyrmHeadModel extends SkullModel {
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, float red, float green, float blue, float alpha) {
+	public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
 		stack.pushPose();
 		stack.translate(0.0D, -1.15F, 0.0D);
 		stack.scale(0.75F, 0.75F, 0.75F);
-		this.head.render(stack, consumer, light, overlay, red, green, blue, alpha);
+		this.head.render(stack, consumer, light, overlay, color);
 		stack.popPose();
 	}
 }

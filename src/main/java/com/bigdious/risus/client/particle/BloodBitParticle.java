@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class BloodBitParticle extends TextureSheetParticle {
 
-	private final ResourceLocation TEXTURE = new ResourceLocation(Risus.MODID,
+	private final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Risus.MODID,
 			"textures/particle/cauldron_boil_particle.png");
 	// Thanks to JoeFoxe and his mod Hexerei for this code
 	public static final Vec3[] CUBE = {
@@ -45,20 +45,13 @@ public class BloodBitParticle extends TextureSheetParticle {
 
 	private static final ParticleRenderType renderType = new ParticleRenderType() {
 		@Override
-		public void begin(BufferBuilder bufferBuilder, TextureManager textureManager) {
+		public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
 
 			RenderSystem.depthMask(false);
 			RenderSystem.enableBlend();
 			RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
 
-			bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
-		}
-
-		@Override
-		public void end(Tesselator tesselator) {
-			tesselator.end();
-			RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA,
-					GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+			return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
 		}
 	};
 
@@ -138,12 +131,12 @@ public class BloodBitParticle extends TextureSheetParticle {
 
 				Vec3 normal = CUBE_NORMALS[i];
 
-				builder.vertex(vec.x, vec.y, vec.z)
-						.uv(0, 0)
-						.color(Mth.clamp(rCol * 0.8f, 0, 1.0f), Mth.clamp(gCol * 0.8f, 0, 1.0f), Mth.clamp(bCol * 0.8f, 0, 1.0f), alpha)
-						.normal((float) normal.x, (float) normal.y, (float) normal.z)
-						.uv2(light)
-						.endVertex();
+				builder.addVertex((float)vec.x, (float)vec.y, (float)vec.z)
+					.setUv(0, 0)
+					.setColor(Mth.clamp(rCol * 0.8f, 0, 1.0f), Mth.clamp(gCol * 0.8f, 0, 1.0f), Mth.clamp(bCol * 0.8f, 0, 1.0f), alpha)
+					.setNormal((float) normal.x, (float) normal.y, (float) normal.z)
+					.setUv2(light, light);
+
 
 			}
 		}

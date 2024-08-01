@@ -26,30 +26,4 @@ public class UnThrowableAxeItem extends AxeItem {
 	public UnThrowableAxeItem(Tier tier, Properties properties) {
 		super(tier, properties);
 	}
-
-
-	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		List<Enchantment> validEnchants = List.of(
-			Enchantments.UNBREAKING,
-			Enchantments.SHARPNESS,
-			Enchantments.SMITE,
-			Enchantments.BANE_OF_ARTHROPODS,
-			Enchantments.FIRE_ASPECT,
-			Enchantments.KNOCKBACK,
-			Enchantments.LOOTING);
-		return validEnchants.contains(enchantment);
-	}
-
-	@Override
-	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
-		List<Enchantment> validEnchants = List.of(Enchantments.MENDING, Enchantments.LOYALTY);
-		AtomicBoolean flag = new AtomicBoolean(false);
-		validEnchants.forEach(enchantment -> {
-			if (EnchantmentHelper.canStoreEnchantments(book)) {
-				flag.set(true);
-			}
-		});
-		return flag.get();
-	}
 }

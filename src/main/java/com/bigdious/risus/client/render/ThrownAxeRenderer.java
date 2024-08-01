@@ -34,7 +34,7 @@ public class ThrownAxeRenderer extends EntityRenderer<ThrownAxe> {
 		stack.mulPose(Axis.XP.rotationDegrees(axe.shouldSpin() ? axe.spinTickCount * 20.0F : 55.0F));
 		stack.translate(0.0D, -0.65D, 0.0D);
 		VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(this.getTextureLocation(axe)), false, axe.isFoil());
-		this.model.renderToBuffer(stack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		this.model.renderToBuffer(stack, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1);
 		stack.popPose();
 		super.render(axe, yaw, partialTicks, stack, buffer, light);
 	}

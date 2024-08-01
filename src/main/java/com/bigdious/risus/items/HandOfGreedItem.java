@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -21,7 +22,7 @@ public class HandOfGreedItem extends TieredItem {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.BLOCK_INTERACTION_RANGE,
 				new AttributeModifier(
-					"range_modifier",
+					Risus.prefix("reach_modifier"),
 					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND).build();
 
 	}

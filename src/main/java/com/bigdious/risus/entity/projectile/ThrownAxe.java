@@ -2,13 +2,17 @@ package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +23,7 @@ import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -36,14 +41,19 @@ public class ThrownAxe extends AbstractArrow {
 	public int clientSideReturnAxeTickCount;
 
 	public ThrownAxe(EntityType<ThrownAxe> type, Level level) {
-		super(type, level, ItemStack.EMPTY);
+		super(type, level);
 	}
 
 	public ThrownAxe(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
-		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack);
-		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(pPickupItemStack));
-		this.entityData.set(ID_SHARPNESS, (byte) EnchantmentHelper.getLoyalty(pPickupItemStack));
+		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
+		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
+		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getDamageValue());
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
+	}
+	private byte getLoyaltyFromItem(ItemStack p_345571_) {
+		return this.level() instanceof ServerLevel serverlevel
+			? (byte) Mth.clamp(EnchantmentHelper.getTridentReturnToOwnerAcceleration(serverlevel, p_345571_, this), 0, 127)
+			: 0;
 	}
 
 
@@ -131,13 +141,15 @@ public class ThrownAxe extends AbstractArrow {
 		Entity entity = result.getEntity();
 		float f;
 		//10 is base damage of crescent, update if it changes
-		f = 10.0F + this.entityData.get(ID_SHARPNESS);;
-		if (entity instanceof LivingEntity livingentity) {
-			f += EnchantmentHelper.getDamageBonus(this.getPickupItemStackOrigin(), livingentity.getType());
-		}
-
+		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().trident(this, entity1 == null ? this : entity1);
+		if (this.level() instanceof ServerLevel serverlevel) {
+			f += EnchantmentHelper.modifyDamage(serverlevel, this.getPickupItemStackOrigin(), entity, damagesource, f);
+		}
+
+
+
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
 		if (entity.hurt(damagesource, f)) {
@@ -147,8 +159,7 @@ public class ThrownAxe extends AbstractArrow {
 
 			if (entity instanceof LivingEntity livingentity1) {
 				if (entity1 instanceof LivingEntity) {
-					EnchantmentHelper.doPostHurtEffects(livingentity1, entity1);
-					EnchantmentHelper.doPostDamageEffects((LivingEntity) entity1, livingentity1);
+					this.doPostHurtEffects(livingentity1);
 				}
 
 				this.doPostHurtEffects(livingentity1);
@@ -185,8 +196,8 @@ public class ThrownAxe extends AbstractArrow {
 		super.readAdditionalSaveData(tag);
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
-		this.entityData.set(ID_LOYALTY, (byte)EnchantmentHelper.getLoyalty(this.getPickupItemStackOrigin()));
-		this.entityData.set(ID_SHARPNESS, (byte)EnchantmentHelper.getLoyalty(this.getPickupItemStackOrigin()));
+		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
+		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getDamageValue());
 	}
 
 	@Override

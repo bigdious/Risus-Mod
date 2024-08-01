@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class MawGutsScreen extends AbstractContainerScreen<MawGutsMenu> {
 
-	private static final ResourceLocation CONTAINER_BACKGROUND = new ResourceLocation("textures/gui/container/generic_54.png");
+	private static final ResourceLocation CONTAINER_BACKGROUND = ResourceLocation.withDefaultNamespace("textures/gui/container/generic_54.png");
 
 	public MawGutsScreen(MawGutsMenu menu, Inventory inventory, Component component) {
 		super(menu, inventory, component);

@@ -59,12 +59,6 @@ public class ToothknockerItem extends SwordItem {
 
 
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		List<Enchantment> validEnchants = List.of(Enchantments.UNBREAKING, Enchantments.SMITE, Enchantments.BANE_OF_ARTHROPODS, Enchantments.KNOCKBACK, Enchantments.VANISHING_CURSE);
-		return validEnchants.contains(enchantment);
-	}
-
-	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
 		if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
 			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER, 0, 0));

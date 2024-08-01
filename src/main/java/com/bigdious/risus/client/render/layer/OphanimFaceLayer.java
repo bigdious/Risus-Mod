@@ -17,7 +17,7 @@ public class OphanimFaceLayer<T extends Angel, M extends AngelModel<T>> extends 
 
 	@Override
 	public RenderType renderType() {
-		return RenderType.eyes(new ResourceLocation(Risus.MODID, "textures/entity/ophanim_face.png"));
+		return RenderType.eyes(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/ophanim_face.png"));
 	}
 }
 

@@ -116,7 +116,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 				depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
 				return ItemInteractionResult.FAIL;
 			}
-			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(new ResourceLocation(Risus.MODID, "research_notes")).getItem())) {
+			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "research_notes")).getItem())) {
 				if (depthVase.depthToSlotRatio == 1) {
 					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
 					return ItemInteractionResult.SUCCESS;

@@ -1,34 +1,34 @@
-//package com.bigdious.risus.data;
-//
-//
-//import com.bigdious.risus.Risus;
-//import com.bigdious.risus.init.*;
-//import net.minecraft.advancements.Advancement;
-//import net.minecraft.advancements.AdvancementHolder;
-//import net.minecraft.advancements.AdvancementRequirements;
-//import net.minecraft.advancements.AdvancementType;
-//import net.minecraft.advancements.critereon.*;
-//import net.minecraft.core.HolderLookup;
-//import net.minecraft.core.registries.BuiltInRegistries;
-//import net.minecraft.core.registries.Registries;
-//import net.minecraft.data.PackOutput;
-//import net.minecraft.nbt.CompoundTag;
-//import net.minecraft.network.chat.Component;
-//import net.minecraft.resources.ResourceKey;
-//import net.minecraft.resources.ResourceLocation;
-//import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.Items;
-//import net.minecraft.world.level.ItemLike;
-//import net.minecraft.world.level.levelgen.structure.Structure;
-//import net.neoforged.neoforge.common.data.AdvancementProvider;
-//import net.neoforged.neoforge.common.data.ExistingFileHelper;
-//import vazkii.patchouli.api.PatchouliAPI;
-//
-//
-//import java.util.List;
-//import java.util.concurrent.CompletableFuture;
-//import java.util.function.Consumer;
-//
+package com.bigdious.risus.data;
+
+
+import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.*;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.critereon.*;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vazkii.patchouli.api.PatchouliAPI;
+
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
+
 //public class RisusAdvancementProvider extends AdvancementProvider {
 //    public RisusAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
 //        super(output, registries, existingFileHelper, List.of(new RisusAdvancementGenerator()));
@@ -47,14 +47,14 @@
 //                            AdvancementType.TASK,
 //                            true, false, false)
 //                    .requirements(AdvancementRequirements.Strategy.OR)
-//				.addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("alteration_site"))))))
-//                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("grassy_maw"))))))
-//                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("sandy_maw"))))))
-//                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("endy_maw"))))))
-//                    .addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("flower_field"))))))
-//                    .addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("family_tree"))))))
+//				.addCriterion("site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(registries.lookupOrThrow(Registries.STRUCTURE).getOrThrow(RisusStructures.ALTERATION_SITE))))
+////                    .addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("grassy_maw"))))))
+////                    .addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("sandy_maw"))))))
+////                    .addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("endy_maw"))))))
+////                    .addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("flower_field"))))))
+////                    .addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(ResourceKey.create(Registries.STRUCTURE, Risus.prefix("family_tree"))))))
 //                    .save(consumer, "risus:first");
-//
+
 //			AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first).display(
 //                    RisusBlocks.ALTERATION_CATALYST.get(),
 //                    Component.translatable("advancement.risus.site_zero"),
@@ -151,18 +151,18 @@
 //                            Component.translatable("advancement.risus.irresistible.desc"), null, AdvancementType.TASK, true,true,true)
 //                    .addCriterion("pleasure", ConsumeItemTrigger.TriggerInstance.usedItem(RisusItems.GUILTY_APPLE))
 //                    .save(consumer, "risus:irresistible");
-//
-////			Needs help
-//
-////			AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
-////                            potionOfLove(),
-////                            Component.translatable("advancement.risus.cupid"),
-////                            Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true,true,true)
-////                    .requirements(AdvancementRequirements.Strategy.OR)
-////                    .addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.MATING_FRENZY.get()).build()))
-////                    .addCriterion("love2", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.LONG_MATING_FRENZY.get()).build()))
-////                    .save(consumer, "risus:cupid");
-//
+
+//			Needs help
+
+//			AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
+//                            potionOfLove(),
+//                            Component.translatable("advancement.risus.cupid"),
+//                            Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true,true,true)
+//                    .requirements(AdvancementRequirements.Strategy.OR)
+//                    .addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.MATING_FRENZY.get()).build()))
+//                    .addCriterion("love2", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of((ItemLike) RisusPotions.LONG_MATING_FRENZY.get()).build()))
+//                    .save(consumer, "risus:cupid");
+
 //
 //        }
 //		//tag dead, help

@@ -81,7 +81,8 @@ public class QuestionMark extends Monster {
 	public void playerTouch(Player player) {
 		if (this.isAlive()) {
 			if (this.hasLineOfSight(player) && player.hurt(new DamageSource(player.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.INEXISTENCE)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
-				this.doEnchantDamageEffects(this, player);
+				// was doEnchantDamageEffects
+				this.doAutoAttackOnTouch( player);
 			}
 		}
 	}

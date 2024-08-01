@@ -60,9 +60,4 @@ public class BoomstickItem extends TieredItem {
 		level.explode(null, level.damageSources().explosion(entity, entity), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
 	}
 
-	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-		List<Enchantment> validEnchants = List.of(Enchantments.UNBREAKING);
-		return validEnchants.contains(enchantment);
-	}
 }

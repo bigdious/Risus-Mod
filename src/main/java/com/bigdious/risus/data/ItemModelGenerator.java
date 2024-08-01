@@ -67,10 +67,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		toBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 		getBuilder(RisusBlocks.BONDKNOT_FENCE.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/fence_inventory")))
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/fence_inventory")))
 				.texture("texture", texture("block/bondknot_planks"));
 		getBuilder(RisusBlocks.BONDKNOT_BUTTON.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/button_inventory")))
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/button_inventory")))
 				.texture("texture", texture("block/bondknot_planks"));
 		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor_bottom"));
 		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), texture("item/bondknot_door"));
@@ -86,10 +86,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.GRIMSTONE_STAIRS.get());
 		toBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
 		getBuilder(RisusBlocks.GRIMSTONE_WALL.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 				.texture("wall", texture("block/grimstone"));
 		getBuilder(RisusBlocks.GRIMSTONE_BRICKS_WALL.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 				.texture("wall", texture("block/grimstone_bricks"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
@@ -108,8 +108,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue_stairs"));
 		toBlock(RisusBlocks.TISSUE_SLAB.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
-				.texture("wall", new ResourceLocation("block/bone_block_side"));
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 		toBlock(RisusBlocks.BONE_STAIRS.get());
 		toBlock(RisusBlocks.BONE_SLAB.get());
 
@@ -127,8 +127,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.TALL_HAIR.get());
 		toBlock(RisusBlocks.BUNDLE_OF_HAIR.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
-				.parent(getExistingFile(new ResourceLocation("block/wall_inventory")))
-				.texture("wall", new ResourceLocation("block/bone_block_side"));
+				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 
 		//items
 		singleTex(RisusItems.BLOOD_FEATHER);
@@ -200,7 +200,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		//spawn eggs
 		for (DeferredHolder<Item, ?> item : RisusEntities.SPAWN_EGGS.getEntries()) {
 			if (item.get() instanceof SpawnEggItem) {
-				getBuilder(item.getId().getPath()).parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
+				getBuilder(item.getId().getPath()).parent(getExistingFile(ResourceLocation.withDefaultNamespace("item/template_spawn_egg")));
 			}
 		}
 
@@ -272,7 +272,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.withExistingParent(renamedVariant, this.mcLoc("item/handheld")).texture("layer0", this.modLoc("item/" + location + renamedVariant));
 		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
 				.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
-				.override().predicate(new ResourceLocation(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
+				.override().predicate(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
 	}
 
 	@Override

@@ -13,15 +13,15 @@ description='''
 A mod to make you smile.'''
 
 [[dependencies.risus]]
-    modId="neoforge"
-	type="required"
-    versionRange="[1,)"
-    ordering="NONE"
-    side="BOTH"
+modId="neoforge"
+type="required"
+versionRange="[1,)"
+ordering="NONE"
+side="BOTH"
 
 [[dependencies.risus]]
-    modId="minecraft"
-	type="required"
-    versionRange="[1.20.6]"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+type="required"
+versionRange="[1.21]"
+ordering="NONE"
+side="BOTH"

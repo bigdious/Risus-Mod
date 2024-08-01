@@ -15,7 +15,7 @@ public class HolderFaceLayer<T extends Holder, M extends HolderModel<T>> extends
 
 	@Override
 	public RenderType renderType() {
-		return RenderType.eyes(new ResourceLocation(Risus.MODID, "textures/entity/holder_face.png"));
+		return RenderType.eyes(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/holder_face.png"));
 	}
 }
 
