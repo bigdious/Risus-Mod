@@ -16,7 +16,7 @@
                     "predicates": {
                       "minecraft:enchantments": [
                         {
-                          "enchantment": "minecraft:silk_touch",
+                          "enchantments": "minecraft:silk_touch",
                           "levels": {
                             "min": 1
                           }
@@ -26,27 +26,18 @@
                   }
                 }
               ],
-              "name": "risus:crystallized_bonds"
+              "name": "risus:gluttony_scaleplate"
             },
             {
               "type": "minecraft:item",
               "functions": [
                 {
                   "add": false,
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "max": 4.0,
-                    "min": 1.0
-                  },
+                  "count": 1.0,
                   "function": "minecraft:set_count"
-                },
-                {
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
                 }
               ],
-              "name": "risus:crystallized_bond"
+              "name": "risus:gluttony_scales"
             }
           ]
         }
@@ -54,5 +45,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "risus:blocks/crystallized_bonds"
+  "random_sequence": "risus:blocks/gluttony_scaleplate"
 }

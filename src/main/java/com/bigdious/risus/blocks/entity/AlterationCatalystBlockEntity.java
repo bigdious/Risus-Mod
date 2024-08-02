@@ -22,6 +22,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -167,10 +168,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Nullable
 	public AlterationRecipe getRecipe(Level level, ItemStack stack) {
-		if (level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SingleRecipeInput(stack), level).orElse(null) != null) {
-			return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SingleRecipeInput(stack), level).get().value();
-		}
-		return null;
+		return level.getRecipeManager().getRecipeFor(RisusRecipes.ALTERATION_RECIPE.get(), new SingleRecipeInput(stack), level).map(RecipeHolder::value).orElse(null);
 	}
 
 	public void attemptCraft(Level level, ItemStack item) {

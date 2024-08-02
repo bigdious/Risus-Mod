@@ -16,15 +16,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-public record AlterationRecipe(Ingredient input, ItemStack result) implements Recipe<RecipeInput> {
+public record AlterationRecipe(Ingredient input, ItemStack result) implements Recipe<SingleRecipeInput> {
 
 	@Override
-	public boolean matches(RecipeInput recipeInput, Level level) {
+	public boolean matches(SingleRecipeInput recipeInput, Level level) {
 		return this.input.test(recipeInput.getItem(0));
 	}
 
 	@Override
-	public ItemStack assemble(RecipeInput recipeInput, HolderLookup.Provider pRegistries) {
+	public ItemStack assemble(SingleRecipeInput recipeInput, HolderLookup.Provider pRegistries) {
 		return this.result.copy();
 	}
 

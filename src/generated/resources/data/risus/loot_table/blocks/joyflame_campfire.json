@@ -16,7 +16,7 @@
                     "predicates": {
                       "minecraft:enchantments": [
                         {
-                          "enchantment": "minecraft:silk_touch",
+                          "enchantments": "minecraft:silk_touch",
                           "levels": {
                             "min": 1
                           }
@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "risus:gluttony_scaleplate"
+              "name": "risus:joyflame_campfire"
             },
             {
               "type": "minecraft:item",
@@ -37,7 +37,7 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "risus:gluttony_scales"
+              "name": "risus:ashen_remains"
             }
           ]
         }
@@ -45,5 +45,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "risus:blocks/gluttony_scaleplate"
+  "random_sequence": "risus:blocks/joyflame_campfire"
 }

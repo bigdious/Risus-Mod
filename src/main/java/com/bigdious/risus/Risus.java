@@ -28,7 +28,7 @@ public class Risus {
 	public static final String MODID = "risus";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private static final Rarity RISUS = Rarity.create("risus", Risus.prefix("rarity"), ChatFormatting.DARK_RED);
+	private static final Rarity RISUS = Rarity.COMMON;
 
 	public Risus(IEventBus bus, Dist dist) {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
