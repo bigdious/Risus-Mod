@@ -15,15 +15,15 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class RisusItems {
 
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Risus.MODID);
-
+	public static final Rarity BLOOD = Rarity.valueOf("RISUS_BLOOD");
 	//TOOLS
-	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
+	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem(-1, defaultWithRarity().durability(64)));
-	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(Risus.getRarity())));
-	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(Risus.getRarity())));
+	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(BLOOD)));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
+	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD)));
+	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD)));
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).build();
@@ -153,11 +153,11 @@ public class RisusItems {
 	public static final DeferredItem<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", () -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), defaultWithRarity().stacksTo(1).craftRemainder(Items.BUCKET)));
 
 	public static Item.Properties defaultWithRarity() {
-		return new Item.Properties().rarity(Risus.getRarity());
+		return new Item.Properties().rarity(BLOOD);
 	}
 
 	public static Item.Properties defaultNoTab() {
-		return new Item.Properties().rarity(Risus.getRarity());
+		return new Item.Properties().rarity(BLOOD);
 	}
 
 	public static Item.Properties defaultWithNoRarity() {

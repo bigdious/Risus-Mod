@@ -1,27 +1,29 @@
 modLoader="javafml"
-loaderVersion="[1,)"
+loaderVersion="${loader_version_range}"
 license="MIT license"
 
 [[mods]]
-modId="risus"
-version="${file.jarVersion}"
-displayName="Risus"
-logoFile="examplemod.png"
-credits="Thanks to my friends in Trailblazers' Pantheon for forcing me to make a mod and Twig_Demon for constant feedback"
-authors="bigdious"
-description='''
-A mod to make you smile.'''
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''A mod to make you smile.'''
+itemIcon="risus:smiling_remains"
+enumExtensions="META-INF/enumextensions.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
 
 [[dependencies.risus]]
 modId="neoforge"
 type="required"
-versionRange="[1,)"
+versionRange="${neo_version_range}"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.risus]]
 modId="minecraft"
 type="required"
-versionRange="[1.21]"
+versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"

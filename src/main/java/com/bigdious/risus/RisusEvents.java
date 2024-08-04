@@ -5,6 +5,7 @@ import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -24,8 +25,9 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.SpawnPlacementRegisterEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 
@@ -100,11 +102,11 @@ public class RisusEvents {
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 	}
-	private static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-		event.register(RisusEntities.LOVER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, SpawnPlacementRegisterEvent.Operation.REPLACE);
+	private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+		event.register(RisusEntities.LOVER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 		}
 
-	private static void knockOutSomeTeeth(LivingHurtEvent event) {
+	private static void knockOutSomeTeeth(LivingIncomingDamageEvent event) {
 		Entity source = event.getSource().getEntity();
 
 		if (source instanceof Player player) {

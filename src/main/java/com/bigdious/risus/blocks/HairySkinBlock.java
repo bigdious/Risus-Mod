@@ -26,7 +26,7 @@ public class HairySkinBlock extends Block {
 
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEARS)) {
+		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEAR)) {
 			level.setBlock(pos, RisusBlocks.SKIN.get().defaultBlockState(), 11);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));

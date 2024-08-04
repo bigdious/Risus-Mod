@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "RISUS_BLOOD",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "field": "BLOOD"
+      }
+    }
+  ]
+}

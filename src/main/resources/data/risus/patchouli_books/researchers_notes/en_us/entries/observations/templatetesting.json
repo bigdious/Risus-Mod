@@ -1,7 +1,7 @@
 {
-  "name": "testing",
+  "name": "Templates",
   "icon": "minecraft:paper",
-  "category": "risus:observations",
+  "category": "risus:test_category",
   "pages": [
     {
       "type": "risus:alterationtemplate5",

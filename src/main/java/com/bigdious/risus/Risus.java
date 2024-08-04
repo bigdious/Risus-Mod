@@ -28,7 +28,6 @@ public class Risus {
 	public static final String MODID = "risus";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private static final Rarity RISUS = Rarity.COMMON;
 
 	public Risus(IEventBus bus, Dist dist) {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
@@ -47,6 +46,7 @@ public class Risus {
 		RisusSoundEvents.SOUNDS.register(bus);
 		RisusFluids.FLUIDS.register(bus);
 		RisusFluids.FLUID_TYPES.register(bus);
+
 
 		bus.addListener(this::registerPackets);
 		bus.addListener(this::gatherData);
@@ -80,6 +80,7 @@ public class Risus {
 		var blocktags = new BlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
 		event.getGenerator().addProvider(isServer, blocktags);
 		event.getGenerator().addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
+		event.getGenerator().addProvider(isServer, new EnchantmentTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);
@@ -93,7 +94,4 @@ public class Risus {
 		return ResourceLocation.fromNamespaceAndPath(MODID, name.toLowerCase(Locale.ROOT));
 	}
 
-	public static Rarity getRarity() {
-		return RISUS;
-	}
 }

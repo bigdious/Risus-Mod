@@ -25,7 +25,7 @@ public class HairyCurvedSkinBlock extends MultiDirectionalBlock {
 
 
 	public ItemInteractionResult useItemOn(ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEARS)) {
+		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEAR)) {
 			level.setBlock(pos, RisusBlocks.CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
