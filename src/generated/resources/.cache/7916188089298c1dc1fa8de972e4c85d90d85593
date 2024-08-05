@@ -1,8 +1,9 @@
-// 1.21	2024-08-02T16:04:29.687311	Tags for minecraft:item mod id risus
+// 1.21	2024-08-05T22:32:51.8023172	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates/wooden.json
+b2fe950327aed148590cc01e8c2346f24cfa220e data/minecraft/tags/item/enchantable/sword.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs_that_burn.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/item/planks.json

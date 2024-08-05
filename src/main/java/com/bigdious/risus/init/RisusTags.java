@@ -11,14 +11,14 @@ import net.minecraft.world.item.enchantment.Enchantment;
 public class RisusTags {
 	public class Enchantments {
 
-		public static final TagKey<Enchantment> CRESCENT_DISASTER_CUSTOM = tag("custom_set/crescent_disaster");
+//		public static final TagKey<Enchantment> CRESCENT_DISASTER_CUSTOM = tag("custom_set/crescent_disaster");
 
 		private static TagKey<Enchantment> tag(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
 	public static class Items {
-		public static final TagKey<Item> CRESCENT_DISASTER_ENCHANTABLE = tag("crescent_disaster");
+//		public static final TagKey<Item> LOOTING_ENCHANTABLE = tag("enchantable/looting");
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}

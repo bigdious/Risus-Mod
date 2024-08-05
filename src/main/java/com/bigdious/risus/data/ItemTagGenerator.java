@@ -55,6 +55,24 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 
 		//enchantment lists
-		this.tag(RisusTags.Items.CRESCENT_DISASTER_ENCHANTABLE).add(RisusItems.CRESCENT_DISASTER.get());
+		this.tag(ItemTags.SWORDS).add(
+			RisusItems.UNAWAKENED_VESSEL.get(),
+			RisusItems.CRESCENT_DISASTER.get(),
+			RisusItems.SCYTHE.get(),
+			RisusItems.TOOTHKNOCKER.get(),
+			RisusItems.GOLD_FIST.get()
+		);
+
+		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
+			RisusItems.UNAWAKENED_VESSEL.get(),
+			RisusItems.CRESCENT_DISASTER.get(),
+			RisusItems.SCYTHE.get(),
+			RisusItems.TOOTHKNOCKER.get(),
+			RisusItems.GOLD_FIST.get()
+		);
+
+		this.tag(ItemTags.TRIDENT_ENCHANTABLE).add(
+			RisusItems.CRESCENT_DISASTER.get()
+		);
 	}
 }
