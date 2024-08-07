@@ -13,6 +13,7 @@ import net.minecraft.world.item.Rarity;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -46,6 +47,7 @@ public class Risus {
 		RisusSoundEvents.SOUNDS.register(bus);
 		RisusFluids.FLUIDS.register(bus);
 		RisusFluids.FLUID_TYPES.register(bus);
+		RisusStructures.STRUCTURES.register(bus);
 
 
 		bus.addListener(this::registerPackets);
@@ -65,13 +67,13 @@ public class Risus {
 
 	private void gatherData(GatherDataEvent event) {
 		PackOutput packOutput = event.getGenerator().getPackOutput();
-		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+		DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, event.getLookupProvider());
+		CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		boolean isServer = event.includeServer();
 		boolean isClient = event.includeClient();
-
-//		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new StructureUpdater("structures", packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));

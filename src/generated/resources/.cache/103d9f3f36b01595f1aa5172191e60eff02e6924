@@ -1,5 +1,12 @@
-// 1.21	2024-08-02T16:04:29.6883106	Registries
+// 1.21	2024-08-07T21:21:48.9626813	Registries
 13c9212e923998bd25df006ccc5280915bb65eb0 data/risus/damage_type/gluttony.json
 4cb181e1361f009638f6dcb8d3e55b998557daa9 data/risus/damage_type/inexistence.json
 1079228b8ee45ed23c5792413308dc9aacb8fdfc data/risus/damage_type/melancholy.json
 3a4c2794ec341b1fd8850afa8ed6c65f7a56ebe7 data/risus/worldgen/biome/coalification.json
+3425ca0e6fa590dba6fce40c4a48c796f5c2096c data/risus/worldgen/processor_list/alteration_site_degradation.json
+ecea9d7b3ab253a9629b50994a29f7d55d826bbe data/risus/worldgen/structure/alteration_site.json
+617e520fdecef98504df9b0dd3dacd4d24156146 data/risus/worldgen/structure/grassy_maw.json
+8c3865b5fdee97d9c9d1630a7b512dd762558170 data/risus/worldgen/structure_set/alteration_site.json
+1042120221e52b38ba9d68956ff0ca1c42955390 data/risus/worldgen/structure_set/grassy_maw.json
+b639cc5b617ae653a647be086a7fb6e2bf5a7e71 data/risus/worldgen/template_pool/alteration_site.json
+685116ecfb8286b912f032ca20b05c0d4501d53e data/risus/worldgen/template_pool/grassy_maw.json

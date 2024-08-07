@@ -1,15 +1,17 @@
-// 1.21	2024-08-05T22:32:51.8023172	Tags for minecraft:item mod id risus
+// 1.21	2024-08-07T16:37:49.3653233	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates/wooden.json
-b2fe950327aed148590cc01e8c2346f24cfa220e data/minecraft/tags/item/enchantable/sword.json
+30473b97c32bed4270b4ad8a0b443a8094cb27b5 data/minecraft/tags/item/enchantable/durability.json
+e383d08fa86c3518e455f8ba6fbea99b0515dc7d data/minecraft/tags/item/enchantable/trident.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs_that_burn.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/item/planks.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/item/signs.json
 ecc388c40f36e8a5d4349e1a596494b63223f338 data/minecraft/tags/item/slabs.json
 6910eb6a5b64831a42062a77fe92f4f2cf560f7c data/minecraft/tags/item/stairs.json
+30473b97c32bed4270b4ad8a0b443a8094cb27b5 data/minecraft/tags/item/swords.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/item/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/item/wooden_doors.json
 86196d8d301039609134e790f381774456113206 data/minecraft/tags/item/wooden_fences.json

@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1029231764,
+    "separation": 10,
+    "spacing": 30,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "risus:alteration_site",
+      "weight": 1
+    }
+  ]
+}
