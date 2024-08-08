@@ -1,0 +1,41 @@
+{
+  "criteria": {
+    "enter_site": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:alteration_site"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "risus:textures/block/ashen_remains.png",
+    "description": {
+      "translate": "advancement.risus.first.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:smile"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.risus.first"
+    }
+  },
+  "requirements": [
+    [
+      "enter_site"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

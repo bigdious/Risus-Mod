@@ -1,7 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.world.gen.structure.BiggerJigsawStructures;
+
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
@@ -14,7 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
@@ -37,7 +39,6 @@ import java.util.Optional;
 public class RisusStructures {
 	//based off of Undergarden's UGStructures class
 	public static final DeferredRegister<StructureType<?>> STRUCTURES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Risus.MODID);
-	public static final DeferredHolder<StructureType<?>, StructureType<BiggerJigsawStructures>> BIGGER_JIGSAW = STRUCTURES.register("bigger_jigsaw", () -> () -> BiggerJigsawStructures.CODEC);
 	public static final ResourceKey<Structure> ALTERATION_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureSet> ALTERATION_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureTemplatePool> ALTERATION_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
@@ -56,7 +57,7 @@ public class RisusStructures {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
-		context.register(ALTERATION_SITE, new BiggerJigsawStructures(
+		context.register(ALTERATION_SITE, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_ALTERATION_SITE),
 				Map.of(),
@@ -66,15 +67,16 @@ public class RisusStructures {
 			pools.getOrThrow(ALTERATION_SITE_POOL),
 			Optional.empty(),
 			5,
-			UniformHeight.of(VerticalAnchor.absolute(0), VerticalAnchor.TOP),
-			Optional.empty(),
+			ConstantHeight.of(VerticalAnchor.absolute(0)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
 			List.of(),
 			DimensionPadding.ZERO,
 			LiquidSettings.APPLY_WATERLOGGING
 		));
 
-		context.register(GRASSY_MAW, new BiggerJigsawStructures(
+		context.register(GRASSY_MAW, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_MAW),
 				Map.of(),
@@ -84,8 +86,9 @@ public class RisusStructures {
 			pools.getOrThrow(GRASSY_MAW_POOL),
 			Optional.empty(),
 			5,
-			UniformHeight.of(VerticalAnchor.belowTop(0), VerticalAnchor.BOTTOM),
-			Optional.empty(),
+			ConstantHeight.of(VerticalAnchor.absolute(-9)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
 			List.of(),
 			DimensionPadding.ZERO,
