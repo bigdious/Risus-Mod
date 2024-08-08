@@ -1,0 +1,34 @@
+{
+  "parent": "risus:risus/first",
+  "criteria": {
+    "pricked": {
+      "conditions": {
+        "damage": {
+          "source_entity": {
+            "type": "risus:holder"
+          }
+        }
+      },
+      "trigger": "minecraft:entity_hurt_player"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.little.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:organic_matter"
+    },
+    "title": {
+      "translate": "advancement.risus.little"
+    }
+  },
+  "requirements": [
+    [
+      "pricked"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

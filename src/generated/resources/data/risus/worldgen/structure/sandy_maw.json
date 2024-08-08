@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#risus:has_structure/sandy_maw",
+  "max_distance_from_center": 80,
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "size": 5,
+  "spawn_overrides": {},
+  "start_height": {
+    "absolute": -9
+  },
+  "start_pool": "risus:sandy_maw",
+  "step": "surface_structures",
+  "use_expansion_hack": false
+}

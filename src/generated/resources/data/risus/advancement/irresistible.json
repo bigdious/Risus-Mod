@@ -1,0 +1,32 @@
+{
+  "parent": "risus:site_zero",
+  "criteria": {
+    "pleasure": {
+      "conditions": {
+        "item": {
+          "items": "risus:guilty_apple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.irresistible.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:guilty_apple"
+    },
+    "title": {
+      "translate": "advancement.risus.irresistible"
+    }
+  },
+  "requirements": [
+    [
+      "pleasure"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

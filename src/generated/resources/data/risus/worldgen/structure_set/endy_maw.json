@@ -1,14 +1,14 @@
 {
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 22123393,
+    "salt": 52445123,
     "separation": 8,
     "spacing": 10,
     "spread_type": "triangular"
   },
   "structures": [
     {
-      "structure": "risus:grassy_maw",
+      "structure": "risus:endy_maw",
       "weight": 1
     }
   ]

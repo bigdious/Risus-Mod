@@ -1,0 +1,40 @@
+{
+  "parent": "risus:risus/first",
+  "criteria": {
+    "family1": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:family_tree"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.family.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:ribcage"
+    },
+    "title": {
+      "translate": "advancement.risus.family"
+    }
+  },
+  "requirements": [
+    [
+      "family1"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

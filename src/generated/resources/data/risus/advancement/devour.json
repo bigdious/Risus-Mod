@@ -1,0 +1,38 @@
+{
+  "parent": "risus:step",
+  "criteria": {
+    "devour0": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "risus:maw"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.devour.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:gluttony_scales"
+    },
+    "title": {
+      "translate": "advancement.risus.devour"
+    }
+  },
+  "requirements": [
+    [
+      "devour0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "risus:devour",
+  "criteria": {
+    "satiate0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:maw_guts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.satiate.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:maw_guts"
+    },
+    "title": {
+      "translate": "advancement.risus.satiate"
+    }
+  },
+  "requirements": [
+    [
+      "satiate0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
