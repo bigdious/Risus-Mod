@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "patchouli:guide_book"
+            "items": "risus:researchers_notes"
           }
         ]
       },
@@ -18,7 +18,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "patchouli:guide_book"
+      "id": "risus:researchers_notes"
     },
     "title": {
       "translate": "advancement.risus.mod_book"

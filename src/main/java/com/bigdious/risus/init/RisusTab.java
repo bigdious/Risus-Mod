@@ -155,6 +155,7 @@ public class RisusTab {
 						output.accept(RisusItems.ENDLESS_PEARL.get());
 						output.accept(RisusItems.NEURON_STEM.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
+						output.accept(RisusItems.RESEARCHERS_NOTES.get());
 						createSpawnEggsAlphabetical(output);
 
 

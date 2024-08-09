@@ -133,6 +133,7 @@
   "item.risus.hand_of_greed": "Hand of Greed",
   "item.risus.gold_fist": "Stripper",
   "item.risus.scythe": "Unlit Vessel",
+  "item.risus.researchers_notes": "Researcher's Notes",
 
 
 
@@ -174,11 +175,11 @@
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
-  "advancement.risus.first": "First Encounter",
+  "advancement.risus.first": "Risus",
   "advancement.risus.mod_book": "Researcher's Notes",
   "advancement.risus.mod_book.desc": "Alter a book to gain access to vast knowledge.",
   "advancement.risus.family": "Father...?",
-  "advancement.risus.first.desc": "Meet the Risus.",
+  "advancement.risus.first.desc": "The Joyplague",
   "advancement.risus.family.desc": "Discover a Family Tree.",
   "advancement.risus.fleshing.desc": "Use Organic Matter on Tissue to stop the flesh from disintegrating.",
   "advancement.risus.fleshing": "Did you just flesh me?!",

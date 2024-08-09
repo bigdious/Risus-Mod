@@ -1,16 +1,19 @@
 package com.bigdious.risus.data;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -50,7 +53,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_leather", has(Items.LEATHER)).unlockedBy("has_rabbit_hide", has(Items.RABBIT_HIDE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_sea_pickle", has(Items.SEA_PICKLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item_frame", has(Items.ITEM_FRAME)).save(consumer);
-
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_book", has(Items.BOOK)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
 				.unlockedBy("has_oak_log", has(Items.OAK_LOG)).unlockedBy("has_dark_oak_log", has(Items.DARK_OAK_LOG)).unlockedBy("has_birch_log", has(Items.BIRCH_LOG)).unlockedBy("has_spruce_log", has(Items.SPRUCE_LOG)).unlockedBy("has_jungle_log", has(Items.JUNGLE_LOG)).unlockedBy("has_acacia_log", has(Items.ACACIA_LOG)).unlockedBy("has_mangrove_log", has(Items.MANGROVE_LOG)).unlockedBy("has_cherry_log", has(Items.CHERRY_LOG)).save(consumer);

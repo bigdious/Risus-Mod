@@ -1,4 +1,4 @@
-// 1.21	2024-08-02T16:04:29.682314	Recipes
+// 1.21	2024-08-09T14:25:09.012023	Recipes
 0b60466aa78683ab2ad1fdf2e60b9cdbb4963205 data/risus/advancement/recipes/alteration/ashen_remains.json
 b0a3deeed8d70207abbe88fd21d5cfe2a61f4171 data/risus/advancement/recipes/alteration/bloodweave.json
 f07bea113870f5f44c473bebee4762e019743635 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -32,6 +32,7 @@ d5986e69c7d039016b93ede5bcdb230df16dd3da data/risus/advancement/recipes/alterati
 c017166683bd14d4b89468d2e4dbda40bd48bd98 data/risus/advancement/recipes/alteration/organic_matter.json
 3177ed41b02bbd28e2373b24ec114ed21133c987 data/risus/advancement/recipes/alteration/polished_grimstone.json
 8e35a89a06bbd1e8c7c2bc4d1043d9f635bc5ec9 data/risus/advancement/recipes/alteration/regen_rose.json
+96b34387158b5e1f4bd8650954bf3dcc1975c526 data/risus/advancement/recipes/alteration/researchers_notes.json
 95c193bc88490aff3b5d709fa7a80cfe2e0191b2 data/risus/advancement/recipes/alteration/skin.json
 b72473b59e824fd2569d29ca6ad511a56ab9c8c5 data/risus/advancement/recipes/alteration/smiling_remains.json
 bde5798bf513567b810b723b8ef8143e5ea11ebb data/risus/advancement/recipes/alteration/spreading_remains.json
@@ -117,6 +118,7 @@ e005e01e7c5cfe89bbe0ef274be9c29a3bc28807 data/risus/recipe/alteration/laughing_o
 a08fd9f684d22625c7bd80d20659a7e8189a745f data/risus/recipe/alteration/organic_matter.json
 dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipe/alteration/polished_grimstone.json
 2b9100fba2a63fbf5afe525f7312e9a34480cd06 data/risus/recipe/alteration/regen_rose.json
+f7328542d3f035179d1d31ecd36feb7bae876271 data/risus/recipe/alteration/researchers_notes.json
 67aaa677034eea6ede7d4467b3a11cc0d91e5eb0 data/risus/recipe/alteration/skin.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipe/alteration/smiling_remains.json
 2cd00f51233e628515d72d031a8521553421353e data/risus/recipe/alteration/spreading_remains.json

@@ -1,4 +1,4 @@
-// 1.21	2024-08-02T16:04:29.6604641	Risus Item Models
+// 1.21	2024-08-09T14:55:35.8267106	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -49,6 +49,9 @@ ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch_stand.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
+9e84a0a1212d608680da772ba45396dba5218b37 assets/risus/models/item/essence_of_gluttony.json
+815fa2102a2126a4dd7fbab7ddb4c83c1dbc9ecd assets/risus/models/item/essence_of_greed.json
+4fb22221e7afc543c6a201db0e4176a8976ca64f assets/risus/models/item/essence_of_sloth.json
 ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.json
 21251deee36c1148812923afc40b96faf258c24b assets/risus/models/item/eye_bloodshot.json
 277cca67835288839864d857e33bdec3c0bcefff assets/risus/models/item/eye_emerald.json
@@ -102,6 +105,7 @@ f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondkn
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 06f695423b6813ef3cd11a76d7606414c416ee90 assets/risus/models/item/regen_rose.json
 5da3dd592d2a064d01b9c148d92593cb5061b7f3 assets/risus/models/item/renamed_neuron.json
+fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_notes.json
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json

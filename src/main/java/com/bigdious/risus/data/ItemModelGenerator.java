@@ -131,6 +131,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 
 		//items
+		singleTex(RisusItems.RESEARCHERS_NOTES);
+		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
+		singleTex(RisusItems.ESSENCE_OF_GREED);
+		singleTex(RisusItems.ESSENCE_OF_SLOTH);
 		singleTex(RisusItems.BLOOD_FEATHER);
 		singleTex(RisusItems.HAND_OF_GREED);
 		singleTex(RisusItems.BLOOD_BUCKET);

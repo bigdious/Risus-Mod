@@ -37,7 +37,7 @@ public class RisusEvents {
 		bus.addListener(RisusEvents::commonSetup);
 		bus.addListener(RisusEvents::registerAttributes);
 		bus.addListener(RisusEvents::registerSpawnPlacements);
-//		bus.addListener(RisusEvents::registerPotionRecipes);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::registerPotionRecipes);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
 	}
 

@@ -82,6 +82,7 @@ public class Risus {
 		var blocktags = new BlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
 		event.getGenerator().addProvider(isServer, blocktags);
 		event.getGenerator().addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
+		event.getGenerator().addProvider(isServer, new BiomeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);

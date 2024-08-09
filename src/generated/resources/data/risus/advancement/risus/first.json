@@ -130,24 +130,12 @@
   },
   "requirements": [
     [
-      "enter_site"
-    ],
-    [
-      "grassmaw"
-    ],
-    [
-      "sandmaw"
-    ],
-    [
-      "endmaw"
-    ],
-    [
-      "flower"
-    ],
-    [
-      "angel"
-    ],
-    [
+      "enter_site",
+      "grassmaw",
+      "sandmaw",
+      "endmaw",
+      "flower",
+      "angel",
       "family"
     ]
   ],

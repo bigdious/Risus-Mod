@@ -1,7 +1,6 @@
 {
   "name": "Researcher's Notes",
   "landing_text": "I am about to step into a new frontier. I leave behind my notes - though I suspect this plague to consume them - hoping someone will continue my work. It might be difficult to decipher at first, but you'll succeed as you discover the secrets of the Risus. Therefore I ask you, whoever you are, to not make the same mistakes I did.                   -Lost Researcher",
-  "creative_tab": "risus:risusmain",
   "use_resource_pack": true,
   "book_texture": "risus:textures/gui/book_inside.png",
   "filler_texture": "risus:textures/gui/page_filler.png",

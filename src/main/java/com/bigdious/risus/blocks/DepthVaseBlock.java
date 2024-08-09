@@ -5,6 +5,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -116,7 +117,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 				depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
 				return ItemInteractionResult.FAIL;
 			}
-			if (player.getMainHandItem().is(PatchouliAPI.get().getBookStack(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "research_notes")).getItem())) {
+			if (player.getMainHandItem().is(RisusItems.RESEARCHERS_NOTES)) {
 				if (depthVase.depthToSlotRatio == 1) {
 					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
 					return ItemInteractionResult.SUCCESS;
