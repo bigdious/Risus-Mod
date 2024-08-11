@@ -127,7 +127,7 @@ public class RisusBlocks {
 
 	//big's trial
 	public static final DeferredBlock<GrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStemBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ)));
-	//	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.ofFullCopy(Blocks.SPAWNER)));
+	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.ofFullCopy(RisusBlocks.BLOODWEAVE.get())));
 	public static final DeferredBlock<GrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {
 	});
 	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.SCULK_VEIN)));

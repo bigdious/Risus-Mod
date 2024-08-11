@@ -1,4 +1,4 @@
-// 1.21	2024-08-02T16:04:29.6691882	Loot Tables
+// 1.21	2024-08-11T18:06:47.9330451	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_table/blocks/ashen_remains.json
@@ -101,6 +101,7 @@ d3464fb8496cb40085814f1eecc4e131643eaa81 data/risus/loot_table/blocks/teeth.json
 baf8596a6d4bcb13b5afb25d16a59dc79038581b data/risus/loot_table/blocks/tissue.json
 2e7fb3c875aaffdf6a98cff2ed0461842fbcb724 data/risus/loot_table/blocks/tissue_slab.json
 95a120f86c4b4355ca8b1b6bd7b5993cd3ad2cb7 data/risus/loot_table/blocks/tissue_stairs.json
+e72729e6940474c975b2c012fd2a7395ed3b0873 data/risus/loot_table/blocks/weaver_nest.json
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_table/blocks/zit.json
 e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.json
 2075eb3f8bcf68bd5a2bad388c9a39c39bedc9fd data/risus/loot_table/entities/holder.json

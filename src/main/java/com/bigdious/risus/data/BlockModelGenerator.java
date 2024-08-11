@@ -57,6 +57,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 					.build();
 		});
 		simpleBlock(RisusBlocks.ANGEL_ALTAR.get(), models().getExistingFile(texture("block/angel_altar")));
+		simpleBlock(RisusBlocks.WEAVER_NEST.get(), models().getExistingFile(texture("block/weaver_nest")));
 		horizontalBlock(RisusBlocks.DEPTH_VASE.get(), models().getExistingFile(texture("block/depth_vase")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));

@@ -11,9 +11,13 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -21,9 +25,11 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -108,7 +114,50 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPING;
 	}
+	public static class WeaverEffectsGroupData implements SpawnGroupData {
+		@Nullable
+		public net.minecraft.core.Holder<MobEffect> effect;
 
+		public void setRandomEffect(RandomSource pRandom) {
+			int i = pRandom.nextInt(7);
+			if (i <= 1) {
+				this.effect = MobEffects.MOVEMENT_SPEED;
+			} else if (i <= 2) {
+				this.effect = MobEffects.DAMAGE_BOOST;
+			} else if (i <= 3) {
+				this.effect = MobEffects.REGENERATION;
+			} else if (i <= 4) {
+				this.effect = MobEffects.JUMP;
+			} else if (i <= 5) {
+				this.effect = MobEffects.DAMAGE_RESISTANCE;
+			} else if (i <= 6) {
+				this.effect = MobEffects.FIRE_RESISTANCE;
+			}
+		}
+	}
+
+	@Nullable
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
+		pSpawnGroupData = super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
+		RandomSource randomsource = pLevel.getRandom();
+
+		if (pSpawnGroupData == null) {
+			pSpawnGroupData = new Weaver.WeaverEffectsGroupData();
+			if (pLevel.getDifficulty() == Difficulty.HARD && randomsource.nextFloat() < 0.1F * pDifficulty.getSpecialMultiplier()) {
+				((Weaver.WeaverEffectsGroupData)pSpawnGroupData).setRandomEffect(randomsource);
+			}
+		}
+
+		if (pSpawnGroupData instanceof Weaver.WeaverEffectsGroupData weaverEffectsGroupData) {
+			net.minecraft.core.Holder<MobEffect> holder = weaverEffectsGroupData.effect;
+			if (holder != null) {
+				this.addEffect(new MobEffectInstance(holder, -1, 2));
+			}
+		}
+
+		return pSpawnGroupData;
+	}
 
 	@Override
 	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {

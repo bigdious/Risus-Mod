@@ -47,7 +47,7 @@ public class RisusItems {
 
 	//ACTION BLOCKS
 
-	//	public static final DeferredItem<Item> WEAVER_NEST = ITEMS.register("weaver_nest", () -> new BlockItem(RisusBlocks.WEAVER_NEST.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WEAVER_NEST = ITEMS.register("weaver_nest", () -> new BlockItem(RisusBlocks.WEAVER_NEST.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> ALTERATION_CATALYST = ITEMS.register("alteration_catalyst", () -> new BlockItem(RisusBlocks.ALTERATION_CATALYST.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> ANGEL_ALTAR = ITEMS.register("angel_altar", () -> new BlockItem(RisusBlocks.ANGEL_ALTAR.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DEPTH_VASE = ITEMS.register("depth_vase", () -> new BlockItem(RisusBlocks.DEPTH_VASE.get(), defaultWithRarity()));
