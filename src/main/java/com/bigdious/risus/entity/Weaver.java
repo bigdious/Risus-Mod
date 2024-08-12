@@ -1,11 +1,9 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusMobEffects;
-import com.bigdious.risus.init.RisusMobType;
+import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -24,7 +22,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
@@ -35,6 +35,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 public class Weaver extends Spider implements CacheTargetOnClient {
@@ -44,6 +45,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
 	public final AnimationState leapAnim = new AnimationState();
+	public int memories;
 
 
 	public Weaver(EntityType<? extends Spider> type, Level level) {
@@ -63,6 +65,18 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		super.defineSynchedData(builder);
 		builder.define(DATA_ID_ATTACK_TARGET, 0);
 	}
+	@Override
+	public void readAdditionalSaveData(CompoundTag pCompound) {
+		super.readAdditionalSaveData(pCompound);
+		if (pCompound.contains("Memories")) {
+			this.memories = pCompound.getInt("Memories");
+		}
+	}
+	@Override
+	public void addAdditionalSaveData(CompoundTag pCompound) {
+		super.addAdditionalSaveData(pCompound);
+		pCompound.putInt("Memories", this.memories);
+	}
 
 	@Override
 	protected void registerGoals() {
@@ -77,7 +91,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, false));
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
 		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true,
 			entity -> !(entity instanceof ArmorStand)
@@ -92,6 +106,12 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		super.aiStep();
 		if (this.attackAnimationTick > 0) {
 			--this.attackAnimationTick;
+		}
+		if (this.memories>=3) {
+			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size()<2) {
+				this.kill();
+				this.level().setBlock(this.blockPosition(), RisusBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
+			}
 		}
 	}
 
@@ -119,7 +139,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		public net.minecraft.core.Holder<MobEffect> effect;
 
 		public void setRandomEffect(RandomSource pRandom) {
-			int i = pRandom.nextInt(7);
+			int i = pRandom.nextInt(8);
 			if (i <= 1) {
 				this.effect = MobEffects.MOVEMENT_SPEED;
 			} else if (i <= 2) {
@@ -132,11 +152,11 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 				this.effect = MobEffects.DAMAGE_RESISTANCE;
 			} else if (i <= 6) {
 				this.effect = MobEffects.FIRE_RESISTANCE;
+			} else if (i <= 7) {
+				this.effect = MobEffects.INVISIBILITY;
 			}
 		}
 	}
-
-	@Nullable
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
 		pSpawnGroupData = super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
@@ -187,9 +207,9 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA, i * 20, 0), this);
-				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR) && living.hurt(new DamageSource(living.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.MELANCHOLY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR)) {
+					this.memories++;
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 3);
-					this.doHurtTarget( living);
 				}
 
 			}

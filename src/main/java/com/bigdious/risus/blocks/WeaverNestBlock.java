@@ -37,7 +37,7 @@ public class WeaverNestBlock extends BaseEntityBlock implements SimpleMultilogge
 
 	public static final MapCodec<WeaverNestBlock> CODEC = simpleCodec(WeaverNestBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 14.0D, 14.0D);
+	protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 11.0D, 15.0D);
 
 	public WeaverNestBlock(Properties pProperties) {
 		super(pProperties);

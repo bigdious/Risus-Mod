@@ -14,7 +14,7 @@ public class WeaverNestHelper {
 	//this is so ducking stupid. Why is static fine when done through helper
 	private int spawnDelay;
 	public int maxNearbyEntities = 10;
-	public int requiredPlayerRange = 64;
+	public int requiredPlayerRange = 32;
 	public int spawnRange = 10;
 	private boolean isNearPlayer(Level pLevel, BlockPos pPos) {
 		return pLevel.hasNearbyAlivePlayer(
@@ -40,9 +40,9 @@ public class WeaverNestHelper {
 			if (k >= this.maxNearbyEntities) {
 				return;
 			}
-			if(spawnDelay>12000) {
+			if(spawnDelay>1200) {
 				Weaver weaver = RisusEntities.WEAVER.get().create(level);
-				weaver.moveTo(pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, 0.0F, 0.0F);
+				weaver.moveTo(pos.getCenter().x, pos.getBottomCenter().y, pos.getCenter().z, 0.0F, 0.0F);
 				level.addFreshEntity(weaver);
 				spawnDelay=0;
 			} else {

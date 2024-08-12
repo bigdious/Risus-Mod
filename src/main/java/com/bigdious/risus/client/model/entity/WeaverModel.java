@@ -125,12 +125,12 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack stack, VertexConsumer builder, int light, int overlay, int color) {
-		this.memoryCore.visible = false;
+		this.memoryCore.visible = true;
 		this.root().render(stack, builder, light, overlay, color);
 	}
 
 	public void renderCore(PoseStack stack, VertexConsumer builder, int light, int overlay, int color) {
-		this.root.getChild("memoryCore").render(stack, builder, light, overlay, color);
+		this.memoryCore.render(stack, builder, light, overlay, color);
 	}
 
 	@Override
