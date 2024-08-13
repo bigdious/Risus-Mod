@@ -4,9 +4,13 @@ import com.bigdious.risus.init.RisusItems;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.MultifaceBlock;
@@ -18,7 +22,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 
-public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMultiloggedBlock {
+public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMultiloggedBlock,OrganicMatterableBlock {
 
 	public static final MapCodec<SpreadingRemainsBlock> CODEC = simpleCodec(SpreadingRemainsBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
@@ -85,5 +89,19 @@ public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMulti
 	@Override
 	public MultifaceSpreader getSpreader() {
 		return this.spreader;
+	}
+
+	@Override
+	public boolean isValidOrganicMatterTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
+		return Direction.stream().anyMatch(p_153316_ -> this.spreader.canSpreadInAnyDirection(pState, pLevel, pPos, p_153316_.getOpposite()));
+	}
+	@Override
+	public boolean isOrganicMatterSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+		return true;
+	}
+
+	@Override
+	public void performOrganicMatter(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+		this.spreader.spreadFromRandomFaceTowardRandomDirection(pState, pLevel, pPos, pRandom);
 	}
 }

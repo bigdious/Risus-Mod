@@ -2,10 +2,16 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
+import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GrowingPlantBodyBlock;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
@@ -15,6 +21,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.Optional;
 
 public class NeuronStemBlock extends GrowingPlantBodyBlock implements SimpleMultiloggedBlock {
 
@@ -71,4 +79,18 @@ public class NeuronStemBlock extends GrowingPlantBodyBlock implements SimpleMult
 	protected GrowingPlantHeadBlock getHeadBlock() {
 		return RisusBlocks.NEURON_HEAD.get();
 	}
+
+	@Override
+	public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
+		return false;
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+		return false;
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {}
+
 }
