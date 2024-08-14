@@ -4,19 +4,12 @@ import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantBodyBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrowingPlantBodyBlock;
-import net.minecraft.world.level.block.GrowingPlantHeadBlock;
+
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -24,35 +17,37 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Optional;
-
-public class NeuronStemBlock extends RisusGrowingPlantBodyBlock implements SimpleMultiloggedBlock {
-
-	public static final MapCodec<NeuronStemBlock> CODEC = simpleCodec(NeuronStemBlock::new);
+public class VeinsBlock extends RisusGrowingPlantBodyBlock implements SimpleMultiloggedBlock{
+	public static final MapCodec<VeinsBlock> CODEC = simpleCodec(VeinsBlock::new);
+	public static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
-	public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
-	private static final double GROW_PER_TICK_PROBABILITY = 0.14;
 
-	public NeuronStemBlock(BlockBehaviour.Properties p_154873_) {
-		super(p_154873_, Direction.UP, SHAPE, true);
+	@Override
+	public MapCodec<VeinsBlock> codec() {
+		return CODEC;
+	}
+
+	public VeinsBlock(BlockBehaviour.Properties p_154975_) {
+		super(p_154975_, Direction.DOWN, SHAPE, false);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
 
 	@Override
-	protected MapCodec<? extends NeuronStemBlock> codec() {
-		return CODEC;
+	protected RisusGrowingPlantHeadBlock getHeadBlock() {
+		return RisusBlocks.VEINS_END.get();
 	}
-
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(FLUIDLOGGED);
 	}
-
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
+		BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().relative(this.growthDirection));
+		return !blockstate.is(this.getHeadBlock()) && !blockstate.is(this.getBodyBlock())
+			?this.getStateForPlacement(context.getLevel())
+			:this.getBodyBlock().defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 	}
 
 	@Override
@@ -79,8 +74,4 @@ public class NeuronStemBlock extends RisusGrowingPlantBodyBlock implements Simpl
 		return super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
 	}
 
-	@Override
-	protected RisusGrowingPlantHeadBlock getHeadBlock() {
-		return RisusBlocks.NEURON_HEAD.get();
-	}
 }

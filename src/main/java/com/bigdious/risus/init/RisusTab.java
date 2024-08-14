@@ -55,7 +55,6 @@ public class RisusTab {
 						output.accept(RisusItems.BLOOD_BUCKET.get());
 						output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 						output.accept(RisusBlocks.SCAB.get());
-						//					output.accept(RisusBlocks.WEAVER_NEST.get());
 
 						output.accept(RisusBlocks.BONDKNOT_LOG.get());
 						output.accept(RisusBlocks.POPPING_BONDKNOT_LOG.get());
@@ -155,6 +154,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.REGEN_ROSE.get());
 						output.accept(RisusItems.ENDLESS_PEARL.get());
 						output.accept(RisusItems.NEURON_STEM.get());
+						output.accept(RisusItems.VEINS.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
 						output.accept(RisusItems.RESEARCHERS_NOTES.get());
 						createSpawnEggsAlphabetical(output);

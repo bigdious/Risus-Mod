@@ -1,4 +1,4 @@
-// 1.21	2024-08-11T18:06:47.9582544	Risus blockstates and models
+// 1.21	2024-08-14T22:25:28.8721294	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -90,6 +90,8 @@ c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.jso
 afabf7420575fc41fb43a7e0d6a2ed356a96554a assets/risus/blockstates/tissue.json
 aa66cca1f604ab84a0ce36ddeef16c78fbdacbe9 assets/risus/blockstates/tissue_slab.json
 b3ec85bb612ab05fe6304555bf6651a5eed2f342 assets/risus/blockstates/tissue_stairs.json
+d79ed2b071902f25bda75889d48e72d2fbf3821b assets/risus/blockstates/veins.json
+db97b2292c16408dd20ea46cb40e1609a373e21c assets/risus/blockstates/veins_end.json
 e33852e2a28b57bf6a06369f4c8e139c0836558d assets/risus/blockstates/weaver_nest.json
 9c25f6213d4c49828c8edd9550d0d8a79475ec8a assets/risus/blockstates/zit.json
 77a87d03007d65960d122293fa0b845e39f0a56d assets/risus/models/block/alteration_catalyst.json
@@ -208,3 +210,5 @@ fb525b9b5a0a7e1015f8edb040a14db1007c2e82 assets/risus/models/block/tissue_slab.j
 04b49323a292a734e100bb903622d180fb3581e5 assets/risus/models/block/tissue_stairs.json
 bf94e1c84e80586dc3c5e0d5c2abcefa3674726a assets/risus/models/block/tissue_stairs_inner.json
 8668a14e60339d19eee434c8fc100b534ffce734 assets/risus/models/block/tissue_stairs_outer.json
+48de0139c11d3673cc4260d614e88dda41ca0cd0 assets/risus/models/block/veins.json
+393048aaddb672b9d84ef124259f83b4803c3042 assets/risus/models/block/veins_end.json

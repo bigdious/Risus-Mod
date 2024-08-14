@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -24,19 +25,20 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class NeuronHeadBlock extends GrowingPlantHeadBlock implements SimpleMultiloggedBlock,OrganicMatterableBlock {
+public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements SimpleMultiloggedBlock {
 
 	public static final MapCodec<NeuronHeadBlock> CODEC = simpleCodec(NeuronHeadBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
+	private static final double GROW_PER_TICK_PROBABILITY = 0.14;
 
 	public NeuronHeadBlock(BlockBehaviour.Properties properties) {
-		super(properties, Direction.UP, SHAPE, false, 0.1D);
-		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY).setValue(AGE, 0));
+		super(properties, Direction.UP, SHAPE, true, 0.14);
+		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
 
 	@Override
-	protected MapCodec<? extends GrowingPlantHeadBlock> codec() {
+	protected MapCodec<NeuronHeadBlock> codec() {
 		return CODEC;
 	}
 
@@ -74,63 +76,20 @@ public class NeuronHeadBlock extends GrowingPlantHeadBlock implements SimpleMult
 		}
 	}
 
-	@Override
-	protected int getBlocksToGrowWhenBonemealed(RandomSource random) {
-		return NetherVines.getBlocksToGrowWhenBonemealed(random);
-	}
 
-	@Override
-	public boolean canGrowInto(BlockState pState) {
-		return pState.isAir();
-	}
 
 	@Override
 	protected Block getBodyBlock() {
 		return RisusBlocks.NEURON_STEM.get();
 	}
-
-	protected static boolean canDefinitelyGrowInto(BlockState state) {
-		return true;
+	@Override
+	protected int getBlocksToGrowWhenOrganicMattered(RandomSource pRandom) {
+		return 1;
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
-		return false;
-	}
-
-	@Override
-	public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-		return false;
-	}
-
-	@Override
-	public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {}
-
-	@Override
-	public boolean isValidOrganicMatterTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
-		return this.canGrowInto(pLevel.getBlockState(pPos.relative(this.growthDirection)));
-	}
-
-	@Override
-	public boolean isOrganicMatterSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-		return true;
-	}
-
-	@Override
-	public void performOrganicMatter(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-		BlockPos blockpos = pPos.relative(this.growthDirection);
-		int i = Math.min(pState.getValue(AGE) + 1, 25);
-		int j = this.getBlocksToGrowWhenBonemealed(pRandom);
-
-		for (int k = 0; k < j && this.canGrowInto(pLevel.getBlockState(blockpos)); k++) {
-			pLevel.setBlockAndUpdate(blockpos, pState.setValue(AGE, Integer.valueOf(i)));
-			blockpos = blockpos.relative(this.growthDirection);
-			i = Math.min(i + 1, 25);
-		}
-	}
-
-	@Override
-	public boolean canPlaceLiquid(@Nullable Player player, BlockGetter getter, BlockPos pos, BlockState state, Fluid fluid) {
-		return SimpleMultiloggedBlock.super.canPlaceLiquid(player, getter, pos, state, fluid);
+	protected boolean canGrowInto(BlockState pState) {
+		return pState.isAir();
 	}
 }
+

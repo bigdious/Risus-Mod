@@ -216,6 +216,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 		simpleBlock(RisusBlocks.NEURON_HEAD.get(), models().cross("neuron_head", Risus.prefix("block/neuron_head")).renderType("minecraft:cutout"));
 		simpleBlock(RisusBlocks.NEURON_STEM.get(), models().cross("neuron", Risus.prefix("block/neuron")).renderType("minecraft:cutout"));
+		simpleBlock(RisusBlocks.VEINS_END.get(), models().cross("veins_end", Risus.prefix("block/veins_end")).renderType("minecraft:cutout"));
+		simpleBlock(RisusBlocks.VEINS.get(), models().cross("veins", Risus.prefix("block/veins")).renderType("minecraft:cutout"));
 
 		simpleBlock(RisusBlocks.TISSUE.get());
 		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), texture("block/tissue"));

@@ -2,6 +2,8 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
+import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantBodyBlock;
+import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.util.RisusSkullType;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
@@ -126,10 +128,11 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> JOYFLAME_FIRE = BLOCKS.register("joyflame_fire", () -> new JoyflameFireBlock(Block.Properties.ofFullCopy(Blocks.FIRE)));
 
 	//big's trial
-	public static final DeferredBlock<GrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStemBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<RisusGrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStemBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<RisusGrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {});
+	public static final DeferredBlock<RisusGrowingPlantBodyBlock> VEINS = BLOCKS.register("veins", () -> new VeinsBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<RisusGrowingPlantHeadBlock> VEINS_END = BLOCKS.register("veins_end", () -> new VeinsEndBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.ofFullCopy(RisusBlocks.BLOODWEAVE.get())));
-	public static final DeferredBlock<GrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {
-	});
 	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.SCULK_VEIN)));
 	public static final DeferredBlock<MultifaceBlock> TEETH = BLOCKS.register("teeth", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion()));
 	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.ofFullCopy(Blocks.AIR).pushReaction(PushReaction.DESTROY).noOcclusion().sound(SoundType.SCULK)));

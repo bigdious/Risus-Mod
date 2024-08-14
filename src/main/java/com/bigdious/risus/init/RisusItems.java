@@ -94,6 +94,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> ZIT = ITEMS.register("zit", () -> new BlockItem(RisusBlocks.ZIT.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> CRYSTALLIZED_BOND = ITEMS.register("crystallized_bond", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> VEINS = ITEMS.register("veins", () -> new BlockItem(RisusBlocks.VEINS_END.get(), defaultWithRarity()));
 
 
 	//GRIMSTONE

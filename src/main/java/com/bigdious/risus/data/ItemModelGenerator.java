@@ -190,6 +190,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.JOYFLAME_LANTERN);
 		singleTex(RisusItems.JOYFLAME_TORCH);
 		singleTex(RisusItems.HEART_TRANSPLANT);
+		singleTex(RisusItems.VEINS);
 		singleTex(RisusItems.BIG_CHAIN);
 		generatedRenderType(RisusItems.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
 		singleTex(RisusItems.MEMORY1_ITEM);
@@ -197,6 +198,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusItems.TEETH);
+
 		nameableWeapon(RisusItems.NEURON_STEM.get(), "weapons/", "renamed_neuron");
 		singleTex(RisusItems.HAIR_FOLLICLES);
 
