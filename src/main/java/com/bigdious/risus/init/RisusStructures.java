@@ -259,7 +259,7 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(SANDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("sandy_maw")), 1)
+			Pair.of(StructurePoolElement.single(name("saendy_maw")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ENDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(

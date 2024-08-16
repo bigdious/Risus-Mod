@@ -53,6 +53,10 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 	}
+	@Override
+	public BlockState getStateForPlacement(LevelAccessor pLevel) {
+		return this.defaultBlockState().setValue(AGE, Integer.valueOf(pLevel.getRandom().nextInt(25)));
+	}
 
 	@Override
 	public FluidState getFluidState(BlockState state) {

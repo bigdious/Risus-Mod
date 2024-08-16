@@ -30,10 +30,10 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class BoomstickItem extends TieredItem {
+public class BoomstickItem extends  Item {
 
-	public BoomstickItem(int damage, Item.Properties pProperties){
-		super(RisusToolMaterials.GLUTTONY, pProperties);
+	public BoomstickItem( Item.Properties pProperties){
+		super(pProperties);
 	}
 	@Override
 	public boolean isEnchantable(ItemStack itemstack) {

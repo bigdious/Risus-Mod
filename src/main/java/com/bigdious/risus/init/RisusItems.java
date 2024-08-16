@@ -22,7 +22,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> RESEARCHERS_NOTES = ITEMS.register("researchers_notes", () -> new RisusBook(defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem(-1, defaultWithRarity().durability(64)));
+	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem( defaultWithRarity().durability(64)));
 	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(BLOOD)));
 	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD)));

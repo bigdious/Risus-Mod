@@ -1,4 +1,4 @@
-// 1.21	2024-08-11T18:06:47.9782416	Registries
+// 1.21	2024-08-16T15:00:17.5122968	Registries
 13c9212e923998bd25df006ccc5280915bb65eb0 data/risus/damage_type/gluttony.json
 4cb181e1361f009638f6dcb8d3e55b998557daa9 data/risus/damage_type/inexistence.json
 1079228b8ee45ed23c5792413308dc9aacb8fdfc data/risus/damage_type/melancholy.json
@@ -26,4 +26,4 @@ c882a328106086dfcd31bca22c4f0aae8abe69d6 data/risus/worldgen/template_pool/endy_
 5cbc467775ab36796f9fb29eaa09426db2231385 data/risus/worldgen/template_pool/family_tree.json
 1cb576fba3c62b4ff0e004326f500ceaa3b27c48 data/risus/worldgen/template_pool/flower_field.json
 685116ecfb8286b912f032ca20b05c0d4501d53e data/risus/worldgen/template_pool/grassy_maw.json
-2695b0897da84f18c0c7862c8cd9ba9f5facd728 data/risus/worldgen/template_pool/sandy_maw.json
+7e86422c77e81e08b39bfc9fefe302b1eacad554 data/risus/worldgen/template_pool/sandy_maw.json

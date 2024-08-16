@@ -102,9 +102,9 @@ public class RisusBlocks {
 	public static final DeferredBlock<SlabBlock> BONE_SLAB = BLOCKS.register("bone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 
 	public static final DeferredBlock<Block> LIVING_TISSUE = BLOCKS.register("living_tissue", () -> new Block(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
-	public static final DeferredBlock<WallBlock> ROTTED_TISSUE = BLOCKS.register("rotted_tissue", () -> new WallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
-	public static final DeferredBlock<WallBlock> DECOMPOSED_TISSUE = BLOCKS.register("decomposed_tissue", () -> new WallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
-	public static final DeferredBlock<WallBlock> DECAYED_TISSUE = BLOCKS.register("decayed_tissue", () -> new WallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
+	public static final DeferredBlock<WallBlock> ROTTED_TISSUE = BLOCKS.register("rotted_tissue", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
+	public static final DeferredBlock<WallBlock> DECOMPOSED_TISSUE = BLOCKS.register("decomposed_tissue", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
+	public static final DeferredBlock<WallBlock> DECAYED_TISSUE = BLOCKS.register("decayed_tissue", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<Block> EYE_ENDER = BLOCKS.register("eye_ender", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<Block> EYE_BLEACHED = BLOCKS.register("eye_bleached", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<Block> EYE_BLOODSHOT = BLOCKS.register("eye_bloodshot", () -> new ActuallyUseableDirectionalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
