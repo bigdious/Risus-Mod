@@ -36,8 +36,8 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		super(type, level);
 	}
 
-	public BloodwyrmBreathEntity(Level world, LivingEntity living) {
-		super(RisusEntities.BLOODWYRM_BREATH.get(),  world);
+	public BloodwyrmBreathEntity(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
+		super(RisusEntities.BLOODWYRM_BREATH.get(), owner, level, pPickupItemStack, null);
 		this.pickup = Pickup.DISALLOWED;
 	}
 
@@ -95,9 +95,8 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		if (this.shakeTime > 0) {
 			--this.shakeTime;
 		}
-
-		if (this.isInWaterOrRain() || blockstate.is(Blocks.POWDER_SNOW) || this.isInFluidType((fluidType, height) -> this.canFluidExtinguish(fluidType))) {
-			this.clearFire();
+		if (this.isInWaterOrRain()){
+			this.discard();
 		}
 
 		if (this.inGround && !flag) {

@@ -140,7 +140,7 @@ public class ThrownAxe extends AbstractArrow {
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
 		float f;
-		//10 is base damage of crescent, update if it changes
+
 		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().trident(this, entity1 == null ? this : entity1);
@@ -152,7 +152,8 @@ public class ThrownAxe extends AbstractArrow {
 
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
-		if (entity.hurt(damagesource, f)) {
+		//10 is base damage of crescent, update if it changes
+		if (entity.hurt(damagesource, 10+f)) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}
