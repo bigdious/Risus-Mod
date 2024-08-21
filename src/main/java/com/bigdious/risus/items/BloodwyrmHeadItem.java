@@ -36,6 +36,7 @@ public class BloodwyrmHeadItem extends Item {
 				if (validSlot != -1 && ammo.is(Items.DRAGON_BREATH)) {
 					itemstack.hurtAndBreak(-200, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					ammo.shrink(1);
+					player.spawnAtLocation(Items.GLASS_BOTTLE);
 					level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_EMPTY, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				}
 			}
@@ -57,7 +58,7 @@ public class BloodwyrmHeadItem extends Item {
 		if (count % 5 == 0) {
 			if (!level.isClientSide()) {
 				BloodwyrmBreathEntity breath = new BloodwyrmBreathEntity(level, player, stack);
-				breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+				breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 10F);
 				level.addFreshEntity(breath);
 				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 				player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, .5f, .75f);
