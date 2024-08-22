@@ -139,6 +139,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.HAND_OF_GREED);
 		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
+		singleTex(RisusItems.GUTS_BOAT);
 		singleTex(RisusItems.CONCENTRATION_CORE);
 		singleTex(RisusItems.CRYSTALLIZED_BOND);
 		singleTex(RisusItems.GLUTTONY_SCALES);

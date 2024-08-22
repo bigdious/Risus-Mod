@@ -23,6 +23,7 @@ public class RisusEntities {
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Angel>> ANGEL = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel"), EntityType.Builder.of(Angel::new, MobCategory.MONSTER).sized(0.75F, 2.0F), 0x000000, 0x8b0000);
 	public static final DeferredHolder<EntityType<?>, EntityType<RisusBoat>> BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
+	public static final DeferredHolder<EntityType<?>, EntityType<GutsBoat>> GUTS_BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "guts_boat"), EntityType.Builder.<GutsBoat>of(GutsBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
 	public static final DeferredHolder<EntityType<?>, EntityType<BloodwyrmBreathEntity>> BLOODWYRM_BREATH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodwyrm_breath"), EntityType.Builder.<BloodwyrmBreathEntity>of(BloodwyrmBreathEntity::new, MobCategory.MISC).sized(0.1F, 0.1F));
 	public static final DeferredHolder<EntityType<?>, EntityType<Holder>> HOLDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "holder"), EntityType.Builder.of(Holder::new, MobCategory.MONSTER).sized(0.7F, 0.5F), 0x000000, 0x8b0000);
 	public static final DeferredHolder<EntityType<?>, EntityType<Maw>> MAW = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "maw"), EntityType.Builder.of(Maw::new, MobCategory.MONSTER).sized(1.0F, 0.75F), 0x000000, 0x8b0000);

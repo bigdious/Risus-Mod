@@ -19,6 +19,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation MEMORY1 = register("memory1");
 
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
+	public static final ModelLayerLocation GUTS_BOAT = register("guts_boat");
 
 	private static ModelLayerLocation register(String name) {
 		return register(name, "main");

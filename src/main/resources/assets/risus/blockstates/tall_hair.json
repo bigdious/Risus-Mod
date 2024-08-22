@@ -22,7 +22,7 @@
       "model": "risus:block/tall_hair"
     },
     "facing=west": {
-      "model": "risus:block/tall_hair",
+      "model": "risus:block/tall_hair_gelled",
       "x": 90,
       "y": 270
     }

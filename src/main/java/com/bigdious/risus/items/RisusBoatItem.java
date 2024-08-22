@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.entity.GutsBoat;
 import com.bigdious.risus.entity.RisusBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -21,9 +22,11 @@ import java.util.List;
 public class RisusBoatItem extends Item {
 
 	private final RisusBoat.Type type;
+	private final boolean guts;
 
-	public RisusBoatItem(RisusBoat.Type type, Properties properties) {
+	public RisusBoatItem(boolean guts, RisusBoat.Type type, Properties properties) {
 		super(properties);
+		this.guts = guts;
 		this.type = type;
 	}
 
@@ -72,6 +75,6 @@ public class RisusBoatItem extends Item {
 	}
 
 	private RisusBoat getBoat(Level level, HitResult result) {
-		return new RisusBoat(level, result.getLocation().x(), result.getLocation().y(), result.getLocation().z());
+		return this.guts ? new GutsBoat(level, result.getLocation().x(), result.getLocation().y(), result.getLocation().z) : new RisusBoat(level, result.getLocation().x(), result.getLocation().y(), result.getLocation().z);
 	}
 }

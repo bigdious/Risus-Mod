@@ -15,10 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-//TODO MAYBE flamethrower change from entity shot to hitscan ala scepter of life (CHECK DISADVANTAGES)
 public class BloodwyrmHeadItem extends Item {
 
-		@Override
+	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
 		if (!player.isInWaterOrRain()) {
@@ -58,7 +57,7 @@ public class BloodwyrmHeadItem extends Item {
 		if (count % 5 == 0) {
 			if (!level.isClientSide()) {
 				BloodwyrmBreathEntity breath = new BloodwyrmBreathEntity(level, player, stack);
-				breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 10F);
+				breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
 				level.addFreshEntity(breath);
 				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 				player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, .5f, .75f);

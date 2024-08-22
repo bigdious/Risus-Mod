@@ -74,6 +74,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.BONDKNOT_FENCE.get());
 						output.accept(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 						output.accept(RisusItems.BONDKNOT_BOAT.get());
+						output.accept(RisusItems.GUTS_BOAT.get());
 
 						output.accept(RisusBlocks.CRYSTALLIZED_BONDS.get());
 						output.accept(RisusItems.CRYSTALLIZED_BOND.get());

@@ -21,6 +21,7 @@ public class RisusBoat extends Boat {
 
 	public RisusBoat(EntityType<? extends Boat> type, Level level) {
 		super(type, level);
+		this.blocksBuilding = true;
 	}
 
 	public RisusBoat(Level level, double x, double y, double z) {
@@ -32,7 +33,7 @@ public class RisusBoat extends Boat {
 	}
 
 	public RisusBoat.Type getRisusBoatType() {
-		return RisusBoat.Type.byId(this.entityData.get(BOAT_TYPE));
+		return RisusBoat.Type.byId(this.getEntityData().get(BOAT_TYPE));
 	}
 
 	@Override
@@ -43,10 +44,13 @@ public class RisusBoat extends Boat {
 	}
 
 	public void setRisusBoatType(RisusBoat.Type boatType) {
-		this.entityData.set(BOAT_TYPE, boatType.ordinal());
+		this.getEntityData().set(BOAT_TYPE, boatType.ordinal());
 	}
-
-
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(BOAT_TYPE, Type.BONDKNOT.ordinal());
+	}
 
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
@@ -59,6 +63,7 @@ public class RisusBoat extends Boat {
 			this.setRisusBoatType(RisusBoat.Type.getTypeFromString(compound.getString("Type")));
 		}
 	}
+
 
 	public enum Type {
 		BONDKNOT(RisusBlocks.BONDKNOT_PLANKS.get(), "bondknot");
@@ -84,12 +89,12 @@ public class RisusBoat extends Boat {
 		}
 
 		public static RisusBoat.Type byId(int id) {
-			RisusBoat.Type[] types = values();
-			if (id < 0 || id >= types.length) {
+			RisusBoat.Type[] aRisusBoatEntity$type = values();
+			if (id < 0 || id >= aRisusBoatEntity$type.length) {
 				id = 0;
 			}
 
-			return types[id];
+			return aRisusBoatEntity$type[id];
 		}
 
 		public static RisusBoat.Type getTypeFromString(String nameIn) {

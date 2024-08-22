@@ -1,6 +1,7 @@
 package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.client.model.entity.GutsBoatModel;
 import com.bigdious.risus.entity.RisusBoat;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -9,6 +10,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -24,10 +26,10 @@ import java.util.stream.Stream;
 public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 	private final Map<RisusBoat.Type, Pair<ResourceLocation, BoatModel>> boatResources;
 
-	public RisusBoatRenderer(EntityRendererProvider.Context context) {
+	public RisusBoatRenderer(EntityRendererProvider.Context context, boolean guts) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = Stream.of(RisusBoat.Type.values()).collect(ImmutableMap.toImmutableMap((type) -> type, (type) -> Pair.of(Risus.prefix(getTextureLocation(type)), this.createBoatModel(context, type))));
+		this.boatResources = Stream.of(RisusBoat.Type.values()).collect(ImmutableMap.toImmutableMap((type) -> type, (type) -> Pair.of(ResourceLocation.fromNamespaceAndPath(Risus.MODID, getTextureLocation(type, guts)), this.createBoatModel(context, type, guts))));
 	}
 
 	private static ModelLayerLocation createLocation(String path, String model) {
@@ -38,17 +40,18 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 		return createLocation("boat/" + pType.getName(), "main");
 	}
 
-	public static ModelLayerLocation createChestBoatModelName(RisusBoat.Type type) {
-		return createLocation("chest_boat/" + type.getName(), "main");
+	public static ModelLayerLocation createGutsBoatModelName(RisusBoat.Type type) {
+		return createLocation("guts_boat/" + type.getName(), "main");
 	}
 
-	private BoatModel createBoatModel(EntityRendererProvider.Context context, RisusBoat.Type type) {
-		ModelLayerLocation modellayerlocation = createBoatModelName(type);
-		return new BoatModel(context.bakeLayer(modellayerlocation));
+	private BoatModel createBoatModel(EntityRendererProvider.Context context, RisusBoat.Type type, boolean guts) {
+		ModelLayerLocation modellayerlocation = guts ? createGutsBoatModelName(type) : createBoatModelName(type);
+		ModelPart modelpart = context.bakeLayer(modellayerlocation);
+		return guts ? new GutsBoatModel(modelpart) : new BoatModel(context.bakeLayer(modellayerlocation));
 	}
 
-	private static String getTextureLocation(RisusBoat.Type type) {
-		return "textures/entity/boat/" + type.getName() + ".png";
+	private static String getTextureLocation(RisusBoat.Type type, boolean guts) {
+		return guts ? "textures/entity/guts_boat/" + type.getName() + ".png" : "textures/entity/boat/" + type.getName() + ".png";
 	}
 
 	@Override
@@ -79,7 +82,7 @@ public class RisusBoatRenderer extends EntityRenderer<RisusBoat> {
 		poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
 		boat.setupAnim(entity, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer vertexconsumer = bufferSource.getBuffer(boat.renderType(texture));
-		boat.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1);
+		boat.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, -1);
 		if (!entity.isUnderWater()) {
 			VertexConsumer vertexconsumer1 = bufferSource.getBuffer(RenderType.waterMask());
 			boat.waterPatch().render(poseStack, vertexconsumer1, packedLight, OverlayTexture.NO_OVERLAY);

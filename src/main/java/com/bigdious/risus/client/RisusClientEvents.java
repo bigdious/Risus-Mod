@@ -113,6 +113,7 @@ public class RisusClientEvents {
 	private static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		for (RisusBoat.Type boatType : RisusBoat.Type.values()) {
 			event.registerLayerDefinition(RisusBoatRenderer.createBoatModelName(boatType), BoatModel::createBodyModel);
+			event.registerLayerDefinition(RisusBoatRenderer.createGutsBoatModelName(boatType), GutsBoatModel::createBodyModel);
 		}
 		event.registerLayerDefinition(RisusModelLayers.ANGEL, AngelModel::create);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
@@ -143,7 +144,8 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 
-		event.registerEntityRenderer(RisusEntities.BOAT.get(), RisusBoatRenderer::new);
+		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));
+		event.registerEntityRenderer(RisusEntities.GUTS_BOAT.get(), (context) -> new RisusBoatRenderer(context, true));
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SKULL.get(), SkullBlockRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SIGN.get(), SignRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);

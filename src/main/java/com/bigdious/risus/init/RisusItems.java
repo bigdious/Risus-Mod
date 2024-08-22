@@ -42,7 +42,8 @@ public class RisusItems {
 
 	//SUMMONERS
 
-	public static final DeferredItem<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(RisusBoat.Type.BONDKNOT, defaultWithRarity()));
+	public static final DeferredItem<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, defaultWithRarity().stacksTo(1)));
+	public static final DeferredItem<Item> GUTS_BOAT = ITEMS.register("guts_boat", () -> new RisusBoatItem(true, RisusBoat.Type.BONDKNOT, defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultWithNoRarity()));
 
 	//ACTION BLOCKS
