@@ -55,7 +55,7 @@ public class GutsBoat extends RisusBoat implements HasCustomInventoryScreen, Con
 
 	@Override
 	protected float getSinglePassengerXOffset() {
-		return 0.17F;
+		return 0.18F;
 	}
 
 	@Override
