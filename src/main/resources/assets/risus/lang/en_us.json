@@ -75,6 +75,8 @@
   "block.risus.polished_grimstone": "Polished Grimstone",
   "block.risus.neuron": "Neuron",
   "block.risus.neuron_head": "Neuron",
+  "block.risus.veins": "Veins",
+  "block.risus.veins_end": "Veins",
   "block.risus.regen_rose": "Regeneration Rose",
   "block.risus.spreading_remains": "Spreading Remains",
   "block.risus.curved_ritual_block": "Curved Ritual Block",
@@ -112,6 +114,7 @@
 
   "item.risus.smile": "Smile",
   "item.risus.bondknot_boat": "Bondknot Boat",
+  "item.risus.guts_boat": "Bondknot Boat with Maw Guts",
   "item.risus.blood_feather": "Blood Feather",
   "item.risus.concentration_core": "Concentration Core",
   "item.risus.crystallized_bond": "Crystallized Bond",
