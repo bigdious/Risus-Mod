@@ -124,7 +124,7 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 			double d0 = (double) pPos.getX() + pRandom.nextDouble();
 			double d1 = (double) pPos.getY() + pRandom.nextDouble() * 0.5 + 0.5;
 			double d2 = (double) pPos.getZ() + pRandom.nextDouble();
-			pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+			pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
 		}
 		pLevel.scheduleTick(pPos, this, 10);
 	}

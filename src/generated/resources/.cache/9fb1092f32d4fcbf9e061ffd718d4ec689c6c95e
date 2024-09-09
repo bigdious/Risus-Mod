@@ -1,4 +1,4 @@
-// 1.21	2024-08-09T14:25:09.012023	Recipes
+// 1.21	2024-09-09T21:05:11.9832349	Recipes
 0b60466aa78683ab2ad1fdf2e60b9cdbb4963205 data/risus/advancement/recipes/alteration/ashen_remains.json
 b0a3deeed8d70207abbe88fd21d5cfe2a61f4171 data/risus/advancement/recipes/alteration/bloodweave.json
 f07bea113870f5f44c473bebee4762e019743635 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -58,6 +58,7 @@ e65ed41747fb7ef29b57342378ff56cced1c0d53 data/risus/advancement/recipes/building
 d93cec05f5c09071774cbb95aca64bd982a120d3 data/risus/advancement/recipes/building_blocks/grimstone_slab.json
 d88e150ff7364757c0bf047fced0d21231ff86c2 data/risus/advancement/recipes/building_blocks/grimstone_stairs.json
 f999f481d5b9a5a1a064eee793a2e3d185acf472 data/risus/advancement/recipes/building_blocks/linear_ritual_block.json
+cf01ed890c67cf3436434f4804dc53fc50eb4ad7 data/risus/advancement/recipes/building_blocks/organic_matter_block.json
 da6a499f7330b914af2c6bc0e06a1ccbada6d706 data/risus/advancement/recipes/building_blocks/polished_grimstone.json
 ac732fd4672074a5b55a6e97936402bb6a7e85dc data/risus/advancement/recipes/building_blocks/stripped_bondknot_wood.json
 7ab04d1d3f2af34761ce3f04a55751b7bbf4794f data/risus/advancement/recipes/combat/boomstick.json
@@ -165,6 +166,7 @@ abc0a00dabf6a9e6a7298c7d7a7faf360c9b56c2 data/risus/recipe/joyflame_campfire.jso
 5bdacb023206fc0592572f167d763dcb24326f00 data/risus/recipe/joyflame_torch.json
 305081d34461a2aa90a6289df76c7f4b2636bc33 data/risus/recipe/light_devourer.json
 5a050e85334c03102d1b5449aadfa512323cad11 data/risus/recipe/linear_ritual_block.json
+994dcb359b8deb8437356054c46d8849dc79faf1 data/risus/recipe/organic_matter_block.json
 736e665c16d7d9f88196163fe1770b3ef3e652c7 data/risus/recipe/polished_grimstone.json
 968abc9dcc810d89fc9c8c112583e1eb85edce9e data/risus/recipe/stripped_bondknot_wood.json
 c24b31f0b80393fcbe03c3af0ec4d6c1edcfe9f6 data/risus/recipe/tall_hair.json

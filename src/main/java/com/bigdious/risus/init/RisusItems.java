@@ -153,6 +153,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new BlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> ORGANIC_MATTER_BLOCK = ITEMS.register("organic_matter_block", () -> new BlockItem(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), defaultWithRarity()));
 
 
 	//MAW

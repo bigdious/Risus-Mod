@@ -1,4 +1,4 @@
-// 1.21	2024-08-14T22:25:28.8531402	Loot Tables
+// 1.21	2024-09-09T19:35:30.0485454	Loot Tables
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_table/blocks/ashen_remains.json
@@ -81,6 +81,7 @@ c318dcdced65070e0ac785c5b8dd1dc7093656e0 data/risus/loot_table/blocks/mirage_gra
 478ad3216cd18f9af2b53fc1f2d46942fd54fa3b data/risus/loot_table/blocks/mirage_sand.json
 66d514d529972579da35d203b4bab7cf2daeaf9f data/risus/loot_table/blocks/neuron.json
 89453a2330d4aa0a71361243c9f16af12a37b1ca data/risus/loot_table/blocks/neuron_head.json
+6e3a354c01154a2a6883adf48dcf129b8cc3a29c data/risus/loot_table/blocks/organic_matter_block.json
 ea992c368422c9067e7bcd7aa9dcf9671bddd897 data/risus/loot_table/blocks/polished_grimstone.json
 9a2ddc285afdba9b61bcc741ab6aed63c41998b0 data/risus/loot_table/blocks/popping_bondknot_log.json
 01368e43c12335e757a80aa22cf3a760c32754a6 data/risus/loot_table/blocks/popping_bondknot_wood.json

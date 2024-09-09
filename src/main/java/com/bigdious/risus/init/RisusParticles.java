@@ -35,7 +35,8 @@ public class RisusParticles {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> ALTERATION_FINISHED = PARTICLES.register("alteration_finished", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TOOTHICAL = PARTICLES.register("toothical", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RISUS_SOUL_PARTICLE = PARTICLES.register("risus_soul", () -> new SimpleParticleType(true));
-	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> ORGANIC_PARTICLE = PARTICLES.register("organic", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FIERY_ORGANIC_PARTICLE = PARTICLES.register("fiery_organic", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOCK_ORGANIC_PARTICLE = PARTICLES.register("block_organic", () -> new SimpleParticleType(true));
 
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> JOYFLAME = PARTICLES.register("joyflame", () -> new SimpleParticleType(false));
 

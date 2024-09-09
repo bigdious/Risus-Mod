@@ -60,7 +60,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 					double d3 = (double)pPos.getX() + pRandom.nextDouble() * 0.1F;
 					double d8 = (double)pPos.getY() + pRandom.nextDouble();
 					double d13 = (double)pPos.getZ() + pRandom.nextDouble();
-					pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d3, d8, d13, 0.0, 0.0, 0.0);
+					pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d3, d8, d13, 0.0, 0.0, 0.0);
 				}
 			}
 
@@ -69,7 +69,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 					double d4 = (double)(pPos.getX() + 1) - pRandom.nextDouble() * 0.1F;
 					double d9 = (double)pPos.getY() + pRandom.nextDouble();
 					double d14 = (double)pPos.getZ() + pRandom.nextDouble();
-					pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d4, d9, d14, 0.0, 0.0, 0.0);
+					pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d4, d9, d14, 0.0, 0.0, 0.0);
 				}
 			}
 
@@ -78,7 +78,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 					double d5 = (double)pPos.getX() + pRandom.nextDouble();
 					double d10 = (double)pPos.getY() + pRandom.nextDouble();
 					double d15 = (double)pPos.getZ() + pRandom.nextDouble() * 0.1F;
-					pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d5, d10, d15, 0.0, 0.0, 0.0);
+					pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d5, d10, d15, 0.0, 0.0, 0.0);
 				}
 			}
 
@@ -87,7 +87,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 					double d6 = (double)pPos.getX() + pRandom.nextDouble();
 					double d11 = (double)pPos.getY() + pRandom.nextDouble();
 					double d16 = (double)(pPos.getZ() + 1) - pRandom.nextDouble() * 0.1F;
-					pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d6, d11, d16, 0.0, 0.0, 0.0);
+					pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d6, d11, d16, 0.0, 0.0, 0.0);
 				}
 			}
 
@@ -96,7 +96,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 					double d7 = (double)pPos.getX() + pRandom.nextDouble();
 					double d12 = (double)(pPos.getY() + 1) - pRandom.nextDouble() * 0.1F;
 					double d17 = (double)pPos.getZ() + pRandom.nextDouble();
-					pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d7, d12, d17, 0.0, 0.0, 0.0);
+					pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d7, d12, d17, 0.0, 0.0, 0.0);
 				}
 			}
 		} else {
@@ -104,7 +104,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 				double d0 = (double)pPos.getX() + pRandom.nextDouble();
 				double d1 = (double)pPos.getY() + pRandom.nextDouble() * 0.5 + 0.5;
 				double d2 = (double)pPos.getZ() + pRandom.nextDouble();
-				pLevel.addParticle(RisusParticles.ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+				pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
 			}
 		}
 	}

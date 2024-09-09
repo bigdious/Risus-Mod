@@ -83,7 +83,8 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.EmissiveProvider::new);
 		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.ORGANIC_PARTICLE.get(), FieryOrganicParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), FieryOrganicParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.BLOCK_ORGANIC_PARTICLE.get(), BlockOrganicParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 	}

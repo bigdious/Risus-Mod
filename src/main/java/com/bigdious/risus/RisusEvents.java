@@ -119,7 +119,7 @@ public class RisusEvents {
 		if (source instanceof Player player) {
 			if (player.hasEffect(RisusMobEffects.TOOTHLUSTER)) {
 				if (!event.getEntity().level().isClientSide()) {
-					PacketDistributor.sendToPlayersTrackingEntity(event.getEntity(), new CreateCritParticlePacket(event.getEntity().getId(), 1, RisusParticles.TOOTHICAL.get()));
+					PacketDistributor.sendToPlayersTrackingEntity(event.getEntity(), new CreateCritParticlePacket(event.getEntity().getId(), 1, event.getEntity().getEyeHeight(), RisusParticles.TOOTHICAL.get()));
 				}
 			}
 		}

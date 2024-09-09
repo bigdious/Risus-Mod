@@ -20,38 +20,11 @@ public class RisusBlocks {
 
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Risus.MODID);
 
+	//FAMILY TREE
+
 	public static final BlockSetType BONDKNOT_SET = new BlockSetType(Risus.prefix("bondknot").toString());
 	public static final WoodType BONDKNOT_TYPE = WoodType.register(new WoodType(Risus.prefix("bondknot").toString(), BONDKNOT_SET));
-
-	public static final DeferredBlock<Block> ALTERATION_CATALYST = BLOCKS.register("alteration_catalyst", () -> new AlterationCatalystBlock(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
-	public static final DeferredBlock<Block> ANGEL_ALTAR = BLOCKS.register("angel_altar", () -> new AngelAltar(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
-	public static final DeferredBlock<Block> DEPTH_VASE = BLOCKS.register("depth_vase", () -> new DepthVaseBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
-	public static final DeferredBlock<Block> LAUGHING_STALK = BLOCKS.register("laughing_stalk", () -> new BiomeBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
-	public static final DeferredBlock<Block> ASHEN_REMAINS = BLOCKS.register("ashen_remains", () -> new AshenRemainsBlock(Block.Properties.ofFullCopy(Blocks.SOUL_SOIL)));
-	public static final DeferredBlock<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new RemainsBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK)));
-	public static final DeferredBlock<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN)));
-	public static final DeferredBlock<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT).noOcclusion()));
-	public static final DeferredBlock<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
-	public static final DeferredBlock<Block> BIG_CHAIN = BLOCKS.register("big_chain", () -> new BigChainBlock(Block.Properties.ofFullCopy(Blocks.CHAIN)));
-
-	public static final DeferredBlock<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
-	public static final DeferredBlock<Block> MIRAGE_GRASS_BLOCK = BLOCKS.register("mirage_grass_block", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.GRASS_BLOCK).noOcclusion(), Blocks.GRASS_BLOCK));
-	public static final DeferredBlock<Block> MIRAGE_SAND = BLOCKS.register("mirage_sand", () -> new MirageBlock(Block.Properties.of().noOcclusion(), Blocks.SAND));
-	public static final DeferredBlock<Block> MIRAGE_END_STONE = BLOCKS.register("mirage_end_stone", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion(), Blocks.END_STONE));
-	public static final DeferredBlock<Block> MIRAGE_NETHERRACK = BLOCKS.register("mirage_netherrack", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK).noOcclusion(), Blocks.NETHERRACK));
-	public static final DeferredBlock<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
-	public static final DeferredBlock<Block> IMITATION_SCALEPLATE = BLOCKS.register("imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
-	public static final DeferredBlock<Block> FLOWERING_IMITATION_SCALEPLATE = BLOCKS.register("flowering_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
-	public static final DeferredBlock<Block> BUDDING_IMITATION_SCALEPLATE = BLOCKS.register("budding_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
-	public static final DeferredBlock<Block> FLATTENED_SCALES_BLOCK = BLOCKS.register("flattened_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
-	public static final DeferredBlock<Block> FLATTENED_IMITATION_SCALES_BLOCK = BLOCKS.register("flattened_imitation_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
-	public static final DeferredBlock<Block> ZIT = BLOCKS.register("zit", () -> new ZitBlock(Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak()));
-
 	public static final DeferredBlock<Block> CRYSTALLIZED_BONDS = BLOCKS.register("crystallized_bonds", () -> new CrystallizedBondsBlock(Block.Properties.of().mapColor(MapColor.NONE).instrument(NoteBlockInstrument.HAT).noOcclusion().sound(SoundType.GLASS).strength(0.25F)));
-	public static final DeferredBlock<Block> BLOODWEAVE = BLOCKS.register("bloodweave", () -> new BloodweaveBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn()));
-	public static final DeferredBlock<Block> BLOODWYRM_HEAD = BLOCKS.register("bloodwyrm_head", () -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak()));
-	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = BLOCKS.register("bloodwyrm_wall_head", () -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak()));
-
 	public static final DeferredBlock<RotatedPillarBlock> BONDKNOT_LOG = BLOCKS.register("bondknot_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
 	public static final DeferredBlock<RotatedPillarBlock> BONDKNOT_WOOD = BLOCKS.register("bondknot_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
 	public static final DeferredBlock<RotatedPillarBlock> POPPING_BONDKNOT_LOG = BLOCKS.register("popping_bondknot_log", () -> new PoppingBondknotBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
@@ -71,13 +44,71 @@ public class RisusBlocks {
 	public static final DeferredBlock<WallSignBlock> BONDKNOT_WALL_SIGN = BLOCKS.register("bondknot_wall_sign", () -> new RisusWallSignBlock(RisusBlocks.BONDKNOT_TYPE, BlockBehaviour.Properties.ofFullCopy(BONDKNOT_PLANKS.get()).noOcclusion().noCollission().forceSolidOn()));
 	public static final DeferredBlock<CeilingHangingSignBlock> BONDKNOT_HANGING_SIGN = BLOCKS.register("bondknot_hanging_sign", () -> new RisusCeilingHangingSignBlock(BlockBehaviour.Properties.ofFullCopy(BONDKNOT_PLANKS.get()).noOcclusion().noCollission().forceSolidOn(), RisusBlocks.BONDKNOT_TYPE));
 	public static final DeferredBlock<WallHangingSignBlock> BONDKNOT_WALL_HANGING_SIGN = BLOCKS.register("bondknot_wall_hanging_sign", () -> new RisusWallHangingSignBlock(BlockBehaviour.Properties.ofFullCopy(BONDKNOT_PLANKS.get()).noOcclusion().forceSolidOn(), RisusBlocks.BONDKNOT_TYPE));
+	public static final DeferredBlock<Block> BABY_RIBCAGE = BLOCKS.register("baby_ribcage", () -> new BabyRibcageBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion().forceSolidOn()));
+	public static final DeferredBlock<Block> RIBCAGE = BLOCKS.register("ribcage", () -> new RibcageBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion()));
 
+	//UTILITY
+
+	public static final DeferredBlock<Block> ALTERATION_CATALYST = BLOCKS.register("alteration_catalyst", () -> new AlterationCatalystBlock(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
+	public static final DeferredBlock<Block> ANGEL_ALTAR = BLOCKS.register("angel_altar", () -> new AngelAltar(Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion()));
+	public static final DeferredBlock<Block> DEPTH_VASE = BLOCKS.register("depth_vase", () -> new DepthVaseBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
+	public static final DeferredBlock<Block> LAUGHING_STALK = BLOCKS.register("laughing_stalk", () -> new BiomeBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F)));
+	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn()));
+	public static final DeferredBlock<Block> DISPLAY_NOTCH = BLOCKS.register("display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+	//MAW STUFF
+
+	public static final DeferredBlock<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
+	public static final DeferredBlock<Block> MIRAGE_GRASS_BLOCK = BLOCKS.register("mirage_grass_block", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.GRASS_BLOCK).noOcclusion(), Blocks.GRASS_BLOCK));
+	public static final DeferredBlock<Block> MIRAGE_SAND = BLOCKS.register("mirage_sand", () -> new MirageBlock(Block.Properties.of().noOcclusion(), Blocks.SAND));
+	public static final DeferredBlock<Block> MIRAGE_END_STONE = BLOCKS.register("mirage_end_stone", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion(), Blocks.END_STONE));
+	public static final DeferredBlock<Block> MIRAGE_NETHERRACK = BLOCKS.register("mirage_netherrack", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK).noOcclusion(), Blocks.NETHERRACK));
+	public static final DeferredBlock<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final DeferredBlock<Block> IMITATION_SCALEPLATE = BLOCKS.register("imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final DeferredBlock<Block> FLOWERING_IMITATION_SCALEPLATE = BLOCKS.register("flowering_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final DeferredBlock<Block> BUDDING_IMITATION_SCALEPLATE = BLOCKS.register("budding_imitation_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
+	public static final DeferredBlock<Block> FLATTENED_SCALES_BLOCK = BLOCKS.register("flattened_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
+	public static final DeferredBlock<Block> FLATTENED_IMITATION_SCALES_BLOCK = BLOCKS.register("flattened_imitation_scales_block", () -> new ActuallyUseableDirectionalBlock(Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn()));
+
+	//REMAINS
+
+	public static final DeferredBlock<Block> ASHEN_REMAINS = BLOCKS.register("ashen_remains", () -> new AshenRemainsBlock(Block.Properties.ofFullCopy(Blocks.SOUL_SOIL)));
+	public static final DeferredBlock<Block> SMILING_REMAINS = BLOCKS.register("smiling_remains", () -> new RemainsBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK)));
+	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.SCULK_VEIN)));
+	public static final DeferredBlock<Block> ORGANIC_MATTER_BLOCK = BLOCKS.register("organic_matter_block", () -> new OrganicMatterBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noOcclusion()));
+
+	//MISC FULLBLOCK
+
+	public static final DeferredBlock<Block> LAUGHING_OBSIDIAN = BLOCKS.register("laughing_obsidian", () -> new LaughingObsidianBlock(Block.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN)));
+	public static final DeferredBlock<RotatedPillarBlock> ENGRAVED_BASALT = BLOCKS.register("engraved_basalt", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT).noOcclusion()));
+	public static final DeferredBlock<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+	public static final DeferredBlock<Block> SCAB = BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
+	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = BLOCKS.register("coagulated_blood_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn()));
+	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.ofFullCopy(Blocks.AIR).pushReaction(PushReaction.DESTROY).noOcclusion().sound(SoundType.SCULK)));
+
+	//NONFULLBLOCK DECO
+
+	public static final DeferredBlock<Block> BIG_CHAIN = BLOCKS.register("big_chain", () -> new BigChainBlock(Block.Properties.ofFullCopy(Blocks.CHAIN)));
+	public static final DeferredBlock<Block> ZIT = BLOCKS.register("zit", () -> new ZitBlock(Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak()));
+	public static final DeferredBlock<Block> BLOODWEAVE = BLOCKS.register("bloodweave", () -> new BloodweaveBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn()));
+	public static final DeferredBlock<Block> BLOODWYRM_HEAD = BLOCKS.register("bloodwyrm_head", () -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak()));
+	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = BLOCKS.register("bloodwyrm_wall_head", () -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak()));
+
+	//PLANTS
+
+	public static final DeferredBlock<MultifaceBlock> TEETH = BLOCKS.register("teeth", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion()));
 	public static final DeferredBlock<Block> HEART_TRANSPLANT = BLOCKS.register("heart_transplant", () -> new HeartTransplantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().forceSolidOn().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final DeferredBlock<Block> REGEN_ROSE = BLOCKS.register("regen_rose", () -> new RegenRoseBlock(MobEffects.REGENERATION::value, 1, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final DeferredBlock<Block> POTTED_HEART_TRANSPLANT = BLOCKS.register("potted_heart_transplant", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HEART_TRANSPLANT, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 	public static final DeferredBlock<Block> POTTED_REGEN_ROSE = BLOCKS.register("potted_regen_rose", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REGEN_ROSE, BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
-	public static final DeferredBlock<Block> BABY_RIBCAGE = BLOCKS.register("baby_ribcage", () -> new BabyRibcageBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion().forceSolidOn()));
-	public static final DeferredBlock<Block> RIBCAGE = BLOCKS.register("ribcage", () -> new RibcageBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion()));
+	public static final DeferredBlock<RisusGrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStemBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<RisusGrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {});
+	public static final DeferredBlock<RisusGrowingPlantBodyBlock> VEINS = BLOCKS.register("veins", () -> new VeinsBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final DeferredBlock<RisusGrowingPlantHeadBlock> VEINS_END = BLOCKS.register("veins_end", () -> new VeinsEndBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
+
+	//GRIMSTONE
+
 	public static final DeferredBlock<RotatedPillarBlock> GRIMSTONE = BLOCKS.register("grimstone", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 	public static final DeferredBlock<Block> GRIMSTONE_BRICKS = BLOCKS.register("grimstone_bricks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<Block> CRACKED_GRIMSTONE_BRICKS = BLOCKS.register("cracked_grimstone_bricks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
@@ -91,6 +122,8 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = BLOCKS.register("chiseled_grimstone", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())) {
 	});
 
+	//TISSUE SKIN EYES AND HAIR
+
 	public static final DeferredBlock<DecomposingTissueBlock> TISSUE = BLOCKS.register("tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<StairBlock> TISSUE_STAIRS = BLOCKS.register("tissue_stairs", () -> new RisusStairBlock(() -> TISSUE.get().defaultBlockState(), Block.Properties.ofFullCopy(RisusBlocks.TISSUE.get())));
 	public static final DeferredBlock<SlabBlock> TISSUE_SLAB = BLOCKS.register("tissue_slab", () -> new RisusSlabBlock(Block.Properties.ofFullCopy(RisusBlocks.TISSUE.get())));
@@ -100,7 +133,6 @@ public class RisusBlocks {
 	public static final DeferredBlock<WallBlock> BONE_WALL = BLOCKS.register("bone_wall", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 	public static final DeferredBlock<StairBlock> BONE_STAIRS = BLOCKS.register("bone_stairs", () -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 	public static final DeferredBlock<SlabBlock> BONE_SLAB = BLOCKS.register("bone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
-
 	public static final DeferredBlock<Block> LIVING_TISSUE = BLOCKS.register("living_tissue", () -> new Block(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<WallBlock> ROTTED_TISSUE = BLOCKS.register("rotted_tissue", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<WallBlock> DECOMPOSED_TISSUE = BLOCKS.register("decomposed_tissue", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
@@ -118,29 +150,18 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> HAIRY_SKIN = BLOCKS.register("hairy_skin", () -> new HairySkinBlock(BlockBehaviour.Properties.ofFullCopy(RisusBlocks.TISSUE.get())));
 	public static final DeferredBlock<Block> TALL_HAIR = BLOCKS.register("tall_hair", () -> new RisusTallGrassBlock(Block.Properties.ofFullCopy(Blocks.TALL_GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)));
 	public static final DeferredBlock<RotatedPillarBlock> BUNDLE_OF_HAIR = BLOCKS.register("bundle_of_hair", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK).ignitedByLava()));
-	public static final DeferredBlock<Block> SCAB = BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
-	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = BLOCKS.register("coagulated_blood_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn()));
 
+	//CINDERGLEE
 	public static final DeferredBlock<Block> JOYFLAME_TORCH = BLOCKS.register("joyflame_torch", () -> new ModdedTorchBlock(Block.Properties.ofFullCopy(Blocks.TORCH)));
 	public static final DeferredBlock<Block> JOYFLAME_WALL_TORCH = BLOCKS.register("joyflame_wall_torch", () -> new ModdedWallTorchBlock(Block.Properties.ofFullCopy(Blocks.TORCH)));
 	public static final DeferredBlock<Block> JOYFLAME_CAMPFIRE = BLOCKS.register("joyflame_campfire", () -> new RisusCampfireBlock(true, 2, Block.Properties.ofFullCopy(Blocks.CAMPFIRE)));
 	public static final DeferredBlock<Block> JOYFLAME_LANTERN = BLOCKS.register("joyflame_lantern", () -> new LanternBlock(Block.Properties.ofFullCopy(Blocks.LANTERN)));
 	public static final DeferredBlock<Block> JOYFLAME_FIRE = BLOCKS.register("joyflame_fire", () -> new JoyflameFireBlock(Block.Properties.ofFullCopy(Blocks.FIRE)));
-
-	//big's trial
-	public static final DeferredBlock<RisusGrowingPlantBodyBlock> NEURON_STEM = BLOCKS.register("neuron", () -> new NeuronStemBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final DeferredBlock<RisusGrowingPlantHeadBlock> NEURON_HEAD = BLOCKS.register("neuron_head", () -> new NeuronHeadBlock(Block.Properties.ofFullCopy(Blocks.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)) {});
-	public static final DeferredBlock<RisusGrowingPlantBodyBlock> VEINS = BLOCKS.register("veins", () -> new VeinsBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final DeferredBlock<RisusGrowingPlantHeadBlock> VEINS_END = BLOCKS.register("veins_end", () -> new VeinsEndBlock(Block.Properties.ofFullCopy(Blocks.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
-	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.ofFullCopy(RisusBlocks.BLOODWEAVE.get())));
-	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = BLOCKS.register("spreading_remains", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.SCULK_VEIN)));
-	public static final DeferredBlock<MultifaceBlock> TEETH = BLOCKS.register("teeth", () -> new SpreadingRemainsBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion()));
-	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.ofFullCopy(Blocks.AIR).pushReaction(PushReaction.DESTROY).noOcclusion().sound(SoundType.SCULK)));
 	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = BLOCKS.register("curved_ritual_block", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 	public static final DeferredBlock<Block> LINEAR_RITUAL_BLOCK = BLOCKS.register("linear_ritual_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));
 
+	//FLUIDS
+
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new LiquidBlock(RisusFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
-	public static final DeferredBlock<Block> DISPLAY_NOTCH = BLOCKS.register("display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
-	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
 }

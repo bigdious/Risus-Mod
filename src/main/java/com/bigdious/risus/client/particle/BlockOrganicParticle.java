@@ -1,14 +1,16 @@
 package com.bigdious.risus.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
-public class FieryOrganicParticle extends BaseOrganicParticle {
-	protected FieryOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ, SpriteSet spriteSet) {
-		super(pLevel, pX, pY, pZ, 8, 0.5F, spriteSet);
+public class BlockOrganicParticle extends BaseOrganicParticle {
+	protected BlockOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ, SpriteSet spriteSet) {
+		super(pLevel, pX, pY, pZ, 8, 0F, spriteSet);
 	}
 
 
@@ -30,10 +32,11 @@ public class FieryOrganicParticle extends BaseOrganicParticle {
 			double pYSpeed,
 			double pZSpeed
 		) {
-			FieryOrganicParticle organicParticle = new FieryOrganicParticle(pLevel, pX, pY, pZ, this.sprite);
-			organicParticle.pickSprite(this.sprite);
-			return organicParticle;
+			BlockOrganicParticle blockOrganicParticle = new BlockOrganicParticle(pLevel, pX, pY, pZ, this.sprite);
+			blockOrganicParticle.pickSprite(this.sprite);
+			return blockOrganicParticle;
 		}
 	}
 
 }
+

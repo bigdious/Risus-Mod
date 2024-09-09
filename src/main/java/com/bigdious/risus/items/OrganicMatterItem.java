@@ -5,6 +5,7 @@ import com.bigdious.risus.blocks.OrganicMatterableBlock;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
+import com.bigdious.risus.init.RisusParticles;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -118,13 +119,13 @@ public class OrganicMatterItem extends Item {
 			BlockPos blockpos = organicMatterableBlock.getOMBParticlePos(pPos);
 			switch (organicMatterableBlock.getOMBType()) {
 				case NEIGHBOR_SPREADER:
-					ParticleUtils.spawnParticles(pLevel, blockpos, pData * 3, 3.0, 1.0, false, ParticleTypes.HAPPY_VILLAGER);
+					ParticleUtils.spawnParticles(pLevel, blockpos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 					break;
 				case GROWER:
-					ParticleUtils.spawnParticleInBlock(pLevel, blockpos, pData, ParticleTypes.HAPPY_VILLAGER);
+					ParticleUtils.spawnParticleInBlock(pLevel, blockpos, pData, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 			}
 		} else if (blockstate.is(Blocks.WATER)) {
-			ParticleUtils.spawnParticles(pLevel, pPos, pData * 3, 3.0, 1.0, false, ParticleTypes.HAPPY_VILLAGER);
+			ParticleUtils.spawnParticles(pLevel, pPos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 		}
 	}
 	public static Optional<BlockState> getWaxed(BlockState state) {

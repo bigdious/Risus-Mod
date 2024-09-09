@@ -100,6 +100,14 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusBlocks.STRIPPED_BONDKNOT_LOG.get()))
 				.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.ORGANIC_MATTER_BLOCK.get(), 1)
+			.pattern("###")
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusItems.ORGANIC_MATTER.get()))
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_PLANKS.get(), 4)
 				.requires(Ingredient.of(ItemTagGenerator.BONDKNOT_LOGS))
 				.unlockedBy("has_item", has(ItemTagGenerator.BONDKNOT_LOGS))

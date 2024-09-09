@@ -35,6 +35,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.LAUGHING_STALK.get());
 
 						output.accept(RisusItems.ORGANIC_MATTER.get());
+						output.accept(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 						output.accept(RisusBlocks.SMILING_REMAINS.get());
 						output.accept(RisusBlocks.ASHEN_REMAINS.get());
 						output.accept(RisusBlocks.SPREADING_REMAINS.get());

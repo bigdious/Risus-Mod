@@ -15,7 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 
-public record CreateCritParticlePacket(int entityID, int duration,
+public record CreateCritParticlePacket(int entityID, int duration, float entityEyeHeight ,
 									   ParticleOptions particle) implements CustomPacketPayload {
 
 	public static final Type<CreateCritParticlePacket> TYPE = new Type<>(Risus.prefix("create_crit_particle"));
@@ -23,7 +23,7 @@ public record CreateCritParticlePacket(int entityID, int duration,
 
 
 	public CreateCritParticlePacket(RegistryFriendlyByteBuf buf) {
-		this(buf.readInt(), buf.readInt(), ParticleTypes.STREAM_CODEC.decode(buf));
+		this(buf.readInt(), buf.readInt(),buf.readFloat(), ParticleTypes.STREAM_CODEC.decode(buf));
 	}
 
 
