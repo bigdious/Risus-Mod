@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 
 
+import com.bigdious.risus.blocks.BiomeBlock;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -43,6 +45,7 @@ import static net.minecraft.world.level.block.RotatedPillarBlock.AXIS;
 public class RisusStructures {
 	//based off of Undergarden's UGStructures class
 	public static final DeferredRegister<StructureType<?>> STRUCTURES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Risus.MODID);
+	public static final ResourceKey<StructureProcessorList> BIOME_BLOCK_ACTIVATION = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "biome_block_activation"));
 	public static final ResourceKey<Structure> ALTERATION_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureSet> ALTERATION_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureTemplatePool> ALTERATION_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
@@ -238,7 +241,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 52445123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(25, 4, RandomSpreadType.LINEAR, 1029739264)));
+			new RandomSpreadStructurePlacement(10, 3, RandomSpreadType.LINEAR, 1029739264)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 1341435524)));

@@ -218,5 +218,18 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> type1, BlockEntityType<E> type2, BlockEntityTicker<? super E> ticker) {
 		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
 	}
+	@Override
+	protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+		if (!pLevel.isClientSide) {
+			boolean flag = pState.getValue(SPREADING);
+			if (flag != pLevel.hasNeighborSignal(pPos)) {
+				if (flag) {
+					pLevel.scheduleTick(pPos, this, 4);
+				} else {
+					pLevel.scheduleTick(pPos, this, 4);
+				}
+			}
+		}
+	}
 }
 
