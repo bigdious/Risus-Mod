@@ -15,7 +15,8 @@ public class LootGenerator extends LootTableProvider {
 	public LootGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
 		super(output, Set.of(), List.of(
 				new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK),
-				new LootTableProvider.SubProviderEntry(EntityLootTables::new, LootContextParamSets.ENTITY)
+				new LootTableProvider.SubProviderEntry(EntityLootTables::new, LootContextParamSets.ENTITY),
+				new LootTableProvider.SubProviderEntry(ContainerLootTables::new, LootContextParamSets.CHEST)
 		), provider);
 	}
 }

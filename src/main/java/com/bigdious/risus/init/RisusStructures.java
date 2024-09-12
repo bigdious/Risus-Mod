@@ -76,6 +76,8 @@ public class RisusStructures {
 	public static final ResourceKey<StructureTemplatePool> FLOWER_FIELD_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureProcessorList> FLOWER_FIELD_WITHERING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field_withering"));
 
+	public static final ResourceKey<StructureTemplatePool> TRIGGER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "trigger"));
+
 	public static void bootstrapStructures(BootstrapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
@@ -197,7 +199,7 @@ public class RisusStructures {
 			pools.getOrThrow(ANGEL_ALTAR_POOL),
 			Optional.empty(),
 			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-2)),
+			ConstantHeight.of(VerticalAnchor.absolute(-1)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
@@ -241,7 +243,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 52445123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(10, 3, RandomSpreadType.LINEAR, 1029739264)));
+			new RandomSpreadStructurePlacement(10, 3, RandomSpreadType.LINEAR, 529739264)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 1341435524)));
@@ -280,6 +282,11 @@ public class RisusStructures {
 		context.register(FLOWER_FIELD_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("flower_field"),processors.getOrThrow(FLOWER_FIELD_WITHERING)), 1)
 		), StructureTemplatePool.Projection.TERRAIN_MATCHING));
+
+		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
+			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1)
+		), StructureTemplatePool.Projection.RIGID));
 	}
 	public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
 		context.register(ALTERATION_SITE_DEGRADATION, new StructureProcessorList(List.of(

@@ -19,7 +19,7 @@
     }
   },
   "start_height": {
-    "absolute": -2
+    "absolute": -1
   },
   "start_pool": "risus:angel_altar",
   "step": "surface_structures",
