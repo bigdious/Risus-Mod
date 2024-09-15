@@ -287,7 +287,8 @@ public class RisusStructures {
 
 		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1)
+			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1),
+			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 	}
 	public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
