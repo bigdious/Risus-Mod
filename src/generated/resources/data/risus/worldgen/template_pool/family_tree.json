@@ -8,6 +8,24 @@
         "projection": "rigid"
       },
       "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:family_tree/1",
+        "processors": "risus:family_tree_popping",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:family_tree/2",
+        "processors": "risus:family_tree_popping",
+        "projection": "rigid"
+      },
+      "weight": 1
     }
   ],
   "fallback": "minecraft:empty"

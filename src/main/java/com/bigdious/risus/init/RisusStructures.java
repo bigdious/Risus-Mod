@@ -272,7 +272,9 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FAMILY_TREE_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1)
+			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1),
+			Pair.of(StructurePoolElement.single(name("family_tree/1"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1),
+			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -317,6 +319,12 @@ public class RisusStructures {
 		context.register(FAMILY_TREE_POPPING, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
 				//I am guilty of warcrimes right here
+				//Tissue Transform
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.TISSUE.get().defaultBlockState()
+				),
 
 				//Wood transform
 				new ProcessorRule(

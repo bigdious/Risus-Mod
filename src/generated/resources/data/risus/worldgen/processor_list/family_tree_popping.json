@@ -5,6 +5,28 @@
       "rules": [
         {
           "input_predicate": {
+            "block": "risus:living_tissue",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "risus:tissue",
+            "Properties": {
+              "east": "none",
+              "fluid": "empty",
+              "north": "none",
+              "south": "none",
+              "up": "true",
+              "waterlogged": "true",
+              "west": "none"
+            }
+          }
+        },
+        {
+          "input_predicate": {
             "block": "risus:bondknot_wood",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.01

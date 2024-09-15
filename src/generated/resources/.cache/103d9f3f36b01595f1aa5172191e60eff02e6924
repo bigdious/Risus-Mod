@@ -1,10 +1,10 @@
-// 1.21	2024-09-12T21:22:03.3898411	Registries
+// 1.21	2024-09-15T16:38:32.6698212	Registries
 13c9212e923998bd25df006ccc5280915bb65eb0 data/risus/damage_type/gluttony.json
 4cb181e1361f009638f6dcb8d3e55b998557daa9 data/risus/damage_type/inexistence.json
 1079228b8ee45ed23c5792413308dc9aacb8fdfc data/risus/damage_type/melancholy.json
 3a4c2794ec341b1fd8850afa8ed6c65f7a56ebe7 data/risus/worldgen/biome/coalification.json
 3425ca0e6fa590dba6fce40c4a48c796f5c2096c data/risus/worldgen/processor_list/alteration_site_degradation.json
-77671f4e845df055c065034bc4801651921a5140 data/risus/worldgen/processor_list/family_tree_popping.json
+6db3b5ed77d96c33bde9e22f715133ed783ad4d2 data/risus/worldgen/processor_list/family_tree_popping.json
 3ef5768ed627e09a65df12a94ef310b9e4b988ee data/risus/worldgen/processor_list/flower_field_withering.json
 fbf1e355ed00bbdd7b8e2d88a536d3e7dc684f38 data/risus/worldgen/structure/alteration_site.json
 2d573a070893c7913ebb0a847ec41a2d3e824a90 data/risus/worldgen/structure/angel_altar.json
@@ -23,7 +23,7 @@ a0f89f320c2b620ccb7e227b358686ecaf733986 data/risus/worldgen/structure_set/sandy
 b639cc5b617ae653a647be086a7fb6e2bf5a7e71 data/risus/worldgen/template_pool/alteration_site.json
 fd25ecec548743d79a6a830456a87efb30614bde data/risus/worldgen/template_pool/angel_altar.json
 c882a328106086dfcd31bca22c4f0aae8abe69d6 data/risus/worldgen/template_pool/endy_maw.json
-5cbc467775ab36796f9fb29eaa09426db2231385 data/risus/worldgen/template_pool/family_tree.json
+49f8a15835c1c86a82f7f9c6d2dcbcf57a098bfc data/risus/worldgen/template_pool/family_tree.json
 1cb576fba3c62b4ff0e004326f500ceaa3b27c48 data/risus/worldgen/template_pool/flower_field.json
 685116ecfb8286b912f032ca20b05c0d4501d53e data/risus/worldgen/template_pool/grassy_maw.json
 7e86422c77e81e08b39bfc9fefe302b1eacad554 data/risus/worldgen/template_pool/sandy_maw.json
