@@ -122,7 +122,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = BLOCKS.register("chiseled_grimstone", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())) {
 	});
 
-	//TISSUE SKIN EYES AND HAIR
+	//TISSUE, BONE, SKIN, EYES AND HAIR
 
 	public static final DeferredBlock<DecomposingTissueBlock> TISSUE = BLOCKS.register("tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<StairBlock> TISSUE_STAIRS = BLOCKS.register("tissue_stairs", () -> new RisusStairBlock(() -> TISSUE.get().defaultBlockState(), Block.Properties.ofFullCopy(RisusBlocks.TISSUE.get())));
@@ -130,6 +130,9 @@ public class RisusBlocks {
 	public static final DeferredBlock<WallBlock> ROTTING_TISSUE = BLOCKS.register("rotting_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.ROTTING, Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<WallBlock> DECOMPOSING_TISSUE = BLOCKS.register("decomposing_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECOMPOSING, Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
 	public static final DeferredBlock<WallBlock> DECAYING_TISSUE = BLOCKS.register("decaying_tissue", () -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.DECAYING, Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
+	public static final DeferredBlock<RotatedPillarBlock> FULL_BONE_BLOCK = BLOCKS.register("full_bone_block", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
+	public static final DeferredBlock<StairBlock> FULL_BONE_STAIRS = BLOCKS.register("full_bone_stairs", () -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
+	public static final DeferredBlock<SlabBlock> FULL_BONE_SLAB = BLOCKS.register("full_bone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(RisusBlocks.FULL_BONE_BLOCK.get())));
 	public static final DeferredBlock<WallBlock> BONE_WALL = BLOCKS.register("bone_wall", () -> new RisusWallBlock(Block.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 	public static final DeferredBlock<StairBlock> BONE_STAIRS = BLOCKS.register("bone_stairs", () -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 	public static final DeferredBlock<SlabBlock> BONE_SLAB = BLOCKS.register("bone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));

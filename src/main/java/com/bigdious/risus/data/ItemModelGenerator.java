@@ -113,6 +113,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 		toBlock(RisusBlocks.BONE_STAIRS.get());
 		toBlock(RisusBlocks.BONE_SLAB.get());
+		toBlock(RisusBlocks.FULL_BONE_STAIRS.get());
+		toBlock(RisusBlocks.FULL_BONE_SLAB.get());
+		toBlock(RisusBlocks.FULL_BONE_BLOCK.get());
 
 		toBlock(RisusBlocks.EYE_ENDER.get());
 		toBlock(RisusBlocks.EYE_BLEACHED.get());

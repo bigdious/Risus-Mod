@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "risus:block/bone_block_side",
+    "side": "risus:block/bone_block_side"
+  }
+}

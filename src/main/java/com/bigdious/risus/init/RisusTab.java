@@ -125,6 +125,9 @@ public class RisusTab {
 						output.accept(RisusBlocks.BONE_WALL.get());
 						output.accept(RisusBlocks.BONE_STAIRS.get());
 						output.accept(RisusBlocks.BONE_SLAB.get());
+						output.accept(RisusBlocks.FULL_BONE_BLOCK.get());
+						output.accept(RisusBlocks.FULL_BONE_STAIRS.get());
+						output.accept(RisusBlocks.FULL_BONE_SLAB.get());
 
 						output.accept(RisusBlocks.TEETH.get());
 						output.accept(RisusItems.TOOTHKNOCKER.get());

@@ -1,4 +1,4 @@
-// 1.21	2024-09-12T21:10:25.629707	Loot Tables
+// 1.21	2024-09-16T20:42:58.8323768	Loot Tables
 20474a9ffc166c4ae3d863411cab6606cbef43d1 data/risus/loot_table/angel_altar_1.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
@@ -52,6 +52,9 @@ c0bb3bcc86044f545418770a66de418f9a567c33 data/risus/loot_table/blocks/flattened_
 919ce802a368b36ce4f8703b94e617787a5ca43d data/risus/loot_table/blocks/flattened_scales_block.json
 6a102d45f4922be27d077e47296fc3b48594118c data/risus/loot_table/blocks/fleshy_skin.json
 500d95171b0032a957f53bf0d507eda2f9c3089a data/risus/loot_table/blocks/flowering_imitation_scaleplate.json
+9ed9517d8536ca5dfd4278db782a8677b7d1a2c6 data/risus/loot_table/blocks/full_bone_block.json
+52c64f9e8035fbae755974246817373705464bf9 data/risus/loot_table/blocks/full_bone_slab.json
+d9efb97fe27f9ed432f3cfb8398d28d79a2f05dc data/risus/loot_table/blocks/full_bone_stairs.json
 c6017f17c73b2e6e918b265c7df0d0a16ea853ed data/risus/loot_table/blocks/gluttony_scaleplate.json
 a6a1244fd95622ea9607bfbec50ec0d7396ab4b5 data/risus/loot_table/blocks/grimstone.json
 43a9cbbefc8b41f0b4ddd85760856fc8fd023981 data/risus/loot_table/blocks/grimstone_bricks.json

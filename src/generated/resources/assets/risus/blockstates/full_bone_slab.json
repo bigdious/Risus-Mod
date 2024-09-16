@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "risus:block/full_bone_slab"
+    },
+    "type=double": {
+      "model": "risus:block/bone_block"
+    },
+    "type=top": {
+      "model": "risus:block/full_bone_slab_top"
+    }
+  }
+}

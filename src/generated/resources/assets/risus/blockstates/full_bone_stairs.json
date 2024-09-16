@@ -1,0 +1,824 @@
+{
+  "variants": {
+    "facing=east,fluid=blood,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=blood,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=east,fluid=blood,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=blood,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=east,fluid=blood,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs"
+    },
+    "facing=east,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=empty,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=empty,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=east,fluid=empty,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=empty,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=east,fluid=empty,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs"
+    },
+    "facing=east,fluid=empty,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=empty,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=empty,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=empty,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=empty,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=east,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=east,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs"
+    },
+    "facing=east,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=east,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=east,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs"
+    },
+    "facing=east,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=blood,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=blood,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=blood,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=empty,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=empty,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=empty,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=empty,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=empty,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=south,fluid=blood,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=south,fluid=blood,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=south,fluid=blood,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=south,fluid=empty,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=south,fluid=empty,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=empty,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=empty,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=empty,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=south,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=south,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner"
+    },
+    "facing=south,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer"
+    },
+    "facing=south,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=blood,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=blood,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=blood,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=blood,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=empty,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=empty,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=empty,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=lava,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=lava,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,half=bottom,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,half=bottom,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=bottom,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=inner_left": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=inner_right": {
+      "model": "risus:block/full_bone_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,shape=outer_left": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,fluid=water,half=top,shape=outer_right": {
+      "model": "risus:block/full_bone_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,fluid=water,half=top,shape=straight": {
+      "model": "risus:block/full_bone_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    }
+  }
+}

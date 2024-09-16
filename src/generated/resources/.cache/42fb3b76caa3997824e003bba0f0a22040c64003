@@ -1,4 +1,4 @@
-// 1.21	2024-09-09T19:35:30.0435501	Risus Item Models
+// 1.21	2024-09-16T20:42:58.8166564	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -61,6 +61,9 @@ c3b6162d362fbbc5855d5d6b4c8624830d8a7f33 assets/risus/models/item/eye_golden.jso
 c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scales_block.json
 3bc38e51ed584679a51f10e9c8983d430b1e46d0 assets/risus/models/item/fleshy_skin.json
 66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
+a265ff829c8ebd0d0935c42805872988b0f1ce5a assets/risus/models/item/full_bone_block.json
+bc0961010c8e94f8a8076fbfa550d1af954f76b8 assets/risus/models/item/full_bone_slab.json
+5c32504781d5a2b6878c1a436f548084711298dc assets/risus/models/item/full_bone_stairs.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/gluttony_scaleplate.json
 64407bfe9021930d75aab764c3f2652e47e2b9aa assets/risus/models/item/gluttony_scales.json
 cf809d4f60040c6c19f177f9fe3a690fadd1af28 assets/risus/models/item/grimstone.json

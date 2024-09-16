@@ -120,6 +120,9 @@ public class RisusItems {
 	public static final DeferredItem<Item> ROTTING_TISSUE = ITEMS.register("rotting_tissue", () -> new BlockItem(RisusBlocks.ROTTING_TISSUE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DECOMPOSING_TISSUE = ITEMS.register("decomposing_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSING_TISSUE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DECAYING_TISSUE = ITEMS.register("decaying_tissue", () -> new BlockItem(RisusBlocks.DECAYING_TISSUE.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> FULL_BONE_BLOCK = ITEMS.register("full_bone_block", () -> new BlockItem(RisusBlocks.FULL_BONE_BLOCK.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> FULL_BONE_STAIRS = ITEMS.register("full_bone_stairs", () -> new BlockItem(RisusBlocks.FULL_BONE_STAIRS.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> FULL_BONE_SLAB = ITEMS.register("full_bone_slab", () -> new BlockItem(RisusBlocks.FULL_BONE_SLAB.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BONE_STAIRS = ITEMS.register("bone_stairs", () -> new BlockItem(RisusBlocks.BONE_STAIRS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BONE_SLAB = ITEMS.register("bone_slab", () -> new BlockItem(RisusBlocks.BONE_SLAB.get(), defaultWithRarity()));

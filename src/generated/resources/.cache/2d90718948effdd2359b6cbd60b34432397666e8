@@ -1,4 +1,4 @@
-// 1.21	2024-09-09T19:35:30.0535436	Risus blockstates and models
+// 1.21	2024-09-16T21:05:41.8595995	Risus blockstates and models
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -47,6 +47,9 @@ a4d9a17fc34edf01da7929518cce89457cbeb55d assets/risus/blockstates/eye_golden.jso
 2a243c7764935f55427dbff5d56a80698f074e21 assets/risus/blockstates/flattened_imitation_scales_block.json
 f068b60ae1d3b1e4e81f2b8c975876c476cf62e3 assets/risus/blockstates/flattened_scales_block.json
 ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.json
+a0e2e65d05f5d9e83c1892d939207d147cb11b54 assets/risus/blockstates/full_bone_block.json
+95e202abfbb13628076da66c1963a56ec11bee47 assets/risus/blockstates/full_bone_slab.json
+b905f64eeb004125c3f0d73dfb7bd1beb2cac549 assets/risus/blockstates/full_bone_stairs.json
 1f463d973c1d6849035de5e8006483425d81783b assets/risus/blockstates/grimstone.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json
 0a740a6b8074b3d00dda9ef650be2768c3092a8b assets/risus/blockstates/grimstone_bricks_slab.json
@@ -148,6 +151,13 @@ ff7841ba6d523e79dfa98fc199ab5c5248631e3f assets/risus/models/block/coagulated_bl
 bfa697fc85b0b8008ed1d9ff214e898baeada6b4 assets/risus/models/block/cracked_grimstone_bricks.json
 d73118566362fbc4f2ac70ef9a444991202cc036 assets/risus/models/block/curved_ritual_block.json
 c764c4ae060afc94619618152825520cd07855f6 assets/risus/models/block/darkness.json
+cdd7d7277f4fcaacd3642ef48634b22fb8c74515 assets/risus/models/block/full_bone_block.json
+478f0439de78448bf54c7fe1abd7858eab5a77b6 assets/risus/models/block/full_bone_block_horizontal.json
+8f6ea9bc6297a78ee952cb553c403fb9993a4752 assets/risus/models/block/full_bone_slab.json
+6b40ac04aa1561a8a22271b04ea8e06e7c4c9d2e assets/risus/models/block/full_bone_slab_top.json
+8e1523ad2a7c0dba18da4c768ca72fa008da120b assets/risus/models/block/full_bone_stairs.json
+ce958c040d8ef339c20de7ec0ab222d70560235d assets/risus/models/block/full_bone_stairs_inner.json
+e84fa082c14be0a27003685c280d8ddd0cba1ffa assets/risus/models/block/full_bone_stairs_outer.json
 33057f977bd46161422304ee8043e0ea1e28db59 assets/risus/models/block/grimstone.json
 b50a2827be14d5417ca5b1ff0f1f4ca36af153f8 assets/risus/models/block/grimstone_bricks.json
 2927018df91cf18e3d8a5a082c8eacb8bdeabc04 assets/risus/models/block/grimstone_bricks_slab.json
