@@ -54,11 +54,8 @@ public class VeinsEndBlock extends RisusGrowingPlantHeadBlock implements SimpleM
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
-	}
-	@Override
-	public BlockState getStateForPlacement(LevelAccessor pLevel) {
-		return this.defaultBlockState().setValue(AGE, Integer.valueOf(pLevel.getRandom().nextInt(25)));
+		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
+			.setValue(AGE, Integer.valueOf(context.getLevel().getRandom().nextInt(25)));
 	}
 	@Override
 	public FluidState getFluidState(BlockState state) {

@@ -132,6 +132,41 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.STONY_PEAKS
 		);
 
+		tag(RisusTags.Biomes.HAS_GREAT_BODY).add(
+			Biomes.BADLANDS,
+			Biomes.BAMBOO_JUNGLE,
+			Biomes.BIRCH_FOREST,
+			Biomes.CHERRY_GROVE,
+			Biomes.DARK_FOREST,
+			Biomes.DESERT,
+			Biomes.ERODED_BADLANDS,
+			Biomes.FOREST,
+			Biomes.GROVE,
+			Biomes.ICE_SPIKES,
+			Biomes.JUNGLE,
+			Biomes.MANGROVE_SWAMP,
+			Biomes.MEADOW,
+			Biomes.MUSHROOM_FIELDS,
+			Biomes.OLD_GROWTH_BIRCH_FOREST,
+			Biomes.OLD_GROWTH_PINE_TAIGA,
+			Biomes.OLD_GROWTH_SPRUCE_TAIGA,
+			Biomes.PLAINS,
+			Biomes.SAVANNA,
+			Biomes.SAVANNA_PLATEAU,
+			Biomes.SNOWY_PLAINS,
+			Biomes.SNOWY_SLOPES,
+			Biomes.SNOWY_TAIGA,
+			Biomes.SPARSE_JUNGLE,
+			Biomes.SUNFLOWER_PLAINS,
+			Biomes.SWAMP,
+			Biomes.TAIGA,
+			Biomes.WINDSWEPT_FOREST,
+			Biomes.WINDSWEPT_GRAVELLY_HILLS,
+			Biomes.WINDSWEPT_HILLS,
+			Biomes.WINDSWEPT_SAVANNA,
+			Biomes.WOODED_BADLANDS
+		);
+
 		tag(RisusTags.Biomes.HAS_FLOWER_FIELD).add(
 			Biomes.FLOWER_FOREST
 		);

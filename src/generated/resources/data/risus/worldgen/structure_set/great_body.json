@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 838347612,
+    "separation": 10,
+    "spacing": 20,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "risus:great_body",
+      "weight": 1
+    }
+  ]
+}

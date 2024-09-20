@@ -1,8 +1,9 @@
-// 1.21	2024-08-09T15:54:50.9082679	Tags for minecraft:worldgen/biome mod id risus
+// 1.21	2024-09-20T15:28:43.6041762	Tags for minecraft:worldgen/biome mod id risus
 8c78e30679c8c4c93d5c7429dd458c1afe981190 data/risus/tags/worldgen/biome/has_structure/alteration_site.json
 e29593f32e33230d9bcabc88dab510ed5e74a854 data/risus/tags/worldgen/biome/has_structure/angel_altar.json
 59b749045bbc74f00161d31f6b1976cce62b156c data/risus/tags/worldgen/biome/has_structure/endy_maw.json
 8c78e30679c8c4c93d5c7429dd458c1afe981190 data/risus/tags/worldgen/biome/has_structure/family_tree.json
 4301fee991060a44225e5c74bedfd95e386538e1 data/risus/tags/worldgen/biome/has_structure/flower_field.json
 28a3012251ef3e3210a100d9a2de83e321c41477 data/risus/tags/worldgen/biome/has_structure/grassy_maw.json
+8c78e30679c8c4c93d5c7429dd458c1afe981190 data/risus/tags/worldgen/biome/has_structure/great_body.json
 f3ef2895c49e29111297e950661e5bc71a79989e data/risus/tags/worldgen/biome/has_structure/sandy_maw.json

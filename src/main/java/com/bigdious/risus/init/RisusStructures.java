@@ -71,6 +71,11 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> ANGEL_ALTAR_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel_altar"));
 	public static final ResourceKey<StructureTemplatePool> ANGEL_ALTAR_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel_altar"));
 
+	public static final ResourceKey<Structure> GREAT_BODY = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
+	public static final ResourceKey<StructureSet> GREAT_BODY_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
+	public static final ResourceKey<StructureTemplatePool> GREAT_BODY_A_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body_a"));
+	public static final ResourceKey<StructureTemplatePool> GREAT_BODY_B_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body_b"));
+
 	public static final ResourceKey<Structure> FLOWER_FIELD = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureSet> FLOWER_FIELD_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureTemplatePool> FLOWER_FIELD_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
@@ -208,6 +213,29 @@ public class RisusStructures {
 			LiquidSettings.IGNORE_WATERLOGGING
 		));
 
+		context.register(GREAT_BODY, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_GREAT_BODY),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
+					))
+				),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(GREAT_BODY_A_POOL),
+			Optional.empty(),
+			5,
+			ConstantHeight.of(VerticalAnchor.absolute(-33)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
+
 		context.register(FLOWER_FIELD, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_FLOWER_FIELD),
@@ -248,6 +276,9 @@ public class RisusStructures {
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 1341435524)));
 
+		context.register(GREAT_BODY_SET, new StructureSet(structures.getOrThrow(GREAT_BODY),
+			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 838347612)));
+
 		context.register(FLOWER_FIELD_SET, new StructureSet(structures.getOrThrow(FLOWER_FIELD),
 			new RandomSpreadStructurePlacement(21, 20, RandomSpreadType.TRIANGULAR, 29213393)));
 	}
@@ -279,6 +310,15 @@ public class RisusStructures {
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("angel_altar/0")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(GREAT_BODY_A_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("great_body_a/0")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(GREAT_BODY_B_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("great_body_b/0")), 1),
+			Pair.of(StructurePoolElement.single(name("great_body_b/0_connector")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FLOWER_FIELD_POOL, new StructureTemplatePool(emptyPool, List.of(

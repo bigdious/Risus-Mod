@@ -26,6 +26,7 @@ public class RisusTags {
 		public static final TagKey<Biome> HAS_ENDY_MAW = tag("has_structure/endy_maw");
 		public static final TagKey<Biome> HAS_FAMILY_TREE = tag("has_structure/family_tree");
 		public static final TagKey<Biome> HAS_ANGEL_ALTAR = tag("has_structure/angel_altar");
+		public static final TagKey<Biome> HAS_GREAT_BODY = tag("has_structure/great_body");
 		public static final TagKey<Biome> HAS_FLOWER_FIELD = tag("has_structure/flower_field");
 
 		private static TagKey<Biome> tag(String name) {
