@@ -48,6 +48,22 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING))
 					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES)))
 		);
+		register.accept(RisusLootTables.GREAT_BODY,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3,6))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusItems.FULL_BONE_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
+					.add(LootItem.lootTableItem(RisusItems.NEURON_STEM).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
+					.add(LootItem.lootTableItem(RisusItems.BLOODWEAVE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
+					.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE))
+					.add(LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE)))
+		);
 
 	}
 }

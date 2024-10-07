@@ -4,6 +4,15 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "risus:great_body_b/0",
+        "processors": "risus:great_body_degradation",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_b/0_connector",
         "processors": {
           "processors": []
         },
@@ -14,7 +23,36 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:great_body_b/0_connector",
+        "location": "risus:great_body_b/1",
+        "processors": "risus:great_body_degradation",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_b/1_connector",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_b/2",
+        "processors": "risus:great_body_degradation",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_b/2_connector",
         "processors": {
           "processors": []
         },

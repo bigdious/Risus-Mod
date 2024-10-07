@@ -17,6 +17,7 @@ public class RisusLootTables {
 	// Chest loot
 	public static final ResourceKey<LootTable> FAMILY_TREE = register("family_tree_1");
 	public static final ResourceKey<LootTable> ANGEL_ALTAR = register("angel_altar_1");
+	public static final ResourceKey<LootTable> GREAT_BODY = register("great_body_1");
 
 	private static ResourceKey<LootTable> register(String id) {
 		return register(ResourceKey.create(Registries.LOOT_TABLE, Risus.prefix(id)));

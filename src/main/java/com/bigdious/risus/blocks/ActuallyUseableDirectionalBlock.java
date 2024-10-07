@@ -5,6 +5,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.Nullable;
@@ -37,6 +39,14 @@ public class ActuallyUseableDirectionalBlock extends DirectionalBlock {
 			}
 		}
 		return null;
+	}
+	@Override
+	protected BlockState rotate(BlockState pState, Rotation pRot) {
+		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+	}
+	@Override
+	protected BlockState mirror(BlockState pState, Mirror mirror) {
+		return pState.setValue(FACING, mirror.mirror(pState.getValue(FACING)));
 	}
 
 	@Override

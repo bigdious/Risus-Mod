@@ -1,4 +1,4 @@
-// 1.21	2024-09-16T20:42:58.8323768	Loot Tables
+// 1.21	2024-10-07T10:27:30.4874531	Loot Tables
 20474a9ffc166c4ae3d863411cab6606cbef43d1 data/risus/loot_table/angel_altar_1.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
@@ -119,3 +119,4 @@ ac15bf48d7a30e86f1de03e9bbe197893f6617b2 data/risus/loot_table/entities/lover.js
 1e71f8b3f09e60c0a00986d030e4b8fd78308bcc data/risus/loot_table/entities/stalker.json
 9c044ca39df2290290f20d8be7518f5730e62f15 data/risus/loot_table/entities/weaver.json
 5d4243e5971e8984b32dbd1d4f754248e27e1ad0 data/risus/loot_table/family_tree_1.json
+ce25b5facafd88f16cdf7ed517ba87b74bd17ddc data/risus/loot_table/great_body_1.json

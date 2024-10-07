@@ -4,9 +4,25 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "risus:great_body_a/0",
-        "processors": {
-          "processors": []
-        },
+        "processors": "risus:great_body_degradation",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_a/1",
+        "processors": "risus:great_body_degradation",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:great_body_a/2",
+        "processors": "risus:great_body_degradation",
         "projection": "rigid"
       },
       "weight": 1

@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -72,6 +73,7 @@ public class BloodweaveBlock extends PipeBlock implements SimpleMultiloggedBlock
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
 		entity.makeStuckInBlock(state, new Vec3(0.65D, 0.75F, 0.65D));
 	}
+
 }
 
 
