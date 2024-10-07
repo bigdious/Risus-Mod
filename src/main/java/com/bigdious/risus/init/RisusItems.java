@@ -24,18 +24,19 @@ public class RisusItems {
 	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 4, -2F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem( defaultWithRarity().durability(64)));
 	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(BLOOD)));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD)));
 	public static final DeferredItem<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", () -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), defaultWithRarity().stacksTo(1).craftRemainder(Items.BUCKET)));
 	public static final DeferredItem<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(RisusBlocks.DARKNESS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = ITEMS.register("bloodwyrm_head_weapon", () -> new BloodwyrmHeadItem(RisusItems.defaultWithRarity().durability(1000)));
+	public static final DeferredItem<Item> ANGEL_WINGS = ITEMS.register("angel_wings", () -> new AngelWings(RisusItems.defaultWithRarity().durability(513)));
 
 	//CONSUMABLES
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(10).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
-	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).build();
+	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).fast().build();
 	public static final DeferredItem<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 	public static final DeferredItem<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity().food(ORGANIC_FOOD)));
 

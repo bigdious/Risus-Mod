@@ -14,10 +14,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -34,6 +31,10 @@ public class BoomstickItem extends  Item {
 
 	public BoomstickItem( Item.Properties pProperties){
 		super(pProperties);
+	}
+	@Override
+	public boolean isValidRepairItem(ItemStack pToRepair, ItemStack pRepair) {
+		return pRepair.is(Items.TNT);
 	}
 	@Override
 	public boolean isEnchantable(ItemStack itemstack) {

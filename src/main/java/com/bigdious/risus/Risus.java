@@ -1,18 +1,23 @@
 package com.bigdious.risus;
 
 import com.bigdious.risus.client.RisusClientEvents;
+import com.bigdious.risus.client.render.layer.AngelWingsLayer;
 import com.bigdious.risus.data.*;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -57,6 +62,7 @@ public class Risus {
 		if (dist.isClient()) {
 			RisusClientEvents.initEvents(bus);
 		}
+
 	}
 
 	public void registerPackets(RegisterPayloadHandlersEvent event) {

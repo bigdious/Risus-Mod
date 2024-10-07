@@ -1,5 +1,6 @@
 package com.bigdious.risus;
 
+import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
@@ -7,8 +8,11 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.ParticleUtils;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
@@ -33,7 +37,9 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
@@ -46,6 +52,7 @@ public class RisusEvents {
 		bus.addListener(RisusEvents::registerSpawnPlacements);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::registerPotionRecipes);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -127,5 +134,18 @@ public class RisusEvents {
 	public static OrganicMatterEvent fireOrganicMatterEvent(@Nullable Player player, Level level, BlockPos pos, BlockState state, ItemStack stack) {
 		return NeoForge.EVENT_BUS.post(new OrganicMatterEvent(player, level, pos, state, stack));
 	}
+
+	private static void addExBurnParticles(EntityTickEvent.Pre event) {
+		Entity entity = event.getEntity();
+		if (entity instanceof LivingEntity living) {
+			if (living.tickCount % 5 == 0 && living.level().isClientSide() && living.hasEffect(RisusMobEffects.EXBURN)) {
+					for (int i = 0; i < 2; i++) {
+					living.level().addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 0.0, 0.0, 0.0);
+				}
+			}
+		}
+	}
+
+
 
 }

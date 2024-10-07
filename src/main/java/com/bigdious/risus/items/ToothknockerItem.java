@@ -36,6 +36,10 @@ public class ToothknockerItem extends SwordItem {
 	public ToothknockerItem(Tier tier, Item.Properties properties) {
 		super(tier, properties);
 	}
+	@Override
+	public boolean isValidRepairItem(ItemStack pToRepair, ItemStack pRepair) {
+		return pRepair.is(RisusItems.GLUTTONY_SCALES);
+	}
 
 
 	public boolean canAttackBlock(BlockState p_43291_, Level p_43292_, BlockPos p_43293_, Player p_43294_) {
@@ -54,7 +58,7 @@ public class ToothknockerItem extends SwordItem {
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
 		if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
-			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER, 0, 0));
+			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER, 0, 0, false, false, false));
 			player.getOffhandItem().hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			Level level = player.level();
@@ -67,7 +71,7 @@ public class ToothknockerItem extends SwordItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand pHand) {
 		ItemStack itemstack = player.getItemInHand(pHand);
-		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
+		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1 || player.isFallFlying() || player.isInWater()) {
 			return InteractionResultHolder.fail(itemstack);
 		} else {
 

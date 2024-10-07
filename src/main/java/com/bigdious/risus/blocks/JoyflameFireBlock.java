@@ -127,7 +127,7 @@ public class JoyflameFireBlock extends SoulFireBlock {
 	@Override
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
 		if (!level.isClientSide() && entity instanceof LivingEntity living && living.isAlive() && (living.tickCount % 100 == 0 || !living.hasEffect(RisusMobEffects.EXBURN))) {
-			living.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600));
+			living.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 0, false, false, true));
 		}
 	}
 }

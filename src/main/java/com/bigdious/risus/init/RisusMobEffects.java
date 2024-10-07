@@ -20,4 +20,5 @@ public class RisusMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> PLEASURE = MOB_EFFECTS.register("pleasure", () -> new PleasureEffect(MobEffectCategory.HARMFUL, 0x009900));
 	public static final DeferredHolder<MobEffect, MobEffect> TOOTHLUSTER = MOB_EFFECTS.register("toothluster", () -> new ToothlusterEffect(MobEffectCategory.BENEFICIAL, 16762624, 3.0D).addAttributeModifier(Attributes.ATTACK_DAMAGE, Risus.prefix("toothluster_damage"), 1.0D, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 	public static final DeferredHolder<MobEffect, MobEffect> EXBURN = MOB_EFFECTS.register("existential_burn", () -> new ExBurnEffect(MobEffectCategory.HARMFUL, 0x990000));
+	public static final DeferredHolder<MobEffect, MobEffect> BLOODCLOGGED = MOB_EFFECTS.register("bloodclogged", () -> new BloodcloggedEffect(MobEffectCategory.HARMFUL, 0x990000).addAttributeModifier(Attributes.MAX_HEALTH, Risus.prefix("bloodclogged_health"), -1.0D, AttributeModifier.Operation.ADD_VALUE));
 }

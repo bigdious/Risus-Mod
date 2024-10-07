@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.RisusCampfireBlockEntity;
+import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -8,6 +9,9 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -64,7 +68,14 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(FLUIDLOGGED).getFluid().defaultFluidState();
 	}
-
+	@Override
+	protected void entityInside(BlockState pState, Level level, BlockPos pPos, Entity entity) {
+		if (pState.getValue(LIT) && entity instanceof LivingEntity) {
+			if (!level.isClientSide() && entity instanceof LivingEntity living && living.isAlive() && (living.tickCount % 100 == 0 || !living.hasEffect(RisusMobEffects.EXBURN))) {
+				living.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 0, false, false, true));
+			}
+		}
+	}
 	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
 		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
@@ -108,24 +119,26 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 	}
 	@Override
 	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
-		if (pRandom.nextInt(24) == 0) {
-			pLevel.playLocalSound(
-				(double) pPos.getX() + 0.5,
-				(double) pPos.getY() + 0.5,
-				(double) pPos.getZ() + 0.5,
-				SoundEvents.FIRE_AMBIENT,
-				SoundSource.BLOCKS,
-				1.0F + pRandom.nextFloat(),
-				pRandom.nextFloat() * 0.7F + 0.3F,
-				false
-			);
+		if (pState.getValue(LIT)) {
+			if (pRandom.nextInt(24) == 0) {
+				pLevel.playLocalSound(
+					(double) pPos.getX() + 0.5,
+					(double) pPos.getY() + 0.5,
+					(double) pPos.getZ() + 0.5,
+					SoundEvents.FIRE_AMBIENT,
+					SoundSource.BLOCKS,
+					1.0F + pRandom.nextFloat(),
+					pRandom.nextFloat() * 0.7F + 0.3F,
+					false
+				);
+			}
+			for (int i = 0; i < 2; i++) {
+				double d0 = (double) pPos.getX() + pRandom.nextDouble();
+				double d1 = (double) pPos.getY() + pRandom.nextDouble() * 0.5 + 0.5;
+				double d2 = (double) pPos.getZ() + pRandom.nextDouble();
+				pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+			}
+			pLevel.scheduleTick(pPos, this, 10);
 		}
-		for (int i = 0; i < 2; i++) {
-			double d0 = (double) pPos.getX() + pRandom.nextDouble();
-			double d1 = (double) pPos.getY() + pRandom.nextDouble() * 0.5 + 0.5;
-			double d2 = (double) pPos.getZ() + pRandom.nextDouble();
-			pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
-		}
-		pLevel.scheduleTick(pPos, this, 10);
 	}
 }

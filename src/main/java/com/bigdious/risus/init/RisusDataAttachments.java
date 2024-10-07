@@ -12,4 +12,4 @@ public class RisusDataAttachments {
 	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, Risus.MODID);
 
 	public static final DeferredHolder<AttachmentType<?>, AttachmentType<ExBurnAttachment>> EX_BURN = ATTACHMENT_TYPES.register("ex_burn", () -> AttachmentType.builder(ExBurnAttachment::new).serialize(ExBurnAttachment.CODEC).build());
-}
+	}

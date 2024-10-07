@@ -8,6 +8,24 @@
         "class": "com/bigdious/risus/RisusEnumExtensions",
         "field": "BLOOD"
       }
+    },
+    {
+      "enum": "net/minecraft/client/gui/Gui$HeartType",
+      "name": "RISUS_EXBURN",
+      "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "method": "EXBURN_HEARTS"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/gui/Gui$HeartType",
+      "name": "RISUS_BLOODCLOGGED",
+      "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "method": "BLOODCLOGGED_HEARTS"
+      }
     }
   ]
 }

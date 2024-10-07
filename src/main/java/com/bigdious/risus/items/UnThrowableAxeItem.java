@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.entity.projectile.ThrownAxe;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -25,5 +26,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class UnThrowableAxeItem extends AxeItem {
 	public UnThrowableAxeItem(Tier tier, Properties properties) {
 		super(tier, properties);
+	}
+	@Override
+	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
+		return material.is(RisusItems.GLUTTONY_SCALES);
 	}
 }
