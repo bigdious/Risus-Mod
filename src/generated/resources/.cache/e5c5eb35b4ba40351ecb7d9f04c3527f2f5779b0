@@ -1,14 +1,14 @@
-// 1.21	2024-08-09T15:05:35.3436324	Advancements
+// 1.21	2024-10-10T18:32:30.3558629	Advancements
 fe27c86b3ebdf106c42723793edc114ccba38fe3 data/risus/advancement/crusade.json
 4ebb2233847ff6d5dca9e7f7d2882488406af2c2 data/risus/advancement/devour.json
-a20fd546303e0bcad9e2335fab7c6a1837b4b6f0 data/risus/advancement/family.json
+e344ea2f4330f6cf06c6150d32ec3f6b506a96f6 data/risus/advancement/family.json
+7357a6cc82d67bfd5b091a1e30fa1d826f3e868d data/risus/advancement/first.json
 a33b0d07e80de75776d3758b6abe669082eafd42 data/risus/advancement/fleshing.json
 5505920bb3c65b003e9c91a48affc6fb71cf2988 data/risus/advancement/irresistible.json
-556d4a4146ca5126d29c034ae0885a5b95997916 data/risus/advancement/little.json
+8dca3ca21deb5851899d5dcb412976ef2ee15898 data/risus/advancement/little.json
 0598cea69de170f8c5e44e489a7157939a33fb78 data/risus/advancement/mod_book.json
 93ac074a1f3aed968b6d0b667caf692eb1052379 data/risus/advancement/potential.json
-7357a6cc82d67bfd5b091a1e30fa1d826f3e868d data/risus/advancement/risus/first.json
 b88a9efb6cb474fdabd33d52f3debf90f3b4542c data/risus/advancement/satiate.json
-7764380cad0096ac3562c829429a3b2af0263db2 data/risus/advancement/site_zero.json
-326717b03ebc2429f5bd7e33eb7f3c0c81e6c222 data/risus/advancement/step.json
+0d571b3d701c43ef9a5c81271ea6891f1190b812 data/risus/advancement/site_zero.json
+d6e518e24cb608d7a3c25d1e09a840b339f19623 data/risus/advancement/step.json
 401d62826b57b2ab3ec6212aad03decf193fd10b data/risus/advancement/unleashed.json

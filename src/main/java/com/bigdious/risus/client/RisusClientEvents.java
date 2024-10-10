@@ -135,6 +135,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
+		event.registerEntityRenderer(RisusEntities.TRANSIENT_QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));

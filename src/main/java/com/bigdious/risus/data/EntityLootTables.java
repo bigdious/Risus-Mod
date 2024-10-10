@@ -61,6 +61,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 						.add(LootItem.lootTableItem(Items.GUNPOWDER)).
 						apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
 		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
+		add(RisusEntities.TRANSIENT_QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.WEAVER.get(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1.0F))
