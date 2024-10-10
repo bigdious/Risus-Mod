@@ -1,15 +1,19 @@
 package com.bigdious.risus;
 
 import com.bigdious.risus.client.RisusClientEvents;
+import com.bigdious.risus.data.RisusAdvancementProvider;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
+import net.minecraft.ChatFormatting;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,12 +36,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
@@ -53,6 +59,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::registerPotionRecipes);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -114,6 +121,7 @@ public class RisusEvents {
 		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
+		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 	}
 	private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
@@ -146,6 +154,16 @@ public class RisusEvents {
 		}
 	}
 
-
+	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event){
+		Entity player = event.getEntity();
+		Level level = player.level();
+		if (event.getAdvancement().id().equals(Risus.prefix("first"))){
+			for (int i = 0; i < 13; i++) {
+				QuestionMark witness = RisusEntities.TRANSIENT_QUESTION_MARK.get().create(level);
+				witness.moveTo(player.getRandomX(40), player.getRandomY()+2+11*(player.getRandomY()-player.getRandomY()), player.getRandomZ(40), 0.0F, 0.0F);
+				level.addFreshEntity(witness);
+			}
+		}
+	}
 
 }

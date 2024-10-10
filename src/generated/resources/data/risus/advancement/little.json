@@ -1,5 +1,5 @@
 {
-  "parent": "risus:risus/first",
+  "parent": "risus:first",
   "criteria": {
     "pricked": {
       "conditions": {

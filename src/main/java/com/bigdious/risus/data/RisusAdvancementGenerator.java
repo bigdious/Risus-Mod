@@ -48,7 +48,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				.addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
 				.addCriterion("angel", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
 				.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
-			.save(consumer, "risus:risus/first");
+			.save(consumer, "risus:first");
 
 			AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first)
 				.display(
