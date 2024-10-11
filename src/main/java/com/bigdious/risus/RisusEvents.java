@@ -1,24 +1,15 @@
 package com.bigdious.risus;
 
-import com.bigdious.risus.client.RisusClientEvents;
-import com.bigdious.risus.data.RisusAdvancementProvider;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
-import net.minecraft.ChatFormatting;
-import net.minecraft.advancements.AdvancementHolder;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.ParticleUtils;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
@@ -34,17 +25,15 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.ClientHooks;
+import net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
-import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -59,6 +48,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::registerPotionRecipes);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 	}
 
@@ -143,16 +133,26 @@ public class RisusEvents {
 		return NeoForge.EVENT_BUS.post(new OrganicMatterEvent(player, level, pos, state, stack));
 	}
 
-	private static void addExBurnParticles(EntityTickEvent.Pre event) {
+	private static void addExBurnParticles(EntityTickEvent.Post event) {
 		Entity entity = event.getEntity();
 		if (entity instanceof LivingEntity living) {
 			if (living.tickCount % 5 == 0 && living.level().isClientSide() && living.hasEffect(RisusMobEffects.EXBURN)) {
 					for (int i = 0; i < 2; i++) {
-					living.level().addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 0.0, 0.0, 0.0);
+					living.level().addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), true,living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 0.0, 0.0, 0.0);
 				}
 			}
 		}
 	}
+
+	private static void addHearts(EntityTickEvent.Post event) {
+		Entity entity = event.getEntity();
+		if (entity instanceof LivingEntity living) {
+			if (living.tickCount % 5 == 0 && living.level().isClientSide() && living.hasEffect(RisusMobEffects.MATING_FRENZY)) {
+				living.level().addParticle(ParticleTypes.HEART, true,living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 0.0, 0.0, 0.0);
+			}
+		}
+	}
+
 
 	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event){
 		Entity player = event.getEntity();

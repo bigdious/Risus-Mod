@@ -32,7 +32,6 @@ public class ExBurnEffect extends MobEffect {
 				entity.getData(RisusDataAttachments.EX_BURN).decrementHealth(entity);
 			}
 		}
-//		ParticleUtils.spawnParticles(entity.level(), entity.getOnPos().above(2), 9, 3.0, 1.0, true, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 		return super.applyEffectTick(entity, amplifier);
 	}
 

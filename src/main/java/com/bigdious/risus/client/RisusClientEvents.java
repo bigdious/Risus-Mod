@@ -30,10 +30,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
@@ -59,6 +61,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 	}
 
 	private static void clientSetup(FMLClientSetupEvent event) {
@@ -171,6 +174,13 @@ public class RisusClientEvents {
 	private static void renderBloodcloggedHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.BLOODCLOGGED)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
+		}
+	}
+
+	//doesn't work... But should it?
+    private static void renderExBurning(RenderBlockScreenEffectEvent event) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.EXBURN)) {
+			ClientHooks.renderBlockOverlay(Minecraft.getInstance().player, event.getPoseStack(), RenderBlockScreenEffectEvent.OverlayType.FIRE, RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), Minecraft.getInstance().player.blockPosition());
 		}
 	}
 
