@@ -6,6 +6,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -29,17 +30,17 @@ public class FlameFrailtyEffect extends MobEffect {
 				player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false, false));
 				player.removeEffect(MobEffects.FIRE_RESISTANCE);
 				player.hurt(entity.damageSources().onFire(), 2);
-				if (player.level().isClientSide) {
+				if (player.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 4; i++) {
-						player.level().addParticle(ParticleTypes.FLAME, player.getRandomX(0.5), player.getRandomY(), player.getRandomZ(0.5), 0.0, 0.0, 0.0);
+						serverLevel.sendParticles(ParticleTypes.FLAME, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0, 0.0, 0);
 					}
 				}
 			} else if (player.isOnFire()){
-				entity.hurt(entity.damageSources().onFire(), 1);
-				entity.setRemainingFireTicks(entity.getRemainingFireTicks()+40);
-				if (player.level().isClientSide) {
+				player.hurt(entity.damageSources().onFire(), 1);
+				player.setRemainingFireTicks(entity.getRemainingFireTicks()+40);
+				if (player.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 4; i++) {
-						player.level().addParticle(ParticleTypes.FLAME, player.getRandomX(0.5), player.getRandomY(), player.getRandomZ(0.5), 0.0, 0.0, 0.0);
+						serverLevel.sendParticles(ParticleTypes.FLAME, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0, 0.0, 0);
 					}
 				}
 			}
@@ -47,13 +48,19 @@ public class FlameFrailtyEffect extends MobEffect {
 		if (entity.getType().fireImmune()) {
 			entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60, 1, false, false, false));
 			entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 2, false, false, false));
+			entity.hurt(entity.damageSources().generic(), 1);
+			if (entity.level() instanceof ServerLevel serverLevel) {
+				for (int i = 0; i < 4; i++) {
+					serverLevel.sendParticles(ParticleTypes.FLAME, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0, 0.0, 0);
+				}
+			}
 		}
 		if (entity.isOnFire()) {
 			entity.hurt(entity.damageSources().onFire(), 1);
 			entity.setRemainingFireTicks(entity.getRemainingFireTicks()+30);
-			if (entity.level().isClientSide) {
+			if (entity.level() instanceof ServerLevel serverLevel) {
 				for (int i = 0; i < 4; i++) {
-					entity.level().addParticle(ParticleTypes.LARGE_SMOKE, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), entity.getRandom().nextFloat(), entity.getRandom().nextFloat(), 0.0);
+					serverLevel.sendParticles(ParticleTypes.FLAME, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0, 0.0, 0);
 				}
 			}
 		}
