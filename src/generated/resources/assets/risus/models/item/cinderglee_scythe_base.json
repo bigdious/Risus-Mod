@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "risus:item/cinderglee_scythe_item"
+  }
+}

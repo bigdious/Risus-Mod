@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/cinderglee_scythe_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/cinderglee_scythe_held",
+      "textures": {
+        "cinderglee_scythe": "risus:item/cinderglee_scythe"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/cinderglee_scythe_held",
+      "textures": {
+        "cinderglee_scythe": "risus:item/cinderglee_scythe"
+      }
+    },
+    "head": {
+      "parent": "risus:item/cinderglee_scythe_held",
+      "textures": {
+        "cinderglee_scythe": "risus:item/cinderglee_scythe"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/cinderglee_scythe_held",
+      "textures": {
+        "cinderglee_scythe": "risus:item/cinderglee_scythe"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/cinderglee_scythe_held",
+      "textures": {
+        "cinderglee_scythe": "risus:item/cinderglee_scythe"
+      }
+    }
+  },
+  "textures": {
+    "layer0": "risus:item/cinderglee_scythe"
+  }
+}

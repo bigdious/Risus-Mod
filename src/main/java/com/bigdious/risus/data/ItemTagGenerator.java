@@ -59,6 +59,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.UNAWAKENED_VESSEL.get(),
 			RisusItems.CRESCENT_DISASTER.get(),
 			RisusItems.SCYTHE.get(),
+			RisusItems.SOUL_SCYTHE.get(),
+			RisusItems.FIRE_SCYTHE.get(),
+			RisusItems.CINDERGLEE_SCYTHE.get(),
 			RisusItems.TOOTHKNOCKER.get(),
 			RisusItems.GOLD_FIST.get()
 		);
@@ -67,6 +70,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.UNAWAKENED_VESSEL.get(),
 			RisusItems.CRESCENT_DISASTER.get(),
 			RisusItems.SCYTHE.get(),
+			RisusItems.SOUL_SCYTHE.get(),
+			RisusItems.FIRE_SCYTHE.get(),
+			RisusItems.CINDERGLEE_SCYTHE.get(),
 			RisusItems.TOOTHKNOCKER.get(),
 			RisusItems.GOLD_FIST.get()
 		);

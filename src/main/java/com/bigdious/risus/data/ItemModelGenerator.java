@@ -181,6 +181,36 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, scythe)
 			.perspective(ItemDisplayContext.HEAD, scythe)
 			.end();
+		singleTexTool(RisusItems.SOUL_SCYTHE);
+		ItemModelBuilder soul_scythe = nested().parent(getExistingFile(Risus.prefix("item/soul_scythe_held"))).texture("soul_scythe", Risus.prefix("item/soul_scythe"));
+		withExistingParent(RisusItems.SOUL_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("soul_scythe_base", Risus.prefix("item/soul_scythe_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, soul_scythe)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, soul_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, soul_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, soul_scythe)
+			.perspective(ItemDisplayContext.HEAD, soul_scythe)
+			.end();
+		singleTexTool(RisusItems.FIRE_SCYTHE);
+		ItemModelBuilder fire_scythe = nested().parent(getExistingFile(Risus.prefix("item/fire_scythe_held"))).texture("fire_scythe", Risus.prefix("item/fire_scythe"));
+		withExistingParent(RisusItems.FIRE_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("fire_scythe_base", Risus.prefix("item/fire_scythe_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, fire_scythe)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, fire_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, fire_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, fire_scythe)
+			.perspective(ItemDisplayContext.HEAD, fire_scythe)
+			.end();
+		singleTexTool(RisusItems.CINDERGLEE_SCYTHE);
+		ItemModelBuilder cinderglee_scythe = nested().parent(getExistingFile(Risus.prefix("item/cinderglee_scythe_held"))).texture("cinderglee_scythe", Risus.prefix("item/cinderglee_scythe"));
+		withExistingParent(RisusItems.CINDERGLEE_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("cinderglee_scythe_base", Risus.prefix("item/cinderglee_scythe_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, cinderglee_scythe)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, cinderglee_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, cinderglee_scythe)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, cinderglee_scythe)
+			.perspective(ItemDisplayContext.HEAD, cinderglee_scythe)
+			.end();
 		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
