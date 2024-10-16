@@ -1,5 +1,6 @@
 package com.bigdious.risus;
 
+import com.bigdious.risus.blocks.RisusCampfireBlock;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
@@ -7,6 +8,7 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -24,6 +26,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.ClientHooks;
@@ -33,8 +36,11 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -51,6 +57,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -171,4 +178,24 @@ public class RisusEvents {
 		}
 	}
 
+	private static void explodeStick(LivingIncomingDamageEvent event) {
+		Entity entity = event.getSource().getEntity();
+		Entity victim = event.getEntity();
+		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.BOOMSTICK.get())) {
+			explode(victim.level(), victim.getOnPos(), attacker);
+			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+		}
+	}
+
+	private static void explode(Level level, BlockPos pos, LivingEntity entity) {
+		Vec3 vec3 = pos.getCenter().add(0, 1, 0);
+		level.explode(entity, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
+	}
+	private static void campfireAbsorbed(UseItemOnBlockEvent event){
+		if (event.getItemStack().is(RisusItems.SCYTHE.get()) && event.getLevel() instanceof ServerLevel serverLevel){
+			if (serverLevel.getBlockState(event.getPos()).is(RisusBlocks.JOYFLAME_CAMPFIRE)){
+
+			}
+		}
+	}
 }

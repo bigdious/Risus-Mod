@@ -27,7 +27,7 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class BoomstickItem extends  Item {
+public class BoomstickItem extends Item {
 
 	public BoomstickItem( Item.Properties pProperties){
 		super(pProperties);
@@ -41,24 +41,6 @@ public class BoomstickItem extends  Item {
 		return true;
 	}
 
-	//CHECK BELOW IN FUTURE
 
-
-	//TODO make it work when used by enemies
-	@Override
-	public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-		Level level = pAttacker.level();
-		ItemStack itemstack = pAttacker.getMainHandItem();
-		if (!level.isClientSide()) {
-			this.explode(level, pTarget.getOnPos(), pAttacker);
-			itemstack.hurtAndBreak(1, pAttacker, EquipmentSlot.MAINHAND);
-
-			}
-		return super.hurtEnemy(pStack, pTarget, pAttacker);
-	}
-	private void explode(Level level, BlockPos pos, LivingEntity entity) {
-		Vec3 vec3 = pos.getCenter().add(0, 1, 0);
-		level.explode(null, level.damageSources().explosion(entity, entity), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
-	}
 
 }
