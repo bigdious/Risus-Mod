@@ -12,6 +12,7 @@ import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -191,11 +192,13 @@ public class RisusEvents {
 		Vec3 vec3 = pos.getCenter().add(0, 1, 0);
 		level.explode(entity, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
 	}
-	private static void campfireAbsorbed(UseItemOnBlockEvent event){
-		if (event.getItemStack().is(RisusItems.SCYTHE.get()) && event.getLevel() instanceof ServerLevel serverLevel){
-			if (serverLevel.getBlockState(event.getPos()).is(RisusBlocks.JOYFLAME_CAMPFIRE)){
 
-			}
+	private static void fireScythe(LivingDamageEvent.Post event) {
+		Entity entity = event.getSource().getEntity();
+		Entity entity2 = event.getEntity();
+		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
+			victim.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
+			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 		}
 	}
 }

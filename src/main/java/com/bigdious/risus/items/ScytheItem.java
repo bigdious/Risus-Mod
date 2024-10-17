@@ -2,8 +2,10 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.RisusCampfireBlock;
+import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusParticles;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
@@ -53,35 +55,76 @@ public class ScytheItem extends SwordItem {
 		BlockState blockstate = level.getBlockState(blockpos);
 		Player player = pContext.getPlayer();
 		ItemStack scythe = player.getMainHandItem();
-		if (blockstate.getValue(RisusCampfireBlock.LIT) && blockstate.is(RisusBlocks.JOYFLAME_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get()) && player.isCrouching()) {
-			ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.CINDERGLEE_SCYTHE.get()));
-			item.getItem().applyComponents(scythe.getComponentsPatch());
-			player.level().addFreshEntity(item);
-			if (!level.isClientSide()) {
-				level.setBlock(blockpos, RisusBlocks.JOYFLAME_CAMPFIRE.get().defaultBlockState().setValue(RisusCampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(RisusCampfireBlock.FACING)), 11);
+		if (level.getBlockState(blockpos.below().east()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().west()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().south()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().north()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().north().east()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().north().west()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().south().east()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below().south().west()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
+			level.getBlockState(blockpos.below()).is(RisusBlocks.BLOOD_FLUID_BLOCK)
+		) {
+			if (blockstate.getValue(RisusCampfireBlock.LIT) && blockstate.is(RisusBlocks.JOYFLAME_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
+				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.CINDERGLEE_SCYTHE.get()));
+				item.getItem().applyComponents(scythe.getComponentsPatch());
+				player.level().addFreshEntity(item);
+				if (!level.isClientSide()) {
+					level.setBlock(blockpos, RisusBlocks.JOYFLAME_CAMPFIRE.get().defaultBlockState().setValue(RisusCampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(RisusCampfireBlock.FACING)), 11);
+				}
+				scythe.shrink(1);
+				if (level.isClientSide()) {
+					for (int i = 0; i < 20; i++) {
+						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
+							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							blockpos.getY(),
+							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							0.0F, 0.1F, 0.0F);
+					}
+				}
+				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1F, 1F);
+				return InteractionResult.SUCCESS;
 			}
-			scythe.shrink(1);
-			return InteractionResult.SUCCESS;
-		}
-		if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.SOUL_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get()) && player.isCrouching()) {
-			ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.SOUL_SCYTHE.get()));
-			item.getItem().applyComponents(scythe.getComponentsPatch());
-			player.level().addFreshEntity(item);
-			if (!level.isClientSide()) {
-				level.setBlock(blockpos, Blocks.SOUL_CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
+			if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.SOUL_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
+				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.SOUL_SCYTHE.get()));
+				item.getItem().applyComponents(scythe.getComponentsPatch());
+				player.level().addFreshEntity(item);
+				if (!level.isClientSide()) {
+					level.setBlock(blockpos, Blocks.SOUL_CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
+				}
+				scythe.shrink(1);
+				if (level.isClientSide()) {
+					for (int i = 0; i < 20; i++) {
+						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
+							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							blockpos.getY(),
+							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							0.0F, 0.1F, 0.0F);
+					}
+				}
+				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1F);
+				return InteractionResult.SUCCESS;
 			}
-			scythe.shrink(1);
-			return InteractionResult.SUCCESS;
-		}
-		if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get()) && player.isCrouching()) {
-			ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.FIRE_SCYTHE.get()));
-			item.getItem().applyComponents(scythe.getComponentsPatch());
-			player.level().addFreshEntity(item);
-			if (!level.isClientSide()) {
-				level.setBlock(blockpos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
+			if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
+				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.FIRE_SCYTHE.get()));
+				item.getItem().applyComponents(scythe.getComponentsPatch());
+				player.level().addFreshEntity(item);
+				if (!level.isClientSide()) {
+					level.setBlock(blockpos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
+				}
+				scythe.shrink(1);
+				if (level.isClientSide()) {
+					for (int i = 0; i < 20; i++) {
+						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
+							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							blockpos.getY(),
+							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							0.0F, 0.1F, 0.0F);
+					}
+				}
+				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1F);
+				return InteractionResult.SUCCESS;
 			}
-			scythe.shrink(1);
-			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.FAIL;
 	}
