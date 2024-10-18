@@ -1,4 +1,4 @@
-// 1.21	2024-10-07T12:31:22.3786456	Registries
+// 1.21	2024-10-18T18:59:19.5184852	Registries
 13c9212e923998bd25df006ccc5280915bb65eb0 data/risus/damage_type/gluttony.json
 4cb181e1361f009638f6dcb8d3e55b998557daa9 data/risus/damage_type/inexistence.json
 1079228b8ee45ed23c5792413308dc9aacb8fdfc data/risus/damage_type/melancholy.json
@@ -15,7 +15,7 @@ c6b03d7d6b3edb1facf975ba05a982bf61d96b8a data/risus/worldgen/structure/endy_maw.
 87aabc188b0bef4a564b2b004e4ce2fc41c25fed data/risus/worldgen/structure/grassy_maw.json
 97574daf478e0080f543c1ea670001083fbcb85f data/risus/worldgen/structure/great_body.json
 9fe701041554b83e26cc358248da34b5a2b43130 data/risus/worldgen/structure/sandy_maw.json
-7043ffdf3041f239e9d08dc7eb6cf908afbb7def data/risus/worldgen/structure_set/alteration_site.json
+e6e751adc7eb2f0c26abd6e3387e422b6325bd2b data/risus/worldgen/structure_set/alteration_site.json
 c86bb73d1355881c29b24b390d6da87534d87d53 data/risus/worldgen/structure_set/angel_altar.json
 63c987a3d666f13955bb99ee2d03156c2a4004e1 data/risus/worldgen/structure_set/endy_maw.json
 cc16b733171a13c50ae34028506e6ccbe9a796af data/risus/worldgen/structure_set/family_tree.json
@@ -23,13 +23,13 @@ cc16b733171a13c50ae34028506e6ccbe9a796af data/risus/worldgen/structure_set/famil
 f56ab40db00b9f35ec3c1759707297f83c36c625 data/risus/worldgen/structure_set/grassy_maw.json
 a13a8993874facbd83f051a70547f86f9d74ddf1 data/risus/worldgen/structure_set/great_body.json
 a0f89f320c2b620ccb7e227b358686ecaf733986 data/risus/worldgen/structure_set/sandy_maw.json
-b639cc5b617ae653a647be086a7fb6e2bf5a7e71 data/risus/worldgen/template_pool/alteration_site.json
-a817059b17ae52d0d9e4471b9e4a1fd933b7d582 data/risus/worldgen/template_pool/angel_altar.json
+f523e5285f35280bbe6512e42680972dd1e1812f data/risus/worldgen/template_pool/alteration_site.json
+3a9f2b69f43b2e032fc46b363e7c54b05951bd00 data/risus/worldgen/template_pool/angel_altar.json
 c882a328106086dfcd31bca22c4f0aae8abe69d6 data/risus/worldgen/template_pool/endy_maw.json
-49f8a15835c1c86a82f7f9c6d2dcbcf57a098bfc data/risus/worldgen/template_pool/family_tree.json
+38207c579d844864f4324764d1c522e1d6ea0f67 data/risus/worldgen/template_pool/family_tree.json
 1cb576fba3c62b4ff0e004326f500ceaa3b27c48 data/risus/worldgen/template_pool/flower_field.json
 685116ecfb8286b912f032ca20b05c0d4501d53e data/risus/worldgen/template_pool/grassy_maw.json
 48be44dfceba73d33629db7b7ced463231455aa3 data/risus/worldgen/template_pool/great_body_a.json
 e61c0ee6bcfb838fed64b3ae4eb59d90315f33ad data/risus/worldgen/template_pool/great_body_b.json
-7e86422c77e81e08b39bfc9fefe302b1eacad554 data/risus/worldgen/template_pool/sandy_maw.json
-74100080202b5ed96111383f6aa37b50a047e596 data/risus/worldgen/template_pool/trigger.json
+2695b0897da84f18c0c7862c8cd9ba9f5facd728 data/risus/worldgen/template_pool/sandy_maw.json
+c72fbe761e0e6e2843db4d77657716b5cbda024a data/risus/worldgen/template_pool/trigger.json

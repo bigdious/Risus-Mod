@@ -8,10 +8,12 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
@@ -59,6 +61,9 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::fireScythe);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::cindergleeScythe);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::soulScythe);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -181,16 +186,15 @@ public class RisusEvents {
 
 	private static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
-		Entity victim = event.getEntity();
 		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.BOOMSTICK.get())) {
-			explode(victim.level(), victim.getOnPos(), attacker);
+			explode(attacker.level(), attacker.getOnPos(), attacker);
 			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 		}
 	}
 
 	private static void explode(Level level, BlockPos pos, LivingEntity entity) {
 		Vec3 vec3 = pos.getCenter().add(0, 1, 0);
-		level.explode(entity, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
+		level.explode(null, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
 	}
 
 	private static void fireScythe(LivingDamageEvent.Post event) {
@@ -198,7 +202,26 @@ public class RisusEvents {
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
 			victim.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
-			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+			victim.igniteForSeconds(2);
+		}
+	}
+	private static void cindergleeScythe(LivingDamageEvent.Post event) {
+		Entity entity = event.getSource().getEntity();
+		Entity entity2 = event.getEntity();
+		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
+			victim.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 0, false, false, true));
+		}
+	}
+
+	private static void soulScythe(LivingDamageEvent.Pre event) {
+		Entity entity = event.getSource().getEntity();
+		Entity entity2 = event.getEntity();
+		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
+			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types())) {
+				event.setNewDamage(event.getOriginalDamage()+5);
+			} else {
+				event.setNewDamage(event.getOriginalDamage()-3);
+			}
 		}
 	}
 }

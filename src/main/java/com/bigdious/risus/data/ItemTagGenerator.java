@@ -76,9 +76,5 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.TOOTHKNOCKER.get(),
 			RisusItems.GOLD_FIST.get()
 		);
-
-		this.tag(ItemTags.TRIDENT_ENCHANTABLE).add(
-			RisusItems.CRESCENT_DISASTER.get()
-		);
 	}
 }

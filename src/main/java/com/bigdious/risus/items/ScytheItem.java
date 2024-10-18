@@ -42,7 +42,7 @@ public class ScytheItem extends SwordItem {
 	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
 		return SwordItem.createAttributes(tier, damage, speed)
 			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), 2.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-			.withModifierAdded(Attributes.SWEEPING_DAMAGE_RATIO, new AttributeModifier(Risus.prefix("range_modifier"), damage, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+			.withModifierAdded(Attributes.SWEEPING_DAMAGE_RATIO, new AttributeModifier(Risus.prefix("range_modifier"), 0.9, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
 	}
 	@Override
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {

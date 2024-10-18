@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:saendy_maw",
+        "location": "risus:sandy_maw",
         "processors": {
           "processors": []
         },

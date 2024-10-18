@@ -262,7 +262,7 @@ public class RisusStructures {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
-			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 1024321764)));
+			new RandomSpreadStructurePlacement(20, 15, RandomSpreadType.TRIANGULAR, 1024321764)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
 			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 22123393)));
@@ -290,7 +290,8 @@ public class RisusStructures {
 		HolderGetter<StructureProcessorList> processors = context.lookup(Registries.PROCESSOR_LIST);
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("alteration_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("alteration_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("alteration_site/1"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GRASSY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -298,7 +299,7 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(SANDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("saendy_maw")), 1)
+			Pair.of(StructurePoolElement.single(name("sandy_maw")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ENDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -306,13 +307,14 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FAMILY_TREE_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1),
-			Pair.of(StructurePoolElement.single(name("family_tree/1"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1),
-			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1)
+			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 5),
+			Pair.of(StructurePoolElement.single(name("family_tree/1"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
+			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("angel_altar/0"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("angel_altar/0"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("angel_altar/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GREAT_BODY_A_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -337,7 +339,8 @@ public class RisusStructures {
 		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1)
+			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1),
+			Pair.of(StructurePoolElement.single(name("trigger/living_tissue")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 	}
 	public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
