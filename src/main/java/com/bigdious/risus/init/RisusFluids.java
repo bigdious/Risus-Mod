@@ -30,45 +30,14 @@ public class RisusFluids {
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, Risus.MODID);
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, Risus.MODID);
 
-	public static final DeferredHolder<FluidType, FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid", () -> new FluidType(FluidType.Properties.create().canHydrate(true).canDrown(false).canSwim(true).density(10).viscosity(15).canPushEntity(true)) {
-		@Override
-		public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
-			consumer.accept(new IClientFluidTypeExtensions() {
-				@Override
-				public ResourceLocation getStillTexture() {
-					return Risus.prefix("block/blood_still");
-				}
+	public static final DeferredHolder<FluidType, FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid", () -> new FluidType(FluidType.Properties.create()
+		.canHydrate(true)
+		.canDrown(false)
+		.canSwim(true)
+		.density(10)
+		.viscosity(15)
+		.canPushEntity(true)) {
 
-				@Override
-				public ResourceLocation getFlowingTexture() {
-					return Risus.prefix("block/blood_flow");
-				}
-
-				public ResourceLocation getOverlayTexture() {
-					return Risus.prefix("block/blood_flow");
-				}
-
-				public @Nullable ResourceLocation getRenderOverlayTexture(Minecraft mc) {
-					return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/misc/blood_fluid_block.png");
-				}
-
-				@Override
-				public int getTintColor() {
-					return 0xFFE60E07;
-				}
-
-				@Override
-				public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
-					return new Vector3f(54f / 255f, 4f / 255f, 4f / 255f);
-				}
-
-				@Override
-				public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
-					RenderSystem.setShaderFogStart(0f);
-					RenderSystem.setShaderFogEnd(6f);
-				}
-			});
-		}
 	});
 
 	public static final DeferredHolder<Fluid, BloodFluid.Source> SOURCE_BLOOD = FLUIDS.register("blood_fluid", () -> new BloodFluid.Source(RisusFluids.BLOOD_FLUID_PROPERTIES));

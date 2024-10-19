@@ -10,13 +10,17 @@ import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
+import com.mojang.blaze3d.shaders.FogShape;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.Util;
+import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
@@ -37,12 +41,18 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
+import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class RisusClientEvents {
@@ -57,6 +67,8 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerEntityRenderers);
 		bus.addListener(RisusClientEvents::registerScreens);
 		bus.addListener(RisusClientEvents::registerBlockColors);
+		bus.addListener(RisusClientEvents::registerClientExtensions);
+
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
@@ -73,7 +85,7 @@ public class RisusClientEvents {
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
 		});
-		registerElytraLayer();
+//		registerElytraLayer();
 	}
 
 	private static void registerParticleFactories(RegisterParticleProvidersEvent event) {
@@ -152,6 +164,44 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH_STAND.get(), DisplayNotchStandRenderer::new);
 	}
+	private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+		event.registerFluidType(new IClientFluidTypeExtensions() {
+			@Override
+			public ResourceLocation getStillTexture() {
+				return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "block/blood_still");
+			}
+
+			@Override
+			public ResourceLocation getFlowingTexture() {
+				return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "block/blood_flow");
+			}
+
+			@Override
+			public ResourceLocation getOverlayTexture() {
+				return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "block/blood_flow");
+			}
+
+			public @Nullable ResourceLocation getRenderOverlayTexture(Minecraft mc) {
+				return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/misc/blood_fluid_block.png");
+			}
+			@Override
+			public int getTintColor() {
+				return 0xFFE60E07;
+			}
+
+			@Override
+			public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
+				return new Vector3f(54f / 255f, 4f / 255f, 4f / 255f);
+			}
+
+			@Override
+			public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
+				RenderSystem.setShaderFogStart(0f);
+				RenderSystem.setShaderFogEnd(6f);
+			}
+		}, RisusFluids.BLOOD_FLUID_TYPE.get());
+	}
+
 
 	private static void killScreenWithAmnesia(RenderGuiLayerEvent.Pre event) {
 		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {
@@ -185,12 +235,12 @@ public class RisusClientEvents {
 	}
 
 
-	public static void registerElytraLayer()
-	{
-		Minecraft mc = Minecraft.getInstance();
-		mc.getEntityRenderDispatcher().getSkinMap().values()
-			.forEach(player -> ((LivingEntityRenderer) player).addLayer(new AngelWingsLayer((LivingEntityRenderer) player, mc.getEntityModels())));
-	}
+//	public static void registerElytraLayer()
+//	{
+//		Minecraft mc = Minecraft.getInstance();
+//		mc.getEntityRenderDispatcher().getSkinMap().values()
+//			.forEach(player -> ((LivingEntityRenderer) player).addLayer(new AngelWingsLayer((LivingEntityRenderer) player, mc.getEntityModels())));
+//	}
 
 
 	public static class RenderStateAccessor extends RenderStateShard {
