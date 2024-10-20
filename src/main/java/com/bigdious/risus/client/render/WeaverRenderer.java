@@ -48,27 +48,5 @@ public class WeaverRenderer extends MobRenderer<Weaver, WeaverModel<Weaver>> {
 		public RenderType renderType() {
 			return RenderType.eyes(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/weaver_core.png"));
 		}
-
-//		@Override
-//		public void render(
-//			PoseStack ms,
-//			MultiBufferSource pBuffer,
-//			int light,
-//			Weaver entity,
-//			float limbSwing,
-//			float limbSwingAmount,
-//			float partialTicks,
-//			float ageInTicks,
-//			float netHeadYaw,
-//			float headPitch
-//		) {
-
-			//TODO fix weavercore tranparency
-//			this.getParentModel().copyPropertiesTo(this.memoryCore);
-//			this.memoryCore.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-//			this.memoryCore.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-//			VertexConsumer buffer = pBuffer.getBuffer(RenderType.entityTranslucent(this.getTextureLocation(entity)));
-//			this.memoryCore.renderCore(ms, buffer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1);
-//		}
 	}
 }

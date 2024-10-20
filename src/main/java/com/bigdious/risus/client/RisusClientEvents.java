@@ -134,6 +134,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
+		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 	}
 
 	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
@@ -160,7 +161,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_HANGING_SIGN.get(), HangingSignRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystRenderer::new);
-		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), context -> new DepthVaseRenderer());
+		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), DepthVaseRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH_STAND.get(), DisplayNotchStandRenderer::new);
 	}

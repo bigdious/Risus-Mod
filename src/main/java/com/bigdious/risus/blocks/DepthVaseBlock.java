@@ -49,7 +49,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	public static final MapCodec<DepthVaseBlock> CODEC = simpleCodec(DepthVaseBlock::new);
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 14.0D, 14.0D);
+	protected static final VoxelShape BOUNDING_BOX = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 14.0D, 14.0D);
 
 	public DepthVaseBlock(Properties props) {
 		super(props);
@@ -99,7 +99,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return SHAPE;
+		return BOUNDING_BOX;
 	}
 
 	@Override
@@ -114,15 +114,15 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 		if ($$8 instanceof DepthVaseBlockEntity depthVase) {
 			if (hand != InteractionHand.MAIN_HAND) {
 				player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-				depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
+				depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
 				return ItemInteractionResult.FAIL;
 			}
 			if (player.getMainHandItem().is(RisusItems.RESEARCHERS_NOTES)) {
-				if (depthVase.depthToSlotRatio == 1) {
-					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
+				if (depthVase.depthToSlotRatio > 1) {
+					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
 					return ItemInteractionResult.SUCCESS;
 				} else {
-					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
+					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
 					return ItemInteractionResult.SUCCESS;
 				}
 			} else {
@@ -130,14 +130,14 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 					for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
 						if (i == depthVase.depthToSlotRatio) {
 							player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.NEGATIVE);
+							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
 							return ItemInteractionResult.FAIL;
 						}
 						if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
 							if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
 								depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
 								player.getMainHandItem().shrink(player.getMainHandItem().getCount());
-								depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
+								depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
@@ -156,7 +156,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							} else {
 								player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
 								depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
-								depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
+								depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
@@ -175,7 +175,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							}
 						} else if (depthVase.getInputItem(i).isEmpty()) {
 							depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
-							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
+							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(
@@ -200,7 +200,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
 							level.addFreshEntity(item);
 							depthVase.setInputItem(i, ItemStack.EMPTY);
-							depthVase.wobble(DecoratedPotBlockEntity.WobbleStyle.POSITIVE);
+							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(
