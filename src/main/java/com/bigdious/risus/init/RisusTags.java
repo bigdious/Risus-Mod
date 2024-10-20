@@ -3,17 +3,16 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 
 public class RisusTags {
 	public class Enchantments {
-
-//		public static final TagKey<Enchantment> CRESCENT_DISASTER_CUSTOM = tag("custom_set/crescent_disaster");
-
 		private static TagKey<Enchantment> tag(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
@@ -33,9 +32,10 @@ public class RisusTags {
 			return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
-
 	public static class Items {
-//		public static final TagKey<Item> LOOTING_ENCHANTABLE = tag("enchantable/looting");
+
+		public static final TagKey<Item> BONE_BLOCK_VARIATION = tag("bone_block_variation");
+
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}

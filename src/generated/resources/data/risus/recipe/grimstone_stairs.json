@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "risus:grimstone_bricks"
+      "item": "risus:grimstone"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 8,
+    "count": 4,
     "id": "risus:grimstone_stairs"
   }
 }

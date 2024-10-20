@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:hair_follicles"
+    },
+    {
+      "item": "risus:skin"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:hairy_skin"
+  }
+}

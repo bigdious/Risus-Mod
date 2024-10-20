@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-19T12:10:34.6656047	Risus Item Models
+// 1.21.1	2024-10-20T17:22:09.5483975	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -110,6 +110,9 @@ e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.j
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json
 2f16712ae08ea3d4edd94c13c6224a3eb66bb354 assets/risus/models/item/polished_grimstone.json
+431609ba6ab8c91087e71a2b5143e070296a085f assets/risus/models/item/polished_grimstone_slab.json
+83e8086dba6b8421657b3122ab631812e1839f1f assets/risus/models/item/polished_grimstone_stairs.json
+70a811fc17afb67e5702edc41350a74187465ee2 assets/risus/models/item/polished_grimstone_wall.json
 f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondknot_log.json
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json

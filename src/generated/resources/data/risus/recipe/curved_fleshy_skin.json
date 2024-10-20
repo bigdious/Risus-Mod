@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "risus:skin"
+    },
+    "/": {
+      "item": "risus:tissue"
+    }
+  },
+  "pattern": [
+    "##",
+    "#/"
+  ],
+  "result": {
+    "count": 4,
+    "id": "risus:curved_fleshy_skin"
+  }
+}

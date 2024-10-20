@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "risus:crystallized_bond"
+    },
+    "C": {
+      "item": "risus:concentration_core"
+    },
+    "G": {
+      "item": "risus:gluttony_scales"
+    },
+    "L": {
+      "tag": "risus:bone_block_variation"
+    }
+  },
+  "pattern": [
+    "GGC",
+    "GBL",
+    "BLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:scythe"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "risus:block/polished_grimstone_slab"
+    },
+    "type=double": {
+      "model": "risus:block/grimstone_bricks"
+    },
+    "type=top": {
+      "model": "risus:block/polished_grimstone_slab_top"
+    }
+  }
+}

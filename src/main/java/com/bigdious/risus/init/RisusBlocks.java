@@ -61,7 +61,7 @@ public class RisusBlocks {
 
 	public static final DeferredBlock<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().requiresCorrectToolForDrops().strength(4.0F)));
 	public static final DeferredBlock<Block> MIRAGE_GRASS_BLOCK = BLOCKS.register("mirage_grass_block", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.GRASS_BLOCK).noOcclusion(), Blocks.GRASS_BLOCK));
-	public static final DeferredBlock<Block> MIRAGE_SAND = BLOCKS.register("mirage_sand", () -> new MirageBlock(Block.Properties.of().noOcclusion(), Blocks.SAND));
+	public static final DeferredBlock<Block> MIRAGE_SAND = BLOCKS.register("mirage_sand", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.SAND).noOcclusion(), Blocks.SAND));
 	public static final DeferredBlock<Block> MIRAGE_END_STONE = BLOCKS.register("mirage_end_stone", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion(), Blocks.END_STONE));
 	public static final DeferredBlock<Block> MIRAGE_NETHERRACK = BLOCKS.register("mirage_netherrack", () -> new MirageBlock(Block.Properties.ofFullCopy(Blocks.NETHERRACK).noOcclusion(), Blocks.NETHERRACK));
 	public static final DeferredBlock<Block> GLUTTONY_SCALEPLATE = BLOCKS.register("gluttony_scaleplate", () -> new ScaleplateBlock(Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion()));
@@ -114,10 +114,13 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CRACKED_GRIMSTONE_BRICKS = BLOCKS.register("cracked_grimstone_bricks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<SlabBlock> GRIMSTONE_SLAB = BLOCKS.register("grimstone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<SlabBlock> GRIMSTONE_BRICKS_SLAB = BLOCKS.register("grimstone_bricks_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
+	public static final DeferredBlock<SlabBlock> POLISHED_GRIMSTONE_SLAB = BLOCKS.register("polished_grimstone_slab", () -> new RisusSlabBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<StairBlock> GRIMSTONE_BRICKS_STAIRS = BLOCKS.register("grimstone_bricks_stairs", () -> new RisusStairBlock(() -> GRIMSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<StairBlock> GRIMSTONE_STAIRS = BLOCKS.register("grimstone_stairs", () -> new RisusStairBlock(() -> GRIMSTONE.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
+	public static final DeferredBlock<StairBlock> POLISHED_GRIMSTONE_STAIRS = BLOCKS.register("polished_grimstone_stairs", () -> new RisusStairBlock(() -> GRIMSTONE.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<WallBlock> GRIMSTONE_WALL = BLOCKS.register("grimstone_wall", () -> new RisusWallBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<WallBlock> GRIMSTONE_BRICKS_WALL = BLOCKS.register("grimstone_bricks_wall", () -> new RisusWallBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
+	public static final DeferredBlock<WallBlock> POLISHED_GRIMSTONE_WALL = BLOCKS.register("polished_grimstone_wall", () -> new RisusWallBlock(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<Block> POLISHED_GRIMSTONE = BLOCKS.register("polished_grimstone", () -> new Block(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())));
 	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = BLOCKS.register("chiseled_grimstone", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get())) {
 	});

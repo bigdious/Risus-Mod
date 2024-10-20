@@ -2,6 +2,7 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -30,5 +31,18 @@ public class UnThrowableAxeItem extends AxeItem {
 	@Override
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
 		return material.is(RisusItems.GLUTTONY_SCALES);
+	}
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.SHARPNESS) ||
+			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
+			enchantment.is(Enchantments.LOYALTY)||
+			enchantment.is(Enchantments.SMITE)||
+			enchantment.is(Enchantments.MENDING)||
+			enchantment.is(Enchantments.UNBREAKING)||
+			enchantment.is(Enchantments.FIRE_ASPECT)||
+			enchantment.is(Enchantments.KNOCKBACK)||
+			enchantment.is(Enchantments.VANISHING_CURSE)
+			;
 	}
 }

@@ -202,11 +202,14 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
 		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), texture("block/grimstone"));
 		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), texture("block/grimstone_bricks"));
+		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), texture("block/polished_grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), texture("block/grimstone"), texture("block/grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), texture("block/grimstone_bricks"), texture("block/grimstone_bricks"));
+		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), texture("block/grimstone_bricks"), texture("block/polished_grimstone"));
 		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(), models().getExistingFile(Risus.prefix("block/chiseled_grimstone")));
 		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone"));
 		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), texture("block/grimstone_bricks"));
+		wallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), texture("block/polished_grimstone"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));

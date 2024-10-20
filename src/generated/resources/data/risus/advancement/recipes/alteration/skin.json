@@ -1,17 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leather": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:leather"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_rabbit_hide": {
+    "has_item": {
       "conditions": {
         "items": [
           {
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_leather",
-      "has_rabbit_hide"
+      "has_item"
     ]
   ],
   "rewards": {

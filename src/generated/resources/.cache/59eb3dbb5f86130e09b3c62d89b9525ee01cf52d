@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-19T12:10:34.6755993	Loot Tables
+// 1.21.1	2024-10-20T17:22:09.5653878	Loot Tables
 20474a9ffc166c4ae3d863411cab6606cbef43d1 data/risus/loot_table/angel_altar_1.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
@@ -79,14 +79,17 @@ c0be40aa18a2d2e6cee8f214585d1888188714ef data/risus/loot_table/blocks/laughing_s
 4009090cc2cb6ddd585ad87e6f4f714154aa25aa data/risus/loot_table/blocks/linear_ritual_block.json
 73e2d66249f042b584ac6043ea5590a5d22ba2d1 data/risus/loot_table/blocks/living_tissue.json
 320374d0153b1c45e537be87ce578bfe58b000b1 data/risus/loot_table/blocks/maw_guts.json
-ba933d74761ca1a68252fc73b2fb361e25848d50 data/risus/loot_table/blocks/mirage_end_stone.json
-c318dcdced65070e0ac785c5b8dd1dc7093656e0 data/risus/loot_table/blocks/mirage_grass_block.json
-1176335259501367a7b3b269641a440c3da162cc data/risus/loot_table/blocks/mirage_netherrack.json
-478ad3216cd18f9af2b53fc1f2d46942fd54fa3b data/risus/loot_table/blocks/mirage_sand.json
+70e9f8deae5d068d7acde7c21b502a9d321df37b data/risus/loot_table/blocks/mirage_end_stone.json
+7d1bd797320b256876212566f142078609cbbd8d data/risus/loot_table/blocks/mirage_grass_block.json
+83d76e206c6ef174ea7d9ae1842facad996a0215 data/risus/loot_table/blocks/mirage_netherrack.json
+283739a60959592c08f4e220f19e97feaff88202 data/risus/loot_table/blocks/mirage_sand.json
 66d514d529972579da35d203b4bab7cf2daeaf9f data/risus/loot_table/blocks/neuron.json
 89453a2330d4aa0a71361243c9f16af12a37b1ca data/risus/loot_table/blocks/neuron_head.json
 6e3a354c01154a2a6883adf48dcf129b8cc3a29c data/risus/loot_table/blocks/organic_matter_block.json
 ea992c368422c9067e7bcd7aa9dcf9671bddd897 data/risus/loot_table/blocks/polished_grimstone.json
+4e5b54e8466edea345b8fd706db943b68522f28c data/risus/loot_table/blocks/polished_grimstone_slab.json
+6f9130b34196745c9f95b734140395d30000f643 data/risus/loot_table/blocks/polished_grimstone_stairs.json
+254994f23a5dcf381a829c348932fee46f570c6e data/risus/loot_table/blocks/polished_grimstone_wall.json
 9a2ddc285afdba9b61bcc741ab6aed63c41998b0 data/risus/loot_table/blocks/popping_bondknot_log.json
 01368e43c12335e757a80aa22cf3a760c32754a6 data/risus/loot_table/blocks/popping_bondknot_wood.json
 df6f8f5f46d6ce65f454313ca9373f25b242a981 data/risus/loot_table/blocks/potted_heart_transplant.json

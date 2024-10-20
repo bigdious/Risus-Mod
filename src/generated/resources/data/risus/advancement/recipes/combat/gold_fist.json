@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hand_of_greed": {
+    "has_item": {
       "conditions": {
         "items": [
           {
@@ -16,23 +16,12 @@
         "recipe": "risus:gold_fist"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_toothknocker": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:toothknocker"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_toothknocker",
-      "has_hand_of_greed"
+      "has_item"
     ]
   ],
   "rewards": {

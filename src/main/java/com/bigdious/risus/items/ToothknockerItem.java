@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -22,6 +23,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -54,7 +57,18 @@ public class ToothknockerItem extends SwordItem {
 		return true;
 	}
 
-
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.SHARPNESS) ||
+			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
+			enchantment.is(Enchantments.SMITE)||
+			enchantment.is(Enchantments.MENDING)||
+			enchantment.is(Enchantments.UNBREAKING)||
+			enchantment.is(Enchantments.FIRE_ASPECT)||
+			enchantment.is(Enchantments.KNOCKBACK)||
+			enchantment.is(Enchantments.VANISHING_CURSE)
+			;
+	}
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
 		if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {

@@ -6,7 +6,7 @@
       "item": "risus:tissue"
     },
     "X": {
-      "item": "minecraft:bone_block"
+      "tag": "risus:bone_block_variation"
     },
     "Y": {
       "item": "risus:bone_wall"

@@ -109,10 +109,13 @@ public class RisusItems {
 	public static final DeferredItem<Item> CRACKED_GRIMSTONE_BRICKS = ITEMS.register("cracked_grimstone_bricks", () -> new BlockItem(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_SLAB.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_BRICKS_SLAB = ITEMS.register("grimstone_bricks_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> POLISHED_GRIMSTONE_SLAB = ITEMS.register("polished_grimstone_slab", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_STAIRS = ITEMS.register("grimstone_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_STAIRS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_BRICKS_STAIRS = ITEMS.register("grimstone_bricks_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> POLISHED_GRIMSTONE_STAIRS = ITEMS.register("polished_grimstone_stairs", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_WALL = ITEMS.register("grimstone_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_WALL.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_BRICKS_WALL = ITEMS.register("grimstone_bricks_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> POLISHED_GRIMSTONE_WALL = ITEMS.register("polished_grimstone_wall", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> CHISELED_GRIMSTONE = ITEMS.register("chiseled_grimstone", () -> new BlockItem(RisusBlocks.CHISELED_GRIMSTONE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
 

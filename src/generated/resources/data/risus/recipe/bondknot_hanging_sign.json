@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "risus:stripped_bondknot_log"
+    },
+    "/": {
+      "tag": "c:chains"
+    }
+  },
+  "pattern": [
+    "/ /",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "risus:bondknot_hanging_sign"
+  }
+}

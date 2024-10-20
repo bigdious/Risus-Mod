@@ -1,21 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cstem": {
+    "has_item": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:crimson_stem"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_hyphae": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:crimson_hyphae"
+            "items": "minecraft:warped_stem"
           }
         ]
       },
@@ -26,35 +16,12 @@
         "recipe": "risus:alteration/burnt_hyphae"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_whyphae": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:warped_hyphae"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_wstem": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:warped_stem"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_hyphae",
-      "has_cstem",
-      "has_whyphae",
-      "has_wstem"
+      "has_item"
     ]
   ],
   "rewards": {

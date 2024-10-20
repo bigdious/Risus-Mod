@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_teeth": {
+    "has_item": {
       "conditions": {
         "items": [
           {
@@ -16,23 +16,12 @@
         "recipe": "risus:teeth"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_tissue": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:tissue"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_tissue",
-      "has_teeth"
+      "has_item"
     ]
   ],
   "rewards": {

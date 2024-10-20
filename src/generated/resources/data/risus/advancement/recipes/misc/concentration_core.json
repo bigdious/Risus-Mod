@@ -1,21 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_core": {
+    "has_item": {
       "conditions": {
         "items": [
           {
             "items": "risus:memory_core"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_scales": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:gluttony_scales"
           }
         ]
       },
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_scales",
-      "has_core"
+      "has_item"
     ]
   ],
   "rewards": {

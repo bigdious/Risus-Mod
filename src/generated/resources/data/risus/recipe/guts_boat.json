@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "risus:maw_guts"
+    },
+    {
+      "item": "risus:bondknot_boat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:guts_boat"
+  }
+}

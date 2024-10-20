@@ -10,6 +10,10 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.component.TypedDataComponent;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -26,12 +30,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import org.jetbrains.annotations.ApiStatus;
+
+import java.util.List;
 
 public class ScytheItem extends SwordItem {
 
@@ -42,11 +52,24 @@ public class ScytheItem extends SwordItem {
 	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
 		return SwordItem.createAttributes(tier, damage, speed)
 			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), 2.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-			.withModifierAdded(Attributes.SWEEPING_DAMAGE_RATIO, new AttributeModifier(Risus.prefix("range_modifier"), 0.9, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+			.withModifierAdded(Attributes.SWEEPING_DAMAGE_RATIO, new AttributeModifier(Risus.prefix("range_modifier"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
 	}
 	@Override
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
 		return material.is(RisusItems.GLUTTONY_SCALES);
+	}
+
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.SHARPNESS) ||
+			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
+			enchantment.is(Enchantments.SMITE)||
+			enchantment.is(Enchantments.MENDING)||
+			enchantment.is(Enchantments.UNBREAKING)||
+			enchantment.is(Enchantments.FIRE_ASPECT)||
+			enchantment.is(Enchantments.KNOCKBACK)||
+			enchantment.is(Enchantments.VANISHING_CURSE)
+			;
 	}
 	@Override
 	public InteractionResult useOn(UseOnContext pContext) {
@@ -88,6 +111,9 @@ public class ScytheItem extends SwordItem {
 			if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.SOUL_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
 				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.SOUL_SCYTHE.get()));
 				item.getItem().applyComponents(scythe.getComponentsPatch());
+				if (scythe.getEnchantmentLevel(level.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SMITE)) > 0) {
+					item.getItem();
+				}
 				player.level().addFreshEntity(item);
 				if (!level.isClientSide()) {
 					level.setBlock(blockpos, Blocks.SOUL_CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);

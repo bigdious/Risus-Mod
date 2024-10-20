@@ -1,27 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bonds": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:crystallized_bond"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_core": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:concentration_core"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_scales": {
+    "has_item": {
       "conditions": {
         "items": [
           {
@@ -41,9 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_core",
-      "has_bonds",
-      "has_scales"
+      "has_item"
     ]
   ],
   "rewards": {

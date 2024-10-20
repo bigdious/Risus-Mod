@@ -13,6 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -53,28 +54,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
 		this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
-
-		//enchantment lists
-		this.tag(ItemTags.SWORDS).add(
-			RisusItems.UNAWAKENED_VESSEL.get(),
-			RisusItems.CRESCENT_DISASTER.get(),
-			RisusItems.SCYTHE.get(),
-			RisusItems.SOUL_SCYTHE.get(),
-			RisusItems.FIRE_SCYTHE.get(),
-			RisusItems.CINDERGLEE_SCYTHE.get(),
-			RisusItems.TOOTHKNOCKER.get(),
-			RisusItems.GOLD_FIST.get()
-		);
-
-		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
-			RisusItems.UNAWAKENED_VESSEL.get(),
-			RisusItems.CRESCENT_DISASTER.get(),
-			RisusItems.SCYTHE.get(),
-			RisusItems.SOUL_SCYTHE.get(),
-			RisusItems.FIRE_SCYTHE.get(),
-			RisusItems.CINDERGLEE_SCYTHE.get(),
-			RisusItems.TOOTHKNOCKER.get(),
-			RisusItems.GOLD_FIST.get()
-		);
+		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
 	}
 }

@@ -5,16 +5,6 @@
       "conditions": {
         "items": [
           {
-            "items": "risus:eye_ender"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_item1": {
-      "conditions": {
-        "items": [
-          {
             "items": "risus:teeth"
           }
         ]
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_item",
-      "has_item1"
+      "has_item"
     ]
   ],
   "rewards": {

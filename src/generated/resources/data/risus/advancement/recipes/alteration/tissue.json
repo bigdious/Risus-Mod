@@ -1,37 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beef": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:beef"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_mutton": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:mutton"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_pork": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:porkchop"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_rabbit": {
+    "has_item": {
       "conditions": {
         "items": [
           {
@@ -51,10 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pork",
-      "has_beef",
-      "has_mutton",
-      "has_rabbit"
+      "has_item"
     ]
   ],
   "rewards": {

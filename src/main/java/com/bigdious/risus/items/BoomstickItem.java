@@ -4,6 +4,7 @@ import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -40,7 +41,10 @@ public class BoomstickItem extends Item {
 	public boolean isEnchantable(ItemStack itemstack) {
 		return true;
 	}
-
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.UNBREAKING);
+	}
 
 
 }
