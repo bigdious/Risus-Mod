@@ -30,10 +30,10 @@ public class BloodFluid extends BaseFlowingFluid {
 		return 6;
 	}
 
-
+	@Override
 	protected boolean canConvertToSource(Level pLevel) {
 		//TODO look into gamerules
-		return pLevel.getGameRules().getBoolean(GameRules.RULE_WATER_SOURCE_CONVERSION);
+		return true;
 	}
 
 	@Override

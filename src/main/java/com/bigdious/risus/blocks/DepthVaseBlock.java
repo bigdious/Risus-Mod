@@ -141,9 +141,9 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
-										ParticleTypes.DUST_PLUME,
+										ParticleTypes.SMOKE,
 										(double)pos.getX() + 0.5,
-										(double)pos.getY() + 1.2,
+										(double)pos.getY() + 1,
 										(double)pos.getZ() + 0.5,
 										7,
 										0.0,
@@ -160,9 +160,9 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 								if (level instanceof ServerLevel serverlevel) {
 									serverlevel.sendParticles(
-										ParticleTypes.DUST_PLUME,
+										ParticleTypes.SMOKE,
 										(double)pos.getX() + 0.5,
-										(double)pos.getY() + 1.2,
+										(double)pos.getY() + 1,
 										(double)pos.getZ() + 0.5,
 										7,
 										0.0,
@@ -179,9 +179,9 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(
-									ParticleTypes.DUST_PLUME,
+									ParticleTypes.SMOKE,
 									(double)pos.getX() + 0.5,
-									(double)pos.getY() + 1.2,
+									(double)pos.getY() + 1,
 									(double)pos.getZ() + 0.5,
 									7,
 									0.0,
@@ -204,11 +204,11 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
 							if (level instanceof ServerLevel serverlevel) {
 								serverlevel.sendParticles(
-									ParticleTypes.DUST_PLUME,
+									RisusParticles.RISUS_SOUL_PARTICLE.get(),
 									(double)pos.getX() + 0.5,
-									(double)pos.getY() + 1.2,
+									(double)pos.getY() + 1,
 									(double)pos.getZ() + 0.5,
-									7,
+									1,
 									0.0,
 									0.0,
 									0.0,

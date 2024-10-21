@@ -57,8 +57,9 @@ public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEnti
 	public void render(DepthVaseBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 		poseStack.pushPose();
 		Direction direction = blockEntity.getDirection();
-		poseStack.translate(0.5, 1.5, 0.5);
+		poseStack.translate(0.5, 0, 0.5);
 		poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
+		poseStack.translate(0, -1.5, 0);
 		DepthVaseBlockEntity.DepthWobbleStyle wobbleStyle = blockEntity.lastWobbleStyle;
 		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F + direction.toYRot()));
 
@@ -76,7 +77,7 @@ public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEnti
 				} else {
 					float f5 = Mth.sin(-f * 3.0F * (float) Math.PI) * WOBBLE_AMPLITUDE;
 					float f6 = 1.0F - f;
-					poseStack.rotateAround(Axis.YP.rotation(f5 * f6), 0.5F, 0.0F, 0.5F);
+					poseStack.rotateAround(Axis.YP.rotation(f5 * f6), 0F, 0.0F, 0F);
 				}
 			}
 		}

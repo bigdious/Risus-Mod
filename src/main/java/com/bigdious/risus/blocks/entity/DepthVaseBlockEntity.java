@@ -15,6 +15,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -111,9 +112,17 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 			this.level.blockEvent(this.getBlockPos(), this.getBlockState().getBlock(), EVENT_POT_WOBBLES, pStyle.ordinal());
 		}
 	}
+
 	@Override
 	public boolean triggerEvent(int pId, int pType) {
-		return true;
+		//thanks for pointing this out giz
+		if (this.level != null && pId == 1 && pType >= 0 && pType < DepthWobbleStyle.values().length) {
+			this.wobbleStartedAtTick = this.level.getGameTime();
+			this.lastWobbleStyle = DepthWobbleStyle.values()[pType];
+			return true;
+		} else {
+			return super.triggerEvent(pId, pType);
+		}
 	}
 
 	public static enum DepthWobbleStyle {
