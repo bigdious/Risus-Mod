@@ -17,11 +17,11 @@
   "block.risus.full_bone_slab": "Full Bone Slab",
   "block.risus.organic_matter_block": "Organic Matter Block",
   "block.risus.burnt_hyphae": "Burnt Hyphae",
-  "block.risus.tissue": "Tissue",
+  "block.risus.tissue": "Living Tissue",
   "block.risus.rotting_tissue": "Rotting Tissue",
   "block.risus.decomposing_tissue": "Decomposing Tissue",
   "block.risus.decaying_tissue": "Decaying Tissue",
-  "block.risus.living_tissue": "Living Tissue",
+  "block.risus.living_tissue": "Tissue",
   "block.risus.rotted_tissue": "Rotted Tissue",
   "block.risus.decomposed_tissue": "Decomposed Tissue",
   "block.risus.decayed_tissue": "Decayed Tissue",
@@ -144,6 +144,7 @@
   "item.risus.soul_scythe": "Soul Scratcher",
   "item.risus.cinderglee_scythe": "Existential Executioner",
   "item.risus.researchers_notes": "Researcher's Notes",
+  "item.risus.angel_wings": "Ophanim Wings",
 
 
 

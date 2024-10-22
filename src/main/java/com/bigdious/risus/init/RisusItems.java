@@ -34,7 +34,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(RisusBlocks.DARKNESS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = ITEMS.register("bloodwyrm_head_weapon", () -> new BloodwyrmHeadItem(RisusItems.defaultWithRarity().durability(1000)));
-	public static final DeferredItem<Item> ANGEL_WINGS = ITEMS.register("angel_wings", () -> new AngelWings(RisusItems.defaultWithRarity().durability(513)));
+	public static final DeferredItem<Item> ANGEL_WINGS = ITEMS.register("angel_wings", () -> new AngelWings(RisusItems.defaultWithRarity().durability(666)));
 
 	//CONSUMABLES
 

@@ -20,6 +20,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
@@ -30,6 +32,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -54,6 +58,7 @@ import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 
 public class RisusClientEvents {
 
@@ -68,6 +73,7 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerScreens);
 		bus.addListener(RisusClientEvents::registerBlockColors);
 		bus.addListener(RisusClientEvents::registerClientExtensions);
+		bus.addListener(EntityRenderersEvent.AddLayers.class, RisusClientEvents::attachRenderLayers);
 
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
@@ -137,6 +143,25 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 	}
 
+	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
+		//thanks Tama
+		for (EntityType<?> type : event.getEntityTypes()) {
+			var renderer = event.getRenderer(type);
+			if (renderer instanceof LivingEntityRenderer<?, ?> living) {
+				attachRenderLayers(living);
+			}
+		}
+
+		event.getSkins().forEach(renderer -> {
+			LivingEntityRenderer<Player, EntityModel<Player>> skin = event.getSkin(renderer);
+			attachRenderLayers(Objects.requireNonNull(skin));
+		});
+	}
+
+	private static <T extends LivingEntity, M extends EntityModel<T>> void attachRenderLayers(LivingEntityRenderer<T, M> renderer) {
+		EntityModelSet models = Minecraft.getInstance().getEntityModels();
+		renderer.addLayer(new AngelWingsLayer<>(renderer, models));
+	}
 	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
 		event.registerSkullModel(RisusSkullType.BLOODWYRM, new BloodWyrmHeadModel(event.getEntityModelSet().bakeLayer(RisusModelLayers.BLOODWYRM_HEAD)));
 	}
@@ -234,16 +259,6 @@ public class RisusClientEvents {
 			ClientHooks.renderBlockOverlay(Minecraft.getInstance().player, event.getPoseStack(), RenderBlockScreenEffectEvent.OverlayType.FIRE, RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), Minecraft.getInstance().player.blockPosition());
 		}
 	}
-
-
-//	public static void registerElytraLayer()
-//	{
-//		Minecraft mc = Minecraft.getInstance();
-//		mc.getEntityRenderDispatcher().getSkinMap().values()
-//			.forEach(player -> ((LivingEntityRenderer) player).addLayer(new AngelWingsLayer((LivingEntityRenderer) player, mc.getEntityModels())));
-//	}
-
-
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {

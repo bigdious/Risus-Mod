@@ -1,5 +1,6 @@
 package com.bigdious.risus.client.render.layer;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -14,28 +15,63 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.ElytraLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public  class AngelWingsLayer extends ElytraLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
-	private static final ResourceLocation WINGS_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/angel_wings.png");
+public  class AngelWingsLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T,M> {
+	private static final ResourceLocation WINGS_LOCATION = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/angel_wings.png");
+	private final ElytraModel<T> elytraModel;
 
-	public AngelWingsLayer(RenderLayerParent<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> pRenderer, EntityModelSet pModelSet) {
-		super(pRenderer, pModelSet);
-	}
-	@Override
-	public boolean shouldRender(ItemStack stack, AbstractClientPlayer entity)
-	{
-		return true;
+	public AngelWingsLayer(RenderLayerParent<T, M> p_174493_, EntityModelSet p_174494_) {
+		super(p_174493_);
+		this.elytraModel = new ElytraModel<>(p_174494_.bakeLayer(ModelLayers.ELYTRA));
 	}
 
-	@Override
-	public ResourceLocation getElytraTexture(ItemStack stack, AbstractClientPlayer entity)
-	{
+	public void render(PoseStack p_116951_, MultiBufferSource p_116952_, int p_116953_, T p_116954_, float p_116955_, float p_116956_, float p_116957_, float p_116958_, float p_116959_, float p_116960_) {
+		ItemStack itemstack = p_116954_.getItemBySlot(EquipmentSlot.CHEST);
+		if (this.shouldRender(itemstack, p_116954_)) {
+			ResourceLocation resourcelocation;
+			if (p_116954_ instanceof AbstractClientPlayer) {
+				AbstractClientPlayer abstractclientplayer = (AbstractClientPlayer)p_116954_;
+				PlayerSkin playerskin = abstractclientplayer.getSkin();
+				if (playerskin.elytraTexture() != null) {
+					resourcelocation = playerskin.elytraTexture();
+				} else if (playerskin.capeTexture() != null && abstractclientplayer.isModelPartShown(PlayerModelPart.CAPE)) {
+					resourcelocation = playerskin.capeTexture();
+				} else {
+					resourcelocation = this.getElytraTexture(itemstack, p_116954_);
+				}
+			} else {
+				resourcelocation = this.getElytraTexture(itemstack, p_116954_);
+			}
+
+			p_116951_.pushPose();
+			p_116951_.translate(0.0F, 0.0F, 0.125F);
+			this.getParentModel().copyPropertiesTo(this.elytraModel);
+			this.elytraModel.setupAnim(p_116954_, p_116955_, p_116956_, p_116958_, p_116959_, p_116960_);
+			VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(p_116952_, RenderType.armorCutoutNoCull(resourcelocation), itemstack.hasFoil());
+			this.elytraModel.renderToBuffer(p_116951_, vertexconsumer, p_116953_, OverlayTexture.NO_OVERLAY);
+			p_116951_.popPose();
+		}
+
+	}
+
+	public boolean shouldRender(ItemStack stack, T entity) {
+		return stack.getItem() == RisusItems.ANGEL_WINGS.asItem();
+	}
+
+	public ResourceLocation getElytraTexture(ItemStack stack, T entity) {
 		return WINGS_LOCATION;
 	}
-
 }
