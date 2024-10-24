@@ -118,7 +118,7 @@ public class Lover extends Monster {
 
 
 	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPING;
+		return RisusMobType.OFFSPRING;
 	}
 }
 

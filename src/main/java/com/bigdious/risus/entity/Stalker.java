@@ -77,7 +77,7 @@ public class Stalker extends Monster {
 	}
 
 	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPING;
+		return RisusMobType.OFFSPRING;
 	}
 
 	protected SoundEvent getHurtSound(DamageSource pDamageSource) {

@@ -39,12 +39,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Weaver extends Spider implements CacheTargetOnClient {
+	private int attackTimer;
 
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
-	private int attackAnimationTick;
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
 	public final AnimationState leapAnim = new AnimationState();
+	public final AnimationState biteAnim = new AnimationState();
 	public int memories;
 
 
@@ -104,8 +105,8 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 	public void aiStep() {
 		super.aiStep();
-		if (this.attackAnimationTick > 0) {
-			--this.attackAnimationTick;
+		if (this.attackTimer > 0) {
+			--this.attackTimer;
 		}
 		if (this.memories>=3) {
 			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size()<2) {
@@ -132,7 +133,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 
 	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPING;
+		return RisusMobType.OFFSPRING;
 	}
 	public static class WeaverEffectsGroupData implements SpawnGroupData {
 		@Nullable
@@ -194,8 +195,8 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 	@Override
 	public boolean doHurtTarget(Entity entity) {
-		this.attackAnimationTick = 10;
-		this.level().broadcastEntityEvent(this, (byte) 67);
+		this.attackTimer = 10;
+		this.level().broadcastEntityEvent(this, (byte) 4);
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
 				Level level = living.level();
@@ -247,12 +248,11 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 
 	@Override
 	public void handleEntityEvent(byte id) {
+		if (id == 4) {
+			this.attackTimer = 10;
+		}
 		if (id == 66) {
 			this.leapAnim.start(this.tickCount);
-		} else if (id == 67) {
-			this.attackAnimationTick = 10;
-		} else {
-			super.handleEntityEvent(id);
 		}
 	}
 
@@ -294,8 +294,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		}
 
 	}
-
-	public int getAttackAnimationTick() {
-		return this.attackAnimationTick;
+	public int getAttackTimer() {
+		return this.attackTimer;
 	}
 }

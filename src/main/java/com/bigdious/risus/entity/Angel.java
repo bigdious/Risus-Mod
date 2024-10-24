@@ -48,7 +48,7 @@ public class Angel extends Monster {
 	}
 
 	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPING;
+		return RisusMobType.OFFSPRING;
 	}
 
 	@Override

@@ -44,6 +44,7 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
+import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -224,6 +225,15 @@ public class RisusEvents {
 			} else {
 				event.setNewDamage(event.getOriginalDamage()-3);
 			}
+		}
+	}
+
+	//this will be so complicated
+	//I am definitely procrastinating this shit
+	private static void pushBloodweave(PistonEvent event) {
+		BlockState state = event.getState();
+		if (state.is(RisusBlocks.BLOODWEAVE.get())){
+
 		}
 	}
 }
