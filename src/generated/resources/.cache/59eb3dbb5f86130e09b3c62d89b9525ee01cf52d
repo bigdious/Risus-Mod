@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-20T17:22:09.5653878	Loot Tables
+// 1.21.1	2024-10-25T19:30:24.4358423	Loot Tables
 20474a9ffc166c4ae3d863411cab6606cbef43d1 data/risus/loot_table/angel_altar_1.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
@@ -35,6 +35,7 @@ ddfd7d233204c1b01626a566581fea6e0f11ecce data/risus/loot_table/blocks/bondknot_t
 8ad82caee5694ebe921b5948a57156a05260ee3f data/risus/loot_table/blocks/crystallized_bonds.json
 50672bfb864fadc67eb4b37fd035f162efba6681 data/risus/loot_table/blocks/curved_fleshy_skin.json
 3f70b4e7ee99e9317fabd500d8fbd35c5751da29 data/risus/loot_table/blocks/curved_ritual_block.json
+2b215889cd9907fc6952fb1d629f15ae6ca39dbb data/risus/loot_table/blocks/darkness.json
 decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_table/blocks/decayed_tissue.json
 46b68cae6160b2510334f558d196451c82481bc2 data/risus/loot_table/blocks/decaying_tissue.json
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_table/blocks/decomposed_tissue.json
@@ -115,6 +116,7 @@ e72729e6940474c975b2c012fd2a7395ed3b0873 data/risus/loot_table/blocks/weaver_nes
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_table/blocks/zit.json
 e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.json
 2075eb3f8bcf68bd5a2bad388c9a39c39bedc9fd data/risus/loot_table/entities/holder.json
+c6a21d7bd537d4b9d5903c9e48feeba941c42dd3 data/risus/loot_table/entities/licker.json
 ac15bf48d7a30e86f1de03e9bbe197893f6617b2 data/risus/loot_table/entities/lover.json
 899a1181d1faf62ef9f0b2848055cda65d1288a4 data/risus/loot_table/entities/maw.json
 43249e37e72788d275b68e5c1cf5dab074b49db0 data/risus/loot_table/entities/memory1.json

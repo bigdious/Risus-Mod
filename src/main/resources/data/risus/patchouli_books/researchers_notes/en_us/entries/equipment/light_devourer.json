@@ -1,0 +1,17 @@
+{
+  "name": "Light Devourer",
+  "icon": "risus:light_devourer",
+  "category": "risus:equipment",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Light Devourer is made up of a case holding a dark mass at its center that swirls and consumes the points of lights floating around it, representing a contained miniature black hole. As a tool, it allows the user to semi-permanently absorb the light in a localized empty area. This effect can be nullified by using the tool to 'break' the darkness."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:light_devourer",
+      "text": "'In darkness, there's a beauty that cannot be sought anywhere else. It is the purest form the fear of the unknown can take. A power so great, its potential is nearly infinite...'            -extract from the Story of Shadows"
+    }
+  ]
+}

@@ -69,6 +69,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusItems.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
 				.unlockedBy("has_item", has(Items.OAK_LOG)).unlockedBy("has_item", has(Items.DARK_OAK_LOG)).unlockedBy("has_item", has(Items.BIRCH_LOG)).unlockedBy("has_item", has(Items.SPRUCE_LOG)).unlockedBy("has_item", has(Items.JUNGLE_LOG)).unlockedBy("has_item", has(Items.ACACIA_LOG)).unlockedBy("has_item", has(Items.MANGROVE_LOG)).unlockedBy("has_item", has(Items.CHERRY_LOG)).save(consumer);

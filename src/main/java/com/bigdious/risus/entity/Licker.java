@@ -33,14 +33,15 @@ public class Licker extends Monster {
 			.add(Attributes.FOLLOW_RANGE, 24)
 			.add(Attributes.ATTACK_DAMAGE, 5.0);
 	}
+	@Override
 	protected Brain<?> makeBrain(Dynamic<?> p_312201_) {
 		return LickerAi.makeBrain(this, this.brainProvider().makeBrain(p_312201_));
 	}
-
-	public Brain<Licker> getBrain() {
-		return super.getBrain();
-	}
-
+//	@Override
+//	public Brain<Licker> getBrain() {
+//		return super.getBrain();
+//	}
+	@Override
 	protected Brain.Provider<Licker> brainProvider() {
 		return Brain.provider(LickerAi.MEMORY_TYPES, LickerAi.SENSOR_TYPES);
 	}
@@ -61,9 +62,10 @@ public class Licker extends Monster {
 
 		return false;
 	}
+	@Override
 	protected void customServerAiStep() {
 		this.level().getProfiler().push("lickerBrain");
-		this.getBrain().tick((ServerLevel)this.level(), this);
+//		this.getBrain().tick((ServerLevel)this.level(), this);
 		this.level().getProfiler().popPush("lickerActivityUpdate");
 		LickerAi.updateActivity(this);
 		this.level().getProfiler().pop();

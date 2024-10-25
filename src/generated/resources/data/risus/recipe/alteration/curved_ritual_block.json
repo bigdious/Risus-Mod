@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:black_glazed_terracotta"
+  },
+  "result": "risus:curved_ritual_block"
+}

@@ -37,10 +37,12 @@ public class LickerAi {
 			new LookAtTargetSink(45, 90)));
 	}
 	private static void initIdleActivity(Brain<Licker> lickerBrain) {
-		lickerBrain.addActivity(Activity.IDLE, ImmutableList.of(Pair.of(0, StartAttacking.create((p_312881_) -> {
-			return p_312881_.getBrain().getMemory(MemoryModuleType.NEAREST_ATTACKABLE);
-		})), Pair.of(1, StartAttacking.create(Licker::getHurtBy)),
-			Pair.of(2, new RunOne(ImmutableList.of(
+		lickerBrain.addActivity(Activity.IDLE, ImmutableList.of(
+			Pair.of(0, StartAttacking.create((licker) -> {
+					return licker.getBrain().getMemory(MemoryModuleType.NEAREST_ATTACKABLE);
+			})),
+			Pair.of(1, StartAttacking.create(Licker::getHurtBy)),
+			Pair.of(2, new RunOne<>(ImmutableList.of(
 				Pair.of(new DoNothing(20, 100), 1),
 				Pair.of(RandomStroll.stroll(0.6F), 2))))));
 	}
@@ -61,6 +63,6 @@ public class LickerAi {
 	}
 	static {
 		SENSOR_TYPES = ImmutableList.of(SensorType.NEAREST_LIVING_ENTITIES, SensorType.HURT_BY, SensorType.NEAREST_PLAYERS);
-		MEMORY_TYPES = ImmutableList.of(MemoryModuleType.LOOK_TARGET, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES, MemoryModuleType.NEAREST_ATTACKABLE, MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE, MemoryModuleType.ATTACK_TARGET, MemoryModuleType.WALK_TARGET, MemoryModuleType.BREEZE_JUMP_COOLDOWN, MemoryModuleType.BREEZE_JUMP_INHALING, MemoryModuleType.BREEZE_SHOOT, MemoryModuleType.BREEZE_SHOOT_CHARGING, MemoryModuleType.BREEZE_SHOOT_RECOVERING, MemoryModuleType.BREEZE_SHOOT_COOLDOWN, new MemoryModuleType[]{MemoryModuleType.BREEZE_JUMP_TARGET, MemoryModuleType.BREEZE_LEAVING_WATER, MemoryModuleType.HURT_BY, MemoryModuleType.HURT_BY_ENTITY, MemoryModuleType.PATH});
+		MEMORY_TYPES = ImmutableList.of(MemoryModuleType.LOOK_TARGET, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES, MemoryModuleType.NEAREST_ATTACKABLE, MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE, MemoryModuleType.ATTACK_TARGET, MemoryModuleType.WALK_TARGET, MemoryModuleType.HURT_BY, MemoryModuleType.HURT_BY_ENTITY, MemoryModuleType.PATH);
 	}
 }

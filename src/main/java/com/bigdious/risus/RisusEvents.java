@@ -126,6 +126,7 @@ public class RisusEvents {
 		event.put(RisusEntities.MAW.get(), Maw.attributes().build());
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());
 		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
+		event.put(RisusEntities.LICKER.get(), Lover.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
@@ -216,14 +217,14 @@ public class RisusEvents {
 		}
 	}
 
-	private static void soulScythe(LivingDamageEvent.Pre event) {
+	private static void soulScythe(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types())) {
-				event.setNewDamage(event.getOriginalDamage()+5);
+				event.setAmount(event.getAmount()+5);
 			} else {
-				event.setNewDamage(event.getOriginalDamage()-3);
+				event.setAmount(event.getAmount()-3);
 			}
 		}
 	}

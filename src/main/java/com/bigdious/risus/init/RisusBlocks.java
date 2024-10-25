@@ -85,7 +85,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
 	public static final DeferredBlock<Block> SCAB = BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
 	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = BLOCKS.register("coagulated_blood_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn()));
-	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.ofFullCopy(Blocks.AIR).pushReaction(PushReaction.DESTROY).noOcclusion().sound(SoundType.SCULK)));
+	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.of().pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
 
 	//NONFULLBLOCK DECO
 
