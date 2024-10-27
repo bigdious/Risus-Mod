@@ -1,5 +1,8 @@
 package com.bigdious.risus.effects;
 
+import com.bigdious.risus.init.RisusDamageTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,7 +14,7 @@ public class PleasureEffect extends MobEffect {
 
 	@Override
 	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-		entity.hurt(entity.damageSources().magic(), 1);
+		entity.hurt(entity.damageSources().source(RisusDamageTypes.PLEASURE), 1);
 		entity.invulnerableTime = 0;
 		return super.applyEffectTick(entity, amplifier);
 	}

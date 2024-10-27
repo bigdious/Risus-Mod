@@ -58,7 +58,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		return Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 12.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.3D)
-				.add(Attributes.ATTACK_DAMAGE, 3.0D);
+				.add(Attributes.ATTACK_DAMAGE, 2.0D);
 	}
 
 	@Override
@@ -208,6 +208,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA, i * 20, 0), this);
+				entity.hurt(entity.damageSources().source(RisusDamageTypes.MELANCHOLY), 1);
 				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR)) {
 					this.memories++;
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 3);
@@ -216,7 +217,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 			}
 		}
 
-		return false;
+		return super.doHurtTarget(entity);
 	}
 
 	@Override

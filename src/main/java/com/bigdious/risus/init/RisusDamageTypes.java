@@ -30,11 +30,13 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> INEXISTENCE = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("inexistence"));
 	public static final ResourceKey<DamageType> GLUTTONY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("gluttony"));
 	public static final ResourceKey<DamageType> MELANCHOLY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("melancholy"));
+	public static final ResourceKey<DamageType> PLEASURE = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("pleasure"));
 
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {
 		context.register(INEXISTENCE, new DamageType("inexistence", 0));
 		context.register(GLUTTONY, new DamageType("gluttony", 0));
 		context.register(MELANCHOLY, new DamageType("melancholy", 0));
+		context.register(PLEASURE, new DamageType("pleasure", 0));
 	}
 }

@@ -157,6 +157,7 @@
   "item.risus.transient_question_mark_spawn_egg": "??? Spawn Egg",
   "item.risus.weaver_spawn_egg": "Weaver Spawn Egg",
   "item.risus.lover_spawn_egg": "Lover Spawn Egg",
+  "item.risus.licker_spawn_egg": "Licker Spawn Egg",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",
@@ -179,12 +180,16 @@
   "entity.risus.thrown_axe": "Thrown Crescent Disaster",
   "entity.risus.weaver": "Weaver",
   "entity.risus.memory1": "Faded Statue",
+  "entity.risus.licker": "Licker",
 
   "death.attack.inexistence": "%1$s has stepped into inexistence",
   "death.attack.inexistence.player": "%1$s has stepped into inexistence while trying to escape %2$s",
   "death.attack.weaver": "Fuck off",
 
   "death.attack.risus.melancholy": "%1$s went dancing in the acid rain",
+
+  "death.attack.pleasure": "%1$s's body drowned in ecstasy",
+  "death.attack.pleasure.player": "%1$s's body drowned in ecstasy while dancing with %2$s",
 
   "death.attack.gluttony": "%1$s was devoured",
   "death.attack.gluttony.player": "%1$s was devoured",
@@ -194,7 +199,7 @@
   "itemGroup.risus.main": "Risus",
   "advancement.risus.first": "Risus",
   "advancement.risus.mod_book": "Researcher's Notes",
-  "advancement.risus.mod_book.desc": "Alter a book to gain access to vast knowledge.",
+  "advancement.risus.mod_book.desc": "Alter a book to gain access to lost knowledge.",
   "advancement.risus.family": "Father...?",
   "advancement.risus.first.desc": "The Joyplague",
   "advancement.risus.family.desc": "Discover a Family Tree.",

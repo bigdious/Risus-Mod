@@ -3,8 +3,10 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobType;
+import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -85,6 +87,7 @@ public class Lover extends Monster {
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.85D, false));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Spider.class, true));
 	}
 	@Override
 	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
@@ -108,7 +111,36 @@ public class Lover extends Monster {
 				}
 				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
+				for(int i = 0; i < 10; ++i) {
+					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0 , 0.0, 0.0, 0.0);
+					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5),1, 0 , 0.0, 0.0, 0.0);
+				}
+				flag = false;
+			}
+		}
+		if ((entity instanceof Spider spider && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.LICKER.get(), (timer) -> {}))) {
+			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
+				return flag;
+			}
 
+			Licker licker = spider.convertTo(RisusEntities.LICKER.get(), false);
+			if (licker != null) {
+				licker.finalizeSpawn(
+					level,
+					level.getCurrentDifficultyAt(licker.blockPosition()),
+					MobSpawnType.CONVERSION,
+					new Zombie.ZombieGroupData(false, false)
+				);
+				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, licker);
+				if (!this.isSilent()) {
+					level.levelEvent(null, 1026, this.blockPosition(), 0);
+				}
+				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
+				for(int i = 0; i < 10; ++i) {
+						level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0 , 0.0, 0.0, 0.0);
+						level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5),1, 0 , 0.0, 0.0, 0.0);
+				}
 				flag = false;
 			}
 		}

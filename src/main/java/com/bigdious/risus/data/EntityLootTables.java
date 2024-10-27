@@ -30,38 +30,43 @@ public class EntityLootTables extends EntityLootSubProvider {
 	@Override
 	public void generate() {
 		add(RisusEntities.ANGEL.get(),
-				LootTable.lootTable()
-						.withPool(LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1.0F))
-								.add(LootItem.lootTableItem(RisusItems.BLOOD_FEATHER.get()))
-								.when(LootItemKilledByPlayerCondition.killedByPlayer())));
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.BLOOD_FEATHER.get()))
+					.when(LootItemKilledByPlayerCondition.killedByPlayer())));
 		add(RisusEntities.MEMORY1.get(),
-				LootTable.lootTable()
-						.withPool(LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1.0F))
-								.add(LootItem.lootTableItem(RisusItems.MEMORY1_ITEM.get()))
-								.when(LootItemKilledByPlayerCondition.killedByPlayer())));
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.MEMORY1_ITEM.get()))
+					.when(LootItemKilledByPlayerCondition.killedByPlayer())));
 
 		add(RisusEntities.HOLDER.get(),
-				LootTable.lootTable().withPool(LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1.0F))
-								.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER.get()))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
-						.withPool(LootPool.lootPool()
-								.setRolls(ConstantValue.exactly(1.0F))
-								.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
-								.when(LootItemKilledByPlayerCondition.killedByPlayer())
-								.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
+			LootTable.lootTable().withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER.get()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
+					.when(LootItemKilledByPlayerCondition.killedByPlayer())
+					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
 		add(RisusEntities.STALKER.get(), LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-						.setRolls(ConstantValue.exactly(1.0F))
-						.add(LootItem.lootTableItem(Items.GUNPOWDER)).
-						apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.GUNPOWDER)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
 		add(RisusEntities.LICKER.get(), LootTable.lootTable()
 			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER))
 				.setRolls(ConstantValue.exactly(1.0F))
 				.add(LootItem.lootTableItem(Items.STRING)).
 				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))
@@ -71,15 +76,16 @@ public class EntityLootTables extends EntityLootSubProvider {
 		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.TRANSIENT_QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.WEAVER.get(), LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-						.setRolls(ConstantValue.exactly(1.0F))
-						.add(LootItem.lootTableItem(Items.BONE)).
-						apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))
-				.withPool(LootPool.lootPool()
-						.setRolls(ConstantValue.exactly(1.0F))
-						.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE.get()))
-						.when(LootItemKilledByPlayerCondition.killedByPlayer())
-						.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries,0.03F, 0.03F)))));
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.BONE)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE.get()))
+				.when(LootItemKilledByPlayerCondition.killedByPlayer())
+				.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
+
 	}
 
 	@Override
