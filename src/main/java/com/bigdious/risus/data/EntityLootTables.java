@@ -55,6 +55,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
+		add(RisusEntities.BABY_SPIDER.get(), LootTable.lootTable());
 		add(RisusEntities.STALKER.get(), LootTable.lootTable()
 			.withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1.0F))

@@ -158,6 +158,7 @@
   "item.risus.weaver_spawn_egg": "Weaver Spawn Egg",
   "item.risus.lover_spawn_egg": "Lover Spawn Egg",
   "item.risus.licker_spawn_egg": "Licker Spawn Egg",
+  "item.risus.baby_spider_spawn_egg": "Baby Spider Spawn Egg",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",
@@ -181,6 +182,7 @@
   "entity.risus.weaver": "Weaver",
   "entity.risus.memory1": "Faded Statue",
   "entity.risus.licker": "Licker",
+  "entity.risus.baby_spider": "Baby Spider",
 
   "death.attack.inexistence": "%1$s has stepped into inexistence",
   "death.attack.inexistence.player": "%1$s has stepped into inexistence while trying to escape %2$s",

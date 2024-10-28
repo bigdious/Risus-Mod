@@ -1,46 +1,44 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-public class Licker extends Monster {
+public class BabySpider extends Monster {
 	private int attackTimer;
 
-	public Licker(EntityType<? extends Monster> type, Level level) {
+	public BabySpider(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward=3;
+		this.xpReward=1;
 	}
 
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
-			.add(Attributes.MAX_HEALTH, 32.0D)
+			.add(Attributes.MAX_HEALTH, 3.0D)
 			.add(Attributes.MOVEMENT_SPEED, 0.30F)
 			.add(Attributes.FOLLOW_RANGE, 24)
-			.add(Attributes.ATTACK_DAMAGE, 1D);
+			.add(Attributes.ATTACK_DAMAGE, 1F);
 	}
 	@Override
 	protected void registerGoals() {
@@ -50,7 +48,15 @@ public class Licker extends Monster {
 		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
+			entity -> !(entity instanceof ArmorStand)
+				&& !(entity instanceof Holder)
+				&& !(entity instanceof QuestionMark)
+				&& !(entity instanceof Stalker)
+				&& !(entity instanceof Lover)
+				&& !(entity instanceof Licker)
+				&& !(entity instanceof BabySpider)
+				&& !(entity instanceof Angel)));
 	}
 	@Override
 	public void aiStep() {
@@ -60,22 +66,7 @@ public class Licker extends Monster {
 			--this.attackTimer;
 		}
 	}
-	@Override
-	public boolean doHurtTarget(Entity entity) {
-		if (entity instanceof LivingEntity living) {
-			this.attackTimer = 10;
-			this.level().broadcastEntityEvent(this, (byte) 4);
-			int i = 10;
-			if (this.level().getDifficulty() == Difficulty.NORMAL) {
-				i = 15;
-			} else if (this.level().getDifficulty() == Difficulty.HARD) {
-				i = 20;
-			}
-			living.addEffect(new MobEffectInstance(MobEffects.WEAVING, i * 20, 0), this);
-			living.addEffect(new MobEffectInstance(RisusMobEffects.PLEASURE, i * 2, 0), this);
-		}
-		return super.doHurtTarget(entity);
-	}
+
 	public int getAttackTimer() {
 		return this.attackTimer;
 	}
@@ -110,15 +101,5 @@ public class Licker extends Monster {
 	public boolean canBeAffected(MobEffectInstance p_33809_) {
 		return !p_33809_.is(MobEffects.POISON) && super.canBeAffected(p_33809_);
 	}
-	public boolean hurt(DamageSource source, float amount) {
-		boolean flag = super.hurt(source, amount);
-		if (flag && this.getHealth()==0) {
-			for (int i = 0; i<4; i++) {
-				BabySpider babySpider = RisusEntities.BABY_SPIDER.get().create(this.level());
-				babySpider.moveTo(this.getX(), this.getY()+1, this.getZ(), 0.0F, 0.0F);
-				this.level().addFreshEntity(babySpider);
-			}
-		}
-		return flag;
-	}
+
 }

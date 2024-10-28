@@ -62,6 +62,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::knockOutSomeTeeth);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::addEggSack);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::fireScythe);
@@ -129,6 +130,7 @@ public class RisusEvents {
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());
 		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
 		event.put(RisusEntities.LICKER.get(), Licker.attributes().build());
+		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
@@ -228,6 +230,15 @@ public class RisusEvents {
 			} else {
 				event.setAmount(event.getAmount()-3);
 			}
+		}
+	}
+
+	private static void addEggSack(LivingDeathEvent event) {
+		Entity entity = event.getEntity();
+		if (entity instanceof Licker licker) {
+				if (licker.level() instanceof ServerLevel serverLevel) {
+					serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, licker.getRandomX(0.5), licker.getY()+1, licker.getRandomZ(0.5), 7, 0, 0, 0, 0);
+				}
 		}
 	}
 

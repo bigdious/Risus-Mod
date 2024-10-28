@@ -100,6 +100,8 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 				&& !(entity instanceof QuestionMark)
 				&& !(entity instanceof Stalker)
 				&& !(entity instanceof Lover)
+				&& !(entity instanceof Licker)
+				&& !(entity instanceof BabySpider)
 				&& !(entity instanceof Angel)));
 	}
 
