@@ -39,6 +39,7 @@ public class Risus {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
 		RisusBlocks.BLOCKS.register(bus);
 		RisusDataAttachments.ATTACHMENT_TYPES.register(bus);
+		RisusArmorMaterials.ARMOR_MATERIALS.register(bus);
 		RisusEntities.ENTITIES.register(bus);
 		RisusItems.ITEMS.register(bus);
 		RisusMobEffects.MOB_EFFECTS.register(bus);

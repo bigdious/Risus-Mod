@@ -99,6 +99,10 @@ public class RisusTab {
 						output.accept(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
 						output.accept(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
 
+						output.accept(RisusItems.SKIN_HELMET.get());
+						output.accept(RisusItems.SKIN_CHESTPLATE.get());
+						output.accept(RisusItems.SKIN_LEGGINGS.get());
+						output.accept(RisusItems.SKIN_BOOTS.get());
 						output.accept(RisusBlocks.SKIN.get());
 						output.accept(RisusBlocks.FLESHY_SKIN.get());
 						output.accept(RisusBlocks.CURVED_FLESHY_SKIN.get());

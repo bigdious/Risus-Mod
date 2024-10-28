@@ -55,5 +55,16 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
+
+		this.tag(ItemTags.TRIMMABLE_ARMOR)
+			.add(RisusItems.SKIN_HELMET.get())
+			.add(RisusItems.SKIN_CHESTPLATE.get())
+			.add(RisusItems.SKIN_LEGGINGS.get())
+			.add(RisusItems.SKIN_BOOTS.get());
+
+		tag(ItemTags.TRIM_MATERIALS)
+			.add(RisusItems.GLUTTONY_SCALES.get())
+			.add(RisusItems.SKIN.get())
+		;
 	}
 }

@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusStructures;
+import com.bigdious.risus.init.RisusTrimMaterials;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -19,6 +20,7 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
 		.add(Registries.PROCESSOR_LIST, RisusStructures::bootstrapProcessors)
 		.add(Registries.STRUCTURE,RisusStructures::bootstrapStructures)
 		.add(Registries.STRUCTURE_SET,RisusStructures::bootstrapSets)
+		.add(Registries.TRIM_MATERIAL, RisusTrimMaterials::bootstrap)
 		.add(Registries.TEMPLATE_POOL,RisusStructures::bootstrapPools);
 
 	public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

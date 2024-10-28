@@ -156,6 +156,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.GUILTY_APPLE);
 		singleTex(RisusItems.MEMORY_CORE);
 		singleTex(RisusItems.ORGANIC_MATTER);
+		singleTex(RisusItems.SKIN_HELMET);
+		singleTex(RisusItems.SKIN_CHESTPLATE);
+		singleTex(RisusItems.SKIN_LEGGINGS);
+		singleTex(RisusItems.SKIN_BOOTS);
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)

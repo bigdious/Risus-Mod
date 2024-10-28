@@ -146,6 +146,10 @@
   "item.risus.cinderglee_scythe": "Existential Executioner",
   "item.risus.researchers_notes": "Researcher's Notes",
   "item.risus.angel_wings": "Ophanim Wings",
+  "item.risus.skin_helmet": "Skin Head",
+  "item.risus.skin_chestplate": "Skin Flabs",
+  "item.risus.skin_leggings": "Skin Jeans",
+  "item.risus.skin_boots": "Skin Socks",
 
 
 
@@ -159,6 +163,9 @@
   "item.risus.lover_spawn_egg": "Lover Spawn Egg",
   "item.risus.licker_spawn_egg": "Licker Spawn Egg",
   "item.risus.baby_spider_spawn_egg": "Baby Spider Spawn Egg",
+
+  "trim_material.risus.gluttony_scales": "Gluttony Material",
+  "trim_material.risus.skin": "Skin Material",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",

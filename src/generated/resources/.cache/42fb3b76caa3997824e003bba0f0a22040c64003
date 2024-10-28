@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-28T16:27:16.5672956	Risus Item Models
+// 1.21.1	2024-10-28T19:57:09.8801973	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -128,6 +128,10 @@ bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue
 1aa8527fdd14541c708c8a7ed89d18556f8c8f4c assets/risus/models/item/scythe.json
 41bd975a547aaa19a4c5789852ad24ca183a26af assets/risus/models/item/scythe_base.json
 64e5bd0a479d77d885d260c8f0ecf66cfcfe2e34 assets/risus/models/item/skin.json
+93ec1a790c54eca519c956db78762ac2c30a5ce1 assets/risus/models/item/skin_boots.json
+15e75f0c4b2165dafac6338acfda63e6cd4016c2 assets/risus/models/item/skin_chestplate.json
+1a97de86dd92187b71b714ae88d6696ae18c21d4 assets/risus/models/item/skin_helmet.json
+2860551c9eaff034b2360ac28f26d83077cf7a77 assets/risus/models/item/skin_leggings.json
 204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
 dc36cb95dbebd0588cc46908ada8eeb141576995 assets/risus/models/item/soul_scythe.json

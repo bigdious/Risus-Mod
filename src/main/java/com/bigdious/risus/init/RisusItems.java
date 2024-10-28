@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
+import com.bigdious.risus.items.armor.RisusArmorItem;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -35,6 +36,14 @@ public class RisusItems {
 	public static final DeferredItem<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = ITEMS.register("bloodwyrm_head_weapon", () -> new BloodwyrmHeadItem(RisusItems.defaultWithRarity().durability(1000)));
 	public static final DeferredItem<Item> ANGEL_WINGS = ITEMS.register("angel_wings", () -> new AngelWings(RisusItems.defaultWithRarity().durability(666)));
+
+	//ARMORS
+
+	public static final DeferredItem<Item> SKIN_HELMET = ITEMS.register("skin_helmet", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1))));
+	public static final DeferredItem<Item> SKIN_CHESTPLATE = ITEMS.register("skin_chestplate", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.CHESTPLATE, 1))));
+	public static final DeferredItem<Item> SKIN_LEGGINGS = ITEMS.register("skin_leggings", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.LEGGINGS, 1))));
+	public static final DeferredItem<Item> SKIN_BOOTS = ITEMS.register("skin_boots", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1))));
+
 
 	//CONSUMABLES
 

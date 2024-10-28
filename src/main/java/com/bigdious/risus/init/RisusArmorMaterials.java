@@ -1,0 +1,26 @@
+package com.bigdious.risus.init;
+
+import com.bigdious.risus.Risus;
+import net.minecraft.Util;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.EnumMap;
+import java.util.List;
+
+public class RisusArmorMaterials {
+	public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Risus.MODID);
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> SKIN = ARMOR_MATERIALS.register("skin", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+			map.put(ArmorItem.Type.BOOTS, 1);
+			map.put(ArmorItem.Type.LEGGINGS, 1);
+			map.put(ArmorItem.Type.CHESTPLATE, 1);
+			map.put(ArmorItem.Type.HELMET, 1);
+		}), 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skin"))), 0.0F, 0.0F)
+	);
+}
