@@ -1,6 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBannerPatterns;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusStructures;
 import com.bigdious.risus.init.RisusTrimMaterials;
@@ -21,6 +22,7 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
 		.add(Registries.STRUCTURE,RisusStructures::bootstrapStructures)
 		.add(Registries.STRUCTURE_SET,RisusStructures::bootstrapSets)
 		.add(Registries.TRIM_MATERIAL, RisusTrimMaterials::bootstrap)
+		.add(Registries.BANNER_PATTERN, RisusBannerPatterns::bootstrap)
 		.add(Registries.TEMPLATE_POOL,RisusStructures::bootstrapPools);
 
 	public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

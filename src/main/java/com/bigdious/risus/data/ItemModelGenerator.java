@@ -160,6 +160,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.SKIN_CHESTPLATE);
 		singleTex(RisusItems.SKIN_LEGGINGS);
 		singleTex(RisusItems.SKIN_BOOTS);
+		singleTex(RisusItems.SMILE_PATTERN);
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)

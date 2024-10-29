@@ -1,7 +1,10 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -10,6 +13,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BannerPattern;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class RisusTags {
 	public class Enchantments {
@@ -40,5 +48,29 @@ public class RisusTags {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 
+	}
+
+	public static class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
+
+		public static final TagKey<BannerPattern> SMILE_PATTERN = create("pattern_item/smile");
+
+
+		public BannerPatternTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+			super(output, Registries.BANNER_PATTERN, provider, Risus.MODID, existingFileHelper);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider provider) {
+			this.tag(SMILE_PATTERN).add(RisusBannerPatterns.SMILE);
+		}
+
+		private static TagKey<BannerPattern> create(String name) {
+			return TagKey.create(Registries.BANNER_PATTERN, Risus.prefix(name));
+		}
+
+		@Override
+		public String getName() {
+			return "Risus Banner Pattern Tags";
+		}
 	}
 }

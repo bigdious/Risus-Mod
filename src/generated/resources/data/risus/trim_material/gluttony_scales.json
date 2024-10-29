@@ -1,0 +1,9 @@
+{
+  "asset_name": "gluttony_scales",
+  "description": {
+    "color": "#660000",
+    "translate": "trim_material.risus.gluttony_scales"
+  },
+  "ingredient": "risus:gluttony_scales",
+  "item_model_index": 0.2
+}

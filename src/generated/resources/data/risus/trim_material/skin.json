@@ -1,0 +1,9 @@
+{
+  "asset_name": "skin",
+  "description": {
+    "color": "#F2A688",
+    "translate": "trim_material.risus.skin"
+  },
+  "ingredient": "risus:skin",
+  "item_model_index": 0.2
+}

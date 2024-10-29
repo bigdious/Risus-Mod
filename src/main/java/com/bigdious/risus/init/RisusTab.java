@@ -173,6 +173,7 @@ public class RisusTab {
 						output.accept(RisusItems.VEINS.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
 						output.accept(RisusItems.RESEARCHERS_NOTES.get());
+						output.accept(RisusItems.SMILE_PATTERN.get());
 						createSpawnEggsAlphabetical(output);
 
 

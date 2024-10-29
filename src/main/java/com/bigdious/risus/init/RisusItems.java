@@ -195,6 +195,10 @@ public class RisusItems {
 	public static final DeferredItem<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new Item(defaultWithRarity()));
 
+	//TRIMS AND PATTERNS
+
+	public static final DeferredItem<Item> SMILE_PATTERN = ITEMS.register("smile_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, defaultWithRarity().stacksTo(1)));
+
 	//DISPLAY ONLY ITEMS
 
 	public static final DeferredItem<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));

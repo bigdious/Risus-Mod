@@ -21,8 +21,8 @@ public class RisusTrimMaterials {
 		return ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 	}
 	public static void bootstrap(BootstrapContext<TrimMaterial> context) {
-		register(context, GLUTTONY_SCALES, RisusItems.GLUTTONY_SCALES, Style.EMPTY.withColor(9863528), 0.2F);
-		register(context, SKIN, RisusItems.SKIN, Style.EMPTY.withColor(9863528), 0.2F);
+		register(context, GLUTTONY_SCALES, RisusItems.GLUTTONY_SCALES, Style.EMPTY.withColor(0x660000), 0.2F);
+		register(context, SKIN, RisusItems.SKIN, Style.EMPTY.withColor(0xf2a688), 0.2F);
 	}
 	private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Holder<Item> trimItem, Style color, float itemModelIndex) {
 		TrimMaterial material = new TrimMaterial(trimKey.location().getPath(), trimItem, itemModelIndex, Map.of(), Component.translatable(Util.makeDescriptionId("trim_material", trimKey.location())).withStyle(color));
