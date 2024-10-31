@@ -80,6 +80,7 @@ public class ThrowableAxeItem extends AxeItem {
 			enchantment.is(Enchantments.MENDING)||
 			enchantment.is(Enchantments.UNBREAKING)||
 			enchantment.is(Enchantments.FIRE_ASPECT)||
+			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.KNOCKBACK)||
 			enchantment.is(Enchantments.VANISHING_CURSE)
 			;

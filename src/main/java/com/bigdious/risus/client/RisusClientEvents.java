@@ -138,6 +138,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.WEAVER_CORE, WeaverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LOVER, LoverModel::create);
+		event.registerLayerDefinition(RisusModelLayers.SINGER, SingerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.STALKER, StalkerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
@@ -176,6 +177,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);
+		event.registerEntityRenderer(RisusEntities.SINGER.get(), SingerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LICKER.get(), LickerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BABY_SPIDER.get(), BabySpiderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);

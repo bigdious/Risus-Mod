@@ -66,6 +66,7 @@ public class ToothknockerItem extends SwordItem {
 			enchantment.is(Enchantments.UNBREAKING)||
 			enchantment.is(Enchantments.FIRE_ASPECT)||
 			enchantment.is(Enchantments.KNOCKBACK)||
+			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.VANISHING_CURSE)
 			;
 	}

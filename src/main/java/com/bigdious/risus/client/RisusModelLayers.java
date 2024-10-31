@@ -15,6 +15,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation BLOODWYRM_BREATH = register("bloodwyrm_breath");
 	public static final ModelLayerLocation WEAVER = register("weaver");
 	public static final ModelLayerLocation LOVER = register("lover");
+	public static final ModelLayerLocation SINGER = register("singer");
 	public static final ModelLayerLocation STALKER = register("stalker");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 

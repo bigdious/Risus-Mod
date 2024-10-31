@@ -129,6 +129,7 @@ public class RisusEvents {
 		event.put(RisusEntities.MAW.get(), Maw.attributes().build());
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());
 		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
+		event.put(RisusEntities.SINGER.get(), Singer.attributes().build());
 		event.put(RisusEntities.LICKER.get(), Licker.attributes().build());
 		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());

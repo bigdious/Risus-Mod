@@ -64,6 +64,17 @@ public class EntityLootTables extends EntityLootSubProvider {
 				.setRolls(ConstantValue.exactly(1.0F))
 				.add(LootItem.lootTableItem(Items.GUNPOWDER)).
 				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
+		add(RisusEntities.SINGER.get(), LootTable.lootTable()
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.ENDER_EYE)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.ENDER_PEARL)).
+				apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))));
 		add(RisusEntities.LICKER.get(), LootTable.lootTable()
 			.withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1.0F))

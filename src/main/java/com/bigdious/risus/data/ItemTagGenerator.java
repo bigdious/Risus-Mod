@@ -56,6 +56,17 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
 
+		this.tag(ItemTags.SWORDS)
+			.add(RisusItems.UNAWAKENED_VESSEL.asItem())
+			.add(RisusItems.CRESCENT_DISASTER.asItem())
+			.add(RisusItems.SCYTHE.asItem())
+			.add(RisusItems.FIRE_SCYTHE.asItem())
+			.add(RisusItems.SOUL_SCYTHE.asItem())
+			.add(RisusItems.CINDERGLEE_SCYTHE.asItem())
+			.add(RisusItems.TOOTHKNOCKER.asItem())
+			.add(RisusItems.GOLD_FIST.asItem())
+		;
+
 		this.tag(ItemTags.TRIMMABLE_ARMOR)
 			.add(RisusItems.SKIN_HELMET.get())
 			.add(RisusItems.SKIN_CHESTPLATE.get())

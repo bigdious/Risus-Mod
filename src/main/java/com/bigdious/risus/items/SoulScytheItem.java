@@ -15,6 +15,7 @@ public class SoulScytheItem extends ScytheItem{
 		return enchantment.is(Enchantments.SHARPNESS) ||
 			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
 			enchantment.is(Enchantments.MENDING)||
+			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.UNBREAKING)||
 			enchantment.is(Enchantments.FIRE_ASPECT)||
 			enchantment.is(Enchantments.KNOCKBACK)||

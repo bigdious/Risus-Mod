@@ -63,6 +63,7 @@ public class ScytheItem extends SwordItem {
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
 		return enchantment.is(Enchantments.SHARPNESS) ||
 			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
+			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.SMITE)||
 			enchantment.is(Enchantments.MENDING)||
 			enchantment.is(Enchantments.UNBREAKING)||

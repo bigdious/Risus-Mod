@@ -39,6 +39,7 @@ public class UnThrowableAxeItem extends AxeItem {
 			enchantment.is(Enchantments.LOYALTY)||
 			enchantment.is(Enchantments.SMITE)||
 			enchantment.is(Enchantments.MENDING)||
+			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.UNBREAKING)||
 			enchantment.is(Enchantments.FIRE_ASPECT)||
 			enchantment.is(Enchantments.KNOCKBACK)||
