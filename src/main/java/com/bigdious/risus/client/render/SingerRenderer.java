@@ -4,6 +4,8 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.LickerModel;
 import com.bigdious.risus.client.model.entity.SingerModel;
+import com.bigdious.risus.client.render.layer.SingerEyeLayer;
+import com.bigdious.risus.client.render.layer.StalkerEyeLayer;
 import com.bigdious.risus.entity.Licker;
 import com.bigdious.risus.entity.Singer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -15,6 +17,7 @@ public class SingerRenderer extends MobRenderer<Singer, SingerModel<Singer>> {
 
 	public SingerRenderer(EntityRendererProvider.Context context) {
 		super(context, new SingerModel<>(context.bakeLayer(RisusModelLayers.SINGER)), 0.0F);
+		this.addLayer(new SingerEyeLayer<>(this));
 	}
 
 

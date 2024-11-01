@@ -3,18 +3,15 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "minecraft:ender_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "risus:organic_matter"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:ender_pearl"
         }
       ],
       "functions": [
@@ -26,7 +23,19 @@
             "min": 0.0
           },
           "function": "minecraft:set_count"
-        },
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "risus:organic_matter"
+        }
+      ],
+      "functions": [
         {
           "add": false,
           "count": {
@@ -35,7 +44,19 @@
             "min": 0.0
           },
           "function": "minecraft:set_count"
-        },
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_pearl"
+        }
+      ],
+      "functions": [
         {
           "add": false,
           "count": {

@@ -96,13 +96,11 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
 		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true,
 			entity -> !(entity instanceof ArmorStand)
-				&& !(entity instanceof Holder)
 				&& !(entity instanceof QuestionMark)
-				&& !(entity instanceof Stalker)
-				&& !(entity instanceof Lover)
-				&& !(entity instanceof Licker)
-				&& !(entity instanceof BabySpider)
-				&& !(entity instanceof Angel)));
+				&& !(entity instanceof TransientQuestionMark)
+				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
+				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
+		));
 	}
 
 	public void aiStep() {
@@ -133,10 +131,6 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 		return null;
 	}
 
-
-	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPRING;
-	}
 	public static class WeaverEffectsGroupData implements SpawnGroupData {
 		@Nullable
 		public net.minecraft.core.Holder<MobEffect> effect;

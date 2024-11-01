@@ -1,9 +1,6 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.init.RisusMobType;
-import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -18,6 +15,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
@@ -86,13 +84,16 @@ public class Lover extends Monster {
 		this.goalSelector.addGoal(4, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.85D, false));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Spider.class, true));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
+			entity -> entity.getType().is(RisusTags.Entities.LOVEABLE)
+
+		));
 	}
 	@Override
 	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
 		boolean flag = super.killedEntity(level, entity);
-		if ((entity instanceof Creeper creeper && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.STALKER.get(), (timer) -> {}))) {
+		if ((entity instanceof Creeper creeper && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.STALKER.get(), (timer) -> {
+		}))) {
 			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
 				return flag;
 			}
@@ -111,14 +112,15 @@ public class Lover extends Monster {
 				}
 				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
-				for(int i = 0; i < 10; ++i) {
-					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0 , 0.0, 0.0, 0.0);
-					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5),1, 0 , 0.0, 0.0, 0.0);
+				for (int i = 0; i < 10; ++i) {
+					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
 				}
 				flag = false;
 			}
 		}
-		if ((entity instanceof Spider spider && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.LICKER.get(), (timer) -> {}))) {
+		if ((entity instanceof Spider spider && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.LICKER.get(), (timer) -> {
+		}))) {
 			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
 				return flag;
 			}
@@ -137,20 +139,43 @@ public class Lover extends Monster {
 				}
 				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
-				for(int i = 0; i < 10; ++i) {
-						level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0 , 0.0, 0.0, 0.0);
-						level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5),1, 0 , 0.0, 0.0, 0.0);
+				for (int i = 0; i < 10; ++i) {
+					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
 				}
 				flag = false;
 			}
 		}
+			if ((entity instanceof EnderMan enderMan && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.SINGER.get(), (timer) -> {
+			}))) {
+				if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
+					return flag;
+				}
 
-		return flag;
-	}
+				Singer singer = enderMan.convertTo(RisusEntities.SINGER.get(), false);
+				if (singer != null) {
+					singer.finalizeSpawn(
+						level,
+						level.getCurrentDifficultyAt(singer.blockPosition()),
+						MobSpawnType.CONVERSION,
+						new Zombie.ZombieGroupData(false, false)
+					);
+					net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, singer);
+					if (!this.isSilent()) {
+						level.levelEvent(null, 1026, this.blockPosition(), 0);
+					}
+					if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+						entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
+					for (int i = 0; i < 10; ++i) {
+						level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+						level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+					}
+					flag = false;
+				}
+			}
 
+			return flag;
+		}
 
-	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPRING;
-	}
 }
 

@@ -2,6 +2,7 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -119,10 +120,7 @@ public class Angel extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL.get())) {
-			return super.hurt(source, Float.MAX_VALUE);
-		}
-		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CRESCENT_DISASTER.get())) {
+		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusTags.Items.WILLFUL_WEAPON)) {
 			return super.hurt(source, Float.MAX_VALUE);
 		}
 		return false;

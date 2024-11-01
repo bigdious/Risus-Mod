@@ -58,10 +58,25 @@ public class ScytheItem extends SwordItem {
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
 		return material.is(RisusItems.GLUTTONY_SCALES);
 	}
+	@Override
+	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+		return
+			enchantment.is(Enchantments.SHARPNESS) ||
+				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
+				enchantment.is(Enchantments.LOOTING) ||
+				enchantment.is(Enchantments.SMITE) ||
+				enchantment.is(Enchantments.MENDING) ||
+				enchantment.is(Enchantments.UNBREAKING) ||
+				enchantment.is(Enchantments.FIRE_ASPECT) ||
+				enchantment.is(Enchantments.KNOCKBACK) ||
+				enchantment.is(Enchantments.VANISHING_CURSE)
+			;
+	}
 
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return enchantment.is(Enchantments.SHARPNESS) ||
+		return
+			enchantment.is(Enchantments.SHARPNESS) ||
 			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
 			enchantment.is(Enchantments.LOOTING)||
 			enchantment.is(Enchantments.SMITE)||

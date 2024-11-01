@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
@@ -43,11 +44,23 @@ public class RisusTags {
 	public static class Items {
 
 		public static final TagKey<Item> BONE_BLOCK_VARIATION = tag("bone_block_variation");
+		public static final TagKey<Item> WILLFUL_WEAPON = tag("willful_weapon");
 
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 
+	}
+	public static class Entities {
+
+		public static final TagKey<EntityType<?>> OFFSPRING = tag("offspring");
+		public static final TagKey<EntityType<?>> BELOVED = tag("beloved");
+		public static final TagKey<EntityType<?>> LOVEABLE = tag("loveable");
+
+
+		private static TagKey<EntityType<?>> tag(String name) {
+			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
+		}
 	}
 
 	public static class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {

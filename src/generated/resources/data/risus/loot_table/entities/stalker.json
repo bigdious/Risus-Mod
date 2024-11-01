@@ -7,10 +7,6 @@
         {
           "type": "minecraft:item",
           "name": "risus:organic_matter"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
         }
       ],
       "functions": [
@@ -22,7 +18,19 @@
             "min": 0.0
           },
           "function": "minecraft:set_count"
-        },
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder"
+        }
+      ],
+      "functions": [
         {
           "add": false,
           "count": {

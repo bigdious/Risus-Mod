@@ -6,18 +6,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -38,6 +39,7 @@ import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 
 public class Singer extends Monster {
+	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Singer.class, EntityDataSerializers.BOOLEAN);
 	private int targetChangeTime;
 
 	public Singer(EntityType<? extends Monster> type, Level level) {
@@ -59,11 +61,21 @@ public class Singer extends Monster {
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1F, true));
+		this.goalSelector.addGoal(1, new Singer.SingerInducesNauseaAttack(this));
 		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
+	}
+	public void setCharging(boolean charging) {
+		this.entityData.set(DATA_IS_CHARGING, charging);
+	}
+	public boolean isCharging() {
+		return this.entityData.get(DATA_IS_CHARGING);
+	}
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_IS_CHARGING, false);
 	}
 	public void aiStep() {
 		if (this.level().isClientSide) {
@@ -137,6 +149,9 @@ public class Singer extends Monster {
 			return false;
 		}
 	}
+	protected SoundEvent getAmbientSound() {
+		return SoundEvents.ENDERMAN_AMBIENT;
+	}
 	protected SoundEvent getHurtSound(DamageSource p_32527_) {
 		return SoundEvents.ENDERMAN_HURT;
 	}
@@ -174,6 +189,52 @@ public class Singer extends Monster {
 		ItemStack itemstack = p_186274_.getItem();
 		PotionContents potioncontents = itemstack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
 		return potioncontents.is(Potions.WATER) && super.hurt(p_186273_, p_186275_);
+	}
+	static class SingerInducesNauseaAttack extends Goal {
+		private final Singer singer;
+		public int chargeTime;
+
+
+		public SingerInducesNauseaAttack(Singer singer) {
+			this.singer = singer;
+		}
+
+		public boolean canUse() {
+			return this.singer.getTarget() != null;
+		}
+
+		public void start() {
+			this.chargeTime = 0;
+			singer.setAggressive(true);
+		}
+
+		public void stop() {
+			this.singer.setCharging(false);
+			singer.setAggressive(false);
+		}
+
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+		public void tick() {
+			LivingEntity livingentity = this.singer.getTarget();
+			if (livingentity != null) {
+				this.singer.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
+				if (this.singer.hasLineOfSight(livingentity)) {
+					++this.chargeTime;
+					if (this.chargeTime == 4) {
+						singer.playSound(SoundEvents.ENDERMAN_SCREAM, 4, 1.1F);
+						livingentity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false, true));
+						this.chargeTime = -8;
+					}
+				}
+			} else if (this.chargeTime > 0) {
+				--this.chargeTime;
+			}
+
+			this.singer.setCharging(this.chargeTime > 2);
+		}
 	}
 
 }
