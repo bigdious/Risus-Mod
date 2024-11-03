@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-31T21:34:51.8737689	Risus Item Models
+// 1.21.1	2024-11-03T15:58:20.904642	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -24,6 +24,7 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 553449888a1c24b05e924c9fb47115de6e3cb4d8 assets/risus/models/item/bondknot_stairs.json
 523c6c687656d5c97791226624cc2cea28d44c23 assets/risus/models/item/bondknot_trapdoor.json
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
+3f30f32e94595944c43f723d9e2f590cbe60ef13 assets/risus/models/item/bond_glass.json
 47cd4ff2e2fde19bdf58563a9eef7dc57bcb2d17 assets/risus/models/item/bone_slab.json
 4322a3de8473f7dfc0d81f733372b97e34fe4c81 assets/risus/models/item/bone_stairs.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
@@ -37,6 +38,7 @@ ffc75b7867cf6e523ea66a6fb32b0b68765e9617 assets/risus/models/item/cinderglee_scy
 52df45674db0583530fe0d6e7ca00cf4b0346160 assets/risus/models/item/cinderglee_scythe_base.json
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
+887a891e9ea0cfca9359bcb13ec78e6600b1b686 assets/risus/models/item/containment_glass.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
 8d54e4876e8191c5568b1bb973fc27711a1a0754 assets/risus/models/item/crescent_disaster.json
 aa352cb9a4f8c7f3964d9f1922250f0c4f3ae764 assets/risus/models/item/crescent_disaster_base.json

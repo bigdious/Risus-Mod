@@ -79,6 +79,8 @@ public class RisusTab {
 
 						output.accept(RisusBlocks.CRYSTALLIZED_BONDS.get());
 						output.accept(RisusItems.CRYSTALLIZED_BOND.get());
+						output.accept(RisusBlocks.BOND_GLASS.get());
+						output.accept(RisusBlocks.CONTAINMENT_GLASS.get());
 						output.accept(RisusItems.RIBCAGE.get());
 						output.accept(RisusItems.BABY_RIBCAGE.get());
 						output.accept(RisusBlocks.HEART_TRANSPLANT.get());

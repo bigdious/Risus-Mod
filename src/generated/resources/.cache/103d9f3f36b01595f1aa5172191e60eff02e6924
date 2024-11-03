@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-29T22:08:29.1089839	Registries
+// 1.21.1	2024-11-03T14:23:03.2454987	Registries
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
 13c9212e923998bd25df006ccc5280915bb65eb0 data/risus/damage_type/gluttony.json
 4cb181e1361f009638f6dcb8d3e55b998557daa9 data/risus/damage_type/inexistence.json
@@ -7,7 +7,7 @@
 bb72531c2b5ab8f171f4ac64122715d6120a3367 data/risus/trim_material/gluttony_scales.json
 df6f2a54eceb79b25e8c369feab3887693ca06ae data/risus/trim_material/skin.json
 3a4c2794ec341b1fd8850afa8ed6c65f7a56ebe7 data/risus/worldgen/biome/coalification.json
-3425ca0e6fa590dba6fce40c4a48c796f5c2096c data/risus/worldgen/processor_list/alteration_site_degradation.json
+e3588c453c96863e993153ad2f30ee45f2a95f65 data/risus/worldgen/processor_list/alteration_site_degradation.json
 6db3b5ed77d96c33bde9e22f715133ed783ad4d2 data/risus/worldgen/processor_list/family_tree_popping.json
 3ef5768ed627e09a65df12a94ef310b9e4b988ee data/risus/worldgen/processor_list/flower_field_withering.json
 346b255ca09db993bb72ee867ce630b890c7105a data/risus/worldgen/processor_list/great_body_degradation.json

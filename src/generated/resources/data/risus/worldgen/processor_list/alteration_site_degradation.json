@@ -28,7 +28,8 @@
           "output_state": {
             "Name": "risus:engraved_basalt",
             "Properties": {
-              "axis": "y"
+              "axis": "y",
+              "fluid": "empty"
             }
           }
         }

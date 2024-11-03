@@ -211,6 +211,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), texture("block/grimstone_bricks"));
 		wallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), texture("block/polished_grimstone"));
 
+		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
+		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));
+
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
 

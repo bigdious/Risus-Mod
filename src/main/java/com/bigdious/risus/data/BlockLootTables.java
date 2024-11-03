@@ -56,6 +56,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
 		add(RisusBlocks.CRYSTALLIZED_BONDS.get(), createSilkTouchDispatchTable(RisusBlocks.CRYSTALLIZED_BONDS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+		add(RisusBlocks.BOND_GLASS.get(), createSilkTouchDispatchTable(RisusBlocks.BOND_GLASS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get())).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))));
+		dropSelf(RisusBlocks.CONTAINMENT_GLASS.get());
 		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
 		dropSelf(RisusBlocks.MAW_GUTS.get());
