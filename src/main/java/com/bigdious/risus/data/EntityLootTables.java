@@ -71,7 +71,11 @@ public class EntityLootTables extends EntityLootSubProvider {
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(Items.GUNPOWDER))
-					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F)))));
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.STALKER_EYE))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
 
 		add(RisusEntities.SINGER.get(),
 			LootTable.lootTable()
@@ -96,6 +100,11 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE))
 					.when(LootItemKilledByPlayerCondition.killedByPlayer())
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.EGG_SAC))
+					.when(LootItemKilledByPlayerCondition.killedByPlayer())
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER))

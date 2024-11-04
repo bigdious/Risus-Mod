@@ -6,11 +6,11 @@
       "item": "risus:eye_golden"
     },
     {
-      "item": "risus:organic_matter"
+      "item": "minecraft:ender_pearl"
     }
   ],
   "result": {
     "count": 1,
-    "id": "risus:eye_bloodshot"
+    "id": "risus:eye_ender"
   }
 }

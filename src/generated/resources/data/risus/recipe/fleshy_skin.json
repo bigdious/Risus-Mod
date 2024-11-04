@@ -6,7 +6,7 @@
       "item": "risus:skin"
     },
     "/": {
-      "item": "risus:tissue"
+      "tag": "risus:base_tissue"
     }
   },
   "pattern": [

@@ -47,9 +47,7 @@
 			"scale": [0.625, 0.625, 0.625]
 		},
 		"head": {
-			"rotation": [-90, 0, 0],
-			"translation": [0, 4, -5.5],
-			"scale": [0.2, 0.2, 0.2]
+			"rotation": [90, 0, -180]
 		},
 		"fixed": {
 			"rotation": [-90, 0, 0],

@@ -115,12 +115,6 @@ public class RisusTab {
 						output.accept(RisusItems.TALL_HAIR.get());
 						output.accept(RisusItems.BUNDLE_OF_HAIR.get());
 
-						output.accept(RisusItems.EYE_ENDER.get());
-						output.accept(RisusItems.EYE_BLEACHED.get());
-						output.accept(RisusItems.EYE_BLOODSHOT.get());
-						output.accept(RisusItems.EYE_GOLDEN.get());
-						output.accept(RisusItems.EYE_EMERALD.get());
-
 						output.accept(RisusBlocks.LIVING_TISSUE.get());
 						output.accept(RisusBlocks.ROTTING_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());
@@ -137,6 +131,14 @@ public class RisusTab {
 						output.accept(RisusBlocks.FULL_BONE_BLOCK.get());
 						output.accept(RisusBlocks.FULL_BONE_STAIRS.get());
 						output.accept(RisusBlocks.FULL_BONE_SLAB.get());
+
+						output.accept(RisusItems.STALKER_EYE.get());
+						output.accept(RisusItems.EYE_SANDWICH.get());
+						output.accept(RisusItems.EYE_GOLDEN.get());
+						output.accept(RisusItems.EYE_ENDER.get());
+						output.accept(RisusItems.EYE_BLEACHED.get());
+						output.accept(RisusItems.EYE_BLOODSHOT.get());
+						output.accept(RisusItems.EYE_EMERALD.get());
 
 						output.accept(RisusBlocks.TEETH.get());
 						output.accept(RisusItems.TOOTHKNOCKER.get());
@@ -174,6 +176,7 @@ public class RisusTab {
 						output.accept(RisusItems.NEURON_STEM.get());
 						output.accept(RisusItems.VEINS.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
+						output.accept(RisusItems.EGG_SAC.get());
 						output.accept(RisusItems.RESEARCHERS_NOTES.get());
 						output.accept(RisusItems.SMILE_PATTERN.get());
 						createSpawnEggsAlphabetical(output);

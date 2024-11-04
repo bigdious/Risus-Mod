@@ -65,6 +65,18 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(RisusItems.CINDERGLEE_SCYTHE.get())
 			;
 
+		this.tag(RisusTags.Items.EYE)
+			.add(RisusItems.EYE_EMERALD.get())
+			.add(RisusItems.EYE_BLOODSHOT.get())
+			.add(RisusItems.EYE_ENDER.get())
+			.add(RisusItems.EYE_GOLDEN.get())
+			.add(RisusItems.EYE_BLEACHED.get())
+		;
+		this.tag(RisusTags.Items.BASE_TISSUE)
+			.add(RisusItems.TISSUE.get())
+			.add(RisusItems.LIVING_TISSUE.get())
+		;
+
 		this.tag(ItemTags.TRIMMABLE_ARMOR)
 			.add(RisusItems.SKIN_HELMET.get())
 			.add(RisusItems.SKIN_CHESTPLATE.get())

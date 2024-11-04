@@ -1,4 +1,5 @@
-// 1.21.1	2024-11-01T23:30:44.9480243	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2024-11-04T21:24:12.7234745	Tags for minecraft:entity_type mod id risus
+80248ca7b3238ffd145a7454f3bf35968f274da3 data/minecraft/tags/entity_type/arthropod.json
 7611a71c36a274c69e3b208fe049a656499b8791 data/risus/tags/entity_type/beloved.json
 2350ba2047239025be30c3ed75e00c25c27b8075 data/risus/tags/entity_type/loveable.json
 36ecdfa2197965bf3609725d22b9b7587817a1b3 data/risus/tags/entity_type/offspring.json

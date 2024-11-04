@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
 import com.bigdious.risus.init.RisusTags;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.fluids.FluidType;
 
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
@@ -47,7 +49,14 @@ public class Angel extends Monster {
 		super.defineSynchedData(builder);
 		builder.define(DATA_IS_CHARGING, false);
 	}
-
+	@Override
+	public boolean canSwimInFluidType(FluidType type) {
+		if (type == RisusFluids.BLOOD_FLUID_TYPE.get()) {
+			return false;
+		} else {
+			return super.canSwimInFluidType(type);
+		}
+	}
 	public RisusMobType getRisusMobType() {
 		return RisusMobType.OFFSPRING;
 	}

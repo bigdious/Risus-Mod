@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-03T15:58:20.904642	Risus Item Models
+// 1.21.1	2024-11-04T22:03:13.5791569	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -53,6 +53,7 @@ ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_ti
 b332bad690944154b80ccd21beee1034d1727af4 assets/risus/models/item/depth_vase.json
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.json
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch_stand.json
+9bbd4572fb9e05f6ac0c6647c99335026ac0ebd7 assets/risus/models/item/egg_sac.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
 9e84a0a1212d608680da772ba45396dba5218b37 assets/risus/models/item/essence_of_gluttony.json
@@ -63,6 +64,7 @@ ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.j
 277cca67835288839864d857e33bdec3c0bcefff assets/risus/models/item/eye_emerald.json
 fdc8c128323eb2e27060fb82a5b741e669dea66e assets/risus/models/item/eye_ender.json
 c3b6162d362fbbc5855d5d6b4c8624830d8a7f33 assets/risus/models/item/eye_golden.json
+d86d9fe15f0cdebde5000f4047f884afe7b6cb81 assets/risus/models/item/eye_sandwich.json
 f974d8fba1d0bb08080c603a2996be06b37a6bea assets/risus/models/item/fire_scythe.json
 ec04d6ddd5f3f99ad7ccbdff3a9105bc0868ada1 assets/risus/models/item/fire_scythe_base.json
 77ec3b1c1f63a0795a12729d78ab6298e8e93ddd assets/risus/models/item/flattened_imitation_scales_block.json
@@ -141,6 +143,7 @@ c5acdd3360ec4c1cab407437d31935ce56fd28c6 assets/risus/models/item/smile_banner_p
 dc36cb95dbebd0588cc46908ada8eeb141576995 assets/risus/models/item/soul_scythe.json
 2a8f6b062e87b5e5c23663529b4b319ae0c5cbad assets/risus/models/item/soul_scythe_base.json
 8aabd6109304e1691a4a7137fe92c70c77d1ebe2 assets/risus/models/item/spreading_remains.json
+c8ae8b493fb76c56a3635862ed57431896a05861 assets/risus/models/item/stalker_eye.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/stalker_spawn_egg.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json

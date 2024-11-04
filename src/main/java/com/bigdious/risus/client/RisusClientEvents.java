@@ -7,18 +7,15 @@ import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.layer.AngelWingsLayer;
 import com.bigdious.risus.entity.RisusBoat;
-import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.Util;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -28,36 +25,25 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.util.ParticleUtils;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.Blocks;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Objects;
 
 public class RisusClientEvents {
@@ -69,6 +55,7 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerParticleFactories);
 		bus.addListener(RisusClientEvents::registerEntityLayers);
 		bus.addListener(RisusClientEvents::registerSkullModel);
+		bus.addListener(RisusClientEvents::registerOverlays);
 		bus.addListener(RisusClientEvents::registerEntityRenderers);
 		bus.addListener(RisusClientEvents::registerScreens);
 		bus.addListener(RisusClientEvents::registerBlockColors);
@@ -184,6 +171,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.TRANSIENT_QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
+		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));
 		event.registerEntityRenderer(RisusEntities.GUTS_BOAT.get(), (context) -> new RisusBoatRenderer(context, true));
@@ -233,7 +221,16 @@ public class RisusClientEvents {
 			}
 		}, RisusFluids.BLOOD_FLUID_TYPE.get());
 	}
-
+	private static void registerOverlays(RegisterGuiLayersEvent event) {
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "eye_overlay"), (guiGraphics, deltaTracker) -> {
+			Minecraft minecraft = Minecraft.getInstance();
+			ResourceLocation overlay = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/eye_overlay.png");
+			LocalPlayer player = minecraft.player;
+			if (player != null && player.getInventory().getArmor(3).is(RisusTags.Items.EYE)) {
+				minecraft.gui.renderTextureOverlay(guiGraphics, overlay, 1.0F);
+			}
+		});
+	}
 
 	private static void killScreenWithAmnesia(RenderGuiLayerEvent.Pre event) {
 		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {

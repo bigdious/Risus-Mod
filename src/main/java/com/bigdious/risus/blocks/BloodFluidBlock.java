@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -18,7 +19,7 @@ public class BloodFluidBlock extends LiquidBlock {
 
 	@Override
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-		if (entity.isAlive() && entity instanceof LivingEntity livingEntity) {
+		if (entity.isAlive() && entity instanceof LivingEntity livingEntity && !(livingEntity.getType().is(RisusTags.Entities.OFFSPRING))) {
 //			if (livingEntity.getType().is(RisusTags.Entities.IMMUNE_TO_BLOOD))
 //				return;
 			if (livingEntity.getAttribute(Attributes.MAX_HEALTH) != null && livingEntity.getAttribute(Attributes.MAX_HEALTH).getValue()>livingEntity.getHealth()) {

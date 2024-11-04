@@ -2,6 +2,7 @@ package com.bigdious.risus;
 
 import com.bigdious.risus.blocks.RisusCampfireBlock;
 import com.bigdious.risus.entity.*;
+import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
@@ -13,6 +14,8 @@ import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,6 +23,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -41,6 +45,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
@@ -66,6 +71,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addExBurnParticles);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addEggSack);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::eggSacBoom);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::fireScythe);
@@ -229,7 +235,7 @@ public class RisusEvents {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
-			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types())) {
+			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(victim.getType().is(RisusTags.Entities.OFFSPRING))) {
 				event.setAmount(event.getAmount()+5);
 			} else {
 				event.setAmount(event.getAmount()-3);
@@ -243,6 +249,15 @@ public class RisusEvents {
 				if (licker.level() instanceof ServerLevel serverLevel) {
 					serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, licker.getRandomX(0.5), licker.getY()+1, licker.getRandomZ(0.5), 7, 0, 0, 0, 0);
 				}
+		}
+	}
+	private static void eggSacBoom(ProjectileImpactEvent event) {
+		Entity entity = event.getProjectile();
+		if (entity instanceof EggSac eggSac) {
+			if (eggSac.level() instanceof ServerLevel serverLevel) {
+				serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, eggSac.getRandomX(0.5), eggSac.getY(), eggSac.getRandomZ(0.5), 7, 0, 0, 0, 0);
+				serverLevel.playLocalSound(eggSac, SoundEvents.TURTLE_EGG_HATCH, SoundSource.NEUTRAL, 1, 1);
+			}
 		}
 	}
 

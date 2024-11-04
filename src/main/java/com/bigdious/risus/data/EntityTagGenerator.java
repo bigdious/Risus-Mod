@@ -21,6 +21,11 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
 
+		tag(EntityTypeTags.ARTHROPOD)
+			.add(RisusEntities.BABY_SPIDER.get())
+			.add(RisusEntities.LICKER.get())
+			.add(RisusEntities.WEAVER.get())
+		;
 		tag(RisusTags.Entities.OFFSPRING)
 			.add(RisusEntities.ANGEL.get())
 			.add(RisusEntities.HOLDER.get())

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "risus:tissue"
+            "items": "#risus:base_tissue"
           }
         ]
       },

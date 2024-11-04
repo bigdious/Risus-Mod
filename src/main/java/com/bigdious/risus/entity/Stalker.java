@@ -1,6 +1,8 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
@@ -9,6 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,6 +22,7 @@ import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class Stalker extends Monster {
@@ -47,12 +51,12 @@ public class Stalker extends Monster {
 
 	@Override
 	public void playerTouch(Player player) {
-		if (this.isAlive()) {
+		if (this.isAlive() && !player.getItemBySlot(EquipmentSlot.HEAD).is(RisusTags.Items.EYE)) {
 			int i = 5;
 			if (this.level().getDifficulty() == Difficulty.NORMAL) {
-				i = 10;
+				i = 8;
 			} else if (this.level().getDifficulty() == Difficulty.HARD) {
-				i = 15;
+				i = 10;
 			}
 			player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, i * 20, 0, false, false, true), this);
 			player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, i * 20, 0, false, false, true), this);

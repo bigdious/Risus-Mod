@@ -1,6 +1,7 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobType;
 import net.minecraft.nbt.CompoundTag;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -61,7 +63,14 @@ public class Holder extends Monster {
 			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
 		}));
 	}
-
+	@Override
+	public boolean canSwimInFluidType(FluidType type) {
+		if (type == RisusFluids.BLOOD_FLUID_TYPE.get()) {
+			return false;
+		} else {
+			return super.canSwimInFluidType(type);
+		}
+	}
 
 //	@Override
 //	public float getStepHeight() {

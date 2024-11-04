@@ -380,7 +380,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("#")
 			.pattern("/")
 			.define('#', Ingredient.of(RisusBlocks.SKIN.get()))
-			.define('/', Ingredient.of(RisusBlocks.TISSUE.get()))
+			.define('/', Ingredient.of(RisusTags.Items.BASE_TISSUE))
 			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
 			.save(consumer);
 
@@ -388,7 +388,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("##")
 			.pattern("#/")
 			.define('#', Ingredient.of(RisusBlocks.SKIN.get()))
-			.define('/', Ingredient.of(RisusBlocks.TISSUE.get()))
+			.define('/', Ingredient.of(RisusTags.Items.BASE_TISSUE))
 			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
 			.save(consumer);
 
@@ -414,14 +414,14 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("#  ")
 			.pattern("## ")
 			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.TISSUE.get()))
-			.unlockedBy("has_item", has(RisusBlocks.TISSUE.get()))
+			.define('#', Ingredient.of(RisusTags.Items.BASE_TISSUE))
+			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.TISSUE_SLAB.get(), 6)
 			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.TISSUE.get()))
-			.unlockedBy("has_item", has(RisusBlocks.TISSUE.get()))
+			.define('#', Ingredient.of(RisusTags.Items.BASE_TISSUE))
+			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BOND_GLASS.get(), 1)
@@ -561,11 +561,10 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("XXX")
 				.pattern("X#X")
 				.pattern("Y Y")
-				.define('#', RisusItems.TISSUE.get())
+				.define('#', RisusTags.Items.BASE_TISSUE)
 				.define('X', RisusTags.Items.BONE_BLOCK_VARIATION)
 				.define('Y', RisusItems.BONE_WALL.get())
-				.unlockedBy("has_item", has(RisusItems.TISSUE.get()))
-				.unlockedBy("has_item", has(RisusItems.TEETH.get()))
+				.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONE_WALL.get(), 6)
@@ -611,28 +610,31 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(Items.BONE_BLOCK))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_GOLDEN.get(), 1)
+			.requires(RisusTags.Items.BASE_TISSUE)
+			.requires(RisusItems.STALKER_EYE.get())
+			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
+			.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLEACHED.get(), 1)
 				.requires(RisusItems.TEETH.get())
-				.requires(RisusItems.EYE_ENDER.get())
+				.requires(RisusItems.EYE_GOLDEN.get())
 				.requires(Items.CHARCOAL)
-				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
-				.unlockedBy("has_item", has(RisusItems.TEETH.get()))
+				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
 				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_GOLDEN.get(), 1)
-				.requires(RisusItems.EYE_ENDER.get())
-				.requires(Items.GOLD_INGOT)
-				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_ENDER.get(), 1)
+				.requires(RisusItems.EYE_GOLDEN.get())
+				.requires(Items.ENDER_PEARL)
+				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
 				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_EMERALD.get(), 1)
-				.requires(RisusItems.EYE_ENDER.get())
+				.requires(RisusItems.EYE_GOLDEN.get())
 				.requires(Items.EMERALD)
-				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
+				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
 				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLOODSHOT.get(), 1)
-				.requires(RisusItems.EYE_ENDER.get())
+				.requires(RisusItems.EYE_GOLDEN.get())
 				.requires(RisusItems.ORGANIC_MATTER.get())
-				.unlockedBy("has_item", has(RisusItems.EYE_ENDER.get()))
-				.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
 				.save(consumer);
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1);

@@ -33,6 +33,8 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -101,6 +103,14 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
 				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
 		));
+	}
+	@Override
+	public boolean canSwimInFluidType(FluidType type) {
+		if (type == RisusFluids.BLOOD_FLUID_TYPE.get()) {
+			return false;
+		} else {
+			return super.canSwimInFluidType(type);
+		}
 	}
 
 	public void aiStep() {

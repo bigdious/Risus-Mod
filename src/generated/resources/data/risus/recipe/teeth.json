@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "risus:tissue"
+      "tag": "risus:base_tissue"
     },
     "X": {
       "tag": "risus:bone_block_variation"

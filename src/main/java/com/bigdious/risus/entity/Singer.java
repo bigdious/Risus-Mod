@@ -11,8 +11,11 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
@@ -28,8 +31,10 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -65,7 +70,7 @@ public class Singer extends Monster {
 		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !player.getItemBySlot(EquipmentSlot.HEAD).is(Items.CARVED_PUMPKIN)));
 	}
 	public void setCharging(boolean charging) {
 		this.entityData.set(DATA_IS_CHARGING, charging);
@@ -83,6 +88,19 @@ public class Singer extends Monster {
 				this.level().addParticle(ParticleTypes.PORTAL, this.getRandomX(-0.5), this.getY()+1, this.getRandomZ(-0.5), (this.random.nextDouble() - 0.5) * 2.0, -this.random.nextDouble(), (this.random.nextDouble() - 0.5) * 2.0);
 			}
 		}
+		if (this.isAggressive() && this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && !this.level().isClientSide) {
+			RandomSource randomsource = this.getRandom();
+			Level level = this.level();
+			int i = Mth.floor(this.getX() - 4.0 + randomsource.nextDouble() * 8.0);
+			int j = Mth.floor(this.getY() + randomsource.nextDouble() * 6.0);
+			int k = Mth.floor(this.getZ() - 4.0 + randomsource.nextDouble() * 8.0);
+			BlockPos blockpos = new BlockPos(i, j, k);
+			BlockState blockstate = level.getBlockState(blockpos);
+			if (blockstate.is(Blocks.GLASS) || blockstate.is(Blocks.GLASS_PANE)) {
+				level.destroyBlock(blockpos, true);
+			}
+		}
+
 		super.aiStep();
 	}
 	protected void customServerAiStep() {

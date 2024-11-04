@@ -3,10 +3,10 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "risus:eye_ender"
+      "tag": "risus:base_tissue"
     },
     {
-      "item": "minecraft:gold_ingot"
+      "item": "risus:stalker_eye"
     }
   ],
   "result": {

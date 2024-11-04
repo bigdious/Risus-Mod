@@ -104,7 +104,7 @@
   "block.risus.laughing_stalk": "Laughing Stalk",
 
 
-  "block.risus.eye_ender": "Eye Block",
+  "block.risus.eye_ender": "Ender Eye Block",
   "block.risus.eye_bleached": "Bleached Eye Block",
   "block.risus.eye_bloodshot": "Bloodshot Eye Block",
   "block.risus.eye_golden": "Golden Eye Block",
@@ -152,6 +152,10 @@
   "item.risus.skin_chestplate": "Skin Flabs",
   "item.risus.skin_leggings": "Skin Jeans",
   "item.risus.skin_boots": "Skin Socks",
+  "item.risus.egg_sac": "Egg Sac",
+
+  "item.risus.stalker_eye": "Stalker Eye",
+  "item.risus.eye_sandwich": "Eye Sandwich",
 
   "item.risus.smile_banner_pattern": "Banner Pattern",
   "item.risus.smile_banner_pattern.desc": "Smile",

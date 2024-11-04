@@ -1,6 +1,8 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -19,11 +21,13 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.fluids.FluidType;
 
 public class BabySpider extends Monster {
 	private int attackTimer;
@@ -38,6 +42,7 @@ public class BabySpider extends Monster {
 			.add(Attributes.MAX_HEALTH, 3.0D)
 			.add(Attributes.MOVEMENT_SPEED, 0.30F)
 			.add(Attributes.FOLLOW_RANGE, 24)
+			.add(Attributes.ENTITY_INTERACTION_RANGE, 1.5)
 			.add(Attributes.ATTACK_DAMAGE, 1F);
 	}
 	@Override
@@ -50,14 +55,12 @@ public class BabySpider extends Monster {
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
 			entity -> !(entity instanceof ArmorStand)
-				&& !(entity instanceof Holder)
-				&& !(entity instanceof QuestionMark)
-				&& !(entity instanceof Stalker)
-				&& !(entity instanceof Lover)
-				&& !(entity instanceof Licker)
+				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
+				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
 				&& !(entity instanceof BabySpider)
-				&& !(entity instanceof Angel)));
+				&& !(entity instanceof Spider)));
 	}
+
 	@Override
 	public void aiStep() {
 		super.aiStep();

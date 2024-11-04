@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
+import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -36,6 +37,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<Singer>> SINGER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "singer"), EntityType.Builder.of(Singer::new, MobCategory.MONSTER).sized(1F, 3.0F), 0x000000, 0xfaefcf);
 	public static final DeferredHolder<EntityType<?>, EntityType<Licker>> LICKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "licker"), EntityType.Builder.of(Licker::new, MobCategory.MONSTER).sized(0.8F, 2F), 0x4f3424, 0xff9494);
 	public static final DeferredHolder<EntityType<?>, EntityType<BabySpider>> BABY_SPIDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "baby_spider"), EntityType.Builder.of(BabySpider::new, MobCategory.MONSTER).sized(0.3F, 0.3F), 0xfcf0f0, 0xfcd2d2);
+	public static final DeferredHolder<EntityType<?>, EntityType<EggSac>> EGG_SAC = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "egg_sac"), EntityType.Builder.<EggSac>of(EggSac::new, MobCategory.MISC).sized(0.3F, 0.3F));
 	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x14ff14, 0xffd414);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Memory1>> MEMORY1 = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
