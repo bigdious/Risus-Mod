@@ -1,29 +1,26 @@
-package com.bigdious.risus;
+package com.bigdious.risus.event;
 
-import com.bigdious.risus.blocks.RisusCampfireBlock;
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.projectile.EggSac;
-import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.google.common.collect.Maps;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
-import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.EntityTypeTags;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -39,8 +36,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.client.ClientHooks;
-import net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -50,10 +45,7 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
@@ -72,6 +64,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addEggSack);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::eggSacBoom);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::sacrificeAccepted);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::fireScythe);
@@ -257,6 +250,29 @@ public class RisusEvents {
 			if (eggSac.level() instanceof ServerLevel serverLevel) {
 				serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, eggSac.getRandomX(0.5), eggSac.getY(), eggSac.getRandomZ(0.5), 7, 0, 0, 0, 0);
 				serverLevel.playLocalSound(eggSac, SoundEvents.TURTLE_EGG_HATCH, SoundSource.NEUTRAL, 1, 1);
+			}
+		}
+	}
+	private static void sacrificeAccepted(LivingDeathEvent event) {
+		Entity sacrifice = event.getEntity();
+		Entity murderer = event.getEntity().getKillCredit();
+		if (sacrifice instanceof Player ||
+			sacrifice instanceof AbstractVillager ||
+			sacrifice instanceof AbstractIllager ||
+			sacrifice instanceof Witch
+		) {
+			if (murderer instanceof Player cultist && cultist.getOffhandItem().is(RisusItems.SACRIFICE_CATALYST)) {
+
+				if (murderer.level() instanceof ServerLevel serverLevel) {
+					for (int i = 0; i < 5; i++) {
+						serverLevel.sendParticles(RisusParticles.FALLING_JOY.get(), sacrifice.getRandomX(0.5), sacrifice.getRandomY(), sacrifice.getRandomZ(0.5), 1, 0, 0, 0, 0);
+					}
+				}
+				if (cultist.getOffhandItem().getDamageValue()>1) {
+				cultist.getOffhandItem().setDamageValue(cultist.getOffhandItem().getDamageValue()-1);
+				} else {
+					cultist.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(RisusItems.THOUSAND_BLADE.asItem()));
+				}
 			}
 		}
 	}

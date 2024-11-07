@@ -166,6 +166,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.STALKER_EYE);
 		singleTex(RisusItems.EYE_SANDWICH);
 		singleTex(RisusItems.EGG_SAC);
+		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
@@ -225,6 +226,16 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, cinderglee_scythe)
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, cinderglee_scythe)
 			.perspective(ItemDisplayContext.HEAD, cinderglee_scythe)
+			.end();
+		singleTexTool(RisusItems.THOUSAND_BLADE);
+		ItemModelBuilder thousand_blade = nested().parent(getExistingFile(Risus.prefix("item/thousand_blade_held"))).texture("thousand_blade", Risus.prefix("item/thousand_blade"));
+		withExistingParent(RisusItems.THOUSAND_BLADE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("thousand_blade_base", Risus.prefix("item/thousand_blade_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, thousand_blade)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, thousand_blade)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, thousand_blade)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, thousand_blade)
+			.perspective(ItemDisplayContext.HEAD, thousand_blade)
 			.end();
 		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));

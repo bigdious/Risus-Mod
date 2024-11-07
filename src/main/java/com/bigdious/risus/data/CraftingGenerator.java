@@ -71,6 +71,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusItems.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusItems.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.BANNER_PATTERNS), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(RisusTags.Items.BANNER_PATTERNS)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
 				.unlockedBy("has_item", has(Items.OAK_LOG)).unlockedBy("has_item", has(Items.DARK_OAK_LOG)).unlockedBy("has_item", has(Items.BIRCH_LOG)).unlockedBy("has_item", has(Items.SPRUCE_LOG)).unlockedBy("has_item", has(Items.JUNGLE_LOG)).unlockedBy("has_item", has(Items.ACACIA_LOG)).unlockedBy("has_item", has(Items.MANGROVE_LOG)).unlockedBy("has_item", has(Items.CHERRY_LOG)).save(consumer);
@@ -636,6 +637,15 @@ public class CraftingGenerator extends RecipeProvider {
 				.requires(RisusItems.ORGANIC_MATTER.get())
 				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
 				.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, RisusItems.EYE_SANDWICH.get(), 1)
+			.pattern("B")
+			.pattern("E")
+			.pattern("B")
+			.define('B', Items.BREAD)
+			.define('E', RisusItems.STALKER_EYE)
+			.unlockedBy("has_item", has(RisusItems.STALKER_EYE))
+			.save(consumer);
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1);
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.CHISELED_GRIMSTONE,1);

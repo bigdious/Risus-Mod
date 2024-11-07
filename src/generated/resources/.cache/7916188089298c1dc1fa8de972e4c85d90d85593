@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-04T21:24:12.7204764	Tags for minecraft:item mod id risus
+// 1.21.1	2024-11-07T19:29:49.0182283	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
@@ -18,6 +18,7 @@ ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/item/wooden_buttons
 fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/item/wooden_slabs.json
 4e1a395d41189d294b952ba2d28d3ac5dee03b7d data/minecraft/tags/item/wooden_stairs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/item/wooden_trapdoors.json
+0159b57640951228cb1c462fb74ecfbf93e1e776 data/risus/tags/item/banner_pattern.json
 d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/item/bondknot_logs.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json

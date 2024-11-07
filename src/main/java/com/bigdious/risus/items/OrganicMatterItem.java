@@ -1,8 +1,7 @@
 package com.bigdious.risus.items;
 
-import com.bigdious.risus.RisusEvents;
+import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.blocks.OrganicMatterableBlock;
-import com.bigdious.risus.event.OrganicMatterEvent;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusParticles;
@@ -29,7 +28,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 

@@ -47,6 +47,7 @@ public class RisusTags {
 		public static final TagKey<Item> WILLFUL_WEAPON = tag("willful_weapon");
 		public static final TagKey<Item> EYE = tag("eye");
 		public static final TagKey<Item> BASE_TISSUE = tag("base_tissue");
+		public static final TagKey<Item> BANNER_PATTERNS = tag("banner_pattern");
 
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

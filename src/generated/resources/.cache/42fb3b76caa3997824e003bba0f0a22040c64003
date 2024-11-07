@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-04T22:03:13.5791569	Risus Item Models
+// 1.21.1	2024-11-07T21:41:49.5372504	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -128,6 +128,7 @@ fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_no
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
+54c7e5e0c47024ade5d2795651d4d517b51c8aa3 assets/risus/models/item/sacrifice_catalyst.json
 6846d2ae47181489ef3caae70a1b0a86eb232ea2 assets/risus/models/item/scab.json
 1aa8527fdd14541c708c8a7ed89d18556f8c8f4c assets/risus/models/item/scythe.json
 41bd975a547aaa19a4c5789852ad24ca183a26af assets/risus/models/item/scythe_base.json
@@ -149,6 +150,8 @@ a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondk
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
 fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json
 e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
+e9154f5d8d2f12aec92695657b875dc34a5db0bd assets/risus/models/item/thousand_blade.json
+cd7e728eba311ff07068b2978b8306a7b5eb70df assets/risus/models/item/thousand_blade_base.json
 7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 88dbd49ff61f13526dc4161377d35ab5494e4539 assets/risus/models/item/tissue_slab.json
 b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.json

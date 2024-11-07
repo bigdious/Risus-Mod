@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/thousand_blade_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/thousand_blade_held",
+      "textures": {
+        "thousand_blade": "risus:item/thousand_blade"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/thousand_blade_held",
+      "textures": {
+        "thousand_blade": "risus:item/thousand_blade"
+      }
+    },
+    "head": {
+      "parent": "risus:item/thousand_blade_held",
+      "textures": {
+        "thousand_blade": "risus:item/thousand_blade"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/thousand_blade_held",
+      "textures": {
+        "thousand_blade": "risus:item/thousand_blade"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/thousand_blade_held",
+      "textures": {
+        "thousand_blade": "risus:item/thousand_blade"
+      }
+    }
+  },
+  "textures": {
+    "layer0": "risus:item/thousand_blade"
+  }
+}

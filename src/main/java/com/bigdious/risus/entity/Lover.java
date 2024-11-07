@@ -33,7 +33,10 @@ public class Lover extends Monster {
 		this.xpReward = 5;
 		this.moveControl = new FlyingMoveControl(this, 20, true);
 	}
-
+	@Override
+	public boolean canBeLeashed() {
+		return true;
+	}
 	public static boolean canLoverSpawn(EntityType<? extends Lover> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
 		return checkMonsterSpawnRules(entityType, level, spawnType, pos, random);
 	}

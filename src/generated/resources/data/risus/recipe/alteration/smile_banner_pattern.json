@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "tag": "risus:banner_pattern"
+  },
+  "result": "risus:smile_banner_pattern"
+}

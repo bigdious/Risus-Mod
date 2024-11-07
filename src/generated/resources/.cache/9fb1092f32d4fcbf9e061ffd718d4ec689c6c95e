@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-04T21:24:12.7124809	Recipes
+// 1.21.1	2024-11-07T19:29:49.0132309	Recipes
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
 fa2df7c444c04b9725da545090d578bb984c3158 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -45,6 +45,7 @@ ef54d2927b9c44f6955edea6e51c66cc3e0bed99 data/risus/advancement/recipes/alterati
 a8912c42461269e033671a1e86c349d14a73b7b9 data/risus/advancement/recipes/alteration/regen_rose.json
 60faa865b49579ead29880de2008407dc048d60f data/risus/advancement/recipes/alteration/researchers_notes.json
 84e9351de512eae0a8bda0da030e8e23d8ee4ccf data/risus/advancement/recipes/alteration/skin.json
+fecb31a9350aa8f3a13441b3a0879b3f25dd67b1 data/risus/advancement/recipes/alteration/smile_banner_pattern.json
 b126e3e16eed7cd801edd62ccc3e1b646ac1f43c data/risus/advancement/recipes/alteration/smiling_remains.json
 f589957142134f25dac506cee758ec42facf4f72 data/risus/advancement/recipes/alteration/spreading_remains.json
 776fd321b2689ea20a8e0fe935330a7b006abf49 data/risus/advancement/recipes/alteration/stripped_bondknot_log.json
@@ -113,6 +114,7 @@ c14381f0bdb304ac61137644049485e84f2cde77 data/risus/advancement/recipes/decorati
 abae48fcf1ca01fd435e87ae86194a45b7f47f2a data/risus/advancement/recipes/decorations/polished_grimstone_wall.json
 56640d25099f806f9a7e6fd340b7d51094c0aa17 data/risus/advancement/recipes/decorations/tall_hair.json
 6dd416df431b73fe4b940de12371387c868a2126 data/risus/advancement/recipes/decorations/teeth.json
+6f0e18074b39004b1137b4cbcd07ab995eef9d8f data/risus/advancement/recipes/food/eye_sandwich.json
 4c139688a880f4b2e5b0a666c5639563c282bebf data/risus/advancement/recipes/misc/concentration_core.json
 478a1ce421ab9d6f6e8f7f77d8bc208e25c5e79b data/risus/advancement/recipes/misc/smelt_cracked_grimstone_bricks.json
 6703caf7c5e196838b3ec4a3236d83def83b9944 data/risus/advancement/recipes/redstone/bondknot_button.json
@@ -169,6 +171,7 @@ dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipe/alteration/polished_g
 2b9100fba2a63fbf5afe525f7312e9a34480cd06 data/risus/recipe/alteration/regen_rose.json
 f7328542d3f035179d1d31ecd36feb7bae876271 data/risus/recipe/alteration/researchers_notes.json
 67aaa677034eea6ede7d4467b3a11cc0d91e5eb0 data/risus/recipe/alteration/skin.json
+9ffd457ceace4a691f2cf5da64e9948dfd4d6315 data/risus/recipe/alteration/smile_banner_pattern.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipe/alteration/smiling_remains.json
 2cd00f51233e628515d72d031a8521553421353e data/risus/recipe/alteration/spreading_remains.json
 0247494eacfcb868ac7f4dddb3f935824fca8ebd data/risus/recipe/alteration/stripped_bondknot_log.json
@@ -208,6 +211,7 @@ a36bbeddf34cdefdb039bfcb5bbbc4e53b20f1ff data/risus/recipe/eye_bloodshot.json
 fd70a69a51eb9bc190cac837dcd5a3a8b4eeec85 data/risus/recipe/eye_emerald.json
 32aadefc956348ef386daac0bdf50ecee42ed35a data/risus/recipe/eye_ender.json
 67bcb9206aa2c2355d503eb243e832fd993d6c46 data/risus/recipe/eye_golden.json
+6704489d96cd95e41bd1ed276d407a109fab7899 data/risus/recipe/eye_sandwich.json
 b0529c32f9876c1ddf543ee31b872a3cf7fca1ff data/risus/recipe/flattened_imitation_scales_block.json
 581aa86951d2a83b3c6eb89ab731cc09e157e329 data/risus/recipe/flattened_scales_block.json
 bebcad96d7148682f6370f490dabd45a2f1766ee data/risus/recipe/fleshy_skin.json

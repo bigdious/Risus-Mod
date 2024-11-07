@@ -1,0 +1,35 @@
+{
+  "result": {
+    "id": "risus:sacrifice_catalyst",
+    "count": 1,
+    "components": {
+      "minecraft:damage": 1000
+    }
+  },
+  "pattern": [
+    "PSP",
+    "BCH",
+    "PGP"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "risus:flattened_scales_block"
+    },
+    "S": {
+      "item": "minecraft:iron_sword"
+    },
+    "H": {
+      "item": "risus:heart_transplant"
+    },
+    "P": {
+      "item": "risus:coagulated_blood_block"
+    },
+    "B": {
+      "item": "risus:bloodweave"
+    },
+    "C": {
+      "item": "risus:concentration_core"
+    }
+  }
+}

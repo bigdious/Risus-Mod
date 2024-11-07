@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bread"
+    },
+    "E": {
+      "item": "risus:stalker_eye"
+    }
+  },
+  "pattern": [
+    "B",
+    "E",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:eye_sandwich"
+  }
+}
