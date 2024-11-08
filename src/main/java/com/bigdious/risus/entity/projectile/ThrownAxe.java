@@ -2,8 +2,6 @@ package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
-import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -19,11 +17,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -32,9 +27,8 @@ import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 
 public class ThrownAxe extends AbstractArrow {
-//	loyalty requirement removed until enchantments are fixed
 
-//	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private boolean dealtDamage;
@@ -48,7 +42,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	public ThrownAxe(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
-//		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
+		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getDamageValue());
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
@@ -75,8 +69,7 @@ public class ThrownAxe extends AbstractArrow {
 		}
 
 		Entity entity = this.getOwner();
-		//this.entityData.get(ID_LOYALTY);
-		int i = 2;
+		int i = this.entityData.get(ID_LOYALTY);
 		if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
 			if (!this.isAcceptableReturnOwner()) {
 				if (!this.level().isClientSide() && this.pickup == AbstractArrow.Pickup.ALLOWED) {
@@ -135,7 +128,7 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
 		super.defineSynchedData(pBuilder);
-//		pBuilder.define(ID_LOYALTY, (byte)0);
+		pBuilder.define(ID_LOYALTY, (byte)0);
 		pBuilder.define(ID_SHARPNESS, (byte)0);
 		pBuilder.define(ID_FOIL, false);
 	}
@@ -200,7 +193,7 @@ public class ThrownAxe extends AbstractArrow {
 		super.readAdditionalSaveData(tag);
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
-//		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
+		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
 		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getDamageValue());
 	}
 
@@ -212,8 +205,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	@Override
 	public void tickDespawn() {
-//		this.entityData.get(ID_LOYALTY);
-		int i = 2;
+		int i = this.entityData.get(ID_LOYALTY);
 		if (this.pickup != AbstractArrow.Pickup.ALLOWED || i <= 0) {
 			super.tickDespawn();
 		}

@@ -66,7 +66,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
+//		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 	}
 
 	private static void clientSetup(FMLClientSetupEvent event) {
@@ -257,11 +257,11 @@ public class RisusClientEvents {
 	}
 
 	//doesn't work... But should it?
-    private static void renderExBurning(RenderBlockScreenEffectEvent event) {
-		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.EXBURN)) {
-			ClientHooks.renderBlockOverlay(Minecraft.getInstance().player, event.getPoseStack(), RenderBlockScreenEffectEvent.OverlayType.FIRE, RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), Minecraft.getInstance().player.blockPosition());
-		}
-	}
+//    private static void renderExBurning(RenderBlockScreenEffectEvent event) {
+//		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.EXBURN)) {
+//			ClientHooks.renderBlockOverlay(Minecraft.getInstance().player, event.getPoseStack(), RenderBlockScreenEffectEvent.OverlayType.FIRE, RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), Minecraft.getInstance().player.blockPosition());
+//		}
+//	}
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {

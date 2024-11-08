@@ -163,7 +163,7 @@ public class RisusBlocks {
 	//CINDERGLEE
 	public static final DeferredBlock<Block> JOYFLAME_TORCH = BLOCKS.register("joyflame_torch", () -> new ModdedTorchBlock(Block.Properties.ofFullCopy(Blocks.TORCH)));
 	public static final DeferredBlock<Block> JOYFLAME_WALL_TORCH = BLOCKS.register("joyflame_wall_torch", () -> new ModdedWallTorchBlock(Block.Properties.ofFullCopy(Blocks.TORCH)));
-	public static final DeferredBlock<Block> JOYFLAME_CAMPFIRE = BLOCKS.register("joyflame_campfire", () -> new RisusCampfireBlock(true, 2, Block.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> JOYFLAME_CAMPFIRE = BLOCKS.register("joyflame_campfire", () -> new RisusCampfireBlock(true, 2, Block.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 14)));
 	public static final DeferredBlock<Block> JOYFLAME_LANTERN = BLOCKS.register("joyflame_lantern", () -> new LanternBlock(Block.Properties.ofFullCopy(Blocks.LANTERN)));
 	public static final DeferredBlock<Block> JOYFLAME_FIRE = BLOCKS.register("joyflame_fire", () -> new JoyflameFireBlock(Block.Properties.ofFullCopy(Blocks.FIRE)));
 	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = BLOCKS.register("curved_ritual_block", () -> new ChiseledGrimstone(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA)));

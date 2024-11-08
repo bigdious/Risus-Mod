@@ -55,6 +55,17 @@ public class FlameFrailtyEffect extends MobEffect {
 				}
 			}
 		}
+		if (entity.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+			entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 1, false, false, false));
+			entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2, false, false, false));
+			entity.removeEffect(MobEffects.FIRE_RESISTANCE);
+			entity.hurt(entity.damageSources().onFire(), 2);
+			if (entity.level() instanceof ServerLevel serverLevel) {
+				for (int i = 0; i < 4; i++) {
+					serverLevel.sendParticles(ParticleTypes.FLAME, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0, 0.0, 0);
+				}
+			}
+		}
 		if (entity.isOnFire()) {
 			entity.hurt(entity.damageSources().onFire(), 1);
 			entity.setRemainingFireTicks(entity.getRemainingFireTicks()+30);
