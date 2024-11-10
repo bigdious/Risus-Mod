@@ -1,0 +1,93 @@
+{
+  "parent": "risus:fleshing",
+  "criteria": {
+    "shaving0": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "risus:hairy_skin"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:shears"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    },
+    "shaving1": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "risus:hairy_fleshy_skin"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:shears"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    },
+    "shaving2": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "risus:hairy_curved_fleshy_skin"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:shears"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.shave.desc"
+    },
+    "icon": {
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "risus:mating_frenzy"
+        }
+      },
+      "count": 1,
+      "id": "minecraft:potion"
+    },
+    "title": {
+      "translate": "advancement.risus.shave"
+    }
+  },
+  "requirements": [
+    [
+      "shaving0",
+      "shaving1",
+      "shaving2"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

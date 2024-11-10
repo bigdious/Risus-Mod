@@ -1,0 +1,41 @@
+{
+  "parent": "risus:scythe",
+  "criteria": {
+    "scythes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:cinderglee_scythe"
+          },
+          {
+            "items": "risus:soul_scythe"
+          },
+          {
+            "items": "risus:fire_scythe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.rainbow.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "risus:soul_scythe"
+    },
+    "title": {
+      "translate": "advancement.risus.rainbow"
+    }
+  },
+  "requirements": [
+    [
+      "scythes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

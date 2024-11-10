@@ -1,0 +1,44 @@
+{
+  "parent": "risus:irresistible",
+  "criteria": {
+    "love": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:potion"
+          },
+          {
+            "items": "minecraft:splash_potion"
+          },
+          {
+            "items": "minecraft:lingering_potion"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.cupid.desc"
+    },
+    "icon": {
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "risus:mating_frenzy"
+        }
+      },
+      "count": 1,
+      "id": "minecraft:potion"
+    },
+    "title": {
+      "translate": "advancement.risus.cupid"
+    }
+  },
+  "requirements": [
+    [
+      "love"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -16,6 +16,7 @@
     "description": {
       "translate": "advancement.risus.mod_book.desc"
     },
+    "frame": "goal",
     "icon": {
       "count": 1,
       "id": "risus:researchers_notes"

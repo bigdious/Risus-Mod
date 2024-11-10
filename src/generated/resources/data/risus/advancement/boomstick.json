@@ -1,0 +1,33 @@
+{
+  "parent": "risus:satiate",
+  "criteria": {
+    "boomstick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:boomstick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.boomstick.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:boomstick"
+    },
+    "title": {
+      "translate": "advancement.risus.boomstick"
+    }
+  },
+  "requirements": [
+    [
+      "boomstick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

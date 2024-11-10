@@ -1,0 +1,23 @@
+{
+  "name": "Composer of Tragedy",
+  "icon": "minecraft:paper",
+  "category": "risus:observations",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A reoccurring person throughout the literature I've analyzed is someone going by the pen-name 'Composer of Tragedy'. Their works are rather varied, from great epics to poems, and the exact dates and places of origins are both unclear. The newests I've come across seem to have appeared only decades ago while the oldest works - which were mostly found in the treasuries of kingdoms - go all"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the way back to said kingdoms' founding years. Some of their works include but are not limited to: 'Story of Shadows', 'The Ones Below God', 'Bleeding Stars', 'Envy's Ballad', 'Afterglow' and so on. What is most interesting about these works is that unlike the songs of bards or the tales parents tell their children, these are not heroes' journeys or methods to instill fear. Instead, they oftentimes showcase concepts that can be difficult to comprehend, such as the world beyond our"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "everyday or the way the events of the world function. As an example, the 'Story of Shadows' is a genesis story, describing how there was once a One Great Shadow that enveloped the entire world under itself. However, a light appeared and while it couldn't defeat the One Great Shadow, it was capable of shattering it into multiple shades. The implication is that the present world is what this shattered shades became. Another motif that can be commonly found in the Composer's works is"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the idea that the world has a memory and therefore can forget. This can turn into a conflict, where the memory of the world does not align with the memory of its residents. Nonetheless, so far I've figured out very little about the Composer's identity. Their wisdom and long lifespan seem like obvious enough deductions, but no further details have been revealed to me in his works. I need to find a method to meet them directly..."
+    }
+  ]
+}

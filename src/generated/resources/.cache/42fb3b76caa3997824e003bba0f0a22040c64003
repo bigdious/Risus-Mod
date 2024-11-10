@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-07T21:41:49.5372504	Risus Item Models
+// 1.21.1	2024-11-10T16:45:44.9166111	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -53,6 +53,7 @@ ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_ti
 b332bad690944154b80ccd21beee1034d1727af4 assets/risus/models/item/depth_vase.json
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.json
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch_stand.json
+cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banner_pattern.json
 9bbd4572fb9e05f6ac0c6647c99335026ac0ebd7 assets/risus/models/item/egg_sac.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
@@ -156,6 +157,7 @@ cd7e728eba311ff07068b2978b8306a7b5eb70df assets/risus/models/item/thousand_blade
 88dbd49ff61f13526dc4161377d35ab5494e4539 assets/risus/models/item/tissue_slab.json
 b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/transient_question_mark_spawn_egg.json
+8a61f9a79180f9455dfd8470384ee6b73c875168 assets/risus/models/item/tree_banner_pattern.json
 b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json
 593a2e82a779cb7f0b577677ce31aff17bac3884 assets/risus/models/item/unawakened_vessel_base.json
 e7b13f6aeb60562c279778a751de4448fa6755b0 assets/risus/models/item/veins.json

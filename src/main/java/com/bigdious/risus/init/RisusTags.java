@@ -69,6 +69,8 @@ public class RisusTags {
 	public static class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
 
 		public static final TagKey<BannerPattern> SMILE_PATTERN = create("pattern_item/smile");
+		public static final TagKey<BannerPattern> DIVINITY_PATTERN = create("pattern_item/divinity");
+		public static final TagKey<BannerPattern> TREE_PATTERN = create("pattern_item/tree");
 
 
 		public BannerPatternTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -77,7 +79,10 @@ public class RisusTags {
 
 		@Override
 		protected void addTags(HolderLookup.Provider provider) {
+
 			this.tag(SMILE_PATTERN).add(RisusBannerPatterns.SMILE);
+			this.tag(DIVINITY_PATTERN).add(RisusBannerPatterns.DIVINITY);
+			this.tag(TREE_PATTERN).add(RisusBannerPatterns.TREE);
 		}
 
 		private static TagKey<BannerPattern> create(String name) {

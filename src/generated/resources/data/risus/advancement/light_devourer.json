@@ -1,0 +1,33 @@
+{
+  "parent": "risus:satiate",
+  "criteria": {
+    "light_devourer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:light_devourer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.light_devourer.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:light_devourer"
+    },
+    "title": {
+      "translate": "advancement.risus.light_devourer"
+    }
+  },
+  "requirements": [
+    [
+      "light_devourer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

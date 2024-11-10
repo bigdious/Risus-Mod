@@ -1,0 +1,33 @@
+{
+  "parent": "risus:satiate",
+  "criteria": {
+    "scythe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:scythe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.scythe.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:scythe"
+    },
+    "title": {
+      "translate": "advancement.risus.scythe"
+    }
+  },
+  "requirements": [
+    [
+      "scythe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

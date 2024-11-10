@@ -202,7 +202,7 @@ public class RisusStructures {
 					))
 				),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.NONE
+				TerrainAdjustment.BEARD_THIN
 			),
 			pools.getOrThrow(ANGEL_ALTAR_POOL),
 			Optional.empty(),
@@ -262,7 +262,7 @@ public class RisusStructures {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
-			new RandomSpreadStructurePlacement(20, 15, RandomSpreadType.TRIANGULAR, 1024321764)));
+			new RandomSpreadStructurePlacement(30, 25, RandomSpreadType.TRIANGULAR, 1024321764)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
 			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 22123393)));
@@ -274,13 +274,13 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 52445123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(10, 7, RandomSpreadType.LINEAR, 529739264)));
+			new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.LINEAR, 529739264)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(15, 4, RandomSpreadType.TRIANGULAR, 1341435524)));
 
 		context.register(GREAT_BODY_SET, new StructureSet(structures.getOrThrow(GREAT_BODY),
-			new RandomSpreadStructurePlacement(15, 4, RandomSpreadType.LINEAR, 838347612)));
+			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.LINEAR, 838347612)));
 
 		context.register(FLOWER_FIELD_SET, new StructureSet(structures.getOrThrow(FLOWER_FIELD),
 			new RandomSpreadStructurePlacement(21, 20, RandomSpreadType.TRIANGULAR, 29213393)));

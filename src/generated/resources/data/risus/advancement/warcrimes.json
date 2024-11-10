@@ -1,0 +1,34 @@
+{
+  "parent": "risus:satiate",
+  "criteria": {
+    "warcrimes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:thousand_blade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.thousand.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "risus:thousand_blade"
+    },
+    "title": {
+      "translate": "advancement.risus.thousand"
+    }
+  },
+  "requirements": [
+    [
+      "warcrimes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

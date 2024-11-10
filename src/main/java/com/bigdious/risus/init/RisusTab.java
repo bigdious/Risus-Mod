@@ -182,6 +182,8 @@ public class RisusTab {
 						output.accept(RisusItems.EGG_SAC.get());
 						output.accept(RisusItems.RESEARCHERS_NOTES.get());
 						output.accept(RisusItems.SMILE_PATTERN.get());
+						output.accept(RisusItems.DIVINITY_PATTERN.get());
+						output.accept(RisusItems.TREE_PATTERN.get());
 						createSpawnEggsAlphabetical(output);
 
 

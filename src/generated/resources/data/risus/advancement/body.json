@@ -1,0 +1,39 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "body": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:great_body"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.great_body.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:hairy_fleshy_skin"
+    },
+    "title": {
+      "translate": "advancement.risus.great_body"
+    }
+  },
+  "requirements": [
+    [
+      "body"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

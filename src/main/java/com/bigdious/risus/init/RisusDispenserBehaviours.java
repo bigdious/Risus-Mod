@@ -2,11 +2,15 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.dispenser.OrganicMatterDispenseBehaviour;
 import com.bigdious.risus.dispenser.ShavingDispenserBehaviour;
+import com.bigdious.risus.entity.projectile.EggSac;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.core.dispenser.ProjectileDispenseBehavior;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -36,5 +40,6 @@ public class RisusDispenserBehaviours {
 
 		DispenserBlock.registerBehavior(RisusItems.ORGANIC_MATTER, new OrganicMatterDispenseBehaviour());
 		DispenserBlock.registerBehavior(Items.SHEARS, new ShavingDispenserBehaviour());
+		DispenserBlock.registerProjectileBehavior(RisusItems.EGG_SAC);
 	}
 }

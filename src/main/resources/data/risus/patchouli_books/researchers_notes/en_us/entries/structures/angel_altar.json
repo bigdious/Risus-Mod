@@ -1,0 +1,19 @@
+{
+  "name": "Angel Altars",
+  "icon": "risus:angel_altar",
+  "category": "risus:structures",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altars represent places of worship and holy grounds most commonly located at high altitudes. At their center there is a divine construct above which floats an Ophanim, the weakest type of angel. It will diligently smite down all trespassers that come close to the Altar. This structure should only be approached if the trespasser is equipped with weaponry capable of slaying the divine."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["risus:textures/gui/entries/angel_altar.png"],
+      "border": "true",
+      "title": "Circular Angel Altar",
+      "text": "There are oftentimes Depth Vases hidden in the blood within these altars."
+      }
+  ]
+}

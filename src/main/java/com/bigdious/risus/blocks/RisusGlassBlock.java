@@ -55,6 +55,9 @@ public class RisusGlassBlock extends Block implements SimpleMultiloggedBlock {
 
 		return super.updateShape(state, direction, neighborState, accessor, pos, neighborPos);
 	}
+	protected boolean skipRendering(BlockState blockState1, BlockState blockState2, Direction direction) {
+		return blockState2.is(this) ? true : super.skipRendering(blockState1, blockState2, direction);
+	}
 
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;

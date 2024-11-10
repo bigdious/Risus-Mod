@@ -31,6 +31,10 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 				.withPool(LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(RisusItems.HEART_TRANSPLANT)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.TREE_PATTERN)))
 				);
 		register.accept(RisusLootTables.ANGEL_ALTAR,
 			LootTable.lootTable()
@@ -47,6 +51,10 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(EmptyLootItem.emptyItem().setWeight(2))
 					.add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING))
 					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.DIVINITY_PATTERN)))
 		);
 		register.accept(RisusLootTables.GREAT_BODY,
 			LootTable.lootTable()

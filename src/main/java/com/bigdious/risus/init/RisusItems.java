@@ -208,6 +208,8 @@ public class RisusItems {
 	//TRIMS AND PATTERNS
 
 	public static final DeferredItem<Item> SMILE_PATTERN = ITEMS.register("smile_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, defaultWithRarity().stacksTo(1)));
+	public static final DeferredItem<Item> DIVINITY_PATTERN = ITEMS.register("divinity_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, defaultWithRarity().stacksTo(1)));
+	public static final DeferredItem<Item> TREE_PATTERN = ITEMS.register("tree_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, defaultWithRarity().stacksTo(1)));
 
 	//DISPLAY ONLY ITEMS
 

@@ -1,0 +1,42 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "skins": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:skin_helmet"
+          },
+          {
+            "items": "risus:skin_boots"
+          },
+          {
+            "items": "risus:skin_chestplate"
+          },
+          {
+            "items": "risus:skin_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.tight.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:skin_helmet"
+    },
+    "title": {
+      "translate": "advancement.risus.tight"
+    }
+  },
+  "requirements": [
+    [
+      "skins"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

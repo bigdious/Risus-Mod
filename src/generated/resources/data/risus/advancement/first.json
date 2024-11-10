@@ -16,6 +16,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "body": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:great_body"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "endmaw": {
       "conditions": {
         "player": [
@@ -136,7 +152,8 @@
       "endmaw",
       "flower",
       "angel",
-      "family"
+      "family",
+      "body"
     ]
   ],
   "sends_telemetry_event": true

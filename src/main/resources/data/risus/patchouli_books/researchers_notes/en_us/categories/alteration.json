@@ -1,6 +1,6 @@
 {
   "name": "Alteration",
-  "description": "To imbue an object, be it organic or inorganic, with the properties of the Risus - that is the goal of alteration.",
+  "description": "The goal of alteration is to use an Alteration Catalyst to imbue an object, be it organic or inorganic, with the properties of the Risus. The results can be beneficial or entirely too volatile.",
   "icon": "risus:alteration_catalyst",
   "advancement": "risus:site_zero"
 }

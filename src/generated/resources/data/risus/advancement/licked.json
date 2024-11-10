@@ -1,0 +1,33 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "licked": {
+      "conditions": {
+        "damage": {
+          "source_entity": {
+            "type": "risus:licker"
+          }
+        }
+      },
+      "trigger": "minecraft:entity_hurt_player"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.licked.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:egg_sac"
+    },
+    "title": {
+      "translate": "advancement.risus.licked"
+    }
+  },
+  "requirements": [
+    [
+      "licked"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
