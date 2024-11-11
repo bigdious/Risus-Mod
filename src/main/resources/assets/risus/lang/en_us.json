@@ -251,6 +251,7 @@
   "entity.risus.transient_question_mark": "???",
   "entity.risus.risus_boat": "Boat",
   "entity.risus.thrown_axe": "Thrown Crescent Disaster",
+  "entity.risus.bloodslash": "Sanguine Slash",
   "entity.risus.weaver": "Weaver",
   "entity.risus.memory1": "Faded Statue",
   "entity.risus.licker": "Licker",
@@ -261,7 +262,7 @@
   "death.attack.inexistence.player": "%1$s has stepped into inexistence while trying to escape %2$s",
   "death.attack.weaver": "Fuck off",
 
-  "death.attack.risus.melancholy": "%1$s went dancing in the acid rain",
+  "death.attack.risus.melancholy": "%1$s lost all memories",
 
   "death.attack.pleasure": "%1$s's body drowned in ecstasy",
   "death.attack.pleasure.player": "%1$s's body drowned in ecstasy while dancing with %2$s",
@@ -269,6 +270,11 @@
   "death.attack.gluttony": "%1$s was devoured",
   "death.attack.gluttony.player": "%1$s was devoured",
   "death.attack.melancholy.player": "%1$s got their memories weaved into Bloodweave",
+
+  "death.attack.vampirism": "%1$s got sucked dry.",
+  "death.attack.vampirism.player": "%1$s's got sucked dry while trying to fight %2$s",
+
+  "death.attack.bloodslash": "%1$s was cut in half.",
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",

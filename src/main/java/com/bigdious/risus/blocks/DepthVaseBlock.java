@@ -118,13 +118,13 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 				return ItemInteractionResult.FAIL;
 			}
 			if (player.getMainHandItem().is(RisusItems.RESEARCHERS_NOTES)) {
-				if (depthVase.depthToSlotRatio > 1) {
+//				if (depthVase.depthToSlotRatio > 1) {
 					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
-					return ItemInteractionResult.SUCCESS;
-				} else {
-					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
-					return ItemInteractionResult.SUCCESS;
-				}
+					return ItemInteractionResult.sidedSuccess(level.isClientSide);
+//				} else {
+//					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
+//					return ItemInteractionResult.SUCCESS;
+//				}
 			} else {
 				if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
 					for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {

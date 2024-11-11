@@ -31,6 +31,8 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> GLUTTONY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("gluttony"));
 	public static final ResourceKey<DamageType> MELANCHOLY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("melancholy"));
 	public static final ResourceKey<DamageType> PLEASURE = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("pleasure"));
+	public static final ResourceKey<DamageType> BLOODSLASH = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("bloodslash"));
+	public static final ResourceKey<DamageType> VAMPIRISM = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("vampirism"));
 
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {
@@ -38,5 +40,7 @@ public class RisusDamageTypes {
 		context.register(GLUTTONY, new DamageType("gluttony", 0));
 		context.register(MELANCHOLY, new DamageType("melancholy", 0));
 		context.register(PLEASURE, new DamageType("pleasure", 0));
+		context.register(BLOODSLASH, new DamageType("bloodslash", 0));
+		context.register(VAMPIRISM, new DamageType("vampirism", 0));
 	}
 }

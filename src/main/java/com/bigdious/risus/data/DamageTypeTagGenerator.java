@@ -18,6 +18,11 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
-		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(RisusDamageTypes.INEXISTENCE);
+		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(RisusDamageTypes.INEXISTENCE).add(RisusDamageTypes.VAMPIRISM).add(RisusDamageTypes.PLEASURE);
+		this.tag(DamageTypeTags.BYPASSES_INVULNERABILITY).add(RisusDamageTypes.VAMPIRISM).add(RisusDamageTypes.INEXISTENCE);
+		this.tag(DamageTypeTags.NO_KNOCKBACK).add(RisusDamageTypes.VAMPIRISM);
+		this.tag(DamageTypeTags.NO_IMPACT).add(RisusDamageTypes.VAMPIRISM);
+		this.tag(DamageTypeTags.BYPASSES_ARMOR).add(RisusDamageTypes.INEXISTENCE).add(RisusDamageTypes.VAMPIRISM).add(RisusDamageTypes.PLEASURE);
+		this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(RisusDamageTypes.INEXISTENCE).add(RisusDamageTypes.VAMPIRISM).add(RisusDamageTypes.PLEASURE);
 	}
 }

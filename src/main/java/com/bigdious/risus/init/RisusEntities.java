@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.*;
+import com.bigdious.risus.entity.projectile.BloodSlash;
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
 import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
@@ -31,6 +32,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).sized(3F, 3F), 0x000000, 0xffffff);
 	public static final DeferredHolder<EntityType<?>, EntityType<TransientQuestionMark>> TRANSIENT_QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "transient_question_mark"), EntityType.Builder.of(TransientQuestionMark::new, MobCategory.MONSTER).sized(3F, 3F), 0x000000, 0xffffff);
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
+	public static final DeferredHolder<EntityType<?>, EntityType<BloodSlash>> BLOODSLASH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodslash"), EntityType.Builder.<BloodSlash>of(BloodSlash::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x4d36ff);
