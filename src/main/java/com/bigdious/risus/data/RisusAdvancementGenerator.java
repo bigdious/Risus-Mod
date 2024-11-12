@@ -92,7 +92,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.save(consumer, "risus:little");
 
 
-		AdvancementHolder fleshing = Advancement.Builder.advancement().parent(site_zero)
+		AdvancementHolder fleshing = Advancement.Builder.advancement().parent(first)
 			.display(
 				RisusBlocks.DECOMPOSED_TISSUE.get(),
 				Component.translatable("advancement.risus.fleshing"),
@@ -124,6 +124,15 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("devour0", KilledTrigger.TriggerInstance.entityKilledPlayer(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
 			.save(consumer, "risus:devour");
 
+		AdvancementHolder gluttony = Advancement.Builder.advancement().parent(devour)
+			.display(
+				RisusItems.GLUTTONY_SCALES.get(),
+				Component.translatable("advancement.risus.gluttony"),
+				Component.translatable("advancement.risus.gluttony.desc"), null, AdvancementType.TASK, true, true, true)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("gluttony", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GLUTTONY_SCALES.get()))
+			.save(consumer, "risus:gluttony");
+
 		AdvancementHolder satiate = Advancement.Builder.advancement().parent(devour)
 			.display(
 				RisusBlocks.MAW_GUTS.get(),
@@ -133,7 +142,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("satiate0", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MAW_GUTS.get()))
 			.save(consumer, "risus:satiate");
 
-		AdvancementHolder potential = Advancement.Builder.advancement().parent(satiate)
+		AdvancementHolder potential = Advancement.Builder.advancement().parent(gluttony)
 			.display(
 				RisusItems.UNAWAKENED_VESSEL.get(),
 				Component.translatable("advancement.risus.potential"),
@@ -171,7 +180,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
 				Component.translatable("advancement.risus.great_body"),
-				Component.translatable("advancement.risus.great_body.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.great_body.desc"), null, AdvancementType.TASK, true, true, true)
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
 			.save(consumer, "risus:body");
 
@@ -183,19 +192,19 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("skins", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SKIN_HELMET.get(), RisusItems.SKIN_BOOTS.get(), RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SKIN_LEGGINGS.get()))
 			.save(consumer, "risus:tight");
 
-		AdvancementHolder scythe = Advancement.Builder.advancement().parent(satiate)
+		AdvancementHolder scythe = Advancement.Builder.advancement().parent(gluttony)
 			.display(
 				RisusItems.SCYTHE.get(),
 				Component.translatable("advancement.risus.scythe"),
-				Component.translatable("advancement.risus.scythe.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.scythe.desc"), null, AdvancementType.TASK, true, true, true)
 			.addCriterion("scythe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SCYTHE.get()))
 			.save(consumer, "risus:scythe");
 
-		AdvancementHolder warcrimes = Advancement.Builder.advancement().parent(satiate)
+		AdvancementHolder warcrimes = Advancement.Builder.advancement().parent(gluttony)
 			.display(
 				RisusItems.THOUSAND_BLADE.get(),
 				Component.translatable("advancement.risus.thousand"),
-				Component.translatable("advancement.risus.thousand.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+				Component.translatable("advancement.risus.thousand.desc"), null, AdvancementType.CHALLENGE, true, true, true)
 			.addCriterion("warcrimes", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.THOUSAND_BLADE.get()))
 			.save(consumer, "risus:warcrimes");
 
@@ -211,11 +220,11 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.EGG_SAC.get(),
 				Component.translatable("advancement.risus.licked"),
-				Component.translatable("advancement.risus.licked.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.licked.desc"), null, AdvancementType.TASK, true, true, true)
 			.addCriterion("licked", EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance().sourceEntity(EntityPredicate.Builder.entity().of(RisusEntities.LICKER.get()).build())))
 			.save(consumer, "risus:licked");
 
-		AdvancementHolder boomstick = Advancement.Builder.advancement().parent(satiate)
+		AdvancementHolder boomstick = Advancement.Builder.advancement().parent(gluttony)
 			.display(
 				RisusItems.BOOMSTICK.get(),
 				Component.translatable("advancement.risus.boomstick"),
@@ -223,7 +232,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("boomstick", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.BOOMSTICK.get()))
 			.save(consumer, "risus:boomstick");
 
-		AdvancementHolder light_devourer = Advancement.Builder.advancement().parent(satiate)
+		AdvancementHolder light_devourer = Advancement.Builder.advancement().parent(gluttony)
 			.display(
 				RisusItems.LIGHT_DEVOURER.get(),
 				Component.translatable("advancement.risus.light_devourer"),
@@ -235,19 +244,19 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 		AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
 				lovePotion(),
 				Component.translatable("advancement.risus.cupid"),
-				Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(lovePotion().getItem(), splashLovePotion().getItem(), lingeringLovePotion().getItem()))
 			.save(consumer, "risus:cupid");
 
-		AdvancementHolder shave = Advancement.Builder.advancement().parent(fleshing).display(
-				lovePotion(),
+		AdvancementHolder shave = Advancement.Builder.advancement().parent(first).display(
+				RisusItems.HAIRY_SKIN.get(),
 				Component.translatable("advancement.risus.shave"),
-				Component.translatable("advancement.risus.shave.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.shave.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("shaving0", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.HAIRY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
-			.addCriterion("shaving1", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.HAIRY_FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
-			.addCriterion("shaving2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
+			.addCriterion("shaving0", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
+			.addCriterion("shaving1", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
+			.addCriterion("shaving2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.CURVED_FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
 			.save(consumer, "risus:shave");
 
 	}

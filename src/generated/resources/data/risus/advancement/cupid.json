@@ -22,6 +22,7 @@
     "description": {
       "translate": "advancement.risus.cupid.desc"
     },
+    "hidden": true,
     "icon": {
       "components": {
         "minecraft:potion_contents": {

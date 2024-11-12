@@ -1,5 +1,5 @@
 {
-  "parent": "risus:fleshing",
+  "parent": "risus:first",
   "criteria": {
     "shaving0": {
       "conditions": {
@@ -8,7 +8,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "block": {
-                "blocks": "risus:hairy_skin"
+                "blocks": "risus:skin"
               }
             }
           },
@@ -29,7 +29,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "block": {
-                "blocks": "risus:hairy_fleshy_skin"
+                "blocks": "risus:fleshy_skin"
               }
             }
           },
@@ -50,7 +50,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "block": {
-                "blocks": "risus:hairy_curved_fleshy_skin"
+                "blocks": "risus:curved_fleshy_skin"
               }
             }
           },
@@ -69,14 +69,10 @@
     "description": {
       "translate": "advancement.risus.shave.desc"
     },
+    "hidden": true,
     "icon": {
-      "components": {
-        "minecraft:potion_contents": {
-          "potion": "risus:mating_frenzy"
-        }
-      },
       "count": 1,
-      "id": "minecraft:potion"
+      "id": "risus:hairy_skin"
     },
     "title": {
       "translate": "advancement.risus.shave"

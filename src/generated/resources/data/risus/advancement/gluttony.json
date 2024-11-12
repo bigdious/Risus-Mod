@@ -1,11 +1,11 @@
 {
-  "parent": "risus:gluttony",
+  "parent": "risus:devour",
   "criteria": {
-    "light_devourer": {
+    "gluttony": {
       "conditions": {
         "items": [
           {
-            "items": "risus:light_devourer"
+            "items": "risus:gluttony_scales"
           }
         ]
       },
@@ -14,19 +14,20 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.light_devourer.desc"
+      "translate": "advancement.risus.gluttony.desc"
     },
+    "hidden": true,
     "icon": {
       "count": 1,
-      "id": "risus:light_devourer"
+      "id": "risus:gluttony_scales"
     },
     "title": {
-      "translate": "advancement.risus.light_devourer"
+      "translate": "advancement.risus.gluttony"
     }
   },
   "requirements": [
     [
-      "light_devourer"
+      "gluttony"
     ]
   ],
   "sends_telemetry_event": true

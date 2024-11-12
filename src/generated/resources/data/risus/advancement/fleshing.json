@@ -1,5 +1,5 @@
 {
-  "parent": "risus:site_zero",
+  "parent": "risus:first",
   "criteria": {
     "fleshing0": {
       "conditions": {

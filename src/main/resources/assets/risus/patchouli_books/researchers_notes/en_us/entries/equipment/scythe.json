@@ -2,7 +2,7 @@
   "name": "Scythes",
   "icon": "risus:soul_scythe",
   "category": "risus:equipment",
-  "advancement": "risus:site_zero",
+  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",

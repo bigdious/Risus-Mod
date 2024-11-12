@@ -325,5 +325,7 @@
   "advancement.risus.light_devourer": "False Genesis",
   "advancement.risus.light_devourer.desc": "Obtain a Light Devourer that can be used to place Darkness.",
   "advancement.risus.angel": "Holy Grounds",
-  "advancement.risus.angel.desc": "Trespass into the Altar of the Ophanim."
+  "advancement.risus.angel.desc": "Trespass into the Altar of the Ophanim.",
+  "advancement.risus.gluttony": "Gateway To Divinity",
+  "advancement.risus.gluttony.desc": "Obtain Gluttony Scales."
 }

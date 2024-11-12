@@ -1,0 +1,26 @@
+{
+  "name": "Boomstick",
+  "icon": "risus:boomstick",
+  "category": "risus:equipment",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Made using TNT, the Boomstick is a volatile weapon but can be extremely effective if the user has no regard for the space around them or their own safety. Upon hitting an enemy with it, the dynamite stick on its end will explode, hurting the user as well. The Boomstick will not be consumed after one explosion and can be reused several times. It can also be repaired using TNT"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:boomstick",
+      "text": "Armor that strongly resists explosions is necessary to have a chance at survival. Note: Do not let a Zombie or any other mob get ahold of a Boomstick. Unlike a Creeper, there will be no windup to the explosion."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "What absolute lunatic birthed forth the monstrosity of an idea to create this weapon. The first time I came across a Boomstick was when a cultist ran towards me with the intention of blowing us both up. Thankfully, I had a shield on me and managed to survive the explosion, but it still nearly took my arm off. I understand that the Risus can offer immortality - or even using the pillager's totems would allow the wielder to"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "survive the explosion - but still! I just cannot fathom such a disregard for one's own safety. You'd have to be a madman to truly consider using it."
+    }
+  ]
+}

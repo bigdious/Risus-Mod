@@ -1,5 +1,5 @@
 {
-  "parent": "risus:satiate",
+  "parent": "risus:gluttony",
   "criteria": {
     "scythe": {
       "conditions": {
@@ -16,6 +16,7 @@
     "description": {
       "translate": "advancement.risus.scythe.desc"
     },
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:scythe"

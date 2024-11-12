@@ -1,5 +1,5 @@
 {
-  "parent": "risus:satiate",
+  "parent": "risus:gluttony",
   "criteria": {
     "warcrimes": {
       "conditions": {
@@ -17,6 +17,7 @@
       "translate": "advancement.risus.thousand.desc"
     },
     "frame": "challenge",
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:thousand_blade"
