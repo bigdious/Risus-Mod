@@ -87,6 +87,7 @@ public class Risus {
 		event.getGenerator().addProvider(isServer, new BiomeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		event.getGenerator().addProvider(isServer, new RisusDataMaps(packOutput, lookupProvider));
 
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);
 		event.getGenerator().addProvider(isServer, registryDataGenerator);

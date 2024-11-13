@@ -203,7 +203,7 @@ public class RisusItems {
 	//LEFTOVER CRAFTING MATERIALS
 	public static final DeferredItem<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new Item(defaultWithRarity()));
+	public static final DeferredItem<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new ExperienceItem(defaultWithRarity()));
 
 	//TRIMS AND PATTERNS
 

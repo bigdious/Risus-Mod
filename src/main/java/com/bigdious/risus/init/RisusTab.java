@@ -161,6 +161,7 @@ public class RisusTab {
 						output.accept(RisusItems.GLUTTONY_SCALES.get());
 						output.accept(RisusItems.BOOMSTICK.get());
 						output.accept(RisusItems.LIGHT_DEVOURER.get());
+						output.accept(RisusItems.MEMORY_CORE.get());
 						output.accept(RisusItems.CONCENTRATION_CORE.get());
 						output.accept(RisusItems.SCYTHE.get());
 						output.accept(RisusItems.FIRE_SCYTHE.get());

@@ -49,7 +49,7 @@ public class Singer extends Monster {
 
 	public Singer(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward=3;
+		this.xpReward=5;
 	}
 	public boolean isSensitiveToWater() {
 		return true;

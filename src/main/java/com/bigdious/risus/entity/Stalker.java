@@ -28,6 +28,7 @@ import net.minecraft.world.level.Level;
 public class Stalker extends Monster {
 	public Stalker(EntityType<? extends Monster> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
+		this.xpReward=5;
 	}
 
 	public static AttributeSupplier.Builder attributes() {

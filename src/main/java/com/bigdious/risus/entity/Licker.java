@@ -32,7 +32,7 @@ public class Licker extends Monster {
 
 	public Licker(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward=3;
+		this.xpReward=5;
 	}
 
 	public static AttributeSupplier.Builder attributes() {

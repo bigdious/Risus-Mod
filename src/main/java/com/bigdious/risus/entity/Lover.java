@@ -30,7 +30,6 @@ import java.util.Random;
 public class Lover extends Monster {
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
-		this.xpReward = 5;
 		this.moveControl = new FlyingMoveControl(this, 20, true);
 	}
 	@Override
