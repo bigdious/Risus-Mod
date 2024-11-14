@@ -16,7 +16,8 @@
       "type": "patchouli:item",
       "item": "#output1",
       "x": 86,
-      "y": 5
+      "y": 5,
+      "link_recipe": true
     },
     {
       "type": "patchouli:image",
@@ -45,7 +46,8 @@
       "type": "patchouli:item",
       "item": "#output2",
       "x": 86,
-      "y": 31
+      "y": 31,
+      "link_recipe": true
     },
     {
       "type": "patchouli:image",
@@ -74,7 +76,8 @@
       "type": "patchouli:item",
       "item": "#output3",
       "x": 86,
-      "y": 57
+      "y": 57,
+      "link_recipe": true
     },
     {
       "type": "patchouli:image",
@@ -103,7 +106,8 @@
       "type": "patchouli:item",
       "item": "#output4",
       "x": 86,
-      "y": 83
+      "y": 83,
+      "link_recipe": true
     },
     {
       "type": "patchouli:image",

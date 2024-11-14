@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

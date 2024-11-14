@@ -16,7 +16,8 @@
       "type": "patchouli:item",
       "item": "#output1",
       "x": 86,
-      "y": 5
+      "y": 5,
+      "link_recipe": true
     },
     {
       "type": "patchouli:image",

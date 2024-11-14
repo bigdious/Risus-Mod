@@ -7,17 +7,14 @@
     }
   },
   "pattern": [
-    "PSP",
-    "BCH",
-    "PGP"
+    "PGP",
+    "BHB",
+    "PCP"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
     "G": {
-      "item": "risus:flattened_scales_block"
-    },
-    "S": {
-      "item": "minecraft:iron_sword"
+      "item": "risus:organic_matter_block"
     },
     "H": {
       "item": "risus:heart_transplant"

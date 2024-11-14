@@ -2,7 +2,7 @@
   "name": "Angel Altars",
   "icon": "risus:angel_altar",
   "category": "risus:structures",
-  "advancement": "risus:site_zero",
+  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:text",

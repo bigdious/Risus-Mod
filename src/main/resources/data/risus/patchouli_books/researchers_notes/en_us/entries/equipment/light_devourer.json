@@ -2,7 +2,7 @@
   "name": "Light Devourer",
   "icon": "risus:light_devourer",
   "category": "risus:equipment",
-  "advancement": "risus:site_zero",
+  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
