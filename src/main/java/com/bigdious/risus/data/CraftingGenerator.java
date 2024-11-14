@@ -463,11 +463,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, RisusItems.CRESCENT_DISASTER.get())
-				.requires(RisusItems.UNAWAKENED_VESSEL.get())
-				.requires(RisusItems.BLOOD_FEATHER.get())
-				.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
-				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.TOOTHKNOCKER.get())
 				.pattern("BBB")

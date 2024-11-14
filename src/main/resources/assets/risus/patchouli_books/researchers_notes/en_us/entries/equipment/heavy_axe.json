@@ -1,0 +1,31 @@
+{
+  "name": "Heavy Axes",
+  "icon": "risus:crescent_disaster",
+  "category": "risus:equipment",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "While basic axes can be used for combat and are rather effective against shields, Heavy Axes offer even more specialization towards fighting, at the cost of the normal utilites and axe would offer. They are more unwieldy but can hit harder in return. A Heavy Axe can be crafted using Gluttony Scales, a bit of wood, Crystallized Bonds and a Concentration Core."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unawakened_vessel",
+      "text": "While decent as is, it's possible to unlock more usability by awakening it's will using the remnants of a divine being."
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "risus:smithing/crescent_disaster",
+      "text": "While decent as is, it's possible to unlock more usability by awakening it's will using the remnants of a divine being."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "What absolute lunatic birthed forth the monstrosity of an idea to create this weapon. The first time I came across a Boomstick was when a cultist ran towards me with the intention of blowing us both up. Thankfully, I had a shield on me and managed to survive the explosion, but it still nearly took my arm off. I understand that the Risus can offer immortality - or even using the pillager's totems would allow the wielder to"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "survive the explosion - but still! I just cannot fathom such a disregard for one's own safety. You'd have to be a madman to truly consider using it."
+    }
+  ]
+}

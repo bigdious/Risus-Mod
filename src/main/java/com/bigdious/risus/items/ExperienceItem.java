@@ -1,9 +1,6 @@
 package com.bigdious.risus.items;
 
-import com.bigdious.risus.entity.projectile.EggSac;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

@@ -1,0 +1,19 @@
+{
+  "values": {
+    "risus:ashen_remains": {
+      "burn_time": 400
+    },
+    "risus:organic_matter": {
+      "burn_time": 200
+    },
+    "risus:organic_matter_block": {
+      "burn_time": 2000
+    },
+    "risus:smiling_remains": {
+      "burn_time": 400
+    },
+    "risus:spreading_remains": {
+      "burn_time": 300
+    }
+  }
+}

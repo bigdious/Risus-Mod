@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-07T19:29:49.0132309	Recipes
+// 1.21.1	2024-11-14T17:23:50.1004911	Recipes
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
 fa2df7c444c04b9725da545090d578bb984c3158 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -93,7 +93,6 @@ ac732fd4672074a5b55a6e97936402bb6a7e85dc data/risus/advancement/recipes/building
 768252fc2679525fb9ceb5c1a16ad270e62bd6cf data/risus/advancement/recipes/building_blocks/tissue_slab.json
 ff90250c2dc854256a32d30c36ac37f88065d139 data/risus/advancement/recipes/building_blocks/tissue_stairs.json
 86bd8b3fc7dc5511d889d1a1ab5ffdfd24ddd0b8 data/risus/advancement/recipes/combat/boomstick.json
-9ef6ac1dbc839d672f19bf4e629882cf574d58be data/risus/advancement/recipes/combat/crescent_disaster.json
 25a4a7c7289fe2ff8270ebd47b2493f5f936f4be data/risus/advancement/recipes/combat/gold_fist.json
 b293bd4931fa791111b2aba85d95f960ad4c9750 data/risus/advancement/recipes/combat/scythe.json
 d24b7a2811f3fe1523c3a4572f05611e177354a9 data/risus/advancement/recipes/combat/toothknocker.json
@@ -201,7 +200,6 @@ e86e670e76cde4693da888e144d05674974ee078 data/risus/recipe/budding_imitation_sca
 00eb2f29379425f64876d3d9464fd281b6c6f9ae data/risus/recipe/bundle_of_hair.json
 dff4413748faa74453390ce5bb0e704182296845 data/risus/recipe/chiseled_grimstone.json
 e0100e54063c0c86a57825c1aecd627d3976974d data/risus/recipe/concentration_core.json
-de6b9a10458024b6c616f791ef97d6405371c786 data/risus/recipe/crescent_disaster.json
 7c8f52d03234f21b652740e94f6a90ab6e3c2386 data/risus/recipe/curved_fleshy_skin.json
 0fa05267e5b5d9157f59ec7e7338b7ae82581b41 data/risus/recipe/curved_ritual_block.json
 cf5ca2996646e8e5654846f3f82d1745dbed254d data/risus/recipe/display_notch.json

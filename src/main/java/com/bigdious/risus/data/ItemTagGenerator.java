@@ -65,6 +65,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(RisusItems.CINDERGLEE_SCYTHE.get())
 			;
 
+		this.tag(ItemTags.TRIM_TEMPLATES)
+			.add(RisusItems.BLOOD_FEATHER.get())
+		;
 		this.tag(RisusTags.Items.EYE)
 			.add(RisusItems.EYE_EMERALD.get())
 			.add(RisusItems.EYE_BLOODSHOT.get())
@@ -83,11 +86,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(RisusItems.SKIN_LEGGINGS.get())
 			.add(RisusItems.SKIN_BOOTS.get());
 
-		tag(ItemTags.TRIM_MATERIALS)
+		this.tag(ItemTags.TRIM_MATERIALS)
 			.add(RisusItems.GLUTTONY_SCALES.get())
 			.add(RisusItems.SKIN.get())
 		;
-		tag(RisusTags.Items.BANNER_PATTERNS)
+		this.tag(RisusTags.Items.BANNER_PATTERNS)
 			.add(Items.CREEPER_BANNER_PATTERN)
 			.add(Items.SKULL_BANNER_PATTERN)
 			.add(Items.PIGLIN_BANNER_PATTERN)
