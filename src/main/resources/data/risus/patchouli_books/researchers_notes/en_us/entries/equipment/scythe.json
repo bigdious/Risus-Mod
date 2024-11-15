@@ -47,21 +47,24 @@
       "item": {
         "item": "risus:fire_scythe"
       },
-      "text": "The Flame Fiend is imbued with pure fire. When using it, not only is the victim set on fire, but they will also experience Flame Frailty, a state during which being on fire will be more painful. Additionally, even enemies who are immune to fire won't be spared, as they get weakened and devoured by the pure flames from within."
+      "text": "The Flame Fiend is imbued with pure fire. When using it, not only is the victim set on fire, but they will also experience Flame Frailty, a state during which being on fire will be more painful. Additionally, even enemies who are immune to fire won't be spared, as they get weakened and devoured by the pure flames from within.",
+      "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": {
         "item": "risus:soul_scythe"
       },
-      "text": "The Soul Scratcher holds the spirit-burning Soul Fire. As such, it is considerably more powerful when wielded against living beings and can even somewhat pierce armor. Unfortunately, this does make it much weaker against enemies without soul, such as the Undead or the Offsprings."
+      "text": "The Soul Scratcher holds the spirit-burning Soul Fire. As such, it is considerably more powerful when wielded against living beings and can even somewhat pierce armor. Unfortunately, this does make it much weaker against enemies without soul, such as the Undead or the Offsprings.",
+      "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": {
         "item": "risus:cinderglee_scythe"
       },
-      "text": "The Existential Executioner allows you to inflict the Existential Burn state onto enemies, causing their existence to slowly burn away and reducing their life. The lost health cannot be reclaimed through regeneration or other healing methods, with the exception of consuming Organic Matter, as that can restore their existence."
+      "text": "The Existential Executioner allows you to inflict the Existential Burn state onto enemies, causing their existence to slowly burn away and reducing their life. The lost health cannot be reclaimed through regeneration or other healing methods, with the exception of consuming Organic Matter, as that can restore their existence.",
+      "link_recipe": true
     }
   ]
 }

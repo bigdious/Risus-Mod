@@ -56,6 +56,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
 
+		this.tag(Tags.Items.OBSIDIANS).add(RisusItems.LAUGHING_OBSIDIAN.get());
+
 		this.tag(RisusTags.Items.WILLFUL_WEAPON)
 			.add(RisusItems.UNAWAKENED_VESSEL.get())
 			.add(RisusItems.CRESCENT_DISASTER.get())

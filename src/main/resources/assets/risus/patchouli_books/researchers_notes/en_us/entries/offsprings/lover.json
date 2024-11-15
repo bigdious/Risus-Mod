@@ -1,0 +1,18 @@
+{
+  "name": "Lover",
+  "icon": "risus:lover_spawn_egg",
+  "category": "risus:offsprings",
+  "advancement": "risus:step",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Lover is the main way Risus affects non-sentient living creatures. It ignores people and targets creatures such as even Creepers or Spiders. Once it touches them with the postules on its body, it forcefully impregnates them with the Risus. This causes a violent reaction, where the victim's body is oftentimes torn open in the process."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:lover",
+      "border": "true",
+      "scale": 0.4
+       }
+  ]
+}

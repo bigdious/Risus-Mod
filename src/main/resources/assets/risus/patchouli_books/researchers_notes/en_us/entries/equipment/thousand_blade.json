@@ -5,12 +5,15 @@
   "advancement": "risus:gluttony",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Blade Of A Thousand is - as the name implies - made from the blood of a thousand people. By extracting the iron from all that blood, a blunt iron blade of great size is created that can conjure a floating sharp edge of blood around it. Due to this nature, it's possible to also shoot out this blood as a slash by charging up an attack. This process will consume a small amount of the blood and the "
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:thousand_blade"
+      },
+      "text": "The Blade Of A Thousand is - as the name implies - made from the blood of a thousand people. By extracting the iron from all that blood, a blunt iron blade of great size is created that can conjure a sharp aura of blood around it. Due to this nature, it's possible to also shoot out this blood as a slash by charging up an attack. This process"
     },
     {
       "type": "patchouli:text",
-      "text": "blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile while the usual sword enchants will work on the blade's edge with the exception of Fire Aspect. To assist with the creation of this sword, a Sacrificial Catalyst is needed, which requires several items such as: Coagulated Blood, Bloodweave, a Heart Transplant, an Organic Matter Block and a Concentration Core."
+      "text": "will consume a small amount of the blood and the blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile, but nor Flame nor Fire aspect will work on the aura. To assist with the creation of this sword, a Sacrificial Catalyst is needed, which requires several items such as: Coagulated Blood, Bloodweave, a Heart Transplant, an Organic Matter Block and a Concentration Core."
     },
     {
       "type": "patchouli:crafting",

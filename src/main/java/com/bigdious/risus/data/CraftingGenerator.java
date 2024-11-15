@@ -372,7 +372,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("###")
 				.pattern("#/#")
 				.pattern("###")
-				.define('#', Ingredient.of(Blocks.OBSIDIAN))
+				.define('#', Ingredient.of(Tags.Items.OBSIDIANS))
 				.define('/', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);

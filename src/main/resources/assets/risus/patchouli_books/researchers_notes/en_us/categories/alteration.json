@@ -1,6 +1,6 @@
 {
-  "name": "Alteration",
-  "description": "The goal of alteration is to use an Alteration Catalyst to imbue an object, be it organic or inorganic, with the properties of the Risus. The results can be beneficial or entirely too volatile.",
+  "name": "Blocks",
+  "description": "The Risus boasts of a high variety of features, from macabre decorations to even pure flowers. Many of these have features that may not be obvious at a first glance; some are even advantageous.",
   "icon": "risus:alteration_catalyst",
   "advancement": "risus:site_zero"
 }

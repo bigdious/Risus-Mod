@@ -1,0 +1,53 @@
+{
+  "name": "Maw",
+  "icon": "risus:essence_of_gluttony",
+  "category": "risus:offsprings",
+  "advancement": "risus:step",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Maw is an immobile creature that uses a trap to ambush prey and can be found pretty much everywhere, even in the sparse expanse of the End. The trap is a simple 3x3 hole, around a dozen blocks deep with itself at the bottom facing upwards. The top is covered by Mirage Blocks that look like the surrounding environment but are not solid and can be fallen through."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:maw",
+      "border": "true",
+      "scale": 0.6,
+      "text": "They will swallow anything, from living beings to simple items."
+      },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:mirage_grass_block"
+      },
+      "link_recipe": true,
+      "text": "Mirage blocks come in mainly four varieties: Grass, Sand, Netherrack and Endstone. Since it's unclear how exactly the Maw creates these, renewing them isn't possible and must instead be harvested with Silk Touch from maw traps. Similarly to powdered snow, wearing leather or skin boots allows the wearer to walk on these blocks as if they were solid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:maw_guts"
+      },
+      "link_recipe": true,
+      "text": "Maws are made up of a mouth, Maw Guts and Gluttony Scales surrounding and protecting their innards. The Scales can be harvested with a Diamond Pickaxe without hurting the Maw, however, removing the Guts will obviously kill it. The Maw Guts can be used for storage and its ability to swallow items remains even after it is no longer part of a Maw."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:gluttony_scales"
+      },
+      "link_recipe": true,
+      "text": "Gluttony Scales are a widely used material, especially for equipment. Their durability and Risus-imbued nature allows for things not even Netherite is capable of. Additionally, they are also valued for their look and design, which results in many people mixing them with Obsidian to create Imitiation Scale decorations."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scaleplate",
+      "recipe2": "risus:flattened_imitation_scales_block"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:flowering_imitation_scaleplate",
+      "recipe2": "risus:budding_imitation_scaleplate"
+    }
+  ]
+}
