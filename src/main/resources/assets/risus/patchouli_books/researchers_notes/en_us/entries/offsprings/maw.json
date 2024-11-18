@@ -29,7 +29,7 @@
         "item": "risus:maw_guts"
       },
       "link_recipe": true,
-      "text": "Maws are made up of a mouth, Maw Guts and Gluttony Scales surrounding and protecting their innards. The Scales can be harvested with a Diamond Pickaxe without hurting the Maw, however, removing the Guts will obviously kill it. The Maw Guts can be used for storage and its ability to swallow items remains even after it is no longer part of a Maw."
+      "text": "Maws are made up of a mouth and Maw Guts, as well as Gluttony Scaleplates protecting their innards. The Scales can be harvested with a Diamond Pickaxe without hurting the Maw, however, removing the Guts will obviously kill it. The Maw Guts can be used for storage and its ability to swallow items remains even after the Maw's death."
     },
     {
       "type": "patchouli:spotlight",

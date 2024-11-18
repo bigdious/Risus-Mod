@@ -65,7 +65,11 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusItems.DEPTH_VASE.get()).unlockedBy("has_item", has(Items.DECORATED_POT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.MILK_BUCKET), RisusItems.BLOOD_BUCKET.get()).unlockedBy("has_item", has(Items.MILK_BUCKET)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusItems.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.RABBIT_HIDE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_HELMET), RisusItems.SKIN_HELMET.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_CHESTPLATE), RisusItems.SKIN_CHESTPLATE.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_LEGGINGS), RisusItems.SKIN_LEGGINGS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_BOOTS), RisusItems.SKIN_BOOTS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
