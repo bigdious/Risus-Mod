@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-15T16:48:29.8487938	Recipes
+// 1.21.1	2024-11-19T21:30:32.9937916	Recipes
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
 fa2df7c444c04b9725da545090d578bb984c3158 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -44,7 +44,11 @@ cf6bc53085f582eea209aee3b32fc7857a3ac678 data/risus/advancement/recipes/alterati
 ef54d2927b9c44f6955edea6e51c66cc3e0bed99 data/risus/advancement/recipes/alteration/polished_grimstone_wall.json
 a8912c42461269e033671a1e86c349d14a73b7b9 data/risus/advancement/recipes/alteration/regen_rose.json
 60faa865b49579ead29880de2008407dc048d60f data/risus/advancement/recipes/alteration/researchers_notes.json
-84e9351de512eae0a8bda0da030e8e23d8ee4ccf data/risus/advancement/recipes/alteration/skin.json
+8e3d5253d0f337947167eb2db7e859050aa81f8b data/risus/advancement/recipes/alteration/skin.json
+1eb095b0fcd43f21cc1d68893f1c68f33c263df8 data/risus/advancement/recipes/alteration/skin_boots.json
+21c62d49daeecda75d3486525330f8c57bb08fb7 data/risus/advancement/recipes/alteration/skin_chestplate.json
+e5bd8ea46702546e279b5592c652605920d44c8d data/risus/advancement/recipes/alteration/skin_helmet.json
+fc1856ea2235f660d960b30db4c94cb381b713b7 data/risus/advancement/recipes/alteration/skin_leggings.json
 fecb31a9350aa8f3a13441b3a0879b3f25dd67b1 data/risus/advancement/recipes/alteration/smile_banner_pattern.json
 b126e3e16eed7cd801edd62ccc3e1b646ac1f43c data/risus/advancement/recipes/alteration/smiling_remains.json
 f589957142134f25dac506cee758ec42facf4f72 data/risus/advancement/recipes/alteration/spreading_remains.json
@@ -170,6 +174,10 @@ dba9a47a59a6c86e430f36723e59326223664212 data/risus/recipe/alteration/polished_g
 2b9100fba2a63fbf5afe525f7312e9a34480cd06 data/risus/recipe/alteration/regen_rose.json
 f7328542d3f035179d1d31ecd36feb7bae876271 data/risus/recipe/alteration/researchers_notes.json
 67aaa677034eea6ede7d4467b3a11cc0d91e5eb0 data/risus/recipe/alteration/skin.json
+d82a64e7fb49379d0399b1000b5967bc6b6094ad data/risus/recipe/alteration/skin_boots.json
+d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chestplate.json
+05d58ae171080fce836836e79b068f0f39ae6515 data/risus/recipe/alteration/skin_helmet.json
+0ad765a0924b0279ccc9d737c1d1558fdbbc26dd data/risus/recipe/alteration/skin_leggings.json
 9ffd457ceace4a691f2cf5da64e9948dfd4d6315 data/risus/recipe/alteration/smile_banner_pattern.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipe/alteration/smiling_remains.json
 2cd00f51233e628515d72d031a8521553421353e data/risus/recipe/alteration/spreading_remains.json

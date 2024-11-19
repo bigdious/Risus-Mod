@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "risus:organic_matter"
+  },
+  "base": {
+    "item": "risus:bloodwyrm_head"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:bloodwyrm_head_weapon"
+  },
+  "template": {
+    "item": "risus:blood_feather"
+  }
+}

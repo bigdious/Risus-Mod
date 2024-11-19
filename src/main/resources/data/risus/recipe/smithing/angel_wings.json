@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "risus:organic_matter"
+  },
+  "base": {
+    "item": "minecraft:elytra"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:angel_wings"
+  },
+  "template": {
+    "item": "risus:blood_feather"
+  }
+}

@@ -124,7 +124,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE.get()))
 					.when(LootItemKilledByPlayerCondition.killedByPlayer())
-					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
+					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.06F, 0.03F)))));
 
 	}
 

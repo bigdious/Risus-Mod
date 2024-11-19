@@ -2,7 +2,6 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -22,27 +21,24 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.TargetGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Skeleton;
-import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Predicate;
 
-public class Weaver extends Spider implements CacheTargetOnClient {
+public class Weaver extends Monster implements CacheTargetOnClient {
 	private int attackTimer;
-
+	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
@@ -51,7 +47,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	public int memories;
 
 
-	public Weaver(EntityType<? extends Spider> type, Level level) {
+	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
 		this.xpReward = 5;
 	}
@@ -67,6 +63,7 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(DATA_ID_ATTACK_TARGET, 0);
+		builder.define(DATA_FLAGS_ID, (byte)0);
 	}
 	@Override
 	public void readAdditionalSaveData(CompoundTag pCompound) {
@@ -303,5 +300,37 @@ public class Weaver extends Spider implements CacheTargetOnClient {
 	}
 	public int getAttackTimer() {
 		return this.attackTimer;
+	}
+
+	//make em climb
+
+	protected PathNavigation createNavigation(Level level) {
+		return new WallClimberNavigation(this, level);
+	}
+	public void tick() {
+		super.tick();
+		if (!this.level().isClientSide) {
+			this.setClimbing(this.horizontalCollision);
+		}
+	}
+	public boolean onClimbable() {
+		return this.isClimbing();
+	}
+	public boolean isClimbing() {
+		return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+	}
+
+	public void setClimbing(boolean climbing) {
+		byte b0 = this.entityData.get(DATA_FLAGS_ID);
+		if (climbing) {
+			b0 = (byte)(b0 | 1);
+		} else {
+			b0 &= -2;
+		}
+
+		this.entityData.set(DATA_FLAGS_ID, b0);
+	}
+	static {
+		DATA_FLAGS_ID = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.BYTE);
 	}
 }

@@ -62,7 +62,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.ANGEL_ALTAR.get(),
 				Component.translatable("advancement.risus.angel"),
-				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, true)
 			.addCriterion("angel_altar", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
 			.save(consumer, "risus:angel");
 

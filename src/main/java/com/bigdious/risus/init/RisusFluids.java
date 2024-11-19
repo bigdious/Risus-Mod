@@ -32,10 +32,13 @@ public class RisusFluids {
 
 	public static final DeferredHolder<FluidType, FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid", () -> new FluidType(FluidType.Properties.create()
 		.canHydrate(true)
+		.motionScale(0.00116666666)
 		.canDrown(false)
 		.canSwim(true)
-		.density(10)
-		.viscosity(15)
+		.density(1500)
+		.viscosity(1000)
+		.supportsBoating(true)
+		.canConvertToSource(true)
 		.canPushEntity(true)) {
 
 	});
