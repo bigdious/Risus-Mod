@@ -46,11 +46,15 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
 import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
+
+import java.awt.event.ItemEvent;
 
 public class RisusEvents {
 
@@ -70,6 +74,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::fireScythe);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::cindergleeScythe);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::soulScythe);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::hurtWings);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -274,6 +279,12 @@ public class RisusEvents {
 					cultist.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(RisusItems.THOUSAND_BLADE.asItem()));
 				}
 			}
+		}
+	}
+
+	private static void hurtWings(PlayerInteractEvent.RightClickItem event) {
+		if (event.getItemStack().is(Items.FIREWORK_ROCKET) && event.getEntity().getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.ANGEL_WINGS) && event.getEntity().isFallFlying()) {
+			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(30, event.getEntity(), EquipmentSlot.CHEST);
 		}
 	}
 

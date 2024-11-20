@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:leather_helmet"
+  },
+  "result": "risus:skin_helmet"
+}
