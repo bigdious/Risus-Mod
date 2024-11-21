@@ -48,6 +48,15 @@
       "type": "patchouli:crafting",
       "recipe": "risus:flowering_imitation_scaleplate",
       "recipe2": "risus:budding_imitation_scaleplate"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "The first time I came across a Maw was when I fell into its trap. Fortunately, I managed to not fall directly in its mouth, but that didn't make the situation any less terrifying - being that close to the fangs. In the panic, I even dropped the pickaxe I was holding and that did land in its mouth. While I managed to crawl out, I still needed that pick so out of frustration I just dropped a tnt on it. To my surprise, it actually swallowed it. The"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "explosion was almost fully isolated to its guts which got destroyed, killing it in the process and giving my pick back. Anyway... it is interesting how the Maw Traps are a regional phenomenon. While they are quite common here, they are basically nonexistent anywhere else I've been in, except the End. That could indicate that there is something in this region specifically causing them to appear."
     }
   ]
 }

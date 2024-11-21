@@ -1,0 +1,36 @@
+{
+  "name": "Licker",
+  "icon": "risus:egg_sac",
+  "category": "risus:offsprings",
+  "advancement": "risus:licked",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Licker is the beloved version of a Spider. Through the impregnation, the Spider grows additional segments on its legs and because of the internal bodily changes, its abdomen bursts open with a newly formed tongue sticking out. While it can no longer bite, the Licker can use this tongue to lick its target. The saliva on the tongue is a mix of web fluid and some sort of chemical, the combination of"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:egg_sac"
+      },
+      "link_recipe": true,
+      "text": "which causes the target to be afflicted with both the Webbed and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop Organic Matter, String, Fermented Spider Eye and Egg Sacs which can be thrown at opponents to attack them with Baby Spiders."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:licker",
+      "border": "true",
+      "scale": 0.8,
+      "text": "Keeping a good distance is advised, as getting licked even once can domino into death."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "The Licker is a great example of the capabilities the Lover's impregnation holds. Compared to a Spider, the Licker is closer to a mammal than an arachnid. This is because the Risus completely restructures the Spider's insides, growing mammalian organs in it, such as the 'womb' that is created in the Spider head, which is used to incubate baby spiders. It's important to note that while the old Spider head appears dead, the Licker is not fully"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "part of Risus, instead it's still alive and simply using Risus to its own ends. The pure survival instincts of a Spider to consume and breed seem to be enhanced into a joy-driven desire to 'procreate to death'. That's why it seeks out a person and tries to get its attention by licking it, so that it can be killed and release the kin inside. The Pleasure effect applied by the saliva might be intended to have a different outcome but as it is, it's simply deadly to people."
+    }
+  ]
+}
