@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-10T16:45:44.9166111	Risus Item Models
+// 1.21.1	2024-11-22T20:11:58.3447229	Risus Item Models
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
@@ -55,10 +55,15 @@ ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch_stand.json
 cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banner_pattern.json
 9bbd4572fb9e05f6ac0c6647c99335026ac0ebd7 assets/risus/models/item/egg_sac.json
+2c0a81f02b99ae4fcec84b37b27aaad58ba25da3 assets/risus/models/item/embodiment_of_courtship.json
+435c93c5458c5f22825e13a357153b237b7cdf7f assets/risus/models/item/embodiment_of_devotion.json
+3f7e71feda15d609afabe97f25178e1996b279e1 assets/risus/models/item/embodiment_of_intimacy.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
 9e84a0a1212d608680da772ba45396dba5218b37 assets/risus/models/item/essence_of_gluttony.json
 815fa2102a2126a4dd7fbab7ddb4c83c1dbc9ecd assets/risus/models/item/essence_of_greed.json
+a914f6a65b1dff773175099de325673a9debac1b assets/risus/models/item/essence_of_lust.json
+f22dee71228e4e6083a695473efc03ecfc6cda4f assets/risus/models/item/essence_of_melancholy.json
 4fb22221e7afc543c6a201db0e4176a8976ca64f assets/risus/models/item/essence_of_sloth.json
 ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.json
 21251deee36c1148812923afc40b96faf258c24b assets/risus/models/item/eye_bloodshot.json

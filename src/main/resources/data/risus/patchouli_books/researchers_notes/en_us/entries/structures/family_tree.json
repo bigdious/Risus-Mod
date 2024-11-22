@@ -18,6 +18,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:crystallized_bond",
+      "link_recipe": true,
       "text": "Crystallized Bonds are a unique resource that can be found on parts of the trunk and used for the manufacture of a special glass or to create a sharp edge for a weapon. These are renewable and formed on Popping Bondknot wood, which cannot be removed without losing their ability to generate Crystallized Bonds."
     },
 

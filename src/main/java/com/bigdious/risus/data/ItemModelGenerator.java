@@ -147,6 +147,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
 		singleTex(RisusItems.ESSENCE_OF_GREED);
 		singleTex(RisusItems.ESSENCE_OF_SLOTH);
+		singleTex(RisusItems.ESSENCE_OF_LUST);
+		singleTex(RisusItems.ESSENCE_OF_MELANCHOLY);
+		singleTex(RisusItems.EMBODIMENT_OF_COURTSHIP);
+		singleTex(RisusItems.EMBODIMENT_OF_INTIMACY);
+		singleTex(RisusItems.EMBODIMENT_OF_DEVOTION);
 		singleTex(RisusItems.BLOOD_FEATHER);
 		singleTex(RisusItems.HAND_OF_GREED);
 		singleTex(RisusItems.BLOOD_BUCKET);

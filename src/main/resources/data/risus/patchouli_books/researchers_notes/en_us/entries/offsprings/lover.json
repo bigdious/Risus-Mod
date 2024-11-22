@@ -1,18 +1,28 @@
 {
   "name": "Lover",
-  "icon": "risus:lover_spawn_egg",
+  "icon": "risus:essence_of_lust",
   "category": "risus:offsprings",
-  "advancement": "risus:step",
+  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Lover is the main way Risus affects non-sentient living creatures. It ignores people and targets creatures such as even Creepers or Spiders. Once it touches them with the postules on its body, it forcefully impregnates them with the Risus. This causes a violent reaction, where the victim's body is oftentimes torn open in the process."
+      "text": "The Lover is the main way Risus affects non-sentient living creatures. It ignores people and targets creatures such as Creepers or Spiders, even Endermen. Once it touches them with the postules on its body, it forcefully impregnates them with the Risus. This causes a violent reaction, where the victim's body is oftentimes torn open in the process."
     },
     {
       "type": "patchouli:entity",
       "entity": "risus:lover",
       "border": "true",
-      "scale": 0.4
-       }
+      "scale": 0.4,
+      "text": "Even though they are passive towards people and don't have useful loot, letting them be can be very dangerous."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "Honestly speaking, Lovers are genuinely my favorite. They are great specimens to use for experiments as they can be leashed, they float - meaning they can traverse any type of terrain - and pose virtually no direct danger. I would definitely prefer keeping a Lover as a pet over any other monster. Even if its looks are horrendous, I can just get used to it with time, no issues."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "(Re-reading this addendum, I realize it comes across much more insane than I initially intended. It was simply written right after the frustration of a Holder stealing an item of mine again, so I inadvertently included more unfiltered emotions than I should have.)"
+    }
   ]
 }

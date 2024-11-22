@@ -1,0 +1,31 @@
+{
+  "name": "Weaver",
+  "icon": "risus:essence_of_melancholy",
+  "category": "risus:offsprings",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating Memory Core. They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in colonies where they form large "
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:memory_core"
+      },
+      "link_recipe": true,
+      "text": "nests - such as in Great Bodies. Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or used to craft a Concentration Core, which is a vital component for Willful weapons. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:concentration_core",
+      "text": "consumed sufficient memories. This process will kill the Weaver but the newly created Nest will birth forth new Weavers at a slow but steady rate."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:weaver",
+      "border": "true",
+      "text": "The Amnesia they cause can easily lead the victim into panic and danger."
+    }
+  ]
+}

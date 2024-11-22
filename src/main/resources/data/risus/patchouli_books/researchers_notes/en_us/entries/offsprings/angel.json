@@ -15,6 +15,15 @@
       "scale": 0.7,
       "offset": 0.2,
       "text": "The embodiment of pure apathy tempered by a desire to ward off trespassers."
-      }
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "One of the wildest concepts that I have come across during my journey is the idea of angels as avatars of good. The first time I had heard it I took it for a joke, but apparently, it's a story that can be found passed down in certain families throughout generations. The stories mention how angels would be guardians of humanity, or even bestow blessings. It all seems almost impossible to me. Angels, such as Ophanims or"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the dreaded Seraphims are all living calamities of different scales. Even surviving the encounter with one usually counts as a miracle. However, if I do want to learn the secrets of the world I will have to acknowledge that my preconceived truths may be false, in which case, if the angels of now and the angels of the past are completely opposite to each other, then I wonder what could have caused such a drastic change..."
+    }
   ]
 }

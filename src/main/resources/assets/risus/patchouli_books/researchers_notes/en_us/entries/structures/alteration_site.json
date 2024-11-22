@@ -18,6 +18,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:alteration_catalyst",
+      "link_recipe": true,
       "text": "The cornerstone of rituals, the Alteration Catalyst allows a person to possibly infect an object or material with the Risus. One must simply place it in the bowl in the middle and witness as the essence pours into it, altering its form and function to better adapt to the new powers within."
     },
     {

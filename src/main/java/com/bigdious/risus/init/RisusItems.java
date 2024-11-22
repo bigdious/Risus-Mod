@@ -52,8 +52,8 @@ public class RisusItems {
 
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).fast().build();
-	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
-	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(12.8F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
+	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
+	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
 	public static final DeferredItem<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
 	public static final DeferredItem<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity().food(ORGANIC_FOOD)));
 	public static final DeferredItem<Item> STALKER_EYE = ITEMS.register("stalker_eye", () -> new Item(defaultWithRarity().food(EYE_FOOD)));
@@ -217,6 +217,11 @@ public class RisusItems {
 	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = ITEMS.register("essence_of_gluttony", () -> new Item(defaultNoTab()));
 	public static final DeferredItem<Item> ESSENCE_OF_GREED = ITEMS.register("essence_of_greed", () -> new Item(defaultNoTab()));
 	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = ITEMS.register("essence_of_sloth", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> ESSENCE_OF_LUST = ITEMS.register("essence_of_lust", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> ESSENCE_OF_MELANCHOLY = ITEMS.register("essence_of_melancholy", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = ITEMS.register("embodiment_of_intimacy", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = ITEMS.register("embodiment_of_devotion", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = ITEMS.register("embodiment_of_courtship", () -> new Item(defaultNoTab()));
 
 	public static Item.Properties defaultWithRarity() {
 		return new Item.Properties().rarity(BLOOD);
