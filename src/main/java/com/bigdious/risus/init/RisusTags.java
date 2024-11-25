@@ -48,6 +48,8 @@ public class RisusTags {
 		public static final TagKey<Item> EYE = tag("eye");
 		public static final TagKey<Item> BASE_TISSUE = tag("base_tissue");
 		public static final TagKey<Item> BANNER_PATTERNS = tag("banner_pattern");
+		public static final TagKey<Item> HURTS_ANGEL_WINGS = tag("hurts_angel_wings");
+		public static final TagKey<Item> LIGHTLY_HURTS_ANGEL_WINGS = tag("lightly_hurts_angel_wings");
 
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-15T16:42:49.9810486	Tags for minecraft:item mod id risus
+// 1.21.1	2024-11-25T21:40:51.1404084	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
@@ -26,5 +26,7 @@ d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json
 c647bef230a44322731190f38304ddc63985164a data/risus/tags/item/eye.json
 ee2387014a0e77b1a5e2cbf21393c351832f3345 data/risus/tags/item/froglight_blocks.json
+c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
+2d4bb28011449fdf388a6360b5bb48a3fa19941b data/risus/tags/item/lightly_hurts_angel_wings.json
 f87c4a8e692aabb1749314559b02698e85e5c7b7 data/risus/tags/item/willful_weapon.json

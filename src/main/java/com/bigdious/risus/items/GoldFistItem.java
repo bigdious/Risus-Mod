@@ -1,5 +1,9 @@
 package com.bigdious.risus.items;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -27,12 +31,13 @@ public class GoldFistItem extends ToothknockerItem {
 		int i = random.nextInt(9);
 		if (entity instanceof LivingEntity target && entity.getType() != EntityType.PLAYER) {
 			//change random bound to define chances, 4 is 100% 8 is 50% etc.
-			switch (random.nextInt(40)) {
+			switch (random.nextInt(20)) {
 				case 1:
 					if (target.hasItemInSlot(EquipmentSlot.HEAD)) {
 						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), target.getItemBySlot(EquipmentSlot.HEAD));
 						level.addFreshEntity(item);
 						if (item.isAddedToLevel()) {
+							level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
 							target.setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
 						}
 						return super.onLeftClickEntity(stack, player, entity);
@@ -42,6 +47,7 @@ public class GoldFistItem extends ToothknockerItem {
 						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), target.getItemBySlot(EquipmentSlot.CHEST));
 						level.addFreshEntity(item);
 						if (item.isAddedToLevel()) {
+							level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
 							target.setItemSlot(EquipmentSlot.CHEST, ItemStack.EMPTY);
 						}
 						return super.onLeftClickEntity(stack, player, entity);
@@ -51,6 +57,7 @@ public class GoldFistItem extends ToothknockerItem {
 						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), target.getItemBySlot(EquipmentSlot.LEGS));
 						level.addFreshEntity(item);
 						if (item.isAddedToLevel()) {
+							level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
 							target.setItemSlot(EquipmentSlot.LEGS, ItemStack.EMPTY);
 						}
 						return super.onLeftClickEntity(stack, player, entity);
@@ -60,6 +67,7 @@ public class GoldFistItem extends ToothknockerItem {
 						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), target.getItemBySlot(EquipmentSlot.FEET));
 						level.addFreshEntity(item);
 						if (item.isAddedToLevel()) {
+							level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
 							target.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
 						}
 						return super.onLeftClickEntity(stack, player, entity);
@@ -74,17 +82,21 @@ public class GoldFistItem extends ToothknockerItem {
 							ItemEntity item = new ItemEntity(playertarget.level(), player.getX(), player.getY(), player.getZ(),
 								playertarget.getInventory().getItem(kd));
 							player.level().addFreshEntity(item);
-							playertarget.getInventory().getItem(kd).shrink(playertarget.getInventory().getItem(kd).getCount());
+							if (item.isAddedToLevel()) {
+								level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
+								playertarget.getInventory().setItem(kd, ItemStack.EMPTY);
+								player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "GET KD'D KID"));
+							}
 
 						}
 					}
 				} else if (!playertarget.getInventory().getItem(i).isEmpty()) {
 					ItemEntity item = new ItemEntity(playertarget.level(), player.getX(), player.getY(), player.getZ(),
 						playertarget.getInventory().getItem(i));
-					item.getItem().setCount(1);
 					player.level().addFreshEntity(item);
 					if (item.isAddedToLevel()) {
-						playertarget.getInventory().getItem(i).shrink(1);
+						level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
+						playertarget.getInventory().setItem(i, ItemStack.EMPTY);
 					}
 					return super.onLeftClickEntity(stack, player, entity);
 				}

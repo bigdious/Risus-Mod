@@ -102,5 +102,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(Items.FLOW_BANNER_PATTERN)
 			.add(Items.GUSTER_BANNER_PATTERN)
 		;
+		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS)
+			.add(Items.FIREWORK_ROCKET)
+		;
+		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS)
+			.add(Items.TRIDENT)
+			.add(RisusItems.CRESCENT_DISASTER.get())
+		;
 	}
 }

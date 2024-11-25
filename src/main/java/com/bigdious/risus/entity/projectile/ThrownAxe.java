@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity.projectile;
 
+import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.nbt.CompoundTag;
@@ -139,7 +140,7 @@ public class ThrownAxe extends AbstractArrow {
 
 		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
-		DamageSource damagesource = this.damageSources().trident(this, entity1 == null ? this : entity1);
+		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED);
 		if (this.level() instanceof ServerLevel serverlevel) {
 			f += EnchantmentHelper.modifyDamage(serverlevel, this.getPickupItemStackOrigin(), entity, damagesource, f);
 		}
@@ -148,7 +149,7 @@ public class ThrownAxe extends AbstractArrow {
 
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
-		//10 is base damage of crescent, update if it changes
+
 		if (entity.hurt(damagesource, 10+f)) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;

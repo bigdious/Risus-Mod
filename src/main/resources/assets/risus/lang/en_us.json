@@ -275,10 +275,14 @@
   "death.attack.gluttony.player": "%1$s was devoured",
   "death.attack.melancholy.player": "%1$s got their memories weaved into Bloodweave",
 
-  "death.attack.vampirism": "%1$s got sucked dry.",
+  "death.attack.vampirism": "%1$s got sucked dry",
   "death.attack.vampirism.player": "%1$s's got sucked dry while trying to fight %2$s",
 
-  "death.attack.bloodslash": "%1$s was cut in half.",
+  "death.attack.bloodslash": "%1$s was cut in half",
+  "death.attack.bloodslash.player": "%1$s was cut in half while trying to escape %2$s",
+
+  "death.attack.axed": "%1$s had an axe thrown through their skull",
+  "death.attack.axed.player": "%1$s had an axe thrown through their skull while trying to escape %2$s",
 
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
