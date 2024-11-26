@@ -1,12 +1,14 @@
 package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.init.RisusEntities;
+import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -50,10 +52,13 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 	}
 
 	@Override
-	protected void onHitEntity(EntityHitResult p_37404_) {
-		super.onHitEntity(p_37404_);
-		Entity entity = p_37404_.getEntity();
+	protected void onHitEntity(EntityHitResult hitResult) {
+		super.onHitEntity(hitResult);
+		Entity entity = hitResult.getEntity();
 		entity.hurt(this.damageSources().thrown(this, this.getOwner()), 1);
+		if (entity instanceof LivingEntity liver){
+			liver.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY,  200, 0), this);
+		}
 		entity.igniteForSeconds(10);
 	}
 

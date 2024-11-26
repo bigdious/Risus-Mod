@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Whereas using ender pearls can be rather annoying - due to how quickly they get used up while also taking up a lot of space - using the Endless Pearl can be much more comfortable. It consumes all ender pearls around it to add mass to itself, which then allows the wielder to use it repeatedly. The total amount of mass it can absorb is roughly equal to ten thousand ender pearls."
+      "text": "Whereas using ender pearls can be rather annoying - due to how quickly they get used up while also taking up a lot of space - using the Endless Pearl can be much more comfortable. It consumes all Ender Pearls around it to add mass to itself, which then allows the wielder to use it repeatedly. The total amount of mass it can absorb is roughly equal to ten thousand Ender Pearls."
     },
     {
       "type": "patchouli:crafting",

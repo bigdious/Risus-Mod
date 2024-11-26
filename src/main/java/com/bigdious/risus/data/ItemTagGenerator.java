@@ -109,5 +109,10 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(Items.TRIDENT)
 			.add(RisusItems.CRESCENT_DISASTER.get())
 		;
+		this.tag(Tags.Items.FOODS_RAW_MEAT)
+			.add(Items.COD)
+			.add(Items.SALMON)
+			.add(Items.TROPICAL_FISH)
+			;
 	}
 }

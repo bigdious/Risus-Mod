@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-19T21:30:32.9937916	Recipes
+// 1.21.1	2024-11-26T21:19:08.2269892	Recipes
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
 fa2df7c444c04b9725da545090d578bb984c3158 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -183,7 +183,7 @@ d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chest
 2cd00f51233e628515d72d031a8521553421353e data/risus/recipe/alteration/spreading_remains.json
 0247494eacfcb868ac7f4dddb3f935824fca8ebd data/risus/recipe/alteration/stripped_bondknot_log.json
 0b8870ca808beb6177feb61254e302548f8156bb data/risus/recipe/alteration/stripped_bondknot_wood.json
-6da00f5681afef0bd7aad33fa24914d579798258 data/risus/recipe/alteration/tissue.json
+74bb16182977a201384d016cc602877eac624ba0 data/risus/recipe/alteration/tissue.json
 825c36bd61168704c516131f63448e774789f21c data/risus/recipe/alteration/zit.json
 61dd54119cbaf1d625a815acc77140dc185d29f3 data/risus/recipe/big_chain.json
 bb8054027871ee79f3d0a8f0016a1516897fe92a data/risus/recipe/bondknot_boat.json

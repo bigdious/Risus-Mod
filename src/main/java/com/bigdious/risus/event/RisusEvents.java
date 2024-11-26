@@ -287,7 +287,7 @@ public class RisusEvents {
 		if (event.getItemStack().is(RisusTags.Items.HURTS_ANGEL_WINGS) && event.getEntity().getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.ANGEL_WINGS) && event.getEntity().isFallFlying()) {
 			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(30, event.getEntity(), EquipmentSlot.CHEST);
 		}
-		if (event.getItemStack().is(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS) && event.getEntity().getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.ANGEL_WINGS) && event.getEntity().isFallFlying()) {
+		if (event.getItemStack().is(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS) && event.getEntity().getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.ANGEL_WINGS) && (event.getEntity().isFallFlying() || event.getEntity().isInWaterRainOrBubble() || event.getEntity().isInLava())) {
 			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(5, event.getEntity(), EquipmentSlot.CHEST);
 		}
 	}

@@ -1,30 +1,7 @@
 {
   "type": "risus:alteration",
-  "input": [
-    {
-      "item": "minecraft:porkchop"
-    },
-    {
-      "item": "minecraft:beef"
-    },
-    {
-      "item": "minecraft:mutton"
-    },
-    {
-      "item": "minecraft:rabbit"
-    },
-    {
-      "item": "minecraft:chicken"
-    },
-    {
-      "item": "minecraft:cod"
-    },
-    {
-      "item": "minecraft:tropical_fish"
-    },
-    {
-      "item": "minecraft:salmon"
-    }
-  ],
+  "input": {
+    "tag": "c:foods/raw_meat"
+  },
   "result": "risus:tissue"
 }
