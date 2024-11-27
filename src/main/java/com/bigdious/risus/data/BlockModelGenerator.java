@@ -197,6 +197,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		slabBlock(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_planks"), texture("block/bondknot_planks"));
 
 		simpleBlock(RisusBlocks.GRIMSTONE.get());
+		simpleBlock(RisusBlocks.ACTIVE_GRIMSTONE.get());
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());

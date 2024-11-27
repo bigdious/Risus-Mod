@@ -36,7 +36,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x4d36ff);
-	public static final DeferredHolder<EntityType<?>, EntityType<Singer>> SINGER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "singer"), EntityType.Builder.of(Singer::new, MobCategory.MONSTER).sized(1F, 3.0F), 0x000000, 0xfaefcf);
+	public static final DeferredHolder<EntityType<?>, EntityType<Singer>> SINGER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "singer"), EntityType.Builder.of(Singer::new, MobCategory.MONSTER).sized(1F, 3.0F), 0x000000, 0x13967c);
 	public static final DeferredHolder<EntityType<?>, EntityType<Licker>> LICKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "licker"), EntityType.Builder.of(Licker::new, MobCategory.MONSTER).sized(0.8F, 2F), 0x4f3424, 0xff9494);
 	public static final DeferredHolder<EntityType<?>, EntityType<BabySpider>> BABY_SPIDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "baby_spider"), EntityType.Builder.of(BabySpider::new, MobCategory.MONSTER).sized(0.3F, 0.3F), 0xfcf0f0, 0xfcd2d2);
 	public static final DeferredHolder<EntityType<?>, EntityType<EggSac>> EGG_SAC = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "egg_sac"), EntityType.Builder.<EggSac>of(EggSac::new, MobCategory.MISC).sized(0.3F, 0.3F));

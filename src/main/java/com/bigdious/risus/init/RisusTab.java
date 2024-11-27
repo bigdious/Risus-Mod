@@ -87,6 +87,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.ZIT.get());
 
 						output.accept(RisusBlocks.GRIMSTONE.get());
+						output.accept(RisusBlocks.ACTIVE_GRIMSTONE.get());
 						output.accept(RisusBlocks.GRIMSTONE_STAIRS.get());
 						output.accept(RisusBlocks.GRIMSTONE_SLAB.get());
 						output.accept(RisusBlocks.GRIMSTONE_WALL.get());

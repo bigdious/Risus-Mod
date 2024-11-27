@@ -122,6 +122,7 @@ public class RisusItems {
 	//GRIMSTONE
 
 	public static final DeferredItem<Item> GRIMSTONE = ITEMS.register("grimstone", () -> new BlockItem(RisusBlocks.GRIMSTONE.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> ACTIVE_GRIMSTONE = ITEMS.register("active_grimstone", () -> new BlockItem(RisusBlocks.ACTIVE_GRIMSTONE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> CRACKED_GRIMSTONE_BRICKS = ITEMS.register("cracked_grimstone_bricks", () -> new BlockItem(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_SLAB.get(), defaultWithRarity()));

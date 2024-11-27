@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:gilded_blackstone"
+  },
+  "result": "risus:active_grimstone"
+}

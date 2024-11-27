@@ -5,16 +5,20 @@
   "advancement": "risus:little",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Ophanims are rare, divine beings, only found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter its range with lighting. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a Blood Feather upon death."
-    },
-    {
       "type": "patchouli:entity",
       "entity": "risus:angel",
       "border": "true",
       "scale": 0.7,
       "offset": 0.2,
       "text": "The embodiment of pure apathy tempered by a desire to ward off trespassers."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:blood_feather"
+      },
+      "link_recipe": true,
+      "text": "Ophanims are rare, divine beings, only found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter its range with lighting. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a Blood Feather upon death."
     },
     {
       "type": "patchouli:text",

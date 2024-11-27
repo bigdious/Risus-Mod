@@ -1,4 +1,5 @@
-// 1.21.1	2024-11-03T15:58:20.921632	Risus blockstates and models
+// 1.21.1	2024-11-27T21:54:52.2071904	Risus blockstates and models
+e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 5a7596d1da96e5ba638322fac7ba5a961f26f1b1 assets/risus/blockstates/ashen_remains.json
@@ -66,7 +67,7 @@ e435a565179d6af5e2fbdd7b0f6f54b84922de4a assets/risus/blockstates/heart_transpla
 408e75aad347e7ec440938d5e18de92b9a2d4ec8 assets/risus/blockstates/joyflame_fire.json
 97c3ef3ecfd29e52a2ddabac3d2119309aec705f assets/risus/blockstates/joyflame_lantern.json
 128ffb02e3991bb5e9c88a51568ffea31dbd83b4 assets/risus/blockstates/joyflame_torch.json
-71b0fc2368b6578669d494238f980971f312c6b1 assets/risus/blockstates/joyflame_wall_torch.json
+74b5d21c6f994105a71a61733e6274456c2b1c1e assets/risus/blockstates/joyflame_wall_torch.json
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
 1b43edf9ddbe2e8172ee4f42176166213bceee10 assets/risus/blockstates/laughing_stalk.json
 50d625eef7c45a6b9ce071fd66ff5e604d04dec1 assets/risus/blockstates/linear_ritual_block.json
@@ -103,6 +104,7 @@ d79ed2b071902f25bda75889d48e72d2fbf3821b assets/risus/blockstates/veins.json
 db97b2292c16408dd20ea46cb40e1609a373e21c assets/risus/blockstates/veins_end.json
 e33852e2a28b57bf6a06369f4c8e139c0836558d assets/risus/blockstates/weaver_nest.json
 9c25f6213d4c49828c8edd9550d0d8a79475ec8a assets/risus/blockstates/zit.json
+7661660aacc0350f15c198145df40e4d86a9ea49 assets/risus/models/block/active_grimstone.json
 77a87d03007d65960d122293fa0b845e39f0a56d assets/risus/models/block/alteration_catalyst.json
 569e6e6441c2aca9d2a913395d3863348399ad4f assets/risus/models/block/ashen_remains.json
 10fd20f950500ed987bd79ff9f6415b103c481ed assets/risus/models/block/ashen_remains_eyes.json

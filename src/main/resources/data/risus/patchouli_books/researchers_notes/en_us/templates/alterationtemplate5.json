@@ -1,22 +1,29 @@
 {
   "components": [
     {
+      "type": "patchouli:header",
+      "text": "#header",
+      "x": -1,
+      "y": -1,
+      "scale": "1"
+    },
+    {
       "type": "patchouli:item",
       "item": "#input1",
       "x": 14,
-      "y": 5
+      "y": 18
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 5
+      "y": 18
     },
     {
       "type": "patchouli:item",
       "item": "#output1",
       "x": 86,
-      "y": 5,
+      "y": 18,
       "link_recipe": true
     },
     {
@@ -28,25 +35,25 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 1
+      "y": 14
     },
     {
       "type": "patchouli:item",
       "item": "#input2",
       "x": 14,
-      "y": 31
+      "y": 44
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 31
+      "y": 44
     },
     {
       "type": "patchouli:item",
       "item": "#output2",
       "x": 86,
-      "y": 31,
+      "y": 44,
       "link_recipe": true
     },
     {
@@ -58,25 +65,25 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 27
+      "y": 40
     },
     {
       "type": "patchouli:item",
       "item": "#input3",
       "x": 14,
-      "y": 57
+      "y": 70
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 57
+      "y": 70
     },
     {
       "type": "patchouli:item",
       "item": "#output3",
       "x": 86,
-      "y": 57,
+      "y": 70,
       "link_recipe": true
     },
     {
@@ -88,25 +95,25 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 53
+      "y": 66
     },
     {
       "type": "patchouli:item",
       "item": "#input4",
       "x": 14,
-      "y": 83
+      "y": 96
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 83
+      "y": 96
     },
     {
       "type": "patchouli:item",
       "item": "#output4",
       "x": 86,
-      "y": 83,
+      "y": 96,
       "link_recipe": true
     },
     {
@@ -118,25 +125,25 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 79
+      "y": 92
     },
     {
       "type": "patchouli:item",
       "item": "#input5",
       "x": 14,
-      "y": 109
+      "y": 122
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 109
+      "y": 122
     },
     {
       "type": "patchouli:item",
       "item": "#output5",
       "x": 86,
-      "y": 109,
+      "y": 122,
       "link_recipe": true
     },
     {
@@ -148,13 +155,13 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 105
+      "y": 118
     },
     {
       "type": "patchouli:text",
       "text": "#text",
       "x": 5,
-      "y": 132
+      "y": 145
     }
   ]
 }

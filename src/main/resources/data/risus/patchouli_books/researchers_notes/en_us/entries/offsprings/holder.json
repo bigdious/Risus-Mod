@@ -13,8 +13,15 @@
       "entity": "risus:holder",
       "border": "true",
       "text": "They may be little and not really lethal, but such traits lead to easily underestimating them..."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:hand_of_greed"
       },
-
+      "link_recipe": true,
+      "text": "Rarely, Holders may drop a Hand Of Greed. Whenever held in the 'off-hand', these will allow the user to interact with blocks at a higher range than normal. Unfortunately, it does not affect combat range, as it cannot hold weapons well."
+    },
     {
       "type": "patchouli:text",
       "title": "Addendum",

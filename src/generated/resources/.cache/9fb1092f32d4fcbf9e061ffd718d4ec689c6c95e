@@ -1,4 +1,5 @@
-// 1.21.1	2024-11-26T21:19:08.2269892	Recipes
+// 1.21.1	2024-11-27T21:55:34.9344935	Recipes
+4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
 fa2df7c444c04b9725da545090d578bb984c3158 data/risus/advancement/recipes/alteration/bloodwyrm_head.json
@@ -128,6 +129,7 @@ d8c5860baafb46ee3e5dc4760dcac6c0f087c0c7 data/risus/advancement/recipes/redstone
 d0aab298101321b21b3961b6b107cdc0614bdd66 data/risus/advancement/recipes/tools/light_devourer.json
 5d9aafde7cbe74a8f61052800ba55e0abdccb4bd data/risus/advancement/recipes/transportation/bondknot_boat.json
 a6048b1953c43e6b9efc50a46981ece9b3108c89 data/risus/advancement/recipes/transportation/guts_boat.json
+f6fef0b1ec407eafeccc43b96e0e7010e5c21929 data/risus/recipe/alteration/active_grimstone.json
 af86effae05c8f88611eada81ba72ccfcc848ebb data/risus/recipe/alteration/ashen_remains.json
 acce3965ed17d2094b76527afbbe6da7b7cf9370 data/risus/recipe/alteration/bloodweave.json
 928e419986355a1b547e448655099d5a8eabf80a data/risus/recipe/alteration/bloodwyrm_head.json

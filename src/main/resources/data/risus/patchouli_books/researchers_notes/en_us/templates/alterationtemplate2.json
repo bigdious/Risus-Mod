@@ -1,22 +1,29 @@
 {
   "components": [
     {
+      "type": "patchouli:header",
+      "text": "#header",
+      "x": -1,
+      "y": -1,
+      "scale": "1"
+    },
+    {
       "type": "patchouli:item",
       "item": "#input1",
       "x": 14,
-      "y": 5
+      "y": 18
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 5
+      "y": 18
     },
     {
       "type": "patchouli:item",
       "item": "#output1",
       "x": 86,
-      "y": 5,
+      "y": 18,
       "link_recipe": true
     },
     {
@@ -28,25 +35,25 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 1
+      "y": 14
     },
     {
       "type": "patchouli:item",
       "item": "#input2",
       "x": 14,
-      "y": 31
+      "y": 44
     },
     {
       "type": "patchouli:item",
       "item": "risus:alteration_catalyst",
       "x": 50,
-      "y": 31
+      "y": 44
     },
     {
       "type": "patchouli:item",
       "item": "#output2",
       "x": 86,
-      "y": 31,
+      "y": 44,
       "link_recipe": true
     },
     {
@@ -58,13 +65,13 @@
       "v": 71,
       "texture_width": 128,
       "x": 10,
-      "y": 27
+      "y": 40
     },
     {
       "type": "patchouli:text",
       "text": "#text",
       "x": 5,
-      "y": 56
+      "y": 69
     }
   ]
 }

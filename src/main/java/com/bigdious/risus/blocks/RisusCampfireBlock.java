@@ -60,7 +60,7 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 		return this.defaultBlockState()
 				.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
 				.setValue(SIGNAL_FIRE, this.isSmokeSource(levelaccessor.getBlockState(blockpos.below())))
-				.setValue(LIT, !MultiloggingEnum.getFromFluid(fluidstate.getType()).isExtinguishingFluid())
+				.setValue(LIT, true)
 				.setValue(FACING, pContext.getHorizontalDirection());
 	}
 

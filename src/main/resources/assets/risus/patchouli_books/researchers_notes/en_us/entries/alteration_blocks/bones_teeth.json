@@ -1,0 +1,31 @@
+{
+  "name": "Bones & Teeth",
+  "icon": "risus:teeth",
+  "category": "risus:alteration",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In the presence of the Risus, the malleability of Bone blocks increases considerably, unlocking the ability to not only craft stairs, slabs and walls from it, but to also smoothen out all sides to create Full Bone versions of these. Additionally, by including some Tissue, the creation of Teeth becomes possible. Once placed, these can be further spread with the use of Organic Matter."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:bone_stairs",
+      "recipe2": "risus:bone_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:bone_wall",
+      "recipe2": "risus:full_bone_block"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:full_bone_stairs",
+      "recipe2": "risus:full_bone_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:teeth"
+    }
+  ]
+}

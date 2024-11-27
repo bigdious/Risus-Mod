@@ -83,6 +83,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.RIBCAGE.get());
 		toBlock(RisusBlocks.GRIMSTONE.get());
 		toBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
+		toBlock(RisusBlocks.ACTIVE_GRIMSTONE.get());
 		toBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		toBlock(RisusBlocks.GRIMSTONE_SLAB.get());
 		toBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());

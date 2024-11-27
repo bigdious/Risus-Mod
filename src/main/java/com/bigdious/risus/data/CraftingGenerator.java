@@ -44,6 +44,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRYING_OBSIDIAN), RisusItems.LAUGHING_OBSIDIAN.get()).unlockedBy("has_item", has(Items.CRYING_OBSIDIAN)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ROTTEN_FLESH), RisusItems.ORGANIC_MATTER.get()).unlockedBy("has_item", has(Items.ROTTEN_FLESH)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE), RisusItems.GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GILDED_BLACKSTONE), RisusItems.ACTIVE_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE), RisusItems.POLISHED_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICKS), RisusItems.GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusItems.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);

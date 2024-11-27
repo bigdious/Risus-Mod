@@ -6,7 +6,13 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating Memory Core. They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in colonies where they form large "
+      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating Memory Core. They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in colonies of nests."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:weaver",
+      "border": "true",
+      "text": "The Amnesia they cause can easily lead the victim into panic and danger."
     },
     {
       "type": "patchouli:spotlight",
@@ -14,18 +20,19 @@
         "item": "risus:memory_core"
       },
       "link_recipe": true,
-      "text": "nests - such as in Great Bodies. Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or used to craft a Concentration Core, which is a vital component for Willful weapons. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has"
+      "text": "Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or be used to craft a Concentration Core. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has consumed sufficient memories. "
+    },
+    {
+      "type": "risus:alterationtemplate1",
+      "header": "Bloodweave",
+      "input1": "minecraft:cobweb",
+      "output1": "risus:bloodweave",
+      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "risus:concentration_core",
-      "text": "consumed sufficient memories. This process will kill the Weaver but the newly created Nest will birth forth new Weavers at a slow but steady rate."
-    },
-    {
-      "type": "patchouli:entity",
-      "entity": "risus:weaver",
-      "border": "true",
-      "text": "The Amnesia they cause can easily lead the victim into panic and danger."
+      "text": "The Concentration core is a vital component for creating willful weapons. Usually these weapons can express unique abilities and also gain the capability of hurting divine beings, such as angels."
     }
   ]
 }

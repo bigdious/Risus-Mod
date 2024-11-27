@@ -1,17 +1,62 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,fluid=blood": {
       "model": "risus:block/joyflame_wall_torch"
     },
-    "facing=north": {
+    "facing=east,fluid=empty": {
+      "model": "risus:block/joyflame_wall_torch"
+    },
+    "facing=east,fluid=lava": {
+      "model": "risus:block/joyflame_wall_torch"
+    },
+    "facing=east,fluid=water": {
+      "model": "risus:block/joyflame_wall_torch"
+    },
+    "facing=north,fluid=blood": {
       "model": "risus:block/joyflame_wall_torch",
       "y": 270
     },
-    "facing=south": {
+    "facing=north,fluid=empty": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 270
+    },
+    "facing=north,fluid=lava": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 270
+    },
+    "facing=north,fluid=water": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 270
+    },
+    "facing=south,fluid=blood": {
       "model": "risus:block/joyflame_wall_torch",
       "y": 90
     },
-    "facing=west": {
+    "facing=south,fluid=empty": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 90
+    },
+    "facing=south,fluid=lava": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 90
+    },
+    "facing=south,fluid=water": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 90
+    },
+    "facing=west,fluid=blood": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 180
+    },
+    "facing=west,fluid=empty": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 180
+    },
+    "facing=west,fluid=lava": {
+      "model": "risus:block/joyflame_wall_torch",
+      "y": 180
+    },
+    "facing=west,fluid=water": {
       "model": "risus:block/joyflame_wall_torch",
       "y": 180
     }
