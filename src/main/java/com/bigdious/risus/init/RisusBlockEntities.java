@@ -14,8 +14,8 @@ public class RisusBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Risus.MODID);
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AlterationCatalystBlockEntity>> ALTERATION_CATALYST = BLOCK_ENTITIES.register("alteration_catalyst", () -> BlockEntityType.Builder.of(AlterationCatalystBlockEntity::new, RisusBlocks.ALTERATION_CATALYST.get()).build(null));
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchBlockEntity>> DISPLAY_NOTCH = BLOCK_ENTITIES.register("display_notch", () -> BlockEntityType.Builder.of(DisplayNotchBlockEntity::new, RisusBlocks.DISPLAY_NOTCH.get()).build(null));
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchStandBlockEntity>> DISPLAY_NOTCH_STAND = BLOCK_ENTITIES.register("display_notch_stand", () -> BlockEntityType.Builder.of(DisplayNotchStandBlockEntity::new, RisusBlocks.DISPLAY_NOTCH_STAND.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchBlockEntity>> DISPLAY_NOTCH = BLOCK_ENTITIES.register("display_notch", () -> BlockEntityType.Builder.of(DisplayNotchBlockEntity::new, RisusBlocks.DISPLAY_NOTCH.get(), RisusBlocks.GLOW_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH_STAND.get(), RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get()).build(null));
+
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DepthVaseBlockEntity>> DEPTH_VASE = BLOCK_ENTITIES.register("depth_vase", () -> BlockEntityType.Builder.of(DepthVaseBlockEntity::new, RisusBlocks.DEPTH_VASE.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BiomeBlockEntity>> BIOME_BLOCK = BLOCK_ENTITIES.register("laughing_stalk", () -> BlockEntityType.Builder.of(BiomeBlockEntity::new, RisusBlocks.LAUGHING_STALK.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MawGutsBlockEntity>> MAW_GUTS = BLOCK_ENTITIES.register("maw_guts", () -> BlockEntityType.Builder.of(MawGutsBlockEntity::new, RisusBlocks.MAW_GUTS.get()).build(null));

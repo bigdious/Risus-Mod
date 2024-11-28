@@ -58,7 +58,9 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> LAUGHING_STALK = BLOCKS.register("laughing_stalk", () -> new BiomeBlock(Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	public static final DeferredBlock<Block> WEAVER_NEST = BLOCKS.register("weaver_nest", () -> new WeaverNestBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	public static final DeferredBlock<Block> DISPLAY_NOTCH = BLOCKS.register("display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
-	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchStandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> GLOW_DISPLAY_NOTCH = BLOCKS.register("glow_display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> GLOW_DISPLAY_NOTCH_STAND = BLOCKS.register("glow_display_notch_stand", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 
 	//MAW STUFF
 
@@ -88,7 +90,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BURNT_HYPHAE = BLOCKS.register("burnt_hyphae", () -> new Block(Block.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
 	public static final DeferredBlock<Block> SCAB = BLOCKS.register("scab", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops()));
 	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = BLOCKS.register("coagulated_blood_block", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn()));
-	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.of().pushReaction(PushReaction.DESTROY).instabreak().noOcclusion()));
+	public static final DeferredBlock<Block> DARKNESS = BLOCKS.register("darkness", () -> new DarknessBlock(Block.Properties.of().pushReaction(PushReaction.DESTROY).instabreak().noOcclusion().replaceable()));
 
 	//NONFULLBLOCK DECO
 

@@ -1,9 +1,10 @@
-// 1.21.1	2024-11-27T21:54:52.2001721	Tags for minecraft:block mod id risus
+// 1.21.1	2024-11-28T20:57:43.8135073	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates/wooden.json
 ac21c777aa73f9bacb1190ebb3997a96a3e64ad9 data/minecraft/tags/block/campfires.json
+55db3c4812da3496be8eccb68a963c8613455bea data/minecraft/tags/block/climbable.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/doors.json
 86196d8d301039609134e790f381774456113206 data/minecraft/tags/block/fences.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/block/fence_gates.json
@@ -11,7 +12,7 @@ e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs_that_burn.json
 c79143e7db2e0603412a22d5134a48470b96226a data/minecraft/tags/block/mineable/axe.json
 9d461f03c8379612fe5c3cfd9f1667d3ebfff806 data/minecraft/tags/block/mineable/hoe.json
-6acfca8cd92125046320a168e1a4cf97312cc26a data/minecraft/tags/block/mineable/pickaxe.json
+4b74fdae06f03fc5e9d05e1656ccf3a726e59ad0 data/minecraft/tags/block/mineable/pickaxe.json
 8516aa90805c2046c288b404377062ac9f49a652 data/minecraft/tags/block/needs_diamond_tool.json
 86225bfdd35cb8f9a6666034cbc3f8ae42042ffa data/minecraft/tags/block/nylium.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/block/planks.json

@@ -5,9 +5,7 @@ import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -91,7 +89,6 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 		if (alteration.getInputItem() != null) {
 			if (alteration.getInputItem().isEmpty()) {
 				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
-				ItemInteractionResult.sidedSuccess(level.isClientSide);
 			} else {
 				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getInputItem());
 				level.addFreshEntity(item);
@@ -100,7 +97,7 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 		}
 
 		level.sendBlockUpdated(pos, state, state, 2);
-		return ItemInteractionResult.sidedSuccess(level.isClientSide);
+		return ItemInteractionResult.SUCCESS;
 	}
 
 	@Nullable
@@ -113,5 +110,17 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
 		return createTickerHelper(type, RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystBlockEntity::tick);
+	}
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
+		if (!state.is(newState.getBlock())) {
+			BlockEntity blockentity = level.getBlockEntity(pos);
+			if (blockentity instanceof Container container) {
+				Containers.dropContents(level, pos, container);
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, moving);
+		}
 	}
 }

@@ -1,7 +1,7 @@
 {
   "type": "risus:alteration",
   "input": {
-    "item": "minecraft:vine"
+    "item": "minecraft:glow_lichen"
   },
   "result": "risus:spreading_remains"
 }

@@ -74,7 +74,9 @@ public class RisusItems {
 	public static final DeferredItem<Item> ANGEL_ALTAR = ITEMS.register("angel_altar", () -> new BlockItem(RisusBlocks.ANGEL_ALTAR.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DEPTH_VASE = ITEMS.register("depth_vase", () -> new BlockItem(RisusBlocks.DEPTH_VASE.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DISPLAY_NOTCH = ITEMS.register("display_notch", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> GLOW_DISPLAY_NOTCH = ITEMS.register("glow_display_notch", () -> new BlockItem(RisusBlocks.GLOW_DISPLAY_NOTCH.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> DISPLAY_NOTCH_STAND = ITEMS.register("display_notch_stand", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> GLOW_DISPLAY_NOTCH_STAND = ITEMS.register("glow_display_notch_stand", () -> new BlockItem(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> LAUGHING_STALK = ITEMS.register("laughing_stalk", () -> new BlockItem(RisusBlocks.LAUGHING_STALK.get(), defaultWithRarity()));
 
 

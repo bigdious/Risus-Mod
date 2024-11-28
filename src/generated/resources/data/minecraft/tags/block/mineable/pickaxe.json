@@ -1,8 +1,11 @@
 {
   "values": [
     "risus:alteration_catalyst",
+    "risus:big_chain",
     "risus:display_notch",
+    "risus:glow_display_notch",
     "risus:display_notch_stand",
+    "risus:glow_display_notch_stand",
     "risus:ashen_remains",
     "risus:smiling_remains",
     "risus:laughing_obsidian",

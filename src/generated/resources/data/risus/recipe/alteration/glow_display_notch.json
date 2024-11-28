@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:glow_item_frame"
+  },
+  "result": "risus:glow_display_notch"
+}

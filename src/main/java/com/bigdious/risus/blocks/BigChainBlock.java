@@ -16,9 +16,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BigChainBlock extends RotatedPillarBlock implements SimpleMultiloggedBlock {
 
-	protected static final VoxelShape Y_AXIS_AABB = Block.box(4.5D, 0.0D, 4.5D, 11.5D, 16.0D, 11.5D);
-	protected static final VoxelShape Z_AXIS_AABB = Block.box(4.5D, 4.5D, 0.0D, 11.5D, 11.5D, 16.0D);
-	protected static final VoxelShape X_AXIS_AABB = Block.box(0.0D, 4.5D, 4.5D, 16.0D, 11.5D, 11.5D);
+	protected static final VoxelShape Y_AXIS_AABB = Block.box(5.1D, 0.0D, 5.1D, 10.9D, 16.0D, 10.9D);
+	protected static final VoxelShape Z_AXIS_AABB = Block.box(5.1D, 5.1D, 0.0D, 10.9D, 10.9D, 16.0D);
+	protected static final VoxelShape X_AXIS_AABB = Block.box(0.0D, 5.1D, 5.1D, 16.0D, 10.9D, 10.9D);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
 	public BigChainBlock(Properties properties) {

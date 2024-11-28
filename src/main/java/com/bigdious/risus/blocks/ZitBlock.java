@@ -134,7 +134,7 @@ public class ZitBlock extends DirectionalBlock implements SimpleMultiloggedBlock
 			spit.shoot(0, -10, 0, 1.5F, 11.0F);
 		} else if (state.getValue(FACING) == Direction.NORTH) {
 			spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 1);
-			spit.shoot(0, 0, pos.getZ() - 10, 1.5F, 11.0F);
+			spit.shoot(0, 0, -10, 1.5F, 11.0F);
 		} else if (state.getValue(FACING) == Direction.SOUTH) {
 			spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ());
 			spit.shoot(0, 0, +10, 1.5F, 11.0F);

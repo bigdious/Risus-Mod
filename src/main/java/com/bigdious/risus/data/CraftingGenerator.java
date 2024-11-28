@@ -35,8 +35,9 @@ public class CraftingGenerator extends RecipeProvider {
 
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusItems.SMILING_REMAINS.get()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusItems.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.VINE), RisusItems.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusItems.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusItems.NEURON_STEM.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusItems.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_item", has(Items.GOLDEN_APPLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusItems.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusItems.ENGRAVED_BASALT.get()).unlockedBy("has_item", has(Items.BASALT)).save(consumer);
@@ -72,7 +73,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_LEGGINGS), RisusItems.SKIN_LEGGINGS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_BOOTS), RisusItems.SKIN_BOOTS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_ITEM_FRAME), RisusItems.GLOW_DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusItems.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusItems.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
@@ -143,7 +145,17 @@ public class CraftingGenerator extends RecipeProvider {
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DISPLAY_NOTCH.get(), 1)
 			.requires(Ingredient.of(RisusBlocks.DISPLAY_NOTCH_STAND))
-			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH_STAND))
+			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), 1)
+			.requires(Ingredient.of(RisusBlocks.GLOW_DISPLAY_NOTCH))
+			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GLOW_DISPLAY_NOTCH.get(), 1)
+			.requires(Ingredient.of(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND))
+			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_STAIRS.get(), 4)

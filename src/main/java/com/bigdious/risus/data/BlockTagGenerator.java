@@ -80,8 +80,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 				RisusBlocks.ALTERATION_CATALYST.get(),
+				RisusBlocks.BIG_CHAIN.get(),
 				RisusBlocks.DISPLAY_NOTCH.get(),
+				RisusBlocks.GLOW_DISPLAY_NOTCH.get(),
 				RisusBlocks.DISPLAY_NOTCH_STAND.get(),
+				RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(),
 				RisusBlocks.ASHEN_REMAINS.get(),
 				RisusBlocks.SMILING_REMAINS.get(),
 				RisusBlocks.LAUGHING_OBSIDIAN.get(),
@@ -146,7 +149,27 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
 				RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
 
-		this.tag(BlockTags.MINEABLE_WITH_HOE).add(RisusBlocks.EYE_BLEACHED.get()).add(RisusBlocks.EYE_GOLDEN.get()).add(RisusBlocks.EYE_EMERALD.get()).add(RisusBlocks.EYE_BLOODSHOT.get()).add(RisusBlocks.EYE_ENDER.get());
-		this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(RisusBlocks.LAUGHING_OBSIDIAN.get(), RisusBlocks.GLUTTONY_SCALEPLATE.get(), RisusBlocks.IMITATION_SCALEPLATE.get(), RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
+		this.tag(BlockTags.CLIMBABLE)
+			.add(RisusBlocks.VEINS.get(),
+			RisusBlocks.NEURON_STEM.get(),
+			RisusBlocks.BIG_CHAIN.get()
+			);
+
+		this.tag(BlockTags.MINEABLE_WITH_HOE)
+			.add(RisusBlocks.EYE_BLEACHED.get(),
+				RisusBlocks.EYE_GOLDEN.get(),
+				RisusBlocks.EYE_EMERALD.get(),
+				RisusBlocks.EYE_BLOODSHOT.get(),
+				RisusBlocks.EYE_ENDER.get()
+			);
+		this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
+			.add(RisusBlocks.LAUGHING_OBSIDIAN.get(),
+				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
+				RisusBlocks.IMITATION_SCALEPLATE.get(),
+				RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),
+				RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(),
+				RisusBlocks.FLATTENED_SCALES_BLOCK.get(),
+				RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()
+			);
 	}
 }

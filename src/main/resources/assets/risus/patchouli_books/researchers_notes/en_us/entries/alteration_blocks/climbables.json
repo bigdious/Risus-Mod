@@ -1,0 +1,22 @@
+{
+  "name": "Climbables",
+  "icon": "risus:big_chain",
+  "category": "risus:alteration",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "risus:alterationtemplate2",
+      "header": "Climbables",
+      "input1": "minecraft:twisting_vines",
+      "output1": "risus:neuron",
+      "input2": "minecraft:weeping_vines",
+      "output2": "risus:veins",
+      "text": "There are a few climbable blocks commonly found within the Risus. Neurons can be altered from Twisting Vines and grow upwards. Veins are obtained by altering Weeping Vines and can be hanged from a surface and they will grow downwards. Using Organic Matter on them will speed up their growth."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:big_chain",
+      "text": "Another climbable block is the Big Chain, which can be crafted from seven Iron Ingots and just like a normal Chain, it can be placed in any axis. "
+    }
+  ]
+}

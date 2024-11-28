@@ -1,8 +1,9 @@
 {
 	"credit": "Made with Blockbench",
+  "render_type": "minecraft:translucent",
 	"textures": {
 		"0": "risus:block/display_notch",
-		"particle": "risus:block/display_notch"
+		"particle": "risus:block/decoy_notch"
 	},
 	"elements": [
 		{

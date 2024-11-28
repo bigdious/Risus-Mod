@@ -32,8 +32,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.ALTERATION_CATALYST.get());
 		toBlock(RisusBlocks.ANGEL_ALTAR.get());
 		toBlockModel(RisusBlocks.DEPTH_VASE.get(), texture("block/decoy_vase"));
-		toBlockModel(RisusBlocks.DISPLAY_NOTCH.get(), texture("block/display_notch"));
-		toBlockModel(RisusBlocks.DISPLAY_NOTCH_STAND.get(), texture("block/display_notch"));
+		toBlockModel(RisusBlocks.DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
+		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
+		toBlockModel(RisusBlocks.DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
+		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
 		toBlockModel(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), texture("block/organic_matter_block"));
 		toBlock(RisusBlocks.LAUGHING_STALK.get());
 		toBlock(RisusBlocks.ASHEN_REMAINS.get());
