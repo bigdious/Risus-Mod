@@ -1,22 +1,31 @@
 {
-  "name": "Display Stands",
-  "icon": "risus:display_stand",
+  "name": "Display Notches",
+  "icon": "risus:display_notch",
   "category": "risus:alteration",
   "advancement": "risus:site_zero",
   "pages": [
     {
-      "type": "risus:alterationtemplate1",
-      "header": "Display Stands",
+      "type": "patchouli:text",
+      "text": "Display Notches and Glow Display Notches can be altered from Item Frames and Glow Item Frames repsectively. These can be placed on any side of a block, and then an item can be inserted. Using dyes, the color of the notch can be changed, and using a pickaxe, the rotation of it alongside the displayed item. Interacting with an empty hand changes the elevation of the displayed item."
+    },
+    {
+      "type": "risus:alterationtemplate2",
+      "header": "Alteration",
       "input1": "minecraft:item_frame",
-      "output1": "risus:neuron",
+      "output1": "risus:display_notch",
       "input2": "minecraft:glow_item_frame",
-      "output2": "risus:veins",
-      "text": "There are a few climbable blocks commonly found within the Risus. Neurons can be altered from Twisting Vines and grow upwards. Veins are obtained by altering Weeping Vines and can be hanged from a surface and they will grow downwards. Using Organic Matter on them will speed up their growth."
+      "output2": "risus:glow_display_notch",
+      "text": "By placing them in a crafting grid, the Display Notches can be switched between Flat and Standing display mode. Adding a Glow Inc Sac to a Display Notch will also turn it into a Glow one."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "risus:big_chain",
-      "text": "Another climbable block is the Big Chain, which can be crafted from seven Iron Ingots and just like a normal Chain, it can be placed in any axis. "
+      "recipe": "risus:display_notch_stand",
+      "recipe2": "risus:glow_display_notch_stand"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:glow_display_notch1",
+      "recipe2": "risus:glow_display_notch_stand1"
     }
   ]
 }

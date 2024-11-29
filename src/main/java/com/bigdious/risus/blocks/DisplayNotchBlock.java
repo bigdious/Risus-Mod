@@ -7,6 +7,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
@@ -25,9 +26,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -47,14 +46,16 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 	private static final VoxelShape SHAPE6 = Block.box(0.0D, 7.0D, 7.0D, 1.0D, 9.0D, 9.0D);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final EnumProperty<ColorEnum> COLOR = ColorEnum.COLOR;
-	public static final EnumProperty<FrontAndTop> ORIENTATION = BlockStateProperties.ORIENTATION;
+	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 	public static final BooleanProperty ELEVATE = BooleanProperty.create("elevate");
+	public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_16;
 	public DisplayNotchBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any()
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
-			.setValue(ORIENTATION, FrontAndTop.NORTH_UP)
+			.setValue(FACING, Direction.UP)
 			.setValue(COLOR, ColorEnum.BLACK)
+			.setValue(ROTATION, 0)
 			.setValue(ELEVATE, false));
 	}
 
@@ -137,6 +138,13 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 				return ItemInteractionResult.SUCCESS;
 			}
 		}
+		else if (!notch.getInputItem().isEmpty() && player.getMainHandItem().is(ItemTags.PICKAXES)) {
+			if (level.getBlockState(pos).getValue(ROTATION)<15) {
+				level.setBlock(pos, state.setValue(ROTATION, level.getBlockState(pos).getValue(ROTATION)+1), 3);
+			} else {
+				level.setBlock(pos, state.setValue(ROTATION, 0), 3);
+			}
+		}
 		else if (notch.getInputItem() != null) {
 			if (notch.getInputItem().isEmpty()) {
 				notch.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
@@ -144,6 +152,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), notch.getInputItem());
 				level.addFreshEntity(item);
 				notch.setInputItem(ItemStack.EMPTY);
+				level.setBlock(pos, state.setValue(ELEVATE, false), 3);
 			}
 		}
 
@@ -167,27 +176,28 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 		};
 
 		return this.defaultBlockState()
-			.setValue(ORIENTATION, FrontAndTop.fromFrontAndTop(direction, direction1))
+			.setValue(FACING, context.getNearestLookingDirection().getOpposite())
 			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
 			//the elevation is reversed due to laziness
 			.setValue(ELEVATE, false);
 	}
 	@Override
 	public BlockState rotate(BlockState blockState, Rotation rotation) {
-		return blockState.setValue(ORIENTATION, rotation.rotation().rotate(blockState.getValue(ORIENTATION)));
+		return blockState.setValue(FACING, rotation.rotation().rotate(blockState.getValue(FACING)));
 	}
 
 	@Override
 	public BlockState mirror(BlockState blockState, Mirror mirror) {
-		return blockState.setValue(ORIENTATION, mirror.rotation().rotate(blockState.getValue(ORIENTATION)));
+		return blockState.setValue(FACING, mirror.rotation().rotate(blockState.getValue(FACING)));
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(ORIENTATION);
+		builder.add(FACING);
 		builder.add(FLUIDLOGGED);
 		builder.add(ELEVATE);
 		builder.add(COLOR);
+		builder.add(ROTATION);
 	}
 	@Override
 	public FluidState getFluidState(BlockState state) {
@@ -208,12 +218,14 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		if (state.getValue(ORIENTATION) == FrontAndTop.DOWN_EAST || state.getValue(ORIENTATION) == FrontAndTop.DOWN_NORTH || state.getValue(ORIENTATION) == FrontAndTop.DOWN_WEST || state.getValue(ORIENTATION) == FrontAndTop.DOWN_SOUTH) return SHAPE2;
-		if (state.getValue(ORIENTATION) == FrontAndTop.NORTH_UP) return SHAPE3;
-		if (state.getValue(ORIENTATION) == FrontAndTop.SOUTH_UP) return SHAPE4;
-		if (state.getValue(ORIENTATION) == FrontAndTop.WEST_UP) return SHAPE5;
-		if (state.getValue(ORIENTATION) == FrontAndTop.EAST_UP) return SHAPE6;
-		return SHAPE1;
+		return switch (state.getValue(FACING)) {
+			case DOWN -> SHAPE2;
+			case NORTH -> SHAPE3;
+			case SOUTH -> SHAPE4;
+			case WEST -> SHAPE5;
+			case EAST -> SHAPE6;
+			default -> SHAPE1;
+		};
 	}
 
 	@Nullable

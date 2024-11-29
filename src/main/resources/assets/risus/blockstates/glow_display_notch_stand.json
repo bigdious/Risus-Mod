@@ -1,55 +1,28 @@
 {
   "variants": {
-    "orientation=down_east": {
-      "model": "risus:block/display_notch",
-      "y": -90,
-      "x": 180
-    },
-    "orientation=down_north": {
+    "facing=down": {
       "model": "risus:block/display_notch",
       "x": 180
     },
-    "orientation=down_south": {
-      "model": "risus:block/display_notch",
-      "y": -180,
-      "x": 180
-    },
-    "orientation=down_west": {
-      "model": "risus:block/display_notch",
-      "y": -270,
-      "x": 180
 
-    },
-    "orientation=east_up": {
+    "facing=east": {
       "model": "risus:block/display_notch",
       "y": 90,
       "x": 90
     },
-    "orientation=north_up": {
+    "facing=north": {
       "model": "risus:block/display_notch",
       "x": 90
     },
-    "orientation=south_up": {
+    "facing=south": {
       "model": "risus:block/display_notch",
       "y": 180,
       "x": 90
     },
-    "orientation=up_east": {
-      "model": "risus:block/display_notch",
-      "y": 90
-    },
-    "orientation=up_north": {
+    "facing=up": {
       "model": "risus:block/display_notch"
     },
-    "orientation=up_south": {
-      "model": "risus:block/display_notch",
-      "y": 180
-    },
-    "orientation=up_west": {
-      "model": "risus:block/display_notch",
-      "y": 270
-    },
-    "orientation=west_up": {
+    "facing=west": {
       "model": "risus:block/display_notch",
       "y": 270,
       "x": 90

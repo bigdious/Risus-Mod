@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlockEntity> {
 	private final ItemRenderer itemRenderer;
@@ -41,18 +42,22 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 	protected static final ResourceLocation PINK = Risus.prefix("textures/entity/display_notch/pink.png");
 
 	private final ModelPart notch;
+	private final ModelPart flat_notch;
 
 	public DisplayNotchRenderer(BlockEntityRendererProvider.Context pContext) {
 		this.itemRenderer = pContext.getItemRenderer();
 		ModelPart modelpart = pContext.bakeLayer(RisusModelLayers.DISPLAY_NOTCH);
 		this.notch = modelpart.getChild("notch");
+		this.flat_notch = modelpart.getChild("flat_notch");
 	}
 
 	public static LayerDefinition createBaseLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		partdefinition.addOrReplaceChild("notch", CubeListBuilder.create().texOffs(0, 0).addBox(-0.99F, -33.01F, -1.01F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		partdefinition.addOrReplaceChild("notch", CubeListBuilder.create().texOffs(0, 0).addBox(-0.99F, -32.01F, -1.01F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+		partdefinition.addOrReplaceChild("flat_notch", CubeListBuilder.create().texOffs(0, 0).addBox(-0.99F, -0.49F, -25.01F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -24.0F, 0.0F, 1.5708F, 0.0F, 0.0F));
 
 
 		return LayerDefinition.create(meshdefinition, 16, 16);
@@ -87,8 +92,8 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 	public void render(DisplayNotchBlockEntity entity, float partialTicks, PoseStack stack, MultiBufferSource buffers, int light, int overlay) {
 		ItemStack itemstack = entity.getInputItem();
 		stack.pushPose();
-			switch (entity.getBlockState().getValue(BlockStateProperties.ORIENTATION)) {
-				case UP_NORTH -> {
+			switch (entity.getBlockState().getValue(DisplayNotchBlock.FACING)) {
+				case UP -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.25, 0.5D);
@@ -96,7 +101,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.03125, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
-						stack.mulPose(Axis.ZP.rotationDegrees(180));
+						stack.mulPose(Axis.ZP.rotationDegrees(180+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.YP.rotationDegrees(0));
 						stack.scale(1f, 1f, 1f);
 					}
@@ -108,87 +113,19 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(180));
+						stack.mulPose(Axis.YP.rotationDegrees(180+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
-				case UP_SOUTH -> {
+				case DOWN -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
+							stack.translate(0.5D, 0.75, 0.5D);
 						} else {
-							stack.translate(0.5D, 0.03125, 0.5D);
+							stack.translate(0.5D, 0.96875, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case UP_WEST -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.03125, 0.5D);
-						}
-						stack.mulPose(Axis.ZP.rotationDegrees(90));
-						stack.mulPose(Axis.YP.rotationDegrees(270));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(270));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case UP_EAST -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.03125, 0.5D);
-						}
-						stack.mulPose(Axis.ZP.rotationDegrees(270));
-						stack.mulPose(Axis.YP.rotationDegrees(90));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.25, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(90));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case DOWN_NORTH -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.96875, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
+						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.YP.rotationDegrees(180));
 						stack.scale(1f, 1f, 1f);
 					}
@@ -200,79 +137,12 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(180));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(180));
+						stack.mulPose(Axis.YP.rotationDegrees(180+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
-				case DOWN_SOUTH -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.96875, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(180));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(180));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case DOWN_WEST -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.96875, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(90));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(180));
-						stack.mulPose(Axis.YP.rotationDegrees(270));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case DOWN_EAST -> {
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.96875, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(270));
-						stack.mulPose(Axis.ZP.rotationDegrees(270));
-						stack.scale(1f, 1f, 1f);
-					}
-					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
-						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
-							stack.translate(0.5D, 0.75, 0.5D);
-						} else {
-							stack.translate(0.5D, 0.5, 0.5D);
-						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(180));
-						stack.mulPose(Axis.YP.rotationDegrees(90));
-						stack.scale(1f, 1f, 1f);
-					}
-				}
-				case NORTH_UP -> {
+
+				case NORTH -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.5, 0.75);
@@ -280,7 +150,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.5, 0.96875);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
+						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND)) {
@@ -291,11 +161,11 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(270));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(0));
+						stack.mulPose(Axis.YP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
-				case SOUTH_UP -> {
+				case SOUTH -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.5, 0.25);
@@ -303,7 +173,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 							stack.translate(0.5D, 0.5, 0.03125);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0));
-						stack.mulPose(Axis.ZP.rotationDegrees(0));
+						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.YP.rotationDegrees(180));
 						stack.scale(1f, 1f, 1f);
 					}
@@ -315,18 +185,18 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
-						stack.mulPose(Axis.YP.rotationDegrees(0));
+						stack.mulPose(Axis.YP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
-				case EAST_UP -> {
+				case EAST -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.25D, 0.5, 0.5);
 						} else {
 							stack.translate(0.03125, 0.5, 0.5);
 						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
+						stack.mulPose(Axis.XP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
 						stack.mulPose(Axis.YP.rotationDegrees(270));
 						stack.scale(1f, 1f, 1f);
@@ -339,18 +209,18 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
 						stack.mulPose(Axis.ZP.rotationDegrees(270));
-						stack.mulPose(Axis.YP.rotationDegrees(0));
+						stack.mulPose(Axis.YP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
-				case WEST_UP -> {
+				case WEST -> {
 					if (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH)) {
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.75D, 0.5, 0.5);
 						} else {
 							stack.translate(0.96875, 0.5, 0.5);
 						}
-						stack.mulPose(Axis.XP.rotationDegrees(0));
+						stack.mulPose(Axis.XP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
 						stack.mulPose(Axis.YP.rotationDegrees(90));
 						stack.scale(1f, 1f, 1f);
@@ -363,7 +233,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(270));
 						stack.mulPose(Axis.ZP.rotationDegrees(90));
-						stack.mulPose(Axis.YP.rotationDegrees(0));
+						stack.mulPose(Axis.YP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.scale(1f, 1f, 1f);
 					}
 				}
@@ -373,7 +243,12 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 				this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, k, overlay, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
 			}
 		VertexConsumer vertexconsumer = buffers.getBuffer(RenderType.entityCutout(getColor(entity)));
-		this.notch.render(stack, vertexconsumer, light, overlay);
+		if (!entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE) && (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND))) {
+			this.notch.render(stack, vertexconsumer, light, overlay);
+		}
+		if (!entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE) && (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH))) {
+			this.flat_notch.render(stack, vertexconsumer, light, overlay);
+		}
 		stack.popPose();
 	}
 }
