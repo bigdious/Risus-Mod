@@ -3,9 +3,12 @@ package com.bigdious.risus.effects;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.neoforged.neoforge.common.EffectCure;
 
 import java.util.Map;
+import java.util.Set;
 
 public class ToothlusterEffect extends MobEffect {
 	public ToothlusterEffect(MobEffectCategory category, int color) {
@@ -17,6 +20,10 @@ public class ToothlusterEffect extends MobEffect {
 	public ToothlusterEffect(MobEffectCategory p_19426_, int p_19427_, double p_19428_) {
 		super(p_19426_, p_19427_);
 		this.multiplier = p_19428_;
+	}
+	@Override
+	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {
+		cures.clear();
 	}
 
 	public double getAttributeModifierValue(int p_19430_, AttributeModifier p_19431_) {

@@ -19,6 +19,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Spider;
@@ -59,6 +60,7 @@ public class BabySpider extends Monster {
 				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
 				&& !(entity instanceof BabySpider)
 				&& !(entity instanceof Spider)));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, true));
 	}
 
 	@Override

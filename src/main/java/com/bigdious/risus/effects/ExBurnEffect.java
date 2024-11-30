@@ -14,7 +14,9 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.neoforged.neoforge.common.EffectCure;
 
+import java.util.Set;
 import java.util.function.Function;
 
 
@@ -23,6 +25,10 @@ public class ExBurnEffect extends MobEffect {
 
 	public ExBurnEffect(MobEffectCategory category, int color) {
 		super(category, color);
+	}
+	@Override
+	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {
+		cures.clear();
 	}
 
 	@Override

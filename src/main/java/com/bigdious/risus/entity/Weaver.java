@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -100,6 +101,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
 				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
 		));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
 	}
 	@Override
 	public boolean canSwimInFluidType(FluidType type) {

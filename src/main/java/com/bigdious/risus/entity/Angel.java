@@ -17,7 +17,10 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -67,8 +70,15 @@ public class Angel extends Monster {
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 50.0F));
 		this.goalSelector.addGoal(7, new Angel.AngelLightningAttackGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (entity) -> Math.abs(entity.getY() - this.getY()) <= 50.0D));
-
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
+			entity -> Math.abs(entity.getY() - this.getY()) <= 50.0D &&
+			!(entity instanceof ArmorStand)
+			&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
+			&& !(entity.getType().is(RisusTags.Entities.BELOVED))
+		));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, 10, true, false,
+			entity -> Math.abs(entity.getY() - this.getY()) <= 50.0D
+		));
 	}
 
 	static class AngelLightningAttackGoal extends Goal {

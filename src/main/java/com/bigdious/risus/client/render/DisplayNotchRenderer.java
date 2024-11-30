@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -240,7 +241,8 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 			}
 			if (entity.getInputItem() != null && !entity.getInputItem().isEmpty()) {
 				int k = this.getLightVal(entity, 15728880, light);
-				this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, k, overlay, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
+				assert itemstack != null;
+				this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, k, OverlayTexture.NO_OVERLAY, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
 			}
 		VertexConsumer vertexconsumer = buffers.getBuffer(RenderType.entityCutout(getColor(entity)));
 		if (!entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE) && (entity.getBlockState().is(RisusBlocks.DISPLAY_NOTCH_STAND) || entity.getBlockState().is(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND))) {
