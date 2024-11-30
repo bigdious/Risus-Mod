@@ -39,6 +39,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 		super(type, level);
 		this.setYRot(0.0F);
 		this.setXRot(0.0F);
+		this.xpReward = 0;
 	}
 
 	@Override

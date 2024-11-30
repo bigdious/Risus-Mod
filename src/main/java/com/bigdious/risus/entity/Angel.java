@@ -28,6 +28,7 @@ import net.neoforged.neoforge.fluids.FluidType;
 public class Angel extends Monster {
 	public Angel(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
+		this.xpReward = 0;
 	}
 
 	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Angel.class, EntityDataSerializers.BOOLEAN);
@@ -59,9 +60,6 @@ public class Angel extends Monster {
 		} else {
 			return super.canSwimInFluidType(type);
 		}
-	}
-	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPRING;
 	}
 
 	@Override

@@ -39,6 +39,7 @@ public class Holder extends Monster {
 
 	public Holder(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
+		this.xpReward = 0;
 	}
 
 	public static AttributeSupplier.Builder attributes() {

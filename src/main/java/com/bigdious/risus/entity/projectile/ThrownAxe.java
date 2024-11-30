@@ -20,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -44,7 +45,7 @@ public class ThrownAxe extends AbstractArrow {
 	public ThrownAxe(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
-		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getDamageValue());
+		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
 	private byte getLoyaltyFromItem(ItemStack p_345571_) {
@@ -140,17 +141,14 @@ public class ThrownAxe extends AbstractArrow {
 
 		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
-		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED);
-		if (this.level() instanceof ServerLevel serverlevel) {
-			f += EnchantmentHelper.modifyDamage(serverlevel, this.getPickupItemStackOrigin(), entity, damagesource, f);
-		}
+		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED, entity1 == null ? this : entity1);
 
 
 
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
 
-		if (entity.hurt(damagesource, 10+f)) {
+		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS)<1 ? 10 : 10+(0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}
@@ -195,7 +193,7 @@ public class ThrownAxe extends AbstractArrow {
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
-		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getDamageValue());
+		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
 	}
 
 	@Override

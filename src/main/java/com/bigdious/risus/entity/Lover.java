@@ -31,6 +31,7 @@ public class Lover extends Monster {
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 		this.moveControl = new FlyingMoveControl(this, 20, true);
+		this.xpReward = 0;
 	}
 	@Override
 	public boolean canBeLeashed() {
