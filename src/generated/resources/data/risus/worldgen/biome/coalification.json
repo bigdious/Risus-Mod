@@ -9,7 +9,7 @@
       "options": {
         "type": "risus:risus_soul"
       },
-      "probability": 0.001
+      "probability": 1.0E-4
     },
     "sky_color": 0,
     "water_color": 526343,

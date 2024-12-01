@@ -24,9 +24,11 @@ public class MatingFrenzyEffect extends MobEffect {
 		if (entity instanceof Animal animal) {
 			if (animal.isBaby()) animal.removeEffect(RisusMobEffects.MATING_FRENZY);
 			if (!animal.isBaby() && animal.canFallInLove()) {
-				animal.hurt(entity.damageSources().magic(), 2.0F);
+				if (animal.getAge()>0){
+					animal.setAge(0);
+					animal.hurt(entity.damageSources().magic(), 2.0F);
+				}
 				animal.setInLove(null);
-				animal.setAge(0);
 
 			}
 		}

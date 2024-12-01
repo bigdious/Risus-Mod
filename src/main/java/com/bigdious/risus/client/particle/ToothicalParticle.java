@@ -60,7 +60,7 @@ public class ToothicalParticle extends TextureSheetParticle {
 		}
 
 		public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			ToothicalParticle crit = new ToothicalParticle(level, x, y + 1, z, xSpeed, ySpeed, zSpeed);
+			ToothicalParticle crit = new ToothicalParticle(level, x, y, z, xSpeed, ySpeed, zSpeed);
 			crit.lifetime = 80;
 			crit.gravity = 0.025F;
 			crit.pickSprite(this.spriteSet);

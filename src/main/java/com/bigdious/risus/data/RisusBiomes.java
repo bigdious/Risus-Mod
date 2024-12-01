@@ -33,7 +33,7 @@ public class RisusBiomes {
 			.downfall(0.0F)
 			.temperature(0.8F)
 			.specialEffects(generateColors(new BiomeSpecialEffects.Builder(), 526343, 1842204)
-				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.001F))
+				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F))
 				.build())
 			.build());
 	}

@@ -2,9 +2,11 @@ package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
+import com.bigdious.risus.init.RisusParticles;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -80,7 +82,11 @@ public class BloodSlash extends AbstractArrow {
 		if (this.life >= 50) {
 			this.discard();
 		}
+		level().addParticle(RisusParticles.BLOODSLASH_TRAIL.get(), true, this.getX(), this.getRandomY()-1.5+(Math.random() * 2.8), this.getZ(), 0, 0,0);
 		playSound(SoundEvents.BREEZE_WHIRL);
+	}
+	protected float getWaterInertia() {
+		return 1F;
 	}
 	@Override
 	protected void onHitEntity(EntityHitResult result) {
@@ -89,7 +95,7 @@ public class BloodSlash extends AbstractArrow {
 
 		f = this.entityData.get(ID_POWER);
 		Entity entity1 = this.getOwner();
-		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.BLOODSLASH);
+		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.BLOODSLASH, entity1 == null ? this : entity1);
 		if (this.level() instanceof ServerLevel serverlevel) {
 			f += EnchantmentHelper.modifyDamage(serverlevel, this.getPickupItemStackOrigin(), entity, damagesource, f);
 		}
