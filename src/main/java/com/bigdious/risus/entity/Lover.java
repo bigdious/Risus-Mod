@@ -89,9 +89,8 @@ public class Lover extends Monster {
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1D));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
 			entity -> entity.getType().is(RisusTags.Entities.LOVEABLE)
-
 		));
-	}
+    }
 	@Override
 	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
 		boolean flag = super.killedEntity(level, entity);

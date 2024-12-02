@@ -51,7 +51,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	protected void registerGoals() {
 		this.targetSelector.addGoal(1, new MawNearestAttackableGoal(this, LivingEntity.class, false, LivingEntity::attackable));
-	}
+    }
 
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()

@@ -3,39 +3,32 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusMobType;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 public class Holder extends Monster {
 
-	private boolean shouldAvoidPlayer;
+	private boolean shouldAvoidEntity;
 	@Nullable
-	private UUID avoidedPlayerUUID;
-	private final List<ServerPlayer> hurtBy = new ArrayList<>();
+	private UUID avoidedEntityUUID;
 
 	public Holder(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
@@ -53,16 +46,14 @@ public class Holder extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
+		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.8D));
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, entity -> this.avoidedPlayerUUID != null && Objects.equals(this.avoidedPlayerUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidPlayer));
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LivingEntity.class, entity -> this.avoidedEntityUUID != null && Objects.equals(this.avoidedEntityUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidEntity));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
-		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Player.class , true, living -> {
-			List<Monster> nearbyMonsters = this.level().getEntitiesOfClass(Monster.class, this.getBoundingBox().inflate(12.0D), monster -> !(monster instanceof Holder));
-			return this.getMainHandItem().isEmpty() && nearbyMonsters.isEmpty();
-		}));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class , true, living ->
+			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (this.level().getGameRules().getBoolean(Risus.HOLDERS_STEAL_FROM_MONSTERS) ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
+		));
 	}
 	@Override
 	public boolean canSwimInFluidType(FluidType type) {
@@ -73,10 +64,6 @@ public class Holder extends Monster {
 		}
 	}
 
-//	@Override
-//	public float getStepHeight() {
-//		return 1.0F;
-//	}
 
 	@Override
 	public boolean canPickUpLoot() {
@@ -100,8 +87,8 @@ public class Holder extends Monster {
 			item.discard();
 			var thrower = item.getOwner();
 			if (thrower != null) {
-				this.shouldAvoidPlayer = true;
-				this.avoidedPlayerUUID = thrower.getUUID();
+				this.shouldAvoidEntity = true;
+				this.avoidedEntityUUID = thrower.getUUID();
 			}
 		}
 	}
@@ -118,29 +105,30 @@ public class Holder extends Monster {
 		}
 	}
 
-	@Override
-	public InteractionResult interactAt(Player player, Vec3 vec3, InteractionHand hand) {
-		if (!player.getItemInHand(hand).isEmpty() && this.getMainHandItem().isEmpty()) {
-			this.setItemInHand(InteractionHand.MAIN_HAND, player.getItemInHand(hand).split(1));
-			return InteractionResult.sidedSuccess(this.level().isClientSide());
-		}
-		return super.interactAt(player, vec3, hand);
-	}
+	//let's keep this commented, might be reused in future
+//	@Override
+//	public InteractionResult interactAt(Player player, Vec3 vec3, InteractionHand hand) {
+//		if (!player.getItemInHand(hand).isEmpty() && this.getMainHandItem().isEmpty()) {
+//			this.setItemInHand(InteractionHand.MAIN_HAND, player.getItemInHand(hand).split(1));
+//			return InteractionResult.sidedSuccess(this.level().isClientSide());
+//		}
+//		return super.interactAt(player, vec3, hand);
+//	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		boolean flag = super.hurt(source, amount);
-		if (flag && this.hasItemInSlot(EquipmentSlot.MAINHAND) && source.getEntity() instanceof Player) {
+		if (flag && this.hasItemInSlot(EquipmentSlot.MAINHAND) && source.getEntity() instanceof LivingEntity) {
 			this.spawnAtLocation(this.getMainHandItem());
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
-			this.shouldAvoidPlayer = false;
-			this.avoidedPlayerUUID = null;
-			if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(Risus.prefix("holder_friendly")) != null) {
-				this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(Risus.prefix("holder_friendly"));
-			}
-			if (this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(Risus.prefix("holder_friendly_speed")) != null) {
-				this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(Risus.prefix("holder_friendly_speed"));
-			}
+				this.shouldAvoidEntity = false;
+				this.avoidedEntityUUID = null;
+				if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(Risus.prefix("holder_friendly")) != null) {
+					this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(Risus.prefix("holder_friendly"));
+				}
+				if (this.getAttribute(Attributes.MOVEMENT_SPEED).getModifier(Risus.prefix("holder_friendly_speed")) != null) {
+					this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(Risus.prefix("holder_friendly_speed"));
+				}
 		}
 		return flag;
 	}
@@ -150,16 +138,14 @@ public class Holder extends Monster {
 		boolean flag = super.doHurtTarget(entity);
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
-			if (living instanceof Player player) {
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
-					this.shouldAvoidPlayer = false;
+					this.shouldAvoidEntity = false;
 					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly"),  -3, AttributeModifier.Operation.ADD_VALUE));
 					this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly_speed"), 1.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 				} else {
-					this.avoidedPlayerUUID = player.getUUID();
-					this.shouldAvoidPlayer = true;
+					this.avoidedEntityUUID = living.getUUID();
+					this.shouldAvoidEntity = true;
 				}
-			}
 		}
 		return flag;
 	}
@@ -168,18 +154,18 @@ public class Holder extends Monster {
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
-		tag.putBoolean("AvoidingPlayer", this.shouldAvoidPlayer);
-		if (this.avoidedPlayerUUID != null) {
-			tag.putUUID("AvoidingUUID", this.avoidedPlayerUUID);
+		tag.putBoolean("AvoidingEntity", this.shouldAvoidEntity);
+		if (this.avoidedEntityUUID != null) {
+			tag.putUUID("AvoidingUUID", this.avoidedEntityUUID);
 		}
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-		this.shouldAvoidPlayer = tag.getBoolean("AvoidingPlayer");
+		this.shouldAvoidEntity = tag.getBoolean("AvoidingEntity");
 		if (tag.contains("AvoidingUUID")) {
-			this.avoidedPlayerUUID = tag.getUUID("AvoidingUUID");
+			this.avoidedEntityUUID = tag.getUUID("AvoidingUUID");
 		}
 	}
 }

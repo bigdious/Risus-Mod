@@ -104,14 +104,14 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.CHISELED_GRIMSTONE.get(),
 
 				RisusBlocks.GRIMSTONE_BRICKS.get(),
-			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
-			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
-			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
+				RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
+				RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
+				RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 
 				RisusBlocks.POLISHED_GRIMSTONE.get(),
-			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
-			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
-			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
+				RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
+				RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
+				RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
 
 				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
 				RisusBlocks.JOYFLAME_LANTERN.get(),
@@ -128,7 +128,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.BONE_SLAB.get(),
 				RisusBlocks.FULL_BONE_SLAB.get(),
 				RisusBlocks.FULL_BONE_STAIRS.get(),
-				RisusBlocks.BONE_STAIRS.get()
+				RisusBlocks.BONE_STAIRS.get(),
+
+				RisusBlocks.FLESHY_SPAWNER.get()
 		);
 
 

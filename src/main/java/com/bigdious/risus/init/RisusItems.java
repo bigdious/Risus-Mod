@@ -78,6 +78,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> DISPLAY_NOTCH_STAND = ITEMS.register("display_notch_stand", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> GLOW_DISPLAY_NOTCH_STAND = ITEMS.register("glow_display_notch_stand", () -> new BlockItem(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> LAUGHING_STALK = ITEMS.register("laughing_stalk", () -> new BlockItem(RisusBlocks.LAUGHING_STALK.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> FLESHY_SPAWNER = ITEMS.register("fleshy_spawner", () -> new BlockItem(RisusBlocks.FLESHY_SPAWNER.get(), defaultWithRarity()));
 
 
 	//WOOD
@@ -208,11 +209,12 @@ public class RisusItems {
 	public static final DeferredItem<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new ExperienceItem(defaultWithRarity()));
 
-	//TRIMS AND PATTERNS
+	//COLLECTABLES
 
 	public static final DeferredItem<Item> SMILE_PATTERN = ITEMS.register("smile_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> DIVINITY_PATTERN = ITEMS.register("divinity_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> TREE_PATTERN = ITEMS.register("tree_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, defaultWithRarity().stacksTo(1)));
+	public static final DeferredItem<Item> MUSIC_DISC_RAK = ITEMS.register("music_disc_rak", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK)));
 
 	//DISPLAY ONLY ITEMS
 

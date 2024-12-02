@@ -61,6 +61,8 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> OFFSPRING = tag("offspring");
 		public static final TagKey<EntityType<?>> BELOVED = tag("beloved");
 		public static final TagKey<EntityType<?>> LOVEABLE = tag("loveable");
+		public static final TagKey<EntityType<?>> CANT_BE_STOLEN_FROM = tag("cant_be_stolen_from");
+		public static final TagKey<EntityType<?>> CANT_BE_STRIPPED = tag("cant_be_stripped");
 
 
 		private static TagKey<EntityType<?>> tag(String name) {

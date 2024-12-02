@@ -71,7 +71,7 @@ public class Singer extends Monster {
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !player.getItemBySlot(EquipmentSlot.HEAD).is(Items.CARVED_PUMPKIN)));
-	}
+    }
 	public void setCharging(boolean charging) {
 		this.entityData.set(DATA_IS_CHARGING, charging);
 	}

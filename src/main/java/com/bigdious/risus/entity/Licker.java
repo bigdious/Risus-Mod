@@ -51,7 +51,7 @@ public class Licker extends Monster {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-	}
+    }
 	@Override
 	public void aiStep() {
 		super.aiStep();

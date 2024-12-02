@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -29,7 +30,7 @@ public class GoldFistItem extends ToothknockerItem {
 		RandomSource random = RandomSource.create();
 		Level level = entity.level();
 		int i = random.nextInt(9);
-		if (entity instanceof LivingEntity target && entity.getType() != EntityType.PLAYER) {
+		if (entity instanceof LivingEntity target && entity.getType() != EntityType.PLAYER && !(entity.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM))) {
 			//change random bound to define chances, 4 is 100% 8 is 50% etc.
 			switch (random.nextInt(20)) {
 				case 1:
@@ -85,7 +86,7 @@ public class GoldFistItem extends ToothknockerItem {
 							if (item.isAddedToLevel()) {
 								level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
 								playertarget.getInventory().setItem(kd, ItemStack.EMPTY);
-								player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "GET KD'D KID"));
+								player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "Your items are being repossessed due to outstanding debt."));
 							}
 
 						}

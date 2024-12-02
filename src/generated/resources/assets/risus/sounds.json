@@ -1,0 +1,18 @@
+{
+  "music.disc.rak": {
+    "sounds": [
+      {
+        "name": "risus:music/disc/rak",
+        "stream": true
+      }
+    ]
+  },
+  "music.family_tree": {
+    "sounds": [
+      {
+        "name": "risus:music/family_tree",
+        "stream": true
+      }
+    ]
+  }
+}

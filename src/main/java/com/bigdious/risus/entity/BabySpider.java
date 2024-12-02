@@ -61,7 +61,7 @@ public class BabySpider extends Monster {
 				&& !(entity instanceof BabySpider)
 				&& !(entity instanceof Spider)));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, true));
-	}
+    }
 
 	@Override
 	public void aiStep() {

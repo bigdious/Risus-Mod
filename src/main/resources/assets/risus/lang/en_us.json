@@ -19,6 +19,7 @@
   "block.risus.full_bone_slab": "Full Bone Slab",
   "block.risus.organic_matter_block": "Organic Matter Block",
   "block.risus.burnt_hyphae": "Burnt Hyphae",
+  "block.risus.fleshy_spawner": "Fleshy Monster Spawner",
   "block.risus.tissue": "Living Tissue",
   "block.risus.rotting_tissue": "Rotting Tissue",
   "block.risus.decomposing_tissue": "Decomposing Tissue",
@@ -237,6 +238,9 @@
 
   "trim_material.risus.gluttony_scales": "Gluttony Material",
   "trim_material.risus.skin": "Skin Material",
+
+  "item.risus.music_disc_rak": "Music Disc",
+  "jukebox_song.risus.rak": "Kizbe - Rak",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",

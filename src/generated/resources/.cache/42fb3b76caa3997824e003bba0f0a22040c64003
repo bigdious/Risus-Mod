@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-28T22:42:46.2439943	Risus Item Models
+// 1.21.1	2024-12-02T19:46:16.7061115	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -77,6 +77,7 @@ ec04d6ddd5f3f99ad7ccbdff3a9105bc0868ada1 assets/risus/models/item/fire_scythe_ba
 77ec3b1c1f63a0795a12729d78ab6298e8e93ddd assets/risus/models/item/flattened_imitation_scales_block.json
 c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scales_block.json
 3bc38e51ed584679a51f10e9c8983d430b1e46d0 assets/risus/models/item/fleshy_skin.json
+37e7c664bb219542fd02536212d4a9a14816b7b5 assets/risus/models/item/fleshy_spawner.json
 66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
 a265ff829c8ebd0d0935c42805872988b0f1ce5a assets/risus/models/item/full_bone_block.json
 bc0961010c8e94f8a8076fbfa550d1af954f76b8 assets/risus/models/item/full_bone_slab.json
@@ -121,6 +122,7 @@ e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.j
 4f9af2019320b5a9761a720842dd4512c6ec0050 assets/risus/models/item/mirage_grass_block.json
 7bf54dbd9f1f9f6927207adfaf44e33318592463 assets/risus/models/item/mirage_netherrack.json
 619695f332002d5722967c437debd7b603da0865 assets/risus/models/item/mirage_sand.json
+eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak.json
 568df591e71e68d0e165708b3c8516db9f1a2d28 assets/risus/models/item/neuron.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json

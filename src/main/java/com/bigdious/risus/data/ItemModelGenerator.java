@@ -31,6 +31,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		//blocks
 		toBlock(RisusBlocks.ALTERATION_CATALYST.get());
 		toBlock(RisusBlocks.ANGEL_ALTAR.get());
+		toBlockModel(RisusBlocks.FLESHY_SPAWNER.get(), texture("block/fleshy_spawner"));
 		toBlockModel(RisusBlocks.DEPTH_VASE.get(), texture("block/decoy_vase"));
 		toBlockModel(RisusBlocks.DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
 		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
@@ -146,6 +147,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		//items
 		singleTex(RisusItems.RESEARCHERS_NOTES);
+		singleTex(RisusItems.MUSIC_DISC_RAK);
 		singleTex(RisusItems.ANGEL_WINGS);
 		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
 		singleTex(RisusItems.ESSENCE_OF_GREED);

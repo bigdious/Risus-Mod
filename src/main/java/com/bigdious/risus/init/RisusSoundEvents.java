@@ -17,7 +17,11 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_STEP = register("block.meat.step");
 	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
 
+	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_RAK = register("music.disc.rak");
+	public static final DeferredHolder<SoundEvent, SoundEvent> FAMILY_TREE_AMBIENT = register("music.family_tree");
+
+
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {
-		return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name)));
+		return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(Risus.prefix( name)));
 	}
 }

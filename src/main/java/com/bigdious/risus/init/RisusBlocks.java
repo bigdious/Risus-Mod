@@ -61,6 +61,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> GLOW_DISPLAY_NOTCH = BLOCKS.register("glow_display_notch", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	public static final DeferredBlock<Block> DISPLAY_NOTCH_STAND = BLOCKS.register("display_notch_stand", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	public static final DeferredBlock<Block> GLOW_DISPLAY_NOTCH_STAND = BLOCKS.register("glow_display_notch_stand", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> FLESHY_SPAWNER = BLOCKS.register("fleshy_spawner", () -> new RisusSpawner(BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 
 	//MAW STUFF
 

@@ -48,7 +48,7 @@ public class Stalker extends Monster {
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-	}
+    }
 
 	@Override
 	public void playerTouch(Player player) {

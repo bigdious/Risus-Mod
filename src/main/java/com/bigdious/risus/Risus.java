@@ -9,12 +9,14 @@ import com.bigdious.risus.network.CreateCritParticlePacket;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.GameRules;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.apache.logging.log4j.LogManager;
@@ -26,8 +28,12 @@ import java.util.concurrent.CompletableFuture;
 @Mod(Risus.MODID)
 public class Risus {
 	public static final String MODID = "risus";
-	public static final Logger LOGGER = LogManager.getLogger();
 
+	public static final GameRules.Key<GameRules.BooleanValue> HOLDERS_STEAL_FROM_MONSTERS = GameRules.register("holdersStealFromMonsters",
+		GameRules.Category.MOBS,
+		GameRules.BooleanValue.create(true));
+
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public Risus(IEventBus bus, Dist dist) {
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
@@ -88,6 +94,7 @@ public class Risus {
 		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new RisusDataMaps(packOutput, lookupProvider));
+		event.getGenerator().addProvider(isServer, new RisusSoundDefinitions(packOutput, existingFileHelper));
 
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);
 		event.getGenerator().addProvider(isServer, registryDataGenerator);

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "jukebox_song.risus.rak"
+  },
+  "length_in_seconds": 135.0,
+  "sound_event": "risus:music.disc.rak"
+}

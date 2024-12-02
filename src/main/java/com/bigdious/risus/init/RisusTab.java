@@ -118,6 +118,7 @@ public class RisusTab {
 						output.accept(RisusItems.TALL_HAIR.get());
 						output.accept(RisusItems.BUNDLE_OF_HAIR.get());
 
+						output.accept(RisusBlocks.FLESHY_SPAWNER.get());
 						output.accept(RisusBlocks.LIVING_TISSUE.get());
 						output.accept(RisusBlocks.ROTTING_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());
@@ -188,6 +189,7 @@ public class RisusTab {
 						output.accept(RisusItems.SMILE_PATTERN.get());
 						output.accept(RisusItems.DIVINITY_PATTERN.get());
 						output.accept(RisusItems.TREE_PATTERN.get());
+						output.accept(RisusItems.MUSIC_DISC_RAK.get());
 						createSpawnEggsAlphabetical(output);
 
 
