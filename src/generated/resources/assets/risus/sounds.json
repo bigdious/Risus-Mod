@@ -1,17 +1,37 @@
 {
+  "music.disc.feigr": {
+    "sounds": [
+      {
+        "name": "risus:music/disc/feigr",
+        "stream": true,
+        "volume": 2.0
+      }
+    ]
+  },
+  "music.disc.mork": {
+    "sounds": [
+      {
+        "name": "risus:music/disc/mork",
+        "stream": true,
+        "volume": 2.0
+      }
+    ]
+  },
   "music.disc.rak": {
     "sounds": [
       {
         "name": "risus:music/disc/rak",
-        "stream": true
+        "stream": true,
+        "volume": 2.0
       }
     ]
   },
-  "music.family_tree": {
+  "music.disc.regn": {
     "sounds": [
       {
-        "name": "risus:music/family_tree",
-        "stream": true
+        "name": "risus:music/disc/regn",
+        "stream": true,
+        "volume": 2.0
       }
     ]
   }

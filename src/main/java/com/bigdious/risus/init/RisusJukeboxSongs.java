@@ -14,6 +14,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class RisusJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> RAK = create("rak");
+	public static final ResourceKey<JukeboxSong> REGN = create("regn");
+	public static final ResourceKey<JukeboxSong> FEIGR = create("feigr");
+	public static final ResourceKey<JukeboxSong> MORK = create("mork");
 	private static ResourceKey<JukeboxSong> create(String name) {
 		return ResourceKey.create(Registries.JUKEBOX_SONG,  ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 	}
@@ -22,5 +25,8 @@ public class RisusJukeboxSongs {
 	}
 	public static void bootstrap(BootstrapContext<JukeboxSong> context) {
 		register(context, RAK, RisusSoundEvents.MUSIC_DISC_RAK, 135, 15);
+		register(context, REGN, RisusSoundEvents.MUSIC_DISC_REGN, 121, 14);
+		register(context, FEIGR, RisusSoundEvents.MUSIC_DISC_FEIGR, 82, 10);
+		register(context, MORK, RisusSoundEvents.MUSIC_DISC_MORK, 67, 7);
 	}
 }

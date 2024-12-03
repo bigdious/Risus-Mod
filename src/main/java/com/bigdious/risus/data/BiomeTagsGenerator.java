@@ -52,7 +52,20 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.WINDSWEPT_HILLS,
 			Biomes.WINDSWEPT_SAVANNA,
 			Biomes.WOODED_BADLANDS
-			);
+			)
+			.addTag(Tags.Biomes.IS_BIRCH_FOREST)
+			.addTag(Tags.Biomes.IS_BADLANDS)
+			.addTag(Tags.Biomes.IS_JUNGLE)
+			.addTag(Tags.Biomes.IS_FOREST)
+			.addTag(Tags.Biomes.IS_OLD_GROWTH)
+			.addTag(Tags.Biomes.IS_DESERT)
+			.addTag(Tags.Biomes.IS_MUSHROOM)
+			.addTag(Tags.Biomes.IS_SWAMP)
+			.addTag(Tags.Biomes.IS_SAVANNA)
+			.addTag(Tags.Biomes.IS_TAIGA)
+			.addTag(Tags.Biomes.IS_HILL)
+			.addTag(Tags.Biomes.IS_SNOWY)
+		;
 
 		tag(RisusTags.Biomes.HAS_FAMILY_TREE).add(
 			Biomes.BADLANDS,
@@ -87,7 +100,20 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.WINDSWEPT_HILLS,
 			Biomes.WINDSWEPT_SAVANNA,
 			Biomes.WOODED_BADLANDS
-		);
+		)
+			.addTag(Tags.Biomes.IS_BIRCH_FOREST)
+			.addTag(Tags.Biomes.IS_BADLANDS)
+			.addTag(Tags.Biomes.IS_JUNGLE)
+			.addTag(Tags.Biomes.IS_FOREST)
+			.addTag(Tags.Biomes.IS_OLD_GROWTH)
+			.addTag(Tags.Biomes.IS_DESERT)
+			.addTag(Tags.Biomes.IS_MUSHROOM)
+			.addTag(Tags.Biomes.IS_SWAMP)
+			.addTag(Tags.Biomes.IS_SAVANNA)
+			.addTag(Tags.Biomes.IS_TAIGA)
+			.addTag(Tags.Biomes.IS_HILL)
+			.addTag(Tags.Biomes.IS_SNOWY)
+		;
 
 		tag(RisusTags.Biomes.HAS_GRASSY_MAW).add(
 			Biomes.BAMBOO_JUNGLE,
@@ -112,17 +138,27 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.WINDSWEPT_GRAVELLY_HILLS,
 			Biomes.WINDSWEPT_HILLS,
 			Biomes.WINDSWEPT_SAVANNA
-		);
+		)
+			.addTag(Tags.Biomes.IS_JUNGLE)
+			.addTag(Tags.Biomes.IS_FOREST)
+			.addTag(Tags.Biomes.IS_PLAINS)
+			.addTag(Tags.Biomes.IS_SAVANNA)
+			.addTag(Tags.Biomes.IS_SWAMP)
+		;
 
 		tag(RisusTags.Biomes.HAS_SANDY_MAW).add(
 			Biomes.DESERT
-		);
+		)
+			.addTag(Tags.Biomes.IS_DESERT)
+		;
 
 		tag(RisusTags.Biomes.HAS_ENDY_MAW).add(
 			Biomes.END_BARRENS,
 			Biomes.END_MIDLANDS,
 			Biomes.END_HIGHLANDS
-		);
+		)
+			.addTag(Tags.Biomes.IS_END)
+		;
 
 		tag(RisusTags.Biomes.HAS_ANGEL_ALTAR).add(
 			Biomes.FROZEN_PEAKS,
@@ -130,7 +166,12 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.SAVANNA_PLATEAU,
 			Biomes.SNOWY_SLOPES,
 			Biomes.STONY_PEAKS
-		);
+		)
+			.addTag(Tags.Biomes.IS_MOUNTAIN)
+			.addTag(Tags.Biomes.IS_MOUNTAIN_PEAK)
+			.addTag(Tags.Biomes.IS_PLATEAU)
+			.addTag(Tags.Biomes.IS_MOUNTAIN_SLOPE)
+		;
 
 		tag(RisusTags.Biomes.HAS_GREAT_BODY).add(
 			Biomes.BADLANDS,
@@ -165,10 +206,26 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			Biomes.WINDSWEPT_HILLS,
 			Biomes.WINDSWEPT_SAVANNA,
 			Biomes.WOODED_BADLANDS
-		);
+		)
+			.addTag(Tags.Biomes.IS_BIRCH_FOREST)
+			.addTag(Tags.Biomes.IS_BADLANDS)
+			.addTag(Tags.Biomes.IS_JUNGLE)
+			.addTag(Tags.Biomes.IS_FOREST)
+			.addTag(Tags.Biomes.IS_OLD_GROWTH)
+			.addTag(Tags.Biomes.IS_DESERT)
+			.addTag(Tags.Biomes.IS_MUSHROOM)
+			.addTag(Tags.Biomes.IS_SWAMP)
+			.addTag(Tags.Biomes.IS_SAVANNA)
+			.addTag(Tags.Biomes.IS_TAIGA)
+			.addTag(Tags.Biomes.IS_HILL)
+			.addTag(Tags.Biomes.IS_SNOWY)
+			.addTag(Tags.Biomes.IS_CAVE)
+		;
 
 		tag(RisusTags.Biomes.HAS_FLOWER_FIELD).add(
 			Biomes.FLOWER_FOREST
-		);
+		)
+			.addTag(Tags.Biomes.IS_FLOWER_FOREST)
+		;
 	}
 }

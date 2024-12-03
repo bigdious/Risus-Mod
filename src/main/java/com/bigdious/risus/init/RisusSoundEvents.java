@@ -18,7 +18,9 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_RAK = register("music.disc.rak");
-	public static final DeferredHolder<SoundEvent, SoundEvent> FAMILY_TREE_AMBIENT = register("music.family_tree");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_MORK = register("music.disc.mork");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_FEIGR = register("music.disc.feigr");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_REGN = register("music.disc.regn");
 
 
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {

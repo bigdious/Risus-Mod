@@ -13,10 +13,16 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 	@Override
 	public void registerSounds() {
 		this.add(RisusSoundEvents.MUSIC_DISC_RAK, definition().with(
-			sound("risus:music/disc/rak").stream()
+			sound("risus:music/disc/rak").volume(2).pitch(1).weight(1).stream()
 		));
-		this.add(RisusSoundEvents.FAMILY_TREE_AMBIENT, definition().with(
-			sound("risus:music/family_tree").stream()
+		this.add(RisusSoundEvents.MUSIC_DISC_MORK, definition().with(
+			sound("risus:music/disc/mork").volume(2).pitch(1).weight(1).stream()
+		));
+		this.add(RisusSoundEvents.MUSIC_DISC_FEIGR, definition().with(
+			sound("risus:music/disc/feigr").volume(2).pitch(1).weight(1).stream()
+		));
+		this.add(RisusSoundEvents.MUSIC_DISC_REGN, definition().with(
+			sound("risus:music/disc/regn").volume(2).pitch(1).weight(1).stream()
 		));
 	}
 }

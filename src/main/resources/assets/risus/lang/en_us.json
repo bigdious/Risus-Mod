@@ -241,6 +241,12 @@
 
   "item.risus.music_disc_rak": "Music Disc",
   "jukebox_song.risus.rak": "Kizbe - Rak",
+  "item.risus.music_disc_regn": "Music Disc",
+  "jukebox_song.risus.regn": "Kizbe - Regn",
+  "item.risus.music_disc_feigr": "Music Disc",
+  "jukebox_song.risus.feigr": "Kizbe - Feigr",
+  "item.risus.music_disc_mork": "Music Disc",
+  "jukebox_song.risus.mork": "Kizbe - Mǫrk",
 
   "item.minecraft.potion.effect.mating_frenzy": "Potion of Love",
   "item.minecraft.splash_potion.effect.mating_frenzy": "Splash Potion of Love",

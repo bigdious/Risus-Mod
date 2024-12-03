@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-02T19:46:16.7061115	Risus Item Models
+// 1.21.1	2024-12-03T20:15:28.9762164	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -122,7 +122,10 @@ e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.j
 4f9af2019320b5a9761a720842dd4512c6ec0050 assets/risus/models/item/mirage_grass_block.json
 7bf54dbd9f1f9f6927207adfaf44e33318592463 assets/risus/models/item/mirage_netherrack.json
 619695f332002d5722967c437debd7b603da0865 assets/risus/models/item/mirage_sand.json
+eebc5afa6ed04e3a2c989b191c2df71bc0326122 assets/risus/models/item/music_disc_feigr.json
+8abdbc05a484f01340691e21c66ffeb33d275812 assets/risus/models/item/music_disc_mork.json
 eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak.json
+92d5564813d06f220ace570541ad121df15a5f4d assets/risus/models/item/music_disc_regn.json
 568df591e71e68d0e165708b3c8516db9f1a2d28 assets/risus/models/item/neuron.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json

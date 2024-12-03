@@ -215,6 +215,9 @@ public class RisusItems {
 	public static final DeferredItem<Item> DIVINITY_PATTERN = ITEMS.register("divinity_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> TREE_PATTERN = ITEMS.register("tree_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, defaultWithRarity().stacksTo(1)));
 	public static final DeferredItem<Item> MUSIC_DISC_RAK = ITEMS.register("music_disc_rak", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK)));
+	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = ITEMS.register("music_disc_feigr", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR)));
+	public static final DeferredItem<Item> MUSIC_DISC_MORK = ITEMS.register("music_disc_mork", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK)));
+	public static final DeferredItem<Item> MUSIC_DISC_REGN = ITEMS.register("music_disc_regn", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.REGN)));
 
 	//DISPLAY ONLY ITEMS
 

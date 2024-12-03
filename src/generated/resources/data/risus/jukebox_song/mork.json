@@ -1,0 +1,8 @@
+{
+  "comparator_output": 7,
+  "description": {
+    "translate": "jukebox_song.risus.mork"
+  },
+  "length_in_seconds": 67.0,
+  "sound_event": "risus:music.disc.mork"
+}

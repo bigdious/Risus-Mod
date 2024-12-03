@@ -31,6 +31,19 @@
     "minecraft:windswept_gravelly_hills",
     "minecraft:windswept_hills",
     "minecraft:windswept_savanna",
-    "minecraft:wooded_badlands"
+    "minecraft:wooded_badlands",
+    "#c:is_birch_forest",
+    "#c:is_badlands",
+    "#c:is_jungle",
+    "#c:is_forest",
+    "#c:is_old_growth",
+    "#c:is_desert",
+    "#c:is_mushroom",
+    "#c:is_swamp",
+    "#c:is_savanna",
+    "#c:is_taiga",
+    "#c:is_hill",
+    "#c:is_snowy",
+    "#c:is_cave"
   ]
 }

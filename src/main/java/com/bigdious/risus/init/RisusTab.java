@@ -190,6 +190,9 @@ public class RisusTab {
 						output.accept(RisusItems.DIVINITY_PATTERN.get());
 						output.accept(RisusItems.TREE_PATTERN.get());
 						output.accept(RisusItems.MUSIC_DISC_RAK.get());
+						output.accept(RisusItems.MUSIC_DISC_REGN.get());
+						output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
+						output.accept(RisusItems.MUSIC_DISC_MORK.get());
 						createSpawnEggsAlphabetical(output);
 
 

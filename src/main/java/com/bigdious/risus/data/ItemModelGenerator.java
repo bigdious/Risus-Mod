@@ -148,6 +148,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		//items
 		singleTex(RisusItems.RESEARCHERS_NOTES);
 		singleTex(RisusItems.MUSIC_DISC_RAK);
+		singleTex(RisusItems.MUSIC_DISC_REGN);
+		singleTex(RisusItems.MUSIC_DISC_FEIGR);
+		singleTex(RisusItems.MUSIC_DISC_MORK);
 		singleTex(RisusItems.ANGEL_WINGS);
 		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
 		singleTex(RisusItems.ESSENCE_OF_GREED);

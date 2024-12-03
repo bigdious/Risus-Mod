@@ -1,5 +1,6 @@
 {
   "values": [
-    "minecraft:flower_forest"
+    "minecraft:flower_forest",
+    "#c:is_flower_forest"
   ]
 }

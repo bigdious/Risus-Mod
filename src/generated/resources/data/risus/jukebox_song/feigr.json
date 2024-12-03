@@ -1,0 +1,8 @@
+{
+  "comparator_output": 10,
+  "description": {
+    "translate": "jukebox_song.risus.feigr"
+  },
+  "length_in_seconds": 82.0,
+  "sound_event": "risus:music.disc.feigr"
+}
