@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusVines;
 import com.bigdious.risus.init.RisusBlocks;

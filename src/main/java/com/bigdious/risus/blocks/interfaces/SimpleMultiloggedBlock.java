@@ -1,4 +1,4 @@
-package com.bigdious.risus.blocks;
+package com.bigdious.risus.blocks.interfaces;
 
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusBlocks;

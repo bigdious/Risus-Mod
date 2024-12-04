@@ -1,7 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.event.RisusEvents;
-import com.bigdious.risus.blocks.OrganicMatterableBlock;
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusParticles;

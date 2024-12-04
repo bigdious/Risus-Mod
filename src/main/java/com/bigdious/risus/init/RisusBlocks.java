@@ -2,6 +2,8 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
+import com.bigdious.risus.blocks.interfaces.DecomposingBlock;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantBodyBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.util.RisusSkullType;
@@ -11,7 +13,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;

@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.AlterationCatalystBlockEntity;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

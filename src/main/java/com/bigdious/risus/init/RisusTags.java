@@ -15,6 +15,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
@@ -26,6 +27,7 @@ public class RisusTags {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
+
 	public static class Biomes {
 
 		public static final TagKey<Biome> HAS_ALTERATION_SITE = tag("has_structure/alteration_site");
@@ -41,6 +43,7 @@ public class RisusTags {
 			return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
+
 	public static class Items {
 
 		public static final TagKey<Item> BONE_BLOCK_VARIATION = tag("bone_block_variation");
@@ -56,6 +59,7 @@ public class RisusTags {
 		}
 
 	}
+
 	public static class Entities {
 
 		public static final TagKey<EntityType<?>> OFFSPRING = tag("offspring");
@@ -97,5 +101,9 @@ public class RisusTags {
 		public String getName() {
 			return "Risus Banner Pattern Tags";
 		}
+	}
+
+	public static class Structures {
+		public static final TagKey<Structure> FAMILY_TREE = TagKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "family_tree"));
 	}
 }

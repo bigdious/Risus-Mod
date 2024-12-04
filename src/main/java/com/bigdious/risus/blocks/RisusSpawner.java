@@ -1,7 +1,7 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.blocks.entity.RisusCampfireBlockEntity;
 import com.bigdious.risus.blocks.entity.RisusSpawnerEntity;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -19,11 +19,9 @@ import net.minecraft.world.level.Spawner;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SpawnerBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -32,7 +30,7 @@ import net.minecraft.world.level.material.FluidState;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class RisusSpawner extends BaseEntityBlock implements SimpleMultiloggedBlock{
+public class RisusSpawner extends BaseEntityBlock implements SimpleMultiloggedBlock {
 	public static final MapCodec<RisusSpawner> CODEC = simpleCodec(RisusSpawner::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public RisusSpawner(Properties properties) {

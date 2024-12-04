@@ -1,6 +1,6 @@
 package com.bigdious.risus.blocks.plantblocks;
 
-import com.bigdious.risus.blocks.OrganicMatterableBlock;
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusFluids;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

@@ -1,14 +1,13 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
-import com.bigdious.risus.client.render.ColorEnums;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.blocks.interfaces.ColorEnums;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.FrontAndTop;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -33,8 +32,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Locale;
 
 public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultiloggedBlock, ColorEnums {
 	public static final MapCodec<DisplayNotchBlock> CODEC = simpleCodec(DisplayNotchBlock::new);

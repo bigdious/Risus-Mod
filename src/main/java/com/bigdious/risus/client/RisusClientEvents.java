@@ -33,16 +33,22 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.client.event.sound.SoundEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
@@ -79,7 +85,6 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::playMusic);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 	}
 
@@ -273,17 +278,6 @@ public class RisusClientEvents {
 		if (event.getEntity().hasEffect(RisusMobEffects.BLOODCLOGGED)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
 		}
-	}
-
-	private static void playMusic(PlayerTickEvent.Post event){
-		Player player = event.getEntity();
-	if (player.level() instanceof ServerLevel level) {
-		HolderLookup.Provider registries = level.registryAccess();
-		HolderLookup.RegistryLookup<Structure> structures = registries.lookupOrThrow(Registries.STRUCTURE);
-		if (level.structureManager().getAllStructuresAt(player.getOnPos().above()).containsKey(RisusStructures.FAMILY_TREE)) {
-			event.getEntity().sendSystemMessage(Component.literal("WE WON"));
-		}
-	}
 	}
 
 	//doesn't work... But should it?

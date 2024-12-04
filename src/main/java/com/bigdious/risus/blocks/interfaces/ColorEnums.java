@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.blocks.interfaces;
 
 import com.bigdious.risus.blocks.DisplayNotchBlock;
 import net.minecraft.util.StringRepresentable;

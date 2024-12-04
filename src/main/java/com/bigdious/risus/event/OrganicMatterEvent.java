@@ -1,11 +1,10 @@
 package com.bigdious.risus.event;
 
-import com.bigdious.risus.blocks.OrganicMatterableBlock;
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.ICancellableEvent;

@@ -1,22 +1,15 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
-import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
-import com.bigdious.risus.blocks.entity.PoppingBondknotBlockEntity;
 import com.bigdious.risus.blocks.entity.WeaverNestBlockEntity;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Spawner;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -31,9 +24,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class WeaverNestBlock extends BaseEntityBlock implements SimpleMultiloggedBlock{
+public class WeaverNestBlock extends BaseEntityBlock implements SimpleMultiloggedBlock {
 
 	public static final MapCodec<WeaverNestBlock> CODEC = simpleCodec(WeaverNestBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;

@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 
-public class ModdedTorchBlock extends TorchBlock implements SimpleMultiloggedBlock{
+public class ModdedTorchBlock extends TorchBlock implements SimpleMultiloggedBlock {
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
 	public ModdedTorchBlock(Properties properties) {

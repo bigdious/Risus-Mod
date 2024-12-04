@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantBodyBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
 import com.bigdious.risus.init.RisusBlocks;
@@ -17,7 +18,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class VeinsBlock extends RisusGrowingPlantBodyBlock implements SimpleMultiloggedBlock{
+public class VeinsBlock extends RisusGrowingPlantBodyBlock implements SimpleMultiloggedBlock {
 	public static final MapCodec<VeinsBlock> CODEC = simpleCodec(VeinsBlock::new);
 	public static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;

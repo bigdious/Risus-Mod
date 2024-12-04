@@ -1,6 +1,8 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
+import com.bigdious.risus.blocks.interfaces.PlayingMusicEnums;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.data.RisusBiomes;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
@@ -13,7 +15,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -44,11 +45,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock {
+public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock, PlayingMusicEnums {
 	//copy from Twilight Forest TransCore
 	public static final BooleanProperty SPREADING = BooleanProperty.create("spreading");
 
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
+	public static final EnumProperty<PlayingMusicEnum> MUSIC_PLAYING = PlayingMusicEnum.MUSIC_PLAYING;
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
 		Direction.UP, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
 		Direction.DOWN, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
@@ -64,7 +66,9 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 		this.registerDefaultState(this.getStateDefinition().any()
 			.setValue(SPREADING, false)
 			.setValue(FACING, Direction.UP)
-			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
+			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
+			.setValue(MUSIC_PLAYING, PlayingMusicEnum.NONE)
+		);
 	}
 
 	@Override
@@ -76,7 +80,8 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(SPREADING)
-			.add(FLUIDLOGGED);
+			.add(FLUIDLOGGED)
+			.add(MUSIC_PLAYING);
 	}
 	@Nullable
 	@Override
@@ -149,6 +154,31 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			player.getMainHandItem().shrink(1);
 			return ItemInteractionResult.SUCCESS;
 		}
+//		if (held.is(RisusItems.MUSIC_DISC_RAK)) {
+//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.RAK));
+//			level.scheduleTick(pos, this, this.tickRate());
+//			return ItemInteractionResult.SUCCESS;
+//		}
+//		if (held.is(RisusItems.MUSIC_DISC_REGN)) {
+//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.REGN));
+//			level.scheduleTick(pos, this, this.tickRate());
+//			return ItemInteractionResult.SUCCESS;
+//		}
+//		if (held.is(RisusItems.MUSIC_DISC_MORK)) {
+//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.MORK));
+//			level.scheduleTick(pos, this, this.tickRate());
+//			return ItemInteractionResult.SUCCESS;
+//		}
+//		if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
+//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.FEIGR));
+//			level.scheduleTick(pos, this, this.tickRate());
+//			return ItemInteractionResult.SUCCESS;
+//		}
+//		if (held.isEmpty()) {
+//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.FEIGR));
+//			level.scheduleTick(pos, this, this.tickRate());
+//			return ItemInteractionResult.SUCCESS;
+//		}
 
 		return ItemInteractionResult.FAIL;
 	}
@@ -211,7 +241,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-		return level.isClientSide() ? null : createTickerHelper(type, RisusBlockEntities.BIOME_BLOCK.get(), BiomeBlockEntity::tick);
+		return createTickerHelper(type, RisusBlockEntities.BIOME_BLOCK.get(), level.isClientSide ? BiomeBlockEntity::tick : null);
 	}
 	@SuppressWarnings("unchecked")
 	@Nullable

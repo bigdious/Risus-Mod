@@ -2,10 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.*;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.AdvancementRequirements;
-import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -15,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
@@ -259,6 +257,23 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("shaving2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.CURVED_FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
 			.save(consumer, "risus:shave");
 
+		AdvancementHolder music_playing = Advancement.Builder.advancement().display(
+			Items.JUKEBOX,
+			Component.translatable("advancement.risus.music_playing"),
+			Component.translatable("advancement.risus.music_playing.desc"),
+			ResourceLocation.fromNamespaceAndPath("minecraft", "textures/block/ashen_remains.png"),
+			AdvancementType.TASK, false, false, false)
+			.requirements(AdvancementRequirements.Strategy.OR)
+			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
+			.save(consumer, "risus:music_playing");
+
+		AdvancementHolder family_music = Advancement.Builder.advancement().parent(music_playing)
+			.display(
+				RisusItems.MUSIC_DISC_MORK.get(),
+				Component.translatable("advancement.risus.family_music"),
+				Component.translatable("advancement.risus.family_music.desc"), null, AdvancementType.TASK, false, false, false)
+			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
+			.save(consumer, "risus:family_music");
 	}
 		private ItemStack lovePotion() {
 			ItemStack itemstack = new ItemStack(Items.POTION);

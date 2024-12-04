@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-19T21:43:55.9258799	Advancements
+// 1.21.1	2024-12-04T20:29:16.5107047	Advancements
 36b24f231a6729f8a7e12e77697dbbc2796d3e0b data/risus/advancement/angel.json
 a82c406a9ed3d73f67062f8321fd28246f839fd6 data/risus/advancement/body.json
 04bc759fe0dc807c7ed82249b11a01fe70104d06 data/risus/advancement/boomstick.json
@@ -6,6 +6,7 @@ bc469d6d2c97b60ca72e7dc09db418efc19af82e data/risus/advancement/crusade.json
 6ccffa72c7d662c5ff7c386b5fb3006b6a0529e7 data/risus/advancement/cupid.json
 4ebb2233847ff6d5dca9e7f7d2882488406af2c2 data/risus/advancement/devour.json
 e344ea2f4330f6cf06c6150d32ec3f6b506a96f6 data/risus/advancement/family.json
+9405bbeadcad1fec2bb6c3fd09ebea142422d80e data/risus/advancement/family_music.json
 edcd0cfa2c3f14913c6f1a57948a4bbcf59d5a51 data/risus/advancement/first.json
 75d5ef32d872b578663e82d40e9a80b6447a050f data/risus/advancement/fleshing.json
 f816eee00d8d2ff5e5f895e3b34a9e265f940c7a data/risus/advancement/gluttony.json
@@ -14,6 +15,7 @@ f816eee00d8d2ff5e5f895e3b34a9e265f940c7a data/risus/advancement/gluttony.json
 4e8b670cac861767ec94b9a6c66a156234ccbbc4 data/risus/advancement/light_devourer.json
 8dca3ca21deb5851899d5dcb412976ef2ee15898 data/risus/advancement/little.json
 6c26d22dbedaaf59290b10dc01083a8eca050ccc data/risus/advancement/mod_book.json
+969fe73507119b12fb11ce8c17667207aba77a50 data/risus/advancement/music_playing.json
 af955fcda1689a445d293b70e925a5dc11021b0c data/risus/advancement/potential.json
 9448a3fd3be75f794c001e3cb7ef4c055db5cdd2 data/risus/advancement/rainbow.json
 b88a9efb6cb474fdabd33d52f3debf90f3b4542c data/risus/advancement/satiate.json

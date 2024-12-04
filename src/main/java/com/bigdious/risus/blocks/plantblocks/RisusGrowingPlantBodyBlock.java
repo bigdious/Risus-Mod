@@ -1,6 +1,6 @@
 package com.bigdious.risus.blocks.plantblocks;
 
-import com.bigdious.risus.blocks.OrganicMatterableBlock;
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusFluids;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.BlockUtil;
@@ -15,8 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrowingPlantBodyBlock;
-import net.minecraft.world.level.block.GrowingPlantHeadBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;

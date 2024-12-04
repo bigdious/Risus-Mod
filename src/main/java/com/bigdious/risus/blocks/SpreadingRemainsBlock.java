@@ -1,5 +1,7 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -12,17 +14,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.MultifaceSpreader;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 
-public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMultiloggedBlock,OrganicMatterableBlock {
+public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMultiloggedBlock, OrganicMatterableBlock {
 
 	public static final MapCodec<SpreadingRemainsBlock> CODEC = simpleCodec(SpreadingRemainsBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;

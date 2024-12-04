@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.RisusCampfireBlockEntity;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;

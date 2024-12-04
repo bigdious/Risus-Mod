@@ -1,0 +1,41 @@
+{
+  "parent": "risus:music_playing",
+  "criteria": {
+    "family1": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:family_tree"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.risus.family_music.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:music_disc_mork"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.risus.family_music"
+    }
+  },
+  "requirements": [
+    [
+      "family1"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

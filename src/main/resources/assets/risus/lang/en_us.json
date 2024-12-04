@@ -348,5 +348,9 @@
   "advancement.risus.angel": "Holy Grounds",
   "advancement.risus.angel.desc": "Trespass into the Altar of the Ophanim.",
   "advancement.risus.gluttony": "Gateway To Divinity",
-  "advancement.risus.gluttony.desc": "Obtain Gluttony Scales."
+  "advancement.risus.gluttony.desc": "Obtain Gluttony Scales.",
+  "advancement.risus.music_playing": "Currently Playing Music:",
+  "advancement.risus.music_playing.desc": "Here you can see which Risus music is currently being played in the background, if any",
+  "advancement.risus.family_music": "Mǫrk",
+  "advancement.risus.family_music.desc": "Kizbe - Mǫrk"
 }
