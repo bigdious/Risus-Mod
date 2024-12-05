@@ -1,6 +1,5 @@
 package com.bigdious.risus.blocks.interfaces;
 
-import com.bigdious.risus.blocks.DisplayNotchBlock;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 

@@ -1,4 +1,20 @@
 {
+  "music.ambient.feigr": {
+    "sounds": [
+      {
+        "name": "risus:music/ambient/ambient_feigr",
+        "stream": true
+      }
+    ]
+  },
+  "music.ambient.mork": {
+    "sounds": [
+      {
+        "name": "risus:music/ambient/ambient_mork",
+        "stream": true
+      }
+    ]
+  },
   "music.disc.feigr": {
     "sounds": [
       {

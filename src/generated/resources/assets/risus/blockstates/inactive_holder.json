@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "risus:block/inactive_holder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "risus:block/inactive_holder"
+    },
+    "facing=south": {
+      "model": "risus:block/inactive_holder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "risus:block/inactive_holder",
+      "y": 270
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -55,10 +56,7 @@ public class Memory1 extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL.get())) {
-			return super.hurt(source, Float.MAX_VALUE);
-		}
-		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CRESCENT_DISASTER.get())) {
+		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusTags.Items.WILLFUL_WEAPON)) {
 			return super.hurt(source, Float.MAX_VALUE);
 		}
 		return false;

@@ -101,6 +101,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BLOODWEAVE = BLOCKS.register("bloodweave", () -> new BloodweaveBlock(Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn()));
 	public static final DeferredBlock<Block> BLOODWYRM_HEAD = BLOCKS.register("bloodwyrm_head", () -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak()));
 	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = BLOCKS.register("bloodwyrm_wall_head", () -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak()));
+	public static final DeferredBlock<Block> INACTIVE_HOLDER = BLOCKS.register("inactive_holder", () -> new InactiveHolderBlock(Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion()));
 
 	//PLANTS
 

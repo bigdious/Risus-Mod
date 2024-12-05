@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-03T20:15:28.9762164	Risus Item Models
+// 1.21.1	2024-12-05T21:27:42.959492	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -104,6 +104,7 @@ ab80b6a3fd40e4e96471f2029ddbf5edb4bccc91 assets/risus/models/item/hand_of_greed.
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 08ad060456dce4cd9b17851442e7a18e3102a8be assets/risus/models/item/imitation_scaleplate.json
+43d7c11fcae77a372ab71fd1cfa9fdbc02cdd346 assets/risus/models/item/inactive_holder.json
 1b635f19448bfd519e2722f31b533e5ac8e0553c assets/risus/models/item/joyflame_campfire.json
 65728b6525f3ba04a06445ad79aec1b9b2f6a1ae assets/risus/models/item/joyflame_lantern.json
 816bfe10a7db7e9282ba581bbf14fb5ff3f3a256 assets/risus/models/item/joyflame_torch.json

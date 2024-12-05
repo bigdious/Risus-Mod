@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-02T18:37:18.9603772	Loot Tables
+// 1.21.1	2024-12-05T21:27:42.9704849	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -76,6 +76,7 @@ bb3a2a5c36c195c93090f35a96a2f37f140ae7e4 data/risus/loot_table/blocks/grimstone_
 a315c59335e563532770a9a0df7ee38258b284cf data/risus/loot_table/blocks/hairy_skin.json
 974da9d3d555500ac4888818e458c29f5e70a3d8 data/risus/loot_table/blocks/heart_transplant.json
 555a0d5b5295a1d846439064b9e9e9f9041dca1e data/risus/loot_table/blocks/imitation_scaleplate.json
+f4c01e8daf22fcacf7206fbf73a407410811d947 data/risus/loot_table/blocks/inactive_holder.json
 a119dbcd3fb2c264595a3b7b741e00c0b3e44260 data/risus/loot_table/blocks/joyflame_campfire.json
 c382ba88778232e13d12e9e398a6316cfe4c1483 data/risus/loot_table/blocks/joyflame_fire.json
 3ab6b455a7edc5b58b0e31dfe09a50a8774a01b8 data/risus/loot_table/blocks/joyflame_lantern.json

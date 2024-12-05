@@ -24,5 +24,11 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 		this.add(RisusSoundEvents.MUSIC_DISC_REGN, definition().with(
 			sound("risus:music/disc/regn").volume(2).pitch(1).weight(1).stream()
 		));
+		this.add(RisusSoundEvents.AMBIENT_MORK, definition().with(
+			sound("risus:music/ambient/ambient_mork").volume(1).pitch(1).weight(1).stream()
+		));
+		this.add(RisusSoundEvents.AMBIENT_FEIGR, definition().with(
+			sound("risus:music/ambient/ambient_feigr").volume(1).pitch(1).weight(1).stream()
+		));
 	}
 }

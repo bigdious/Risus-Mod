@@ -13,20 +13,15 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation QUESTION_MARK = register("question_mark");
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation BLOODSLASH = register("bloodslash");
-	public static final ModelLayerLocation BLOODWYRM_BREATH = register("bloodwyrm_breath");
 	public static final ModelLayerLocation WEAVER = register("weaver");
 	public static final ModelLayerLocation LOVER = register("lover");
 	public static final ModelLayerLocation SINGER = register("singer");
 	public static final ModelLayerLocation STALKER = register("stalker");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
-
 	public static final ModelLayerLocation MEMORY1 = register("memory1");
 	public static final ModelLayerLocation DEPTH_VASE = register("depth_vase");
 	public static final ModelLayerLocation DISPLAY_NOTCH = register("display_notch");
-	public static final ModelLayerLocation FLESHY_SPAWNER = register("fleshy_spawner");
-
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
-	public static final ModelLayerLocation GUTS_BOAT = register("guts_boat");
 
 	private static ModelLayerLocation register(String name) {
 		return register(name, "main");

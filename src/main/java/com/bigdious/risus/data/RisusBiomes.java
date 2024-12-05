@@ -24,6 +24,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class RisusBiomes {
 	public static final ResourceKey<Biome> COALIFICATION = create("coalification");
+	public static final ResourceKey<Biome> COALIFICATION_MORK = create("coalification_mork");
+	public static final ResourceKey<Biome> COALIFICATION_FEIGR = create("coalification_feigr");
 
 	private static ResourceKey<Biome> create(String name) {
 		return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -41,6 +43,24 @@ public class RisusBiomes {
 			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.MUSIC_DISC_RAK)
 				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
 			.build());
+		context.register(COALIFICATION_MORK, new Biome.BiomeBuilder()
+			.generationSettings( new BiomeGenerationSettings.Builder(featureGetter, carverGetter).build())
+			.mobSpawnSettings(new MobSpawnSettings.Builder().build())
+			.hasPrecipitation(false)
+			.downfall(0.0F)
+			.temperature(0.8F)
+			.specialEffects(addBackgroundLoop(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_MORK)
+				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
+			.build());
+		context.register(COALIFICATION_FEIGR, new Biome.BiomeBuilder()
+			.generationSettings( new BiomeGenerationSettings.Builder(featureGetter, carverGetter).build())
+			.mobSpawnSettings(new MobSpawnSettings.Builder().build())
+			.hasPrecipitation(false)
+			.downfall(0.0F)
+			.temperature(0.8F)
+			.specialEffects(addBackgroundLoop(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_FEIGR)
+				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
+			.build());
 	}
 
 	private static BiomeSpecialEffects.Builder generateColors(BiomeSpecialEffects.Builder builder, int skyFog, int grass) {
@@ -55,6 +75,9 @@ public class RisusBiomes {
 	private static BiomeSpecialEffects.Builder addMusic(BiomeSpecialEffects.Builder builder,  DeferredHolder<SoundEvent, SoundEvent> music) {
 	return builder
 		.backgroundMusic(new Music(music, 3000, 6000, true));
-//		.ambientLoopSound(music);
+	}
+	private static BiomeSpecialEffects.Builder addBackgroundLoop(BiomeSpecialEffects.Builder builder,  DeferredHolder<SoundEvent, SoundEvent> music) {
+		return builder
+			.ambientLoopSound(music);
 	}
 }

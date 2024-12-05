@@ -41,6 +41,7 @@ public class RisusTab {
 						output.accept(RisusBlocks.SMILING_REMAINS.get());
 						output.accept(RisusBlocks.ASHEN_REMAINS.get());
 						output.accept(RisusBlocks.SPREADING_REMAINS.get());
+						output.accept(RisusBlocks.INACTIVE_HOLDER.get());
 
 						output.accept(RisusBlocks.JOYFLAME_CAMPFIRE.get());
 						output.accept(RisusBlocks.JOYFLAME_LANTERN.get());

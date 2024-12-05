@@ -1,1041 +1,4161 @@
 {
   "variants": {
-    "facing=down,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=none,spreading=false": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=none,spreading=true": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=down,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=none,spreading=false": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=none,spreading=true": {
+    "facing=down,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=down,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=down,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=down,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=down,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=down,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=down,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=down,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=down,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=none,spreading=false": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=none,spreading=true": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=down,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=mork,spreading=false": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=mork,spreading=true": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=none,spreading=false": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=none,spreading=true": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=rak,spreading=false": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=rak,spreading=true": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=regn,spreading=false": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=down,fluid=water,music_playing=regn,spreading=true": {
+    "facing=down,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 180
     },
-    "facing=east,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=down,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=down,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 180
+    },
+    "facing=east,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=none,spreading=false": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=none,spreading=true": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=east,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=none,spreading=false": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=none,spreading=true": {
+    "facing=east,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=east,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=east,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=east,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=east,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=east,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=east,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=east,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=east,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=none,spreading=false": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=none,spreading=true": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=east,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=mork,spreading=false": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=mork,spreading=true": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=none,spreading=false": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=none,spreading=true": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=rak,spreading=false": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=rak,spreading=true": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=regn,spreading=false": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=east,fluid=water,music_playing=regn,spreading=true": {
+    "facing=east,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 90
     },
-    "facing=north,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=east,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=none,spreading=false": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=none,spreading=true": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=north,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=none,spreading=false": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=none,spreading=true": {
+    "facing=north,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=north,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=north,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=north,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=north,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=north,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=north,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=north,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=north,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=none,spreading=false": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=none,spreading=true": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=north,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=mork,spreading=false": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=mork,spreading=true": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=none,spreading=false": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=none,spreading=true": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=rak,spreading=false": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=rak,spreading=true": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=regn,spreading=false": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=north,fluid=water,music_playing=regn,spreading=true": {
+    "facing=north,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90
     },
-    "facing=south,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=north,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=north,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90
+    },
+    "facing=south,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=none,spreading=false": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=none,spreading=true": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=south,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=none,spreading=false": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=none,spreading=true": {
+    "facing=south,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=south,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=south,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=south,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=south,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=south,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=south,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=south,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=south,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=none,spreading=false": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=none,spreading=true": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=south,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=mork,spreading=false": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=mork,spreading=true": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=none,spreading=false": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=none,spreading=true": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=rak,spreading=false": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=rak,spreading=true": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=regn,spreading=false": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=south,fluid=water,music_playing=regn,spreading=true": {
+    "facing=south,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 180
     },
-    "facing=up,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=south,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=none,spreading=false": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=none,spreading=true": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=up,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=none,spreading=false": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=none,spreading=true": {
+    "facing=up,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=up,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=up,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=up,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=up,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=up,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=up,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=up,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=up,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=none,spreading=false": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=none,spreading=true": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=up,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=mork,spreading=false": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=mork,spreading=true": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=none,spreading=false": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=none,spreading=true": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=rak,spreading=false": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=rak,spreading=true": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=regn,spreading=false": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=up,fluid=water,music_playing=regn,spreading=true": {
+    "facing=up,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk"
     },
-    "facing=west,fluid=blood,music_playing=feigr,spreading=false": {
+    "facing=up,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=up,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk"
+    },
+    "facing=west,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=feigr,spreading=true": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=mork,spreading=false": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=mork,spreading=true": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=none,spreading=false": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=none,spreading=true": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=rak,spreading=false": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=rak,spreading=true": {
+    "facing=west,fluid=blood,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=regn,spreading=false": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=blood,music_playing=regn,spreading=true": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=feigr,spreading=false": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=feigr,spreading=true": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=mork,spreading=false": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=mork,spreading=true": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=none,spreading=false": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=none,spreading=true": {
+    "facing=west,fluid=blood,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=rak,spreading=false": {
+    "facing=west,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=rak,spreading=true": {
+    "facing=west,fluid=blood,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=regn,spreading=false": {
+    "facing=west,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=empty,music_playing=regn,spreading=true": {
+    "facing=west,fluid=blood,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=feigr,spreading=false": {
+    "facing=west,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=feigr,spreading=true": {
+    "facing=west,fluid=blood,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=mork,spreading=false": {
+    "facing=west,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=mork,spreading=true": {
+    "facing=west,fluid=blood,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=none,spreading=false": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=none,spreading=true": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=rak,spreading=false": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=rak,spreading=true": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=regn,spreading=false": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=lava,music_playing=regn,spreading=true": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=feigr,spreading=false": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=feigr,spreading=true": {
+    "facing=west,fluid=blood,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=mork,spreading=false": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=mork,spreading=true": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=none,spreading=false": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=none,spreading=true": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=rak,spreading=false": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=rak,spreading=true": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=regn,spreading=false": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270
     },
-    "facing=west,fluid=water,music_playing=regn,spreading=true": {
+    "facing=west,fluid=blood,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=empty,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=lava,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=feigr,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=mork,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=none,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=rak,spreading=true,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=false,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=false,spreading_feigr=true,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=true,spreading_feigr=false,spreading_mork=true": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=false": {
+      "model": "risus:block/laughing_stalk",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,fluid=water,music_playing=regn,spreading=true,spreading_feigr=true,spreading_mork=true": {
       "model": "risus:block/laughing_stalk",
       "x": 90,
       "y": 270

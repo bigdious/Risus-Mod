@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-04T21:05:33.3325335	Risus blockstates and models
+// 1.21.1	2024-12-05T21:27:42.9754826	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -64,13 +64,14 @@ b905f64eeb004125c3f0d73dfb7bd1beb2cac549 assets/risus/blockstates/full_bone_stai
 6cad01a9850470a5c37ed672ae58c4afe72c3154 assets/risus/blockstates/grimstone_wall.json
 c0af7a7adc9341a925c16fa01c878d120add417b assets/risus/blockstates/hairy_fleshy_skin.json
 e435a565179d6af5e2fbdd7b0f6f54b84922de4a assets/risus/blockstates/heart_transplant.json
+e127d2d59745e1b1da9a24e544aab62011aee968 assets/risus/blockstates/inactive_holder.json
 1fd71209d75e35a63066f63d837bcebddbeca187 assets/risus/blockstates/joyflame_campfire.json
 408e75aad347e7ec440938d5e18de92b9a2d4ec8 assets/risus/blockstates/joyflame_fire.json
 97c3ef3ecfd29e52a2ddabac3d2119309aec705f assets/risus/blockstates/joyflame_lantern.json
 128ffb02e3991bb5e9c88a51568ffea31dbd83b4 assets/risus/blockstates/joyflame_torch.json
 74b5d21c6f994105a71a61733e6274456c2b1c1e assets/risus/blockstates/joyflame_wall_torch.json
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
-66ca1891b879cea09dab50421ebdcf0dd1a5f2ef assets/risus/blockstates/laughing_stalk.json
+2b3c27928b3b69f755433c9a5023ef6c7d44c036 assets/risus/blockstates/laughing_stalk.json
 50d625eef7c45a6b9ce071fd66ff5e604d04dec1 assets/risus/blockstates/linear_ritual_block.json
 8cdc3c2d14955abc1dc03367dbad553ead1a0c8c assets/risus/blockstates/living_tissue.json
 6788b1496053443e949a64b483ec2bb93ca42a2d assets/risus/blockstates/maw_guts.json

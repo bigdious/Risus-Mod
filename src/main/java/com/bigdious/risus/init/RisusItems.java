@@ -187,6 +187,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> ORGANIC_MATTER_BLOCK = ITEMS.register("organic_matter_block", () -> new BlockItem(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BOND_GLASS = ITEMS.register("bond_glass", () -> new BlockItem(RisusBlocks.BOND_GLASS.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> CONTAINMENT_GLASS = ITEMS.register("containment_glass", () -> new BlockItem(RisusBlocks.CONTAINMENT_GLASS.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> INACTIVE_HOLDER = ITEMS.register("inactive_holder", () -> new BlockItem(RisusBlocks.INACTIVE_HOLDER.get(), defaultWithRarity()));
 
 
 	//MAW

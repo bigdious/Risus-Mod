@@ -6,12 +6,18 @@ import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.data.RisusBiomes;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import net.minecraft.core.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.QuartPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -37,6 +43,7 @@ import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.chunk.PalettedContainer;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -46,8 +53,10 @@ import java.util.List;
 import java.util.Map;
 
 public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock, PlayingMusicEnums {
-	//copy from Twilight Forest TransCore
+	//based off of from Twilight Forest TransCore
 	public static final BooleanProperty SPREADING = BooleanProperty.create("spreading");
+	public static final BooleanProperty SPREADING_MORK = BooleanProperty.create("spreading_mork");
+	public static final BooleanProperty SPREADING_FEIGR = BooleanProperty.create("spreading_feigr");
 
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final EnumProperty<PlayingMusicEnum> MUSIC_PLAYING = PlayingMusicEnum.MUSIC_PLAYING;
@@ -65,6 +74,8 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 
 		this.registerDefaultState(this.getStateDefinition().any()
 			.setValue(SPREADING, false)
+			.setValue(SPREADING_MORK, false)
+			.setValue(SPREADING_FEIGR, false)
 			.setValue(FACING, Direction.UP)
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
 			.setValue(MUSIC_PLAYING, PlayingMusicEnum.NONE)
@@ -79,7 +90,10 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(SPREADING)
+		builder
+			.add(SPREADING)
+			.add(SPREADING_FEIGR)
+			.add(SPREADING_MORK)
 			.add(FLUIDLOGGED)
 			.add(MUSIC_PLAYING);
 	}
@@ -135,9 +149,9 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Override
 	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
-		if (!state.getValue(SPREADING)) return;
+		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) return;
 		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime==40) {
-			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false));
+			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
 			laughingStalk.decaytime=0;
 		}
 
@@ -148,12 +162,21 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 
 	public ItemInteractionResult useItemOn (ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
-		if (!state.getValue(SPREADING) && held.is(RisusItems.ORGANIC_MATTER)) {
-			level.setBlockAndUpdate(pos, state.setValue(SPREADING, true));
+		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) {
+			if (held.is(RisusItems.ORGANIC_MATTER)) {
+				level.setBlockAndUpdate(pos, state.setValue(SPREADING, true));
+			}
+			else if (held.is(RisusItems.MUSIC_DISC_MORK)) {
+				level.setBlockAndUpdate(pos, state.setValue(SPREADING_MORK, true));
+			}
+			else if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
+				level.setBlockAndUpdate(pos, state.setValue(SPREADING_FEIGR, true));
+			} else return  ItemInteractionResult.FAIL;
 			level.scheduleTick(pos, this, this.tickRate());
 			player.getMainHandItem().shrink(1);
 			return ItemInteractionResult.SUCCESS;
 		}
+
 //		if (held.is(RisusItems.MUSIC_DISC_RAK)) {
 //			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.RAK));
 //			level.scheduleTick(pos, this, this.tickRate());
@@ -184,14 +207,16 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	}
 
 	void performConversion(ServerLevel level, BlockPos pos, RandomSource rand, BlockState state) {
-		Holder<Biome> biome = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(RisusBiomes.COALIFICATION);
+		Holder<Biome> biome = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(
+			state.getValue(SPREADING_MORK) ? RisusBiomes.COALIFICATION_MORK :
+				state.getValue(SPREADING_FEIGR) ? RisusBiomes.COALIFICATION_FEIGR : RisusBiomes.COALIFICATION);
 		int range = 9;
 		for (int i = 0; i < 16; i++) {
 			BlockPos dPos = WorldUtil.randomOffset(rand, pos, range, 0, range);
 			if (dPos.distSqr(pos) > 256.0)
 				continue;
 
-			if (level.getBiome(dPos).is(RisusBiomes.COALIFICATION))
+			if (level.getBiome(dPos).is(biome))
 				continue;
 
 			int minY = QuartPos.fromBlock(level.getMinBuildHeight());
@@ -204,7 +229,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			for (LevelChunkSection section : chunkAt.getSections()) {
 				for (int sy = 0; sy < 16; sy += 4) {
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
-					if (section.getBiomes().get(x & 3, y & 3, z & 3).is(RisusBiomes.COALIFICATION))
+					if (section.getBiomes().get(x & 3, y & 3, z & 3).is(biome))
 						continue;
 					if (section.getBiomes() instanceof PalettedContainer<Holder<Biome>> container)
 						container.set(x & 3, y & 3, z & 3, biome);
@@ -214,7 +239,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
 			level.getChunkSource().chunkMap.resendBiomesForChunks(List.of(chunkAt));
 
-			if (state.getValue(SPREADING) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) laughingStalk.decaytime++;
+			if ((state.getValue(SPREADING) || state.getValue(SPREADING_FEIGR) || state.getValue(SPREADING_MORK)) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) laughingStalk.decaytime++;
 			break;
 		}
 	}
@@ -249,9 +274,21 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
 	}
 	@Override
+	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+		if (pState.getValue(SPREADING) || pState.getValue(SPREADING_MORK) || pState.getValue(SPREADING_FEIGR)) {
+			for (int i = 0; i < 2; i++) {
+				double d0 = (double) pPos.getX() + pRandom.nextDouble();
+				double d1 = (double) pPos.getY() + pRandom.nextDouble() * 0.5 + 0.5;
+				double d2 = (double) pPos.getZ() + pRandom.nextDouble();
+				pLevel.addParticle(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+			}
+			pLevel.scheduleTick(pPos, this, 10);
+		}
+	}
+	@Override
 	protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
 		if (!pLevel.isClientSide) {
-			boolean flag = pState.getValue(SPREADING);
+			boolean flag = pState.getValue(SPREADING) || pState.getValue(SPREADING_FEIGR) || pState.getValue(SPREADING_MORK);
 			if (flag != pLevel.hasNeighborSignal(pPos)) {
 				if (flag) {
 					pLevel.scheduleTick(pPos, this, 4);
@@ -260,6 +297,10 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				}
 			}
 		}
+	}
+	@Override
+	public PushReaction getPistonPushReaction(BlockState state) {
+		return PushReaction.IGNORE;
 	}
 }
 

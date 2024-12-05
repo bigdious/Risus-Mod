@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -86,5 +87,9 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 	private void explode(Level level, BlockPos pos) {
 		Vec3 vec3 = pos.getCenter().add(0, 2, 0);
 		level.explode(null, level.damageSources().magic(), null, vec3, 3.0F, true, Level.ExplosionInteraction.BLOCK);
+	}
+	@Override
+	public PushReaction getPistonPushReaction(BlockState state) {
+		return PushReaction.IGNORE;
 	}
 }
