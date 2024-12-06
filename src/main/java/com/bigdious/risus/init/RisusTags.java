@@ -27,6 +27,15 @@ public class RisusTags {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
+	public static class Blocks {
+
+		public static final TagKey<Block> COPPER_AMALGAM_VARIATION = tag("copper_amalgam_variation");
+		public static final TagKey<Block> WAXED_COPPER_AMALGAM_VARIATION = tag("waxed_copper_amalgam_variation");
+
+		private static TagKey<Block> tag(String name) {
+			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
+		}
+	}
 
 	public static class Biomes {
 
@@ -50,7 +59,6 @@ public class RisusTags {
 		public static final TagKey<Item> WILLFUL_WEAPON = tag("willful_weapon");
 		public static final TagKey<Item> EYE = tag("eye");
 		public static final TagKey<Item> BASE_TISSUE = tag("base_tissue");
-		public static final TagKey<Item> BANNER_PATTERNS = tag("banner_pattern");
 		public static final TagKey<Item> HURTS_ANGEL_WINGS = tag("hurts_angel_wings");
 		public static final TagKey<Item> LIGHTLY_HURTS_ANGEL_WINGS = tag("lightly_hurts_angel_wings");
 

@@ -172,7 +172,14 @@ public class RisusItems {
 	public static final DeferredItem<Item> HAIR_FOLLICLES = ITEMS.register("hair_follicles", () -> new Item(defaultWithRarity()));
 	public static final DeferredItem<Item> TALL_HAIR = ITEMS.register("tall_hair", () -> new BlockItem(RisusBlocks.TALL_HAIR.get(), defaultWithRarity()));
 	public static final DeferredItem<Item> BUNDLE_OF_HAIR = ITEMS.register("bundle_of_hair", () -> new BlockItem(RisusBlocks.BUNDLE_OF_HAIR.get(), defaultWithRarity()));
-
+	public static final DeferredItem<Item> COPPER_AMALGAM = ITEMS.register("copper_amalgam", () -> new BlockItem(RisusBlocks.COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> EXPOSED_COPPER_AMALGAM = ITEMS.register("exposed_copper_amalgam", () -> new BlockItem(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WEATHERED_COPPER_AMALGAM = ITEMS.register("weathered_copper_amalgam", () -> new BlockItem(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> OXIDIZED_COPPER_AMALGAM = ITEMS.register("oxidized_copper_amalgam", () -> new BlockItem(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WAXED_COPPER_AMALGAM = ITEMS.register("waxed_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WAXED_EXPOSED_COPPER_AMALGAM = ITEMS.register("waxed_exposed_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WAXED_WEATHERED_COPPER_AMALGAM = ITEMS.register("waxed_weathered_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> WAXED_OXIDIZED_COPPER_AMALGAM = ITEMS.register("waxed_oxidized_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), defaultWithRarity()));
 	//MISC BUILDING BLOCKS
 
 	public static final DeferredItem<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));

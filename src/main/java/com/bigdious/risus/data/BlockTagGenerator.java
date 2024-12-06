@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -27,8 +28,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
 		this.tag(BONDKNOT_LOGS)
-				.add(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get())
-				.add(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+			.add(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get())
+			.add(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 
 		this.tag(JOYFLAME_FIRE_BASE_BLOCKS).add(RisusBlocks.SMILING_REMAINS.get(), RisusBlocks.ASHEN_REMAINS.get());
 
@@ -62,77 +63,87 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.WALL_SIGNS).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
 
 		this.tag(BlockTags.WALLS).add(RisusBlocks.GRIMSTONE_WALL.get(), RisusBlocks.BONE_WALL.get(),
-				RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECAYING_TISSUE.get(),
-				RisusBlocks.ROTTED_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get());
+			RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECAYING_TISSUE.get(),
+			RisusBlocks.ROTTED_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get());
 
 
 		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(BONDKNOT_LOGS)
-				.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())
-				.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
+			.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())
+			.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
 
 		this.tag(BlockTags.CAMPFIRES).add(RisusBlocks.JOYFLAME_CAMPFIRE.get());
 
 		this.tag(BlockTags.NYLIUM).add(RisusBlocks.EYE_BLEACHED.get())
-				.add(RisusBlocks.EYE_BLOODSHOT.get())
-				.add(RisusBlocks.EYE_EMERALD.get())
-				.add(RisusBlocks.EYE_ENDER.get())
-				.add(RisusBlocks.EYE_GOLDEN.get());
+			.add(RisusBlocks.EYE_BLOODSHOT.get())
+			.add(RisusBlocks.EYE_EMERALD.get())
+			.add(RisusBlocks.EYE_ENDER.get())
+			.add(RisusBlocks.EYE_GOLDEN.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-				RisusBlocks.ALTERATION_CATALYST.get(),
-				RisusBlocks.BIG_CHAIN.get(),
-				RisusBlocks.DISPLAY_NOTCH.get(),
-				RisusBlocks.GLOW_DISPLAY_NOTCH.get(),
-				RisusBlocks.DISPLAY_NOTCH_STAND.get(),
-				RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(),
-				RisusBlocks.ASHEN_REMAINS.get(),
-				RisusBlocks.SMILING_REMAINS.get(),
-				RisusBlocks.LAUGHING_OBSIDIAN.get(),
-				RisusBlocks.ENGRAVED_BASALT.get(),
-				RisusBlocks.MAW_GUTS.get(),
-				RisusBlocks.BABY_RIBCAGE.get(),
-				RisusBlocks.RIBCAGE.get(),
-				RisusBlocks.GRIMSTONE_BRICKS.get(),
-				RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(),
-				RisusBlocks.ACTIVE_GRIMSTONE.get(),
+			RisusBlocks.ALTERATION_CATALYST.get(),
+			RisusBlocks.BIG_CHAIN.get(),
+			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.GLOW_DISPLAY_NOTCH.get(),
+			RisusBlocks.DISPLAY_NOTCH_STAND.get(),
+			RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(),
+			RisusBlocks.ASHEN_REMAINS.get(),
+			RisusBlocks.SMILING_REMAINS.get(),
+			RisusBlocks.LAUGHING_OBSIDIAN.get(),
+			RisusBlocks.ENGRAVED_BASALT.get(),
+			RisusBlocks.MAW_GUTS.get(),
+			RisusBlocks.BABY_RIBCAGE.get(),
+			RisusBlocks.RIBCAGE.get(),
+			RisusBlocks.GRIMSTONE_BRICKS.get(),
+			RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(),
+			RisusBlocks.ACTIVE_GRIMSTONE.get(),
 
-				RisusBlocks.GRIMSTONE.get(),
-				RisusBlocks.GRIMSTONE_SLAB.get(),
-				RisusBlocks.GRIMSTONE_STAIRS.get(),
-				RisusBlocks.GRIMSTONE_WALL.get(),
+			RisusBlocks.GRIMSTONE.get(),
+			RisusBlocks.GRIMSTONE_SLAB.get(),
+			RisusBlocks.GRIMSTONE_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_WALL.get(),
 
-				RisusBlocks.CHISELED_GRIMSTONE.get(),
+			RisusBlocks.CHISELED_GRIMSTONE.get(),
 
-				RisusBlocks.GRIMSTONE_BRICKS.get(),
-				RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
-				RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
-				RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
+			RisusBlocks.GRIMSTONE_BRICKS.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 
-				RisusBlocks.POLISHED_GRIMSTONE.get(),
-				RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
-				RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
-				RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
+			RisusBlocks.POLISHED_GRIMSTONE.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
 
-				RisusBlocks.GLUTTONY_SCALEPLATE.get(),
-				RisusBlocks.JOYFLAME_LANTERN.get(),
-				RisusBlocks.CURVED_RITUAL_BLOCK.get(),
-				RisusBlocks.TEETH.get(),
-				RisusBlocks.LINEAR_RITUAL_BLOCK.get(),
-				RisusBlocks.IMITATION_SCALEPLATE.get(),
-				RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),
-				RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(),
-				RisusBlocks.FLATTENED_SCALES_BLOCK.get(),
-				RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),
-				RisusBlocks.BONE_WALL.get(),
-				RisusBlocks.FULL_BONE_BLOCK.get(),
-				RisusBlocks.BONE_SLAB.get(),
-				RisusBlocks.FULL_BONE_SLAB.get(),
-				RisusBlocks.FULL_BONE_STAIRS.get(),
-				RisusBlocks.BONE_STAIRS.get(),
+			RisusBlocks.GLUTTONY_SCALEPLATE.get(),
+			RisusBlocks.JOYFLAME_LANTERN.get(),
+			RisusBlocks.CURVED_RITUAL_BLOCK.get(),
+			RisusBlocks.TEETH.get(),
+			RisusBlocks.LINEAR_RITUAL_BLOCK.get(),
+			RisusBlocks.IMITATION_SCALEPLATE.get(),
+			RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(),
+			RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(),
+			RisusBlocks.FLATTENED_SCALES_BLOCK.get(),
+			RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),
+			RisusBlocks.BONE_WALL.get(),
+			RisusBlocks.FULL_BONE_BLOCK.get(),
+			RisusBlocks.BONE_SLAB.get(),
+			RisusBlocks.FULL_BONE_SLAB.get(),
+			RisusBlocks.FULL_BONE_STAIRS.get(),
+			RisusBlocks.BONE_STAIRS.get(),
 
-				RisusBlocks.FLESHY_SPAWNER.get()
-		);
+			RisusBlocks.FLESHY_SPAWNER.get(),
 
+			RisusBlocks.COPPER_AMALGAM.get(),
+			RisusBlocks.EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(),
+			RisusBlocks.BLOOD_CAULDRON.get()
+
+			);
 
 
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
@@ -153,8 +164,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		this.tag(BlockTags.CLIMBABLE)
 			.add(RisusBlocks.VEINS.get(),
-			RisusBlocks.NEURON_STEM.get(),
-			RisusBlocks.BIG_CHAIN.get()
+				RisusBlocks.NEURON_STEM.get(),
+				RisusBlocks.BIG_CHAIN.get()
 			);
 
 		this.tag(BlockTags.MINEABLE_WITH_HOE)
@@ -173,5 +184,29 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.FLATTENED_SCALES_BLOCK.get(),
 				RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()
 			);
+		this.tag(BlockTags.NEEDS_STONE_TOOL).add(
+			RisusBlocks.COPPER_AMALGAM.get(),
+			RisusBlocks.EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
+		);
+
+		this.tag(RisusTags.Blocks.COPPER_AMALGAM_VARIATION).add(
+			RisusBlocks.COPPER_AMALGAM.get(),
+			RisusBlocks.EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.OXIDIZED_COPPER_AMALGAM.get()
+			);
+		this.tag(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION).add(
+			RisusBlocks.WAXED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
+		);
+		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
 	}
 }

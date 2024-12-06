@@ -78,7 +78,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusItems.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusItems.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.BANNER_PATTERNS), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(RisusTags.Items.BANNER_PATTERNS)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PAPER), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(Items.PAPER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_FENCE_GATE, Items.DARK_OAK_FENCE_GATE, Items.BIRCH_FENCE_GATE, Items.SPRUCE_FENCE_GATE, Items.JUNGLE_FENCE_GATE, Items.ACACIA_FENCE_GATE, Items.MANGROVE_FENCE_GATE, Items.CHERRY_FENCE_GATE), RisusItems.BONDKNOT_FENCE_GATE.get())
 				.unlockedBy("has_item", has(Items.OAK_LOG)).unlockedBy("has_item", has(Items.DARK_OAK_LOG)).unlockedBy("has_item", has(Items.BIRCH_LOG)).unlockedBy("has_item", has(Items.SPRUCE_LOG)).unlockedBy("has_item", has(Items.JUNGLE_LOG)).unlockedBy("has_item", has(Items.ACACIA_LOG)).unlockedBy("has_item", has(Items.MANGROVE_LOG)).unlockedBy("has_item", has(Items.CHERRY_LOG)).save(consumer);
@@ -131,6 +132,15 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("###")
 			.define('#', Ingredient.of(RisusItems.ORGANIC_MATTER.get()))
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.COPPER_AMALGAM.get(), 1)
+			.pattern("###")
+			.pattern("#M#")
+			.pattern("###")
+			.define('#', Ingredient.of(Items.COPPER_INGOT))
+			.define('M', Ingredient.of(RisusItems.MAW_GUTS.get()))
+			.unlockedBy("has_item", has(RisusItems.MAW_GUTS.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_PLANKS.get(), 4)

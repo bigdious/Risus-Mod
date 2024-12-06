@@ -1,7 +1,7 @@
 {
   "type": "risus:alteration",
   "input": {
-    "tag": "risus:banner_pattern"
+    "item": "minecraft:paper"
   },
   "result": "risus:smile_banner_pattern"
 }

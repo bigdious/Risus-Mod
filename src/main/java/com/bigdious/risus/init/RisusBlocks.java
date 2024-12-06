@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.blocks.interfaces.DecomposingBlock;
+import com.bigdious.risus.blocks.interfaces.RisusWeatheringCopper;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantBodyBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
@@ -64,6 +65,16 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> GLOW_DISPLAY_NOTCH_STAND = BLOCKS.register("glow_display_notch_stand", () -> new DisplayNotchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	public static final DeferredBlock<Block> FLESHY_SPAWNER = BLOCKS.register("fleshy_spawner", () -> new RisusSpawner(BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 
+	//COPPER AMALGAM
+
+	public static final DeferredBlock<Block> COPPER_AMALGAM = BLOCKS.register("copper_amalgam", () -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.UNAFFECTED,BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> EXPOSED_COPPER_AMALGAM = BLOCKS.register("exposed_copper_amalgam", () -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.EXPOSED,BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> WEATHERED_COPPER_AMALGAM = BLOCKS.register("weathered_copper_amalgam", () -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> OXIDIZED_COPPER_AMALGAM = BLOCKS.register("oxidized_copper_amalgam", () -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.OXIDIZED,BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> WAXED_COPPER_AMALGAM = BLOCKS.register("waxed_copper_amalgam", () -> new MultiloggedRotateableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> WAXED_EXPOSED_COPPER_AMALGAM = BLOCKS.register("waxed_exposed_copper_amalgam", () -> new MultiloggedRotateableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> WAXED_WEATHERED_COPPER_AMALGAM = BLOCKS.register("waxed_weathered_copper_amalgam", () -> new MultiloggedRotateableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
+	public static final DeferredBlock<Block> WAXED_OXIDIZED_COPPER_AMALGAM = BLOCKS.register("waxed_oxidized_copper_amalgam", () -> new MultiloggedRotateableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_COPPER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
 	//MAW STUFF
 
 	public static final DeferredBlock<Block> MAW_GUTS = BLOCKS.register("maw_guts", () -> new MawGutsBlock(Block.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().requiresCorrectToolForDrops().strength(4.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0)));
@@ -178,5 +189,6 @@ public class RisusBlocks {
 	//FLUIDS
 
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new BloodFluidBlock(RisusFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+	public static final DeferredBlock<Block> BLOOD_CAULDRON = BLOCKS.register("blood_cauldron.json", () -> new BloodCauldronBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
 
 }

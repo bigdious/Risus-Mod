@@ -45,6 +45,15 @@
     "risus:full_bone_slab",
     "risus:full_bone_stairs",
     "risus:bone_stairs",
-    "risus:fleshy_spawner"
+    "risus:fleshy_spawner",
+    "risus:copper_amalgam",
+    "risus:exposed_copper_amalgam",
+    "risus:weathered_copper_amalgam",
+    "risus:oxidized_copper_amalgam",
+    "risus:waxed_copper_amalgam",
+    "risus:waxed_exposed_copper_amalgam",
+    "risus:waxed_weathered_copper_amalgam",
+    "risus:waxed_oxidized_copper_amalgam",
+    "risus:blood_cauldron.json"
   ]
 }

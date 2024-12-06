@@ -58,6 +58,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
+		dropSelf(RisusBlocks.COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.EXPOSED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.WEATHERED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.WAXED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get());
+		dropSelf(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get());
 		add(RisusBlocks.CRYSTALLIZED_BONDS.get(), createSilkTouchDispatchTable(RisusBlocks.CRYSTALLIZED_BONDS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.BOND_GLASS.get(), createSilkTouchDispatchTable(RisusBlocks.BOND_GLASS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get())).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))));
 		dropSelf(RisusBlocks.CONTAINMENT_GLASS.get());
@@ -77,6 +85,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
+		dropOther(RisusBlocks.BLOOD_CAULDRON.get(), Items.CAULDRON);
 		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 
 		dropSelf(RisusBlocks.BONDKNOT_LOG.get());

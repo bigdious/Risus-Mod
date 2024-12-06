@@ -64,6 +64,14 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.DEPTH_VASE.get(), models().getExistingFile(texture("block/depth_vase")));
 		horizontalBlock(RisusBlocks.INACTIVE_HOLDER.get(), models().getExistingFile(texture("block/inactive_holder")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
+		horizontalBlock(RisusBlocks.COPPER_AMALGAM.get(), models().getExistingFile(texture("block/copper_amalgam")));
+		horizontalBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/exposed_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/weathered_copper_amalgam")));
+		horizontalBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/oxidized_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/exposed_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/weathered_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/oxidized_copper_amalgam")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
 		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(texture("block/laughing_stalk")));
 

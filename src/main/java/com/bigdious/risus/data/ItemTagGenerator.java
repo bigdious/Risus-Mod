@@ -92,16 +92,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(RisusItems.GLUTTONY_SCALES.get())
 			.add(RisusItems.SKIN.get())
 		;
-		this.tag(RisusTags.Items.BANNER_PATTERNS)
-			.add(Items.CREEPER_BANNER_PATTERN)
-			.add(Items.SKULL_BANNER_PATTERN)
-			.add(Items.PIGLIN_BANNER_PATTERN)
-			.add(Items.MOJANG_BANNER_PATTERN)
-			.add(Items.GLOBE_BANNER_PATTERN)
-			.add(Items.FLOWER_BANNER_PATTERN)
-			.add(Items.FLOW_BANNER_PATTERN)
-			.add(Items.GUSTER_BANNER_PATTERN)
-		;
 		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS)
 			.add(Items.FIREWORK_ROCKET)
 		;

@@ -35,6 +35,10 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(EmptyLootItem.emptyItem().setWeight(20))
 					.add(LootItem.lootTableItem(RisusItems.TREE_PATTERN)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_MORK)))
 				);
 		register.accept(RisusLootTables.ANGEL_ALTAR,
 			LootTable.lootTable()

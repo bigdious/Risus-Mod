@@ -100,6 +100,7 @@
   "block.risus.scab": "Scab",
   "block.risus.weaver_nest": "Weaver Nest",
   "block.risus.darkness": "Darkness",
+  "block.risus.blood_cauldron": "Blood Cauldron",
 
   "block.risus.skin": "Skin",
   "block.risus.fleshy_skin": "Fleshy Skin",
@@ -123,6 +124,15 @@
   "block.risus.joyflame_lantern": "Cinderglee Lantern",
   "block.risus.joyflame_torch": "Cinderglee Torch",
   "block.risus.joyflame_wall_torch": "Cinderglee Wall Torch",
+
+  "block.risus.copper_amalgam": "Copper Amalgam",
+  "block.risus.exposed_copper_amalgam": "Exposed Copper Amalgam",
+  "block.risus.weathered_copper_amalgam": "Weathered Copper Amalgam",
+  "block.risus.oxidized_copper_amalgam": "Oxidized Copper Amalgam",
+  "block.risus.waxed_copper_amalgam": "Waxed Copper Amalgam",
+  "block.risus.waxed_exposed_copper_amalgam": "Waxed Exposed Copper Amalgam",
+  "block.risus.waxed_weathered_copper_amalgam": "Waxed Weathered Copper Amalgam",
+  "block.risus.waxed_oxidized_copper_amalgam": "Waxed Oxidized Copper Amalgam",
 
   "container.risus.maw_guts": "Maw Guts",
   "container.risus.depth_vase": "Depth Vase",

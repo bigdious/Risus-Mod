@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "risus:weathered_copper_amalgam"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "risus:blocks/weathered_copper_amalgam"
+}

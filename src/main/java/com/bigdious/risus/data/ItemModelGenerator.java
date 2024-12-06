@@ -39,6 +39,14 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
 		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
 		toBlockModel(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), texture("block/organic_matter_block"));
+		toBlockModel(RisusBlocks.COPPER_AMALGAM.get(), texture("block/copper_amalgam"));
+		toBlockModel(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), texture("block/exposed_copper_amalgam"));
+		toBlockModel(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), texture("block/weathered_copper_amalgam"));
+		toBlockModel(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), texture("block/oxidized_copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_COPPER_AMALGAM.get(), texture("block/copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), texture("block/exposed_copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), texture("block/weathered_copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), texture("block/oxidized_copper_amalgam"));
 		toBlock(RisusBlocks.LAUGHING_STALK.get());
 		toBlock(RisusBlocks.ASHEN_REMAINS.get());
 		toBlock(RisusBlocks.SMILING_REMAINS.get());

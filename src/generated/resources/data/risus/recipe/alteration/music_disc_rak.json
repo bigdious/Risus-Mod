@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:disc_fragment_5"
+  },
+  "result": "risus:music_disc_rak"
+}

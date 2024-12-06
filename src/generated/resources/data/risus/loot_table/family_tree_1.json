@@ -79,6 +79,20 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "risus:music_disc_mork"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "risus:family_tree_1"

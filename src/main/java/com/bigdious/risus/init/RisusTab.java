@@ -119,6 +119,15 @@ public class RisusTab {
 						output.accept(RisusItems.TALL_HAIR.get());
 						output.accept(RisusItems.BUNDLE_OF_HAIR.get());
 
+						output.accept(RisusBlocks.COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.EXPOSED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.WEATHERED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.WAXED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get());
+						output.accept(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get());
+
 						output.accept(RisusBlocks.FLESHY_SPAWNER.get());
 						output.accept(RisusBlocks.LIVING_TISSUE.get());
 						output.accept(RisusBlocks.ROTTING_TISSUE.get());
