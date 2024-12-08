@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-06T19:14:50.2835808	Risus blockstates and models
+// 1.21.1	2024-12-08T21:08:28.8043192	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -162,7 +162,7 @@ d5c2d28346e23ffe702728a5c68b851256df81c1 assets/risus/models/block/bone_slab.jso
 0eaa02309f1d66c4513dd68bb1d6183bdf39472b assets/risus/models/block/bone_stairs_outer.json
 526563d86913a2594e833c4277ea37572b8da59a assets/risus/models/block/bundle_of_hair.json
 bce535e4d325d0075b366c5625c87628614166a7 assets/risus/models/block/bundle_of_hair_horizontal.json
-6b5ec472b9f17409e80e93724e78f22e1e6b7686 assets/risus/models/block/burnt_hyphae.json
+136e16c418eaeff56de61227a6d43e7aad597bd9 assets/risus/models/block/burnt_hyphae.json
 118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
 40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json
 ff7841ba6d523e79dfa98fc199ab5c5248631e3f assets/risus/models/block/coagulated_blood_block.json

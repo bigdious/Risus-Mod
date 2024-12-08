@@ -46,6 +46,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
 				.texture("all", Risus.prefix("block/smiling_remains"))
 				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
+		simpleBlock(RisusBlocks.BURNT_HYPHAE.get(), make2LayerCubeAllSidesSame(RisusBlocks.BURNT_HYPHAE.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
+			.texture("all", Risus.prefix("block/burnt_hyphae"))
+			.texture("all2", Risus.prefix("block/burnt_hyphae_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		simpleBlock(RisusBlocks.BLOOD_FLUID_BLOCK.get());
 
@@ -267,7 +270,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 		axisBlock(RisusBlocks.BUNDLE_OF_HAIR.get(), texture("block/bundle_of_hair_side"), texture("block/bundle_of_hair_top"));
 
 
-		simpleBlock(RisusBlocks.BURNT_HYPHAE.get());
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
 		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
 		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().getExistingFile(texture("block/regen_rose")));

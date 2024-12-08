@@ -129,11 +129,11 @@ public class RisusTab {
 						output.accept(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get());
 
 						output.accept(RisusBlocks.FLESHY_SPAWNER.get());
-						output.accept(RisusBlocks.LIVING_TISSUE.get());
+						output.accept(RisusBlocks.TISSUE.get());
 						output.accept(RisusBlocks.ROTTING_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSING_TISSUE.get());
 						output.accept(RisusBlocks.DECAYING_TISSUE.get());
-						output.accept(RisusBlocks.TISSUE.get());
+						output.accept(RisusBlocks.LIVING_TISSUE.get());
 						output.accept(RisusBlocks.ROTTED_TISSUE.get());
 						output.accept(RisusBlocks.DECOMPOSED_TISSUE.get());
 						output.accept(RisusBlocks.DECAYED_TISSUE.get());

@@ -13,6 +13,7 @@ import net.minecraft.data.worldgen.Pools;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.world.TickRateManager;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
@@ -21,6 +22,9 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
+import net.minecraft.world.level.levelgen.heightproviders.HeightProviderType;
+import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
+import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.*;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
@@ -29,6 +33,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
@@ -77,8 +82,15 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> FLOWER_FIELD_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureTemplatePool> FLOWER_FIELD_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureProcessorList> FLOWER_FIELD_WITHERING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field_withering"));
-
+	public static final ResourceKey<Structure> DUNGEON = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
+	public static final ResourceKey<StructureSet> DUNGEON_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
+	public static final ResourceKey<StructureTemplatePool> DUNGEON_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
+	public static final ResourceKey<StructureProcessorList> DUNGEON_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_blending"));
+	public static final ResourceKey<Structure> BLOOD_WELL = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
+	public static final ResourceKey<StructureSet> BLOOD_WELL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
+	public static final ResourceKey<StructureTemplatePool> BLOOD_WELL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
 	public static final ResourceKey<StructureTemplatePool> TRIGGER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "trigger"));
+	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
 
 	public static void bootstrapStructures(BootstrapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -251,6 +263,44 @@ public class RisusStructures {
 			DimensionPadding.ZERO,
 			LiquidSettings.IGNORE_WATERLOGGING
 		));
+
+		context.register(DUNGEON, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_DUNGEON),
+				Map.of(),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(DUNGEON_POOL),
+			Optional.empty(),
+			5,
+			UniformHeight.of(VerticalAnchor.aboveBottom(-59), VerticalAnchor.aboveBottom(-10)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
+
+		context.register(BLOOD_WELL, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_BLOOD_WELL),
+				Map.of(),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.BEARD_THIN
+			),
+			pools.getOrThrow(BLOOD_WELL_POOL),
+			Optional.empty(),
+			5,
+			ConstantHeight.of(VerticalAnchor.absolute(-2)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
 	}
 	public static void bootstrapSets(BootstrapContext<StructureSet> context) {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
@@ -278,6 +328,12 @@ public class RisusStructures {
 
 		context.register(FLOWER_FIELD_SET, new StructureSet(structures.getOrThrow(FLOWER_FIELD),
 			new RandomSpreadStructurePlacement(21, 20, RandomSpreadType.TRIANGULAR, 29213393)));
+
+		context.register(DUNGEON_SET, new StructureSet(structures.getOrThrow(DUNGEON),
+			new RandomSpreadStructurePlacement(7, 5, RandomSpreadType.LINEAR, 938752732)));
+
+		context.register(BLOOD_WELL_SET, new StructureSet(structures.getOrThrow(BLOOD_WELL),
+			new RandomSpreadStructurePlacement(30, 29, RandomSpreadType.LINEAR, 894328793)));
 	}
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);
@@ -330,11 +386,28 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("flower_field"),processors.getOrThrow(FLOWER_FIELD_WITHERING)), 1)
 		), StructureTemplatePool.Projection.TERRAIN_MATCHING));
 
+		context.register(DUNGEON_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("dungeon"),processors.getOrThrow(DUNGEON_BLENDING)), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(BLOOD_WELL_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("blood_well")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
 		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/living_tissue")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(DUNGEON_ROOMS, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/holder_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/weaver_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/stalker_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/singer_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/zombie_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/licker_room")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 	}
 	public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
@@ -369,6 +442,26 @@ public class RisusStructures {
 					new RandomBlockMatchTest(RisusBlocks.REGEN_ROSE.get(), 0.3F),
 					AlwaysTrueTest.INSTANCE,
 					Blocks.AIR.defaultBlockState()
+				)
+			))
+		)));
+
+		context.register(DUNGEON_BLENDING, new StructureProcessorList(List.of(
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.GRIMSTONE.get(), 0.03F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ACTIVE_GRIMSTONE.get().defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.GRIMSTONE.get(), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					Blocks.DEEPSLATE.defaultBlockState()
+				),
+				new ProcessorRule(
+				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.3F),
+				AlwaysTrueTest.INSTANCE,
+				RisusBlocks.TISSUE.get().defaultBlockState()
 				)
 			))
 		)));

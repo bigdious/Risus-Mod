@@ -1,6 +1,8 @@
-// 1.21.1	2024-12-03T19:40:26.4557722	Tags for minecraft:worldgen/biome mod id risus
+// 1.21.1	2024-12-08T15:29:30.4044968	Tags for minecraft:worldgen/biome mod id risus
 f76e628e82568bebd1a0f82d2ec898000bd7c04c data/risus/tags/worldgen/biome/has_structure/alteration_site.json
 642d9f3168b49cdec78932de76b7cd5d8682c0c5 data/risus/tags/worldgen/biome/has_structure/angel_altar.json
+98c40a2126e570e3f8487652d336ef244659db8a data/risus/tags/worldgen/biome/has_structure/blood_well.json
+96bd20d8ad8fcac164921732d498b4d098033ef3 data/risus/tags/worldgen/biome/has_structure/dungeon.json
 ffc0254a22d43f3666fdb84c30262b68b391a6bd data/risus/tags/worldgen/biome/has_structure/endy_maw.json
 f76e628e82568bebd1a0f82d2ec898000bd7c04c data/risus/tags/worldgen/biome/has_structure/family_tree.json
 9834f7cb8dab0ab33e5a5913c52236db71e5f35d data/risus/tags/worldgen/biome/has_structure/flower_field.json

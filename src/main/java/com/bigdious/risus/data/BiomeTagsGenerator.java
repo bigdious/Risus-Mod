@@ -227,5 +227,11 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 		)
 			.addTag(Tags.Biomes.IS_FLOWER_FOREST)
 		;
+		tag(RisusTags.Biomes.HAS_DUNGEON)
+			.addTag(Tags.Biomes.IS_OVERWORLD)
+		;
+		tag(RisusTags.Biomes.HAS_BLOOD_WELL)
+			.addTag(Tags.Biomes.IS_DESERT)
+		;
 	}
 }

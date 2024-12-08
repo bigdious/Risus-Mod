@@ -3,7 +3,8 @@
 	"render_type": "minecraft:translucent",
 	"textures": {
 		"0": "risus:block/spreading_remains",
-		"particle": "risus:block/spreading_remains"
+		"particle": "risus:block/spreading_remains",
+		"light": "risus:block/spreading_remains_overlay"
 	},
 	"elements": [
 		{
@@ -18,6 +19,27 @@
 				"up": {"uv": [0, 0, 0, 0], "rotation": 180, "texture": "#0"},
 				"down": {"uv": [0, 0, 0, 0], "texture": "#0"}
 			}
-		}
+		},
+    {
+      "faces": {
+        "south": {
+          "cullface": "south",
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#light",
+          "tintindex": 0
+        }
+      },
+      "from": [0, 0, 0.03],
+      "to": [16, 16, 0.03],
+      "shade": false
+    }
 	]
 }

@@ -1,0 +1,60 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "risus:grimstone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.03
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "risus:active_grimstone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "risus:grimstone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:deepslate",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "risus:living_tissue",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "risus:tissue",
+            "Properties": {
+              "east": "none",
+              "fluid": "empty",
+              "north": "none",
+              "south": "none",
+              "up": "true",
+              "waterlogged": "true",
+              "west": "none"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

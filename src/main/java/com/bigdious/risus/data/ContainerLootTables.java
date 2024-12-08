@@ -1,12 +1,17 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusPotions;
 import com.bigdious.risus.loot.RisusLootTables;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -24,12 +29,12 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 		register.accept(RisusLootTables.FAMILY_TREE,
 			LootTable.lootTable()
 				.withPool(LootPool.lootPool()
-					.setRolls(UniformGenerator.between(2,3))
+					.setRolls(UniformGenerator.between(2, 3))
 					.add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))))
 					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))))
 					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))))
 				.withPool(LootPool.lootPool()
-						.setRolls(ConstantValue.exactly(1.0F))
+					.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(RisusItems.HEART_TRANSPLANT)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
@@ -39,11 +44,11 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(EmptyLootItem.emptyItem().setWeight(20))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_MORK)))
-				);
+		);
 		register.accept(RisusLootTables.ANGEL_ALTAR,
 			LootTable.lootTable()
 				.withPool(LootPool.lootPool()
-					.setRolls(UniformGenerator.between(3,6))
+					.setRolls(UniformGenerator.between(3, 6))
 					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
 					.add(LootItem.lootTableItem(RisusItems.LINEAR_RITUAL_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
 					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
@@ -63,7 +68,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 		register.accept(RisusLootTables.GREAT_BODY,
 			LootTable.lootTable()
 				.withPool(LootPool.lootPool()
-					.setRolls(UniformGenerator.between(3,6))
+					.setRolls(UniformGenerator.between(3, 6))
 					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
 					.add(LootItem.lootTableItem(RisusItems.FULL_BONE_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
 					.add(LootItem.lootTableItem(RisusItems.NEURON_STEM).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
@@ -76,6 +81,165 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE))
 					.add(LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE)))
 		);
+		register.accept(RisusLootTables.ZOMBIE_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 9))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.ROTTEN_FLESH).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+		);
+		register.accept(RisusLootTables.STALKER_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 9))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusItems.STALKER_EYE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.GUNPOWDER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+		);
+		register.accept(RisusLootTables.SINGER_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 9))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.ENDER_PEARL).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.ENDER_EYE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+		);
+		register.accept(RisusLootTables.HOLDER_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 9))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.GOLD_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
+					.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED)))
+		);
+		register.accept(RisusLootTables.LICKER_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 9))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.STRING).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(RisusItems.EGG_SAC).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+		);
+		register.accept(RisusLootTables.CENTER_ROOM,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 12))
+					.add(LootItem.lootTableItem(RisusItems.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.IRON_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(Items.GOLD_INGOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+					.add(LootItem.lootTableItem(RisusItems.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(2.0F))
+					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
+					.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+					.add(LootItem.lootTableItem(Items.NAME_TAG))
+					.add(LootItem.lootTableItem(Items.SADDLE))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
+					.add(LootItem.lootTableItem(Items.DIAMOND)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
+		);
 
 	}
+
+
 }
