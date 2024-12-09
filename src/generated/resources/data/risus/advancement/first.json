@@ -112,6 +112,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "lab": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:lab_start"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "sandmaw": {
       "conditions": {
         "player": [
@@ -153,7 +169,8 @@
       "flower",
       "angel",
       "family",
-      "body"
+      "body",
+      "lab"
     ]
   ],
   "sends_telemetry_event": true

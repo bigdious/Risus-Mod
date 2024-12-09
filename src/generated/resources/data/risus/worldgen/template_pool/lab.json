@@ -3,7 +3,34 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/bondknot",
+        "location": "risus:lab/lab_containment",
+        "processors": "risus:lab_spreading",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:lab/lab_exit_hallway",
+        "processors": "risus:lab_spreading",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:lab/lab_stairwell",
+        "processors": "risus:lab_spreading",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:lab/pipe",
         "processors": {
           "processors": []
         },
@@ -14,43 +41,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/grimstone",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/ashen_remains",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/living_tissue",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/flesh_feigr",
-        "processors": {
-          "processors": []
-        },
+        "location": "risus:lab/lab_main",
+        "processors": "risus:lab_spreading",
         "projection": "rigid"
       },
       "weight": 1

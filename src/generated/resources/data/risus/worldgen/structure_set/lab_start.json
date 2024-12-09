@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 123141287,
+    "separation": 29,
+    "spacing": 30
+  },
+  "structures": [
+    {
+      "structure": "risus:lab_start",
+      "weight": 1
+    }
+  ]
+}

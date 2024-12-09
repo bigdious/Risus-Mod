@@ -24,6 +24,10 @@ public class RisusLootTables {
 	public static final ResourceKey<LootTable> STALKER_ROOM = register("stalker_room");
 	public static final ResourceKey<LootTable> LICKER_ROOM = register("licker_room");
 	public static final ResourceKey<LootTable> ZOMBIE_ROOM = register("zombie_room");
+	public static final ResourceKey<LootTable> REACTOR = register("reactor");
+	public static final ResourceKey<LootTable> STAIRWELL_FLESH = register("stairwell_flesh");
+	public static final ResourceKey<LootTable> STAIRWELL_REMAINS = register("stairwell_remains");
+	public static final ResourceKey<LootTable> STORAGE_ROOM = register("storage_room");
 
 	private static ResourceKey<LootTable> register(String id) {
 		return register(ResourceKey.create(Registries.LOOT_TABLE, Risus.prefix(id)));

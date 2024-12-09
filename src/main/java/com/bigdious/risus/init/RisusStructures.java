@@ -89,8 +89,14 @@ public class RisusStructures {
 	public static final ResourceKey<Structure> BLOOD_WELL = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
 	public static final ResourceKey<StructureSet> BLOOD_WELL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
 	public static final ResourceKey<StructureTemplatePool> BLOOD_WELL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
+	public static final ResourceKey<Structure> LAB_START = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
+	public static final ResourceKey<StructureSet> LAB_START_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
+	public static final ResourceKey<StructureTemplatePool> LAB_START_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
 	public static final ResourceKey<StructureTemplatePool> TRIGGER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "trigger"));
 	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
+	public static final ResourceKey<StructureTemplatePool> SPAWNER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spawner"));
+	public static final ResourceKey<StructureTemplatePool> LAB = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab"));
+	public static final ResourceKey<StructureProcessorList> LAB_SPREADING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_spreading"));
 
 	public static void bootstrapStructures(BootstrapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -301,6 +307,27 @@ public class RisusStructures {
 			DimensionPadding.ZERO,
 			LiquidSettings.IGNORE_WATERLOGGING
 		));
+		context.register(LAB_START, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_LAB),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 2)
+					))),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.ENCAPSULATE
+			),
+			pools.getOrThrow(LAB_START_POOL),
+			Optional.empty(),
+			6,
+			ConstantHeight.of(VerticalAnchor.absolute(-3)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
 	}
 	public static void bootstrapSets(BootstrapContext<StructureSet> context) {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
@@ -334,6 +361,9 @@ public class RisusStructures {
 
 		context.register(BLOOD_WELL_SET, new StructureSet(structures.getOrThrow(BLOOD_WELL),
 			new RandomSpreadStructurePlacement(30, 29, RandomSpreadType.LINEAR, 894328793)));
+
+		context.register(LAB_START_SET, new StructureSet(structures.getOrThrow(LAB_START),
+			new RandomSpreadStructurePlacement(50, 30, RandomSpreadType.LINEAR, 523141287)));
 	}
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);
@@ -394,11 +424,16 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("blood_well")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
+		context.register(LAB_START_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("lab_entrance")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
 		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1),
 			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/living_tissue")), 1)
+			Pair.of(StructurePoolElement.single(name("trigger/living_tissue")), 1),
+			Pair.of(StructurePoolElement.single(name("trigger/flesh_feigr")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(DUNGEON_ROOMS, new StructureTemplatePool(emptyPool, List.of(
@@ -408,6 +443,23 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/singer_room")), 1),
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/zombie_room")), 1),
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/licker_room")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(LAB, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("lab/lab_containment"), processors.getOrThrow(LAB_SPREADING)), 1),
+			Pair.of(StructurePoolElement.single(name("lab/lab_exit_hallway"), processors.getOrThrow(LAB_SPREADING)), 1),
+			Pair.of(StructurePoolElement.single(name("lab/lab_stairwell"), processors.getOrThrow(LAB_SPREADING)), 1),
+			Pair.of(StructurePoolElement.single(name("lab/pipe")), 1),
+			Pair.of(StructurePoolElement.single(name("lab/lab_main"), processors.getOrThrow(LAB_SPREADING)), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(SPAWNER, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("spawner/holder")),  1),
+			Pair.of(StructurePoolElement.single(name("spawner/weaver")), 1),
+			Pair.of(StructurePoolElement.single(name("spawner/lover")), 1),
+			Pair.of(StructurePoolElement.single(name("spawner/creeper")), 1),
+			Pair.of(StructurePoolElement.single(name("spawner/spider")), 1),
+			Pair.of(StructurePoolElement.single(name("spawner/enderman")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 	}
 	public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
@@ -462,6 +514,26 @@ public class RisusStructures {
 				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.3F),
 				AlwaysTrueTest.INSTANCE,
 				RisusBlocks.TISSUE.get().defaultBlockState()
+				)
+			))
+		)));
+
+		context.register(LAB_SPREADING, new StructureProcessorList(List.of(
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(Blocks.DEEPSLATE_BRICKS, 0.29F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.GRIMSTONE_BRICKS.get().defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(Blocks.DEEPSLATE_BRICKS, 0.01F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(Blocks.SMOOTH_STONE, 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.FULL_BONE_BLOCK.get().defaultBlockState()
 				)
 			))
 		)));

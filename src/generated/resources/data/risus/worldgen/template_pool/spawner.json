@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/bondknot",
+        "location": "risus:spawner/holder",
         "processors": {
           "processors": []
         },
@@ -14,7 +14,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/grimstone",
+        "location": "risus:spawner/weaver",
         "processors": {
           "processors": []
         },
@@ -25,7 +25,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/ashen_remains",
+        "location": "risus:spawner/lover",
         "processors": {
           "processors": []
         },
@@ -36,7 +36,7 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/living_tissue",
+        "location": "risus:spawner/creeper",
         "processors": {
           "processors": []
         },
@@ -47,7 +47,18 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:trigger/flesh_feigr",
+        "location": "risus:spawner/spider",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "risus:spawner/enderman",
         "processors": {
           "processors": []
         },

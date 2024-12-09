@@ -189,6 +189,6 @@ public class RisusBlocks {
 	//FLUIDS
 
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = BLOCKS.register("blood_fluid_block", () -> new BloodFluidBlock(RisusFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
-	public static final DeferredBlock<Block> BLOOD_CAULDRON = BLOCKS.register("blood_cauldron.json", () -> new BloodCauldronBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
+	public static final DeferredBlock<Block> BLOOD_CAULDRON = BLOCKS.register("blood_cauldron", () -> new BloodCauldronBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON)));
 
 }

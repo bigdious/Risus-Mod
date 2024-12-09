@@ -112,7 +112,7 @@ public class Lover extends Monster {
 				if (!this.isSilent()) {
 					level.levelEvent(null, 1026, this.blockPosition(), 0);
 				}
-				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
 				for (int i = 0; i < 10; ++i) {
 					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
@@ -139,7 +139,7 @@ public class Lover extends Monster {
 				if (!this.isSilent()) {
 					level.levelEvent(null, 1026, this.blockPosition(), 0);
 				}
-				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
 				for (int i = 0; i < 10; ++i) {
 					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
@@ -166,7 +166,7 @@ public class Lover extends Monster {
 					if (!this.isSilent()) {
 						level.levelEvent(null, 1026, this.blockPosition(), 0);
 					}
-					if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+					if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
 						entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
 					for (int i = 0; i < 10; ++i) {
 						level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);

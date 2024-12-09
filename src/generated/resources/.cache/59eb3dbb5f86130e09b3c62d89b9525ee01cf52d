@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-08T15:29:30.3994997	Loot Tables
+// 1.21.1	2024-12-09T22:12:37.7757666	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -9,7 +9,7 @@ c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_table/blocks/big_chain.
 0706b996998a5fc794ccfd7d09e70135dd97406e data/risus/loot_table/blocks/bloodweave.json
 cb36a79a27cc5aac3243bbd05144f6a36991e0de data/risus/loot_table/blocks/bloodwyrm_head.json
 e47ca2c08b307b5ad8ff6f47594aaebad27234d2 data/risus/loot_table/blocks/bloodwyrm_wall_head.json
-1bc1e4649b3475445b507ab7e85490549f547fc0 data/risus/loot_table/blocks/blood_cauldron.json.json
+f9113da9adb64f60958073057a8fbc977d993a5e data/risus/loot_table/blocks/blood_cauldron.json
 7e47ded5e019d1f307706bde2e767b15b6ea812f data/risus/loot_table/blocks/bondknot_button.json
 de8702a01decd5951a87dbef6e7bc8043571d987 data/risus/loot_table/blocks/bondknot_door.json
 0bda4d9d80ce9cb175e3d35a70132cccccf3e9b0 data/risus/loot_table/blocks/bondknot_fence.json
@@ -147,6 +147,10 @@ cf611a099c7a227e0cc066d1f8c1c26600eff924 data/risus/loot_table/family_tree_1.jso
 ce25b5facafd88f16cdf7ed517ba87b74bd17ddc data/risus/loot_table/great_body_1.json
 2a82d04331ce679d18c5bf6b5ba31cf5445e31d2 data/risus/loot_table/holder_room.json
 a7b67c19fbf03ebcf92061d2c9a57d0b0f7b526e data/risus/loot_table/licker_room.json
+abf87f2bfcbaffc51a6efd33a5b5c747cb0da165 data/risus/loot_table/reactor.json
 c9261f89a52c602a510005da1e0cade9859fe4ff data/risus/loot_table/singer_room.json
+78caba22cb0cd7218b94c8a8201f5b59edf50dc6 data/risus/loot_table/stairwell_flesh.json
+dbeffd7df65d780984b12ad4d8e3ec1adb019280 data/risus/loot_table/stairwell_remains.json
 274e83e67688e5cbbce2394eaf5841960e6cfbc1 data/risus/loot_table/stalker_room.json
+f0411615bd3055ed2575d699ba53b9b1c60b3e43 data/risus/loot_table/storage_room.json
 92cfd4165ef794fda4faa817ef0aced3336d7364 data/risus/loot_table/zombie_room.json

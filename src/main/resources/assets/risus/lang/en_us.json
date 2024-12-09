@@ -363,5 +363,7 @@
   "advancement.risus.music_playing": "Currently Playing Music:",
   "advancement.risus.music_playing.desc": "Here you can see which Risus music is currently being played in the background, if any",
   "advancement.risus.family_music": "Mǫrk",
-  "advancement.risus.family_music.desc": "Kizbe - Mǫrk"
+  "advancement.risus.family_music.desc": "Kizbe - Mǫrk",
+  "advancement.risus.lab": "Deep Core Fallout",
+  "advancement.risus.lab.desc": "Approach a failed experiment."
 }

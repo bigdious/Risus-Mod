@@ -46,6 +46,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("angel", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
 			.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
+			.addCriterion("lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
 			.save(consumer, "risus:first");
 
 		AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first)
@@ -274,6 +275,14 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.family_music.desc"), null, AdvancementType.TASK, false, false, false)
 			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
 			.save(consumer, "risus:family_music");
+
+		AdvancementHolder lab = Advancement.Builder.advancement().parent(first)
+			.display(
+				RisusBlocks.INACTIVE_HOLDER.get(),
+				Component.translatable("advancement.risus.lab"),
+				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, false)
+			.addCriterion("enter_lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
+			.save(consumer, "risus:lab");
 	}
 		private ItemStack lovePotion() {
 			ItemStack itemstack = new ItemStack(Items.POTION);

@@ -1,0 +1,40 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "enter_lab": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:lab_start"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.lab.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "risus:inactive_holder"
+    },
+    "title": {
+      "translate": "advancement.risus.lab"
+    }
+  },
+  "requirements": [
+    [
+      "enter_lab"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
