@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-09T22:12:37.7757666	Loot Tables
+// 1.21.1	2024-12-10T16:01:57.7189285	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -147,7 +147,7 @@ cf611a099c7a227e0cc066d1f8c1c26600eff924 data/risus/loot_table/family_tree_1.jso
 ce25b5facafd88f16cdf7ed517ba87b74bd17ddc data/risus/loot_table/great_body_1.json
 2a82d04331ce679d18c5bf6b5ba31cf5445e31d2 data/risus/loot_table/holder_room.json
 a7b67c19fbf03ebcf92061d2c9a57d0b0f7b526e data/risus/loot_table/licker_room.json
-abf87f2bfcbaffc51a6efd33a5b5c747cb0da165 data/risus/loot_table/reactor.json
+42cb75ad900a1f361e08508c9629de3eb2578f32 data/risus/loot_table/reactor.json
 c9261f89a52c602a510005da1e0cade9859fe4ff data/risus/loot_table/singer_room.json
 78caba22cb0cd7218b94c8a8201f5b59edf50dc6 data/risus/loot_table/stairwell_flesh.json
 dbeffd7df65d780984b12ad4d8e3ec1adb019280 data/risus/loot_table/stairwell_remains.json

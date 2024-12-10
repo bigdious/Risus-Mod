@@ -5,51 +5,9 @@
       "rules": [
         {
           "input_predicate": {
-            "block": "minecraft:deepslate_bricks",
+            "block": "risus:bone_wall",
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.29
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "risus:grimstone_bricks"
-          }
-        },
-        {
-          "input_predicate": {
-            "block": "minecraft:deepslate_bricks",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.01
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "risus:cracked_grimstone_bricks"
-          }
-        },
-        {
-          "input_predicate": {
-            "block": "minecraft:smooth_stone",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.2
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "risus:full_bone_block",
-            "Properties": {
-              "axis": "y"
-            }
-          }
-        },
-        {
-          "input_predicate": {
-            "block": "risus:living_tissue",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.3
+            "probability": 0.6
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
@@ -65,6 +23,35 @@
               "waterlogged": "true",
               "west": "none"
             }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:netherrack",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:basalt",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:netherrack",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:soul_sand"
           }
         }
       ]

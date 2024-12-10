@@ -50,6 +50,7 @@ public class RisusTags {
 		public static final TagKey<Biome> HAS_DUNGEON = tag("has_structure/dungeon");
 		public static final TagKey<Biome> HAS_BLOOD_WELL = tag("has_structure/blood_well");
 		public static final TagKey<Biome> HAS_LAB = tag("has_structure/lab");
+		public static final TagKey<Biome> HAS_DRAXOLOTL_REMAINS = tag("has_structure/draxolotl_remains");
 
 		private static TagKey<Biome> tag(String name) {
 			return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

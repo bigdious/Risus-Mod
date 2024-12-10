@@ -1,5 +1,5 @@
 {
-  "parent": "risus:first",
+  "parent": "risus:site_zero",
   "criteria": {
     "skins": {
       "conditions": {
@@ -25,6 +25,7 @@
     "description": {
       "translate": "advancement.risus.tight.desc"
     },
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:skin_helmet"

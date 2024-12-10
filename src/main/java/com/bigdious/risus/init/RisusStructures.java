@@ -1,8 +1,6 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-
-
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -13,7 +11,6 @@ import net.minecraft.data.worldgen.Pools;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.WeightedRandomList;
-import net.minecraft.world.TickRateManager;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
@@ -22,8 +19,6 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
-import net.minecraft.world.level.levelgen.heightproviders.HeightProviderType;
-import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.structure.*;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
@@ -33,7 +28,6 @@ import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
@@ -92,6 +86,11 @@ public class RisusStructures {
 	public static final ResourceKey<Structure> LAB_START = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
 	public static final ResourceKey<StructureSet> LAB_START_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
 	public static final ResourceKey<StructureTemplatePool> LAB_START_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_start"));
+	public static final ResourceKey<Structure> DRAXOLOTL_REMAINS = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains"));
+	public static final ResourceKey<StructureSet> DRAXOLOTL_REMAINS_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains"));
+	public static final ResourceKey<StructureTemplatePool> DRAXOLOTL_REMAINS_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains"));
+	public static final ResourceKey<StructureProcessorList> DRAXOLOTL_REMAINS_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains_blending"));
+
 	public static final ResourceKey<StructureTemplatePool> TRIGGER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "trigger"));
 	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
 	public static final ResourceKey<StructureTemplatePool> SPAWNER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spawner"));
@@ -328,6 +327,27 @@ public class RisusStructures {
 			DimensionPadding.ZERO,
 			LiquidSettings.IGNORE_WATERLOGGING
 		));
+		context.register(DRAXOLOTL_REMAINS, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_DRAXOLOTL_REMAINS),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 1)
+					))),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(DRAXOLOTL_REMAINS_POOL),
+			Optional.empty(),
+			6,
+			UniformHeight.of(VerticalAnchor.aboveBottom(-122), VerticalAnchor.aboveBottom(-28)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
 	}
 	public static void bootstrapSets(BootstrapContext<StructureSet> context) {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
@@ -357,13 +377,16 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(21, 20, RandomSpreadType.TRIANGULAR, 29213393)));
 
 		context.register(DUNGEON_SET, new StructureSet(structures.getOrThrow(DUNGEON),
-			new RandomSpreadStructurePlacement(7, 5, RandomSpreadType.LINEAR, 938752732)));
+			new RandomSpreadStructurePlacement(17, 10, RandomSpreadType.LINEAR, 938752732)));
 
 		context.register(BLOOD_WELL_SET, new StructureSet(structures.getOrThrow(BLOOD_WELL),
 			new RandomSpreadStructurePlacement(30, 29, RandomSpreadType.LINEAR, 894328793)));
 
 		context.register(LAB_START_SET, new StructureSet(structures.getOrThrow(LAB_START),
 			new RandomSpreadStructurePlacement(50, 30, RandomSpreadType.LINEAR, 523141287)));
+
+		context.register(DRAXOLOTL_REMAINS_SET, new StructureSet(structures.getOrThrow(DRAXOLOTL_REMAINS),
+			new RandomSpreadStructurePlacement(24, 17, RandomSpreadType.TRIANGULAR, 729472497)));
 	}
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);
@@ -426,6 +449,10 @@ public class RisusStructures {
 
 		context.register(LAB_START_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("lab_entrance")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(DRAXOLOTL_REMAINS_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("draxolotl_remains"), processors.getOrThrow(DRAXOLOTL_REMAINS_BLENDING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
@@ -534,6 +561,32 @@ public class RisusStructures {
 					new RandomBlockMatchTest(Blocks.SMOOTH_STONE, 0.2F),
 					AlwaysTrueTest.INSTANCE,
 					RisusBlocks.FULL_BONE_BLOCK.get().defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.3F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.TISSUE.get().defaultBlockState()
+				)
+
+			))
+		)));
+
+		context.register(DRAXOLOTL_REMAINS_BLENDING, new StructureProcessorList(List.of(
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.BONE_WALL.get(), 0.6F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.TISSUE.get().defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(Blocks.NETHERRACK, 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					Blocks.BASALT.defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockMatchTest(Blocks.NETHERRACK, 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					Blocks.SOUL_SAND.defaultBlockState()
 				)
 			))
 		)));

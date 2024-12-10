@@ -280,5 +280,8 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			.addTag(Tags.Biomes.IS_HILL)
 			.addTag(Tags.Biomes.IS_SNOWY)
 		;
+		tag(RisusTags.Biomes.HAS_DRAXOLOTL_REMAINS)
+			.addTag(Tags.Biomes.IS_NETHER)
+		;
 	}
 }

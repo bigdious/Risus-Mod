@@ -297,7 +297,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "risus:smile"
+          "name": "risus:smile_banner_pattern"
         }
       ],
       "rolls": 1.0

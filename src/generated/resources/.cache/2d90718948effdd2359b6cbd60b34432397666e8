@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-08T21:08:28.8043192	Risus blockstates and models
+// 1.21.1	2024-12-10T17:27:02.5749254	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -54,7 +54,6 @@ f068b60ae1d3b1e4e81f2b8c975876c476cf62e3 assets/risus/blockstates/flattened_scal
 ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.json
 6531c65deeeb84e5e5900487a41e3214ccfdbdf4 assets/risus/blockstates/fleshy_spawner.json
 a0e2e65d05f5d9e83c1892d939207d147cb11b54 assets/risus/blockstates/full_bone_block.json
-95e202abfbb13628076da66c1963a56ec11bee47 assets/risus/blockstates/full_bone_slab.json
 b905f64eeb004125c3f0d73dfb7bd1beb2cac549 assets/risus/blockstates/full_bone_stairs.json
 1f463d973c1d6849035de5e8006483425d81783b assets/risus/blockstates/grimstone.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json
@@ -172,8 +171,6 @@ d73118566362fbc4f2ac70ef9a444991202cc036 assets/risus/models/block/curved_ritual
 c764c4ae060afc94619618152825520cd07855f6 assets/risus/models/block/darkness.json
 cdd7d7277f4fcaacd3642ef48634b22fb8c74515 assets/risus/models/block/full_bone_block.json
 478f0439de78448bf54c7fe1abd7858eab5a77b6 assets/risus/models/block/full_bone_block_horizontal.json
-8f6ea9bc6297a78ee952cb553c403fb9993a4752 assets/risus/models/block/full_bone_slab.json
-6b40ac04aa1561a8a22271b04ea8e06e7c4c9d2e assets/risus/models/block/full_bone_slab_top.json
 8e1523ad2a7c0dba18da4c768ca72fa008da120b assets/risus/models/block/full_bone_stairs.json
 ce958c040d8ef339c20de7ec0ab222d70560235d assets/risus/models/block/full_bone_stairs_inner.json
 e84fa082c14be0a27003685c280d8ddd0cba1ffa assets/risus/models/block/full_bone_stairs_outer.json

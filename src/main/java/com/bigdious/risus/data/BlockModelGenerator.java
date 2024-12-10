@@ -255,7 +255,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 		stairsBlock(RisusBlocks.BONE_STAIRS.get(), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
 		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), texture("block/bone_block_side"), texture("block/bone_block_side"), texture("block/bone_block_side"));
 		slabBlock(RisusBlocks.BONE_SLAB.get(), texture("block/bone_block"), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
-		slabBlock(RisusBlocks.FULL_BONE_SLAB.get(), texture("block/bone_block"), texture("block/bone_block_side"), texture("block/bone_block_side"), texture("block/bone_block_side"));
 		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), texture("block/bone_block_side"), texture("block/bone_block_side"));
 
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(texture("block/eye_ender")));

@@ -183,11 +183,11 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
 			.save(consumer, "risus:body");
 
-		AdvancementHolder tight = Advancement.Builder.advancement().parent(first)
+		AdvancementHolder tight = Advancement.Builder.advancement().parent(site_zero)
 			.display(
 				RisusItems.SKIN_HELMET.get(),
 				Component.translatable("advancement.risus.tight"),
-				Component.translatable("advancement.risus.tight.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.tight.desc"), null, AdvancementType.TASK, true, true, true)
 			.addCriterion("skins", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SKIN_HELMET.get(), RisusItems.SKIN_BOOTS.get(), RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SKIN_LEGGINGS.get()))
 			.save(consumer, "risus:tight");
 
@@ -258,29 +258,12 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("shaving2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.CURVED_FLESHY_SKIN.get())), ItemPredicate.Builder.item().of(Items.SHEARS)))
 			.save(consumer, "risus:shave");
 
-		AdvancementHolder music_playing = Advancement.Builder.advancement().display(
-			Items.JUKEBOX,
-			Component.translatable("advancement.risus.music_playing"),
-			Component.translatable("advancement.risus.music_playing.desc"),
-			ResourceLocation.fromNamespaceAndPath("minecraft", "textures/block/ashen_remains.png"),
-			AdvancementType.TASK, false, false, false)
-			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
-			.save(consumer, "risus:music_playing");
-
-		AdvancementHolder family_music = Advancement.Builder.advancement().parent(music_playing)
-			.display(
-				RisusItems.MUSIC_DISC_MORK.get(),
-				Component.translatable("advancement.risus.family_music"),
-				Component.translatable("advancement.risus.family_music.desc"), null, AdvancementType.TASK, false, false, false)
-			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
-			.save(consumer, "risus:family_music");
 
 		AdvancementHolder lab = Advancement.Builder.advancement().parent(first)
 			.display(
 				RisusBlocks.INACTIVE_HOLDER.get(),
 				Component.translatable("advancement.risus.lab"),
-				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, false)
+				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, true)
 			.addCriterion("enter_lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
 			.save(consumer, "risus:lab");
 	}

@@ -26,3 +26,10 @@ enumExtensions="META-INF/enumextensions.json"
 	versionRange="[1.21.1]"
 	ordering="NONE"
 	side="BOTH"
+
+[[dependencies.risus]]
+modId="patchouli"
+type="required"
+versionRange="[1.21.0,1.21.1]"
+ordering="NONE"
+side="BOTH"

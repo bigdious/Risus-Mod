@@ -23,6 +23,7 @@
       "translate": "advancement.risus.lab.desc"
     },
     "frame": "goal",
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:inactive_holder"
