@@ -14,7 +14,7 @@
         "item": "risus:egg_sac"
       },
       "link_recipe": true,
-      "text": "which causes the target to be afflicted with both the Webbed and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop Organic Matter, String, Fermented Spider Eye and Egg Sacs which can be thrown at opponents to attack them with Baby Spiders."
+      "text": "which causes the target to be afflicted with both the Weaving and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop Organic Matter, String, Fermented Spider Eye and Egg Sacs which can be thrown at opponents to attack them with Baby Spiders."
     },
     {
       "type": "patchouli:entity",

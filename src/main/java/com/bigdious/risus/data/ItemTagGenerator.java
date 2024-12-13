@@ -65,6 +65,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.add(RisusItems.FIRE_SCYTHE.get())
 			.add(RisusItems.SOUL_SCYTHE.get())
 			.add(RisusItems.CINDERGLEE_SCYTHE.get())
+			.add(RisusItems.THOUSAND_BLADE.get())
 			;
 
 		this.tag(ItemTags.TRIM_TEMPLATES)

@@ -16,7 +16,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:joyflame_campfire",
-      "text": "The fact that it cannot burn physical matter also means that a Cinderglee Campfire cannot actually cook anything, nor release signal smoke. Nonetheless, it can still apply Existential Burn, so it can be useful for traps and anything else of the sort."
+      "text": "The fact that it cannot burn physical matter also means that a Cinderglee Campfire cannot actually cook anything, nor release signal smoke. Existential Burn can also not be put out with Water or any other liquid."
     }
   ]
 }

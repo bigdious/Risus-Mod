@@ -2,7 +2,7 @@
   "name": "Tissue, Skin & Hair",
   "icon": "risus:hairy_fleshy_skin",
   "category": "risus:alteration",
-  "advancement": "risus:site_zero",
+  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",
