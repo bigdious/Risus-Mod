@@ -21,6 +21,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_REGN = register("music.disc.regn");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_MORK = register("music.ambient.mork");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_FEIGR = register("music.ambient.feigr");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("mobs.cheeky_laugh");
 
 
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {

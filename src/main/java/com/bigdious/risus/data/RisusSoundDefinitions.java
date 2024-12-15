@@ -30,5 +30,8 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 		this.add(RisusSoundEvents.AMBIENT_FEIGR, definition().with(
 			sound("risus:music/ambient/ambient_feigr").volume(1).pitch(1).weight(1).stream()
 		));
+		this.add(RisusSoundEvents.CHEEKY_LAUGH, definition().with(
+			sound("risus:mobs/cheeky_laugh").volume(1).pitch(1).weight(1).stream()
+		));
 	}
 }

@@ -1,4 +1,12 @@
 {
+  "mobs.cheeky_laugh": {
+    "sounds": [
+      {
+        "name": "risus:mobs/cheeky_laugh",
+        "stream": true
+      }
+    ]
+  },
   "music.ambient.feigr": {
     "sounds": [
       {

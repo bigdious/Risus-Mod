@@ -77,8 +77,9 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 				stack.mulPose(Axis.XP.rotationDegrees(180.0F));
 				stack.mulPose(Axis.YP.rotationDegrees(180.0F));
 				stack.translate(-0.29D, -0.25D, 0.25D);
-				boolean flag = arm == HumanoidArm.LEFT;
-				stack.translate((float) (flag ? -1 : 1) / 16.0F, 0.125D, -0.625D);
+				boolean flag = entity.getMainArm() == HumanoidArm.LEFT;
+
+				stack.translate((flag ? 0.5 : 1/ 16.0), 0.125D, -0.625D);
 				this.itemInHandRenderer.renderItem(entity, item, type, flag, stack, source, light);
 				stack.popPose();
 			}

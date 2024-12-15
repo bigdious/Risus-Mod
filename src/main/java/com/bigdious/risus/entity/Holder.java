@@ -3,8 +3,10 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -138,6 +140,7 @@ public class Holder extends Monster {
 		boolean flag = super.doHurtTarget(entity);
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
 			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
+			entity.level().playSound(null, entity.getOnPos(), RisusSoundEvents.CHEEKY_LAUGH.get(), SoundSource.HOSTILE, 1, 1);
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
 					this.shouldAvoidEntity = false;
 					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly"),  -3, AttributeModifier.Operation.ADD_VALUE));
