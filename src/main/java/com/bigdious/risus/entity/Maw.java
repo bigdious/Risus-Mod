@@ -17,6 +17,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
@@ -30,8 +31,10 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Maw.class, EntityDataSerializers.INT);
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
-	private boolean eatenTNT;
+	@Nullable
+	private PrimedTnt eatenTNT;
 	private int eatenTNTTimer;
+	public boolean hasGutsAssigned;
 
 	public final AnimationState biteAnim = new AnimationState();
 
@@ -60,21 +63,37 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	}
 
 	@Override
+	public void tick() {
+		if (this.firstTick) {
+			if (this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
+				this.hasGutsAssigned = true;
+			}
+		}
+		super.tick();
+	}
+
+	@Override
 	protected void customServerAiStep() {
 		super.customServerAiStep();
-		if (!this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS.get())) {
-			this.kill();
-		}
-
-		if (this.eatenTNT) {
+		if (this.eatenTNT != null) {
 			this.eatenTNTTimer++;
 			((ServerLevel) this.level()).sendParticles(ParticleTypes.SMOKE, this.position().x(), this.position().y() + 0.5F, this.position().z(), 2, 0.1F, 0.1F, 0.1F, 0);
 
 			if (this.eatenTNTTimer >= 60) {
+				this.hasGutsAssigned = false;
+				this.hurt(Explosion.getDefaultDamageSource(this.level(), this.eatenTNT), Float.MAX_VALUE);
 				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 3.0F, Level.ExplosionInteraction.NONE);
-				this.kill();
+
 			}
 		}
+	}
+
+	@Override
+	public boolean isInvulnerableTo(DamageSource source) {
+		if (this.hasGutsAssigned) {
+			return !source.is(DamageTypeTags.IS_EXPLOSION) && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY);
+		}
+		return super.isInvulnerableTo(source);
 	}
 
 	@Override
@@ -104,11 +123,6 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	public boolean attackable() {
 		return false;
-	}
-
-	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		return source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && super.hurt(source, amount);
 	}
 
 	//[VanillaCopy], but include primed TNT in pushing so we can swallow it
@@ -149,8 +163,8 @@ public class Maw extends Monster implements CacheTargetOnClient {
 				this.doHurtTarget(living);
 			}
 		} else if (entity instanceof PrimedTnt tnt) {
+			this.eatenTNT = tnt;
 			tnt.discard();
-			this.eatenTNT = true;
 		}
 	}
 

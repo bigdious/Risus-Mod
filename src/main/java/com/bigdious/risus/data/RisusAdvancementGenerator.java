@@ -138,7 +138,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.satiate"),
 				Component.translatable("advancement.risus.satiate.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.AND)
-			.addCriterion("satiate0", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MAW_GUTS.get()))
+			.addCriterion("satiate0", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
 			.save(consumer, "risus:satiate");
 
 		AdvancementHolder potential = Advancement.Builder.advancement().parent(gluttony)

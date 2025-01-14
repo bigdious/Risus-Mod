@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
+import com.bigdious.risus.entity.Maw;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.MawGutsMenu;
 import net.minecraft.core.BlockPos;
@@ -8,9 +9,11 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -21,6 +24,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -204,5 +208,15 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	@Override
 	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
 		return true;
+	}
+
+	public void killAboveMaw(DamageSource source) {
+		var maws = this.getLevel().getEntitiesOfClass(Maw.class, new AABB(this.getBlockPos()).inflate(0.0D, 1.0D, 0.0D));
+		if (!maws.isEmpty()) {
+			maws.forEach(maw -> {
+				maw.hasGutsAssigned = false;
+				maw.hurt(source, Float.MAX_VALUE);
+			});
+		}
 	}
 }

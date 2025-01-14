@@ -3,13 +3,17 @@
   "criteria": {
     "satiate0": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": "risus:maw_guts"
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "risus:maw"
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:player_killed_entity"
     }
   },
   "display": {

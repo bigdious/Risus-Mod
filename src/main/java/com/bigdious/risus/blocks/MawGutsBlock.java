@@ -8,8 +8,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -25,6 +27,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.BiConsumer;
 
 public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, SimpleMultiloggedBlock {
 
@@ -115,13 +119,32 @@ public class MawGutsBlock extends BaseEntityBlock implements EntityBlock, Simple
 		return blockentity instanceof MenuProvider provider ? provider : null;
 	}
 
-
+	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
 		BlockEntity blockentity = level.getBlockEntity(pos);
 		if (blockentity instanceof MawGutsBlockEntity guts) {
 			player.openMenu(guts);
 		}
 		return InteractionResult.sidedSuccess(level.isClientSide());
+	}
+
+	//TODO change to be more like CreakingHeartBlock.playerWillDestroy in 1.21.2+
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		if (level.getBlockEntity(pos) instanceof MawGutsBlockEntity entity) {
+			entity.killAboveMaw(level.damageSources().playerAttack(player));
+		}
+		return super.playerWillDestroy(level, pos, state, player);
+	}
+
+	//TODO change to be more like CreakingHeartBlock.onExplosionHit in 1.21.2+
+	@Override
+	protected void onExplosionHit(BlockState state, Level level, BlockPos pos, Explosion explosion, BiConsumer<ItemStack, BlockPos> dropConsumer) {
+		if (level.getBlockEntity(pos) instanceof MawGutsBlockEntity entity && (explosion.getBlockInteraction() == Explosion.BlockInteraction.DESTROY || explosion.getBlockInteraction() == Explosion.BlockInteraction.DESTROY_WITH_DECAY)) {
+			entity.killAboveMaw(level.damageSources().explosion(explosion));
+		}
+
+		super.onExplosionHit(state, level, pos, explosion, dropConsumer);
 	}
 
 	@Nullable
