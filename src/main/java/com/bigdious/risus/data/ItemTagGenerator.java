@@ -59,51 +59,228 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(Tags.Items.OBSIDIANS).add(RisusItems.LAUGHING_OBSIDIAN.get());
 
 		this.tag(RisusTags.Items.WILLFUL_WEAPON)
-			.add(RisusItems.UNAWAKENED_VESSEL.get())
-			.add(RisusItems.CRESCENT_DISASTER.get())
-			.add(RisusItems.SCYTHE.get())
-			.add(RisusItems.FIRE_SCYTHE.get())
-			.add(RisusItems.SOUL_SCYTHE.get())
-			.add(RisusItems.CINDERGLEE_SCYTHE.get())
-			.add(RisusItems.THOUSAND_BLADE.get())
+			.add(
+				RisusItems.UNAWAKENED_VESSEL.get(),
+				RisusItems.CRESCENT_DISASTER.get(),
+				RisusItems.SCYTHE.get(),
+				RisusItems.FIRE_SCYTHE.get(),
+				RisusItems.SOUL_SCYTHE.get(),
+				RisusItems.CINDERGLEE_SCYTHE.get(),
+				RisusItems.THOUSAND_BLADE.get())
 			;
 
 		this.tag(ItemTags.TRIM_TEMPLATES)
-			.add(RisusItems.BLOOD_FEATHER.get())
+			.add(
+				RisusItems.BLOOD_FEATHER.get())
 		;
 		this.tag(RisusTags.Items.EYE)
-			.add(RisusItems.EYE_EMERALD.get())
-			.add(RisusItems.EYE_BLOODSHOT.get())
-			.add(RisusItems.EYE_ENDER.get())
-			.add(RisusItems.EYE_GOLDEN.get())
-			.add(RisusItems.EYE_BLEACHED.get())
+			.add(
+				RisusItems.EYE_EMERALD.get(),
+				RisusItems.EYE_BLOODSHOT.get(),
+				RisusItems.EYE_ENDER.get(),
+				RisusItems.EYE_GOLDEN.get(),
+				RisusItems.EYE_BLEACHED.get())
 		;
 		this.tag(RisusTags.Items.BASE_TISSUE)
-			.add(RisusItems.TISSUE.get())
-			.add(RisusItems.LIVING_TISSUE.get())
+			.add(
+				RisusItems.TISSUE.get(),
+				RisusItems.LIVING_TISSUE.get())
 		;
 
 		this.tag(ItemTags.TRIMMABLE_ARMOR)
-			.add(RisusItems.SKIN_HELMET.get())
-			.add(RisusItems.SKIN_CHESTPLATE.get())
-			.add(RisusItems.SKIN_LEGGINGS.get())
-			.add(RisusItems.SKIN_BOOTS.get());
+			.add(
+				RisusItems.SKIN_HELMET.get(),
+				RisusItems.SKIN_CHESTPLATE.get(),
+				RisusItems.SKIN_LEGGINGS.get(),
+				RisusItems.SKIN_BOOTS.get())
+		;
 
 		this.tag(ItemTags.TRIM_MATERIALS)
-			.add(RisusItems.GLUTTONY_SCALES.get())
-			.add(RisusItems.SKIN.get())
+			.add(
+				RisusItems.GLUTTONY_SCALES.get(),
+				RisusItems.SKIN.get())
 		;
 		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS)
-			.add(Items.FIREWORK_ROCKET)
+			.add(
+				Items.FIREWORK_ROCKET)
 		;
 		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS)
-			.add(Items.TRIDENT)
-			.add(RisusItems.CRESCENT_DISASTER.get())
+			.add(
+				Items.TRIDENT,
+				RisusItems.CRESCENT_DISASTER.get())
 		;
 		this.tag(Tags.Items.FOODS_RAW_MEAT)
-			.add(Items.COD)
-			.add(Items.SALMON)
-			.add(Items.TROPICAL_FISH)
+			.add(
+				Items.COD,
+				Items.SALMON,
+				Items.TROPICAL_FISH)
+		;
+
+		//for bondknot
+
+		this.tag(RisusTags.Items.ALTERABLE_GATES)
+			.add(Items.OAK_FENCE_GATE,
+				Items.DARK_OAK_FENCE_GATE,
+				Items.BIRCH_FENCE_GATE,
+				Items.SPRUCE_FENCE_GATE,
+				Items.JUNGLE_FENCE_GATE,
+				Items.ACACIA_FENCE_GATE,
+				Items.MANGROVE_FENCE_GATE,
+				Items.CHERRY_FENCE_GATE)
 			;
+		this.tag(RisusTags.Items.ALTERABLE_FENCES)
+			.add(
+				Items.OAK_FENCE,
+				Items.DARK_OAK_FENCE,
+				Items.BIRCH_FENCE,
+				Items.SPRUCE_FENCE,
+				Items.JUNGLE_FENCE,
+				Items.ACACIA_FENCE,
+				Items.MANGROVE_FENCE,
+				Items.CHERRY_FENCE
+			);
+		this.tag(RisusTags.Items.ALTERABLE_TRAPDOORS)
+			.add(
+				Items.OAK_TRAPDOOR,
+				Items.DARK_OAK_TRAPDOOR,
+				Items.BIRCH_TRAPDOOR,
+				Items.SPRUCE_TRAPDOOR,
+				Items.JUNGLE_TRAPDOOR,
+				Items.ACACIA_TRAPDOOR,
+				Items.MANGROVE_TRAPDOOR,
+				Items.CHERRY_TRAPDOOR
+			);
+		this.tag(RisusTags.Items.ALTERABLE_HANGING_SIGNS)
+			.add(
+				Items.OAK_HANGING_SIGN,
+				Items.DARK_OAK_HANGING_SIGN,
+				Items.BIRCH_HANGING_SIGN,
+				Items.SPRUCE_HANGING_SIGN,
+				Items.JUNGLE_HANGING_SIGN,
+				Items.ACACIA_HANGING_SIGN,
+				Items.MANGROVE_HANGING_SIGN,
+				Items.CHERRY_HANGING_SIGN
+			);
+		this.tag(RisusTags.Items.ALTERABLE_SIGNS)
+			.add(
+				Items.OAK_SIGN,
+				Items.DARK_OAK_SIGN,
+				Items.BIRCH_SIGN,
+				Items.SPRUCE_SIGN,
+				Items.JUNGLE_SIGN,
+				Items.ACACIA_SIGN,
+				Items.MANGROVE_SIGN,
+				Items.CHERRY_SIGN
+			);
+		this.tag(RisusTags.Items.ALTERABLE_DOORS)
+			.add(
+				Items.OAK_DOOR,
+				Items.DARK_OAK_DOOR,
+				Items.BIRCH_DOOR,
+				Items.SPRUCE_DOOR,
+				Items.JUNGLE_DOOR,
+				Items.ACACIA_DOOR,
+				Items.MANGROVE_DOOR,
+				Items.CHERRY_DOOR
+			);
+		this.tag(RisusTags.Items.ALTERABLE_BUTTONS)
+			.add(
+				Items.OAK_BUTTON,
+				Items.DARK_OAK_BUTTON,
+				Items.BIRCH_BUTTON,
+				Items.SPRUCE_BUTTON,
+				Items.JUNGLE_BUTTON,
+				Items.ACACIA_BUTTON,
+				Items.MANGROVE_BUTTON,
+				Items.CHERRY_BUTTON
+			);
+		this.tag(RisusTags.Items.ALTERABLE_PRESSURE_PLATES)
+			.add(
+				Items.OAK_PRESSURE_PLATE,
+				Items.DARK_OAK_PRESSURE_PLATE,
+				Items.BIRCH_PRESSURE_PLATE,
+				Items.SPRUCE_PRESSURE_PLATE,
+				Items.JUNGLE_PRESSURE_PLATE,
+				Items.ACACIA_PRESSURE_PLATE,
+				Items.MANGROVE_PRESSURE_PLATE,
+				Items.CHERRY_PRESSURE_PLATE
+			);
+		this.tag(RisusTags.Items.ALTERABLE_SLABS)
+			.add(
+				Items.OAK_SLAB,
+				Items.DARK_OAK_SLAB,
+				Items.BIRCH_SLAB,
+				Items.SPRUCE_SLAB,
+				Items.JUNGLE_SLAB,
+				Items.ACACIA_SLAB,
+				Items.MANGROVE_SLAB,
+				Items.CHERRY_SLAB
+			);
+		this.tag(RisusTags.Items.ALTERABLE_STAIRS)
+			.add(
+				Items.OAK_STAIRS,
+				Items.DARK_OAK_STAIRS,
+				Items.BIRCH_STAIRS,
+				Items.SPRUCE_STAIRS,
+				Items.JUNGLE_STAIRS,
+				Items.ACACIA_STAIRS,
+				Items.MANGROVE_STAIRS,
+				Items.CHERRY_STAIRS
+			);
+		this.tag(RisusTags.Items.ALTERABLE_PLANKS)
+			.add(
+				Items.OAK_PLANKS,
+				Items.DARK_OAK_PLANKS,
+				Items.BIRCH_PLANKS,
+				Items.SPRUCE_PLANKS,
+				Items.JUNGLE_PLANKS,
+				Items.ACACIA_PLANKS,
+				Items.MANGROVE_PLANKS,
+				Items.CHERRY_PLANKS
+			);
+		this.tag(RisusTags.Items.ALTERABLE_LOGS)
+			.add(
+				Items.OAK_LOG,
+				Items.DARK_OAK_LOG,
+				Items.BIRCH_LOG,
+				Items.SPRUCE_LOG,
+				Items.JUNGLE_LOG,
+				Items.ACACIA_LOG,
+				Items.MANGROVE_LOG,
+				Items.CHERRY_LOG
+			);
+		this.tag(RisusTags.Items.ALTERABLE_STRIPPED_WOODS)
+			.add(
+				Items.STRIPPED_OAK_WOOD,
+				Items.STRIPPED_DARK_OAK_WOOD,
+				Items.STRIPPED_BIRCH_WOOD,
+				Items.STRIPPED_SPRUCE_WOOD,
+				Items.STRIPPED_JUNGLE_WOOD,
+				Items.STRIPPED_ACACIA_WOOD,
+				Items.STRIPPED_MANGROVE_WOOD,
+				Items.STRIPPED_CHERRY_WOOD
+			);
+		this.tag(RisusTags.Items.ALTERABLE_WOODS)
+			.add(
+				Items.OAK_WOOD,
+				Items.DARK_OAK_WOOD,
+				Items.BIRCH_WOOD,
+				Items.SPRUCE_WOOD,
+				Items.JUNGLE_WOOD,
+				Items.ACACIA_WOOD,
+				Items.MANGROVE_WOOD,
+				Items.CHERRY_WOOD
+			);
+		this.tag(RisusTags.Items.ALTERABLE_STRIPPED_LOGS)
+			.add(
+				Items.STRIPPED_OAK_LOG,
+				Items.STRIPPED_DARK_OAK_LOG,
+				Items.STRIPPED_BIRCH_LOG,
+				Items.STRIPPED_SPRUCE_LOG,
+				Items.STRIPPED_JUNGLE_LOG,
+				Items.STRIPPED_ACACIA_LOG,
+				Items.STRIPPED_MANGROVE_LOG,
+				Items.STRIPPED_CHERRY_LOG
+			);
 	}
 }

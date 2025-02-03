@@ -1,30 +1,7 @@
 {
   "type": "risus:alteration",
-  "input": [
-    {
-      "item": "minecraft:oak_planks"
-    },
-    {
-      "item": "minecraft:dark_oak_planks"
-    },
-    {
-      "item": "minecraft:birch_planks"
-    },
-    {
-      "item": "minecraft:spruce_planks"
-    },
-    {
-      "item": "minecraft:jungle_planks"
-    },
-    {
-      "item": "minecraft:acacia_planks"
-    },
-    {
-      "item": "minecraft:mangrove_planks"
-    },
-    {
-      "item": "minecraft:cherry_planks"
-    }
-  ],
+  "input": {
+    "tag": "risus:alterable_planks"
+  },
   "result": "risus:bondknot_planks"
 }

@@ -308,6 +308,8 @@
   "death.attack.axed": "%1$s had an axe thrown through their skull",
   "death.attack.axed.player": "%1$s had an axe thrown through their skull while trying to escape %2$s",
 
+  "gui.risus.alteration_jei": "Alteration",
+
   "itemGroup.risus": "Risus",
   "itemGroup.risus.main": "Risus",
   "advancement.risus.first": "Risus",

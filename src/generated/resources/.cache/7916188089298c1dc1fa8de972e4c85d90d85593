@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-13T15:02:47.3864569	Tags for minecraft:item mod id risus
+// 1.21.1	2025-02-03T22:02:42.7314202	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
@@ -21,6 +21,19 @@ ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/item/wooden_buttons
 fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/item/wooden_slabs.json
 4e1a395d41189d294b952ba2d28d3ac5dee03b7d data/minecraft/tags/item/wooden_stairs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/item/wooden_trapdoors.json
+97ba3d96b15e164a392b13d12d09607bef35bd5c data/risus/tags/item/alterable_buttons.json
+20e8f491dd14f75f111aa172ba123c450107e7e0 data/risus/tags/item/alterable_doors.json
+5bb27b8bfced3980eecb0f7f57223a187e65aa6b data/risus/tags/item/alterable_fences.json
+3cb586e973a7f2d90c61698542dcbcad204b8853 data/risus/tags/item/alterable_gates.json
+0032fab9887ba5c16d6593db7a290422649ee131 data/risus/tags/item/alterable_hanging_signs.json
+c499fc6f149008141d0f57e3936957efe03661b8 data/risus/tags/item/alterable_logs.json
+eef1a5e24a86a385d4d7e7bf2cdef75a9e23c33d data/risus/tags/item/alterable_planks.json
+c6fd616af36da4a3e2520995ad011e9ca1c89b07 data/risus/tags/item/alterable_pressure_plates.json
+35a55f0fa648b71f5ae2a045ab0b8f93e2782728 data/risus/tags/item/alterable_signs.json
+71cdd95aa7d7f81565d4dc130f85131661476ee9 data/risus/tags/item/alterable_slabs.json
+12936f8330cc7e44bd5861255d14175637e2bc1c data/risus/tags/item/alterable_stairs.json
+6bd9cfc8f39b091489940c6b45f7ed52a9e483e1 data/risus/tags/item/alterable_trapdoors.json
+85c1719ff72cd4248400c1b13febf24d44ddf660 data/risus/tags/item/alterable_woods.json
 d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/item/bondknot_logs.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json

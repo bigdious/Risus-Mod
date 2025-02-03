@@ -85,6 +85,14 @@ repositories {
 		url = "https://maven.blamejared.com/"
 	}
 	maven {
+		name = "TerraformersMC" //EMI
+		url = "https://maven.terraformersmc.com/"
+	}
+	maven {
+		name 'Shedaniel\'s Maven' //REI
+		url "https://maven.shedaniel.me"
+	}
+	maven {
 		// location of a maven mirror for JEI files, as a fallback
 		name = "ModMaven"
 		url = "https://modmaven.dev"
@@ -96,11 +104,10 @@ repositories {
 }
 
 dependencies {
-	// compile against the JEI API but do not include it at runtime
-	compileOnly("mezz.jei:jei-1.21-common-api:${jei_version}")
-	compileOnly("mezz.jei:jei-1.21-neoforge-api:${jei_version}")
-	// at runtime, use the full JEI jar for NeoForge
-	runtimeOnly("mezz.jei:jei-1.21-neoforge:${jei_version}")
+
+	implementation "mezz.jei:jei-${project.minecraft_version}-neoforge:${project.jei_version}"
+	compileOnly "dev.emi:emi-neoforge:${project.emi_version}+${project.minecraft_version}"
+	compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${project.rei_version}"
 
 	implementation "curse.maven:jade-324717:${project.jade_version}"
 	compileOnly "vazkii.patchouli:Patchouli:1.21-${project.patchouli_version}:api"

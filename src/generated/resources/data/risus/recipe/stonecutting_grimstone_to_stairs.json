@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "risus:grimstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:grimstone_stairs"
+  }
+}

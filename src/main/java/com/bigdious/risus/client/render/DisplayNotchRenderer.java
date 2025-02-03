@@ -99,7 +99,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.25, 0.5D);
 						} else {
-							stack.translate(0.5D, 0.03125, 0.5D);
+							stack.translate(0.5D, 0.03625, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
 						stack.mulPose(Axis.ZP.rotationDegrees(180+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
@@ -123,7 +123,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.75, 0.5D);
 						} else {
-							stack.translate(0.5D, 0.96875, 0.5D);
+							stack.translate(0.5D, 0.96375, 0.5D);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(90));
 						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
@@ -148,7 +148,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.5, 0.75);
 						} else {
-							stack.translate(0.5D, 0.5, 0.96875);
+							stack.translate(0.5D, 0.5, 0.96375);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0));
 						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
@@ -171,7 +171,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.5D, 0.5, 0.25);
 						} else {
-							stack.translate(0.5D, 0.5, 0.03125);
+							stack.translate(0.5D, 0.5, 0.03625);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0));
 						stack.mulPose(Axis.ZP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
@@ -195,7 +195,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.25D, 0.5, 0.5);
 						} else {
-							stack.translate(0.03125, 0.5, 0.5);
+							stack.translate(0.03625, 0.5, 0.5);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));
@@ -219,7 +219,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 						if (entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE)) {
 							stack.translate(0.75D, 0.5, 0.5);
 						} else {
-							stack.translate(0.96875, 0.5, 0.5);
+							stack.translate(0.96375, 0.5, 0.5);
 						}
 						stack.mulPose(Axis.XP.rotationDegrees(0+(entity.getBlockState().getValue(DisplayNotchBlock.ROTATION)*22.5F)));
 						stack.mulPose(Axis.ZP.rotationDegrees(0));

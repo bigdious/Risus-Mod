@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:oak_sign",
+    "minecraft:dark_oak_sign",
+    "minecraft:birch_sign",
+    "minecraft:spruce_sign",
+    "minecraft:jungle_sign",
+    "minecraft:acacia_sign",
+    "minecraft:mangrove_sign",
+    "minecraft:cherry_sign"
+  ]
+}

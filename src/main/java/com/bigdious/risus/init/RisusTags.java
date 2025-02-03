@@ -65,6 +65,21 @@ public class RisusTags {
 		public static final TagKey<Item> BASE_TISSUE = tag("base_tissue");
 		public static final TagKey<Item> HURTS_ANGEL_WINGS = tag("hurts_angel_wings");
 		public static final TagKey<Item> LIGHTLY_HURTS_ANGEL_WINGS = tag("lightly_hurts_angel_wings");
+		public static final TagKey<Item> ALTERABLE_GATES = tag("alterable_gates");
+		public static final TagKey<Item> ALTERABLE_FENCES = tag("alterable_fences");
+		public static final TagKey<Item> ALTERABLE_TRAPDOORS = tag("alterable_trapdoors");
+		public static final TagKey<Item> ALTERABLE_HANGING_SIGNS = tag("alterable_hanging_signs");
+		public static final TagKey<Item> ALTERABLE_SIGNS = tag("alterable_signs");
+		public static final TagKey<Item> ALTERABLE_DOORS = tag("alterable_doors");
+		public static final TagKey<Item> ALTERABLE_BUTTONS = tag("alterable_buttons");
+		public static final TagKey<Item> ALTERABLE_PRESSURE_PLATES = tag("alterable_pressure_plates");
+		public static final TagKey<Item> ALTERABLE_SLABS = tag("alterable_slabs");
+		public static final TagKey<Item> ALTERABLE_STAIRS = tag("alterable_stairs");
+		public static final TagKey<Item> ALTERABLE_PLANKS = tag("alterable_planks");
+		public static final TagKey<Item> ALTERABLE_LOGS = tag("alterable_logs");
+		public static final TagKey<Item> ALTERABLE_STRIPPED_LOGS = tag("alterable_logs");
+		public static final TagKey<Item> ALTERABLE_WOODS = tag("alterable_woods");
+		public static final TagKey<Item> ALTERABLE_STRIPPED_WOODS = tag("alterable_woods");
 
 		private static TagKey<Item> tag(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

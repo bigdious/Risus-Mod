@@ -10,6 +10,7 @@
     },
     {
       "type": "risus:alterationtemplate4",
+      "header": "Alteration",
       "input1": "minecraft:leather_helmet",
       "output1": "risus:skin_helmet",
       "input2": "minecraft:leather_chestplate",
@@ -18,7 +19,7 @@
       "output3": "risus:skin_leggings",
       "input4": "minecraft:leather_boots",
       "output4": "risus:skin_boots",
-      "text": "A total of 24 leather pieces are needed to create a full set. Using a Potion of Love on a few cows can be a quick way to attain them."
+      "text": "A total of 24 leather pieces are needed to create a full set."
     },
     {
       "type": "patchouli:text",
