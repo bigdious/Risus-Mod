@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -34,10 +35,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.FLESHY_SPAWNER.get(), texture("block/fleshy_spawner"));
 		toBlockModel(RisusBlocks.INACTIVE_HOLDER.get(), texture("block/inactive_holder"));
 		toBlockModel(RisusBlocks.DEPTH_VASE.get(), texture("block/decoy_vase"));
-		toBlockModel(RisusBlocks.DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
-		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH.get(), texture("block/decoy_notch"));
-		toBlockModel(RisusBlocks.DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
-		toBlockModel(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), texture("block/decoy_notch"));
+		toBlock(RisusBlocks.DISPLAY_NOTCH.get());
 		toBlockModel(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), texture("block/organic_matter_block"));
 		toBlockModel(RisusBlocks.COPPER_AMALGAM.get(), texture("block/copper_amalgam"));
 		toBlockModel(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), texture("block/exposed_copper_amalgam"));
@@ -273,20 +271,20 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.perspective(ItemDisplayContext.HEAD, unawakened)
 				.end();
 		singleTex(RisusItems.SMILE);
-		singleTex(RisusItems.JOYFLAME_CAMPFIRE);
-		singleTex(RisusItems.JOYFLAME_LANTERN);
+		singleTex(RisusBlocks.JOYFLAME_CAMPFIRE);
+		singleTex(RisusBlocks.JOYFLAME_LANTERN);
 		singleTex(RisusItems.JOYFLAME_TORCH);
-		singleTex(RisusItems.HEART_TRANSPLANT);
-		singleTex(RisusItems.VEINS);
-		singleTex(RisusItems.BIG_CHAIN);
-		generatedRenderType(RisusItems.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
+		singleTex(RisusBlocks.HEART_TRANSPLANT);
+		singleTex(RisusBlocks.VEINS);
+		singleTex(RisusBlocks.BIG_CHAIN);
+		generatedRenderType(RisusBlocks.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
 		singleTex(RisusItems.MEMORY1_ITEM);
-		singleTex(RisusItems.REGEN_ROSE);
+		singleTex(RisusBlocks.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
-		singleTex(RisusItems.TEETH);
+		singleTex(RisusBlocks.TEETH);
 
-		nameableWeapon(RisusItems.NEURON_STEM.get(), "weapons/", "renamed_neuron");
+		nameableWeapon(RisusBlocks.NEURON_STEM.asItem(), "weapons/", "renamed_neuron");
 		singleTex(RisusItems.HAIR_FOLLICLES);
 
 
@@ -319,8 +317,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		return generated(name, "item/generated", layers);
 	}
 
-	private ItemModelBuilder singleTex(DeferredHolder<Item, Item> item) {
-		return generated(item.getId().getPath(), "item/generated", texture("item/" + item.getId().getPath()));
+	private ItemModelBuilder singleTex(ItemLike item) {
+		return generated(BuiltInRegistries.ITEM.getKey(item.asItem()).getPath(), "item/generated", texture("item/" + BuiltInRegistries.ITEM.getKey(item.asItem()).getPath()));
 	}
 
 	private ItemModelBuilder singleTexTool(DeferredHolder<Item, Item> item) {

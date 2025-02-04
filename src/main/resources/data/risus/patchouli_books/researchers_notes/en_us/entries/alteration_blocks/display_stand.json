@@ -1,6 +1,6 @@
 {
   "name": "Display Notches",
-  "icon": "risus:display_notch",
+  "icon": "risus:black_display_notch",
   "category": "risus:alteration",
   "advancement": "risus:site_zero",
   "pages": [
@@ -12,20 +12,8 @@
       "type": "risus:alterationtemplate2",
       "header": "Alteration",
       "input1": "minecraft:item_frame",
-      "output1": "risus:display_notch",
-      "input2": "minecraft:glow_item_frame",
-      "output2": "risus:glow_display_notch",
+      "output1": "risus:black_display_notch",
       "text": "By placing them in a crafting grid, the Display Notches can be switched between Flat and Standing display mode. Adding a Glow Inc Sac to a Display Notch will also turn it into a Glow one."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:display_notch_stand",
-      "recipe2": "risus:glow_display_notch_stand"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:glow_display_notch1",
-      "recipe2": "risus:glow_display_notch_stand1"
     }
   ]
 }

@@ -1,6 +1,7 @@
 package com.bigdious.risus.compat;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import mezz.jei.api.constants.VanillaTypes;
@@ -28,7 +29,7 @@ public class AlterationCategory implements IRecipeCategory<AlterationRecipe> {
 	public AlterationCategory(IGuiHelper helper) {
 		ResourceLocation location = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/gui/alteration_gui.png");
 		this.background = helper.createDrawable(location, 0, 0, 116, 54);
-		this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, RisusItems.ALTERATION_CATALYST.get().getDefaultInstance());
+		this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, RisusBlocks.ALTERATION_CATALYST.asItem().getDefaultInstance());
 		this.localizedName = Component.translatable("gui.risus.alteration_jei");
 	}
 	@Override

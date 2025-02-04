@@ -135,7 +135,6 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
-		event.registerLayerDefinition(RisusModelLayers.DISPLAY_NOTCH, DisplayNotchRenderer::createBaseLayer);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {

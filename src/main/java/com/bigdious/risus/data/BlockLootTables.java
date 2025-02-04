@@ -49,9 +49,21 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());
-		dropSelf(RisusBlocks.GLOW_DISPLAY_NOTCH.get());
-		dropSelf(RisusBlocks.DISPLAY_NOTCH_STAND.get());
-		dropSelf(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get());
+		dropOther(RisusBlocks.GRAY_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.WHITE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.RED_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.ORANGE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.YELLOW_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.GREEN_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.LIME_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.BLUE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.CYAN_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.LIGHT_BLUE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.PURPLE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.PINK_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
+		dropOther(RisusBlocks.BROWN_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropSelf(RisusBlocks.LAUGHING_STALK.get());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.INACTIVE_HOLDER.get());
@@ -132,8 +144,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
 		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
 		dropSelf(RisusBlocks.REGEN_ROSE.get());
-		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusItems.HEART_TRANSPLANT.get()));
-		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusItems.REGEN_ROSE.get()));
+		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusBlocks.HEART_TRANSPLANT.get()));
+		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusBlocks.REGEN_ROSE.get()));
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.BONE_STAIRS.get());
 		dropSelf(RisusBlocks.BONE_SLAB.get());
@@ -147,7 +159,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.HAIRY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 		dropSelf(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
-		add(RisusBlocks.TALL_HAIR.get(), createShearsOnlyDrop(RisusItems.TALL_HAIR.get()));
+		add(RisusBlocks.TALL_HAIR.get(), createShearsOnlyDrop(RisusBlocks.TALL_HAIR.get()));
 		dropSelf(RisusBlocks.BUNDLE_OF_HAIR.get());
 
 		dropSelf(RisusBlocks.TISSUE.get());
@@ -173,16 +185,15 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.EYE_GOLDEN.get());
 		dropSelf(RisusBlocks.EYE_EMERALD.get());
 
-
 		dropSelf(RisusBlocks.JOYFLAME_LANTERN.get());
 		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
-		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusItems.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
+		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusBlocks.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		dropSelf(RisusBlocks.ZIT.get());
-		dropOther(RisusBlocks.NEURON_STEM.get(), RisusItems.NEURON_STEM.get());
-		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusItems.NEURON_STEM.get());
-		dropOther(RisusBlocks.VEINS.get(), RisusItems.VEINS.get());
-		dropOther(RisusBlocks.VEINS_END.get(), RisusItems.VEINS.get());
+		dropOther(RisusBlocks.NEURON_STEM.get(), RisusBlocks.NEURON_STEM.get());
+		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusBlocks.NEURON_STEM.get());
+		dropOther(RisusBlocks.VEINS.get(), RisusBlocks.VEINS.get());
+		dropOther(RisusBlocks.VEINS_END.get(), RisusBlocks.VEINS.get());
 		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));
 		add(RisusBlocks.TEETH.get(), createMultifaceBlockDrops(RisusBlocks.TEETH.get()));
 	}

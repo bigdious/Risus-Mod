@@ -31,11 +31,11 @@ public class AlterationCatalystRenderer implements BlockEntityRenderer<Alteratio
 
 	@Override
 	public void render(AlterationCatalystBlockEntity entity, float partialTicks, PoseStack stack, MultiBufferSource buffers, int light, int overlay) {
-		ItemStack itemstack = entity.getInputItem();
+		ItemStack itemstack = entity.getTheItem();
 		int i = (int)entity.getBlockPos().asLong();
 		if (itemstack != ItemStack.EMPTY) {
 			stack.pushPose();
-			double yOffset = entity.getInputItem().getItem() instanceof BlockItem ? 1.0D : 0.95D;
+			double yOffset = entity.getTheItem().getItem() instanceof BlockItem ? 1.0D : 0.95D;
 			stack.translate(0.5D, yOffset, 0.5D);
 			stack.mulPose(Axis.XP.rotationDegrees(90.0F));
 			stack.mulPose(Axis.ZP.rotationDegrees(entity.rotationDegrees));

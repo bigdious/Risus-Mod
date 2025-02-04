@@ -249,7 +249,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.save(consumer, "risus:cupid");
 
 		AdvancementHolder shave = Advancement.Builder.advancement().parent(first).display(
-				RisusItems.HAIRY_SKIN.get(),
+				RisusBlocks.HAIRY_SKIN.get(),
 				Component.translatable("advancement.risus.shave"),
 				Component.translatable("advancement.risus.shave.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)

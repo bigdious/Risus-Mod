@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "elevate=false,facing=down": {
+      "model": "risus:block/green_display_notch",
+      "x": 180
+    },
+    "elevate=false,facing=east": {
+      "model": "risus:block/green_display_notch",
+      "x": 90,
+      "y": 90
+    },
+    "elevate=false,facing=north": {
+      "model": "risus:block/green_display_notch",
+      "x": 90
+    },
+    "elevate=false,facing=south": {
+      "model": "risus:block/green_display_notch",
+      "x": 90,
+      "y": 180
+    },
+    "elevate=false,facing=up": {
+      "model": "risus:block/green_display_notch"
+    },
+    "elevate=false,facing=west": {
+      "model": "risus:block/green_display_notch",
+      "x": 90,
+      "y": 270
+    },
+    "elevate=true,facing=down": {
+      "model": "risus:block/empty",
+      "x": 180
+    },
+    "elevate=true,facing=east": {
+      "model": "risus:block/empty",
+      "x": 90,
+      "y": 90
+    },
+    "elevate=true,facing=north": {
+      "model": "risus:block/empty",
+      "x": 90
+    },
+    "elevate=true,facing=south": {
+      "model": "risus:block/empty",
+      "x": 90,
+      "y": 180
+    },
+    "elevate=true,facing=up": {
+      "model": "risus:block/empty"
+    },
+    "elevate=true,facing=west": {
+      "model": "risus:block/empty",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

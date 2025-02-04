@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/template_display_notch",
+  "textures": {
+    "texture": "minecraft:block/pink_wool"
+  }
+}

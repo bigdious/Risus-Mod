@@ -2,6 +2,7 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -78,7 +79,7 @@ public class SpreadingRemainsBlock extends MultifaceBlock implements SimpleMulti
 
 	@Override
 	public boolean canBeReplaced(BlockState state, BlockPlaceContext blockplace) {
-		return !blockplace.getItemInHand().is(RisusItems.SPREADING_REMAINS.get()) || super.canBeReplaced(state, blockplace);
+		return !blockplace.getItemInHand().is(RisusBlocks.SPREADING_REMAINS.asItem()) || super.canBeReplaced(state, blockplace);
 	}
 
 	@Override

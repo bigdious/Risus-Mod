@@ -82,10 +82,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 			RisusBlocks.ALTERATION_CATALYST.get(),
 			RisusBlocks.BIG_CHAIN.get(),
-			RisusBlocks.DISPLAY_NOTCH.get(),
-			RisusBlocks.GLOW_DISPLAY_NOTCH.get(),
-			RisusBlocks.DISPLAY_NOTCH_STAND.get(),
-			RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(),
 			RisusBlocks.ASHEN_REMAINS.get(),
 			RisusBlocks.SMILING_REMAINS.get(),
 			RisusBlocks.LAUGHING_OBSIDIAN.get(),

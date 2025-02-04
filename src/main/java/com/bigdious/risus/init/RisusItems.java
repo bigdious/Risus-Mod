@@ -13,6 +13,9 @@ import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 @SuppressWarnings("unused")
 public class RisusItems {
 
@@ -20,236 +23,85 @@ public class RisusItems {
 	public static final Rarity BLOOD = Rarity.valueOf("RISUS_BLOOD");
 
 	//TOOLS AND SHIT
-
-	public static final DeferredItem<Item> RESEARCHERS_NOTES = ITEMS.register("researchers_notes", () -> new RisusBook(defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> CRESCENT_DISASTER = ITEMS.register("crescent_disaster", () -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> GOLD_FIST = ITEMS.register("gold_fist", () -> new GoldFistItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 3, 4F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> BOOMSTICK = ITEMS.register("boomstick", () -> new BoomstickItem( defaultWithRarity().durability(64)));
-	public static final DeferredItem<Item> HAND_OF_GREED = ITEMS.register("hand_of_greed", () -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(BLOOD)));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = ITEMS.register("unawakened_vessel", () -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> TOOTHKNOCKER = ITEMS.register("toothknocker", () -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> SCYTHE = ITEMS.register("scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> FIRE_SCYTHE = ITEMS.register("fire_scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> SOUL_SCYTHE = ITEMS.register("soul_scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = ITEMS.register("cinderglee_scythe", () -> new ScytheItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> THOUSAND_BLADE = ITEMS.register("thousand_blade", () -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, new Item.Properties().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 14, -3.5F)).rarity(BLOOD)));
-	public static final DeferredItem<Item> BLOOD_BUCKET = ITEMS.register("blood_bucket", () -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), defaultWithRarity().stacksTo(1).craftRemainder(Items.BUCKET)));
-	public static final DeferredItem<Item> LIGHT_DEVOURER = ITEMS.register("light_devourer", () -> new LightDevourerItem(defaultWithRarity()));
-	public static final DeferredItem<Item> ENDLESS_PEARL = ITEMS.register("endless_pearl", () -> new EndlessPearlItem(defaultWithRarity().durability(10000)));
-	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = ITEMS.register("bloodwyrm_head_weapon", () -> new BloodwyrmHeadItem(RisusItems.defaultWithRarity().durability(1000)));
-	public static final DeferredItem<Item> ANGEL_WINGS = ITEMS.register("angel_wings", () -> new AngelWings(RisusItems.defaultWithRarity().durability(666)));
-	public static final DeferredItem<Item> SACRIFICE_CATALYST = ITEMS.register("sacrifice_catalyst", () -> new Item(RisusItems.defaultWithRarity().durability(1000)));
+	public static final DeferredItem<Item> RESEARCHERS_NOTES = register("researchers_notes", RisusBookItem::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> CRESCENT_DISASTER = register("crescent_disaster", properties -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 9, -3F)).rarity(BLOOD));
+	public static final DeferredItem<Item> GOLD_FIST = register("gold_fist", properties -> new GoldFistItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 3, 4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> BOOMSTICK = register("boomstick", BoomstickItem::new, () -> new Item.Properties().rarity(BLOOD).durability(64));
+	public static final DeferredItem<Item> HAND_OF_GREED = register("hand_of_greed", properties -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes(RisusToolMaterials.GLUTTONY)).rarity(BLOOD));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = register("unawakened_vessel", properties -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD));
+	public static final DeferredItem<Item> TOOTHKNOCKER = register("toothknocker", properties -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SCYTHE = register("scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> FIRE_SCYTHE = register("fire_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SOUL_SCYTHE = register("soul_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 14, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> BLOOD_BUCKET = register("blood_bucket", properties -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).craftRemainder(Items.BUCKET));
+	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().rarity(BLOOD).durability(10000));
+	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
+	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().rarity(BLOOD).durability(666));
+	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
 
 	//ARMORS
-
-	public static final DeferredItem<Item> SKIN_HELMET = ITEMS.register("skin_helmet", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1))));
-	public static final DeferredItem<Item> SKIN_CHESTPLATE = ITEMS.register("skin_chestplate", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.CHESTPLATE, 1))));
-	public static final DeferredItem<Item> SKIN_LEGGINGS = ITEMS.register("skin_leggings", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.LEGGINGS, 1))));
-	public static final DeferredItem<Item> SKIN_BOOTS = ITEMS.register("skin_boots", () -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1))));
-
+	public static final DeferredItem<Item> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)));
+	public static final DeferredItem<Item> SKIN_CHESTPLATE = register("skin_chestplate", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.CHESTPLATE, properties), () -> new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.CHESTPLATE, 1)));
+	public static final DeferredItem<Item> SKIN_LEGGINGS = register("skin_leggings", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.LEGGINGS, properties), () -> new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.LEGGINGS, 1)));
+	public static final DeferredItem<Item> SKIN_BOOTS = register("skin_boots", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1)));
 
 	//CONSUMABLES
-
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).fast().build();
 	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
 	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
-	public static final DeferredItem<Item> GUILTY_APPLE = ITEMS.register("guilty_apple", () -> new Item(defaultWithRarity().food(GUILTY_FOOD)));
-	public static final DeferredItem<Item> ORGANIC_MATTER = ITEMS.register("organic_matter", () -> new OrganicMatterItem(defaultWithRarity().food(ORGANIC_FOOD)));
-	public static final DeferredItem<Item> STALKER_EYE = ITEMS.register("stalker_eye", () -> new Item(defaultWithRarity().food(EYE_FOOD)));
-	public static final DeferredItem<Item> EYE_SANDWICH = ITEMS.register("eye_sandwich", () -> new Item(defaultWithRarity().food(EYE_SANDWICH_FOOD)));
-	public static final DeferredItem<Item> EGG_SAC = ITEMS.register("egg_sac", () -> new EggSacItem(defaultWithRarity()));
-	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = ITEMS.register("totem_of_unyielding", () -> new Item(defaultWithRarity().stacksTo(1)));
-
+	public static final DeferredItem<Item> GUILTY_APPLE = register("guilty_apple", Item::new, () -> new Item.Properties().rarity(BLOOD).food(GUILTY_FOOD));
+	public static final DeferredItem<Item> ORGANIC_MATTER = register("organic_matter", OrganicMatterItem::new, () -> new Item.Properties().rarity(BLOOD).food(ORGANIC_FOOD));
+	public static final DeferredItem<Item> STALKER_EYE = register("stalker_eye", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_FOOD));
+	public static final DeferredItem<Item> EYE_SANDWICH = register("eye_sandwich", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_SANDWICH_FOOD));
+	public static final DeferredItem<Item> EGG_SAC = register("egg_sac", EggSacItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 
 	//SUMMONERS
+	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> GUTS_BOAT = register("guts_boat", properties -> new RisusBoatItem(true, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> MEMORY1_ITEM = register("memory1_item", Memory1Item::new, Item.Properties::new);
 
-	public static final DeferredItem<Item> BONDKNOT_BOAT = ITEMS.register("bondknot_boat", () -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> GUTS_BOAT = ITEMS.register("guts_boat", () -> new RisusBoatItem(true, RisusBoat.Type.BONDKNOT, defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> MEMORY1_ITEM = ITEMS.register("memory1_item", () -> new Memory1Item(defaultWithNoRarity()));
-
-	//ACTION BLOCKS
-
-	public static final DeferredItem<Item> WEAVER_NEST = ITEMS.register("weaver_nest", () -> new BlockItem(RisusBlocks.WEAVER_NEST.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ALTERATION_CATALYST = ITEMS.register("alteration_catalyst", () -> new BlockItem(RisusBlocks.ALTERATION_CATALYST.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ANGEL_ALTAR = ITEMS.register("angel_altar", () -> new BlockItem(RisusBlocks.ANGEL_ALTAR.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DEPTH_VASE = ITEMS.register("depth_vase", () -> new BlockItem(RisusBlocks.DEPTH_VASE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DISPLAY_NOTCH = ITEMS.register("display_notch", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GLOW_DISPLAY_NOTCH = ITEMS.register("glow_display_notch", () -> new BlockItem(RisusBlocks.GLOW_DISPLAY_NOTCH.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DISPLAY_NOTCH_STAND = ITEMS.register("display_notch_stand", () -> new BlockItem(RisusBlocks.DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GLOW_DISPLAY_NOTCH_STAND = ITEMS.register("glow_display_notch_stand", () -> new BlockItem(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> LAUGHING_STALK = ITEMS.register("laughing_stalk", () -> new BlockItem(RisusBlocks.LAUGHING_STALK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FLESHY_SPAWNER = ITEMS.register("fleshy_spawner", () -> new BlockItem(RisusBlocks.FLESHY_SPAWNER.get(), defaultWithRarity()));
-
-
-	//WOOD
-
-	public static final DeferredItem<Item> BONDKNOT_LOG = ITEMS.register("bondknot_log", () -> new BlockItem(RisusBlocks.BONDKNOT_LOG.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> STRIPPED_BONDKNOT_LOG = ITEMS.register("stripped_bondknot_log", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> STRIPPED_BONDKNOT_WOOD = ITEMS.register("stripped_bondknot_wood", () -> new BlockItem(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_WOOD = ITEMS.register("bondknot_wood", () -> new BlockItem(RisusBlocks.BONDKNOT_WOOD.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> POPPING_BONDKNOT_LOG = ITEMS.register("popping_bondknot_log", () -> new BlockItem(RisusBlocks.POPPING_BONDKNOT_LOG.get(), defaultNoTab()));
-	public static final DeferredItem<Item> POPPING_BONDKNOT_WOOD = ITEMS.register("popping_bondknot_wood", () -> new BlockItem(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), defaultNoTab()));
-	public static final DeferredItem<Item> BONDKNOT_PLANKS = ITEMS.register("bondknot_planks", () -> new BlockItem(RisusBlocks.BONDKNOT_PLANKS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_SLAB = ITEMS.register("bondknot_slab", () -> new BlockItem(RisusBlocks.BONDKNOT_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_STAIRS = ITEMS.register("bondknot_stairs", () -> new BlockItem(RisusBlocks.BONDKNOT_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_FENCE = ITEMS.register("bondknot_fence", () -> new BlockItem(RisusBlocks.BONDKNOT_FENCE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_FENCE_GATE = ITEMS.register("bondknot_fence_gate", () -> new BlockItem(RisusBlocks.BONDKNOT_FENCE_GATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_PRESSURE_PLATE = ITEMS.register("bondknot_pressure_plate", () -> new BlockItem(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_BUTTON = ITEMS.register("bondknot_button", () -> new BlockItem(RisusBlocks.BONDKNOT_BUTTON.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_TRAPDOOR = ITEMS.register("bondknot_trapdoor", () -> new BlockItem(RisusBlocks.BONDKNOT_TRAPDOOR.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_DOOR = ITEMS.register("bondknot_door", () -> new BlockItem(RisusBlocks.BONDKNOT_DOOR.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONDKNOT_SIGN = ITEMS.register("bondknot_sign", () -> new SignItem(RisusItems.defaultWithRarity().stacksTo(16), RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()));
-	public static final DeferredItem<Item> BONDKNOT_HANGING_SIGN = ITEMS.register("bondknot_hanging_sign", () -> new HangingSignItem(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), RisusItems.defaultWithRarity().stacksTo(16)));
-
-	//DECO
-
-	public static final DeferredItem<Item> RIBCAGE = ITEMS.register("ribcage", () -> new BlockItem(RisusBlocks.RIBCAGE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BABY_RIBCAGE = ITEMS.register("baby_ribcage", () -> new BlockItem(RisusBlocks.BABY_RIBCAGE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CRYSTALLIZED_BONDS = ITEMS.register("crystallized_bonds", () -> new BlockItem(RisusBlocks.CRYSTALLIZED_BONDS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> HEART_TRANSPLANT = ITEMS.register("heart_transplant", () -> new BlockItem(RisusBlocks.HEART_TRANSPLANT.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> REGEN_ROSE = ITEMS.register("regen_rose", () -> new BlockItem(RisusBlocks.REGEN_ROSE.get(), defaultWithNoRarity()));
-	public static final DeferredItem<Item> TEETH = ITEMS.register("teeth", () -> new BlockItem(RisusBlocks.TEETH.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> JOYFLAME_TORCH = ITEMS.register("joyflame_torch", () -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), defaultWithRarity(), Direction.DOWN));
-	public static final DeferredItem<Item> JOYFLAME_LANTERN = ITEMS.register("joyflame_lantern", () -> new BlockItem(RisusBlocks.JOYFLAME_LANTERN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> JOYFLAME_CAMPFIRE = ITEMS.register("joyflame_campfire", () -> new BlockItem(RisusBlocks.JOYFLAME_CAMPFIRE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BLOODWEAVE = ITEMS.register("bloodweave", () -> new BlockItem(RisusBlocks.BLOODWEAVE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BIG_CHAIN = ITEMS.register("big_chain", () -> new BlockItem(RisusBlocks.BIG_CHAIN.get(), defaultWithNoRarity()));
-	public static final DeferredItem<Item> BURNT_HYPHAE = ITEMS.register("burnt_hyphae", () -> new BlockItem(RisusBlocks.BURNT_HYPHAE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BLOODWYRM_HEAD = ITEMS.register("bloodwyrm_head", () -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.defaultWithRarity(), Direction.DOWN));
-	public static final DeferredItem<Item> ZIT = ITEMS.register("zit", () -> new BlockItem(RisusBlocks.ZIT.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CRYSTALLIZED_BOND = ITEMS.register("crystallized_bond", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> NEURON_STEM = ITEMS.register("neuron", () -> new BlockItem(RisusBlocks.NEURON_HEAD.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> VEINS = ITEMS.register("veins", () -> new BlockItem(RisusBlocks.VEINS_END.get(), defaultWithRarity()));
-
-
-	//GRIMSTONE
-
-	public static final DeferredItem<Item> GRIMSTONE = ITEMS.register("grimstone", () -> new BlockItem(RisusBlocks.GRIMSTONE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ACTIVE_GRIMSTONE = ITEMS.register("active_grimstone", () -> new BlockItem(RisusBlocks.ACTIVE_GRIMSTONE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_BRICKS = ITEMS.register("grimstone_bricks", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CRACKED_GRIMSTONE_BRICKS = ITEMS.register("cracked_grimstone_bricks", () -> new BlockItem(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_BRICKS_SLAB = ITEMS.register("grimstone_bricks_slab", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> POLISHED_GRIMSTONE_SLAB = ITEMS.register("polished_grimstone_slab", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_STAIRS = ITEMS.register("grimstone_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_BRICKS_STAIRS = ITEMS.register("grimstone_bricks_stairs", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> POLISHED_GRIMSTONE_STAIRS = ITEMS.register("polished_grimstone_stairs", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_WALL = ITEMS.register("grimstone_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_WALL.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GRIMSTONE_BRICKS_WALL = ITEMS.register("grimstone_bricks_wall", () -> new BlockItem(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> POLISHED_GRIMSTONE_WALL = ITEMS.register("polished_grimstone_wall", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CHISELED_GRIMSTONE = ITEMS.register("chiseled_grimstone", () -> new BlockItem(RisusBlocks.CHISELED_GRIMSTONE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> POLISHED_GRIMSTONE = ITEMS.register("polished_grimstone", () -> new BlockItem(RisusBlocks.POLISHED_GRIMSTONE.get(), defaultWithRarity()));
-
-	//BODYPART BLOCKS
-
-	public static final DeferredItem<Item> TISSUE = ITEMS.register("tissue", () -> new BlockItem(RisusBlocks.TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> TISSUE_STAIRs = ITEMS.register("tissue_stairs", () -> new BlockItem(RisusBlocks.TISSUE_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> TISSUE_SLAB = ITEMS.register("tissue_slab", () -> new BlockItem(RisusBlocks.TISSUE_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ROTTING_TISSUE = ITEMS.register("rotting_tissue", () -> new BlockItem(RisusBlocks.ROTTING_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DECOMPOSING_TISSUE = ITEMS.register("decomposing_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSING_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DECAYING_TISSUE = ITEMS.register("decaying_tissue", () -> new BlockItem(RisusBlocks.DECAYING_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FULL_BONE_BLOCK = ITEMS.register("full_bone_block", () -> new BlockItem(RisusBlocks.FULL_BONE_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FULL_BONE_STAIRS = ITEMS.register("full_bone_stairs", () -> new BlockItem(RisusBlocks.FULL_BONE_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FULL_BONE_SLAB = ITEMS.register("full_bone_slab", () -> new BlockItem(RisusBlocks.FULL_BONE_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONE_WALL = ITEMS.register("bone_wall", () -> new BlockItem(RisusBlocks.BONE_WALL.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONE_STAIRS = ITEMS.register("bone_stairs", () -> new BlockItem(RisusBlocks.BONE_STAIRS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BONE_SLAB = ITEMS.register("bone_slab", () -> new BlockItem(RisusBlocks.BONE_SLAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> LIVING_TISSUE = ITEMS.register("living_tissue", () -> new BlockItem(RisusBlocks.LIVING_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ROTTED_TISSUE = ITEMS.register("rotted_tissue", () -> new BlockItem(RisusBlocks.ROTTED_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DECOMPOSED_TISSUE = ITEMS.register("decomposed_tissue", () -> new BlockItem(RisusBlocks.DECOMPOSED_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> DECAYED_TISSUE = ITEMS.register("decayed_tissue", () -> new BlockItem(RisusBlocks.DECAYED_TISSUE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EYE_ENDER = ITEMS.register("eye_ender", () -> new BlockItem(RisusBlocks.EYE_ENDER.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EYE_BLEACHED = ITEMS.register("eye_bleached", () -> new BlockItem(RisusBlocks.EYE_BLEACHED.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EYE_GOLDEN = ITEMS.register("eye_golden", () -> new BlockItem(RisusBlocks.EYE_GOLDEN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EYE_BLOODSHOT = ITEMS.register("eye_bloodshot", () -> new BlockItem(RisusBlocks.EYE_BLOODSHOT.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EYE_EMERALD = ITEMS.register("eye_emerald", () -> new BlockItem(RisusBlocks.EYE_EMERALD.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FLESHY_SKIN = ITEMS.register("fleshy_skin", () -> new BlockItem(RisusBlocks.FLESHY_SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> SKIN = ITEMS.register("skin", () -> new BlockItem(RisusBlocks.SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CURVED_FLESHY_SKIN = ITEMS.register("curved_fleshy_skin", () -> new BlockItem(RisusBlocks.CURVED_FLESHY_SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> HAIRY_FLESHY_SKIN = ITEMS.register("hairy_fleshy_skin", () -> new BlockItem(RisusBlocks.HAIRY_FLESHY_SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> HAIRY_SKIN = ITEMS.register("hairy_skin", () -> new BlockItem(RisusBlocks.HAIRY_SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> HAIRY_CURVED_FLESHY_SKIN = ITEMS.register("hairy_curved_fleshy_skin", () -> new BlockItem(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> HAIR_FOLLICLES = ITEMS.register("hair_follicles", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> TALL_HAIR = ITEMS.register("tall_hair", () -> new BlockItem(RisusBlocks.TALL_HAIR.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BUNDLE_OF_HAIR = ITEMS.register("bundle_of_hair", () -> new BlockItem(RisusBlocks.BUNDLE_OF_HAIR.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> COPPER_AMALGAM = ITEMS.register("copper_amalgam", () -> new BlockItem(RisusBlocks.COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> EXPOSED_COPPER_AMALGAM = ITEMS.register("exposed_copper_amalgam", () -> new BlockItem(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> WEATHERED_COPPER_AMALGAM = ITEMS.register("weathered_copper_amalgam", () -> new BlockItem(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> OXIDIZED_COPPER_AMALGAM = ITEMS.register("oxidized_copper_amalgam", () -> new BlockItem(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> WAXED_COPPER_AMALGAM = ITEMS.register("waxed_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> WAXED_EXPOSED_COPPER_AMALGAM = ITEMS.register("waxed_exposed_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> WAXED_WEATHERED_COPPER_AMALGAM = ITEMS.register("waxed_weathered_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> WAXED_OXIDIZED_COPPER_AMALGAM = ITEMS.register("waxed_oxidized_copper_amalgam", () -> new BlockItem(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), defaultWithRarity()));
-	//MISC BUILDING BLOCKS
-
-	public static final DeferredItem<Item> CURVED_RITUAL_BLOCK = ITEMS.register("curved_ritual_block", () -> new BlockItem(RisusBlocks.CURVED_RITUAL_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> LINEAR_RITUAL_BLOCK = ITEMS.register("linear_ritual_block", () -> new BlockItem(RisusBlocks.LINEAR_RITUAL_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> SCAB = ITEMS.register("scab", () -> new BlockItem(RisusBlocks.SCAB.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> COAGULATED_BLOOD_BLOCK = ITEMS.register("coagulated_blood_block", () -> new BlockItem(RisusBlocks.COAGULATED_BLOOD_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ASHEN_REMAINS = ITEMS.register("ashen_remains", () -> new BlockItem(RisusBlocks.ASHEN_REMAINS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> SMILING_REMAINS = ITEMS.register("smiling_remains", () -> new BlockItem(RisusBlocks.SMILING_REMAINS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> LAUGHING_OBSIDIAN = ITEMS.register("laughing_obsidian", () -> new BlockItem(RisusBlocks.LAUGHING_OBSIDIAN.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ENGRAVED_BASALT = ITEMS.register("engraved_basalt", () -> new BlockItem(RisusBlocks.ENGRAVED_BASALT.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> SPREADING_REMAINS = ITEMS.register("spreading_remains", () -> new BlockItem(RisusBlocks.SPREADING_REMAINS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> ORGANIC_MATTER_BLOCK = ITEMS.register("organic_matter_block", () -> new BlockItem(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BOND_GLASS = ITEMS.register("bond_glass", () -> new BlockItem(RisusBlocks.BOND_GLASS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> CONTAINMENT_GLASS = ITEMS.register("containment_glass", () -> new BlockItem(RisusBlocks.CONTAINMENT_GLASS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> INACTIVE_HOLDER = ITEMS.register("inactive_holder", () -> new BlockItem(RisusBlocks.INACTIVE_HOLDER.get(), defaultWithRarity()));
-
-
-	//MAW
-
-	public static final DeferredItem<Item> MAW_GUTS = ITEMS.register("maw_guts", () -> new BlockItem(RisusBlocks.MAW_GUTS.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GLUTTONY_SCALEPLATE = ITEMS.register("gluttony_scaleplate", () -> new BlockItem(RisusBlocks.GLUTTONY_SCALEPLATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> IMITATION_SCALEPLATE = ITEMS.register("imitation_scaleplate", () -> new BlockItem(RisusBlocks.IMITATION_SCALEPLATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FLOWERING_IMITATION_SCALEPLATE = ITEMS.register("flowering_imitation_scaleplate", () -> new BlockItem(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> BUDDING_IMITATION_SCALEPLATE = ITEMS.register("budding_imitation_scaleplate", () -> new BlockItem(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FLATTENED_SCALES_BLOCK = ITEMS.register("flattened_scales_block", () -> new BlockItem(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> FLATTENED_IMITATION_SCALES_BLOCK = ITEMS.register("flattened_imitation_scales_block", () -> new BlockItem(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> GLUTTONY_SCALES = ITEMS.register("gluttony_scales", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> MIRAGE_SAND = ITEMS.register("mirage_sand", () -> new BlockItem(RisusBlocks.MIRAGE_SAND.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> MIRAGE_GRASS_BLOCK = ITEMS.register("mirage_grass_block", () -> new BlockItem(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> MIRAGE_NETHERRACK = ITEMS.register("mirage_netherrack", () -> new BlockItem(RisusBlocks.MIRAGE_NETHERRACK.get(), defaultWithRarity()));
-	public static final DeferredItem<Item> MIRAGE_END_STONE = ITEMS.register("mirage_end_stone", () -> new BlockItem(RisusBlocks.MIRAGE_END_STONE.get(), defaultWithRarity()));
+	public static final DeferredItem<Item> BONDKNOT_DOOR = register("bondknot_door", properties -> new DoubleHighBlockItem(RisusBlocks.BONDKNOT_DOOR.get(), properties), () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> BONDKNOT_SIGN = register("bondknot_sign", properties -> new SignItem(properties, RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()), () -> new Item.Properties().rarity(BLOOD).stacksTo(16));
+	public static final DeferredItem<Item> BONDKNOT_HANGING_SIGN = register("bondknot_hanging_sign", properties -> new HangingSignItem(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(16));
+	public static final DeferredItem<Item> JOYFLAME_TORCH = register("joyflame_torch", properties -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), properties, Direction.DOWN), () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), properties, Direction.DOWN), () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> CRYSTALLIZED_BOND = register("crystallized_bond", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS
-	public static final DeferredItem<Item> BLOOD_FEATHER = ITEMS.register("blood_feather", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> CONCENTRATION_CORE = ITEMS.register("concentration_core", () -> new Item(defaultWithRarity()));
-	public static final DeferredItem<Item> MEMORY_CORE = ITEMS.register("memory_core", () -> new ExperienceItem(defaultWithRarity()));
+	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//COLLECTABLES
-
-	public static final DeferredItem<Item> SMILE_PATTERN = ITEMS.register("smile_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> DIVINITY_PATTERN = ITEMS.register("divinity_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> TREE_PATTERN = ITEMS.register("tree_banner_pattern", () -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, defaultWithRarity().stacksTo(1)));
-	public static final DeferredItem<Item> MUSIC_DISC_RAK = ITEMS.register("music_disc_rak", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK)));
-	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = ITEMS.register("music_disc_feigr", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR)));
-	public static final DeferredItem<Item> MUSIC_DISC_MORK = ITEMS.register("music_disc_mork", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK)));
-	public static final DeferredItem<Item> MUSIC_DISC_REGN = ITEMS.register("music_disc_regn", () -> new Item(defaultWithRarity().stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.REGN)));
+	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> DIVINITY_PATTERN = register("divinity_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> TREE_PATTERN = register("tree_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> MUSIC_DISC_RAK = register("music_disc_rak", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK));
+	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = register("music_disc_feigr", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR));
+	public static final DeferredItem<Item> MUSIC_DISC_MORK = register("music_disc_mork", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK));
+	public static final DeferredItem<Item> MUSIC_DISC_REGN = register("music_disc_regn", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.REGN));
 
 	//DISPLAY ONLY ITEMS
 
-	public static final DeferredItem<Item> SMILE = ITEMS.register("smile", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = ITEMS.register("essence_of_gluttony", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> ESSENCE_OF_GREED = ITEMS.register("essence_of_greed", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = ITEMS.register("essence_of_sloth", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> ESSENCE_OF_LUST = ITEMS.register("essence_of_lust", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> ESSENCE_OF_MELANCHOLY = ITEMS.register("essence_of_melancholy", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = ITEMS.register("embodiment_of_intimacy", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = ITEMS.register("embodiment_of_devotion", () -> new Item(defaultNoTab()));
-	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = ITEMS.register("embodiment_of_courtship", () -> new Item(defaultNoTab()));
+	public static final DeferredItem<Item> SMILE = register("smile", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = register("essence_of_gluttony", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ESSENCE_OF_GREED = register("essence_of_greed", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = register("essence_of_sloth", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ESSENCE_OF_LUST = register("essence_of_lust", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> ESSENCE_OF_MELANCHOLY = register("essence_of_melancholy", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = register("embodiment_of_intimacy", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = register("embodiment_of_devotion", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = register("embodiment_of_courtship", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
-	public static Item.Properties defaultWithRarity() {
-		return new Item.Properties().rarity(BLOOD);
-	}
-
-	public static Item.Properties defaultNoTab() {
-		return new Item.Properties().rarity(BLOOD);
-	}
-
-	public static Item.Properties defaultWithNoRarity() {
-		return new Item.Properties();
+	public static <T extends Item> DeferredItem<T> register(String name, Function<Item.Properties, T> item, Supplier<Item.Properties> properties) {
+		return ITEMS.register(name, () -> item.apply(properties.get()));
 	}
 }
 

@@ -87,14 +87,12 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 		if (alteration.isCrafting)
 			return ItemInteractionResult.FAIL;
 
-		if (alteration.getInputItem() != null) {
-			if (alteration.getInputItem().isEmpty()) {
-				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
-			} else {
-				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getInputItem());
-				level.addFreshEntity(item);
-				alteration.setInputItem(ItemStack.EMPTY);
-			}
+		if (alteration.getTheItem().isEmpty()) {
+			alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
+		} else {
+			ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getTheItem());
+			level.addFreshEntity(item);
+			alteration.setInputItem(ItemStack.EMPTY);
 		}
 
 		level.sendBlockUpdated(pos, state, state, 2);

@@ -9,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -17,10 +16,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -28,11 +24,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.ticks.ContainerSingleItem;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Function;
-
-public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer {
+public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer, ContainerSingleItem.BlockContainerSingleItem {
 
 	protected ItemStack item = ItemStack.EMPTY;
 	public boolean isCrafting;
@@ -57,7 +52,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			te.craftingCounter++;
 		}
 		if (level.isClientSide()) {
-			if (te.craftingCounter>1 && te.craftingCounter<60) {
+			if (te.craftingCounter > 1 && te.craftingCounter < 60) {
 				RandomSource random = level.getRandom();
 				BlockPos randomPos = pos.offset(Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)), 2, Mth.floor(random.nextFloat() * 2.0F * (random.nextBoolean() ? 1.0F : -1.0F)));
 
@@ -102,21 +97,20 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 			if (level.isClientSide()) {
 				for (int i = 0; i < 7; i++) {
 					level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
-							(pos.getX() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
-							pos.getY() + 1.0F,
-							(pos.getZ() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
-							0.0F, 0.1F, 0.0F);
+						(pos.getX() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
+						pos.getY() + 1.0F,
+						(pos.getZ() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
+						0.0F, 0.1F, 0.0F);
 				}
 			}
 		}
 	}
 
 
-	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-		super.saveAdditional(tag, pRegistries);
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.saveAdditional(tag, registries);
 		if (this.item != null && !this.item.isEmpty()) {
-			Tag reagentTag = this.item.save(pRegistries);
-			tag.put("item", reagentTag);
+			tag.put("item", this.item.save(registries));
 		}
 		tag.putBoolean("isCrafting", this.isCrafting);
 		tag.putBoolean("finishedCrafting", this.finishedCrafting);
@@ -125,17 +119,13 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	}
 
 
-	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
-		} else {
-			this.item = ItemStack.EMPTY;
-		}
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
 		this.isCrafting = tag.getBoolean("isCrafting");
 		this.finishedCrafting = tag.getBoolean("finishedCrafting");
 		this.craftingCounter = tag.getInt("counter");
 		this.rotationDegrees = tag.getFloat("itemRotation");
-		super.loadAdditional(tag, pRegistries);
+		super.loadAdditional(tag, registries);
 	}
 
 
@@ -196,62 +186,25 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	}
 
 	@Override
-	public int getContainerSize() {
-		return 1;
+	public ItemStack splitTheItem(int amount) {
+		if (this.isCrafting) return ItemStack.EMPTY;
+		return BlockContainerSingleItem.super.splitTheItem(amount);
 	}
 
 	@Override
-	public boolean isEmpty() {
-		return this.item.isEmpty();
-	}
-
-	@Override
-	public ItemStack getItem(int slot) {
+	public ItemStack getTheItem() {
 		return this.item;
 	}
 
 	@Override
-	public ItemStack removeItem(int slot, int count) {
-		if (this.isCrafting) return ItemStack.EMPTY;
-		ItemStack stack = item.copy().split(count);
-		item.shrink(count);
-		this.updateBlock();
-		return stack;
-	}
-
-	@Override
-	public ItemStack removeItemNoUpdate(int p_18951_) {
-		if (this.isCrafting) return ItemStack.EMPTY;
-		return this.item;
-	}
-
-	@Override
-	public void setItem(int slot, ItemStack stack) {
+	public void setTheItem(ItemStack item) {
 		if (this.isCrafting) return;
-		this.item = stack;
+		this.item = item;
 		this.rotationDegrees = this.getLevel().getRandom().nextFloat() * 360.0F;
 		this.updateBlock();
-		this.attemptCraft(this.getLevel(), stack);
+		this.attemptCraft(this.getLevel(), item);
 	}
 
-	@Override
-	public int getMaxStackSize() {
-		return 1;
-	}
-
-	@Override
-	public boolean stillValid(Player player) {
-		return false;
-	}
-
-	@Override
-	public void clearContent() {
-		this.item = ItemStack.EMPTY;
-	}
-	@Nullable
-	public ItemStack getInputItem() {
-		return this.getItem(0);
-	}
 
 	public void setInputItem(ItemStack item) {
 		this.setItem(0, item);
@@ -271,5 +224,10 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	@Override
 	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
 		return direction == Direction.DOWN && !this.item.isEmpty() && !this.isCrafting;
+	}
+
+	@Override
+	public BlockEntity getContainerBlockEntity() {
+		return this;
 	}
 }

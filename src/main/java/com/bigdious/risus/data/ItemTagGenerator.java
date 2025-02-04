@@ -56,68 +56,41 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
 
-		this.tag(Tags.Items.OBSIDIANS).add(RisusItems.LAUGHING_OBSIDIAN.get());
+		this.tag(Tags.Items.OBSIDIANS).add(RisusBlocks.LAUGHING_OBSIDIAN.asItem());
 
-		this.tag(RisusTags.Items.WILLFUL_WEAPON)
-			.add(
+		this.tag(RisusTags.Items.WILLFUL_WEAPON).add(
 				RisusItems.UNAWAKENED_VESSEL.get(),
 				RisusItems.CRESCENT_DISASTER.get(),
 				RisusItems.SCYTHE.get(),
 				RisusItems.FIRE_SCYTHE.get(),
 				RisusItems.SOUL_SCYTHE.get(),
 				RisusItems.CINDERGLEE_SCYTHE.get(),
-				RisusItems.THOUSAND_BLADE.get())
-			;
+				RisusItems.THOUSAND_BLADE.get());
 
-		this.tag(ItemTags.TRIM_TEMPLATES)
-			.add(
-				RisusItems.BLOOD_FEATHER.get())
-		;
-		this.tag(RisusTags.Items.EYE)
-			.add(
-				RisusItems.EYE_EMERALD.get(),
-				RisusItems.EYE_BLOODSHOT.get(),
-				RisusItems.EYE_ENDER.get(),
-				RisusItems.EYE_GOLDEN.get(),
-				RisusItems.EYE_BLEACHED.get())
-		;
-		this.tag(RisusTags.Items.BASE_TISSUE)
-			.add(
-				RisusItems.TISSUE.get(),
-				RisusItems.LIVING_TISSUE.get())
-		;
+		this.tag(ItemTags.TRIM_TEMPLATES).add(
+			RisusItems.BLOOD_FEATHER.get());
+		this.tag(RisusTags.Items.EYE).add(
+			RisusBlocks.EYE_EMERALD.asItem(),
+			RisusBlocks.EYE_BLOODSHOT.asItem(),
+			RisusBlocks.EYE_ENDER.asItem(),
+			RisusBlocks.EYE_GOLDEN.asItem(),
+			RisusBlocks.EYE_BLEACHED.asItem());
+		this.tag(RisusTags.Items.BASE_TISSUE).add(
+			RisusBlocks.TISSUE.asItem(),
+			RisusBlocks.LIVING_TISSUE.asItem());
 
-		this.tag(ItemTags.TRIMMABLE_ARMOR)
-			.add(
+		this.tag(ItemTags.TRIMMABLE_ARMOR).add(
 				RisusItems.SKIN_HELMET.get(),
 				RisusItems.SKIN_CHESTPLATE.get(),
 				RisusItems.SKIN_LEGGINGS.get(),
-				RisusItems.SKIN_BOOTS.get())
-		;
+				RisusItems.SKIN_BOOTS.get());
 
-		this.tag(ItemTags.TRIM_MATERIALS)
-			.add(
-				RisusItems.GLUTTONY_SCALES.get(),
-				RisusItems.SKIN.get())
-		;
-		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS)
-			.add(
-				Items.FIREWORK_ROCKET)
-		;
-		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS)
-			.add(
-				Items.TRIDENT,
-				RisusItems.CRESCENT_DISASTER.get())
-		;
-		this.tag(Tags.Items.FOODS_RAW_MEAT)
-			.add(
-				Items.COD,
-				Items.SALMON,
-				Items.TROPICAL_FISH)
-		;
+		this.tag(ItemTags.TRIM_MATERIALS).add(RisusItems.GLUTTONY_SCALES.get(), RisusBlocks.SKIN.asItem());
+		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS).add(Items.FIREWORK_ROCKET);
+		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS).add(Items.TRIDENT, RisusItems.CRESCENT_DISASTER.get());
+		this.tag(Tags.Items.FOODS_RAW_MEAT).add(Items.COD, Items.SALMON, Items.TROPICAL_FISH);
 
 		//for bondknot
-
 		this.tag(RisusTags.Items.ALTERABLE_GATES)
 			.add(Items.OAK_FENCE_GATE,
 				Items.DARK_OAK_FENCE_GATE,
@@ -127,7 +100,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				Items.ACACIA_FENCE_GATE,
 				Items.MANGROVE_FENCE_GATE,
 				Items.CHERRY_FENCE_GATE)
-			;
+		;
 		this.tag(RisusTags.Items.ALTERABLE_FENCES)
 			.add(
 				Items.OAK_FENCE,

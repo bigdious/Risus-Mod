@@ -21,10 +21,9 @@ import java.util.function.Supplier;
 public class RegenRoseBlock extends FlowerBlock {
 	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
 
-	public RegenRoseBlock(Supplier<MobEffect> effect, int amp, Properties properties) {
-		super(MobEffects.REGENERATION, amp, properties);
+	public RegenRoseBlock(Properties properties) {
+		super(MobEffects.REGENERATION, 1, properties);
 	}
-
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

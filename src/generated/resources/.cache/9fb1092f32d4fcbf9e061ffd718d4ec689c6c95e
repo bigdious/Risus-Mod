@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-04T21:34:55.9141345	Recipes
+// 1.21.1	2025-02-04T14:10:38.8765351	Recipes
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
@@ -25,7 +25,6 @@ f0a7cab0e972260d0dd8ddb81e043e4ff463544b data/risus/advancement/recipes/alterati
 ea3df8e5ea00c5b2d2696666f5630468b17dca50 data/risus/advancement/recipes/alteration/depth_vase.json
 d5e54f96fa60274a7aeb630003d30c695d446dd2 data/risus/advancement/recipes/alteration/display_notch.json
 f37b146173d66619bc3824cf2b3d9cac3c2ce446 data/risus/advancement/recipes/alteration/engraved_basalt.json
-5ddfedf8063e5a1e1eea0a4b16283f3bde23d586 data/risus/advancement/recipes/alteration/glow_display_notch.json
 dfc9183fdce0a24ba5906ef5473401b634ee5a2d data/risus/advancement/recipes/alteration/gluttony_scaleplate.json
 6b1053d4470b133248230b887560c75a469101c6 data/risus/advancement/recipes/alteration/gluttony_scales.json
 9daf041c638f0f62739bd18a34853de31cbf37fa data/risus/advancement/recipes/alteration/grimstone.json
@@ -73,8 +72,6 @@ e4ab881ed0749624eca3eed7bf77aefed402c60d data/risus/advancement/recipes/building
 897ab84dab0de7968194f7f981dd7fc3dac159da data/risus/advancement/recipes/building_blocks/copper_amalgam.json
 42e0065b9ace888c1d8b87f1cb74281b0d81bf17 data/risus/advancement/recipes/building_blocks/curved_fleshy_skin.json
 ce057b58fe663641986db311ed4378f586dd53b2 data/risus/advancement/recipes/building_blocks/curved_ritual_block.json
-c6234f236fd29ff0e8d29e5ee7661551ff411e33 data/risus/advancement/recipes/building_blocks/display_notch.json
-8902cb2499a002e2695a5ed68225a4e70592db6d data/risus/advancement/recipes/building_blocks/display_notch_stand.json
 216ee1e5303238ed85be849c33feb047f007148c data/risus/advancement/recipes/building_blocks/eye_bleached.json
 4a456a145d73a0c882bc945bf565d2b95899a94e data/risus/advancement/recipes/building_blocks/eye_bloodshot.json
 f90420e31b4a7a4c9cc56d8ef5b6d3b144cb9570 data/risus/advancement/recipes/building_blocks/eye_emerald.json
@@ -86,8 +83,6 @@ d058e7021a397740184f6f8f11412c011bdee795 data/risus/advancement/recipes/building
 65fbfd3f6a4e9d90326b1d41c143df40828a4a79 data/risus/advancement/recipes/building_blocks/full_bone_block.json
 840e594dd19923de427748901a5275bbc50d670b data/risus/advancement/recipes/building_blocks/full_bone_slab.json
 579c30f0c2855f3980ddd96f8ca1a64be36e31ed data/risus/advancement/recipes/building_blocks/full_bone_stairs.json
-97854bb75220d22abec89439c2af6ea39db88013 data/risus/advancement/recipes/building_blocks/glow_display_notch.json
-e764f148774d0b624575dd8a21deb5cefec1ab5d data/risus/advancement/recipes/building_blocks/glow_display_notch_stand.json
 e65ed41747fb7ef29b57342378ff56cced1c0d53 data/risus/advancement/recipes/building_blocks/grimstone_bricks.json
 a708e0eeb6556f5e3c3b8efa62d267e8cd78d003 data/risus/advancement/recipes/building_blocks/grimstone_bricks_slab.json
 dcbf7afd0631a64cb090a51ce79498c4b97aed0b data/risus/advancement/recipes/building_blocks/grimstone_bricks_stairs.json
@@ -186,7 +181,6 @@ ba8af861bad0ba1756e8dc97ffc7948cff571b84 data/risus/recipe/alteration/bondknot_w
 10fffbd3e17cb2f846403cc53d9c5ccb804b6d1e data/risus/recipe/alteration/depth_vase.json
 6eacacd01cfb770d8a3e13b8b3e9ca8ac9ba13e6 data/risus/recipe/alteration/display_notch.json
 b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipe/alteration/engraved_basalt.json
-9e57cebf924a9de4f28332fb4afbba955569dd86 data/risus/recipe/alteration/glow_display_notch.json
 1f14d028771778d9ae874216fbb4d9f6bcf269a6 data/risus/recipe/alteration/gluttony_scaleplate.json
 a489e7b7d493d78e7320f8fc951e6a6381411cd2 data/risus/recipe/alteration/gluttony_scales.json
 8d7edd1d48675bafb09f520d827d17c1d474d492 data/risus/recipe/alteration/grimstone.json
@@ -248,8 +242,6 @@ e0100e54063c0c86a57825c1aecd627d3976974d data/risus/recipe/concentration_core.js
 8172028be02fab6185460fc98d3ab2ea1d0726f4 data/risus/recipe/copper_amalgam.json
 7c8f52d03234f21b652740e94f6a90ab6e3c2386 data/risus/recipe/curved_fleshy_skin.json
 0fa05267e5b5d9157f59ec7e7338b7ae82581b41 data/risus/recipe/curved_ritual_block.json
-cf5ca2996646e8e5654846f3f82d1745dbed254d data/risus/recipe/display_notch.json
-69c995d436fc5461ec20be78452e823c3b7feeee data/risus/recipe/display_notch_stand.json
 5e71fa94a093c3abef15390c7f57137692b4a725 data/risus/recipe/eye_bleached.json
 a36bbeddf34cdefdb039bfcb5bbbc4e53b20f1ff data/risus/recipe/eye_bloodshot.json
 fd70a69a51eb9bc190cac837dcd5a3a8b4eeec85 data/risus/recipe/eye_emerald.json
@@ -263,8 +255,6 @@ ca06d52f3e896eb6ce0c76438c2fc982de908e84 data/risus/recipe/flowering_imitation_s
 1e27daf186ef7816264662b5717228a6cb268dde data/risus/recipe/full_bone_block.json
 f72f1b531b301bbb3e8b770a6d4ca2bbefcbfde3 data/risus/recipe/full_bone_slab.json
 71c9aee05dd9efa168c8915cfc4403837a208d05 data/risus/recipe/full_bone_stairs.json
-e79c04164956216b576d68ec5f37966e1ea45ffe data/risus/recipe/glow_display_notch.json
-016b1a8219055478b0bffb2c49627de0ae36ffde data/risus/recipe/glow_display_notch_stand.json
 3f2aa6d63b55644d27b29602199e57e06e5a70b8 data/risus/recipe/gold_fist.json
 091b431907ab5bad7493cbf1ce59022446df836b data/risus/recipe/grimstone_bricks.json
 54933a5bf7f591c175cd4cba45bdfda51b7496ed data/risus/recipe/grimstone_bricks_slab.json

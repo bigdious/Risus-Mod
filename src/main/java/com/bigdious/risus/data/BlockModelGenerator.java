@@ -1,19 +1,13 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.AshenRemainsBlock;
-import com.bigdious.risus.blocks.PoppingBondknotBlock;
-import com.bigdious.risus.blocks.RibcageBlock;
-import com.bigdious.risus.blocks.ZitBlock;
+import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.init.RisusBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.LanternBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
@@ -77,6 +71,20 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/oxidized_copper_amalgam")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
 		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(texture("block/laughing_stalk")));
+
+		for (var notch : RisusBlocks.BLOCKS.getEntries().stream().filter(holder -> holder.getRegisteredName().contains("display_notch")).toList()) {
+			this.getVariantBuilder(notch.get()).forAllStatesExcept(state -> {
+				boolean normal = notch.get() == RisusBlocks.DISPLAY_NOTCH.get();
+				ModelFile base = models().withExistingParent(notch.getRegisteredName(), Risus.prefix("block/template_display_notch")).texture("texture", blockTexture(normal ? Blocks.BLACK_WOOL : BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(notch.getRegisteredName().replace("risus:", "").replace("display_notch", "wool")))));
+				ModelFile non = models().withExistingParent("empty", "block/block");
+				Direction dir = state.getValue(BlockStateProperties.FACING);
+				return ConfiguredModel.builder()
+					.modelFile(state.getValue(DisplayNotchBlock.ELEVATE) ? non : base)
+					.rotationX(dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0)
+					.rotationY(dir.getAxis().isVertical() ? 0 : (int) (((dir.toYRot()) + 180) % 360))
+					.build();
+			}, DisplayNotchBlock.ROTATION, DisplayNotchBlock.FLUIDLOGGED);
+		}
 
 		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));
 		horizontalBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(texture("block/maw_guts")));

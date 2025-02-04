@@ -50,7 +50,7 @@ public class RisusEntities {
 
 	private static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> register(ResourceLocation id, EntityType.Builder<T> builder, int primary, int secondary) {
 		DeferredHolder<EntityType<?>, EntityType<T>> ret = ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));
-		SPAWN_EGGS.register(id.getPath() + "_spawn_egg", () -> new DeferredSpawnEggItem(ret, primary, secondary, RisusItems.defaultWithRarity()));
+		SPAWN_EGGS.register(id.getPath() + "_spawn_egg", () -> new DeferredSpawnEggItem(ret, primary, secondary, new Item.Properties().rarity(RisusItems.BLOOD)));
 		return ret;
 	}
 }

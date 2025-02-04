@@ -30,84 +30,83 @@ public class CraftingGenerator extends RecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput consumer) {
 
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusItems.SMILING_REMAINS.get()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusItems.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusItems.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusItems.NEURON_STEM.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusItems.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusBlocks.SMILING_REMAINS.get()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusBlocks.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusBlocks.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_STEM.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusBlocks.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_item", has(Items.GOLDEN_APPLE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusItems.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusItems.ENGRAVED_BASALT.get()).unlockedBy("has_item", has(Items.BASALT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusBlocks.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusBlocks.ENGRAVED_BASALT.get()).unlockedBy("has_item", has(Items.BASALT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DRAGON_HEAD), RisusItems.BLOODWYRM_HEAD.get()).unlockedBy("has_item", has(Items.DRAGON_HEAD)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRYING_OBSIDIAN), RisusItems.LAUGHING_OBSIDIAN.get()).unlockedBy("has_item", has(Items.CRYING_OBSIDIAN)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRYING_OBSIDIAN), RisusBlocks.LAUGHING_OBSIDIAN.get()).unlockedBy("has_item", has(Items.CRYING_OBSIDIAN)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ROTTEN_FLESH), RisusItems.ORGANIC_MATTER.get()).unlockedBy("has_item", has(Items.ROTTEN_FLESH)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE), RisusItems.GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GILDED_BLACKSTONE), RisusItems.ACTIVE_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE), RisusItems.POLISHED_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICKS), RisusItems.GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusItems.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CHISELED_POLISHED_BLACKSTONE), RisusItems.CHISELED_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_STAIRS), RisusItems.GRIMSTONE_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_SLAB), RisusItems.GRIMSTONE_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_WALL), RisusItems.GRIMSTONE_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_STAIRS), RisusItems.POLISHED_GRIMSTONE_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_SLAB), RisusItems.POLISHED_GRIMSTONE_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_WALL), RisusItems.POLISHED_GRIMSTONE_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_STAIRS), RisusItems.GRIMSTONE_BRICKS_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_SLAB), RisusItems.GRIMSTONE_BRICKS_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_WALL), RisusItems.GRIMSTONE_BRICKS_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE), RisusBlocks.GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GILDED_BLACKSTONE), RisusBlocks.ACTIVE_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE), RisusBlocks.POLISHED_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICKS), RisusBlocks.GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS), RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CHISELED_POLISHED_BLACKSTONE), RisusBlocks.CHISELED_GRIMSTONE.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_STAIRS), RisusBlocks.GRIMSTONE_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_SLAB), RisusBlocks.GRIMSTONE_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACKSTONE_WALL), RisusBlocks.GRIMSTONE_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_STAIRS), RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_SLAB), RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_WALL), RisusBlocks.POLISHED_GRIMSTONE_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_STAIRS), RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_SLAB), RisusBlocks.GRIMSTONE_BRICKS_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_WALL), RisusBlocks.GRIMSTONE_BRICKS_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		//TODO enchanted book to corrupt book handler
-		AlterationRecipeBuilder.alteration(Ingredient.of(Tags.Items.FOODS_RAW_MEAT), RisusItems.TISSUE.get()).unlockedBy("has_item", has(Items.PORKCHOP)).unlockedBy("has_item", has(Items.BEEF)).unlockedBy("has_item", has(Items.MUTTON)).unlockedBy("has_item", has(Items.RABBIT)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusItems.BURNT_HYPHAE.get()).unlockedBy("has_item", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_item", has(Items.CRIMSON_STEM)).unlockedBy("has_item", has(Items.WARPED_HYPHAE)).unlockedBy("has_item", has(Items.WARPED_STEM)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusItems.REGEN_ROSE.get()).unlockedBy("has_item", has(Items.WITHER_ROSE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusItems.DEPTH_VASE.get()).unlockedBy("has_item", has(Items.DECORATED_POT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Tags.Items.FOODS_RAW_MEAT), RisusBlocks.TISSUE.get()).unlockedBy("has_item", has(Items.PORKCHOP)).unlockedBy("has_item", has(Items.BEEF)).unlockedBy("has_item", has(Items.MUTTON)).unlockedBy("has_item", has(Items.RABBIT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusBlocks.BURNT_HYPHAE.get()).unlockedBy("has_item", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_item", has(Items.CRIMSON_STEM)).unlockedBy("has_item", has(Items.WARPED_HYPHAE)).unlockedBy("has_item", has(Items.WARPED_STEM)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusBlocks.REGEN_ROSE.get()).unlockedBy("has_item", has(Items.WITHER_ROSE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusBlocks.DEPTH_VASE.get()).unlockedBy("has_item", has(Items.DECORATED_POT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.MILK_BUCKET), RisusItems.BLOOD_BUCKET.get()).unlockedBy("has_item", has(Items.MILK_BUCKET)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusItems.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusItems.SKIN.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusBlocks.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusBlocks.SKIN.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_HELMET), RisusItems.SKIN_HELMET.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_CHESTPLATE), RisusItems.SKIN_CHESTPLATE.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_LEGGINGS), RisusItems.SKIN_LEGGINGS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_BOOTS), RisusItems.SKIN_BOOTS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusItems.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME), RisusItems.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_ITEM_FRAME), RisusItems.GLOW_DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusBlocks.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME), RisusBlocks.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusItems.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusItems.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusBlocks.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusBlocks.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PAPER), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(Items.PAPER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERITE_INGOT), RisusItems.GLUTTONY_SCALES).unlockedBy("has_item", has(Items.NETHERITE_INGOT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
 		//bunch of bondknot
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_GATES), RisusItems.BONDKNOT_FENCE_GATE.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_GATES), RisusBlocks.BONDKNOT_FENCE_GATE.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_FENCES), RisusItems.BONDKNOT_FENCE.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_FENCES), RisusBlocks.BONDKNOT_FENCE.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_TRAPDOORS), RisusItems.BONDKNOT_TRAPDOOR.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_TRAPDOORS), RisusBlocks.BONDKNOT_TRAPDOOR.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_HANGING_SIGNS), RisusItems.BONDKNOT_HANGING_SIGN.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_SIGNS), RisusItems.BONDKNOT_SIGN.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_DOORS), RisusItems.BONDKNOT_DOOR.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_DOORS), RisusBlocks.BONDKNOT_DOOR.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_BUTTONS), RisusItems.BONDKNOT_BUTTON.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_BUTTONS), RisusBlocks.BONDKNOT_BUTTON.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_PRESSURE_PLATES), RisusItems.BONDKNOT_PRESSURE_PLATE.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_PRESSURE_PLATES), RisusBlocks.BONDKNOT_PRESSURE_PLATE.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_SLABS), RisusItems.BONDKNOT_SLAB.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_SLABS), RisusBlocks.BONDKNOT_SLAB.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STAIRS), RisusItems.BONDKNOT_STAIRS.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STAIRS), RisusBlocks.BONDKNOT_STAIRS.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_PLANKS), RisusItems.BONDKNOT_PLANKS.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_PLANKS), RisusBlocks.BONDKNOT_PLANKS.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_LOGS), RisusItems.BONDKNOT_LOG.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_LOGS), RisusBlocks.BONDKNOT_LOG.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_WOODS), RisusItems.BONDKNOT_WOOD.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_WOODS), RisusBlocks.BONDKNOT_WOOD.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_WOODS), RisusItems.STRIPPED_BONDKNOT_WOOD.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_WOODS), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_LOGS), RisusItems.STRIPPED_BONDKNOT_LOG.get())
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_LOGS), RisusBlocks.STRIPPED_BONDKNOT_LOG.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
@@ -137,34 +136,14 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("#M#")
 			.pattern("###")
 			.define('#', Ingredient.of(Items.COPPER_INGOT))
-			.define('M', Ingredient.of(RisusItems.MAW_GUTS.get()))
-			.unlockedBy("has_item", has(RisusItems.MAW_GUTS.get()))
+			.define('M', Ingredient.of(RisusBlocks.MAW_GUTS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.MAW_GUTS.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_PLANKS.get(), 4)
 				.requires(Ingredient.of(ItemTagGenerator.BONDKNOT_LOGS))
 				.unlockedBy("has_item", has(ItemTagGenerator.BONDKNOT_LOGS))
 				.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DISPLAY_NOTCH_STAND.get(), 1)
-			.requires(Ingredient.of(RisusBlocks.DISPLAY_NOTCH))
-			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
-			.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DISPLAY_NOTCH.get(), 1)
-			.requires(Ingredient.of(RisusBlocks.DISPLAY_NOTCH_STAND))
-			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
-			.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get(), 1)
-			.requires(Ingredient.of(RisusBlocks.GLOW_DISPLAY_NOTCH))
-			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
-			.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GLOW_DISPLAY_NOTCH.get(), 1)
-			.requires(Ingredient.of(RisusBlocks.GLOW_DISPLAY_NOTCH_STAND))
-			.unlockedBy("has_item", has(RisusBlocks.DISPLAY_NOTCH))
-			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_STAIRS.get(), 4)
 				.pattern("#  ")
@@ -206,7 +185,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("/ /")
 				.pattern(" / ")
 				.pattern("/ /")
-				.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+				.define('/', Ingredient.of(RisusBlocks.IMITATION_SCALEPLATE.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
@@ -214,7 +193,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern(" / ")
 				.pattern("///")
 				.pattern(" / ")
-				.define('/', Ingredient.of(RisusItems.IMITATION_SCALEPLATE.get()))
+				.define('/', Ingredient.of(RisusBlocks.IMITATION_SCALEPLATE.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
@@ -280,15 +259,15 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, RisusItems.GUTS_BOAT, 1)
-			.requires(RisusItems.MAW_GUTS.get())
+			.requires(RisusBlocks.MAW_GUTS.get())
 			.requires(RisusItems.BONDKNOT_BOAT.get())
-			.unlockedBy("has_item", has(RisusItems.MAW_GUTS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.MAW_GUTS.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUNDLE_OF_HAIR.get(), 1)
 				.pattern("##")
 				.pattern("##")
-				.define('#', Ingredient.of(RisusItems.TALL_HAIR.get()))
+				.define('#', Ingredient.of(RisusBlocks.TALL_HAIR.get()))
 				.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
 				.save(consumer);
 
@@ -300,13 +279,13 @@ public class CraftingGenerator extends RecipeProvider {
 				.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LINEAR_RITUAL_BLOCK.get(), 1)
-				.requires(RisusItems.CURVED_RITUAL_BLOCK.get())
-				.unlockedBy("has_item", has(RisusItems.CURVED_RITUAL_BLOCK.get()))
+				.requires(RisusBlocks.CURVED_RITUAL_BLOCK.get())
+				.unlockedBy("has_item", has(RisusBlocks.CURVED_RITUAL_BLOCK.get()))
 				.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CURVED_RITUAL_BLOCK.get(), 1)
-				.requires(RisusItems.LINEAR_RITUAL_BLOCK.get())
-				.unlockedBy("has_item", has(RisusItems.LINEAR_RITUAL_BLOCK.get()))
+				.requires(RisusBlocks.LINEAR_RITUAL_BLOCK.get())
+				.unlockedBy("has_item", has(RisusBlocks.LINEAR_RITUAL_BLOCK.get()))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_STAIRS.get(), 4)
@@ -407,7 +386,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("/")
 			.define('#', Ingredient.of(RisusBlocks.SKIN.get()))
 			.define('/', Ingredient.of(RisusTags.Items.BASE_TISSUE))
-			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
+			.unlockedBy("has_item", has(RisusBlocks.SKIN.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CURVED_FLESHY_SKIN.get(), 4)
@@ -415,25 +394,25 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("#/")
 			.define('#', Ingredient.of(RisusBlocks.SKIN.get()))
 			.define('/', Ingredient.of(RisusTags.Items.BASE_TISSUE))
-			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
+			.unlockedBy("has_item", has(RisusBlocks.SKIN.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.HAIRY_SKIN.get(), 1)
 			.requires(RisusItems.HAIR_FOLLICLES.get())
-			.requires(RisusItems.SKIN.get())
-			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
+			.requires(RisusBlocks.SKIN.get())
+			.unlockedBy("has_item", has(RisusBlocks.SKIN.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.HAIRY_FLESHY_SKIN.get(), 1)
 			.requires(RisusItems.HAIR_FOLLICLES.get())
-			.requires(RisusItems.FLESHY_SKIN.get())
-			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
+			.requires(RisusBlocks.FLESHY_SKIN.get())
+			.unlockedBy("has_item", has(RisusBlocks.SKIN.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get(), 1)
 			.requires(RisusItems.HAIR_FOLLICLES.get())
-			.requires(RisusItems.CURVED_FLESHY_SKIN.get())
-			.unlockedBy("has_item", has(RisusItems.SKIN.get()))
+			.requires(RisusBlocks.CURVED_FLESHY_SKIN.get())
+			.unlockedBy("has_item", has(RisusBlocks.SKIN.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.TISSUE_STAIRS.get(), 4)
@@ -493,11 +472,11 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("BBB")
 				.pattern("LCL")
 				.pattern("LVL")
-				.define('B', Ingredient.of(RisusItems.TEETH.get()))
+				.define('B', Ingredient.of(RisusBlocks.TEETH.get()))
 				.define('C', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
 				.define('L', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.define('V', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
-				.unlockedBy("has_item", has(RisusItems.TEETH.get()))
+				.unlockedBy("has_item", has(RisusBlocks.TEETH.get()))
 				.unlockedBy("has_item", has(RisusItems.CRYSTALLIZED_BOND.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
@@ -508,7 +487,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("LHL")
 				.define('B', Ingredient.of(Blocks.GOLD_BLOCK))
 				.define('C', Ingredient.of(RisusItems.TOOTHKNOCKER.get()))
-				.define('L', Ingredient.of(RisusItems.COAGULATED_BLOOD_BLOCK.get()))
+				.define('L', Ingredient.of(RisusBlocks.COAGULATED_BLOOD_BLOCK.get()))
 				.define('V', Ingredient.of(Items.GOLD_INGOT))
 				.define('H', Ingredient.of(RisusItems.HAND_OF_GREED.get()))
 				.unlockedBy("has_item", has(RisusItems.TOOTHKNOCKER.get()))
@@ -519,7 +498,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("BGB")
 				.pattern("GMG")
 				.pattern("BGB")
-				.define('G', Ingredient.of(RisusItems.NEURON_STEM.get()))
+				.define('G', Ingredient.of(RisusBlocks.NEURON_STEM.get()))
 				.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
 				.define('B', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
@@ -584,7 +563,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("Y Y")
 				.define('#', RisusTags.Items.BASE_TISSUE)
 				.define('X', RisusTags.Items.BONE_BLOCK_VARIATION)
-				.define('Y', RisusItems.BONE_WALL.get())
+				.define('Y', RisusBlocks.BONE_WALL.get())
 				.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 				.save(consumer);
 
@@ -637,25 +616,25 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 			.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLEACHED.get(), 1)
-				.requires(RisusItems.TEETH.get())
-				.requires(RisusItems.EYE_GOLDEN.get())
+				.requires(RisusBlocks.TEETH.get())
+				.requires(RisusBlocks.EYE_GOLDEN.get())
 				.requires(Items.CHARCOAL)
-				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
+				.unlockedBy("has_item", has(RisusBlocks.EYE_GOLDEN.get()))
 				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_ENDER.get(), 1)
-				.requires(RisusItems.EYE_GOLDEN.get())
+				.requires(RisusBlocks.EYE_GOLDEN.get())
 				.requires(Items.ENDER_PEARL)
-				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
+				.unlockedBy("has_item", has(RisusBlocks.EYE_GOLDEN.get()))
 				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_EMERALD.get(), 1)
-				.requires(RisusItems.EYE_GOLDEN.get())
+				.requires(RisusBlocks.EYE_GOLDEN.get())
 				.requires(Items.EMERALD)
-				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
+				.unlockedBy("has_item", has(RisusBlocks.EYE_GOLDEN.get()))
 				.save(consumer);
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLOODSHOT.get(), 1)
-				.requires(RisusItems.EYE_GOLDEN.get())
+				.requires(RisusBlocks.EYE_GOLDEN.get())
 				.requires(RisusItems.ORGANIC_MATTER.get())
-				.unlockedBy("has_item", has(RisusItems.EYE_GOLDEN.get()))
+				.unlockedBy("has_item", has(RisusBlocks.EYE_GOLDEN.get()))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, RisusItems.EYE_SANDWICH.get(), 1)
@@ -668,78 +647,78 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_bricks"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.CHISELED_GRIMSTONE,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_chiseled"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_polished"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_brick_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_polished_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_bricks_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_polished_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_wall"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_bricks_wall"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_polished_wall"));
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_bricks"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.CHISELED_GRIMSTONE,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_chiseled"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_bricks_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_polished_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_bricks_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_polished_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_bricks_wall"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.POLISHED_GRIMSTONE_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_polished_grimstone_to_polished_wall"));
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.CHISELED_GRIMSTONE,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_chiseled"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_STAIRS,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_stairs"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_SLAB,2)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_slab"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS_WALL,1)
-			.unlockedBy("has_item", has(RisusItems.GRIMSTONE))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_wall"));
 
 		smeltingRecipe(RisusBlocks.GRIMSTONE_BRICKS.get(),RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().asItem(),0.1F,1).save(consumer, prefix("smelt_cracked_grimstone_bricks"));

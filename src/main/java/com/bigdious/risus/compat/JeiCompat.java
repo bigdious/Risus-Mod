@@ -1,6 +1,7 @@
 package com.bigdious.risus.compat;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
@@ -35,7 +36,7 @@ public class JeiCompat implements IModPlugin {
 
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-		registration.addRecipeCatalyst(new ItemStack(RisusItems.ALTERATION_CATALYST.get()), AlterationCategory.ALTERATION);
+		registration.addRecipeCatalyst(new ItemStack(RisusBlocks.ALTERATION_CATALYST), AlterationCategory.ALTERATION);
 	}
 	@Override
 	@SuppressWarnings("unchecked")

@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BiomeBlock;
 import com.bigdious.risus.blocks.entity.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -14,7 +15,24 @@ public class RisusBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Risus.MODID);
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AlterationCatalystBlockEntity>> ALTERATION_CATALYST = BLOCK_ENTITIES.register("alteration_catalyst", () -> BlockEntityType.Builder.of(AlterationCatalystBlockEntity::new, RisusBlocks.ALTERATION_CATALYST.get()).build(null));
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchBlockEntity>> DISPLAY_NOTCH = BLOCK_ENTITIES.register("display_notch", () -> BlockEntityType.Builder.of(DisplayNotchBlockEntity::new, RisusBlocks.DISPLAY_NOTCH.get(), RisusBlocks.GLOW_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH_STAND.get(), RisusBlocks.GLOW_DISPLAY_NOTCH_STAND.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchBlockEntity>> DISPLAY_NOTCH = BLOCK_ENTITIES.register("display_notch", () -> BlockEntityType.Builder.of(DisplayNotchBlockEntity::new, Blocks.SHULKER_BOX,
+			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.BROWN_DISPLAY_NOTCH.get(),
+			RisusBlocks.CYAN_DISPLAY_NOTCH.get(),
+			RisusBlocks.GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.GREEN_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIME_DISPLAY_NOTCH.get(),
+			RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(),
+			RisusBlocks.ORANGE_DISPLAY_NOTCH.get(),
+			RisusBlocks.PINK_DISPLAY_NOTCH.get(),
+			RisusBlocks.PURPLE_DISPLAY_NOTCH.get(),
+			RisusBlocks.RED_DISPLAY_NOTCH.get(),
+			RisusBlocks.WHITE_DISPLAY_NOTCH.get(),
+			RisusBlocks.YELLOW_DISPLAY_NOTCH.get())
+		.build(null));
 
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DepthVaseBlockEntity>> DEPTH_VASE = BLOCK_ENTITIES.register("depth_vase", () -> BlockEntityType.Builder.of(DepthVaseBlockEntity::new, RisusBlocks.DEPTH_VASE.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BiomeBlockEntity>> BIOME_BLOCK = BLOCK_ENTITIES.register("laughing_stalk", () -> BlockEntityType.Builder.of(BiomeBlockEntity::new, RisusBlocks.LAUGHING_STALK.get()).build(null));
