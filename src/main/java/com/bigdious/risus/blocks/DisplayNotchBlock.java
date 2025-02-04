@@ -182,7 +182,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
-		if (!(state.getBlock() instanceof DisplayNotchBlock)) {
+		if (!(newState.getBlock() instanceof DisplayNotchBlock)) {
 			BlockEntity blockentity = level.getBlockEntity(pos);
 			if (blockentity instanceof Container container) {
 				Containers.dropContents(level, pos, container);
