@@ -3,7 +3,6 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.StalkerModel;
-import com.bigdious.risus.client.render.layer.HolderFaceLayer;
 import com.bigdious.risus.client.render.layer.StalkerEyeLayer;
 import com.bigdious.risus.entity.Stalker;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

@@ -2,7 +2,6 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import net.minecraft.Util;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.network.chat.Component;

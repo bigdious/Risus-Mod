@@ -3,7 +3,6 @@ package com.bigdious.risus.blocks;
 import com.bigdious.risus.init.RisusParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;

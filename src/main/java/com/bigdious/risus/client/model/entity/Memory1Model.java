@@ -8,42 +8,25 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class Memory1Model<T extends Memory1> extends HierarchicalModel<T> {
 	private final ModelPart root;
-	private final ModelPart man;
-	private final ModelPart woman;
-
-	private final ModelPart chain1;
-	private final ModelPart chain2;
-	private final ModelPart chain3;
-	private final ModelPart chain4;
-	private final ModelPart chain5;
-	private final ModelPart chain6;
-	private final ModelPart chain7;
-	private final ModelPart chain8;
-	private final ModelPart chain9;
-	private final ModelPart chain10;
-	private final ModelPart chain11;
-	private final ModelPart chain12;
-	private final ModelPart chain13;
-	private final ModelPart chain14;
 
 	public Memory1Model(ModelPart root) {
 		this.root = root;
-		this.man = root.getChild("man");
-		this.woman = root.getChild("woman");
-		this.chain1 = root.getChild("chain1");
-		this.chain2 = root.getChild("chain2");
-		this.chain3 = root.getChild("chain3");
-		this.chain4 = root.getChild("chain4");
-		this.chain5 = root.getChild("chain5");
-		this.chain6 = root.getChild("chain6");
-		this.chain7 = root.getChild("chain7");
-		this.chain8 = root.getChild("chain8");
-		this.chain9 = root.getChild("chain9");
-		this.chain10 = root.getChild("chain10");
-		this.chain11 = root.getChild("chain11");
-		this.chain12 = root.getChild("chain12");
-		this.chain13 = root.getChild("chain13");
-		this.chain14 = root.getChild("chain14");
+		ModelPart man = root.getChild("man");
+		ModelPart woman = root.getChild("woman");
+		ModelPart chain1 = root.getChild("chain1");
+		ModelPart chain2 = root.getChild("chain2");
+		ModelPart chain3 = root.getChild("chain3");
+		ModelPart chain4 = root.getChild("chain4");
+		ModelPart chain5 = root.getChild("chain5");
+		ModelPart chain6 = root.getChild("chain6");
+		ModelPart chain7 = root.getChild("chain7");
+		ModelPart chain8 = root.getChild("chain8");
+		ModelPart chain9 = root.getChild("chain9");
+		ModelPart chain10 = root.getChild("chain10");
+		ModelPart chain11 = root.getChild("chain11");
+		ModelPart chain12 = root.getChild("chain12");
+		ModelPart chain13 = root.getChild("chain13");
+		ModelPart chain14 = root.getChild("chain14");
 	}
 
 	public static LayerDefinition create() {

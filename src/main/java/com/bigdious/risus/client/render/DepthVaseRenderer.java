@@ -6,22 +6,18 @@ import com.bigdious.risus.client.RisusModelLayers;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
-import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity.WobbleStyle;
 import net.minecraft.world.phys.AABB;
 
 public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEntity> {
@@ -86,9 +82,11 @@ public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEnti
 		this.decoration.render(poseStack, vertexconsumer, pPackedLight,pPackedOverlay);
 		poseStack.popPose();
 	}
-	public AABB getRenderBoundingBox(DecoratedPotBlockEntity blockEntity) {
+
+	@Override
+	public AABB getRenderBoundingBox(DepthVaseBlockEntity blockEntity) {
 		BlockPos pos = blockEntity.getBlockPos();
-		return new AABB((double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), (double)pos.getX() + 1.0, (double)pos.getY() + 1.3, (double)pos.getZ() + 1.0);
+		return new AABB(pos.getX(), pos.getY(), pos.getZ(), (double)pos.getX() + 1.0, (double)pos.getY() + 1.3, (double)pos.getZ() + 1.0);
 	}
 
 }

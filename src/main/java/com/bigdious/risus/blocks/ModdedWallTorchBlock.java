@@ -36,11 +36,10 @@ public class ModdedWallTorchBlock extends WallTorchBlock implements SimpleMultil
 		LevelReader levelreader = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		Direction[] adirection = context.getNearestLookingDirections();
-		Direction[] var6 = adirection;
 		int var7 = adirection.length;
 
 		for(int var8 = 0; var8 < var7; ++var8) {
-			Direction direction = var6[var8];
+			Direction direction = adirection[var8];
 			if (direction.getAxis().isHorizontal()) {
 				Direction direction1 = direction.getOpposite();
 				blockstate = blockstate.setValue(FACING, direction1);

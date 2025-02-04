@@ -34,7 +34,7 @@ public interface RisusWeatheringCopper extends ChangeOverTimeBlock<RisusWeatheri
 		UNAFFECTED,
 		EXPOSED,
 		WEATHERED,
-		OXIDIZED;
+		OXIDIZED
 	}
 
 }

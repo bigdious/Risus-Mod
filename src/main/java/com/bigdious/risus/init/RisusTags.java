@@ -22,13 +22,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class RisusTags {
-	public class Enchantments {
-		private static TagKey<Enchantment> tag(String name) {
-			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
-		}
-	}
 	public static class Blocks {
-
 		public static final TagKey<Block> COPPER_AMALGAM_VARIATION = tag("copper_amalgam_variation");
 		public static final TagKey<Block> WAXED_COPPER_AMALGAM_VARIATION = tag("waxed_copper_amalgam_variation");
 
@@ -38,7 +32,6 @@ public class RisusTags {
 	}
 
 	public static class Biomes {
-
 		public static final TagKey<Biome> HAS_ALTERATION_SITE = tag("has_structure/alteration_site");
 		public static final TagKey<Biome> HAS_GRASSY_MAW = tag("has_structure/grassy_maw");
 		public static final TagKey<Biome> HAS_SANDY_MAW = tag("has_structure/sandy_maw");
@@ -58,7 +51,6 @@ public class RisusTags {
 	}
 
 	public static class Items {
-
 		public static final TagKey<Item> BONE_BLOCK_VARIATION = tag("bone_block_variation");
 		public static final TagKey<Item> WILLFUL_WEAPON = tag("willful_weapon");
 		public static final TagKey<Item> EYE = tag("eye");
@@ -88,13 +80,11 @@ public class RisusTags {
 	}
 
 	public static class Entities {
-
 		public static final TagKey<EntityType<?>> OFFSPRING = tag("offspring");
 		public static final TagKey<EntityType<?>> BELOVED = tag("beloved");
 		public static final TagKey<EntityType<?>> LOVEABLE = tag("loveable");
 		public static final TagKey<EntityType<?>> CANT_BE_STOLEN_FROM = tag("cant_be_stolen_from");
 		public static final TagKey<EntityType<?>> CANT_BE_STRIPPED = tag("cant_be_stripped");
-
 
 		private static TagKey<EntityType<?>> tag(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -106,7 +96,6 @@ public class RisusTags {
 		public static final TagKey<BannerPattern> SMILE_PATTERN = create("pattern_item/smile");
 		public static final TagKey<BannerPattern> DIVINITY_PATTERN = create("pattern_item/divinity");
 		public static final TagKey<BannerPattern> TREE_PATTERN = create("pattern_item/tree");
-
 
 		public BannerPatternTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
 			super(output, Registries.BANNER_PATTERN, provider, Risus.MODID, existingFileHelper);
@@ -128,9 +117,5 @@ public class RisusTags {
 		public String getName() {
 			return "Risus Banner Pattern Tags";
 		}
-	}
-
-	public static class Structures {
-		public static final TagKey<Structure> FAMILY_TREE = TagKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "family_tree"));
 	}
 }

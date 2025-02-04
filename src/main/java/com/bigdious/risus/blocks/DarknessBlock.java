@@ -36,6 +36,7 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		super.createBlockStateDefinition(builder);
 		builder.add(FLUIDLOGGED);
 	}
+
 	@Override
 	protected RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.INVISIBLE;
@@ -46,16 +47,10 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 	}
+
 	public static boolean canBePlacedAt(Level level, BlockPos pos, Direction direction) {
 		BlockState blockstate = level.getBlockState(pos);
 		return blockstate.isAir() || blockstate.is(RisusBlocks.BLOOD_FLUID_BLOCK) || blockstate.is(Blocks.WATER) || blockstate.is(Blocks.LAVA);
-	}
-	public static BlockState getState(BlockGetter getter, BlockPos pos) {
-		BlockState blockstate = getter.getBlockState(pos);
-		if (blockstate.getFluidState().is(RisusFluids.SOURCE_BLOOD.get())) return RisusBlocks.DARKNESS.get().defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.BLOOD);
-		else if (blockstate.getFluidState().is(Fluids.WATER)) return RisusBlocks.DARKNESS.get().defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.WATER);
-		else if (blockstate.getFluidState().is(Fluids.LAVA)) return RisusBlocks.DARKNESS.get().defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.LAVA);
-		else return RisusBlocks.DARKNESS.get().defaultBlockState();
 	}
 
 	@Override

@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.ElytraModel;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -14,17 +13,14 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.ElytraLayer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -38,22 +34,22 @@ public  class AngelWingsLayer<T extends LivingEntity, M extends EntityModel<T>> 
 		this.elytraModel = new ElytraModel<>(p_174494_.bakeLayer(ModelLayers.ELYTRA));
 	}
 
+	@Override
 	public void render(PoseStack p_116951_, MultiBufferSource p_116952_, int p_116953_, T p_116954_, float p_116955_, float p_116956_, float p_116957_, float p_116958_, float p_116959_, float p_116960_) {
 		ItemStack itemstack = p_116954_.getItemBySlot(EquipmentSlot.CHEST);
-		if (this.shouldRender(itemstack, p_116954_)) {
+		if (this.shouldRender(itemstack)) {
 			ResourceLocation resourcelocation;
-			if (p_116954_ instanceof AbstractClientPlayer) {
-				AbstractClientPlayer abstractclientplayer = (AbstractClientPlayer)p_116954_;
+			if (p_116954_ instanceof AbstractClientPlayer abstractclientplayer) {
 				PlayerSkin playerskin = abstractclientplayer.getSkin();
 				if (playerskin.elytraTexture() != null) {
 					resourcelocation = playerskin.elytraTexture();
 				} else if (playerskin.capeTexture() != null && abstractclientplayer.isModelPartShown(PlayerModelPart.CAPE)) {
 					resourcelocation = playerskin.capeTexture();
 				} else {
-					resourcelocation = this.getElytraTexture(itemstack, p_116954_);
+					resourcelocation = WINGS_LOCATION;
 				}
 			} else {
-				resourcelocation = this.getElytraTexture(itemstack, p_116954_);
+				resourcelocation = WINGS_LOCATION;
 			}
 
 			p_116951_.pushPose();
@@ -67,11 +63,7 @@ public  class AngelWingsLayer<T extends LivingEntity, M extends EntityModel<T>> 
 
 	}
 
-	public boolean shouldRender(ItemStack stack, T entity) {
-		return stack.getItem() == RisusItems.ANGEL_WINGS.asItem();
-	}
-
-	public ResourceLocation getElytraTexture(ItemStack stack, T entity) {
-		return WINGS_LOCATION;
+	public boolean shouldRender(ItemStack stack) {
+		return stack.is(RisusItems.ANGEL_WINGS);
 	}
 }

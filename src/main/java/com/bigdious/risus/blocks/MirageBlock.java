@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class MirageBlock extends Block {
 
 	private final Block mimickedBlock;
-	private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, (double) 0.9F, 1.0D);
+	private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, 0.9F, 1.0D);
 
 	public MirageBlock(Properties properties, Block mimickedBlock) {
 		super(properties);
@@ -55,7 +55,7 @@ public class MirageBlock extends Block {
 		if (entity.getType().is(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)) {
 			return true;
 		} else {
-			return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).canWalkOnPowderedSnow((LivingEntity) entity);
+			return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).canWalkOnPowderedSnow(living);
 		}
 	}
 

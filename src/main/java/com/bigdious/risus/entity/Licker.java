@@ -3,13 +3,10 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -18,10 +15,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +27,7 @@ public class Licker extends Monster {
 
 	public Licker(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward=5;
+		this.xpReward = 5;
 	}
 
 	public static AttributeSupplier.Builder attributes() {
@@ -42,6 +37,7 @@ public class Licker extends Monster {
 			.add(Attributes.FOLLOW_RANGE, 24)
 			.add(Attributes.ATTACK_DAMAGE, 1D);
 	}
+
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -51,7 +47,8 @@ public class Licker extends Monster {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-    }
+	}
+
 	@Override
 	public void aiStep() {
 		super.aiStep();
@@ -60,6 +57,7 @@ public class Licker extends Monster {
 			--this.attackTimer;
 		}
 	}
+
 	@Override
 	public boolean doHurtTarget(Entity entity) {
 		if (entity instanceof LivingEntity living) {
@@ -76,9 +74,7 @@ public class Licker extends Monster {
 		}
 		return super.doHurtTarget(entity);
 	}
-	public int getAttackTimer() {
-		return this.attackTimer;
-	}
+
 	public void handleEntityEvent(byte id) {
 		if (id == 4) {
 			this.attackTimer = 10;
@@ -86,6 +82,7 @@ public class Licker extends Monster {
 			super.handleEntityEvent(id);
 		}
 	}
+
 	protected SoundEvent getAmbientSound() {
 		return SoundEvents.SPIDER_AMBIENT;
 	}
@@ -101,21 +98,24 @@ public class Licker extends Monster {
 	protected void playStepSound(BlockPos p_33804_, BlockState p_33805_) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
 	}
+
 	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {
 		if (!p_33796_.is(Blocks.COBWEB)) {
 			super.makeStuckInBlock(p_33796_, p_33797_);
 		}
 
 	}
+
 	public boolean canBeAffected(MobEffectInstance p_33809_) {
 		return !p_33809_.is(MobEffects.POISON) && super.canBeAffected(p_33809_);
 	}
+
 	public boolean hurt(DamageSource source, float amount) {
 		boolean flag = super.hurt(source, amount);
-		if (flag && this.getHealth()==0) {
-			for (int i = 0; i<4; i++) {
+		if (flag && this.getHealth() == 0) {
+			for (int i = 0; i < 4; i++) {
 				BabySpider babySpider = RisusEntities.BABY_SPIDER.get().create(this.level());
-				babySpider.moveTo(this.getX(), this.getY()+1, this.getZ(), 0.0F, 0.0F);
+				babySpider.moveTo(this.getX(), this.getY() + 1, this.getZ(), 0.0F, 0.0F);
 				this.level().addFreshEntity(babySpider);
 			}
 		}

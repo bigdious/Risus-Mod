@@ -16,8 +16,6 @@ public class ExBurnAttachment {
 					Codec.INT.fieldOf("lost_health").forGetter(o -> o.lostHealth))
 			.apply(instance, ExBurnAttachment::new));
 
-
-	private static final UUID HEALTH_MODIFIER_UUID = UUID.fromString("6e279bb5-440e-4498-ae26-01b7f0347e01");
 	private int lostHealth;
 
 	public ExBurnAttachment() {

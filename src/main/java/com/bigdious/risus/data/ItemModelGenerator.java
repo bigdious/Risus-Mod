@@ -260,7 +260,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, thousand_blade)
 			.perspective(ItemDisplayContext.HEAD, thousand_blade)
 			.end();
-		ItemModelBuilder bloodwyrmhead = nested().texture("bloodwyrm_head", Risus.prefix("entity/bloodwyrm_head"));
 		ItemModelBuilder unawakened = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/unawakened_vessel"));
 		withExistingParent(RisusItems.UNAWAKENED_VESSEL.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 				.base(generated("unawakened_vessel_base", Risus.prefix("item/unawakened_vessel")))
@@ -352,11 +351,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		} else {
 			throw new IllegalStateException("Unknown item: " + item.toString());
 		}
-	}
-
-	public void item(Item item, String location) {
-		this.withExistingParent(this.itemName(item), mcLoc("item/generated"))
-				.texture("layer0", modLoc("item/" + location + this.itemName(item)));
 	}
 
 	public void nameableWeapon(Item item, String location, String renamedVariant) {

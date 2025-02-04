@@ -1,9 +1,7 @@
 package com.bigdious.risus.entity;
 
 
-import com.bigdious.risus.blocks.entity.MawGuts;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
-import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.inventory.MawGutsMenu;
@@ -20,14 +18,11 @@ import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.ContainerEntity;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.Hopper;
 import net.minecraft.world.level.block.entity.HopperBlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -202,13 +197,6 @@ public class GutsBoat extends RisusBoat implements HasCustomInventoryScreen, Con
 		this.itemStacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 	}
 
-	public BlockState getDefaultDisplayBlockState() {
-		return RisusBlocks.MAW_GUTS.get().defaultBlockState();
-	}
-
-	public int getDefaultDisplayOffset() {
-		return 1;
-	}
 	@Override
 	public void tick() {
 		super.tick();
@@ -216,6 +204,7 @@ public class GutsBoat extends RisusBoat implements HasCustomInventoryScreen, Con
 			this.setChanged();
 		}
 	}
+
 	public boolean suckInItems() {
 		if (HopperBlockEntity.suckInItems(this.level(), this)) {
 			return true;
@@ -238,7 +227,7 @@ public class GutsBoat extends RisusBoat implements HasCustomInventoryScreen, Con
 
 	@Override
 	public double getLevelY() {
-		return this.getY()+0.5;
+		return this.getY() + 0.5;
 	}
 
 	@Override

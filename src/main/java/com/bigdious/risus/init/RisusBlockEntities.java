@@ -1,7 +1,6 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.BiomeBlock;
 import com.bigdious.risus.blocks.entity.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Blocks;

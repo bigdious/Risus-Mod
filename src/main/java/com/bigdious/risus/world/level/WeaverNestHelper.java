@@ -13,38 +13,40 @@ import net.minecraft.world.phys.AABB;
 public class WeaverNestHelper {
 	//this is so ducking stupid. Why is static fine when done through helper
 	private int spawnDelay;
-	public int maxNearbyEntities = 10;
-	public int requiredPlayerRange = 32;
-	public int spawnRange = 10;
+	public final int maxNearbyEntities = 10;
+	public final int requiredPlayerRange = 32;
+	public final int spawnRange = 10;
+
 	private boolean isNearPlayer(Level pLevel, BlockPos pPos) {
 		return pLevel.hasNearbyAlivePlayer(
-			(double)pPos.getX() + 0.5, (double)pPos.getY() + 0.5, (double)pPos.getZ() + 0.5, (double)this.requiredPlayerRange
+			(double) pPos.getX() + 0.5, (double) pPos.getY() + 0.5, (double) pPos.getZ() + 0.5, this.requiredPlayerRange
 		);
 	}
+
 	public void tick(BlockState state, ServerLevel level, BlockPos pos) {
-		if(this.isNearPlayer(level, pos)){
+		if (this.isNearPlayer(level, pos)) {
 			int k = level.getEntities(
 					EntityTypeTest.forExactClass(Weaver.class),
 					new AABB(
-						(double)pos.getX(),
-						(double)pos.getY(),
-						(double)pos.getZ(),
-						(double)(pos.getX() + 1),
-						(double)(pos.getY() + 1),
-						(double)(pos.getZ() + 1)
+						pos.getX(),
+						pos.getY(),
+						pos.getZ(),
+						pos.getX() + 1,
+						pos.getY() + 1,
+						pos.getZ() + 1
 					)
-						.inflate((double)this.spawnRange),
+						.inflate(this.spawnRange),
 					EntitySelector.NO_SPECTATORS
 				)
 				.size();
 			if (k >= this.maxNearbyEntities) {
 				return;
 			}
-			if(spawnDelay>1200) {
+			if (spawnDelay > 1200) {
 				Weaver weaver = RisusEntities.WEAVER.get().create(level);
 				weaver.moveTo(pos.getCenter().x, pos.getBottomCenter().y, pos.getCenter().z, 0.0F, 0.0F);
 				level.addFreshEntity(weaver);
-				spawnDelay=0;
+				spawnDelay = 0;
 			} else {
 				spawnDelay++;
 			}

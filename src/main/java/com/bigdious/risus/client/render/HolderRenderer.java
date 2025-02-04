@@ -7,14 +7,11 @@ import com.bigdious.risus.client.render.layer.HolderFaceLayer;
 import com.bigdious.risus.entity.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.minecraft.client.model.EndermanModel;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
@@ -59,7 +56,6 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 			if (!itemstack.isEmpty() || !itemstack1.isEmpty()) {
 				stack.pushPose();
 				if (this.getParentModel().young) {
-					float f = 0.5F;
 					stack.translate(0.0D, 0.75D, 0.0D);
 					stack.scale(0.5F, 0.5F, 0.5F);
 				}

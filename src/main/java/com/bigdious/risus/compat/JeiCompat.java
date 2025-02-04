@@ -2,12 +2,10 @@ package com.bigdious.risus.compat;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;

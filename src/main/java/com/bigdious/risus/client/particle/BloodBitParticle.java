@@ -7,61 +7,51 @@ import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class BloodBitParticle extends TextureSheetParticle {
 
-	private final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Risus.MODID,
-			"textures/particle/cauldron_boil_particle.png");
+	private final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/particle/cauldron_boil_particle.png");
 	// Thanks to JoeFoxe and his mod Hexerei for this code
 	public static final Vec3[] CUBE = {
-
-			//middle top inside
-			new Vec3(0.1, -0.01, -0.1),
-			new Vec3(0.1, -0.01, 0.1),
-			new Vec3(-0.1, -0.01, 0.1),
-			new Vec3(-0.1, -0.01, -0.1),
-			// middle bottom render
-			new Vec3(-0.1, 0.01, -0.1),
-			new Vec3(-0.1, 0.01, 0.1),
-			new Vec3(0.1, 0.01, 0.1),
-			new Vec3(0.1, 0.01, -0.1),
-
-
+		//middle top inside
+		new Vec3(0.1, -0.01, -0.1),
+		new Vec3(0.1, -0.01, 0.1),
+		new Vec3(-0.1, -0.01, 0.1),
+		new Vec3(-0.1, -0.01, -0.1),
+		// middle bottom render
+		new Vec3(-0.1, 0.01, -0.1),
+		new Vec3(-0.1, 0.01, 0.1),
+		new Vec3(0.1, 0.01, 0.1),
+		new Vec3(0.1, 0.01, -0.1),
 	};
 
 	public static final Vec3[] CUBE_NORMALS = {
-			// modified normals for the sides
-			new Vec3(0, 0, 0.5),
-			new Vec3(0, 0, 0.5),
+		// modified normals for the sides
+		new Vec3(0, 0, 0.5),
+		new Vec3(0, 0, 0.5),
 	};
 
-	private static final ParticleRenderType renderType = new ParticleRenderType() {
-		@Override
-		public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
+	private static final ParticleRenderType renderType = (tesselator, textureManager) -> {
 
-			RenderSystem.depthMask(false);
-			RenderSystem.enableBlend();
-			RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+		RenderSystem.depthMask(false);
+		RenderSystem.enableBlend();
+		RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
 
-			return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
-		}
+		return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
 	};
 
 	protected float scale;
 	protected float rotationDirection;
 	protected float rotation;
-	protected float rotationOffsetYaw;
-	protected float rotationOffsetPitch;
-	protected float rotationOffsetRoll;
-	protected float colorOffset;
+	protected final float rotationOffsetYaw;
+	protected final float rotationOffsetPitch;
+	protected final float rotationOffsetRoll;
 
 
 	public BloodBitParticle(ClientLevel world, double x, double y, double z, double motionX, double motionY, double motionZ) {
@@ -70,18 +60,14 @@ public class BloodBitParticle extends TextureSheetParticle {
 		this.yd = motionY;
 		this.zd = motionZ;
 		this.rotation = 0;
+		this.lifetime = (int) (80 + (this.random.nextDouble() * 2D - 1D) * 8);
 
-		averageAge(80);
+		this.rotationOffsetYaw = this.random.nextFloat();
+		this.rotationOffsetPitch = this.random.nextFloat();
+		this.rotationOffsetRoll = this.random.nextFloat();
 
-		Random random = new Random();
-
-		this.colorOffset = (random.nextFloat() * 0.25f);
-		this.rotationOffsetYaw = random.nextFloat();
-		this.rotationOffsetPitch = random.nextFloat();
-		this.rotationOffsetRoll = random.nextFloat();
-
-		setScale(0.2F);
-		setRotationDirection(random.nextFloat() - 0.5f);
+		this.setScale(0.2F);
+		this.setRotationDirection(this.random.nextFloat() - 0.5f);
 	}
 
 	public void setScale(float scale) {
@@ -89,21 +75,13 @@ public class BloodBitParticle extends TextureSheetParticle {
 		this.setSize(scale * 0.5f, scale * 0.5f);
 	}
 
-	public void averageAge(int age) {
-		Random random = new Random();
-		this.lifetime = (int) (age + (random.nextDouble() * 2D - 1D) * 8);
-	}
-
 	public void setRotationDirection(float rotationDirection) {
 		this.rotationDirection = rotationDirection;
 	}
 
-
 	@Override
 	public void tick() {
-
 		this.rotation = (this.rotationDirection * 0.1f) + this.rotation;
-
 		super.tick();
 	}
 
@@ -123,15 +101,15 @@ public class BloodBitParticle extends TextureSheetParticle {
 			for (int j = 0; j < 4; j++) {
 				Vec3 vec = CUBE[i * 4 + j];
 				vec = vec
-						.yRot(this.rotation + this.rotationOffsetYaw)
-						.xRot(this.rotation + this.rotationOffsetPitch)
-						.zRot(this.rotation + this.rotationOffsetRoll)
-						.scale(scale * ageMultiplier)
-						.add(lerpX, lerpY, lerpZ);
+					.yRot(this.rotation + this.rotationOffsetYaw)
+					.xRot(this.rotation + this.rotationOffsetPitch)
+					.zRot(this.rotation + this.rotationOffsetRoll)
+					.scale(scale * ageMultiplier)
+					.add(lerpX, lerpY, lerpZ);
 
 				Vec3 normal = CUBE_NORMALS[i];
 
-				builder.addVertex((float)vec.x, (float)vec.y, (float)vec.z)
+				builder.addVertex((float) vec.x, (float) vec.y, (float) vec.z)
 					.setUv(0, 0)
 					.setColor(Mth.clamp(rCol * 0.8f, 0, 1.0f), Mth.clamp(gCol * 0.8f, 0, 1.0f), Mth.clamp(bCol * 0.8f, 0, 1.0f), alpha)
 					.setNormal((float) normal.x, (float) normal.y, (float) normal.z)
@@ -156,22 +134,17 @@ public class BloodBitParticle extends TextureSheetParticle {
 
 		@Nullable
 		@Override
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			BloodBitParticle cauldronParticle = new BloodBitParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed);
-			Random random = new Random();
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+			BloodBitParticle cauldronParticle = new BloodBitParticle(level, x, y, z, xSpeed, ySpeed, zSpeed);
 
-			float colorOffset = (random.nextFloat() * 0.10f);
+			float colorOffset = (level.getRandom().nextFloat() * 0.10f);
 			cauldronParticle.setColor(0.025f + colorOffset, 0.05f, 0.05f);
 
 			cauldronParticle.setAlpha(1.0f);
 
-
 			cauldronParticle.pickSprite(this.spriteSet);
 			return cauldronParticle;
-
 		}
 	}
-
-
 }
 

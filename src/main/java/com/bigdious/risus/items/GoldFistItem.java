@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.common.ItemAbilities;
 
 import java.util.UUID;
 
@@ -105,8 +104,4 @@ public class GoldFistItem extends ToothknockerItem {
 			return super.onLeftClickEntity(stack, player, entity);
 		}
 
-	@Override
-	public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility toolAction) {
-		return false;
-	}
 }

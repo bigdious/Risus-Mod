@@ -8,11 +8,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class RisusSoundEvents {
 	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, Risus.MODID);
-	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_BREAK = register("block.meat.break");
-	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_FALL = register("block.meat.fall");
-	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_HIT = register("block.meat.hit");
-	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_PLACE = register("block.meat.place");
-	public static final DeferredHolder<SoundEvent, SoundEvent> MEAT_STEP = register("block.meat.step");
 	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_RAK = register("music.disc.rak");
@@ -23,8 +18,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_FEIGR = register("music.ambient.feigr");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("mobs.cheeky_laugh");
 
-
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {
-		return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(Risus.prefix( name)));
+		return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(Risus.prefix(name)));
 	}
 }

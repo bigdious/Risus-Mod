@@ -15,23 +15,18 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import static net.minecraft.world.level.block.entity.DecoratedPotBlockEntity.WobbleStyle;
-
 import javax.annotation.Nullable;
 
 public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
-	public int depthToSlotRatio = (int) Math.round((81 - (this.getBlockPos().getY() + 64) / 4.74));
+	public final int depthToSlotRatio = (int) Math.round((81 - (this.getBlockPos().getY() + 64) / 4.74));
 	public static final int EVENT_POT_WOBBLES = 1;
 	public long wobbleStartedAtTick;
 	@Nullable
 	public DepthWobbleStyle lastWobbleStyle;
-	@Nullable
-	private ItemStack item = ItemStack.EMPTY;
 	private NonNullList<ItemStack> items = NonNullList.withSize(depthToSlotRatio, ItemStack.EMPTY);
 
 	public DepthVaseBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -45,6 +40,7 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 			ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
 		}
 	}
+
 	public Direction getDirection() {
 		return this.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING);
 	}
@@ -56,14 +52,8 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 		if (!this.tryLoadLootTable(pTag)) {
 			ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
 		}
-
 	}
-	//the below needs to stay or else depthvase allows for overflow when interacted with, deleting items
 
-	public ItemStack getTheItem() {
-		this.unpackLootTable(null);
-		return this.item;
-	}
 	public int getContainerSize() {
 		return depthToSlotRatio;
 	}
@@ -83,26 +73,31 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 	protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
 		return new DepthVaseMenu(pId, pPlayer);
 	}
+
 	public static <E extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, E e) {
 	}
+
 	public void setItem(int pIndex, ItemStack pStack) {
-		this.unpackLootTable((Player)null);
+		this.unpackLootTable(null);
 		this.getItems().set(pIndex, pStack);
 		if (pStack.getCount() > this.getMaxStackSize()) {
 			pStack.setCount(this.getMaxStackSize());
 		}
 
 	}
+
 	public boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
 		return ItemStack.isSameItem(oldStack, newStack);
 	}
+
 	public void setInputItem(int slot, ItemStack item) {
 		this.setItem(slot, item);
 		this.wobble(DepthWobbleStyle.POSITIVE);
 		this.setChanged();
 
 	}
-	@org.jetbrains.annotations.Nullable
+
+	@Nullable
 	public ItemStack getInputItem(int slot) {
 		return this.getItem(slot);
 	}
@@ -125,13 +120,13 @@ public class DepthVaseBlockEntity extends RandomizableContainerBlockEntity {
 		}
 	}
 
-	public static enum DepthWobbleStyle {
+	public enum DepthWobbleStyle {
 		POSITIVE(7),
 		NEGATIVE(10);
 
 		public final int duration;
 
-		private DepthWobbleStyle(int p_305780_) {
+		DepthWobbleStyle(int p_305780_) {
 			this.duration = p_305780_;
 		}
 	}

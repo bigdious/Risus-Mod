@@ -12,7 +12,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BaseSpawner;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.phys.AABB;
 
 public class RisusSpawnerRenderer implements BlockEntityRenderer<RisusSpawnerEntity> {
@@ -44,7 +43,7 @@ public class RisusSpawnerRenderer implements BlockEntityRenderer<RisusSpawnerEnt
 		}
 
 		poseStack.translate(0.0F, 0.4F, 0.0F);
-		poseStack.mulPose(Axis.YP.rotationDegrees((float) Mth.lerp((double)partialTick, oSpin, spin) * 10.0F));
+		poseStack.mulPose(Axis.YP.rotationDegrees((float) Mth.lerp(partialTick, oSpin, spin) * 10.0F));
 		poseStack.translate(0.0F, -0.2F, 0.0F);
 		poseStack.mulPose(Axis.XP.rotationDegrees(-30.0F));
 		poseStack.scale(f, f, f);

@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.Nullable;
 
 public class ActuallyUseableDirectionalBlock extends DirectionalBlock {
-	MapCodec<ActuallyUseableDirectionalBlock> CODEC = simpleCodec(ActuallyUseableDirectionalBlock::new);
+	final MapCodec<ActuallyUseableDirectionalBlock> CODEC = simpleCodec(ActuallyUseableDirectionalBlock::new);
 
 	public ActuallyUseableDirectionalBlock(Properties properties) {
 		super(properties);

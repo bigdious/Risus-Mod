@@ -102,7 +102,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	private boolean isAcceptableReturnOwner() {
 		Entity entity = this.getOwner();
-		return entity == null || !entity.isAlive() ? false : !(entity instanceof ServerPlayer) || !entity.isSpectator();
+		return entity != null && entity.isAlive() && (!(entity instanceof ServerPlayer) || !entity.isSpectator());
 	}
 
 

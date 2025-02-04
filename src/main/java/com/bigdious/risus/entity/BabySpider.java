@@ -1,16 +1,12 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusFluids;
-import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -28,7 +24,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.fluids.FluidType;
 
 public class BabySpider extends Monster {
 	private int attackTimer;
@@ -72,9 +67,6 @@ public class BabySpider extends Monster {
 		}
 	}
 
-	public int getAttackTimer() {
-		return this.attackTimer;
-	}
 	public void handleEntityEvent(byte id) {
 		if (id == 4) {
 			this.attackTimer = 10;

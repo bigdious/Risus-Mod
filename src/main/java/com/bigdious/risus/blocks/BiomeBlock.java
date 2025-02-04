@@ -4,10 +4,8 @@ import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
 import com.bigdious.risus.blocks.interfaces.PlayingMusicEnums;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.data.RisusBiomes;
-import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
@@ -16,8 +14,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -32,8 +28,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -97,6 +91,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			.add(FLUIDLOGGED)
 			.add(MUSIC_PLAYING);
 	}
+
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -118,6 +113,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 		}
 		return null;
 	}
+
 	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(FLUIDLOGGED).getFluid().defaultFluidState();
@@ -135,44 +131,35 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 		}
 	}
 
-	//No longer an override, but keep here for sanity
-	public int tickRate() {
-		return 20;
-	}
-
 	@Override
-	@SuppressWarnings("deprecation")
 	public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
-		level.scheduleTick(pos, this, this.tickRate());
+		level.scheduleTick(pos, this, 20);
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) return;
-		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime==40) {
+		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime == 40) {
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
-			laughingStalk.decaytime=0;
+			laughingStalk.decaytime = 0;
 		}
 
 		this.performConversion(level, pos, rand, state);
-		level.scheduleTick(pos, this, this.tickRate());
+		level.scheduleTick(pos, this, 20);
 
 	}
 
-	public ItemInteractionResult useItemOn (ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		ItemStack held = player.getItemInHand(hand);
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) {
 			if (held.is(RisusItems.ORGANIC_MATTER)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING, true));
-			}
-			else if (held.is(RisusItems.MUSIC_DISC_MORK)) {
+			} else if (held.is(RisusItems.MUSIC_DISC_MORK)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING_MORK, true));
-			}
-			else if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
+			} else if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING_FEIGR, true));
-			} else return  ItemInteractionResult.FAIL;
-			level.scheduleTick(pos, this, this.tickRate());
+			} else return ItemInteractionResult.FAIL;
+			level.scheduleTick(pos, this, 20);
 			player.getMainHandItem().shrink(1);
 			return ItemInteractionResult.SUCCESS;
 		}
@@ -212,7 +199,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				state.getValue(SPREADING_FEIGR) ? RisusBiomes.COALIFICATION_FEIGR : RisusBiomes.COALIFICATION);
 		int range = 9;
 		for (int i = 0; i < 16; i++) {
-			BlockPos dPos = WorldUtil.randomOffset(rand, pos, range, 0, range);
+			BlockPos dPos = this.randomOffset(rand, pos, range, 0, range);
 			if (dPos.distSqr(pos) > 256.0)
 				continue;
 
@@ -239,10 +226,19 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
 			level.getChunkSource().chunkMap.resendBiomesForChunks(List.of(chunkAt));
 
-			if ((state.getValue(SPREADING) || state.getValue(SPREADING_FEIGR) || state.getValue(SPREADING_MORK)) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) laughingStalk.decaytime++;
+			if ((state.getValue(SPREADING) || state.getValue(SPREADING_FEIGR) || state.getValue(SPREADING_MORK)) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk)
+				laughingStalk.decaytime++;
 			break;
 		}
 	}
+
+	public BlockPos randomOffset(RandomSource random, BlockPos pos, int rx, int ry, int rz) {
+		int dx = random.nextInt(rx * 2 + 1) - rx;
+		int dy = random.nextInt(ry * 2 + 1) - ry;
+		int dz = random.nextInt(rz * 2 + 1) - rz;
+		return pos.offset(dx, dy, dz);
+	}
+
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return true;
@@ -253,26 +249,19 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
 		return new BiomeBlockEntity(pos, state);
 	}
+
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
 		Direction facing = state.getValue(DirectionalBlock.FACING);
 		BlockPos restingPos = pos.relative(facing.getOpposite());
 		return canSupportCenter(world, restingPos, facing);
 	}
+
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
-	@Nullable
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-		return createTickerHelper(type, RisusBlockEntities.BIOME_BLOCK.get(), level.isClientSide ? BiomeBlockEntity::tick : null);
-	}
-	@SuppressWarnings("unchecked")
-	@Nullable
-	protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> type1, BlockEntityType<E> type2, BlockEntityTicker<? super E> ticker) {
-		return type2 == type1 ? (BlockEntityTicker<A>) ticker : null;
-	}
+
 	@Override
 	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
 		if (pState.getValue(SPREADING) || pState.getValue(SPREADING_MORK) || pState.getValue(SPREADING_FEIGR)) {
@@ -285,19 +274,17 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			pLevel.scheduleTick(pPos, this, 10);
 		}
 	}
+
 	@Override
 	protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
 		if (!pLevel.isClientSide) {
 			boolean flag = pState.getValue(SPREADING) || pState.getValue(SPREADING_FEIGR) || pState.getValue(SPREADING_MORK);
 			if (flag != pLevel.hasNeighborSignal(pPos)) {
-				if (flag) {
-					pLevel.scheduleTick(pPos, this, 4);
-				} else {
-					pLevel.scheduleTick(pPos, this, 4);
-				}
+				pLevel.scheduleTick(pPos, this, 4);
 			}
 		}
 	}
+
 	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
 		return PushReaction.IGNORE;

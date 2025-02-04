@@ -44,9 +44,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	@Nullable
 	private LivingEntity clientSideCachedAttackTarget;
 	public final AnimationState leapAnim = new AnimationState();
-	public final AnimationState biteAnim = new AnimationState();
 	public int memories;
-
 
 	public Weaver(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
@@ -55,17 +53,18 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 12.0D)
-				.add(Attributes.MOVEMENT_SPEED, 0.3D)
-				.add(Attributes.ATTACK_DAMAGE, 2.0D);
+			.add(Attributes.MAX_HEALTH, 12.0D)
+			.add(Attributes.MOVEMENT_SPEED, 0.3D)
+			.add(Attributes.ATTACK_DAMAGE, 2.0D);
 	}
 
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(DATA_ID_ATTACK_TARGET, 0);
-		builder.define(DATA_FLAGS_ID, (byte)0);
+		builder.define(DATA_FLAGS_ID, (byte) 0);
 	}
+
 	@Override
 	public void readAdditionalSaveData(CompoundTag pCompound) {
 		super.readAdditionalSaveData(pCompound);
@@ -73,6 +72,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 			this.memories = pCompound.getInt("Memories");
 		}
 	}
+
 	@Override
 	public void addAdditionalSaveData(CompoundTag pCompound) {
 		super.addAdditionalSaveData(pCompound);
@@ -94,15 +94,10 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
-		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true,
-			entity -> !(entity instanceof ArmorStand)
-				&& !(entity instanceof QuestionMark)
-				&& !(entity instanceof TransientQuestionMark)
-				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
-				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
-		));
+		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof QuestionMark) && !entity.getType().is(RisusTags.Entities.OFFSPRING) && !entity.getType().is(RisusTags.Entities.BELOVED)));
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
 	}
+
 	@Override
 	public boolean canSwimInFluidType(FluidType type) {
 		if (type == RisusFluids.BLOOD_FLUID_TYPE.get()) {
@@ -112,13 +107,14 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		}
 	}
 
+	@Override
 	public void aiStep() {
 		super.aiStep();
 		if (this.attackTimer > 0) {
 			--this.attackTimer;
 		}
-		if (this.memories>=3) {
-			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size()<2) {
+		if (this.memories >= 3) {
+			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size() < 2) {
 				this.kill();
 				this.level().setBlock(this.blockPosition(), RisusBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
 			}
@@ -148,21 +144,22 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 			int i = pRandom.nextInt(8);
 			if (i <= 1) {
 				this.effect = MobEffects.MOVEMENT_SPEED;
-			} else if (i <= 2) {
+			} else if (i == 2) {
 				this.effect = MobEffects.DAMAGE_BOOST;
-			} else if (i <= 3) {
+			} else if (i == 3) {
 				this.effect = MobEffects.REGENERATION;
-			} else if (i <= 4) {
+			} else if (i == 4) {
 				this.effect = MobEffects.JUMP;
-			} else if (i <= 5) {
+			} else if (i == 5) {
 				this.effect = MobEffects.DAMAGE_RESISTANCE;
-			} else if (i <= 6) {
+			} else if (i == 6) {
 				this.effect = MobEffects.FIRE_RESISTANCE;
-			} else if (i <= 7) {
+			} else if (i == 7) {
 				this.effect = MobEffects.INVISIBILITY;
 			}
 		}
 	}
+
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
 		pSpawnGroupData = super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
@@ -171,7 +168,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		if (pSpawnGroupData == null) {
 			pSpawnGroupData = new Weaver.WeaverEffectsGroupData();
 			if (pLevel.getDifficulty() == Difficulty.HARD && randomsource.nextFloat() < 0.1F * pDifficulty.getSpecialMultiplier()) {
-				((Weaver.WeaverEffectsGroupData)pSpawnGroupData).setRandomEffect(randomsource);
+				((Weaver.WeaverEffectsGroupData) pSpawnGroupData).setRandomEffect(randomsource);
 			}
 		}
 
@@ -300,6 +297,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		}
 
 	}
+
 	public int getAttackTimer() {
 		return this.attackTimer;
 	}
@@ -309,15 +307,18 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	protected PathNavigation createNavigation(Level level) {
 		return new WallClimberNavigation(this, level);
 	}
+
 	public void tick() {
 		super.tick();
 		if (!this.level().isClientSide) {
 			this.setClimbing(this.horizontalCollision);
 		}
 	}
+
 	public boolean onClimbable() {
 		return this.isClimbing();
 	}
+
 	public boolean isClimbing() {
 		return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
 	}
@@ -325,13 +326,14 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	public void setClimbing(boolean climbing) {
 		byte b0 = this.entityData.get(DATA_FLAGS_ID);
 		if (climbing) {
-			b0 = (byte)(b0 | 1);
+			b0 = (byte) (b0 | 1);
 		} else {
 			b0 &= -2;
 		}
 
 		this.entityData.set(DATA_FLAGS_ID, b0);
 	}
+
 	static {
 		DATA_FLAGS_ID = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.BYTE);
 	}

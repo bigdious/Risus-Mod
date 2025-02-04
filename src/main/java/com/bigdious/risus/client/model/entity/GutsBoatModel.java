@@ -10,8 +10,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class GutsBoatModel extends BoatModel {
-	private static final String ORGANS = "organs";
-	private static final String RIBCAGE = "ribcage";
 	public GutsBoatModel(ModelPart root) {
 		super(root);
 	}
@@ -23,6 +21,7 @@ public class GutsBoatModel extends BoatModel {
 		builder.add(root.getChild("ribcage"));
 		return builder;
 	}
+
 	public static LayerDefinition createBodyModel() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();

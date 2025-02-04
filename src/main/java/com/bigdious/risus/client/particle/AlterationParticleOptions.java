@@ -1,17 +1,11 @@
 package com.bigdious.risus.client.particle;
 
 import com.bigdious.risus.init.RisusParticles;
-import com.mojang.brigadier.StringReader;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.core.particles.DustColorTransitionOptions;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ScalableParticleOptionsBase;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -21,8 +15,6 @@ import org.joml.Vector3f;
 
 public class AlterationParticleOptions extends ScalableParticleOptionsBase {
 
-
-    //deserializer broke
 	public static final MapCodec<AlterationParticleOptions> CODEC = RecordCodecBuilder.mapCodec(
 		p_341564_ -> p_341564_.group(
 				ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(p_341563_ -> p_341563_.fromColor),
@@ -43,7 +35,6 @@ public class AlterationParticleOptions extends ScalableParticleOptionsBase {
 	private final Vector3f fromColor;
 	private final Vector3f toColor;
 
-
 	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(Vec3.fromRGB24(9868693).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
 
 	public AlterationParticleOptions(Vector3f p_254199_, Vector3f p_254529_, float p_254178_) {
@@ -58,7 +49,6 @@ public class AlterationParticleOptions extends ScalableParticleOptionsBase {
 	public Vector3f getToColor() {
 		return this.toColor;
 	}
-
 
 	@Override
 	public ParticleType<?> getType() {

@@ -3,16 +3,10 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -28,10 +22,6 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.ItemAbilities;
-
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ToothknockerItem extends SwordItem {
 
@@ -44,10 +34,6 @@ public class ToothknockerItem extends SwordItem {
 		return pRepair.is(RisusItems.GLUTTONY_SCALES);
 	}
 
-
-	public boolean canAttackBlock(BlockState p_43291_, Level p_43292_, BlockPos p_43293_, Player p_43294_) {
-		return !p_43294_.isCreative();
-	}
 
 	public boolean mineBlock(ItemStack itemstack, Level p_43283_, BlockState p_43284_, BlockPos p_43285_, LivingEntity player) {
 		if (p_43284_.getDestroySpeed(p_43283_, p_43285_) != 0.0F) {
@@ -93,7 +79,6 @@ public class ToothknockerItem extends SwordItem {
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			Level level = player.level();
 			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.TURTLE_EGG_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
-			;
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
@@ -115,8 +100,7 @@ public class ToothknockerItem extends SwordItem {
 			f1 *= f5 / f4;
 			f2 *= f5 / f4;
 			f3 *= f5 / f4;
-			player.push((double) f1, (double) f2, (double) f3);
-			float f6 = 1.1999999F;
+			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
 			player.getCooldowns().addCooldown(this, 30);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);

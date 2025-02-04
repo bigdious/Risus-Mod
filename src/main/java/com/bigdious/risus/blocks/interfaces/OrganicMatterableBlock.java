@@ -25,8 +25,8 @@ public interface OrganicMatterableBlock {
 		return OrganicMatterableBlock.Type.GROWER;
 	}
 
-	public static enum Type {
+	enum Type {
 		NEIGHBOR_SPREADER,
-		GROWER;
+		GROWER
 	}
 }

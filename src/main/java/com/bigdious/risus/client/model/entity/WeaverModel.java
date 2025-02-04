@@ -40,7 +40,6 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		this.upperJaw = head.getChild("upperJaw");
 		this.lowerJaw = head.getChild("lowerJaw");
 		ModelPart coreHolder = root.getChild("memoryCore");
-		ModelPart body = root.getChild("body");
 		this.memoryCore = coreHolder.getChild("memoryShell");
 	}
 
@@ -155,7 +154,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		float f8 = Math.abs(Mth.sin(limbSwing * 0.6662F + (float) Math.PI) * 0.4F) * limbSwingAmount;
 		float f10 = Math.abs(Mth.sin(limbSwing * 0.6662F + ((float) Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
 		this.right_leg3.yRot += f3;
-		this.left_leg3.yRot += -f3;
+		this.left_leg3.yRot -= f3;
 		this.right_leg2.yRot += f4;
 		this.left_leg2.yRot -= f4;
 		this.right_leg1.yRot += f6;

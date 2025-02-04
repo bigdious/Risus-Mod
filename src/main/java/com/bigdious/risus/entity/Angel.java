@@ -1,8 +1,6 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusFluids;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusMobType;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -20,7 +18,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidType;

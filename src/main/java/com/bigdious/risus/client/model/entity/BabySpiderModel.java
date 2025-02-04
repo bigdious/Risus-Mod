@@ -6,7 +6,6 @@ package com.bigdious.risus.client.model.entity;
 
 
 import com.bigdious.risus.entity.BabySpider;
-import com.bigdious.risus.entity.Licker;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -15,7 +14,6 @@ import net.minecraft.util.Mth;
 
 public class BabySpiderModel<T extends BabySpider> extends HierarchicalModel<T> {
 	private final ModelPart root;
-	private final ModelPart body;
 	private final ModelPart leg8;
 	private final ModelPart leg7;
 	private final ModelPart leg6;
@@ -27,7 +25,7 @@ public class BabySpiderModel<T extends BabySpider> extends HierarchicalModel<T> 
 
 	public BabySpiderModel(ModelPart root) {
 		this.root = root;
-		this.body = root.getChild("body");
+		ModelPart body = root.getChild("body");
 		this.leg8 = body.getChild("leg8");
 		this.leg7 = body.getChild("leg7");
 		this.leg6 = body.getChild("leg6");
@@ -67,9 +65,6 @@ public class BabySpiderModel<T extends BabySpider> extends HierarchicalModel<T> 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		float f3 = -(Mth.cos(limbSwing * 0.6662F * 10F + 0.0F) * 0.4F) * limbSwingAmount;
-		float f4 = -(Mth.cos(limbSwing * 0.6662F * 10F + (float) Math.PI) * 0.4F) * limbSwingAmount;
-		float f6 = -(Mth.cos(limbSwing * 0.6662F * 10F + ((float) Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;
 		float f7 = Math.abs(Mth.sin(limbSwing * 0.6662F * 3F + 0.0F) * 0.4F) * limbSwingAmount;
 		float f8 = Math.abs(Mth.sin(limbSwing * 0.6662F * 3F + (float) Math.PI) * 0.4F) * limbSwingAmount;
 		float f10 = Math.abs(Mth.sin(limbSwing * 0.6662F * 3F + ((float) Math.PI * 1.5F)) * 0.4F) * limbSwingAmount;

@@ -36,6 +36,6 @@ public interface DecomposingBlock extends ChangeOverTimeBlock<DecomposingBlock.D
 		NONE,
 		ROTTING,
 		DECOMPOSING,
-		DECAYING;
+		DECAYING
 	}
 }

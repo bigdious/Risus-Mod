@@ -14,11 +14,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
@@ -30,8 +28,7 @@ import net.neoforged.neoforge.event.EventHooks;
 import javax.annotation.Nullable;
 
 public class BloodwyrmBreathEntity extends AbstractArrow {
-	@Nullable
-	private BlockState lastState;
+
 	private int life;
 
 	public BloodwyrmBreathEntity(EntityType<BloodwyrmBreathEntity> type, Level level) {
@@ -105,7 +102,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		}
 
 		if (this.inGround && !flag) {
-			if (this.lastState != blockstate && this.shouldFall()) {
+			if (this.shouldFall()) {
 				this.startFalling();
 			} else if (!this.level().isClientSide) {
 				this.tickDespawn();
@@ -172,17 +169,15 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 			this.setXRot(lerpRotation(this.xRotO, this.getXRot()));
 			this.setYRot(lerpRotation(this.yRotO, this.getYRot()));
 			float f = 0.99F;
-			float f1 = 0.05F;
 			if (this.isInWater()) {
 				for (int j = 0; j < 4; ++j) {
-					float f2 = 0.25F;
 					this.level().addParticle(ParticleTypes.BUBBLE, d7 - d5 * 0.25D, d2 - d6 * 0.25D, d3 - d1 * 0.25D, d5, d6, d1);
 				}
 
 				f = this.getWaterInertia();
 			}
 
-			this.setDeltaMovement(vec3.scale((double) f));
+			this.setDeltaMovement(vec3.scale(f));
 			if (!this.isNoGravity() && !flag) {
 				Vec3 vec34 = this.getDeltaMovement();
 				this.setDeltaMovement(vec34.x, vec34.y - (double) 0.05F, vec34.z);
@@ -202,7 +197,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 	private void startFalling() {
 		this.inGround = false;
 		Vec3 vec3 = this.getDeltaMovement();
-		this.setDeltaMovement(vec3.multiply((double) (this.random.nextFloat() * 0.2F), (double) (this.random.nextFloat() * 0.2F), (double) (this.random.nextFloat() * 0.2F)));
+		this.setDeltaMovement(vec3.multiply(this.random.nextFloat() * 0.2F, this.random.nextFloat() * 0.2F, this.random.nextFloat() * 0.2F));
 		this.life = 0;
 	}
 
@@ -227,7 +222,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 
 	@Override
 	protected ItemStack getDefaultPickupItem() {
-		return null;
+		return ItemStack.EMPTY;
 	}
 }
 

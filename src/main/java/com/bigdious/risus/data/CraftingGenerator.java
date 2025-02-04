@@ -21,10 +21,9 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.concurrent.CompletableFuture;
 
 public class CraftingGenerator extends RecipeProvider {
-	private final HolderLookup.Provider provider;
 	public CraftingGenerator(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
 		super(packOutput, provider);
-		this.provider = provider.join();
+		HolderLookup.Provider provider1 = provider.join();
 	}
 
 	@Override
@@ -722,10 +721,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_wall"));
 
 		smeltingRecipe(RisusBlocks.GRIMSTONE_BRICKS.get(),RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().asItem(),0.1F,1).save(consumer, prefix("smelt_cracked_grimstone_bricks"));
-	}
-
-	public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike input, ItemLike result, float exp) {
-		return smeltingRecipe(input, result, exp, 1);
 	}
 
 	public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike input, ItemLike result, float exp, int count) {

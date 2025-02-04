@@ -17,7 +17,6 @@ public class OrganicMatterEvent extends Event implements ICancellableEvent {
 	private final BlockPos pos;
 	private final BlockState state;
 	private final ItemStack stack;
-	private final boolean isValidOrganicMatterTarget;
 	private boolean isSuccess = false;
 
 	public OrganicMatterEvent(@Nullable Player player, Level level, BlockPos pos, BlockState state, ItemStack stack) {
@@ -26,15 +25,18 @@ public class OrganicMatterEvent extends Event implements ICancellableEvent {
 		this.pos = pos;
 		this.state = state;
 		this.stack = stack;
-		this.isValidOrganicMatterTarget = state.getBlock() instanceof OrganicMatterableBlock organicmatterable && organicmatterable.isValidOrganicMatterTarget(level, pos, state);
+		boolean isValidOrganicMatterTarget = state.getBlock() instanceof OrganicMatterableBlock organicmatterable && organicmatterable.isValidOrganicMatterTarget(level, pos, state);
 	}
+
 	@Nullable
 	public Player getPlayer() {
 		return this.player;
 	}
+
 	public Level getLevel() {
 		return this.level;
 	}
+
 	public BlockPos getPos() {
 		return this.pos;
 	}
@@ -47,17 +49,15 @@ public class OrganicMatterEvent extends Event implements ICancellableEvent {
 		return this.stack;
 	}
 
-	public boolean isValidOrganicMatterTarget() {
-		return this.isValidOrganicMatterTarget();
-	}
-
 	public void setSuccessful(boolean success) {
 		this.isSuccess = success;
 		this.setCanceled(true);
 	}
+
 	public boolean isSuccessful() {
 		return this.isSuccess;
 	}
+
 	@Override
 	public void setCanceled(boolean canceled) {
 		ICancellableEvent.super.setCanceled(canceled);

@@ -7,15 +7,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.neoforged.neoforge.common.EffectCure;
 
-import java.util.Map;
 import java.util.Set;
 
 public class ToothlusterEffect extends MobEffect {
-	public ToothlusterEffect(MobEffectCategory category, int color) {
-		super(category, color);
-	}
 
-	private double multiplier;
+	private final double multiplier;
 
 	public ToothlusterEffect(MobEffectCategory p_19426_, int p_19427_, double p_19428_) {
 		super(p_19426_, p_19427_);

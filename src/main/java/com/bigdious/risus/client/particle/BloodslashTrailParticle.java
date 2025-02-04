@@ -21,9 +21,9 @@ public class BloodslashTrailParticle extends TextureSheetParticle {
 		this.xd = this.xd * 0.009999999776482582 + pXSpeed;
 		this.yd = this.yd * 0.009999999776482582 + pYSpeed;
 		this.zd = this.zd * 0.009999999776482582 + pZSpeed;
-		this.x += (double)((this.random.nextFloat() - this.random.nextFloat()) * 0.05F);
-		this.y += (double)((this.random.nextFloat() - this.random.nextFloat()) * 0.05F);
-		this.z += (double)((this.random.nextFloat() - this.random.nextFloat()) * 0.05F);
+		this.x += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
+		this.y += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
+		this.z += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
 	}
 
 	@Override

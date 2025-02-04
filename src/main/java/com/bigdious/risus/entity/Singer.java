@@ -1,7 +1,5 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -11,14 +9,11 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -49,8 +44,10 @@ public class Singer extends Monster {
 
 	public Singer(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward=5;
+		this.xpReward = 5;
 	}
+
+	@Override
 	public boolean isSensitiveToWater() {
 		return true;
 	}
@@ -63,6 +60,7 @@ public class Singer extends Monster {
 			.add(Attributes.JUMP_STRENGTH, 0)
 			.add(Attributes.ATTACK_DAMAGE, 0F);
 	}
+
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -71,21 +69,25 @@ public class Singer extends Monster {
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true, player -> !player.getItemBySlot(EquipmentSlot.HEAD).is(Items.CARVED_PUMPKIN)));
-    }
+	}
+
 	public void setCharging(boolean charging) {
 		this.entityData.set(DATA_IS_CHARGING, charging);
 	}
+
 	public boolean isCharging() {
 		return this.entityData.get(DATA_IS_CHARGING);
 	}
+
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(DATA_IS_CHARGING, false);
 	}
+
 	public void aiStep() {
 		if (this.level().isClientSide) {
 			for (int i = 0; i < 2; ++i) {
-				this.level().addParticle(ParticleTypes.PORTAL, this.getRandomX(-0.5), this.getY()+1, this.getRandomZ(-0.5), (this.random.nextDouble() - 0.5) * 2.0, -this.random.nextDouble(), (this.random.nextDouble() - 0.5) * 2.0);
+				this.level().addParticle(ParticleTypes.PORTAL, this.getRandomX(-0.5), this.getY() + 1, this.getRandomZ(-0.5), (this.random.nextDouble() - 0.5) * 2.0, -this.random.nextDouble(), (this.random.nextDouble() - 0.5) * 2.0);
 			}
 		}
 		if (this.isAggressive() && this.level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && !this.level().isClientSide) {
@@ -103,11 +105,12 @@ public class Singer extends Monster {
 
 		super.aiStep();
 	}
+
 	protected void customServerAiStep() {
 		if (this.level().isDay() && this.tickCount >= this.targetChangeTime + 600) {
 			float f = this.getLightLevelDependentMagicValue();
 			if (f > 0.5F && this.level().canSeeSky(this.blockPosition()) && this.random.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) {
-				this.setTarget((LivingEntity)null);
+				this.setTarget(null);
 				this.teleport();
 			}
 		}
@@ -118,7 +121,7 @@ public class Singer extends Monster {
 	protected boolean teleport() {
 		if (!this.level().isClientSide() && this.isAlive()) {
 			double d0 = this.getX() + (this.random.nextDouble() - 0.5) * 64.0;
-			double d1 = this.getY() + (double)(this.random.nextInt(64) - 32);
+			double d1 = this.getY() + (double) (this.random.nextInt(64) - 32);
 			double d2 = this.getZ() + (this.random.nextDouble() - 0.5) * 64.0;
 			return this.teleport(d0, d1, d2);
 		} else {
@@ -126,20 +129,10 @@ public class Singer extends Monster {
 		}
 	}
 
-	boolean teleportTowards(Entity p_32501_) {
-		Vec3 vec3 = new Vec3(this.getX() - p_32501_.getX(), this.getY(0.5) - p_32501_.getEyeY(), this.getZ() - p_32501_.getZ());
-		vec3 = vec3.normalize();
-		double d0 = 16.0;
-		double d1 = this.getX() + (this.random.nextDouble() - 0.5) * 8.0 - vec3.x * 16.0;
-		double d2 = this.getY() + (double)(this.random.nextInt(16) - 8) - vec3.y * 16.0;
-		double d3 = this.getZ() + (this.random.nextDouble() - 0.5) * 8.0 - vec3.z * 16.0;
-		return this.teleport(d1, d2, d3);
-	}
-
 	private boolean teleport(double p_32544_, double p_32545_, double p_32546_) {
 		BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos(p_32544_, p_32545_, p_32546_);
 
-		while(blockpos$mutableblockpos.getY() > this.level().getMinBuildHeight() && !this.level().getBlockState(blockpos$mutableblockpos).blocksMotion()) {
+		while (blockpos$mutableblockpos.getY() > this.level().getMinBuildHeight() && !this.level().getBlockState(blockpos$mutableblockpos).blocksMotion()) {
 			blockpos$mutableblockpos.move(Direction.DOWN);
 		}
 
@@ -156,7 +149,7 @@ public class Singer extends Monster {
 				if (flag2) {
 					this.level().gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(this));
 					if (!this.isSilent()) {
-						this.level().playSound((Player)null, this.xo, this.yo, this.zo, SoundEvents.ENDERMAN_TELEPORT, this.getSoundSource(), 1.0F, 1.0F);
+						this.level().playSound(null, this.xo, this.yo, this.zo, SoundEvents.ENDERMAN_TELEPORT, this.getSoundSource(), 1.0F, 1.0F);
 						this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
 					}
 				}
@@ -167,9 +160,11 @@ public class Singer extends Monster {
 			return false;
 		}
 	}
+
 	protected SoundEvent getAmbientSound() {
 		return SoundEvents.ENDERMAN_AMBIENT;
 	}
+
 	protected SoundEvent getHurtSound(DamageSource p_32527_) {
 		return SoundEvents.ENDERMAN_HURT;
 	}
@@ -177,6 +172,7 @@ public class Singer extends Monster {
 	protected SoundEvent getDeathSound() {
 		return SoundEvents.ENDERMAN_DEATH;
 	}
+
 	public boolean hurt(DamageSource p_32494_, float p_32495_) {
 		if (this.isInvulnerableTo(p_32494_)) {
 			return false;
@@ -191,9 +187,9 @@ public class Singer extends Monster {
 
 				return flag1;
 			} else {
-				flag1 = flag && this.hurtWithCleanWater(p_32494_, (ThrownPotion)p_32494_.getDirectEntity(), p_32495_);
+				flag1 = flag && this.hurtWithCleanWater(p_32494_, (ThrownPotion) p_32494_.getDirectEntity(), p_32495_);
 
-				for(int i = 0; i < 64; ++i) {
+				for (int i = 0; i < 64; ++i) {
 					if (this.teleport()) {
 						return true;
 					}
@@ -203,11 +199,13 @@ public class Singer extends Monster {
 			}
 		}
 	}
+
 	private boolean hurtWithCleanWater(DamageSource p_186273_, ThrownPotion p_186274_, float p_186275_) {
 		ItemStack itemstack = p_186274_.getItem();
 		PotionContents potioncontents = itemstack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
 		return potioncontents.is(Potions.WATER) && super.hurt(p_186273_, p_186275_);
 	}
+
 	static class SingerInducesNauseaAttack extends Goal {
 		private final Singer singer;
 		public int chargeTime;

@@ -86,7 +86,7 @@ public abstract class RisusGrowingPlantBodyBlock extends RisusGrowingPlantBlock 
 	@Override
 	protected boolean canBeReplaced(BlockState pState, BlockPlaceContext pUseContext) {
 		boolean flag = super.canBeReplaced(pState, pUseContext);
-		return flag && pUseContext.getItemInHand().is(this.getHeadBlock().asItem()) ? false : flag;
+		return (!flag || !pUseContext.getItemInHand().is(this.getHeadBlock().asItem())) && flag;
 	}
 
 	@Override

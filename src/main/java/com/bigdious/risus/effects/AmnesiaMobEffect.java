@@ -1,15 +1,9 @@
 package com.bigdious.risus.effects;
 
-import com.bigdious.risus.init.RisusItems;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.common.EffectCure;
-
-import java.util.Set;
 
 public class AmnesiaMobEffect extends MobEffect {
 

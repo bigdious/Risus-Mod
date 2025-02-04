@@ -10,8 +10,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrowingPlantBlock;
-import net.minecraft.world.level.block.GrowingPlantHeadBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -51,9 +49,7 @@ public abstract class RisusGrowingPlantBlock extends Block {
 	protected boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
 		BlockPos blockpos = pPos.relative(this.growthDirection.getOpposite());
 		BlockState blockstate = pLevel.getBlockState(blockpos);
-		return !this.canAttachTo(blockstate)
-			? false
-			: blockstate.is(this.getHeadBlock()) || blockstate.is(this.getBodyBlock()) || blockstate.isFaceSturdy(pLevel, blockpos, this.growthDirection);
+		return this.canAttachTo(blockstate) && (blockstate.is(this.getHeadBlock()) || blockstate.is(this.getBodyBlock()) || blockstate.isFaceSturdy(pLevel, blockpos, this.growthDirection));
 	}
 
 	@Override

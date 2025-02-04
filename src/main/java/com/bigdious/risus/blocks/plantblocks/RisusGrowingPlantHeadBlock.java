@@ -27,7 +27,7 @@ public abstract class RisusGrowingPlantHeadBlock extends RisusGrowingPlantBlock 
 	protected RisusGrowingPlantHeadBlock(BlockBehaviour.Properties pProperties, Direction pGrowthDirection, VoxelShape pShape, boolean pScheduleFluidTicks, double pGrowPerTickProbability) {
 		super(pProperties, pGrowthDirection, pShape, pScheduleFluidTicks);
 		this.growPerTickProbability = pGrowPerTickProbability;
-		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public abstract class RisusGrowingPlantHeadBlock extends RisusGrowingPlantBlock 
 
 	@Override
 	public BlockState getStateForPlacement(LevelAccessor pLevel) {
-		return this.defaultBlockState().setValue(AGE, Integer.valueOf(pLevel.getRandom().nextInt(25)));
+		return this.defaultBlockState().setValue(AGE, pLevel.getRandom().nextInt(25));
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public abstract class RisusGrowingPlantHeadBlock extends RisusGrowingPlantBlock 
 	}
 
 	public BlockState getMaxAgeState(BlockState pState) {
-		return pState.setValue(AGE, Integer.valueOf(25));
+		return pState.setValue(AGE, 25);
 	}
 
 	public boolean isMaxAge(BlockState pState) {
@@ -110,7 +110,7 @@ public abstract class RisusGrowingPlantHeadBlock extends RisusGrowingPlantBlock 
 		int j = this.getBlocksToGrowWhenOrganicMattered(pRandom);
 
 		for (int k = 0; k < j && this.canGrowInto(pLevel.getBlockState(blockpos)); k++) {
-			pLevel.setBlockAndUpdate(blockpos, pState.setValue(AGE, Integer.valueOf(i)));
+			pLevel.setBlockAndUpdate(blockpos, pState.setValue(AGE, i));
 			blockpos = blockpos.relative(this.growthDirection);
 			i = Math.min(i + 1, 25);
 		}

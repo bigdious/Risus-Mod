@@ -1,8 +1,6 @@
 package com.bigdious.risus.effects;
 
 import com.bigdious.risus.init.RisusDamageTypes;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;

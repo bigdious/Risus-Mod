@@ -24,9 +24,9 @@ public class ThrownAxeModel extends Model {
 				.texOffs(0, 22).mirror().addBox(-1.0F, -12.5F, -2.5F, 2.0F, 5.0F, 5.0F).mirror(false)
 				.texOffs(24, 17).mirror().addBox(-1.01F, -13.5F, -1.0F, 2.0F, 13.0F, 2.0F, new CubeDeformation(-0.1F)).mirror(false), PartPose.offset(0.0F, 16.5F, 3.5F));
 
-		PartDefinition cube_r1 = axe.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(24, 16).addBox(-1.0F, 1.3241F, 2.8206F, 2.0F, 8.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -3.7049F, -2.8713F, -0.3927F, 0.0F, 0.0F));
+		axe.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(24, 16).addBox(-1.0F, 1.3241F, 2.8206F, 2.0F, 8.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -3.7049F, -2.8713F, -0.3927F, 0.0F, 0.0F));
 
-		PartDefinition cube_r2 = axe.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, -14).addBox(0.0F, -4.5423F, -0.5184F, 0.0F, 14.0F, 14.0F), PartPose.offsetAndRotation(0.0F, -3.7049F, -2.8713F, 2.3562F, 0.0F, 0.0F));
+		axe.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, -14).addBox(0.0F, -4.5423F, -0.5184F, 0.0F, 14.0F, 14.0F), PartPose.offsetAndRotation(0.0F, -3.7049F, -2.8713F, 2.3562F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}

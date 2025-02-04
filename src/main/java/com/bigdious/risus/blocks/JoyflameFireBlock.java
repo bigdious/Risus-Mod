@@ -6,7 +6,6 @@ import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -116,11 +115,6 @@ public class JoyflameFireBlock extends SoulFireBlock {
 
 	public static boolean canSurviveOnBlock(BlockState state) {
 		return state.is(BlockTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS);
-	}
-
-	@Override
-	protected boolean canBurn(BlockState state) {
-		return true;
 	}
 
 

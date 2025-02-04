@@ -2,7 +2,6 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -23,12 +22,12 @@ public class RisusParticles {
 	public static final DeferredHolder<ParticleType<?>, ParticleType<AlterationParticleOptions>> ALTERATION = PARTICLES.register("alteration", () -> new ParticleType<>(false) {
 		@Override
 		public MapCodec<AlterationParticleOptions> codec() {
-			return null;
+			return AlterationParticleOptions.CODEC;
 		}
 
 		@Override
 		public StreamCodec<? super RegistryFriendlyByteBuf, AlterationParticleOptions> streamCodec() {
-			return null;
+			return AlterationParticleOptions.STREAM_CODEC;
 		}
 	});
 

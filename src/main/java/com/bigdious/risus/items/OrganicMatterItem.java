@@ -59,7 +59,6 @@ public class OrganicMatterItem extends Item {
 		Level level = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate = level.getBlockState(blockpos);
-		BlockPos blockpos1 = blockpos.relative(context.getClickedFace());
 		if (applyOrganicMatter(context.getItemInHand(), level, blockpos, context.getPlayer())) {
 			if (!level.isClientSide) {
 				context.getPlayer().gameEvent(GameEvent.ITEM_INTERACT_FINISH);

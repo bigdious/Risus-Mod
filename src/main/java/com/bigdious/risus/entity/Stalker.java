@@ -1,7 +1,5 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusMobType;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -22,7 +20,6 @@ import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class Stalker extends Monster {
@@ -79,10 +76,6 @@ public class Stalker extends Monster {
 			}
 		}
 		return false;
-	}
-
-	public RisusMobType getRisusMobType() {
-		return RisusMobType.OFFSPRING;
 	}
 
 	protected SoundEvent getHurtSound(DamageSource pDamageSource) {

@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.core.particles.ScalableParticleOptionsBase;
 import org.joml.Vector3f;
 
 public class AlterationParticle extends DustParticleBase<AlterationParticleOptions> {
@@ -32,7 +31,6 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 		this.y = this.yo;
 		this.z = this.zo;
 		this.quadSize = 0.125F * (this.random.nextFloat() * 0.5F + 0.2F);
-		float f = this.random.nextFloat() * 0.6F + 0.4F;
 		this.rCol = fromColor.x();
 		this.gCol = fromColor.y();
 		this.bCol = fromColor.z();
@@ -83,11 +81,6 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 		}
 
 		return j | k << 16;
-	}
-
-	@Override
-	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
 	}
 
 	@Override

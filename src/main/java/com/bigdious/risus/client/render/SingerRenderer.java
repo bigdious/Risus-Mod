@@ -2,11 +2,8 @@ package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
-import com.bigdious.risus.client.model.entity.LickerModel;
 import com.bigdious.risus.client.model.entity.SingerModel;
 import com.bigdious.risus.client.render.layer.SingerEyeLayer;
-import com.bigdious.risus.client.render.layer.StalkerEyeLayer;
-import com.bigdious.risus.entity.Licker;
 import com.bigdious.risus.entity.Singer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

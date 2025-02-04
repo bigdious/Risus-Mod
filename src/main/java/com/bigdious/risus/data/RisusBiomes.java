@@ -1,12 +1,9 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -17,8 +14,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.world.BiomeSpecialEffectsBuilder;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 

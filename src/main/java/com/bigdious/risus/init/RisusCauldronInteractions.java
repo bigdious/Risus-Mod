@@ -1,6 +1,5 @@
 package com.bigdious.risus.init;
 
-import com.bigdious.risus.data.RisusBiomes;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;

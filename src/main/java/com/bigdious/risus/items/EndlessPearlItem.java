@@ -41,7 +41,7 @@ public class EndlessPearlItem extends EnderpearlItem {
 			if (itemstack.getDamageValue() == itemstack.getMaxDamage()) {
 				return InteractionResultHolder.fail(player.getItemInHand(hand));
 			} else {
-				level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+				level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				player.getCooldowns().addCooldown(this, 20);
 				if (!level.isClientSide) {
 					ThrownEnderpearl thrownenderpearl = new ThrownEnderpearl(level, player);
@@ -66,9 +66,4 @@ public class EndlessPearlItem extends EnderpearlItem {
 	public boolean isBookEnchantable(ItemStack itemstack, ItemStack book) {
 		return false;
 	}
-
-	public boolean canApplyAtEnchantingTable(ItemStack itemstack, Enchantment enchantment) {
-		return false;
-	}
-
 }

@@ -3,7 +3,6 @@ package com.bigdious.risus.blocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Equipable;
-import net.minecraft.world.level.block.EquipableCarvedPumpkinBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class EquipableEyeBlock extends ActuallyUseableDirectionalBlock implements Equipable {

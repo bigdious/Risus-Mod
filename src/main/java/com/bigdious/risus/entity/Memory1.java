@@ -1,6 +1,5 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;

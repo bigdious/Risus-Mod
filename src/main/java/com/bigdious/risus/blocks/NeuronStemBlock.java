@@ -22,7 +22,6 @@ public class NeuronStemBlock extends RisusGrowingPlantBodyBlock implements Simpl
 	public static final MapCodec<NeuronStemBlock> CODEC = simpleCodec(NeuronStemBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
-	private static final double GROW_PER_TICK_PROBABILITY = 0.14;
 
 	public NeuronStemBlock(BlockBehaviour.Properties p_154873_) {
 		super(p_154873_, Direction.UP, SHAPE, true);

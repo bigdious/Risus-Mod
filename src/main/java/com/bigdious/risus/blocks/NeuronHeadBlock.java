@@ -2,9 +2,7 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.blocks.plantblocks.RisusGrowingPlantHeadBlock;
-import com.bigdious.risus.entity.Angel;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +13,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -34,7 +31,6 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 	public static final MapCodec<NeuronHeadBlock> CODEC = simpleCodec(NeuronHeadBlock::new);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
-	private static final double GROW_PER_TICK_PROBABILITY = 0.14;
 
 	public NeuronHeadBlock(BlockBehaviour.Properties properties) {
 		super(properties, Direction.UP, SHAPE, true, 0.14);
@@ -56,7 +52,7 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
-			.setValue(AGE, Integer.valueOf(context.getLevel().getRandom().nextInt(25)));
+			.setValue(AGE, context.getLevel().getRandom().nextInt(25));
 	}
 
 	@Override

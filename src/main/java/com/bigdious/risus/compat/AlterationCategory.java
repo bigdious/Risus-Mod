@@ -2,7 +2,6 @@ package com.bigdious.risus.compat;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -14,7 +13,6 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;

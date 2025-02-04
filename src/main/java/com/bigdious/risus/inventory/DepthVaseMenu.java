@@ -11,9 +11,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class DepthVaseMenu extends AbstractContainerMenu {
 
-	private static final net.minecraft.world.Container Container = null;
 	private final Container depthVase;
-
 
 	public DepthVaseMenu(int id, Inventory inventory) {
 		this(id, inventory, new SimpleContainer(54) {
@@ -21,7 +19,7 @@ public class DepthVaseMenu extends AbstractContainerMenu {
 	}
 
 	public DepthVaseMenu(int id, Inventory inventory, Container container) {
-		super((MenuType<?>) null, id);
+		super(null, id);
 		this.depthVase = container;
 		checkContainerSize(depthVase, this.depthVase.getContainerSize());
 		container.startOpen(inventory.player);
