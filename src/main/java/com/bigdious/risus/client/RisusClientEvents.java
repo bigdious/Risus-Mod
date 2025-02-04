@@ -58,6 +58,7 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerEntityRenderers);
 		bus.addListener(RisusClientEvents::registerScreens);
 		bus.addListener(RisusClientEvents::registerBlockColors);
+		bus.addListener(RisusClientEvents::registerItemColors);
 		bus.addListener(RisusClientEvents::registerClientExtensions);
 		bus.addListener(EntityRenderersEvent.AddLayers.class, RisusClientEvents::attachRenderLayers);
 
@@ -112,6 +113,10 @@ public class RisusClientEvents {
 
 	private static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
 		event.register((state, getter, pos, i) -> getter != null && pos != null ? BiomeColors.getAverageGrassColor(getter, pos) : GrassColor.get(0.5D, 1.0D), RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+	}
+
+	private static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+		event.register((stack, i) -> GrassColor.get(0.5D, 1.0D), RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 	}
 
 	private static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {

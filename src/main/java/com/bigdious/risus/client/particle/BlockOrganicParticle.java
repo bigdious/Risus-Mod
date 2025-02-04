@@ -9,8 +9,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 public class BlockOrganicParticle extends BaseOrganicParticle {
-	protected BlockOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ, SpriteSet spriteSet) {
-		super(pLevel, pX, pY, pZ, 8, 0F, spriteSet);
+	protected BlockOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ) {
+		super(pLevel, pX, pY, pZ, 8, 0F);
 	}
 
 
@@ -32,7 +32,7 @@ public class BlockOrganicParticle extends BaseOrganicParticle {
 			double pYSpeed,
 			double pZSpeed
 		) {
-			BlockOrganicParticle blockOrganicParticle = new BlockOrganicParticle(pLevel, pX, pY, pZ, this.sprite);
+			BlockOrganicParticle blockOrganicParticle = new BlockOrganicParticle(pLevel, pX, pY, pZ);
 			blockOrganicParticle.pickSprite(this.sprite);
 			return blockOrganicParticle;
 		}

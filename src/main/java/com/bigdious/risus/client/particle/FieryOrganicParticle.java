@@ -7,8 +7,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 public class FieryOrganicParticle extends BaseOrganicParticle {
-	protected FieryOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ, SpriteSet spriteSet) {
-		super(pLevel, pX, pY, pZ, 8, 0.5F, spriteSet);
+	protected FieryOrganicParticle(ClientLevel pLevel, double pX, double pY, double pZ) {
+		super(pLevel, pX, pY, pZ, 8, 0.5F);
 	}
 
 
@@ -30,7 +30,7 @@ public class FieryOrganicParticle extends BaseOrganicParticle {
 			double pYSpeed,
 			double pZSpeed
 		) {
-			FieryOrganicParticle organicParticle = new FieryOrganicParticle(pLevel, pX, pY, pZ, this.sprite);
+			FieryOrganicParticle organicParticle = new FieryOrganicParticle(pLevel, pX, pY, pZ);
 			organicParticle.pickSprite(this.sprite);
 			return organicParticle;
 		}
