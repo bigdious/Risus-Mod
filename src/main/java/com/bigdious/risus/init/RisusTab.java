@@ -195,6 +195,7 @@ public class RisusTab {
 						output.accept(RisusItems.VEINS.get());
 						output.accept(RisusItems.GUILTY_APPLE.get());
 						output.accept(RisusItems.EGG_SAC.get());
+						output.accept(RisusItems.TOTEM_OF_UNYIELDING.get());
 						output.accept(RisusItems.RESEARCHERS_NOTES.get());
 						output.accept(RisusItems.SMILE_PATTERN.get());
 						output.accept(RisusItems.DIVINITY_PATTERN.get());

@@ -22,4 +22,5 @@ public class RisusMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> EXBURN = MOB_EFFECTS.register("existential_burn", () -> new ExBurnEffect(MobEffectCategory.HARMFUL, 0x990000));
 	public static final DeferredHolder<MobEffect, MobEffect> BLOODCLOGGED = MOB_EFFECTS.register("bloodclogged", () -> new BloodcloggedEffect(MobEffectCategory.HARMFUL, 0x990000).addAttributeModifier(Attributes.MAX_HEALTH, Risus.prefix("bloodclogged_health"), -1.0D, AttributeModifier.Operation.ADD_VALUE));
 	public static final DeferredHolder<MobEffect, MobEffect> FLAME_FRAILTY = MOB_EFFECTS.register("flame_frailty", () -> new FlameFrailtyEffect(MobEffectCategory.HARMFUL, 0x990000));
+	public static final DeferredHolder<MobEffect, MobEffect> DESTINED_DEATH = MOB_EFFECTS.register("destined_death", () -> new DestinedDeathEffect(MobEffectCategory.HARMFUL, 0x990000));
 }

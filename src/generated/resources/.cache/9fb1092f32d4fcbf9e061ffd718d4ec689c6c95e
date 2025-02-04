@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-03T21:58:11.2493274	Recipes
+// 1.21.1	2025-02-04T21:34:55.9141345	Recipes
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
@@ -27,6 +27,7 @@ d5e54f96fa60274a7aeb630003d30c695d446dd2 data/risus/advancement/recipes/alterati
 f37b146173d66619bc3824cf2b3d9cac3c2ce446 data/risus/advancement/recipes/alteration/engraved_basalt.json
 5ddfedf8063e5a1e1eea0a4b16283f3bde23d586 data/risus/advancement/recipes/alteration/glow_display_notch.json
 dfc9183fdce0a24ba5906ef5473401b634ee5a2d data/risus/advancement/recipes/alteration/gluttony_scaleplate.json
+6b1053d4470b133248230b887560c75a469101c6 data/risus/advancement/recipes/alteration/gluttony_scales.json
 9daf041c638f0f62739bd18a34853de31cbf37fa data/risus/advancement/recipes/alteration/grimstone.json
 8df3954d8a3ba4dc8d46552ccee222cffcacd74d data/risus/advancement/recipes/alteration/grimstone_bricks.json
 53ee0db55640d8f7fb844cbaec91b0fd3308ce91 data/risus/advancement/recipes/alteration/grimstone_bricks_slab.json
@@ -57,6 +58,7 @@ f589957142134f25dac506cee758ec42facf4f72 data/risus/advancement/recipes/alterati
 9ef5ace7a59444e40ab73bdeb0a7a8bb21f401ce data/risus/advancement/recipes/alteration/stripped_bondknot_log.json
 86983d31d9a7e1bf6c84d8437504398e08093958 data/risus/advancement/recipes/alteration/stripped_bondknot_wood.json
 62d001638ff5e3da6a0ca8de73001e110c44394f data/risus/advancement/recipes/alteration/tissue.json
+3ae758df2709a9406a1346105f4151779da5cff9 data/risus/advancement/recipes/alteration/totem_of_unyielding.json
 d2ecc76bc33b204702f987d4acc58ccbfde17be8 data/risus/advancement/recipes/alteration/veins.json
 38632cf620565458ee69d613769a29dc1e83cc4f data/risus/advancement/recipes/alteration/zit.json
 cbc6a4b7b2536ce931d2ed9049aa890d879a4429 data/risus/advancement/recipes/building_blocks/bondknot_planks.json
@@ -186,6 +188,7 @@ ba8af861bad0ba1756e8dc97ffc7948cff571b84 data/risus/recipe/alteration/bondknot_w
 b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipe/alteration/engraved_basalt.json
 9e57cebf924a9de4f28332fb4afbba955569dd86 data/risus/recipe/alteration/glow_display_notch.json
 1f14d028771778d9ae874216fbb4d9f6bcf269a6 data/risus/recipe/alteration/gluttony_scaleplate.json
+a489e7b7d493d78e7320f8fc951e6a6381411cd2 data/risus/recipe/alteration/gluttony_scales.json
 8d7edd1d48675bafb09f520d827d17c1d474d492 data/risus/recipe/alteration/grimstone.json
 84968afdeaa5ea7c0f27ca5bff9b0f8532fa8c45 data/risus/recipe/alteration/grimstone_bricks.json
 0be8ff956384b7c80a57a5d3f0547895dd731f61 data/risus/recipe/alteration/grimstone_bricks_slab.json
@@ -216,6 +219,7 @@ d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chest
 0bacfcd6651210f7cb0437c08dc2b8201317f9a7 data/risus/recipe/alteration/stripped_bondknot_log.json
 174af8c5f558ec9bdb0982791491b11556619fa1 data/risus/recipe/alteration/stripped_bondknot_wood.json
 74bb16182977a201384d016cc602877eac624ba0 data/risus/recipe/alteration/tissue.json
+be52867032b72cde59c9c580b7d060af42306728 data/risus/recipe/alteration/totem_of_unyielding.json
 34b4d87cdd699e04068bbd2b9b905810445a8623 data/risus/recipe/alteration/veins.json
 825c36bd61168704c516131f63448e774789f21c data/risus/recipe/alteration/zit.json
 61dd54119cbaf1d625a815acc77140dc185d29f3 data/risus/recipe/big_chain.json

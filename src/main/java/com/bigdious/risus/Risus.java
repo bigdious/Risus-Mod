@@ -6,6 +6,7 @@ import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
+import com.bigdious.risus.network.UnyieldingTotemPacket;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -69,6 +70,7 @@ public class Risus {
 	public void registerPackets(RegisterPayloadHandlersEvent event) {
 		PayloadRegistrar registrar = event.registrar(MODID).versioned("1.0.0").optional();
 		registrar.playToClient(CreateCritParticlePacket.TYPE, CreateCritParticlePacket.STREAM_CODEC, CreateCritParticlePacket::handle);
+		registrar.playToClient(UnyieldingTotemPacket.TYPE, UnyieldingTotemPacket.STREAM_CODEC, UnyieldingTotemPacket::handle);
 	}
 
 

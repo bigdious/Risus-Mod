@@ -34,6 +34,7 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> BLOODSLASH = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("bloodslash"));
 	public static final ResourceKey<DamageType> AXED = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("axed"));
 	public static final ResourceKey<DamageType> VAMPIRISM = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("vampirism"));
+	public static final ResourceKey<DamageType> DESTINED_DEATH = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("destined_death"));
 
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {
@@ -44,5 +45,6 @@ public class RisusDamageTypes {
 		context.register(BLOODSLASH, new DamageType("bloodslash", 0));
 		context.register(VAMPIRISM, new DamageType("vampirism", 0));
 		context.register(AXED, new DamageType("axed", 0));
+		context.register(DESTINED_DEATH, new DamageType("destined_death", 0));
 	}
 }

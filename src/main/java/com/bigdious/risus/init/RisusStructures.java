@@ -298,7 +298,7 @@ public class RisusStructures {
 			pools.getOrThrow(BLOOD_WELL_POOL),
 			Optional.empty(),
 			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-2)),
+			ConstantHeight.of(VerticalAnchor.absolute(-3)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
@@ -314,7 +314,7 @@ public class RisusStructures {
 						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 2)
 					))),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.ENCAPSULATE
+				TerrainAdjustment.NONE
 			),
 			pools.getOrThrow(LAB_START_POOL),
 			Optional.empty(),
@@ -356,19 +356,19 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(30, 25, RandomSpreadType.TRIANGULAR, 1024321764)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 22123393)));
+			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 2223393)));
 
 		context.register(SANDY_MAW_SET, new StructureSet(structures.getOrThrow(SANDY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 34523493)));
+			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 3452493)));
 
 		context.register(ENDY_MAW_SET, new StructureSet(structures.getOrThrow(ENDY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 52445123)));
+			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 5245123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.TRIANGULAR, 529739264)));
+			new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.TRIANGULAR, 5297)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
-			new RandomSpreadStructurePlacement(15, 4, RandomSpreadType.TRIANGULAR, 1341435524)));
+			new RandomSpreadStructurePlacement(15, 4, RandomSpreadType.TRIANGULAR, 13414354)));
 
 		context.register(GREAT_BODY_SET, new StructureSet(structures.getOrThrow(GREAT_BODY),
 			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 838347612)));

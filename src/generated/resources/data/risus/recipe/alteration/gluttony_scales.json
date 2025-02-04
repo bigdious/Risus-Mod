@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": "risus:gluttony_scales"
+}

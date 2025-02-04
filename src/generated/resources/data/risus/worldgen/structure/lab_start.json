@@ -23,6 +23,5 @@
   },
   "start_pool": "risus:lab_start",
   "step": "surface_structures",
-  "terrain_adaptation": "encapsulate",
   "use_expansion_hack": false
 }

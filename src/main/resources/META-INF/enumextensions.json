@@ -26,6 +26,15 @@
         "class": "com/bigdious/risus/RisusEnumExtensions",
         "method": "BLOODCLOGGED_HEARTS"
       }
+    },
+    {
+      "enum": "net/minecraft/client/gui/Gui$HeartType",
+      "name": "RISUS_DEATH",
+      "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "method": "DEATH_HEARTS"
+      }
     }
   ]
 }

@@ -59,6 +59,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> STALKER_EYE = ITEMS.register("stalker_eye", () -> new Item(defaultWithRarity().food(EYE_FOOD)));
 	public static final DeferredItem<Item> EYE_SANDWICH = ITEMS.register("eye_sandwich", () -> new Item(defaultWithRarity().food(EYE_SANDWICH_FOOD)));
 	public static final DeferredItem<Item> EGG_SAC = ITEMS.register("egg_sac", () -> new EggSacItem(defaultWithRarity()));
+	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = ITEMS.register("totem_of_unyielding", () -> new Item(defaultWithRarity().stacksTo(1)));
 
 
 	//SUMMONERS

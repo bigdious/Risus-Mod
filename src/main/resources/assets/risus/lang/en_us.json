@@ -173,6 +173,7 @@
   "item.risus.skin_leggings": "Skin Jeans",
   "item.risus.skin_boots": "Skin Socks",
   "item.risus.egg_sac": "Egg Sac",
+  "item.risus.totem_of_unyielding": "Totem of Unyielding",
 
   "item.risus.stalker_eye": "Stalker Eye",
   "item.risus.eye_sandwich": "Eye Sandwich",
@@ -269,6 +270,7 @@
   "effect.risus.existential_burn": "Existential Burn",
   "effect.risus.flame_frailty": "Flame Frailty",
   "effect.risus.bloodclogged": "Bloodclogged",
+  "effect.risus.destined_death": "Destined Death",
 
   "entity.risus.angel": "Blood Ophanim",
   "entity.risus.stalker": "Stalker",
@@ -307,6 +309,9 @@
 
   "death.attack.axed": "%1$s had an axe thrown through their skull",
   "death.attack.axed.player": "%1$s had an axe thrown through their skull while trying to escape %2$s",
+
+  "death.attack.destined_death": "%1$s couldn't flee from their Destined Death",
+  "death.attack.destined_death.player": "%1$s couldn't flee from their Destined Death while trying to escape %2$s",
 
   "gui.risus.alteration_jei": "Alteration",
 

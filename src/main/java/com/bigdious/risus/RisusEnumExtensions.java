@@ -40,4 +40,17 @@ public class RisusEnumExtensions {
 			default -> throw new IllegalArgumentException("Unexpected parameter index: " + idx);
 		});
 	}
+	public static Object DEATH_HEARTS(int idx, Class<?> type) {
+		return type.cast(switch (idx) {
+			case 0 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/normal");
+			case 1 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/normal_blinking");
+			case 2 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/half");
+			case 3 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/half_blinking");
+			case 4 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/hardcore");
+			case 5 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/hardcore_blinking");
+			case 6 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/hardcore_half");
+			case 7 -> ResourceLocation.fromNamespaceAndPath(Risus.MODID, "death_hearts/hardcore_half_blinking");
+			default -> throw new IllegalArgumentException("Unexpected parameter index: " + idx);
+		});
+	}
 }

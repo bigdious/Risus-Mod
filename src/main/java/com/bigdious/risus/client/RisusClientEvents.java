@@ -64,6 +64,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 	}
@@ -93,6 +94,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOODSLASH_TRAIL.get(), RisusSoulParticle.EmissiveProvider::new);
 		event.registerSpriteSet(RisusParticles.BLOODSLASH_TRAIL.get(), RisusSoulParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), FieryOrganicParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.DESTINED_DEATH_PARTICLE.get(), ToothicalParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.BLOCK_ORGANIC_PARTICLE.get(), BlockOrganicParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
@@ -251,6 +253,11 @@ public class RisusClientEvents {
 	private static void renderExburnHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.EXBURN)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_EXBURN"));
+		}
+	}
+	private static void renderDeathHearts(PlayerHeartTypeEvent event) {
+		if (event.getEntity().hasEffect(RisusMobEffects.DESTINED_DEATH)) {
+			event.setType(Gui.HeartType.valueOf("RISUS_DEATH"));
 		}
 	}
 

@@ -76,6 +76,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusItems.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PAPER), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(Items.PAPER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERITE_INGOT), RisusItems.GLUTTONY_SCALES).unlockedBy("has_item", has(Items.NETHERITE_INGOT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_GATES), RisusItems.BONDKNOT_FENCE_GATE.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);

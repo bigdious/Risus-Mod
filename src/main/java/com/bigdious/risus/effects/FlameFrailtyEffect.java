@@ -16,6 +16,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.neoforge.common.EffectCure;
+
+import java.util.Set;
 
 public class FlameFrailtyEffect extends MobEffect {
 	public FlameFrailtyEffect(MobEffectCategory category, int color) {
@@ -81,5 +84,9 @@ public class FlameFrailtyEffect extends MobEffect {
 	@Override
 	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return duration % 30 == 0;
+	}
+	@Override
+	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {
+		cures.clear();
 	}
 }
