@@ -68,7 +68,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_LEGGINGS), RisusItems.SKIN_LEGGINGS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_BOOTS), RisusItems.SKIN_BOOTS.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SEA_PICKLE), RisusBlocks.ZIT.get()).unlockedBy("has_item", has(Items.SEA_PICKLE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME), RisusBlocks.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME), RisusBlocks.DISPLAY_NOTCH.get()).unlockedBy("has_item", has(Items.ITEM_FRAME)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BOOK), RisusItems.RESEARCHERS_NOTES).unlockedBy("has_item", has(Items.BOOK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BLACK_GLAZED_TERRACOTTA), RisusBlocks.CURVED_RITUAL_BLOCK).unlockedBy("has_item", has(Items.CLAY_BALL)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusBlocks.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);

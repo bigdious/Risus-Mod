@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -26,6 +27,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Function;
 
 public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer, ContainerSingleItem.BlockContainerSingleItem {
 
@@ -120,7 +123,12 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-		this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
+		//the below item stuff stays as is, otherwise it throws errors in log
+		if (tag.contains("item")) {
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+		} else {
+			this.item = ItemStack.EMPTY;
+		}
 		this.isCrafting = tag.getBoolean("isCrafting");
 		this.finishedCrafting = tag.getBoolean("finishedCrafting");
 		this.craftingCounter = tag.getInt("counter");

@@ -1,7 +1,12 @@
 {
   "type": "risus:alteration",
-  "input": {
-    "item": "minecraft:item_frame"
-  },
+  "input": [
+    {
+      "item": "minecraft:item_frame"
+    },
+    {
+      "item": "minecraft:glow_item_frame"
+    }
+  ],
   "result": "risus:display_notch"
 }

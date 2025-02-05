@@ -5,6 +5,7 @@ import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
@@ -16,6 +17,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.ticks.ContainerSingleItem;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Function;
 
 public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem {
 	protected ItemStack item = ItemStack.EMPTY;
@@ -50,8 +53,16 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 
 	@Override
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-		this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
+		//the below item stuff stays as is, otherwise it throws errors in log
+		if (tag.contains("item")) {
+			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+		} else {
+			this.item = ItemStack.EMPTY;
+		}
 		this.ticks = tag.getInt("ticks");
+		this.rotate = tag.getBoolean("rotate");
+		this.glowing = tag.getBoolean("glowing");
+		this.stand = tag.getBoolean("stand");
 		super.loadAdditional(tag, registries);
 	}
 

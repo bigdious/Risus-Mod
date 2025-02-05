@@ -49,7 +49,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 			stack.mulPose(Axis.ZP.rotationDegrees(entity.ticks * 5.0F));
 		}
 
-		if (!entity.getTheItem().isEmpty()) {
+		if (!entity.getTheItem().isEmpty() && entity.getTheItem() != null) {
 			int k = this.getLightVal(entity, light);
 			this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, k, OverlayTexture.NO_OVERLAY, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
 		}

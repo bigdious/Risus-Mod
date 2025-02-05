@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -92,6 +93,15 @@ public class BloodweaveBlock extends PipeBlock implements SimpleMultiloggedBlock
 		}
 	}
 
+	@Override
+	public boolean isStickyBlock(BlockState state) {
+		return true;
+	}
+	//racist slime block
+	@Override
+	public boolean canStickTo(BlockState state, BlockState other) {
+		return other.is(RisusBlocks.BLOODWEAVE);
+	}
 }
 
 

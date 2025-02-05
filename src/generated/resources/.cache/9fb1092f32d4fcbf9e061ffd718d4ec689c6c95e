@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-04T14:10:38.8765351	Recipes
+// 1.21.1	2025-02-05T18:20:00.0307535	Recipes
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
@@ -179,7 +179,7 @@ ba8af861bad0ba1756e8dc97ffc7948cff571b84 data/risus/recipe/alteration/bondknot_w
 9b2062ca00eeb2905a2d6eb2b52fee8442d90f97 data/risus/recipe/alteration/cracked_grimstone_bricks.json
 1eb42aa7319572502506fe9578b00ac82caf5926 data/risus/recipe/alteration/curved_ritual_block.json
 10fffbd3e17cb2f846403cc53d9c5ccb804b6d1e data/risus/recipe/alteration/depth_vase.json
-6eacacd01cfb770d8a3e13b8b3e9ca8ac9ba13e6 data/risus/recipe/alteration/display_notch.json
+dfa5e61a46b37f8286e45d20702da60dd02275c1 data/risus/recipe/alteration/display_notch.json
 b0e1ae574b1a3b313b8db72a12c038e5ad953a3b data/risus/recipe/alteration/engraved_basalt.json
 1f14d028771778d9ae874216fbb4d9f6bcf269a6 data/risus/recipe/alteration/gluttony_scaleplate.json
 a489e7b7d493d78e7320f8fc951e6a6381411cd2 data/risus/recipe/alteration/gluttony_scales.json

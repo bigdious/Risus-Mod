@@ -27,7 +27,7 @@
       "header": "Bloodweave",
       "input1": "minecraft:cobweb",
       "output1": "risus:bloodweave",
-      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system."
+      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system. When pushed by a Piston, all connected Bloodweave will move together."
     },
     {
       "type": "patchouli:crafting",
