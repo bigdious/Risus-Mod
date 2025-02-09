@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "risus:bloody_sponge"
-  },
-  "result": "minecraft:sponge",
-  "experience": 0.1,
-  "cookingtime": 200
-}

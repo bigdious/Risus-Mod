@@ -134,7 +134,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.FULL_BONE_STAIRS.get());
 		toBlock(RisusBlocks.FULL_BONE_SLAB.get());
 		toBlock(RisusBlocks.FULL_BONE_BLOCK.get());
-		toBlock(RisusBlocks.BLOODY_SPONGE.get());
 
 		toBlock(RisusBlocks.EYE_ENDER.get());
 		toBlock(RisusBlocks.EYE_BLEACHED.get());
