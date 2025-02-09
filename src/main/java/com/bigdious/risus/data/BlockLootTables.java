@@ -95,6 +95,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 		dropOther(RisusBlocks.BLOOD_CAULDRON.get(), Items.CAULDRON);
 		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
+		dropSelf(RisusBlocks.BLOODY_SPONGE.get());
 
 		dropSelf(RisusBlocks.BONDKNOT_LOG.get());
 		dropSelf(RisusBlocks.BONDKNOT_WOOD.get());
