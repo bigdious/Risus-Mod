@@ -203,6 +203,7 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_REGN.get());
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
+				output.accept(RisusBlocks.BLOODY_SPONGE.get());
 				createSpawnEggsAlphabetical(output);
 			}
 		)
