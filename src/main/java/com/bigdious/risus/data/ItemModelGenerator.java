@@ -283,7 +283,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusBlocks.TEETH);
 
-		nameableWeapon(RisusBlocks.NEURON_STEM.asItem(), "weapons/", "renamed_neuron");
+		singleTex(RisusBlocks.NEURON_HEAD.asItem());
 		singleTex(RisusItems.HAIR_FOLLICLES);
 
 

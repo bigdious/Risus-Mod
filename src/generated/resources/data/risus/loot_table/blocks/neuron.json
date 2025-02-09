@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "risus:neuron"
+          "name": "risus:neuron_head"
         }
       ],
       "rolls": 1.0

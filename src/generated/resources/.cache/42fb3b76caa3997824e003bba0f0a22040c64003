@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-04T14:10:38.8695313	Risus Item Models
+// 1.21.1	2025-02-09T15:20:50.5298355	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -126,7 +126,7 @@ eebc5afa6ed04e3a2c989b191c2df71bc0326122 assets/risus/models/item/music_disc_fei
 8abdbc05a484f01340691e21c66ffeb33d275812 assets/risus/models/item/music_disc_mork.json
 eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak.json
 92d5564813d06f220ace570541ad121df15a5f4d assets/risus/models/item/music_disc_regn.json
-568df591e71e68d0e165708b3c8516db9f1a2d28 assets/risus/models/item/neuron.json
+7550f7d0aec3bd65f92e9c9769ecd04b6670a0ae assets/risus/models/item/neuron_head.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/oxidized_copper_amalgam.json
@@ -138,7 +138,6 @@ f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondkn
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 06f695423b6813ef3cd11a76d7606414c416ee90 assets/risus/models/item/regen_rose.json
-5da3dd592d2a064d01b9c148d92593cb5061b7f3 assets/risus/models/item/renamed_neuron.json
 fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_notes.json
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json

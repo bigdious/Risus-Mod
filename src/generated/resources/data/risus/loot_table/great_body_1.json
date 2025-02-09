@@ -47,7 +47,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:neuron"
+          "name": "risus:neuron_head"
         },
         {
           "type": "minecraft:item",

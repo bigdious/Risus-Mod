@@ -190,7 +190,7 @@ public class RisusTab {
 				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusItems.ENDLESS_PEARL.get());
-				output.accept(RisusBlocks.NEURON_STEM.get());
+				output.accept(RisusBlocks.NEURON_HEAD.get());
 				output.accept(RisusBlocks.VEINS.get());
 				output.accept(RisusItems.GUILTY_APPLE.get());
 				output.accept(RisusItems.EGG_SAC.get());

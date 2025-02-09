@@ -27,7 +27,7 @@ public class PoppingBondknotBlockEntity extends BlockEntity {
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, PoppingBondknotBlockEntity te) {
-		if (te.popDir != null) {
+		if (te.popDir != null && !level.getBlockState(pos.relative(state.getValue(PoppingBondknotBlock.POP_SIDE),1)).is(RisusBlocks.CRYSTALLIZED_BONDS)) {
 			if (!te.popping && te.secondTicker++ >= 20) {
 				if (level.getRandom().nextInt(500) == 0) {
 					te.popping = true;

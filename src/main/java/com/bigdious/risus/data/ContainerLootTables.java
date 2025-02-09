@@ -65,7 +65,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.setRolls(UniformGenerator.between(3, 6))
 					.add(LootItem.lootTableItem(RisusBlocks.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
 					.add(LootItem.lootTableItem(RisusBlocks.FULL_BONE_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
-					.add(LootItem.lootTableItem(RisusBlocks.NEURON_STEM).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
+					.add(LootItem.lootTableItem(RisusBlocks.NEURON_HEAD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
 					.add(LootItem.lootTableItem(RisusBlocks.BLOODWEAVE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 10))))
 					.add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))))
 					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))))

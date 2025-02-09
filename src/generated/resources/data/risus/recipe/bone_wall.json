@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "X": {
-      "item": "minecraft:bone_block"
+      "tag": "risus:bone_block_variation"
     }
   },
   "pattern": [

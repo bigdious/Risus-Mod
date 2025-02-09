@@ -186,8 +186,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.JOYFLAME_WALL_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());
 		add(RisusBlocks.JOYFLAME_CAMPFIRE.get(), createSilkTouchDispatchTable(RisusBlocks.JOYFLAME_CAMPFIRE.get(), LootItem.lootTableItem(RisusBlocks.ASHEN_REMAINS.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		dropSelf(RisusBlocks.ZIT.get());
-		dropOther(RisusBlocks.NEURON_STEM.get(), RisusBlocks.NEURON_STEM.get());
-		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusBlocks.NEURON_STEM.get());
+		dropOther(RisusBlocks.NEURON_STEM.get(), RisusBlocks.NEURON_HEAD.get());
+		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusBlocks.NEURON_HEAD.get());
 		dropOther(RisusBlocks.VEINS.get(), RisusBlocks.VEINS.get());
 		dropOther(RisusBlocks.VEINS_END.get(), RisusBlocks.VEINS.get());
 		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));

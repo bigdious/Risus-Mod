@@ -32,7 +32,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusBlocks.SMILING_REMAINS.get()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusBlocks.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusBlocks.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_STEM.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_HEAD.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusBlocks.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_item", has(Items.GOLDEN_APPLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusBlocks.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
@@ -74,7 +74,6 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLASS), RisusBlocks.CONTAINMENT_GLASS).unlockedBy("has_item", has(Items.GLASS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PAPER), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(Items.PAPER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERITE_INGOT), RisusItems.GLUTTONY_SCALES).unlockedBy("has_item", has(Items.NETHERITE_INGOT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
 		//bunch of bondknot
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_GATES), RisusBlocks.BONDKNOT_FENCE_GATE.get())
@@ -130,6 +129,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusItems.ORGANIC_MATTER.get(), 9)
+			.requires(Ingredient.of(RisusBlocks.ORGANIC_MATTER_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.COPPER_AMALGAM.get(), 1)
 			.pattern("###")
 			.pattern("#M#")
@@ -143,6 +147,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.requires(Ingredient.of(ItemTagGenerator.BONDKNOT_LOGS))
 				.unlockedBy("has_item", has(ItemTagGenerator.BONDKNOT_LOGS))
 				.save(consumer);
+
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_STAIRS.get(), 4)
 				.pattern("#  ")
@@ -371,6 +376,11 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusItems.GLUTTONY_SCALES.get(), 4)
+			.requires(Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), 32)
 				.pattern("###")
 				.pattern("#/#")
@@ -497,7 +507,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("BGB")
 				.pattern("GMG")
 				.pattern("BGB")
-				.define('G', Ingredient.of(RisusBlocks.NEURON_STEM.get()))
+				.define('G', Ingredient.of(RisusBlocks.NEURON_HEAD.get()))
 				.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
 				.define('B', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
@@ -569,7 +579,7 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONE_WALL.get(), 6)
 			.pattern("XXX")
 			.pattern("XXX")
-			.define('X', Items.BONE_BLOCK)
+			.define('X', RisusTags.Items.BONE_BLOCK_VARIATION)
 			.unlockedBy("has_item", has(Items.BONE_BLOCK))
 			.save(consumer);
 
@@ -593,6 +603,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("XX")
 			.define('X', Items.BONE_BLOCK)
 			.unlockedBy("has_item", has(Items.BONE_BLOCK))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 9)
+			.requires(RisusBlocks.FULL_BONE_BLOCK.get())
+			.unlockedBy("has_item", has(RisusBlocks.FULL_BONE_BLOCK.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FULL_BONE_STAIRS.get(), 4)

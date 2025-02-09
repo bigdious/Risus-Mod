@@ -233,10 +233,11 @@ public class RisusEvents {
 		level.explode(null, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
 	}
 
+	//do not touch below scythe events. It's stupid, but they need to stay as is
 	private static void fireScythe(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
+		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
 			victim.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
 			victim.igniteForSeconds(2);
 		}
@@ -244,7 +245,7 @@ public class RisusEvents {
 	private static void cindergleeScythe(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
+		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
 			victim.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 0, false, false, true));
 		}
 	}
@@ -252,7 +253,7 @@ public class RisusEvents {
 	private static void soulScythe(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof Mob victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
+		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(victim.getType().is(RisusTags.Entities.OFFSPRING))) {
 				event.setAmount(event.getAmount()+5);
 			} else {

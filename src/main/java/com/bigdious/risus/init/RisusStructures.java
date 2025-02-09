@@ -353,40 +353,40 @@ public class RisusStructures {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
-			new RandomSpreadStructurePlacement(30, 25, RandomSpreadType.TRIANGULAR, 1024321764)));
+			new RandomSpreadStructurePlacement(30, 0, RandomSpreadType.LINEAR, 1024321764)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 2223393)));
+			new RandomSpreadStructurePlacement(10, 0, RandomSpreadType.LINEAR, 2223393)));
 
 		context.register(SANDY_MAW_SET, new StructureSet(structures.getOrThrow(SANDY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 3452493)));
+			new RandomSpreadStructurePlacement(10, 0, RandomSpreadType.LINEAR, 3452493)));
 
 		context.register(ENDY_MAW_SET, new StructureSet(structures.getOrThrow(ENDY_MAW),
-			new RandomSpreadStructurePlacement(10, 8, RandomSpreadType.TRIANGULAR, 5245123)));
+			new RandomSpreadStructurePlacement(10, 0, RandomSpreadType.LINEAR, 5245123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(15, 10, RandomSpreadType.TRIANGULAR, 5297)));
+			new RandomSpreadStructurePlacement(20, 0, RandomSpreadType.LINEAR, 5297)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
-			new RandomSpreadStructurePlacement(15, 4, RandomSpreadType.TRIANGULAR, 13414354)));
+			new RandomSpreadStructurePlacement(21, 4, RandomSpreadType.LINEAR, 13414354)));
 
 		context.register(GREAT_BODY_SET, new StructureSet(structures.getOrThrow(GREAT_BODY),
-			new RandomSpreadStructurePlacement(20, 10, RandomSpreadType.TRIANGULAR, 838347612)));
+			new RandomSpreadStructurePlacement(26, 0, RandomSpreadType.LINEAR, 838347612)));
 
 		context.register(FLOWER_FIELD_SET, new StructureSet(structures.getOrThrow(FLOWER_FIELD),
-			new RandomSpreadStructurePlacement(21, 20, RandomSpreadType.TRIANGULAR, 29213393)));
+			new RandomSpreadStructurePlacement(24, 0, RandomSpreadType.LINEAR, 29213393)));
 
 		context.register(DUNGEON_SET, new StructureSet(structures.getOrThrow(DUNGEON),
-			new RandomSpreadStructurePlacement(17, 10, RandomSpreadType.TRIANGULAR, 938752732)));
+			new RandomSpreadStructurePlacement(19, 0, RandomSpreadType.LINEAR, 938752732)));
 
 		context.register(BLOOD_WELL_SET, new StructureSet(structures.getOrThrow(BLOOD_WELL),
-			new RandomSpreadStructurePlacement(30, 29, RandomSpreadType.TRIANGULAR, 894328793)));
+			new RandomSpreadStructurePlacement(30, 0, RandomSpreadType.LINEAR, 894328793)));
 
 		context.register(LAB_START_SET, new StructureSet(structures.getOrThrow(LAB_START),
-			new RandomSpreadStructurePlacement(100, 81, RandomSpreadType.TRIANGULAR, 523141287)));
+			new RandomSpreadStructurePlacement(101, 0, RandomSpreadType.LINEAR, 523141287)));
 
 		context.register(DRAXOLOTL_REMAINS_SET, new StructureSet(structures.getOrThrow(DRAXOLOTL_REMAINS),
-			new RandomSpreadStructurePlacement(24, 17, RandomSpreadType.TRIANGULAR, 729472497)));
+			new RandomSpreadStructurePlacement(29, 0, RandomSpreadType.LINEAR, 729472497)));
 	}
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);

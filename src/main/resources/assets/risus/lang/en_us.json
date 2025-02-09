@@ -1,5 +1,6 @@
 {
   "block.risus.smiling_remains": "Smiling Remains",
+  "block.risus.blood_fluid_block": "Blood",
   "block.risus.inactive_holder": "Inactive Holder",
   "block.risus.angel_altar": "Angel Altar",
   "block.risus.depth_vase": "Depth Vase",
@@ -384,5 +385,9 @@
   "advancement.risus.family_music": "Mǫrk",
   "advancement.risus.family_music.desc": "Kizbe - Mǫrk",
   "advancement.risus.lab": "Deep Core Fallout",
-  "advancement.risus.lab.desc": "Approach a failed experiment."
+  "advancement.risus.lab.desc": "Approach a failed experiment.",
+
+  "biome.risus.coalification": "Coalification",
+  "biome.risus.coalification_feigr": "Coalification",
+  "biome.risus.coalification_mork": "Coalification"
 }

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:twisting_vines"
+            "items": "risus:full_bone_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:alteration/neuron"
+        "recipe": "minecraft:bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "risus:alteration/neuron"
+      "minecraft:bone_meal"
     ]
   }
 }

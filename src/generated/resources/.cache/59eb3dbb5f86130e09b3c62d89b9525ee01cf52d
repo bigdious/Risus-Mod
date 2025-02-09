@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-04T12:57:06.3214018	Loot Tables
+// 1.21.1	2025-02-09T16:00:31.37901	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -100,8 +100,8 @@ c10e0b7093679b4e062ede261e9e98125b8c368a data/risus/loot_table/blocks/light_gray
 7d1bd797320b256876212566f142078609cbbd8d data/risus/loot_table/blocks/mirage_grass_block.json
 83d76e206c6ef174ea7d9ae1842facad996a0215 data/risus/loot_table/blocks/mirage_netherrack.json
 283739a60959592c08f4e220f19e97feaff88202 data/risus/loot_table/blocks/mirage_sand.json
-66d514d529972579da35d203b4bab7cf2daeaf9f data/risus/loot_table/blocks/neuron.json
-89453a2330d4aa0a71361243c9f16af12a37b1ca data/risus/loot_table/blocks/neuron_head.json
+49a1b4c17c8e65f7fda3fe8afa46b4104ae392d3 data/risus/loot_table/blocks/neuron.json
+e7495f38c67ccafd2837640688bf688d41aa2107 data/risus/loot_table/blocks/neuron_head.json
 7b6af40f68d433c78295c5edf46c0b02bb67602c data/risus/loot_table/blocks/orange_display_notch.json
 6e3a354c01154a2a6883adf48dcf129b8cc3a29c data/risus/loot_table/blocks/organic_matter_block.json
 5b8ebdd5bc5e98fe741fb5dfe727df7c17b1faf1 data/risus/loot_table/blocks/oxidized_copper_amalgam.json
@@ -156,7 +156,7 @@ dfc5688a140c7bcfcf90ce0b17749de7da5895db data/risus/loot_table/entities/singer.j
 c31b90d67ad22b6dd6197a5165641ab2d04bf563 data/risus/loot_table/entities/transient_question_mark.json
 115d870e5802c6c7f23b83f569c8e426f57e0e19 data/risus/loot_table/entities/weaver.json
 cf611a099c7a227e0cc066d1f8c1c26600eff924 data/risus/loot_table/family_tree_1.json
-ce25b5facafd88f16cdf7ed517ba87b74bd17ddc data/risus/loot_table/great_body_1.json
+eabad1db50737ac8ce7af7818530056905a2c6df data/risus/loot_table/great_body_1.json
 2a82d04331ce679d18c5bf6b5ba31cf5445e31d2 data/risus/loot_table/holder_room.json
 a7b67c19fbf03ebcf92061d2c9a57d0b0f7b526e data/risus/loot_table/licker_room.json
 42cb75ad900a1f361e08508c9629de3eb2578f32 data/risus/loot_table/reactor.json

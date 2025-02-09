@@ -103,7 +103,7 @@ public class ToothknockerItem extends SwordItem {
 			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
 			player.getCooldowns().addCooldown(this, 30);
-			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}

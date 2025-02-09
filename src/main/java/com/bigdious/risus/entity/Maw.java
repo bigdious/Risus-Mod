@@ -20,6 +20,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,6 +70,11 @@ public class Maw extends Monster implements CacheTargetOnClient {
 				this.hasGutsAssigned = true;
 			}
 		}
+		if (this.tickCount % 60 == 0){
+			if (!this.firstTick && this.hasGutsAssigned && !this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
+				this.kill();
+			}
+		}
 		super.tick();
 	}
 
@@ -109,6 +115,10 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	public boolean isPushable() {
 		return false;
+	}
+	@Override
+	public PushReaction getPistonPushReaction() {
+		return PushReaction.IGNORE;
 	}
 
 	@Override
@@ -153,7 +163,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 
 	@Override
 	protected void doPush(Entity entity) {
-		this.level().broadcastEntityEvent(this, (byte) 66);
+
 		if (entity instanceof LivingEntity living && living.attackable()) {
 			//set up the victim to think theyre being killed by a player
 			if (this.level() instanceof ServerLevel server)
@@ -162,6 +172,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			if (entity.hurt(new DamageSource(this.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 				this.doHurtTarget(living);
 			}
+			this.level().broadcastEntityEvent(this, (byte) 66);
 		} else if (entity instanceof PrimedTnt tnt) {
 			this.eatenTNT = tnt;
 			tnt.discard();
