@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_risus:bloody_sponge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:bloody_sponge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "risus:smelt_bloody_sponge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_risus:bloody_sponge"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "risus:smelt_bloody_sponge"
+    ]
+  }
+}

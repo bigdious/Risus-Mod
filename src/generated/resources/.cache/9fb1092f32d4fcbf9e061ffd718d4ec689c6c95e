@@ -1,6 +1,6 @@
-// 1.21.1	2025-02-09T16:00:31.3840067	Recipes
-9b96a9e16bf0f842fe5937f9ea8bd2389afba47b data/minecraft/advancement/recipes/misc/bone_meal.json
-27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/bone_meal.json
+// 1.21.1	2025-02-10T16:48:04.4272067	Recipes
+88c2947c75e5a46b8274edefb490d28e51d24a84 data/minecraft/advancement/recipes/misc/full_bone_to_bone_meal.json
+27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json
@@ -149,6 +149,7 @@ abae48fcf1ca01fd435e87ae86194a45b7f47f2a data/risus/advancement/recipes/decorati
 6f0e18074b39004b1137b4cbcd07ab995eef9d8f data/risus/advancement/recipes/food/eye_sandwich.json
 4c139688a880f4b2e5b0a666c5639563c282bebf data/risus/advancement/recipes/misc/concentration_core.json
 3f2b5b8270f70a8f6d4e051dba1167b64b260cf8 data/risus/advancement/recipes/misc/organic_matter.json
+7c4d8a777ad2e93822ef2e443f19eeabf32ef2ea data/risus/advancement/recipes/misc/smelt_bloody_sponge.json
 478a1ce421ab9d6f6e8f7f77d8bc208e25c5e79b data/risus/advancement/recipes/misc/smelt_cracked_grimstone_bricks.json
 6703caf7c5e196838b3ec4a3236d83def83b9944 data/risus/advancement/recipes/redstone/bondknot_button.json
 5cac949b692f79952e34d443a95cd6fcbfe8454c data/risus/advancement/recipes/redstone/bondknot_door.json
@@ -283,6 +284,7 @@ abc0a00dabf6a9e6a7298c7d7a7faf360c9b56c2 data/risus/recipe/joyflame_campfire.jso
 c61c40c197f3f48d37bbe5a0a8e23412da34ea3b data/risus/recipe/polished_grimstone_stairs.json
 e5a6b6e225ec9f69e58c6a2c9e23868f281654f8 data/risus/recipe/polished_grimstone_wall.json
 e2ae2c46c3f400e544566a95ac5823b147a47025 data/risus/recipe/scythe.json
+1db6440c23cd494a875c8981f50300ad1efa3e4c data/risus/recipe/smelt_bloody_sponge.json
 ab773a823a0a7dfce27783aec85fb832a44144a5 data/risus/recipe/smelt_cracked_grimstone_bricks.json
 435f66abbd0c0703b61decc0f45dae259615d721 data/risus/recipe/stonecutting_grimstone_bricks_to_bricks_slab.json
 98512f8a675665dc765caaef4ce820e5cc692771 data/risus/recipe/stonecutting_grimstone_bricks_to_bricks_stairs.json

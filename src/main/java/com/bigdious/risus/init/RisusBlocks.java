@@ -128,7 +128,7 @@ public class RisusBlocks {
 	//PLANTS
 	public static final DeferredBlock<MultifaceBlock> TEETH = registerWithItem("teeth", SpreadingRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> HEART_TRANSPLANT = registerWithItem("heart_transplant", HeartTransplantBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().forceSolidOn().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XZ));
-	public static final DeferredBlock<Block> REGEN_ROSE = registerWithItem("regen_rose", RegenRoseBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ));
+	public static final DeferredBlock<Block> REGEN_ROSE = registerWithItemWithoutRarity("regen_rose", RegenRoseBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ));
 	public static final DeferredBlock<Block> POTTED_HEART_TRANSPLANT = registerWithItem("potted_heart_transplant", properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HEART_TRANSPLANT, properties), () -> BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion());
 	public static final DeferredBlock<Block> POTTED_REGEN_ROSE = registerWithItem("potted_regen_rose", properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REGEN_ROSE, properties), () -> BlockBehaviour.Properties.of().mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).instabreak().noOcclusion());
 	public static final DeferredBlock<RisusGrowingPlantBodyBlock> NEURON_STEM = register("neuron", NeuronStemBlock::new, () -> Block.Properties.ofFullCopy(Blocks.TWISTING_VINES_PLANT).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
@@ -204,6 +204,11 @@ public class RisusBlocks {
 	public static <T extends Block> DeferredBlock<T> registerWithItem(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
 		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
 		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), () -> new Item.Properties().rarity(RisusItems.BLOOD));
+		return ret;
+	}
+	public static <T extends Block> DeferredBlock<T> registerWithItemWithoutRarity(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
+		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
+		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), Item.Properties::new);
 		return ret;
 	}
 

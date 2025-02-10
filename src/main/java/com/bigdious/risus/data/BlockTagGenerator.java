@@ -136,8 +136,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(),
-			RisusBlocks.BLOOD_CAULDRON.get(),
-			RisusBlocks.BLOODY_SPONGE.get()
+			RisusBlocks.BLOOD_CAULDRON.get()
 			);
 
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
@@ -171,7 +170,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.EYE_GOLDEN.get(),
 				RisusBlocks.EYE_EMERALD.get(),
 				RisusBlocks.EYE_BLOODSHOT.get(),
-				RisusBlocks.EYE_ENDER.get()
+				RisusBlocks.EYE_ENDER.get(),
+				RisusBlocks.BLOODY_SPONGE.get()
 			);
 		this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
 			.add(RisusBlocks.LAUGHING_OBSIDIAN.get(),

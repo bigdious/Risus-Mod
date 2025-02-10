@@ -45,7 +45,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 			.texture("all2", Risus.prefix("block/burnt_hyphae_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		simpleBlock(RisusBlocks.BLOOD_FLUID_BLOCK.get());
-		simpleBlock(RisusBlocks.BLOODY_SPONGE.get(), models().getExistingFile(texture("block/bloody_sponge")));
+		simpleBlock(RisusBlocks.BLOODY_SPONGE.get());
 
 
 		getVariantBuilder(RisusBlocks.RIBCAGE.get()).forAllStates(state -> {

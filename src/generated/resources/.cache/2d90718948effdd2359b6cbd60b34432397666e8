@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-09T20:08:20.2581605	Risus blockstates and models
+// 1.21.1	2025-02-10T15:57:37.7661551	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -134,6 +134,7 @@ d2cfc9faae185ada851050ad4102ec7968b1bb2f assets/risus/blockstates/yellow_display
 77a87d03007d65960d122293fa0b845e39f0a56d assets/risus/models/block/alteration_catalyst.json
 569e6e6441c2aca9d2a913395d3863348399ad4f assets/risus/models/block/ashen_remains.json
 10fd20f950500ed987bd79ff9f6415b103c481ed assets/risus/models/block/ashen_remains_eyes.json
+899e6b60409d6995cf45e518e159762867f9bcb2 assets/risus/models/block/bloody_sponge.json
 9054db4b5648d91c650c9e9ff45b40ed0724e23e assets/risus/models/block/blood_fluid_block.json
 21e31e656067cb6f2a7c108eb739545bd297b0c7 assets/risus/models/block/blue_display_notch.json
 4ce28c7324439e669d55b95664a348f127c35a8b assets/risus/models/block/bondknot_button.json

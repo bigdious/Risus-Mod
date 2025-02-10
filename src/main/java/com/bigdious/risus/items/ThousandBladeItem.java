@@ -65,7 +65,6 @@ public class ThousandBladeItem extends SwordItem {
 			return InteractionResultHolder.fail(itemstack);
 		} else {
 			player.startUsingItem(hand);
-			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}
@@ -90,6 +89,7 @@ public class ThousandBladeItem extends SwordItem {
 			int i = this.getUseDuration(stack, entity) - useTicks;
 			if (i >= 10) {
 				if (!level.isClientSide()) {
+					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					if (stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
 						player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 3);
 						BloodSlash slash = new BloodSlash(level, player, stack);

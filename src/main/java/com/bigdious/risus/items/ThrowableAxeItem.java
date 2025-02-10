@@ -47,7 +47,7 @@ public class ThrowableAxeItem extends AxeItem {
 				Holder<SoundEvent> holder = EnchantmentHelper.pickHighestLevel(stack, EnchantmentEffectComponents.TRIDENT_SOUND)
 					.orElse(SoundEvents.TRIDENT_THROW);
 				if (!level.isClientSide()) {
-					player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					ThrownAxe axe = new ThrownAxe(level, player, stack);
 					axe.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
 					if (player.getAbilities().instabuild) {

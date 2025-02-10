@@ -608,7 +608,7 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 9)
 			.requires(RisusBlocks.FULL_BONE_BLOCK.get())
 			.unlockedBy("has_item", has(RisusBlocks.FULL_BONE_BLOCK.get()))
-			.save(consumer);
+			.save(consumer, "full_bone_to_bone_meal");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FULL_BONE_STAIRS.get(), 4)
 			.pattern("X  ")
@@ -736,6 +736,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_wall"));
 
 		smeltingRecipe(RisusBlocks.GRIMSTONE_BRICKS.get(),RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().asItem(),0.1F,1).save(consumer, prefix("smelt_cracked_grimstone_bricks"));
+		smeltingRecipe(RisusBlocks.BLOODY_SPONGE,Blocks.SPONGE.asItem(),0.1F,1).save(consumer, prefix("smelt_bloody_sponge"));
 	}
 
 	public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike input, ItemLike result, float exp, int count) {
