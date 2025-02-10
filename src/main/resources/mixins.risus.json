@@ -2,11 +2,7 @@
   "required": true,
   "package": "com.bigdious.risus.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "SpongeBlockMixin"
-  ],
   "client": [
-    "SpongeBlockMixin",
     "AbstractFurnaceBlockEntityMixin"
   ],
   "injectors": {

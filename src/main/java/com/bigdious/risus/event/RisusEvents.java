@@ -7,9 +7,13 @@ import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.collect.Maps;
+import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.OutgoingChatMessage;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -31,9 +35,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -51,12 +58,17 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class RisusEvents {
 
@@ -81,6 +93,9 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedOffRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onLivingDeath);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::onServerTick);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -389,5 +404,65 @@ public class RisusEvents {
 			}
 		}
 		return false;
+	}
+
+	public static void onSpongeBlockNeighborUpdatedEvent(BlockEvent.NeighborNotifyEvent event) {
+		LevelAccessor levelAccessor = event.getLevel();
+		BlockPos pos = event.getPos();
+		// get all the neighbors of the block, if any of them are a sponge block, run the sponge block logic
+		for (Direction direction : event.getNotifiedSides()) {
+			BlockPos neighborPos = pos.relative(direction);
+			BlockState neighborState = levelAccessor.getBlockState(neighborPos);
+			if (neighborState.is(Blocks.SPONGE)) {
+				if (levelAccessor instanceof Level level) {
+					handleSpongeBlockPlaceOrUpdate(level, neighborPos);
+				}
+			}
+		}
+	}
+
+	public static void onSpongeBlockPlacedEvent(BlockEvent.EntityPlaceEvent event) {
+		LevelAccessor levelAccessor = event.getLevel();
+		BlockPos pos = event.getPos();
+
+		if (levelAccessor instanceof Level level) {
+			handleSpongeBlockPlaceOrUpdate(level, pos);
+		}
+	}
+
+	private static void handleSpongeBlockPlaceOrUpdate(Level level, BlockPos pos) {
+		if (!(level instanceof ServerLevel serverLevel)) return;
+		if (!level.getBlockState(pos).is(Blocks.SPONGE)) return;
+
+		if (removeBloodBreadthFirstSearch(serverLevel, pos)) {
+			serverLevel.setBlock(pos, RisusBlocks.BLOODY_SPONGE.get().defaultBlockState(), 2); // Replace with Bloody Sponge
+			serverLevel.playSound(null, pos, SoundEvents.SPONGE_ABSORB, SoundSource.BLOCKS, 1.0F, 1.0F); // Play absorb sound
+		}
+	}
+
+	private static boolean removeBloodBreadthFirstSearch(Level level, BlockPos pos) {
+		final int MAX_DEPTH = 6;
+		final int MAX_COUNT = 64;
+		final Direction[] ALL_DIRECTIONS = Direction.values();
+
+		return BlockPos.breadthFirstTraversal(pos, MAX_DEPTH, MAX_COUNT, (currentPos, consumer) -> {
+			for (Direction direction : ALL_DIRECTIONS) {
+				consumer.accept(currentPos.relative(direction));
+			}
+		}, (targetPos) -> {
+			if (targetPos.equals(pos)) {
+				return true;
+			}
+
+			BlockState blockState = level.getBlockState(targetPos);
+			Block block = blockState.getBlock();
+
+			if (block == RisusBlocks.BLOOD_FLUID_BLOCK.get()) {
+				level.setBlock(targetPos, Blocks.AIR.defaultBlockState(), 3);
+				return true;
+			}
+
+			return false;
+		}) > 1;
 	}
 }
