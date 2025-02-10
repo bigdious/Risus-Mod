@@ -5,6 +5,7 @@ import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusParticles;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -16,94 +17,106 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.*;
+import net.neoforged.neoforge.event.EventHooks;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Predicate;
 
-public class BloodSlash extends AbstractArrow {
+public class BloodSlash extends Projectile {
 
 	private static final EntityDataAccessor<Byte> ID_POWER = SynchedEntityData.defineId(BloodSlash.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_PIERCING = SynchedEntityData.defineId(BloodSlash.class, EntityDataSerializers.BYTE);
 	@Nullable
 	private IntOpenHashSet piercingIgnoreEntityIds;
-	@Nullable
-	private List<Entity> piercedAndKilledEntities;
-	private double baseDamage;
+	private float baseDamage;
 	private int life;
+	@Nullable
+	private ItemStack weapon = null;
 
 	public BloodSlash(EntityType<BloodSlash> type, Level level) {
 		super(type, level);
 	}
 
-	public BloodSlash(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
-		super(RisusEntities.BLOODSLASH.get(), owner, level, pPickupItemStack, null);
-		this.entityData.set(ID_POWER, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));
-		this.entityData.set(ID_PIERCING, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.PIERCING))));
-		this.baseDamage = 15.0;
+	public BloodSlash(Level level, LivingEntity owner, @Nullable ItemStack weapon) {
+		super(RisusEntities.BLOODSLASH.get(), level);
+		this.setOwner(owner);
+		this.setPos(owner.getX(), owner.getEyeY() - 0.1F, owner.getZ());
+		this.baseDamage = 15.0F;
+		this.weapon = weapon;
+		if (weapon != null) {
+			this.getEntityData().set(ID_POWER, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));
+			this.getEntityData().set(ID_PIERCING, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.PIERCING))));
+
+		}
 	}
 
 	@Override
-	public boolean isNoGravity() {
-		return true;
-	}
-
-	@Override
-	protected ItemStack getDefaultPickupItem() {
-		return ItemStack.EMPTY;
-	}
-
-	@Override
-	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
-		super.defineSynchedData(pBuilder);
-		pBuilder.define(ID_POWER, (byte) 0);
-		pBuilder.define(ID_PIERCING, (byte) 0);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(ID_POWER, (byte) 0);
+		builder.define(ID_PIERCING, (byte) 0);
 	}
 
 	public byte getPierceLevel() {
-		return this.entityData.get(ID_PIERCING);
+		return this.getEntityData().get(ID_PIERCING);
 	}
 
 	public void tick() {
 		super.tick();
 		++this.life;
 		if (this.life >= 50) {
-			this.discard();
+//			this.discard();
 		}
-		level().addParticle(RisusParticles.BLOODSLASH_TRAIL.get(), true, this.getX(), this.getRandomY() - 1.5 + (Math.random() * 2.8), this.getZ(), 0, 0, 0);
-		playSound(SoundEvents.BREEZE_WHIRL);
-	}
 
-	protected float getWaterInertia() {
-		return 1F;
+		HitResult blockResult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
+		HitResult entityResult = getEntityHitResult(this.position(), this, this::canHitEntity, this.getDeltaMovement(), this.level(), 0.3F, ClipContext.Block.COLLIDER);
+		if (entityResult.getType() == HitResult.Type.ENTITY && !EventHooks.onProjectileImpact(this, entityResult)) {
+			this.hitTargetOrDeflectSelf(entityResult);
+		} else if (blockResult.getType() == HitResult.Type.BLOCK && !EventHooks.onProjectileImpact(this, blockResult)) {
+			this.onHit(blockResult);
+		}
+
+		this.checkInsideBlocks();
+		Vec3 vec3 = this.getDeltaMovement();
+		double d0 = this.getX() + vec3.x;
+		double d1 = this.getY() + vec3.y;
+		double d2 = this.getZ() + vec3.z;
+		this.updateRotation();
+
+		this.setDeltaMovement(vec3.scale(0.99F));
+		this.applyGravity();
+		this.setPos(d0, d1, d2);
+
+		this.level().addParticle(RisusParticles.BLOODSLASH_TRAIL.get(), true, this.getX(), this.getRandomY() - 1.5 + (Math.random() * 2.8), this.getZ(), 0, 0, 0);
+		//this.playSound(SoundEvents.BREEZE_WHIRL);
 	}
 
 	@Override
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
-		float f;
+		float damage = this.baseDamage;
 
-		f = this.entityData.get(ID_POWER);
+		damage += this.getEntityData().get(ID_POWER);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.BLOODSLASH, entity1 == null ? this : entity1);
-		if (this.level() instanceof ServerLevel serverlevel) {
-			f += EnchantmentHelper.modifyDamage(serverlevel, this.getPickupItemStackOrigin(), entity, damagesource, f);
+		if (this.level() instanceof ServerLevel serverlevel && this.weapon != null) {
+			damage += EnchantmentHelper.modifyDamage(serverlevel, this.weapon, entity, damagesource, damage);
 		}
 
 		if (this.getPierceLevel() > 0) {
 			if (this.piercingIgnoreEntityIds == null) {
 				this.piercingIgnoreEntityIds = new IntOpenHashSet(5);
-			}
-
-			if (this.piercedAndKilledEntities == null) {
-				this.piercedAndKilledEntities = Lists.newArrayListWithCapacity(5);
 			}
 
 			if (this.piercingIgnoreEntityIds.size() >= this.getPierceLevel() + 1) {
@@ -114,19 +127,18 @@ public class BloodSlash extends AbstractArrow {
 			this.piercingIgnoreEntityIds.add(entity.getId());
 		}
 
-
-		if (entity.hurt(damagesource, (float) baseDamage + this.entityData.get(ID_POWER))) {
+		if (entity.hurt(damagesource, damage)) {
 			if (entity instanceof LivingEntity livingentity) {
-				this.doKnockback(livingentity, damagesource);
-				Level var13 = this.level();
-				if (var13 instanceof ServerLevel serverlevel1) {
-					EnchantmentHelper.doPostAttackEffectsWithItemSource(serverlevel1, livingentity, damagesource, this.getWeaponItem());
+				double d0 = this.weapon != null && this.level() instanceof ServerLevel serverlevel ? EnchantmentHelper.modifyKnockback(serverlevel, this.weapon, entity, damagesource, 0.0F) : 0.0F;
+				if (d0 > 0.0) {
+					double d1 = Math.max(0.0, 1.0 - livingentity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+					Vec3 vec3 = this.getDeltaMovement().multiply(1.0, 0.0, 1.0).normalize().scale(d0 * 0.6 * d1);
+					if (vec3.lengthSqr() > 0.0) {
+						entity.push(vec3.x, 0.1, vec3.z);
+					}
 				}
-
-				this.doPostHurtEffects(livingentity);
-
-				if (!entity.isAlive() && this.piercedAndKilledEntities != null) {
-					this.piercedAndKilledEntities.add(livingentity);
+				if (this.level() instanceof ServerLevel serverlevel1) {
+					EnchantmentHelper.doPostAttackEffectsWithItemSource(serverlevel1, livingentity, damagesource, this.getWeaponItem());
 				}
 			}
 			if (this.getPierceLevel() <= 0) {
@@ -136,29 +148,18 @@ public class BloodSlash extends AbstractArrow {
 	}
 
 	@Override
-	protected boolean tryPickup(Player player) {
-		return false;
-	}
-
-	@Override
-	protected SoundEvent getDefaultHitGroundSoundEvent() {
-		return SoundEvents.BREEZE_LAND;
-	}
-
-	@Override
-	public void playerTouch(Player player) {
-		if (this.ownedBy(player) || this.getOwner() == null) {
-			super.playerTouch(player);
-		}
-
-	}
-
-	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
 
-		this.entityData.set(ID_POWER, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.POWER))));
-		this.entityData.set(ID_PIERCING, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.PIERCING))));
+		if (tag.contains("weapon", CompoundTag.TAG_COMPOUND)) {
+			this.weapon = ItemStack.parse(this.registryAccess(), tag.getCompound("weapon")).orElse(null);
+			if (this.weapon != null) {
+				this.getEntityData().set(ID_POWER, (byte) this.weapon.getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.POWER))));
+				this.getEntityData().set(ID_PIERCING, (byte) this.weapon.getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.PIERCING))));
+			}
+		} else {
+			this.weapon = null;
+		}
 	}
 
 	@Override
@@ -167,6 +168,9 @@ public class BloodSlash extends AbstractArrow {
 		compound.putShort("life", (short) this.life);
 		compound.putDouble("damage", this.baseDamage);
 		compound.putByte("PierceLevel", this.getPierceLevel());
+		if (this.weapon != null) {
+			compound.put("weapon", this.weapon.save(this.registryAccess(), new CompoundTag()));
+		}
 	}
 
 	@Override
@@ -183,5 +187,21 @@ public class BloodSlash extends AbstractArrow {
 	@Override
 	public boolean shouldRender(double x, double y, double z) {
 		return true;
+	}
+
+	private static HitResult getEntityHitResult(Vec3 pos, Entity projectile, Predicate<Entity> filter, Vec3 deltaMovement, Level level, float margin, ClipContext.Block clipContext) {
+		AABB entityHitbox = projectile.getBoundingBox().inflate(0.0D, 1.25D, 0.0D).move(0.0D, -0.25D, 0.0D);
+		Vec3 vec3 = pos.add(deltaMovement);
+		HitResult hitresult = level.clip(new ClipContext(pos, vec3, clipContext, ClipContext.Fluid.NONE, projectile));
+		if (hitresult.getType() != HitResult.Type.MISS) {
+			vec3 = hitresult.getLocation();
+		}
+
+		HitResult hitresult1 = ProjectileUtil.getEntityHitResult(level, projectile, pos, vec3, entityHitbox.expandTowards(deltaMovement).inflate(1.0), filter, 1.3F);
+		if (hitresult1 != null) {
+			hitresult = hitresult1;
+		}
+
+		return hitresult;
 	}
 }
