@@ -6,7 +6,9 @@ import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.ItemModelGenerators;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.SpawnEggItem;
@@ -14,9 +16,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.loaders.SeparateTransformsModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -179,10 +183,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.GUILTY_APPLE);
 		singleTex(RisusItems.MEMORY_CORE);
 		singleTex(RisusItems.ORGANIC_MATTER);
-		singleTex(RisusItems.SKIN_HELMET);
-		singleTex(RisusItems.SKIN_CHESTPLATE);
-		singleTex(RisusItems.SKIN_LEGGINGS);
-		singleTex(RisusItems.SKIN_BOOTS);
+		trimmedArmor(RisusItems.SKIN_HELMET);
+		trimmedArmor(RisusItems.SKIN_CHESTPLATE);
+		trimmedArmor(RisusItems.SKIN_LEGGINGS);
+		trimmedArmor(RisusItems.SKIN_BOOTS);
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);
 		singleTex(RisusItems.TREE_PATTERN);
@@ -359,6 +363,18 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
 				.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
 				.override().predicate(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
+	}
+
+	private void trimmedArmor(DeferredItem<ArmorItem> armor) {
+		ItemModelBuilder base = this.singleTex(armor);
+		for (ItemModelGenerators.TrimModelData trim : ItemModelGenerators.GENERATED_TRIM_MODELS) {
+			String material = trim.name();
+			String name = armor.getId().getPath() + "_" + material + "_trim";
+			ModelFile trimModel = this.withExistingParent(name, this.mcLoc("item/generated"))
+				.texture("layer0", Risus.prefix("item/" + armor.getId().getPath()))
+				.texture("layer1", this.mcLoc("trims/items/" + armor.get().getType().getName() + "_trim_" + material));
+			base.override().predicate(ResourceLocation.withDefaultNamespace("trim_type"), trim.itemModelIndex()).model(trimModel).end();
+		}
 	}
 
 	@Override
