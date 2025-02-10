@@ -8,6 +8,7 @@ import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.layer.AngelWingsLayer;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.items.ThousandBladeItem;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -195,6 +196,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_SPAWNER.get(), RisusSpawnerRenderer::new);
 	}
 	private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(ThousandBladeItem.ItemExtensions.INSTANCE, RisusItems.THOUSAND_BLADE.get());
 		event.registerFluidType(new IClientFluidTypeExtensions() {
 			@Override
 			public ResourceLocation getStillTexture() {

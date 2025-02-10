@@ -4,6 +4,9 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodSlash;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusItems;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -12,6 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,6 +28,8 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import org.jetbrains.annotations.Nullable;
 
 public class ThousandBladeItem extends SwordItem {
 
@@ -114,6 +120,7 @@ public class ThousandBladeItem extends SwordItem {
 			}
 		}
 	}
+
 	@Override
 	public UseAnim getUseAnimation(ItemStack stack) {
 		return UseAnim.SPEAR;
@@ -122,6 +129,16 @@ public class ThousandBladeItem extends SwordItem {
 	@Override
 	public int getUseDuration(ItemStack stack, LivingEntity entity) {
 		return 72000;
+	}
+
+	public static class ItemExtensions implements IClientItemExtensions {
+
+		public static final ItemExtensions INSTANCE = new ItemExtensions();
+
+		@Override
+		public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+			return HumanoidModel.ArmPose.valueOf("RISUS_THOUSAND_BLADE");
+		}
 	}
 
 }

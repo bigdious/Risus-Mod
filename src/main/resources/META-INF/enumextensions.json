@@ -35,6 +35,15 @@
         "class": "com/bigdious/risus/RisusEnumExtensions",
         "method": "DEATH_HEARTS"
       }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "RISUS_THOUSAND_BLADE",
+      "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "method": "THOUSAND_BLADE"
+      }
     }
   ]
 }
