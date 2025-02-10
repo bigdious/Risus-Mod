@@ -2,6 +2,7 @@ package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.MultiloggedRotateableBlock;
+import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.*;
@@ -36,10 +37,7 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -93,8 +91,8 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedOffRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onLivingDeath);
-//		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
-//		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -129,21 +127,22 @@ public class RisusEvents {
 
 			//fluid
 			FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
-					RisusFluids.BLOOD_FLUID_TYPE.get(),
-					fluidState -> {
-						if (!fluidState.isSource()) {
-							return RisusBlocks.SCAB.get().defaultBlockState();
-						} else {
-							return RisusBlocks.LAUGHING_OBSIDIAN.get().defaultBlockState();
-						}
+				RisusFluids.BLOOD_FLUID_TYPE.get(),
+				fluidState -> {
+					if (!fluidState.isSource()) {
+						return RisusBlocks.SCAB.get().defaultBlockState();
+					} else {
+						return RisusBlocks.LAUGHING_OBSIDIAN.get().defaultBlockState();
 					}
+				}
 			));
 			FluidInteractionRegistry.addInteraction(NeoForgeMod.WATER_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
-					RisusFluids.BLOOD_FLUID_TYPE.get(),
-					fluidState -> RisusBlocks.COAGULATED_BLOOD_BLOCK.get().defaultBlockState()
+				RisusFluids.BLOOD_FLUID_TYPE.get(),
+				fluidState -> RisusBlocks.COAGULATED_BLOOD_BLOCK.get().defaultBlockState()
 			));
-			});
+		});
 	}
+
 	private static void registerPotionRecipes(RegisterBrewingRecipesEvent event) {
 		PotionBrewing.Builder builder = event.getBuilder();
 		builder.addMix(Potions.AWKWARD, RisusItems.GUILTY_APPLE.get(), RisusPotions.MATING_FRENZY);
@@ -165,9 +164,10 @@ public class RisusEvents {
 		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 	}
+
 	private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
 		event.register(RisusEntities.LOVER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Lover::canLoverSpawn, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-		}
+	}
 
 	private static void knockOutSomeTeeth(LivingIncomingDamageEvent event) {
 		Entity source = event.getSource().getEntity();
@@ -180,6 +180,7 @@ public class RisusEvents {
 			}
 		}
 	}
+
 	public static OrganicMatterEvent fireOrganicMatterEvent(@Nullable Player player, Level level, BlockPos pos, BlockState state, ItemStack stack) {
 		return NeoForge.EVENT_BUS.post(new OrganicMatterEvent(player, level, pos, state, stack));
 	}
@@ -190,19 +191,20 @@ public class RisusEvents {
 			if (living.tickCount % 5 == 0 && living.hasEffect(RisusMobEffects.EXBURN)) {
 				if (living.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 2; i++) {
-						serverLevel.sendParticles(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5),1 ,  0.0, 0.0, 0.0, 0);
+						serverLevel.sendParticles(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 1, 0.0, 0.0, 0.0, 0);
 					}
 				}
 			}
 		}
 	}
+
 	private static void addDeathParticles(EntityTickEvent.Post event) {
 		Entity entity = event.getEntity();
 		if (entity instanceof LivingEntity living) {
 			if (living.tickCount % 5 == 0 && living.hasEffect(RisusMobEffects.DESTINED_DEATH)) {
 				if (living.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 2; i++) {
-						serverLevel.sendParticles(RisusParticles.DESTINED_DEATH_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5),1 ,  0.0, 0.0, 0.0, 0);
+						serverLevel.sendParticles(RisusParticles.DESTINED_DEATH_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 1, 0.0, 0.0, 0.0, 0);
 					}
 				}
 			}
@@ -222,13 +224,13 @@ public class RisusEvents {
 	}
 
 
-	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event){
+	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event) {
 		Entity player = event.getEntity();
 		Level level = player.level();
-		if (event.getAdvancement().id().equals(Risus.prefix("first"))){
+		if (event.getAdvancement().id().equals(Risus.prefix("first"))) {
 			for (int i = 0; i < 13; i++) {
 				QuestionMark witness = RisusEntities.TRANSIENT_QUESTION_MARK.get().create(level);
-				witness.moveTo(player.getRandomX(40), player.getRandomY()+2+11*(player.getRandomY()-player.getRandomY()), player.getRandomZ(40), 0.0F, 0.0F);
+				witness.moveTo(player.getRandomX(40), player.getRandomY() + 2 + 11 * (player.getRandomY() - player.getRandomY()), player.getRandomZ(40), 0.0F, 0.0F);
 				level.addFreshEntity(witness);
 			}
 		}
@@ -256,6 +258,7 @@ public class RisusEvents {
 			victim.igniteForSeconds(2);
 		}
 	}
+
 	private static void cindergleeScythe(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
@@ -269,9 +272,9 @@ public class RisusEvents {
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(victim.getType().is(RisusTags.Entities.OFFSPRING))) {
-				event.setAmount(event.getAmount()+5);
+				event.setAmount(event.getAmount() + 5);
 			} else {
-				event.setAmount(event.getAmount()-3);
+				event.setAmount(event.getAmount() - 3);
 			}
 		}
 	}
@@ -279,11 +282,12 @@ public class RisusEvents {
 	private static void addEggSack(LivingDeathEvent event) {
 		Entity entity = event.getEntity();
 		if (entity instanceof Licker licker) {
-				if (licker.level() instanceof ServerLevel serverLevel) {
-					serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, licker.getRandomX(0.5), licker.getY()+1, licker.getRandomZ(0.5), 7, 0, 0, 0, 0);
-				}
+			if (licker.level() instanceof ServerLevel serverLevel) {
+				serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, licker.getRandomX(0.5), licker.getY() + 1, licker.getRandomZ(0.5), 7, 0, 0, 0, 0);
+			}
 		}
 	}
+
 	private static void eggSacBoom(ProjectileImpactEvent event) {
 		Entity entity = event.getProjectile();
 		if (entity instanceof EggSac eggSac) {
@@ -293,6 +297,7 @@ public class RisusEvents {
 			}
 		}
 	}
+
 	private static void sacrificeAccepted(LivingDeathEvent event) {
 		Entity sacrifice = event.getEntity();
 		Entity murderer = event.getEntity().getKillCredit();
@@ -308,8 +313,8 @@ public class RisusEvents {
 						serverLevel.sendParticles(RisusParticles.FALLING_JOY.get(), sacrifice.getRandomX(0.5), sacrifice.getRandomY(), sacrifice.getRandomZ(0.5), 1, 0, 0, 0, 0);
 					}
 				}
-				if (cultist.getOffhandItem().getDamageValue()>1) {
-				cultist.getOffhandItem().setDamageValue(cultist.getOffhandItem().getDamageValue()-1);
+				if (cultist.getOffhandItem().getDamageValue() > 1) {
+					cultist.getOffhandItem().setDamageValue(cultist.getOffhandItem().getDamageValue() - 1);
 				} else {
 					cultist.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(RisusItems.THOUSAND_BLADE.asItem()));
 				}
@@ -325,24 +330,22 @@ public class RisusEvents {
 			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(5, event.getEntity(), EquipmentSlot.CHEST);
 		}
 	}
+
 	private static void getWaxedRisusStyle(PlayerInteractEvent.RightClickBlock event) {
-		if (event.getItemStack().is(Items.HONEYCOMB) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.COPPER_AMALGAM_VARIATION)){
-			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.COPPER_AMALGAM)){
+		if (event.getItemStack().is(Items.HONEYCOMB) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.COPPER_AMALGAM_VARIATION)) {
+			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.EXPOSED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.EXPOSED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WEATHERED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WEATHERED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.OXIDIZED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.OXIDIZED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
@@ -351,24 +354,22 @@ public class RisusEvents {
 			event.getLevel().playSound(null, event.getPos(), SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
 	}
+
 	private static void getWaxedOffRisusStyle(PlayerInteractEvent.RightClickBlock event) {
-		if (event.getItemStack().is(ItemTags.AXES) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION)){
-			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_COPPER_AMALGAM)){
+		if (event.getItemStack().is(ItemTags.AXES) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION)) {
+			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.EXPOSED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.WEATHERED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM)){
+			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM)) {
 				event.getLevel().setBlock(event.getPos(), RisusBlocks.OXIDIZED_COPPER_AMALGAM.get().defaultBlockState()
 					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
 					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
@@ -377,11 +378,12 @@ public class RisusEvents {
 			event.getLevel().playSound(null, event.getPos(), SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
 	}
+
 	@SuppressWarnings("SameReturnValue")
-	private static boolean onLivingDeath (@NotNull LivingDeathEvent event){
+	private static void onLivingDeath(@NotNull LivingDeathEvent event) {
 		LivingEntity dyingEntity = event.getEntity();
-		Level level = dyingEntity.getCommandSenderWorld();
-		if (!level.isClientSide) {
+		Level level = dyingEntity.level();
+		if (!level.isClientSide()) {
 			if (dyingEntity.getMainHandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get()) || dyingEntity.getOffhandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get())) {
 				dyingEntity.setHealth(1.0F);
 				dyingEntity.removeAllEffects();
@@ -389,80 +391,67 @@ public class RisusEvents {
 				dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 2, false, false));
 				dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
 				dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
-//					level.broadcastEntityEvent(dyingEntity, (byte) 35);
-					if (dyingEntity.getMainHandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get())) {
-						dyingEntity.getMainHandItem().shrink(1);
-					} else {
-						dyingEntity.getOffhandItem().shrink(1);
-					}
-					level.playSound(null, dyingEntity.getOnPos(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
-					if (dyingEntity instanceof ServerPlayer player){
-						PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(new ItemStack(RisusItems.TOTEM_OF_UNYIELDING.get()), RisusSoundEvents.SQUIRT.getKey()));
-					}
+//				level.broadcastEntityEvent(dyingEntity, (byte) 35);
+				if (dyingEntity.getMainHandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get())) {
+					dyingEntity.getMainHandItem().shrink(1);
+				} else {
+					dyingEntity.getOffhandItem().shrink(1);
+				}
+				level.playSound(null, dyingEntity.getOnPos(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
+				if (dyingEntity instanceof ServerPlayer player) {
+					PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(new ItemStack(RisusItems.TOTEM_OF_UNYIELDING.get()), RisusSoundEvents.SQUIRT.getKey()));
+				}
 				event.setCanceled(true);
 			}
 		}
-		return false;
 	}
-//commented as more work required
 
-//	public static void onSpongeBlockNeighborUpdatedEvent(BlockEvent.NeighborNotifyEvent event) {
-//		LevelAccessor levelAccessor = event.getLevel();
-//		BlockPos pos = event.getPos();
-//		// get all the neighbors of the block, if any of them are a sponge block, run the sponge block logic
-//		for (Direction direction : event.getNotifiedSides()) {
-//			BlockPos neighborPos = pos.relative(direction);
-//			BlockState neighborState = levelAccessor.getBlockState(neighborPos);
-//			if (neighborState.is(Blocks.SPONGE)) {
-//				if (levelAccessor instanceof Level level) {
-//					handleSpongeBlockPlaceOrUpdate(level, neighborPos);
-//				}
-//			}
-//		}
-//	}
+	public static void onSpongeBlockNeighborUpdatedEvent(BlockEvent.NeighborNotifyEvent event) {
+		LevelAccessor accessor = event.getLevel();
+		BlockPos pos = event.getPos();
+		// get all the neighbors of the block, if any of them are a sponge block, run the sponge block logic
+		for (Direction direction : event.getNotifiedSides()) {
+			BlockPos neighborPos = pos.relative(direction);
+			BlockState neighborState = accessor.getBlockState(neighborPos);
+			if (neighborState.is(Blocks.SPONGE)) {
+				handleSpongeBlockPlaceOrUpdate(accessor, neighborPos);
+			}
+		}
+	}
 
-//	public static void onSpongeBlockPlacedEvent(BlockEvent.EntityPlaceEvent event) {
-//		LevelAccessor levelAccessor = event.getLevel();
-//		BlockPos pos = event.getPos();
-//
-//		if (levelAccessor instanceof Level level) {
-//			handleSpongeBlockPlaceOrUpdate(level, pos);
-//		}
-//	}
-//
-//	private static void handleSpongeBlockPlaceOrUpdate(Level level, BlockPos pos) {
-//		if (!(level instanceof ServerLevel serverLevel)) return;
-//		if (!level.getBlockState(pos).is(Blocks.SPONGE)) return;
-//
-//		if (removeBloodBreadthFirstSearch(serverLevel, pos)) {
-//			serverLevel.setBlock(pos, RisusBlocks.BLOODY_SPONGE.get().defaultBlockState(), 2); // Replace with Bloody Sponge
-//			serverLevel.playSound(null, pos, SoundEvents.SPONGE_ABSORB, SoundSource.BLOCKS, 1.0F, 1.0F); // Play absorb sound
-//		}
-//	}
-//
-//	private static boolean removeBloodBreadthFirstSearch(Level level, BlockPos pos) {
-//		final int MAX_DEPTH = 6;
-//		final int MAX_COUNT = 64;
-//		final Direction[] ALL_DIRECTIONS = Direction.values();
-//
-//		return BlockPos.breadthFirstTraversal(pos, MAX_DEPTH, MAX_COUNT, (currentPos, consumer) -> {
-//			for (Direction direction : ALL_DIRECTIONS) {
-//				consumer.accept(currentPos.relative(direction));
-//			}
-//		}, (targetPos) -> {
-//			if (targetPos.equals(pos)) {
-//				return true;
-//			}
-//
-//			BlockState blockState = level.getBlockState(targetPos);
-//			Block block = blockState.getBlock();
-//
-//			if (block == RisusBlocks.BLOOD_FLUID_BLOCK.get()) {
-//				level.setBlock(targetPos, Blocks.AIR.defaultBlockState(), 3);
-//				return true;
-//			}
-//
-//			return false;
-//		}) > 1;
-//	}
+	public static void onSpongeBlockPlacedEvent(BlockEvent.EntityPlaceEvent event) {
+		handleSpongeBlockPlaceOrUpdate(event.getLevel(), event.getPos());
+	}
+
+	private static void handleSpongeBlockPlaceOrUpdate(LevelAccessor accessor, BlockPos pos) {
+		if (!accessor.getBlockState(pos).is(Blocks.SPONGE)) return;
+
+		if (absorbBlood(accessor, pos)) {
+			accessor.setBlock(pos, RisusBlocks.BLOODY_SPONGE.get().defaultBlockState(), 2); // Replace with Bloody Sponge
+			accessor.playSound(null, pos, SoundEvents.SPONGE_ABSORB, SoundSource.BLOCKS, 1.0F, 1.0F); // Play absorb sound
+		}
+	}
+
+	private static boolean absorbBlood(LevelAccessor accessor, BlockPos pos) {
+		return BlockPos.breadthFirstTraversal(pos, 6, 65, (currentPos, consumer) -> {
+			for (Direction direction : Direction.values()) {
+				consumer.accept(currentPos.relative(direction));
+			}
+		}, (targetPos) -> {
+			if (targetPos.equals(pos)) {
+				return true;
+			} else {
+				BlockState state = accessor.getBlockState(targetPos);
+
+				if (state.hasProperty(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) && state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.BLOOD) {
+					return state.getBlock() instanceof BucketPickup bucketpickup && !bucketpickup.pickupBlock(null, accessor, targetPos, state).isEmpty();
+				} else if (state.is(RisusBlocks.BLOOD_FLUID_BLOCK)) {
+					accessor.setBlock(targetPos, Blocks.AIR.defaultBlockState(), 3);
+					return true;
+				}
+			}
+
+			return false;
+		}) > 1;
+	}
 }

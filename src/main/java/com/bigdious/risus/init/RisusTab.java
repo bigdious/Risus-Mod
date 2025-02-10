@@ -56,6 +56,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.BLOODWEAVE.get());
 				output.accept(RisusBlocks.WEAVER_NEST.get());
 				output.accept(RisusItems.BLOOD_BUCKET.get());
+				output.accept(RisusBlocks.BLOODY_SPONGE.get());
 				output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 				output.accept(RisusBlocks.SCAB.get());
 
@@ -203,8 +204,6 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_REGN.get());
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
-				//commented as it needs further work
-//				output.accept(RisusBlocks.BLOODY_SPONGE.get());
 				createSpawnEggsAlphabetical(output);
 			}
 		)
