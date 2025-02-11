@@ -8,6 +8,7 @@ import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.layer.AngelWingsLayer;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.items.AngelWingsItem;
 import com.bigdious.risus.items.ThousandBladeItem;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.shaders.FogShape;
@@ -27,10 +28,12 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -79,8 +82,9 @@ public class RisusClientEvents {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
+
+			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) ->  AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 		});
-//		registerElytraLayer();
 	}
 
 	private static void registerParticleFactories(RegisterParticleProvidersEvent event) {

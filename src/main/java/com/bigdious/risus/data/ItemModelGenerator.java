@@ -163,7 +163,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.MUSIC_DISC_REGN);
 		singleTex(RisusItems.MUSIC_DISC_FEIGR);
 		singleTex(RisusItems.MUSIC_DISC_MORK);
-		singleTex(RisusItems.ANGEL_WINGS);
+		singleTex(RisusItems.ANGEL_WINGS).override().predicate(Risus.prefix("broken"), 1.0F).model(singleTex("angel_wings_broken"));
 		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
 		singleTex(RisusItems.ESSENCE_OF_GREED);
 		singleTex(RisusItems.ESSENCE_OF_SLOTH);
@@ -319,6 +319,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	private ItemModelBuilder generated(String name, ResourceLocation... layers) {
 		return generated(name, "item/generated", layers);
+	}
+
+	private ItemModelBuilder singleTex(String texture) {
+		return generated(texture, "item/generated", texture("item/" + texture));
 	}
 
 	private ItemModelBuilder singleTex(ItemLike item) {
