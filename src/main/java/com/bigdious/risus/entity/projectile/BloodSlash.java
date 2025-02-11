@@ -96,6 +96,7 @@ public class BloodSlash extends Projectile {
 
 		this.level().addParticle(RisusParticles.BLOODSLASH_TRAIL.get(), true, this.getX(), this.getRandomY() - 1.5 + (Math.random() * 2.8), this.getZ(), 0, 0, 0);
 		//this.playSound(SoundEvents.BREEZE_WHIRL);
+		if(tickCount>100) this.kill();
 	}
 
 	@Override

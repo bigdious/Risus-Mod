@@ -2,6 +2,8 @@ package com.bigdious.risus.blocks.fluid;
 
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -12,13 +14,18 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 
+import javax.annotation.Nullable;
+
 public class BloodFluid extends BaseFlowingFluid {
 	//Credit to JoeFoxe and his mod Hexerei for this beautiful blood fluid and particles
 	protected BloodFluid(Properties properties) {
 		super(properties);
 	}
 
-
+	@Nullable
+	public ParticleOptions getDripParticle() {
+		return RisusParticles.DRIPPING_BLOOD.get();
+	}
 	@Override
 	public boolean isSource(FluidState pState) {
 		return false;

@@ -61,7 +61,7 @@ public class BloodySpongeBlock extends Block {
 					}
 				}
 
-				level.addParticle(RisusParticles.BLOOD_BIT.get(), d0, d1, d2, 0.0, 0.0, 0.0);
+				level.addParticle(RisusParticles.DRIPPING_BLOOD.get(), d0, d1, d2, 0.0, 0.0, 0.0);
 			}
 		}
 

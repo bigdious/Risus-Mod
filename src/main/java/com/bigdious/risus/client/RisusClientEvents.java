@@ -33,7 +33,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -90,10 +89,13 @@ public class RisusClientEvents {
 	private static void registerParticleFactories(RegisterParticleProvidersEvent event) {
 		event.registerSpriteSet(RisusParticles.ALTERATION.get(), AlterationParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.ALTERATION_FINISHED.get(), AlterationFinishedParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.DRIPPING_JOY.get(), JoyParticle.JoyHangProvider::new);
-		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), JoyParticle.JoyFallProvider::new);
+		event.registerSpriteSet(RisusParticles.DRIPPING_JOY.get(), RisusDripParticle.JoyHangProvider::new);
+		event.registerSpriteSet(RisusParticles.FALLING_JOY.get(), RisusDripParticle.JoyFallProvider::new);
+		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), RisusDripParticle.JoyLandProvider::new);
+		event.registerSpriteSet(RisusParticles.DRIPPING_BLOOD.get(), RisusDripParticle.BloodDripHangProvider::new);
+		event.registerSpriteSet(RisusParticles.FALLING_BLOOD.get(), RisusDripParticle.BloodDripFallProvider::new);
+		event.registerSpriteSet(RisusParticles.LANDING_BLOOD.get(), RisusDripParticle.BloodDripLandProvider::new);
 		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
-		event.registerSpriteSet(RisusParticles.LANDING_JOY.get(), JoyParticle.JoyLandProvider::new);
 		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.EmissiveProvider::new);
 		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.Provider::new);

@@ -136,14 +136,14 @@ public class Angel extends Monster {
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.getEntity() instanceof LivingEntity living && (
-			//temporarily disabled to fix issue
-//			living.getItemInHand(living.getUsedItemHand()).is(RisusTags.Items.WILLFUL_WEAPON)
+			living.getItemInHand(living.getUsedItemHand()).is(RisusTags.Items.WILLFUL_WEAPON) ||
 			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.SCYTHE) ||
 			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.FIRE_SCYTHE) ||
 			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.SOUL_SCYTHE) ||
 			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CINDERGLEE_SCYTHE) ||
 			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.UNAWAKENED_VESSEL) ||
-			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CRESCENT_DISASTER)
+			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.CRESCENT_DISASTER) ||
+			living.getItemInHand(living.getUsedItemHand()).is(RisusItems.THOUSAND_BLADE)
 	)
 		) {
 			return super.hurt(source, Float.MAX_VALUE);

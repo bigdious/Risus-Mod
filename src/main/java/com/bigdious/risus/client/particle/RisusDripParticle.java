@@ -1,5 +1,6 @@
 package com.bigdious.risus.client.particle;
 
+import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.DripParticle;
@@ -15,7 +16,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
 
-public class JoyParticle extends DripParticle {
+public class RisusDripParticle extends DripParticle {
 
 	private static final MethodHandles.Lookup LOOKUP = MethodHandles.lookup();
 	private static final Field particle_Gravity = ObfuscationReflectionHelper.findField(Particle.class, "gravity"); //gravity
@@ -35,7 +36,7 @@ public class JoyParticle extends DripParticle {
 		handle_particle_Gravity_get = tmp_handle_particle_Gravity_get;
 	}
 
-	public JoyParticle(ClientLevel level, double x, double y, double z, Fluid fluid) {
+	public RisusDripParticle(ClientLevel level, double x, double y, double z, Fluid fluid) {
 		super(level, x, y, z, fluid);
 	}
 
@@ -85,4 +86,46 @@ public class JoyParticle extends DripParticle {
 			return dripparticle;
 		}
 	}
+	public record BloodDripFallProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.FallAndLandParticle(level, x, y, z, Fluids.EMPTY, RisusParticles.LANDING_BLOOD.get());
+			try {
+				handle_particle_Gravity_set.invokeExact((Particle) dripparticle, 0.01F);
+			} catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
+			dripparticle.setColor(0.51171875F, 0.03125F, 0.890625F);
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
+	public record BloodDripHangProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.DripHangParticle(level, x, y, z, Fluids.EMPTY, RisusParticles.FALLING_BLOOD.get());
+			try {
+				handle_particle_Gravity_set.invokeExact((Particle) dripparticle, (float) handle_particle_Gravity_get.invokeExact((Particle) dripparticle) * 0.01F);
+			} catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
+			dripparticle.setLifetime(100);
+			dripparticle.setColor(0.51171875F, 0.03125F, 0.890625F);
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
+	public record BloodDripLandProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.DripLandParticle(level, x, y, z, RisusFluids.SOURCE_BLOOD.get());
+			dripparticle.setLifetime((int) (28.0D / (Math.random() * 0.8D + 0.2D)));
+			dripparticle.setColor(0.51171875F, 0.03125F, 0.890625F);
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
 }
