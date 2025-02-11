@@ -13,6 +13,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -41,7 +42,6 @@ public class BloodSlash extends Projectile {
 	@Nullable
 	private IntOpenHashSet piercingIgnoreEntityIds;
 	private float baseDamage;
-	private int life;
 	@Nullable
 	private ItemStack weapon = null;
 
@@ -74,10 +74,6 @@ public class BloodSlash extends Projectile {
 
 	public void tick() {
 		super.tick();
-		++this.life;
-		if (this.life >= 50) {
-//			this.discard();
-		}
 
 		HitResult blockResult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
 		HitResult entityResult = getEntityHitResult(this.position(), this, this::canHitEntity, this.getDeltaMovement(), this.level(), 0.3F, ClipContext.Block.COLLIDER);
@@ -148,32 +144,6 @@ public class BloodSlash extends Projectile {
 	}
 
 	@Override
-	public void readAdditionalSaveData(CompoundTag tag) {
-		super.readAdditionalSaveData(tag);
-
-		if (tag.contains("weapon", CompoundTag.TAG_COMPOUND)) {
-			this.weapon = ItemStack.parse(this.registryAccess(), tag.getCompound("weapon")).orElse(null);
-			if (this.weapon != null) {
-				this.getEntityData().set(ID_POWER, (byte) this.weapon.getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.POWER))));
-				this.getEntityData().set(ID_PIERCING, (byte) this.weapon.getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.PIERCING))));
-			}
-		} else {
-			this.weapon = null;
-		}
-	}
-
-	@Override
-	public void addAdditionalSaveData(CompoundTag compound) {
-		super.addAdditionalSaveData(compound);
-		compound.putShort("life", (short) this.life);
-		compound.putDouble("damage", this.baseDamage);
-		compound.putByte("PierceLevel", this.getPierceLevel());
-		if (this.weapon != null) {
-			compound.put("weapon", this.weapon.save(this.registryAccess(), new CompoundTag()));
-		}
-	}
-
-	@Override
 	protected boolean canHitEntity(Entity target) {
 		return super.canHitEntity(target) && (this.piercingIgnoreEntityIds == null || !this.piercingIgnoreEntityIds.contains(target.getId()));
 	}
@@ -182,11 +152,6 @@ public class BloodSlash extends Projectile {
 	protected void onHitBlock(BlockHitResult result) {
 		super.onHitBlock(result);
 		this.discard();
-	}
-
-	@Override
-	public boolean shouldRender(double x, double y, double z) {
-		return true;
 	}
 
 	private static HitResult getEntityHitResult(Vec3 pos, Entity projectile, Predicate<Entity> filter, Vec3 deltaMovement, Level level, float margin, ClipContext.Block clipContext) {
