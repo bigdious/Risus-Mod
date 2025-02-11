@@ -29,10 +29,11 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	@Override
 	protected void registerStatesAndModels() {
-		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().withExistingParent(RisusBlocks.ALTERATION_CATALYST.getId().getPath(), "block/block").texture("particle", ResourceLocation.withDefaultNamespace("block/netherite_block"))
-				.customLoader(CompositeModelBuilder::begin)
-				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
-				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());
+		simpleBlock(RisusBlocks.ALTERATION_CATALYST.get(), models().getExistingFile(Risus.prefix("block/alteration_catalyst")));
+		models().withExistingParent("alteration_catalyst_inventory", "block/block").texture("particle", ResourceLocation.withDefaultNamespace("block/netherite_block"))
+			.customLoader(CompositeModelBuilder::begin)
+			.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
+			.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst"))).end();
 		getVariantBuilder(RisusBlocks.ASHEN_REMAINS.get()).forAllStates(state -> {
 			ModelFile noEyes = models().cubeAll("ashen_remains", Risus.prefix("block/ashen_remains"));
 			ModelFile eyes = models().cubeAll("ashen_remains_eyes", Risus.prefix("block/ashen_remains_eyes"));

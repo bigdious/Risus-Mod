@@ -2,7 +2,7 @@
   "parent": "minecraft:block/block",
   "children": {
     "base": {
-      "parent": "risus:block/alteration_catalyst_base"
+      "parent": "risus:block/alteration_catalyst"
     },
     "ring": {
       "parent": "risus:block/alteration_catalyst_ring"

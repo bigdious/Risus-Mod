@@ -82,21 +82,20 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (level.isClientSide() || hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof AlterationCatalystBlockEntity alteration))
-			return ItemInteractionResult.FAIL;
-		if (alteration.isCrafting)
+		if (!(level.getBlockEntity(pos) instanceof AlterationCatalystBlockEntity alteration) || alteration.isCrafting)
 			return ItemInteractionResult.FAIL;
 
-		if (alteration.getTheItem().isEmpty()) {
-			alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
-		} else {
-			ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getTheItem());
-			level.addFreshEntity(item);
-			alteration.setInputItem(ItemStack.EMPTY);
+		if (!level.isClientSide()) {
+			if (alteration.getTheItem().isEmpty()) {
+				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
+			} else {
+				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getTheItem());
+				level.addFreshEntity(item);
+				alteration.setInputItem(ItemStack.EMPTY);
+			}
+			level.sendBlockUpdated(pos, state, state, 2);
 		}
-
-		level.sendBlockUpdated(pos, state, state, 2);
-		return ItemInteractionResult.SUCCESS;
+		return ItemInteractionResult.sidedSuccess(level.isClientSide());
 	}
 
 	@Nullable

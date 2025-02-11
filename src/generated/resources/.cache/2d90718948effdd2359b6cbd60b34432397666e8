@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-10T23:24:40.8668241	Risus blockstates and models
+// 1.21.1	2025-02-11T10:43:31.542089	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -134,7 +134,7 @@ a12bc79b2cc448bdf31a3fbecd6841ca0dd4ce97 assets/risus/blockstates/white_display_
 d2cfc9faae185ada851050ad4102ec7968b1bb2f assets/risus/blockstates/yellow_display_notch.json
 9c25f6213d4c49828c8edd9550d0d8a79475ec8a assets/risus/blockstates/zit.json
 7661660aacc0350f15c198145df40e4d86a9ea49 assets/risus/models/block/active_grimstone.json
-77a87d03007d65960d122293fa0b845e39f0a56d assets/risus/models/block/alteration_catalyst.json
+12222bc257de82c9b38b3e0cd92a204214bf9339 assets/risus/models/block/alteration_catalyst_inventory.json
 569e6e6441c2aca9d2a913395d3863348399ad4f assets/risus/models/block/ashen_remains.json
 10fd20f950500ed987bd79ff9f6415b103c481ed assets/risus/models/block/ashen_remains_eyes.json
 899e6b60409d6995cf45e518e159762867f9bcb2 assets/risus/models/block/bloody_sponge.json
@@ -186,7 +186,7 @@ bcfb0526524d6dc44cba56667f364eecf049297a assets/risus/models/block/brown_display
 526563d86913a2594e833c4277ea37572b8da59a assets/risus/models/block/bundle_of_hair.json
 bce535e4d325d0075b366c5625c87628614166a7 assets/risus/models/block/bundle_of_hair_horizontal.json
 136e16c418eaeff56de61227a6d43e7aad597bd9 assets/risus/models/block/burnt_hyphae.json
-118165d09103fa40d3a20845e99bbdf905507257 assets/risus/models/block/catalyst_base.json
+4a378d9f5381f99979ea6c6294673871621ddeb2 assets/risus/models/block/catalyst_base.json
 40ab6373628113905948421fe6a1d57d335c29be assets/risus/models/block/catalyst_ring.json
 1a6b280edd03a249944c2532e5fd7421d8a72ad7 assets/risus/models/block/chiseled_grimstone.json
 ff7841ba6d523e79dfa98fc199ab5c5248631e3f assets/risus/models/block/coagulated_blood_block.json

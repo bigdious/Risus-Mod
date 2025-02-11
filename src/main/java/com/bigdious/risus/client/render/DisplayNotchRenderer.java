@@ -35,7 +35,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 		boolean stand = entity.stand;
 		boolean elevate = entity.getBlockState().getValue(DisplayNotchBlock.ELEVATE);
 		var dir = entity.getBlockState().getValue(DisplayNotchBlock.FACING);
-		var offset = elevate ? stand ? -0.25D : -0.3D : stand ? 0.0D : -0.4675D;
+		var offset = elevate ? stand ? -0.25D : -0.3D : stand ? 0.01D : -0.4675D;
 		stack.translate(offset * dir.getStepX() + 0.5D, offset * dir.getStepY() + 0.5D, offset * dir.getStepZ() + 0.5D);
 		var rotation = (entity.getBlockState().getValue(DisplayNotchBlock.ROTATION) * 22.5F) * Mth.DEG_TO_RAD;
 		stack.mulPose(dir.getRotation()

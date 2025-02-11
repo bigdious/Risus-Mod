@@ -34,7 +34,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		//blocks
-		toBlock(RisusBlocks.ALTERATION_CATALYST.get());
+		toBlockModel(RisusBlocks.ALTERATION_CATALYST.get(), Risus.prefix("block/alteration_catalyst_inventory"));
 		toBlock(RisusBlocks.ANGEL_ALTAR.get());
 		toBlock(RisusBlocks.FLESHY_SPAWNER.get());
 		toBlock(RisusBlocks.INACTIVE_HOLDER.get());

@@ -82,28 +82,32 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (hand != InteractionHand.MAIN_HAND || !(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
+		if (!(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
 			return ItemInteractionResult.FAIL;
+
 		if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.SHOVELS)) {
 			level.setBlock(pos, state.cycle(ELEVATE), 3);
-			return ItemInteractionResult.SUCCESS;
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.PICKAXES)) {
 			level.setBlock(pos, state.cycle(ROTATION), 3);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && notch.handleBEInteractions(stack, level, pos, state)) {
-			return ItemInteractionResult.SUCCESS;
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else {
-			if (notch.getTheItem().isEmpty()) {
-				notch.setTheItem(player.getInventory().removeItem(player.getInventory().selected, 1));
-			} else {
-				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), notch.getTheItem());
-				level.addFreshEntity(item);
-				notch.setTheItem(ItemStack.EMPTY);
-				level.setBlock(pos, state.setValue(ELEVATE, false), 3);
-			}
-		}
+			if (!level.isClientSide()) {
+				if (notch.getTheItem().isEmpty()) {
+					notch.setTheItem(player.getInventory().removeItem(player.getInventory().selected, 1));
+				} else {
+					ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), notch.getTheItem());
+					level.addFreshEntity(item);
+					notch.setTheItem(ItemStack.EMPTY);
+					level.setBlock(pos, state.setValue(ELEVATE, false), 3);
+				}
 
-		level.sendBlockUpdated(pos, state, state, 2);
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+				level.sendBlockUpdated(pos, state, state, 2);
+			}
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+		}
 	}
 
 	@Override
