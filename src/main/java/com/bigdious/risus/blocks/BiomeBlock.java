@@ -13,6 +13,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -160,7 +161,9 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING_FEIGR, true));
 			} else return ItemInteractionResult.FAIL;
 			level.scheduleTick(pos, this, 20);
-			player.getMainHandItem().shrink(1);
+			if (!player.isCreative()) {
+				player.getMainHandItem().shrink(1);
+			}
 			return ItemInteractionResult.SUCCESS;
 		}
 
@@ -203,7 +206,8 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			if (dPos.distSqr(pos) > 256.0)
 				continue;
 
-			if (level.getBiome(dPos).is(biome))
+			// Holder<Biome>(dpos).is(biome) is deprecated and could cause issues in the future
+			if (level.getBiome(dPos) == biome)
 				continue;
 
 			int minY = QuartPos.fromBlock(level.getMinBuildHeight());
@@ -216,7 +220,8 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			for (LevelChunkSection section : chunkAt.getSections()) {
 				for (int sy = 0; sy < 16; sy += 4) {
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
-					if (section.getBiomes().get(x & 3, y & 3, z & 3).is(biome))
+					// Holder<Biome>(x, y, z).is(biome) is deprecated and could cause issues in the future
+					if (section.getBiomes().get(x & 3, y & 3, z & 3) == (biome))
 						continue;
 					if (section.getBiomes() instanceof PalettedContainer<Holder<Biome>> container)
 						container.set(x & 3, y & 3, z & 3, biome);
