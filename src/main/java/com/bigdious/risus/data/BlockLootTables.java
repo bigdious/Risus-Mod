@@ -189,8 +189,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.ZIT.get());
 		dropOther(RisusBlocks.NEURON_STEM.get(), RisusBlocks.NEURON_HEAD.get());
 		dropOther(RisusBlocks.NEURON_HEAD.get(), RisusBlocks.NEURON_HEAD.get());
-		dropOther(RisusBlocks.VEINS.get(), RisusBlocks.VEINS.get());
-		dropOther(RisusBlocks.VEINS_END.get(), RisusBlocks.VEINS.get());
+		dropOther(RisusBlocks.VEINS.get(), RisusBlocks.VEINS_END.get());
+		dropSelf(RisusBlocks.VEINS_END.get());
 		add(RisusBlocks.SPREADING_REMAINS.get(), createMultifaceBlockDrops(RisusBlocks.SPREADING_REMAINS.get()));
 		add(RisusBlocks.TEETH.get(), createMultifaceBlockDrops(RisusBlocks.TEETH.get()));
 	}

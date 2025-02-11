@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/template_copper_amalgam",
+  "textures": {
+    "texture": "risus:block/exposed_copper_amalgam"
+  }
+}

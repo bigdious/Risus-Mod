@@ -33,7 +33,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusBlocks.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusBlocks.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_HEAD.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusBlocks.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusItems.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_item", has(Items.GOLDEN_APPLE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusBlocks.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusBlocks.ENGRAVED_BASALT.get()).unlockedBy("has_item", has(Items.BASALT)).save(consumer);

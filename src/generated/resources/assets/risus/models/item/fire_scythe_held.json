@@ -1,0 +1,6 @@
+{
+  "parent": "risus:item/template_held_scythe",
+  "textures": {
+    "texture": "risus:item/fire_scythe"
+  }
+}

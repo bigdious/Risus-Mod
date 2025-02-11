@@ -9,33 +9,33 @@
   "loader": "neoforge:separate_transforms",
   "perspectives": {
     "firstperson_lefthand": {
-      "parent": "risus:item/soul_scythe_held",
+      "parent": "risus:item/template_held_scythe",
       "textures": {
-        "soul_scythe": "risus:item/soul_scythe"
+        "texture": "risus:item/soul_scythe"
       }
     },
     "firstperson_righthand": {
-      "parent": "risus:item/soul_scythe_held",
+      "parent": "risus:item/template_held_scythe",
       "textures": {
-        "soul_scythe": "risus:item/soul_scythe"
+        "texture": "risus:item/soul_scythe"
       }
     },
     "head": {
-      "parent": "risus:item/soul_scythe_held",
+      "parent": "risus:item/template_held_scythe",
       "textures": {
-        "soul_scythe": "risus:item/soul_scythe"
+        "texture": "risus:item/soul_scythe"
       }
     },
     "thirdperson_lefthand": {
-      "parent": "risus:item/soul_scythe_held",
+      "parent": "risus:item/template_held_scythe",
       "textures": {
-        "soul_scythe": "risus:item/soul_scythe"
+        "texture": "risus:item/soul_scythe"
       }
     },
     "thirdperson_righthand": {
-      "parent": "risus:item/soul_scythe_held",
+      "parent": "risus:item/template_held_scythe",
       "textures": {
-        "soul_scythe": "risus:item/soul_scythe"
+        "texture": "risus:item/soul_scythe"
       }
     }
   },

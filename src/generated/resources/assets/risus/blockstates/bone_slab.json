@@ -4,7 +4,7 @@
       "model": "risus:block/bone_slab"
     },
     "type=double": {
-      "model": "risus:block/bone_block"
+      "model": "minecraft:block/bone_block"
     },
     "type=top": {
       "model": "risus:block/bone_slab_top"

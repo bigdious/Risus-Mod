@@ -298,7 +298,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.BONE_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 10))))
 					.add(LootItem.lootTableItem(RisusItems.ORGANIC_MATTER).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 10))))
 					.add(LootItem.lootTableItem(RisusBlocks.BURNT_HYPHAE).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 10))))
-					.add(LootItem.lootTableItem(RisusBlocks.VEINS).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 10))))
+					.add(LootItem.lootTableItem(RisusItems.VEINS).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 10))))
 					.add(LootItem.lootTableItem(RisusItems.STALKER_EYE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
 					.add(LootItem.lootTableItem(RisusItems.EGG_SAC).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
 					.add(LootItem.lootTableItem(RisusBlocks.EYE_BLOODSHOT).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))))

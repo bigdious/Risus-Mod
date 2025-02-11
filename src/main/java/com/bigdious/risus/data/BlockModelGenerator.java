@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -33,8 +34,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.child("ring", models().withExistingParent("catalyst_ring", Risus.prefix("block/alteration_catalyst_ring")))
 				.child("base", models().withExistingParent("catalyst_base", Risus.prefix("block/alteration_catalyst_base"))).end());
 		getVariantBuilder(RisusBlocks.ASHEN_REMAINS.get()).forAllStates(state -> {
-			ModelFile noEyes = models().cubeAll("ashen_remains", texture("block/ashen_remains"));
-			ModelFile eyes = models().cubeAll("ashen_remains_eyes", texture("block/ashen_remains_eyes"));
+			ModelFile noEyes = models().cubeAll("ashen_remains", Risus.prefix("block/ashen_remains"));
+			ModelFile eyes = models().cubeAll("ashen_remains_eyes", Risus.prefix("block/ashen_remains_eyes"));
 			return ConfiguredModel.builder().modelFile(state.getValue(AshenRemainsBlock.HAS_EYES) ? eyes : noEyes).weight(1).nextModel().modelFile(noEyes).weight(30).build();
 		});
 		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
@@ -44,35 +45,36 @@ public class BlockModelGenerator extends BlockStateProvider {
 			.texture("all", Risus.prefix("block/burnt_hyphae"))
 			.texture("all2", Risus.prefix("block/burnt_hyphae_overlay")));
 		simpleBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
-		simpleBlock(RisusBlocks.BLOOD_FLUID_BLOCK.get());
+		simpleBlock(RisusBlocks.BLOOD_FLUID_BLOCK.get(), models().getBuilder("blood_fluid_block").texture("particle", Risus.prefix("block/blood_still")));
 		simpleBlock(RisusBlocks.BLOODY_SPONGE.get());
+		simpleBlock(RisusBlocks.BLOOD_CAULDRON.get(), models().withExistingParent("blood_cauldron", "block/template_cauldron_full").texture("content", Risus.prefix("block/blood_still")));
 
 
 		getVariantBuilder(RisusBlocks.RIBCAGE.get()).forAllStates(state -> {
-			ModelFile bottom = models().getExistingFile(texture("block/ribcage_cage"));
-			ModelFile top = models().getExistingFile(texture("block/ribcage_spine"));
+			ModelFile bottom = models().getExistingFile(Risus.prefix("block/ribcage_cage"));
+			ModelFile top = models().getExistingFile(Risus.prefix("block/ribcage_spine"));
 			return ConfiguredModel.builder()
 					.modelFile(state.getValue(RibcageBlock.HALF) == DoubleBlockHalf.LOWER ? bottom : top)
 					.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
 					.build();
 		});
-		simpleBlock(RisusBlocks.ANGEL_ALTAR.get(), models().getExistingFile(texture("block/angel_altar")));
-		simpleBlock(RisusBlocks.FLESHY_SPAWNER.get(), models().getExistingFile(texture("block/fleshy_spawner")));
-		simpleBlock(RisusBlocks.WEAVER_NEST.get(), models().getExistingFile(texture("block/weaver_nest")));
-		simpleBlock(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), models().getExistingFile(texture("block/organic_matter_block")));
-		horizontalBlock(RisusBlocks.DEPTH_VASE.get(), models().getExistingFile(texture("block/depth_vase")));
-		horizontalBlock(RisusBlocks.INACTIVE_HOLDER.get(), models().getExistingFile(texture("block/inactive_holder")));
-		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(texture("block/baby_ribcage")));
-		horizontalBlock(RisusBlocks.COPPER_AMALGAM.get(), models().getExistingFile(texture("block/copper_amalgam")));
-		horizontalBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/exposed_copper_amalgam")));
-		horizontalBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/weathered_copper_amalgam")));
-		horizontalBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/oxidized_copper_amalgam")));
-		horizontalBlock(RisusBlocks.WAXED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/copper_amalgam")));
-		horizontalBlock(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/exposed_copper_amalgam")));
-		horizontalBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/weathered_copper_amalgam")));
-		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(texture("block/oxidized_copper_amalgam")));
-		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(texture("block/crystallized_bonds")));
-		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(texture("block/laughing_stalk")));
+		simpleBlock(RisusBlocks.ANGEL_ALTAR.get(), models().getExistingFile(Risus.prefix("block/angel_altar")));
+		simpleBlock(RisusBlocks.FLESHY_SPAWNER.get(),  models().getExistingFile(Risus.prefix("block/fleshy_spawner")));
+		simpleBlock(RisusBlocks.WEAVER_NEST.get(), models().getExistingFile(Risus.prefix("block/weaver_nest")));
+		simpleBlock(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), models().getExistingFile(Risus.prefix("block/organic_matter_block")));
+		builtinEntity(RisusBlocks.DEPTH_VASE.get(), Risus.prefix("block/depth_vase"));
+		horizontalBlock(RisusBlocks.INACTIVE_HOLDER.get(), models().getExistingFile(Risus.prefix("block/inactive_holder")));
+		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(Risus.prefix("block/baby_ribcage")));
+		horizontalBlock(RisusBlocks.COPPER_AMALGAM.get(), models().withExistingParent("copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/copper_amalgam")));
+		horizontalBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), models().withExistingParent("exposed_copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/exposed_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), models().withExistingParent("weathered_copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/weathered_copper_amalgam")));
+		horizontalBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), models().withExistingParent("oxidized_copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/oxidized_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/exposed_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/weathered_copper_amalgam")));
+		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/oxidized_copper_amalgam")));
+		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(Risus.prefix("block/crystallized_bonds")));
+		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(Risus.prefix("block/laughing_stalk")));
 
 		for (var notch : RisusBlocks.BLOCKS.getEntries().stream().filter(holder -> holder.getRegisteredName().contains("display_notch")).toList()) {
 			this.getVariantBuilder(notch.get()).forAllStatesExcept(state -> {
@@ -88,18 +90,18 @@ public class BlockModelGenerator extends BlockStateProvider {
 			}, DisplayNotchBlock.ROTATION, DisplayNotchBlock.FLUIDLOGGED);
 		}
 
-		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(texture("block/engraved_basalt")), models().getExistingFile(texture("block/engraved_basalt")));
-		horizontalBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(texture("block/maw_guts")));
-		simpleBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), models().withExistingParent(RisusBlocks.MIRAGE_GRASS_BLOCK.getId().getPath(), "block/grass_block").renderType("minecraft:cutout").texture("top", texture("block/mirage_grass_block_top")));
+		axisBlock(RisusBlocks.ENGRAVED_BASALT.get(), models().getExistingFile(Risus.prefix("block/engraved_basalt")), models().getExistingFile(Risus.prefix("block/engraved_basalt")));
+		horizontalBlock(RisusBlocks.MAW_GUTS.get(), models().getExistingFile(Risus.prefix("block/maw_guts")));
+		simpleBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), models().withExistingParent(RisusBlocks.MIRAGE_GRASS_BLOCK.getId().getPath(), "block/grass_block").renderType("minecraft:cutout").texture("top", Risus.prefix("block/mirage_grass_block_top")));
 		simpleBlock(RisusBlocks.MIRAGE_SAND.get(), cubeAll(RisusBlocks.MIRAGE_SAND.get()));
 		simpleBlock(RisusBlocks.MIRAGE_NETHERRACK.get(), cubeAll(RisusBlocks.MIRAGE_NETHERRACK.get()));
 		simpleBlock(RisusBlocks.MIRAGE_END_STONE.get(), cubeAll(RisusBlocks.MIRAGE_END_STONE.get()));
-		directionalBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_scales_block")));
-		directionalBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), models().getExistingFile(texture("block/flattened_imitation_scales_block")));
+		directionalBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), models().cubeBottomTop("flattened_scales_block", Risus.prefix("block/flat_scales_block_side"), Risus.prefix("block/flat_scales_block_bottom"), Risus.prefix("block/flat_scales_block_top")));
+		directionalBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), models().getExistingFile(Risus.prefix("block/flattened_scales_block")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
-		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), texture("block/bondknot_log"), texture("block/bondknot_log_top"));
-		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), texture("block/bondknot_log"), texture("block/bondknot_log"));
+		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), Risus.prefix("block/bondknot_log"), Risus.prefix("block/bondknot_log_top"));
+		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), Risus.prefix("block/bondknot_log"), Risus.prefix("block/bondknot_log"));
 		getVariantBuilder(RisusBlocks.POPPING_BONDKNOT_LOG.get()).forAllStates(state -> {
 			ModelFile baseFile = models().withExistingParent(RisusBlocks.POPPING_BONDKNOT_LOG.getId().getPath() + "_base", "block/cube")
 					.texture("particle", Risus.prefix("block/bondknot_log"))
@@ -204,43 +206,43 @@ public class BlockModelGenerator extends BlockStateProvider {
 				}
 			}
 		});
-		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log_top"));
-		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), texture("block/stripped_bondknot_log"), texture("block/stripped_bondknot_log"));
+		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get(), Risus.prefix("block/stripped_bondknot_log"), Risus.prefix("block/stripped_bondknot_log_top"));
+		axisBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get(), Risus.prefix("block/stripped_bondknot_log"), Risus.prefix("block/stripped_bondknot_log"));
 		simpleBlock(RisusBlocks.BONDKNOT_PLANKS.get());
-		fenceBlock(RisusBlocks.BONDKNOT_FENCE.get(), texture("block/bondknot_planks"));
-		fenceGateBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get(), texture("block/bondknot_planks"));
-		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), texture("block/bondknot_planks"));
-		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), texture("block/bondknot_planks"));
-		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor"), true, ResourceLocation.withDefaultNamespace("cutout"));
-		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), texture("block/bondknot_door_bottom"), texture("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
-		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), texture("block/bondknot_planks"));
-		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), texture("block/bondknot_planks"));
-		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), texture("block/stripped_bondknot_log"));
-		builtinEntity(RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), texture("block/stripped_bondknot_log"));
-		stairsBlock(RisusBlocks.BONDKNOT_STAIRS.get(), texture("block/bondknot_planks"));
-		slabBlock(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_planks"), texture("block/bondknot_planks"));
+		fenceBlock(RisusBlocks.BONDKNOT_FENCE.get(), Risus.prefix("block/bondknot_planks"));
+		fenceGateBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get(), Risus.prefix("block/bondknot_planks"));
+		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), Risus.prefix("block/bondknot_planks"));
+		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), Risus.prefix("block/bondknot_planks"));
+		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor"), true, ResourceLocation.withDefaultNamespace("cutout"));
+		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), Risus.prefix("block/bondknot_door_bottom"), Risus.prefix("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
+		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), Risus.prefix("block/bondknot_planks"));
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), Risus.prefix("block/bondknot_planks"));
+		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), Risus.prefix("block/stripped_bondknot_log"));
+		builtinEntity(RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), Risus.prefix("block/stripped_bondknot_log"));
+		stairsBlock(RisusBlocks.BONDKNOT_STAIRS.get(), Risus.prefix("block/bondknot_planks"));
+		slabBlock(RisusBlocks.BONDKNOT_SLAB.get(), Risus.prefix("block/bondknot_planks"), Risus.prefix("block/bondknot_planks"));
 
 		simpleBlock(RisusBlocks.GRIMSTONE.get());
 		simpleBlock(RisusBlocks.ACTIVE_GRIMSTONE.get());
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
-		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), texture("block/grimstone"));
-		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), texture("block/grimstone_bricks"));
-		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), texture("block/polished_grimstone"));
-		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), texture("block/grimstone"), texture("block/grimstone"));
-		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), texture("block/grimstone_bricks"), texture("block/grimstone_bricks"));
-		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), texture("block/grimstone_bricks"), texture("block/polished_grimstone"));
-		horizontalBlock(RisusBlocks.CHISELED_GRIMSTONE.get(), models().getExistingFile(Risus.prefix("block/chiseled_grimstone")));
-		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), texture("block/grimstone"));
-		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), texture("block/grimstone_bricks"));
-		wallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), texture("block/polished_grimstone"));
+		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), Risus.prefix("block/grimstone"));
+		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), Risus.prefix("block/grimstone_bricks"));
+		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), Risus.prefix("block/polished_grimstone"));
+		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), Risus.prefix("block/grimstone"), Risus.prefix("block/grimstone"));
+		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), Risus.prefix("block/grimstone_bricks"), Risus.prefix("block/grimstone_bricks"));
+		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), Risus.prefix("block/grimstone_bricks"), Risus.prefix("block/polished_grimstone"));
+		simpleBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
+		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), Risus.prefix("block/grimstone"));
+		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), Risus.prefix("block/grimstone_bricks"));
+		wallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), Risus.prefix("block/polished_grimstone"));
 
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
 		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
-		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), texture("block/linear_ritual_block_side"), texture("block/linear_ritual_block_top"));
+		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
 
 		simpleBlock(RisusBlocks.DARKNESS.get(), models().cubeAll("darkness", Risus.prefix("block/darkness")).renderType("minecraft:cutout"));
 		simpleBlock(RisusBlocks.SCAB.get());
@@ -252,8 +254,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.VEINS.get(), models().cross("veins", Risus.prefix("block/veins")).renderType("minecraft:cutout"));
 
 		simpleBlock(RisusBlocks.TISSUE.get());
-		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), texture("block/tissue"));
-		slabBlock(RisusBlocks.TISSUE_SLAB.get(), texture("block/tissue"), texture("block/tissue"));
+		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue"));
+		slabBlock(RisusBlocks.TISSUE_SLAB.get(), Risus.prefix("block/tissue"), Risus.prefix("block/tissue"));
 		wallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
@@ -262,49 +264,51 @@ public class BlockModelGenerator extends BlockStateProvider {
 		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
 		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
-		stairsBlock(RisusBlocks.BONE_STAIRS.get(), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
-		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), texture("block/bone_block_side"), texture("block/bone_block_side"), texture("block/bone_block_side"));
-		slabBlock(RisusBlocks.BONE_SLAB.get(), texture("block/bone_block"), texture("block/bone_block_side"), texture("block/bone_block_top"), texture("block/bone_block_top"));
-		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), texture("block/bone_block_side"), texture("block/bone_block_side"));
+		stairsBlock(RisusBlocks.BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_top"), Risus.prefix("block/bone_block_top"));
+		slabBlock(RisusBlocks.BONE_SLAB.get(), ResourceLocation.withDefaultNamespace("block/bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_top"), Risus.prefix("block/bone_block_top"));
+		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
+		slabBlock(RisusBlocks.FULL_BONE_SLAB.get(), Risus.prefix("block/full_bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
+		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 
-		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(texture("block/eye_ender")));
-		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(texture("block/eye_bleached")));
-		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(texture("block/eye_bloodshot")));
-		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(texture("block/eye_golden")));
-		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(texture("block/eye_emerald")));
+		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().cubeBottomTop("eye_ender", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_ender")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().cubeBottomTop("eye_bleached", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_bleached")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().cubeBottomTop("eye_bloodshot", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_bloodshot")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().cubeBottomTop("eye_golden", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_golden")));
+		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().cubeBottomTop("eye_emerald", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_emerald")));
 
-		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().getExistingFile(texture("block/fleshy_skin")));
+		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().cubeBottomTop("fleshy_skin", Risus.prefix("block/side_fleshy_skin"), Risus.prefix("block/tissue"), Risus.prefix("block/skin")));
 		simpleBlock(RisusBlocks.SKIN.get());
-		directionalBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get(), models().getExistingFile(texture("block/hairy_fleshy_skin")));
-		axisBlock(RisusBlocks.BUNDLE_OF_HAIR.get(), texture("block/bundle_of_hair_side"), texture("block/bundle_of_hair_top"));
+		simpleBlock(RisusBlocks.HAIRY_SKIN.get(), models().getExistingFile(Risus.prefix("block/hairy_skin")));
+		directionalBlock(RisusBlocks.HAIRY_FLESHY_SKIN.get(), models().getExistingFile(Risus.prefix("block/hairy_fleshy_skin")));
+		axisBlock(RisusBlocks.BUNDLE_OF_HAIR.get(), Risus.prefix("block/bundle_of_hair_side"), Risus.prefix("block/bundle_of_hair_top"));
 
 
-		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/heart_transplant")));
-		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(texture("block/potted_heart_transplant")));
-		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().getExistingFile(texture("block/regen_rose")));
-		simpleBlock(RisusBlocks.POTTED_REGEN_ROSE.get(), models().getExistingFile(texture("block/potted_regen_rose")));
+		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(Risus.prefix("block/heart_transplant")));
+		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(Risus.prefix("block/potted_heart_transplant")));
+		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().cross("regen_rose", Risus.prefix("block/regen_rose")));
+		simpleBlock(RisusBlocks.POTTED_REGEN_ROSE.get(), models().withExistingParent("potted_regen_rose", "block/flower_pot_cross").texture("plant", Risus.prefix("block/regen_rose")).renderType("cutout"));
 		getVariantBuilder(RisusBlocks.BIG_CHAIN.get())
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y)
-				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).addModel()
+				.modelForState().modelFile(models().getExistingFile(Risus.prefix("block/big_chain"))).addModel()
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z)
-				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).rotationX(90).addModel()
+				.modelForState().modelFile(models().getExistingFile(Risus.prefix("block/big_chain"))).rotationX(90).addModel()
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X)
-				.modelForState().modelFile(models().getExistingFile(texture("block/big_chain"))).rotationX(90).rotationY(90).addModel();
+				.modelForState().modelFile(models().getExistingFile(Risus.prefix("block/big_chain"))).rotationX(90).rotationY(90).addModel();
 		torchBlock(RisusBlocks.JOYFLAME_TORCH, RisusBlocks.JOYFLAME_WALL_TORCH);
 		getVariantBuilder(RisusBlocks.JOYFLAME_CAMPFIRE.get()).forAllStatesExcept(state -> {
-			ModelFile on = models().withExistingParent("joyflame_campfire", ResourceLocation.withDefaultNamespace("block/template_campfire")).texture("fire", texture("block/joyflame_campfire_fire")).texture("lit_log", texture("block/joyflame_campfire_log_lit")).renderType("minecraft:cutout");
+			ModelFile on = models().withExistingParent("joyflame_campfire", ResourceLocation.withDefaultNamespace("block/template_campfire")).texture("fire", Risus.prefix("block/joyflame_campfire_fire")).texture("lit_log", Risus.prefix("block/joyflame_campfire_log_lit")).renderType("minecraft:cutout");
 			ModelFile off = models().withExistingParent("joyflame_campfire_off", ResourceLocation.withDefaultNamespace("block/campfire_off")).renderType("minecraft:cutout");
 			return ConfiguredModel.builder().modelFile(state.getValue(CampfireBlock.LIT) ? on : off).rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360).build();
 		}, CampfireBlock.WATERLOGGED, CampfireBlock.SIGNAL_FIRE);
 		getVariantBuilder(RisusBlocks.JOYFLAME_LANTERN.get()).forAllStatesExcept(state -> {
-			ModelFile normal = models().withExistingParent("joyflame_lantern", ResourceLocation.withDefaultNamespace("block/template_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
-			ModelFile hanging = models().withExistingParent("joyflame_lantern_hanging", ResourceLocation.withDefaultNamespace("block/template_hanging_lantern")).texture("lantern", texture("block/joyflame_lantern")).renderType("minecraft:cutout");
+			ModelFile normal = models().withExistingParent("joyflame_lantern", ResourceLocation.withDefaultNamespace("block/template_lantern")).texture("lantern", Risus.prefix("block/joyflame_lantern")).renderType("minecraft:cutout");
+			ModelFile hanging = models().withExistingParent("joyflame_lantern_hanging", ResourceLocation.withDefaultNamespace("block/template_hanging_lantern")).texture("lantern", Risus.prefix("block/joyflame_lantern")).renderType("minecraft:cutout");
 			return ConfiguredModel.builder().modelFile(state.getValue(LanternBlock.HANGING) ? hanging : normal).build();
 		}, LanternBlock.WATERLOGGED);
 
 		getVariantBuilder(RisusBlocks.ZIT.get()).forAllStates(state -> {
-			ModelFile normal = models().getExistingFile(texture("block/zit"));
-			ModelFile popped = models().getExistingFile(texture("block/zit_popped"));
+			ModelFile normal = models().getExistingFile(Risus.prefix("block/zit"));
+			ModelFile popped = models().getExistingFile(Risus.prefix("block/zit_popped"));
 			int x = 0;
 			int y = 0;
 			switch (state.getValue(ZitBlock.FACING)) {
@@ -326,9 +330,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(state.getValue(ZitBlock.POPPED) ? popped : normal).rotationX(x).rotationY(y).build();
 		});
 
-		ModelFile floor = models().withExistingParent("joyflame_fire_floor", ResourceLocation.withDefaultNamespace("block/template_fire_floor")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
-		ModelFile side = models().withExistingParent("joyflame_fire_side", ResourceLocation.withDefaultNamespace("block/template_fire_side")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
-		ModelFile sideAlt = models().withExistingParent("joyflame_fire_side_alt", ResourceLocation.withDefaultNamespace("block/template_fire_side_alt")).texture("fire", texture("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile floor = models().withExistingParent("joyflame_fire_floor", ResourceLocation.withDefaultNamespace("block/template_fire_floor")).texture("fire", Risus.prefix("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile side = models().withExistingParent("joyflame_fire_side", ResourceLocation.withDefaultNamespace("block/template_fire_side")).texture("fire", Risus.prefix("block/joyflame_fire")).renderType("minecraft:cutout");
+		ModelFile sideAlt = models().withExistingParent("joyflame_fire_side_alt", ResourceLocation.withDefaultNamespace("block/template_fire_side_alt")).texture("fire", Risus.prefix("block/joyflame_fire")).renderType("minecraft:cutout");
 
 		getMultipartBuilder(RisusBlocks.JOYFLAME_FIRE.get())
 				.part().modelFile(floor).addModel().end()
@@ -346,8 +350,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 	}
 
 	public void torchBlock(Supplier<? extends Block> block, Supplier<? extends Block> wall) {
-		ModelFile torch = models().torch(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), texture("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
-		ModelFile torchwall = models().torchWall(BuiltInRegistries.BLOCK.getKey(wall.get()).getPath(), texture("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
+		ModelFile torch = models().torch(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), Risus.prefix("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
+		ModelFile torchwall = models().torchWall(BuiltInRegistries.BLOCK.getKey(wall.get()).getPath(), Risus.prefix("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath())).renderType("cutout");
 		simpleBlock(block.get(), torch);
 		getVariantBuilder(wall.get()).forAllStates(state ->
 				ConfiguredModel.builder()
@@ -386,11 +390,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.face(Direction.WEST).texture("#west2").cullface(Direction.WEST).emissivity(layer2emW, skylightLevel).tintindex(0).end()
 				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU, skylightLevel).tintindex(0).end()
 				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD, skylightLevel).tintindex(0).end().end();
-	}
-
-
-	private ResourceLocation texture(String name) {
-		return Risus.prefix(name);
 	}
 
 	@Nonnull

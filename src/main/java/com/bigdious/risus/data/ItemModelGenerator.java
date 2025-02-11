@@ -36,19 +36,18 @@ public class ItemModelGenerator extends ItemModelProvider {
 		//blocks
 		toBlock(RisusBlocks.ALTERATION_CATALYST.get());
 		toBlock(RisusBlocks.ANGEL_ALTAR.get());
-		toBlockModel(RisusBlocks.FLESHY_SPAWNER.get(), texture("block/fleshy_spawner"));
-		toBlockModel(RisusBlocks.INACTIVE_HOLDER.get(), texture("block/inactive_holder"));
-		toBlockModel(RisusBlocks.DEPTH_VASE.get(), texture("block/decoy_vase"));
+		toBlock(RisusBlocks.FLESHY_SPAWNER.get());
+		toBlock(RisusBlocks.INACTIVE_HOLDER.get());
 		toBlock(RisusBlocks.DISPLAY_NOTCH.get());
-		toBlockModel(RisusBlocks.ORGANIC_MATTER_BLOCK.get(), texture("block/organic_matter_block"));
-		toBlockModel(RisusBlocks.COPPER_AMALGAM.get(), texture("block/copper_amalgam"));
-		toBlockModel(RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), texture("block/exposed_copper_amalgam"));
-		toBlockModel(RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), texture("block/weathered_copper_amalgam"));
-		toBlockModel(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), texture("block/oxidized_copper_amalgam"));
-		toBlockModel(RisusBlocks.WAXED_COPPER_AMALGAM.get(), texture("block/copper_amalgam"));
-		toBlockModel(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), texture("block/exposed_copper_amalgam"));
-		toBlockModel(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), texture("block/weathered_copper_amalgam"));
-		toBlockModel(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), texture("block/oxidized_copper_amalgam"));
+		toBlock(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
+		toBlock(RisusBlocks.COPPER_AMALGAM.get());
+		toBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM.get());
+		toBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM.get());
+		toBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get());
+		toBlockModel(RisusBlocks.WAXED_COPPER_AMALGAM.get(), Risus.prefix("block/copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), Risus.prefix("block/exposed_copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), Risus.prefix("block/weathered_copper_amalgam"));
+		toBlockModel(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), Risus.prefix("block/oxidized_copper_amalgam"));
 		toBlock(RisusBlocks.LAUGHING_STALK.get());
 		toBlock(RisusBlocks.ASHEN_REMAINS.get());
 		toBlock(RisusBlocks.SMILING_REMAINS.get());
@@ -56,43 +55,43 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.ENGRAVED_BASALT.get());
 		toBlock(RisusBlocks.MAW_GUTS.get());
 		toBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get());
-		toBlock(RisusBlocks.IMITATION_SCALEPLATE.get());
+		toBlockModel(RisusBlocks.IMITATION_SCALEPLATE.get(), Risus.prefix("block/gluttony_scaleplate"));
 		toBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
 		toBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
-		toBlockModel(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), texture("block/flattened_scales_block"));
-		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), texture("block/flattened_imitation_scales_block"));
+		toBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
+		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), Risus.prefix("block/flattened_scales_block"));
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 		toBlock(RisusBlocks.MIRAGE_SAND.get());
 		toBlock(RisusBlocks.MIRAGE_NETHERRACK.get());
 		toBlock(RisusBlocks.MIRAGE_END_STONE.get());
-		toBlockModel(RisusBlocks.BLOODWEAVE.get(), texture("block/bloodweave_core"));
-		toBlockModel(RisusBlocks.SCAB.get(), texture("block/scab"));
-		toBlockModel(RisusBlocks.COAGULATED_BLOOD_BLOCK.get(), texture("block/coagulated_blood_block"));
-		toBlockModel(RisusBlocks.WEAVER_NEST.get(), Risus.prefix("block/weaver_nest"));
+		toBlockModel(RisusBlocks.BLOODWEAVE.get(), Risus.prefix("block/bloodweave_core"));
+		toBlock(RisusBlocks.SCAB.get());
+		toBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
+		toBlock(RisusBlocks.WEAVER_NEST.get());
 		toBlock(RisusBlocks.BOND_GLASS.get());
 		toBlock(RisusBlocks.CONTAINMENT_GLASS.get());
 		toBlock(RisusBlocks.BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.BONDKNOT_WOOD.get());
-		toBlockModel(RisusBlocks.POPPING_BONDKNOT_LOG.get(), texture("block/popping_bondknot_log_north"));
-		toBlockModel(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), texture("block/popping_bondknot_wood_north"));
+		toBlockModel(RisusBlocks.POPPING_BONDKNOT_LOG.get(), Risus.prefix("block/popping_bondknot_log_north"));
+		toBlockModel(RisusBlocks.POPPING_BONDKNOT_WOOD.get(), Risus.prefix("block/popping_bondknot_wood_north"));
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
 		toBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 		toBlock(RisusBlocks.BONDKNOT_PLANKS.get());
-		toBlockModel(RisusBlocks.BONDKNOT_SLAB.get(), texture("block/bondknot_slab"));
+		toBlock(RisusBlocks.BONDKNOT_SLAB.get());
 		toBlock(RisusBlocks.BONDKNOT_STAIRS.get());
 		toBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		toBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 		getBuilder(RisusBlocks.BONDKNOT_FENCE.getId().getPath())
 				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/fence_inventory")))
-				.texture("texture", texture("block/bondknot_planks"));
+				.texture("texture", Risus.prefix("block/bondknot_planks"));
 		getBuilder(RisusBlocks.BONDKNOT_BUTTON.getId().getPath())
 				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/button_inventory")))
-				.texture("texture", texture("block/bondknot_planks"));
-		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), texture("block/bondknot_trapdoor_bottom"));
-		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), texture("item/bondknot_door"));
-		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), texture("item/bondknot_sign"));
-		generated(RisusBlocks.BONDKNOT_HANGING_SIGN.getId().getPath(), texture("item/bondknot_hanging_sign"));
+				.texture("texture", Risus.prefix("block/bondknot_planks"));
+		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor_bottom"));
+		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), Risus.prefix("item/bondknot_door"));
+		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), Risus.prefix("item/bondknot_sign"));
+		generated(RisusBlocks.BONDKNOT_HANGING_SIGN.getId().getPath(), Risus.prefix("item/bondknot_hanging_sign"));
 		toBlock(RisusBlocks.BABY_RIBCAGE.get());
 		toBlock(RisusBlocks.RIBCAGE.get());
 		toBlock(RisusBlocks.GRIMSTONE.get());
@@ -107,13 +106,13 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
 		getBuilder(RisusBlocks.GRIMSTONE_WALL.getId().getPath())
 				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", texture("block/grimstone"));
+				.texture("wall", Risus.prefix("block/grimstone"));
 		getBuilder(RisusBlocks.GRIMSTONE_BRICKS_WALL.getId().getPath())
 				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", texture("block/grimstone_bricks"));
+				.texture("wall", Risus.prefix("block/grimstone_bricks"));
 		getBuilder(RisusBlocks.POLISHED_GRIMSTONE_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-			.texture("wall", texture("block/polished_grimstone"));
+			.texture("wall", Risus.prefix("block/polished_grimstone"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
@@ -128,7 +127,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.ROTTED_TISSUE.get(), Risus.prefix("block/tissue/rotting_tissue_post"));
 		toBlockModel(RisusBlocks.DECOMPOSED_TISSUE.get(), Risus.prefix("block/tissue/decomposing_tissue_post"));
 		toBlockModel(RisusBlocks.DECAYED_TISSUE.get(), Risus.prefix("block/tissue/decaying_tissue_post"));
-		toBlockModel(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue_stairs"));
+		toBlock(RisusBlocks.TISSUE_STAIRS.get());
 		toBlock(RisusBlocks.TISSUE_SLAB.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
@@ -216,7 +215,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.HEAD, boomstick)
 			.end();
 		singleTexTool(RisusItems.SCYTHE);
-		ItemModelBuilder scythe = nested().parent(getExistingFile(Risus.prefix("item/scythe_held"))).texture("scythe", Risus.prefix("item/scythe"));
+		ItemModelBuilder scythe = withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")).texture("texture", Risus.prefix("item/scythe"));
 		withExistingParent(RisusItems.SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated("scythe_base", Risus.prefix("item/scythe_item")))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, scythe)
@@ -226,7 +225,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.HEAD, scythe)
 			.end();
 		singleTexTool(RisusItems.SOUL_SCYTHE);
-		ItemModelBuilder soul_scythe = nested().parent(getExistingFile(Risus.prefix("item/soul_scythe_held"))).texture("soul_scythe", Risus.prefix("item/soul_scythe"));
+		ItemModelBuilder soul_scythe = withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")).texture("texture", Risus.prefix("item/soul_scythe"));
 		withExistingParent(RisusItems.SOUL_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated("soul_scythe_base", Risus.prefix("item/soul_scythe_item")))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, soul_scythe)
@@ -236,7 +235,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.HEAD, soul_scythe)
 			.end();
 		singleTexTool(RisusItems.FIRE_SCYTHE);
-		ItemModelBuilder fire_scythe = nested().parent(getExistingFile(Risus.prefix("item/fire_scythe_held"))).texture("fire_scythe", Risus.prefix("item/fire_scythe"));
+		ItemModelBuilder fire_scythe = withExistingParent("fire_scythe_held", Risus.prefix("item/template_held_scythe")).texture("texture", Risus.prefix("item/fire_scythe"));
 		withExistingParent(RisusItems.FIRE_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated("fire_scythe_base", Risus.prefix("item/fire_scythe_item")))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, fire_scythe)
@@ -246,7 +245,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.HEAD, fire_scythe)
 			.end();
 		singleTexTool(RisusItems.CINDERGLEE_SCYTHE);
-		ItemModelBuilder cinderglee_scythe = nested().parent(getExistingFile(Risus.prefix("item/cinderglee_scythe_held"))).texture("cinderglee_scythe", Risus.prefix("item/cinderglee_scythe"));
+		ItemModelBuilder cinderglee_scythe = withExistingParent("cinderglee_scythe_held", Risus.prefix("item/template_held_scythe")).texture("texture", Risus.prefix("item/cinderglee_scythe"));
 		withExistingParent(RisusItems.CINDERGLEE_SCYTHE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated("cinderglee_scythe_base", Risus.prefix("item/cinderglee_scythe_item")))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, cinderglee_scythe)
@@ -279,7 +278,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusBlocks.JOYFLAME_LANTERN);
 		singleTex(RisusItems.JOYFLAME_TORCH);
 		singleTex(RisusBlocks.HEART_TRANSPLANT);
-		singleTex(RisusBlocks.VEINS);
+		singleTex(RisusItems.VEINS);
 		singleTex(RisusBlocks.BIG_CHAIN);
 		generatedRenderType(RisusBlocks.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
 		singleTex(RisusItems.MEMORY1_ITEM);
@@ -302,7 +301,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private void toBlock(Block b) {
-		toBlockModel(b, texture("block/" + Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(b)).getPath()));
+		toBlockModel(b, Risus.prefix("block/" + Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(b)).getPath()));
 	}
 
 	private void toBlockModel(Block b, ResourceLocation model) {
@@ -322,15 +321,15 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private ItemModelBuilder singleTex(String texture) {
-		return generated(texture, "item/generated", texture("item/" + texture));
+		return generated(texture, "item/generated", Risus.prefix("item/" + texture));
 	}
 
 	private ItemModelBuilder singleTex(ItemLike item) {
-		return generated(BuiltInRegistries.ITEM.getKey(item.asItem()).getPath(), "item/generated", texture("item/" + BuiltInRegistries.ITEM.getKey(item.asItem()).getPath()));
+		return generated(BuiltInRegistries.ITEM.getKey(item.asItem()).getPath(), "item/generated", Risus.prefix("item/" + BuiltInRegistries.ITEM.getKey(item.asItem()).getPath()));
 	}
 
 	private ItemModelBuilder singleTexTool(DeferredHolder<Item, Item> item) {
-		return generated(item.getId().getPath(), "item/handheld", texture("item/" + item.getId().getPath()));
+		return generated(item.getId().getPath(), "item/handheld", Risus.prefix("item/" + item.getId().getPath()));
 	}
 
 	private ItemModelBuilder generatedRenderType(String name, @Nullable String renderType, ResourceLocation... layers) {
@@ -346,10 +345,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 			builder = builder.renderType(renderType);
 		}
 		return builder;
-	}
-
-	private ResourceLocation texture(String name) {
-		return Risus.prefix(name);
 	}
 
 	//from Aether
