@@ -8,13 +8,10 @@ import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.collect.Maps;
-import dev.architectury.event.events.common.TickEvent;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.OutgoingChatMessage;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -23,6 +20,7 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -38,7 +36,6 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -57,16 +54,11 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class RisusEvents {
 
@@ -379,29 +371,27 @@ public class RisusEvents {
 		}
 	}
 
-	@SuppressWarnings("SameReturnValue")
 	private static void onLivingDeath(@NotNull LivingDeathEvent event) {
 		LivingEntity dyingEntity = event.getEntity();
 		Level level = dyingEntity.level();
 		if (!level.isClientSide()) {
-			if (dyingEntity.getMainHandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get()) || dyingEntity.getOffhandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get())) {
-				dyingEntity.setHealth(1.0F);
-				dyingEntity.removeAllEffects();
-				dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4, false, false));
-				dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 2, false, false));
-				dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
-				dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
-//				level.broadcastEntityEvent(dyingEntity, (byte) 35);
-				if (dyingEntity.getMainHandItem().is(RisusItems.TOTEM_OF_UNYIELDING.get())) {
-					dyingEntity.getMainHandItem().shrink(1);
-				} else {
-					dyingEntity.getOffhandItem().shrink(1);
+			for (InteractionHand interactionhand : InteractionHand.values()) {
+				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
+				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING)) {
+					dyingEntity.setHealth(1.0F);
+					dyingEntity.removeAllEffects();
+					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4, false, false));
+					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 2, false, false));
+					dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
+					dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
+					stack.shrink(1);
+					level.playSound(null, dyingEntity.blockPosition(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
+					if (dyingEntity instanceof ServerPlayer player) {
+						PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(stack));
+					}
+					event.setCanceled(true);
+					return;
 				}
-				level.playSound(null, dyingEntity.getOnPos(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
-				if (dyingEntity instanceof ServerPlayer player) {
-					PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(new ItemStack(RisusItems.TOTEM_OF_UNYIELDING.get()), RisusSoundEvents.SQUIRT.getKey()));
-				}
-				event.setCanceled(true);
 			}
 		}
 	}

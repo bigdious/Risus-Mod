@@ -6,16 +6,20 @@ import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
+import com.google.common.base.Suppliers;
+import net.minecraft.Util;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.apache.logging.log4j.LogManager;
@@ -23,18 +27,18 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 @Mod(Risus.MODID)
 public class Risus {
 	public static final String MODID = "risus";
 
-	public static final GameRules.Key<GameRules.BooleanValue> HOLDERS_STEAL_FROM_MONSTERS = GameRules.register("holdersStealFromMonsters",
-		GameRules.Category.MOBS,
-		GameRules.BooleanValue.create(true));
+	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> HOLDERS_STEAL_FROM_MONSTERS = Suppliers.memoize(() -> GameRules.register("holdersStealFromMonsters", GameRules.Category.MOBS, GameRules.BooleanValue.create(true)));
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public Risus(IEventBus bus, Dist dist) {
+		Util.backgroundExecutor().execute(HOLDERS_STEAL_FROM_MONSTERS::get);
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
 		RisusBlocks.BLOCKS.register(bus);
 		RisusDataAttachments.ATTACHMENT_TYPES.register(bus);
@@ -56,13 +60,13 @@ public class Risus {
 
 
 		bus.addListener(this::registerPackets);
+		bus.addListener(this::registerTypes);
 		bus.addListener(this::gatherData);
 		RisusEvents.initEvents(bus);
 
 		if (dist.isClient()) {
 			RisusClientEvents.initEvents(bus);
 		}
-
 	}
 
 	public void registerPackets(RegisterPayloadHandlersEvent event) {
@@ -71,6 +75,9 @@ public class Risus {
 		registrar.playToClient(UnyieldingTotemPacket.TYPE, UnyieldingTotemPacket.STREAM_CODEC, UnyieldingTotemPacket::handle);
 	}
 
+	public void registerTypes(BlockEntityTypeAddBlocksEvent event) {
+		event.modify(BlockEntityType.MOB_SPAWNER, RisusBlocks.FLESHY_SPAWNER.get());
+	}
 
 	private void gatherData(GatherDataEvent event) {
 		PackOutput packOutput = event.getGenerator().getPackOutput();

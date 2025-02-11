@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -125,28 +126,12 @@ public class ZitBlock extends DirectionalBlock implements SimpleMultiloggedBlock
 	}
 
 	private void pop(Level level, BlockState state, BlockPos pos) {
+		Direction dir = state.getValue(FACING);
 		LlamaSpit spit = new LlamaSpit(EntityType.LLAMA_SPIT, level);
-		if (state.getValue(FACING) == Direction.UP) {
-			spit.setPosRaw(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-			spit.shoot(0, 10, 0, 1.5F, 11.0F);
-		} else if (state.getValue(FACING) == Direction.DOWN) {
-			spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
-			spit.shoot(0, -10, 0, 1.5F, 11.0F);
-		} else if (state.getValue(FACING) == Direction.NORTH) {
-			spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 1);
-			spit.shoot(0, 0, -10, 1.5F, 11.0F);
-		} else if (state.getValue(FACING) == Direction.SOUTH) {
-			spit.setPosRaw(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ());
-			spit.shoot(0, 0, +10, 1.5F, 11.0F);
-		} else if (state.getValue(FACING) == Direction.EAST) {
-			spit.setPosRaw(pos.getX(), pos.getY() + 0.5, pos.getZ() + 0.5);
-			spit.shoot(10, 0, 0, 1.5F, 11.0F);
-		} else if (state.getValue(FACING) == Direction.WEST) {
-			spit.setPosRaw(pos.getX() + 1, pos.getY() + 0.5, pos.getZ() + 0.5);
-			spit.shoot(-10, 0, 0, 1.5F, 11.0F);
-		}
-		level.playSound(null, pos, SoundEvents.LLAMA_SPIT, SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
+		spit.setPos(Vec3.atCenterOf(pos));
+		spit.shoot(dir.getStepX() * 10.0D, dir.getStepY() * 10.0D, dir.getStepZ() * 10.0D, 1.5F, 11.0F);
 		level.addFreshEntity(spit);
+		level.playSound(null, pos, SoundEvents.LLAMA_SPIT, SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
 		level.setBlockAndUpdate(pos, state.setValue(POPPED, true));
 		level.scheduleTick(pos, this, 60);
 	}

@@ -54,7 +54,7 @@ public class Holder extends Monster {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class , true, living ->
-			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (this.level().getGameRules().getBoolean(Risus.HOLDERS_STEAL_FROM_MONSTERS) ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
+			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (this.level().getGameRules().getBoolean(Risus.HOLDERS_STEAL_FROM_MONSTERS.get()) ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
 		));
 	}
 	@Override
