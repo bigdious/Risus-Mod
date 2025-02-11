@@ -216,14 +216,23 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			int x = QuartPos.fromBlock(dPos.getX());
 			int z = QuartPos.fromBlock(dPos.getZ());
 
+			// Get chunk at random relative position
 			LevelChunk chunkAt = level.getChunk(dPos.getX() >> 4, dPos.getZ() >> 4);
+			// Iterate over all sections in the chunk
 			for (LevelChunkSection section : chunkAt.getSections()) {
+				// Iterate over all blocks in quarters in the section
 				for (int sy = 0; sy < 16; sy += 4) {
+					// Get y position clamped between the minY(0) and maxY(320)
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
+					
 					// Holder<Biome>(x, y, z).is(biome) is deprecated and could cause issues in the future
+					// Check if the biome at the position between index 0 and 3 is the same as the biome we want to set
 					if (section.getBiomes().get(x & 3, y & 3, z & 3) == (biome))
 						continue;
+
+					// Set the biome at the position
 					if (section.getBiomes() instanceof PalettedContainer<Holder<Biome>> container)
+						// set the biome at the x y z with all 3 coordinates clamped between index 0 and 3 to fit in the 4x4x4 Quarter
 						container.set(x & 3, y & 3, z & 3, biome);
 				}
 			}
