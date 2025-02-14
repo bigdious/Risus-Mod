@@ -6,7 +6,9 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -21,12 +23,32 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.pattern.BlockInWorld;
+import net.minecraft.world.level.block.state.pattern.BlockPattern;
+import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
+import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
+
+import java.util.Map;
 
 public class ScytheItem extends SwordItem {
+
+	public static final BlockPattern RITUAL = BlockPatternBuilder.start().aisle("crc").aisle("rbr").aisle("crc")
+		.where('c', BlockInWorld.hasState(BlockStatePredicate.forBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get())))
+		.where('r', BlockInWorld.hasState(BlockStatePredicate.forBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get())))
+		.where('b', BlockInWorld.hasState(BlockStatePredicate.forBlock(RisusBlocks.BLOOD_FLUID_BLOCK.get()))).build();
+
+	public static final Map<Block, ItemLike> RITUAL_CONVERSIONS = Map.of(
+		Blocks.CAMPFIRE, RisusItems.FIRE_SCYTHE,
+		Blocks.SOUL_CAMPFIRE, RisusItems.SOUL_SCYTHE,
+		RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusItems.CINDERGLEE_SCYTHE
+	);
 
 	public ScytheItem(Tier material, Properties properties) {
 		super(material, properties);
@@ -37,12 +59,14 @@ public class ScytheItem extends SwordItem {
 			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), 2.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.withModifierAdded(Attributes.SWEEPING_DAMAGE_RATIO, new AttributeModifier(Risus.prefix("range_modifier"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
 	}
+
 	@Override
 	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
 		return material.is(RisusItems.GLUTTONY_SCALES);
 	}
+
 	@Override
-	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
 		return
 			enchantment.is(Enchantments.SHARPNESS) ||
 				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
@@ -52,107 +76,44 @@ public class ScytheItem extends SwordItem {
 				enchantment.is(Enchantments.UNBREAKING) ||
 				enchantment.is(Enchantments.FIRE_ASPECT) ||
 				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+				enchantment.is(Enchantments.VANISHING_CURSE);
 	}
 
 	@Override
-	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-			enchantment.is(Enchantments.LOOTING)||
-			enchantment.is(Enchantments.SMITE)||
-			enchantment.is(Enchantments.MENDING)||
-			enchantment.is(Enchantments.UNBREAKING)||
-			enchantment.is(Enchantments.FIRE_ASPECT)||
-			enchantment.is(Enchantments.KNOCKBACK)||
-			enchantment.is(Enchantments.VANISHING_CURSE)
-			;
-	}
-	@Override
-	public InteractionResult useOn(UseOnContext pContext) {
-		Level level = pContext.getLevel();
-		BlockPos blockpos = pContext.getClickedPos();
+	public InteractionResult useOn(UseOnContext context) {
+		Level level = context.getLevel();
+		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate = level.getBlockState(blockpos);
-		Player player = pContext.getPlayer();
+		Player player = context.getPlayer();
 		ItemStack scythe = player.getMainHandItem();
-		if (level.getBlockState(blockpos.below().east()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().west()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().south()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().north()).is(RisusBlocks.LINEAR_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().north().east()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().north().west()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().south().east()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below().south().west()).is(RisusBlocks.CURVED_RITUAL_BLOCK) &&
-			level.getBlockState(blockpos.below()).is(RisusBlocks.BLOOD_FLUID_BLOCK)
-		) {
-			if (blockstate.getValue(RisusCampfireBlock.LIT) && blockstate.is(RisusBlocks.JOYFLAME_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
-				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.CINDERGLEE_SCYTHE.get()));
-				item.getItem().applyComponents(scythe.getComponentsPatch());
-				player.level().addFreshEntity(item);
-				if (!level.isClientSide()) {
-					level.setBlock(blockpos, RisusBlocks.JOYFLAME_CAMPFIRE.get().defaultBlockState().setValue(RisusCampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(RisusCampfireBlock.FACING)), 11);
-				}
+		if (!scythe.is(RisusItems.SCYTHE)) return super.useOn(context);
+		if (RITUAL.find(level, blockpos.below()) != null) {
+			if (RITUAL_CONVERSIONS.containsKey(blockstate.getBlock()) && blockstate.getValue(CampfireBlock.LIT)) {
+				player.spawnAtLocation(this.transformAndRemoveEnchants(scythe, RITUAL_CONVERSIONS.get(blockstate.getBlock())));
+				level.setBlock(blockpos, blockstate.trySetValue(CampfireBlock.LIT, false), 11);
 				scythe.shrink(1);
 				if (level.isClientSide()) {
 					for (int i = 0; i < 20; i++) {
 						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
-							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							(blockpos.getX() - 1F) + (level.getRandom().nextFloat() * 2.75F),
 							blockpos.getY(),
-							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
+							(blockpos.getZ() - 1F) + (level.getRandom().nextFloat() * 2.75F),
 							0.0F, 0.1F, 0.0F);
 					}
 				}
-				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1F, 1F);
-				return InteractionResult.SUCCESS;
-			}
-			if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.SOUL_CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
-				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.SOUL_SCYTHE.get()));
-				item.getItem().applyComponents(scythe.getComponentsPatch());
-				if (scythe.getEnchantmentLevel(level.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SMITE)) > 0) {
-					item.getItem();
-				}
-				player.level().addFreshEntity(item);
-				if (!level.isClientSide()) {
-					level.setBlock(blockpos, Blocks.SOUL_CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
-				}
-				scythe.shrink(1);
-				if (level.isClientSide()) {
-					for (int i = 0; i < 20; i++) {
-						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
-							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
-							blockpos.getY(),
-							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
-							0.0F, 0.1F, 0.0F);
-					}
-				}
-				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1F);
-				return InteractionResult.SUCCESS;
-			}
-			if (blockstate.getValue(CampfireBlock.LIT) && blockstate.is(Blocks.CAMPFIRE) && scythe.is(RisusItems.SCYTHE.get())) {
-				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), new ItemStack(RisusItems.FIRE_SCYTHE.get()));
-				item.getItem().applyComponents(scythe.getComponentsPatch());
-				player.level().addFreshEntity(item);
-				if (!level.isClientSide()) {
-					level.setBlock(blockpos, Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.LIT, false).setValue(RisusCampfireBlock.FACING, blockstate.getValue(CampfireBlock.FACING)), 11);
-				}
-				scythe.shrink(1);
-				if (level.isClientSide()) {
-					for (int i = 0; i < 20; i++) {
-						level.addParticle(RisusParticles.ALTERATION_FINISHED.get(),
-							(blockpos.getX() -1F) + (level.getRandom().nextFloat() * 2.75F),
-							blockpos.getY(),
-							(blockpos.getZ() -1F) + (level.getRandom().nextFloat() * 2.75F),
-							0.0F, 0.1F, 0.0F);
-					}
-				}
-				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1F);
+				level.playSound(null, blockpos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS);
 				return InteractionResult.SUCCESS;
 			}
 		}
 		return InteractionResult.FAIL;
 	}
 
+	private ItemStack transformAndRemoveEnchants(ItemStack transformFrom, ItemLike transformTo) {
+		var newStack = transformFrom.transmuteCopy(transformTo);
+		var enchants = new ItemEnchantments.Mutable(newStack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY));
+		enchants.removeIf(enchant -> !newStack.supportsEnchantment(enchant));
+		newStack.set(DataComponents.ENCHANTMENTS, enchants.toImmutable());
+		return newStack;
+	}
 }
 
