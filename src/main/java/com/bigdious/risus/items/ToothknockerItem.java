@@ -73,7 +73,7 @@ public class ToothknockerItem extends SwordItem {
 	}
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
-		if (player.isHolding(RisusItems.TOOTHKNOCKER.get()) && player.getOffhandItem().is(RisusItems.TOOTHKNOCKER.get())) {
+		if (player.getItemInHand(InteractionHand.MAIN_HAND).is(RisusItems.TOOTHKNOCKER.get()) && player.getItemInHand(InteractionHand.OFF_HAND).is(RisusItems.TOOTHKNOCKER.get())) {
 			player.addEffect(new MobEffectInstance(RisusMobEffects.TOOTHLUSTER, 0, 0, false, false, false));
 			player.getOffhandItem().hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
