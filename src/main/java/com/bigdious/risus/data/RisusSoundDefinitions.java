@@ -12,6 +12,11 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 	}
 	@Override
 	public void registerSounds() {
+		// vanilla shit
+//		this.add(RisusSoundEvents.LUNGE, definition().with(
+//			sound("minecraft:entity.goat.screaming.long_jump").stream()
+//		));
+
 		this.add(RisusSoundEvents.MUSIC_DISC_RAK, definition().with(
 			sound("risus:music/disc/rak").volume(2).pitch(1).weight(1).stream()
 		));

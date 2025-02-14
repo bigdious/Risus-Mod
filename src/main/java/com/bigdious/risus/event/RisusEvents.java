@@ -222,7 +222,10 @@ public class RisusEvents {
 	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event) {
 		Player player = event.getEntity();
 		Level level = player.level();
-		if (event.getAdvancement().id().equals(Risus.prefix("first")) && level.getDifficulty() != Difficulty.PEACEFUL) {
+		if (event.getAdvancement().id().equals(Risus.prefix("first"))
+			//commented until further changes
+//			&& level.getDifficulty() != Difficulty.PEACEFUL
+		) {
 			for (int i = 0; i < 13; i++) {
 				QuestionMark witness = RisusEntities.TRANSIENT_QUESTION_MARK.get().create(level);
 				witness.moveTo(getBoxAround(player, 2, 40), 0.0F, 0.0F);

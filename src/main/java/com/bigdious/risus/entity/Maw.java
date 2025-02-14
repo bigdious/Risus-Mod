@@ -10,6 +10,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -164,7 +165,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	protected void doPush(Entity entity) {
 
-		if (entity instanceof LivingEntity living && living.attackable()) {
+		if (entity instanceof LivingEntity living && living.attackable() && entity.level().getDifficulty() != Difficulty.PEACEFUL) {
 			//set up the victim to think theyre being killed by a player
 			if (this.level() instanceof ServerLevel server)
 				living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
@@ -248,5 +249,9 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			super.stop();
 			((Maw) this.mob).setActiveAttackTarget(0);
 		}
+	}
+	@Override
+	protected boolean shouldDespawnInPeaceful() {
+		return false;
 	}
 }

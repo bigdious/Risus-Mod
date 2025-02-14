@@ -8,6 +8,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class RisusSoundEvents {
 	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, Risus.MODID);
+
+	//items
+//	public static final DeferredHolder<SoundEvent, SoundEvent> LUNGE = register("item.lunge");
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_RAK = register("music.disc.rak");

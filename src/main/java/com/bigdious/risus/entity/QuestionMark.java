@@ -12,6 +12,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.PushReaction;
 
 public class QuestionMark extends Monster {
 	public QuestionMark(EntityType<? extends Monster> type, Level level) {
@@ -88,5 +89,13 @@ public class QuestionMark extends Monster {
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		return source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && super.hurt(source, amount);
+	}
+	@Override
+	protected boolean shouldDespawnInPeaceful() {
+		return false;
+	}
+	@Override
+	public PushReaction getPistonPushReaction() {
+		return PushReaction.IGNORE;
 	}
 }

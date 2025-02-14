@@ -63,11 +63,12 @@ public class Licker extends Monster {
 		if (entity instanceof LivingEntity living) {
 			this.attackTimer = 10;
 			this.level().broadcastEntityEvent(this, (byte) 4);
-			int i = 10;
+			int i = 5;
 			if (this.level().getDifficulty() == Difficulty.NORMAL) {
+				i = 10;
+			}
+			if (this.level().getDifficulty() == Difficulty.HARD) {
 				i = 15;
-			} else if (this.level().getDifficulty() == Difficulty.HARD) {
-				i = 20;
 			}
 			living.addEffect(new MobEffectInstance(MobEffects.WEAVING, i * 20, 0), this);
 			living.addEffect(new MobEffectInstance(RisusMobEffects.PLEASURE, i * 2, 0), this);

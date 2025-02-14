@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -104,7 +105,7 @@ public class Angel extends Monster {
 
 		public void tick() {
 			LivingEntity livingentity = this.angel.getTarget();
-			if (livingentity != null) {
+			if (livingentity != null && this.angel.level().getDifficulty() != Difficulty.PEACEFUL) {
 				if (livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity)) {
 					++this.chargeTime;
 					if (this.chargeTime == 20) {
@@ -148,6 +149,10 @@ public class Angel extends Monster {
 		) {
 			return super.hurt(source, Float.MAX_VALUE);
 		}
+		return false;
+	}
+	@Override
+	protected boolean shouldDespawnInPeaceful() {
 		return false;
 	}
 
