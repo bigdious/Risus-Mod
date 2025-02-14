@@ -18,8 +18,10 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Mth;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -39,6 +41,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -217,15 +220,27 @@ public class RisusEvents {
 
 
 	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event) {
-		Entity player = event.getEntity();
+		Player player = event.getEntity();
 		Level level = player.level();
-		if (event.getAdvancement().id().equals(Risus.prefix("first"))) {
+		if (event.getAdvancement().id().equals(Risus.prefix("first")) && level.getDifficulty() != Difficulty.PEACEFUL) {
 			for (int i = 0; i < 13; i++) {
 				QuestionMark witness = RisusEntities.TRANSIENT_QUESTION_MARK.get().create(level);
-				witness.moveTo(player.getRandomX(40), player.getRandomY() + 2 + 11 * (player.getRandomY() - player.getRandomY()), player.getRandomZ(40), 0.0F, 0.0F);
+				witness.moveTo(getBoxAround(player, 2, 40), 0.0F, 0.0F);
 				level.addFreshEntity(witness);
 			}
 		}
+	}
+
+	private static BlockPos getBoxAround(Entity entity, int padding, int radius) {
+		BlockPos pos = entity.blockPosition();
+		AABB paddingBox = new AABB(pos).inflate(padding);
+		//check 10 random spots in a box around the player, excluding a small box defined by the padding
+		for (BlockPos checkPos : BlockPos.randomInCube(entity.getRandom(), 10, pos, radius)) {
+			if (paddingBox.intersects(new AABB(checkPos))) continue;
+			return checkPos.atY((int) Math.max(pos.getY() + 6, entity.getRandomY() + 2 + 11 * (entity.getRandomY() - entity.getRandomY())));
+		}
+		//didnt find a spot? Spawn 6 blocks above player
+		return pos.atY(pos.getY() + 6);
 	}
 
 	private static void explodeStick(LivingIncomingDamageEvent event) {
