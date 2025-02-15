@@ -12,23 +12,20 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-
+import net.neoforged.neoforge.common.ItemAbilities;
 
 public class RemainsBlock extends Block {
+
 	public RemainsBlock(Properties properties) {
 		super(properties);
-
 	}
 
+	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
-		if (held.is(Items.FLINT_AND_STEEL) || held.is(Items.FIRE_CHARGE)) {
-			if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
-				level.setBlock(pos.above(), RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), 11);
-				return ItemInteractionResult.SUCCESS;
-
-			}
+		if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT) && level.getBlockState(pos.above()).isAir()) {
+			level.setBlock(pos.above(), RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), 11);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

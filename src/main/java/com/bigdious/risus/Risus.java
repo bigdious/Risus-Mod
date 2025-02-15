@@ -89,7 +89,7 @@ public class Risus {
 		boolean isClient = event.includeClient();
 		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new RisusTags.BannerPatternTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		event.getGenerator().addProvider(isServer, new BannerPatternTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new StructureUpdater("structures", packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
@@ -106,6 +106,7 @@ public class Risus {
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);
 		event.getGenerator().addProvider(isServer, registryDataGenerator);
 		event.getGenerator().addProvider(isServer, new DamageTypeTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
+		event.getGenerator().addProvider(isServer, new EnchantmentTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
 
 		event.getGenerator().addProvider(isClient, new SpriteReferenceGenerator(packOutput, lookupProvider, existingFileHelper));
 	}

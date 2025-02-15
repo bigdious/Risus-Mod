@@ -36,11 +36,7 @@ public class Memory1Item extends Item {
 				level.addFreshEntity(star);
 				level.gameEvent(player, GameEvent.ENTITY_PLACE, BlockPos.containing(result.getLocation()));
 				star.setYRot(90);
-				if (!player.getAbilities().instabuild) {
-					player.getItemInHand(hand).shrink(1);
-				}
-
-
+				stack.consume(1, player);
 			}
 		}
 

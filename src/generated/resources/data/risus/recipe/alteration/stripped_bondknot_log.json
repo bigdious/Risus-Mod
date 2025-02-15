@@ -1,7 +1,7 @@
 {
   "type": "risus:alteration",
   "input": {
-    "tag": "risus:alterable_logs"
+    "tag": "risus:alterable_stripped_logs"
   },
   "result": "risus:stripped_bondknot_log"
 }

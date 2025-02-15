@@ -3,19 +3,15 @@ package com.bigdious.risus.items;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodSlash;
 import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusItems;
-import com.mojang.blaze3d.vertex.PoseStack;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -43,27 +39,12 @@ public class ThousandBladeItem extends SwordItem {
 			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.withModifierAdded(Attributes.MOVEMENT_SPEED, new AttributeModifier(Risus.prefix("speed_modifier"), -0.05F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND);
 	}
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
-		return material.is(RisusItems.GLUTTONY_SCALES);
-	}
+
 	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
-				enchantment.is(Enchantments.SWEEPING_EDGE) ||
-				enchantment.is(Enchantments.LOOTING) ||
-				enchantment.is(Enchantments.SMITE) ||
-				enchantment.is(Enchantments.MENDING) ||
-				enchantment.is(Enchantments.UNBREAKING) ||
-				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.POWER) ||
-				enchantment.is(Enchantments.PIERCING) ||
-				enchantment.is(Enchantments.MULTISHOT) ||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.THOUSAND_BLADE_ALLOWED_ENCHANTS);
 	}
+
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
@@ -74,22 +55,12 @@ public class ThousandBladeItem extends SwordItem {
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}
+
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) || enchantment.is(Enchantments.SWEEPING_EDGE) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
-				enchantment.is(Enchantments.LOOTING) ||
-				enchantment.is(Enchantments.SMITE) ||
-				enchantment.is(Enchantments.MENDING) ||
-				enchantment.is(Enchantments.UNBREAKING) ||
-				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.POWER) ||
-				enchantment.is(Enchantments.PIERCING) ||
-				enchantment.is(Enchantments.MULTISHOT) ||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.THOUSAND_BLADE_ALLOWED_ENCHANTS);
 	}
+
 	public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int useTicks) {
 		if (entity instanceof Player player) {
 			int i = this.getUseDuration(stack, entity) - useTicks;
@@ -102,18 +73,18 @@ public class ThousandBladeItem extends SwordItem {
 						BloodSlash slash1 = new BloodSlash(level, player, stack);
 						BloodSlash slash2 = new BloodSlash(level, player, stack);
 						slash.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.3F, 1.0F);
-						slash1.shootFromRotation(player, player.getXRot(), player.getYRot()+10, 0.0F, 1.3F, 1.0F);
-						slash2.shootFromRotation(player, player.getXRot(), player.getYRot()-10, 0.0F, 1.3F, 1.0F);
+						slash1.shootFromRotation(player, player.getXRot(), player.getYRot() + 10, 0.0F, 1.3F, 1.0F);
+						slash2.shootFromRotation(player, player.getXRot(), player.getYRot() - 10, 0.0F, 1.3F, 1.0F);
 						level.addFreshEntity(slash);
 						level.addFreshEntity(slash1);
 						level.addFreshEntity(slash2);
-						level.playSound(null , entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
+						level.playSound(null, entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
 					} else {
 						player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1);
 						BloodSlash slash = new BloodSlash(level, player, stack);
 						slash.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.3F, 1.0F);
 						level.addFreshEntity(slash);
-						level.playSound(null , entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
+						level.playSound(null, entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
 					}
 				}
 				player.awardStat(Stats.ITEM_USED.get(this));

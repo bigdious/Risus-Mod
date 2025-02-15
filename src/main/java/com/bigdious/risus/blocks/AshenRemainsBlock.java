@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.common.ItemAbilities;
 
 public class AshenRemainsBlock extends RemainsBlock {
 
@@ -27,22 +28,16 @@ public class AshenRemainsBlock extends RemainsBlock {
 
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
-
-		if (held.is(RisusTags.Items.WILLFUL_WEAPON) && state.getValue(HAS_EYES)) {
+		if (stack.is(RisusTags.Items.WILLFUL_WEAPON) && state.getValue(HAS_EYES)) {
 			level.setBlock(pos, state.setValue(HAS_EYES, false), 3);
-
-			return ItemInteractionResult.SUCCESS;
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
 
-		if (held.is(Items.FLINT_AND_STEEL) || held.is(Items.FIRE_CHARGE)) {
-			if (level.getBlockState(pos.above()).is(Blocks.AIR)) {
-				level.setBlock(pos.above(), RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), 11);
-				return ItemInteractionResult.SUCCESS;
-
-			}
+		if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT) && level.getBlockState(pos.above()).isAir()) {
+			level.setBlock(pos.above(), RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), 11);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
 	@Override

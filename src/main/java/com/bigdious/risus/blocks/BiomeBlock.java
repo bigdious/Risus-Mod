@@ -151,20 +151,17 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) {
-			if (held.is(RisusItems.ORGANIC_MATTER)) {
+			if (stack.is(RisusItems.ORGANIC_MATTER)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING, true));
-			} else if (held.is(RisusItems.MUSIC_DISC_MORK)) {
+			} else if (stack.is(RisusItems.MUSIC_DISC_MORK)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING_MORK, true));
-			} else if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
+			} else if (stack.is(RisusItems.MUSIC_DISC_FEIGR)) {
 				level.setBlockAndUpdate(pos, state.setValue(SPREADING_FEIGR, true));
 			} else return ItemInteractionResult.FAIL;
 			level.scheduleTick(pos, this, 20);
-			if (!player.isCreative()) {
-				player.getMainHandItem().shrink(1);
-			}
-			return ItemInteractionResult.SUCCESS;
+			stack.consume(1, player);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
 
 //		if (held.is(RisusItems.MUSIC_DISC_RAK)) {
@@ -193,7 +190,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 //			return ItemInteractionResult.SUCCESS;
 //		}
 
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
 	void performConversion(ServerLevel level, BlockPos pos, RandomSource rand, BlockState state) {
@@ -224,7 +221,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				for (int sy = 0; sy < 16; sy += 4) {
 					// Get y position clamped between the minY(0) and maxY(320)
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
-					
+
 					// Holder<Biome>(x, y, z).is(biome) is deprecated and could cause issues in the future
 					// Check if the biome at the position between index 0 and 3 is the same as the biome we want to set
 					if (section.getBiomes().get(x & 3, y & 3, z & 3) == (biome))

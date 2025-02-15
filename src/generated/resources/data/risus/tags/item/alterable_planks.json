@@ -1,12 +1,8 @@
 {
+  "remove": [
+    "risus:bondknot_planks"
+  ],
   "values": [
-    "minecraft:oak_planks",
-    "minecraft:dark_oak_planks",
-    "minecraft:birch_planks",
-    "minecraft:spruce_planks",
-    "minecraft:jungle_planks",
-    "minecraft:acacia_planks",
-    "minecraft:mangrove_planks",
-    "minecraft:cherry_planks"
+    "#minecraft:planks"
   ]
 }

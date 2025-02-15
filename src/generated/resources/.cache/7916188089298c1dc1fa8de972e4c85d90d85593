@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-03T22:02:42.7314202	Tags for minecraft:item mod id risus
+// 1.21.1	2025-02-15T10:52:06.093805	Tags for minecraft:item mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates.json
@@ -21,19 +21,21 @@ ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/item/wooden_buttons
 fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/item/wooden_slabs.json
 4e1a395d41189d294b952ba2d28d3ac5dee03b7d data/minecraft/tags/item/wooden_stairs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/item/wooden_trapdoors.json
-97ba3d96b15e164a392b13d12d09607bef35bd5c data/risus/tags/item/alterable_buttons.json
-20e8f491dd14f75f111aa172ba123c450107e7e0 data/risus/tags/item/alterable_doors.json
-5bb27b8bfced3980eecb0f7f57223a187e65aa6b data/risus/tags/item/alterable_fences.json
-3cb586e973a7f2d90c61698542dcbcad204b8853 data/risus/tags/item/alterable_gates.json
-0032fab9887ba5c16d6593db7a290422649ee131 data/risus/tags/item/alterable_hanging_signs.json
-c499fc6f149008141d0f57e3936957efe03661b8 data/risus/tags/item/alterable_logs.json
-eef1a5e24a86a385d4d7e7bf2cdef75a9e23c33d data/risus/tags/item/alterable_planks.json
-c6fd616af36da4a3e2520995ad011e9ca1c89b07 data/risus/tags/item/alterable_pressure_plates.json
-35a55f0fa648b71f5ae2a045ab0b8f93e2782728 data/risus/tags/item/alterable_signs.json
-71cdd95aa7d7f81565d4dc130f85131661476ee9 data/risus/tags/item/alterable_slabs.json
-12936f8330cc7e44bd5861255d14175637e2bc1c data/risus/tags/item/alterable_stairs.json
-6bd9cfc8f39b091489940c6b45f7ed52a9e483e1 data/risus/tags/item/alterable_trapdoors.json
-85c1719ff72cd4248400c1b13febf24d44ddf660 data/risus/tags/item/alterable_woods.json
+b5cf7a832b7e405b85d0f857acf83b5327a93700 data/risus/tags/item/alterable_buttons.json
+aa639adb5ae8f395730f6e399869887d2000be55 data/risus/tags/item/alterable_doors.json
+6ee4bf80c36b9b24bac86c69cdb3fdf220db33e0 data/risus/tags/item/alterable_fences.json
+579af8389983696fcf969a499bd47a554450f853 data/risus/tags/item/alterable_gates.json
+70dcc8156788087a5e63b79ff99b4f57432530aa data/risus/tags/item/alterable_hanging_signs.json
+74b161a736ef498376058da84e2794ca19222234 data/risus/tags/item/alterable_logs.json
+5098e152f4f446bcfb01c9df433bdfd6718fcc32 data/risus/tags/item/alterable_planks.json
+a803990ef4fef74a963c20ec9bb56d5aab534821 data/risus/tags/item/alterable_pressure_plates.json
+52ad457ce1e7a36fef94c621144ffa1622b5de46 data/risus/tags/item/alterable_signs.json
+20a095c7a3c4136906bc5d1468f594b13354250b data/risus/tags/item/alterable_slabs.json
+dd848072279917c6f55f1883746af9f6edb53156 data/risus/tags/item/alterable_stairs.json
+5fd646540c7b6895dac600ea4223e673a0c51de5 data/risus/tags/item/alterable_stripped_logs.json
+171c7a939f711916bd660833b62bbec4ac1a37e2 data/risus/tags/item/alterable_stripped_woods.json
+150061e079e5a89dc59a73141a08320d2046bf95 data/risus/tags/item/alterable_trapdoors.json
+29f8ee1827f0623c9a41d4802f33ae5461069031 data/risus/tags/item/alterable_woods.json
 d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/item/bondknot_logs.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json

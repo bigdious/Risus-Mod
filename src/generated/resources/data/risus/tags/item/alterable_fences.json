@@ -1,12 +1,9 @@
 {
+  "remove": [
+    "risus:bondknot_fence"
+  ],
   "values": [
-    "minecraft:oak_fence",
-    "minecraft:dark_oak_fence",
-    "minecraft:birch_fence",
-    "minecraft:spruce_fence",
-    "minecraft:jungle_fence",
-    "minecraft:acacia_fence",
-    "minecraft:mangrove_fence",
-    "minecraft:cherry_fence"
+    "#minecraft:wooden_fences",
+    "#c:fences/wooden"
   ]
 }

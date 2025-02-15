@@ -2,6 +2,7 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -22,11 +23,7 @@ import net.minecraft.world.level.Level;
 
 public class ThrowableAxeItem extends AxeItem {
 	public ThrowableAxeItem(Tier tier, Properties properties) {
-		super(tier,  properties);
-	}
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
-		return material.is(RisusItems.GLUTTONY_SCALES);
+		super(tier, properties);
 	}
 
 	@Override
@@ -40,6 +37,7 @@ public class ThrowableAxeItem extends AxeItem {
 		}
 	}
 
+	@Override
 	public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int useTicks) {
 		if (entity instanceof Player player) {
 			int i = this.getUseDuration(stack, entity) - useTicks;
@@ -65,35 +63,15 @@ public class ThrowableAxeItem extends AxeItem {
 			}
 		}
 	}
+
 	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-			return
-				enchantment.is(Enchantments.LOYALTY)||
-				enchantment.is(Enchantments.SHARPNESS)||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-				enchantment.is(Enchantments.SMITE)||
-				enchantment.is(Enchantments.MENDING)||
-				enchantment.is(Enchantments.UNBREAKING)||
-				enchantment.is(Enchantments.FIRE_ASPECT)||
-				enchantment.is(Enchantments.LOOTING)||
-				enchantment.is(Enchantments.KNOCKBACK)||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-				;
+		return enchantment.is(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS);
 	}
+
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.LOYALTY)||
-			enchantment.is(Enchantments.SHARPNESS)||
-			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-			enchantment.is(Enchantments.SMITE)||
-			enchantment.is(Enchantments.MENDING)||
-			enchantment.is(Enchantments.UNBREAKING)||
-			enchantment.is(Enchantments.FIRE_ASPECT)||
-			enchantment.is(Enchantments.LOOTING)||
-			enchantment.is(Enchantments.KNOCKBACK)||
-			enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS);
 	}
 
 	@Override

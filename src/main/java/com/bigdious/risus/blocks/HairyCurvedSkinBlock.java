@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 
 public class HairyCurvedSkinBlock extends MultiDirectionalBlock {
@@ -22,17 +23,16 @@ public class HairyCurvedSkinBlock extends MultiDirectionalBlock {
 		super(properties);
 	}
 
-
-	public ItemInteractionResult useItemOn(ItemStack stack,BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (player.getMainHandItem().is(Tags.Items.TOOLS_SHEAR)) {
-			level.setBlock(pos, RisusBlocks.CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
-			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
-			ItemEntity hairitem = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
-			level.addFreshEntity(hairitem);
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+		if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST)) {
+			level.setBlock(pos, RisusBlocks.CURVED_FLESHY_SKIN.get().withPropertiesOf(state), 2);
+			stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+			popResource(level, pos, new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
 			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
-			return ItemInteractionResult.SUCCESS;
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

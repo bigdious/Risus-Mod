@@ -25,16 +25,15 @@ public class SkinBlock extends Block {
 		super(properties);
 	}
 
-
+	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		if (player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
-			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 11);
-			player.getMainHandItem().shrink(1);
+		if (stack.is(RisusItems.ORGANIC_MATTER.get())) {
+			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 2);
+			stack.consume(1, player);
 			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
 			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
-			return ItemInteractionResult.SUCCESS;
-
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

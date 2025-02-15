@@ -57,7 +57,7 @@ public class RisusBlocks {
 
 	//UTILITY
 	public static final DeferredBlock<Block> ALTERATION_CATALYST = registerWithItem("alteration_catalyst", AlterationCatalystBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion());
-	public static final DeferredBlock<Block> ANGEL_ALTAR = registerWithItem("angel_altar", AngelAltar::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> ANGEL_ALTAR = registerWithItem("angel_altar", AngelAltarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> DEPTH_VASE = registerWithItem("depth_vase", DepthVaseBlock::new, () -> Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> LAUGHING_STALK = registerWithItem("laughing_stalk", BiomeBlock::new, () -> Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> WEAVER_NEST = registerWithItem("weaver_nest", WeaverNestBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
@@ -151,7 +151,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<WallBlock> GRIMSTONE_BRICKS_WALL = registerWithItem("grimstone_bricks_wall", RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<WallBlock> POLISHED_GRIMSTONE_WALL = registerWithItem("polished_grimstone_wall", RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> POLISHED_GRIMSTONE = registerWithItem("polished_grimstone", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
-	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = registerWithItem("chiseled_grimstone", ChiseledGrimstone::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
+	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = registerWithItem("chiseled_grimstone", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 
 	//TISSUE, BONE, SKIN, EYES AND HAIR
 	public static final DeferredBlock<DecomposingTissueBlock> TISSUE = registerWithItem("tissue", properties -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, properties), () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
@@ -190,7 +190,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> JOYFLAME_CAMPFIRE = registerWithItem("joyflame_campfire", properties -> new RisusCampfireBlock(false, 2, properties), () -> Block.Properties.ofFullCopy(Blocks.CAMPFIRE).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 5));
 	public static final DeferredBlock<Block> JOYFLAME_LANTERN = registerWithItem("joyflame_lantern", LanternBlock::new, () -> Block.Properties.ofFullCopy(Blocks.LANTERN).lightLevel(state -> 5));
 	public static final DeferredBlock<Block> JOYFLAME_FIRE = register("joyflame_fire", JoyflameFireBlock::new, () -> Block.Properties.ofFullCopy(Blocks.FIRE).lightLevel(state -> 5));
-	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = registerWithItem("curved_ritual_block", ChiseledGrimstone::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA));
+	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = registerWithItem("curved_ritual_block", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA));
 	public static final DeferredBlock<Block> LINEAR_RITUAL_BLOCK = registerWithItem("linear_ritual_block", RotatedPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA));
 
 	//FLUIDS

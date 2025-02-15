@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 
 public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements SimpleMultiloggedBlock {
@@ -77,12 +78,11 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 		}
 	}
 
-
-
 	@Override
 	protected Block getBodyBlock() {
 		return RisusBlocks.NEURON_STEM.get();
 	}
+
 	@Override
 	protected int getBlocksToGrowWhenOrganicMattered(RandomSource pRandom) {
 		return 1;
@@ -92,13 +92,13 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 	protected boolean canGrowInto(BlockState pState) {
 		return pState.isAir();
 	}
+
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
-		if (held.is(Tags.Items.TOOLS_SHEAR) && state.getValue(AGE)<25) {
-			level.setBlock(pos, RisusBlocks.NEURON_HEAD.get().defaultBlockState().setValue(AGE, 25), 11);
+		if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST) && state.getValue(AGE) < 25) {
+			level.setBlock(pos, RisusBlocks.NEURON_HEAD.get().defaultBlockState().setValue(AGE, 25), 2);
 			level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS);
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }
 

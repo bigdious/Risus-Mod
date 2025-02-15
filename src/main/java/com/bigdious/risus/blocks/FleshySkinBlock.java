@@ -27,17 +27,15 @@ public class FleshySkinBlock extends ActuallyUseableDirectionalBlock {
 		super(properties);
 	}
 
+	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		RandomSource random = RandomSource.create();
-		if (player.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
+		if (stack.is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_FLESHY_SKIN.get().defaultBlockState().setValue(ActuallyUseableDirectionalBlock.FACING, state.getValue(FACING)), 11);
-			player.getMainHandItem().shrink(1);
-			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), state.getValue(FACING), () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
+			stack.consume(1, player);
+			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), state.getValue(FACING), () -> new Vec3(Mth.nextDouble(level.getRandom(), -0.1, 0.1), Mth.nextDouble(level.getRandom(), -0.1, 0.1), Mth.nextDouble(level.getRandom(), -0.1, 0.1)), 0.6);
 			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
-			return ItemInteractionResult.SUCCESS;
-
-
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

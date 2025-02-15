@@ -25,7 +25,7 @@ public class EggSacItem extends Item implements ProjectileItem {
 		ItemStack itemstack = player.getItemInHand(hand);
 		level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 1F);
 		player.getCooldowns().addCooldown(this, 20);
-		if (!level.isClientSide) {
+		if (!level.isClientSide()) {
 			EggSac eggSac = new EggSac(level, player);
 			eggSac.setItem(itemstack);
 			eggSac.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
@@ -33,11 +33,10 @@ public class EggSacItem extends Item implements ProjectileItem {
 		}
 
 		player.awardStat(Stats.ITEM_USED.get(this));
-		if (!player.getAbilities().instabuild) {
-			itemstack.shrink(1);
-		}
+		itemstack.consume(1, player);
 		return InteractionResultHolder.success(itemstack);
 	}
+
 	@Override
 	public Projectile asProjectile(Level level, Position position, ItemStack stack, Direction direction) {
 		return new EggSac(level, position.x(), position.y(), position.z());

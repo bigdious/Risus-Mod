@@ -1,7 +1,7 @@
 {
   "type": "risus:alteration",
   "input": {
-    "tag": "risus:alterable_woods"
+    "tag": "risus:alterable_stripped_woods"
   },
   "result": "risus:stripped_bondknot_wood"
 }

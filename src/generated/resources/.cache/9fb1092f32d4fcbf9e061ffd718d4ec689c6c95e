@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-10T16:48:04.4272067	Recipes
+// 1.21.1	2025-02-15T10:52:06.0877784	Recipes
 88c2947c75e5a46b8274edefb490d28e51d24a84 data/minecraft/advancement/recipes/misc/full_bone_to_bone_meal.json
 27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
@@ -213,8 +213,8 @@ d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chest
 3de845543ec4ba5266446e0f0709479526524d41 data/risus/recipe/alteration/smile_banner_pattern.json
 1e5f7404d2820ea198a8b0b840eb5fb69fc174b3 data/risus/recipe/alteration/smiling_remains.json
 17d222351ac5ffccdc79805abcdf335916ac9473 data/risus/recipe/alteration/spreading_remains.json
-0bacfcd6651210f7cb0437c08dc2b8201317f9a7 data/risus/recipe/alteration/stripped_bondknot_log.json
-174af8c5f558ec9bdb0982791491b11556619fa1 data/risus/recipe/alteration/stripped_bondknot_wood.json
+7da25db651ff7eb9dc46a3fb333f35ffdec7d3f8 data/risus/recipe/alteration/stripped_bondknot_log.json
+1db0a868a27fb5dfa5bd07e57f841ef9c87e1550 data/risus/recipe/alteration/stripped_bondknot_wood.json
 74bb16182977a201384d016cc602877eac624ba0 data/risus/recipe/alteration/tissue.json
 be52867032b72cde59c9c580b7d060af42306728 data/risus/recipe/alteration/totem_of_unyielding.json
 34b4d87cdd699e04068bbd2b9b905810445a8623 data/risus/recipe/alteration/veins.json

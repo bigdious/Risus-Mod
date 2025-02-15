@@ -1,8 +1,8 @@
 package com.bigdious.risus.items;
 
-
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
@@ -22,55 +22,33 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.ItemAbility;
 
 public class ToothknockerItem extends SwordItem {
-
 
 	public ToothknockerItem(Tier tier, Item.Properties properties) {
 		super(tier, properties);
 	}
+
 	@Override
-	public boolean isValidRepairItem(ItemStack pToRepair, ItemStack pRepair) {
-		return pRepair.is(RisusItems.GLUTTONY_SCALES);
-	}
-
-
-	public boolean mineBlock(ItemStack itemstack, Level p_43283_, BlockState p_43284_, BlockPos p_43285_, LivingEntity player) {
-		if (p_43284_.getDestroySpeed(p_43283_, p_43285_) != 0.0F) {
-			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+	public boolean mineBlock(ItemStack itemstack, Level level, BlockState state, BlockPos pos, LivingEntity entity) {
+		if (state.getDestroySpeed(level, pos) != 0.0F) {
+			itemstack.hurtAndBreak(1, entity, EquipmentSlot.MAINHAND);
 		}
 
 		return true;
 	}
+
 	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-				enchantment.is(Enchantments.SMITE)||
-				enchantment.is(Enchantments.MENDING)||
-				enchantment.is(Enchantments.UNBREAKING)||
-				enchantment.is(Enchantments.FIRE_ASPECT)||
-				enchantment.is(Enchantments.KNOCKBACK)||
-				enchantment.is(Enchantments.LOOTING)||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.TOOTHKNOCKER_ALLOWED_ENCHANTS);
 	}
 
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-			enchantment.is(Enchantments.SMITE)||
-			enchantment.is(Enchantments.MENDING)||
-			enchantment.is(Enchantments.UNBREAKING)||
-			enchantment.is(Enchantments.FIRE_ASPECT)||
-			enchantment.is(Enchantments.KNOCKBACK)||
-			enchantment.is(Enchantments.LOOTING)||
-			enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.TOOTHKNOCKER_ALLOWED_ENCHANTS);
 	}
+
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
 		if (player.getItemInHand(InteractionHand.MAIN_HAND).is(RisusItems.TOOTHKNOCKER.get()) && player.getItemInHand(InteractionHand.OFF_HAND).is(RisusItems.TOOTHKNOCKER.get())) {
@@ -92,9 +70,9 @@ public class ToothknockerItem extends SwordItem {
 
 			float f7 = player.getYRot();
 			float f = player.getXRot();
-			float f1 = -Mth.sin(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
-			float f2 = -Mth.sin(f * (float) (Math.PI / 180.0));
-			float f3 = Mth.cos(f7 * (float) (Math.PI / 180.0)) * Mth.cos(f * (float) (Math.PI / 180.0));
+			float f1 = -Mth.sin(f7 * Mth.RAD_TO_DEG) * Mth.cos(f * Mth.RAD_TO_DEG);
+			float f2 = -Mth.sin(f * Mth.RAD_TO_DEG);
+			float f3 = Mth.cos(f7 * Mth.RAD_TO_DEG) * Mth.cos(f * Mth.RAD_TO_DEG);
 			float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
 			float f5 = 3.0F * ((1F) / 4.0F);
 			f1 *= f5 / f4;
@@ -108,8 +86,9 @@ public class ToothknockerItem extends SwordItem {
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}
+
 	@Override
-	public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility itemAbility){
+	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
 		return false;
 	}
 }

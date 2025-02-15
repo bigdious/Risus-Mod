@@ -38,11 +38,11 @@ import java.util.function.Supplier;
 public class OrganicMatterItem extends Item {
 
 	public static final Supplier<BiMap<Block, Block>> PRESERVABLE = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
-			.put(RisusBlocks.TISSUE.get(), RisusBlocks.LIVING_TISSUE.get())
-			.put(RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.ROTTED_TISSUE.get())
-			.put(RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get())
-			.put(RisusBlocks.DECAYING_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get())
-			.build());
+		.put(RisusBlocks.TISSUE.get(), RisusBlocks.LIVING_TISSUE.get())
+		.put(RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.ROTTED_TISSUE.get())
+		.put(RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get())
+		.put(RisusBlocks.DECAYING_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get())
+		.build());
 
 	public OrganicMatterItem(Properties properties) {
 		super(properties);
@@ -64,7 +64,7 @@ public class OrganicMatterItem extends Item {
 				context.getPlayer().gameEvent(GameEvent.ITEM_INTERACT_FINISH);
 				level.levelEvent(1505, blockpos, 15);
 			}
-			addGrowthParticles(level, blockpos,10);
+			addGrowthParticles(level, blockpos, 10);
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {
 //			boolean flag = blockstate.isFaceSturdy(level, blockpos, context.getClickedFace());
@@ -76,33 +76,34 @@ public class OrganicMatterItem extends Item {
 //
 //				return InteractionResult.sidedSuccess(level.isClientSide);
 //			} else {
-				return getWaxed(blockstate).map(state -> {
-					Player player = context.getPlayer();
-					ItemStack itemstack = context.getItemInHand();
-					if (player instanceof ServerPlayer) {
-						CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, blockpos, itemstack);
-					}
-
-					itemstack.shrink(1);
-					level.setBlock(blockpos, state, 11);
-					level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, state));
-					ParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
-					level.playSound(null, blockpos, SoundEvents.SCULK_VEIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
-					return InteractionResult.sidedSuccess(level.isClientSide());
-				}).orElse(InteractionResult.PASS);
-			}
-		}
-	public static boolean applyOrganicMatter(ItemStack p_40628_, Level p_40629_, BlockPos p_40630_, @Nullable net.minecraft.world.entity.player.Player player) {
-		BlockState blockstate = p_40629_.getBlockState(p_40630_);
-		var event = RisusEvents.fireOrganicMatterEvent(player, p_40629_, p_40630_, blockstate, p_40628_);
-		if (event.isCanceled()) return event.isSuccessful();
-		if (blockstate.getBlock() instanceof OrganicMatterableBlock organicMatterableBlock && organicMatterableBlock.isValidOrganicMatterTarget(p_40629_, p_40630_, blockstate)) {
-			if (p_40629_ instanceof ServerLevel) {
-				if (organicMatterableBlock.isOrganicMatterSuccess(p_40629_, p_40629_.random, p_40630_, blockstate)) {
-					organicMatterableBlock.performOrganicMatter((ServerLevel)p_40629_, p_40629_.random, p_40630_, blockstate);
+			return getWaxed(blockstate).map(state -> {
+				Player player = context.getPlayer();
+				ItemStack itemstack = context.getItemInHand();
+				if (player instanceof ServerPlayer) {
+					CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, blockpos, itemstack);
 				}
 
-				p_40628_.shrink(1);
+				itemstack.consume(1, player);
+				level.setBlock(blockpos, state, 11);
+				level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, state));
+				ParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
+				level.playSound(null, blockpos, SoundEvents.SCULK_VEIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+				return InteractionResult.sidedSuccess(level.isClientSide());
+			}).orElse(InteractionResult.PASS);
+		}
+	}
+
+	public static boolean applyOrganicMatter(ItemStack stack, Level level, BlockPos pos, @Nullable Player player) {
+		BlockState blockstate = level.getBlockState(pos);
+		var event = RisusEvents.fireOrganicMatterEvent(player, level, pos, blockstate, stack);
+		if (event.isCanceled()) return event.isSuccessful();
+		if (blockstate.getBlock() instanceof OrganicMatterableBlock organicMatterableBlock && organicMatterableBlock.isValidOrganicMatterTarget(level, pos, blockstate)) {
+			if (level instanceof ServerLevel) {
+				if (organicMatterableBlock.isOrganicMatterSuccess(level, level.getRandom(), pos, blockstate)) {
+					organicMatterableBlock.performOrganicMatter((ServerLevel) level, level.getRandom(), pos, blockstate);
+				}
+
+				stack.consume(1, player);
 			}
 
 			return true;
@@ -110,6 +111,7 @@ public class OrganicMatterItem extends Item {
 
 		return false;
 	}
+
 	public static void addGrowthParticles(LevelAccessor pLevel, BlockPos pPos, int pData) {
 		BlockState blockstate = pLevel.getBlockState(pPos);
 		if (blockstate.getBlock() instanceof OrganicMatterableBlock organicMatterableBlock) {
@@ -125,6 +127,7 @@ public class OrganicMatterItem extends Item {
 			ParticleUtils.spawnParticles(pLevel, pPos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 		}
 	}
+
 	public static Optional<BlockState> getWaxed(BlockState state) {
 		return Optional.ofNullable(PRESERVABLE.get().get(state.getBlock())).map(block -> block.withPropertiesOf(state));
 	}

@@ -31,10 +31,9 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		RandomSource random = RandomSource.create();
-		if (player.getItemInHand(hand).is(RisusItems.ORGANIC_MATTER.get())) {
+		if (stack.is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get().defaultBlockState().setValue(MultiDirectionalBlock.ORIENTATION, state.getValue(ORIENTATION)), 11);
-			if (!player.isCreative())
-				player.getMainHandItem().shrink(1);
+			stack.consume(1, player);
 			//just making sure they appear on the right faces. Could it be done nicer? Certainly, but idk how and I am not wasting more hours on this
 
 			Direction directionneeded;
@@ -93,9 +92,9 @@ public class CurvedSkinBlock extends MultiDirectionalBlock {
 			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded2, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
 
 			level.playSound(null, pos, SoundEvents.SCULK_BLOCK_SPREAD, SoundSource.PLAYERS);
-			return ItemInteractionResult.SUCCESS;
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

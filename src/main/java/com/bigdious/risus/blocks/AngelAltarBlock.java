@@ -25,12 +25,12 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class AngelAltar extends Block implements SimpleMultiloggedBlock {
+public class AngelAltarBlock extends Block implements SimpleMultiloggedBlock {
 
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 14.0D, 14.0D);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
-	public AngelAltar(Properties properties) {
+	public AngelAltarBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
@@ -67,21 +67,20 @@ public class AngelAltar extends Block implements SimpleMultiloggedBlock {
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
-		if (held.is(Items.TOTEM_OF_UNDYING)) {
+		if (stack.is(Items.TOTEM_OF_UNDYING)) {
 			if (level.getBlockState(pos.above()).isAir()) {
-				if (!level.isClientSide) {
+				if (!level.isClientSide()) {
 					this.explode(level, pos);
+					Angel summonedAngel = RisusEntities.ANGEL.get().create(level);
+					summonedAngel.moveTo(pos.above(), 0.0F, 0.0F);
+					level.addFreshEntity(summonedAngel);
 				}
-				Angel summonedAngel = RisusEntities.ANGEL.get().create(level);
-				summonedAngel.moveTo(pos.getCenter().x, pos.getCenter().y + 1, pos.getCenter().z, 0.0F, 0.0F);
-				level.addFreshEntity(summonedAngel);
-				player.getMainHandItem().shrink(1);
-				return ItemInteractionResult.SUCCESS;
+				stack.consume(1, player);
+				return ItemInteractionResult.sidedSuccess(level.isClientSide());
 			}
 
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
 	private void explode(Level level, BlockPos pos) {

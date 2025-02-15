@@ -7,10 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 public class BloodwyrmHeadItem extends Item {
@@ -36,8 +33,7 @@ public class BloodwyrmHeadItem extends Item {
 				//fuck you -1
 				if (validSlot != -1 && ammo.is(Items.DRAGON_BREATH)) {
 					itemstack.hurtAndBreak(-200, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
-					ammo.shrink(1);
-					player.spawnAtLocation(Items.GLASS_BOTTLE);
+					ItemUtils.createFilledResult(ammo, player, new ItemStack(Items.GLASS_BOTTLE));
 					level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_EMPTY, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				}
 			}
@@ -48,7 +44,7 @@ public class BloodwyrmHeadItem extends Item {
 				return InteractionResultHolder.success(player.getItemInHand(hand));
 			}
 		}
-		return InteractionResultHolder.fail(player.getItemInHand(hand));
+		return super.use(level, player, hand);
 	}
 
 	@Override

@@ -144,8 +144,8 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_PLANKS.get(), 4)
-				.requires(Ingredient.of(ItemTagGenerator.BONDKNOT_LOGS))
-				.unlockedBy("has_item", has(ItemTagGenerator.BONDKNOT_LOGS))
+				.requires(Ingredient.of(RisusTags.Items.BONDKNOT_LOGS))
+				.unlockedBy("has_item", has(RisusTags.Items.BONDKNOT_LOGS))
 				.save(consumer);
 
 
@@ -518,7 +518,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("FBS")
 				.pattern("BPB")
 				.pattern("GBL")
-				.define('F', Ingredient.of(ItemTagGenerator.FROGLIGHT_BLOCKS))
+				.define('F', Ingredient.of(RisusTags.Items.FROGLIGHT_BLOCKS))
 				.define('P', Ingredient.of(Items.ENDER_PEARL))
 				.define('B', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
 				.define('S', Ingredient.of(Items.GLOWSTONE))
@@ -542,9 +542,9 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("LLL")
 				.define('L', ItemTags.LOGS)
 				.define('S', Items.STICK)
-				.define('#', ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS)
+				.define('#', RisusTags.Items.JOYFLAME_FIRE_BASE_BLOCKS)
 				.unlockedBy("has_item", has(Items.STICK))
-				.unlockedBy("has_item", has(ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS))
+				.unlockedBy("has_item", has(RisusTags.Items.JOYFLAME_FIRE_BASE_BLOCKS))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.JOYFLAME_TORCH.get(), 4)
@@ -553,8 +553,8 @@ public class CraftingGenerator extends RecipeProvider {
 				.pattern("S")
 				.define('X', Ingredient.of(Items.COAL, Items.CHARCOAL))
 				.define('#', Items.STICK)
-				.define('S', ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS)
-				.unlockedBy("has_item", has(ItemTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS))
+				.define('S', RisusTags.Items.JOYFLAME_FIRE_BASE_BLOCKS)
+				.unlockedBy("has_item", has(RisusTags.Items.JOYFLAME_FIRE_BASE_BLOCKS))
 				.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.JOYFLAME_LANTERN.get())

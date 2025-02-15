@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
@@ -12,38 +13,14 @@ public class UnThrowableAxeItem extends AxeItem {
 	public UnThrowableAxeItem(Tier tier, Properties properties) {
 		super(tier, properties);
 	}
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
-		return material.is(RisusItems.GLUTTONY_SCALES);
-	}
+
 	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
-				enchantment.is(Enchantments.LOYALTY) ||
-				enchantment.is(Enchantments.SMITE) ||
-				enchantment.is(Enchantments.MENDING) ||
-				enchantment.is(Enchantments.LOOTING) ||
-				enchantment.is(Enchantments.UNBREAKING) ||
-				enchantment.is(Enchantments.FIRE_ASPECT) ||
-				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS);
 	}
+
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-			enchantment.is(Enchantments.BANE_OF_ARTHROPODS)||
-			enchantment.is(Enchantments.LOYALTY)||
-			enchantment.is(Enchantments.SMITE)||
-			enchantment.is(Enchantments.MENDING)||
-			enchantment.is(Enchantments.LOOTING)||
-			enchantment.is(Enchantments.UNBREAKING)||
-			enchantment.is(Enchantments.FIRE_ASPECT)||
-			enchantment.is(Enchantments.KNOCKBACK)||
-			enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS);
 	}
 }

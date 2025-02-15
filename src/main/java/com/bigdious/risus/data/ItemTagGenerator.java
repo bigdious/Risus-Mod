@@ -9,8 +9,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -21,9 +19,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends ItemTagsProvider {
-	public static final TagKey<Item> BONDKNOT_LOGS = ItemTags.create(Risus.prefix("bondknot_logs"));
-	public static final TagKey<Item> JOYFLAME_FIRE_BASE_BLOCKS = ItemTags.create(Risus.prefix("joyflame_fire_base_blocks"));
-	public static final TagKey<Item> FROGLIGHT_BLOCKS = ItemTags.create(Risus.prefix("froglight_blocks"));
 
 	public ItemTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTagLookup, @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, blockTagLookup, Risus.MODID, existingFileHelper);
@@ -31,11 +26,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider provider) {
-		this.copy(BlockTagGenerator.BONDKNOT_LOGS, BONDKNOT_LOGS);
-		this.copy(BlockTagGenerator.JOYFLAME_FIRE_BASE_BLOCKS, JOYFLAME_FIRE_BASE_BLOCKS);
-		this.tag(ItemTags.LOGS).addTag(BONDKNOT_LOGS);
-		this.tag(ItemTags.LOGS_THAT_BURN).addTag(BONDKNOT_LOGS);
-		this.tag(ItemTagGenerator.FROGLIGHT_BLOCKS).add(Items.OCHRE_FROGLIGHT).add(Items.VERDANT_FROGLIGHT).add(Items.PEARLESCENT_FROGLIGHT);
+		this.copy(RisusTags.Blocks.BONDKNOT_LOGS, RisusTags.Items.BONDKNOT_LOGS);
+		this.copy(RisusTags.Blocks.JOYFLAME_FIRE_BASE_BLOCKS, RisusTags.Items.JOYFLAME_FIRE_BASE_BLOCKS);
+		this.tag(ItemTags.LOGS).addTag(RisusTags.Items.BONDKNOT_LOGS);
+		this.tag(ItemTags.LOGS_THAT_BURN).addTag(RisusTags.Items.BONDKNOT_LOGS);
+		this.tag(RisusTags.Items.FROGLIGHT_BLOCKS).add(Items.OCHRE_FROGLIGHT).add(Items.VERDANT_FROGLIGHT).add(Items.PEARLESCENT_FROGLIGHT);
 		this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 
 		this.copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
@@ -91,126 +86,17 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(Tags.Items.FOODS_RAW_MEAT).add(Items.COD, Items.SALMON, Items.TROPICAL_FISH);
 
 		//for bondknot
-		this.tag(RisusTags.Items.ALTERABLE_GATES)
-			.add(Items.OAK_FENCE_GATE,
-				Items.DARK_OAK_FENCE_GATE,
-				Items.BIRCH_FENCE_GATE,
-				Items.SPRUCE_FENCE_GATE,
-				Items.JUNGLE_FENCE_GATE,
-				Items.ACACIA_FENCE_GATE,
-				Items.MANGROVE_FENCE_GATE,
-				Items.CHERRY_FENCE_GATE)
-		;
-		this.tag(RisusTags.Items.ALTERABLE_FENCES)
-			.add(
-				Items.OAK_FENCE,
-				Items.DARK_OAK_FENCE,
-				Items.BIRCH_FENCE,
-				Items.SPRUCE_FENCE,
-				Items.JUNGLE_FENCE,
-				Items.ACACIA_FENCE,
-				Items.MANGROVE_FENCE,
-				Items.CHERRY_FENCE
-			);
-		this.tag(RisusTags.Items.ALTERABLE_TRAPDOORS)
-			.add(
-				Items.OAK_TRAPDOOR,
-				Items.DARK_OAK_TRAPDOOR,
-				Items.BIRCH_TRAPDOOR,
-				Items.SPRUCE_TRAPDOOR,
-				Items.JUNGLE_TRAPDOOR,
-				Items.ACACIA_TRAPDOOR,
-				Items.MANGROVE_TRAPDOOR,
-				Items.CHERRY_TRAPDOOR
-			);
-		this.tag(RisusTags.Items.ALTERABLE_HANGING_SIGNS)
-			.add(
-				Items.OAK_HANGING_SIGN,
-				Items.DARK_OAK_HANGING_SIGN,
-				Items.BIRCH_HANGING_SIGN,
-				Items.SPRUCE_HANGING_SIGN,
-				Items.JUNGLE_HANGING_SIGN,
-				Items.ACACIA_HANGING_SIGN,
-				Items.MANGROVE_HANGING_SIGN,
-				Items.CHERRY_HANGING_SIGN
-			);
-		this.tag(RisusTags.Items.ALTERABLE_SIGNS)
-			.add(
-				Items.OAK_SIGN,
-				Items.DARK_OAK_SIGN,
-				Items.BIRCH_SIGN,
-				Items.SPRUCE_SIGN,
-				Items.JUNGLE_SIGN,
-				Items.ACACIA_SIGN,
-				Items.MANGROVE_SIGN,
-				Items.CHERRY_SIGN
-			);
-		this.tag(RisusTags.Items.ALTERABLE_DOORS)
-			.add(
-				Items.OAK_DOOR,
-				Items.DARK_OAK_DOOR,
-				Items.BIRCH_DOOR,
-				Items.SPRUCE_DOOR,
-				Items.JUNGLE_DOOR,
-				Items.ACACIA_DOOR,
-				Items.MANGROVE_DOOR,
-				Items.CHERRY_DOOR
-			);
-		this.tag(RisusTags.Items.ALTERABLE_BUTTONS)
-			.add(
-				Items.OAK_BUTTON,
-				Items.DARK_OAK_BUTTON,
-				Items.BIRCH_BUTTON,
-				Items.SPRUCE_BUTTON,
-				Items.JUNGLE_BUTTON,
-				Items.ACACIA_BUTTON,
-				Items.MANGROVE_BUTTON,
-				Items.CHERRY_BUTTON
-			);
-		this.tag(RisusTags.Items.ALTERABLE_PRESSURE_PLATES)
-			.add(
-				Items.OAK_PRESSURE_PLATE,
-				Items.DARK_OAK_PRESSURE_PLATE,
-				Items.BIRCH_PRESSURE_PLATE,
-				Items.SPRUCE_PRESSURE_PLATE,
-				Items.JUNGLE_PRESSURE_PLATE,
-				Items.ACACIA_PRESSURE_PLATE,
-				Items.MANGROVE_PRESSURE_PLATE,
-				Items.CHERRY_PRESSURE_PLATE
-			);
-		this.tag(RisusTags.Items.ALTERABLE_SLABS)
-			.add(
-				Items.OAK_SLAB,
-				Items.DARK_OAK_SLAB,
-				Items.BIRCH_SLAB,
-				Items.SPRUCE_SLAB,
-				Items.JUNGLE_SLAB,
-				Items.ACACIA_SLAB,
-				Items.MANGROVE_SLAB,
-				Items.CHERRY_SLAB
-			);
-		this.tag(RisusTags.Items.ALTERABLE_STAIRS)
-			.add(
-				Items.OAK_STAIRS,
-				Items.DARK_OAK_STAIRS,
-				Items.BIRCH_STAIRS,
-				Items.SPRUCE_STAIRS,
-				Items.JUNGLE_STAIRS,
-				Items.ACACIA_STAIRS,
-				Items.MANGROVE_STAIRS,
-				Items.CHERRY_STAIRS
-			);
-		this.tag(RisusTags.Items.ALTERABLE_PLANKS)
-			.add(
-				Items.OAK_PLANKS,
-				Items.DARK_OAK_PLANKS,
-				Items.BIRCH_PLANKS,
-				Items.SPRUCE_PLANKS,
-				Items.JUNGLE_PLANKS,
-				Items.ACACIA_PLANKS,
-				Items.MANGROVE_PLANKS,
-				Items.CHERRY_PLANKS
-			);
+		this.tag(RisusTags.Items.ALTERABLE_GATES).addTag(Tags.Items.FENCE_GATES_WOODEN).remove(RisusBlocks.BONDKNOT_FENCE_GATE.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_FENCES).addTag(ItemTags.WOODEN_FENCES).addTag(Tags.Items.FENCES_WOODEN).remove(RisusBlocks.BONDKNOT_FENCE.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_TRAPDOORS).addTag(ItemTags.WOODEN_TRAPDOORS).remove(RisusBlocks.BONDKNOT_TRAPDOOR.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_HANGING_SIGNS).addTag(ItemTags.HANGING_SIGNS).remove(RisusBlocks.BONDKNOT_HANGING_SIGN.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_SIGNS).addTag(ItemTags.SIGNS).remove(RisusBlocks.BONDKNOT_SIGN.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_DOORS).addTag(ItemTags.WOODEN_DOORS).remove(RisusBlocks.BONDKNOT_DOOR.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_BUTTONS).addTag(ItemTags.WOODEN_BUTTONS).remove(RisusBlocks.BONDKNOT_BUTTON.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_PRESSURE_PLATES).addTag(ItemTags.WOODEN_PRESSURE_PLATES).remove(RisusBlocks.BONDKNOT_PRESSURE_PLATE.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_SLABS).addTag(ItemTags.WOODEN_SLABS).remove(RisusBlocks.BONDKNOT_SIGN.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_STAIRS).addTag(ItemTags.WOODEN_STAIRS).remove(RisusBlocks.BONDKNOT_STAIRS.asItem());
+		this.tag(RisusTags.Items.ALTERABLE_PLANKS).addTag(ItemTags.PLANKS).remove(RisusBlocks.BONDKNOT_PLANKS.asItem());
 		this.tag(RisusTags.Items.ALTERABLE_LOGS)
 			.add(
 				Items.OAK_LOG,

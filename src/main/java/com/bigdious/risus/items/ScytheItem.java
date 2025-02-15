@@ -12,6 +12,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -49,9 +50,11 @@ public class ScytheItem extends SwordItem {
 		Blocks.SOUL_CAMPFIRE, RisusItems.SOUL_SCYTHE,
 		RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusItems.CINDERGLEE_SCYTHE
 	);
+	private final TagKey<Enchantment> allowedEnchants;
 
-	public ScytheItem(Tier material, Properties properties) {
+	public ScytheItem(Tier material, TagKey<Enchantment> allowedEnchants, Properties properties) {
 		super(material, properties);
+		this.allowedEnchants = allowedEnchants;
 	}
 
 	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
@@ -61,35 +64,13 @@ public class ScytheItem extends SwordItem {
 	}
 
 	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack material) {
-		return material.is(RisusItems.GLUTTONY_SCALES);
-	}
-	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
-				enchantment.is(Enchantments.LOOTING) ||
-				enchantment.is(Enchantments.SMITE) ||
-				enchantment.is(Enchantments.MENDING) ||
-				enchantment.is(Enchantments.UNBREAKING) ||
-				enchantment.is(Enchantments.FIRE_ASPECT) ||
-				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.VANISHING_CURSE)
-			;
+		return enchantment.is(this.allowedEnchants);
 	}
+
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return
-			enchantment.is(Enchantments.SHARPNESS) ||
-				enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
-				enchantment.is(Enchantments.LOOTING) ||
-				enchantment.is(Enchantments.SMITE) ||
-				enchantment.is(Enchantments.MENDING) ||
-				enchantment.is(Enchantments.UNBREAKING) ||
-				enchantment.is(Enchantments.FIRE_ASPECT) ||
-				enchantment.is(Enchantments.KNOCKBACK) ||
-				enchantment.is(Enchantments.VANISHING_CURSE);
+		return enchantment.is(this.allowedEnchants);
 	}
 
 	@Override

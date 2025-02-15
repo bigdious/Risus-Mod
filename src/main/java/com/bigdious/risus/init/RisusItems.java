@@ -1,6 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.data.BannerPatternTagGenerator;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.items.armor.RisusArmorItem;
@@ -30,10 +31,10 @@ public class RisusItems {
 	public static final DeferredItem<Item> HAND_OF_GREED = register("hand_of_greed", properties -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes()).rarity(BLOOD));
 	public static final DeferredItem<Item> UNAWAKENED_VESSEL = register("unawakened_vessel", properties -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD));
 	public static final DeferredItem<Item> TOOTHKNOCKER = register("toothknocker", properties -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(SwordItem.createAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> SCYTHE = register("scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD));
-	public static final DeferredItem<Item> FIRE_SCYTHE = register("fire_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
-	public static final DeferredItem<Item> SOUL_SCYTHE = register("soul_scythe", properties -> new SoulScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
-	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SCYTHE = register("scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 11, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> FIRE_SCYTHE = register("fire_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.FIRE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SOUL_SCYTHE = register("soul_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
+	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 8, -3.5F)).rarity(BLOOD));
 	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 14, -3.5F)).rarity(BLOOD));
 	public static final DeferredItem<Item> BLOOD_BUCKET = register("blood_bucket", properties -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).craftRemainder(Items.BUCKET));
 	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().rarity(BLOOD));
@@ -81,9 +82,9 @@ public class RisusItems {
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//COLLECTABLES
-	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> DIVINITY_PATTERN = register("divinity_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.DIVINITY_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> TREE_PATTERN = register("tree_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatternTagGenerator.TREE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> DIVINITY_PATTERN = register("divinity_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.DIVINITY_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> TREE_PATTERN = register("tree_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.TREE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> MUSIC_DISC_RAK = register("music_disc_rak", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK));
 	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = register("music_disc_feigr", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR));
 	public static final DeferredItem<Item> MUSIC_DISC_MORK = register("music_disc_mork", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK));

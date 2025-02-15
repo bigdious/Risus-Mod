@@ -25,7 +25,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.ItemAbilities;
 
 public class VeinsEndBlock extends RisusGrowingPlantHeadBlock implements SimpleMultiloggedBlock {
 	public static final MapCodec<VeinsEndBlock> CODEC = simpleCodec(VeinsEndBlock::new);
@@ -56,21 +56,25 @@ public class VeinsEndBlock extends RisusGrowingPlantHeadBlock implements SimpleM
 	protected boolean canGrowInto(BlockState p_154971_) {
 		return RisusVines.isValidGrowthState(p_154971_);
 	}
+
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(FLUIDLOGGED);
 	}
+
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		return this.defaultBlockState().setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
 			.setValue(AGE, context.getLevel().getRandom().nextInt(25));
 	}
+
 	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(FLUIDLOGGED).getFluid().defaultFluidState();
 	}
+
 	@Override
 	public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor accessor, BlockPos pos, BlockPos neighborPos) {
 		if (direction == this.growthDirection.getOpposite() && !state.canSurvive(accessor, pos)) {
@@ -87,12 +91,13 @@ public class VeinsEndBlock extends RisusGrowingPlantHeadBlock implements SimpleM
 			return this.updateBodyAfterConvertedFromHead(state, this.getBodyBlock().defaultBlockState().setValue(FLUIDLOGGED, state.getValue(FLUIDLOGGED)));
 		}
 	}
+
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		ItemStack held = player.getItemInHand(hand);
-		if (held.is(Tags.Items.TOOLS_SHEAR) && state.getValue(AGE)<25) {
-			level.setBlock(pos, RisusBlocks.VEINS_END.get().defaultBlockState().setValue(AGE, 25), 11);
+		if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST) && state.getValue(AGE) < 25) {
+			level.setBlock(pos, RisusBlocks.VEINS_END.get().defaultBlockState().setValue(AGE, 25), 2);
 			level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-		return ItemInteractionResult.FAIL;
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 }

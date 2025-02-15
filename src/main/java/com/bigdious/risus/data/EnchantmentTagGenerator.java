@@ -1,0 +1,103 @@
+package com.bigdious.risus.data;
+
+import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusTags;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.EnchantmentTagsProvider;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.concurrent.CompletableFuture;
+
+public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
+	public EnchantmentTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, Risus.MODID, existingFileHelper);
+	}
+
+	@Override
+	protected void addTags(HolderLookup.Provider provider) {
+		this.tag(RisusTags.Enchantments.THOUSAND_BLADE_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.SWEEPING_EDGE,
+			Enchantments.LOOTING,
+			Enchantments.SMITE,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.KNOCKBACK,
+			Enchantments.POWER,
+			Enchantments.PIERCING,
+			Enchantments.MULTISHOT,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS).add(
+			Enchantments.LOYALTY,
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.SMITE,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.LOOTING,
+			Enchantments.KNOCKBACK,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.SCYTHE_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.LOOTING,
+			Enchantments.SMITE,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.KNOCKBACK,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.LOOTING,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.KNOCKBACK,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.FIRE_SCYTHE_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.LOOTING,
+			Enchantments.SMITE,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.KNOCKBACK,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.LOOTING,
+			Enchantments.SMITE,
+			Enchantments.MENDING,
+			Enchantments.UNBREAKING,
+			Enchantments.FIRE_ASPECT,
+			Enchantments.KNOCKBACK,
+			Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.TOOTHKNOCKER_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+				Enchantments.BANE_OF_ARTHROPODS,
+				Enchantments.SMITE,
+				Enchantments.MENDING,
+				Enchantments.UNBREAKING,
+				Enchantments.FIRE_ASPECT,
+				Enchantments.KNOCKBACK,
+				Enchantments.LOOTING,
+				Enchantments.VANISHING_CURSE);
+	}
+}
