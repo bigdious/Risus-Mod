@@ -51,7 +51,7 @@ public class ScaleplateBlock extends MultiDirectionalBlock implements SimpleMult
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		Direction direction = context.getNearestLookingDirection().getOpposite();
+		Direction direction = context.getClickedFace();
 		Direction direction1 = switch (direction) {
 			case DOWN -> context.getHorizontalDirection().getOpposite();
 			case UP -> context.getHorizontalDirection();
