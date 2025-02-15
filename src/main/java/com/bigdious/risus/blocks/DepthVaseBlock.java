@@ -1,25 +1,23 @@
 package com.bigdious.risus.blocks;
 
-
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
-import com.bigdious.risus.entity.projectile.ThrownAxe;
-import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -27,13 +25,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -84,13 +81,13 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	}
 
 	@Override
-	public BlockState rotate(BlockState pState, Rotation pRot) {
-		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+	public BlockState rotate(BlockState state, Rotation rotation) {
+		return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
 	}
 
 	@Override
-	public BlockState mirror(BlockState pState, Mirror pMirror) {
-		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+	public BlockState mirror(BlockState state, Mirror mirror) {
+		return state.rotate(mirror.getRotation(state.getValue(FACING)));
 	}
 
 	@Override
@@ -103,156 +100,101 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 		return RenderShape.MODEL;
 	}
 
-
+	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-		//it can probably be compacted but it broke the logic when I did it so it'll stay an ugly duckling
-		BlockEntity $$8 = level.getBlockEntity(pos);
-		if ($$8 instanceof DepthVaseBlockEntity depthVase) {
-			if (hand != InteractionHand.MAIN_HAND) {
-				player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-				depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
-				return ItemInteractionResult.FAIL;
-			}
-			if (player.getMainHandItem().is(RisusItems.RESEARCHERS_NOTES)) {
-//				if (depthVase.depthToSlotRatio > 1) {
-					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slots"));
-					return ItemInteractionResult.sidedSuccess(level.isClientSide);
-//				} else {
-//					player.sendSystemMessage(Component.literal(depthVase.depthToSlotRatio + " Slot"));
-//					return ItemInteractionResult.SUCCESS;
-//				}
+		if (level.getBlockEntity(pos) instanceof DepthVaseBlockEntity vase) {
+			//display slot count when right clicked with notes
+			if (stack.is(RisusItems.RESEARCHERS_NOTES)) {
+				//this only fires on the client to prevent the message from displaying twice
+				if (level.isClientSide()) player.displayClientMessage(Component.literal(vase.depthToSlotRatio + " Slots"), true);
+				return ItemInteractionResult.sidedSuccess(level.isClientSide());
 			} else {
-				if (!player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-					for (int i = 0; i < depthVase.depthToSlotRatio + 1; ++i) {
-						if (i == depthVase.depthToSlotRatio) {
-							player.playSound(SoundEvents.DECORATED_POT_INSERT_FAIL);
-							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
-							return ItemInteractionResult.FAIL;
-						}
-						if (depthVase.canMergeItems(player.getMainHandItem(), depthVase.getInputItem(i)) && depthVase.getInputItem(i).getCount() < depthVase.getInputItem(i).getMaxStackSize()) {
-							if (depthVase.getInputItem(i).getCount() + player.getMainHandItem().getCount() <= depthVase.getInputItem(i).getMaxStackSize()) {
-								depthVase.getInputItem(i).grow(player.getMainHandItem().getCount());
-								player.getMainHandItem().shrink(player.getMainHandItem().getCount());
-								depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
-								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
-								if (level instanceof ServerLevel serverlevel) {
-									serverlevel.sendParticles(
-										ParticleTypes.SMOKE,
-										(double)pos.getX() + 0.5,
-										(double)pos.getY() + 1,
-										(double)pos.getZ() + 0.5,
-										7,
-										0.0,
-										0.0,
-										0.0,
-										0.0
-									);
-								}
-								return ItemInteractionResult.sidedSuccess(level.isClientSide);
+				//otherwise, attempt to add items into the pot
+				if (!player.isCrouching() && !stack.isEmpty()) {
+					for (int i = 0; i < vase.depthToSlotRatio; i++) {
+						ItemStack currentItem = vase.getItem(i);
+						if (currentItem.isEmpty() || (ItemStack.isSameItemSameComponents(stack, currentItem) && currentItem.getCount() < currentItem.getMaxStackSize())) {
+							//find the difference between the 2 stacks to get the vase to a full stack and let the player keep the remainder
+							//so if a vase has a stack of 35 blocks and the player tries to insert 42, they will only insert 29 to make the vase contents a full stack.
+							int toInsert = Math.min(stack.getCount() + currentItem.getCount(), stack.getMaxStackSize()) - currentItem.getCount();
+							ItemStack inputItem = stack.split(toInsert);
+							if (currentItem.isEmpty()) {
+								vase.setItem(i, inputItem);
 							} else {
-								player.getMainHandItem().shrink(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
-								depthVase.getInputItem(i).grow(depthVase.getInputItem(i).getMaxStackSize() - depthVase.getInputItem(i).getCount());
-								depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
-								level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
-								if (level instanceof ServerLevel serverlevel) {
-									serverlevel.sendParticles(
-										ParticleTypes.SMOKE,
-										(double)pos.getX() + 0.5,
-										(double)pos.getY() + 1,
-										(double)pos.getZ() + 0.5,
-										7,
-										0.0,
-										0.0,
-										0.0,
-										0.0
-									);
-								}
-								return ItemInteractionResult.sidedSuccess(level.isClientSide);
+								currentItem.grow(inputItem.getCount());
 							}
-						} else if (depthVase.getInputItem(i).isEmpty()) {
-							depthVase.setInputItem(i, player.getInventory().removeItem(player.getInventory().selected, 1));
-							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
-							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
-							if (level instanceof ServerLevel serverlevel) {
-								serverlevel.sendParticles(
-									ParticleTypes.SMOKE,
-									(double)pos.getX() + 0.5,
-									(double)pos.getY() + 1,
-									(double)pos.getZ() + 0.5,
-									7,
-									0.0,
-									0.0,
-									0.0,
-									0.0
-								);
-							}
-							return ItemInteractionResult.sidedSuccess(level.isClientSide);
-						}
-					}
-				}
-				if (player.getMainHandItem().isEmpty() && !player.isCrouching()) {
-					for (int i = depthVase.depthToSlotRatio - 1; i >= 0; --i) {
-						if (!depthVase.getInputItem(i).isEmpty()) {
-							ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), depthVase.getInputItem(i));
-							level.addFreshEntity(item);
-							depthVase.setInputItem(i, ItemStack.EMPTY);
-							depthVase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
-							level.playSound(null, player, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * 1);
-							if (level instanceof ServerLevel serverlevel) {
-								serverlevel.sendParticles(
-									RisusParticles.RISUS_SOUL_PARTICLE.get(),
-									(double)pos.getX() + 0.5,
-									(double)pos.getY() + 1,
-									(double)pos.getZ() + 0.5,
-									1,
-									0.0,
-									0.0,
-									0.0,
-									0.0
-								);
-							}
-							return ItemInteractionResult.SUCCESS;
+							player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
+							this.playWobbleEffects(vase, level, pos, ParticleTypes.SMOKE);
+							return ItemInteractionResult.sidedSuccess(level.isClientSide());
 						}
 					}
 				}
 			}
+			//if we get here, it means the player was either crouching or wasnt holding an item. This moves further logic to fire from useWithoutItem
+			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		}
-		return ItemInteractionResult.FAIL;
+		return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	@Override
-	public void onProjectileHit(Level pLevel, BlockState pState, BlockHitResult pHit, Projectile pProjectile) {
-		BlockPos blockpos = pHit.getBlockPos();
-		if (!pLevel.isClientSide && pProjectile.mayInteract(pLevel, blockpos) && pProjectile instanceof ThrownTrident && pProjectile.getDeltaMovement().length() > 0.6D) {
-			pLevel.destroyBlock(blockpos, true);
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+		if (level.getBlockEntity(pos) instanceof DepthVaseBlockEntity vase) {
+			//if not crouching try to pull an item out of the vase
+			if (!player.isCrouching() && !vase.isEmpty()) {
+				for (int i = vase.depthToSlotRatio - 1; i >= 0; i--) {
+					if (!vase.getItem(i).isEmpty()) {
+						ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), vase.getItem(i));
+						level.addFreshEntity(item);
+						vase.setItem(i, ItemStack.EMPTY);
+						this.playWobbleEffects(vase, level, pos, RisusParticles.RISUS_SOUL_PARTICLE.get());
+						return InteractionResult.SUCCESS;
+					}
+				}
+			}
+			//if no item is fetched or the player is crouching, play fail effects
+			level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS);
+			vase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
+			level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+			return InteractionResult.SUCCESS;
 		}
-		if (!pLevel.isClientSide && pProjectile.mayInteract(pLevel, blockpos) && pProjectile instanceof ThrownAxe && pProjectile.getDeltaMovement().length() > 0.6D) {
-			pLevel.destroyBlock(blockpos, true);
+		return InteractionResult.PASS;
+	}
+
+	private void playWobbleEffects(DepthVaseBlockEntity entity, Level level, BlockPos pos, ParticleOptions particle) {
+		entity.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
+		level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F);
+		if (level instanceof ServerLevel serverlevel) {
+			serverlevel.sendParticles(
+				particle,
+				(double) pos.getX() + 0.5D,
+				(double) pos.getY() + 1.0D,
+				(double) pos.getZ() + 0.5D,
+				1,
+				0.0D,
+				0.0D,
+				0.0D,
+				0.0D
+			);
+		}
+	}
+
+	@Override
+	public void onProjectileHit(Level level, BlockState state, BlockHitResult result, Projectile projectile) {
+		BlockPos blockpos = result.getBlockPos();
+		if (!level.isClientSide() && projectile.mayInteract(level, blockpos) && projectile.mayBreak(level)) {
+			level.destroyBlock(blockpos, true, projectile);
 		}
 	}
 
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
-		if (!state.is(newState.getBlock())) {
-			BlockEntity blockentity = level.getBlockEntity(pos);
-			if (blockentity instanceof Container container) {
-				Containers.dropContents(level, pos, container);
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
-
-			super.onRemove(state, level, pos, newState, moving);
-		}
+		Containers.dropContentsOnDestroy(state, newState, level, pos);
+		super.onRemove(state, level, pos, newState, moving);
 	}
 
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
 		return new DepthVaseBlockEntity(pos, state);
-	}
-
-	@Nullable
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-		return createTickerHelper(type, RisusBlockEntities.DEPTH_VASE.get(), DepthVaseBlockEntity::tick);
 	}
 }

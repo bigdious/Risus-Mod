@@ -121,20 +121,20 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 	}
 
 	private static boolean canMergeItems(ItemStack oldStack, ItemStack newStack) {
-		return ItemStack.isSameItem(oldStack, newStack);
+		return oldStack.getCount() <= oldStack.getMaxStackSize() && ItemStack.isSameItemSameComponents(oldStack, newStack);
 	}
 
 	@Override
-	public void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-		super.loadAdditional(tag, pRegistries);
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.loadAdditional(tag, registries);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(tag, this.items, pRegistries);
+		ContainerHelper.loadAllItems(tag, this.items, registries);
 	}
 
 	@Override
-	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-		super.saveAdditional(tag, pRegistries);
-		ContainerHelper.saveAllItems(tag, this.items, pRegistries);
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.saveAdditional(tag, registries);
+		ContainerHelper.saveAllItems(tag, this.items, registries);
 	}
 
 	@Override
@@ -182,11 +182,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 
 	@Override
 	public boolean stillValid(Player player) {
-		if (this.getLevel().getBlockEntity(this.getBlockPos()) != this) {
-			return false;
-		} else {
-			return !(player.distanceToSqr((double) this.getBlockPos().getX() + 0.5D, (double) this.getBlockPos().getY() + 0.5D, (double) this.getBlockPos().getZ() + 0.5D) > 64.0D);
-		}
+		return Container.stillValidBlockEntity(this, player);
 	}
 
 	@Override
