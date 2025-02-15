@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusTags;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -181,7 +182,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 	@Override
 	public void onProjectileHit(Level level, BlockState state, BlockHitResult result, Projectile projectile) {
 		BlockPos blockpos = result.getBlockPos();
-		if (!level.isClientSide() && projectile.mayInteract(level, blockpos) && projectile.mayBreak(level)) {
+		if (!level.isClientSide() && projectile.mayInteract(level, blockpos) && projectile.getType().is(RisusTags.Entities.BREAKS_DEPTH_VASES)) {
 			level.destroyBlock(blockpos, true, projectile);
 		}
 	}

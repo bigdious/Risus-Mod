@@ -50,5 +50,9 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(RisusEntities.HOLDER.get())
 			.add(EntityType.ARMOR_STAND)
 		;
+		tag(RisusTags.Entities.BREAKS_DEPTH_VASES)
+			.add(RisusEntities.THROWN_AXE.get())
+			.add(EntityType.TRIDENT)
+		;
 	}
 }

@@ -85,6 +85,7 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> LOVEABLE = tag("loveable");
 		public static final TagKey<EntityType<?>> CANT_BE_STOLEN_FROM = tag("cant_be_stolen_from");
 		public static final TagKey<EntityType<?>> CANT_BE_STRIPPED = tag("cant_be_stripped");
+		public static final TagKey<EntityType<?>> BREAKS_DEPTH_VASES = tag("breaks_depth_vases");
 
 		private static TagKey<EntityType<?>> tag(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
