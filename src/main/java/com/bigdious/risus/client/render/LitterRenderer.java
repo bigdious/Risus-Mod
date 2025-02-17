@@ -34,13 +34,9 @@ public class LitterRenderer extends MobRenderer<Litter, LitterModel<Litter>> {
 
 	@Override
 	public void render(Litter entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-		BlockState renderBlockState;
-		for ( Object s : entity.getTags().toArray()) {
-			System.out.println(s);
-		}
-		renderBlockState = Blocks.DIRT.defaultBlockState();
-
+		BlockState renderBlockState = entity.getLightBlockState();
 		Block block = renderBlockState.getBlock();
+
 		ResourceLocation blockTexture = ResourceLocation.fromNamespaceAndPath(
 			BuiltInRegistries.BLOCK.getKey(block).getNamespace(),
 			"textures/block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + ".png"
@@ -60,10 +56,7 @@ public class LitterRenderer extends MobRenderer<Litter, LitterModel<Litter>> {
 
 	@Override
 	public ResourceLocation getTextureLocation(Litter litter) {
-		return ResourceLocation.fromNamespaceAndPath(
-			BuiltInRegistries.BLOCK.getKey(litter.getBlockState().getBlock()).getNamespace(),
-			"textures/block/" + BuiltInRegistries.BLOCK.getKey(litter.getBlockState().getBlock()).getPath() + ".png"
-		);
+		return DEFAULT_TEXTURE;
 	}
 
 }

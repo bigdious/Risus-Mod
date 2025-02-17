@@ -21,41 +21,39 @@ import java.util.UUID;
 public class Litter extends TamableAnimal implements NeutralMob {
 
 
-	private BlockState blockState;
+	private BlockState blockState = Blocks.DIRT.defaultBlockState();
 
 	public Litter(EntityType<? extends TamableAnimal> entityType, Level level, @Nullable UUID ownerUUID) {
 		super(entityType, level);
 		this.setOwnerUUID(ownerUUID);
-		blockState = null;
 	}
 
 	public Litter(EntityType<Litter> litterEntityType, Level level) {
 		super(litterEntityType, level);
-		blockState = null;
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
-		tag.put("BlockState", NbtUtils.writeBlockState(this.blockState));
+		tag.put("light_block", NbtUtils.writeBlockState(this.blockState));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
-		if (tag.contains("BlockState", 10)) {
-			this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), tag.getCompound("BlockState"));
+		if (tag.contains("light_block", 10)) {
+			this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), tag.getCompound("light_block"));
 		} else {
 			this.blockState = Blocks.STONE.defaultBlockState();
 		}
 	}
 
 
-	public void setBlockState(BlockState state) {
+	public void setLightBlockState(BlockState state) {
 		this.blockState = state;
 	}
 
-	public BlockState getBlockState() {
+	public BlockState getLightBlockState() {
 		return this.blockState;
 	}
 

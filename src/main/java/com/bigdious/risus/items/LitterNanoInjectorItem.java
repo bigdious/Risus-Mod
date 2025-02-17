@@ -16,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 public class LitterNanoInjectorItem extends Item {
 
@@ -65,9 +66,10 @@ public class LitterNanoInjectorItem extends Item {
 			// play villager transformation sound
 			level.playSound(null, context.getClickedPos(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);
 
+			// create litter entity at clicked position
 			Litter summonedLitter = new Litter(RisusEntities.LITTER.get(), level, context.getPlayer().getUUID());
-			summonedLitter.setBlockState(blockState);
-			summonedLitter.moveTo(context.getClickedPos(), 0.0F, 0.0F);
+			summonedLitter.setLightBlockState(blockState);
+			summonedLitter.moveTo(Vec3.atBottomCenterOf(context.getClickedPos()));
 			level.addFreshEntity(summonedLitter);
 			return InteractionResult.SUCCESS;
 		}

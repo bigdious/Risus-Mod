@@ -144,7 +144,7 @@
 
 		@Override
 		public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+			this.root().getAllParts().forEach(ModelPart::resetPose);
 		}
 		@Override
 		public ModelPart root() {
