@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-15T10:52:06.0877784	Recipes
+// 1.21.1	2025-02-16T19:20:53.2546845	Recipes
 88c2947c75e5a46b8274edefb490d28e51d24a84 data/minecraft/advancement/recipes/misc/full_bone_to_bone_meal.json
 27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
@@ -157,6 +157,7 @@ abae48fcf1ca01fd435e87ae86194a45b7f47f2a data/risus/advancement/recipes/decorati
 d8c5860baafb46ee3e5dc4760dcac6c0f087c0c7 data/risus/advancement/recipes/redstone/bondknot_pressure_plate.json
 83eac5c1499c5f0967758387a03036ab9a659729 data/risus/advancement/recipes/redstone/bondknot_trapdoor.json
 d0aab298101321b21b3961b6b107cdc0614bdd66 data/risus/advancement/recipes/tools/light_devourer.json
+f821ff45e3bfb8393a1b8ff416df6c463d2e6ea3 data/risus/advancement/recipes/tools/litter_nano_injector.json
 5d9aafde7cbe74a8f61052800ba55e0abdccb4bd data/risus/advancement/recipes/transportation/bondknot_boat.json
 a6048b1953c43e6b9efc50a46981ece9b3108c89 data/risus/advancement/recipes/transportation/guts_boat.json
 f6fef0b1ec407eafeccc43b96e0e7010e5c21929 data/risus/recipe/alteration/active_grimstone.json
@@ -277,6 +278,7 @@ abc0a00dabf6a9e6a7298c7d7a7faf360c9b56c2 data/risus/recipe/joyflame_campfire.jso
 5bdacb023206fc0592572f167d763dcb24326f00 data/risus/recipe/joyflame_torch.json
 305081d34461a2aa90a6289df76c7f4b2636bc33 data/risus/recipe/light_devourer.json
 5a050e85334c03102d1b5449aadfa512323cad11 data/risus/recipe/linear_ritual_block.json
+8db1d692d7da6f7017c9817493a819f774c0c1d1 data/risus/recipe/litter_nano_injector.json
 548cb3c7c5bfc340b50dc7fec6af7ed7f5e16111 data/risus/recipe/organic_matter.json
 994dcb359b8deb8437356054c46d8849dc79faf1 data/risus/recipe/organic_matter_block.json
 3129caaf1a8c9df3a847760325fb251d64a56bba data/risus/recipe/polished_grimstone.json

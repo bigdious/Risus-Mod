@@ -25,6 +25,7 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(RisusEntities.BABY_SPIDER.get())
 			.add(RisusEntities.LICKER.get())
 			.add(RisusEntities.WEAVER.get())
+			.add(RisusEntities.LITTER.get())
 		;
 
 		tag(RisusTags.Entities.OFFSPRING)

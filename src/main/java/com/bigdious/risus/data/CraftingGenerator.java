@@ -660,6 +660,20 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.STALKER_EYE))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, RisusItems.LITTER_NANO_INJECTOR.get(), 1)
+			.pattern("GMG")
+			.pattern("CHC")
+			.pattern(" N ")
+			.define('G', Ingredient.of(Items.GOLD_INGOT))
+			.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
+			.define('C', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
+			.define('H', Ingredient.of(RisusBlocks.HEART_TRANSPLANT.get()))
+			.define('N', Ingredient.of(Items.GOLD_NUGGET))
+			.unlockedBy("has_item", has(RisusItems.MEMORY_CORE.get()))
+			.unlockedBy("has_item", has(RisusItems.CRYSTALLIZED_BOND.get()))
+			.unlockedBy("has_item", has(RisusBlocks.HEART_TRANSPLANT.get()))
+			.save(consumer);
+
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1)
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_to_bricks"));

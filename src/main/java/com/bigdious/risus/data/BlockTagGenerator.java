@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -201,6 +202,13 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
 		);
+		this.tag(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS).add(
+			Blocks.GLOWSTONE,
+			Blocks.SHROOMLIGHT,
+			Blocks.JACK_O_LANTERN,
+			Blocks.BEACON,
+			Blocks.SEA_LANTERN
+			);
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
 	}
 }

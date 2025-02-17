@@ -189,6 +189,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.TRANSIENT_QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));
 		event.registerEntityRenderer(RisusEntities.GUTS_BOAT.get(), (context) -> new RisusBoatRenderer(context, true));
