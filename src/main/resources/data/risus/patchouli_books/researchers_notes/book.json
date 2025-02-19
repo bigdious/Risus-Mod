@@ -1,6 +1,6 @@
 {
   "name": "Researcher's Notes",
-  "landing_text": "I am about to step into a new frontier. I leave behind my notes - though I suspect this plague to consume them - hoping they can escape if I cannot. It might be difficult to decipher them at first, but you'll succeed as you explore the Risus. However, I will ask you, whoever you are, to not follow in my footsteps.                   -R. Tenebrora",
+  "landing_text": "I am about to step into a new frontier. I leave behind my notes - though I suspect this plague to consume them - hoping they can escape if I cannot. It might be difficult to decipher them at first, but you'll succeed as you explore more of the Risus. However, I will ask you, whoever you are, to not follow in my footsteps.                   -R. Tenebrora",
   "use_resource_pack": true,
   "dont_generate_book": true,
   "custom_book_item": "risus:researchers_notes",

@@ -20,7 +20,6 @@
     "description": {
       "translate": "advancement.risus.satiate.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:maw_guts"

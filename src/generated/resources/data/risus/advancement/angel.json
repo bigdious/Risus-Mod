@@ -22,7 +22,6 @@
     "description": {
       "translate": "advancement.risus.angel.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:angel_altar"

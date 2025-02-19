@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.neoforged.neoforge.common.Tags;
 
 public class RisusDispenserBehaviours {
 	public static void register() {

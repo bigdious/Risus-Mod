@@ -22,7 +22,6 @@
     "description": {
       "translate": "advancement.risus.family.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:ribcage"

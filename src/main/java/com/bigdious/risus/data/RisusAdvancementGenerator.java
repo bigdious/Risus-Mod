@@ -59,7 +59,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.ANGEL_ALTAR.get(),
 				Component.translatable("advancement.risus.angel"),
-				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("angel_altar", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
 			.save(consumer, "risus:angel");
 
@@ -76,7 +76,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.RIBCAGE.get(),
 				Component.translatable("advancement.risus.family"),
-				Component.translatable("advancement.risus.family.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.family.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("family1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
 			.save(consumer, "risus:family");
 
@@ -84,7 +84,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.ESSENCE_OF_GREED.get(),
 				Component.translatable("advancement.risus.little"),
-				Component.translatable("advancement.risus.little.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.little.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("pricked", EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance().sourceEntity(EntityPredicate.Builder.entity().of(RisusEntities.HOLDER.get()).build())))
 			.save(consumer, "risus:little");
 
@@ -117,7 +117,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.ESSENCE_OF_GLUTTONY.get(),
 				Component.translatable("advancement.risus.devour"),
-				Component.translatable("advancement.risus.devour.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.devour.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("devour0", KilledTrigger.TriggerInstance.entityKilledPlayer(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
 			.save(consumer, "risus:devour");
 
@@ -125,7 +125,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.GLUTTONY_SCALES.get(),
 				Component.translatable("advancement.risus.gluttony"),
-				Component.translatable("advancement.risus.gluttony.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.gluttony.desc"), null, AdvancementType.TASK, true, true, false)
 			.requirements(AdvancementRequirements.Strategy.AND)
 			.addCriterion("gluttony", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer, "risus:gluttony");
@@ -134,7 +134,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.MAW_GUTS.get(),
 				Component.translatable("advancement.risus.satiate"),
-				Component.translatable("advancement.risus.satiate.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.satiate.desc"), null, AdvancementType.TASK, true, true, false)
 			.requirements(AdvancementRequirements.Strategy.AND)
 			.addCriterion("satiate0", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
 			.save(consumer, "risus:satiate");
@@ -143,7 +143,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.UNAWAKENED_VESSEL.get(),
 				Component.translatable("advancement.risus.potential"),
-				Component.translatable("advancement.risus.potential.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.potential.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("weakaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.UNAWAKENED_VESSEL.get()))
 			.save(consumer, "risus:potential");
 
@@ -152,7 +152,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.ESSENCE_OF_SLOTH.get(),
 				Component.translatable("advancement.risus.crusade"),
-				Component.translatable("advancement.risus.crusade.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.crusade.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("murder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.ANGEL.get())))
 			.save(consumer, "risus:crusade");
 
@@ -160,7 +160,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.CRESCENT_DISASTER.get(),
 				Component.translatable("advancement.risus.unleashed"),
-				Component.translatable("advancement.risus.unleashed.desc"), null, AdvancementType.GOAL, true, true, true)
+				Component.translatable("advancement.risus.unleashed.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("strongaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CRESCENT_DISASTER))
 			.save(consumer, "risus:unleashed");
 
@@ -177,7 +177,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
 				Component.translatable("advancement.risus.great_body"),
-				Component.translatable("advancement.risus.great_body.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.great_body.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
 			.save(consumer, "risus:body");
 
@@ -185,7 +185,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.SKIN_HELMET.get(),
 				Component.translatable("advancement.risus.tight"),
-				Component.translatable("advancement.risus.tight.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.tight.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("skins", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SKIN_HELMET.get(), RisusItems.SKIN_BOOTS.get(), RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SKIN_LEGGINGS.get()))
 			.save(consumer, "risus:tight");
 
@@ -193,7 +193,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.SCYTHE.get(),
 				Component.translatable("advancement.risus.scythe"),
-				Component.translatable("advancement.risus.scythe.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.scythe.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("scythe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SCYTHE.get()))
 			.save(consumer, "risus:scythe");
 
@@ -217,7 +217,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.EGG_SAC.get(),
 				Component.translatable("advancement.risus.licked"),
-				Component.translatable("advancement.risus.licked.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.licked.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("licked", EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance().sourceEntity(EntityPredicate.Builder.entity().of(RisusEntities.LICKER.get()).build())))
 			.save(consumer, "risus:licked");
 
@@ -261,7 +261,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.INACTIVE_HOLDER.get(),
 				Component.translatable("advancement.risus.lab"),
-				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, true)
+				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("enter_lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
 			.save(consumer, "risus:lab");
 	}

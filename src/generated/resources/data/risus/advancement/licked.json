@@ -16,7 +16,6 @@
     "description": {
       "translate": "advancement.risus.licked.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:egg_sac"

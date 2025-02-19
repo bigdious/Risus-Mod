@@ -33,6 +33,7 @@ public class ThrownAxe extends AbstractArrow {
 	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_FIRE_ASPECT = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private boolean dealtDamage;
 	private boolean shouldSpin = true;
 	public int spinTickCount;
@@ -46,6 +47,7 @@ public class ThrownAxe extends AbstractArrow {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_FIRE_ASPECT, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
 	private byte getLoyaltyFromItem(ItemStack p_345571_) {
@@ -132,14 +134,12 @@ public class ThrownAxe extends AbstractArrow {
 		super.defineSynchedData(pBuilder);
 		pBuilder.define(ID_LOYALTY, (byte)0);
 		pBuilder.define(ID_SHARPNESS, (byte)0);
+		pBuilder.define(ID_FIRE_ASPECT, (byte)0);
 		pBuilder.define(ID_FOIL, false);
 	}
 	@Override
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
-		float f;
-
-		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED, entity1 == null ? this : entity1);
 
@@ -147,12 +147,14 @@ public class ThrownAxe extends AbstractArrow {
 
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
-
-		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS)<1 ? 10 : 10+(0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
+	//update base attack when needed
+		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS)<1 ? 9 : 9+(0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}
-
+			if(this.entityData.get(ID_FIRE_ASPECT) > 0) {
+				entity.igniteForSeconds(this.entityData.get(ID_FIRE_ASPECT) * 80);
+			}
 			if (entity instanceof LivingEntity livingentity1) {
 				if (entity1 instanceof LivingEntity) {
 					this.doPostHurtEffects(livingentity1);
@@ -194,6 +196,7 @@ public class ThrownAxe extends AbstractArrow {
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
 		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_FIRE_ASPECT, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 	}
 
 	@Override

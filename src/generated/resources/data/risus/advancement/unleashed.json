@@ -17,7 +17,6 @@
       "translate": "advancement.risus.unleashed.desc"
     },
     "frame": "goal",
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:crescent_disaster"

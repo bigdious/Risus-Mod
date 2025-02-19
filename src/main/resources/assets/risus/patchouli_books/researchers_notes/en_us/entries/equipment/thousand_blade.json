@@ -13,7 +13,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "will consume a small amount of the blood and the blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile, but nor Flame nor Fire aspect will work on the aura. To assist with the creation of this sword, a Sacrificial Catalyst is needed, which requires several items such as: Coagulated Blood, Bloodweave, a Heart Transplant, an Organic Matter Block and a Concentration Core."
+      "text": "will consume a small amount of the blood and the blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile at least, but nor Flame nor Fire aspect will work. To assist with the creation of this sword, a Sacrificial Catalyst is needed, which requires several items such as: Coagulated Blood, Bloodweave, a Heart Transplant, an Organic Matter Block and a Concentration Core."
     },
     {
       "type": "patchouli:crafting",

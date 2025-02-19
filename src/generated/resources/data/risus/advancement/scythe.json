@@ -16,7 +16,6 @@
     "description": {
       "translate": "advancement.risus.scythe.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:scythe"

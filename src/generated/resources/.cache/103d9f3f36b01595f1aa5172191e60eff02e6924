@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-14T17:46:58.8404631	Registries
+// 1.21.1	2025-02-19T18:43:40.6595297	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
 39f02a921b190255a135f614d59aa6fed375becb data/risus/banner_pattern/tree.json
@@ -41,7 +41,7 @@ ae99a2e75942e71b8e70fb821a507334f97ce5eb data/risus/worldgen/structure/lab_start
 4971d6e24a627f3c1076de3d479e03f46e273262 data/risus/worldgen/structure_set/alteration_site.json
 73addd7a91a855a81ed2056450fe97a9bc461b0b data/risus/worldgen/structure_set/angel_altar.json
 4ae54052baa6f60ae62318f650b4a4fe8e8085a1 data/risus/worldgen/structure_set/blood_well.json
-0f3a8920a7f3e57548d9e5487f24d985a2c9ae67 data/risus/worldgen/structure_set/draxolotl_remains.json
+ff18531331d4a9194f8b5e28a5819305fee1ffb4 data/risus/worldgen/structure_set/draxolotl_remains.json
 49bee552a670335d739e8f154add26e8b2a19a72 data/risus/worldgen/structure_set/dungeon.json
 82827ae6c37fc142f6adeda8ff554773d026dfd5 data/risus/worldgen/structure_set/endy_maw.json
 51e7fddddec7305149a6e62b3908c8a6e01d5c81 data/risus/worldgen/structure_set/family_tree.json
