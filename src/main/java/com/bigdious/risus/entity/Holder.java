@@ -66,34 +66,35 @@ public class Holder extends Monster {
 		}
 	}
 
-
-	@Override
-	public boolean canPickUpLoot() {
-		return this.getMainHandItem().isEmpty() && this.hurtTime <= 0;
-	}
+	//let's not pick up anything for now, it causes weird AI and potential item deletion
+//	@Override
+//	public boolean canPickUpLoot() {
+//		return this.getMainHandItem().isEmpty() && this.hurtTime <= 0;
+//	}
+//
 
 	//Only pick up 1 item
-	@Override
-	protected void pickUpItem(ItemEntity item) {
-		ItemStack itemstack = item.getItem();
-		if (this.canHoldItem(itemstack)) {
-			int i = itemstack.getCount();
-			if (i > 1) {
-				this.dropItemStack(itemstack.split(i - 1));
-			}
-
-			this.onItemPickup(item);
-			this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
-			this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
-			this.take(item, itemstack.getCount());
-			item.discard();
-			var thrower = item.getOwner();
-			if (thrower != null) {
-				this.shouldAvoidEntity = true;
-				this.avoidedEntityUUID = thrower.getUUID();
-			}
-		}
-	}
+//	@Override
+//	protected void pickUpItem(ItemEntity item) {
+//		ItemStack itemstack = item.getItem();
+//		if (this.canHoldItem(itemstack)) {
+//			int i = itemstack.getCount();
+//			if (i > 1) {
+//				this.dropItemStack(itemstack.split(i - 1));
+//			}
+//
+//			this.onItemPickup(item);
+//			this.setItemSlot(EquipmentSlot.MAINHAND, itemstack.split(1));
+//			this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 2.0F;
+//			this.take(item, itemstack.getCount());
+//			item.discard();
+//			var thrower = item.getOwner();
+//			if (thrower != null) {
+//				this.shouldAvoidEntity = true;
+//				this.avoidedEntityUUID = thrower.getUUID();
+//			}
+//		}
+//	}
 
 	private void dropItemStack(ItemStack stack) {
 		ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), stack);
@@ -139,7 +140,7 @@ public class Holder extends Monster {
 	public boolean doHurtTarget(Entity entity) {
 		boolean flag = super.doHurtTarget(entity);
 		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
-			this.setItemInHand(InteractionHand.MAIN_HAND, living.getMainHandItem().split(1));
+			this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, living.getMainHandItem().split(1));
 			entity.level().playSound(null, entity.getOnPos(), RisusSoundEvents.CHEEKY_LAUGH.get(), SoundSource.HOSTILE, 1, 1);
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {
 					this.shouldAvoidEntity = false;

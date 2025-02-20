@@ -54,7 +54,7 @@ public class BloodSlash extends Projectile {
 		this.setOwner(owner);
 		this.setPos(owner.getX(), owner.getEyeY() - 0.1F, owner.getZ());
 		//remember to update if needed
-		this.baseDamage = 13.0F;
+		this.baseDamage = 12.0F;
 		this.weapon = weapon;
 		if (weapon != null) {
 			this.getEntityData().set(ID_POWER, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));

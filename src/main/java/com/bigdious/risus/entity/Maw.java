@@ -23,6 +23,7 @@ import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
+import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -252,6 +253,10 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	}
 	@Override
 	protected boolean shouldDespawnInPeaceful() {
+		return false;
+	}
+	@Override
+	public boolean isPushedByFluid(FluidType type) {
 		return false;
 	}
 }
