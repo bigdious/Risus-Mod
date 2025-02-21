@@ -185,6 +185,7 @@ public class RisusTab {
 				output.accept(RisusItems.CRESCENT_DISASTER.get());
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
+				output.accept(RisusItems.LITTER.get());
 
 				output.accept(RisusBlocks.BIG_CHAIN.get());
 				output.accept(RisusItems.MEMORY1_ITEM.get());

@@ -57,7 +57,7 @@ public class Risus {
 		RisusFluids.FLUIDS.register(bus);
 		RisusFluids.FLUID_TYPES.register(bus);
 		RisusStructures.STRUCTURES.register(bus);
-
+		RisusDataComponents.COMPONENTS.register(bus);
 
 		bus.addListener(this::registerPackets);
 		bus.addListener(this::registerTypes);

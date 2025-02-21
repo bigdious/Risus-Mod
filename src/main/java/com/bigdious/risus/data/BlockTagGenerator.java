@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -133,11 +134,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(),
 			RisusBlocks.BLOOD_CAULDRON.get()
-			);
+		);
 
-		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-			RisusBlocks.ASHEN_REMAINS.get()
-			);
+		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(RisusBlocks.ASHEN_REMAINS.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(RisusBlocks.BONDKNOT_HANGING_SIGN.get(),
@@ -194,12 +193,22 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.EXPOSED_COPPER_AMALGAM.get(),
 			RisusBlocks.WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.OXIDIZED_COPPER_AMALGAM.get()
-			);
+		);
 		this.tag(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION).add(
 			RisusBlocks.WAXED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
+		);
+		this.tag(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS).add(
+			Blocks.GLOWSTONE,
+			Blocks.SHROOMLIGHT,
+			Blocks.JACK_O_LANTERN,
+			Blocks.BEACON,
+			Blocks.SEA_LANTERN,
+			Blocks.OCHRE_FROGLIGHT,
+			Blocks.PEARLESCENT_FROGLIGHT,
+			Blocks.VERDANT_FROGLIGHT
 		);
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
 	}

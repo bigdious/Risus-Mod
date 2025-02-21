@@ -158,6 +158,7 @@ public class RisusEvents {
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
+		event.put(RisusEntities.LITTER.get(), Litter.createAttributes().build());
 	}
 
 	private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {

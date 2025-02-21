@@ -27,6 +27,7 @@ public class RisusTags {
 		public static final TagKey<Block> JOYFLAME_FIRE_BASE_BLOCKS = BlockTags.create(Risus.prefix("joyflame_fire_base_blocks"));
 		public static final TagKey<Block> COPPER_AMALGAM_VARIATION = create("copper_amalgam_variation");
 		public static final TagKey<Block> WAXED_COPPER_AMALGAM_VARIATION = create("waxed_copper_amalgam_variation");
+		public static final TagKey<Block> LITTER_ALLOWED_LIGHT_BLOCKS = create("litter_allowed_light_blocks");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
