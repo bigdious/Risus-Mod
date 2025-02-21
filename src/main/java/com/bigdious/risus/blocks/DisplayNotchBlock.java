@@ -104,6 +104,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 					level.setBlock(pos, state.setValue(ELEVATE, false), 3);
 				}
 
+				notch.setChanged();
 				level.sendBlockUpdated(pos, state, state, 2);
 			}
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
