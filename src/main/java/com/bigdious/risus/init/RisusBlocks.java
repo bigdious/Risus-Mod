@@ -79,6 +79,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BROWN_DISPLAY_NOTCH = register("brown_display_notch", DisplayNotchBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F, 6.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> FLESHY_SPAWNER = registerWithItem("fleshy_spawner", RisusSpawnerBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> BLOODY_SPONGE = registerWithItem("bloody_sponge", BloodySpongeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPONGE));
+	public static final DeferredBlock<Block> LIGHT_EXCREMENT = register("light_excrement", LightExcrementBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).lightLevel(state -> 15).noLootTable());
 
 	//COPPER AMALGAM
 	public static final DeferredBlock<Block> COPPER_AMALGAM = registerWithItem("copper_amalgam", properties -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.UNAFFECTED, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));

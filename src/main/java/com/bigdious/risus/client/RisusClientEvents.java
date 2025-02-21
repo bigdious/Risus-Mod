@@ -5,6 +5,7 @@ import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
+import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.layer.AngelWingsLayer;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
@@ -38,6 +39,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
@@ -71,6 +73,12 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
+			@Override
+			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+				return new LitterItemRenderer();
+			}
+		}, RisusItems.LITTER.get()));
 	}
 
 	private static void clientSetup(FMLClientSetupEvent event) {

@@ -4,6 +4,9 @@
     "minecraft:shroomlight",
     "minecraft:jack_o_lantern",
     "minecraft:beacon",
-    "minecraft:sea_lantern"
+    "minecraft:sea_lantern",
+    "minecraft:ochre_froglight",
+    "minecraft:pearlescent_froglight",
+    "minecraft:verdant_froglight"
   ]
 }

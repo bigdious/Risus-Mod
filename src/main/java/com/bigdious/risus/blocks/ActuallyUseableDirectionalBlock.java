@@ -28,22 +28,24 @@ public class ActuallyUseableDirectionalBlock extends DirectionalBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Direction clicked = context.getClickedFace();
-		BlockState state = defaultBlockState().setValue(FACING, clicked);
-		if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
+		BlockState state = this.defaultBlockState().setValue(FACING, clicked);
+		if (this.canSurvive(state, context.getLevel(), context.getClickedPos())) {
 			return state;
 		}
 		for (Direction dir : context.getNearestLookingDirections()) {
-			state = defaultBlockState().setValue(FACING, dir.getOpposite());
-			if (canSurvive(state, context.getLevel(), context.getClickedPos())) {
+			state = this.defaultBlockState().setValue(FACING, dir.getOpposite());
+			if (this.canSurvive(state, context.getLevel(), context.getClickedPos())) {
 				return state;
 			}
 		}
 		return null;
 	}
+
 	@Override
 	protected BlockState rotate(BlockState pState, Rotation pRot) {
 		return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
 	}
+
 	@Override
 	protected BlockState mirror(BlockState pState, Mirror mirror) {
 		return pState.setValue(FACING, mirror.mirror(pState.getValue(FACING)));

@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleMultiloggedBlock {
+public class CrystallizedBondsBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock {
 	public static final MapCodec<CrystallizedBondsBlock> CODEC = simpleCodec(CrystallizedBondsBlock::new);
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
@@ -49,33 +49,25 @@ public class CrystallizedBondsBlock extends DirectionalBlock implements SimpleMu
 	}
 
 	@Override
-	protected MapCodec<? extends DirectionalBlock> codec() {
+	protected MapCodec<? extends ActuallyUseableDirectionalBlock> codec() {
 		return CODEC;
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING, FLUIDLOGGED);
+		builder.add(FLUIDLOGGED);
 	}
 
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		Direction clicked = context.getClickedFace();
-		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-		BlockState state = defaultBlockState().setValue(FACING, clicked).setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
-		if (this.canSurvive(state, context.getLevel(), context.getClickedPos())) {
-			return state;
+		var state = super.getStateForPlacement(context);
+		if (state != null) {
+			FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+			state = state.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 		}
-
-		for (Direction dir : context.getNearestLookingDirections()) {
-			state = this.defaultBlockState().setValue(FACING, dir.getOpposite());
-			if (this.canSurvive(state, context.getLevel(), context.getClickedPos())) {
-				return state;
-			}
-		}
-		return null;
+		return state;
 	}
 
 	@Override

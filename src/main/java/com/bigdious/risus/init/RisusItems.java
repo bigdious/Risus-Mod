@@ -42,7 +42,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().rarity(BLOOD).durability(666));
 	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
-	public static final DeferredItem<Item> LITTER_NANO_INJECTOR = register("litter_nano_injector", LitterNanoInjectorItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> LITTER = register("litter", LitterItem::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));
@@ -77,7 +77,7 @@ public class RisusItems {
 
 	//LEFTOVER CRAFTING MATERIALS
 	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", ConcentrationCoreItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", Item::new, () -> new Item.Properties().rarity(BLOOD));

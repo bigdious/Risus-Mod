@@ -391,5 +391,8 @@
 
   "biome.risus.coalification": "Coalification",
   "biome.risus.coalification_feigr": "Coalification",
-  "biome.risus.coalification_mork": "Coalification"
+  "biome.risus.coalification_mork": "Coalification",
+
+  "entity.risus.litter": "Litter",
+  "item.risus.litter": "Litter"
 }
