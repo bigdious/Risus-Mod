@@ -20,7 +20,6 @@
     "description": {
       "translate": "advancement.risus.crusade.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:essence_of_sloth"

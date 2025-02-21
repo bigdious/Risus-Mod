@@ -1,11 +1,11 @@
 {
-  "parent": "risus:gluttony",
+  "parent": "risus:little",
   "criteria": {
-    "scythe": {
+    "revenge": {
       "conditions": {
         "items": [
           {
-            "items": "risus:scythe"
+            "items": "risus:hand_of_greed"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.scythe.desc"
+      "translate": "advancement.risus.revenge.desc"
     },
     "icon": {
       "count": 1,
-      "id": "risus:scythe"
+      "id": "risus:hand_of_greed"
     },
     "title": {
-      "translate": "advancement.risus.scythe"
+      "translate": "advancement.risus.revenge"
     }
   },
   "requirements": [
     [
-      "scythe"
+      "revenge"
     ]
   ],
   "sends_telemetry_event": true

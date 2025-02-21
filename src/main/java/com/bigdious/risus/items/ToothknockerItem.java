@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusTags;
@@ -11,12 +12,12 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -28,6 +29,10 @@ public class ToothknockerItem extends SwordItem {
 
 	public ToothknockerItem(Tier tier, Item.Properties properties) {
 		super(tier, properties);
+	}
+	public static ItemAttributeModifiers createKnuckleAttributes(Tier tier, int damage, float speed) {
+		return SwordItem.createAttributes(tier, damage, speed)
+			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), -0.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
 	}
 
 	@Override

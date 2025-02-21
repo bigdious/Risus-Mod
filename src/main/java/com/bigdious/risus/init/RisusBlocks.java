@@ -56,8 +56,8 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CONTAINMENT_GLASS = registerWithItem("containment_glass", RisusGlassBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 
 	//UTILITY
-	public static final DeferredBlock<Block> ALTERATION_CATALYST = registerWithItem("alteration_catalyst", AlterationCatalystBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion());
-	public static final DeferredBlock<Block> ANGEL_ALTAR = registerWithItem("angel_altar", AngelAltarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> ALTERATION_CATALYST = registerWithFireResistantItem("alteration_catalyst", AlterationCatalystBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().pushReaction(PushReaction.BLOCK).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0).strength(-1.0F, 3600000.8F));
+	public static final DeferredBlock<Block> ANGEL_ALTAR = registerWithFireResistantItem("angel_altar", AngelAltarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.OBSIDIAN).noOcclusion().pushReaction(PushReaction.BLOCK).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0).strength(-1.0F, 3600000.8F));
 	public static final DeferredBlock<Block> DEPTH_VASE = registerWithItem("depth_vase", DepthVaseBlock::new, () -> Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> LAUGHING_STALK = registerWithItem("laughing_stalk", BiomeBlock::new, () -> Block.Properties.ofFullCopy(Blocks.DECORATED_POT).mapColor(MapColor.NONE).pushReaction(PushReaction.DESTROY).noOcclusion().strength(2.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> WEAVER_NEST = registerWithItem("weaver_nest", WeaverNestBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
@@ -97,12 +97,12 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> MIRAGE_SAND = registerWithItem("mirage_sand", properties -> new MirageBlock(properties, Blocks.SAND), () -> Block.Properties.ofFullCopy(Blocks.SAND).noOcclusion().forceSolidOn());
 	public static final DeferredBlock<Block> MIRAGE_END_STONE = registerWithItem("mirage_end_stone", properties -> new MirageBlock(properties, Blocks.END_STONE), () -> Block.Properties.ofFullCopy(Blocks.END_STONE).noOcclusion().forceSolidOn());
 	public static final DeferredBlock<Block> MIRAGE_NETHERRACK = registerWithItem("mirage_netherrack", properties -> new MirageBlock(properties, Blocks.NETHERRACK), () -> Block.Properties.ofFullCopy(Blocks.NETHERRACK).noOcclusion().forceSolidOn());
-	public static final DeferredBlock<Block> GLUTTONY_SCALEPLATE = registerWithItem("gluttony_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion());
-	public static final DeferredBlock<Block> IMITATION_SCALEPLATE = registerWithItem("imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion());
-	public static final DeferredBlock<Block> FLOWERING_IMITATION_SCALEPLATE = registerWithItem("flowering_imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> BUDDING_IMITATION_SCALEPLATE = registerWithItem("budding_imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> FLATTENED_SCALES_BLOCK = registerWithItem("flattened_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn());
-	public static final DeferredBlock<Block> FLATTENED_IMITATION_SCALES_BLOCK = registerWithItem("flattened_imitation_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn());
+	public static final DeferredBlock<Block> GLUTTONY_SCALEPLATE = registerWithFireResistantItem("gluttony_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion());
+	public static final DeferredBlock<Block> IMITATION_SCALEPLATE = registerWithFireResistantItem("imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion());
+	public static final DeferredBlock<Block> FLOWERING_IMITATION_SCALEPLATE = registerWithFireResistantItem("flowering_imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> BUDDING_IMITATION_SCALEPLATE = registerWithFireResistantItem("budding_imitation_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> FLATTENED_SCALES_BLOCK = registerWithFireResistantItem("flattened_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn());
+	public static final DeferredBlock<Block> FLATTENED_IMITATION_SCALES_BLOCK = registerWithFireResistantItem("flattened_imitation_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.GLUTTONY_SCALEPLATE.get()).forceSolidOn());
 
 	//REMAINS
 	public static final DeferredBlock<Block> ASHEN_REMAINS = registerWithItem("ashen_remains", AshenRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SOUL_SOIL));
@@ -127,6 +127,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> INACTIVE_HOLDER = registerWithItem("inactive_holder", InactiveHolderBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion());
 
 	//PLANTS
+	//yes, teeth are plants
 	public static final DeferredBlock<MultifaceBlock> TEETH = registerWithItem("teeth", SpreadingRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> HEART_TRANSPLANT = registerWithItem("heart_transplant", HeartTransplantBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().forceSolidOn().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XZ));
 	public static final DeferredBlock<Block> REGEN_ROSE = registerWithItemWithoutRarity("regen_rose", RegenRoseBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.ROOTS).offsetType(BlockBehaviour.OffsetType.XZ));
@@ -194,7 +195,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> CURVED_RITUAL_BLOCK = registerWithItem("curved_ritual_block", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA));
 	public static final DeferredBlock<Block> LINEAR_RITUAL_BLOCK = registerWithItem("linear_ritual_block", RotatedPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_GLAZED_TERRACOTTA));
 
-	//FLUIDS
+	//FLUIDSTUFF
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = register("blood_fluid_block", properties -> new BloodFluidBlock(RisusFluids.SOURCE_BLOOD.get(), properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WATER));
 	public static final DeferredBlock<Block> BLOOD_CAULDRON = register("blood_cauldron", BloodCauldronBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON));
 
@@ -205,6 +206,11 @@ public class RisusBlocks {
 	public static <T extends Block> DeferredBlock<T> registerWithItem(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
 		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
 		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), () -> new Item.Properties().rarity(RisusItems.BLOOD));
+		return ret;
+	}
+	public static <T extends Block> DeferredBlock<T> registerWithFireResistantItem(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
+		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
+		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), () -> new Item.Properties().fireResistant().rarity(RisusItems.BLOOD));
 		return ret;
 	}
 	public static <T extends Block> DeferredBlock<T> registerWithItemWithoutRarity(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {

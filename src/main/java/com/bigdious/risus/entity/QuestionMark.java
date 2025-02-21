@@ -13,6 +13,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
+import net.neoforged.neoforge.fluids.FluidType;
 
 public class QuestionMark extends Monster {
 	public QuestionMark(EntityType<? extends Monster> type, Level level) {
@@ -97,5 +98,9 @@ public class QuestionMark extends Monster {
 	@Override
 	public PushReaction getPistonPushReaction() {
 		return PushReaction.IGNORE;
+	}
+	@Override
+	public boolean isPushedByFluid(FluidType type) {
+		return false;
 	}
 }

@@ -80,6 +80,18 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				RisusItems.SKIN_LEGGINGS.get(),
 				RisusItems.SKIN_BOOTS.get());
 
+		this.tag(Tags.Items.ARMORS).add(
+			RisusItems.SKIN_BOOTS.get(),
+			RisusItems.SKIN_CHESTPLATE.get(),
+			RisusItems.SKIN_HELMET.get(),
+			RisusItems.SKIN_LEGGINGS.get()
+		);
+
+		this.tag(ItemTags.HEAD_ARMOR).add(RisusItems.SKIN_HELMET.get());
+		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get());
+		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get());
+		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get());
+
 		this.tag(ItemTags.TRIM_MATERIALS).add(RisusItems.GLUTTONY_SCALES.get(), RisusBlocks.SKIN.asItem());
 		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS).add(Items.FIREWORK_ROCKET);
 		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS).add(Items.TRIDENT, RisusItems.CRESCENT_DISASTER.get());

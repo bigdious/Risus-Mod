@@ -90,7 +90,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
 		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
-		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))).withPool(LootPool.lootPool().add(LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))));
+		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 		dropOther(RisusBlocks.BLOOD_CAULDRON.get(), Items.CAULDRON);
@@ -134,7 +134,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.CURVED_RITUAL_BLOCK.get());
 		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
-
 
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
 		add(RisusBlocks.FLESHY_SPAWNER.get(), LootTable.lootTable());
@@ -228,25 +227,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 												.setProperties(StatePropertiesPredicate.Builder.properties()
 														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))),
 								new BlockPos(0, 1, 0))))
-				.withPool(LootPool.lootPool().add(bondBuilder)
-						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-								.setProperties(StatePropertiesPredicate.Builder.properties()
-										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
-						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
-										.setBlock(BlockPredicate.Builder.block().of(block)
-												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))),
-								new BlockPos(0, 1, 0))))
 				.withPool(LootPool.lootPool().add(boneBuilder)
-						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-								.setProperties(StatePropertiesPredicate.Builder.properties()
-										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))
-						.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
-										.setBlock(BlockPredicate.Builder.block().of(block)
-												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))),
-								new BlockPos(0, -1, 0))))
-				.withPool(LootPool.lootPool().add(bondBuilder)
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
 								.setProperties(StatePropertiesPredicate.Builder.properties()
 										.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))

@@ -22,7 +22,6 @@
     "description": {
       "translate": "advancement.risus.great_body.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:hairy_fleshy_skin"

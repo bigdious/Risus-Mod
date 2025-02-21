@@ -386,7 +386,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(200, 0, RandomSpreadType.LINEAR, 523141287)));
 
 		context.register(DRAXOLOTL_REMAINS_SET, new StructureSet(structures.getOrThrow(DRAXOLOTL_REMAINS),
-			new RandomSpreadStructurePlacement(90, 0, RandomSpreadType.LINEAR, 729472497)));
+			new RandomSpreadStructurePlacement(250, 0, RandomSpreadType.LINEAR, 729472497)));
 	}
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);

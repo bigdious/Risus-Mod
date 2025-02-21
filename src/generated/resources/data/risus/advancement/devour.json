@@ -20,7 +20,6 @@
     "description": {
       "translate": "advancement.risus.devour.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:essence_of_gluttony"

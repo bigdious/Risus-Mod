@@ -1,10 +1,10 @@
-// 1.21.1	2025-02-09T20:08:20.2521396	Loot Tables
+// 1.21.1	2025-02-20T20:20:49.0136398	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_table/blocks/ashen_remains.json
-e9b75cef7581aa07859e36450e6b8edbdb7dea58 data/risus/loot_table/blocks/baby_ribcage.json
+02e4d8d387488a6d0516c493ad9d36a9c3364917 data/risus/loot_table/blocks/baby_ribcage.json
 c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_table/blocks/big_chain.json
 0706b996998a5fc794ccfd7d09e70135dd97406e data/risus/loot_table/blocks/bloodweave.json
 cb36a79a27cc5aac3243bbd05144f6a36991e0de data/risus/loot_table/blocks/bloodwyrm_head.json
@@ -118,7 +118,7 @@ f7938b099a7d07cef1763e39181fba5c3fdac483 data/risus/loot_table/blocks/potted_reg
 ddbf5e2f42b128610f749784854c91709012db04 data/risus/loot_table/blocks/purple_display_notch.json
 ab8c10bbc73a0028e95e814b5bdd53ac9ecb71c8 data/risus/loot_table/blocks/red_display_notch.json
 ed6505214f674136cb0cab3b951aefaef9ef74a7 data/risus/loot_table/blocks/regen_rose.json
-8c87c01fa645a0865cc81204d135e35e3f1ee892 data/risus/loot_table/blocks/ribcage.json
+0ed895ee45b614509c0378e5dbaf680f1e57a509 data/risus/loot_table/blocks/ribcage.json
 096ff7a6a6d961e2c32abcaa703eda1f514dcf14 data/risus/loot_table/blocks/rotted_tissue.json
 d325f14b56b619089c1a6b1c43c487884cd9416f data/risus/loot_table/blocks/rotting_tissue.json
 ee84405cdf0338040437a5494f50892e24d0763d data/risus/loot_table/blocks/scab.json

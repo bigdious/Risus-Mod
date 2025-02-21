@@ -16,7 +16,6 @@
     "description": {
       "translate": "advancement.risus.little.desc"
     },
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:essence_of_greed"

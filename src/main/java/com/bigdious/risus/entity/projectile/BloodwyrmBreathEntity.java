@@ -54,7 +54,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 		Entity entity = hitResult.getEntity();
 		entity.hurt(this.damageSources().thrown(this, this.getOwner()), 1);
 		if (entity instanceof LivingEntity liver){
-			liver.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY,  200, 0), this);
+			liver.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY,  200, 0, false, false, true), this);
 		}
 		entity.igniteForSeconds(10);
 	}

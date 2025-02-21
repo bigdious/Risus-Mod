@@ -1,16 +1,29 @@
 package com.bigdious.risus.dispenser;
 
+import com.bigdious.risus.entity.Angel;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusEntities;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ShavingDispenserBehaviour extends DefaultDispenseItemBehavior {
+public class ShavingDispenserBehaviour extends OptionalDispenseItemBehavior {
+
+	private final DispenseItemBehavior vanillaBehavior;
+
+	public ShavingDispenserBehaviour(DispenseItemBehavior vanillaBehavior) {
+		this.vanillaBehavior = vanillaBehavior;
+	}
 	boolean fired = false;
 	@Override
 	protected ItemStack execute(BlockSource source, ItemStack stack) {
@@ -27,7 +40,11 @@ public class ShavingDispenserBehaviour extends DefaultDispenseItemBehavior {
 			level.setBlock(pos, RisusBlocks.CURVED_FLESHY_SKIN.get().withPropertiesOf(state), 3);
 		}
 		this.fired = true;
-		return stack;
+		ItemEntity summonedItem = EntityType.ITEM.create(level);
+		summonedItem.moveTo(pos.above(), 0.0F, 0.0F);
+		summonedItem.setItem(RisusItems.HAIR_FOLLICLES.toStack());
+		level.addFreshEntity(summonedItem);
+		return this.vanillaBehavior.dispense(source, stack);
 	}
 
 	@Override

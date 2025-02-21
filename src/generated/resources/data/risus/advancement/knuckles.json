@@ -1,11 +1,11 @@
 {
   "parent": "risus:gluttony",
   "criteria": {
-    "scythe": {
+    "knuckles": {
       "conditions": {
         "items": [
           {
-            "items": "risus:scythe"
+            "items": "risus:toothknocker"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.scythe.desc"
+      "translate": "advancement.risus.knuckles.desc"
     },
     "icon": {
       "count": 1,
-      "id": "risus:scythe"
+      "id": "risus:toothknocker"
     },
     "title": {
-      "translate": "advancement.risus.scythe"
+      "translate": "advancement.risus.knuckles"
     }
   },
   "requirements": [
     [
-      "scythe"
+      "knuckles"
     ]
   ],
   "sends_telemetry_event": true

@@ -53,7 +53,8 @@ public class BloodSlash extends Projectile {
 		super(RisusEntities.BLOODSLASH.get(), level);
 		this.setOwner(owner);
 		this.setPos(owner.getX(), owner.getEyeY() - 0.1F, owner.getZ());
-		this.baseDamage = 15.0F;
+		//remember to update if needed
+		this.baseDamage = 12.0F;
 		this.weapon = weapon;
 		if (weapon != null) {
 			this.getEntityData().set(ID_POWER, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));

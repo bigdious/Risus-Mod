@@ -3,6 +3,7 @@ package com.bigdious.risus.effects;
 import com.bigdious.risus.init.RisusMobEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -38,7 +39,7 @@ public class MatingFrenzyEffect extends MobEffect {
 		}
 		if (entity instanceof Player player) {
 			entity.removeEffect(RisusMobEffects.MATING_FRENZY);
-			player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "You are incapable of Love."));
+			player.sendSystemMessage(Component.translatable("effect.risus.mating_frenzy.message").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)));
 		}
 		return super.applyEffectTick(entity, amplifier);
 	}

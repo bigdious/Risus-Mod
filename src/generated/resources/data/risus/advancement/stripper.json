@@ -1,11 +1,11 @@
 {
-  "parent": "risus:gluttony",
+  "parent": "risus:knuckles",
   "criteria": {
-    "scythe": {
+    "stripper": {
       "conditions": {
         "items": [
           {
-            "items": "risus:scythe"
+            "items": "risus:gold_fist"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.scythe.desc"
+      "translate": "advancement.risus.stripper.desc"
     },
     "icon": {
       "count": 1,
-      "id": "risus:scythe"
+      "id": "risus:gold_fist"
     },
     "title": {
-      "translate": "advancement.risus.scythe"
+      "translate": "advancement.risus.stripper"
     }
   },
   "requirements": [
     [
-      "scythe"
+      "stripper"
     ]
   ],
   "sends_telemetry_event": true

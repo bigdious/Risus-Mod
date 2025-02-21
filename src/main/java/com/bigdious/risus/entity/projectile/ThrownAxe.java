@@ -3,7 +3,10 @@ package com.bigdious.risus.entity.projectile;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -12,6 +15,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -27,12 +31,14 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 public class ThrownAxe extends AbstractArrow {
 
 	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_FIRE_ASPECT = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private boolean dealtDamage;
 	private boolean shouldSpin = true;
 	public int spinTickCount;
@@ -46,6 +52,7 @@ public class ThrownAxe extends AbstractArrow {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_FIRE_ASPECT, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
 	private byte getLoyaltyFromItem(ItemStack p_345571_) {
@@ -132,14 +139,12 @@ public class ThrownAxe extends AbstractArrow {
 		super.defineSynchedData(pBuilder);
 		pBuilder.define(ID_LOYALTY, (byte)0);
 		pBuilder.define(ID_SHARPNESS, (byte)0);
+		pBuilder.define(ID_FIRE_ASPECT, (byte)0);
 		pBuilder.define(ID_FOIL, false);
 	}
 	@Override
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
-		float f;
-
-		f = this.entityData.get(ID_SHARPNESS);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED, entity1 == null ? this : entity1);
 
@@ -147,12 +152,14 @@ public class ThrownAxe extends AbstractArrow {
 
 		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
-
-		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS)<1 ? 10 : 10+(0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
+	//update base attack when needed
+		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS)<1 ? 9 : 9+(0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}
-
+			if(this.entityData.get(ID_FIRE_ASPECT) > 0) {
+				entity.igniteForSeconds(this.entityData.get(ID_FIRE_ASPECT) * 80);
+			}
 			if (entity instanceof LivingEntity livingentity1) {
 				if (entity1 instanceof LivingEntity) {
 					this.doPostHurtEffects(livingentity1);
@@ -171,6 +178,31 @@ public class ThrownAxe extends AbstractArrow {
 
 	@Override
 	protected boolean tryPickup(Player player) {
+		switch (this.random.nextInt(999)) {
+			case 1: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message1").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 2: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message2").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 3: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message3").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 4: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message4").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 5: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message5").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 6: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message6").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 7: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message7").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 8: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message8").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 9: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message9").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 10: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message10").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 11: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message11").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 12: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message12").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 13: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message13").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 14: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message14").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 15: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message15").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 16: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message16").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 17: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message17").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 18: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message18").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 19: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message19").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 20: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message20").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 21: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message21").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 22: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message22").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			default: break;
+		}
 		return super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
 	}
 
@@ -194,6 +226,7 @@ public class ThrownAxe extends AbstractArrow {
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
 		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_FIRE_ASPECT, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 	}
 
 	@Override

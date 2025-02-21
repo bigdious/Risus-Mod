@@ -528,7 +528,7 @@ public class CraftingGenerator extends RecipeProvider {
 				.save(consumer);
 
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BIG_CHAIN.get(), 8)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BIG_CHAIN.get(), 4)
 				.pattern("I I")
 				.pattern("III")
 				.pattern("I I")

@@ -53,7 +53,6 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.SMITE,
 			Enchantments.MENDING,
 			Enchantments.UNBREAKING,
-			Enchantments.FIRE_ASPECT,
 			Enchantments.KNOCKBACK,
 			Enchantments.VANISHING_CURSE);
 
@@ -63,7 +62,6 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.LOOTING,
 			Enchantments.MENDING,
 			Enchantments.UNBREAKING,
-			Enchantments.FIRE_ASPECT,
 			Enchantments.KNOCKBACK,
 			Enchantments.VANISHING_CURSE);
 
@@ -85,7 +83,6 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.SMITE,
 			Enchantments.MENDING,
 			Enchantments.UNBREAKING,
-			Enchantments.FIRE_ASPECT,
 			Enchantments.KNOCKBACK,
 			Enchantments.VANISHING_CURSE);
 
