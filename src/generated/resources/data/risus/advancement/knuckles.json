@@ -1,11 +1,11 @@
 {
-  "parent": "risus:potential",
+  "parent": "risus:gluttony",
   "criteria": {
-    "strongaxe": {
+    "knuckles": {
       "conditions": {
         "items": [
           {
-            "items": "risus:crescent_disaster"
+            "items": "risus:toothknocker"
           }
         ]
       },
@@ -14,20 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.unleashed.desc"
+      "translate": "advancement.risus.knuckles.desc"
     },
-    "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "risus:crescent_disaster"
+      "id": "risus:toothknocker"
     },
     "title": {
-      "translate": "advancement.risus.unleashed"
+      "translate": "advancement.risus.knuckles"
     }
   },
   "requirements": [
     [
-      "strongaxe"
+      "knuckles"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,11 +1,11 @@
 {
-  "parent": "risus:potential",
+  "parent": "risus:little",
   "criteria": {
-    "strongaxe": {
+    "revenge": {
       "conditions": {
         "items": [
           {
-            "items": "risus:crescent_disaster"
+            "items": "risus:hand_of_greed"
           }
         ]
       },
@@ -14,20 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.unleashed.desc"
+      "translate": "advancement.risus.revenge.desc"
     },
-    "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "risus:crescent_disaster"
+      "id": "risus:hand_of_greed"
     },
     "title": {
-      "translate": "advancement.risus.unleashed"
+      "translate": "advancement.risus.revenge"
     }
   },
   "requirements": [
     [
-      "strongaxe"
+      "revenge"
     ]
   ],
   "sends_telemetry_event": true

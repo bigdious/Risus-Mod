@@ -88,18 +88,13 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("pricked", EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance().sourceEntity(EntityPredicate.Builder.entity().of(RisusEntities.HOLDER.get()).build())))
 			.save(consumer, "risus:little");
 
-
-		AdvancementHolder fleshing = Advancement.Builder.advancement().parent(first)
+		AdvancementHolder revenge = Advancement.Builder.advancement().parent(little)
 			.display(
-				RisusBlocks.DECOMPOSED_TISSUE.get(),
-				Component.translatable("advancement.risus.fleshing"),
-				Component.translatable("advancement.risus.fleshing.desc"), null, AdvancementType.TASK, true, true, true)
-			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("fleshing0", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.DECOMPOSING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
-			.addCriterion("fleshing1", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.ROTTING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
-			.addCriterion("fleshing2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.DECAYING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
-			.addCriterion("fleshing3", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
-			.save(consumer, "risus:fleshing");
+				RisusItems.HAND_OF_GREED.get(),
+				Component.translatable("advancement.risus.revenge"),
+				Component.translatable("advancement.risus.revenge.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("revenge", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.HAND_OF_GREED))
+			.save(consumer, "risus:revenge");
 
 		AdvancementHolder step = Advancement.Builder.advancement().parent(first)
 			.display(
@@ -156,7 +151,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("murder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.ANGEL.get())))
 			.save(consumer, "risus:crusade");
 
-		AdvancementHolder unleashed = Advancement.Builder.advancement().parent(crusade)
+		AdvancementHolder unleashed = Advancement.Builder.advancement().parent(potential)
 			.display(
 				RisusItems.CRESCENT_DISASTER.get(),
 				Component.translatable("advancement.risus.unleashed"),
@@ -179,7 +174,19 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.great_body"),
 				Component.translatable("advancement.risus.great_body.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
-			.save(consumer, "risus:body");
+			.save(consumer, "risus:great_body");
+
+		AdvancementHolder fleshing = Advancement.Builder.advancement().parent(great_body)
+			.display(
+				RisusBlocks.DECOMPOSED_TISSUE.get(),
+				Component.translatable("advancement.risus.fleshing"),
+				Component.translatable("advancement.risus.fleshing.desc"), null, AdvancementType.TASK, true, true, true)
+			.requirements(AdvancementRequirements.Strategy.OR)
+			.addCriterion("fleshing0", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.DECOMPOSING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
+			.addCriterion("fleshing1", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.ROTTING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
+			.addCriterion("fleshing2", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.DECAYING_TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
+			.addCriterion("fleshing3", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.TISSUE.get())), ItemPredicate.Builder.item().of(RisusItems.ORGANIC_MATTER.get())))
+			.save(consumer, "risus:fleshing");
 
 		AdvancementHolder tight = Advancement.Builder.advancement().parent(site_zero)
 			.display(
@@ -215,7 +222,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 
 		AdvancementHolder licked = Advancement.Builder.advancement().parent(first)
 			.display(
-				RisusItems.EGG_SAC.get(),
+				RisusItems.EMBODIMENT_OF_INTIMACY.get(),
 				Component.translatable("advancement.risus.licked"),
 				Component.translatable("advancement.risus.licked.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("licked", EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance().sourceEntity(EntityPredicate.Builder.entity().of(RisusEntities.LICKER.get()).build())))
@@ -246,7 +253,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(lovePotion().getItem(), splashLovePotion().getItem(), lingeringLovePotion().getItem()))
 			.save(consumer, "risus:cupid");
 
-		AdvancementHolder shave = Advancement.Builder.advancement().parent(first).display(
+		AdvancementHolder shave = Advancement.Builder.advancement().parent(fleshing).display(
 				RisusBlocks.HAIRY_SKIN.get(),
 				Component.translatable("advancement.risus.shave"),
 				Component.translatable("advancement.risus.shave.desc"), null, AdvancementType.TASK, true, true, true)
@@ -264,6 +271,30 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.lab.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("enter_lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
 			.save(consumer, "risus:lab");
+
+		AdvancementHolder knuckles = Advancement.Builder.advancement().parent(gluttony)
+			.display(
+				RisusItems.TOOTHKNOCKER.get(),
+				Component.translatable("advancement.risus.knuckles"),
+				Component.translatable("advancement.risus.knuckles.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("knuckles", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.TOOTHKNOCKER.get()))
+			.save(consumer, "risus:knuckles");
+
+		AdvancementHolder stripper = Advancement.Builder.advancement().parent(knuckles)
+			.display(
+				RisusItems.GOLD_FIST.get(),
+				Component.translatable("advancement.risus.stripper"),
+				Component.translatable("advancement.risus.stripper.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("stripper", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GOLD_FIST.get()))
+			.save(consumer, "risus:stripper");
+
+//		AdvancementHolder homewrecker = Advancement.Builder.advancement().parent(first)
+//			.display(
+//				RisusBlocks.WEAVER_NEST.get(),
+//				Component.translatable("advancement.risus.homewrecker"),
+//				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.GOAL, true, true, false)
+//			.addCriterion("homewrecker", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.WEAVER_NEST.get())), ItemPredicate.Builder.item().of()))
+//			.save(consumer, "risus:homewrecker");
 	}
 		private ItemStack lovePotion() {
 			ItemStack itemstack = new ItemStack(Items.POTION);

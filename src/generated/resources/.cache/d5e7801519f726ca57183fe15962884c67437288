@@ -1,8 +1,8 @@
-// 1.21.1	2025-02-15T11:22:07.0372258	Tags for minecraft:enchantment mod id risus
-d5aa356dd439fa334af8e35e39a5e8e200cc59a9 data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json
+// 1.21.1	2025-02-21T19:29:07.3574651	Tags for minecraft:enchantment mod id risus
+89adb8efbd4ca78d240beab9b997ccd9e1df8a10 data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json
 371bdc717890667ed82528492314791a1fb2c681 data/risus/tags/enchantment/crescent_disaster_allowed_enchants.json
 d5aa356dd439fa334af8e35e39a5e8e200cc59a9 data/risus/tags/enchantment/fire_scythe_allowed_enchants.json
-d5aa356dd439fa334af8e35e39a5e8e200cc59a9 data/risus/tags/enchantment/scythe_allowed_enchants.json
-313f3b0d19468d49a3f36de2fef6746cd195976e data/risus/tags/enchantment/soul_scythe_allowed_enchants.json
+89adb8efbd4ca78d240beab9b997ccd9e1df8a10 data/risus/tags/enchantment/scythe_allowed_enchants.json
+de8af3da690e6d7b0321d86d41ec99aed7d7e26d data/risus/tags/enchantment/soul_scythe_allowed_enchants.json
 04f75b3d99db981ff57de93376d5ff287f05542c data/risus/tags/enchantment/thousand_blade_allowed_enchants.json
 a83f05c4b46cc5fe2ba4061159b18d495e8e05f3 data/risus/tags/enchantment/toothknocker_allowed_enchants.json

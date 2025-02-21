@@ -3,7 +3,10 @@ package com.bigdious.risus.entity.projectile;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -12,6 +15,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -27,6 +31,7 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 public class ThrownAxe extends AbstractArrow {
 
@@ -173,6 +178,31 @@ public class ThrownAxe extends AbstractArrow {
 
 	@Override
 	protected boolean tryPickup(Player player) {
+		switch (this.random.nextInt(999)) {
+			case 1: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message1").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 2: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message2").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 3: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message3").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 4: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message4").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 5: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message5").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 6: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message6").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 7: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message7").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 8: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message8").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 9: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message9").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);	break;
+			case 10: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message10").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 11: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message11").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 12: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message12").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 13: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message13").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 14: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message14").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 15: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message15").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 16: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message16").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 17: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message17").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 18: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message18").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 19: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message19").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 20: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message20").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 21: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message21").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			case 22: player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message22").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true); break;
+			default: break;
+		}
 		return super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
 	}
 

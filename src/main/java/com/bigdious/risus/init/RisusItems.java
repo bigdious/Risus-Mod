@@ -25,23 +25,23 @@ public class RisusItems {
 
 	//TOOLS AND SHIT
 	public static final DeferredItem<Item> RESEARCHERS_NOTES = register("researchers_notes", RisusBookItem::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> CRESCENT_DISASTER = register("crescent_disaster", properties -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 8, -3F)).rarity(BLOOD));
-	public static final DeferredItem<Item> GOLD_FIST = register("gold_fist", properties -> new GoldFistItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(GoldFistItem.createKnuckleAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> BOOMSTICK = register("boomstick", BoomstickItem::new, () -> new Item.Properties().rarity(BLOOD).durability(64));
-	public static final DeferredItem<Item> HAND_OF_GREED = register("hand_of_greed", properties -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(HandOfGreedItem.createHandOfGreedAttributes()).rarity(BLOOD));
-	public static final DeferredItem<Item> UNAWAKENED_VESSEL = register("unawakened_vessel", properties -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD));
-	public static final DeferredItem<Item> TOOTHKNOCKER = register("toothknocker", properties -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ToothknockerItem.createKnuckleAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> SCYTHE = register("scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 10, -3.4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> FIRE_SCYTHE = register("fire_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.FIRE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> SOUL_SCYTHE = register("soul_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
-	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 11, -3.6F)).rarity(BLOOD));
+	public static final DeferredItem<Item> CRESCENT_DISASTER = register("crescent_disaster", properties -> new ThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 8, -3F)).rarity(BLOOD));
+	public static final DeferredItem<Item> GOLD_FIST = register("gold_fist", properties -> new GoldFistItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(GoldFistItem.createKnuckleAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> BOOMSTICK = register("boomstick", BoomstickItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(64));
+	public static final DeferredItem<Item> HAND_OF_GREED = register("hand_of_greed", properties -> new HandOfGreedItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(HandOfGreedItem.createHandOfGreedAttributes()).rarity(BLOOD));
+	public static final DeferredItem<Item> UNAWAKENED_VESSEL = register("unawakened_vessel", properties -> new UnThrowableAxeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(RisusToolMaterials.GLUTTONY, 10, -3F)).rarity(BLOOD));
+	public static final DeferredItem<Item> TOOTHKNOCKER = register("toothknocker", properties -> new ToothknockerItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(ToothknockerItem.createKnuckleAttributes(RisusToolMaterials.GLUTTONY, 2, 4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SCYTHE = register("scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().fireResistant().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 10, -3.4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> FIRE_SCYTHE = register("fire_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.FIRE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().fireResistant().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> SOUL_SCYTHE = register("soul_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().fireResistant().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().fireResistant().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
+	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 11, -3.6F)).rarity(BLOOD));
 	public static final DeferredItem<Item> BLOOD_BUCKET = register("blood_bucket", properties -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).craftRemainder(Items.BUCKET));
-	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().rarity(BLOOD).durability(10000));
-	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
-	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().rarity(BLOOD).durability(666));
-	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().rarity(BLOOD).durability(1000));
+	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
+	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(10000));
+	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
+	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(666));
+	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));
@@ -50,7 +50,7 @@ public class RisusItems {
 	public static final DeferredItem<ArmorItem> SKIN_BOOTS = register("skin_boots", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1)).rarity(BLOOD));
 
 	//CONSUMABLES
-	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 90), 1.0F).build();
+	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 45), 1.0F).build();
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).fast().build();
 	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
 	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
@@ -75,11 +75,11 @@ public class RisusItems {
 	public static final DeferredItem<Item> VEINS = register("veins", properties -> new BlockItem(RisusBlocks.VEINS_END.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS
-	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
+	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 
 	//COLLECTABLES
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

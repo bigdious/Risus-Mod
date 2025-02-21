@@ -1,11 +1,11 @@
 {
-  "parent": "risus:potential",
+  "parent": "risus:knuckles",
   "criteria": {
-    "strongaxe": {
+    "stripper": {
       "conditions": {
         "items": [
           {
-            "items": "risus:crescent_disaster"
+            "items": "risus:gold_fist"
           }
         ]
       },
@@ -14,20 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.unleashed.desc"
+      "translate": "advancement.risus.stripper.desc"
     },
-    "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "risus:crescent_disaster"
+      "id": "risus:gold_fist"
     },
     "title": {
-      "translate": "advancement.risus.unleashed"
+      "translate": "advancement.risus.stripper"
     }
   },
   "requirements": [
     [
-      "strongaxe"
+      "stripper"
     ]
   ],
   "sends_telemetry_event": true
