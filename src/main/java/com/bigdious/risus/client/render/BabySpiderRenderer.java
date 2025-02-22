@@ -18,7 +18,7 @@ public class BabySpiderRenderer extends MobRenderer<BabySpider, BabySpiderModel<
 
 	@Override
 	protected float getFlipDegrees(BabySpider babySpider) {
-		return 0.0F;
+		return 180.0F;
 	}
 
 	@Override

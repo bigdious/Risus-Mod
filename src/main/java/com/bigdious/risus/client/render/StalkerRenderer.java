@@ -18,11 +18,6 @@ public class StalkerRenderer extends MobRenderer<Stalker, StalkerModel<Stalker>>
 	}
 
 	@Override
-	protected float getFlipDegrees(Stalker stalker) {
-		return 0.0F;
-	}
-
-	@Override
 	public ResourceLocation getTextureLocation(Stalker stalker) {
 		return TEXTURE;
 	}

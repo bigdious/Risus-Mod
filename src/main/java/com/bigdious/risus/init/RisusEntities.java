@@ -34,7 +34,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<BloodSlash>> BLOODSLASH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodslash"), EntityType.Builder.<BloodSlash>of(BloodSlash::new, MobCategory.MISC).noSave().fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
 
-	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).sized(0.5F, 0.5F), 0x000000, 0x8b0000);
+	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).sized(0.75F, 1.0F));
 
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x4d36ff);

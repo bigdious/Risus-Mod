@@ -18,7 +18,7 @@ public class LickerRenderer extends MobRenderer<Licker, LickerModel<Licker>> {
 
 	@Override
 	protected float getFlipDegrees(Licker licker) {
-		return 0.0F;
+		return 180.0F;
 	}
 
 	@Override

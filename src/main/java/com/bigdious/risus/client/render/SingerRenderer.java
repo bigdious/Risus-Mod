@@ -17,12 +17,6 @@ public class SingerRenderer extends MobRenderer<Singer, SingerModel<Singer>> {
 		this.addLayer(new SingerEyeLayer<>(this));
 	}
 
-
-	@Override
-	protected float getFlipDegrees(Singer singer) {
-		return 0.0F;
-	}
-
 	@Override
 	public ResourceLocation getTextureLocation(Singer singer) {
 		return TEXTURE;

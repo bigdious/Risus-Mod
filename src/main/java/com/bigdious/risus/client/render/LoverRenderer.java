@@ -16,11 +16,6 @@ public class LoverRenderer extends MobRenderer<Lover, LoverModel<Lover>> {
 	}
 
 	@Override
-	protected float getFlipDegrees(Lover lover) {
-		return 0.0F;
-	}
-
-	@Override
 	public ResourceLocation getTextureLocation(Lover lover) {
 		return TEXTURE;
 	}
