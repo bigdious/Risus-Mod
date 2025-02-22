@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
 public class ConcentrationCoreItem extends Item {
 
@@ -70,18 +71,17 @@ public class ConcentrationCoreItem extends Item {
 		Level level = context.getLevel();
 		BlockPos pos = context.getClickedPos();
 		BlockState state = level.getBlockState(pos);
-		var ritual = RITUAL.find(level, pos);
-		var ritual_sideways = RITUAL_SIDEWAYS.find(level, pos);
-		if ((ritual != null || ritual_sideways != null) && (state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (level.getGameRules().getBoolean(Risus.ILLEGAL_LITTERS.get()) && state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS))) ) {
-			level.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos.above(), ParticleTypes.END_ROD, UniformInt.of(3, 7));
-			level.playSound(null, context.getClickedPos(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);
-
-			Litter summonedLitter = new Litter(level, context.getPlayer());
-			summonedLitter.setLightBlockState(state);
-			summonedLitter.moveTo(Vec3.atBottomCenterOf(pos.above()));
-			level.addFreshEntity(summonedLitter);
+		if ((state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (level.getGameRules().getBoolean(Risus.ILLEGAL_LITTERS.get()) && state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))) {
+			var ritual = this.getUsedRitual(level, pos);
 			if (ritual != null) {
+				level.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());
+				ParticleUtils.spawnParticlesOnBlockFaces(level, pos.above(), ParticleTypes.END_ROD, UniformInt.of(3, 7));
+				level.playSound(null, context.getClickedPos(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);
+
+				Litter summonedLitter = new Litter(level, context.getPlayer());
+				summonedLitter.setLightBlockState(state);
+				summonedLitter.moveTo(Vec3.atBottomCenterOf(pos.above()));
+				level.addFreshEntity(summonedLitter);
 				for (int x = 0; x < ritual.getWidth(); x++) {
 					for (int y = 0; y < ritual.getHeight(); y++) {
 						for (int z = 0; z < ritual.getDepth(); z++) {
@@ -93,23 +93,19 @@ public class ConcentrationCoreItem extends Item {
 						}
 					}
 				}
-			} else {
-				for (int x = 0; x < ritual_sideways.getWidth(); x++) {
-					for (int y = 0; y < ritual_sideways.getHeight(); y++) {
-						for (int z = 0; z < ritual_sideways.getDepth(); z++) {
-							var worldBlock = ritual_sideways.getBlock(x, y, z);
-							if (worldBlock.getState().is(RisusBlocks.CURVED_RITUAL_BLOCK) || worldBlock.getState().is(RisusBlocks.LINEAR_RITUAL_BLOCK)) {
-								level.setBlockAndUpdate(worldBlock.getPos(), RisusBlocks.ASHEN_REMAINS.get().defaultBlockState());
-								level.addDestroyBlockEffect(worldBlock.getPos(), RisusBlocks.ASHEN_REMAINS.get().defaultBlockState());
-							}
-						}
-					}
-				}
-			}
-			context.getItemInHand().consume(1, context.getPlayer());
 
-			return InteractionResult.sidedSuccess(level.isClientSide());
+				context.getItemInHand().consume(1, context.getPlayer());
+
+				return InteractionResult.sidedSuccess(level.isClientSide());
+			}
 		}
 		return super.useOn(context);
+	}
+
+	@Nullable
+	private BlockPattern.BlockPatternMatch getUsedRitual(Level level, BlockPos pos) {
+		var normal = RITUAL.find(level, pos);
+		if (normal != null) return normal;
+		return RITUAL_SIDEWAYS.find(level, pos);
 	}
 }

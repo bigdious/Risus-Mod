@@ -2,50 +2,37 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BaseRotatableBlock;
-import com.bigdious.risus.blocks.RisusCampfireBlock;
 import com.bigdious.risus.blocks.entity.RitualBlockEntity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusParticles;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
-import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 import java.util.Map;
+import java.util.function.Function;
 
 public class ScytheItem extends SwordItem {
 
-	public static final BlockPattern RITUAL = BlockPatternBuilder.start()
+	public static final Function<Block, BlockPattern> RITUAL = block -> BlockPatternBuilder.start()
 		//for some reason, south is up
 		.aisle("     f     ")
 		.aisle("     z     ")
@@ -65,13 +52,13 @@ public class ScytheItem extends SwordItem {
 		.where('y', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y))
 		.where('z', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Z))
 		.where('x', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X))
-		.where('f', BlockInWorld.hasState(state -> state.is(BlockTags.FIRE)))
+		.where('f', BlockInWorld.hasState(state -> state.is(block)))
 		.where('b', BlockInWorld.hasState(state -> state.is(RisusBlocks.BLOOD_FLUID_BLOCK) || state.is(RisusBlocks.RITUAL))).build();
 
-	public static final Map<Block, ItemLike> RITUAL_CONVERSIONS = Map.of(
-		Blocks.CAMPFIRE, RisusItems.FIRE_SCYTHE,
-		Blocks.SOUL_CAMPFIRE, RisusItems.SOUL_SCYTHE,
-		RisusBlocks.JOYFLAME_CAMPFIRE.get(), RisusItems.CINDERGLEE_SCYTHE
+	public static final Map<Block, Pair<Block, ItemLike>> RITUAL_CONVERSIONS = Map.of(
+		Blocks.CAMPFIRE, Pair.of(Blocks.FIRE, RisusItems.FIRE_SCYTHE),
+		Blocks.SOUL_CAMPFIRE,  Pair.of(Blocks.SOUL_FIRE, RisusItems.SOUL_SCYTHE),
+		RisusBlocks.JOYFLAME_CAMPFIRE.get(),  Pair.of(RisusBlocks.JOYFLAME_FIRE.get(), RisusItems.CINDERGLEE_SCYTHE)
 	);
 	private final TagKey<Enchantment> allowedEnchants;
 
@@ -105,7 +92,7 @@ public class ScytheItem extends SwordItem {
 		ItemStack scythe = player.getMainHandItem();
 		if (!scythe.is(RisusItems.SCYTHE)) return super.useOn(context);
 		if (RITUAL_CONVERSIONS.containsKey(blockstate.getBlock()) && blockstate.getValue(CampfireBlock.LIT)) {
-			if (RITUAL.find(level, blockpos.below()) != null) {
+			if (RITUAL.apply(RITUAL_CONVERSIONS.get(blockstate.getBlock()).getFirst()).find(level, blockpos.below()) != null) {
 				level.setBlockAndUpdate(blockpos.below(), RisusBlocks.RITUAL.get().defaultBlockState());
 				if (level.getBlockEntity(blockpos.below()) instanceof RitualBlockEntity ritual) {
 					ritual.setTheItem(scythe.consumeAndReturn(1, context.getPlayer()));

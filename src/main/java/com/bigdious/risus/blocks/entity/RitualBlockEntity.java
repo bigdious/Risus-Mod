@@ -66,10 +66,11 @@ public class RitualBlockEntity extends BlockEntity implements ContainerSingleIte
 		}
 
 		if (entity.timer > 100) {
-			var ritual = ScytheItem.RITUAL.find(level, pos);
+			var campfire = level.getBlockState(pos.above());
+			var resultPair = ScytheItem.RITUAL_CONVERSIONS.get(campfire.getBlock());
+			var ritual = ScytheItem.RITUAL.apply(resultPair.getFirst()).find(level, pos);
 			if (ritual != null) {
-				var campfire = level.getBlockState(pos.above());
-				var item = new ItemEntity(level, pos.getX(), pos.getY() + 1, pos.getZ(), entity.transformAndRemoveEnchants(entity.item, ScytheItem.RITUAL_CONVERSIONS.get(campfire.getBlock())));
+				var item = new ItemEntity(level, pos.getX(), pos.getY() + 1, pos.getZ(), entity.transformAndRemoveEnchants(entity.item, resultPair.getSecond()));
 				level.addFreshEntity(item);
 				level.setBlock(pos.above(), campfire.trySetValue(CampfireBlock.LIT, false), 11);
 				for (int x = 0; x < ritual.getWidth(); x++) {
