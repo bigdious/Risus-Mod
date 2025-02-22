@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.blocks.RisusCampfireBlock;
 import com.bigdious.risus.blocks.entity.RitualBlockEntity;
 import com.bigdious.risus.init.RisusBlocks;
@@ -32,29 +33,39 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 import java.util.Map;
 
 public class ScytheItem extends SwordItem {
 
 	public static final BlockPattern RITUAL = BlockPatternBuilder.start()
-		.aisle("    l    ")
-		.aisle("   clc   ")
-		.aisle("   flf   ")
-		.aisle(" cfclcfc ")
-		.aisle("llllbllll")
-		.aisle(" cfclcfc ")
-		.aisle("   flf   ")
-		.aisle("   clc   ")
-		.aisle("    l    ")
-		.where('c', BlockInWorld.hasState(BlockStatePredicate.forBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get())))
+		//for some reason, south is up
+		.aisle("     f     ")
+		.aisle("     z     ")
+		.aisle("    nye    ")
+		.aisle("    fzf    ")
+		.aisle("  nfnyefe  ")
+		.aisle("fxyxybyxyxf")
+		.aisle("  wfwysfs  ")
+		.aisle("    fzf    ")
+		.aisle("    wys    ")
+		.aisle("     z     ")
+		.aisle("     f     ")
+		.where('n', BlockInWorld.hasState(state -> state.is(RisusBlocks.CURVED_RITUAL_BLOCK.get()) && state.getValue(BaseRotatableBlock.FACING) == Direction.NORTH))
+		.where('e', BlockInWorld.hasState(state -> state.is(RisusBlocks.CURVED_RITUAL_BLOCK.get()) && state.getValue(BaseRotatableBlock.FACING) == Direction.EAST))
+		.where('s', BlockInWorld.hasState(state -> state.is(RisusBlocks.CURVED_RITUAL_BLOCK.get()) && state.getValue(BaseRotatableBlock.FACING) == Direction.SOUTH))
+		.where('w', BlockInWorld.hasState(state -> state.is(RisusBlocks.CURVED_RITUAL_BLOCK.get()) && state.getValue(BaseRotatableBlock.FACING) == Direction.WEST))
+		.where('y', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y))
+		.where('z', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Z))
+		.where('x', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X))
 		.where('f', BlockInWorld.hasState(state -> state.is(BlockTags.FIRE)))
-		.where('l', BlockInWorld.hasState(BlockStatePredicate.forBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get())))
 		.where('b', BlockInWorld.hasState(state -> state.is(RisusBlocks.BLOOD_FLUID_BLOCK) || state.is(RisusBlocks.RITUAL))).build();
 
 	public static final Map<Block, ItemLike> RITUAL_CONVERSIONS = Map.of(

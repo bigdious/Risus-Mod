@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-21T23:57:35.7232616	Risus blockstates and models
+// 1.21.1	2025-02-22T10:54:03.2038545	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -285,7 +285,7 @@ e373e5ac57e65b26bb36858654f1f9041d3b7892 assets/risus/models/block/popping_bondk
 633ca789ea4a553f34b8d9b3cbc8b89f0aea6a2c assets/risus/models/block/potted_regen_rose.json
 289d91144378c285e72e4a504f206c85fd3c524b assets/risus/models/block/purple_display_notch.json
 50456d859bdbb89763ded16a66f8e22f77b94683 assets/risus/models/block/red_display_notch.json
-409432a1628af3a8b8f53853a9fafba86bf982fa assets/risus/models/block/regen_rose.json
+d2bd0f841628d310ac26954b68bde3b37ec72f08 assets/risus/models/block/regen_rose.json
 8d377202c63f1866c7a0b526ecf3d225da02f63f assets/risus/models/block/ritual.json
 d3d4ffb29795fa9e9863fa572d07bad1b5b72e22 assets/risus/models/block/scab.json
 b9d311152129a46ed0c73c3dd61d54d4fa16e8e3 assets/risus/models/block/skin.json

@@ -7,6 +7,9 @@
     "minecraft:sea_lantern",
     "minecraft:ochre_froglight",
     "minecraft:pearlescent_froglight",
-    "minecraft:verdant_froglight"
+    "minecraft:verdant_froglight",
+    "minecraft:sculk_catalyst",
+    "minecraft:crying_obsidian",
+    "risus:laughing_obsidian"
   ]
 }

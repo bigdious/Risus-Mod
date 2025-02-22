@@ -287,7 +287,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 		horizontalBlock(RisusBlocks.HEART_TRANSPLANT.get(), models().getExistingFile(Risus.prefix("block/heart_transplant")));
 		simpleBlock(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), models().getExistingFile(Risus.prefix("block/potted_heart_transplant")));
-		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().cross("regen_rose", Risus.prefix("block/regen_rose")));
+		simpleBlock(RisusBlocks.REGEN_ROSE.get(), models().cross("regen_rose", Risus.prefix("block/regen_rose")).renderType("cutout"));
 		simpleBlock(RisusBlocks.POTTED_REGEN_ROSE.get(), models().withExistingParent("potted_regen_rose", "block/flower_pot_cross").texture("plant", Risus.prefix("block/regen_rose")).renderType("cutout"));
 		getVariantBuilder(RisusBlocks.BIG_CHAIN.get())
 				.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y)

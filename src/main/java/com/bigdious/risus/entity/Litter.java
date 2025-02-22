@@ -67,7 +67,7 @@ public class Litter extends TamableAnimal {
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Frog.class, 8.0F, 1.0F, 1.25F));
-		this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F));
+		this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 5.0F, 2.0F));
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
@@ -86,6 +86,7 @@ public class Litter extends TamableAnimal {
 			this.lightCheckInterval--;
 			if (this.lightCheckInterval <= 0) {
 				if (this.level().getBrightness(LightLayer.BLOCK, this.blockPosition()) <= 0 && this.level().isEmptyBlock(this.blockPosition())) {
+					if (this.level().canSeeSky(this.blockPosition()) && this.level().isDay()) {this.lightCheckInterval = 100; return;}
 					this.level().setBlockAndUpdate(this.blockPosition(), RisusBlocks.LIGHT_EXCREMENT.get().defaultBlockState().setValue(LightExcrementBlock.FACING, Direction.DOWN));
 					this.playSound(SoundEvents.CHICKEN_EGG, 0.15F, 0.75F);
 				}

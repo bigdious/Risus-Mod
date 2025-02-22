@@ -1,10 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -15,11 +12,6 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-import javax.annotation.Nullable;
-import java.util.concurrent.CompletableFuture;
 
 public class RisusTags {
 	public static class Blocks {
@@ -28,6 +20,7 @@ public class RisusTags {
 		public static final TagKey<Block> COPPER_AMALGAM_VARIATION = create("copper_amalgam_variation");
 		public static final TagKey<Block> WAXED_COPPER_AMALGAM_VARIATION = create("waxed_copper_amalgam_variation");
 		public static final TagKey<Block> LITTER_ALLOWED_LIGHT_BLOCKS = create("litter_allowed_light_blocks");
+		public static final TagKey<Block> ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS = create("non_canon_litter_allowed_light_blocks");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

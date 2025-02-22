@@ -34,11 +34,13 @@ public class Risus {
 	public static final String MODID = "risus";
 
 	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> HOLDERS_STEAL_FROM_MONSTERS = Suppliers.memoize(() -> GameRules.register("holdersStealFromMonsters", GameRules.Category.MOBS, GameRules.BooleanValue.create(true)));
+	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> ILLEGAL_LITTERS = Suppliers.memoize(() -> GameRules.register("illegalLitters", GameRules.Category.MOBS, GameRules.BooleanValue.create(false)));
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public Risus(IEventBus bus, Dist dist) {
 		Util.backgroundExecutor().execute(HOLDERS_STEAL_FROM_MONSTERS::get);
+		Util.backgroundExecutor().execute(ILLEGAL_LITTERS::get);
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
 		RisusBlocks.BLOCKS.register(bus);
 		RisusDataAttachments.ATTACHMENT_TYPES.register(bus);

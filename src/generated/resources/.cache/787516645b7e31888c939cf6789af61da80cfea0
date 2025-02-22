@@ -1,14 +1,15 @@
-// 1.21.1	2025-02-21T14:52:35.2413602	Tags for minecraft:block mod id risus
+// 1.21.1	2025-02-22T13:45:33.2058924	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates/wooden.json
-ac21c777aa73f9bacb1190ebb3997a96a3e64ad9 data/minecraft/tags/block/campfires.json
+ddc76049a559e6ddf6013e0a5688a846920be0bb data/minecraft/tags/block/campfires.json
 ec753b81e9558b44c846e98e909ffa33f075cae4 data/minecraft/tags/block/cauldrons.json
 55db3c4812da3496be8eccb68a963c8613455bea data/minecraft/tags/block/climbable.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/doors.json
 86196d8d301039609134e790f381774456113206 data/minecraft/tags/block/fences.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/block/fence_gates.json
+bd91bab90901281b6022e8156f5d31aa13cd8f6f data/minecraft/tags/block/fire.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs_that_burn.json
 c79143e7db2e0603412a22d5134a48470b96226a data/minecraft/tags/block/mineable/axe.json
@@ -37,5 +38,6 @@ fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/block/wooden_slabs.
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/block/bondknot_logs.json
 086a5ada21429600844477604ecba07e6ef5c61a data/risus/tags/block/copper_amalgam_variation.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/block/joyflame_fire_base_blocks.json
-f20e2a77a1f26df21ee5e2cd86bf07fd054e4902 data/risus/tags/block/litter_allowed_light_blocks.json
+cb96af7a6282aed3beecbf9dcad73a664d876d76 data/risus/tags/block/litter_allowed_light_blocks.json
+82d91a2e190ecfeaf217c2357dec40e597efc980 data/risus/tags/block/non_canon_litter_allowed_light_blocks.json
 e3436a8ca281ce0908f3175a98646068e91ebf7a data/risus/tags/block/waxed_copper_amalgam_variation.json

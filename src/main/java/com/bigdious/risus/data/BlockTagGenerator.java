@@ -6,8 +6,6 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -200,6 +198,12 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
 		);
+		this.tag(BlockTags.FIRE).add(
+			RisusBlocks.JOYFLAME_FIRE.get()
+		);
+		this.tag(BlockTags.CAMPFIRES).add(
+			RisusBlocks.JOYFLAME_CAMPFIRE.get()
+		);
 		this.tag(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS).add(
 			Blocks.GLOWSTONE,
 			Blocks.SHROOMLIGHT,
@@ -208,8 +212,48 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			Blocks.SEA_LANTERN,
 			Blocks.OCHRE_FROGLIGHT,
 			Blocks.PEARLESCENT_FROGLIGHT,
-			Blocks.VERDANT_FROGLIGHT
-		);
+			Blocks.VERDANT_FROGLIGHT,
+			Blocks.SCULK_CATALYST,
+			Blocks.CRYING_OBSIDIAN,
+			RisusBlocks.LAUGHING_OBSIDIAN.get());
+
+			this.tag(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS).add(
+			Blocks.ENCHANTING_TABLE,
+			Blocks.COPPER_BULB,
+			Blocks.EXPOSED_COPPER_BULB,
+			Blocks.OXIDIZED_COPPER_BULB,
+			Blocks.WEATHERED_COPPER_BULB,
+			Blocks.WAXED_COPPER_BULB,
+			Blocks.WAXED_EXPOSED_COPPER_BULB,
+			Blocks.WAXED_OXIDIZED_COPPER_BULB,
+			Blocks.WAXED_WEATHERED_COPPER_BULB,
+			Blocks.REDSTONE_LAMP,
+			Blocks.REDSTONE_ORE,
+			Blocks.DEEPSLATE_REDSTONE_ORE,
+			Blocks.SMALL_AMETHYST_BUD,
+			Blocks.MEDIUM_AMETHYST_BUD,
+			Blocks.LARGE_AMETHYST_BUD,
+			Blocks.AMETHYST_CLUSTER,
+			Blocks.BROWN_MUSHROOM,
+			Blocks.TORCH,
+			Blocks.LANTERN,
+			Blocks.SOUL_TORCH,
+			Blocks.SOUL_LANTERN,
+			RisusBlocks.JOYFLAME_TORCH.get(),
+			RisusBlocks.JOYFLAME_LANTERN.get(),
+			Blocks.END_ROD,
+			Blocks.CONDUIT,
+			Blocks.REDSTONE_TORCH,
+			Blocks.SCULK_SENSOR,
+			Blocks.CALIBRATED_SCULK_SENSOR,
+			Blocks.SEA_PICKLE,
+			RisusBlocks.LIGHT_EXCREMENT.get()
+		)
+				.addTag(BlockTags.CANDLES)
+				.addTag(BlockTags.CANDLE_CAKES)
+				.addTag(BlockTags.FIRE)
+				.addTag(BlockTags.CAMPFIRES)
+			;
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
 	}
 }
