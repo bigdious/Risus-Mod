@@ -31,7 +31,6 @@ public class EntityLootTables extends EntityLootSubProvider {
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
 		add(RisusEntities.BABY_SPIDER.get(), LootTable.lootTable());
 		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
-		add(RisusEntities.TRANSIENT_QUESTION_MARK.get(), LootTable.lootTable());
 
 		add(RisusEntities.ANGEL.get(),
 			LootTable.lootTable()

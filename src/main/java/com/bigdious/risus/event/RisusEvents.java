@@ -156,7 +156,6 @@ public class RisusEvents {
 		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
-		event.put(RisusEntities.TRANSIENT_QUESTION_MARK.get(), TransientQuestionMark.attributes().build());
 		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 		event.put(RisusEntities.LITTER.get(), Litter.createAttributes().build());
 	}
@@ -223,12 +222,10 @@ public class RisusEvents {
 	private static void welcomePlayer(AdvancementEvent.AdvancementEarnEvent event) {
 		Player player = event.getEntity();
 		Level level = player.level();
-		if (event.getAdvancement().id().equals(Risus.prefix("first"))
-			//commented until further changes
-//			&& level.getDifficulty() != Difficulty.PEACEFUL
-		) {
+		if (event.getAdvancement().id().equals(Risus.prefix("first"))) {
 			for (int i = 0; i < 13; i++) {
-				QuestionMark witness = RisusEntities.TRANSIENT_QUESTION_MARK.get().create(level);
+				QuestionMark witness = RisusEntities.QUESTION_MARK.get().create(level);
+				witness.setTransient();
 				witness.moveTo(getBoxAround(player, 2, 40), 0.0F, 0.0F);
 				level.addFreshEntity(witness);
 			}

@@ -196,7 +196,6 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.BABY_SPIDER.get(), BabySpiderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
-		event.registerEntityRenderer(RisusEntities.TRANSIENT_QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);

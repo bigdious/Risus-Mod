@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-20T20:20:49.0136398	Loot Tables
+// 1.21.1	2025-02-21T22:20:59.4646629	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -154,7 +154,6 @@ ac15bf48d7a30e86f1de03e9bbe197893f6617b2 data/risus/loot_table/entities/lover.js
 046b7694f2c0f2eb62a7cbf3f70d949ad90d71d6 data/risus/loot_table/entities/question_mark.json
 dfc5688a140c7bcfcf90ce0b17749de7da5895db data/risus/loot_table/entities/singer.json
 1a8691354eccd798ee6d5e89e069c06253b99795 data/risus/loot_table/entities/stalker.json
-c31b90d67ad22b6dd6197a5165641ab2d04bf563 data/risus/loot_table/entities/transient_question_mark.json
 115d870e5802c6c7f23b83f569c8e426f57e0e19 data/risus/loot_table/entities/weaver.json
 cf611a099c7a227e0cc066d1f8c1c26600eff924 data/risus/loot_table/family_tree_1.json
 eabad1db50737ac8ce7af7818530056905a2c6df data/risus/loot_table/great_body_1.json
