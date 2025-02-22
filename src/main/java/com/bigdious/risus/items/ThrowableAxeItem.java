@@ -2,6 +2,7 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
@@ -43,7 +44,7 @@ public class ThrowableAxeItem extends AxeItem {
 			int i = this.getUseDuration(stack, entity) - useTicks;
 			if (i >= 10) {
 				Holder<SoundEvent> holder = EnchantmentHelper.pickHighestLevel(stack, EnchantmentEffectComponents.TRIDENT_SOUND)
-					.orElse(SoundEvents.TRIDENT_THROW);
+					.orElse(RisusSoundEvents.CRESCENT_DISASTER_THROW);
 				if (!level.isClientSide()) {
 					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					ThrownAxe axe = new ThrownAxe(level, player, stack);

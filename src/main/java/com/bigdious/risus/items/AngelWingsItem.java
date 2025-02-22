@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -42,7 +43,7 @@ public class AngelWingsItem extends Item implements Equipable {
 	}
 
 	public Holder<SoundEvent> getEquipSound() {
-		return SoundEvents.ARMOR_EQUIP_ELYTRA;
+		return RisusSoundEvents.ARMOR_EQUIP_WINGS;
 	}
 
 	public EquipmentSlot getEquipmentSlot() {

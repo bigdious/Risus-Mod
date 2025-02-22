@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -153,7 +154,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 				}
 			}
 			//if no item is fetched or the player is crouching, play fail effects
-			level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS);
+			level.playSound(null, pos, RisusSoundEvents.DEPTH_VASE_INSERT_FAIL.get(), SoundSource.BLOCKS);
 			vase.wobble(DepthVaseBlockEntity.DepthWobbleStyle.NEGATIVE);
 			level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
 			return InteractionResult.SUCCESS;
@@ -163,7 +164,7 @@ public class DepthVaseBlock extends BaseEntityBlock implements SimpleMultilogged
 
 	private void playWobbleEffects(DepthVaseBlockEntity entity, Level level, BlockPos pos, ParticleOptions particle) {
 		entity.wobble(DepthVaseBlockEntity.DepthWobbleStyle.POSITIVE);
-		level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F);
+		level.playSound(null, pos, RisusSoundEvents.DEPTH_VASE_INSERT.get(), SoundSource.BLOCKS, 1.0F, 0.7F);
 		if (level instanceof ServerLevel serverlevel) {
 			serverlevel.sendParticles(
 				particle,

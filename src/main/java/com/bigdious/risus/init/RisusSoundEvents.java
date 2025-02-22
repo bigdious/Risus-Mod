@@ -41,7 +41,6 @@ public class RisusSoundEvents {
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_BREAK = register("item.egg_sac.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_THROW = register("item.egg_sac.throw");
-	public static final DeferredHolder<SoundEvent, SoundEvent> UNYIELDING_USE = register("item.totem_of_unyielding.use");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_SKIN = register("item.armor.equip_skin");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_WINGS = register("item.armor.equip_wings");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CONCENTRATION_CORE_LITTER = register("item.concentration_core.create_litter");

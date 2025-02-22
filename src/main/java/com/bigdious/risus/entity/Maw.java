@@ -2,6 +2,7 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -187,7 +188,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 		if (this.deathTime == 20 && !this.level().isClientSide()) {
 			if (this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS.get())) {
 				this.level().destroyBlock(this.blockPosition().below(), true);
-				this.playSound(SoundEvents.WITHER_BREAK_BLOCK);
+				this.playSound(RisusSoundEvents.MAW_GUTS_SHATTER.get());
 			}
 			//Commented for now as it breaks progression
 			//for (Direction dir : Direction.Plane.HORIZONTAL) {

@@ -3,6 +3,7 @@ package com.bigdious.risus.entity.projectile;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.core.particles.ParticleTypes;
@@ -96,8 +97,8 @@ public class BloodSlash extends Projectile {
 		this.setPos(d0, d1, d2);
 
 		this.level().addParticle(RisusParticles.BLOODSLASH_TRAIL.get(), true, this.getX(), this.getRandomY() - 1.5 + (Math.random() * 2.8), this.getZ(), 0, 0, 0);
-		if (this.tickCount % 40 == 0) this.playSound(SoundEvents.BREEZE_WHIRL);
-		if(tickCount>70) this.kill();
+		if (this.tickCount % 40 == 0) this.playSound(RisusSoundEvents.BLOOD_SLASH_WHOOSH.get());
+		if (tickCount > 70) this.kill();
 	}
 
 	@Override

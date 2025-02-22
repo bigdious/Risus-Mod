@@ -1,9 +1,144 @@
 {
+  "block.blood.ambient": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.water.ambient"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.ambient"
+  },
+  "block.depth_vase.insert": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.decorated_pot.insert"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.insert"
+  },
+  "block.depth_vase.insert_fail": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.decorated_pot.insert_fail"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.insert_fail"
+  },
+  "block.hair.grow": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.sculk.spread"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.grow"
+  },
+  "block.popping_bondknot.crystallized_bond_grow": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.chicken.egg"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.crystallized_bond_grow"
+  },
+  "block.zit.pop": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.llama.spit"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.pop"
+  },
+  "entity.blood_slash.whoosh": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.breeze.whirl"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.whoosh"
+  },
+  "entity.crescent_disaster.hit": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.trident.hit"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hit"
+  },
+  "entity.crescent_disaster.hit_ground": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.trident.hit_ground"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hit_ground"
+  },
+  "entity.crescent_disaster.return": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.trident.return"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.return"
+  },
+  "entity.crescent_disaster.throw": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.trident.throw"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.throw"
+  },
   "entity.holder.cheeky_laugh": {
     "sounds": [
       "risus:entity/holder/cheeky_laugh"
     ],
     "subtitle": "subtitles.risus.entity.cheeky_laugh"
+  },
+  "entity.litter.excrement": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.chicken.egg"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.excrement"
+  },
+  "entity.lover.infect": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie.infect"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.infect"
+  },
+  "entity.maw.guts_shatter": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.wither.break_block"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.guts_shatter"
+  },
+  "entity.singer.scream": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.enderman.scream"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.scream"
   },
   "item.armor.equip_skin": {
     "sounds": [
@@ -22,6 +157,87 @@
       }
     ],
     "subtitle": "subtitles.risus.item.equip_wings"
+  },
+  "item.boat.slash": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.player.attack.sweep"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.slash"
+  },
+  "item.concentration_core.create_litter": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie_villager.converted"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.create_litter"
+  },
+  "item.egg_sac.break": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.turtle.egg_hatch"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.break"
+  },
+  "item.egg_sac.throw": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.snowball.throw"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.throw"
+  },
+  "item.light_devourer.place_darkness": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.warden.nearby_close"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.place_darkness"
+  },
+  "item.organic_matter.use": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.sculk_vein.break"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.use"
+  },
+  "item.stripper.strip": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.arrow.hit"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.strip"
+  },
+  "item.toothknocker.crack": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.turtle.egg_break"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.crack"
+  },
+  "item.toothknocker.dash": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.goat.screaming.long_jump"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.dash"
   },
   "music.ambient.feigr": {
     "sounds": [

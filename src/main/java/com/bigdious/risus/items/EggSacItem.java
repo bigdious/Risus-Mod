@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.entity.projectile.EggSac;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.sounds.SoundEvents;
@@ -23,7 +24,7 @@ public class EggSacItem extends Item implements ProjectileItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
-		level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 1F);
+		level.playSound(null, player.getX(), player.getY(), player.getZ(), RisusSoundEvents.EGG_SAC_THROW, SoundSource.NEUTRAL, 0.5F, 1F);
 		player.getCooldowns().addCooldown(this, 20);
 		if (!level.isClientSide()) {
 			EggSac eggSac = new EggSac(level, player);

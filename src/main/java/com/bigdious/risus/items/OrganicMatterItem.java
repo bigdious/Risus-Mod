@@ -5,6 +5,7 @@ import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -87,7 +88,7 @@ public class OrganicMatterItem extends Item {
 				level.setBlock(blockpos, state, 11);
 				level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, state));
 				ParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
-				level.playSound(null, blockpos, SoundEvents.SCULK_VEIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+				level.playSound(null, blockpos, RisusSoundEvents.ORGANIC_MATTER_USE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
 				return InteractionResult.sidedSuccess(level.isClientSide());
 			}).orElse(InteractionResult.PASS);
 		}

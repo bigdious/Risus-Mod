@@ -3,6 +3,7 @@ package com.bigdious.risus.items;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodSlash;
 import com.bigdious.risus.init.RisusDamageTypes;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.Holder;
@@ -67,6 +68,7 @@ public class ThousandBladeItem extends SwordItem {
 			if (i >= 10) {
 				if (!level.isClientSide()) {
 					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+					//TODO account for higher possible levels of multishot
 					if (stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
 						player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 3);
 						BloodSlash slash = new BloodSlash(level, player, stack);
@@ -78,13 +80,13 @@ public class ThousandBladeItem extends SwordItem {
 						level.addFreshEntity(slash);
 						level.addFreshEntity(slash1);
 						level.addFreshEntity(slash2);
-						level.playSound(null, entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
+						level.playSound(null, entity, RisusSoundEvents.THOUSAND_BLADE_SLASH.get(), SoundSource.NEUTRAL, 1F, 0.6F);
 					} else {
 						player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1);
 						BloodSlash slash = new BloodSlash(level, player, stack);
 						slash.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.3F, 1.0F);
 						level.addFreshEntity(slash);
-						level.playSound(null, entity, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.NEUTRAL, 1F, 0.6F);
+						level.playSound(null, entity, RisusSoundEvents.THOUSAND_BLADE_SLASH.get(), SoundSource.NEUTRAL, 1F, 0.6F);
 					}
 				}
 				player.awardStat(Stats.ITEM_USED.get(this));

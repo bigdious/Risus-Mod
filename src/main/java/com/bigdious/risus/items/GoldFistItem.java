@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.ChatFormatting;
@@ -37,18 +38,18 @@ public class GoldFistItem extends ToothknockerItem {
 				EquipmentSlot slot = EquipmentSlot.values()[rand + 2];
 				if (target.hasItemInSlot(slot)) {
 					player.spawnAtLocation(target.getItemBySlot(slot));
-					level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
+					level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
 					target.setItemSlot(slot, ItemStack.EMPTY);
 				}
 			}
 		} else if (entity instanceof Player playertarget) {
 			if (player.getUUID() == UUID.fromString("4b455c5e-d81f-441c-906e-768708f6ca32")) {
 				playertarget.getInventory().dropAll();
-				level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
+				level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
 				player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "Your items are being repossessed due to outstanding debt."));
 			} else if (!playertarget.getInventory().getItem(i).isEmpty()) {
 				player.spawnAtLocation(playertarget.getInventory().getItem(i));
-				level.playSound(player, player.getOnPos(), SoundEvents.ARROW_HIT, SoundSource.PLAYERS);
+				level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
 				playertarget.getInventory().setItem(i, ItemStack.EMPTY);
 			}
 		}

@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks.fluid;
 
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -85,7 +86,7 @@ public class BloodFluid extends BaseFlowingFluid {
 		public void animateTick(Level level, BlockPos pos, FluidState state, RandomSource random) {
 			if (!state.isSource() && !state.getValue(FALLING)) {
 				if (random.nextInt(64) == 0) {
-					level.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.WATER_AMBIENT, SoundSource.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F);
+					level.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, RisusSoundEvents.BLOOD_AMBIENT, SoundSource.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F);
 				}
 			} else if (random.nextInt(12) == 0) {
 				if (random.nextInt(3) == 0)
@@ -120,7 +121,7 @@ public class BloodFluid extends BaseFlowingFluid {
 		public void animateTick(Level worldIn, BlockPos pos, FluidState state, RandomSource random) {
 			if (!state.isSource() && !state.getValue(FALLING)) {
 				if (random.nextInt(64) == 0) {
-					worldIn.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.WATER_AMBIENT, SoundSource.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F);
+					worldIn.playSound(null, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, RisusSoundEvents.BLOOD_AMBIENT, SoundSource.BLOCKS, random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F);
 				}
 			} else if (random.nextInt(14) == 0) {
 				if (random.nextInt(2) == 0)

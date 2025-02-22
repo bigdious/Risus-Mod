@@ -3,6 +3,7 @@ package com.bigdious.risus.items;
 import com.bigdious.risus.blocks.DarknessBlock;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -28,7 +29,7 @@ public class LightDevourerItem extends Item {
 
 		BlockPos blockpos1 = blockpos.relative(context.getClickedFace());
 		if (DarknessBlock.canBePlacedAt(level, blockpos1, context.getHorizontalDirection())) {
-			level.playSound(player, blockpos1, SoundEvents.WARDEN_NEARBY_CLOSE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+			level.playSound(player, blockpos1, RisusSoundEvents.DARKNESS_PLACE.get(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
 			BlockState blockstate1 = RisusBlocks.DARKNESS.get().defaultBlockState().setValue(DarknessBlock.FLUIDLOGGED, SimpleMultiloggedBlock.MultiloggingEnum.getFromFluid(level.getFluidState(blockpos1).getType()));
 			level.setBlock(blockpos1, blockstate1, 11);
 			level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);

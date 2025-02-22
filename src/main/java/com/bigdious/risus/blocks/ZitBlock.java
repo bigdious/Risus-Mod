@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
@@ -131,7 +132,7 @@ public class ZitBlock extends DirectionalBlock implements SimpleMultiloggedBlock
 		spit.setPos(Vec3.atCenterOf(pos));
 		spit.shoot(dir.getStepX() * 10.0D, dir.getStepY() * 10.0D, dir.getStepZ() * 10.0D, 1.5F, 11.0F);
 		level.addFreshEntity(spit);
-		level.playSound(null, pos, SoundEvents.LLAMA_SPIT, SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
+		level.playSound(null, pos, RisusSoundEvents.ZIT_POP.get(), SoundSource.BLOCKS, 1.0F, 1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F);
 		level.setBlockAndUpdate(pos, state.setValue(POPPED, true));
 		level.scheduleTick(pos, this, 60);
 	}

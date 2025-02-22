@@ -21,6 +21,6 @@ public class RisusArmorMaterials {
 			map.put(ArmorItem.Type.LEGGINGS, 1);
 			map.put(ArmorItem.Type.CHESTPLATE, 1);
 			map.put(ArmorItem.Type.HELMET, 1);
-		}), 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skin"))), 0.0F, 0.0F)
+		}), 10, RisusSoundEvents.ARMOR_EQUIP_SKIN, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skin"))), 0.0F, 0.0F)
 	);
 }

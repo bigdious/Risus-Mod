@@ -3,6 +3,7 @@ package com.bigdious.risus.items;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -61,7 +62,7 @@ public class ToothknockerItem extends SwordItem {
 			player.getOffhandItem().hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
 			player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			Level level = player.level();
-			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.TURTLE_EGG_BREAK, SoundSource.PLAYERS, 0.5F, 1.0F);
+			level.playSound(null, player.getX(), player.getY(), player.getZ(), RisusSoundEvents.TOOTHKNOCKER_CRACK.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
 		}
 		return super.onLeftClickEntity(stack, player, entity);
 	}
@@ -87,7 +88,7 @@ public class ToothknockerItem extends SwordItem {
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
 			player.getCooldowns().addCooldown(this, 30);
 			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
-			pLevel.playSound(player, player.getOnPos().above(), SoundEvents.GOAT_SCREAMING_LONG_JUMP, SoundSource.PLAYERS);
+			pLevel.playSound(player, player.getOnPos().above(), RisusSoundEvents.TOOTHKNOCKER_DASH.get(), SoundSource.PLAYERS);
 			return InteractionResultHolder.consume(itemstack);
 		}
 	}

@@ -3,6 +3,7 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
@@ -24,24 +25,39 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.event.EventHooks;
+
+import java.util.Map;
 
 public class Lover extends Monster {
+
+	//TODO data map
+	private static final Map<EntityType<?>, Holder<EntityType<?>>> CONVERSIONS = Map.of(
+		EntityType.CREEPER, RisusEntities.STALKER,
+		EntityType.SPIDER, RisusEntities.LICKER,
+		EntityType.ENDERMAN, RisusEntities.SINGER
+	);
+
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
 		this.moveControl = new FlyingMoveControl(this, 20, true);
 		this.xpReward = 0;
 	}
+
 	@Override
 	public boolean canBeLeashed() {
 		return true;
 	}
+
 	public static boolean canLoverSpawn(EntityType<? extends Lover> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
 		return checkMonsterSpawnRules(entityType, level, spawnType, pos, random);
 	}
+
 	@Override
 	public int getMaxSpawnClusterSize() {
 		return 1;
 	}
+
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
 			.add(Attributes.MAX_HEALTH, 30.0D)
@@ -50,6 +66,7 @@ public class Lover extends Monster {
 			.add(Attributes.ATTACK_DAMAGE, 100.0D)
 			.add(Attributes.FOLLOW_RANGE, 30.0D);
 	}
+
 	@Override
 	protected PathNavigation createNavigation(Level p_218342_) {
 		FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, p_218342_);
@@ -58,9 +75,11 @@ public class Lover extends Monster {
 		flyingpathnavigation.setCanPassDoors(true);
 		return flyingpathnavigation;
 	}
+
 	@Override
 	protected void checkFallDamage(double p_218316_, boolean p_218317_, BlockState p_218318_, BlockPos p_218319_) {
 	}
+
 	@Override
 	public void travel(Vec3 p_218382_) {
 		if (this.isControlledByLocalInstance()) {
@@ -81,6 +100,7 @@ public class Lover extends Monster {
 
 		this.calculateEntityAnimation(false);
 	}
+
 	protected void registerGoals() {
 		this.goalSelector.addGoal(4, new FloatGoal(this));
 		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.85D, false));
@@ -91,94 +111,45 @@ public class Lover extends Monster {
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
 			entity -> entity.getType().is(RisusTags.Entities.LOVEABLE)
 		));
-    }
+	}
+
 	@Override
+	@SuppressWarnings("unchecked")
 	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
 		boolean flag = super.killedEntity(level, entity);
-		if ((entity instanceof Creeper creeper && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.STALKER.get(), (timer) -> {
-		}))) {
+
+		if (entity instanceof Mob mob && CONVERSIONS.containsKey(mob.getType())) {
+			flag |= tryConvertEntity(level, (EntityType<? extends Mob>) CONVERSIONS.get(mob.getType()).value(), mob);
+		}
+
+		return flag;
+	}
+
+	private <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
+		boolean flag = true;
+		if (EventHooks.canLivingConvert(from, to, (timer) -> {})) {
 			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
 				return flag;
 			}
 
-			Stalker stalker = creeper.convertTo(RisusEntities.STALKER.get(), false);
-			if (stalker != null) {
-				stalker.finalizeSpawn(
-					level,
-					level.getCurrentDifficultyAt(stalker.blockPosition()),
-					MobSpawnType.CONVERSION,
-					new Zombie.ZombieGroupData(false, false)
-				);
-				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, stalker);
+			T offspring = from.convertTo(to, false);
+			if (offspring != null) {
+				offspring.finalizeSpawn(level, level.getCurrentDifficultyAt(offspring.blockPosition()), MobSpawnType.CONVERSION, null);
+				EventHooks.onLivingConvert(from, offspring);
 				if (!this.isSilent()) {
-					level.levelEvent(null, 1026, this.blockPosition(), 0);
+					this.playSound(RisusSoundEvents.LOVER_INFECT.get(), 2.0F, (this.getRandom().nextFloat() - this.getRandom().nextFloat()) * 0.2F + 1.0F);
 				}
-				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
-					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
+				if (level.getBlockState(from.blockPosition().above()).is(Blocks.AIR) && level.getBlockState(from.getOnPos()).isSolidRender(level, from.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
+					level.setBlock(from.blockPosition(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
 				for (int i = 0; i < 10; ++i) {
-					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
-					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+					level.sendParticles(ParticleTypes.HEART, from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
 				}
 				flag = false;
 			}
 		}
-		if ((entity instanceof Spider spider && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.LICKER.get(), (timer) -> {
-		}))) {
-			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
-				return flag;
-			}
-
-			Licker licker = spider.convertTo(RisusEntities.LICKER.get(), false);
-			if (licker != null) {
-				licker.finalizeSpawn(
-					level,
-					level.getCurrentDifficultyAt(licker.blockPosition()),
-					MobSpawnType.CONVERSION,
-					new Zombie.ZombieGroupData(false, false)
-				);
-				net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, licker);
-				if (!this.isSilent()) {
-					level.levelEvent(null, 1026, this.blockPosition(), 0);
-				}
-				if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
-					entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
-				for (int i = 0; i < 10; ++i) {
-					level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
-					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
-				}
-				flag = false;
-			}
-		}
-			if ((entity instanceof EnderMan enderMan && net.neoforged.neoforge.event.EventHooks.canLivingConvert(entity, RisusEntities.SINGER.get(), (timer) -> {
-			}))) {
-				if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
-					return flag;
-				}
-
-				Singer singer = enderMan.convertTo(RisusEntities.SINGER.get(), false);
-				if (singer != null) {
-					singer.finalizeSpawn(
-						level,
-						level.getCurrentDifficultyAt(singer.blockPosition()),
-						MobSpawnType.CONVERSION,
-						new Zombie.ZombieGroupData(false, false)
-					);
-					net.neoforged.neoforge.event.EventHooks.onLivingConvert(entity, singer);
-					if (!this.isSilent()) {
-						level.levelEvent(null, 1026, this.blockPosition(), 0);
-					}
-					if (entity.level().getBlockState(entity.getOnPos().above()).is(Blocks.AIR) && entity.level().getBlockState(entity.getOnPos()).isSolidRender(level, entity.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
-						entity.level().setBlock(entity.getOnPos().above(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
-					for (int i = 0; i < 10; ++i) {
-						level.sendParticles(ParticleTypes.HEART, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
-						level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
-					}
-					flag = false;
-				}
-			}
-
-			return flag;
-		}
+		return flag;
+	}
 
 }
 

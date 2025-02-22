@@ -75,7 +75,6 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addDeathParticles);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::addEggSack);
-		NeoForge.EVENT_BUS.addListener(RisusEvents::eggSacBoom);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::sacrificeAccepted);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::explodeStick);
@@ -292,16 +291,6 @@ public class RisusEvents {
 		if (entity instanceof Licker licker) {
 			if (licker.level() instanceof ServerLevel serverLevel) {
 				serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, licker.getRandomX(0.5), licker.getY() + 1, licker.getRandomZ(0.5), 7, 0, 0, 0, 0);
-			}
-		}
-	}
-
-	private static void eggSacBoom(ProjectileImpactEvent event) {
-		Entity entity = event.getProjectile();
-		if (entity instanceof EggSac eggSac) {
-			if (eggSac.level() instanceof ServerLevel serverLevel) {
-				serverLevel.sendParticles(ParticleTypes.ITEM_COBWEB, eggSac.getRandomX(0.5), eggSac.getY(), eggSac.getRandomZ(0.5), 7, 0, 0, 0, 0);
-				serverLevel.playLocalSound(eggSac, SoundEvents.TURTLE_EGG_HATCH, SoundSource.NEUTRAL, 1, 1);
 			}
 		}
 	}

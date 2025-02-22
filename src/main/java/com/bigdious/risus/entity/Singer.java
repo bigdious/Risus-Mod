@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -240,7 +241,7 @@ public class Singer extends Monster {
 				if (this.singer.hasLineOfSight(livingentity)) {
 					++this.chargeTime;
 					if (this.chargeTime == 4) {
-						singer.playSound(SoundEvents.ENDERMAN_SCREAM, 4, 1.1F);
+						singer.playSound(RisusSoundEvents.SINGER_SCREAM.get(), 4, 1.1F);
 						livingentity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false, true));
 						this.chargeTime = -8;
 					}

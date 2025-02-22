@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.CrystallizedBondsBlock;
 import com.bigdious.risus.blocks.PoppingBondknotBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -13,11 +14,13 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
 public class PoppingBondknotBlockEntity extends BlockEntity {
 
 	private int popTimer = 0;
 	private boolean popping = false;
+	@Nullable
 	public final Direction popDir;
 	private int secondTicker;
 
@@ -62,7 +65,7 @@ public class PoppingBondknotBlockEntity extends BlockEntity {
 	private void createCrystal(Level level) {
 		if (this.popDir != null) {
 			level.setBlockAndUpdate(this.getBlockPos().relative(this.popDir), RisusBlocks.CRYSTALLIZED_BONDS.get().defaultBlockState().setValue(CrystallizedBondsBlock.FACING, this.popDir));
-			level.playSound(null, this.getBlockPos().relative(this.popDir), SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0f);
+			level.playSound(null, this.getBlockPos().relative(this.popDir), RisusSoundEvents.CRYSTALLIZED_BOND_GROW.get(), SoundSource.BLOCKS, 1.0F, 1.0f);
 		}
 	}
 }
