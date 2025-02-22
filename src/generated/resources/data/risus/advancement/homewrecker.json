@@ -1,0 +1,27 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "homewrecker": {
+      "trigger": "risus:break_weaver_nest"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.homewrecker.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "risus:weaver_nest"
+    },
+    "title": {
+      "translate": "advancement.risus.homewrecker"
+    }
+  },
+  "requirements": [
+    [
+      "homewrecker"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

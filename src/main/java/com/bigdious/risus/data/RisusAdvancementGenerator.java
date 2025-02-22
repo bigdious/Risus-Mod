@@ -1,10 +1,13 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
 import com.bigdious.risus.init.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.component.DataComponentPredicate;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -246,11 +249,11 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 
 
 		AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
-				lovePotion(),
+				PotionContents.createItemStack(Items.POTION, RisusPotions.MATING_FRENZY),
 				Component.translatable("advancement.risus.cupid"),
 				Component.translatable("advancement.risus.cupid.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(lovePotion().getItem(), splashLovePotion().getItem(), lingeringLovePotion().getItem()))
+			.addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:cupid");
 
 		AdvancementHolder shave = Advancement.Builder.advancement().parent(fleshing).display(
@@ -288,27 +291,12 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("stripper", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GOLD_FIST.get()))
 			.save(consumer, "risus:stripper");
 
-//		AdvancementHolder homewrecker = Advancement.Builder.advancement().parent(first)
-//			.display(
-//				RisusBlocks.WEAVER_NEST.get(),
-//				Component.translatable("advancement.risus.homewrecker"),
-//				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.GOAL, true, true, false)
-//			.addCriterion("homewrecker", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(RisusBlocks.WEAVER_NEST.get())), ItemPredicate.Builder.item().of()))
-//			.save(consumer, "risus:homewrecker");
-	}
-		private ItemStack lovePotion() {
-			ItemStack itemstack = new ItemStack(Items.POTION);
-			itemstack.set(DataComponents.POTION_CONTENTS, new PotionContents(RisusPotions.MATING_FRENZY.getDelegate()));
-			return itemstack;
-	}
-	private ItemStack splashLovePotion() {
-		ItemStack itemstack = new ItemStack(Items.SPLASH_POTION);
-		itemstack.set(DataComponents.POTION_CONTENTS, new PotionContents(RisusPotions.MATING_FRENZY.getDelegate()));
-		return itemstack;
-	}
-	private ItemStack lingeringLovePotion() {
-		ItemStack itemstack = new ItemStack(Items.LINGERING_POTION);
-		itemstack.set(DataComponents.POTION_CONTENTS, new PotionContents(RisusPotions.MATING_FRENZY.getDelegate()));
-		return itemstack;
+		AdvancementHolder homewrecker = Advancement.Builder.advancement().parent(first)
+			.display(
+				RisusBlocks.WEAVER_NEST.get(),
+				Component.translatable("advancement.risus.homewrecker"),
+				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.GOAL, true, true, false)
+			.addCriterion("homewrecker", BreakWeaverNestTrigger.TriggerInstance.breakNest())
+			.save(consumer, "risus:homewrecker");
 	}
 }
