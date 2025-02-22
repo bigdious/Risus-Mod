@@ -110,6 +110,7 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 				level.setBlockAndUpdate(pos, DisplayNotchBlock.NOTCH_BY_DYE.get(color).get().withPropertiesOf(state));
 				level.setBlockEntity(oldBe);
 				this.setChanged();
+				level.sendBlockUpdated(pos, state, state, 2);
 				return true;
 			}
 		} else if (stack.is(Items.REDSTONE_TORCH)) {
@@ -119,6 +120,7 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 		} else if (stack.is(ItemTags.AXES)) {
 			this.stand = !this.stand;
 			this.setChanged();
+			level.sendBlockUpdated(pos, state, state, 2);
 			return true;
 		}
 		return false;
