@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-11T10:43:31.542089	Risus blockstates and models
+// 1.21.1	2025-02-21T19:41:51.8032258	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -112,6 +112,7 @@ e480b3b5e6ac1933ecfe18ad96f358fadadb083c assets/risus/blockstates/potted_heart_t
 782f468f59db976014ba508f7be6d768eede839e assets/risus/blockstates/red_display_notch.json
 c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.json
 9c785b5a66028b578994a78735fd77d7040717fe assets/risus/blockstates/ribcage.json
+9e92e18ecd0927197552f896d5dd3cac277eb538 assets/risus/blockstates/ritual.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotted_tissue.json
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotting_tissue.json
 672a1d812e59b0ea1ccdc5a09e15df60aa6bccbe assets/risus/blockstates/scab.json
@@ -285,6 +286,7 @@ e373e5ac57e65b26bb36858654f1f9041d3b7892 assets/risus/models/block/popping_bondk
 289d91144378c285e72e4a504f206c85fd3c524b assets/risus/models/block/purple_display_notch.json
 50456d859bdbb89763ded16a66f8e22f77b94683 assets/risus/models/block/red_display_notch.json
 409432a1628af3a8b8f53853a9fafba86bf982fa assets/risus/models/block/regen_rose.json
+8d377202c63f1866c7a0b526ecf3d225da02f63f assets/risus/models/block/ritual.json
 d3d4ffb29795fa9e9863fa572d07bad1b5b72e22 assets/risus/models/block/scab.json
 b9d311152129a46ed0c73c3dd61d54d4fa16e8e3 assets/risus/models/block/skin.json
 346a9547f72726ff2de7c47eb4fe3f7c4617613b assets/risus/models/block/smiling_remains.json

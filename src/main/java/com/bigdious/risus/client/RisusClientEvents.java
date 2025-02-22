@@ -90,7 +90,7 @@ public class RisusClientEvents {
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
 
-			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) ->  AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 		});
 	}
 
@@ -177,6 +177,7 @@ public class RisusClientEvents {
 		EntityModelSet models = Minecraft.getInstance().getEntityModels();
 		renderer.addLayer(new AngelWingsLayer<>(renderer, models));
 	}
+
 	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
 		event.registerSkullModel(RisusSkullType.BLOODWYRM, new BloodWyrmHeadModel(event.getEntityModelSet().bakeLayer(RisusModelLayers.BLOODWYRM_HEAD)));
 	}
@@ -209,7 +210,9 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), DepthVaseRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.RITUAL.get(), RitualBlockEntityRenderer::new);
 	}
+
 	private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
 		event.registerItem(ThousandBladeItem.ItemExtensions.INSTANCE, RisusItems.THOUSAND_BLADE.get());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.DEPTH_VASE.asItem());
@@ -232,6 +235,7 @@ public class RisusClientEvents {
 			public @Nullable ResourceLocation getRenderOverlayTexture(Minecraft mc) {
 				return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/misc/blood_fluid_block.png");
 			}
+
 			@Override
 			public int getTintColor() {
 				return 0xFFE60E07;
@@ -249,6 +253,7 @@ public class RisusClientEvents {
 			}
 		}, RisusFluids.BLOOD_FLUID_TYPE.get());
 	}
+
 	private static void registerOverlays(RegisterGuiLayersEvent event) {
 		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "eye_overlay"), (guiGraphics, deltaTracker) -> {
 			Minecraft minecraft = Minecraft.getInstance();
@@ -277,6 +282,7 @@ public class RisusClientEvents {
 			event.setType(Gui.HeartType.valueOf("RISUS_EXBURN"));
 		}
 	}
+
 	private static void renderDeathHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.DESTINED_DEATH)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_DEATH"));
