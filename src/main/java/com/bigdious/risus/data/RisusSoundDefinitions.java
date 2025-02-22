@@ -133,8 +133,7 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 	}
 
 	private void createSubtitleAndLangEntry(DeferredHolder<SoundEvent, SoundEvent> event, SoundDefinition definition, String subtitle) {
-		String[] splitSoundName = event.getId().getPath().split("\\.", 3);
-		String subtitleKey = "subtitles.risus." + splitSoundName[0] + "." + splitSoundName[2];
+		String subtitleKey = "subtitles.risus." + event.getId().getPath();
 		definition.subtitle(subtitleKey);
 		//TODO Gizmo: hook up subtitle generation to lang file
 		//LangGenerator.SUBTITLE_GENERATOR.put(subtitleKey, subtitle);
