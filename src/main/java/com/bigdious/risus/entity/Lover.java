@@ -3,7 +3,6 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
@@ -27,16 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
 
-import java.util.Map;
-
 public class Lover extends Monster {
-
-	//TODO data map
-	private static final Map<EntityType<?>, Holder<EntityType<?>>> CONVERSIONS = Map.of(
-		EntityType.CREEPER, RisusEntities.STALKER,
-		EntityType.SPIDER, RisusEntities.LICKER,
-		EntityType.ENDERMAN, RisusEntities.SINGER
-	);
 
 	public Lover(EntityType<? extends Lover> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
@@ -109,7 +99,7 @@ public class Lover extends Monster {
 			return itemStack.is(ItemTags.BEE_FOOD);
 		}, false));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
-			entity -> entity.getType().is(RisusTags.Entities.LOVEABLE)
+			entity -> entity.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION) != null
 		));
 	}
 
@@ -118,8 +108,8 @@ public class Lover extends Monster {
 	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
 		boolean flag = super.killedEntity(level, entity);
 
-		if (entity instanceof Mob mob && CONVERSIONS.containsKey(mob.getType())) {
-			flag |= tryConvertEntity(level, (EntityType<? extends Mob>) CONVERSIONS.get(mob.getType()).value(), mob);
+		if (entity instanceof Mob mob && mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION) != null) {
+			flag |= tryConvertEntity(level, (EntityType<? extends Mob>) mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION).result(), mob);
 		}
 
 		return flag;

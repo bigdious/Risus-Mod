@@ -1,0 +1,13 @@
+{
+  "values": {
+    "minecraft:creeper": {
+      "convert_to": "risus:stalker"
+    },
+    "minecraft:enderman": {
+      "convert_to": "risus:singer"
+    },
+    "minecraft:spider": {
+      "convert_to": "risus:licker"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.data.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.init.RisusDataMaps;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.base.Suppliers;
@@ -22,6 +23,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -65,6 +67,7 @@ public class Risus {
 		bus.addListener(this::registerPackets);
 		bus.addListener(this::registerTypes);
 		bus.addListener(this::gatherData);
+		bus.addListener(RegisterDataMapTypesEvent.class, event -> event.register(RisusDataMaps.LOVER_CONVERSION));
 		RisusEvents.initEvents(bus);
 
 		if (dist.isClient()) {
@@ -103,7 +106,7 @@ public class Risus {
 		event.getGenerator().addProvider(isServer, new BiomeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new RisusDataMaps(packOutput, lookupProvider));
+		event.getGenerator().addProvider(isServer, new DataMapGenerator(packOutput, lookupProvider));
 		event.getGenerator().addProvider(isServer, new RisusSoundDefinitions(packOutput, existingFileHelper));
 
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);

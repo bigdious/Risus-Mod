@@ -35,12 +35,6 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(RisusEntities.LOVER.get())
 			.add(RisusEntities.WEAVER.get())
 		;
-		tag(RisusTags.Entities.LOVEABLE)
-			.add(EntityType.SPIDER)
-			.add(EntityType.CREEPER)
-			.add(EntityType.ENDERMAN)
-
-		;
 		tag(RisusTags.Entities.BELOVED)
 			.add(RisusEntities.LICKER.get())
 			.add(RisusEntities.SINGER.get())
