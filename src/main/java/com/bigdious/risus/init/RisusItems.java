@@ -1,7 +1,6 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.data.BannerPatternTagGenerator;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.items.armor.RisusArmorItem;
@@ -76,7 +75,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> VEINS = register("veins", properties -> new BlockItem(RisusBlocks.VEINS_END.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS
-	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
+	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", BloodFeatherItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", ConcentrationCoreItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
