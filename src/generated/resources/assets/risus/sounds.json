@@ -6,7 +6,7 @@
         "name": "block.water.ambient"
       }
     ],
-    "subtitle": "subtitles.risus.block.ambient"
+    "subtitle": "subtitles.risus.block.blood.ambient"
   },
   "block.depth_vase.insert": {
     "sounds": [
@@ -15,7 +15,7 @@
         "name": "block.decorated_pot.insert"
       }
     ],
-    "subtitle": "subtitles.risus.block.insert"
+    "subtitle": "subtitles.risus.block.depth_vase.insert"
   },
   "block.depth_vase.insert_fail": {
     "sounds": [
@@ -24,7 +24,7 @@
         "name": "block.decorated_pot.insert_fail"
       }
     ],
-    "subtitle": "subtitles.risus.block.insert_fail"
+    "subtitle": "subtitles.risus.block.depth_vase.insert_fail"
   },
   "block.hair.grow": {
     "sounds": [
@@ -33,7 +33,7 @@
         "name": "block.sculk.spread"
       }
     ],
-    "subtitle": "subtitles.risus.block.grow"
+    "subtitle": "subtitles.risus.block.hair.grow"
   },
   "block.popping_bondknot.crystallized_bond_grow": {
     "sounds": [
@@ -42,7 +42,7 @@
         "name": "entity.chicken.egg"
       }
     ],
-    "subtitle": "subtitles.risus.block.crystallized_bond_grow"
+    "subtitle": "subtitles.risus.block.popping_bondknot.crystallized_bond_grow"
   },
   "block.zit.pop": {
     "sounds": [
@@ -51,7 +51,7 @@
         "name": "entity.llama.spit"
       }
     ],
-    "subtitle": "subtitles.risus.block.pop"
+    "subtitle": "subtitles.risus.block.zit.pop"
   },
   "entity.blood_slash.whoosh": {
     "sounds": [
@@ -60,7 +60,7 @@
         "name": "entity.breeze.whirl"
       }
     ],
-    "subtitle": "subtitles.risus.entity.whoosh"
+    "subtitle": "subtitles.risus.entity.blood_slash.whoosh"
   },
   "entity.crescent_disaster.hit": {
     "sounds": [
@@ -69,7 +69,7 @@
         "name": "item.trident.hit"
       }
     ],
-    "subtitle": "subtitles.risus.entity.hit"
+    "subtitle": "subtitles.risus.entity.crescent_disaster.hit"
   },
   "entity.crescent_disaster.hit_ground": {
     "sounds": [
@@ -78,7 +78,7 @@
         "name": "item.trident.hit_ground"
       }
     ],
-    "subtitle": "subtitles.risus.entity.hit_ground"
+    "subtitle": "subtitles.risus.entity.crescent_disaster.hit_ground"
   },
   "entity.crescent_disaster.return": {
     "sounds": [
@@ -87,7 +87,7 @@
         "name": "item.trident.return"
       }
     ],
-    "subtitle": "subtitles.risus.entity.return"
+    "subtitle": "subtitles.risus.entity.crescent_disaster.return"
   },
   "entity.crescent_disaster.throw": {
     "sounds": [
@@ -96,13 +96,13 @@
         "name": "item.trident.throw"
       }
     ],
-    "subtitle": "subtitles.risus.entity.throw"
+    "subtitle": "subtitles.risus.entity.crescent_disaster.throw"
   },
   "entity.holder.cheeky_laugh": {
     "sounds": [
       "risus:entity/holder/cheeky_laugh"
     ],
-    "subtitle": "subtitles.risus.entity.cheeky_laugh"
+    "subtitle": "subtitles.risus.entity.holder.cheeky_laugh"
   },
   "entity.litter.excrement": {
     "sounds": [
@@ -111,7 +111,7 @@
         "name": "entity.chicken.egg"
       }
     ],
-    "subtitle": "subtitles.risus.entity.excrement"
+    "subtitle": "subtitles.risus.entity.litter.excrement"
   },
   "entity.lover.infect": {
     "sounds": [
@@ -120,7 +120,7 @@
         "name": "entity.zombie.infect"
       }
     ],
-    "subtitle": "subtitles.risus.entity.infect"
+    "subtitle": "subtitles.risus.entity.lover.infect"
   },
   "entity.maw.guts_shatter": {
     "sounds": [
@@ -129,7 +129,7 @@
         "name": "entity.wither.break_block"
       }
     ],
-    "subtitle": "subtitles.risus.entity.guts_shatter"
+    "subtitle": "subtitles.risus.entity.maw.guts_shatter"
   },
   "entity.singer.scream": {
     "sounds": [
@@ -138,7 +138,7 @@
         "name": "entity.enderman.scream"
       }
     ],
-    "subtitle": "subtitles.risus.entity.scream"
+    "subtitle": "subtitles.risus.entity.singer.scream"
   },
   "item.armor.equip_skin": {
     "sounds": [
@@ -147,7 +147,7 @@
         "name": "item.armor.equip_leather"
       }
     ],
-    "subtitle": "subtitles.risus.item.equip_skin"
+    "subtitle": "subtitles.risus.item.armor.equip_skin"
   },
   "item.armor.equip_wings": {
     "sounds": [
@@ -156,7 +156,7 @@
         "name": "item.armor.equip_elytra"
       }
     ],
-    "subtitle": "subtitles.risus.item.equip_wings"
+    "subtitle": "subtitles.risus.item.armor.equip_wings"
   },
   "item.boat.slash": {
     "sounds": [
@@ -165,7 +165,7 @@
         "name": "entity.player.attack.sweep"
       }
     ],
-    "subtitle": "subtitles.risus.item.slash"
+    "subtitle": "subtitles.risus.item.boat.slash"
   },
   "item.concentration_core.create_litter": {
     "sounds": [
@@ -174,7 +174,7 @@
         "name": "entity.zombie_villager.converted"
       }
     ],
-    "subtitle": "subtitles.risus.item.create_litter"
+    "subtitle": "subtitles.risus.item.concentration_core.create_litter"
   },
   "item.egg_sac.break": {
     "sounds": [
@@ -183,7 +183,7 @@
         "name": "entity.turtle.egg_hatch"
       }
     ],
-    "subtitle": "subtitles.risus.item.break"
+    "subtitle": "subtitles.risus.item.egg_sac.break"
   },
   "item.egg_sac.throw": {
     "sounds": [
@@ -192,7 +192,7 @@
         "name": "entity.snowball.throw"
       }
     ],
-    "subtitle": "subtitles.risus.item.throw"
+    "subtitle": "subtitles.risus.item.egg_sac.throw"
   },
   "item.light_devourer.place_darkness": {
     "sounds": [
@@ -201,7 +201,7 @@
         "name": "entity.warden.nearby_close"
       }
     ],
-    "subtitle": "subtitles.risus.item.place_darkness"
+    "subtitle": "subtitles.risus.item.light_devourer.place_darkness"
   },
   "item.organic_matter.use": {
     "sounds": [
@@ -210,7 +210,7 @@
         "name": "block.sculk_vein.break"
       }
     ],
-    "subtitle": "subtitles.risus.item.use"
+    "subtitle": "subtitles.risus.item.organic_matter.use"
   },
   "item.stripper.strip": {
     "sounds": [
@@ -219,7 +219,7 @@
         "name": "entity.arrow.hit"
       }
     ],
-    "subtitle": "subtitles.risus.item.strip"
+    "subtitle": "subtitles.risus.item.stripper.strip"
   },
   "item.toothknocker.crack": {
     "sounds": [
@@ -228,7 +228,7 @@
         "name": "entity.turtle.egg_break"
       }
     ],
-    "subtitle": "subtitles.risus.item.crack"
+    "subtitle": "subtitles.risus.item.toothknocker.crack"
   },
   "item.toothknocker.dash": {
     "sounds": [
@@ -237,7 +237,7 @@
         "name": "entity.goat.screaming.long_jump"
       }
     ],
-    "subtitle": "subtitles.risus.item.dash"
+    "subtitle": "subtitles.risus.item.toothknocker.dash"
   },
   "music.ambient.feigr": {
     "sounds": [

@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-22T13:45:33.2058924	Tags for minecraft:block mod id risus
+// 1.21.1	2025-02-22T21:02:15.5987035	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
@@ -39,5 +39,5 @@ fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/block/wooden_slabs.
 086a5ada21429600844477604ecba07e6ef5c61a data/risus/tags/block/copper_amalgam_variation.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/block/joyflame_fire_base_blocks.json
 cb96af7a6282aed3beecbf9dcad73a664d876d76 data/risus/tags/block/litter_allowed_light_blocks.json
-82d91a2e190ecfeaf217c2357dec40e597efc980 data/risus/tags/block/non_canon_litter_allowed_light_blocks.json
+48381e1559342f9581e848c872b8e40ae5c76d36 data/risus/tags/block/non_canon_litter_allowed_light_blocks.json
 e3436a8ca281ce0908f3175a98646068e91ebf7a data/risus/tags/block/waxed_copper_amalgam_variation.json

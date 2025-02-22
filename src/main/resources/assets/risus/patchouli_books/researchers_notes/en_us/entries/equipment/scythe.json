@@ -18,29 +18,31 @@
       "item": {
         "item": "risus:scythe"
       },
-      "text": "Although the Unlit Vessel is a strong weapon as is, it still has more potential that can be unleashed. Using a simple Scorching Ritual, you can ignite the vessel and awaken a new power within. To build it, you need a circular pattern with 4 Linear and 4 Curved Ritual Blocks, placing some Blood in the middle and above that, a campfire."
+      "text": "The Unlit Vessel, while strong, still has more potential that can be unleashed - with the use of a Scorching Ritual. To build it, you need the following pattern, made with 16 Linear and 12 Curved Ritual Blocks, some Blood in the middle, and above that, a campfire. 12 Fires have to be created in total at the places where the Ritual Blocks point."
     },
     {
       "type": "patchouli:multiblock",
       "name": "Scorching Ritual",
       "multiblock": {
         "pattern": [
-          [ "   ", " 0 ", "   "],
-          [ "UAI", "VBV", "YAT"]
+          ["           ","           ","           ","           ","           ", "     0     ","           ","           ","           ","           ","           "],
+          ["     F     ","     X     ","    SYE    ","    FXF    ","  SFSYEFE  ", "FZYZYBYZYZF","  WFWYNFN  ","    FXF    ","    WYN    ","     X     ","     F     "]
         ],
         "mapping": {
           "B": "risus:blood_fluid_block",
-          "A": "risus:linear_ritual_block[axis=z]",
-          "V": "risus:linear_ritual_block[axis=x]",
+          "Z": "risus:linear_ritual_block[axis=z]",
+          "X": "risus:linear_ritual_block[axis=x]",
+          "Y": "risus:linear_ritual_block[axis=y]",
           "0": "risus:joyflame_campfire",
-          "T": "risus:curved_ritual_block[facing=north]",
-          "Y": "risus:curved_ritual_block[facing=west]",
-          "U": "risus:curved_ritual_block[facing=south]",
-          "I": "risus:curved_ritual_block[facing=east]"
+          "N": "risus:curved_ritual_block[facing=north]",
+          "W": "risus:curved_ritual_block[facing=west]",
+          "S": "risus:curved_ritual_block[facing=south]",
+          "E": "risus:curved_ritual_block[facing=east]",
+          "F": "risus:joyflame_fire"
         },
         "symmetrical": false
       },
-      "text": "Simply change out the campfire in the middle for the desired type. Do not forget the blood."
+      "text": "Simply change out the campfire and the fires to the desired type. Do not forget the Blood."
     },
     {
       "type": "patchouli:spotlight",
