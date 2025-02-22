@@ -1,7 +1,6 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
-import com.bigdious.risus.blocks.interfaces.PlayingMusicEnums;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.data.RisusBiomes;
 import com.bigdious.risus.init.RisusItems;
@@ -13,7 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -47,14 +45,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock, PlayingMusicEnums {
+public class BiomeBlock extends ActuallyUseableDirectionalBlock implements SimpleMultiloggedBlock, EntityBlock {
 	//based off of from Twilight Forest TransCore
 	public static final BooleanProperty SPREADING = BooleanProperty.create("spreading");
 	public static final BooleanProperty SPREADING_MORK = BooleanProperty.create("spreading_mork");
 	public static final BooleanProperty SPREADING_FEIGR = BooleanProperty.create("spreading_feigr");
 
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
-	public static final EnumProperty<PlayingMusicEnum> MUSIC_PLAYING = PlayingMusicEnum.MUSIC_PLAYING;
 	private static final Map<Direction, VoxelShape> AABBS = Maps.newEnumMap(ImmutableMap.of(
 		Direction.UP, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
 		Direction.DOWN, Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D),
@@ -73,7 +70,6 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			.setValue(SPREADING_FEIGR, false)
 			.setValue(FACING, Direction.UP)
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
-			.setValue(MUSIC_PLAYING, PlayingMusicEnum.NONE)
 		);
 	}
 
@@ -89,8 +85,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			.add(SPREADING)
 			.add(SPREADING_FEIGR)
 			.add(SPREADING_MORK)
-			.add(FLUIDLOGGED)
-			.add(MUSIC_PLAYING);
+			.add(FLUIDLOGGED);
 	}
 
 	@Nullable
