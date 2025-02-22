@@ -2,7 +2,7 @@
   "render_type": "minecraft:translucent",
   "textures": {
     "remains": "risus:block/spreading_remains",
-    "particle": "#texture",
+    "particle": "#remains",
     "overlay": "risus:block/spreading_remains_overlay"
   },
   "elements": [
@@ -15,8 +15,8 @@
       }
     },
     {
-      "from": [0, 0, 0.03],
-      "to": [16, 16, 0.03],
+      "from": [0, 0, 0.02],
+      "to": [16, 16, 0.02],
       "faces": {
         "south": {"uv": [0, 16, 16, 0], "neoforge_data": {"block_light": 10}, "texture": "#overlay", "tintindex": 0}
       },
