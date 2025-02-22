@@ -1,11 +1,27 @@
 {
-  "mobs.cheeky_laugh": {
+  "entity.holder.cheeky_laugh": {
+    "sounds": [
+      "risus:entity/holder/cheeky_laugh"
+    ],
+    "subtitle": "subtitles.risus.entity.cheeky_laugh"
+  },
+  "item.armor.equip_skin": {
     "sounds": [
       {
-        "name": "risus:mobs/cheeky_laugh",
-        "stream": true
+        "type": "event",
+        "name": "item.armor.equip_leather"
       }
-    ]
+    ],
+    "subtitle": "subtitles.risus.item.equip_skin"
+  },
+  "item.armor.equip_wings": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.armor.equip_elytra"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.equip_wings"
   },
   "music.ambient.feigr": {
     "sounds": [
