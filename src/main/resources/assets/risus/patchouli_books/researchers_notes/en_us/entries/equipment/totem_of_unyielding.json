@@ -1,0 +1,28 @@
+{
+  "name": "Totem of Unyielding",
+  "icon": "risus:totem_of_unyielding",
+  "category": "risus:equipment",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "risus:alterationtemplate1",
+      "header": "Totem of Unyielding",
+      "input1": "minecraft:totem_of_undying",
+      "output1": "risus:totem_of_unyielding",
+      "text": "The Totem of Undying can be altered into a Totem of Unyielding. The resulting totem acts similarly to the original, where it activates during the user's death. However, the unyielding one doesn't fully prevent death, instead it delays it by ten seconds. This Destined Death cannot be avoided, not even with an Undying totem, but it can be "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "further delayed by continuous uses of Unyielding totems. During those ten seconds the user also experiences a state of near invincibility, on top of increased physical stength and speed. In short, the user becomes berserk. "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "To be honest, I have never used a Totem of Unyielding. I don't have the blind conviction nor the total disregard to my only life that would be necessary to use it. I have used Totems of Undying several times to save myself though - especially when facing raider cultists who have used Unyielding ones. They were monstrous berserkers, some even using Boomsticks in their state. There was a case once when one of these cultists "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "used an Unyielding totem while there was still a great distance between us. Right before he could reach me, the ten seconds passed, and he felt to his knees in front of me... The Destined Death these totems promise you is horrifyingly absolute. Unlike a stab wound to the heart, there isn't even a second or two of fighting or struggling that can be done. It's just a total annihilation of any signs of life..."
+    }
+  ]
+}
