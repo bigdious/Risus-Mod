@@ -95,6 +95,7 @@ public class Risus {
 		boolean isClient = event.includeClient();
 		generator.addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
 		generator.addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
+		generator.addProvider(isClient, new ParticleGenerator(packOutput, existingFileHelper));
 		generator.addProvider(isClient, new SoundDefinitionGenerator(packOutput, existingFileHelper));
 		generator.addProvider(isClient, new SpriteReferenceGenerator(packOutput, event.getLookupProvider(), existingFileHelper));
 		generator.addProvider(isClient, new LangGenerator(packOutput));

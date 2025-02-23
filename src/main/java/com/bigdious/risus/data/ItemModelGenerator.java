@@ -254,8 +254,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, cinderglee_scythe)
 			.perspective(ItemDisplayContext.HEAD, cinderglee_scythe)
 			.end();
-		singleTexTool(RisusItems.THOUSAND_BLADE);
-		ItemModelBuilder thousand_blade = nested().parent(getExistingFile(Risus.prefix("item/thousand_blade_held"))).texture("thousand_blade", Risus.prefix("item/thousand_blade"));
+		ItemModelBuilder thousand_blade = nested().parent(getExistingFile(Risus.prefix("item/thousand_blade_held"))).texture("thousand_blade", Risus.prefix("item/intact_thousand_blade"));
 		withExistingParent(RisusItems.THOUSAND_BLADE.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated("thousand_blade_base", Risus.prefix("item/thousand_blade_item")))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, thousand_blade)
