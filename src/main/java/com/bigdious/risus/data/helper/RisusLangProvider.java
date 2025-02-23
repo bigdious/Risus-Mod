@@ -22,6 +22,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.apache.commons.lang3.text.WordUtils;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,11 +49,14 @@ public abstract class RisusLangProvider extends LanguageProvider {
 		this.add("biome.risus." + biome.location().getPath(), name);
 	}
 
-	public void addBannerPattern(String patternPrefix, String patternName) {
+	public void addBannerPattern(String patternPrefix, String patternName, DyeColor... excludedColors) {
 		this.add("item.risus." + patternPrefix + "_banner_pattern", "Banner Pattern");
 		this.add("item.risus." + patternPrefix + "_banner_pattern.desc", patternName);
+		List<DyeColor> excluded = Arrays.stream(excludedColors).toList();
 		for (DyeColor color : DyeColor.values()) {
-			this.add("block.minecraft.banner.risus." + patternPrefix + "." + color.getName(), WordUtils.capitalize(color.getName().replace('_', ' ')) + " " + patternName);
+			if (!excluded.contains(color)) {
+				this.add("block.minecraft.banner.risus." + patternPrefix + "." + color.getName(), WordUtils.capitalize(color.getName().replace('_', ' ')) + " " + patternName);
+			}
 		}
 	}
 
