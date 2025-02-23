@@ -3,6 +3,8 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.data.helper.RisusLangProvider;
 import com.bigdious.risus.init.*;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.DyeColor;
+import org.apache.commons.lang3.text.WordUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -145,9 +147,18 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.WEAVER_NEST, "Weaver Nest");
 		this.addBlock(RisusBlocks.ZIT, "Zit");
 
-		this.addBannerPattern("smile", "Smile");
-		this.addBannerPattern("divinity", "Divinity");
-		this.addBannerPattern("tree", "Tree");
+		for (DyeColor color : DyeColor.values()) {
+			if (color != DyeColor.BLACK) {
+				this.add("block.risus." + color.getName() + "_display_notch", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Display Notch");
+			}
+		}
+
+		this.addBannerPattern("smile", "Smile", DyeColor.RED);
+		this.addBannerPattern("divinity", "Divinity", DyeColor.WHITE);
+		this.addBannerPattern("tree", "Tree", DyeColor.GRAY);
+		this.add("block.minecraft.banner.risus.smile.red", "True Smile");
+		this.add("block.minecraft.banner.risus.divinity.white", "Unified Divinity");
+		this.add("block.minecraft.banner.risus.tree.gray", "Ashen Yggdrasil");
 
 		this.addMusicDisc(RisusItems.MUSIC_DISC_FEIGR, "Kizbe - Feigr");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_MORK, "Kizbe - Mǫrk");
@@ -215,7 +226,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityAndEgg(RisusEntities.HOLDER, "Holder");
 		this.addEntityAndEgg(RisusEntities.LICKER, "Licker");
 		this.addEntityAndEgg(RisusEntities.LOVER, "Lover");
-		this.addEntityAndEgg(RisusEntities.LITTER, "Litter");
 		this.addEntityAndEgg(RisusEntities.MAW, "Gorger");
 		this.addEntityAndEgg(RisusEntities.QUESTION_MARK, "???");
 		this.addEntityAndEgg(RisusEntities.SINGER, "Singer");
@@ -226,6 +236,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.BOAT, "Boat");
 		this.addEntityType(RisusEntities.EGG_SAC, "Thrown Egg Sac");
 		this.addEntityType(RisusEntities.GUTS_BOAT, "Boat with Gorger Guts");
+		this.addEntityType(RisusEntities.LITTER, "Litter");
 		this.addEntityType(RisusEntities.MEMORY1, "Faded Statue");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
