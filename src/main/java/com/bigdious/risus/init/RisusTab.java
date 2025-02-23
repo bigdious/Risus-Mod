@@ -185,11 +185,12 @@ public class RisusTab {
 				output.accept(RisusItems.CRESCENT_DISASTER.get());
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
+				output.accept(RisusItems.ENDLESS_PEARL.get());
 
 				output.accept(RisusBlocks.BIG_CHAIN.get());
+				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
-				output.accept(RisusItems.ENDLESS_PEARL.get());
 				output.accept(RisusBlocks.NEURON_HEAD.get());
 				output.accept(RisusItems.VEINS.get());
 				output.accept(RisusItems.GUILTY_APPLE.get());

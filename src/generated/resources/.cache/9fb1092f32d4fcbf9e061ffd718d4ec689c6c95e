@@ -1,6 +1,8 @@
-// 1.21.1	2025-02-19T22:30:52.6479229	Recipes
+// 1.21.1	2025-02-23T16:01:25.4935782	Recipes
 88c2947c75e5a46b8274edefb490d28e51d24a84 data/minecraft/advancement/recipes/misc/full_bone_to_bone_meal.json
+298b83e735f04c738b2d1da24de847ddcd71d755 data/minecraft/advancement/recipes/misc/litter_to_concentration_core.json
 27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
+b16c5d261c08fcb7018a0af009436dea6454cd0a data/minecraft/recipe/litter_to_concentration_core.json
 4d09cd49108edb96fcc3e62bf4677d12de8be313 data/risus/advancement/recipes/alteration/active_grimstone.json
 3fb6138e129a70cdec96862f0b81cc3ce03ad15e data/risus/advancement/recipes/alteration/ashen_remains.json
 c47df1969018991dd5d0bae17b514b988b9524e8 data/risus/advancement/recipes/alteration/bloodweave.json

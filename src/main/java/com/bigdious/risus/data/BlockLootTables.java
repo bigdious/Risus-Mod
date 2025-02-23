@@ -66,6 +66,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());
 		dropSelf(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 		dropSelf(RisusBlocks.BLOODWEAVE.get());
+		dropSelf(RisusBlocks.LIGHT_EXCREMENT.get());
 		dropSelf(RisusBlocks.COPPER_AMALGAM.get());
 		dropSelf(RisusBlocks.EXPOSED_COPPER_AMALGAM.get());
 		dropSelf(RisusBlocks.WEATHERED_COPPER_AMALGAM.get());

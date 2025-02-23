@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-22T10:54:03.2038545	Risus blockstates and models
+// 1.21.1	2025-02-23T14:15:00.1804717	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -84,6 +84,7 @@ e127d2d59745e1b1da9a24e544aab62011aee968 assets/risus/blockstates/inactive_holde
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
 9f5e4dc974ea5e5b2adf8d874bab9d2c5dc671ca assets/risus/blockstates/laughing_stalk.json
 540baa0bf2d5050485ff16166dcd0e586c3f2ff0 assets/risus/blockstates/light_blue_display_notch.json
+e8c9b00c51a0781b87b2d9e1e72c1e4dba12f603 assets/risus/blockstates/light_excrement.json
 77d1d149280353d3a26b10fec3e8960ac119a5e1 assets/risus/blockstates/light_gray_display_notch.json
 73eafda1c6b5528eb236398667bd426f0cd9d4ab assets/risus/blockstates/lime_display_notch.json
 50d625eef7c45a6b9ce071fd66ff5e604d04dec1 assets/risus/blockstates/linear_ritual_block.json

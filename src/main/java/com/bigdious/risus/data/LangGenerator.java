@@ -99,7 +99,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.JOYFLAME_TORCH, "Cinderglee Torch");
 		this.addBlock(RisusBlocks.LAUGHING_OBSIDIAN, "Laughing Obsidian");
 		this.addBlock(RisusBlocks.LAUGHING_STALK, "Laughing Stalk");
-		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Excrement");
+		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Dropping");
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
 		this.addBlock(RisusBlocks.LIVING_TISSUE, "Tissue");
 		this.addBlock(RisusBlocks.MAW_GUTS, "Gorger Guts");
@@ -215,6 +215,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityAndEgg(RisusEntities.HOLDER, "Holder");
 		this.addEntityAndEgg(RisusEntities.LICKER, "Licker");
 		this.addEntityAndEgg(RisusEntities.LOVER, "Lover");
+		this.addEntityAndEgg(RisusEntities.LITTER, "Litter");
 		this.addEntityAndEgg(RisusEntities.MAW, "Gorger");
 		this.addEntityAndEgg(RisusEntities.QUESTION_MARK, "???");
 		this.addEntityAndEgg(RisusEntities.SINGER, "Singer");

@@ -75,6 +75,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/weathered_copper_amalgam")));
 		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/oxidized_copper_amalgam")));
 		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(Risus.prefix("block/crystallized_bonds")));
+		directionalBlock(RisusBlocks.LIGHT_EXCREMENT.get(), models().getExistingFile(Risus.prefix("block/light_excrement")));
 		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(Risus.prefix("block/laughing_stalk")));
 
 		for (var notch : RisusBlocks.BLOCKS.getEntries().stream().filter(holder -> holder.getRegisteredName().contains("display_notch")).toList()) {

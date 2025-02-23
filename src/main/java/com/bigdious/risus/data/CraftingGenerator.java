@@ -134,6 +134,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusItems.CONCENTRATION_CORE.get(), 1)
+			.requires(Ingredient.of(RisusItems.LITTER.get()))
+			.unlockedBy("has_item", has(RisusItems.LITTER.get()))
+			.save(consumer, "litter_to_concentration_core");
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.COPPER_AMALGAM.get(), 1)
 			.pattern("###")
 			.pattern("#M#")

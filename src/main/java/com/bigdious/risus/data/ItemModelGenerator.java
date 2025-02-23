@@ -44,6 +44,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM.get());
 		toBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM.get());
 		toBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get());
+		toBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM.get());
 		toBlockModel(RisusBlocks.WAXED_COPPER_AMALGAM.get(), Risus.prefix("block/copper_amalgam"));
 		toBlockModel(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), Risus.prefix("block/exposed_copper_amalgam"));
 		toBlockModel(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), Risus.prefix("block/weathered_copper_amalgam"));
@@ -53,6 +54,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.SMILING_REMAINS.get());
 		toBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		toBlock(RisusBlocks.ENGRAVED_BASALT.get());
+		toBlock(RisusBlocks.LIGHT_EXCREMENT.get());
 		toBlock(RisusBlocks.MAW_GUTS.get());
 		toBlock(RisusBlocks.GLUTTONY_SCALEPLATE.get());
 		toBlockModel(RisusBlocks.IMITATION_SCALEPLATE.get(), Risus.prefix("block/gluttony_scaleplate"));
