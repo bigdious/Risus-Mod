@@ -54,7 +54,8 @@ public class EndlessPearlItem extends EnderpearlItem {
 				return InteractionResultHolder.success(player.getItemInHand(hand));
 			}
 		}
-		return super.use(level, player, hand);
+		//this needs to fail
+		return InteractionResultHolder.fail(player.getItemInHand(hand));
 	}
 
 	@Override

@@ -17,6 +17,7 @@ import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -31,6 +32,8 @@ import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -295,13 +298,12 @@ public class RisusClientEvents {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
 		}
 	}
-
-	//doesn't work... But should it?
-//    private static void renderExBurning(RenderBlockScreenEffectEvent event) {
-//		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.EXBURN)) {
-//			ClientHooks.renderBlockOverlay(Minecraft.getInstance().player, event.getPoseStack(), RenderBlockScreenEffectEvent.OverlayType.FIRE, RisusBlocks.JOYFLAME_FIRE.get().defaultBlockState(), Minecraft.getInstance().player.blockPosition());
-//		}
-//	}
+	public static void checkWhispers(Player player) {
+		int i = player.getRandom().nextInt(999);
+		if (I18n.exists("entity.risus.thrown_axe.message" + i)) {
+			player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message" + i).withStyle(ChatFormatting.DARK_RED), true);
+		}
+	}
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {

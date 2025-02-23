@@ -76,9 +76,9 @@ public class ToothknockerItem extends SwordItem {
 
 			float f7 = player.getYRot();
 			float f = player.getXRot();
-			float f1 = -Mth.sin(f7 * Mth.RAD_TO_DEG) * Mth.cos(f * Mth.RAD_TO_DEG);
-			float f2 = -Mth.sin(f * Mth.RAD_TO_DEG);
-			float f3 = Mth.cos(f7 * Mth.RAD_TO_DEG) * Mth.cos(f * Mth.RAD_TO_DEG);
+			float f1 = -Mth.sin(f7 * Mth.DEG_TO_RAD) * Mth.cos(f * Mth.DEG_TO_RAD);
+			float f2 = -Mth.sin(f * Mth.DEG_TO_RAD);
+			float f3 = Mth.cos(f7 * Mth.DEG_TO_RAD) * Mth.cos(f * Mth.DEG_TO_RAD);
 			float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
 			float f5 = 3.0F * ((1F) / 4.0F);
 			f1 *= f5 / f4;

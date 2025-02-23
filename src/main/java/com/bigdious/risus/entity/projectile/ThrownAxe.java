@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity.projectile;
 
+import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
@@ -180,11 +181,8 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	protected boolean tryPickup(Player player) {
 		boolean ret = super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
-		if (ret) {
-			int i = this.getRandom().nextInt(999);
-			if (I18n.exists("entity.risus.thrown_axe.message" + i)) {
-				player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message" + i).withStyle(ChatFormatting.DARK_RED), true);
-			}
+		if (ret && this.level().isClientSide()) {
+			RisusClientEvents.checkWhispers(player);
 		}
 		return ret;
 	}

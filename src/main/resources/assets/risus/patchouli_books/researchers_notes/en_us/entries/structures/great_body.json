@@ -2,7 +2,7 @@
   "name": "Great Bodies",
   "icon": "risus:hairy_fleshy_skin",
   "category": "risus:structures",
-  "advancement": "risus:body",
+  "advancement": "risus:great_body",
   "pages": [
     {
       "type": "patchouli:text",
