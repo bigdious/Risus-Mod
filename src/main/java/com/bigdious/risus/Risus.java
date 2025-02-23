@@ -10,6 +10,7 @@ import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.base.Suppliers;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.GameRules;
@@ -86,35 +87,37 @@ public class Risus {
 	}
 
 	private void gatherData(GatherDataEvent event) {
-		PackOutput packOutput = event.getGenerator().getPackOutput();
+		DataGenerator generator = event.getGenerator();
+		PackOutput packOutput = generator.getPackOutput();
 		DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, event.getLookupProvider());
-		CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-		boolean isServer = event.includeServer();
 		boolean isClient = event.includeClient();
-		event.getGenerator().addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new BannerPatternTagGenerator(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isClient, new StructureUpdater("structures", packOutput, existingFileHelper));
-		event.getGenerator().addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
-		event.getGenerator().addProvider(isServer, new CraftingGenerator(packOutput, lookupProvider));
+		generator.addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));
+		generator.addProvider(isClient, new ItemModelGenerator(packOutput, existingFileHelper));
+		generator.addProvider(isClient, new SoundDefinitionGenerator(packOutput, existingFileHelper));
+		generator.addProvider(isClient, new SpriteReferenceGenerator(packOutput, event.getLookupProvider(), existingFileHelper));
+		generator.addProvider(isClient, new LangGenerator(packOutput));
+
+		boolean isServer = event.includeServer();
+		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, datapackProvider.getRegistryProvider());
+		var lookupProvider = registryDataGenerator.getRegistryProvider();
+		generator.addProvider(isServer, registryDataGenerator);
+		generator.addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new StructureUpdater("structures", packOutput, existingFileHelper));
+		generator.addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
+		generator.addProvider(isServer, new CraftingGenerator(packOutput, lookupProvider));
+		generator.addProvider(isServer, new DataMapGenerator(packOutput, lookupProvider));
+
 		var blocktags = new BlockTagGenerator(packOutput, lookupProvider, existingFileHelper);
-		event.getGenerator().addProvider(isServer, blocktags);
-		event.getGenerator().addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
-		event.getGenerator().addProvider(isServer, new BiomeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(isServer, new DataMapGenerator(packOutput, lookupProvider));
-		event.getGenerator().addProvider(isServer, new RisusSoundDefinitions(packOutput, existingFileHelper));
-
-		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, lookupProvider);
-		event.getGenerator().addProvider(isServer, registryDataGenerator);
-		event.getGenerator().addProvider(isServer, new DamageTypeTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
-		event.getGenerator().addProvider(isServer, new EnchantmentTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
-
-		event.getGenerator().addProvider(isClient, new SpriteReferenceGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, blocktags);
+		generator.addProvider(isServer, new BannerPatternTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new BiomeTagsGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new DamageTypeTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
+		generator.addProvider(isServer, new EnchantmentTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
+		generator.addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
 	}
 
 	public static ResourceLocation prefix(String name) {

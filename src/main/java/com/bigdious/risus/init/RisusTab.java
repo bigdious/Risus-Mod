@@ -23,7 +23,7 @@ public class RisusTab {
 		eggs.forEach(output::accept);
 	}
 
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risusmain", () -> CreativeModeTab.builder()
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risus", () -> CreativeModeTab.builder()
 		.title(Component.translatable("itemGroup.risus.main"))
 		.icon(() -> new ItemStack(RisusItems.SMILE.get()))
 		.withTabsImage(RISUS_TABS)

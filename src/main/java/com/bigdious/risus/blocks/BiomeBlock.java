@@ -2,7 +2,7 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
-import com.bigdious.risus.data.RisusBiomes;
+import com.bigdious.risus.init.RisusBiomes;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.google.common.collect.ImmutableMap;

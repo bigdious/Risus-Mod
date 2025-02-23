@@ -1,8 +1,6 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 

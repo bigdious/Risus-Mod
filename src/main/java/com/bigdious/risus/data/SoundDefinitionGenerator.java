@@ -12,18 +12,13 @@ import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.Nullable;
 
-public class RisusSoundDefinitions extends SoundDefinitionsProvider {
-	public RisusSoundDefinitions(PackOutput output, ExistingFileHelper helper) {
+public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
+	public SoundDefinitionGenerator(PackOutput output, ExistingFileHelper helper) {
 		super(output, Risus.MODID, helper);
 	}
 
 	@Override
 	public void registerSounds() {
-		// vanilla shit
-//		this.add(RisusSoundEvents.LUNGE, definition().with(
-//			sound("minecraft:entity.goat.screaming.long_jump").stream()
-//		));
-
 		this.add(RisusSoundEvents.MUSIC_DISC_RAK, definition().with(sound("risus:music/disc/rak").volume(2).stream()));
 		this.add(RisusSoundEvents.MUSIC_DISC_MORK, definition().with(sound("risus:music/disc/mork").volume(2).stream()));
 		this.add(RisusSoundEvents.MUSIC_DISC_FEIGR, definition().with(sound("risus:music/disc/feigr").volume(2).stream()));
@@ -31,33 +26,33 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 		this.add(RisusSoundEvents.AMBIENT_MORK, definition().with(sound("risus:music/ambient/ambient_mork").stream()));
 		this.add(RisusSoundEvents.AMBIENT_FEIGR, definition().with(sound("risus:music/ambient/ambient_feigr").stream()));
 
-		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs cheekily");
 
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_SKIN, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Skin armor rustles");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_WINGS, SoundEvents.ARMOR_EQUIP_ELYTRA.value(), "Angel Wings rustle");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_AMBIENT, SoundEvents.WATER_AMBIENT, "Blood flows");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_SLASH_WHOOSH, SoundEvents.BREEZE_WHIRL, "Blood slash flies");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CONCENTRATION_CORE_LITTER, SoundEvents.ZOMBIE_VILLAGER_CONVERTED, "Litter created");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_WINGS, SoundEvents.ARMOR_EQUIP_ELYTRA.value(), "Ophanim Wings rustle");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_AMBIENT, SoundEvents.WATER_AMBIENT, "Blood courses");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_SLASH_WHOOSH, SoundEvents.BREEZE_WHIRL, "Blood slash whooshes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CONCENTRATION_CORE_LITTER, SoundEvents.ZOMBIE_VILLAGER_CONVERTED, "Litter is born");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CRESCENT_DISASTER_HIT, SoundEvents.TRIDENT_HIT, "Crescent Disaster stabs");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CRESCENT_DISASTER_HIT_GROUND, SoundEvents.TRIDENT_HIT_GROUND, "Crescent Disaster vibrates");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CRESCENT_DISASTER_RETURN, SoundEvents.TRIDENT_RETURN, "Crescent Disaster returns");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CRESCENT_DISASTER_THROW, SoundEvents.TRIDENT_THROW.value(), "Crescent Disaster clangs");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.CRYSTALLIZED_BOND_GROW, SoundEvents.CHICKEN_EGG, "Crystallized Bond grows");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.DARKNESS_PLACE, SoundEvents.WARDEN_NEARBY_CLOSE, "Darkness appears");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.DARKNESS_PLACE, SoundEvents.WARDEN_NEARBY_CLOSE, "Darkness is born");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.DEPTH_VASE_INSERT, SoundEvents.DECORATED_POT_INSERT, "Depth Vase fills");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.DEPTH_VASE_INSERT_FAIL, SoundEvents.DECORATED_POT_INSERT_FAIL, "Depth Vase wobbles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_BREAK, SoundEvents.TURTLE_EGG_HATCH, "Egg Sac breaks");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_THROW, SoundEvents.SNOWBALL_THROW, "Egg Sac flies");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HAIR_GROW, SoundEvents.SCULK_BLOCK_SPREAD, "Hair grows");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LITTER_LAY_EXCREMENT, SoundEvents.CHICKEN_EGG, "Litter lays excrement");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover infects");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MAW_GUTS_SHATTER, SoundEvents.WITHER_BREAK_BLOCK, "Maw Guts break");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ORGANIC_MATTER_USE, SoundEvents.SCULK_VEIN_BREAK, "Organic Matter used");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.SINGER_SCREAM, SoundEvents.ENDERMAN_SCREAM, "Singer Screams");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.STRIPPER_STRIP, SoundEvents.ARROW_HIT, "Stripper Strips");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.THOUSAND_BLADE_SLASH, SoundEvents.PLAYER_ATTACK_SWEEP, "Blood slash flies");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_CRACK, SoundEvents.TURTLE_EGG_BREAK, "Teeth crack");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_DASH, SoundEvents.GOAT_SCREAMING_LONG_JUMP, "Player dashes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LITTER_LAY_EXCREMENT, SoundEvents.CHICKEN_EGG, "Litter excretes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover impregnates");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MAW_GUTS_SHATTER, SoundEvents.WITHER_BREAK_BLOCK, "Gorger Guts break");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ORGANIC_MATTER_USE, SoundEvents.SCULK_VEIN_BREAK, "Organic Matter crinkles");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.SINGER_SCREAM, SoundEvents.ENDERMAN_SCREAM, "Singer serenades");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.STRIPPER_STRIP, SoundEvents.ARROW_HIT, "Debt is claimed");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.THOUSAND_BLADE_SLASH, SoundEvents.PLAYER_ATTACK_SWEEP, "Blade of a Thousand slashes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_CRACK, SoundEvents.TURTLE_EGG_BREAK, "Teeth fall out");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_DASH, SoundEvents.GOAT_SCREAMING_LONG_JUMP, "Player lunges");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ZIT_POP, SoundEvents.LLAMA_SPIT, "Zit pops");
 	}
 
@@ -135,7 +130,6 @@ public class RisusSoundDefinitions extends SoundDefinitionsProvider {
 	private void createSubtitleAndLangEntry(DeferredHolder<SoundEvent, SoundEvent> event, SoundDefinition definition, String subtitle) {
 		String subtitleKey = "subtitles.risus." + event.getId().getPath();
 		definition.subtitle(subtitleKey);
-		//TODO Gizmo: hook up subtitle generation to lang file
-		//LangGenerator.SUBTITLE_GENERATOR.put(subtitleKey, subtitle);
+		LangGenerator.SUBTITLE_GENERATOR.put(subtitleKey, subtitle);
 	}
 }
