@@ -39,7 +39,6 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(RisusEntities.LICKER.get())
 			.add(RisusEntities.SINGER.get())
 			.add(RisusEntities.STALKER.get())
-			.add(RisusEntities.BABY_SPIDER.get())
 		;
 		tag(RisusTags.Entities.CANT_BE_STOLEN_FROM)
 			.add(RisusEntities.HOLDER.get())

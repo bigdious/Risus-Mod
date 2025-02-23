@@ -1,5 +1,10 @@
 {
   "values": [
-    "risus:skin_helmet"
+    "risus:skin_helmet",
+    "risus:eye_bleached",
+    "risus:eye_bloodshot",
+    "risus:eye_emerald",
+    "risus:eye_golden",
+    "risus:eye_ender"
   ]
 }

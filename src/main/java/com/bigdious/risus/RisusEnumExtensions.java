@@ -63,14 +63,22 @@ public class RisusEnumExtensions {
 		if (idx == 0)
 			return true; //two handed. Set to false to only pose the hand holding the item
 		return (IArmPoseTransformer) (model, entity, arm) -> {
-			if (!entity.isUsingItem()) {
 				boolean right = arm == HumanoidArm.RIGHT;
 				ModelPart modelpart = right ? model.rightArm : model.leftArm;
-				ModelPart modelpart1 = right ? model.leftArm : model.rightArm;
-				modelpart.yRot = (right ? -0.6F : 0.6F) + model.head.yRot;
-				modelpart1.yRot = (right ? 0.6F : -0.6F) + model.head.yRot;
-				modelpart.xRot = -Mth.HALF_PI + model.head.xRot + 0.5F;
-				modelpart1.xRot = -Mth.HALF_PI + model.head.xRot + 0.5F;
+				modelpart.yRot = (right ? 0.4F : -0.4F) + model.head.yRot;
+				modelpart.xRot = -Mth.HALF_PI + model.head.xRot + 1.4F;
+		};
+	}
+	public static Object SCYTHE(int idx, Class<?> type) {
+		if (idx == 0)
+			return true; //two handed. Set to false to only pose the hand holding the item
+		return (IArmPoseTransformer) (model, entity, arm) -> {
+			if (!entity.isUsingItem() && arm == HumanoidArm.RIGHT) {
+				ModelPart modelpart = model.rightArm;
+				ModelPart modelpart1 = model.leftArm;
+				modelpart.xRot = -Mth.HALF_PI+0.65F;
+				modelpart1.xRot = -Mth.HALF_PI+1.1F;
+
 			}
 		};
 	}
