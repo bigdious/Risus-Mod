@@ -18,13 +18,13 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> DESTINED_DEATH = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("destined_death"));
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {
-		context.register(INEXISTENCE, new DamageType("inexistence", 0));
-		context.register(GLUTTONY, new DamageType("gluttony", 0));
-		context.register(MELANCHOLY, new DamageType("melancholy", 0));
-		context.register(PLEASURE, new DamageType("pleasure", 0));
-		context.register(BLOODSLASH, new DamageType("bloodslash", 0));
-		context.register(VAMPIRISM, new DamageType("vampirism", 0));
-		context.register(AXED, new DamageType("axed", 0));
-		context.register(DESTINED_DEATH, new DamageType("destined_death", 0));
+		context.register(INEXISTENCE, new DamageType("risus.inexistence", 0));
+		context.register(GLUTTONY, new DamageType("risus.gluttony", 0));
+		context.register(MELANCHOLY, new DamageType("risus.melancholy", 0));
+		context.register(PLEASURE, new DamageType("risus.pleasure", 0));
+		context.register(BLOODSLASH, new DamageType("risus.bloodslash", 0));
+		context.register(VAMPIRISM, new DamageType("risus.vampirism", 0));
+		context.register(AXED, new DamageType("risus.axed", 0));
+		context.register(DESTINED_DEATH, new DamageType("risus.destined_death", 0));
 	}
 }
