@@ -109,9 +109,6 @@ public class BloodSlash extends Projectile {
 		damage += this.getEntityData().get(ID_POWER);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.BLOODSLASH, entity1 == null ? this : entity1);
-		if (this.level() instanceof ServerLevel serverlevel && this.weapon != null) {
-			damage += EnchantmentHelper.modifyDamage(serverlevel, this.weapon, entity, damagesource, damage);
-		}
 
 		if (this.getPierceLevel() > 0) {
 			if (this.piercingIgnoreEntityIds == null) {
