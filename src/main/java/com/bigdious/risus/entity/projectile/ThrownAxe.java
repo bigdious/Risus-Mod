@@ -181,9 +181,9 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	protected boolean tryPickup(Player player) {
 		boolean ret = super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
-		if (ret && this.level().isClientSide()) {
-			RisusClientEvents.checkWhispers(player);
-		}
+//		if (ret) {
+//			RisusClientEvents.CheckWhispers.getWhispers(player);
+//		}
 		return ret;
 	}
 

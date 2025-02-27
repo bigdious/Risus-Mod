@@ -246,7 +246,8 @@ public class RisusEvents {
 	private static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
 		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.BOOMSTICK.get())) {
-			explode(attacker.level(), attacker.getOnPos(), attacker);
+			//we explode stick in the attacker's crotch, this way the victim can use shield to defend
+			explode(attacker.level(), attacker.getOnPos().above(), attacker);
 			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 		}
 	}
@@ -324,7 +325,7 @@ public class RisusEvents {
 			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(30, event.getEntity(), EquipmentSlot.CHEST);
 		}
 		if (event.getItemStack().is(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS) && event.getEntity().getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.ANGEL_WINGS) && (event.getEntity().isFallFlying() || event.getEntity().isInWaterRainOrBubble() || event.getEntity().isInLava())) {
-			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(5, event.getEntity(), EquipmentSlot.CHEST);
+			event.getEntity().getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(10, event.getEntity(), EquipmentSlot.CHEST);
 		}
 	}
 

@@ -23,7 +23,7 @@ public class AngelWingsItem extends Item implements Equipable {
 	}
 
 	public static boolean isFlyEnabled(ItemStack elytraStack) {
-		return elytraStack.getDamageValue() < elytraStack.getMaxDamage() - 21;
+		return elytraStack.getDamageValue() < elytraStack.getMaxDamage() - 31;
 	}
 
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

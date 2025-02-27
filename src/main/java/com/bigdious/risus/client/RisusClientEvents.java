@@ -298,12 +298,14 @@ public class RisusClientEvents {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
 		}
 	}
-	public static void checkWhispers(Player player) {
-		int i = player.getRandom().nextInt(999);
-		if (I18n.exists("entity.risus.thrown_axe.message" + i)) {
-			player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message" + i).withStyle(ChatFormatting.DARK_RED), true);
-		}
-	}
+//	public static class CheckWhispers {
+//		public static void getWhispers(Player player) {
+//			int i = player.getRandom().nextInt(999);
+//			if (I18n.exists("entity.risus.thrown_axe.message" + i)) {
+//				 player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message" + i).withStyle(ChatFormatting.DARK_RED), true);
+//			}
+//		}
+//	}
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {

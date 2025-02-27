@@ -56,7 +56,7 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(RisusItems.HAND_OF_GREED.get()))
 					.when(LootItemKilledByPlayerCondition.killedByPlayer())
-					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.03F, 0.03F)))));
+					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.02F, 0.02F)))));
 
 
 		add(RisusEntities.STALKER.get(),

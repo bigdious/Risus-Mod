@@ -252,12 +252,16 @@ public class LangGenerator extends RisusLangProvider {
 		this.addDeathMessage("gluttony.player", "%1$s was devoured");
 		this.addDeathMessage("vampirism", "%1$s got sucked dry");
 		this.addDeathMessage("vampirism.player", "%1$s got sucked dry while trying to escape %2$s");
+		this.addDeathMessage("vampirism.item", "%1$s got sucked dry while trying to escape %2$s");
 		this.addDeathMessage("bloodslash", "%1$s was cut in half");
 		this.addDeathMessage("bloodslash.player", "%1$s was cut in half while trying to escape %2$s");
+		this.addDeathMessage("bloodslash.item", "%1$s was cut in half while trying to escape %2$s using %3$s");
 		this.addDeathMessage("axed", "%1$s had an axe thrown through their skull");
 		this.addDeathMessage("axed.player", "%1$s had an axe thrown through their skull while trying to escape %2$s");
+		this.addDeathMessage("axed.item", "%1$s had an axe thrown through their skull while trying to escape %2$s using %3$s");
 		this.addDeathMessage("destined_death", "%1$s couldn't flee from their Destined Death");
 		this.addDeathMessage("destined_death.player", "%1$s couldn't flee from their Destined Death while trying to escape %2$s");
+		this.addDeathMessage("destined_death.item", "%1$s couldn't flee from their Destined Death while trying to escape %2$s using %3$s");
 
 		this.addEffect(RisusMobEffects.AMNESIA, "Amnesia");
 		this.addEffect(RisusMobEffects.BLOODCLOGGED, "Bloodclogged");
@@ -322,6 +326,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("itemGroup.risus.main", "Risus");
 		this.add("gui.risus.alteration_jei", "Alteration");
 		this.add("rarity.risus.blood.name", "Blood");
+		this.add("entity.risus.player_doesnt_own", "I don't like you");
 		this.translateListOfStrings("entity.risus.thrown_axe.message",
 			"I missed you",
 			"I love the way you grip me",
@@ -334,7 +339,7 @@ public class LangGenerator extends RisusLangProvider {
 			"I yearn for more",
 			"How many have I killed?",
 			"I recall that pig...",
-			"Let me feel your tongue on me",
+			"Let me feel your fingers on me",
 			"Please hold me with both of your hands",
 			"I adore the color of your blood",
 			"Just a little more...",

@@ -129,7 +129,18 @@ public class Angel extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || (source.getWeaponItem() != null && source.getWeaponItem().is(RisusTags.Items.WILLFUL_WEAPON))) {
+		//keep semi-hardcode until tag issue is confirmed fixed
+		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || (source.getWeaponItem() != null &&
+			(source.getWeaponItem().is(RisusTags.Items.WILLFUL_WEAPON)
+				|| source.getWeaponItem().is(RisusItems.SCYTHE) ||
+				source.getWeaponItem().is(RisusItems.FIRE_SCYTHE) ||
+				source.getWeaponItem().is(RisusItems.SOUL_SCYTHE) ||
+				source.getWeaponItem().is(RisusItems.CINDERGLEE_SCYTHE) ||
+				source.getWeaponItem().is(RisusItems.UNAWAKENED_VESSEL) ||
+				source.getWeaponItem().is(RisusItems.CRESCENT_DISASTER) ||
+				source.getWeaponItem().is(RisusItems.THOUSAND_BLADE)
+
+			))) {
 			return super.hurt(source, Float.MAX_VALUE);
 		}
 		return false;

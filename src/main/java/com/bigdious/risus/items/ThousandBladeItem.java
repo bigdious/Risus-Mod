@@ -65,7 +65,7 @@ public class ThousandBladeItem extends SwordItem {
 	public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int useTicks) {
 		if (entity instanceof Player player) {
 			int i = this.getUseDuration(stack, entity) - useTicks;
-			if (i >= 10) {
+			if (i >= 20) {
 				if (!level.isClientSide()) {
 					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					//TODO account for higher possible levels of multishot

@@ -227,7 +227,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:diamond"
+          "name": "minecraft:lapis_lazuli"
         },
         {
           "type": "minecraft:item",
@@ -395,7 +395,7 @@
           "name": "minecraft:diamond"
         }
       ],
-      "rolls": 4.0
+      "rolls": 1.0
     }
   ],
   "random_sequence": "risus:storage_room"

@@ -15,7 +15,7 @@
       "images": ["risus:textures/gui/entries/angel_altar.png"],
       "border": "true",
       "title": "Circular Angel Altar",
-      "text": "There are oftentimes Depth Vases hidden in the blood within these altars."
+      "text": "The use of a Totem of Undying at the Angel Altar will call down a new Ophanim."
       }
   ]
 }

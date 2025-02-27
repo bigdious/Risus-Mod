@@ -37,9 +37,13 @@ public class GoldFistItem extends ToothknockerItem {
 			if (rand < 4) {
 				EquipmentSlot slot = EquipmentSlot.values()[rand + 2];
 				if (target.hasItemInSlot(slot)) {
-					player.spawnAtLocation(target.getItemBySlot(slot));
-					level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
-					target.setItemSlot(slot, ItemStack.EMPTY);
+					//we need to check if item was added, otherwise it can strip with no loot. Blame Mojang/java
+					ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), target.getItemBySlot(slot));
+					level.addFreshEntity(item);
+					if  (item.isAddedToLevel()) {
+						level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
+						target.setItemSlot(slot, ItemStack.EMPTY);
+					}
 				}
 			}
 		} else if (entity instanceof Player playertarget) {
@@ -48,9 +52,15 @@ public class GoldFistItem extends ToothknockerItem {
 				level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
 				player.sendSystemMessage(Component.literal(ChatFormatting.DARK_RED + "Your items are being repossessed due to outstanding debt."));
 			} else if (!playertarget.getInventory().getItem(i).isEmpty()) {
-				player.spawnAtLocation(playertarget.getInventory().getItem(i));
-				level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
-				playertarget.getInventory().setItem(i, ItemStack.EMPTY);
+				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), playertarget.getInventory().getItem(i));
+				level.addFreshEntity(item);
+				//we need to check if item was added, otherwise it can strip with no loot. Blame Mojang/java
+				if  (item.isAddedToLevel()) {
+					level.playSound(player, player.getOnPos(), RisusSoundEvents.STRIPPER_STRIP.get(), SoundSource.PLAYERS);
+					playertarget.getInventory().setItem(i, ItemStack.EMPTY);
+				}
+
+
 			}
 		}
 		return super.onLeftClickEntity(stack, player, entity);
