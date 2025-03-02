@@ -50,11 +50,11 @@ public class Stalker extends Monster {
 	@Override
 	public void playerTouch(Player player) {
 		if (this.isAlive() && !player.getItemBySlot(EquipmentSlot.HEAD).is(RisusTags.Items.EYE)) {
-			int i = 5;
+			int i = 3;
 			if (this.level().getDifficulty() == Difficulty.NORMAL) {
-				i = 8;
+				i = 5;
 			} else if (this.level().getDifficulty() == Difficulty.HARD) {
-				i = 10;
+				i = 8;
 			}
 			player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, i * 20, 0, false, false, true), this);
 			player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, i * 20, 0, false, false, true), this);

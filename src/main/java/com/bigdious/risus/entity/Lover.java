@@ -53,7 +53,7 @@ public class Lover extends Monster {
 			.add(Attributes.MAX_HEALTH, 30.0D)
 			.add(Attributes.FLYING_SPEED, 0.1F)
 			.add(Attributes.MOVEMENT_SPEED, 0.1F)
-			.add(Attributes.ATTACK_DAMAGE, 100.0D)
+			.add(Attributes.ATTACK_DAMAGE, 0.1D)
 			.add(Attributes.FOLLOW_RANGE, 30.0D);
 	}
 
@@ -105,11 +105,10 @@ public class Lover extends Monster {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public boolean killedEntity(ServerLevel level, LivingEntity entity) {
-		boolean flag = super.killedEntity(level, entity);
-
-		if (entity instanceof Mob mob && mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION) != null) {
-			flag |= tryConvertEntity(level, (EntityType<? extends Mob>) mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION).result(), mob);
+	public boolean doHurtTarget(Entity entity) {
+		boolean flag = super.doHurtTarget(entity);
+		if (entity instanceof Mob mob && entity.level() instanceof ServerLevel serverLevel && mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION) != null) {
+			flag |= tryConvertEntity(serverLevel, (EntityType<? extends Mob>) mob.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION).result(), mob);
 		}
 
 		return flag;
