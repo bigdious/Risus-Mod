@@ -1,0 +1,14 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "risus:coalification",
+    "risus:coalification_feigr",
+    "risus:coalification_mork"
+  ],
+  "spawners": {
+    "type": "risus:holder",
+    "weight": 40,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

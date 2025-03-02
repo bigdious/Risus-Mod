@@ -104,11 +104,7 @@ public class RisusStructures {
 		context.register(ALTERATION_SITE, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_ALTERATION_SITE),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
-					))
-				),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.BEARD_THIN
 			),
@@ -184,11 +180,7 @@ public class RisusStructures {
 		context.register(FAMILY_TREE, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_FAMILY_TREE),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
-					))
-				),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.BEARD_THIN
 			),
@@ -207,11 +199,7 @@ public class RisusStructures {
 		context.register(ANGEL_ALTAR, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_ANGEL_ALTAR),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
-					))
-				),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.BEARD_THIN
 			),
@@ -230,11 +218,7 @@ public class RisusStructures {
 		context.register(GREAT_BODY, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_GREAT_BODY),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 2)
-					))
-				),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.NONE
 			),
@@ -309,10 +293,7 @@ public class RisusStructures {
 		context.register(LAB_START, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_LAB),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 2)
-					))),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.NONE
 			),
@@ -330,10 +311,7 @@ public class RisusStructures {
 		context.register(DRAXOLOTL_REMAINS, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_DRAXOLOTL_REMAINS),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 1, 1, 1)
-					))),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.NONE
 			),

@@ -7,11 +7,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -89,6 +91,19 @@ public class AngelAltarBlock extends Block implements SimpleMultiloggedBlock {
 	}
 	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
-		return PushReaction.IGNORE;
+		return PushReaction.NORMAL;
+	}
+	@Override
+	@SuppressWarnings("deprecation")
+	public float getDestroyProgress(BlockState state, Player player, BlockGetter getter, BlockPos pos) {
+		return -1;
+	}
+	@Override
+	public float getExplosionResistance(BlockState state, BlockGetter getter, BlockPos pos, Explosion explosion) {
+		return 6000000.0F;
+	}
+	@Override
+	public boolean canEntityDestroy(BlockState state, BlockGetter getter, BlockPos pos, Entity entity) {
+		return false;
 	}
 }

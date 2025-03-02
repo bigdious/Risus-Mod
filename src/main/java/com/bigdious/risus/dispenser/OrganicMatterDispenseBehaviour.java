@@ -5,55 +5,58 @@ import com.bigdious.risus.blocks.BiomeBlock;
 import com.bigdious.risus.blocks.MultiDirectionalBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.items.OrganicMatterItem;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.Map;
+
 public class OrganicMatterDispenseBehaviour extends DefaultDispenseItemBehavior {
 	boolean fired = false;
 	//TODO fix particles
+
+	public static final Map<Block, Pair<Block, Block>> ORGANIC_MATTER_CONVERSIONS = Map.of(
+		RisusBlocks.TISSUE.get(), Pair.of(RisusBlocks.LIVING_TISSUE.get(), RisusBlocks.TISSUE.get()),
+		RisusBlocks.DECOMPOSING_TISSUE.get(),  Pair.of(RisusBlocks.DECOMPOSED_TISSUE.get(), RisusBlocks.TISSUE.get()),
+		RisusBlocks.DECAYING_TISSUE.get(),  Pair.of(RisusBlocks.DECAYED_TISSUE.get(), RisusBlocks.TISSUE.get()),
+		RisusBlocks.ROTTING_TISSUE.get(),  Pair.of(RisusBlocks.ROTTED_TISSUE.get(), RisusBlocks.TISSUE.get())
+	);
+
 	@Override
 	protected ItemStack execute(BlockSource source, ItemStack stack) {
-		Level level = source.level();
+		ServerLevel level = source.level();
 		BlockPos pos = source.pos().relative(source.state().getValue(DispenserBlock.FACING));
 		BlockState state = level.getBlockState(pos);
 		RandomSource random = RandomSource.create();
-
+		Block checkingForBlock = state.getBlock();
 		//This gets horny
 		if (state.is(RisusBlocks.LAUGHING_STALK) && !state.getValue(BiomeBlock.SPREADING)) {
 			level.setBlock(pos, RisusBlocks.LAUGHING_STALK.get().withPropertiesOf(state).setValue(BiomeBlock.SPREADING, true), 3);
+			stack.shrink(1);
 		}
 
 		//These get preserved
-		if (state.is(RisusBlocks.TISSUE)) {
-			level.setBlock(pos, RisusBlocks.LIVING_TISSUE.get().withPropertiesOf(state), 3);
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
-		}
-		if (state.is(RisusBlocks.DECOMPOSING_TISSUE)) {
-			level.setBlock(pos, RisusBlocks.DECOMPOSED_TISSUE.get().withPropertiesOf(state), 3);
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
-		}
-		if (state.is(RisusBlocks.DECAYING_TISSUE)) {
-			level.setBlock(pos, RisusBlocks.DECAYED_TISSUE.get().withPropertiesOf(state), 3);
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
-		}
-		if (state.is(RisusBlocks.ROTTING_TISSUE)) {
-			level.setBlock(pos, RisusBlocks.ROTTED_TISSUE.get().withPropertiesOf(state), 3);
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
+		if (ORGANIC_MATTER_CONVERSIONS.containsKey(checkingForBlock)) {
+			level.setBlock(pos, ORGANIC_MATTER_CONVERSIONS.get(checkingForBlock).getFirst().withPropertiesOf(state), 3);
+			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ORGANIC_MATTER_CONVERSIONS.get(checkingForBlock).getSecond())), UniformInt.of(6, 12));
+			stack.shrink(1);
 		}
 
 		//These grow
@@ -66,16 +69,19 @@ public class OrganicMatterDispenseBehaviour extends DefaultDispenseItemBehavior 
 		) {
 			OrganicMatterItem.applyOrganicMatter(stack, level, pos, null);
 			OrganicMatterItem.addGrowthParticles(level, pos, 10);
+			stack.shrink(1);
 		}
 
 		//These grow hair
 		if (state.is(RisusBlocks.SKIN)) {
 			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().withPropertiesOf(state), 3);
 			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
+			stack.shrink(1);
 		}
 		if (state.is(RisusBlocks.FLESHY_SKIN)) {
 			level.setBlock(pos, RisusBlocks.HAIRY_FLESHY_SKIN.get().withPropertiesOf(state), 3);
 			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), state.getValue(ActuallyUseableDirectionalBlock.FACING), () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
+			stack.shrink(1);
 		}
 		//may god have mercy upon my soul
 		if (state.is(RisusBlocks.CURVED_FLESHY_SKIN)) {
@@ -135,6 +141,7 @@ public class OrganicMatterDispenseBehaviour extends DefaultDispenseItemBehavior 
 			}
 			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
 			ParticleUtils.spawnParticlesOnBlockFace(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 4), directionneeded2, () -> new Vec3(Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1), Mth.nextDouble(random, -0.1, 0.1)), 0.6);
+			stack.shrink(1);
 		}
 		this.fired = true;
 		return stack;

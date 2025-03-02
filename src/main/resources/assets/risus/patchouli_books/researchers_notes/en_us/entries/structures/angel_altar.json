@@ -16,6 +16,19 @@
       "border": "true",
       "title": "Circular Angel Altar",
       "text": "The use of a Totem of Undying at the Angel Altar will call down a new Ophanim."
-      }
+      },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "I can't seem to determine what the Angel Altar is made of. It's adjacent to the Alteration Catalyst - being fully unbreakable and made up of unnatural shapes - yet unlike it, the Altar can actually be pushed by Pistons. Moving it doesn't seem to affect its functionality, as Ophanims can still be summoned with Totems of Undying. It might just be that while both the Altar and the Catalyst share the same material makeup and a somewhat"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "similar function (of calling down external powers), the Catalyst is locked to a world coordinate. I am aware of theories about 'Dragon Lines' or 'Leylines' and those being potential sources of power wherever they connect - which might be what a Catalyst itself is linked to. Although, this doesn't interest me quite as much as the material make-up itself does. If I can figure out how to recreate whatever the Altar and Catalyst are made of, then my idea for a Blackbox might be feasible... On another"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "note, the more I see the Angel Altar the more I can't help but feel that it is incomplete. As if I could somehow add something onto it that would activate a hidden mechanism or function within. I'll have to tinker with one..."
+    }
   ]
 }

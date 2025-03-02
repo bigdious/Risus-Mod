@@ -135,7 +135,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) return;
-		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime == 40) {
+		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime > 40) {
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
 			laughingStalk.decaytime = 0;
 		}
