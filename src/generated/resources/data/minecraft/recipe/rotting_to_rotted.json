@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "risus:rotting_tissue"
+    },
+    {
+      "item": "risus:organic_matter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:rotted_tissue"
+  }
+}

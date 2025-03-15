@@ -88,12 +88,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 
 		this.tag(ItemTags.HEAD_ARMOR).add(
-			RisusItems.SKIN_HELMET.get(),
-			RisusBlocks.EYE_BLEACHED.asItem(),
-			RisusBlocks.EYE_BLOODSHOT.asItem(),
-			RisusBlocks.EYE_EMERALD.asItem(),
-			RisusBlocks.EYE_GOLDEN.asItem(),
-			RisusBlocks.EYE_ENDER.asItem()
+			RisusItems.SKIN_HELMET.get()
 		);
 		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get());
 		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get());
@@ -160,5 +155,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				Items.STRIPPED_MANGROVE_LOG,
 				Items.STRIPPED_CHERRY_LOG
 			);
+		this.tag(ItemTags.BEE_FOOD).add(
+			RisusBlocks.REGEN_ROSE.asItem()
+		);
 	}
 }

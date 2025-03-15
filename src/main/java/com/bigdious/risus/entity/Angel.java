@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
@@ -130,7 +131,7 @@ public class Angel extends Monster {
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		//keep semi-hardcode until tag issue is confirmed fixed
-		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || (source.getWeaponItem() != null &&
+		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || source.is(RisusDamageTypes.AXED) || (source.getWeaponItem() != null &&
 			(source.getWeaponItem().is(RisusTags.Items.WILLFUL_WEAPON)
 				|| source.getWeaponItem().is(RisusItems.SCYTHE) ||
 				source.getWeaponItem().is(RisusItems.FIRE_SCYTHE) ||

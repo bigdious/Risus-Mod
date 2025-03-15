@@ -280,6 +280,11 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
 				.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.TALL_HAIR.get(), 4)
+			.requires(RisusBlocks.BUNDLE_OF_HAIR.get())
+			.unlockedBy("has_item", has(RisusBlocks.BUNDLE_OF_HAIR.get()))
+			.save(consumer, "hair_unbundleing");
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS.get(), 4)
 				.pattern("##")
 				.pattern("##")
@@ -485,11 +490,10 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.TOOTHKNOCKER.get())
 				.pattern("BBB")
 				.pattern("LCL")
-				.pattern("LVL")
+				.pattern("LLL")
 				.define('B', Ingredient.of(RisusBlocks.TEETH.get()))
 				.define('C', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
 				.define('L', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
-				.define('V', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
 				.unlockedBy("has_item", has(RisusBlocks.TEETH.get()))
 				.unlockedBy("has_item", has(RisusItems.CRYSTALLIZED_BOND.get()))
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
@@ -664,6 +668,50 @@ public class CraftingGenerator extends RecipeProvider {
 			.define('E', RisusItems.STALKER_EYE)
 			.unlockedBy("has_item", has(RisusItems.STALKER_EYE))
 			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.LIVING_TISSUE, 1)
+			.requires(RisusBlocks.TISSUE.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "tissue_to_living");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.ROTTED_TISSUE, 1)
+			.requires(RisusBlocks.ROTTING_TISSUE.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "rotting_to_rotted");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.DECOMPOSED_TISSUE, 1)
+			.requires(RisusBlocks.DECOMPOSING_TISSUE.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "decomposing_to_decomposed");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.DECAYED_TISSUE, 1)
+			.requires(RisusBlocks.DECAYING_TISSUE.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "decaying_to_decayed");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.HAIRY_SKIN, 1)
+			.requires(RisusBlocks.SKIN.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "adding_hair_to_skin");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.HAIRY_FLESHY_SKIN, 1)
+			.requires(RisusBlocks.FLESHY_SKIN.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "adding_hair_to_fleshy_skin");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.HAIRY_CURVED_FLESHY_SKIN, 1)
+			.requires(RisusBlocks.CURVED_FLESHY_SKIN.get())
+			.requires(RisusItems.ORGANIC_MATTER.get())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer, "adding_hair_to_curved_fleshy_skin");
+
+
 
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.GRIMSTONE_BRICKS,1)
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))

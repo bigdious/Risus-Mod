@@ -1,26 +1,27 @@
 {
-  "render_type": "minecraft:translucent",
-  "textures": {
-    "remains": "risus:block/spreading_remains",
-    "particle": "#remains",
-    "overlay": "risus:block/spreading_remains_overlay"
-  },
-  "elements": [
-    {
-      "from": [0, 0, 0.02],
-      "to": [16, 16, 0.02],
-      "faces": {
-        "north": {"uv": [0, 16, 16, 0], "texture": "#remains"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#remains"}
-      }
-    },
-    {
-      "from": [0, 0, 0.02],
-      "to": [16, 16, 0.02],
-      "faces": {
-        "south": {"uv": [0, 16, 16, 0], "neoforge_data": {"block_light": 10}, "texture": "#overlay", "tintindex": 0}
-      },
-      "shade": false
-    }
-  ]
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:translucent",
+	"textures": {
+		"particle": "risus:block/spreading_remains",
+		"remains": "risus:block/spreading_remains",
+		"overlay": "risus:block/spreading_remains_overlay"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0.15],
+			"to": [16, 16, 0.15],
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "texture": "#remains"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#remains"}
+			}
+		},
+		{
+			"from": [0, 0, 0.16],
+			"to": [16, 16, 0.16],
+			"shade": false,
+			"faces": {
+				"south": {"uv": [0, 16, 16, 0], "neoforge_data": {"block_light": 10}, "texture": "#overlay", "tintindex": 0}
+			}
+		}
+	]
 }

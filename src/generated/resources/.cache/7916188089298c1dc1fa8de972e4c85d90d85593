@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-23T19:09:27.0125275	Tags for minecraft:item mod id risus
+// 1.21.1	2025-03-15T13:48:00.1200144	Tags for minecraft:item mod id risus
 46db12c6ab583a68534821c375c069ab3fd71f0b data/c/tags/item/armors.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
@@ -6,16 +6,17 @@
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates/wooden.json
 4fa4ef3fee986b3a9f5d145b9430d8c911716691 data/c/tags/item/foods/raw_meat.json
 90246e9d74b4b2bbf5464f742536a68e568d6022 data/c/tags/item/obsidians.json
+6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/item/bee_food.json
 f6ae7a1f74e511b30d03b5f7ff7a5603c9ad5534 data/minecraft/tags/item/chest_armor.json
 93747050553d638c805d960ef2c7349d80a43e8f data/minecraft/tags/item/foot_armor.json
-6e8bb15bfbc9afba71269a7c520110255a31c1e2 data/minecraft/tags/item/head_armor.json
+e61a5ea941fba4e1755b4f9dd72c02cdbee30a83 data/minecraft/tags/item/head_armor.json
 c09878a3cda8c356d287496c8936e8e8995df60b data/minecraft/tags/item/leg_armor.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs_that_burn.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/item/planks.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/item/signs.json
-ecc388c40f36e8a5d4349e1a596494b63223f338 data/minecraft/tags/item/slabs.json
-6910eb6a5b64831a42062a77fe92f4f2cf560f7c data/minecraft/tags/item/stairs.json
+cad17b0adee9a59c630129c3e60affe9d47d206d data/minecraft/tags/item/slabs.json
+9e4ce0e286bc9ffa07667e698338525ddbe1dbac data/minecraft/tags/item/stairs.json
 410875f128b7fa5a4f78693c08031d5888ad4c75 data/minecraft/tags/item/trimmable_armor.json
 3f25cc193605c7f90e085269af14123efdd62ed4 data/minecraft/tags/item/trim_materials.json
 42664e374f5d30290366b5992fd64ac4f980586f data/minecraft/tags/item/trim_templates.json

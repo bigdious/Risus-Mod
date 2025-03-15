@@ -1,12 +1,5 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "enchantment": "minecraft:fortune",
-      "formula": "minecraft:ore_drops",
-      "function": "minecraft:apply_bonus"
-    }
-  ],
   "pools": [
     {
       "bonus_rolls": 0.0,

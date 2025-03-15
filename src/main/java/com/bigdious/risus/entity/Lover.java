@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.blocks.LightExcrementBlock;
 import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -128,8 +129,10 @@ public class Lover extends Monster {
 				if (!this.isSilent()) {
 					this.playSound(RisusSoundEvents.LOVER_INFECT.get(), 2.0F, (this.getRandom().nextFloat() - this.getRandom().nextFloat()) * 0.2F + 1.0F);
 				}
-				if (level.getBlockState(from.blockPosition().above()).is(Blocks.AIR) && level.getBlockState(from.getOnPos()).isSolidRender(level, from.getOnPos()) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING))
-					level.setBlock(from.blockPosition(), RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 3);
+				BlockState spreading = RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true);
+				if (spreading.canSurvive(this.level(), offspring.blockPosition()) && level.getBlockState(offspring.blockPosition()).isAir() && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+					this.level().setBlockAndUpdate(offspring.blockPosition(), spreading);
+				}
 				for (int i = 0; i < 10; ++i) {
 					level.sendParticles(ParticleTypes.HEART, from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
 					level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);

@@ -99,7 +99,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.JOYFLAME_FIRE, "Cinderglee Fire");
 		this.addBlock(RisusBlocks.JOYFLAME_LANTERN, "Cinderglee Lantern");
 		this.addBlock(RisusBlocks.JOYFLAME_TORCH, "Cinderglee Torch");
-		this.addBlock(RisusBlocks.LAUGHING_OBSIDIAN, "Laughing Obsidian");
+		this.addBlock(RisusBlocks.LAUGHING_OBSIDIAN, "Smiling Obsidian");
 		this.addBlock(RisusBlocks.LAUGHING_STALK, "Laughing Stalk");
 		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Dropping");
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
@@ -221,6 +221,12 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("item.minecraft.lingering_potion.effect.mating_frenzy", "Lingering Potion of Love");
 		this.add("item.minecraft.tipped_arrow.effect.mating_frenzy", "Cupid's Arrow");
 
+		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
+		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
+		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
+		this.add("tooltip.risus.hand_of_greed", "Uncommonly dropped by Holders.");
+		this.add("tooltip.risus.crystallized_bond", "Found on Family Trees.");
+
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
 		this.addEntityAndEgg(RisusEntities.HOLDER, "Holder");
@@ -279,7 +285,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("fleshing", "Did You Just Flesh Me?!", "Use Organic Matter on Tissue to stop the flesh from disintegrating");
 		this.addAdvancement("step", "Watch Your Step!", "Wearing Leather Boots could save your life");
 		this.addAdvancement("devour", "Devoured", "Fall into a Gorger's trap");
-		this.addAdvancement("satiated", "Satiated", "Obtain the Gorger's Guts");
+		this.addAdvancement("satiate", "Satiated", "Obtain the Gorger's Guts");
 		this.addAdvancement("cupid", "Cupid", "Bring love to the world");
 		this.addAdvancement("irresistible", "Irresistible", "Taste Pleasure");
 		this.addAdvancement("crusade", "Crusade", "Kill an Ophanim");

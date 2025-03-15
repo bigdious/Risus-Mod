@@ -177,8 +177,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 						case UP -> poppingS;
 						case NORTH -> poppingW;
 						case SOUTH -> poppingE;
-						case WEST -> poppingU;
-						case EAST -> poppingD;
+						case WEST -> poppingD;
+						case EAST -> poppingU;
 						default -> poppingN;
 					};
 					return ConfiguredModel.builder().modelFile(file).rotationX(90).rotationY(90).build();
@@ -272,12 +272,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		slabBlock(RisusBlocks.FULL_BONE_SLAB.get(), Risus.prefix("block/full_bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
-
-		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().cubeBottomTop("eye_ender", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_ender")));
-		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().cubeBottomTop("eye_bleached", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_bleached")));
-		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().cubeBottomTop("eye_bloodshot", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_bloodshot")));
-		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().cubeBottomTop("eye_golden", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_golden")));
-		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().cubeBottomTop("eye_emerald", Risus.prefix("block/side_eye"), Risus.prefix("block/tissue"), Risus.prefix("block/eye_iris_emerald")));
+//keep below eye stuff to have custom head display
+		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye_ender")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(Risus.prefix("block/eye_bleached")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(Risus.prefix("block/eye_bloodshot")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(Risus.prefix("block/eye_golden")));
+		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(Risus.prefix("block/eye_emerald")));
 
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().cubeBottomTop("fleshy_skin", Risus.prefix("block/side_fleshy_skin"), Risus.prefix("block/tissue"), Risus.prefix("block/skin")));
 		simpleBlock(RisusBlocks.SKIN.get());

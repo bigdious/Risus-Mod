@@ -10946,5 +10946,17 @@
     },
     "done": true
   },
+  "risus:recipes/misc/organic_matter": {
+    "criteria": {
+      "has_item": "2025-03-15 11:30:55 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/full_bone_to_bone_meal": {
+    "criteria": {
+      "has_item": "2025-03-15 11:37:35 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

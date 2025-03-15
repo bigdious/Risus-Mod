@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "risus:block/tissue",
-    "side": "risus:block/side_eye",
-    "top": "risus:block/eye_iris_emerald"
-  }
-}

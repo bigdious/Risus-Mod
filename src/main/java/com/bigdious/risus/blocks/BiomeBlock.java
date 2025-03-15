@@ -215,6 +215,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				// Iterate over all blocks in quarters in the section
 				for (int sy = 0; sy < 16; sy += 4) {
 					// Get y position clamped between the minY(0) and maxY(320)
+					//this feels like a lie^
 					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
 
 					// Holder<Biome>(x, y, z).is(biome) is deprecated and could cause issues in the future

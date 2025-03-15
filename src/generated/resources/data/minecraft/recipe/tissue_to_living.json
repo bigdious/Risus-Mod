@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "risus:tissue"
+    },
+    {
+      "item": "risus:organic_matter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:living_tissue"
+  }
+}

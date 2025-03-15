@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "risus:skin"
+    },
+    {
+      "item": "risus:organic_matter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:hairy_skin"
+  }
+}

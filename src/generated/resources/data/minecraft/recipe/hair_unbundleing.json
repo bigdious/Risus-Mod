@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:bundle_of_hair"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "risus:tall_hair"
+  }
+}

@@ -2,6 +2,9 @@ package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,6 +18,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
@@ -27,10 +32,16 @@ import net.minecraft.world.phys.Vec3;
 
 public class BabySpider extends Monster {
 	private int attackTimer;
+	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
 
 	public BabySpider(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
 		this.xpReward=1;
+	}
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_FLAGS_ID, (byte) 0);
 	}
 
 	public static AttributeSupplier.Builder attributes() {
@@ -98,5 +109,38 @@ public class BabySpider extends Monster {
 	public boolean canBeAffected(MobEffectInstance p_33809_) {
 		return !p_33809_.is(MobEffects.POISON) && super.canBeAffected(p_33809_);
 	}
+//make em climb
+protected PathNavigation createNavigation(Level level) {
+	return new WallClimberNavigation(this, level);
+}
 
+	public void tick() {
+		super.tick();
+		if (!this.level().isClientSide) {
+			this.setClimbing(this.horizontalCollision);
+		}
+	}
+
+	public boolean onClimbable() {
+		return this.isClimbing();
+	}
+
+	public boolean isClimbing() {
+		return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+	}
+
+	public void setClimbing(boolean climbing) {
+		byte b0 = this.entityData.get(DATA_FLAGS_ID);
+		if (climbing) {
+			b0 = (byte) (b0 | 1);
+		} else {
+			b0 &= -2;
+		}
+
+		this.entityData.set(DATA_FLAGS_ID, b0);
+	}
+
+	static {
+		DATA_FLAGS_ID = SynchedEntityData.defineId(BabySpider.class, EntityDataSerializers.BYTE);
+	}
 }

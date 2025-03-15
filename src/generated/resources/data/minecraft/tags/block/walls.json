@@ -1,6 +1,8 @@
 {
   "values": [
     "risus:grimstone_wall",
+    "risus:grimstone_bricks_wall",
+    "risus:polished_grimstone_wall",
     "risus:bone_wall",
     "risus:rotting_tissue",
     "risus:decomposing_tissue",

@@ -33,7 +33,8 @@ public class ToothknockerItem extends SwordItem {
 	}
 	public static ItemAttributeModifiers createKnuckleAttributes(Tier tier, int damage, float speed) {
 		return SwordItem.createAttributes(tier, damage, speed)
-			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), -0.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), -0.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+			.withModifierAdded(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(Risus.prefix("fall_distance_modifier"), +4, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND);
 	}
 
 	@Override

@@ -35,30 +35,16 @@ public  class AngelWingsLayer<T extends LivingEntity, M extends EntityModel<T>> 
 	}
 
 	@Override
-	public void render(PoseStack p_116951_, MultiBufferSource p_116952_, int p_116953_, T p_116954_, float p_116955_, float p_116956_, float p_116957_, float p_116958_, float p_116959_, float p_116960_) {
-		ItemStack itemstack = p_116954_.getItemBySlot(EquipmentSlot.CHEST);
+	public void render(PoseStack pose, MultiBufferSource p_116952_, int p_116953_, T player, float p_116955_, float p_116956_, float p_116957_, float p_116958_, float p_116959_, float p_116960_) {
+		ItemStack itemstack = player.getItemBySlot(EquipmentSlot.CHEST);
 		if (this.shouldRender(itemstack)) {
-			ResourceLocation resourcelocation;
-			if (p_116954_ instanceof AbstractClientPlayer abstractclientplayer) {
-				PlayerSkin playerskin = abstractclientplayer.getSkin();
-				if (playerskin.elytraTexture() != null) {
-					resourcelocation = playerskin.elytraTexture();
-				} else if (playerskin.capeTexture() != null && abstractclientplayer.isModelPartShown(PlayerModelPart.CAPE)) {
-					resourcelocation = playerskin.capeTexture();
-				} else {
-					resourcelocation = WINGS_LOCATION;
-				}
-			} else {
-				resourcelocation = WINGS_LOCATION;
-			}
-
-			p_116951_.pushPose();
-			p_116951_.translate(0.0F, 0.0F, 0.125F);
+			pose.pushPose();
+			pose.translate(0.0F, 0.0F, 0.125F);
 			this.getParentModel().copyPropertiesTo(this.elytraModel);
-			this.elytraModel.setupAnim(p_116954_, p_116955_, p_116956_, p_116958_, p_116959_, p_116960_);
-			VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(p_116952_, RenderType.armorCutoutNoCull(resourcelocation), itemstack.hasFoil());
-			this.elytraModel.renderToBuffer(p_116951_, vertexconsumer, p_116953_, OverlayTexture.NO_OVERLAY);
-			p_116951_.popPose();
+			this.elytraModel.setupAnim(player, p_116955_, p_116956_, p_116958_, p_116959_, p_116960_);
+			VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(p_116952_, RenderType.armorCutoutNoCull(WINGS_LOCATION), itemstack.hasFoil());
+			this.elytraModel.renderToBuffer(pose, vertexconsumer, p_116953_, OverlayTexture.NO_OVERLAY);
+			pose.popPose();
 		}
 
 	}

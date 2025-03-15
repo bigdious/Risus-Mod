@@ -82,18 +82,18 @@ public class Litter extends TamableAnimal {
 		if (!this.unableToMoveToOwner()) {
 			this.lightCheckInterval--;
 			if (this.lightCheckInterval <= 0) {
-				if (this.level().getBrightness(LightLayer.BLOCK, this.blockPosition()) <= 0 && this.level().isEmptyBlock(this.blockPosition())) {
+				if (this.level().getBrightness(LightLayer.BLOCK, this.blockPosition()) <= 3 && this.level().isEmptyBlock(this.blockPosition())) {
 					if (this.level().canSeeSky(this.blockPosition()) && this.level().isDay()) {
 						this.lightCheckInterval = 100;
 						return;
 					}
 					BlockState excrement = RisusBlocks.LIGHT_EXCREMENT.get().defaultBlockState().setValue(LightExcrementBlock.FACING, Direction.UP);
-					if (excrement.canSurvive(this.level(), this.blockPosition())) {
+					if (excrement.canSurvive(this.level(), this.blockPosition()) && this.level().getBlockState(this.blockPosition()).isAir()) {
 						this.level().setBlockAndUpdate(this.blockPosition(), excrement);
 						this.playSound(RisusSoundEvents.LITTER_LAY_EXCREMENT.get(), 0.15F, 0.75F);
 					}
 				}
-				this.lightCheckInterval = 60;
+				this.lightCheckInterval = 40;
 			}
 		} else {
 			this.lightCheckInterval = 100;

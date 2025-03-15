@@ -5,6 +5,17 @@
     "risus:eye_emerald",
     "risus:eye_bloodshot",
     "risus:eye_ender",
-    "risus:bloody_sponge"
+    "risus:bloody_sponge",
+    "risus:scab",
+    "risus:tissue",
+    "risus:tissue_slab",
+    "risus:tissue_stairs",
+    "risus:living_tissue",
+    "risus:skin",
+    "risus:fleshy_skin",
+    "risus:curved_fleshy_skin",
+    "risus:hairy_skin",
+    "risus:hairy_fleshy_skin",
+    "risus:bundle_of_hair"
   ]
 }

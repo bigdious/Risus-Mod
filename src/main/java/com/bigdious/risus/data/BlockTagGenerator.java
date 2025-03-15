@@ -41,9 +41,25 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 
 		this.tag(BlockTags.WOODEN_SLABS).add(RisusBlocks.BONDKNOT_SLAB.get());
-		this.tag(BlockTags.SLABS).add(RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.GRIMSTONE_SLAB.get());
+		this.tag(BlockTags.SLABS).add(
+			RisusBlocks.BONDKNOT_SLAB.get(),
+			RisusBlocks.TISSUE_SLAB.get(),
+			RisusBlocks.GRIMSTONE_SLAB.get(),
+			RisusBlocks.BONE_SLAB.get(),
+			RisusBlocks.FULL_BONE_SLAB.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()
+		);
 		this.tag(BlockTags.WOODEN_STAIRS).add(RisusBlocks.BONDKNOT_STAIRS.get());
-		this.tag(BlockTags.STAIRS).add(RisusBlocks.BONDKNOT_STAIRS.get(), RisusBlocks.BONDKNOT_STAIRS.get());
+		this.tag(BlockTags.STAIRS).add(
+			RisusBlocks.BONDKNOT_STAIRS.get(),
+			RisusBlocks.BONE_STAIRS.get(),
+			RisusBlocks.FULL_BONE_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
+			RisusBlocks.TISSUE_STAIRS.get()
+		);
 		this.tag(BlockTags.WOODEN_BUTTONS).add(RisusBlocks.BONDKNOT_BUTTON.get());
 		this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 
@@ -53,13 +69,25 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.TRAPDOORS).add(RisusBlocks.BONDKNOT_TRAPDOOR.get());
 		this.tag(BlockTags.WOODEN_TRAPDOORS).add(RisusBlocks.BONDKNOT_TRAPDOOR.get());
 
-		this.tag(BlockTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get()).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
+		this.tag(BlockTags.SIGNS).add(
+			RisusBlocks.BONDKNOT_SIGN.get(),
+			RisusBlocks.BONDKNOT_WALL_SIGN.get()
+		);
+
 		this.tag(BlockTags.STANDING_SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get());
 		this.tag(BlockTags.WALL_SIGNS).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
 
-		this.tag(BlockTags.WALLS).add(RisusBlocks.GRIMSTONE_WALL.get(), RisusBlocks.BONE_WALL.get(),
-			RisusBlocks.ROTTING_TISSUE.get(), RisusBlocks.DECOMPOSING_TISSUE.get(), RisusBlocks.DECAYING_TISSUE.get(),
-			RisusBlocks.ROTTED_TISSUE.get(), RisusBlocks.DECOMPOSED_TISSUE.get(), RisusBlocks.DECAYED_TISSUE.get());
+		this.tag(BlockTags.WALLS).add(
+			RisusBlocks.GRIMSTONE_WALL.get(),
+			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
+			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
+			RisusBlocks.BONE_WALL.get(),
+			RisusBlocks.ROTTING_TISSUE.get(),
+			RisusBlocks.DECOMPOSING_TISSUE.get(),
+			RisusBlocks.DECAYING_TISSUE.get(),
+			RisusBlocks.ROTTED_TISSUE.get(),
+			RisusBlocks.DECOMPOSED_TISSUE.get(),
+			RisusBlocks.DECAYED_TISSUE.get());
 
 
 		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(RisusTags.Blocks.BONDKNOT_LOGS)
@@ -150,7 +178,13 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.CURVED_FLESHY_SKIN.get(),
 				RisusBlocks.HAIRY_SKIN.get(),
 				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
-				RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
+				RisusBlocks.EYE_BLEACHED.get(),
+				RisusBlocks.EYE_GOLDEN.get(),
+				RisusBlocks.EYE_EMERALD.get(),
+				RisusBlocks.EYE_BLOODSHOT.get(),
+				RisusBlocks.EYE_ENDER.get(),
+				RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get()
+			);
 
 		this.tag(BlockTags.CLIMBABLE)
 			.add(RisusBlocks.VEINS.get(),
@@ -164,7 +198,18 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.EYE_EMERALD.get(),
 				RisusBlocks.EYE_BLOODSHOT.get(),
 				RisusBlocks.EYE_ENDER.get(),
-				RisusBlocks.BLOODY_SPONGE.get()
+				RisusBlocks.BLOODY_SPONGE.get(),
+				RisusBlocks.SCAB.get(),
+				RisusBlocks.TISSUE.get(),
+				RisusBlocks.TISSUE_SLAB.get(),
+				RisusBlocks.TISSUE_STAIRS.get(),
+				RisusBlocks.LIVING_TISSUE.get(),
+				RisusBlocks.SKIN.get(),
+				RisusBlocks.FLESHY_SKIN.get(),
+				RisusBlocks.CURVED_FLESHY_SKIN.get(),
+				RisusBlocks.HAIRY_SKIN.get(),
+				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
+				RisusBlocks.BUNDLE_OF_HAIR.get()
 			);
 		this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
 			.add(RisusBlocks.LAUGHING_OBSIDIAN.get(),
@@ -306,5 +351,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		)
 			;
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
+		tag(BlockTags.FLOWERS).add(RisusBlocks.REGEN_ROSE.get());
+		tag(BlockTags.SMALL_FLOWERS).add(RisusBlocks.REGEN_ROSE.get());
 	}
 }

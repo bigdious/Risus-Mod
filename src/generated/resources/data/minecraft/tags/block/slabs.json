@@ -1,6 +1,11 @@
 {
   "values": [
     "risus:bondknot_slab",
-    "risus:grimstone_slab"
+    "risus:tissue_slab",
+    "risus:grimstone_slab",
+    "risus:bone_slab",
+    "risus:full_bone_slab",
+    "risus:grimstone_bricks_slab",
+    "risus:polished_grimstone_slab"
   ]
 }

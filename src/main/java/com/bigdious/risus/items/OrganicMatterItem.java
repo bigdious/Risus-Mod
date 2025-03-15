@@ -64,8 +64,9 @@ public class OrganicMatterItem extends Item {
 			if (!level.isClientSide) {
 				context.getPlayer().gameEvent(GameEvent.ITEM_INTERACT_FINISH);
 				level.levelEvent(1505, blockpos, 15);
+				addGrowthParticles(level, blockpos, 10);
 			}
-			addGrowthParticles(level, blockpos, 10);
+
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {
 //			boolean flag = blockstate.isFaceSturdy(level, blockpos, context.getClickedFace());
