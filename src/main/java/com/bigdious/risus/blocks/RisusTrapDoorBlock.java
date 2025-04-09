@@ -28,17 +28,15 @@ public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultilogg
 
 	public RisusTrapDoorBlock(BlockSetType type, Properties properties) {
 		super(type, properties);
+		StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+		builder.add(FACING, OPEN, HALF, POWERED, FLUIDLOGGED);
+		this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 		this.registerDefaultState(this.stateDefinition.any()
 				.setValue(FACING, Direction.NORTH)
 				.setValue(OPEN, false)
 				.setValue(HALF, Half.BOTTOM)
 				.setValue(POWERED, false)
 				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, OPEN, HALF, POWERED, WATERLOGGED, FLUIDLOGGED);
 	}
 
 	@Override
@@ -91,5 +89,10 @@ public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultilogg
 	@Override
 	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
 		return SimpleMultiloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState);
+	}
+
+	@Override
+	public int getLightEmission(BlockState state, BlockGetter getter, BlockPos pos) {
+		return state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0;
 	}
 }

@@ -27,35 +27,33 @@ public class EndlessPearlItem extends EnderpearlItem {
 			ItemStack checkStack = player.getInventory().getItem(i);
 			if (checkStack.is(Items.ENDER_PEARL)) {
 				validSlot = i;
-				break;
-			}
-		}
-		ItemStack ammo = player.getInventory().getItem(validSlot);
-		int amount = ammo.getCount();
-		if (validSlot != -1 && ammo.is(Items.ENDER_PEARL) && itemstack.getDamageValue() >= amount) {
-			//fuck you -1
-			itemstack.hurtAndBreak(-amount, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
-			ammo.shrink(amount);
-		} else {
-
-			if (itemstack.getDamageValue() == itemstack.getMaxDamage()) {
-				return InteractionResultHolder.fail(player.getItemInHand(hand));
-			} else {
-				level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
-				player.getCooldowns().addCooldown(this, 20);
-				if (!level.isClientSide) {
-					ThrownEnderpearl thrownenderpearl = new ThrownEnderpearl(level, player);
-					thrownenderpearl.setItem(itemstack);
-					thrownenderpearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-					level.addFreshEntity(thrownenderpearl);
-					itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+				ItemStack ammo = player.getInventory().getItem(validSlot);
+				int amount = ammo.getCount();
+				if (validSlot != -1 && ammo.is(Items.ENDER_PEARL) && itemstack.getDamageValue() >= amount) {
+					//fuck you -1
+					itemstack.hurtAndBreak(-amount, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+					ammo.shrink(amount);
 				}
 
-				return InteractionResultHolder.success(player.getItemInHand(hand));
 			}
 		}
-		//this needs to fail
-		return InteractionResultHolder.fail(player.getItemInHand(hand));
+		if (validSlot>0) return InteractionResultHolder.success(player.getItemInHand(hand));
+		if (itemstack.getDamageValue() == itemstack.getMaxDamage() - 1) {
+			return InteractionResultHolder.fail(player.getItemInHand(hand));
+		} else {
+			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+			player.getCooldowns().addCooldown(this, 20);
+			if (!level.isClientSide) {
+				ThrownEnderpearl thrownenderpearl = new ThrownEnderpearl(level, player);
+				thrownenderpearl.setItem(itemstack);
+				thrownenderpearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+				level.addFreshEntity(thrownenderpearl);
+				itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+			}
+
+			return InteractionResultHolder.success(player.getItemInHand(hand));
+		}
+
 	}
 
 	@Override

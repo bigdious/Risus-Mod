@@ -62,7 +62,6 @@
               "north": "none",
               "south": "none",
               "up": "true",
-              "waterlogged": "true",
               "west": "none"
             }
           }

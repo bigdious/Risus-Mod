@@ -11,14 +11,14 @@ import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.WallSide;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
@@ -234,11 +234,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), Risus.prefix("block/polished_grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), Risus.prefix("block/grimstone"), Risus.prefix("block/grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), Risus.prefix("block/grimstone_bricks"), Risus.prefix("block/grimstone_bricks"));
-		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), Risus.prefix("block/grimstone_bricks"), Risus.prefix("block/polished_grimstone"));
+		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), Risus.prefix("block/polished_grimstone"), Risus.prefix("block/polished_grimstone"));
 		simpleBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
-		wallBlock(RisusBlocks.GRIMSTONE_WALL.get(), Risus.prefix("block/grimstone"));
-		wallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), Risus.prefix("block/grimstone_bricks"));
-		wallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), Risus.prefix("block/polished_grimstone"));
+		risusWallBlock(RisusBlocks.GRIMSTONE_WALL.get(), models().wallPost("grimstone_wall_post",Risus.prefix("block/grimstone")), models().wallSide("grimstone_wall_side", Risus.prefix("block/grimstone")), models().wallSideTall("grimstone_wall_side_tall", Risus.prefix("block/grimstone")));
+		risusWallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), models().wallPost("polished_grimstone_wall_post",Risus.prefix("block/polished_grimstone")), models().wallSide("polished_grimstone_wall_side", Risus.prefix("block/polished_grimstone")), models().wallSideTall("polished_grimstone_wall_side_tall", Risus.prefix("block/polished_grimstone")));
+		risusWallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), models().wallPost("grimstone_bricks_wall_post",Risus.prefix("block/grimstone_bricks")), models().wallSide("grimstone_bricks_wall_side", Risus.prefix("block/grimstone_bricks")), models().wallSideTall("grimstone_bricks_wall_side_tall", Risus.prefix("block/grimstone_bricks")));
+
 
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
 		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));
@@ -259,14 +260,14 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.TISSUE.get());
 		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue"));
 		slabBlock(RisusBlocks.TISSUE_SLAB.get(), Risus.prefix("block/tissue"), Risus.prefix("block/tissue"));
-		wallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
-		wallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
-		wallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
 		simpleBlock(RisusBlocks.LIVING_TISSUE.get(), models().cubeAll("living_tissue", Risus.prefix("block/tissue")));
-		wallBlock(RisusBlocks.ROTTED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
-		wallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
-		wallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
-		wallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
+		risusWallBlock(RisusBlocks.ROTTED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.DECOMPOSED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.DECAYED_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
+		risusWallBlock(RisusBlocks.BONE_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/bone_wall_tall_side")));
 		stairsBlock(RisusBlocks.BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_top"), Risus.prefix("block/bone_block_top"));
 		slabBlock(RisusBlocks.BONE_SLAB.get(), ResourceLocation.withDefaultNamespace("block/bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_top"), Risus.prefix("block/bone_block_top"));
 		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
@@ -393,6 +394,17 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.face(Direction.WEST).texture("#west2").cullface(Direction.WEST).emissivity(layer2emW, skylightLevel).tintindex(0).end()
 				.face(Direction.UP).texture("#top2").cullface(Direction.UP).emissivity(layer2emU, skylightLevel).tintindex(0).end()
 				.face(Direction.DOWN).texture("#bottom2").cullface(Direction.DOWN).emissivity(layer2emD, skylightLevel).tintindex(0).end().end();
+	}
+	public void risusWallBlock(RisusWallBlock block, ModelFile post, ModelFile side, ModelFile sideTall) {
+		MultiPartBlockStateBuilder builder = (this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(RisusWallBlock.UP, new Boolean[]{true}).end();
+		WALL_PROPS.entrySet().stream().filter((e) -> (e.getKey()).getAxis().isHorizontal()).forEach((e) -> {
+			this.risusWallSidePart(builder, side, e, WallSide.LOW);
+			this.risusWallSidePart(builder, sideTall, e, WallSide.TALL);
+		});
+	}
+
+	private void risusWallSidePart(MultiPartBlockStateBuilder builder, ModelFile model, Map.Entry<Direction, Property<WallSide>> entry, WallSide height) {
+		(builder.part().modelFile(model).rotationY(((int)(entry.getKey()).toYRot() + 180) % 360).uvLock(true).addModel()).condition(entry.getValue(), height);
 	}
 
 	@Nonnull

@@ -26,17 +26,15 @@ public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBloc
 
 	public RisusFenceBlock(Properties properties) {
 		super(properties);
+		StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+		builder.add(NORTH, EAST, WEST, SOUTH, FLUIDLOGGED);
+		this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 		this.registerDefaultState(this.getStateDefinition().any()
 				.setValue(NORTH, false)
 				.setValue(EAST, false)
 				.setValue(SOUTH, false)
 				.setValue(WEST, false)
 				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(NORTH, EAST, WEST, SOUTH, WATERLOGGED, FLUIDLOGGED);
 	}
 
 	@Override
@@ -92,5 +90,14 @@ public class RisusFenceBlock extends FenceBlock implements SimpleMultiloggedBloc
 	@Override
 	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
 		return SimpleMultiloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState);
+	}
+
+	protected boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+		return state.getValue(MultiloggingEnum.FLUIDLOGGED) != MultiloggingEnum.WATER;
+	}
+
+	@Override
+	public int getLightEmission(BlockState state, BlockGetter getter, BlockPos pos) {
+		return state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0;
 	}
 }

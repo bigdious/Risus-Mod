@@ -41,15 +41,13 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 
 	public RisusCampfireBlock(boolean spawnParticles, int fireDamage, BlockBehaviour.Properties properties) {
 		super(spawnParticles, fireDamage, properties);
+		StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+		builder.add(LIT, SIGNAL_FIRE, FACING, FLUIDLOGGED);
+		this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 		this.registerDefaultState(this.getStateDefinition().any()
 				.setValue(LIT, Boolean.TRUE).setValue(SIGNAL_FIRE, Boolean.FALSE)
 				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
 				.setValue(FACING, Direction.NORTH));
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(LIT, SIGNAL_FIRE, FACING, WATERLOGGED, FLUIDLOGGED);
 	}
 
 	@Nullable
@@ -141,5 +139,10 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 			}
 			pLevel.scheduleTick(pPos, this, 10);
 		}
+	}
+
+	@Override
+	public int getLightEmission(BlockState state, BlockGetter getter, BlockPos pos) {
+		return state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 5;
 	}
 }

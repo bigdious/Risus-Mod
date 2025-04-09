@@ -139,6 +139,8 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
 			laughingStalk.decaytime = 0;
 		}
+		if ((state.getValue(SPREADING) || state.getValue(SPREADING_FEIGR) || state.getValue(SPREADING_MORK)) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk)
+			laughingStalk.decaytime++;
 
 		this.performConversion(level, pos, rand, state);
 		level.scheduleTick(pos, this, 20);
@@ -233,8 +235,6 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
 			level.getChunkSource().chunkMap.resendBiomesForChunks(List.of(chunkAt));
 
-			if ((state.getValue(SPREADING) || state.getValue(SPREADING_FEIGR) || state.getValue(SPREADING_MORK)) && level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk)
-				laughingStalk.decaytime++;
 			break;
 		}
 	}

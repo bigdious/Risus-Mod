@@ -74,7 +74,6 @@ public class ToothknockerItem extends SwordItem {
 		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1 || player.isFallFlying() || player.isInWater()) {
 			return InteractionResultHolder.fail(itemstack);
 		} else {
-
 			float f7 = player.getYRot();
 			float f = player.getXRot();
 			float f1 = -Mth.sin(f7 * Mth.DEG_TO_RAD) * Mth.cos(f * Mth.DEG_TO_RAD);
@@ -87,8 +86,8 @@ public class ToothknockerItem extends SwordItem {
 			f3 *= f5 / f4;
 			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
-			player.getCooldowns().addCooldown(this, 30);
 			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+			player.getCooldowns().addCooldown(this, 30);
 			pLevel.playSound(player, player.getOnPos().above(), RisusSoundEvents.TOOTHKNOCKER_DASH.get(), SoundSource.PLAYERS);
 			return InteractionResultHolder.consume(itemstack);
 		}

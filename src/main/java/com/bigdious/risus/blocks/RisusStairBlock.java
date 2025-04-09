@@ -28,16 +28,14 @@ public class RisusStairBlock extends StairBlock implements SimpleMultiloggedBloc
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
 	public RisusStairBlock(Supplier<BlockState> baseState, Properties properties) {
-		super( baseState.get(), properties);
+		super(baseState.get(), properties);
+		StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+		builder.add(FACING, HALF, SHAPE, FLUIDLOGGED);
+		this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 		this.registerDefaultState(this.getStateDefinition().any()
-				.setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM)
-				.setValue(SHAPE, StairsShape.STRAIGHT)
-				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, HALF, SHAPE, WATERLOGGED, FLUIDLOGGED);
+			.setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM)
+			.setValue(SHAPE, StairsShape.STRAIGHT)
+			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
 
 	@Override
@@ -84,5 +82,10 @@ public class RisusStairBlock extends StairBlock implements SimpleMultiloggedBloc
 	@Override
 	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
 		return SimpleMultiloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState);
+	}
+
+	@Override
+	public int getLightEmission(BlockState state, BlockGetter getter, BlockPos pos) {
+		return state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0;
 	}
 }

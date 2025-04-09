@@ -115,6 +115,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(),
 			RisusBlocks.ACTIVE_GRIMSTONE.get(),
 
+			RisusBlocks.MIRAGE_END_STONE.get(),
+			RisusBlocks.MIRAGE_NETHERRACK.get(),
+
 			RisusBlocks.GRIMSTONE.get(),
 			RisusBlocks.GRIMSTONE_SLAB.get(),
 			RisusBlocks.GRIMSTONE_STAIRS.get(),

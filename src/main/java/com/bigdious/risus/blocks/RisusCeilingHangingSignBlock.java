@@ -34,15 +34,13 @@ public class RisusCeilingHangingSignBlock extends CeilingHangingSignBlock implem
 
 	public RisusCeilingHangingSignBlock(Properties pProperties, WoodType pType) {
 		super(pType, pProperties);
+		StateDefinition.Builder<Block, BlockState> builder = new StateDefinition.Builder<>(this);
+		builder.add(ROTATION, ATTACHED, FLUIDLOGGED);
+		this.stateDefinition = builder.create(Block::defaultBlockState, BlockState::new);
 		this.registerDefaultState(this.getStateDefinition().any()
 				.setValue(ROTATION, 0)
 				.setValue(ATTACHED, false)
 				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(ROTATION, ATTACHED, WATERLOGGED, FLUIDLOGGED);
 	}
 
 	@Override
@@ -110,5 +108,10 @@ public class RisusCeilingHangingSignBlock extends CeilingHangingSignBlock implem
 	@Override
 	public boolean placeLiquid(LevelAccessor pLevel, BlockPos pPos, BlockState pState, FluidState pFluidState) {
 		return SimpleMultiloggedBlock.super.placeLiquid(pLevel, pPos, pState, pFluidState);
+	}
+
+	@Override
+	public int getLightEmission(BlockState state, BlockGetter getter, BlockPos pos) {
+		return state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0;
 	}
 }

@@ -11,6 +11,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -40,6 +42,15 @@ public class AngelWingsItem extends Item implements Equipable {
 		}
 
 		return true;
+	}
+	@Override
+	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.UNBREAKING);
+	}
+
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(Enchantments.UNBREAKING) || enchantment.is(Enchantments.MENDING);
 	}
 
 	public Holder<SoundEvent> getEquipSound() {
