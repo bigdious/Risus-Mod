@@ -133,8 +133,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				Items.STRIPPED_MANGROVE_WOOD,
 				Items.STRIPPED_CHERRY_WOOD
 			);
-		this.tag(RisusTags.Items.ALTERABLE_WOODS)
-			.add(
+		this.tag(RisusTags.Items.ALTERABLE_WOODS).add(
 				Items.OAK_WOOD,
 				Items.DARK_OAK_WOOD,
 				Items.BIRCH_WOOD,
@@ -157,6 +156,18 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			);
 		this.tag(ItemTags.BEE_FOOD).add(
 			RisusBlocks.REGEN_ROSE.asItem()
+		);
+
+//		this.tag(RisusTags.Items.CURIOS_HANDS).add(
+//			RisusItems.HAND_OF_GREED.get()
+//		);
+
+		this.tag(RisusTags.Items.CURIOS_CHARM).add(
+			RisusItems.TOTEM_OF_UNYIELDING.get()
+		);
+
+		this.tag(RisusTags.Items.CURIOS_BELT).add(
+			RisusItems.RESEARCHERS_NOTES.get()
 		);
 	}
 }

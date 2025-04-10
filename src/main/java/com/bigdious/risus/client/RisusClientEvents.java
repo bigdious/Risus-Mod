@@ -12,13 +12,17 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.AngelWingsItem;
 import com.bigdious.risus.items.ScytheItem;
 import com.bigdious.risus.items.ThousandBladeItem;
+import com.bigdious.risus.mixin.ClientLevelAccessor;
+import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.util.RisusSkullType;
+import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Camera;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
@@ -26,6 +30,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
@@ -38,6 +43,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -46,19 +52,34 @@ import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtension
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
+import org.lwjgl.glfw.GLFW;
 
 import javax.annotation.Nullable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class RisusClientEvents {
 
 	private static final RenderType MONOLITH_PORTAL = RenderType.create("risus:monolith_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, 256, true, false, RenderType.CompositeState.builder().setShaderState(RenderStateAccessor.getEndPortal()).setTextureState(RenderStateShard.MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION, false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false).build()).createCompositeState(false));
 
+	private static final KeyMapping OPEN_BOOK_KEY = new KeyMapping(
+		"keybind.researchers_notes_open",
+		KeyConflictContext.IN_GAME,
+		InputConstants.Type.KEYSYM,
+		GLFW.GLFW_KEY_R,
+		"key.categories.misc");
+
 	public static void initEvents(IEventBus bus) {
+		bus.addListener(RegisterKeyMappingsEvent.class, event -> {
+				event.register(OPEN_BOOK_KEY);
+			});
 		bus.addListener(RisusClientEvents::clientSetup);
 		bus.addListener(RisusClientEvents::registerParticleFactories);
 		bus.addListener(RisusClientEvents::registerEntityLayers);
@@ -76,6 +97,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -89,10 +111,15 @@ public class RisusClientEvents {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
+
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
+
+			Set<Item> particleMarkerBlocks = new HashSet<>(ClientLevelAccessor.risus$getMARKER_PARTICLE_ITEMS());
+			particleMarkerBlocks.add(RisusBlocks.DARKNESS.asItem());
+			ClientLevelAccessor.risus$setMARKER_PARTICLE_ITEMS(particleMarkerBlocks);
 
 			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 		});
@@ -296,6 +323,14 @@ public class RisusClientEvents {
 	private static void renderBloodcloggedHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.BLOODCLOGGED)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
+		}
+	}
+
+	private static void remoteOpenBook(InputEvent.Key event){
+		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
+			if (event.getKey() == OPEN_BOOK_KEY.getKey().getValue() && OPEN_BOOK_KEY.consumeClick()){
+				PacketDistributor.sendToServer(OpenBookPacket.INSTANCE);
+			}
 		}
 	}
 //	public static class CheckWhispers {

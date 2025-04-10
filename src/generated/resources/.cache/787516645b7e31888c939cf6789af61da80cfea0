@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-15T13:48:00.1090128	Tags for minecraft:block mod id risus
+// 1.21.1	2025-04-10T21:02:26.0422839	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
@@ -14,8 +14,8 @@ bd91bab90901281b6022e8156f5d31aa13cd8f6f data/minecraft/tags/block/fire.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs_that_burn.json
 5b833f5a1169fef52161730c7ff051ac0eed2fdc data/minecraft/tags/block/mineable/axe.json
-48cad143563988586bb79342c534bbaf4493a0fe data/minecraft/tags/block/mineable/hoe.json
-2384701b25a77d21522660c4d03e5c485ea09c32 data/minecraft/tags/block/mineable/pickaxe.json
+b3ceb52137e7cb05e291801ca534073492706669 data/minecraft/tags/block/mineable/hoe.json
+aab08d129d4598026ba19996d2950dc15e98f1e6 data/minecraft/tags/block/mineable/pickaxe.json
 08e2b2328521bd43408bdb0d31d54dc781c200cd data/minecraft/tags/block/mineable/shovel.json
 8516aa90805c2046c288b404377062ac9f49a652 data/minecraft/tags/block/needs_diamond_tool.json
 af8e4bc49d1dcfcbc3323fd65345a4e5c8f60224 data/minecraft/tags/block/needs_stone_tool.json

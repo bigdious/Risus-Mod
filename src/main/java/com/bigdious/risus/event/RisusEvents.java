@@ -44,6 +44,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -62,6 +63,11 @@ import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosCapability;
+import top.theillusivec4.curios.api.SlotResult;
+
+import java.util.Optional;
 
 public class RisusEvents {
 
@@ -376,24 +382,41 @@ public class RisusEvents {
 			event.getLevel().playSound(null, event.getPos(), SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
 	}
+	private static boolean curiosForUnyielding(LivingEntity entity) {
+		if (ModList.get().isLoaded("curios")) {
+			var handler = entity.getCapability(CuriosCapability.INVENTORY);
+			if (handler == null) return false;
+			var s = handler.findCurios(RisusItems.TOTEM_OF_UNYIELDING.get());
+			if (s.isEmpty()) return false; else return true;
+		}
+		return false;
+	}
+
 
 	private static void onLivingDeath(@NotNull LivingDeathEvent event) {
+		//checking hands and curios slot to trigger totem of unyielding
 		LivingEntity dyingEntity = event.getEntity();
 		Level level = dyingEntity.level();
+		//thanks for the curios check to Tom's Simple Storage Mod
 		if (!level.isClientSide()) {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
-				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING)) {
+				//this is just barely stupid enough to work
+				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING) || curiosForUnyielding(dyingEntity)) {
 					dyingEntity.setHealth(1.0F);
 					dyingEntity.removeAllEffects();
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4, false, false));
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 2, false, false));
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
 					dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
-					stack.shrink(1);
 					level.playSound(null, dyingEntity.blockPosition(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
+					if (curiosForUnyielding(dyingEntity)) {
+						var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
+						var s = handler.findCurios(RisusItems.TOTEM_OF_UNYIELDING.get());
+						s.get(0).stack().shrink(1);
+					} else stack.shrink(1);
 					if (dyingEntity instanceof ServerPlayer player) {
-						PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(stack));
+						PacketDistributor.sendToPlayer(player, new UnyieldingTotemPacket(RisusItems.TOTEM_OF_UNYIELDING.toStack()));
 					}
 					event.setCanceled(true);
 					return;
@@ -450,4 +473,5 @@ public class RisusEvents {
 			return false;
 		}) > 1;
 	}
+
 }

@@ -4,8 +4,11 @@ import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
+import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -17,16 +20,18 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.client.model.IDynamicBakedModel;
 
 
 public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 	protected static final VoxelShape SHAPE = Block.box(1.0D, 1.0D, 1.0D, 14.0D, 14.0D, 14.0D);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 
-	public DarknessBlock(BlockBehaviour.Properties properties) {
+	public DarknessBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
@@ -36,6 +41,14 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		super.createBlockStateDefinition(builder);
 		builder.add(FLUIDLOGGED);
 	}
+	protected int getLightBlock(BlockState p_154828_, BlockGetter p_154829_, BlockPos p_154830_) {
+		return p_154829_.getMaxLightLevel();
+	}
+
+//	@Override
+//	public VoxelShape getOcclusionShape(BlockState state, BlockGetter getter, BlockPos pos) {
+//		return Shapes.block();
+//	}
 
 	@Override
 	protected RenderShape getRenderShape(BlockState pState) {
@@ -74,6 +87,7 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		}
 		return Shapes.empty();
 	}
+
 
 	@Override
 	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {

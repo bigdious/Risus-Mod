@@ -85,6 +85,10 @@ repositories {
 		url = "https://maven.blamejared.com/"
 	}
 	maven {
+		name = "Illusive Soulworks maven"
+		url = "https://maven.theillusivec4.top/"
+	}
+	maven {
 		name = "TerraformersMC" //EMI
 		url = "https://maven.terraformersmc.com/"
 	}
@@ -108,6 +112,8 @@ dependencies {
 	implementation "mezz.jei:jei-${project.minecraft_version}-neoforge:${project.jei_version}"
 	compileOnly "dev.emi:emi-neoforge:${project.emi_version}+${project.minecraft_version}"
 	compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${project.rei_version}"
+
+	implementation "top.theillusivec4.curios:curios-neoforge:${project.curios_version}+${project.minecraft_version}"
 
 	implementation "curse.maven:jade-324717:${project.jade_version}"
 	compileOnly "vazkii.patchouli:Patchouli:1.21-${project.patchouli_version}:api"

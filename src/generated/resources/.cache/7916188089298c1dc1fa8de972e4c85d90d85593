@@ -1,4 +1,6 @@
-// 1.21.1	2025-03-15T13:48:00.1200144	Tags for minecraft:item mod id risus
+// 1.21.1	2025-04-10T21:02:26.0532866	Tags for minecraft:item mod id risus
+a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
+5a13ea60135f89211f1732063d9056a6da98e04e data/curios/tags/item/charm.json
 46db12c6ab583a68534821c375c069ab3fd71f0b data/c/tags/item/armors.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json

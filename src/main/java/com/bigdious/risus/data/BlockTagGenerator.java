@@ -212,7 +212,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.CURVED_FLESHY_SKIN.get(),
 				RisusBlocks.HAIRY_SKIN.get(),
 				RisusBlocks.HAIRY_FLESHY_SKIN.get(),
-				RisusBlocks.BUNDLE_OF_HAIR.get()
+				RisusBlocks.BUNDLE_OF_HAIR.get(),
+				RisusBlocks.SPREADING_REMAINS.get()
 			);
 		this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
 			.add(RisusBlocks.LAUGHING_OBSIDIAN.get(),

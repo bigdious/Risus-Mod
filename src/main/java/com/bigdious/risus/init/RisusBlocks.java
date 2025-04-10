@@ -116,8 +116,8 @@ public class RisusBlocks {
 	public static final DeferredBlock<RotatedPillarBlock> ENGRAVED_BASALT = registerWithItem("engraved_basalt", LoggingPillarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.POLISHED_BASALT).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> BURNT_HYPHAE = registerWithItem("burnt_hyphae", Block::new, () -> Block.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE));
 	public static final DeferredBlock<Block> SCAB = registerWithItem("scab", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.SNARE).strength(3.0F, 3.0F).sound(SoundType.NETHER_WOOD).requiresCorrectToolForDrops());
-	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = registerWithItem("coagulated_blood_block", Block::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn());
-	public static final DeferredBlock<Block> DARKNESS = register("darkness", DarknessBlock::new, () -> Block.Properties.of().pushReaction(PushReaction.DESTROY).instabreak().noOcclusion().replaceable());
+	public static final DeferredBlock<Block> COAGULATED_BLOOD_BLOCK = registerWithItem("coagulated_blood_block", Block::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).instabreak().sound(SoundType.HONEY_BLOCK).forceSolidOn());
+	public static final DeferredBlock<Block> DARKNESS = register("darkness", DarknessBlock::new, () -> BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).instabreak().replaceable());
 
 	//NONFULLBLOCK DECO
 	public static final DeferredBlock<Block> BIG_CHAIN = registerWithItem("big_chain", BigChainBlock::new, () -> Block.Properties.ofFullCopy(Blocks.CHAIN).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));

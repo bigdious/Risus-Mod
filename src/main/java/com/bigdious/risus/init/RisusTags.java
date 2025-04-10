@@ -71,9 +71,15 @@ public class RisusTags {
 		public static final TagKey<Item> ALTERABLE_STRIPPED_LOGS = create("alterable_stripped_logs");
 		public static final TagKey<Item> ALTERABLE_WOODS = create("alterable_woods");
 		public static final TagKey<Item> ALTERABLE_STRIPPED_WOODS = create("alterable_stripped_woods");
+		public static final TagKey<Item> CURIOS_HANDS = createCurios("hands");
+		public static final TagKey<Item> CURIOS_BELT = createCurios("belt");
+		public static final TagKey<Item> CURIOS_CHARM = createCurios("charm");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
+		}
+		private static TagKey<Item> createCurios(String name) {
+			return ItemTags.create(ResourceLocation.fromNamespaceAndPath("curios", name));
 		}
 
 	}

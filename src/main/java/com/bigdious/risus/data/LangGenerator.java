@@ -226,6 +226,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
 		this.add("tooltip.risus.hand_of_greed", "Uncommonly dropped by Holders.");
 		this.add("tooltip.risus.crystallized_bond", "Found on Family Trees.");
+		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
+		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");

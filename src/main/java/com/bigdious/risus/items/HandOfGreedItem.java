@@ -8,6 +8,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import top.theillusivec4.curios.api.CurioAttributeModifiers;
+import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import java.util.List;
 
@@ -22,9 +24,11 @@ public class HandOfGreedItem extends TieredItem {
 			.add(Attributes.BLOCK_INTERACTION_RANGE,
 				new AttributeModifier(
 					Risus.prefix("reach_modifier"),
-					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.OFFHAND).build();
+					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
+			.build();
 
 	}
+
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
 		tooltipComponents.add(Component.translatable("tooltip.risus.hand_of_greed").withStyle(ChatFormatting.GRAY));

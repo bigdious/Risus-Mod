@@ -401,6 +401,7 @@
   "jukebox_song.risus.mork": "Kizbe - Mǫrk",
   "jukebox_song.risus.rak": "Kizbe - Rak",
   "jukebox_song.risus.regn": "Kizbe - Regn",
+  "keybind.researchers_notes_open": "Open Researcher's Notes",
   "rarity.risus.blood.name": "Blood",
   "structure.risus.alteration_site": "Alteration Site",
   "structure.risus.angel_altar": "Angel Altar",
@@ -446,6 +447,7 @@
   "tooltip.risus.gluttony_scales": "Harvested from the bodies of Gorgers.",
   "tooltip.risus.hand_of_greed": "Uncommonly dropped by Holders.",
   "tooltip.risus.memory_core": "Uncommonly dropped by Weavers.",
+  "tooltip.risus.researchers_notes": "Carry in hotbar to access item lookup feature.",
   "trim_material.risus.gluttony": "Gluttony Material",
   "trim_material.risus.skin": "Skin Material"
 }

@@ -55,9 +55,15 @@ public class BloodwyrmHeadItem extends Item {
 		}
 		if (count % 5 == 0) {
 			if (!level.isClientSide()) {
-				BloodwyrmBreathEntity breath = new BloodwyrmBreathEntity(level, player, stack);
-				breath.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
-				level.addFreshEntity(breath);
+				BloodwyrmBreathEntity breath1 = new BloodwyrmBreathEntity(level, player, stack);
+				breath1.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
+				level.addFreshEntity(breath1);
+				BloodwyrmBreathEntity breath2 = new BloodwyrmBreathEntity(level, player, stack);
+				breath2.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
+				level.addFreshEntity(breath2);
+				BloodwyrmBreathEntity breath3 = new BloodwyrmBreathEntity(level, player, stack);
+				breath3.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
+				level.addFreshEntity(breath3);
 				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 				player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, .5f, .75f);
 			}

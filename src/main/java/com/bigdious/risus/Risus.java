@@ -6,6 +6,7 @@ import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusDataMaps;
 import com.bigdious.risus.network.CreateCritParticlePacket;
+import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.base.Suppliers;
 import net.minecraft.Util;
@@ -80,6 +81,7 @@ public class Risus {
 		PayloadRegistrar registrar = event.registrar(MODID).versioned("1.0.0").optional();
 		registrar.playToClient(CreateCritParticlePacket.TYPE, CreateCritParticlePacket.STREAM_CODEC, CreateCritParticlePacket::handle);
 		registrar.playToClient(UnyieldingTotemPacket.TYPE, UnyieldingTotemPacket.STREAM_CODEC, UnyieldingTotemPacket::handle);
+		registrar.playToServer(OpenBookPacket.TYPE, OpenBookPacket.STREAM_CODEC,(payload, context) -> OpenBookPacket.handle(context));
 	}
 
 	public void registerTypes(BlockEntityTypeAddBlocksEvent event) {

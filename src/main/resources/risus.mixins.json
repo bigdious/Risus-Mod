@@ -3,7 +3,8 @@
   "package": "com.bigdious.risus.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "AbstractFurnaceBlockEntityMixin"
+    "AbstractFurnaceBlockEntityMixin",
+    "ClientLevelAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
