@@ -28,7 +28,7 @@ public class BloodFeatherItem extends Item {
 			.add(Attributes.GRAVITY,
 				new AttributeModifier(
 					Risus.prefix("gravity_modifier"),
-					-0.05, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
+					-0.60, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), EquipmentSlotGroup.ANY)
 			.add(Attributes.SAFE_FALL_DISTANCE,
 				new AttributeModifier(
 					Risus.prefix("safe_fall_distance_modifier"),

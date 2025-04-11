@@ -174,7 +174,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EMBODIMENT_OF_INTIMACY);
 		singleTex(RisusItems.EMBODIMENT_OF_DEVOTION);
 		singleTex(RisusItems.BLOOD_FEATHER);
-		singleTex(RisusItems.HAND_OF_GREED);
 		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.GUTS_BOAT);
@@ -188,6 +187,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		trimmedArmor(RisusItems.SKIN_CHESTPLATE);
 		trimmedArmor(RisusItems.SKIN_LEGGINGS);
 		trimmedArmor(RisusItems.SKIN_BOOTS);
+		trimmedArmor(RisusItems.THREADERS_OF_THE_FIRMAMENT);
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);
 		singleTex(RisusItems.TREE_PATTERN);
@@ -196,7 +196,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EGG_SAC);
 		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
-		singleTex(RisusBlocks.DARKNESS);
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
@@ -275,6 +274,16 @@ public class ItemModelGenerator extends ItemModelProvider {
 				.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, unawakened)
 				.perspective(ItemDisplayContext.HEAD, unawakened)
 				.end();
+		singleTexTool(RisusItems.HAND_OF_GREED);
+		ItemModelBuilder handOfGreed = nested().parent(getExistingFile(Risus.prefix("item/hand_of_greed_held"))).texture("hand_of_greed", Risus.prefix("item/hand_of_greed"));
+		withExistingParent(RisusItems.HAND_OF_GREED.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated("hand_of_greed_base", Risus.prefix("item/hand_of_greed_item")))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, handOfGreed)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, handOfGreed)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, handOfGreed)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, handOfGreed)
+			.perspective(ItemDisplayContext.HEAD, handOfGreed)
+			.end();
 		singleTex(RisusItems.SMILE);
 		singleTex(RisusBlocks.JOYFLAME_CAMPFIRE);
 		singleTex(RisusBlocks.JOYFLAME_LANTERN);

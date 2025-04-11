@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-11T14:26:49.6989573	Risus Item Models
+// 1.21.1	2025-04-11T18:17:59.2080213	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -51,7 +51,6 @@ aa352cb9a4f8c7f3964d9f1922250f0c4f3ae764 assets/risus/models/item/crescent_disas
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
 12cff6f1b09f0649b65d4f6af7869b2cf470db9c assets/risus/models/item/curved_fleshy_skin.json
 c4bed38446813184de537893bb74d28c19ca4db1 assets/risus/models/item/curved_ritual_block.json
-7a819f2461cc72dfc0bdd7622e72c4723040be72 assets/risus/models/item/darkness.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decayed_tissue.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissue.json
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposed_tissue.json
@@ -103,7 +102,8 @@ f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall
 67e94359f35a511b0b82629402b66c558675d9ec assets/risus/models/item/hairy_fleshy_skin.json
 0d96a533eaa522b90b2880cc919c43ae619ed400 assets/risus/models/item/hairy_skin.json
 194dc95b7dfa2424d85c66a27c4d3d9b8ece552b assets/risus/models/item/hair_follicles.json
-ab80b6a3fd40e4e96471f2029ddbf5edb4bccc91 assets/risus/models/item/hand_of_greed.json
+8193a3d0a50b01ceed4f5e7d39a2bfff8d16a435 assets/risus/models/item/hand_of_greed.json
+0b3744b69b4ed6640eb32a653d7253185bec2393 assets/risus/models/item/hand_of_greed_base.json
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/imitation_scaleplate.json
@@ -213,6 +213,17 @@ fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json
 e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
 99ca2b09d7c1bc29779813630e3b89c9bbfb57ee assets/risus/models/item/thousand_blade.json
 cd7e728eba311ff07068b2978b8306a7b5eb70df assets/risus/models/item/thousand_blade_base.json
+22f4a792f3979a7a26c12c41d89cc557e072850c assets/risus/models/item/threaders_of_the_firmament.json
+8d2ac8475aa83b2dfc01226ea3b74f6828c39831 assets/risus/models/item/threaders_of_the_firmament_amethyst_trim.json
+6c19c160984a6e598cb26430678327a72caec6e5 assets/risus/models/item/threaders_of_the_firmament_copper_trim.json
+b9c22db8304be44c2a74e8aacf053192c1518c1f assets/risus/models/item/threaders_of_the_firmament_diamond_trim.json
+2a96418d44cd9e482db44c026731af551d702091 assets/risus/models/item/threaders_of_the_firmament_emerald_trim.json
+1eeb6c93257da851697292a4effbeda24389b234 assets/risus/models/item/threaders_of_the_firmament_gold_trim.json
+dedda0d5727129419503d2273974163b1d46a6f2 assets/risus/models/item/threaders_of_the_firmament_iron_trim.json
+1ecdee6470c9a613ebdd8b2b607c4272bc068226 assets/risus/models/item/threaders_of_the_firmament_lapis_trim.json
+956971115c9fcf5b257d777ec231f98aee61e587 assets/risus/models/item/threaders_of_the_firmament_netherite_trim.json
+5dec3c8d2591e15c905111c93e6a4482767c0eb0 assets/risus/models/item/threaders_of_the_firmament_quartz_trim.json
+4850b9a7cfc3115d84e7765f156fb35174e504e1 assets/risus/models/item/threaders_of_the_firmament_redstone_trim.json
 7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 88dbd49ff61f13526dc4161377d35ab5494e4539 assets/risus/models/item/tissue_slab.json
 b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.json

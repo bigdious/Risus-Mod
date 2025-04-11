@@ -12,7 +12,6 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.AngelWingsItem;
 import com.bigdious.risus.items.ScytheItem;
 import com.bigdious.risus.items.ThousandBladeItem;
-import com.bigdious.risus.mixin.ClientLevelAccessor;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
@@ -61,9 +60,7 @@ import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
 
 import javax.annotation.Nullable;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class RisusClientEvents {
 
@@ -116,10 +113,6 @@ public class RisusClientEvents {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
-
-			Set<Item> particleMarkerBlocks = new HashSet<>(ClientLevelAccessor.risus$getMARKER_PARTICLE_ITEMS());
-			particleMarkerBlocks.add(RisusBlocks.DARKNESS.asItem());
-			ClientLevelAccessor.risus$setMARKER_PARTICLE_ITEMS(particleMarkerBlocks);
 
 			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 		});

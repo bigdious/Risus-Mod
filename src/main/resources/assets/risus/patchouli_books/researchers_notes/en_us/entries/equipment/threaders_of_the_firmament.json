@@ -1,0 +1,17 @@
+{
+  "name": "Threads Of The Firmament",
+  "icon": "risus:threaders_of_the_firmament",
+  "category": "risus:equipment",
+  "advancement": "risus:angel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Due to their divine nature, despite Blood Feathers being somewhat fragile, they naturally intertwine with each other, while also resisting other materials. That is why it's possible to craft them together into the Threads Of The Firmament. Wearing this pair of boots unlocks a high amount of agility for the user, lightening their steps. "
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:threaders_of_the_firmament",
+      "text": "Unfortunately, the Threads are quite resistant against enchantments. At most, they can accept Unbreaking and Mending. Even so, the mobility the Threads provide can oftentimes outweigh the disadvantage originating from the lack of defense."
+    }
+  ]
+}

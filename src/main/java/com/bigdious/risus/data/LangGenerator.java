@@ -204,6 +204,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.RESEARCHERS_NOTES, "Researcher's Notes");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Sacrificial Catalyst");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
+		this.addItem(RisusItems.THREADERS_OF_THE_FIRMAMENT, "Threads Of The Firmament");
 		this.addItem(RisusItems.SKIN_BOOTS, "Skin Socks");
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
@@ -227,6 +228,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.hand_of_greed", "Uncommonly dropped by Holders.");
 		this.add("tooltip.risus.crystallized_bond", "Found on Family Trees.");
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
+		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
+		this.add("tooltip.risus.book_button_press.outline", "[%s]");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");

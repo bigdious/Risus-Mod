@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-10T21:02:26.0462854	Recipes
+// 1.21.1	2025-04-11T18:17:59.2170241	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 ac1d17643497e904a8dc3fc58e6bf43951db7890 data/minecraft/advancement/recipes/misc/adding_hair_to_curved_fleshy_skin.json
 b3f061798f4a76d0be074c9fdecd411272541006 data/minecraft/advancement/recipes/misc/adding_hair_to_fleshy_skin.json
@@ -146,6 +146,7 @@ ff90250c2dc854256a32d30c36ac37f88065d139 data/risus/advancement/recipes/building
 86bd8b3fc7dc5511d889d1a1ab5ffdfd24ddd0b8 data/risus/advancement/recipes/combat/boomstick.json
 25a4a7c7289fe2ff8270ebd47b2493f5f936f4be data/risus/advancement/recipes/combat/gold_fist.json
 b293bd4931fa791111b2aba85d95f960ad4c9750 data/risus/advancement/recipes/combat/scythe.json
+3ae706f0b130f57127154137601891d5b70ea255 data/risus/advancement/recipes/combat/threaders_of_the_firmament.json
 d24b7a2811f3fe1523c3a4572f05611e177354a9 data/risus/advancement/recipes/combat/toothknocker.json
 490acc892a5c55017fe22f111dc1819a43bdc9df data/risus/advancement/recipes/combat/unawakened_vessel.json
 9845fdc104f0307adf7b94f166aab08a9a83d1c4 data/risus/advancement/recipes/decorations/big_chain.json
@@ -333,6 +334,7 @@ ad2f11d67f9fdb852ee1d743a3cc14a4ceeda544 data/risus/recipe/stonecutting_polished
 968abc9dcc810d89fc9c8c112583e1eb85edce9e data/risus/recipe/stripped_bondknot_wood.json
 c24b31f0b80393fcbe03c3af0ec4d6c1edcfe9f6 data/risus/recipe/tall_hair.json
 30c45b48c9145a533301e44d2a896c12a215854c data/risus/recipe/teeth.json
+84f8d7b1dde91374ff919e563301a4e65ab7cfb9 data/risus/recipe/threaders_of_the_firmament.json
 d14ab8fcff9e6d3aa6f714f352b4d6bc92165651 data/risus/recipe/tissue_slab.json
 6a84f8a28ce788f71a9a605367081047cc693c6a data/risus/recipe/tissue_stairs.json
 4f0f147a7ca9eafd4cdab166bbc69f19f554a652 data/risus/recipe/toothknocker.json

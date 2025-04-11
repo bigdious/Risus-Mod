@@ -32,6 +32,7 @@ public class RisusBookItem extends Item {
 
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		tooltipComponents.add(Component.translatable("tooltip.risus.book_button_press",Component.translatable("tooltip.risus.book_button_press.outline", Component.keybind("keybind.researchers_notes_open").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(ChatFormatting.GRAY));
 		tooltipComponents.add(Component.translatable("tooltip.risus.researchers_notes").withStyle(ChatFormatting.GRAY));
 	}
 }

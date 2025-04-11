@@ -78,13 +78,15 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				RisusItems.SKIN_HELMET.get(),
 				RisusItems.SKIN_CHESTPLATE.get(),
 				RisusItems.SKIN_LEGGINGS.get(),
-				RisusItems.SKIN_BOOTS.get());
+				RisusItems.SKIN_BOOTS.get(),
+				RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 
 		this.tag(Tags.Items.ARMORS).add(
 			RisusItems.SKIN_BOOTS.get(),
 			RisusItems.SKIN_CHESTPLATE.get(),
 			RisusItems.SKIN_HELMET.get(),
-			RisusItems.SKIN_LEGGINGS.get()
+			RisusItems.SKIN_LEGGINGS.get(),
+			RisusItems.THREADERS_OF_THE_FIRMAMENT.get()
 		);
 
 		this.tag(ItemTags.HEAD_ARMOR).add(
@@ -92,7 +94,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get());
 		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get());
-		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get());
+		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get(), RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
+
+		this.tag(ItemTags.ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
+		this.tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
+		this.tag(ItemTags.VANISHING_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
+		this.tag(ItemTags.EQUIPPABLE_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 
 		this.tag(ItemTags.TRIM_MATERIALS).add(RisusItems.GLUTTONY_SCALES.get(), RisusBlocks.SKIN.asItem());
 		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS).add(Items.FIREWORK_ROCKET);

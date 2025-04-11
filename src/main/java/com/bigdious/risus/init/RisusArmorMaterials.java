@@ -23,4 +23,8 @@ public class RisusArmorMaterials {
 			map.put(ArmorItem.Type.HELMET, 1);
 		}), 10, RisusSoundEvents.ARMOR_EQUIP_SKIN, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skin"))), 0.0F, 0.0F)
 	);
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BLOOD_FEATHER = ARMOR_MATERIALS.register("blood_feather", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+			map.put(ArmorItem.Type.BOOTS, 1);
+		}), 10, RisusSoundEvents.ARMOR_EQUIP_SKIN, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_feather"))), 0.0F, 0.0F)
+	);
 }

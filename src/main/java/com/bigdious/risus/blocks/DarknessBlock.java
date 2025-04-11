@@ -42,7 +42,7 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		builder.add(FLUIDLOGGED);
 	}
 	protected int getLightBlock(BlockState p_154828_, BlockGetter p_154829_, BlockPos p_154830_) {
-		return p_154829_.getMaxLightLevel();
+		return 14;
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		if (context.isHoldingItem(RisusBlocks.DARKNESS.asItem())) {
+		if (context.isHoldingItem(RisusItems.LIGHT_DEVOURER.get())) {
 			return SHAPE;
 		}
 		return Shapes.empty();

@@ -31,16 +31,6 @@ public class OpenBookPacket implements CustomPacketPayload {
 		if (ctx.flow().isServerbound()) {
 			ctx.enqueueWork(() -> {
 				Player player = ctx.player();
-				if (ModList.get().isLoaded("curios")) {
-					var handler = player.getCapability(CuriosCapability.INVENTORY);
-					if (handler == null) return;
-					var s = handler.findCurios(RisusItems.RESEARCHERS_NOTES.get());
-					if (s.isEmpty())return;
-					if (s.getFirst().stack().is(RisusItems.RESEARCHERS_NOTES.get()) && player instanceof ServerPlayer playerser) {
-						PatchouliAPI.get().openBookGUI(playerser, BuiltInRegistries.ITEM.getKey(RisusItems.RESEARCHERS_NOTES.get()));
-						return;
-					}
-				}
 				for (int i = 0; i < player.getInventory().getContainerSize(); ++i) {
 					ItemStack checkStack = player.getInventory().getItem(i);
 					if (checkStack.is(RisusItems.RESEARCHERS_NOTES)) {
@@ -48,6 +38,15 @@ public class OpenBookPacket implements CustomPacketPayload {
 							PatchouliAPI.get().openBookGUI(playerser, BuiltInRegistries.ITEM.getKey(RisusItems.RESEARCHERS_NOTES.get()));
 							break;
 						}
+					}
+				}
+				if (ModList.get().isLoaded("curios")) {
+					var handler = player.getCapability(CuriosCapability.INVENTORY);
+					if (handler == null) return;
+					var s = handler.findCurios(RisusItems.RESEARCHERS_NOTES.get());
+					if (s.isEmpty())return;
+					if (s.getFirst().stack().is(RisusItems.RESEARCHERS_NOTES.get()) && player instanceof ServerPlayer playerser) {
+						PatchouliAPI.get().openBookGUI(playerser, BuiltInRegistries.ITEM.getKey(RisusItems.RESEARCHERS_NOTES.get()));
 					}
 				}
 			});

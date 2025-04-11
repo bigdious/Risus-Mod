@@ -172,6 +172,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
+				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 				output.accept(RisusItems.GLUTTONY_SCALES.get());
 				output.accept(RisusItems.BOOMSTICK.get());
 				output.accept(RisusItems.LIGHT_DEVOURER.get());

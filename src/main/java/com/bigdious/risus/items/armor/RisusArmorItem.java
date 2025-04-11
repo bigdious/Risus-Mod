@@ -20,7 +20,7 @@ public class RisusArmorItem extends ArmorItem {
 
 	@Override
 	public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
-		return stack.is(RisusItems.SKIN_BOOTS.get());
+		return stack.is(RisusItems.SKIN_BOOTS.get()) || stack.is(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 	}
 
 	public static ItemAttributeModifiers createSkinAttributes(ArmorItem.Type type, int armor) {
@@ -29,6 +29,20 @@ public class RisusArmorItem extends ArmorItem {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ARMOR, new AttributeModifier(armorLocation, armor, AttributeModifier.Operation.ADD_VALUE), group)
 			.add(Attributes.MAX_HEALTH, new AttributeModifier(armorLocation, 5.0, AttributeModifier.Operation.ADD_VALUE), group)
+			.build();
+	}
+	public static ItemAttributeModifiers createBloodFeatherAttributes(ArmorItem.Type type, int armor) {
+		ResourceLocation armorLocation = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+		EquipmentSlotGroup group = EquipmentSlotGroup.bySlot(type.getSlot());
+		return ItemAttributeModifiers.builder()
+			.add(Attributes.ARMOR, new AttributeModifier(armorLocation, armor, AttributeModifier.Operation.ADD_VALUE), group)
+			.add(Attributes.STEP_HEIGHT, new AttributeModifier(armorLocation, 0.4, AttributeModifier.Operation.ADD_VALUE), group)
+			.add(Attributes.GRAVITY, new AttributeModifier(armorLocation, -0.30, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.SNEAKING_SPEED, new AttributeModifier(armorLocation, 0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.MOVEMENT_SPEED, new AttributeModifier(armorLocation, 1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.JUMP_STRENGTH, new AttributeModifier(armorLocation, 0.60, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(armorLocation, 10, AttributeModifier.Operation.ADD_VALUE), group)
+			.add(Attributes.FALL_DAMAGE_MULTIPLIER, new AttributeModifier(armorLocation, -0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
 			.build();
 	}
 }

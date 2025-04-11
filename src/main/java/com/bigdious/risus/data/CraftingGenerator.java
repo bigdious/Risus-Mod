@@ -459,6 +459,13 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.CRYSTALLIZED_BOND.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.THREADERS_OF_THE_FIRMAMENT.get())
+			.pattern("B B")
+			.pattern("B B")
+			.define('B', Ingredient.of(RisusItems.BLOOD_FEATHER.get()))
+			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
 				.pattern("BGC")
 				.pattern("BGL")

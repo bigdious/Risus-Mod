@@ -1,6 +1,6 @@
 {
-  "values": [
-    "risus:skin_boots",
+  "remove": [
     "risus:threaders_of_the_firmament"
-  ]
+  ],
+  "values": []
 }

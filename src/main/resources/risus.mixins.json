@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "client": [
     "AbstractFurnaceBlockEntityMixin",
-    "ClientLevelAccessor"
+    "ClientLevelMixin"
   ],
   "injectors": {
     "defaultRequire": 1
