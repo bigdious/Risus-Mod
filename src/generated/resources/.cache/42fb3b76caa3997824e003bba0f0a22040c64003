@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-10T20:35:22.9044884	Risus Item Models
+// 1.21.1	2025-04-11T14:26:49.6989573	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -51,6 +51,7 @@ aa352cb9a4f8c7f3964d9f1922250f0c4f3ae764 assets/risus/models/item/crescent_disas
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
 12cff6f1b09f0649b65d4f6af7869b2cf470db9c assets/risus/models/item/curved_fleshy_skin.json
 c4bed38446813184de537893bb74d28c19ca4db1 assets/risus/models/item/curved_ritual_block.json
+7a819f2461cc72dfc0bdd7622e72c4723040be72 assets/risus/models/item/darkness.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decayed_tissue.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissue.json
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposed_tissue.json

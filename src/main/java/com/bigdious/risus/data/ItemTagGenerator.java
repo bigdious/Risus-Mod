@@ -158,12 +158,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.REGEN_ROSE.asItem()
 		);
 
-//		this.tag(RisusTags.Items.CURIOS_HANDS).add(
-//			RisusItems.HAND_OF_GREED.get()
-//		);
+		this.tag(RisusTags.Items.CURIOS_HANDS).add(
+			RisusItems.HAND_OF_GREED.get()
+		);
 
 		this.tag(RisusTags.Items.CURIOS_CHARM).add(
-			RisusItems.TOTEM_OF_UNYIELDING.get()
+			RisusItems.TOTEM_OF_UNYIELDING.get(),
+			RisusItems.BLOOD_FEATHER.get()
 		);
 
 		this.tag(RisusTags.Items.CURIOS_BELT).add(

@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-09T20:51:00.8364647	Risus blockstates and models
+// 1.21.1	2025-04-11T14:26:49.7039587	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -41,7 +41,6 @@ a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimst
 b5bda4beb81ee26395e627303735e4aad3fe5cf0 assets/risus/blockstates/crystallized_bonds.json
 c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_block.json
 f7cad56e3de68962703f8c5c462c7aee5a71288b assets/risus/blockstates/cyan_display_notch.json
-81c51a22b1acd81e4b4a55d6dc03a2b176e7d12b assets/risus/blockstates/darkness.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decayed_tissue.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decaying_tissue.json
 124a04625066073e20e9520618dd9e50f957277f assets/risus/blockstates/decomposed_tissue.json
@@ -197,7 +196,6 @@ fc8efde1ce8ff111d299054e8477453d3dcf320b assets/risus/models/block/containment_g
 bfa697fc85b0b8008ed1d9ff214e898baeada6b4 assets/risus/models/block/cracked_grimstone_bricks.json
 d73118566362fbc4f2ac70ef9a444991202cc036 assets/risus/models/block/curved_ritual_block.json
 5a7fb3ba12ab2dc77468c02f235ad6359b2633fb assets/risus/models/block/cyan_display_notch.json
-c764c4ae060afc94619618152825520cd07855f6 assets/risus/models/block/darkness.json
 94c3100d496cd898561ffb9d7106d301ae505ada assets/risus/models/block/depth_vase.json
 2dc8a48d0f2879ddcfb301f14ba961151e99557f assets/risus/models/block/display_notch.json
 e528d8951b6212aff0082c9db8204f8b2c490fd4 assets/risus/models/block/empty.json

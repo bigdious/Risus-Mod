@@ -26,7 +26,6 @@ public class HandOfGreedItem extends TieredItem {
 					Risus.prefix("reach_modifier"),
 					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
 			.build();
-
 	}
 
 	@Override

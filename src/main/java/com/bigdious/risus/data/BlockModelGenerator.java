@@ -247,7 +247,6 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
 
-		simpleBlock(RisusBlocks.DARKNESS.get(), models().cubeAll("darkness", Risus.prefix("block/darkness")).renderType("minecraft:cutout"));
 		simpleBlock(RisusBlocks.SCAB.get());
 		simpleBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 		builtinEntity(RisusBlocks.RITUAL.get(), Risus.prefix("block/ashen_remains"));

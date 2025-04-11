@@ -45,11 +45,6 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		return p_154829_.getMaxLightLevel();
 	}
 
-//	@Override
-//	public VoxelShape getOcclusionShape(BlockState state, BlockGetter getter, BlockPos pos) {
-//		return Shapes.block();
-//	}
-
 	@Override
 	protected RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.INVISIBLE;
@@ -82,7 +77,7 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		if (context.isHoldingItem(RisusItems.LIGHT_DEVOURER.get())) {
+		if (context.isHoldingItem(RisusBlocks.DARKNESS.asItem())) {
 			return SHAPE;
 		}
 		return Shapes.empty();

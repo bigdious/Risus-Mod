@@ -1,12 +1,17 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.LightningResistantItemEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,6 +23,18 @@ public class BloodFeatherItem extends Item {
 		super(properties);
 	}
 
+	public static ItemAttributeModifiers createBloodFeatherAttributes() {
+		return ItemAttributeModifiers.builder()
+			.add(Attributes.GRAVITY,
+				new AttributeModifier(
+					Risus.prefix("gravity_modifier"),
+					-0.05, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
+			.add(Attributes.SAFE_FALL_DISTANCE,
+				new AttributeModifier(
+					Risus.prefix("safe_fall_distance_modifier"),
+					4, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
+			.build();
+	}
 	@Override
 	public boolean hasCustomEntity(ItemStack stack) {
 		return true;

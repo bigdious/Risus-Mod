@@ -196,6 +196,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EGG_SAC);
 		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
+		singleTex(RisusBlocks.DARKNESS);
 		singleTexTool(RisusItems.CRESCENT_DISASTER);
 		ItemModelBuilder crescent = nested().parent(getExistingFile(Risus.prefix("item/base_axe_model"))).texture("axe", Risus.prefix("entity/crescent_disaster"));
 		withExistingParent(RisusItems.CRESCENT_DISASTER.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
