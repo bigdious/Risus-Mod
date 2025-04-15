@@ -28,7 +28,7 @@ public class HairyFleshySkinBlock extends ActuallyUseableDirectionalBlock {
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST)) {
 			level.setBlock(pos, RisusBlocks.FLESHY_SKIN.get().withPropertiesOf(state), 2);
-			stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+			stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
 			popResource(level, pos.above(), new ItemStack(RisusItems.HAIR_FOLLICLES.get()));
 			level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());

@@ -1,12 +1,13 @@
 {
+  "remove": [
+    "risus:bondknot_log",
+    "risus:popping_bondknot_log",
+    "risus:stripped_bondknot_log",
+    "risus:bondknot_wood",
+    "risus:popping_bondknot_wood",
+    "risus:stripped_bondknot_wood"
+  ],
   "values": [
-    "minecraft:oak_log",
-    "minecraft:dark_oak_log",
-    "minecraft:birch_log",
-    "minecraft:spruce_log",
-    "minecraft:jungle_log",
-    "minecraft:acacia_log",
-    "minecraft:mangrove_log",
-    "minecraft:cherry_log"
+    "#minecraft:logs"
   ]
 }

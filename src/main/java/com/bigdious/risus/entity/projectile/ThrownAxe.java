@@ -17,6 +17,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
@@ -41,6 +42,8 @@ public class ThrownAxe extends AbstractArrow {
 	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_SMITE = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_ARTHROPODS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_FIRE_ASPECT = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private boolean dealtDamage;
 	private boolean shouldSpin = true;
@@ -55,6 +58,8 @@ public class ThrownAxe extends AbstractArrow {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_SMITE, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SMITE))));
+		this.entityData.set(ID_ARTHROPODS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.BANE_OF_ARTHROPODS))));
 		this.entityData.set(ID_FIRE_ASPECT, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
 	}
@@ -142,6 +147,8 @@ public class ThrownAxe extends AbstractArrow {
 		super.defineSynchedData(pBuilder);
 		pBuilder.define(ID_LOYALTY, (byte) 0);
 		pBuilder.define(ID_SHARPNESS, (byte) 0);
+		pBuilder.define(ID_SMITE, (byte) 0);
+		pBuilder.define(ID_ARTHROPODS, (byte) 0);
 		pBuilder.define(ID_FIRE_ASPECT, (byte) 0);
 		pBuilder.define(ID_FOIL, false);
 	}
@@ -152,13 +159,16 @@ public class ThrownAxe extends AbstractArrow {
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED, entity1 == null ? this : entity1);
 
-
 		this.dealtDamage = true;
+		if (entity.getType() == EntityType.ENDERMAN) {
+			return;
+		}
 		//update base attack when needed
-		if (entity.hurt(damagesource, this.entityData.get(ID_SHARPNESS) < 1 ? 9 : 9 + (0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F))) {
-			if (entity.getType() == EntityType.ENDERMAN) {
-				return;
-			}
+		if (entity.hurt(damagesource, 9 +
+			(this.entityData.get(ID_SHARPNESS) < 1 ? 0 : 0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F) +
+			((entity.getType().is(EntityTypeTags.ARTHROPOD) && this.entityData.get(ID_ARTHROPODS) >= 1) ? 2.5F * this.entityData.get(ID_ARTHROPODS) : 0) +
+			((entity.getType().is(EntityTypeTags.SENSITIVE_TO_SMITE) && this.entityData.get(ID_SMITE) >= 1) ? 2.5F * this.entityData.get(ID_SMITE) : 0)
+			)) {
 			if (this.entityData.get(ID_FIRE_ASPECT) > 0) {
 				entity.igniteForSeconds(this.entityData.get(ID_FIRE_ASPECT) * 80);
 			}
@@ -166,7 +176,6 @@ public class ThrownAxe extends AbstractArrow {
 				if (entity1 instanceof LivingEntity) {
 					this.doPostHurtEffects(livingentity1);
 				}
-
 				this.doPostHurtEffects(livingentity1);
 			}
 		}
@@ -283,6 +292,8 @@ public class ThrownAxe extends AbstractArrow {
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
 		this.entityData.set(ID_SHARPNESS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
+		this.entityData.set(ID_SMITE, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SMITE))));
+		this.entityData.set(ID_ARTHROPODS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.BANE_OF_ARTHROPODS))));
 		this.entityData.set(ID_FIRE_ASPECT, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 	}
 

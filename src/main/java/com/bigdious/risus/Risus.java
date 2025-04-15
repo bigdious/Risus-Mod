@@ -1,5 +1,9 @@
 package com.bigdious.risus;
 
+import com.bigdious.risus.blocks.entity.AlterationCatalystBlockEntity;
+import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
+import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
+import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
 import com.bigdious.risus.data.*;
@@ -14,6 +18,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.Util;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -33,11 +38,15 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.IBlockCapabilityProvider;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
@@ -47,6 +56,7 @@ import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
+import javax.annotation.Nullable;
 import java.util.Locale;
 import java.util.function.Supplier;
 
@@ -87,6 +97,7 @@ public class Risus {
 		bus.addListener(this::registerPackets);
 		bus.addListener(this::registerTypes);
 		bus.addListener(this::gatherData);
+		bus.addListener(this::registerGenericItemHandlers);
 		bus.addListener(RegisterDataMapTypesEvent.class, event -> event.register(RisusDataMaps.LOVER_CONVERSION));
 		RisusEvents.initEvents(bus);
 
@@ -143,6 +154,49 @@ public class Risus {
 
 	private static void loadCuriosCompat(IEventBus bus) {
 		bus.addListener(CuriosCompat::registerCuriosCapabilities);
+		bus.addListener(CuriosCompat::registerCurioRenderers);
+	}
+	//thanks Drull
+	private void registerGenericItemHandlers(RegisterCapabilitiesEvent event) {
+		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderGuts = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof MawGutsBlockEntity mawguts ? new InvWrapper(mawguts) : null;
+		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderVase = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase ? new InvWrapper(depthVase) : null;
+		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderNotch = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity displayNotch ? new InvWrapper(displayNotch) : null;
+		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderCatalyst = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof AlterationCatalystBlockEntity alterationCatalyst ? new InvWrapper(alterationCatalyst) : null;
+		event.registerBlock(
+			Capabilities.ItemHandler.BLOCK,
+			itemHandlerProviderGuts,
+			RisusBlocks.MAW_GUTS.get()
+		);
+		event.registerBlock(
+			Capabilities.ItemHandler.BLOCK,
+			itemHandlerProviderVase,
+			RisusBlocks.DEPTH_VASE.get()
+		);
+		event.registerBlock(
+			Capabilities.ItemHandler.BLOCK,
+			itemHandlerProviderNotch,
+			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.RED_DISPLAY_NOTCH.get(),
+			RisusBlocks.ORANGE_DISPLAY_NOTCH.get(),
+			RisusBlocks.YELLOW_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIME_DISPLAY_NOTCH.get(),
+			RisusBlocks.GREEN_DISPLAY_NOTCH.get(),
+			RisusBlocks.BROWN_DISPLAY_NOTCH.get(),
+			RisusBlocks.WHITE_DISPLAY_NOTCH.get(),
+			RisusBlocks.GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(),
+			RisusBlocks.PINK_DISPLAY_NOTCH.get(),
+			RisusBlocks.PURPLE_DISPLAY_NOTCH.get(),
+			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.CYAN_DISPLAY_NOTCH.get()
+		);
+		event.registerBlock(
+			Capabilities.ItemHandler.BLOCK,
+			itemHandlerProviderCatalyst,
+			RisusBlocks.ALTERATION_CATALYST.get()
+		);
 	}
 
 

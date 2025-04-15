@@ -100,12 +100,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_LOGS), RisusBlocks.BONDKNOT_LOG.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_WOODS), RisusBlocks.BONDKNOT_WOOD.get())
-			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_WOODS), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get())
-			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_STRIPPED_LOGS), RisusBlocks.STRIPPED_BONDKNOT_LOG.get())
-			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
 				.pattern("##")

@@ -2,6 +2,8 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.RisusCampfireBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.BlockPos;
@@ -10,8 +12,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -31,6 +36,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.common.ItemAbilities;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -48,6 +54,18 @@ public class RisusCampfireBlock extends CampfireBlock implements SimpleMultilogg
 				.setValue(LIT, Boolean.TRUE).setValue(SIGNAL_FIRE, Boolean.FALSE)
 				.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
 				.setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+		if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT)) {
+			level.setBlock(pos, RisusBlocks.JOYFLAME_CAMPFIRE.get().withPropertiesOf(state).setValue(LIT, true), 3);
+			stack.hurtAndBreak(1, player, stack.getEquipmentSlot());
+			level.playSound(null, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+
+		}
+		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
 	@Nullable

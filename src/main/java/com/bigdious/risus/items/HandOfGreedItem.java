@@ -24,7 +24,7 @@ public class HandOfGreedItem extends TieredItem {
 			.add(Attributes.BLOCK_INTERACTION_RANGE,
 				new AttributeModifier(
 					Risus.prefix("reach_modifier"),
-					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ANY)
+					3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
 			.build();
 	}
 

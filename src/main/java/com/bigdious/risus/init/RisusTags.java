@@ -74,6 +74,7 @@ public class RisusTags {
 		public static final TagKey<Item> CURIOS_HANDS = createCurios("hands");
 		public static final TagKey<Item> CURIOS_BELT = createCurios("belt");
 		public static final TagKey<Item> CURIOS_CHARM = createCurios("charm");
+		public static final TagKey<Item> CURIOS_HEAD = createCurios("head");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

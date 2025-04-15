@@ -118,55 +118,25 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(RisusTags.Items.ALTERABLE_SLABS).addTag(ItemTags.WOODEN_SLABS).remove(RisusBlocks.BONDKNOT_SIGN.asItem());
 		this.tag(RisusTags.Items.ALTERABLE_STAIRS).addTag(ItemTags.WOODEN_STAIRS).remove(RisusBlocks.BONDKNOT_STAIRS.asItem());
 		this.tag(RisusTags.Items.ALTERABLE_PLANKS).addTag(ItemTags.PLANKS).remove(RisusBlocks.BONDKNOT_PLANKS.asItem());
-		this.tag(RisusTags.Items.ALTERABLE_LOGS)
-			.add(
-				Items.OAK_LOG,
-				Items.DARK_OAK_LOG,
-				Items.BIRCH_LOG,
-				Items.SPRUCE_LOG,
-				Items.JUNGLE_LOG,
-				Items.ACACIA_LOG,
-				Items.MANGROVE_LOG,
-				Items.CHERRY_LOG
-			);
-		this.tag(RisusTags.Items.ALTERABLE_STRIPPED_WOODS)
-			.add(
-				Items.STRIPPED_OAK_WOOD,
-				Items.STRIPPED_DARK_OAK_WOOD,
-				Items.STRIPPED_BIRCH_WOOD,
-				Items.STRIPPED_SPRUCE_WOOD,
-				Items.STRIPPED_JUNGLE_WOOD,
-				Items.STRIPPED_ACACIA_WOOD,
-				Items.STRIPPED_MANGROVE_WOOD,
-				Items.STRIPPED_CHERRY_WOOD
-			);
-		this.tag(RisusTags.Items.ALTERABLE_WOODS).add(
-				Items.OAK_WOOD,
-				Items.DARK_OAK_WOOD,
-				Items.BIRCH_WOOD,
-				Items.SPRUCE_WOOD,
-				Items.JUNGLE_WOOD,
-				Items.ACACIA_WOOD,
-				Items.MANGROVE_WOOD,
-				Items.CHERRY_WOOD
-			);
-		this.tag(RisusTags.Items.ALTERABLE_STRIPPED_LOGS)
-			.add(
-				Items.STRIPPED_OAK_LOG,
-				Items.STRIPPED_DARK_OAK_LOG,
-				Items.STRIPPED_BIRCH_LOG,
-				Items.STRIPPED_SPRUCE_LOG,
-				Items.STRIPPED_JUNGLE_LOG,
-				Items.STRIPPED_ACACIA_LOG,
-				Items.STRIPPED_MANGROVE_LOG,
-				Items.STRIPPED_CHERRY_LOG
-			);
+		this.tag(RisusTags.Items.ALTERABLE_LOGS).addTag(ItemTags.LOGS).remove(
+			RisusBlocks.BONDKNOT_LOG.asItem(),
+			RisusBlocks.POPPING_BONDKNOT_LOG.asItem(),
+			RisusBlocks.STRIPPED_BONDKNOT_LOG.asItem(),
+			RisusBlocks.BONDKNOT_WOOD.asItem(),
+			RisusBlocks.POPPING_BONDKNOT_WOOD.asItem(),
+			RisusBlocks.STRIPPED_BONDKNOT_WOOD.asItem()
+		);
+
 		this.tag(ItemTags.BEE_FOOD).add(
 			RisusBlocks.REGEN_ROSE.asItem()
 		);
 
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(
 			RisusItems.HAND_OF_GREED.get()
+		);
+
+		this.tag(RisusTags.Items.CURIOS_HEAD).add(
+			RisusItems.BLOODWYRM_HEAD.get()
 		);
 
 		this.tag(RisusTags.Items.CURIOS_CHARM).add(
