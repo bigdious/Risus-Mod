@@ -2159,13 +2159,6 @@
     },
     "done": true
   },
-  "risus:recipes/alteration/stripped_bondknot_log": {
-    "criteria": {
-      "has_item": "2025-02-05 18:08:39 +0200",
-      "has_the_recipe": "2025-02-05 18:08:39 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/lapis_lazuli_from_smelting_deepslate_lapis_ore": {
     "criteria": {
       "has_deepslate_lapis_ore": "2025-02-05 18:08:39 +0200",
@@ -4022,13 +4015,6 @@
       "diamond_helmet": "2025-02-05 18:08:39 +0200",
       "diamond_chestplate": "2025-02-05 18:08:39 +0200",
       "diamond_boots": "2025-02-05 18:08:39 +0200"
-    },
-    "done": true
-  },
-  "risus:recipes/alteration/stripped_bondknot_wood": {
-    "criteria": {
-      "has_item": "2025-02-05 18:08:39 +0200",
-      "has_the_recipe": "2025-02-05 18:08:39 +0200"
     },
     "done": true
   },
@@ -8583,13 +8569,6 @@
     },
     "done": true
   },
-  "risus:recipes/alteration/bondknot_wood": {
-    "criteria": {
-      "has_item": "2025-02-05 18:08:39 +0200",
-      "has_the_recipe": "2025-02-05 18:08:39 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/transportation/carrot_on_a_stick": {
     "criteria": {
       "has_the_recipe": "2025-02-05 18:08:39 +0200",
@@ -10955,6 +10934,66 @@
   "minecraft:recipes/misc/full_bone_to_bone_meal": {
     "criteria": {
       "has_item": "2025-03-15 11:37:35 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/tissue_to_living": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/decomposing_to_decomposed": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_fleshy_skin": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/decaying_to_decayed": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_curved_fleshy_skin": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/rotting_to_rotted": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_skin": {
+    "criteria": {
+      "has_item": "2025-04-08 18:18:02 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smelt_bloody_sponge": {
+    "criteria": {
+      "has_risus:bloody_sponge": "2025-04-08 18:18:58 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/hair_unbundleing": {
+    "criteria": {
+      "has_item": "2025-04-08 18:21:47 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/gluttony_scales": {
+    "criteria": {
+      "has_item": "2025-04-08 18:24:01 +0300"
     },
     "done": true
   },

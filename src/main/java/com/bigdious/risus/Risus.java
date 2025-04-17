@@ -161,7 +161,6 @@ public class Risus {
 		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderGuts = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof MawGutsBlockEntity mawguts ? new InvWrapper(mawguts) : null;
 		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderVase = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase ? new InvWrapper(depthVase) : null;
 		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderNotch = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity displayNotch ? new InvWrapper(displayNotch) : null;
-		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderCatalyst = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof AlterationCatalystBlockEntity alterationCatalyst ? new InvWrapper(alterationCatalyst) : null;
 		event.registerBlock(
 			Capabilities.ItemHandler.BLOCK,
 			itemHandlerProviderGuts,
@@ -191,11 +190,6 @@ public class Risus {
 			RisusBlocks.PURPLE_DISPLAY_NOTCH.get(),
 			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
 			RisusBlocks.CYAN_DISPLAY_NOTCH.get()
-		);
-		event.registerBlock(
-			Capabilities.ItemHandler.BLOCK,
-			itemHandlerProviderCatalyst,
-			RisusBlocks.ALTERATION_CATALYST.get()
 		);
 	}
 
