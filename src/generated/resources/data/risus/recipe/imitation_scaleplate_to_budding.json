@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "risus:imitation_scaleplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:budding_imitation_scaleplate"
+  }
+}

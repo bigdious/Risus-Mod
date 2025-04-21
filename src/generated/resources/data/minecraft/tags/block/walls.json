@@ -9,6 +9,7 @@
     "risus:decaying_tissue",
     "risus:rotted_tissue",
     "risus:decomposed_tissue",
-    "risus:decayed_tissue"
+    "risus:decayed_tissue",
+    "risus:imitation_scales_block_wall"
   ]
 }

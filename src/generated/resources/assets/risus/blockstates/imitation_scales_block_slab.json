@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "risus:block/imitation_scales_block_slab"
+    },
+    "type=double": {
+      "model": "risus:block/flat_scales_block_side"
+    },
+    "type=top": {
+      "model": "risus:block/imitation_scales_block_slab_top"
+    }
+  }
+}

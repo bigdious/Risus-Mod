@@ -6,6 +6,9 @@
     "risus:flowering_imitation_scaleplate",
     "risus:budding_imitation_scaleplate",
     "risus:flattened_scales_block",
-    "risus:flattened_imitation_scales_block"
+    "risus:flattened_imitation_scales_block",
+    "risus:imitation_scales_block_stairs",
+    "risus:imitation_scales_block_slab",
+    "risus:imitation_scales_block_wall"
   ]
 }

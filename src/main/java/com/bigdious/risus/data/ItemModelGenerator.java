@@ -62,6 +62,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
 		toBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), Risus.prefix("block/flattened_scales_block"));
+		toBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
+		toBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get());
+		getBuilder(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.getId().getPath())
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/flat_scales_block_side"));
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 		toBlock(RisusBlocks.MIRAGE_SAND.get());

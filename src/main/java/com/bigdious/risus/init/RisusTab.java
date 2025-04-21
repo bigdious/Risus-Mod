@@ -170,6 +170,9 @@ public class RisusTab {
 				output.accept(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
 				output.accept(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 				output.accept(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
+				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
+				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get());
+				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
 				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());

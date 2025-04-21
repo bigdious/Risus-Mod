@@ -99,5 +99,14 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 				Enchantments.KNOCKBACK,
 				Enchantments.LOOTING,
 				Enchantments.VANISHING_CURSE);
+
+		this.tag(RisusTags.Enchantments.BOOMSTICK_ALLOWED_ENCHANTS).add(
+			Enchantments.UNBREAKING,
+			Enchantments.POWER,
+			Enchantments.WIND_BURST,
+			Enchantments.MENDING,
+			Enchantments.MULTISHOT,
+			Enchantments.FLAME
+		);
 	}
 }

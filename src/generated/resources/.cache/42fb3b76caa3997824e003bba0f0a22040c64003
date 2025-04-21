@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-11T18:17:59.2080213	Risus Item Models
+// 1.21.1	2025-04-21T15:15:04.1004222	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -107,6 +107,9 @@ f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/imitation_scaleplate.json
+c86f65a28e5ed900a78de411442415af33eb177c assets/risus/models/item/imitation_scales_block_slab.json
+aad878b7457913a6719c76eae0e5e83556037af6 assets/risus/models/item/imitation_scales_block_stairs.json
+346db14830640b25b5e47ac160a4d452a7d86829 assets/risus/models/item/imitation_scales_block_wall.json
 43d7c11fcae77a372ab71fd1cfa9fdbc02cdd346 assets/risus/models/item/inactive_holder.json
 1b635f19448bfd519e2722f31b533e5ac8e0553c assets/risus/models/item/joyflame_campfire.json
 65728b6525f3ba04a06445ad79aec1b9b2f6a1ae assets/risus/models/item/joyflame_lantern.json

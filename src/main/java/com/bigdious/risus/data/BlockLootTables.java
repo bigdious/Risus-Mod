@@ -91,6 +91,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
 		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
+		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
+		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get());
+		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());

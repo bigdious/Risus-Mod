@@ -131,6 +131,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.REGEN_ROSE.asItem()
 		);
 
+		this.tag(Tags.Items.STORAGE_BLOCKS).add(
+			RisusBlocks.FLATTENED_SCALES_BLOCK.asItem(),
+			RisusBlocks.ORGANIC_MATTER_BLOCK.asItem(),
+			RisusBlocks.FULL_BONE_BLOCK.asItem()
+		);
+
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(
 			RisusItems.HAND_OF_GREED.get()
 		);

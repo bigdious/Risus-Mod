@@ -12,10 +12,12 @@ import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
@@ -23,6 +25,7 @@ import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -31,12 +34,16 @@ import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.SimpleExplosionDamageCalculator;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -65,7 +72,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosCapability;
 
+import java.util.Optional;
+import java.util.function.Function;
+
 public class RisusEvents {
+	public static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR;
 
 	public static void initEvents(IEventBus bus) {
 		bus.addListener(RisusEvents::commonSetup);
@@ -247,25 +258,46 @@ public class RisusEvents {
 
 	private static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
+
 		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.BOOMSTICK.get())) {
-			//we explode stick in the attacker's crotch, this way the victim can use shield to defend
-			explode(attacker.level(), attacker.getOnPos().above(), attacker);
+			ItemStack boomstick = attacker.getMainHandItem();
+			int powerRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.POWER))/2;
+			if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
+				int burstRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST));
+				windBurstExplode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), burstRadius+powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+				if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
+					windBurstExplode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), burstRadius+powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					windBurstExplode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), burstRadius+powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+				}
+			} else {
+				//we explode stick in the attacker's crotch, this way the victim can use shield to defend
+				explode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+				if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
+					explode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					explode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+				}
+			}
 			attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 		}
 	}
 
-	private static void explode(Level level, BlockPos pos, LivingEntity entity) {
-		Vec3 vec3 = pos.getCenter().add(0, 1, 0);
-		level.explode(null, level.damageSources().explosion(entity, null), null, vec3, 3F, false, Level.ExplosionInteraction.BLOCK);
+	private static void explode(Level level, double x, double y, double z, int radius, LivingEntity entity, Boolean isFiery) {
+		level.explode(null, level.damageSources().explosion(entity, null), null, x, y, z, radius+3F, isFiery, Level.ExplosionInteraction.BLOCK);
+	}
+	static {
+		EXPLOSION_DAMAGE_CALCULATOR = new SimpleExplosionDamageCalculator(true, false, Optional.empty(), BuiltInRegistries.BLOCK.getTag(BlockTags.BLOCKS_WIND_CHARGE_EXPLOSIONS).map(Function.identity()));
+	}
+	private static void windBurstExplode(Level level, double x, double y, double z, int radius ,Boolean isFiery) {
+		level.explode(null, null, EXPLOSION_DAMAGE_CALCULATOR, x, y, z, radius+3, isFiery, Level.ExplosionInteraction.TRIGGER, ParticleTypes.GUST_EMITTER_SMALL, ParticleTypes.GUST_EMITTER_LARGE, SoundEvents.BREEZE_WIND_CHARGE_BURST);
 	}
 
 	//do not touch below scythe events. It's stupid, but they need to stay as is
 	private static void fireScythe(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
-		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
-			victim.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
-			victim.igniteForSeconds(2);
+		LivingEntity entity2 = event.getEntity();
+		if (entity instanceof LivingEntity attacker &&  attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
+			entity2.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
+			entity2.igniteForSeconds(2);
 		}
 	}
 

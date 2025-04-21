@@ -2,13 +2,14 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 public class BoomstickItem extends Item {
 
-	public BoomstickItem( Item.Properties pProperties){
+	public BoomstickItem(Item.Properties pProperties){
 		super(pProperties);
 	}
 	@Override
@@ -22,13 +23,12 @@ public class BoomstickItem extends Item {
 
 	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
-		return enchantment.is(Enchantments.UNBREAKING);
+		return enchantment.is(RisusTags.Enchantments.BOOMSTICK_ALLOWED_ENCHANTS);
 	}
 
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-		return enchantment.is(Enchantments.UNBREAKING) || enchantment.is(Enchantments.MENDING);
+		return enchantment.is(RisusTags.Enchantments.BOOMSTICK_ALLOWED_ENCHANTS);
 	}
-
 
 }
