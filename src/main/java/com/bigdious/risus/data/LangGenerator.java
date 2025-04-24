@@ -123,7 +123,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.POPPING_BONDKNOT_LOG, "Popping Bondknot Log");
 		this.addBlock(RisusBlocks.POPPING_BONDKNOT_WOOD, "Popping Bondknot Wood");
 		this.addBlock(RisusBlocks.POTTED_HEART_TRANSPLANT, "Potted Heart Transplant");
-		this.addBlock(RisusBlocks.POTTED_REGEN_ROSE, "Pottered Regeneration Rose");
+		this.addBlock(RisusBlocks.POTTED_REGEN_ROSE, "Potted Regeneration Rose");
 		this.addBlock(RisusBlocks.REGEN_ROSE, "Regeneration Rose");
 		this.addBlock(RisusBlocks.RIBCAGE, "Ribcage");
 		this.addBlock(RisusBlocks.RITUAL, "Ritual");

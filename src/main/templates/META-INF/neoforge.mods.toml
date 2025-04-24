@@ -9,14 +9,14 @@ displayName = "Risus"
 logoFile = "logo.png"
 logoBlur = false
 authors = "bigdious"
-description = '''A mod to make you smile.'''
+description = '''A mod to make you smile. =]'''
 itemIcon = "risus:smiling_remains"
 enumExtensions = "META-INF/enumextensions.json"
 
 [[dependencies.risus]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.1.33,)"
+versionRange = "[21.1.72,)"
 ordering = "NONE"
 side = "BOTH"
 

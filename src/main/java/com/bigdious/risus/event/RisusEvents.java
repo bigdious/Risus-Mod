@@ -258,8 +258,7 @@ public class RisusEvents {
 
 	private static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
-
-		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.BOOMSTICK.get())) {
+		if (entity instanceof LivingEntity attacker && event.getSource().getWeaponItem().is(RisusItems.BOOMSTICK.get())) {
 			ItemStack boomstick = attacker.getMainHandItem();
 			int powerRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.POWER))/2;
 			if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
