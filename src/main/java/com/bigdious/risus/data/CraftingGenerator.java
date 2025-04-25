@@ -409,21 +409,21 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("#  ")
 			.pattern("## ")
 			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.define('#', Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(), 6)
 			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.define('#', Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get(), 6)
 			.pattern("###")
 			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_SCALES_BLOCK.get()))
+			.define('#', Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.FLESHY_SKIN.get(), 2)
@@ -830,7 +830,7 @@ public class CraftingGenerator extends RecipeProvider {
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.FLOWERING_IMITATION_SCALEPLATE,4)
 			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK))
 			.save(consumer, prefix("imitation_scales_block_to_flowering"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.FLOWERING_IMITATION_SCALEPLATE,4)
+		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.BUDDING_IMITATION_SCALEPLATE,4)
 			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK))
 			.save(consumer, prefix("imitation_scales_block_to_budding"));
 		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS,1)

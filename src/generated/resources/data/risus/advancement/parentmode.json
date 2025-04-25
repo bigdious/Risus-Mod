@@ -1,0 +1,27 @@
+{
+  "parent": "risus:first",
+  "criteria": {
+    "parentmode": {
+      "trigger": "risus:witness_weaver_nest"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.parentmode.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "risus:essence_of_melancholy"
+    },
+    "title": {
+      "translate": "advancement.risus.parentmode"
+    }
+  },
+  "requirements": [
+    [
+      "parentmode"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

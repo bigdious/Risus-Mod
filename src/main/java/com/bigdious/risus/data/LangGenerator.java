@@ -306,14 +306,15 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("tight", "IT'S SO TIGHT!", "Obtain a set of Skin armor");
 		this.addAdvancement("scythe", "It Craves Fire", "Obtain an Unlit Vessel");
 		this.addAdvancement("thousand", "Wanted For Warcrimes", "Obtain the Blade of a Thousand by sacrificing a thousand people");
-		this.addAdvancement("licked", "Mmmm, Tasty~", "Get licked");
+		this.addAdvancement("licked", "Mmmm, Tasty~", "Get licked!");
 		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it.");
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
-		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer that can be used to place Darkness");
+		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
 		this.addAdvancement("angel", "Holy Grounds", "Trespass into the Altar of the Ophanim");
-		this.addAdvancement("gluttony", "Gateway To Divinity", "Obtain Gluttony Scales");
+		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttony Scales");
 		this.addAdvancement("lab", "Deep Core Fallout", "Approach a failed experiment");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");
+		this.addAdvancement("parentmode", "Parent Mode: Dedicated", "Witness the creation of a Weaver Nest through the self-willed death of a memory fed Weaver.");
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");

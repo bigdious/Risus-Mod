@@ -1,9 +1,9 @@
-// 1.21.1	2025-02-21T21:24:09.3087229	Advancements
+// 1.21.1	2025-04-25T09:37:12.0835599	Advancements
 f6d450c66cc2757af298ceac1ac266e9a68c3490 data/risus/advancement/angel.json
 04bc759fe0dc807c7ed82249b11a01fe70104d06 data/risus/advancement/boomstick.json
 de88e9dcfecd1324804b6d6fc01dbd37e04cfe57 data/risus/advancement/crusade.json
 32c6c7c3dbd41f93d8b7b57fee81e4e053cdd4a0 data/risus/advancement/cupid.json
-836fbe7219db7f9e72c3ffb47e36aae1086aa9db data/risus/advancement/devour.json
+b85cf8e41d0631d45c910173165c4b682173a7a6 data/risus/advancement/devour.json
 8499c363e4bcdf8d4538c71c718159ceed30d653 data/risus/advancement/family.json
 2511a52712a9f7ffec132109c7b7242e49640753 data/risus/advancement/first.json
 8a52146bcd12dbe82b313cf8d38ef21ae9c4bb8b data/risus/advancement/fleshing.json
@@ -17,6 +17,7 @@ ba3ea24343a11784fa507b7ad333e61b3e96838e data/risus/advancement/knuckles.json
 4e8b670cac861767ec94b9a6c66a156234ccbbc4 data/risus/advancement/light_devourer.json
 bb81efcec332c32a15ba064cf52f864ea6b140d9 data/risus/advancement/little.json
 6c26d22dbedaaf59290b10dc01083a8eca050ccc data/risus/advancement/mod_book.json
+ec6a8685b4f1628313e2e0315f9db8901da19651 data/risus/advancement/parentmode.json
 c3216a49946d9bda668d55c7c0204d674a47e68a data/risus/advancement/potential.json
 9448a3fd3be75f794c001e3cb7ef4c055db5cdd2 data/risus/advancement/rainbow.json
 db6e7b46a6fd105c8102f8e58e797160b433d8d5 data/risus/advancement/revenge.json

@@ -2,18 +2,7 @@
   "parent": "risus:step",
   "criteria": {
     "devour0": {
-      "conditions": {
-        "entity": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type": "risus:maw"
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      "trigger": "risus:killed_by_devour"
     }
   },
   "display": {

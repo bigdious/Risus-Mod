@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -31,6 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
@@ -117,6 +119,11 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size() < 2) {
 				this.kill();
 				this.level().setBlock(this.blockPosition(), RisusBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
+				this.level().getEntities((Entity) null, new AABB(this.getOnPos()).inflate(30), entity -> entity instanceof ServerPlayer).forEach(entity -> {
+					if (entity instanceof ServerPlayer sp) {
+						RisusAdvancements.WITNESS_WEAVER_NEST.get().trigger(sp);
+					}
+				});
 			}
 		}
 	}

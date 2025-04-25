@@ -85,6 +85,7 @@ public class WeaverNestBlock extends BaseEntityBlock implements SimpleMultilogge
 		var ret = super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 		if (player instanceof ServerPlayer sp) {
 			RisusAdvancements.BREAK_WEAVER_NEST.get().trigger(sp);
+			//wait, you can just trigger it like this? Holy hell, that's so stupidly simple. I'm gonna abuse the shit out of it
 		}
 		return ret;
 	}

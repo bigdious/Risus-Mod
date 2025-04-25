@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusAdvancements;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -9,6 +10,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.Difficulty;
@@ -175,6 +177,9 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			//then do the actual damage
 			if (entity.hurt(new DamageSource(this.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
 				this.doHurtTarget(living);
+				if (living instanceof ServerPlayer sp && living.isDeadOrDying()) {
+					RisusAdvancements.KILLED_BY_DEVOUR.get().trigger(sp);
+				}
 			}
 			this.level().broadcastEntityEvent(this, (byte) 66);
 		} else if (entity instanceof PrimedTnt tnt) {

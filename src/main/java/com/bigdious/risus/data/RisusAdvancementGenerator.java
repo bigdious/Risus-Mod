@@ -2,6 +2,8 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
+import com.bigdious.risus.advancement.KilledByDevourTrigger;
+import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
 import com.bigdious.risus.init.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
@@ -116,7 +118,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusItems.ESSENCE_OF_GLUTTONY.get(),
 				Component.translatable("advancement.risus.devour"),
 				Component.translatable("advancement.risus.devour.desc"), null, AdvancementType.TASK, true, true, false)
-			.addCriterion("devour0", KilledTrigger.TriggerInstance.entityKilledPlayer(EntityPredicate.Builder.entity().of(RisusEntities.MAW.get())))
+			.addCriterion("devour0", KilledByDevourTrigger.TriggerInstance.getgood())
 			.save(consumer, "risus:devour");
 
 		AdvancementHolder gluttony = Advancement.Builder.advancement().parent(devour)
@@ -298,5 +300,13 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("homewrecker", BreakWeaverNestTrigger.TriggerInstance.breakNest())
 			.save(consumer, "risus:homewrecker");
+
+		AdvancementHolder parentmode = Advancement.Builder.advancement().parent(first)
+			.display(
+				RisusItems.ESSENCE_OF_MELANCHOLY.get(),
+				Component.translatable("advancement.risus.parentmode"),
+				Component.translatable("advancement.risus.parentmode.desc"), null, AdvancementType.GOAL, true, true, false)
+			.addCriterion("parentmode", WitnessWeaverNestTrigger.TriggerInstance.witnessNest())
+			.save(consumer, "risus:parentmode");
 	}
 }
