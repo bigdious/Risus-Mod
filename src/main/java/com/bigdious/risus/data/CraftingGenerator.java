@@ -61,7 +61,6 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusBlocks.REGEN_ROSE.get()).unlockedBy("has_item", has(Items.WITHER_ROSE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusBlocks.DEPTH_VASE.get()).unlockedBy("has_item", has(Items.DECORATED_POT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.MILK_BUCKET), RisusItems.BLOOD_BUCKET.get()).unlockedBy("has_item", has(Items.MILK_BUCKET)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.GLUTTONY_SCALES.get()), RisusBlocks.GLUTTONY_SCALEPLATE.get()).unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get())).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER, Items.RABBIT_HIDE), RisusBlocks.SKIN.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_HELMET), RisusItems.SKIN_HELMET.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.LEATHER_CHESTPLATE), RisusItems.SKIN_CHESTPLATE.get()).unlockedBy("has_item", has(Items.LEATHER)).unlockedBy("has_item", has(Items.LEATHER)).save(consumer);

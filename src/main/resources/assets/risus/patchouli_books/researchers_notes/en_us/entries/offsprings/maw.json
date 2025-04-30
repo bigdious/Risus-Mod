@@ -21,7 +21,7 @@
         "item": "risus:mirage_grass_block"
       },
       "link_recipe": true,
-      "text": "Mirage blocks come in mostly three varieties: Grass, Sand, and Endstone. It's unclear how exactly the Gorger creates these, so renewing them isn't possible and they must instead be harvested with Silk Touch from Gorger traps. Similarly to Powdered Snow, wearing Leather or Skin boots allows the wearer to walk on these blocks as if they were solid."
+      "text": "Mirage blocks come in mostly three varieties: Grass, Sand, and Endstone. They can only be harvested with Silk Touch from Gorger Traps. Similarly to Powdered Snow, wearing Leather or Skin boots allows the wearer to walk on these blocks as if they were solid. Using maps is a reliable way to differentiate Mirage Blocks, as they do not appear on them."
     },
     {
       "type": "patchouli:spotlight",

@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import com.google.common.collect.ImmutableList;
@@ -31,7 +32,7 @@ public class GoldFistItem extends ToothknockerItem {
 		RandomSource random = RandomSource.create();
 		Level level = entity.level();
 		int i = random.nextInt(9);
-		if (entity instanceof LivingEntity target && entity.getType() != EntityType.PLAYER && !(entity.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM))) {
+		if (entity instanceof LivingEntity target && entity.getType() != EntityType.PLAYER && !(entity.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM) && level.getGameRules().getBoolean(Risus.STRIPPER_WORKS_ON_MOB_ARMOR.get()))) {
 			//change random bound to define chances, 4 is 100% 8 is 50% etc.
 			int rand = random.nextInt(20);
 			if (rand < 4) {
