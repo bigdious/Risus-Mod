@@ -8,15 +8,18 @@ import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.collect.Maps;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
@@ -72,6 +75,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosCapability;
 
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -96,7 +100,6 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::soulScythe);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::hurtWings);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedRisusStyle);
-		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedOffRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onLivingDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
@@ -365,52 +368,40 @@ public class RisusEvents {
 	}
 
 	private static void getWaxedRisusStyle(PlayerInteractEvent.RightClickBlock event) {
+		final Map<Block, Block> WAXING_MAP = Map.of(
+			RisusBlocks.COPPER_AMALGAM.get(), RisusBlocks.WAXED_COPPER_AMALGAM.get(),
+			RisusBlocks.EXPOSED_COPPER_AMALGAM.get(), RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WEATHERED_COPPER_AMALGAM.get(), RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.OXIDIZED_COPPER_AMALGAM.get(), RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
+		);
+		final Map<Block, Block> WAXOFF_MAP = Map.of(
+			RisusBlocks.WAXED_COPPER_AMALGAM.get(), RisusBlocks.COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), RisusBlocks.EXPOSED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), RisusBlocks.WEATHERED_COPPER_AMALGAM.get(),
+			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), RisusBlocks.OXIDIZED_COPPER_AMALGAM.get()
+		);
+		Block checkingForBlock = event.getLevel().getBlockState(event.getPos()).getBlock();
+		BlockState state = event.getLevel().getBlockState(event.getPos());
 		if (event.getItemStack().is(Items.HONEYCOMB) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.COPPER_AMALGAM_VARIATION)) {
-			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.EXPOSED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WEATHERED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.OXIDIZED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
+			if (WAXING_MAP.containsKey(checkingForBlock)) {
+				event.getLevel().setBlock(event.getPos(), WAXING_MAP.get(checkingForBlock).withPropertiesOf(state), 11);
 			}
 			ParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_ON, UniformInt.of(6, 12));
+			event.getItemStack().shrink(1);
+			event.getEntity().awardStat(Stats.ITEM_USED.get(event.getItemStack().getItem()));
 			event.getLevel().playSound(null, event.getPos(), SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
+		}
+		if (event.getItemStack().is(ItemTags.AXES) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION)) {
+			if (WAXOFF_MAP.containsKey(checkingForBlock)) {
+				event.getLevel().setBlock(event.getPos(), WAXOFF_MAP.get(checkingForBlock).withPropertiesOf(state), 11);
+				ParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_OFF, UniformInt.of(6, 12));
+				event.getItemStack().hurtAndBreak(1, event.getEntity(), LivingEntity.getSlotForHand(event.getHand()));
+				event.getEntity().awardStat(Stats.ITEM_USED.get(event.getItemStack().getItem()));
+				event.getLevel().playSound(null, event.getPos(), SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
+			}
 		}
 	}
 
-	private static void getWaxedOffRisusStyle(PlayerInteractEvent.RightClickBlock event) {
-		if (event.getItemStack().is(ItemTags.AXES) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION)) {
-			if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.EXPOSED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.WEATHERED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			} else if (event.getLevel().getBlockState(event.getPos()).is(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM)) {
-				event.getLevel().setBlock(event.getPos(), RisusBlocks.OXIDIZED_COPPER_AMALGAM.get().defaultBlockState()
-					.setValue(MultiloggedRotateableBlock.FACING, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FACING))
-					.setValue(MultiloggedRotateableBlock.FLUIDLOGGED, event.getLevel().getBlockState(event.getPos()).getValue(MultiloggedRotateableBlock.FLUIDLOGGED)), 11);
-			}
-			ParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_OFF, UniformInt.of(6, 12));
-			event.getLevel().playSound(null, event.getPos(), SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
-		}
-	}
 	private static boolean curiosForUnyielding(LivingEntity entity) {
 		if (ModList.get().isLoaded("curios")) {
 			var handler = entity.getCapability(CuriosCapability.INVENTORY);
@@ -502,5 +493,6 @@ public class RisusEvents {
 			return false;
 		}) > 1;
 	}
+	//particle summoning events, usually called directly
 
 }
