@@ -92,7 +92,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
-		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get());
+		add(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(), createSlabItemTable(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get()));
 		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
@@ -109,7 +109,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
 		dropSelf(RisusBlocks.BONDKNOT_PLANKS.get());
 		dropSelf(RisusBlocks.BONDKNOT_STAIRS.get());
-		dropSelf(RisusBlocks.BONDKNOT_SLAB.get());
+		add(RisusBlocks.BONDKNOT_SLAB.get(), createSlabItemTable(RisusBlocks.BONDKNOT_SLAB.get()));
 		dropSelf(RisusBlocks.BONDKNOT_BUTTON.get());
 		dropSelf(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		dropSelf(RisusBlocks.BONDKNOT_FENCE.get());
@@ -128,9 +128,9 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.GRIMSTONE_STAIRS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
-		dropSelf(RisusBlocks.GRIMSTONE_SLAB.get());
-		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
-		dropSelf(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get());
+		add(RisusBlocks.GRIMSTONE_SLAB.get(), createSlabItemTable(RisusBlocks.GRIMSTONE_SLAB.get()));
+		add(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), createSlabItemTable(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get()));
+		add(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), createSlabItemTable(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()));
 		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE_WALL.get());
@@ -148,7 +148,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusBlocks.REGEN_ROSE.get()));
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.BONE_STAIRS.get());
-		dropSelf(RisusBlocks.BONE_SLAB.get());
+		add(RisusBlocks.BONE_SLAB.get(), createSlabItemTable(RisusBlocks.BONE_SLAB.get()));
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.SCAB.get());
 		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
@@ -171,12 +171,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
 		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
 		dropSelf(RisusBlocks.TISSUE_STAIRS.get());
-		dropSelf(RisusBlocks.TISSUE_SLAB.get());
+		add(RisusBlocks.TISSUE_SLAB.get(), createSlabItemTable(RisusBlocks.TISSUE_SLAB.get()));
 		dropSelf(RisusBlocks.BONE_STAIRS.get());
-		dropSelf(RisusBlocks.BONE_SLAB.get());
+		add(RisusBlocks.BONE_SLAB.get(), createSlabItemTable(RisusBlocks.BONE_SLAB.get()));
 		dropSelf(RisusBlocks.BONE_WALL.get());
 		dropSelf(RisusBlocks.FULL_BONE_BLOCK.get());
-		dropSelf(RisusBlocks.FULL_BONE_SLAB.get());
+		add(RisusBlocks.FULL_BONE_SLAB.get(), createSlabItemTable(RisusBlocks.FULL_BONE_SLAB.get()));
 		dropSelf(RisusBlocks.FULL_BONE_STAIRS.get());
 
 		dropSelf(RisusBlocks.EYE_ENDER.get());

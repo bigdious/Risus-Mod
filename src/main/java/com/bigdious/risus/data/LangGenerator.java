@@ -258,12 +258,13 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.addDeathMessage("inexistence", "%1$s has stepped into inexistence");
 		this.addDeathMessage("inexistence.player", "%1$s has stepped into inexistence while trying to escape %2$s");
-		this.addDeathMessage("melancholy", "%1$s lost all memories");
+		this.addDeathMessage("melancholy", "%1$s lost all their memories");
 		this.addDeathMessage("melancholy.player", "%1$s's memories were weaved into Bloodweave");
 		this.addDeathMessage("pleasure", "%1$s's body drowned in ecstasy");
 		this.addDeathMessage("pleasure.player", "%1$s's body drowned in ecstasy while dancing with %2$s");
 		this.addDeathMessage("gluttony", "%1$s was devoured");
 		this.addDeathMessage("gluttony.player", "%1$s was devoured");
+		this.addDeathMessage("gluttony.item", "%1$s was devoured");
 		this.addDeathMessage("vampirism", "%1$s got sucked dry");
 		this.addDeathMessage("vampirism.player", "%1$s got sucked dry while trying to escape %2$s");
 		this.addDeathMessage("vampirism.item", "%1$s got sucked dry while trying to escape %2$s");

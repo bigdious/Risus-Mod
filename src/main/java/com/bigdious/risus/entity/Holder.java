@@ -139,7 +139,7 @@ public class Holder extends Monster {
 	@Override
 	public boolean doHurtTarget(Entity entity) {
 		boolean flag = super.doHurtTarget(entity);
-		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty()) {
+		if (flag && entity instanceof LivingEntity living && this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && !this.isDeadOrDying()) {
 			this.setItemSlotAndDropWhenKilled(EquipmentSlot.MAINHAND, living.getMainHandItem().split(1));
 			entity.level().playSound(null, entity.getOnPos(), RisusSoundEvents.CHEEKY_LAUGH.get(), SoundSource.HOSTILE, 1, 1);
 				if (this.getMainHandItem().is(RisusItems.ORGANIC_MATTER.get())) {

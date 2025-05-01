@@ -175,16 +175,4 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 		this.animate(entity.leapAnim, WeaverAnimations.WEAVER_ATTACK, ageInTicks);
 	}
 
-	@Override
-	public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTicks) {
-		int attackTimer = entity.getAttackTimer();
-		if (attackTimer > 0) {
-			this.upperJaw.zRot = 5F;
-			this.lowerJaw.zRot = -5F;
-		} else {
-			this.upperJaw.zRot = 5F;
-			this.lowerJaw.zRot = -5F;
-		}
-	}
-
 }

@@ -1,11 +1,13 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -28,6 +30,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -40,7 +43,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Predicate;
 
 public class Weaver extends Monster implements CacheTargetOnClient {
-	private int attackTimer;
 	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
 	private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(Weaver.class, EntityDataSerializers.INT);
 	@Nullable
@@ -112,9 +114,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	@Override
 	public void aiStep() {
 		super.aiStep();
-		if (this.attackTimer > 0) {
-			--this.attackTimer;
-		}
 		if (this.memories >= 3) {
 			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size() < 2) {
 				this.kill();
@@ -204,8 +203,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 
 	@Override
 	public boolean doHurtTarget(Entity entity) {
-		this.attackTimer = 10;
-		this.level().broadcastEntityEvent(this, (byte) 4);
 		if (super.doHurtTarget(entity)) {
 			if (entity instanceof LivingEntity living) {
 				Level level = living.level();
@@ -217,16 +214,14 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA, i * 20, 0), this);
-				entity.hurt(entity.damageSources().source(RisusDamageTypes.MELANCHOLY), 1);
-				if (living.getHealth() == 0 && level.getBlockState(pos.above()).is(Blocks.AIR)) {
+				if (living.isDeadOrDying() && level.getBlockState(pos.above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
 					this.memories++;
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 3);
 				}
-
 			}
 		}
-
-		return super.doHurtTarget(entity);
+		//TODO fix weaver damage type application
+		return EntityUtil.properlyApplyCustomDamageSource(this, entity, RisusDamageTypes.getEntityDamageSource(this.level(), RisusDamageTypes.MELANCHOLY, this), null);
 	}
 
 	@Override
@@ -259,7 +254,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 	@Override
 	public void handleEntityEvent(byte id) {
 		if (id == 4) {
-			this.attackTimer = 10;
 		}
 		if (id == 66) {
 			this.leapAnim.start(this.tickCount);
@@ -303,10 +297,6 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 			((Weaver) this.mob).setActiveAttackTarget(0);
 		}
 
-	}
-
-	public int getAttackTimer() {
-		return this.attackTimer;
 	}
 
 	//make em climb
