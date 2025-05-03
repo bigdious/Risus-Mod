@@ -1,7 +1,6 @@
-package com.bigdious.risus.init;
+package com.bigdious.risus.dispenser;
 
-import com.bigdious.risus.dispenser.OrganicMatterDispenseBehaviour;
-import com.bigdious.risus.dispenser.ShavingDispenserBehaviour;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
@@ -11,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.neoforged.neoforge.common.Tags;
 
 public class RisusDispenserBehaviours {
 	public static void register() {
@@ -31,10 +29,13 @@ public class RisusDispenserBehaviours {
 			}
 		};
 		DispenseItemBehavior cachedShearsBehavior = DispenserBlock.DISPENSER_REGISTRY.get(Items.SHEARS);
+		DispenseItemBehavior cachedHoneyCombBehavior = DispenserBlock.DISPENSER_REGISTRY.get(Items.HONEYCOMB);
+
 
 		DispenserBlock.registerBehavior(RisusItems.BLOOD_BUCKET.get(), bucketBehavior);
 		DispenserBlock.registerBehavior(RisusItems.ORGANIC_MATTER, new OrganicMatterDispenseBehaviour());
 		DispenserBlock.registerBehavior(Items.SHEARS, new ShavingDispenserBehaviour(cachedShearsBehavior));
+		DispenserBlock.registerBehavior(Items.HONEYCOMB, new WaxingDispenserBehaviour(cachedHoneyCombBehavior));
 		DispenserBlock.registerProjectileBehavior(RisusItems.EGG_SAC);
 	}
 }

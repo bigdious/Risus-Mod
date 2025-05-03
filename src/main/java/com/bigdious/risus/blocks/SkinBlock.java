@@ -3,6 +3,7 @@ package com.bigdious.risus.blocks;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import org.apache.logging.log4j.core.jmx.Server;
 
 public class SkinBlock extends Block {
 
@@ -31,7 +33,7 @@ public class SkinBlock extends Block {
 		if (stack.is(RisusItems.ORGANIC_MATTER.get())) {
 			level.setBlock(pos, RisusBlocks.HAIRY_SKIN.get().defaultBlockState(), 2);
 			stack.consume(1, player);
-			ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
+			ServerParticleUtils.spawnParticlesOnBlockFaces(level, pos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Blocks.GRAY_CONCRETE)), UniformInt.of(1, 1));
 			level.playSound(null, pos, RisusSoundEvents.HAIR_GROW.get(), SoundSource.PLAYERS);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}

@@ -225,6 +225,24 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("item.minecraft.lingering_potion.effect.mating_frenzy", "Lingering Potion of Love");
 		this.add("item.minecraft.tipped_arrow.effect.mating_frenzy", "Cupid's Arrow");
 
+		this.add("item.minecraft.potion.effect.amnesia", "Potion of Forgetfulness");
+		this.add("item.minecraft.splash_potion.effect.amnesia", "Splash Potion of Forgetfulness");
+		this.add("item.minecraft.lingering_potion.effect.amnesia", "Lingering Potion of Forgetfulness");
+		this.add("item.minecraft.tipped_arrow.effect.amnesia", "Arrow of Forgetfulness");
+
+		this.add("item.minecraft.potion.effect.life_smouldering", "Potion of Life Smouldering");
+		this.add("item.minecraft.potion.effect.long_life_smouldering", "Potion of Life Smouldering");
+		this.add("item.minecraft.potion.effect.strong_life_smouldering", "Potion of Life Smouldering");
+		this.add("item.minecraft.splash_potion.effect.long_life_smouldering", "Splash Potion of Life Smouldering");
+		this.add("item.minecraft.splash_potion.effect.life_smouldering", "Splash Potion of Life Smouldering");
+		this.add("item.minecraft.splash_potion.effect.strong_life_smouldering", "Splash Potion of Life Smouldering");
+		this.add("item.minecraft.lingering_potion.effect.life_smouldering", "Lingering Potion of Life Smouldering");
+		this.add("item.minecraft.lingering_potion.effect.long_life_smouldering", "Lingering Potion of Life Smouldering");
+		this.add("item.minecraft.lingering_potion.effect.strong_life_smouldering", "Lingering Potion of Life Smouldering");
+		this.add("item.minecraft.tipped_arrow.effect.life_smouldering", "Arrow of Life Smouldering");
+		this.add("item.minecraft.tipped_arrow.effect.long_life_smouldering", "Arrow of Life Smouldering");
+		this.add("item.minecraft.tipped_arrow.effect.strong_life_smouldering", "Arrow of Life Smouldering");
+
 		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");

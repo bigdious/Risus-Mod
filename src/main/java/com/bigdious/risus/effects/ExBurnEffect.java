@@ -34,6 +34,6 @@ public class ExBurnEffect extends MobEffect {
 
 	@Override
 	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
-		return duration % 100 == 0;
+		return duration % 100/(1+amplifier) == 0;
 	}
 }

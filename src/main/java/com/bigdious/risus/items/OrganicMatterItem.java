@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
@@ -88,7 +89,7 @@ public class OrganicMatterItem extends Item {
 				itemstack.consume(1, player);
 				level.setBlock(blockpos, state, 11);
 				level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, state));
-				ParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
+				ServerParticleUtils.spawnParticlesOnBlockFaces(level, blockpos, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE.get())), UniformInt.of(6, 12));
 				level.playSound(null, blockpos, RisusSoundEvents.ORGANIC_MATTER_USE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
 				return InteractionResult.sidedSuccess(level.isClientSide());
 			}).orElse(InteractionResult.PASS);
@@ -120,13 +121,13 @@ public class OrganicMatterItem extends Item {
 			BlockPos blockpos = organicMatterableBlock.getOMBParticlePos(pPos);
 			switch (organicMatterableBlock.getOMBType()) {
 				case NEIGHBOR_SPREADER:
-					ParticleUtils.spawnParticles(pLevel, blockpos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
+					ServerParticleUtils.spawnParticles(pLevel, blockpos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 					break;
 				case GROWER:
-					ParticleUtils.spawnParticleInBlock(pLevel, blockpos, pData, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
+					ServerParticleUtils.spawnParticleInBlock(pLevel, blockpos, pData, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 			}
 		} else if (blockstate.is(Blocks.WATER)) {
-			ParticleUtils.spawnParticles(pLevel, pPos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
+			ServerParticleUtils.spawnParticles(pLevel, pPos, pData * 3, 3.0, 1.0, false, RisusParticles.BLOCK_ORGANIC_PARTICLE.get());
 		}
 	}
 

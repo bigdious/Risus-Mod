@@ -6,6 +6,7 @@ import com.bigdious.risus.entity.Litter;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
+import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -76,7 +77,7 @@ public class ConcentrationCoreItem extends Item {
 			var ritual = this.getUsedRitual(level, pos);
 			if (ritual != null) {
 				level.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());
-				ParticleUtils.spawnParticlesOnBlockFaces(level, pos.above(), ParticleTypes.END_ROD, UniformInt.of(3, 7));
+				ServerParticleUtils.spawnParticlesOnBlockFaces(level, pos.above(), ParticleTypes.END_ROD, UniformInt.of(3, 7));
 				level.playSound(null, context.getClickedPos(), RisusSoundEvents.CONCENTRATION_CORE_LITTER.get(), SoundSource.PLAYERS);
 
 				Litter summonedLitter = new Litter(level, context.getPlayer());

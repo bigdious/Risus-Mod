@@ -1,18 +1,16 @@
 package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.MultiloggedRotateableBlock;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.dispenser.RisusDispenserBehaviours;
 import com.bigdious.risus.entity.*;
-import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
+import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.collect.Maps;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -23,12 +21,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.Mth;
-import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -37,7 +31,6 @@ import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -52,7 +45,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -60,7 +52,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
@@ -157,6 +148,13 @@ public class RisusEvents {
 		PotionBrewing.Builder builder = event.getBuilder();
 		builder.addMix(Potions.AWKWARD, RisusItems.GUILTY_APPLE.get(), RisusPotions.MATING_FRENZY);
 		builder.addMix(RisusPotions.MATING_FRENZY, Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY);
+
+		builder.addMix(Potions.AWKWARD, RisusItems.MEMORY_CORE.get(), RisusPotions.AMNESIA);
+		builder.addMix(RisusPotions.MATING_FRENZY, Items.REDSTONE, RisusPotions.LONG_AMNESIA);
+
+		builder.addMix(Potions.AWKWARD, RisusBlocks.JOYFLAME_CAMPFIRE.asItem(), RisusPotions.LIFE_SMOULDERING);
+		builder.addMix(RisusPotions.LIFE_SMOULDERING, Items.REDSTONE, RisusPotions.LONG_LIFE_SMOULDERING);
+		builder.addMix(RisusPotions.LIFE_SMOULDERING, Items.GLOWSTONE_DUST, RisusPotions.STRONG_LIFE_SMOULDERING);
 
 	}
 
@@ -386,7 +384,7 @@ public class RisusEvents {
 			if (WAXING_MAP.containsKey(checkingForBlock)) {
 				event.getLevel().setBlock(event.getPos(), WAXING_MAP.get(checkingForBlock).withPropertiesOf(state), 11);
 			}
-			ParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_ON, UniformInt.of(6, 12));
+			ServerParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_ON, UniformInt.of(6, 12));
 			event.getItemStack().shrink(1);
 			event.getEntity().awardStat(Stats.ITEM_USED.get(event.getItemStack().getItem()));
 			event.getLevel().playSound(null, event.getPos(), SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -394,7 +392,7 @@ public class RisusEvents {
 		if (event.getItemStack().is(ItemTags.AXES) && event.getLevel().getBlockState(event.getPos()).is(RisusTags.Blocks.WAXED_COPPER_AMALGAM_VARIATION)) {
 			if (WAXOFF_MAP.containsKey(checkingForBlock)) {
 				event.getLevel().setBlock(event.getPos(), WAXOFF_MAP.get(checkingForBlock).withPropertiesOf(state), 11);
-				ParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_OFF, UniformInt.of(6, 12));
+				ServerParticleUtils.spawnParticlesOnBlockFaces(event.getLevel(), event.getPos(), ParticleTypes.WAX_OFF, UniformInt.of(6, 12));
 				event.getItemStack().hurtAndBreak(1, event.getEntity(), LivingEntity.getSlotForHand(event.getHand()));
 				event.getEntity().awardStat(Stats.ITEM_USED.get(event.getItemStack().getItem()));
 				event.getLevel().playSound(null, event.getPos(), SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -493,6 +491,5 @@ public class RisusEvents {
 			return false;
 		}) > 1;
 	}
-	//particle summoning events, usually called directly
 
 }
