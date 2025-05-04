@@ -116,8 +116,8 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		super.aiStep();
 		if (this.memories >= 3) {
 			if (this.level().getBlockState(this.blockPosition()).is(Blocks.AIR) && this.onGround() && this.level().getEntitiesOfClass(Weaver.class, this.getBoundingBox().inflate(10)).size() < 2) {
-				this.kill();
 				this.level().setBlock(this.blockPosition(), RisusBlocks.WEAVER_NEST.get().defaultBlockState(), 3);
+				this.kill();
 				this.level().getEntities((Entity) null, new AABB(this.getOnPos()).inflate(30), entity -> entity instanceof ServerPlayer).forEach(entity -> {
 					if (entity instanceof ServerPlayer sp) {
 						RisusAdvancements.WITNESS_WEAVER_NEST.get().trigger(sp);

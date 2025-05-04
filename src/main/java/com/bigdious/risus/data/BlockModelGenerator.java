@@ -82,7 +82,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 			this.getVariantBuilder(notch.get()).forAllStatesExcept(state -> {
 				boolean normal = notch.get() == RisusBlocks.DISPLAY_NOTCH.get();
 				ModelFile base = models().withExistingParent(notch.getRegisteredName(), Risus.prefix("block/template_display_notch")).texture("texture", blockTexture(normal ? Blocks.BLACK_WOOL : BuiltInRegistries.BLOCK.get(ResourceLocation.withDefaultNamespace(notch.getRegisteredName().replace("risus:", "").replace("display_notch", "wool")))));
-				ModelFile non = models().withExistingParent("empty", "block/block");
+				//it's better to call an empty texture, otherwise we get missingtexture block particles
+				ModelFile non = models().withExistingParent("empty", Risus.prefix("block/template_display_notch")).texture("texture", "block/empty");
 				Direction dir = state.getValue(BlockStateProperties.FACING);
 				return ConfiguredModel.builder()
 					.modelFile(state.getValue(DisplayNotchBlock.ELEVATE) ? non : base)

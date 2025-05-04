@@ -162,7 +162,6 @@ public class Risus {
 	private void registerGenericItemHandlers(RegisterCapabilitiesEvent event) {
 		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderGuts = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof MawGutsBlockEntity mawguts ? new InvWrapper(mawguts) : null;
 		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderVase = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DepthVaseBlockEntity depthVase ? new InvWrapper(depthVase) : null;
-		IBlockCapabilityProvider<IItemHandler, Direction> itemHandlerProviderNotch = (level, pos, state, blockEntity, side) -> level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity displayNotch ? new InvWrapper(displayNotch) : null;
 		event.registerBlock(
 			Capabilities.ItemHandler.BLOCK,
 			itemHandlerProviderGuts,
@@ -172,26 +171,6 @@ public class Risus {
 			Capabilities.ItemHandler.BLOCK,
 			itemHandlerProviderVase,
 			RisusBlocks.DEPTH_VASE.get()
-		);
-		event.registerBlock(
-			Capabilities.ItemHandler.BLOCK,
-			itemHandlerProviderNotch,
-			RisusBlocks.DISPLAY_NOTCH.get(),
-			RisusBlocks.RED_DISPLAY_NOTCH.get(),
-			RisusBlocks.ORANGE_DISPLAY_NOTCH.get(),
-			RisusBlocks.YELLOW_DISPLAY_NOTCH.get(),
-			RisusBlocks.LIME_DISPLAY_NOTCH.get(),
-			RisusBlocks.GREEN_DISPLAY_NOTCH.get(),
-			RisusBlocks.BROWN_DISPLAY_NOTCH.get(),
-			RisusBlocks.WHITE_DISPLAY_NOTCH.get(),
-			RisusBlocks.GRAY_DISPLAY_NOTCH.get(),
-			RisusBlocks.LIGHT_BLUE_DISPLAY_NOTCH.get(),
-			RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(),
-			RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(),
-			RisusBlocks.PINK_DISPLAY_NOTCH.get(),
-			RisusBlocks.PURPLE_DISPLAY_NOTCH.get(),
-			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
-			RisusBlocks.CYAN_DISPLAY_NOTCH.get()
 		);
 	}
 

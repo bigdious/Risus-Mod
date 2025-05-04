@@ -1,3 +1,6 @@
 {
-  "parent": "minecraft:block/block"
+  "parent": "risus:block/template_display_notch",
+  "textures": {
+    "texture": "risus:block/empty"
+  }
 }

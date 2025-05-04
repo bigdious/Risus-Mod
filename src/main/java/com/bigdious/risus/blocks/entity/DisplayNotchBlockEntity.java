@@ -22,21 +22,15 @@ import java.util.function.Function;
 
 public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem {
 	protected ItemStack item = ItemStack.EMPTY;
-	public boolean glowing;
 	public boolean stand;
-	public boolean rotate;
-	public int ticks;
+	public boolean shouldRotate;
 
 	public DisplayNotchBlockEntity(BlockPos pos, BlockState state) {
 		super(RisusBlockEntities.DISPLAY_NOTCH.get(), pos, state);
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, DisplayNotchBlockEntity entity) {
-		if (entity.rotate) {
-			entity.ticks++;
-		} else {
-			entity.ticks = 0;
-		}
+		entity.shouldRotate = level.hasNeighborSignal(pos);
 	}
 
 	@Override
@@ -45,23 +39,17 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 		if (this.item != null && !this.item.isEmpty()) {
 			tag.put("item", this.item.save(registries));
 		}
-		tag.putInt("ticks", this.ticks);
-		tag.putBoolean("rotate", this.rotate);
-		tag.putBoolean("glowing", this.glowing);
 		tag.putBoolean("stand", this.stand);
 	}
 
 	@Override
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-		//the below item stuff stays as is, otherwise it throws errors in log
+		//the below needs the itemtag check, otherwise throws log errors
 		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+			this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
 		} else {
 			this.item = ItemStack.EMPTY;
 		}
-		this.ticks = tag.getInt("ticks");
-		this.rotate = tag.getBoolean("rotate");
-		this.glowing = tag.getBoolean("glowing");
 		this.stand = tag.getBoolean("stand");
 		super.loadAdditional(tag, registries);
 	}
@@ -99,11 +87,7 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 	}
 
 	public boolean handleBEInteractions(ItemStack stack, Level level, BlockPos pos, BlockState state) {
-		if (stack.is(Items.GLOW_INK_SAC) && !this.glowing) {
-			this.glowing = true;
-			this.setChanged();
-			return true;
-		} else if (stack.is(Tags.Items.DYES)) {
+		if (stack.is(Tags.Items.DYES)) {
 			DyeColor color = DyeColor.getColor(stack);
 			if (color != null) {
 				var oldBe = level.getBlockEntity(pos);
@@ -113,10 +97,6 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 				level.sendBlockUpdated(pos, state, state, 2);
 				return true;
 			}
-		} else if (stack.is(Items.REDSTONE_TORCH)) {
-			this.rotate = !this.rotate;
-			this.setChanged();
-			return true;
 		} else if (stack.is(ItemTags.AXES)) {
 			this.stand = !this.stand;
 			this.setChanged();

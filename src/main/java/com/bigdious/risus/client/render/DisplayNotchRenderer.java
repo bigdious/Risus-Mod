@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -13,6 +14,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.Objects;
 
 public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlockEntity> {
 
@@ -24,7 +27,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 
 
 	private int getLightVal(DisplayNotchBlockEntity entity, int regularLightVal) {
-		return entity.glowing ? LightTexture.FULL_BRIGHT : regularLightVal;
+		return entity.getBlockState().getValue(DisplayNotchBlock.GLOWING) ? LightTexture.FULL_BRIGHT : regularLightVal;
 	}
 
 	@Override
@@ -43,10 +46,12 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 			.rotateY(stand ? -rotation : 180.0F * Mth.DEG_TO_RAD)
 			.rotateZ(stand ? 0.0F : rotation));
 
-		if (stand) {
-			stack.mulPose(Axis.YP.rotationDegrees(-entity.ticks * 5.0F));
-		} else {
-			stack.mulPose(Axis.ZP.rotationDegrees(entity.ticks * 5.0F));
+		if (entity.shouldRotate && entity.getLevel().isClientSide()) {
+			if (stand) {
+				stack.mulPose(Axis.YP.rotationDegrees(Objects.requireNonNull(entity.getLevel()).getGameTime()*5));
+			} else {
+				stack.mulPose(Axis.ZP.rotationDegrees(Objects.requireNonNull(entity.getLevel()).getGameTime()*5));
+			}
 		}
 
 		if (!entity.getTheItem().isEmpty() && entity.getTheItem() != null) {

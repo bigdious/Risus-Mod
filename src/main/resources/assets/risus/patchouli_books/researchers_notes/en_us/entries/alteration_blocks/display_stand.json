@@ -15,7 +15,7 @@
       "output1": "risus:display_notch",
       "input2": "minecraft:glow_item_frame",
       "output2": "risus:display_notch",
-      "text": "lastly, a Redstone Torch will cause the item to rotate continuously."
+      "text": "lastly, being powered by Redstone will cause the item to rotate continuously."
     }
   ]
 }

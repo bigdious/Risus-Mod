@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-21T15:22:17.2192999	Risus blockstates and models
+// 1.21.1	2025-05-04T18:10:56.5862665	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -201,7 +201,7 @@ d73118566362fbc4f2ac70ef9a444991202cc036 assets/risus/models/block/curved_ritual
 5a7fb3ba12ab2dc77468c02f235ad6359b2633fb assets/risus/models/block/cyan_display_notch.json
 94c3100d496cd898561ffb9d7106d301ae505ada assets/risus/models/block/depth_vase.json
 2dc8a48d0f2879ddcfb301f14ba961151e99557f assets/risus/models/block/display_notch.json
-e528d8951b6212aff0082c9db8204f8b2c490fd4 assets/risus/models/block/empty.json
+eebf5b1af0dc3508208f3029604446607dc7387e assets/risus/models/block/empty.json
 7627e1678c2184c9c899d4be2034cde5aa882ec9 assets/risus/models/block/exposed_copper_amalgam.json
 c30bc60b83e62c4b6f8f2992ea7c7da8506a5554 assets/risus/models/block/flattened_scales_block.json
 9b035399d52c3f8dd646ecb38851447746272cf9 assets/risus/models/block/fleshy_skin.json

@@ -123,12 +123,13 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-		//the below item stuff stays as is, otherwise it throws errors in log
+		//the below needs the itemtag check, otherwise throws log errors
 		if (tag.contains("item")) {
-			this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.get("item")).mapOrElse(Function.identity(), e -> ItemStack.EMPTY);
+			this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
 		} else {
 			this.item = ItemStack.EMPTY;
 		}
+
 		this.isCrafting = tag.getBoolean("isCrafting");
 		this.finishedCrafting = tag.getBoolean("finishedCrafting");
 		this.craftingCounter = tag.getInt("counter");

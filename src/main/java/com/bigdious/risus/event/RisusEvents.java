@@ -307,7 +307,7 @@ public class RisusEvents {
 		Entity entity = event.getSource().getEntity();
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
-			victim.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 0, false, false, true));
+			victim.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 1, false, false, true));
 		}
 	}
 

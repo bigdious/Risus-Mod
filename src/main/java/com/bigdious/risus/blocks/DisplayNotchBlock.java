@@ -18,6 +18,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -51,6 +52,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
 	public static final BooleanProperty ELEVATE = BooleanProperty.create("elevate");
+	public static final BooleanProperty GLOWING = BooleanProperty.create("glowing");
 	public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_16;
 
 	public static final Map<DyeColor, DeferredBlock<Block>> NOTCH_BY_DYE = Util.make(Maps.newEnumMap(DyeColor.class), map -> {
@@ -77,6 +79,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 		this.registerDefaultState(this.getStateDefinition().any()
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
 			.setValue(FACING, Direction.UP)
+			.setValue(GLOWING, false)
 			.setValue(ROTATION, 0)
 			.setValue(ELEVATE, false));
 	}
@@ -87,6 +90,9 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 		if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.SHOVELS)) {
 			level.setBlock(pos, state.cycle(ELEVATE), 3);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+		} else if (!notch.getTheItem().isEmpty() && stack.is(Items.GLOW_INK_SAC)) {
+			level.setBlock(pos, state.cycle(GLOWING), 3);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.PICKAXES)) {
 			level.setBlock(pos, state.cycle(ROTATION), 3);
@@ -140,7 +146,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, FLUIDLOGGED, ELEVATE, ROTATION);
+		builder.add(FACING, FLUIDLOGGED, ELEVATE, ROTATION, GLOWING);
 	}
 
 	@Override
