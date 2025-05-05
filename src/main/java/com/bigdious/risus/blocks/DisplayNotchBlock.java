@@ -10,10 +10,7 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
@@ -90,12 +87,15 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 		if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.SHOVELS)) {
 			level.setBlock(pos, state.cycle(ELEVATE), 3);
+			level.sendBlockUpdated(pos, state, state, 2);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && stack.is(Items.GLOW_INK_SAC)) {
 			level.setBlock(pos, state.cycle(GLOWING), 3);
+			level.sendBlockUpdated(pos, state, state, 2);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.PICKAXES)) {
 			level.setBlock(pos, state.cycle(ROTATION), 3);
+			level.sendBlockUpdated(pos, state, state, 2);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		} else if (!notch.getTheItem().isEmpty() && notch.handleBEInteractions(stack, level, pos, state)) {
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
@@ -184,11 +184,6 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
 		return new DisplayNotchBlockEntity(pos, state);
-	}
-
-	@Override
-	public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-		return createTickerHelper(blockEntityType, RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchBlockEntity::tick);
 	}
 
 	@Override

@@ -3,11 +3,13 @@ package com.bigdious.risus.blocks.entity;
 import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -20,17 +22,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 
-public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem {
+public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyContainer, ContainerSingleItem.BlockContainerSingleItem {
 	protected ItemStack item = ItemStack.EMPTY;
 	public boolean stand;
-	public boolean shouldRotate;
 
 	public DisplayNotchBlockEntity(BlockPos pos, BlockState state) {
 		super(RisusBlockEntities.DISPLAY_NOTCH.get(), pos, state);
-	}
-
-	public static void tick(Level level, BlockPos pos, BlockState state, DisplayNotchBlockEntity entity) {
-		entity.shouldRotate = level.hasNeighborSignal(pos);
 	}
 
 	@Override
@@ -104,5 +101,33 @@ public class DisplayNotchBlockEntity extends BlockEntity implements ContainerSin
 			return true;
 		}
 		return false;
+	}
+
+	public boolean updateBlock() {
+		if (this.getLevel() != null) {
+			BlockState state = this.getLevel().getBlockState(this.getBlockPos());
+			this.getLevel().sendBlockUpdated(this.getBlockPos(), state, state, 2);
+			this.setChanged();
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public int[] getSlotsForFace(Direction direction) {return new int[]{0};}
+
+
+	@Override
+	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction direction) {
+		boolean ret =  this.item.isEmpty();
+		if (ret) this.updateBlock();
+		return ret;
+	}
+
+	@Override
+	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
+		boolean ret = direction == Direction.DOWN && !this.item.isEmpty();
+		if (ret) this.updateBlock();
+		return ret;
 	}
 }

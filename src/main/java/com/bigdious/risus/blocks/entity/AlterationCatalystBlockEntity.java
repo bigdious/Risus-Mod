@@ -227,12 +227,17 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	@Override
 	public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction direction) {
-		return this.item.isEmpty();
+		//gizmo, I fucking love you and your ret
+		boolean ret =  this.item.isEmpty();
+		if (ret) this.updateBlock();
+		return ret;
 	}
 
 	@Override
 	public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction direction) {
-		return direction == Direction.DOWN && !this.item.isEmpty() && !this.isCrafting;
+		boolean ret = direction == Direction.DOWN && !this.item.isEmpty() && !this.isCrafting;
+		if (ret) this.updateBlock();
+		return ret;
 	}
 
 	@Override

@@ -46,15 +46,15 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 			.rotateY(stand ? -rotation : 180.0F * Mth.DEG_TO_RAD)
 			.rotateZ(stand ? 0.0F : rotation));
 
-		if (entity.shouldRotate && entity.getLevel().isClientSide()) {
+		if (entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			if (stand) {
-				stack.mulPose(Axis.YP.rotationDegrees(Objects.requireNonNull(entity.getLevel()).getGameTime()*5));
+				stack.mulPose(Axis.YP.rotationDegrees(AnimationRenderHelper.rotation*2));
 			} else {
-				stack.mulPose(Axis.ZP.rotationDegrees(Objects.requireNonNull(entity.getLevel()).getGameTime()*5));
+				stack.mulPose(Axis.ZP.rotationDegrees(AnimationRenderHelper.rotation*2));
 			}
 		}
 
-		if (!entity.getTheItem().isEmpty() && entity.getTheItem() != null) {
+		if (!itemstack.isEmpty() && itemstack != null && itemstack == entity.getTheItem()) {
 			int k = this.getLightVal(entity, light);
 			this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, k, OverlayTexture.NO_OVERLAY, stack, buffers, entity.getLevel(), (int) entity.getBlockPos().asLong());
 		}

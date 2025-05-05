@@ -1,8 +1,6 @@
 package com.bigdious.risus;
 
-import com.bigdious.risus.blocks.entity.AlterationCatalystBlockEntity;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
-import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
@@ -14,24 +12,11 @@ import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.base.Suppliers;
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
 import net.minecraft.Util;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -52,11 +37,7 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import top.theillusivec4.curios.api.CuriosCapability;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.capability.ICurio;
 
-import javax.annotation.Nullable;
 import java.util.Locale;
 import java.util.function.Supplier;
 

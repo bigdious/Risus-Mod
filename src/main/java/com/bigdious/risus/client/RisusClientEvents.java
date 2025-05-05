@@ -90,6 +90,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -337,6 +338,13 @@ public class RisusClientEvents {
 
 		public static ShaderStateShard getEndPortal() {
 			return RENDERTYPE_END_PORTAL_SHADER;
+		}
+	}
+	private static void clientTick(ClientTickEvent.Post event) {
+		Minecraft mc = Minecraft.getInstance();
+
+		if (!mc.isPaused()) {
+			AnimationRenderHelper.animate();
 		}
 	}
 }
