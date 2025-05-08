@@ -104,6 +104,23 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			.add(RisusBlocks.EYE_GOLDEN.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.RED_DISPLAY_NOTCH.get(),
+			RisusBlocks.GREEN_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIGHT_BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.GRAY_DISPLAY_NOTCH.get(),
+			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
+			RisusBlocks.YELLOW_DISPLAY_NOTCH.get(),
+			RisusBlocks.ORANGE_DISPLAY_NOTCH.get(),
+			RisusBlocks.PINK_DISPLAY_NOTCH.get(),
+			RisusBlocks.PURPLE_DISPLAY_NOTCH.get(),
+			RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(),
+			RisusBlocks.BROWN_DISPLAY_NOTCH.get(),
+			RisusBlocks.WHITE_DISPLAY_NOTCH.get(),
+			RisusBlocks.LIME_DISPLAY_NOTCH.get(),
+			RisusBlocks.CYAN_DISPLAY_NOTCH.get(),
+
 			RisusBlocks.BIG_CHAIN.get(),
 			RisusBlocks.ASHEN_REMAINS.get(),
 			RisusBlocks.SMILING_REMAINS.get(),

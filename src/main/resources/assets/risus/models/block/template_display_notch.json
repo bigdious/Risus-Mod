@@ -6,8 +6,8 @@
 	},
 	"elements": [
 		{
-			"from": [7.01, 0, 7.01],
-			"to": [8.99, 1, 8.99],
+			"from": [7.01, 0.04, 7.01],
+			"to": [8.99, 0.98, 8.99],
 			"faces": {
 				"north": {"uv": [0, 0, 2, 1], "texture": "#texture"},
 				"east": {"uv": [0, 0, 2, 1], "texture": "#texture"},
