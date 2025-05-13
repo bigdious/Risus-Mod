@@ -28,6 +28,9 @@ public abstract class ClientLevelMixin {
 			if (item instanceof LightDevourerItem) {
 				cir.setReturnValue(RisusBlocks.DARKNESS.value());
 			}
+			if (player.getMainHandItem().is(RisusBlocks.DISPLAY_NOTCH.asItem())) {
+				cir.setReturnValue(RisusBlocks.INVISIBLE_DISPLAY_NOTCH.value());
+			}
 		}
 	}
 }

@@ -155,6 +155,14 @@ public class LangGenerator extends RisusLangProvider {
 				this.add("block.risus." + color.getName() + "_display_notch", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Display Notch");
 			}
 		}
+		this.addBlock(RisusBlocks.INVISIBLE_DISPLAY_NOTCH, "Invisible Display Notch");
+
+		this.add("risus.configuration.title", "Risus Config");
+		this.add("risus.configuration.section.obtrophies.common.toml", "Common Settings");
+		this.add("risus.configuration.section.obtrophies.common.toml.title", "Common Settings");
+
+		this.add("config.risus.spinning_source.signal", "Redstone Signal");
+		this.add("config.risus.spinning_source.torch_item", "Redstone Torch Right-click");
 
 		this.addBannerPattern("smile", "Smile", DyeColor.RED);
 		this.addBannerPattern("divinity", "Divinity", DyeColor.WHITE);

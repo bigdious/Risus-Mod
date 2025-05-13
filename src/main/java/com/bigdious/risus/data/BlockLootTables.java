@@ -45,6 +45,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());
+		dropOther(RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropOther(RisusBlocks.GRAY_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropOther(RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropOther(RisusBlocks.WHITE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);

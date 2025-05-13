@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-01T18:03:49.9538111	Loot Tables
+// 1.21.1	2025-05-13T21:09:29.9359276	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -86,6 +86,7 @@ e78bb0f8cc20a72b450461cac50a82b34b3de173 data/risus/loot_table/blocks/imitation_
 a87dd8bf2ea1cacddc143ed848d51dcdf5d6c64a data/risus/loot_table/blocks/imitation_scales_block_stairs.json
 f12f50114dd53aa64914c864798f8baffddb4276 data/risus/loot_table/blocks/imitation_scales_block_wall.json
 f4c01e8daf22fcacf7206fbf73a407410811d947 data/risus/loot_table/blocks/inactive_holder.json
+10a6ec45bfac6a41e66b14b45103c5f26d8ca6b4 data/risus/loot_table/blocks/invisible_display_notch.json
 a119dbcd3fb2c264595a3b7b741e00c0b3e44260 data/risus/loot_table/blocks/joyflame_campfire.json
 c382ba88778232e13d12e9e398a6316cfe4c1483 data/risus/loot_table/blocks/joyflame_fire.json
 3ab6b455a7edc5b58b0e31dfe09a50a8774a01b8 data/risus/loot_table/blocks/joyflame_lantern.json

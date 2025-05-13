@@ -1,210 +1,210 @@
 {
   "variants": {
     "elevate=false,facing=down,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=false,facing=down,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=false,facing=down,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=false,facing=down,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=false,facing=east,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=false,facing=east,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=false,facing=east,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=false,facing=east,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=false,facing=north,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=false,facing=north,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=false,facing=north,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=false,facing=north,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=false,facing=south,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=false,facing=south,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=false,facing=south,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=false,facing=south,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=false,facing=up,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=false,facing=up,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=false,facing=up,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=false,facing=up,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=false,facing=west,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=false,facing=west,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=false,facing=west,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=false,facing=west,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=true,facing=down,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=true,facing=down,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=true,facing=down,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=true,facing=down,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 180
     },
     "elevate=true,facing=east,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=true,facing=east,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=true,facing=east,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=true,facing=east,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 90
     },
     "elevate=true,facing=north,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=true,facing=north,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=true,facing=north,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=true,facing=north,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90
     },
     "elevate=true,facing=south,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=true,facing=south,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=true,facing=south,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=true,facing=south,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 180
     },
     "elevate=true,facing=up,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=true,facing=up,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=true,facing=up,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=true,facing=up,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch"
+      "model": "risus:block/invisible_display_notch"
     },
     "elevate=true,facing=west,glowing=false,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=true,facing=west,glowing=false,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=true,facing=west,glowing=true,phantom=false": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     },
     "elevate=true,facing=west,glowing=true,phantom=true": {
-      "model": "risus:block/green_display_notch",
+      "model": "risus:block/invisible_display_notch",
       "x": 90,
       "y": 270
     }

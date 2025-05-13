@@ -1,5 +1,6 @@
 {
   "parent": "risus:block/template_display_notch",
+  "render_type": "minecraft:cutout",
   "textures": {
     "texture": "minecraft:block/brown_wool"
   }

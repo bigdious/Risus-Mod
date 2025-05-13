@@ -1,6 +1,7 @@
 {
   "parent": "risus:block/template_display_notch",
+  "render_type": "minecraft:cutout",
   "textures": {
-    "texture": "risus:block/empty"
+    "texture": "risus:block/mark"
   }
 }

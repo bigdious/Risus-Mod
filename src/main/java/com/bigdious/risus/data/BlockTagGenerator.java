@@ -105,6 +105,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get(),
 			RisusBlocks.RED_DISPLAY_NOTCH.get(),
 			RisusBlocks.GREEN_DISPLAY_NOTCH.get(),
 			RisusBlocks.LIGHT_GRAY_DISPLAY_NOTCH.get(),

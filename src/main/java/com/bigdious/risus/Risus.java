@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
 import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
+import com.bigdious.risus.config.ConfigSetup;
 import com.bigdious.risus.data.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
@@ -26,6 +27,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.IBlockCapabilityProvider;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -87,6 +89,10 @@ public class Risus {
 		if (dist.isClient()) {
 			RisusClientEvents.initEvents(bus);
 		}
+
+		bus.addListener(ConfigSetup::loadConfigs);
+		bus.addListener(ConfigSetup::reloadConfigs);
+		NeoForge.EVENT_BUS.addListener(ConfigSetup::syncConfigOnLogin);
 	}
 
 	public void registerPackets(RegisterPayloadHandlersEvent event) {
@@ -105,6 +111,7 @@ public class Risus {
 		PackOutput packOutput = generator.getPackOutput();
 		DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, event.getLookupProvider());
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
 
 		boolean isClient = event.includeClient();
 		generator.addProvider(isClient, new BlockModelGenerator(packOutput, existingFileHelper));

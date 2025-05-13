@@ -2,6 +2,7 @@ package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
+import com.bigdious.risus.config.RisusConfig;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
@@ -46,7 +47,7 @@ public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlo
 			.rotateY(stand ? -rotation : 180.0F * Mth.DEG_TO_RAD)
 			.rotateZ(stand ? 0.0F : rotation));
 
-		if (entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
+		if ((RisusConfig.spinningSource == RisusConfig.SpinningSource.SIGNAL && entity.getLevel().hasNeighborSignal(entity.getBlockPos())) || entity.shouldRotate) {
 			if (stand) {
 				stack.mulPose(Axis.YP.rotationDegrees(AnimationRenderHelper.rotation*2));
 			} else {

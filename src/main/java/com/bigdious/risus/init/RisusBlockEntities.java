@@ -16,6 +16,7 @@ public class RisusBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AlterationCatalystBlockEntity>> ALTERATION_CATALYST = BLOCK_ENTITIES.register("alteration_catalyst", () -> BlockEntityType.Builder.of(AlterationCatalystBlockEntity::new, RisusBlocks.ALTERATION_CATALYST.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DisplayNotchBlockEntity>> DISPLAY_NOTCH = BLOCK_ENTITIES.register("display_notch", () -> BlockEntityType.Builder.of(DisplayNotchBlockEntity::new, Blocks.SHULKER_BOX,
 			RisusBlocks.DISPLAY_NOTCH.get(),
+			RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get(),
 			RisusBlocks.BLUE_DISPLAY_NOTCH.get(),
 			RisusBlocks.BROWN_DISPLAY_NOTCH.get(),
 			RisusBlocks.CYAN_DISPLAY_NOTCH.get(),
