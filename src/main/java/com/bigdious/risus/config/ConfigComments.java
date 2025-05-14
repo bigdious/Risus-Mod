@@ -6,6 +6,15 @@ public final class ConfigComments {
 		SIGNAL: A redstone signal will trigger it.
 		TORCH_ITEM: Right-clicking with a Redstone Torch will trigger it.""";
 
+	public static final String HOLDERS_STEAL_FROM_MONSTERS = """
+		Whether or not Holders named GREED can steal from mobs. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
+
+	public static final String ILLEGAL_LITTERS = """
+		Whether or not Litters can be made from non-full block light sources. This means that blocks that have the blocktag ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS will work.""";
+
+	public static final String STRIPPER_WORKS_ON_MOB_ARMOR = """
+		Whether or not Stripper works on mob's armor. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
+
 
 
 }

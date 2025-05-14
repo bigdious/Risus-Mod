@@ -32,6 +32,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.Nullable;
@@ -225,6 +226,13 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 	protected boolean hasAnalogOutputSignal(BlockState state) {
 		return true;
+	}
+
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext collision) {
+		if (state.getValue(PHANTOM)){
+			return Shapes.empty();
+		} else return super.getCollisionShape(state, getter, pos, collision);
 	}
 
 }

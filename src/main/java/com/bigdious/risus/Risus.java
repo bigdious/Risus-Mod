@@ -13,6 +13,7 @@ import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.google.common.base.Suppliers;
+import com.google.common.reflect.Reflection;
 import net.minecraft.Util;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
@@ -47,16 +48,9 @@ import java.util.function.Supplier;
 public class Risus {
 	public static final String MODID = "risus";
 
-	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> HOLDERS_STEAL_FROM_MONSTERS = Suppliers.memoize(() -> GameRules.register("holdersStealFromMonsters", GameRules.Category.MOBS, GameRules.BooleanValue.create(false)));
-	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> ILLEGAL_LITTERS = Suppliers.memoize(() -> GameRules.register("illegalLitters", GameRules.Category.MOBS, GameRules.BooleanValue.create(false)));
-	public static final Supplier<GameRules.Key<GameRules.BooleanValue>> STRIPPER_WORKS_ON_MOB_ARMOR = Suppliers.memoize(() -> GameRules.register("stripperWorksOnMobArmor", GameRules.Category.PLAYER, GameRules.BooleanValue.create(true)));
-
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public Risus(IEventBus bus, Dist dist) {
-		Util.backgroundExecutor().execute(HOLDERS_STEAL_FROM_MONSTERS::get);
-		Util.backgroundExecutor().execute(ILLEGAL_LITTERS::get);
-		Util.backgroundExecutor().execute(STRIPPER_WORKS_ON_MOB_ARMOR::get);
 		RisusBlockEntities.BLOCK_ENTITIES.register(bus);
 		RisusBlocks.BLOCKS.register(bus);
 		RisusDataAttachments.ATTACHMENT_TYPES.register(bus);
@@ -89,7 +83,7 @@ public class Risus {
 		if (dist.isClient()) {
 			RisusClientEvents.initEvents(bus);
 		}
-
+		Reflection.initialize(ConfigSetup.class);
 		bus.addListener(ConfigSetup::loadConfigs);
 		bus.addListener(ConfigSetup::reloadConfigs);
 		NeoForge.EVENT_BUS.addListener(ConfigSetup::syncConfigOnLogin);

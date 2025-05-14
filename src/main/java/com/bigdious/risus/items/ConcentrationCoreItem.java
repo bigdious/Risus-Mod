@@ -2,6 +2,7 @@ package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BaseRotatableBlock;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.Litter;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -73,7 +74,7 @@ public class ConcentrationCoreItem extends Item {
 		Level level = context.getLevel();
 		BlockPos pos = context.getClickedPos();
 		BlockState state = level.getBlockState(pos);
-		if ((state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (level.getGameRules().getBoolean(Risus.ILLEGAL_LITTERS.get()) && state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))) {
+		if ((state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (RisusConfig.illegalLitters && state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))) {
 			var ritual = this.getUsedRitual(level, pos);
 			if (ritual != null) {
 				level.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());

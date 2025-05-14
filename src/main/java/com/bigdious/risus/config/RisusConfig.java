@@ -17,9 +17,15 @@ import java.util.function.IntFunction;
 public class RisusConfig {
 	// -- COMMON CONFIG --
 	public static SpinningSource spinningSource = SpinningSource.SIGNAL;
+	public static boolean holdersStealFromMonsters = true;
+	public static boolean illegalLitters = false;
+	public static boolean stripperWorksOnMobArmor = true;
 
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();
+		holdersStealFromMonsters = config.holdersStealFromMonsters.get();
+		illegalLitters = config.illegalLitters.get();
+		stripperWorksOnMobArmor = config.stripperWorksOnMobArmor.get();
 
 		MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
 		if (server != null && server.isDedicatedServer()) {

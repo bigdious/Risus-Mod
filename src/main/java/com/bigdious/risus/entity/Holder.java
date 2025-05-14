@@ -1,11 +1,14 @@
 package com.bigdious.risus.entity;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.config.RisusConfig;
+import com.bigdious.risus.entity.goals.MonsterFollowOwnerGoal;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,13 +27,17 @@ import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
-public class Holder extends Monster {
-
+public class Holder extends TamableMonster {
+	private static final String TAG_GREED = "GREED";
+	boolean isGreed;
 	private boolean shouldAvoidEntity;
 	@Nullable
 	private UUID avoidedEntityUUID;
+	@Nullable
+	private UUID OwnerUUID;
 
 	public Holder(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
@@ -48,13 +55,14 @@ public class Holder extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new MonsterFollowOwnerGoal(this, 1.0D, 5.0F, 2.0F));
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LivingEntity.class, entity -> this.avoidedEntityUUID != null && Objects.equals(this.avoidedEntityUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidEntity));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class , true, living ->
-			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (this.level().getGameRules().getBoolean(Risus.HOLDERS_STEAL_FROM_MONSTERS.get()) ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
+			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (RisusConfig.holdersStealFromMonsters ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) && this.isGreed : living instanceof Player)
 		));
 	}
 	@Override
@@ -65,6 +73,13 @@ public class Holder extends Monster {
 			return super.canSwimInFluidType(type);
 		}
 	}
+
+	@Nullable
+	@Override
+	public UUID getOwnerUUID() {
+		return this.OwnerUUID;
+	}
+
 
 	//let's not pick up anything for now, it causes weird AI and potential item deletion
 //	@Override
@@ -126,6 +141,7 @@ public class Holder extends Monster {
 			this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
 				this.shouldAvoidEntity = false;
 				this.avoidedEntityUUID = null;
+				this.OwnerUUID = null;
 				if (this.getAttribute(Attributes.ATTACK_DAMAGE).getModifier(Risus.prefix("holder_friendly")) != null) {
 					this.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(Risus.prefix("holder_friendly"));
 				}
@@ -146,6 +162,7 @@ public class Holder extends Monster {
 					this.shouldAvoidEntity = false;
 					this.getAttribute(Attributes.ATTACK_DAMAGE).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly"),  -3, AttributeModifier.Operation.ADD_VALUE));
 					this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(new AttributeModifier(Risus.prefix("holder_friendly_speed"), 1.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+					this.OwnerUUID = living.getUUID();
 				} else {
 					this.avoidedEntityUUID = living.getUUID();
 					this.shouldAvoidEntity = true;
@@ -162,6 +179,12 @@ public class Holder extends Monster {
 		if (this.avoidedEntityUUID != null) {
 			tag.putUUID("AvoidingUUID", this.avoidedEntityUUID);
 		}
+		if (this.OwnerUUID != null) {
+			tag.putUUID("OwnerUUID", this.OwnerUUID);
+		}
+		if (this.isGreed) {
+			tag.putBoolean("GREED", true);
+		}
 	}
 
 	@Override
@@ -171,5 +194,18 @@ public class Holder extends Monster {
 		if (tag.contains("AvoidingUUID")) {
 			this.avoidedEntityUUID = tag.getUUID("AvoidingUUID");
 		}
+		if (tag.contains("OwnerUUID")) {
+			this.OwnerUUID = tag.getUUID("OwnerUUID");
+		}
+		if (tag.contains("GREED", 99)) {
+			this.isGreed = tag.getBoolean("GREED");
+		}
+	}
+	public void setCustomName(@javax.annotation.Nullable Component name) {
+		super.setCustomName(name);
+		if (!this.isGreed && name != null && name.getString().equals("GREED")) {
+			this.isGreed = true;
+		}
+
 	}
 }
