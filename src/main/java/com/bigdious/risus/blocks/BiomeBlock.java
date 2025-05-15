@@ -135,7 +135,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) return;
-		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && laughingStalk.decaytime > 40) {
+		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && (state.getValue(SPREADING_FEIGR) ? laughingStalk.decaytime>160 : state.getValue(SPREADING_MORK) ? laughingStalk.decaytime>70 :  laughingStalk.decaytime > 30)) {
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
 			laughingStalk.decaytime = 0;
 		}
@@ -194,11 +194,13 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 		Holder<Biome> biome = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(
 			state.getValue(SPREADING_MORK) ? RisusBiomes.COALIFICATION_MORK :
 				state.getValue(SPREADING_FEIGR) ? RisusBiomes.COALIFICATION_FEIGR : RisusBiomes.COALIFICATION);
-		int range = 9;
+
+		int range = state.getValue(SPREADING_FEIGR) ? 20 : state.getValue(SPREADING_MORK) ? 9 : 12;
 		for (int i = 0; i < 16; i++) {
-			BlockPos dPos = this.randomOffset(rand, pos, range, 0, range);
-			if (dPos.distSqr(pos) > 256.0)
-				continue;
+			//y needed some random offset too
+			BlockPos dPos = this.randomOffset(rand, pos, range, range+5, range);
+//			if (dPos.distSqr(pos) > 256.0)
+//				continue;
 
 			// Holder<Biome>(dpos).is(biome) is deprecated and could cause issues in the future
 			if (level.getBiome(dPos) == biome)
@@ -209,16 +211,22 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 
 			int x = QuartPos.fromBlock(dPos.getX());
 			int z = QuartPos.fromBlock(dPos.getZ());
+			int y = QuartPos.fromBlock(dPos.getY());
 
 			// Get chunk at random relative position
 			LevelChunk chunkAt = level.getChunk(dPos.getX() >> 4, dPos.getZ() >> 4);
+			int u = QuartPos.fromBlock(chunkAt.getMinBuildHeight());
+			int k = u + QuartPos.fromBlock(chunkAt.getHeight()) - 1;
+			int l = Mth.clamp(QuartPos.fromBlock(dPos.getY()), u, k);
+			int j = chunkAt.getSectionIndex(QuartPos.toBlock(l));
 			// Iterate over all sections in the chunk
-			for (LevelChunkSection section : chunkAt.getSections()) {
+			//WE ONLY NEED ONE SECTION HERE, THAT'S WHAT THE PROBLEM WAS
+			LevelChunkSection section = chunkAt.getSection(j);
 				// Iterate over all blocks in quarters in the section
 				for (int sy = 0; sy < 16; sy += 4) {
 					// Get y position clamped between the minY(0) and maxY(320)
 					//this feels like a lie^
-					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
+//					int y = Mth.clamp(QuartPos.fromBlock(chunkAt.getMinSection() + sy), minY, maxY);
 
 					// Holder<Biome>(x, y, z).is(biome) is deprecated and could cause issues in the future
 					// Check if the biome at the position between index 0 and 3 is the same as the biome we want to set
@@ -230,13 +238,11 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 						// set the biome at the x y z with all 3 coordinates clamped between index 0 and 3 to fit in the 4x4x4 Quarter
 						container.set(x & 3, y & 3, z & 3, biome);
 				}
-			}
 
 			if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
 			level.getChunkSource().chunkMap.resendBiomesForChunks(List.of(chunkAt));
-
-			break;
 		}
+
 	}
 
 	public BlockPos randomOffset(RandomSource random, BlockPos pos, int rx, int ry, int rz) {
