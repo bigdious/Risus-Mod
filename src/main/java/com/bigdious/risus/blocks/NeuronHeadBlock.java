@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -17,11 +18,15 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.LavaFluid;
+import net.minecraft.world.level.material.WaterFluid;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.ItemAbilities;
@@ -34,7 +39,7 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 	public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
 
 	public NeuronHeadBlock(BlockBehaviour.Properties properties) {
-		super(properties, Direction.UP, SHAPE, true, 0.14);
+		super(properties, Direction.UP, SHAPE, true, 0.05);
 		this.registerDefaultState(this.getStateDefinition().any().setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
 	}
 
@@ -89,8 +94,12 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 	}
 
 	@Override
-	protected boolean canGrowInto(BlockState pState) {
-		return pState.isAir();
+	protected boolean canGrowInto(BlockState state) {
+		return
+			state.isAir() ||
+				state.getBlock() == Blocks.WATER ||
+				state.getBlock() == Blocks.LAVA ||
+				state.getBlock() == RisusBlocks.BLOOD_FLUID_BLOCK.get();
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
@@ -99,6 +108,33 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 			level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS);
 		}
 		return super.useItemOn(stack, state, level, pos, player, hand, result);
+	}
+
+	@Override
+	protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+		if (pState.getValue(AGE) < 25 && net.neoforged.neoforge.common.CommonHooks.canCropGrow(pLevel, pPos.relative(this.growthDirection), pState, pRandom.nextDouble() < 0.05)) {
+			BlockPos blockpos = pPos.relative(this.growthDirection);
+			Block neighborFluid = pLevel.getBlockState(blockpos).getBlock();
+			if (this.canGrowInto(pLevel.getBlockState(blockpos))) {
+				pLevel.setBlockAndUpdate(blockpos, this.getGrowIntoState(pState.setValue(FLUIDLOGGED, neighborFluid == Blocks.WATER ? MultiloggingEnum.WATER : neighborFluid == Blocks.LAVA ? MultiloggingEnum.LAVA : neighborFluid == RisusBlocks.BLOOD_FLUID_BLOCK.get() ? MultiloggingEnum.BLOOD : MultiloggingEnum.EMPTY), pLevel.random));
+				net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, blockpos, pLevel.getBlockState(blockpos));
+			}
+		}
+	}
+
+	@Override
+	public void performOrganicMatter(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+		BlockPos blockpos = pPos.relative(this.growthDirection);
+		Block neighborFluid = pLevel.getBlockState(blockpos).getBlock();
+		int i = Math.min(pState.getValue(AGE) + 1, 25);
+		int j = this.getBlocksToGrowWhenOrganicMattered(pRandom);
+
+		for (int k = 0; k < j && this.canGrowInto(pLevel.getBlockState(blockpos)); k++) {
+			pLevel.setBlockAndUpdate(blockpos, pState.setValue(AGE, i)
+				.setValue(FLUIDLOGGED, neighborFluid == Blocks.WATER ? MultiloggingEnum.WATER : neighborFluid == Blocks.LAVA ? MultiloggingEnum.LAVA : neighborFluid == RisusBlocks.BLOOD_FLUID_BLOCK.get() ? MultiloggingEnum.BLOOD : MultiloggingEnum.EMPTY));
+			blockpos = blockpos.relative(this.growthDirection);
+			i = Math.min(i + 1, 25);
+		}
 	}
 }
 

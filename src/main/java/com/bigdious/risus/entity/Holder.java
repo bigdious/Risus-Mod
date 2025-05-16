@@ -3,10 +3,7 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.goals.MonsterFollowOwnerGoal;
-import com.bigdious.risus.init.RisusFluids;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusSoundEvents;
-import com.bigdious.risus.init.RisusTags;
+import com.bigdious.risus.init.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -55,16 +52,27 @@ public class Holder extends TamableMonster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new MonsterFollowOwnerGoal(this, 1.0D, 5.0F, 2.0F));
+		this.goalSelector.addGoal(6, new MonsterFollowOwnerGoal(this, 1.0D, 5.0F, 2.0F));
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, LivingEntity.class, 64.0F));
-		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.8D));
+		this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.8D));
 		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LivingEntity.class, entity -> this.avoidedEntityUUID != null && Objects.equals(this.avoidedEntityUUID, entity.getUUID()), 8.0F, 1.5D, 1.75D, entity -> this.shouldAvoidEntity));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class , true, living ->
-			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (RisusConfig.holdersStealFromMonsters ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) && this.isGreed : living instanceof Player)
+			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (RisusConfig.holdersStealFromMonsters && this.isGreed ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
 		));
 	}
+
+	@Override
+	public void tick() {
+		if (this.tickCount % 40 == 0){
+			if (this.getTarget() != null) {
+				if (this.getTarget().getMainHandItem().isEmpty()) this.setTarget(null);
+			}
+		}
+		super.tick();
+	}
+
 	@Override
 	public boolean canSwimInFluidType(FluidType type) {
 		if (type == RisusFluids.BLOOD_FLUID_TYPE.get()) {
