@@ -11,10 +11,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class AngelRenderer extends MobRenderer<Angel, AngelModel<Angel>> {
 
-	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/entity/angel.png");
+	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/entity/ophanim.png");
 
 	public AngelRenderer(EntityRendererProvider.Context context) {
-		super(context, new AngelModel<>(context.bakeLayer(RisusModelLayers.ANGEL)), 0.8F);
+		super(context, new AngelModel<>(context.bakeLayer(RisusModelLayers.ANGEL)), 0.0F);
 		this.addLayer(new OphanimFaceLayer<>(this));
 	}
 

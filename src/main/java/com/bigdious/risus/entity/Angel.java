@@ -156,4 +156,9 @@ public class Angel extends Monster {
 	public boolean removeWhenFarAway(double dist) {
 		return false;
 	}
+
+	@Override
+	public boolean isNoGravity() {
+		return true;
+	}
 }
