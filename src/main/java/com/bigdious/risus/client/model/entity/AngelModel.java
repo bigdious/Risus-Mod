@@ -16,11 +16,30 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 	private final ModelPart head;
 	private final ModelPart eyeCluster;
 	private final ModelPart topRightWing;
+	private final ModelPart topRightWingOutcurve;
+	private final ModelPart topRightWingIncurve;
+	private final ModelPart topRightWingIncurveTwo;
 	private final ModelPart middleRightWing;
+	private final ModelPart middleRightWingOutcurve;
+	private final ModelPart middleRightWingIncurve;
+	private final ModelPart middleRightWingIncurveTwo;
 	private final ModelPart bottomRightWing;
+	private final ModelPart bottomRightWingOutcurve;
+	private final ModelPart bottomRightWingIncurve;
+	private final ModelPart bottomRightWingIncurveTwo;
 	private final ModelPart topLeftWing;
+	private final ModelPart topLeftWingOutcurve;
+	private final ModelPart topLeftWingIncurve;
+	private final ModelPart topLeftWingIncurveTwo;
 	private final ModelPart middleLeftWing;
+	private final ModelPart middleLeftWingOutcurve;
+	private final ModelPart middleLeftWingIncurve;
+	private final ModelPart middleLeftWingIncurveTwo;
 	private final ModelPart bottomLeftWing;
+	private final ModelPart bottomLeftWingOutcurve;
+	private final ModelPart bottomLeftWingIncurve;
+	private final ModelPart bottomLeftWingIncurveTwo;
+
 
 	public AngelModel(ModelPart root) {
 		this.root = root;
@@ -30,11 +49,29 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 		this.head = root.getChild("head");
 		this.eyeCluster = head.getChild("eyeCluster");
 		this.topRightWing = root.getChild("topRightWing");
+		this.topRightWingOutcurve = topRightWing.getChild("topRightWingOutcurve");
+		this.topRightWingIncurve = topRightWingOutcurve.getChild("topRightWingIncurve");
+		this.topRightWingIncurveTwo = topRightWingIncurve.getChild("topRightWingIncurveTwo");
 		this.middleRightWing = root.getChild("middleRightWing");
+		this.middleRightWingOutcurve = middleRightWing.getChild("middleRightWingOutcurve");
+		this.middleRightWingIncurve = middleRightWingOutcurve.getChild("middleRightWingIncurve");
+		this.middleRightWingIncurveTwo = middleRightWingIncurve.getChild("middleRightWingIncurveTwo");
 		this.bottomRightWing = root.getChild("bottomRightWing");
+		this.bottomRightWingOutcurve = bottomRightWing.getChild("bottomRightWingOutcurve");
+		this.bottomRightWingIncurve = bottomRightWingOutcurve.getChild("bottomRightWingIncurve");
+		this.bottomRightWingIncurveTwo = bottomRightWingIncurve.getChild("bottomRightWingIncurveTwo");
 		this.topLeftWing = root.getChild("topLeftWing");
+		this.topLeftWingOutcurve = topLeftWing.getChild("topLeftWingOutcurve");
+		this.topLeftWingIncurve = topLeftWingOutcurve.getChild("topLeftWingIncurve");
+		this.topLeftWingIncurveTwo = topLeftWingIncurve.getChild("topLeftWingIncurveTwo");
 		this.middleLeftWing = root.getChild("middleLeftWing");
+		this.middleLeftWingOutcurve = middleLeftWing.getChild("middleLeftWingOutcurve");
+		this.middleLeftWingIncurve = middleLeftWingOutcurve.getChild("middleLeftWingIncurve");
+		this.middleLeftWingIncurveTwo = middleLeftWingIncurve.getChild("middleLeftWingIncurveTwo");
 		this.bottomLeftWing = root.getChild("bottomLeftWing");
+		this.bottomLeftWingOutcurve = bottomLeftWing.getChild("bottomLeftWingOutcurve");
+		this.bottomLeftWingIncurve = bottomLeftWingOutcurve.getChild("bottomLeftWingIncurve");
+		this.bottomLeftWingIncurveTwo = bottomLeftWingIncurve.getChild("bottomLeftWingIncurveTwo");
 	}
 
 	public static LayerDefinition create() {
@@ -233,18 +270,42 @@ public class AngelModel<T extends Angel> extends HierarchicalModel<T> {
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.xRot = headPitch * ((float) Math.PI / 180F);
 		this.head.yRot = netHeadYaw * ((float) Math.PI / 180F);
-		this.eyeCluster.zRot = ageInTicks * 0.01F;
+		this.eyeCluster.zRot = ageInTicks * 0.02F;
 		float circle = ageInTicks * 0.05F;
-		float flapping = Mth.sin(ageInTicks * 0.1F) * 0.1F;
+		float flapping = Mth.cos(ageInTicks * 0.10F) * -0.35F;
+		float winging = Mth.cos(ageInTicks * 0.08F) * 0.15F;
+		float weakerWinging = Mth.cos(ageInTicks * 0.05F) * 0.1F;
+		float middleWinging = Mth.cos(ageInTicks * 0.09F) * 0.1F;
 		this.innerRing.xRot = circle * 0.5F;
+		this.innerRing.yRot = -circle;
 		this.middleRing.yRot = circle;
+		this.middleRing.zRot = circle * 0.8F;
 		this.outerRing.zRot = circle * 1.5F;
-		this.topRightWing.yRot = flapping - (12.5F * Mth.DEG_TO_RAD);
-		this.middleRightWing.yRot = flapping - (12.5F * Mth.DEG_TO_RAD);
-		this.bottomRightWing.yRot = flapping - (12.5F * Mth.DEG_TO_RAD);
-		this.topLeftWing.yRot = -flapping + (12.5F * Mth.DEG_TO_RAD);
-		this.middleLeftWing.yRot = -flapping + (12.5F * Mth.DEG_TO_RAD);
-		this.bottomLeftWing.yRot = -flapping + (12.5F * Mth.DEG_TO_RAD);
+		this.outerRing.xRot = circle * 0.5F;
+		this.topRightWing.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topRightWingOutcurve.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topRightWingIncurve.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topRightWingIncurveTwo.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.middleRightWing.yRot = flapping + (12.5F * Mth.DEG_TO_RAD);
+		this.middleRightWingOutcurve.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.55F);
+		this.middleRightWingIncurve.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.3F);
+		this.middleRightWingIncurveTwo.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.55F);
+		this.bottomRightWing.zRot = weakerWinging + (12.5F * Mth.DEG_TO_RAD);
+		this.bottomRightWing.yRot = -weakerWinging + (12.5F * Mth.DEG_TO_RAD);
+		this.bottomRightWingIncurve.zRot = winging + (12.5F * Mth.DEG_TO_RAD);
+		this.bottomRightWingIncurveTwo.zRot = winging + (20F * Mth.DEG_TO_RAD);
+		this.topLeftWing.xRot = middleWinging - (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topLeftWingOutcurve.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topLeftWingIncurve.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.topLeftWingIncurveTwo.xRot = middleWinging + (12.5F * Mth.DEG_TO_RAD+50.02F);
+		this.middleLeftWing.yRot = -flapping - (12.5F * Mth.DEG_TO_RAD);
+		this.middleLeftWingOutcurve.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.55F);
+		this.middleLeftWingIncurve.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.3F);
+		this.middleLeftWingIncurveTwo.xRot = -flapping - (2F * Mth.DEG_TO_RAD+25.55F);
+		this.bottomLeftWing.zRot = -weakerWinging - (12.5F * Mth.DEG_TO_RAD);
+		this.bottomLeftWing.yRot = weakerWinging - (12.5F * Mth.DEG_TO_RAD);
+		this.bottomLeftWingIncurve.zRot = -winging - (12.5F * Mth.DEG_TO_RAD);
+		this.bottomLeftWingIncurveTwo.zRot = -winging - (20F * Mth.DEG_TO_RAD);
 	}
 
 	@Override
