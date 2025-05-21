@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusSoundEvents;

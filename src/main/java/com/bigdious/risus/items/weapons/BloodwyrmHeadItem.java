@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
 import net.minecraft.sounds.SoundEvents;

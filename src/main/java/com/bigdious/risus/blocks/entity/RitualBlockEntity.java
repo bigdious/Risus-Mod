@@ -4,7 +4,7 @@ import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.items.ScytheItem;
+import com.bigdious.risus.items.weapons.ScytheItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;

@@ -9,37 +9,34 @@
   "loader": "neoforge:separate_transforms",
   "perspectives": {
     "firstperson_lefthand": {
-      "parent": "risus:item/template_held_scythe",
+      "parent": "risus:item/cinderglee_scythe_held",
       "textures": {
         "texture": "risus:item/cinderglee_scythe"
       }
     },
     "firstperson_righthand": {
-      "parent": "risus:item/template_held_scythe",
+      "parent": "risus:item/cinderglee_scythe_held",
       "textures": {
         "texture": "risus:item/cinderglee_scythe"
       }
     },
     "head": {
-      "parent": "risus:item/template_held_scythe",
+      "parent": "risus:item/cinderglee_scythe_held",
       "textures": {
         "texture": "risus:item/cinderglee_scythe"
       }
     },
     "thirdperson_lefthand": {
-      "parent": "risus:item/template_held_scythe",
+      "parent": "risus:item/cinderglee_scythe_held",
       "textures": {
         "texture": "risus:item/cinderglee_scythe"
       }
     },
     "thirdperson_righthand": {
-      "parent": "risus:item/template_held_scythe",
+      "parent": "risus:item/cinderglee_scythe_held",
       "textures": {
         "texture": "risus:item/cinderglee_scythe"
       }
     }
-  },
-  "textures": {
-    "layer0": "risus:item/cinderglee_scythe"
   }
 }

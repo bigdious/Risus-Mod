@@ -38,8 +38,5 @@
         "hand_of_greed": "risus:item/hand_of_greed"
       }
     }
-  },
-  "textures": {
-    "layer0": "risus:item/hand_of_greed"
   }
 }

@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodSlash;
@@ -8,7 +8,6 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -18,7 +17,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -29,10 +27,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.neoforge.event.EventHooks;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class ThousandBladeItem extends SwordItem {
 
@@ -72,13 +67,14 @@ public class ThousandBladeItem extends SwordItem {
 		if (entity instanceof Player player) {
 
 			int i = this.getUseDuration(stack, entity) - useTicks;
-			if (i < 0) return;
-			if (!level.isClientSide()) {
-				this.shoot((ServerLevel) level, player, player.getUsedItemHand(), stack);
-				player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1 + 2 * stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Enchantments.MULTISHOT)));
+			if (i >= 20) {
+				if (!level.isClientSide()) {
+					this.shoot((ServerLevel) level, player, player.getUsedItemHand(), stack);
+					if (!player.isCreative()) player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1 + 2 * stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Enchantments.MULTISHOT)));
+				}
+				level.playSound(null, entity, RisusSoundEvents.THOUSAND_BLADE_SLASH.get(), SoundSource.NEUTRAL, 1F, 0.6F);
+				player.awardStat(Stats.ITEM_USED.get(this));
 			}
-			level.playSound(null, entity, RisusSoundEvents.THOUSAND_BLADE_SLASH.get(), SoundSource.NEUTRAL, 1F, 0.6F);
-			player.awardStat(Stats.ITEM_USED.get(this));
 
 //			if (!level.isClientSide()) {
 //					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));

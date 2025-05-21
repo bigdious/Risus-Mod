@@ -38,8 +38,5 @@
         "boomstick": "risus:item/boomstick"
       }
     }
-  },
-  "textures": {
-    "layer0": "risus:item/boomstick"
   }
 }

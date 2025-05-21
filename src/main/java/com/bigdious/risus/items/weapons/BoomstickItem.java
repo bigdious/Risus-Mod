@@ -1,11 +1,9 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 
 public class BoomstickItem extends Item {
 

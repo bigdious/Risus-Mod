@@ -370,7 +370,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(36, 0, RandomSpreadType.LINEAR, 5297)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
-			new RandomSpreadStructurePlacement(57, 4, RandomSpreadType.LINEAR, 13414354)));
+			new RandomSpreadStructurePlacement(37, 4, RandomSpreadType.LINEAR, 13414354)));
 
 		context.register(GREAT_BODY_SET, new StructureSet(structures.getOrThrow(GREAT_BODY),
 			new RandomSpreadStructurePlacement(47, 0, RandomSpreadType.LINEAR, 838347612)));

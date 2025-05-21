@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.summoners;
 
 import com.bigdious.risus.entity.Memory1;
 import com.bigdious.risus.init.RisusEntities;

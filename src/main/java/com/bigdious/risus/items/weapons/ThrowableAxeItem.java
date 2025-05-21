@@ -1,17 +1,14 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.entity.projectile.ThrownAxe;
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -19,7 +16,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
 public class ThrowableAxeItem extends AxeItem {

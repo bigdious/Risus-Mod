@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-21T15:15:04.1004222	Risus Item Models
+// 1.21.1	2025-05-21T21:04:18.536605	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -31,22 +31,22 @@ cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.
 47cd4ff2e2fde19bdf58563a9eef7dc57bcb2d17 assets/risus/models/item/bone_slab.json
 4322a3de8473f7dfc0d81f733372b97e34fe4c81 assets/risus/models/item/bone_stairs.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
-63136f0b4294a21d8018c828655143ab3dba82eb assets/risus/models/item/boomstick.json
+8fab586c083d40f9f2e85a3cf54c3621fd1cb5b4 assets/risus/models/item/boomstick.json
 78b584169858ce09bdd73113805b54da22047316 assets/risus/models/item/boomstick_base.json
 3c4010ec05956ec210ff14e938a5c9d1ae52e257 assets/risus/models/item/budding_imitation_scaleplate.json
 bc2524f52eb27cd34ec72174c5c2ee66d1102477 assets/risus/models/item/bundle_of_hair.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
-32dac958207e43df59cb4941cf14245d9e14c9de assets/risus/models/item/cinderglee_scythe.json
+ca64e007df835a21ed33f429dba8c3e636335bf4 assets/risus/models/item/cinderglee_scythe.json
 52df45674db0583530fe0d6e7ca00cf4b0346160 assets/risus/models/item/cinderglee_scythe_base.json
-7a7d0b4acacd03c1d11b5ead5b99e47071e681e9 assets/risus/models/item/cinderglee_scythe_held.json
+4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/cinderglee_scythe_held.json
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
 887a891e9ea0cfca9359bcb13ec78e6600b1b686 assets/risus/models/item/containment_glass.json
 a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/copper_amalgam.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
-8d54e4876e8191c5568b1bb973fc27711a1a0754 assets/risus/models/item/crescent_disaster.json
-aa352cb9a4f8c7f3964d9f1922250f0c4f3ae764 assets/risus/models/item/crescent_disaster_base.json
+afa12f3383b9521055c2333dd3be51a410c8dd98 assets/risus/models/item/crescent_disaster.json
+e6e3f9d2ba983c27e9e5941c41cd07d94039aa62 assets/risus/models/item/crescent_disaster_base.json
 95910e379c6d488a86764c300a4f23c4b01e8fbe assets/risus/models/item/crystallized_bond.json
 3356fcfe0e12d7b2643bbc3f24127c2cc061a35e assets/risus/models/item/crystallized_bonds.json
 12cff6f1b09f0649b65d4f6af7869b2cf470db9c assets/risus/models/item/curved_fleshy_skin.json
@@ -75,9 +75,9 @@ ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.j
 fdc8c128323eb2e27060fb82a5b741e669dea66e assets/risus/models/item/eye_ender.json
 c3b6162d362fbbc5855d5d6b4c8624830d8a7f33 assets/risus/models/item/eye_golden.json
 d86d9fe15f0cdebde5000f4047f884afe7b6cb81 assets/risus/models/item/eye_sandwich.json
-c549ebae0c5aee68bf1767ceb75a50a72ff9adb5 assets/risus/models/item/fire_scythe.json
+c869a6957d25c5cff7d0a0dbc0007b7d725921e3 assets/risus/models/item/fire_scythe.json
 ec04d6ddd5f3f99ad7ccbdff3a9105bc0868ada1 assets/risus/models/item/fire_scythe_base.json
-0aab73f44a3e5539124674a365bb9a1c09fbfd38 assets/risus/models/item/fire_scythe_held.json
+4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/fire_scythe_held.json
 c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_imitation_scales_block.json
 c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scales_block.json
 3bc38e51ed584679a51f10e9c8983d430b1e46d0 assets/risus/models/item/fleshy_skin.json
@@ -102,7 +102,7 @@ f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall
 67e94359f35a511b0b82629402b66c558675d9ec assets/risus/models/item/hairy_fleshy_skin.json
 0d96a533eaa522b90b2880cc919c43ae619ed400 assets/risus/models/item/hairy_skin.json
 194dc95b7dfa2424d85c66a27c4d3d9b8ece552b assets/risus/models/item/hair_follicles.json
-8193a3d0a50b01ceed4f5e7d39a2bfff8d16a435 assets/risus/models/item/hand_of_greed.json
+d74f21cfe1ec8ebaaa5a7389043c32cf3b9ec32f assets/risus/models/item/hand_of_greed.json
 0b3744b69b4ed6640eb32a653d7253185bec2393 assets/risus/models/item/hand_of_greed_base.json
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
@@ -152,9 +152,9 @@ bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
 54c7e5e0c47024ade5d2795651d4d517b51c8aa3 assets/risus/models/item/sacrifice_catalyst.json
 6846d2ae47181489ef3caae70a1b0a86eb232ea2 assets/risus/models/item/scab.json
-27c8cf1903b2f2a679f72e13d0467155cd49a2b2 assets/risus/models/item/scythe.json
+88924e06e7615d7d0847c395026ad3c408a43f24 assets/risus/models/item/scythe.json
 41bd975a547aaa19a4c5789852ad24ca183a26af assets/risus/models/item/scythe_base.json
-0894c8e418b1d14c6c4cb51ebef1473d7f35f5b0 assets/risus/models/item/scythe_held.json
+4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/scythe_held.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/singer_spawn_egg.json
 64e5bd0a479d77d885d260c8f0ecf66cfcfe2e34 assets/risus/models/item/skin.json
 a06b5197b45455a7b971e1ee7ffef11368d38782 assets/risus/models/item/skin_boots.json
@@ -204,9 +204,9 @@ a2330498168d989f9c81bc25edb9109d5da9a0bf assets/risus/models/item/skin_leggings_
 204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 c5acdd3360ec4c1cab407437d31935ce56fd28c6 assets/risus/models/item/smile_banner_pattern.json
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
-8ab0e0d0382b3a210e6b1bdf9c91054c95144503 assets/risus/models/item/soul_scythe.json
+ac030375c558add83c0658ac9fab7181ded06a8e assets/risus/models/item/soul_scythe.json
 2a8f6b062e87b5e5c23663529b4b319ae0c5cbad assets/risus/models/item/soul_scythe_base.json
-69a9bfe9f9ab2dcd3d8cd6785e9f3360e7cb1e61 assets/risus/models/item/soul_scythe_held.json
+4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/soul_scythe_held.json
 8aabd6109304e1691a4a7137fe92c70c77d1ebe2 assets/risus/models/item/spreading_remains.json
 c8ae8b493fb76c56a3635862ed57431896a05861 assets/risus/models/item/stalker_eye.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/stalker_spawn_egg.json

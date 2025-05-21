@@ -3,7 +3,7 @@ package com.bigdious.risus.client.render.item;
 import com.bigdious.risus.client.EntityCache;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.items.LitterItem;
+import com.bigdious.risus.items.summoners.LitterItem;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

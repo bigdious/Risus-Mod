@@ -1,10 +1,9 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.armor;
 
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;

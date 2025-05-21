@@ -3,7 +3,13 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
+import com.bigdious.risus.items.armor.AngelWingsItem;
 import com.bigdious.risus.items.armor.RisusArmorItem;
+import com.bigdious.risus.items.summoners.EggSacItem;
+import com.bigdious.risus.items.summoners.LitterItem;
+import com.bigdious.risus.items.summoners.Memory1Item;
+import com.bigdious.risus.items.summoners.RisusBoatItem;
+import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -72,7 +78,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> BONDKNOT_HANGING_SIGN = register("bondknot_hanging_sign", properties -> new HangingSignItem(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(16));
 	public static final DeferredItem<Item> JOYFLAME_TORCH = register("joyflame_torch", properties -> new StandingAndWallBlockItem(RisusBlocks.JOYFLAME_TORCH.get(), RisusBlocks.JOYFLAME_WALL_TORCH.get(), properties, Direction.DOWN), () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), properties, Direction.DOWN), () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> CRYSTALLIZED_BOND = register("crystallized_bond", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> CRYSTALLIZED_BOND = register("crystallized_bond", CrystallizedBondItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> VEINS = register("veins", properties -> new BlockItem(RisusBlocks.VEINS_END.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS

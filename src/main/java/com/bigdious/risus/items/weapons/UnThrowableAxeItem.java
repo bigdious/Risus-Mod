@@ -1,13 +1,11 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 
 public class UnThrowableAxeItem extends AxeItem {
 	public UnThrowableAxeItem(Tier tier, Properties properties) {

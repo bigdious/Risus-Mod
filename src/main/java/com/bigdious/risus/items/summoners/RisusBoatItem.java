@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.summoners;
 
 import com.bigdious.risus.entity.GutsBoat;
 import com.bigdious.risus.entity.RisusBoat;

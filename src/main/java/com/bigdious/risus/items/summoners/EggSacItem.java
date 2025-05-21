@@ -1,10 +1,9 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.summoners;
 
 import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

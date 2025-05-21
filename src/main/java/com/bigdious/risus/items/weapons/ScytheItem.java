@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BaseRotatableBlock;
