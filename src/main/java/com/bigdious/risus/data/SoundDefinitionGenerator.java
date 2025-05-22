@@ -27,6 +27,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.add(RisusSoundEvents.AMBIENT_FEIGR, definition().with(sound("risus:music/ambient/ambient_feigr").stream()));
 
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs cheekily");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.TOLLING_BELL, "entity/ophanim/tolling_bell", 1, "Heaven's Gaze looks upon you");
 
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_SKIN, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Skin armor rustles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_WINGS, SoundEvents.ARMOR_EQUIP_ELYTRA.value(), "Ophanim Wings rustle");
@@ -50,7 +51,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ORGANIC_MATTER_USE, SoundEvents.SCULK_VEIN_BREAK, "Organic Matter crinkles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.SINGER_SCREAM, SoundEvents.ENDERMAN_SCREAM, "Singer serenades");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.STRIPPER_STRIP, SoundEvents.ARROW_HIT, "Debt is claimed");
-		this.generateExistingSoundWithSubtitle(RisusSoundEvents.THOUSAND_BLADE_SLASH, SoundEvents.PLAYER_ATTACK_SWEEP, "Blade of a Thousand slashes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.THOUSAND_BLADE_SLASH, SoundEvents.PLAYER_ATTACK_WEAK, "Blade of a Thousand slashes");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_CRACK, SoundEvents.TURTLE_EGG_BREAK, "Teeth fall out");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.TOOTHKNOCKER_DASH, SoundEvents.GOAT_SCREAMING_LONG_JUMP, "Player lunges");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ZIT_POP, SoundEvents.LLAMA_SPIT, "Zit pops");

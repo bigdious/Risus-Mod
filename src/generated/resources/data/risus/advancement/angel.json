@@ -1,21 +1,8 @@
 {
   "parent": "risus:first",
   "criteria": {
-    "angel_altar": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "risus:angel_altar"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
+    "holy_grounds": {
+      "trigger": "risus:holy_grounds"
     }
   },
   "display": {
@@ -32,7 +19,7 @@
   },
   "requirements": [
     [
-      "angel_altar"
+      "holy_grounds"
     ]
   ],
   "sends_telemetry_event": true

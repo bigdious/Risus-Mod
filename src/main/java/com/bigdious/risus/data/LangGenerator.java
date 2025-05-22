@@ -334,10 +334,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("scythe", "It Craves Fire", "Obtain an Unlit Vessel");
 		this.addAdvancement("thousand", "Wanted For Warcrimes", "Obtain the Blade of a Thousand by sacrificing a thousand people");
 		this.addAdvancement("licked", "Mmmm, Tasty~", "Get licked!");
-		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it.");
+		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it...");
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
-		this.addAdvancement("angel", "Holy Grounds", "Trespass into the Altar of the Ophanim");
+		this.addAdvancement("angel", "Holy Grounds", "Trespass onto land protected by an Ophanim.");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttony Scales");
 		this.addAdvancement("lab", "Deep Core Fallout", "Approach a failed experiment");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");

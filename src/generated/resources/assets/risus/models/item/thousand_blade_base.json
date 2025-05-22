@@ -1,5 +1,14 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "risus:item/thousand_blade_item_pulled",
+      "predicate": {
+        "risus:pull": 0.9,
+        "risus:pulling": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "risus:item/thousand_blade_item"
   }

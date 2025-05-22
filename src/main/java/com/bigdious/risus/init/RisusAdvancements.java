@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
+import com.bigdious.risus.advancement.HolyGroundsTrigger;
 import com.bigdious.risus.advancement.KilledByDevourTrigger;
 import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
 import net.minecraft.advancements.CriterionTrigger;
@@ -15,4 +16,5 @@ public class RisusAdvancements {
 	public static final DeferredHolder<CriterionTrigger<?>, BreakWeaverNestTrigger> BREAK_WEAVER_NEST = TRIGGERS.register("break_weaver_nest", BreakWeaverNestTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, WitnessWeaverNestTrigger> WITNESS_WEAVER_NEST = TRIGGERS.register("witness_weaver_nest", WitnessWeaverNestTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, KilledByDevourTrigger> KILLED_BY_DEVOUR = TRIGGERS.register("killed_by_devour", KilledByDevourTrigger::new);
+	public static final DeferredHolder<CriterionTrigger<?>, HolyGroundsTrigger> HOLY_GROUNDS = TRIGGERS.register("holy_grounds", HolyGroundsTrigger::new);
 }

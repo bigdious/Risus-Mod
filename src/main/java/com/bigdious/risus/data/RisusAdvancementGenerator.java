@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
+import com.bigdious.risus.advancement.HolyGroundsTrigger;
 import com.bigdious.risus.advancement.KilledByDevourTrigger;
 import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
 import com.bigdious.risus.init.*;
@@ -46,7 +47,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
 			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
 			.addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
-			.addCriterion("angel", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
+			.addCriterion("holy_grounds", HolyGroundsTrigger.TriggerInstance.getsmitten())
 			.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
 			.addCriterion("lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
@@ -65,7 +66,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusBlocks.ANGEL_ALTAR.get(),
 				Component.translatable("advancement.risus.angel"),
 				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, false)
-			.addCriterion("angel_altar", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ANGEL_ALTAR))))
+			.addCriterion("holy_grounds", HolyGroundsTrigger.TriggerInstance.getsmitten())
 			.save(consumer, "risus:angel");
 
 		AdvancementHolder mod_book = Advancement.Builder.advancement().parent(site_zero)

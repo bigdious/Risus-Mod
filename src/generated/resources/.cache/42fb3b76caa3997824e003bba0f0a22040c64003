@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-21T21:04:18.536605	Risus Item Models
+// 1.21.1	2025-05-22T19:59:51.9386408	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -204,7 +204,7 @@ a2330498168d989f9c81bc25edb9109d5da9a0bf assets/risus/models/item/skin_leggings_
 204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 c5acdd3360ec4c1cab407437d31935ce56fd28c6 assets/risus/models/item/smile_banner_pattern.json
 6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
-ac030375c558add83c0658ac9fab7181ded06a8e assets/risus/models/item/soul_scythe.json
+55ff58d8cc777dba41ea24257961a33936ddb1ed assets/risus/models/item/soul_scythe.json
 2a8f6b062e87b5e5c23663529b4b319ae0c5cbad assets/risus/models/item/soul_scythe_base.json
 4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/soul_scythe_held.json
 8aabd6109304e1691a4a7137fe92c70c77d1ebe2 assets/risus/models/item/spreading_remains.json
@@ -214,8 +214,9 @@ a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondk
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
 fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json
 e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
-99ca2b09d7c1bc29779813630e3b89c9bbfb57ee assets/risus/models/item/thousand_blade.json
-cd7e728eba311ff07068b2978b8306a7b5eb70df assets/risus/models/item/thousand_blade_base.json
+b283d58affc7f7fdfa0421171814f50713b2acdf assets/risus/models/item/thousand_blade.json
+f8103a740f337e51a69ee5601433071c1fca045e assets/risus/models/item/thousand_blade_base.json
+8c7b51f6a7eb60cd1716850d56436ad1f35db4b3 assets/risus/models/item/thousand_blade_item_pulled.json
 22f4a792f3979a7a26c12c41d89cc557e072850c assets/risus/models/item/threaders_of_the_firmament.json
 8d2ac8475aa83b2dfc01226ea3b74f6828c39831 assets/risus/models/item/threaders_of_the_firmament_amethyst_trim.json
 6c19c160984a6e598cb26430678327a72caec6e5 assets/risus/models/item/threaders_of_the_firmament_copper_trim.json

@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -201,11 +202,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		handheldItem(RisusItems.CRESCENT_DISASTER, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster"), Risus.prefix("item/crescent_disaster_item"), "axe");
 		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
 		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
-		singleTexTool(RisusItems.SOUL_SCYTHE);
 		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
 		handheldItem(RisusItems.FIRE_SCYTHE, withExistingParent("fire_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
 		handheldItem(RisusItems.CINDERGLEE_SCYTHE, withExistingParent("cinderglee_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
-		handheldItem(RisusItems.THOUSAND_BLADE, getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item"), "thousand_blade");
+		ModelFile chargedThousandBlade = generated("thousand_blade_item_pulled", Risus.prefix("item/thousand_blade_item_pulled"));
+		chargeableHandheldItem(RisusItems.THOUSAND_BLADE, getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item"), "thousand_blade", chargedThousandBlade);
 		handheldItem(RisusItems.UNAWAKENED_VESSEL, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("entity/unawakened_vessel"), Risus.prefix("item/unawakened_vessel"), "axe");
 		handheldItem(RisusItems.HAND_OF_GREED, getExistingFile(Risus.prefix("item/hand_of_greed_held")), Risus.prefix("item/hand_of_greed"), Risus.prefix("item/hand_of_greed_item"), "hand_of_greed");
 		singleTex(RisusItems.SMILE);
@@ -321,8 +322,21 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.HEAD, heldVersion)
 			.end();
-
 	}
+
+	private void chargeableHandheldItem (DeferredItem<Item> item, ModelFile heldModel, ResourceLocation heldTexture ,ResourceLocation itemTexture, String textureName, ModelFile chargedModel) {
+	ItemModelBuilder heldVersion = nested().parent(heldModel).texture(textureName, heldTexture);
+	withExistingParent(item.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated(item.getId()+"_base", itemTexture)
+				.override().predicate(Risus.prefix("pulling"), 1).predicate(Risus.prefix("pull"), (float) 0.9).model(chargedModel).end())
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.HEAD, heldVersion)
+			.end();
+	}
+
 
 	@Override
 	public String getName() {

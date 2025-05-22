@@ -1,8 +1,8 @@
 {
   "advancement.risus.angel": "Holy Grounds",
-  "advancement.risus.angel.desc": "Trespass into the Altar of the Ophanim",
+  "advancement.risus.angel.desc": "Trespass onto land protected by an Ophanim.",
   "advancement.risus.boomstick": "That's A Bad Idea...",
-  "advancement.risus.boomstick.desc": "Obtain a Boomstick. Be careful with it.",
+  "advancement.risus.boomstick.desc": "Obtain a Boomstick. Be careful with it...",
   "advancement.risus.crusade": "Crusade",
   "advancement.risus.crusade.desc": "Kill an Ophanim",
   "advancement.risus.cupid": "Cupid",
@@ -459,6 +459,7 @@
   "subtitles.risus.entity.litter.excrement": "Litter excretes",
   "subtitles.risus.entity.lover.infect": "Lover impregnates",
   "subtitles.risus.entity.maw.guts_shatter": "Gorger Guts break",
+  "subtitles.risus.entity.ophanim.tolling_bell": "Heaven's Gaze looks upon you",
   "subtitles.risus.entity.singer.scream": "Singer serenades",
   "subtitles.risus.item.armor.equip_skin": "Skin armor rustles",
   "subtitles.risus.item.armor.equip_wings": "Ophanim Wings rustle",

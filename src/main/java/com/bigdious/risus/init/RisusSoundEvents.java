@@ -21,6 +21,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_MORK = register("music.ambient.mork");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_FEIGR = register("music.ambient.feigr");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("entity.holder.cheeky_laugh");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TOLLING_BELL = register("entity.ophanim.tolling_bell");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_AMBIENT = register("block.blood.ambient");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTALLIZED_BOND_GROW = register("block.popping_bondknot.crystallized_bond_grow");

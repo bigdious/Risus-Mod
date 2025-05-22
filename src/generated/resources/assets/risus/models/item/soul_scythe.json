@@ -38,8 +38,5 @@
         "texture": "risus:item/soul_scythe"
       }
     }
-  },
-  "textures": {
-    "layer0": "risus:item/soul_scythe"
   }
 }

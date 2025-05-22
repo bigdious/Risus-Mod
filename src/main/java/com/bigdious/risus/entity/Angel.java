@@ -1,12 +1,12 @@
 package com.bigdious.risus.entity;
 
-import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusFluids;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusTags;
+import com.bigdious.risus.init.*;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -112,12 +112,18 @@ public class Angel extends Monster {
 		public void tick() {
 			LivingEntity livingentity = this.angel.getTarget();
 			Level level = this.angel.level();
-			if (livingentity != null && livingentity.distanceToSqr(this.angel) < 4096.0D && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
+			if (livingentity != null && livingentity.distanceToSqr(this.angel) < 5096.0D && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
+				if (this.chargeTime == 0 && livingentity instanceof Player) {
+					level.playSound(null, livingentity.getOnPos().above(2), RisusSoundEvents.TOLLING_BELL.get() ,SoundSource.HOSTILE, 3, 1);
+				}
 				++this.chargeTime;
-				if (this.chargeTime == 20) {
+				if (this.chargeTime == 30) {
 					LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
 					lightning.setPos(livingentity.getX(), livingentity.getEyeY(), livingentity.getZ());
 					level.addFreshEntity(lightning);
+					if (livingentity instanceof ServerPlayer sp){
+						RisusAdvancements.HOLY_GROUNDS.get().trigger(sp);
+					}
 					this.chargeTime = -40;
 				}
 			} else if (this.chargeTime > 0) {

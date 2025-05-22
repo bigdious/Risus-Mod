@@ -131,6 +131,12 @@
     ],
     "subtitle": "subtitles.risus.entity.maw.guts_shatter"
   },
+  "entity.ophanim.tolling_bell": {
+    "sounds": [
+      "risus:entity/ophanim/tolling_bell"
+    ],
+    "subtitle": "subtitles.risus.entity.ophanim.tolling_bell"
+  },
   "entity.singer.scream": {
     "sounds": [
       {
@@ -162,7 +168,7 @@
     "sounds": [
       {
         "type": "event",
-        "name": "entity.player.attack.sweep"
+        "name": "entity.player.attack.weak"
       }
     ],
     "subtitle": "subtitles.risus.item.boat.slash"

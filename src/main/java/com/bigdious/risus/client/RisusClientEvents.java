@@ -103,7 +103,14 @@ public class RisusClientEvents {
 	private static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
-
+		ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), ResourceLocation.fromNamespaceAndPath(Risus.MODID, "pull"), (stack, level, entity, seed) -> {
+			if (entity == null) {
+				return 0.0F;
+			} else {
+				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
+			}
+		});
+		ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), ResourceLocation.fromNamespaceAndPath(Risus.MODID, "pulling"), (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
