@@ -8,6 +8,7 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -26,8 +28,11 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 public class ThousandBladeItem extends SwordItem {
 
@@ -103,7 +108,17 @@ public class ThousandBladeItem extends SwordItem {
 //			}
 		}
 	}
+	private static Vector3f getProjectileShotVector(LivingEntity shooter, Vec3 distance, float angle) {
+		Vector3f vector3f = distance.toVector3f().normalize();
+		Vector3f vector3f1 = (new Vector3f(vector3f)).cross(new Vector3f(0.0F, 1.0F, 0.0F));
+		if ((double)vector3f1.lengthSquared() <= 1.0E-7) {
+			Vec3 vec3 = shooter.getUpVector(1.0F);
+			vector3f1 = (new Vector3f(vector3f)).cross(vec3.toVector3f());
+		}
 
+		Vector3f vector3f2 = (new Vector3f(vector3f)).rotateAxis(((float)Math.PI / 2F), vector3f1.x, vector3f1.y, vector3f1.z);
+		return (new Vector3f(vector3f)).rotateAxis(angle * ((float)Math.PI / 180F), vector3f2.x, vector3f2.y, vector3f2.z);
+	}
 
 	protected void shoot(ServerLevel level, LivingEntity living, InteractionHand hand, ItemStack stack) {
 
@@ -117,6 +132,7 @@ public class ThousandBladeItem extends SwordItem {
 			float f4 = f2 + f3 * (float) ((i + 1) / 2) * f1;
 			f3 = -f3;
 			BloodSlash slash = new BloodSlash(level, living, stack);
+			this.shootProjectile(living, slash, i, 1.3F, 1.0F, f4);
 			slash.shootFromRotation(living, living.getXRot(), living.getYRot()+f4, 0.0f, 1.3F, 1.0F);
 			level.addFreshEntity(slash);
 			stack.hurtAndBreak(1, living, LivingEntity.getSlotForHand(hand));
@@ -126,6 +142,15 @@ public class ThousandBladeItem extends SwordItem {
 		}
 	}
 
+	protected void shootProjectile(LivingEntity shooter, Projectile projectile, int index, float velocity, float inaccuracy, float angle) {
+		Vector3f vector3f;
+			Vec3 vec3 = shooter.getUpVector(1.0F);
+			Quaternionf quaternionf = (new Quaternionf()).setAngleAxis((angle * ((float)Math.PI / 180F)), vec3.x, vec3.y, vec3.z);
+			Vec3 vec31 = shooter.getViewVector(1.0F);
+			vector3f = vec31.toVector3f().rotate(quaternionf);
+
+		projectile.shoot(vector3f.x(), vector3f.y(), vector3f.z(), velocity, inaccuracy);
+	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack stack) {

@@ -7,6 +7,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue holdersStealFromMonsters;
 	final ModConfigSpec.BooleanValue illegalLitters;
 	final ModConfigSpec.BooleanValue stripperWorksOnMobArmor;
+	final ModConfigSpec.BooleanValue customWeaponAnims;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -28,6 +29,9 @@ public final class RisusCommonConfig {
 			.translation("config.risus.stripper_works_on_mob_armor")
 			.comment(ConfigComments.STRIPPER_WORKS_ON_MOB_ARMOR)
 			.define("stripperWorksOnMobArmor", true);
-
+		this.customWeaponAnims = builder
+			.translation("config.risus.custom_weapon_anims")
+			.comment(ConfigComments.CUSTOM_WEAPON_ANIMS)
+			.define("customWeaponAnims", true);
 	}
 }

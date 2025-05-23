@@ -1,5 +1,6 @@
 package com.bigdious.risus;
 
+import com.bigdious.risus.config.RisusConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -9,6 +10,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.GameRules;
 import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.neoforge.client.IArmPoseTransformer;
 
@@ -60,24 +62,27 @@ public class RisusEnumExtensions {
 		});
 	}
 	public static Object THOUSAND_BLADE(int idx, Class<?> type) {
-		if (idx == 0)
-			return true; //two handed. Set to false to only pose the hand holding the item
-		return (IArmPoseTransformer) (model, entity, arm) -> {
-				boolean right = arm == HumanoidArm.RIGHT;
-				ModelPart modelpart = right ? model.rightArm : model.leftArm;
-				modelpart.yRot = (right ? 0.4F : -0.4F) + model.head.yRot;
-				modelpart.xRot = -Mth.HALF_PI + model.head.xRot + 1.4F;
-		};
+
+			if (idx == 0)
+				return true; //two handed. Set to false to only pose the hand holding the item
+			return (IArmPoseTransformer) (model, entity, arm) -> {
+				if (RisusConfig.customWeaponAnims) {
+					boolean right = arm == HumanoidArm.RIGHT;
+					ModelPart modelpart = right ? model.rightArm : model.leftArm;
+					modelpart.yRot = (right ? 0.4F : -0.4F) + model.head.yRot;
+					modelpart.xRot = -Mth.HALF_PI + model.head.xRot + 1.4F;
+				}
+			};
 	}
 	public static Object SCYTHE(int idx, Class<?> type) {
 		if (idx == 0)
 			return true; //two handed. Set to false to only pose the hand holding the item
 		return (IArmPoseTransformer) (model, entity, arm) -> {
-			if (!entity.isUsingItem() && arm == HumanoidArm.RIGHT) {
+			if (!entity.isUsingItem() && arm == HumanoidArm.RIGHT && RisusConfig.customWeaponAnims) {
 				ModelPart modelpart = model.rightArm;
 				ModelPart modelpart1 = model.leftArm;
-				modelpart.xRot = -Mth.HALF_PI+0.65F;
-				modelpart1.xRot = -Mth.HALF_PI+1.1F;
+				modelpart.xRot = -Mth.HALF_PI + 0.65F;
+				modelpart1.xRot = -Mth.HALF_PI + 1.1F;
 
 			}
 		};
