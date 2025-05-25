@@ -49,7 +49,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), Risus.prefix("block/oxidized_copper_amalgam"));
 		toBlock(RisusBlocks.LAUGHING_STALK.get());
 		toBlock(RisusBlocks.ASHEN_REMAINS.get());
-		toBlock(RisusBlocks.SMILING_REMAINS.get());
+		toBlockModel(RisusBlocks.SMILING_REMAINS.get(), Risus.prefix("block/smiling_remains/1"));
 		toBlock(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		toBlock(RisusBlocks.ENGRAVED_BASALT.get());
 		toBlock(RisusBlocks.LIGHT_EXCREMENT.get());

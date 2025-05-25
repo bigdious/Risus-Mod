@@ -7,7 +7,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -37,11 +36,41 @@ public class BlockModelGenerator extends BlockStateProvider {
 		getVariantBuilder(RisusBlocks.ASHEN_REMAINS.get()).forAllStates(state -> {
 			ModelFile noEyes = models().cubeAll("ashen_remains", Risus.prefix("block/ashen_remains"));
 			ModelFile eyes = models().cubeAll("ashen_remains_eyes", Risus.prefix("block/ashen_remains_eyes"));
-			return ConfiguredModel.builder().modelFile(state.getValue(AshenRemainsBlock.HAS_EYES) ? eyes : noEyes).weight(1).nextModel().modelFile(noEyes).weight(30).build();
+			return ConfiguredModel.builder().modelFile(state.getValue(RemainsBlock.ACTIVE) ? eyes : noEyes).weight(1).nextModel().modelFile(noEyes).weight(30).build();
 		});
-		simpleBlock(RisusBlocks.SMILING_REMAINS.get(), make2LayerCubeAllSidesSame(RisusBlocks.SMILING_REMAINS.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
-				.texture("all", Risus.prefix("block/smiling_remains"))
-				.texture("all2", Risus.prefix("block/smiling_remains_overlay")));
+		//so many lines for such a simple thing
+		getVariantBuilder(RisusBlocks.SMILING_REMAINS.get()).forAllStates(state -> {
+			//blank needs to use an overlay too, despite it being empty. Needed for correct lighting
+			ModelFile blank = make2LayerCubeAllSidesSame("block/smiling_remains/0", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/0")).texture("all2", Risus.prefix("block/smiling_remains/overlay_0"));
+			ModelFile smile1 = make2LayerCubeAllSidesSame("block/smiling_remains/1", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/1")).texture("all2", Risus.prefix("block/smiling_remains/overlay_1"));
+			ModelFile smile2 = make2LayerCubeAllSidesSame("block/smiling_remains/2", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/2")).texture("all2", Risus.prefix("block/smiling_remains/overlay_2"));
+			ModelFile smile3 = make2LayerCubeAllSidesSame("block/smiling_remains/3", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/3")).texture("all2", Risus.prefix("block/smiling_remains/overlay_3"));
+			ModelFile smile4 = make2LayerCubeAllSidesSame("block/smiling_remains/4", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/4")).texture("all2", Risus.prefix("block/smiling_remains/overlay_4"));
+			ModelFile smile5 = make2LayerCubeAllSidesSame("block/smiling_remains/5", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/5")).texture("all2", Risus.prefix("block/smiling_remains/overlay_5"));
+			ModelFile smile6 = make2LayerCubeAllSidesSame("block/smiling_remains/6", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/6")).texture("all2", Risus.prefix("block/smiling_remains/overlay_6"));
+			ModelFile smile7 = make2LayerCubeAllSidesSame("block/smiling_remains/7", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/7")).texture("all2", Risus.prefix("block/smiling_remains/overlay_7"));
+			ModelFile smile8 = make2LayerCubeAllSidesSame("block/smiling_remains/8", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
+				.texture("all", Risus.prefix("block/smiling_remains/8")).texture("all2", Risus.prefix("block/smiling_remains/overlay_8"));
+			return ConfiguredModel.builder()
+				.modelFile(blank).weight(3)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile1 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile2 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile3 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile4 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile5 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile6 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile7 : blank).weight(1)
+				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile8 : blank).weight(1)
+				.build();
+		});
 		simpleBlock(RisusBlocks.BURNT_HYPHAE.get(), make2LayerCubeAllSidesSame(RisusBlocks.BURNT_HYPHAE.getId().getPath(), ResourceLocation.withDefaultNamespace("cutout"), 0, 10, false)
 			.texture("all", Risus.prefix("block/burnt_hyphae"))
 			.texture("all2", Risus.prefix("block/burnt_hyphae_overlay")));

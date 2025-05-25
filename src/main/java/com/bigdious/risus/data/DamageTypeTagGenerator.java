@@ -27,7 +27,8 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 		this.tag(DamageTypeTags.BYPASSES_INVULNERABILITY).add(
 			RisusDamageTypes.VAMPIRISM,
 			RisusDamageTypes.INEXISTENCE,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.GLUTTONY
 		);
 		this.tag(DamageTypeTags.NO_KNOCKBACK).add(
 			RisusDamageTypes.VAMPIRISM,

@@ -110,7 +110,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<RisusWallBlock> IMITATION_SCALES_BLOCK_WALL = registerWithFireResistantItem("imitation_scales_block_wall",  RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
 
 	//REMAINS
-	public static final DeferredBlock<Block> ASHEN_REMAINS = registerWithItem("ashen_remains", AshenRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SOUL_SOIL).mapColor(MapColor.COLOR_BLACK));
+	public static final DeferredBlock<Block> ASHEN_REMAINS = registerWithItem("ashen_remains", RemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SOUL_SOIL).mapColor(MapColor.COLOR_BLACK));
 	public static final DeferredBlock<Block> SMILING_REMAINS = registerWithItem("smiling_remains", RemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHERRACK).mapColor(MapColor.COLOR_BLACK));
 	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = registerWithItem("spreading_remains", SpreadingRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK_VEIN).mapColor(MapColor.COLOR_BLACK).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> ORGANIC_MATTER_BLOCK = registerWithItem("organic_matter_block", OrganicMatterBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noOcclusion());

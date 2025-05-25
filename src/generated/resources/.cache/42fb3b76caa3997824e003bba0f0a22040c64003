@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-22T19:59:51.9386408	Risus Item Models
+// 1.21.1	2025-05-25T14:29:17.0774997	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -203,7 +203,7 @@ b8859bdc337e6118a375b01c630f11be66bbf23c assets/risus/models/item/skin_leggings_
 a2330498168d989f9c81bc25edb9109d5da9a0bf assets/risus/models/item/skin_leggings_redstone_trim.json
 204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 c5acdd3360ec4c1cab407437d31935ce56fd28c6 assets/risus/models/item/smile_banner_pattern.json
-6587fc3889bbc1be460901306d6e640b9fb31ea1 assets/risus/models/item/smiling_remains.json
+4321ad9d12f48a0247f4e7be0ae482957dc00521 assets/risus/models/item/smiling_remains.json
 55ff58d8cc777dba41ea24257961a33936ddb1ed assets/risus/models/item/soul_scythe.json
 2a8f6b062e87b5e5c23663529b4b319ae0c5cbad assets/risus/models/item/soul_scythe_base.json
 4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/soul_scythe_held.json

@@ -1,7 +1,7 @@
-// 1.21.1	2025-02-04T20:03:30.0269754	Tags for minecraft:damage_type mod id risus
+// 1.21.1	2025-05-25T17:28:13.8098496	Tags for minecraft:damage_type mod id risus
 e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_armor.json
 e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_enchantments.json
-8fcf1e41bd278c6b1dbd496df63e4f43a6c45a4c data/minecraft/tags/damage_type/bypasses_invulnerability.json
+6ffce9ce1e5a8d57bcc18fbebbeaef31b9eac51a data/minecraft/tags/damage_type/bypasses_invulnerability.json
 e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_resistance.json
 e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_shield.json
 fe65b5451185af4d1df84baf33c8712d728e581e data/minecraft/tags/damage_type/no_impact.json

@@ -1,7 +1,64 @@
 {
   "variants": {
-    "": {
-      "model": "risus:block/smiling_remains"
-    }
+    "active=false": [
+      {
+        "model": "risus:block/smiling_remains/0",
+        "weight": 3
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      },
+      {
+        "model": "risus:block/smiling_remains/0"
+      }
+    ],
+    "active=true": [
+      {
+        "model": "risus:block/smiling_remains/0",
+        "weight": 3
+      },
+      {
+        "model": "risus:block/smiling_remains/1"
+      },
+      {
+        "model": "risus:block/smiling_remains/2"
+      },
+      {
+        "model": "risus:block/smiling_remains/3"
+      },
+      {
+        "model": "risus:block/smiling_remains/4"
+      },
+      {
+        "model": "risus:block/smiling_remains/5"
+      },
+      {
+        "model": "risus:block/smiling_remains/6"
+      },
+      {
+        "model": "risus:block/smiling_remains/7"
+      },
+      {
+        "model": "risus:block/smiling_remains/8"
+      }
+    ]
   }
 }

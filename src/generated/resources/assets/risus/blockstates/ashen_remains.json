@@ -1,6 +1,6 @@
 {
   "variants": {
-    "has_eyes=false": [
+    "active=false": [
       {
         "model": "risus:block/ashen_remains"
       },
@@ -9,7 +9,7 @@
         "weight": 30
       }
     ],
-    "has_eyes=true": [
+    "active=true": [
       {
         "model": "risus:block/ashen_remains_eyes"
       },

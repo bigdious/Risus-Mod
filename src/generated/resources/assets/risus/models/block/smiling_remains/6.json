@@ -102,12 +102,114 @@
         16,
         16
       ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#bottom"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#east"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#north"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#south"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#top"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#west"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "shade": false,
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#bottom2",
+          "tintindex": 0
+        },
+        "east": {
+          "cullface": "east",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#east2",
+          "tintindex": 0
+        },
+        "north": {
+          "cullface": "north",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#north2",
+          "tintindex": 0
+        },
+        "south": {
+          "cullface": "south",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#south2",
+          "tintindex": 0
+        },
+        "up": {
+          "cullface": "up",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#top2",
+          "tintindex": 0
+        },
+        "west": {
+          "cullface": "west",
+          "neoforge_data": {
+            "block_light": 10
+          },
+          "texture": "#west2",
+          "tintindex": 0
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "shade": false,
+      "to": [
+        16,
+        16,
+        16
+      ]
     }
   ],
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "risus:block/smiling_remains",
-    "all2": "risus:block/smiling_remains_overlay",
+    "all": "risus:block/smiling_remains/6",
+    "all2": "risus:block/smiling_remains/overlay_6",
     "bottom": "#all",
     "bottom2": "#all2",
     "east": "#all",
