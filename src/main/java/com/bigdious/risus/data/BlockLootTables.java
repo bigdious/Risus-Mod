@@ -172,6 +172,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.DECOMPOSED_TISSUE.get());
 		dropSelf(RisusBlocks.DECAYED_TISSUE.get());
 		dropSelf(RisusBlocks.TISSUE_STAIRS.get());
+		dropSelf(RisusBlocks.TISSUE_WALL.get());
 		add(RisusBlocks.TISSUE_SLAB.get(), createSlabItemTable(RisusBlocks.TISSUE_SLAB.get()));
 		dropSelf(RisusBlocks.BONE_STAIRS.get());
 		add(RisusBlocks.BONE_SLAB.get(), createSlabItemTable(RisusBlocks.BONE_SLAB.get()));

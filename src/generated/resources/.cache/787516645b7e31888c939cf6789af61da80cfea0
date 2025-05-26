@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-13T21:09:29.9429297	Tags for minecraft:block mod id risus
+// 1.21.1	2025-05-26T16:24:43.7484836	Tags for minecraft:block mod id risus
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
@@ -13,8 +13,8 @@ bd91bab90901281b6022e8156f5d31aa13cd8f6f data/minecraft/tags/block/fire.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/block/flowers.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs_that_burn.json
-5b833f5a1169fef52161730c7ff051ac0eed2fdc data/minecraft/tags/block/mineable/axe.json
-b3ceb52137e7cb05e291801ca534073492706669 data/minecraft/tags/block/mineable/hoe.json
+c13fd66cb236f44986e77fbcdfced8ef7c722791 data/minecraft/tags/block/mineable/axe.json
+6c6f3357e1dafa6726a1bb0342b3a933bde53aee data/minecraft/tags/block/mineable/hoe.json
 2a45536624f0f5e63209c2d8c14043b3cdfffd2d data/minecraft/tags/block/mineable/pickaxe.json
 08e2b2328521bd43408bdb0d31d54dc781c200cd data/minecraft/tags/block/mineable/shovel.json
 9c7e98caea631afa5c461f2a62977307285fd268 data/minecraft/tags/block/needs_diamond_tool.json
@@ -28,7 +28,7 @@ cad17b0adee9a59c630129c3e60affe9d47d206d data/minecraft/tags/block/slabs.json
 9e4ce0e286bc9ffa07667e698338525ddbe1dbac data/minecraft/tags/block/stairs.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/block/standing_signs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/block/trapdoors.json
-4ad8dc66aaf50a13c82f594956992f88eb60e24a data/minecraft/tags/block/walls.json
+ec0296c07b033406e94fb3d6c969399b862f43fe data/minecraft/tags/block/walls.json
 e98f56bd0edb12f5acbbd746df1f53af5d86b2a7 data/minecraft/tags/block/wall_signs.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/block/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/wooden_doors.json

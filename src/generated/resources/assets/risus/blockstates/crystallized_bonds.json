@@ -1,108 +1,484 @@
 {
   "variants": {
-    "facing=down,fluid=blood": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 180
-    },
-    "facing=down,fluid=empty": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 180
-    },
-    "facing=down,fluid=lava": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 180
-    },
-    "facing=down,fluid=water": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 180
-    },
-    "facing=east,fluid=blood": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 90
-    },
-    "facing=east,fluid=empty": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 90
-    },
-    "facing=east,fluid=lava": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 90
-    },
-    "facing=east,fluid=water": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 90
-    },
-    "facing=north,fluid=blood": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90
-    },
-    "facing=north,fluid=empty": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90
-    },
-    "facing=north,fluid=lava": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90
-    },
-    "facing=north,fluid=water": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90
-    },
-    "facing=south,fluid=blood": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 180
-    },
-    "facing=south,fluid=empty": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 180
-    },
-    "facing=south,fluid=lava": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 180
-    },
-    "facing=south,fluid=water": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 180
-    },
-    "facing=up,fluid=blood": {
-      "model": "risus:block/crystallized_bonds"
-    },
-    "facing=up,fluid=empty": {
-      "model": "risus:block/crystallized_bonds"
-    },
-    "facing=up,fluid=lava": {
-      "model": "risus:block/crystallized_bonds"
-    },
-    "facing=up,fluid=water": {
-      "model": "risus:block/crystallized_bonds"
-    },
-    "facing=west,fluid=blood": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 270
-    },
-    "facing=west,fluid=empty": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 270
-    },
-    "facing=west,fluid=lava": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 270
-    },
-    "facing=west,fluid=water": {
-      "model": "risus:block/crystallized_bonds",
-      "x": 90,
-      "y": 270
-    }
+    "facing=down,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180,
+        "y": 180
+      }
+    ],
+    "facing=down,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180,
+        "y": 180
+      }
+    ],
+    "facing=down,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180,
+        "y": 180
+      }
+    ],
+    "facing=down,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 180,
+        "y": 180
+      }
+    ],
+    "facing=east,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 270
+      }
+    ],
+    "facing=east,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 270
+      }
+    ],
+    "facing=east,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 270
+      }
+    ],
+    "facing=east,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 270
+      }
+    ],
+    "facing=north,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 180
+      }
+    ],
+    "facing=north,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 180
+      }
+    ],
+    "facing=north,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 180
+      }
+    ],
+    "facing=north,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 180
+      }
+    ],
+    "facing=south,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270
+      }
+    ],
+    "facing=south,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270
+      }
+    ],
+    "facing=south,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270
+      }
+    ],
+    "facing=south,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270
+      }
+    ],
+    "facing=up,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds"
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted"
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "y": 180
+      }
+    ],
+    "facing=up,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds"
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted"
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "y": 180
+      }
+    ],
+    "facing=up,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds"
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted"
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "y": 180
+      }
+    ],
+    "facing=up,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds"
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "y": 180
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted"
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "y": 180
+      }
+    ],
+    "facing=west,fluid=blood": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 90
+      }
+    ],
+    "facing=west,fluid=empty": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 90
+      }
+    ],
+    "facing=west,fluid=lava": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 90
+      }
+    ],
+    "facing=west,fluid=water": [
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "risus:block/crystallized_bonds_tilted",
+        "x": 270,
+        "y": 90
+      }
+    ]
   }
 }

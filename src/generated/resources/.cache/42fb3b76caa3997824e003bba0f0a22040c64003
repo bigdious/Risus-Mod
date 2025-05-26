@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-25T14:29:17.0774997	Risus Item Models
+// 1.21.1	2025-05-26T16:23:52.7513681	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -231,6 +231,7 @@ dedda0d5727129419503d2273974163b1d46a6f2 assets/risus/models/item/threaders_of_t
 7b2a5173a3b21944eadd06d4f04b3e21dc47eac0 assets/risus/models/item/tissue.json
 88dbd49ff61f13526dc4161377d35ab5494e4539 assets/risus/models/item/tissue_slab.json
 b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.json
+5c0c348df8337706cf6179845c9b97948d91c3c1 assets/risus/models/item/tissue_wall.json
 a1ba871503c6dd650b347fa420bd20cd998f8cb4 assets/risus/models/item/totem_of_unyielding.json
 8a61f9a79180f9455dfd8470384ee6b73c875168 assets/risus/models/item/tree_banner_pattern.json
 b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json

@@ -88,6 +88,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.ROTTED_TISSUE.get(),
 			RisusBlocks.DECOMPOSED_TISSUE.get(),
 			RisusBlocks.DECAYED_TISSUE.get(),
+			RisusBlocks.TISSUE_WALL.get(),
 			RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
 
 
@@ -200,6 +201,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.TISSUE.get(),
 				RisusBlocks.TISSUE_SLAB.get(),
 				RisusBlocks.TISSUE_STAIRS.get(),
+				RisusBlocks.TISSUE_WALL.get(),
 				RisusBlocks.LIVING_TISSUE.get(),
 				RisusBlocks.SKIN.get(),
 				RisusBlocks.FLESHY_SKIN.get(),
@@ -231,6 +233,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.TISSUE.get(),
 				RisusBlocks.TISSUE_SLAB.get(),
 				RisusBlocks.TISSUE_STAIRS.get(),
+				RisusBlocks.TISSUE_WALL.get(),
 				RisusBlocks.LIVING_TISSUE.get(),
 				RisusBlocks.SKIN.get(),
 				RisusBlocks.FLESHY_SKIN.get(),

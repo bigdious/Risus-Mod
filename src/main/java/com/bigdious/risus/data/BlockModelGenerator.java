@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -18,6 +19,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
@@ -103,7 +105,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		horizontalBlock(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/exposed_copper_amalgam")));
 		horizontalBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/weathered_copper_amalgam")));
 		horizontalBlock(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(), models().getExistingFile(Risus.prefix("block/oxidized_copper_amalgam")));
-		directionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(Risus.prefix("block/crystallized_bonds")));
+		rotatingDirectionalBlock(RisusBlocks.CRYSTALLIZED_BONDS.get(), models().getExistingFile(Risus.prefix("block/crystallized_bonds")), models().getExistingFile(Risus.prefix("block/crystallized_bonds_tilted")), 180);
 		directionalBlock(RisusBlocks.LIGHT_EXCREMENT.get(), models().getExistingFile(Risus.prefix("block/light_excrement")));
 		directionalBlock(RisusBlocks.LAUGHING_STALK.get(), models().getExistingFile(Risus.prefix("block/laughing_stalk")));
 
@@ -292,6 +294,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.TISSUE.get());
 		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue"));
 		slabBlock(RisusBlocks.TISSUE_SLAB.get(), Risus.prefix("block/tissue"), Risus.prefix("block/tissue"));
+		risusWallBlock(RisusBlocks.TISSUE_WALL.get(), models().wallPost("tissue_wall_post",Risus.prefix("block/tissue")), models().wallSide("tissue_wall_side", Risus.prefix("block/tissue")), models().wallSideTall("tissue_wall_side_tall", Risus.prefix("block/tissue")));
 		risusWallBlock(RisusBlocks.ROTTING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/rotting_tissue_tall_side")));
 		risusWallBlock(RisusBlocks.DECOMPOSING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decomposing_tissue_tall_side")));
 		risusWallBlock(RisusBlocks.DECAYING_TISSUE.get(), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_post")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_side")), models().getExistingFile(Risus.prefix("block/tissue/decaying_tissue_tall_side")));
@@ -437,6 +440,26 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	private void risusWallSidePart(MultiPartBlockStateBuilder builder, ModelFile model, Map.Entry<Direction, Property<WallSide>> entry, WallSide height) {
 		(builder.part().modelFile(model).rotationY(((int)(entry.getKey()).toYRot() + 180) % 360).uvLock(true).addModel()).condition(entry.getValue(), height);
+	}
+
+	private void rotatingDirectionalBlock (Block block, ModelFile model, ModelFile tiltedModel, int angleOffset) {
+		this.getVariantBuilder(block).forAllStates((state) -> {
+			Direction dir = state.getValue(BlockStateProperties.FACING);
+			return ConfiguredModel.builder()
+				.modelFile(model)
+				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 90 : 0))
+				.rotationY(dir.getAxis().isVertical() ? 0 : ((int) dir.toYRot() + angleOffset) % 360)
+				.nextModel().modelFile(model)
+				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 270 : 0))
+				.rotationY(dir.getAxis().isVertical() ? 180 : ((int) dir.toYRot() + angleOffset+180) % 360)
+				.nextModel().modelFile(tiltedModel)
+				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 90 : 0))
+				.rotationY(dir.getAxis().isVertical() ? 0 : ((int) dir.toYRot() + angleOffset) % 360)
+				.nextModel().modelFile(tiltedModel)
+				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 270 : 0))
+				.rotationY(dir.getAxis().isVertical() ? 180 : ((int) dir.toYRot() + angleOffset+180) % 360)
+				.build();
+		});
 	}
 
 	@Nonnull

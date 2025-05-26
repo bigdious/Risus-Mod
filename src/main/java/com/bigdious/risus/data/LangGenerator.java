@@ -140,6 +140,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.TISSUE, "Living Tissue");
 		this.addBlock(RisusBlocks.TISSUE_SLAB, "Tissue Slab");
 		this.addBlock(RisusBlocks.TISSUE_STAIRS, "Tissue Stairs");
+		this.addBlock(RisusBlocks.TISSUE_WALL, "Tissue Wall");
 		this.addBlock(RisusBlocks.VEINS, "Veins");
 		this.addBlock(RisusBlocks.VEINS_END, "Veins");
 		this.addBlock(RisusBlocks.WAXED_COPPER_AMALGAM, "Waxed Copper Amalgam");

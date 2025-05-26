@@ -473,6 +473,13 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.TISSUE_WALL.get(), 6)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusTags.Items.BASE_TISSUE))
+			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BOND_GLASS.get(), 1)
 			.requires(RisusItems.CRYSTALLIZED_BOND.get())
 			.requires(Items.GLASS)

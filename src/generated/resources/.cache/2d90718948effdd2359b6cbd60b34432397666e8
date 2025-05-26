@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-25T15:40:07.5514057	Risus blockstates and models
+// 1.21.1	2025-05-26T17:51:43.9048723	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -38,7 +38,7 @@ dced16f6e500a371f97d09e7ee1160701e9231f8 assets/risus/blockstates/bundle_of_hair
 d88cf4b76d271f049efb269e33897b8776844028 assets/risus/blockstates/containment_glass.json
 b36a33309a27cff749b799ebb8e506662e4daa58 assets/risus/blockstates/copper_amalgam.json
 a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimstone_bricks.json
-b5bda4beb81ee26395e627303735e4aad3fe5cf0 assets/risus/blockstates/crystallized_bonds.json
+4ef4ca7e7e6e87db77516ead451047951fd27ebe assets/risus/blockstates/crystallized_bonds.json
 c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_block.json
 5b8112ecf259e44ed661c499e38a40004dc3dcb4 assets/risus/blockstates/cyan_display_notch.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decayed_tissue.json
@@ -127,6 +127,7 @@ ca93484e92f11b2546fcb57f945980874b7195ca assets/risus/blockstates/smiling_remain
 afabf7420575fc41fb43a7e0d6a2ed356a96554a assets/risus/blockstates/tissue.json
 aa66cca1f604ab84a0ce36ddeef16c78fbdacbe9 assets/risus/blockstates/tissue_slab.json
 b3ec85bb612ab05fe6304555bf6651a5eed2f342 assets/risus/blockstates/tissue_stairs.json
+8119f4ac4965fb88ef9d1a6fc8a5123ca51388db assets/risus/blockstates/tissue_wall.json
 d79ed2b071902f25bda75889d48e72d2fbf3821b assets/risus/blockstates/veins.json
 db97b2292c16408dd20ea46cb40e1609a373e21c assets/risus/blockstates/veins_end.json
 b36a33309a27cff749b799ebb8e506662e4daa58 assets/risus/blockstates/waxed_copper_amalgam.json
@@ -314,6 +315,9 @@ fb525b9b5a0a7e1015f8edb040a14db1007c2e82 assets/risus/models/block/tissue_slab.j
 04b49323a292a734e100bb903622d180fb3581e5 assets/risus/models/block/tissue_stairs.json
 bf94e1c84e80586dc3c5e0d5c2abcefa3674726a assets/risus/models/block/tissue_stairs_inner.json
 8668a14e60339d19eee434c8fc100b534ffce734 assets/risus/models/block/tissue_stairs_outer.json
+15fc9b9d41f04eeb6c7b39d9424fa7fb3e88a695 assets/risus/models/block/tissue_wall_post.json
+db6e8035098080b97ad3d7220e7deb925d0b0b82 assets/risus/models/block/tissue_wall_side.json
+3faea5a62eebae7cd094cd0417ab043981352fbb assets/risus/models/block/tissue_wall_side_tall.json
 48de0139c11d3673cc4260d614e88dda41ca0cd0 assets/risus/models/block/veins.json
 393048aaddb672b9d84ef124259f83b4803c3042 assets/risus/models/block/veins_end.json
 501a1e7e80b609c9f691ea92020a8b2811b0afbf assets/risus/models/block/weathered_copper_amalgam.json

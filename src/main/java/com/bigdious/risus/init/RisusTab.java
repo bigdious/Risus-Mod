@@ -139,6 +139,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.DECAYED_TISSUE.get());
 				output.accept(RisusBlocks.TISSUE_STAIRS.get());
 				output.accept(RisusBlocks.TISSUE_SLAB.get());
+				output.accept(RisusBlocks.TISSUE_WALL.get());
 				output.accept(RisusBlocks.BONE_WALL.get());
 				output.accept(RisusBlocks.BONE_STAIRS.get());
 				output.accept(RisusBlocks.BONE_SLAB.get());
