@@ -2,10 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.*;
-import com.bigdious.risus.entity.projectile.BloodSlash;
-import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
-import com.bigdious.risus.entity.projectile.EggSac;
-import com.bigdious.risus.entity.projectile.ThrownAxe;
+import com.bigdious.risus.entity.projectile.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -31,6 +28,7 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).sized(3F, 3F), 0x000000, 0xffffff);
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<BloodSlash>> BLOODSLASH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodslash"), EntityType.Builder.<BloodSlash>of(BloodSlash::new, MobCategory.MISC).noSave().fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
+	public static final DeferredHolder<EntityType<?>, EntityType<ThrownEndlessPearl>> ENDLESS_PEARL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "endless_pearl"), EntityType.Builder.<ThrownEndlessPearl>of(ThrownEndlessPearl::new, MobCategory.MISC).fireImmune().sized(0.4F, 0.4F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).sized(0.75F, 1.0F));

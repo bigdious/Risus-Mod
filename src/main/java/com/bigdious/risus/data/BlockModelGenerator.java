@@ -445,6 +445,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 	private void rotatingDirectionalBlock (Block block, ModelFile model, ModelFile tiltedModel, int angleOffset) {
 		this.getVariantBuilder(block).forAllStates((state) -> {
 			Direction dir = state.getValue(BlockStateProperties.FACING);
+			//look, it works, okey?
 			return ConfiguredModel.builder()
 				.modelFile(model)
 				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 90 : 0))

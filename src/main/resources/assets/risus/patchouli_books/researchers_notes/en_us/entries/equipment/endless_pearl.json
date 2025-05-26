@@ -11,7 +11,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:endless_pearl",
-      "text": "Downsides still apply, such as fall damage upon teleportation, however that can be greatly mitigated with the use of Feather Falling boots or Protection enchanted armor pieces."
+      "text": "With the impurities removed, unlike with an Ender Pearl, using this won't summon Ender Mites. Additionally, the spacial movement is slightly more refined, making it so items that increase Safe Fall Distance will negate the damage too."
     }
   ]
 }

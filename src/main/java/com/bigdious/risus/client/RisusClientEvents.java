@@ -215,6 +215,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODSLASH.get(), BloodSlashRenderer::new);
+		event.registerEntityRenderer(RisusEntities.ENDLESS_PEARL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);
 		event.registerEntityRenderer(RisusEntities.WEAVER.get(), WeaverRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LOVER.get(), LoverRenderer::new);

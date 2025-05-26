@@ -273,6 +273,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityAndEgg(RisusEntities.STALKER, "Stalker");
 		this.addEntityAndEgg(RisusEntities.WEAVER, "Weaver");
 		this.addEntityType(RisusEntities.BLOODSLASH, "Sanguine Slash");
+		this.addEntityType(RisusEntities.ENDLESS_PEARL, "Endless Pearl");
 		this.addEntityType(RisusEntities.BLOODWYRM_BREATH, "False Bloodwyrm Breath");
 		this.addEntityType(RisusEntities.BOAT, "Boat");
 		this.addEntityType(RisusEntities.EGG_SAC, "Thrown Egg Sac");

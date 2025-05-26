@@ -1,5 +1,7 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.entity.projectile.ThrownEndlessPearl;
+import com.bigdious.risus.init.RisusEntities;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -37,17 +39,16 @@ public class EndlessPearlItem extends EnderpearlItem {
 
 			}
 		}
-		if (validSlot>0) return InteractionResultHolder.success(player.getItemInHand(hand));
 		if (itemstack.getDamageValue() == itemstack.getMaxDamage() - 1) {
 			return InteractionResultHolder.fail(player.getItemInHand(hand));
 		} else {
 			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 			player.getCooldowns().addCooldown(this, 20);
 			if (!level.isClientSide) {
-				ThrownEnderpearl thrownenderpearl = new ThrownEnderpearl(level, player);
-				thrownenderpearl.setItem(itemstack);
-				thrownenderpearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-				level.addFreshEntity(thrownenderpearl);
+				ThrownEndlessPearl thrownEndlessPearl = new ThrownEndlessPearl(level, player);
+				thrownEndlessPearl.setItem(itemstack);
+				thrownEndlessPearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+				level.addFreshEntity(thrownEndlessPearl);
 				itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 			}
 
