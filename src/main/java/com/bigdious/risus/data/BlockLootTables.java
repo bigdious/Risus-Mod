@@ -40,7 +40,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 	protected void generate() {
 		HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 		add(RisusBlocks.ALTERATION_CATALYST.get(), LootTable.lootTable());
-		add(RisusBlocks.WEAVER_NEST.get(), LootTable.lootTable());
+		dropOther(RisusBlocks.WEAVER_NEST.get(), RisusBlocks.BLOODWEAVE);
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());

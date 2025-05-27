@@ -22,6 +22,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation DEPTH_VASE = register("depth_vase");
 	public static final ModelLayerLocation BLOODWYRM_HEAD = register("bloodwyrm_head");
 	public static final ModelLayerLocation LITTER = register("litter");
+	public static final ModelLayerLocation HAND_OF_GREED = register("hand_of_greed");
 
 	private static ModelLayerLocation register(String name) {
 		return register(name, "main");

@@ -45,6 +45,7 @@ public class CuriosCompat {
 
 	public static void registerCurioRenderers(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
+			CuriosRendererRegistry.register(RisusItems.HAND_OF_GREED.get(), HandCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.BLOODWYRM_HEAD.get(), HeadCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.TOTEM_OF_UNYIELDING.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.BLOOD_FEATHER.get(), HeadCuriosRenderer::new);

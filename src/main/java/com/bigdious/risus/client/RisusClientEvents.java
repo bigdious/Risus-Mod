@@ -3,6 +3,7 @@ package com.bigdious.risus.client;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
+import com.bigdious.risus.client.model.entity.player.HandOfGreedPlayerModel;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
@@ -118,6 +119,13 @@ public class RisusClientEvents {
 				}
 			});
 			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("croissant"), (stack, level, entity, seed) -> stack.getHoverName().getString().equalsIgnoreCase("croissant disaster") ? 1.0F : 0.0F);
+			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("charged"), (stack, level, entity, seed) -> {
+				if (entity == null || entity.getUseItem() != stack) {
+					return 0.0F;
+				} else {
+					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 10.0F > 0.9F ? 1.0F : 0.0F;
+				}
+			});
 		});
 	}
 
@@ -183,6 +191,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.LITTER, LitterModel::create);
+		event.registerLayerDefinition(RisusModelLayers.HAND_OF_GREED, HandOfGreedPlayerModel::create);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {

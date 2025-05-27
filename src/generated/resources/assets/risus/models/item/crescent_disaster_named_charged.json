@@ -3,60 +3,39 @@
   "base": {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "risus:item/crescent_disaster_item"
+      "layer0": "risus:item/croissant_disaster_item_pulled"
     }
   },
   "loader": "neoforge:separate_transforms",
-  "overrides": [
-    {
-      "model": "risus:item/crescent_disaster_named",
-      "predicate": {
-        "risus:croissant": 1.0
-      }
-    },
-    {
-      "model": "risus:item/crescent_disaster_charged",
-      "predicate": {
-        "risus:charged": 1.0
-      }
-    },
-    {
-      "model": "risus:item/crescent_disaster_named_charged",
-      "predicate": {
-        "risus:charged": 1.0,
-        "risus:croissant": 1.0
-      }
-    }
-  ],
   "perspectives": {
     "firstperson_lefthand": {
       "parent": "risus:item/base_axe_model",
       "textures": {
-        "axe": "risus:item/crescent_disaster"
+        "axe": "risus:item/croissant_disaster_pulled"
       }
     },
     "firstperson_righthand": {
       "parent": "risus:item/base_axe_model",
       "textures": {
-        "axe": "risus:item/crescent_disaster"
+        "axe": "risus:item/croissant_disaster_pulled"
       }
     },
     "head": {
       "parent": "risus:item/base_axe_model",
       "textures": {
-        "axe": "risus:item/crescent_disaster"
+        "axe": "risus:item/croissant_disaster_pulled"
       }
     },
     "thirdperson_lefthand": {
       "parent": "risus:item/base_axe_model",
       "textures": {
-        "axe": "risus:item/crescent_disaster"
+        "axe": "risus:item/croissant_disaster_pulled"
       }
     },
     "thirdperson_righthand": {
       "parent": "risus:item/base_axe_model",
       "textures": {
-        "axe": "risus:item/crescent_disaster"
+        "axe": "risus:item/croissant_disaster_pulled"
       }
     }
   }

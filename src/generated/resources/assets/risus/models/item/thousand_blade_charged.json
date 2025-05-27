@@ -11,31 +11,31 @@
     "firstperson_lefthand": {
       "parent": "risus:item/thousand_blade_held",
       "textures": {
-        "thousand_blade": "risus:item/intact_thousand_blade"
+        "thousand_blade": "risus:item/intact_thousand_blade_pulled"
       }
     },
     "firstperson_righthand": {
       "parent": "risus:item/thousand_blade_held",
       "textures": {
-        "thousand_blade": "risus:item/intact_thousand_blade"
+        "thousand_blade": "risus:item/intact_thousand_blade_pulled"
       }
     },
     "head": {
       "parent": "risus:item/thousand_blade_held",
       "textures": {
-        "thousand_blade": "risus:item/intact_thousand_blade"
+        "thousand_blade": "risus:item/intact_thousand_blade_pulled"
       }
     },
     "thirdperson_lefthand": {
       "parent": "risus:item/thousand_blade_held",
       "textures": {
-        "thousand_blade": "risus:item/intact_thousand_blade"
+        "thousand_blade": "risus:item/intact_thousand_blade_pulled"
       }
     },
     "thirdperson_righthand": {
       "parent": "risus:item/thousand_blade_held",
       "textures": {
-        "thousand_blade": "risus:item/intact_thousand_blade"
+        "thousand_blade": "risus:item/intact_thousand_blade_pulled"
       }
     }
   }

@@ -203,15 +203,19 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
 
 		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
+		var crescentCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster_pulled"), Risus.prefix("item/crescent_disaster_item_pulled"), "axe");
+		var croissantCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_named_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster_pulled"), Risus.prefix("item/croissant_disaster_item_pulled"), "axe");
 		handheldItem(RisusItems.CRESCENT_DISASTER, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster"), Risus.prefix("item/crescent_disaster_item"), "axe")
-			.override().predicate(Risus.prefix("croissant"), 1).model(crescentNamed).end();
+			.override().predicate(Risus.prefix("croissant"), 1).model(crescentNamed).end()
+			.override().predicate(Risus.prefix("charged"), 1).model(crescentCharged).end()
+			.override().predicate(Risus.prefix("charged"), 1).predicate(Risus.prefix("croissant"), 1).model(croissantCharged).end();
 		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
 		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
 		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
 		handheldItem(RisusItems.FIRE_SCYTHE, withExistingParent("fire_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
 		handheldItem(RisusItems.CINDERGLEE_SCYTHE, withExistingParent("cinderglee_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
 
-		var bladeCharged = handheldItem(RisusItems.THOUSAND_BLADE, "_charged", getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item_pulled"), "thousand_blade");
+		var bladeCharged = handheldItem(RisusItems.THOUSAND_BLADE, "_charged", getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade_pulled"), Risus.prefix("item/thousand_blade_item_pulled"), "thousand_blade");
 		handheldItem(RisusItems.THOUSAND_BLADE, getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item"), "thousand_blade")
 			.override().predicate(Risus.prefix("charged"), 1).model(bladeCharged).end();
 		handheldItem(RisusItems.UNAWAKENED_VESSEL, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("entity/unawakened_vessel"), Risus.prefix("item/unawakened_vessel"), "axe");

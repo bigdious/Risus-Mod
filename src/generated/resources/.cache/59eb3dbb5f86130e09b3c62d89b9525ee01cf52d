@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-26T16:17:01.6738505	Loot Tables
+// 1.21.1	2025-05-27T20:02:20.0054605	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -145,7 +145,7 @@ f8964a085f0c69af6d7aab48ead7575de618e459 data/risus/loot_table/blocks/waxed_expo
 2a57b43c01b543d906c83f553fb8507ffe25dca1 data/risus/loot_table/blocks/waxed_oxidized_copper_amalgam.json
 a2420d83024edde3efff8e457fa9eb61b8420ca5 data/risus/loot_table/blocks/waxed_weathered_copper_amalgam.json
 4e62f17d3ce5fd1cb5c1eea86cf41c2ad3cbb126 data/risus/loot_table/blocks/weathered_copper_amalgam.json
-e72729e6940474c975b2c012fd2a7395ed3b0873 data/risus/loot_table/blocks/weaver_nest.json
+31c196bd8868b6d0fc48647bd82539a44646c0d2 data/risus/loot_table/blocks/weaver_nest.json
 684db703cfba5b31d66620b617fa030b45814c86 data/risus/loot_table/blocks/white_display_notch.json
 5e44ed43e4b71cac0e10bf73072ae33da980320e data/risus/loot_table/blocks/yellow_display_notch.json
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_table/blocks/zit.json
