@@ -4,7 +4,6 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -88,11 +87,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.BONDKNOT_FENCE_GATE.get());
 		toBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 		getBuilder(RisusBlocks.BONDKNOT_FENCE.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/fence_inventory")))
-				.texture("texture", Risus.prefix("block/bondknot_planks"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/fence_inventory")))
+			.texture("texture", Risus.prefix("block/bondknot_planks"));
 		getBuilder(RisusBlocks.BONDKNOT_BUTTON.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/button_inventory")))
-				.texture("texture", Risus.prefix("block/bondknot_planks"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/button_inventory")))
+			.texture("texture", Risus.prefix("block/bondknot_planks"));
 		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor_bottom"));
 		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), Risus.prefix("item/bondknot_door"));
 		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), Risus.prefix("item/bondknot_sign"));
@@ -110,11 +109,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
 		getBuilder(RisusBlocks.GRIMSTONE_WALL.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", Risus.prefix("block/grimstone"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/grimstone"));
 		getBuilder(RisusBlocks.GRIMSTONE_BRICKS_WALL.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", Risus.prefix("block/grimstone_bricks"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/grimstone_bricks"));
 		getBuilder(RisusBlocks.POLISHED_GRIMSTONE_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", Risus.prefix("block/polished_grimstone"));
@@ -138,8 +137,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", Risus.prefix("block/tissue"));
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 		toBlock(RisusBlocks.BONE_STAIRS.get());
 		toBlock(RisusBlocks.BONE_SLAB.get());
 		toBlock(RisusBlocks.FULL_BONE_STAIRS.get());
@@ -161,8 +160,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.TALL_HAIR.get());
 		toBlock(RisusBlocks.BUNDLE_OF_HAIR.get());
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
-				.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
-				.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
 
 		//items
 		singleTex(RisusItems.RESEARCHERS_NOTES);
@@ -202,14 +201,19 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EGG_SAC);
 		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
-		handheldItem(RisusItems.CRESCENT_DISASTER, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster"), Risus.prefix("item/crescent_disaster_item"), "axe");
+
+		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
+		handheldItem(RisusItems.CRESCENT_DISASTER, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster"), Risus.prefix("item/crescent_disaster_item"), "axe")
+			.override().predicate(Risus.prefix("croissant"), 1).model(crescentNamed).end();
 		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
-		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
-		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
-		handheldItem(RisusItems.FIRE_SCYTHE, withExistingParent("fire_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
-		handheldItem(RisusItems.CINDERGLEE_SCYTHE, withExistingParent("cinderglee_scythe_held",Risus.prefix("item/template_held_scythe")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
-		ModelFile chargedThousandBlade = generated("thousand_blade_item_pulled", Risus.prefix("item/thousand_blade_item_pulled"));
-		chargeableHandheldItem(RisusItems.THOUSAND_BLADE, getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item"), "thousand_blade", chargedThousandBlade);
+		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
+		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
+		handheldItem(RisusItems.FIRE_SCYTHE, withExistingParent("fire_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
+		handheldItem(RisusItems.CINDERGLEE_SCYTHE, withExistingParent("cinderglee_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
+
+		var bladeCharged = handheldItem(RisusItems.THOUSAND_BLADE, "_charged", getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item_pulled"), "thousand_blade");
+		handheldItem(RisusItems.THOUSAND_BLADE, getExistingFile(Risus.prefix("item/thousand_blade_held")), Risus.prefix("item/intact_thousand_blade"), Risus.prefix("item/thousand_blade_item"), "thousand_blade")
+			.override().predicate(Risus.prefix("charged"), 1).model(bladeCharged).end();
 		handheldItem(RisusItems.UNAWAKENED_VESSEL, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("entity/unawakened_vessel"), Risus.prefix("item/unawakened_vessel"), "axe");
 		handheldItem(RisusItems.HAND_OF_GREED, getExistingFile(Risus.prefix("item/hand_of_greed_held")), Risus.prefix("item/hand_of_greed"), Risus.prefix("item/hand_of_greed_item"), "hand_of_greed");
 		singleTex(RisusItems.SMILE);
@@ -299,8 +303,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 	public void nameableWeapon(Item item, String location, String renamedVariant) {
 		this.withExistingParent(renamedVariant, this.mcLoc("item/handheld")).texture("layer0", this.modLoc("item/" + location + renamedVariant));
 		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
-				.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
-				.override().predicate(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
+			.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
+			.override().predicate(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
 	}
 
 	private void trimmedArmor(DeferredItem<ArmorItem> armor) {
@@ -315,31 +319,20 @@ public class ItemModelGenerator extends ItemModelProvider {
 		}
 	}
 
-	private void handheldItem (DeferredItem<Item> item, ModelFile heldModel, ResourceLocation heldTexture ,ResourceLocation itemTexture, String textureName) {
+	private ItemModelBuilder handheldItem(DeferredItem<Item> item, ModelFile heldModel, ResourceLocation heldTexture, ResourceLocation itemTexture, String textureName) {
+		return handheldItem(item, "", heldModel, heldTexture, itemTexture, textureName);
+	}
+
+	private ItemModelBuilder handheldItem(DeferredItem<Item> item, String suffix, ModelFile heldModel, ResourceLocation heldTexture, ResourceLocation itemTexture, String textureName) {
 		ItemModelBuilder heldVersion = nested().parent(heldModel).texture(textureName, heldTexture);
-		withExistingParent(item.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
-			.base(generated(item.getId()+"_base", itemTexture))
+		return withExistingParent(item.getId().getPath() + suffix, "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated(item.getId() + suffix + "_base", itemTexture))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.HEAD, heldVersion)
-			.end();
+			.perspective(ItemDisplayContext.HEAD, heldVersion).end();
 	}
-
-	private void chargeableHandheldItem (DeferredItem<Item> item, ModelFile heldModel, ResourceLocation heldTexture ,ResourceLocation itemTexture, String textureName, ModelFile chargedModel) {
-	ItemModelBuilder heldVersion = nested().parent(heldModel).texture(textureName, heldTexture);
-	withExistingParent(item.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
-			.base(generated(item.getId()+"_base", itemTexture)
-				.override().predicate(Risus.prefix("pulling"), 1).predicate(Risus.prefix("pull"), (float) 0.9).model(chargedModel).end())
-			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.HEAD, heldVersion)
-			.end();
-	}
-
 
 	@Override
 	public String getName() {

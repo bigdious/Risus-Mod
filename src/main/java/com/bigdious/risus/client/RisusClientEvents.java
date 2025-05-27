@@ -103,21 +103,21 @@ public class RisusClientEvents {
 	private static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.FLOWING_BLOOD.get(), RenderType.translucent());
-		ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), ResourceLocation.fromNamespaceAndPath(Risus.MODID, "pull"), (stack, level, entity, seed) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), ResourceLocation.fromNamespaceAndPath(Risus.MODID, "pulling"), (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
 		event.enqueueWork(() -> {
 			SkullBlockRenderer.SKIN_BY_TYPE.put(RisusSkullType.BLOODWYRM, Risus.prefix("textures/entity/bloodwyrm_head.png"));
 
 			Sheets.addWoodType(RisusBlocks.BONDKNOT_TYPE);
 
-			ItemProperties.register(RisusItems.ANGEL_WINGS.asItem(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.ANGEL_WINGS.get(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), Risus.prefix("charged"), (stack, level, entity, seed) -> {
+				if (entity == null || entity.getUseItem() != stack) {
+					return 0.0F;
+				} else {
+					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F > 0.9F ? 1.0F : 0.0F;
+				}
+			});
+			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("croissant"), (stack, level, entity, seed) -> stack.getHoverName().getString().equalsIgnoreCase("croissant disaster") ? 1.0F : 0.0F);
 		});
 	}
 

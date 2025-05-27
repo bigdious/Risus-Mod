@@ -3,18 +3,10 @@
   "base": {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "risus:item/thousand_blade_item"
+      "layer0": "risus:item/thousand_blade_item_pulled"
     }
   },
   "loader": "neoforge:separate_transforms",
-  "overrides": [
-    {
-      "model": "risus:item/thousand_blade_charged",
-      "predicate": {
-        "risus:charged": 1.0
-      }
-    }
-  ],
   "perspectives": {
     "firstperson_lefthand": {
       "parent": "risus:item/thousand_blade_held",
