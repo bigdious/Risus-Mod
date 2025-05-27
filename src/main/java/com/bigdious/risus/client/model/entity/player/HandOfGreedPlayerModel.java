@@ -19,8 +19,8 @@ public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.0F), 0.0F);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		var arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
-		arm.addOrReplaceChild("outer_arm", CubeListBuilder.create().texOffs(16, 0).addBox(-1.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.36F)), PartPose.ZERO);
+		var arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
+		arm.addOrReplaceChild("outer_arm", CubeListBuilder.create().texOffs(16, 0).addBox(-3.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.52F)), PartPose.ZERO);
 
 		return LayerDefinition.create(meshdefinition, 32, 16);
 	}
@@ -32,13 +32,13 @@ public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
 
 	@Override
 	protected Iterable<ModelPart> bodyParts() {
-		return ImmutableList.of(this.leftArm);
+		return ImmutableList.of(this.rightArm);
 	}
 
 	@Override
 	public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
 		stack.pushPose();
-		this.leftArm.render(stack, consumer, light, overlay, color);
+		this.rightArm.render(stack, consumer, light, overlay, color);
 		stack.popPose();
 	}
 }

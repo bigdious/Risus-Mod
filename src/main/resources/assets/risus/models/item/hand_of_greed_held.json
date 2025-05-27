@@ -10,28 +10,28 @@
 			"name": "OuterHand",
 			"from": [5.74, -0.26, 5.74],
 			"to": [10.26, 12.26, 10.26],
-			"rotation": {"angle": 0, "axis": "y", "origin": [2, -12, 8]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 6, 8]},
 			"faces": {
-				"north": {"uv": [10, 4, 12, 16], "texture": "#0"},
-				"east": {"uv": [8, 4, 10, 16], "texture": "#0"},
-				"south": {"uv": [14, 4, 16, 16], "texture": "#0"},
-				"west": {"uv": [12, 4, 14, 16], "texture": "#0"},
-				"up": {"uv": [12, 4, 10, 0], "texture": "#0"},
-				"down": {"uv": [14, 0, 12, 4], "texture": "#0"}
+				"north": {"uv": [8, 4, 10, 16], "texture": "#0"},
+				"east": {"uv": [14, 4, 16, 16], "texture": "#0"},
+				"south": {"uv": [12, 4, 14, 16], "texture": "#0"},
+				"west": {"uv": [10, 4, 12, 16], "texture": "#0"},
+				"up": {"uv": [12, 4, 10, 0], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [14, 0, 12, 4], "rotation": 90, "texture": "#0"}
 			}
 		},
 		{
 			"name": "InnerHand",
 			"from": [5.99, -0.01, 5.99],
 			"to": [10.01, 12.01, 10.01],
-			"rotation": {"angle": 0, "axis": "y", "origin": [2, -12, 8]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 6, 8]},
 			"faces": {
-				"north": {"uv": [2, 4, 4, 16], "texture": "#0"},
-				"east": {"uv": [0, 4, 2, 16], "texture": "#0"},
-				"south": {"uv": [6, 4, 8, 16], "texture": "#0"},
-				"west": {"uv": [4, 4, 6, 16], "texture": "#0"},
-				"up": {"uv": [4, 4, 2, 0], "texture": "#0"},
-				"down": {"uv": [6, 0, 4, 4], "texture": "#0"}
+				"north": {"uv": [0, 4, 2, 16], "texture": "#0"},
+				"east": {"uv": [6, 4, 8, 16], "texture": "#0"},
+				"south": {"uv": [4, 4, 6, 16], "texture": "#0"},
+				"west": {"uv": [2, 4, 4, 16], "texture": "#0"},
+				"up": {"uv": [4, 4, 2, 0], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [6, 0, 4, 4], "rotation": 90, "texture": "#0"}
 			}
 		}
 	],

@@ -304,13 +304,9 @@ public class ThrownAxe extends AbstractArrow {
 		tag.putBoolean("DealtDamage", this.dealtDamage);
 	}
 
+	//let's not have it despawn
 	@Override
 	public void tickDespawn() {
-		int i = this.entityData.get(ID_LOYALTY);
-		if (this.pickup != AbstractArrow.Pickup.ALLOWED || i <= 0) {
-			super.tickDespawn();
-		}
-
 	}
 
 	@Override
