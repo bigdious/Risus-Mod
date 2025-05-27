@@ -30,13 +30,6 @@ public class HandCuriosRenderer implements ICurioRenderer {
 
 	@Override
 	public <T extends LivingEntity, M extends EntityModel<T>> void render(ItemStack item, SlotContext slotContext, PoseStack stack, RenderLayerParent<T, M> parent, MultiBufferSource buffer, int light, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-		if (parent.getModel() instanceof HumanoidModel<?> model) {
-			stack.pushPose();
-			model.body.translateAndRotate(stack);
-			stack.translate(-0.0D, 0.23D, -0.135D);
-			stack.mulPose(Axis.YP.rotationDegrees(0.0F));
-			stack.popPose();
-		}
 		this.model.setupAnim(slotContext.entity(), limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 		this.model.prepareMobModel(slotContext.entity(), limbSwing, limbSwingAmount, partialTicks);
 		ICurioRenderer.followBodyRotations(slotContext.entity(), this.model);

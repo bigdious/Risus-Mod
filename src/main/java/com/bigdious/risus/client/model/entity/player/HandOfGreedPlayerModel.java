@@ -16,12 +16,11 @@ public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
 	}
 
 	public static LayerDefinition create() {
-		MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(1F), 1F);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.0F), 0.0F);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		partdefinition.addOrReplaceChild("OuterHand", CubeListBuilder.create().texOffs(16, 0).addBox(-8.0F, -24.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(0.0F, 25.0F, 0.0F));
-
-		partdefinition.addOrReplaceChild("InnerHand", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -24.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.01F)), PartPose.offset(0.0F, 25.0F, 0.0F));
+		var arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
+		arm.addOrReplaceChild("outer_arm", CubeListBuilder.create().texOffs(16, 0).addBox(-1.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.36F)), PartPose.ZERO);
 
 		return LayerDefinition.create(meshdefinition, 32, 16);
 	}
@@ -33,13 +32,13 @@ public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
 
 	@Override
 	protected Iterable<ModelPart> bodyParts() {
-		return ImmutableList.of(this.rightArm);
+		return ImmutableList.of(this.leftArm);
 	}
+
 	@Override
 	public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
 		stack.pushPose();
-		this.rightArm.render(stack, consumer, light, overlay, color);
+		this.leftArm.render(stack, consumer, light, overlay, color);
 		stack.popPose();
 	}
-
 }
