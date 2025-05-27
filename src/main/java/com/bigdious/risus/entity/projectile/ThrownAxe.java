@@ -41,6 +41,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> IS_CROISSANT = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BOOLEAN);
 	private static final EntityDataAccessor<Byte> ID_SHARPNESS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_SMITE = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_ARTHROPODS = SynchedEntityData.defineId(ThrownAxe.class, EntityDataSerializers.BYTE);
@@ -56,6 +57,7 @@ public class ThrownAxe extends AbstractArrow {
 
 	public ThrownAxe(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
 		super(RisusEntities.THROWN_AXE.get(), owner, level, pPickupItemStack, null);
+		this.entityData.set(IS_CROISSANT, pPickupItemStack.getHoverName().getString().equalsIgnoreCase("croissant disaster"));
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_SHARPNESS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SHARPNESS))));
 		this.entityData.set(ID_SMITE, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.SMITE))));
@@ -69,7 +71,6 @@ public class ThrownAxe extends AbstractArrow {
 			? (byte) Mth.clamp(EnchantmentHelper.getTridentReturnToOwnerAcceleration(serverlevel, p_345571_, this), 0, 127)
 			: 0;
 	}
-
 
 	public boolean shouldSpin() {
 		return this.shouldSpin;
@@ -129,6 +130,7 @@ public class ThrownAxe extends AbstractArrow {
 	public boolean isFoil() {
 		return this.entityData.get(ID_FOIL);
 	}
+	public boolean isCroissant() {return this.entityData.get(IS_CROISSANT);}
 
 	@Nullable
 	@Override
@@ -145,6 +147,7 @@ public class ThrownAxe extends AbstractArrow {
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
 		super.defineSynchedData(pBuilder);
+		pBuilder.define(IS_CROISSANT, false);
 		pBuilder.define(ID_LOYALTY, (byte) 0);
 		pBuilder.define(ID_SHARPNESS, (byte) 0);
 		pBuilder.define(ID_SMITE, (byte) 0);

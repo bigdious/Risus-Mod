@@ -17,6 +17,7 @@ import net.minecraft.util.Mth;
 
 public class ThrownAxeRenderer extends EntityRenderer<ThrownAxe> {
 	public static final ResourceLocation AXE_LOCATION = Risus.prefix("textures/entity/crescent_disaster.png");
+	public static final ResourceLocation CROISSANT_LOCATION = Risus.prefix("textures/entity/croissant_disaster.png");
 	private final ThrownAxeModel model;
 
 	public ThrownAxeRenderer(EntityRendererProvider.Context context) {
@@ -42,6 +43,6 @@ public class ThrownAxeRenderer extends EntityRenderer<ThrownAxe> {
 	}
 
 	public ResourceLocation getTextureLocation(ThrownAxe axe) {
-		return AXE_LOCATION;
+		return axe.isCroissant() ? CROISSANT_LOCATION : AXE_LOCATION;
 	}
 }
