@@ -3,12 +3,15 @@ package com.bigdious.risus.client;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
-import com.bigdious.risus.client.model.entity.player.HandOfGreedPlayerModel;
+import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
+import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
-import com.bigdious.risus.client.render.layer.AngelWingsLayer;
+import com.bigdious.risus.client.render.player.AngelWingsLayer;
+import com.bigdious.risus.client.render.player.HandOfGreedLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
@@ -134,6 +137,7 @@ public class RisusClientEvents {
 					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 10.0F > 0.9F ? 1.0F : 0.0F;
 				}
 			});
+			ItemProperties.register(RisusItems.SCYTHE.get(), Risus.prefix("no_anim"), (stack, level, entity, seed) -> RisusConfig.animScythes ? 0.0F : 1.0F);
 		});
 	}
 
@@ -199,7 +203,8 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.LITTER, LitterModel::create);
-		event.registerLayerDefinition(RisusModelLayers.HAND_OF_GREED, HandOfGreedPlayerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.RIGHT_HAND_OF_GREED, RightHandPlayerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -220,6 +225,7 @@ public class RisusClientEvents {
 	private static <T extends LivingEntity, M extends EntityModel<T>> void attachRenderLayers(LivingEntityRenderer<T, M> renderer) {
 		EntityModelSet models = Minecraft.getInstance().getEntityModels();
 		renderer.addLayer(new AngelWingsLayer<>(renderer, models));
+		renderer.addLayer(new HandOfGreedLayer<>(renderer));
 	}
 
 	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {
@@ -379,7 +385,7 @@ public class RisusClientEvents {
 	private static void renderHandOfGreed(RenderArmEvent event) {
 		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios")) {
 			CuriosApi.getCurio(RisusItems.HAND_OF_GREED.toStack()).flatMap(iCurio -> CuriosRendererRegistry.getRenderer(iCurio.getStack().getItem())).ifPresent(renderer -> {
-				HandOfGreedPlayerModel model = ((HandCuriosRenderer) renderer).model;
+				RightHandPlayerModel model = ((HandCuriosRenderer) renderer).model;
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
 				model.attackTime = 0.0F;
 				model.crouching = false;

@@ -15,12 +15,19 @@ import java.util.Locale;
 import java.util.function.IntFunction;
 
 public class RisusConfig {
+	// -- CLIENT CONFIG --
+	public static boolean animScythes = true;
+
 	// -- COMMON CONFIG --
 	public static SpinningSource spinningSource = SpinningSource.SIGNAL;
 	public static boolean holdersStealFromMonsters = true;
 	public static boolean illegalLitters = false;
 	public static boolean stripperWorksOnMobArmor = true;
 	public static boolean customWeaponAnims = true;
+
+	static void rebakeClientOptions(RisusClientConfig config) {
+		animScythes = config.animScythes.get();
+	}
 
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();

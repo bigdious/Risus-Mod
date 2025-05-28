@@ -9,12 +9,12 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.LivingEntity;
 
-public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
+public class RightHandPlayerModel extends HumanoidModel<LivingEntity> {
 
 	private final ModelPart arm;
 	private final ModelPart slimArm;
 
-	public HandOfGreedPlayerModel(ModelPart root) {
+	public RightHandPlayerModel(ModelPart root) {
 		super(root, RenderType::entityTranslucent);
 		this.arm = root.getChild("arm");
 		this.slimArm = root.getChild("slim_arm");
@@ -24,7 +24,7 @@ public class HandOfGreedPlayerModel extends HumanoidModel<LivingEntity> {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.0F), 0.0F);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		var arm = partdefinition.addOrReplaceChild("arm", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
+		var arm = partdefinition.addOrReplaceChild("arm", CubeListBuilder.create().texOffs(0, 0).addBox( -3.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
 		arm.addOrReplaceChild("outer_arm", CubeListBuilder.create().texOffs(16, 0).addBox(-3.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.52F)), PartPose.ZERO);
 
 		var slimArm = partdefinition.addOrReplaceChild("slim_arm", CubeListBuilder.create().texOffs(1, 0).addBox(-2.0F, 0.0F, -2.0F, 3.0F, 12.0F, 4.0F, new CubeDeformation(0.26F)), PartPose.offset(-5.0F, 2.0F, 0.0F));

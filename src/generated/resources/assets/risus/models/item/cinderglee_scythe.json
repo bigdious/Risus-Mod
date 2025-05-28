@@ -7,6 +7,14 @@
     }
   },
   "loader": "neoforge:separate_transforms",
+  "overrides": [
+    {
+      "model": "risus:item/cinderglee_scythe",
+      "predicate": {
+        "risus:no_anim": 1.0
+      }
+    }
+  ],
   "perspectives": {
     "firstperson_lefthand": {
       "parent": "risus:item/cinderglee_scythe_held",

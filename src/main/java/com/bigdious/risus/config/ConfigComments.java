@@ -1,6 +1,9 @@
 package com.bigdious.risus.config;
 
 public final class ConfigComments {
+	public static final String ANIM_SCYTHES = """
+		Whether Scythes should use the models for animations or not. Should be used in conjunction with the common config's CUSTOM_WEAPON_ANIMS""";
+
 	public static final String SPINNING_SOURCE = """
 		This setting determines what will cause the Display Notches to automatically rotate. The following values are available:
 		SIGNAL: A redstone signal will trigger it.
@@ -16,6 +19,6 @@ public final class ConfigComments {
 		Whether Stripper works on mob's armor. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
 
 	public static final String CUSTOM_WEAPON_ANIMS = """
-		Whether weapons like Scythes or Blade of a Thousand has custom holding animations. It is advised to set it to false if Better Combat is installed. Note: Scythes are wielded weirdly based on their model. If you wish to change it, overwrite the model with a resourcepack/datapack.""";
+		Whether weapons like Scythes or Blade of a Thousand has custom holding animations. It is advised to set it to false if Better Combat is installed. Should be used in conjunction with the client config's ANIM_SCYTHES""";
 
 }

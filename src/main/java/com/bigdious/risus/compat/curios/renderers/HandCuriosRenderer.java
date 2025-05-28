@@ -2,33 +2,29 @@ package com.bigdious.risus.compat.curios.renderers;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
-import com.bigdious.risus.client.model.entity.player.HandOfGreedPlayerModel;
+import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class HandCuriosRenderer implements ICurioRenderer {
 
-	public static final RenderType RENDER_TYPE = RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/hand_of_greed.png"));
-	public final HandOfGreedPlayerModel model;
+	public static final RenderType RENDER_TYPE = RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/right_hand_of_greed.png"));
+	public final RightHandPlayerModel model;
 
 	public HandCuriosRenderer() {
-		this.model = new HandOfGreedPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.HAND_OF_GREED));
+		this.model = new RightHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.RIGHT_HAND_OF_GREED));
 	}
 
 	@Override
