@@ -8,6 +8,7 @@ import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.layer.AngelWingsLayer;
+import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
@@ -26,6 +27,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
@@ -35,12 +37,15 @@ import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
@@ -54,6 +59,8 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -71,8 +78,8 @@ public class RisusClientEvents {
 
 	public static void initEvents(IEventBus bus) {
 		bus.addListener(RegisterKeyMappingsEvent.class, event -> {
-				event.register(OPEN_BOOK_KEY);
-			});
+			event.register(OPEN_BOOK_KEY);
+		});
 		bus.addListener(RisusClientEvents::clientSetup);
 		bus.addListener(RisusClientEvents::registerParticleFactories);
 		bus.addListener(RisusClientEvents::registerEntityLayers);
@@ -92,6 +99,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -332,13 +340,14 @@ public class RisusClientEvents {
 		}
 	}
 
-	private static void remoteOpenBook(InputEvent.Key event){
+	private static void remoteOpenBook(InputEvent.Key event) {
 		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
-			if (event.getKey() == OPEN_BOOK_KEY.getKey().getValue() && OPEN_BOOK_KEY.consumeClick()){
+			if (event.getKey() == OPEN_BOOK_KEY.getKey().getValue() && OPEN_BOOK_KEY.consumeClick()) {
 				PacketDistributor.sendToServer(OpenBookPacket.INSTANCE);
 			}
 		}
 	}
+
 //	public static class CheckWhispers {
 //		public static void getWhispers(Player player) {
 //			int i = player.getRandom().nextInt(999);
@@ -347,6 +356,7 @@ public class RisusClientEvents {
 //			}
 //		}
 //	}
+
 	public static class RenderStateAccessor extends RenderStateShard {
 
 		public RenderStateAccessor(String p_110161_, Runnable p_110162_, Runnable p_110163_) {
@@ -357,11 +367,27 @@ public class RisusClientEvents {
 			return RENDERTYPE_END_PORTAL_SHADER;
 		}
 	}
+
 	private static void clientTick(ClientTickEvent.Post event) {
 		Minecraft mc = Minecraft.getInstance();
 
 		if (!mc.isPaused()) {
 			AnimationRenderHelper.animate();
+		}
+	}
+
+	private static void renderHandOfGreed(RenderArmEvent event) {
+		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios")) {
+			CuriosApi.getCurio(RisusItems.HAND_OF_GREED.toStack()).flatMap(iCurio -> CuriosRendererRegistry.getRenderer(iCurio.getStack().getItem())).ifPresent(renderer -> {
+				HandOfGreedPlayerModel model = ((HandCuriosRenderer) renderer).model;
+				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
+				model.attackTime = 0.0F;
+				model.crouching = false;
+				model.swimAmount = 0.0F;
+				model.setupArmSize(event.getPlayer().getSkin().model().id().equals("slim"));
+				model.setupAnim(event.getPlayer(), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandCuriosRenderer.RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
+			});
 		}
 	}
 }

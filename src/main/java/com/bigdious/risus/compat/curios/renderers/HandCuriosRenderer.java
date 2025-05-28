@@ -9,6 +9,7 @@ import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -22,18 +23,25 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class HandCuriosRenderer implements ICurioRenderer {
-	private final HandOfGreedPlayerModel model;
 
-	public HandCuriosRenderer(){
+	public static final RenderType RENDER_TYPE = RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/hand_of_greed.png"));
+	public final HandOfGreedPlayerModel model;
+
+	public HandCuriosRenderer() {
 		this.model = new HandOfGreedPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.HAND_OF_GREED));
 	}
 
 	@Override
 	public <T extends LivingEntity, M extends EntityModel<T>> void render(ItemStack item, SlotContext slotContext, PoseStack stack, RenderLayerParent<T, M> parent, MultiBufferSource buffer, int light, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+		boolean slim = false;
+		if (parent.getModel() instanceof PlayerModel<?> player) {
+			slim = player.slim;
+		}
+		this.model.setupArmSize(slim);
 		this.model.setupAnim(slotContext.entity(), limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 		this.model.prepareMobModel(slotContext.entity(), limbSwing, limbSwingAmount, partialTicks);
 		ICurioRenderer.followBodyRotations(slotContext.entity(), this.model);
-		VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/hand_of_greed.png")));
+		VertexConsumer vertexConsumer = buffer.getBuffer(RENDER_TYPE);
 		this.model.renderToBuffer(stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY);
 	}
 }
