@@ -5,11 +5,13 @@ import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
+import com.bigdious.risus.client.model.entity.player.ThreadWingsModel;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
+import com.bigdious.risus.client.render.player.ThreadWingsLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
@@ -205,6 +207,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.LITTER, LitterModel::create);
 		event.registerLayerDefinition(RisusModelLayers.RIGHT_HAND_OF_GREED, RightHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.THREAD_WINGS, ThreadWingsModel::create);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -226,6 +229,7 @@ public class RisusClientEvents {
 		EntityModelSet models = Minecraft.getInstance().getEntityModels();
 		renderer.addLayer(new AngelWingsLayer<>(renderer, models));
 		renderer.addLayer(new HandOfGreedLayer<>(renderer));
+		renderer.addLayer(new ThreadWingsLayer<>(renderer));
 	}
 
 	private static void registerSkullModel(EntityRenderersEvent.CreateSkullModels event) {

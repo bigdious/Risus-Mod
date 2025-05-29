@@ -137,6 +137,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.FULL_BONE_BLOCK.asItem()
 		);
 
+		this.tag(RisusTags.Items.STOPS_THREAD_WINGS_RENDERING).add(
+			Items.ELYTRA,
+			RisusItems.ANGEL_WINGS.get()
+		);
+
+		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(
 			RisusItems.HAND_OF_GREED.get()
 		);

@@ -56,6 +56,7 @@ public class RisusTags {
 		public static final TagKey<Item> BASE_TISSUE = create("base_tissue");
 		public static final TagKey<Item> HURTS_ANGEL_WINGS = create("hurts_angel_wings");
 		public static final TagKey<Item> LIGHTLY_HURTS_ANGEL_WINGS = create("lightly_hurts_angel_wings");
+		public static final TagKey<Item> STOPS_THREAD_WINGS_RENDERING = create("stops_thread_wings_rendering");
 		public static final TagKey<Item> ALTERABLE_GATES = create("alterable_gates");
 		public static final TagKey<Item> ALTERABLE_FENCES = create("alterable_fences");
 		public static final TagKey<Item> ALTERABLE_TRAPDOORS = create("alterable_trapdoors");
@@ -68,9 +69,6 @@ public class RisusTags {
 		public static final TagKey<Item> ALTERABLE_STAIRS = create("alterable_stairs");
 		public static final TagKey<Item> ALTERABLE_PLANKS = create("alterable_planks");
 		public static final TagKey<Item> ALTERABLE_LOGS = create("alterable_logs");
-		public static final TagKey<Item> ALTERABLE_STRIPPED_LOGS = create("alterable_stripped_logs");
-		public static final TagKey<Item> ALTERABLE_WOODS = create("alterable_woods");
-		public static final TagKey<Item> ALTERABLE_STRIPPED_WOODS = create("alterable_stripped_woods");
 		public static final TagKey<Item> CURIOS_HANDS = createCurios("hands");
 		public static final TagKey<Item> CURIOS_BELT = createCurios("belt");
 		public static final TagKey<Item> CURIOS_CHARM = createCurios("charm");
