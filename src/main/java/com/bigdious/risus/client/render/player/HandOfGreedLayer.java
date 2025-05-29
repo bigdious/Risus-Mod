@@ -2,6 +2,7 @@ package com.bigdious.risus.client.render.player;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
+import com.bigdious.risus.client.model.entity.player.HandAnimHelper;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.init.RisusItems;
@@ -28,7 +29,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
+public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> implements HandAnimHelper {
 	//will be expanded later, when sinner armor is added
 	public static final RenderType LEFT_RENDER_TYPE = RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/left_hand_of_greed.png"));
 	public final LeftHandPlayerModel model;
@@ -49,7 +50,8 @@ public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> 
 			this.model.setupArmSize(slim);
 			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, partialTicks);
-			((ArmedModel) this.getParentModel()).translateToHand(HumanoidArm.LEFT, poseStack);
+//			((ArmedModel) this.getParentModel()).translateToHand(HumanoidArm.LEFT, poseStack);
+			HandAnimHelper.followBodyRotations(parent, this.model);
 			VertexConsumer vertexConsumer = buffer.getBuffer(LEFT_RENDER_TYPE);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}
