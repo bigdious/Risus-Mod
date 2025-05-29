@@ -25,6 +25,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation LEFT_HAND_OF_GREED = register("left_hand_of_greed");
 	public static final ModelLayerLocation RIGHT_HAND_OF_GREED = register("right_hand_of_greed");
 	public static final ModelLayerLocation THREAD_WINGS = register("thread_wings");
+	public static final ModelLayerLocation ANGEL_WINGS = register("angel_wings");
 
 	private static ModelLayerLocation register(String name) {
 		return register(name, "main");

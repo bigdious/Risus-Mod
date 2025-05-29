@@ -3,6 +3,7 @@ package com.bigdious.risus.client;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
+import com.bigdious.risus.client.model.entity.player.AngelWingsModel;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.ThreadWingsModel;
@@ -208,6 +209,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.RIGHT_HAND_OF_GREED, RightHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THREAD_WINGS, ThreadWingsModel::create);
+		event.registerLayerDefinition(RisusModelLayers.ANGEL_WINGS, AngelWingsModel::create);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -226,8 +228,7 @@ public class RisusClientEvents {
 	}
 
 	private static <T extends LivingEntity, M extends EntityModel<T>> void attachRenderLayers(LivingEntityRenderer<T, M> renderer) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		renderer.addLayer(new AngelWingsLayer<>(renderer, models));
+		renderer.addLayer(new AngelWingsLayer<>(renderer));
 		renderer.addLayer(new HandOfGreedLayer<>(renderer));
 		renderer.addLayer(new ThreadWingsLayer<>(renderer));
 	}
