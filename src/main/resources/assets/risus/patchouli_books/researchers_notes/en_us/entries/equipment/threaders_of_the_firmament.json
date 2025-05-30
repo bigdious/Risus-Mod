@@ -6,12 +6,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Due to their divine nature, despite Blood Feathers being somewhat fragile, they naturally intertwine with each other, while also resisting other materials. That is why it's possible to craft them together into the Threads Of The Firmament. Wearing this pair of boots unlocks a high amount of agility for the user, lightening their steps. "
+      "text": "By using Skin Boots as a base, with a good number of Blood Feathers and some Ashen Remains, it's possible to create boots that are accompanied by an Ophanim imitation. In practice, this can be seen as a 'blessed' pair of boots, which severely increases the wearer's agility. Though, due to the materials used, the defensive capabilities of the armor are almost non-existent."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "risus:threaders_of_the_firmament",
-      "text": "Unfortunately, the Threads are quite resistant against enchantments. At most, they can accept Unbreaking and Mending. Even so, the mobility the Threads provide can oftentimes outweigh the disadvantage originating from the lack of defense."
+      "text": "Even the enchantability falls quite short. At most, the boots can accept Unbreaking and Mending. Even so, the mobility the Threads Of The Firmament can provide oftentimes outweighs the disadvantages."
     }
   ]
 }

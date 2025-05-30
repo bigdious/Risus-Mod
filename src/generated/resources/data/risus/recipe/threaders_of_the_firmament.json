@@ -4,11 +4,18 @@
   "key": {
     "B": {
       "item": "risus:blood_feather"
+    },
+    "R": {
+      "item": "risus:ashen_remains"
+    },
+    "S": {
+      "item": "risus:skin_boots"
     }
   },
   "pattern": [
     "B B",
-    "B B"
+    "BRB",
+    "BSB"
   ],
   "result": {
     "count": 1,

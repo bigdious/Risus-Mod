@@ -488,8 +488,11 @@ public class CraftingGenerator extends RecipeProvider {
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.THREADERS_OF_THE_FIRMAMENT.get())
 			.pattern("B B")
-			.pattern("B B")
+			.pattern("BRB")
+			.pattern("BSB")
 			.define('B', Ingredient.of(RisusItems.BLOOD_FEATHER.get()))
+			.define('R', Ingredient.of(RisusBlocks.ASHEN_REMAINS.get()))
+			.define('S', Ingredient.of(RisusItems.SKIN_BOOTS.get()))
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 

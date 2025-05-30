@@ -6,6 +6,19 @@
       "predicate": {
         "risus:broken": 1.0
       }
+    },
+    {
+      "model": "risus:item/ashen_wings",
+      "predicate": {
+        "risus:ashen": 1.0
+      }
+    },
+    {
+      "model": "risus:item/ashen_wings_broken",
+      "predicate": {
+        "risus:ashen": 1.0,
+        "risus:broken": 1.0
+      }
     }
   ],
   "textures": {

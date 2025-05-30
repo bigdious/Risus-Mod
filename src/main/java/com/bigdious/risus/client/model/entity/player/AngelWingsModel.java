@@ -95,7 +95,7 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 			}
 
 
-			f = f4 * ((float)Math.PI / 2F) + (1.0F - f4) * f1;
+			f = f4 * ((float)Math.PI / 2F) + (1F - f4) * f1;
 			f5 = f4 * ((float)Math.PI / 2F) + (-1.15F - f4);
 			f6 = f4 * ((float)Math.PI / 2F) + (-1.25F - f4);
 		} else if (entity.isCrouching()) {
