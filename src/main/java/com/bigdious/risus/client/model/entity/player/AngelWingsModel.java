@@ -6,7 +6,9 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.phys.Vec3;
 
 public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 	private final ModelPart RightWing;
@@ -78,7 +80,45 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 
 	@Override
 	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		float f = 0.507271F;
+		float f1 = -0.117359F;
+		float f2 = 2.0F;
+		float f3 = 0.655878F;
+		float f5 = -1.48F;
+		float f6 = -0.78F;
+		if (entity.isFallFlying()) {
+			float f4 = 1.0F;
+			Vec3 vec3 = entity.getDeltaMovement();
+			if (vec3.y < (double)0.0F) {
+				Vec3 vec31 = vec3.normalize();
+				f4 = 1.0F - (float)Math.pow(-vec31.y, 1.5F);
+			}
+
+
+			f = f4 * ((float)Math.PI / 2F) + (1.0F - f4) * f1;
+			f5 = f4 * ((float)Math.PI / 2F) + (-1.15F - f4);
+			f6 = f4 * ((float)Math.PI / 2F) + (-1.25F - f4);
+		} else if (entity.isCrouching()) {
+			f = ((float)Math.PI / 4F);
+			f2 = 5.0F;
+			f5 = -0.9F;
+			f6 = -0.4F;
+
+		}
+		this.LeftWing.y = f2;
+		this.LeftThreeQuarter.xRot = f;
+		this.LeftThreeQuarter.yRot = f3;
+		this.LeftThreeQuarter.zRot = f1;
+		this.LeftTwoQuarter.xRot = f5;
+		this.LeftOneQuarter.xRot = f6;
+
+		this.RightThreeQuarter.yRot = -this.LeftThreeQuarter.yRot;
+		this.RightWing.y = this.LeftWing.y;
+		this.RightThreeQuarter.xRot = this.LeftThreeQuarter.xRot;
+		this.RightThreeQuarter.zRot = -this.LeftThreeQuarter.zRot;
+
+		this.RightTwoQuarter.xRot = this.LeftTwoQuarter.xRot;
+		this.RightOneQuarter.xRot = this.LeftOneQuarter.xRot;
 	}
 
 	@Override

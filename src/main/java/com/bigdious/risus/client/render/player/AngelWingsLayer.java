@@ -37,6 +37,8 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 		ItemStack itemstack = parent.getItemBySlot(EquipmentSlot.CHEST);
 		if (shouldRender(itemstack)){
 			VertexConsumer vertexConsumer = buffer.getBuffer(ANGEL_WINGS_RENDER);
+			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}
 	}

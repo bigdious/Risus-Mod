@@ -37,10 +37,10 @@ public class RisusArmorItem extends ArmorItem {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ARMOR, new AttributeModifier(armorLocation, armor, AttributeModifier.Operation.ADD_VALUE), group)
 			.add(Attributes.STEP_HEIGHT, new AttributeModifier(armorLocation, 0.4, AttributeModifier.Operation.ADD_VALUE), group)
-			.add(Attributes.GRAVITY, new AttributeModifier(armorLocation, -0.30, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.GRAVITY, new AttributeModifier(armorLocation, -0.15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
 			.add(Attributes.SNEAKING_SPEED, new AttributeModifier(armorLocation, 0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
 			.add(Attributes.MOVEMENT_SPEED, new AttributeModifier(armorLocation, 1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
-			.add(Attributes.JUMP_STRENGTH, new AttributeModifier(armorLocation, 0.60, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
+			.add(Attributes.JUMP_STRENGTH, new AttributeModifier(armorLocation, 1.00, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
 			.add(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(armorLocation, 10, AttributeModifier.Operation.ADD_VALUE), group)
 			.add(Attributes.FALL_DAMAGE_MULTIPLIER, new AttributeModifier(armorLocation, -0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), group)
 			.build();

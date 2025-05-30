@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.ThreadWingsModel;
+import com.bigdious.risus.client.render.AnimationRenderHelper;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -39,6 +40,8 @@ public class ThreadWingsLayer <T extends LivingEntity, M extends EntityModel<T>>
 		ItemStack itemstackNeed = parent.getItemBySlot(EquipmentSlot.FEET);
 		if (shouldRender(itemstackNeed, itemstackAvoid)){
 			VertexConsumer vertexConsumer = buffer.getBuffer(THREAD_WINGS_RENDER);
+			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}
 	}
