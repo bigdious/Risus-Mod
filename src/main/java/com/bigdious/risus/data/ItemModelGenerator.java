@@ -151,6 +151,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.EYE_BLOODSHOT.get());
 		toBlock(RisusBlocks.EYE_EMERALD.get());
 		toBlock(RisusBlocks.EYE_GOLDEN.get());
+		toBlock(RisusBlocks.EYE_ENDER_GLOWING.get());
+		toBlock(RisusBlocks.EYE_BLEACHED_GLOWING.get());
+		toBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING.get());
+		toBlock(RisusBlocks.EYE_EMERALD_GLOWING.get());
+		toBlock(RisusBlocks.EYE_GOLDEN_GLOWING.get());
 		toBlock(RisusBlocks.SKIN.get());
 		toBlock(RisusBlocks.FLESHY_SKIN.get());
 		toBlock(RisusBlocks.CURVED_FLESHY_SKIN.get());

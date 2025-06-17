@@ -69,7 +69,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.EYE_BLOODSHOT.asItem(),
 			RisusBlocks.EYE_ENDER.asItem(),
 			RisusBlocks.EYE_GOLDEN.asItem(),
-			RisusBlocks.EYE_BLEACHED.asItem());
+			RisusBlocks.EYE_BLEACHED.asItem(),
+			RisusBlocks.EYE_EMERALD_GLOWING.asItem(),
+			RisusBlocks.EYE_BLOODSHOT_GLOWING.asItem(),
+			RisusBlocks.EYE_ENDER_GLOWING.asItem(),
+			RisusBlocks.EYE_GOLDEN_GLOWING.asItem(),
+			RisusBlocks.EYE_BLEACHED_GLOWING.asItem());
 		this.tag(RisusTags.Items.BASE_TISSUE).add(
 			RisusBlocks.TISSUE.asItem(),
 			RisusBlocks.LIVING_TISSUE.asItem());

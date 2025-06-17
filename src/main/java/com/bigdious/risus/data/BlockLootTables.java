@@ -186,6 +186,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.EYE_BLOODSHOT.get());
 		dropSelf(RisusBlocks.EYE_GOLDEN.get());
 		dropSelf(RisusBlocks.EYE_EMERALD.get());
+		dropSelf(RisusBlocks.EYE_ENDER_GLOWING.get());
+		dropSelf(RisusBlocks.EYE_BLEACHED_GLOWING.get());
+		dropSelf(RisusBlocks.EYE_BLOODSHOT_GLOWING.get());
+		dropSelf(RisusBlocks.EYE_GOLDEN_GLOWING.get());
+		dropSelf(RisusBlocks.EYE_EMERALD_GLOWING.get());
 
 		dropSelf(RisusBlocks.JOYFLAME_LANTERN.get());
 		dropOther(RisusBlocks.JOYFLAME_TORCH.get(), RisusItems.JOYFLAME_TORCH.get());

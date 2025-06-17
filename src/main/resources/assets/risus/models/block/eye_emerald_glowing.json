@@ -1,0 +1,71 @@
+{
+  "texture_size": [32, 32],
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "1": "risus:block/eye_iris_emerald",
+    "2": "risus:block/eye_iris_emerald_overlay",
+    "particle": "risus:block/eye_iris_emerald"
+  },
+  "elements": [
+    {
+      "faces": {
+        "north": {"cullface": "north","uv": [8, 0, 16, 8], "texture": "#1"},
+        "east": {"cullface": "east","uv": [8, 0, 16, 8], "texture": "#1"},
+        "south": {"cullface": "south","uv": [8, 0, 16, 8], "texture": "#1"},
+        "west": {"cullface": "west","uv": [8, 0, 16, 8], "texture": "#1"},
+        "up": {"cullface": "up","uv": [0, 0, 8, 8], "texture": "#1"},
+        "down": {"cullface": "down","uv": [8, 8, 16, 16], "texture": "#1"}
+      },
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "shade": true
+    },
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "shade": false,
+      "faces": {
+        "north": {"cullface": "north","neoforge_data": {"block_light": 10},"uv": [8, 0, 16, 8], "texture": "#2", "tintindex": 0},
+        "east": {"cullface": "east","neoforge_data": {"block_light": 10},"uv": [8, 0, 16, 8], "texture": "#2", "tintindex": 0},
+        "south": {"cullface": "south","neoforge_data": {"block_light": 10},"uv": [8, 0, 16, 8], "texture": "#2", "tintindex": 0},
+        "west": {"cullface": "west","neoforge_data": {"block_light": 10},"uv": [8, 0, 16, 8], "texture": "#2", "tintindex": 0},
+        "up": {"cullface": "up","neoforge_data": {"block_light": 10},"uv": [0, 0, 8, 8], "texture": "#2", "tintindex": 0},
+        "down": {"cullface": "down","neoforge_data": {"block_light": 10},"uv": [8, 8, 16, 16], "texture": "#2", "tintindex": 0}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, 3, 1],
+      "scale": [0.55, 0.55, 0.55]
+    },
+    "firstperson_righthand": {
+      "rotation": [10.89, 47.02, 39.31],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "firstperson_lefthand": {
+      "rotation": [-143.18, -2.56, 147.3],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "ground": {
+      "translation": [0, 3, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "gui": {
+      "rotation": [30, 225, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "head": {
+      "rotation": [90, 0, -180]
+    },
+    "fixed": {
+      "rotation": [-90, 0, 0],
+      "scale": [0.5, 0.5, 0.5]
+    }
+  }
+}

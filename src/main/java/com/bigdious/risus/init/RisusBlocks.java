@@ -183,6 +183,11 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> EYE_BLOODSHOT = registerWithItem("eye_bloodshot", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
 	public static final DeferredBlock<Block> EYE_EMERALD = registerWithItem("eye_emerald", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
 	public static final DeferredBlock<Block> EYE_GOLDEN = registerWithItem("eye_golden", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
+	public static final DeferredBlock<Block> EYE_ENDER_GLOWING = registerWithItem("eye_ender_glowing", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
+	public static final DeferredBlock<Block> EYE_BLEACHED_GLOWING = registerWithItem("eye_bleached_glowing", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
+	public static final DeferredBlock<Block> EYE_BLOODSHOT_GLOWING = registerWithItem("eye_bloodshot_glowing", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
+	public static final DeferredBlock<Block> EYE_EMERALD_GLOWING = registerWithItem("eye_emerald_glowing", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
+	public static final DeferredBlock<Block> EYE_GOLDEN_GLOWING = registerWithItem("eye_golden_glowing", EquipableEyeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
 	public static final DeferredBlock<Block> FLESHY_SKIN = registerWithItem("fleshy_skin", FleshySkinBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(RisusBlocks.TISSUE.get()).mapColor(MapColor.TERRACOTTA_WHITE));
 	public static final DeferredBlock<Block> CURVED_FLESHY_SKIN = registerWithItem("curved_fleshy_skin", CurvedSkinBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(RisusBlocks.FLESHY_SKIN.get()));
 	public static final DeferredBlock<Block> SKIN = registerWithItem("skin", SkinBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(RisusBlocks.FLESHY_SKIN.get()));

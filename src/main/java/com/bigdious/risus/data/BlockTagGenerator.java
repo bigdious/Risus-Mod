@@ -102,7 +102,12 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			.add(RisusBlocks.EYE_BLOODSHOT.get())
 			.add(RisusBlocks.EYE_EMERALD.get())
 			.add(RisusBlocks.EYE_ENDER.get())
-			.add(RisusBlocks.EYE_GOLDEN.get());
+			.add(RisusBlocks.EYE_GOLDEN.get())
+			.add(RisusBlocks.EYE_BLEACHED_GLOWING.get())
+			.add(RisusBlocks.EYE_BLOODSHOT_GLOWING.get())
+			.add(RisusBlocks.EYE_EMERALD_GLOWING.get())
+			.add(RisusBlocks.EYE_ENDER_GLOWING.get())
+			.add(RisusBlocks.EYE_GOLDEN_GLOWING.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 			RisusBlocks.DISPLAY_NOTCH.get(),
@@ -213,6 +218,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.EYE_EMERALD.get(),
 				RisusBlocks.EYE_BLOODSHOT.get(),
 				RisusBlocks.EYE_ENDER.get(),
+				RisusBlocks.EYE_BLEACHED_GLOWING.get(),
+				RisusBlocks.EYE_BLOODSHOT_GLOWING.get(),
+				RisusBlocks.EYE_EMERALD_GLOWING.get(),
+				RisusBlocks.EYE_ENDER_GLOWING.get(),
+				RisusBlocks.EYE_GOLDEN_GLOWING.get(),
 				RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get()
 			);
 
@@ -228,6 +238,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.EYE_EMERALD.get(),
 				RisusBlocks.EYE_BLOODSHOT.get(),
 				RisusBlocks.EYE_ENDER.get(),
+				RisusBlocks.EYE_BLEACHED_GLOWING.get(),
+				RisusBlocks.EYE_BLOODSHOT_GLOWING.get(),
+				RisusBlocks.EYE_EMERALD_GLOWING.get(),
+				RisusBlocks.EYE_ENDER_GLOWING.get(),
+				RisusBlocks.EYE_GOLDEN_GLOWING.get(),
 				RisusBlocks.BLOODY_SPONGE.get(),
 				RisusBlocks.SCAB.get(),
 				RisusBlocks.TISSUE.get(),

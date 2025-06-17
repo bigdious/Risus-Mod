@@ -315,6 +315,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(Risus.prefix("block/eye_golden")));
 		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(Risus.prefix("block/eye_emerald")));
 
+		directionalBlock(RisusBlocks.EYE_ENDER_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_ender_glowing")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_bleached_glowing")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_bloodshot_glowing")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_golden_glowing")));
+		directionalBlock(RisusBlocks.EYE_EMERALD_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_emerald_glowing")));
+
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().cubeBottomTop("fleshy_skin", Risus.prefix("block/side_fleshy_skin"), Risus.prefix("block/tissue"), Risus.prefix("block/skin")));
 		simpleBlock(RisusBlocks.SKIN.get());
 		simpleBlock(RisusBlocks.HAIRY_SKIN.get(), models().getExistingFile(Risus.prefix("block/hairy_skin")));

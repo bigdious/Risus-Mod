@@ -4,6 +4,11 @@
     "risus:eye_bloodshot",
     "risus:eye_ender",
     "risus:eye_golden",
-    "risus:eye_bleached"
+    "risus:eye_bleached",
+    "risus:eye_emerald_glowing",
+    "risus:eye_bloodshot_glowing",
+    "risus:eye_ender_glowing",
+    "risus:eye_golden_glowing",
+    "risus:eye_bleached_glowing"
   ]
 }

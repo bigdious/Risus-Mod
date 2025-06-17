@@ -154,6 +154,11 @@ public class RisusTab {
 				output.accept(RisusBlocks.EYE_BLEACHED.get());
 				output.accept(RisusBlocks.EYE_BLOODSHOT.get());
 				output.accept(RisusBlocks.EYE_EMERALD.get());
+				output.accept(RisusBlocks.EYE_GOLDEN_GLOWING.get());
+				output.accept(RisusBlocks.EYE_ENDER_GLOWING.get());
+				output.accept(RisusBlocks.EYE_BLEACHED_GLOWING.get());
+				output.accept(RisusBlocks.EYE_BLOODSHOT_GLOWING.get());
+				output.accept(RisusBlocks.EYE_EMERALD_GLOWING.get());
 
 				output.accept(RisusBlocks.TEETH.get());
 				output.accept(RisusItems.TOOTHKNOCKER.get());

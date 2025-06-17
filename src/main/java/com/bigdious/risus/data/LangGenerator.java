@@ -72,6 +72,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.EYE_EMERALD, "Emerald Eye Block");
 		this.addBlock(RisusBlocks.EYE_ENDER, "Ender Eye Block");
 		this.addBlock(RisusBlocks.EYE_GOLDEN, "Golden Eye Block");
+		this.addBlock(RisusBlocks.EYE_BLEACHED_GLOWING, "Glowing Bleached Eye Block");
+		this.addBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING, "Glowing Bloodshot Eye Block");
+		this.addBlock(RisusBlocks.EYE_EMERALD_GLOWING, "Glowing Emerald Eye Block");
+		this.addBlock(RisusBlocks.EYE_ENDER_GLOWING, "Glowing Ender Eye Block");
+		this.addBlock(RisusBlocks.EYE_GOLDEN_GLOWING, "Glowing Golden Eye Block");
 		this.addBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK, "Imitation Scales Block");
 		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS, "Imitation Scales Stairs");
 		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, "Imitation Scales Slab");

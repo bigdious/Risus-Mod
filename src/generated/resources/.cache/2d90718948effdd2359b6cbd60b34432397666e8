@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-26T17:51:43.9048723	Risus blockstates and models
+// 1.21.1	2025-06-17T22:04:35.8115678	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -50,10 +50,15 @@ b11a7903b0d3103e90350ee440d299104f4f0711 assets/risus/blockstates/display_notch.
 0334039c8198fbf554420b89f960ca5c90f925b6 assets/risus/blockstates/engraved_basalt.json
 a8a90185e8fac50a6bc160fd53cd5bd0302a7660 assets/risus/blockstates/exposed_copper_amalgam.json
 e0c9d48c2e2e52a716772a11fd6757a3fb796b96 assets/risus/blockstates/eye_bleached.json
+b2b1a910385050620265b41dcb8028a1071c6f09 assets/risus/blockstates/eye_bleached_glowing.json
 b48ffa69e5e2df592253dc0b2e96f9ddb0bf8769 assets/risus/blockstates/eye_bloodshot.json
+6688549db6d8af4cbffdf889a5cc160816171abf assets/risus/blockstates/eye_bloodshot_glowing.json
 9ec0211dfd4a660d6f0dc73b4aebf298e54766b7 assets/risus/blockstates/eye_emerald.json
+a4dd3b4cb52b6483323311a8d593ed580491376a assets/risus/blockstates/eye_emerald_glowing.json
 40a6a3caf7fc62ce3ddcb42d2d857dbd50216d5b assets/risus/blockstates/eye_ender.json
+7e6c7ee9a6efc2c0c97e2c6ec07b5c3330b70710 assets/risus/blockstates/eye_ender_glowing.json
 a4d9a17fc34edf01da7929518cce89457cbeb55d assets/risus/blockstates/eye_golden.json
+79bb3e5704074f0017a51e6714fd8187176259c1 assets/risus/blockstates/eye_golden_glowing.json
 f068b60ae1d3b1e4e81f2b8c975876c476cf62e3 assets/risus/blockstates/flattened_imitation_scales_block.json
 f068b60ae1d3b1e4e81f2b8c975876c476cf62e3 assets/risus/blockstates/flattened_scales_block.json
 ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.json

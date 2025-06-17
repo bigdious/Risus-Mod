@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-29T17:44:49.6701443	Tags for minecraft:item mod id risus
+// 1.21.1	2025-06-17T22:04:35.81757	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 31cd28e679e4349535973611c35bcf28680f8960 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -51,7 +51,7 @@ dd848072279917c6f55f1883746af9f6edb53156 data/risus/tags/item/alterable_stairs.j
 d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/item/bondknot_logs.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json
-c647bef230a44322731190f38304ddc63985164a data/risus/tags/item/eye.json
+5d687e27c85871b9aa5140dfa30f216e42229ff0 data/risus/tags/item/eye.json
 ee2387014a0e77b1a5e2cbf21393c351832f3345 data/risus/tags/item/froglight_blocks.json
 c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
