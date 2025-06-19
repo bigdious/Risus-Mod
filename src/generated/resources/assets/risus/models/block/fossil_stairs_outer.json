@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "risus:block/fossil_top",
+    "side": "risus:block/fossil_side",
+    "top": "risus:block/fossil_top"
+  }
+}

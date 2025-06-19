@@ -308,6 +308,13 @@ public class BlockModelGenerator extends BlockStateProvider {
 		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		slabBlock(RisusBlocks.FULL_BONE_SLAB.get(), Risus.prefix("block/full_bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
+		axisBlock(RisusBlocks.FOSSIL.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_top"));
+		risusWallBlock(RisusBlocks.FOSSIL_WALL.get(), models().wallPost("fossil_wall_post",Risus.prefix("block/fossil_side")), models().wallSide("fossil_wall_side", Risus.prefix("block/fossil_side")), models().wallSideTall("fossil_wall_side_tall", Risus.prefix("block/fossil_side")));
+		stairsBlock(RisusBlocks.FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_top"), Risus.prefix("block/fossil_top"));
+		slabBlock(RisusBlocks.FOSSIL_SLAB.get(), Risus.prefix("block/fossil"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_top"), Risus.prefix("block/fossil_top"));
+		axisBlock(RisusBlocks.FULL_FOSSIL.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
+		slabBlock(RisusBlocks.FULL_FOSSIL_SLAB.get(), Risus.prefix("block/full_fossil"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
+		stairsBlock(RisusBlocks.FULL_FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 //keep below eye stuff to have custom head display
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye_ender")));
 		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(Risus.prefix("block/eye_bleached")));

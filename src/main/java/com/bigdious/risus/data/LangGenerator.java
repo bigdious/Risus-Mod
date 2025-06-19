@@ -85,9 +85,16 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.FLESHY_SKIN, "Fleshy Skin");
 		this.addBlock(RisusBlocks.FLESHY_SPAWNER, "Fleshy Monster Spawner");
 		this.addBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE, "Flowering Scaleplate");
+		this.addBlock(RisusBlocks.FOSSIL, "Fossil");
+		this.addBlock(RisusBlocks.FOSSIL_SLAB, "Fossil Slab");
+		this.addBlock(RisusBlocks.FOSSIL_STAIRS, "Fossil Stairs");
+		this.addBlock(RisusBlocks.FOSSIL_WALL, "Fossil Wall");
 		this.addBlock(RisusBlocks.FULL_BONE_BLOCK, "Full Bone Block");
 		this.addBlock(RisusBlocks.FULL_BONE_SLAB, "Full Bone Slab");
 		this.addBlock(RisusBlocks.FULL_BONE_STAIRS, "Full Bone Stairs");
+		this.addBlock(RisusBlocks.FULL_FOSSIL, "Full Fossil");
+		this.addBlock(RisusBlocks.FULL_FOSSIL_SLAB, "Full Fossil Slab");
+		this.addBlock(RisusBlocks.FULL_FOSSIL_STAIRS, "Full Fossil Stairs");
 		this.addBlock(RisusBlocks.GLUTTONY_SCALEPLATE, "Gluttonous Scaleplate");
 		this.addBlock(RisusBlocks.GRIMSTONE, "Grimstone");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS, "Grimstone Bricks");

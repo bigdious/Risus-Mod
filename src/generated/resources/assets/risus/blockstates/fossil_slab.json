@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "risus:block/fossil_slab"
+    },
+    "type=double": {
+      "model": "risus:block/fossil"
+    },
+    "type=top": {
+      "model": "risus:block/fossil_slab_top"
+    }
+  }
+}

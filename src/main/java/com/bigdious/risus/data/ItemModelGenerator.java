@@ -139,11 +139,21 @@ public class ItemModelGenerator extends ItemModelProvider {
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
+		getBuilder(RisusBlocks.FOSSIL_WALL.getId().getPath())
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/fossil_side"));
 		toBlock(RisusBlocks.BONE_STAIRS.get());
 		toBlock(RisusBlocks.BONE_SLAB.get());
 		toBlock(RisusBlocks.FULL_BONE_STAIRS.get());
 		toBlock(RisusBlocks.FULL_BONE_SLAB.get());
 		toBlock(RisusBlocks.FULL_BONE_BLOCK.get());
+		toBlock(RisusBlocks.BLOODY_SPONGE.get());
+		toBlock(RisusBlocks.FOSSIL.get());
+		toBlock(RisusBlocks.FOSSIL_STAIRS.get());
+		toBlock(RisusBlocks.FOSSIL_SLAB.get());
+		toBlock(RisusBlocks.FULL_FOSSIL_STAIRS.get());
+		toBlock(RisusBlocks.FULL_FOSSIL_SLAB.get());
+		toBlock(RisusBlocks.FULL_FOSSIL.get());
 		toBlock(RisusBlocks.BLOODY_SPONGE.get());
 
 		toBlock(RisusBlocks.EYE_ENDER.get());

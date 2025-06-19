@@ -147,9 +147,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.REGEN_ROSE.get());
 		add(RisusBlocks.POTTED_HEART_TRANSPLANT.get(), createPotFlowerItemTable(RisusBlocks.HEART_TRANSPLANT.get()));
 		add(RisusBlocks.POTTED_REGEN_ROSE.get(), createPotFlowerItemTable(RisusBlocks.REGEN_ROSE.get()));
-		dropSelf(RisusBlocks.BONE_WALL.get());
-		dropSelf(RisusBlocks.BONE_STAIRS.get());
-		add(RisusBlocks.BONE_SLAB.get(), createSlabItemTable(RisusBlocks.BONE_SLAB.get()));
 		dropSelf(RisusBlocks.BURNT_HYPHAE.get());
 		dropSelf(RisusBlocks.SCAB.get());
 		dropSelf(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
@@ -180,6 +177,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.FULL_BONE_BLOCK.get());
 		add(RisusBlocks.FULL_BONE_SLAB.get(), createSlabItemTable(RisusBlocks.FULL_BONE_SLAB.get()));
 		dropSelf(RisusBlocks.FULL_BONE_STAIRS.get());
+		dropSelf(RisusBlocks.FOSSIL.get());
+		dropSelf(RisusBlocks.FOSSIL_STAIRS.get());
+		add(RisusBlocks.FOSSIL_SLAB.get(), createSlabItemTable(RisusBlocks.FOSSIL_SLAB.get()));
+		dropSelf(RisusBlocks.FOSSIL_WALL.get());
+		dropSelf(RisusBlocks.FULL_FOSSIL.get());
+		dropSelf(RisusBlocks.FULL_FOSSIL_STAIRS.get());
+		add(RisusBlocks.FULL_FOSSIL_SLAB.get(), createSlabItemTable(RisusBlocks.FULL_FOSSIL_SLAB.get()));
 
 		dropSelf(RisusBlocks.EYE_ENDER.get());
 		dropSelf(RisusBlocks.EYE_BLEACHED.get());

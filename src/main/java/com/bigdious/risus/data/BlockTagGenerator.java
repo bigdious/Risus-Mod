@@ -47,6 +47,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.GRIMSTONE_SLAB.get(),
 			RisusBlocks.BONE_SLAB.get(),
 			RisusBlocks.FULL_BONE_SLAB.get(),
+			RisusBlocks.FOSSIL_SLAB.get(),
+			RisusBlocks.FULL_FOSSIL_SLAB.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()
 		);
@@ -55,6 +57,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.BONDKNOT_STAIRS.get(),
 			RisusBlocks.BONE_STAIRS.get(),
 			RisusBlocks.FULL_BONE_STAIRS.get(),
+			RisusBlocks.FOSSIL_STAIRS.get(),
+			RisusBlocks.FOSSIL_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
@@ -82,6 +86,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
 			RisusBlocks.BONE_WALL.get(),
+			RisusBlocks.FOSSIL_WALL.get(),
 			RisusBlocks.ROTTING_TISSUE.get(),
 			RisusBlocks.DECOMPOSING_TISSUE.get(),
 			RisusBlocks.DECAYING_TISSUE.get(),
@@ -182,6 +187,13 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FULL_BONE_SLAB.get(),
 			RisusBlocks.FULL_BONE_STAIRS.get(),
 			RisusBlocks.BONE_STAIRS.get(),
+			RisusBlocks.FOSSIL.get(),
+			RisusBlocks.FOSSIL_WALL.get(),
+			RisusBlocks.FULL_FOSSIL.get(),
+			RisusBlocks.FOSSIL_SLAB.get(),
+			RisusBlocks.FULL_FOSSIL_SLAB.get(),
+			RisusBlocks.FULL_FOSSIL_STAIRS.get(),
+			RisusBlocks.FOSSIL_STAIRS.get(),
 
 			RisusBlocks.FLESHY_SPAWNER.get(),
 
