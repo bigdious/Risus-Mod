@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-19T09:07:38.2993306	Risus blockstates and models
+// 1.21.1	2025-06-20T08:59:03.8852768	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -66,7 +66,7 @@ ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.js
 c13786f6255b7ebcd5ac1a1836e499df73cfe1a1 assets/risus/blockstates/fossil.json
 6408179d85d6ada4daa3fe72a56d8c18de2c6a8d assets/risus/blockstates/fossil_slab.json
 7efac7bdac0428323398dbaa43a7e8120182fe4e assets/risus/blockstates/fossil_stairs.json
-4245272076dc61c246f91faad66a431a55326b87 assets/risus/blockstates/fossil_wall.json
+32b590d2eb53f5f7ac8a5b68c013ff4f89332bd2 assets/risus/blockstates/fossil_wall.json
 a0e2e65d05f5d9e83c1892d939207d147cb11b54 assets/risus/blockstates/full_bone_block.json
 3a532da21d13b70b60f159d83be7a1445d43eb8f assets/risus/blockstates/full_bone_slab.json
 b905f64eeb004125c3f0d73dfb7bd1beb2cac549 assets/risus/blockstates/full_bone_stairs.json
@@ -225,9 +225,6 @@ fe1bbb6d5c6948c83cfe7f03259870ed50d527b9 assets/risus/models/block/fossil_slab_t
 c4b1531a6bc806661cb21fb25ddd5c5d4a3843d5 assets/risus/models/block/fossil_stairs.json
 ea514db9934268be62d4d0b2c61a0bcbd5a91b94 assets/risus/models/block/fossil_stairs_inner.json
 3bea3150c3b6eddf2d30f6f6c5c9a6c2b23bb678 assets/risus/models/block/fossil_stairs_outer.json
-d610d8e7632872f15fcb21cd944d98d1bfe4f1eb assets/risus/models/block/fossil_wall_post.json
-bebd1b69b86f7631372c389b58ca1ad4df43cd03 assets/risus/models/block/fossil_wall_side.json
-9c37562701cae34b0062d306bb6c5a4471d56bd1 assets/risus/models/block/fossil_wall_side_tall.json
 cdd7d7277f4fcaacd3642ef48634b22fb8c74515 assets/risus/models/block/full_bone_block.json
 478f0439de78448bf54c7fe1abd7858eab5a77b6 assets/risus/models/block/full_bone_block_horizontal.json
 8f6ea9bc6297a78ee952cb553c403fb9993a4752 assets/risus/models/block/full_bone_slab.json

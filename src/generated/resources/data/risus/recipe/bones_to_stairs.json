@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "risus:bone_block_variation"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:bone_stairs"
+  }
+}

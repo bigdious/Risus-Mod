@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "risus:bone_wall"
+  },
+  "result": "risus:fossil_wall"
+}

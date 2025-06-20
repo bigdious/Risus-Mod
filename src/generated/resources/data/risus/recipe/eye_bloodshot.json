@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "risus:eye_golden"
+      "tag": "risus:eye"
     },
     {
       "item": "risus:organic_matter"

@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "risus:full_bone_slab"
+  },
+  "result": "risus:full_fossil_slab"
+}

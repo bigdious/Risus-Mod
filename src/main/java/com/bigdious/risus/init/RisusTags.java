@@ -51,6 +51,7 @@ public class RisusTags {
 		public static final TagKey<Item> JOYFLAME_FIRE_BASE_BLOCKS = ItemTags.create(Risus.prefix("joyflame_fire_base_blocks"));
 		public static final TagKey<Item> FROGLIGHT_BLOCKS = ItemTags.create(Risus.prefix("froglight_blocks"));
 		public static final TagKey<Item> BONE_BLOCK_VARIATION = create("bone_block_variation");
+		public static final TagKey<Item> FOSSIL_VARIATION = create("fossil_variation");
 		public static final TagKey<Item> WILLFUL_WEAPON = create("willful_weapon");
 		public static final TagKey<Item> EYE = create("eye");
 		public static final TagKey<Item> BASE_TISSUE = create("base_tissue");

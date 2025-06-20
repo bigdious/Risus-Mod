@@ -49,7 +49,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
 		this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);
 		this.tag(ItemTags.SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get().asItem());
-		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem()).add(Blocks.BONE_BLOCK.asItem());
+		this.tag(RisusTags.Items.BONE_BLOCK_VARIATION).add(RisusBlocks.FULL_BONE_BLOCK.get().asItem(), Blocks.BONE_BLOCK.asItem());
+		this.tag(RisusTags.Items.FOSSIL_VARIATION).add(RisusBlocks.FULL_FOSSIL.get().asItem(),RisusBlocks.FOSSIL.asItem());
 
 		this.tag(Tags.Items.OBSIDIANS).add(RisusBlocks.LAUGHING_OBSIDIAN.asItem());
 

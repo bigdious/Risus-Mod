@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "risus:fossil"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:full_fossil"
+  }
+}

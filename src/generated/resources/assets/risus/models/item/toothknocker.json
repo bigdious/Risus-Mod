@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/toothknocker_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/toothknocker_held",
+      "textures": {
+        "texture": "risus:item/toothknocker"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/toothknocker_held",
+      "textures": {
+        "texture": "risus:item/toothknocker"
+      }
+    },
+    "head": {
+      "parent": "risus:item/toothknocker_held",
+      "textures": {
+        "texture": "risus:item/toothknocker"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/toothknocker_held",
+      "textures": {
+        "texture": "risus:item/toothknocker"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/toothknocker_held",
+      "textures": {
+        "texture": "risus:item/toothknocker"
+      }
+    }
+  }
+}
