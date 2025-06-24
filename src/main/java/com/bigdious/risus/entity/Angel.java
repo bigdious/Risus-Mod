@@ -73,7 +73,7 @@ public class Angel extends Monster {
 		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 50.0F));
 		this.goalSelector.addGoal(7, new Angel.AngelLightningAttackGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
-			entity -> Math.abs(entity.getY() - this.getY()) <= 50.0D && !entity.isInvulnerable() &&
+			entity -> !entity.isInvulnerable() &&
 				!(entity instanceof ArmorStand)
 				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
 				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
@@ -112,7 +112,7 @@ public class Angel extends Monster {
 		public void tick() {
 			LivingEntity livingentity = this.angel.getTarget();
 			Level level = this.angel.level();
-			if (livingentity != null && livingentity.distanceToSqr(this.angel) < 5096.0D && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
+			if (livingentity != null && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
 				if (this.chargeTime == 0 && livingentity instanceof Player) {
 					level.playSound(null, livingentity.getOnPos().above(2), RisusSoundEvents.TOLLING_BELL.get() ,SoundSource.HOSTILE, 3, 1);
 				}
