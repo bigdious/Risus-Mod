@@ -316,7 +316,7 @@ public class RisusEvents {
 		Entity entity2 = event.getEntity();
 		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(victim.getType().is(RisusTags.Entities.OFFSPRING))) {
-				event.setAmount(event.getAmount() + 5);
+				event.setAmount(event.getAmount() + 7);
 			} else {
 				event.setAmount(event.getAmount() - 3);
 			}
