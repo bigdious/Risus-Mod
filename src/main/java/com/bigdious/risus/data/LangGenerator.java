@@ -180,9 +180,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBannerPattern("smile", "Smile", DyeColor.RED);
 		this.addBannerPattern("divinity", "Divinity", DyeColor.WHITE);
 		this.addBannerPattern("tree", "Tree", DyeColor.GRAY);
+		this.addBannerPattern("rose", "Rose", DyeColor.BLUE);
 		this.add("block.minecraft.banner.risus.smile.red", "True Smile");
 		this.add("block.minecraft.banner.risus.divinity.white", "Unified Divinity");
 		this.add("block.minecraft.banner.risus.tree.gray", "Ashen Yggdrasil");
+		this.add("block.minecraft.banner.risus.rose.blue", "Forgotten Rose");
 
 		this.addMusicDisc(RisusItems.MUSIC_DISC_FEIGR, "Kizbe - Feigr");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_MORK, "Kizbe - Mǫrk");

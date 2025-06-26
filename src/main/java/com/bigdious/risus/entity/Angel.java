@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -21,10 +22,14 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
+
+import java.util.EnumSet;
 
 public class Angel extends Monster {
 
@@ -40,7 +45,7 @@ public class Angel extends Monster {
 			.add(Attributes.MAX_HEALTH, 100.0D)
 			.add(Attributes.MOVEMENT_SPEED, 0.0D)
 			.add(Attributes.ATTACK_DAMAGE, 5.0D)
-			.add(Attributes.FOLLOW_RANGE, 40.0D);
+			.add(Attributes.FOLLOW_RANGE, 100.0D);
 	}
 
 	public void setCharging(boolean charging) {
@@ -70,7 +75,7 @@ public class Angel extends Monster {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(5, new FloatGoal(this));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 50.0F));
+		this.goalSelector.addGoal(7, new AngelLookGoal(this));
 		this.goalSelector.addGoal(7, new Angel.AngelLightningAttackGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
 			entity -> !entity.isInvulnerable() &&
@@ -131,6 +136,33 @@ public class Angel extends Monster {
 			}
 
 			this.angel.setCharging(this.chargeTime > 10);
+		}
+	}
+	static class AngelLookGoal extends Goal {
+		private final Angel ophanim;
+
+		public AngelLookGoal(Angel ophanim) {
+			this.ophanim = ophanim;
+			this.setFlags(EnumSet.of(Flag.LOOK));
+		}
+
+		public boolean canUse() {
+			return true;
+		}
+
+		public boolean requiresUpdateEveryTick() {
+			return true;
+		}
+
+		public void tick() {
+			if (this.ophanim.getTarget() != null) {
+				LivingEntity livingentity = this.ophanim.getTarget();
+					double d1 = livingentity.getX() - this.ophanim.getX();
+					double d2 = livingentity.getZ() - this.ophanim.getZ();
+					this.ophanim.setYRot(-((float)Mth.atan2(d1, d2)) * (180F / (float)Math.PI));
+					this.ophanim.yBodyRot = this.ophanim.getYRot();
+			}
+
 		}
 	}
 

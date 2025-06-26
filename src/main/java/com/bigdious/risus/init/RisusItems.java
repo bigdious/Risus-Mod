@@ -92,6 +92,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> DIVINITY_PATTERN = register("divinity_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.DIVINITY_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> TREE_PATTERN = register("tree_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.TREE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> ROSE_PATTERN = register("rose_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.ROSE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> MUSIC_DISC_RAK = register("music_disc_rak", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.RAK));
 	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = register("music_disc_feigr", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR));
 	public static final DeferredItem<Item> MUSIC_DISC_MORK = register("music_disc_mork", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK));

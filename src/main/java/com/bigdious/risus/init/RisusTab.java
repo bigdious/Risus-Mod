@@ -217,6 +217,7 @@ public class RisusTab {
 				output.accept(RisusItems.SMILE_PATTERN.get());
 				output.accept(RisusItems.DIVINITY_PATTERN.get());
 				output.accept(RisusItems.TREE_PATTERN.get());
+				output.accept(RisusItems.ROSE_PATTERN.get());
 				output.accept(RisusItems.MUSIC_DISC_RAK.get());
 				output.accept(RisusItems.MUSIC_DISC_REGN.get());
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());

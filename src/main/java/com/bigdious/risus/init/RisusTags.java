@@ -114,6 +114,7 @@ public class RisusTags {
 		public static final TagKey<BannerPattern> SMILE_PATTERN = create("pattern_item/smile");
 		public static final TagKey<BannerPattern> DIVINITY_PATTERN = create("pattern_item/divinity");
 		public static final TagKey<BannerPattern> TREE_PATTERN = create("pattern_item/tree");
+		public static final TagKey<BannerPattern> ROSE_PATTERN = create("pattern_item/rose");
 
 		private static TagKey<BannerPattern> create(String name) {
 			return TagKey.create(Registries.BANNER_PATTERN, Risus.prefix(name));

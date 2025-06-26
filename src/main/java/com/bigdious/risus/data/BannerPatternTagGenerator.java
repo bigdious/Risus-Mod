@@ -26,5 +26,6 @@ public class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
 		this.tag(RisusTags.BannerPatterns.SMILE_PATTERN).add(RisusBannerPatterns.SMILE);
 		this.tag(RisusTags.BannerPatterns.DIVINITY_PATTERN).add(RisusBannerPatterns.DIVINITY);
 		this.tag(RisusTags.BannerPatterns.TREE_PATTERN).add(RisusBannerPatterns.TREE);
+		this.tag(RisusTags.BannerPatterns.ROSE_PATTERN).add(RisusBannerPatterns.ROSE);
 	}
 }

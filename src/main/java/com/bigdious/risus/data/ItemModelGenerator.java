@@ -214,6 +214,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);
 		singleTex(RisusItems.TREE_PATTERN);
+		singleTex(RisusItems.ROSE_PATTERN);
 		singleTex(RisusItems.STALKER_EYE);
 		singleTex(RisusItems.EYE_SANDWICH);
 		singleTex(RisusItems.EGG_SAC);
