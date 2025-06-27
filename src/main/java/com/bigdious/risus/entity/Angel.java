@@ -1,11 +1,11 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.entity.goals.YIncludedNearestAttackableTargetGoal;
 import com.bigdious.risus.init.*;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
@@ -18,15 +18,9 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 
 import java.util.EnumSet;
@@ -42,10 +36,10 @@ public class Angel extends Monster {
 
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
-			.add(Attributes.MAX_HEALTH, 100.0D)
-			.add(Attributes.MOVEMENT_SPEED, 0.0D)
-			.add(Attributes.ATTACK_DAMAGE, 5.0D)
-			.add(Attributes.FOLLOW_RANGE, 100.0D);
+			.add(Attributes.MAX_HEALTH, 100.0F)
+			.add(Attributes.MOVEMENT_SPEED, 0.0F)
+			.add(Attributes.ATTACK_DAMAGE, 5.0F)
+			.add(Attributes.FOLLOW_RANGE, 100.0F);
 	}
 
 	public void setCharging(boolean charging) {
@@ -73,15 +67,14 @@ public class Angel extends Monster {
 
 	@Override
 	protected void registerGoals() {
-		super.registerGoals();
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 		this.goalSelector.addGoal(7, new AngelLookGoal(this));
 		this.goalSelector.addGoal(7, new Angel.AngelLightningAttackGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
+		this.targetSelector.addGoal(1, new YIncludedNearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
 			entity -> !entity.isInvulnerable() &&
-				!(entity instanceof ArmorStand)
-				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
-				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
+				!(entity instanceof ArmorStand) &&
+				!(entity.getType().is(RisusTags.Entities.OFFSPRING)) &&
+				!(entity.getType().is(RisusTags.Entities.BELOVED))
 		));
 	}
 
@@ -118,7 +111,7 @@ public class Angel extends Monster {
 			LivingEntity livingentity = this.angel.getTarget();
 			Level level = this.angel.level();
 			if (livingentity != null && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
-				if (this.chargeTime == 0 && livingentity instanceof Player) {
+				if (this.chargeTime == 0) {
 					level.playSound(null, livingentity.getOnPos().above(2), RisusSoundEvents.TOLLING_BELL.get() ,SoundSource.HOSTILE, 3, 1);
 				}
 				++this.chargeTime;
