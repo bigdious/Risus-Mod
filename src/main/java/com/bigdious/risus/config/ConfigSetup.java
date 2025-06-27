@@ -13,8 +13,6 @@ import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class ConfigSetup {
-	private static final ModConfigSpec CLIENT_SPEC;
-	private static final RisusClientConfig CLIENT_CONFIG;
 	private static final ModConfigSpec COMMON_SPEC;
 	private static final RisusCommonConfig COMMON_CONFIG;
 
@@ -24,26 +22,17 @@ public class ConfigSetup {
 			ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC = specPair.getRight());
 			COMMON_CONFIG = specPair.getLeft();
 		}
-		{
-			final Pair<RisusClientConfig, ModConfigSpec> specPair = new ModConfigSpec.Builder().configure(RisusClientConfig::new);
-			ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC = specPair.getRight());
-			CLIENT_CONFIG = specPair.getLeft();
-		}
 
 	}
 
 	public static void loadConfigs(ModConfigEvent.Loading event) {
-		if (event.getConfig().getSpec() == CLIENT_SPEC) {
-			RisusConfig.rebakeClientOptions(CLIENT_CONFIG);
-		} else if (event.getConfig().getSpec() == COMMON_SPEC) {
+		if (event.getConfig().getSpec() == COMMON_SPEC) {
 			RisusConfig.rebakeCommonOptions(COMMON_CONFIG);
 		}
 	}
 
 	public static void reloadConfigs(ModConfigEvent.Reloading event) {
-		if (event.getConfig().getSpec() == CLIENT_SPEC) {
-			RisusConfig.rebakeClientOptions(CLIENT_CONFIG);
-		} else if (event.getConfig().getSpec() == ConfigSetup.COMMON_SPEC) {
+		if (event.getConfig().getSpec() == ConfigSetup.COMMON_SPEC) {
 			RisusConfig.rebakeCommonOptions(COMMON_CONFIG);
 		}
 	}

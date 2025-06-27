@@ -141,7 +141,6 @@ public class RisusClientEvents {
 					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 10.0F > 0.9F ? 1.0F : 0.0F;
 				}
 			});
-			ItemProperties.register(RisusItems.SCYTHE.get(), Risus.prefix("no_anim"), (stack, level, entity, seed) -> RisusConfig.animScythes ? 0.0F : 1.0F);
 		});
 	}
 

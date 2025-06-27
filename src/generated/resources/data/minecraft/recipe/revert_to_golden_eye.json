@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "risus:eye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:eye_golden"
+  }
+}

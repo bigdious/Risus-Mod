@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-26T20:25:12.4432943	Risus Item Models
+// 1.21.1	2025-06-27T20:31:17.3035988	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -173,9 +173,9 @@ bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
 54c7e5e0c47024ade5d2795651d4d517b51c8aa3 assets/risus/models/item/sacrifice_catalyst.json
 6846d2ae47181489ef3caae70a1b0a86eb232ea2 assets/risus/models/item/scab.json
-2d4ad845527dce5aa1941a658b16f0aec6e8b26a assets/risus/models/item/scythe.json
+88924e06e7615d7d0847c395026ad3c408a43f24 assets/risus/models/item/scythe.json
 41bd975a547aaa19a4c5789852ad24ca183a26af assets/risus/models/item/scythe_base.json
-4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/scythe_held.json
+1f8c31c8284ea353e56243f3ef81976a3481f960 assets/risus/models/item/scythe_held.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/singer_spawn_egg.json
 64e5bd0a479d77d885d260c8f0ecf66cfcfe2e34 assets/risus/models/item/skin.json
 a06b5197b45455a7b971e1ee7ffef11368d38782 assets/risus/models/item/skin_boots.json

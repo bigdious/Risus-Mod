@@ -7,14 +7,6 @@
     }
   },
   "loader": "neoforge:separate_transforms",
-  "overrides": [
-    {
-      "model": "risus:item/scythe",
-      "predicate": {
-        "risus:no_anim": 1.0
-      }
-    }
-  ],
   "perspectives": {
     "firstperson_lefthand": {
       "parent": "risus:item/scythe_held",

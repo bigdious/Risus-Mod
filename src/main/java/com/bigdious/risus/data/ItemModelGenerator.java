@@ -1,6 +1,7 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
@@ -231,9 +232,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
 
-		var noAnimScythe = handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
-		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture")
-			.override().predicate(Risus.prefix("no_anim"), 1).model(noAnimScythe).end();
+
+		handheldItemWithNoAnim(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
 		var noAnimSoulScythe = handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
 		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture")
 			.override().predicate(Risus.prefix("no_anim"), 1).model(noAnimSoulScythe).end();
@@ -362,6 +362,17 @@ public class ItemModelGenerator extends ItemModelProvider {
 		ItemModelBuilder heldVersion = nested().parent(heldModel).texture(textureName, heldTexture);
 		return withExistingParent(item.getId().getPath() + suffix, "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
 			.base(generated(item.getId() + suffix + "_base", itemTexture))
+			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
+			.perspective(ItemDisplayContext.HEAD, heldVersion).end();
+	}
+
+	private ItemModelBuilder handheldItemWithNoAnim(DeferredItem<Item> item, ModelFile heldModel, ModelFile heldModelNoAnim, ResourceLocation heldTexture, ResourceLocation itemTexture, String textureName) {
+		ItemModelBuilder heldVersion = nested().parent(RisusConfig.customWeaponAnims ? heldModel : heldModelNoAnim).texture(textureName, heldTexture);
+		return withExistingParent(item.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
+			.base(generated(item.getId()+ "_base", itemTexture))
 			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)

@@ -25,10 +25,6 @@ public class RisusConfig {
 	public static boolean stripperWorksOnMobArmor = true;
 	public static boolean customWeaponAnims = true;
 
-	static void rebakeClientOptions(RisusClientConfig config) {
-		animScythes = config.animScythes.get();
-	}
-
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();
 		holdersStealFromMonsters = config.holdersStealFromMonsters.get();

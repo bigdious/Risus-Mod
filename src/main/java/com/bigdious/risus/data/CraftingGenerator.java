@@ -732,6 +732,10 @@ public class CraftingGenerator extends RecipeProvider {
 			.requires(RisusItems.STALKER_EYE.get())
 			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
 			.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_GOLDEN.get(), 1)
+			.requires(RisusTags.Items.EYE)
+			.unlockedBy("has_item", has(RisusTags.Items.BASE_TISSUE))
+			.save(consumer, "revert_to_golden_eye");
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EYE_BLEACHED.get(), 1)
 			.requires(RisusBlocks.TEETH.get())
 			.requires(RisusTags.Items.EYE)
