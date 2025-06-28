@@ -89,33 +89,35 @@ public class DisplayNotchBlockEntity extends BlockEntity implements WorldlyConta
 	}
 
 	public boolean handleBEInteractions(ItemStack stack, Level level, BlockPos pos, BlockState state) {
-		if (stack.is(Tags.Items.DYES)) {
-			DyeColor color = DyeColor.getColor(stack);
-			if (color != null) {
+		if (!state.getValue(DisplayNotchBlock.LOCKED)) {
+			if (stack.is(Tags.Items.DYES)) {
+				DyeColor color = DyeColor.getColor(stack);
+				if (color != null) {
+					var oldBe = level.getBlockEntity(pos);
+					level.setBlockAndUpdate(pos, DisplayNotchBlock.NOTCH_BY_DYE.get(color).get().withPropertiesOf(state));
+					level.setBlockEntity(oldBe);
+					this.setChanged();
+					level.sendBlockUpdated(pos, state, state, 2);
+					return true;
+				}
+			} else if (stack.is(ItemTags.AXES)) {
+				this.stand = !this.stand;
+				this.setChanged();
+				level.sendBlockUpdated(pos, state, state, 2);
+				return true;
+			} else if (stack.is(Items.REDSTONE_TORCH) && RisusConfig.spinningSource == RisusConfig.SpinningSource.TORCH_ITEM) {
+				this.shouldRotate = !this.shouldRotate;
+				this.setChanged();
+				level.sendBlockUpdated(pos, state, state, 2);
+				return true;
+			} else if (stack.is(Tags.Items.GLASS_BLOCKS)) {
 				var oldBe = level.getBlockEntity(pos);
-				level.setBlockAndUpdate(pos, DisplayNotchBlock.NOTCH_BY_DYE.get(color).get().withPropertiesOf(state));
+				level.setBlockAndUpdate(pos, state.getBlock().defaultBlockState().is(RisusBlocks.INVISIBLE_DISPLAY_NOTCH) ? RisusBlocks.DISPLAY_NOTCH.get().withPropertiesOf(state) : RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get().withPropertiesOf(state));
 				level.setBlockEntity(oldBe);
 				this.setChanged();
 				level.sendBlockUpdated(pos, state, state, 2);
 				return true;
 			}
-		} else if (stack.is(ItemTags.AXES)) {
-			this.stand = !this.stand;
-			this.setChanged();
-			level.sendBlockUpdated(pos, state, state, 2);
-			return true;
-		} else if (stack.is(Items.REDSTONE_TORCH) && RisusConfig.spinningSource == RisusConfig.SpinningSource.TORCH_ITEM) {
-			this.shouldRotate = !this.shouldRotate;
-			this.setChanged();
-			level.sendBlockUpdated(pos, state, state, 2);
-			return true;
-		} else if (stack.is(Tags.Items.GLASS_BLOCKS)){
-			var oldBe = level.getBlockEntity(pos);
-			level.setBlockAndUpdate(pos, state.getBlock().defaultBlockState().is(RisusBlocks.INVISIBLE_DISPLAY_NOTCH) ? RisusBlocks.DISPLAY_NOTCH.get().withPropertiesOf(state) : RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get().withPropertiesOf(state));
-			level.setBlockEntity(oldBe);
-			this.setChanged();
-			level.sendBlockUpdated(pos, state, state, 2);
-			return true;
 		}
 		return false;
 	}

@@ -52,7 +52,9 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 	public static final BooleanProperty ELEVATE = BooleanProperty.create("elevate");
 	public static final BooleanProperty GLOWING = BooleanProperty.create("glowing");
 	public static final BooleanProperty PHANTOM = BooleanProperty.create("phantom");
+	public static final BooleanProperty LOCKED = BooleanProperty.create("locked");
 	public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_16;
+
 
 	public static final Map<DyeColor, DeferredBlock<Block>> NOTCH_BY_DYE = Util.make(Maps.newEnumMap(DyeColor.class), map -> {
 		map.put(DyeColor.WHITE, RisusBlocks.WHITE_DISPLAY_NOTCH);
@@ -81,14 +83,23 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 			.setValue(GLOWING, false)
 			.setValue(PHANTOM, false)
 			.setValue(ROTATION, 0)
-			.setValue(ELEVATE, false));
+			.setValue(ELEVATE, false)
+			.setValue(LOCKED, false));
 	}
 
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if (!(level.getBlockEntity(pos) instanceof DisplayNotchBlockEntity notch))
 			return ItemInteractionResult.FAIL;
 
-		if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.SHOVELS)) {
+		if(state.getValue(LOCKED) && !stack.is(Items.TRIPWIRE_HOOK)){
+			return ItemInteractionResult.FAIL;
+		}
+		else if (!notch.getTheItem().isEmpty() && stack.is(Items.TRIPWIRE_HOOK)){
+			level.setBlock(pos, state.cycle(LOCKED), 3);
+			level.sendBlockUpdated(pos, state, state, 2);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+		}
+		else if (!notch.getTheItem().isEmpty() && stack.is(ItemTags.SHOVELS)) {
 			level.setBlock(pos, state.cycle(ELEVATE), 3);
 			level.sendBlockUpdated(pos, state, state, 2);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
@@ -141,9 +152,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 		return this.defaultBlockState()
 			.setValue(FACING, context.getClickedFace())
-			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()))
-			//the elevation is reversed due to laziness
-			.setValue(ELEVATE, false);
+			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 	}
 
 	@Override
@@ -158,7 +167,7 @@ public class DisplayNotchBlock extends BaseEntityBlock implements SimpleMultilog
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, FLUIDLOGGED, ELEVATE, ROTATION, GLOWING, PHANTOM);
+		builder.add(FACING, FLUIDLOGGED, ELEVATE, LOCKED, ROTATION, GLOWING, PHANTOM);
 	}
 
 	@Override

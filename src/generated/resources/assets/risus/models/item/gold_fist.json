@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/gold_fist_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/gold_fist_held",
+      "textures": {
+        "texture": "risus:item/gold_fist"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/gold_fist_held",
+      "textures": {
+        "texture": "risus:item/gold_fist"
+      }
+    },
+    "head": {
+      "parent": "risus:item/gold_fist_held",
+      "textures": {
+        "texture": "risus:item/gold_fist"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/gold_fist_held",
+      "textures": {
+        "texture": "risus:item/gold_fist"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/gold_fist_held",
+      "textures": {
+        "texture": "risus:item/gold_fist"
+      }
+    }
+  }
+}

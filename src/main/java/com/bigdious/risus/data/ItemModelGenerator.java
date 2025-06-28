@@ -250,6 +250,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		handheldItem(RisusItems.UNAWAKENED_VESSEL, getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("entity/unawakened_vessel"), Risus.prefix("item/unawakened_vessel"), "axe");
 		handheldItem(RisusItems.HAND_OF_GREED, getExistingFile(Risus.prefix("item/hand_of_greed_held")), Risus.prefix("item/hand_of_greed"), Risus.prefix("item/hand_of_greed_item"), "hand_of_greed");
 		handheldItem(RisusItems.TOOTHKNOCKER, getExistingFile(Risus.prefix("item/toothknocker_held")), Risus.prefix("item/toothknocker"), Risus.prefix("item/toothknocker_item"), "texture");
+		handheldItem(RisusItems.GOLD_FIST, getExistingFile(Risus.prefix("item/gold_fist_held")), Risus.prefix("item/gold_fist"), Risus.prefix("item/gold_fist_item"), "texture");
 
 		singleTex(RisusItems.SMILE);
 		singleTex(RisusBlocks.JOYFLAME_CAMPFIRE);
