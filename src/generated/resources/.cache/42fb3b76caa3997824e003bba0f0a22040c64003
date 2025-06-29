@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-28T21:06:59.1461375	Risus Item Models
+// 1.21.1	2025-06-29T20:36:07.3922662	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -6,6 +6,7 @@ e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_cat
 21c30fbfbbe5230c44b44fa76d80d78adae25973 assets/risus/models/item/angel_wings.json
 d2fcba569fbcee5726ad1c47afb00dddf324f2e1 assets/risus/models/item/angel_wings_broken.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
+6af107ea76eb93397be6c2a237c067dc39dc2cec assets/risus/models/item/ashen_spire.json
 19977dc7e7f89aff3fc66ea4ad715679a1ccca9e assets/risus/models/item/ashen_wings.json
 3a39126d3aca385adb3471cf1906f7a44e6fcf57 assets/risus/models/item/ashen_wings_broken.json
 058008f5335d2bc15ac10b5f79c6d35beca63865 assets/risus/models/item/baby_ribcage.json
@@ -77,16 +78,16 @@ a914f6a65b1dff773175099de325673a9debac1b assets/risus/models/item/essence_of_lus
 f22dee71228e4e6083a695473efc03ecfc6cda4f assets/risus/models/item/essence_of_melancholy.json
 4fb22221e7afc543c6a201db0e4176a8976ca64f assets/risus/models/item/essence_of_sloth.json
 002385919efb8adfb30cf09274f73e7eaa957f5d assets/risus/models/item/exposed_copper_amalgam.json
-ea528c13631b24d4d01fab0b394146d0b2b27d51 assets/risus/models/item/eye_bleached.json
-95588bd1f171f121879f06caaac7d4fa0a28429c assets/risus/models/item/eye_bleached_glowing.json
-21251deee36c1148812923afc40b96faf258c24b assets/risus/models/item/eye_bloodshot.json
-cbca0a0fb9dfaa564e6621a7e21041364e6fe39a assets/risus/models/item/eye_bloodshot_glowing.json
-277cca67835288839864d857e33bdec3c0bcefff assets/risus/models/item/eye_emerald.json
-54c95f2c1f7254b43264fc4beffab39a24859f6f assets/risus/models/item/eye_emerald_glowing.json
-fdc8c128323eb2e27060fb82a5b741e669dea66e assets/risus/models/item/eye_ender.json
-00b55b2b6f26dcc87ddfdbb484fbf710947574d4 assets/risus/models/item/eye_ender_glowing.json
-c3b6162d362fbbc5855d5d6b4c8624830d8a7f33 assets/risus/models/item/eye_golden.json
-61327cadf90ec4e5848ed1974266c2ec6763ea71 assets/risus/models/item/eye_golden_glowing.json
+505278bffada7d7753307c915113ae80d50f9c75 assets/risus/models/item/eye_bleached.json
+c3907447e910f8b59b0e905b31da7fd01671cd0b assets/risus/models/item/eye_bleached_glowing.json
+1d90b8200bd3115969e9a610bee171df55b45ed4 assets/risus/models/item/eye_bloodshot.json
+e23976dcec86d202a2b10e6b716269e214b100e5 assets/risus/models/item/eye_bloodshot_glowing.json
+e71db486f9d1f44a2946897ea2059a93b7a07e63 assets/risus/models/item/eye_emerald.json
+65fcc84e073b74c775a5edc96b61412f44eff595 assets/risus/models/item/eye_emerald_glowing.json
+7520876c386008f8488fff25dc9b3bde20a30eef assets/risus/models/item/eye_ender.json
+8d0feccad17827010859f0378823741a40803a7e assets/risus/models/item/eye_ender_glowing.json
+0aac8f566d92d24645823edbfeabf3bdbe1c3763 assets/risus/models/item/eye_golden.json
+7cfdb7666e81705c2f078e642dc1bef33f2d188f assets/risus/models/item/eye_golden_glowing.json
 d86d9fe15f0cdebde5000f4047f884afe7b6cb81 assets/risus/models/item/eye_sandwich.json
 a0f9b5b6dd4794078618efd332e00bdaa7fabf13 assets/risus/models/item/fire_scythe.json
 ec04d6ddd5f3f99ad7ccbdff3a9105bc0868ada1 assets/risus/models/item/fire_scythe_base.json

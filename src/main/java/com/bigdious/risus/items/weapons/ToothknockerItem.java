@@ -7,6 +7,8 @@ import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -84,6 +86,9 @@ public class ToothknockerItem extends SwordItem {
 			f3 *= f5 / f4;
 			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
+			for (int i=0;i <6; i++) {
+				pLevel.addParticle(ParticleTypes.POOF, player.getX(), player.getRandomY(), player.getZ(), 0, 0, 0);
+			}
 			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			player.getCooldowns().addCooldown(this, 30);
 			pLevel.playSound(player, player.getOnPos().above(), RisusSoundEvents.TOOTHKNOCKER_DASH.get(), SoundSource.PLAYERS);

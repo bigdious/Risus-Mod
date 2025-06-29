@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-26T20:25:12.4545751	Registries
+// 1.21.1	2025-06-29T23:19:31.5226818	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -16,6 +16,7 @@ d41d47bb317d598d17224c24a4b5b16658078de8 data/risus/jukebox_song/mork.json
 a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json
 1ccb12921a5f5bec01b7cab8db4e3248e8f6065d data/risus/jukebox_song/regn.json
 4d1f05854d84877ea22cc4fde810f9698a5168bc data/risus/trim_material/gluttony_scales.json
+1601d81366c8acda3a3517440ea4030ca0801386 data/risus/trim_material/organic_matter.json
 228fc26bf4b2e5564cbd6b508d7981763f029bef data/risus/trim_material/skin.json
 5726a63524cd7a203c8e1649ffc5b13914cb2136 data/risus/worldgen/biome/coalification.json
 23f116d27333663c66ca81a48723e49aca5fb835 data/risus/worldgen/biome/coalification_feigr.json
@@ -39,13 +40,13 @@ c6b03d7d6b3edb1facf975ba05a982bf61d96b8a data/risus/worldgen/structure/endy_maw.
 55c8f7e91ae106790c2224139023cb77096c1951 data/risus/worldgen/structure/great_body.json
 375bda92dab7aab39e7062390277e5c35e7da226 data/risus/worldgen/structure/lab_start.json
 9fe701041554b83e26cc358248da34b5a2b43130 data/risus/worldgen/structure/sandy_maw.json
-24da088f593104f08fba0acf745c11e09e892902 data/risus/worldgen/structure_set/alteration_site.json
+9cefa8ec14d9a2f0c2f2adab1b9ce6102b71ffbf data/risus/worldgen/structure_set/alteration_site.json
 06f3e746972653ceb8df98f2a54e9e067da7a8ce data/risus/worldgen/structure_set/angel_altar.json
-b6dd36e4a3350015ce1d30da6c103ead2566b7de data/risus/worldgen/structure_set/blood_well.json
+d9e0e3cfaf38fcd744c04f0831319d5d2e170746 data/risus/worldgen/structure_set/blood_well.json
 2c3e4bfd61c7fe118e910fc3309cf371bd7bb29d data/risus/worldgen/structure_set/draxolotl_remains.json
 f0887106c9e53c142cb9f9b733927fdc8cf9a578 data/risus/worldgen/structure_set/dungeon.json
 af24c6eb5b34590b8b43179b82b3d3a11d4bd019 data/risus/worldgen/structure_set/endy_maw.json
-be53beb90a5ca6154cd179e3e64e35a950f6ba12 data/risus/worldgen/structure_set/family_tree.json
+5a0db8da7cbbfee92cbb6273d739033e511c41ec data/risus/worldgen/structure_set/family_tree.json
 5ddaf3ecfeee469ab9bf0ffef84f68ffa288ebd8 data/risus/worldgen/structure_set/flower_field.json
 9ae91b3e0ce4b21fff88f6d6fbd1b90dfd9ad8dd data/risus/worldgen/structure_set/grassy_maw.json
 146c7e899b844eb0d1dcea213ba7917cdbd8c918 data/risus/worldgen/structure_set/great_body.json

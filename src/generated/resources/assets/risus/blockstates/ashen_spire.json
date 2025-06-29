@@ -1,0 +1,516 @@
+{
+  "variants": {
+    "flipped=false,fluid=blood,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee"
+      },
+      {
+        "model": "risus:block/cinderglee_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top"
+      },
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire"
+      },
+      {
+        "model": "risus:block/fire_flipped"
+      }
+    ],
+    "flipped=false,fluid=blood,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul"
+      },
+      {
+        "model": "risus:block/soul_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee"
+      },
+      {
+        "model": "risus:block/cinderglee_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top"
+      },
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire"
+      },
+      {
+        "model": "risus:block/fire_flipped"
+      }
+    ],
+    "flipped=false,fluid=empty,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul"
+      },
+      {
+        "model": "risus:block/soul_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee"
+      },
+      {
+        "model": "risus:block/cinderglee_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top"
+      },
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire"
+      },
+      {
+        "model": "risus:block/fire_flipped"
+      }
+    ],
+    "flipped=false,fluid=lava,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul"
+      },
+      {
+        "model": "risus:block/soul_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee"
+      },
+      {
+        "model": "risus:block/cinderglee_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top"
+      },
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire"
+      },
+      {
+        "model": "risus:block/fire_flipped"
+      }
+    ],
+    "flipped=false,fluid=water,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul"
+      },
+      {
+        "model": "risus:block/soul_flipped"
+      }
+    ],
+    "flipped=true,fluid=blood,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=blood,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=blood,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=blood,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=blood,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee_flipped"
+      },
+      {
+        "model": "risus:block/cinderglee"
+      }
+    ],
+    "flipped=true,fluid=blood,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/top"
+      }
+    ],
+    "flipped=true,fluid=blood,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire_flipped"
+      },
+      {
+        "model": "risus:block/fire"
+      }
+    ],
+    "flipped=true,fluid=blood,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul_flipped"
+      },
+      {
+        "model": "risus:block/soul"
+      }
+    ],
+    "flipped=true,fluid=empty,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=empty,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=empty,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=empty,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=empty,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee_flipped"
+      },
+      {
+        "model": "risus:block/cinderglee"
+      }
+    ],
+    "flipped=true,fluid=empty,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/top"
+      }
+    ],
+    "flipped=true,fluid=empty,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire_flipped"
+      },
+      {
+        "model": "risus:block/fire"
+      }
+    ],
+    "flipped=true,fluid=empty,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul_flipped"
+      },
+      {
+        "model": "risus:block/soul"
+      }
+    ],
+    "flipped=true,fluid=lava,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=lava,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=lava,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=lava,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=lava,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee_flipped"
+      },
+      {
+        "model": "risus:block/cinderglee"
+      }
+    ],
+    "flipped=true,fluid=lava,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/top"
+      }
+    ],
+    "flipped=true,fluid=lava,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire_flipped"
+      },
+      {
+        "model": "risus:block/fire"
+      }
+    ],
+    "flipped=true,fluid=lava,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul_flipped"
+      },
+      {
+        "model": "risus:block/soul"
+      }
+    ],
+    "flipped=true,fluid=water,half=lower,lantern=cinderglee": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=water,half=lower,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=water,half=lower,lantern=fire": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=water,half=lower,lantern=soul": [
+      {
+        "model": "risus:block/ashen_spire/bottom_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/bottom"
+      }
+    ],
+    "flipped=true,fluid=water,half=upper,lantern=cinderglee": [
+      {
+        "model": "risus:block/cinderglee_flipped"
+      },
+      {
+        "model": "risus:block/cinderglee"
+      }
+    ],
+    "flipped=true,fluid=water,half=upper,lantern=empty": [
+      {
+        "model": "risus:block/ashen_spire/top_flipped"
+      },
+      {
+        "model": "risus:block/ashen_spire/top"
+      }
+    ],
+    "flipped=true,fluid=water,half=upper,lantern=fire": [
+      {
+        "model": "risus:block/fire_flipped"
+      },
+      {
+        "model": "risus:block/fire"
+      }
+    ],
+    "flipped=true,fluid=water,half=upper,lantern=soul": [
+      {
+        "model": "risus:block/soul_flipped"
+      },
+      {
+        "model": "risus:block/soul"
+      }
+    ]
+  }
+}

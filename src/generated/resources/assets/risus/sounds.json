@@ -98,6 +98,12 @@
     ],
     "subtitle": "subtitles.risus.entity.crescent_disaster.throw"
   },
+  "entity.gorger.bite": {
+    "sounds": [
+      "risus:entity/gorger/bite"
+    ],
+    "subtitle": "subtitles.risus.entity.gorger.bite"
+  },
   "entity.holder.cheeky_laugh": {
     "sounds": [
       "risus:entity/holder/cheeky_laugh"

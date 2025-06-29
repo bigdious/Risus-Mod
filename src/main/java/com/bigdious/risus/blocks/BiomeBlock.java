@@ -2,17 +2,23 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.BiomeBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
-import com.bigdious.risus.init.RisusBiomes;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.*;
+import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.QuartPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -31,6 +37,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
@@ -135,7 +142,7 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
 		if (!state.getValue(SPREADING) && !state.getValue(SPREADING_MORK) && !state.getValue(SPREADING_FEIGR)) return;
-		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && (state.getValue(SPREADING_FEIGR) ? laughingStalk.decaytime>160 : state.getValue(SPREADING_MORK) ? laughingStalk.decaytime>40 :  laughingStalk.decaytime > 70)) {
+		if ((level.getBlockEntity(pos) instanceof BiomeBlockEntity laughingStalk) && (state.getValue(SPREADING_FEIGR) ? laughingStalk.decaytime>170 : state.getValue(SPREADING_MORK) ? laughingStalk.decaytime>50 :  laughingStalk.decaytime > 80)) {
 			level.setBlockAndUpdate(pos, state.setValue(SPREADING, false).setValue(SPREADING_FEIGR, false).setValue(SPREADING_MORK, false));
 			laughingStalk.decaytime = 0;
 		}
@@ -160,33 +167,6 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 			stack.consume(1, player);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
-
-//		if (held.is(RisusItems.MUSIC_DISC_RAK)) {
-//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.RAK));
-//			level.scheduleTick(pos, this, this.tickRate());
-//			return ItemInteractionResult.SUCCESS;
-//		}
-//		if (held.is(RisusItems.MUSIC_DISC_REGN)) {
-//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.REGN));
-//			level.scheduleTick(pos, this, this.tickRate());
-//			return ItemInteractionResult.SUCCESS;
-//		}
-//		if (held.is(RisusItems.MUSIC_DISC_MORK)) {
-//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.MORK));
-//			level.scheduleTick(pos, this, this.tickRate());
-//			return ItemInteractionResult.SUCCESS;
-//		}
-//		if (held.is(RisusItems.MUSIC_DISC_FEIGR)) {
-//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.FEIGR));
-//			level.scheduleTick(pos, this, this.tickRate());
-//			return ItemInteractionResult.SUCCESS;
-//		}
-//		if (held.isEmpty()) {
-//			level.setBlockAndUpdate(pos, state.setValue(MUSIC_PLAYING, PlayingMusicEnum.FEIGR));
-//			level.scheduleTick(pos, this, this.tickRate());
-//			return ItemInteractionResult.SUCCESS;
-//		}
-
 		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}
 
@@ -196,11 +176,23 @@ public class BiomeBlock extends ActuallyUseableDirectionalBlock implements Simpl
 				state.getValue(SPREADING_FEIGR) ? RisusBiomes.COALIFICATION_FEIGR : RisusBiomes.COALIFICATION);
 
 		int range = state.getValue(SPREADING_FEIGR) ? 20 : state.getValue(SPREADING_MORK) ? 9 : 12;
+		for (int i = 0; i < 3; i++) {
+			int rangeDownscaled = range-3;
+			int dx = rand.nextInt(rangeDownscaled * 2 + 1) - rangeDownscaled;
+			int dy = rand.nextInt(rangeDownscaled * 2 + 1) - rangeDownscaled;
+			int dz = rand.nextInt(rangeDownscaled * 2 + 1) - rangeDownscaled;
+			BlockPos blockpos = pos.offset(dx, dy, dz);
+			BlockState blockstate = level.getBlockState(blockpos);
+			if (blockstate.is(RisusTags.Blocks.SPAWN_SPIRE_ON) && level.getBlockState(blockpos.above()).canBeReplaced() && level.getBlockState(blockpos.above(2)).canBeReplaced()) {
+				level.setBlock(blockpos.above(), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState(), 3);
+				level.setBlock(blockpos.above(2), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState().setValue(AshenSpireBlock.HALF, DoubleBlockHalf.UPPER).setValue(AshenSpireBlock.FLIPPED, level.getBlockState(blockpos.above()).getBlock().defaultBlockState().is(RisusBlocks.ASHEN_SPIRE) ? level.getBlockState(blockpos.above()).getValue(AshenSpireBlock.FLIPPED) : false), 3);
+				ServerParticleUtils.spawnParticleInBlock(level, blockpos.above(2), 3, new BlockParticleOption(ParticleTypes.BLOCK, RisusBlocks.ASHEN_SPIRE.get().defaultBlockState()));
+				level.playSound(null, blockpos.above(), SoundEvents.CAVE_VINES_PLACE, SoundSource.BLOCKS);
+			}
+		}
 		for (int i = 0; i < 16; i++) {
 			//y needed some random offset too
 			BlockPos dPos = this.randomOffset(rand, pos, range, range+5, range);
-//			if (dPos.distSqr(pos) > 256.0)
-//				continue;
 
 			// Holder<Biome>(dpos).is(biome) is deprecated and could cause issues in the future
 			if (level.getBiome(dPos) == biome)

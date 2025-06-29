@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/ashen_spire/top_lantern_flipped",
+  "textures": {
+    "1": "minecraft:block/lantern"
+  }
+}

@@ -97,6 +97,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
+		add(RisusBlocks.ASHEN_SPIRE.get(), createSpireDrops(RisusBlocks.ASHEN_SPIRE.get()));
 		dropOther(RisusBlocks.BLOODWYRM_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
 		dropOther(RisusBlocks.BLOOD_CAULDRON.get(), Items.CAULDRON);
 		dropOther(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), RisusItems.BLOODWYRM_HEAD.get());
@@ -251,6 +252,32 @@ public class BlockLootTables extends BlockLootSubProvider {
 												.setProperties(StatePropertiesPredicate.Builder.properties()
 														.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))),
 								new BlockPos(0, -1, 0))));
+	}
+
+	protected LootTable.Builder createSpireDrops(Block block) {
+
+		LootPoolEntryContainer.Builder<?> loot = LootItem.lootTableItem(block)
+			.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)));
+
+		return LootTable.lootTable()
+			.withPool(LootPool.lootPool().add(loot)
+				.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+					.setProperties(StatePropertiesPredicate.Builder.properties()
+						.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
+				.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
+						.setBlock(BlockPredicate.Builder.block().of(block)
+							.setProperties(StatePropertiesPredicate.Builder.properties()
+								.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))),
+					new BlockPos(0, 1, 0))))
+			.withPool(LootPool.lootPool().add(loot)
+				.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+					.setProperties(StatePropertiesPredicate.Builder.properties()
+						.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))
+				.when(LocationCheck.checkLocation(LocationPredicate.Builder.location()
+						.setBlock(BlockPredicate.Builder.block().of(block)
+							.setProperties(StatePropertiesPredicate.Builder.properties()
+								.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))),
+					new BlockPos(0, -1, 0))));
 	}
 
 	@Override

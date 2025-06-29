@@ -141,7 +141,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.MAW_GUTS.get(),
 			RisusBlocks.BABY_RIBCAGE.get(),
 			RisusBlocks.RIBCAGE.get(),
-			RisusBlocks.GRIMSTONE_BRICKS.get(),
 			RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get(),
 			RisusBlocks.ACTIVE_GRIMSTONE.get(),
 
@@ -415,5 +414,10 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());
 		tag(BlockTags.FLOWERS).add(RisusBlocks.REGEN_ROSE.get());
 		tag(BlockTags.SMALL_FLOWERS).add(RisusBlocks.REGEN_ROSE.get());
+		tag(RisusTags.Blocks.SPAWN_SPIRE_ON).add(
+			RisusBlocks.ASHEN_REMAINS.get(),
+			RisusBlocks.SMILING_REMAINS.get(),
+			Blocks.GRASS_BLOCK,
+			RisusBlocks.BURNT_HYPHAE.get());
 	}
 }

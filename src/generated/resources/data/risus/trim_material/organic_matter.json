@@ -1,0 +1,9 @@
+{
+  "asset_name": "organic_matter",
+  "description": {
+    "color": "#C70902",
+    "translate": "trim_material.risus.organic_matter"
+  },
+  "ingredient": "risus:organic_matter",
+  "item_model_index": 0.4
+}

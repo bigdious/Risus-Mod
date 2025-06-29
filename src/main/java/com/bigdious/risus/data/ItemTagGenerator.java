@@ -107,7 +107,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ItemTags.VANISHING_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 		this.tag(ItemTags.EQUIPPABLE_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 
-		this.tag(ItemTags.TRIM_MATERIALS).add(RisusItems.GLUTTONY_SCALES.get(), RisusBlocks.SKIN.asItem());
+		this.tag(ItemTags.TRIM_MATERIALS).add(RisusItems.GLUTTONY_SCALES.get(), RisusBlocks.SKIN.asItem(), RisusItems.ORGANIC_MATTER.get());
 		this.tag(RisusTags.Items.HURTS_ANGEL_WINGS).add(Items.FIREWORK_ROCKET);
 		this.tag(RisusTags.Items.LIGHTLY_HURTS_ANGEL_WINGS).add(Items.TRIDENT, RisusItems.CRESCENT_DISASTER.get());
 		this.tag(Tags.Items.FOODS_RAW_MEAT).add(Items.COD, Items.SALMON, Items.TROPICAL_FISH);

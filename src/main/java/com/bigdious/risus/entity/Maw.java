@@ -12,6 +12,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -177,6 +178,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 				living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
 			//then do the actual damage
 			if (entity.hurt(new DamageSource(this.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(RisusDamageTypes.GLUTTONY)), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+				entity.level().playSound(null, this.getOnPos(), RisusSoundEvents.GORGER_BITE.get() , SoundSource.HOSTILE, 1, 1);
 				this.doHurtTarget(living);
 				if (living instanceof ServerPlayer sp && living.isDeadOrDying()) {
 					RisusAdvancements.KILLED_BY_DEVOUR.get().trigger(sp);

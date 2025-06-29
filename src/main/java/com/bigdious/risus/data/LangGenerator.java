@@ -23,6 +23,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.ALTERATION_CATALYST, "Alteration Catalyst");
 		this.addBlock(RisusBlocks.ANGEL_ALTAR, "Angel Altar");
 		this.addBlock(RisusBlocks.ASHEN_REMAINS, "Ashen Remains");
+		this.addBlock(RisusBlocks.ASHEN_SPIRE, "Ashen Spire");
 		this.addBlock(RisusBlocks.BABY_RIBCAGE, "Baby Ribcage");
 		this.addBlock(RisusBlocks.BIG_CHAIN, "Big Chain");
 		this.addBlock(RisusBlocks.BLOOD_CAULDRON, "Blood Cauldron");
@@ -191,8 +192,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addMusicDisc(RisusItems.MUSIC_DISC_RAK, "Kizbe - Rak");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_REGN, "Kizbe - Regn");
 
-		this.addTrim("gluttony", "Gluttony");
+		this.addTrim("gluttony_scales", "Gluttony");
 		this.addTrim("skin", "Skin");
+		this.addTrim("organic_matter", "Organic Matter");
 
 		this.addItem(RisusItems.ANGEL_WINGS, "Ophanim Wings");
 		this.addItem(RisusItems.BLOOD_BUCKET, "Blood Bucket");
@@ -205,9 +207,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.CRESCENT_DISASTER, "Crescent Disaster");
 		this.addItem(RisusItems.CRYSTALLIZED_BOND, "Crystallized Bond");
 		this.addItem(RisusItems.EGG_SAC, "Egg Sac");
-		this.addItem(RisusItems.EMBODIMENT_OF_COURTSHIP, "Singer Icon");
-		this.addItem(RisusItems.EMBODIMENT_OF_DEVOTION, "Stalker Icon");
-		this.addItem(RisusItems.EMBODIMENT_OF_INTIMACY, "Licker Icon");
+		this.addItem(RisusItems.EMBODIMENT_OF_COURTSHIP, "Embodiment of Courtship");
+		this.addItem(RisusItems.EMBODIMENT_OF_DEVOTION, "Embodiment of Devotion");
+		this.addItem(RisusItems.EMBODIMENT_OF_INTIMACY, "Embodiment of Intimacy");
 		this.addItem(RisusItems.ENDLESS_PEARL, "Endless Pearl");
 		this.addItem(RisusItems.ESSENCE_OF_GLUTTONY, "Essence of Gluttony");
 		this.addItem(RisusItems.ESSENCE_OF_GREED, "Essence of Greed");
@@ -274,6 +276,14 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
+		this.add("tooltip.risus.spawnentity.risus.maw", "Summons Gorger");
+		this.add("tooltip.risus.spawnentity.risus.angel", "Summons Blood Ophanim");
+		this.add("tooltip.risus.spawnentity.risus.weaver", "Summons Weaver");
+		this.add("tooltip.risus.spawnentity.risus.holder", "Summons Holder");
+		this.add("tooltip.risus.spawnentity.risus.lover", "Summons Lover");
+		this.add("tooltip.risus.spawnentity.risus.singer", "Summons Singer");
+		this.add("tooltip.risus.spawnentity.risus.stalker", "Summons Stalker");
+		this.add("tooltip.risus.spawnentity.risus.licker", "Summons Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");

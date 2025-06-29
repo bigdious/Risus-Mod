@@ -114,6 +114,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> SMILING_REMAINS = registerWithItem("smiling_remains", RemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHERRACK).mapColor(MapColor.COLOR_BLACK));
 	public static final DeferredBlock<MultifaceBlock> SPREADING_REMAINS = registerWithItem("spreading_remains", SpreadingRemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK_VEIN).mapColor(MapColor.COLOR_BLACK).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> ORGANIC_MATTER_BLOCK = registerWithItem("organic_matter_block", OrganicMatterBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noOcclusion());
+	public static final DeferredBlock<Block> ASHEN_SPIRE = registerWithItem("ashen_spire", AshenSpireBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).mapColor(MapColor.COLOR_BLACK).noCollission().sound(SoundType.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : state.getValue(AshenSpireBlock.LanternEnum.LANTERN) == AshenSpireBlock.LanternEnum.FIRE ? 15 : state.getValue(AshenSpireBlock.LanternEnum.LANTERN) == AshenSpireBlock.LanternEnum.SOUL ? 10 : state.getValue(AshenSpireBlock.LanternEnum.LANTERN) == AshenSpireBlock.LanternEnum.CINDERGLEE ? 5 : 0));
 
 	//MISC FULLBLOCK
 	public static final DeferredBlock<Block> LAUGHING_OBSIDIAN = registerWithItem("laughing_obsidian", LaughingObsidianBlock::new, () -> Block.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN));
@@ -130,6 +131,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());
 	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", properties -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak());
 	public static final DeferredBlock<Block> INACTIVE_HOLDER = registerWithItem("inactive_holder", InactiveHolderBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion());
+
 
 	//PLANTS
 	//yes, teeth are plants

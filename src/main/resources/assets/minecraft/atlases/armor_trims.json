@@ -43,7 +43,9 @@
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {
         "gluttony_scales": "risus:trims/color_palettes/gluttony_scales",
-        "skin": "risus:trims/color_palettes/skin"
+        "skin": "risus:trims/color_palettes/skin",
+        "organic_matter": "risus:trims/color_palettes/organic_matter"
+
       }
     }
   ]

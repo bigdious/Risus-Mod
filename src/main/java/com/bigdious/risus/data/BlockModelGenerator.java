@@ -3,6 +3,7 @@ package com.bigdious.risus.data;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
 import com.bigdious.risus.init.RisusBlocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -18,6 +19,7 @@ import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuil
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -90,6 +92,44 @@ public class BlockModelGenerator extends BlockStateProvider {
 					.rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
 					.build();
 		});
+		getVariantBuilder(RisusBlocks.ASHEN_SPIRE.get()).forAllStates(state -> {
+			ModelFile bottom = models().getExistingFile(Risus.prefix("block/ashen_spire/bottom"));
+			ModelFile bottomFlipped = models().getExistingFile(Risus.prefix("block/ashen_spire/bottom_flipped"));
+			ModelFile top = models().getExistingFile(Risus.prefix("block/ashen_spire/top"));
+			ModelFile topFlipped = models().getExistingFile(Risus.prefix("block/ashen_spire/top_flipped"));
+			ModelFile topCinderglee = models().withExistingParent("cinderglee" ,Risus.prefix("block/ashen_spire/top_lantern")).texture("1", Risus.prefix("block/joyflame_lantern"));
+			ModelFile topFire = models().withExistingParent("fire" ,Risus.prefix("block/ashen_spire/top_lantern")).texture("1", "minecraft:block/lantern" );
+			ModelFile topSoul = models().withExistingParent("soul" ,Risus.prefix("block/ashen_spire/top_lantern")).texture("1", "minecraft:block/soul_lantern" );
+			ModelFile topCindergleeFlipped = models().withExistingParent("cinderglee_flipped" ,Risus.prefix("block/ashen_spire/top_lantern_flipped")).texture("1", Risus.prefix("block/joyflame_lantern"));
+			ModelFile topFireFlipped = models().withExistingParent("fire_flipped" ,Risus.prefix("block/ashen_spire/top_lantern_flipped")).texture("1", "minecraft:block/lantern" );
+			ModelFile topSoulFlipped = models().withExistingParent("soul_flipped" ,Risus.prefix("block/ashen_spire/top_lantern_flipped")).texture("1", "minecraft:block/soul_lantern" );
+			return ConfiguredModel.builder()
+				//if this is stupid, why does it work perfectly
+				.modelFile(state.getValue(AshenSpireBlock.FLIPPED) ? (
+					state.getValue(AshenSpireBlock.HALF) == DoubleBlockHalf.LOWER ? bottomFlipped :
+						state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.FIRE ? topFireFlipped :
+							state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.SOUL ? topSoulFlipped :
+								state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.CINDERGLEE ? topCindergleeFlipped : topFlipped)
+					:
+					state.getValue(AshenSpireBlock.HALF) == DoubleBlockHalf.LOWER ? bottom :
+						state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.FIRE ? topFire :
+							state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.SOUL ? topSoul :
+								state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.CINDERGLEE ? topCinderglee : top)
+				.weight(1).nextModel()
+				.modelFile(state.getValue(AshenSpireBlock.FLIPPED) ? (
+					state.getValue(AshenSpireBlock.HALF) == DoubleBlockHalf.LOWER ? bottom :
+						state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.FIRE ? topFire :
+							state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.SOUL ? topSoul :
+								state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.CINDERGLEE ? topCinderglee : top)
+					:
+					state.getValue(AshenSpireBlock.HALF) == DoubleBlockHalf.LOWER ? bottomFlipped :
+						state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.FIRE ? topFireFlipped :
+							state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.SOUL ? topSoulFlipped :
+								state.getValue(AshenSpireBlock.LANTERN) == AshenSpireBlock.LanternEnum.CINDERGLEE ? topCindergleeFlipped : topFlipped)
+				.weight(1)
+				.build();
+		});
+
 		simpleBlock(RisusBlocks.ANGEL_ALTAR.get(), models().getExistingFile(Risus.prefix("block/angel_altar")));
 		simpleBlock(RisusBlocks.FLESHY_SPAWNER.get(),  models().getExistingFile(Risus.prefix("block/fleshy_spawner")));
 		simpleBlock(RisusBlocks.WEAVER_NEST.get(), models().getExistingFile(Risus.prefix("block/weaver_nest")));
@@ -316,17 +356,17 @@ public class BlockModelGenerator extends BlockStateProvider {
 		slabBlock(RisusBlocks.FULL_FOSSIL_SLAB.get(), Risus.prefix("block/full_fossil"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 		stairsBlock(RisusBlocks.FULL_FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 //keep below eye stuff to have custom head display
-		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye_ender")));
-		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(Risus.prefix("block/eye_bleached")));
-		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(Risus.prefix("block/eye_bloodshot")));
-		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(Risus.prefix("block/eye_golden")));
-		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(Risus.prefix("block/eye_emerald")));
+		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye/ender")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(Risus.prefix("block/eye/bleached")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(Risus.prefix("block/eye/bloodshot")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN.get(), models().getExistingFile(Risus.prefix("block/eye/golden")));
+		directionalBlock(RisusBlocks.EYE_EMERALD.get(), models().getExistingFile(Risus.prefix("block/eye/emerald")));
 
-		directionalBlock(RisusBlocks.EYE_ENDER_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_ender_glowing")));
-		directionalBlock(RisusBlocks.EYE_BLEACHED_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_bleached_glowing")));
-		directionalBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_bloodshot_glowing")));
-		directionalBlock(RisusBlocks.EYE_GOLDEN_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_golden_glowing")));
-		directionalBlock(RisusBlocks.EYE_EMERALD_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye_emerald_glowing")));
+		directionalBlock(RisusBlocks.EYE_ENDER_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye/ender_glowing")));
+		directionalBlock(RisusBlocks.EYE_BLEACHED_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye/bleached_glowing")));
+		directionalBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye/bloodshot_glowing")));
+		directionalBlock(RisusBlocks.EYE_GOLDEN_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye/golden_glowing")));
+		directionalBlock(RisusBlocks.EYE_EMERALD_GLOWING.get(), models().getExistingFile(Risus.prefix("block/eye/emerald_glowing")));
 
 		directionalBlock(RisusBlocks.FLESHY_SKIN.get(), models().cubeBottomTop("fleshy_skin", Risus.prefix("block/side_fleshy_skin"), Risus.prefix("block/tissue"), Risus.prefix("block/skin")));
 		simpleBlock(RisusBlocks.SKIN.get());

@@ -1,5 +1,5 @@
 {
-  "name": "Bones & Teeth",
+  "name": "Bones, Teeth & Fossils",
   "icon": "risus:teeth",
   "category": "risus:alteration",
   "advancement": "risus:first",
@@ -7,6 +7,15 @@
     {
       "type": "patchouli:text",
       "text": "In the presence of the Risus, the malleability of Bone blocks increases considerably, unlocking the ability to not only craft stairs, slabs and walls from it, but to also smoothen out all sides to create Full Bone versions of these. Additionally, by including some Tissue, the creation of Teeth becomes possible. Once placed, these can be further spread with the use of Organic Matter."
+    },
+    {
+      "type": "risus:alterationtemplate2",
+      "header": "Fossils",
+      "input1": "minecraft:bone_block",
+      "output1": "risus:fossil",
+      "input2": "risus:full_bone_block",
+      "output2": "risus:full_fossil",
+      "text": "Lastly, by throwing Bone Blocks into an Alteration Catalyst, Fossils can be acquired. These share the same malleability, so stairs, slabs, walls and Full versions of these are all possible."
     },
     {
       "type": "patchouli:crafting",
@@ -25,7 +34,18 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "risus:teeth"
+      "recipe": "risus:teeth",
+      "recipe2": "risus:fossil_stairs"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:fossil_slab",
+      "recipe2": "risus:fossil_wall"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:full_fossil_stairs",
+      "recipe2": "risus:full_fossil_slab"
     }
   ]
 }

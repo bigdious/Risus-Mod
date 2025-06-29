@@ -18,11 +18,6 @@ public class RisusTab {
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Risus.MODID);
 
-	private static void createSpawnEggsAlphabetical(CreativeModeTab.Output output) {
-		Collection<? extends Item> eggs = RisusEntities.SPAWN_EGGS.getEntries().stream().map(DeferredHolder::get).toList();
-		eggs.forEach(output::accept);
-	}
-
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risus", () -> CreativeModeTab.builder()
 		.title(Component.translatable("itemGroup.risus.main"))
 		.icon(() -> new ItemStack(RisusItems.SMILE.get()))
@@ -39,6 +34,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 				output.accept(RisusBlocks.SMILING_REMAINS.get());
 				output.accept(RisusBlocks.ASHEN_REMAINS.get());
+				output.accept(RisusBlocks.ASHEN_SPIRE.get());
 				output.accept(RisusBlocks.SPREADING_REMAINS.get());
 				output.accept(RisusBlocks.INACTIVE_HOLDER.get());
 
@@ -222,7 +218,15 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_REGN.get());
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
-				createSpawnEggsAlphabetical(output);
+
+				output.accept(RisusItems.ESSENCE_OF_GLUTTONY.get());
+				output.accept(RisusItems.ESSENCE_OF_MELANCHOLY.get());
+				output.accept(RisusItems.ESSENCE_OF_GREED.get());
+				output.accept(RisusItems.ESSENCE_OF_LUST.get());
+				output.accept(RisusItems.ESSENCE_OF_SLOTH.get());
+				output.accept(RisusItems.EMBODIMENT_OF_COURTSHIP.get());
+				output.accept(RisusItems.EMBODIMENT_OF_DEVOTION.get());
+				output.accept(RisusItems.EMBODIMENT_OF_INTIMACY.get());
 			}
 		)
 		.build());

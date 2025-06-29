@@ -1,9 +1,10 @@
-// 1.21.1	2025-06-19T09:07:38.291328	Loot Tables
+// 1.21.1	2025-06-29T20:19:47.1549465	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_table/blocks/ashen_remains.json
+2e7455809e397437a75efb0eab92320649d64bd3 data/risus/loot_table/blocks/ashen_spire.json
 02e4d8d387488a6d0516c493ad9d36a9c3364917 data/risus/loot_table/blocks/baby_ribcage.json
 c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_table/blocks/big_chain.json
 0706b996998a5fc794ccfd7d09e70135dd97406e data/risus/loot_table/blocks/bloodweave.json

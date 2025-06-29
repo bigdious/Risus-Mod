@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "TST",
-    "TST",
-    "GSG"
+    " TT",
+    "GTT",
+    "SG "
   ],
   "result": {
     "count": 1,

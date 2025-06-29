@@ -5,10 +5,7 @@ import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
 import com.bigdious.risus.items.armor.RisusArmorItem;
-import com.bigdious.risus.items.summoners.EggSacItem;
-import com.bigdious.risus.items.summoners.LitterItem;
-import com.bigdious.risus.items.summoners.Memory1Item;
-import com.bigdious.risus.items.summoners.RisusBoatItem;
+import com.bigdious.risus.items.summoners.*;
 import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
@@ -72,7 +69,17 @@ public class RisusItems {
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> GUTS_BOAT = register("guts_boat", properties -> new RisusBoatItem(true, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> MEMORY1_ITEM = register("memory1_item", Memory1Item::new, Item.Properties::new);
+	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = ITEMS.register("essence_of_gluttony", () -> new RisusSpawnItem (RisusEntities.MAW.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> ESSENCE_OF_GREED = ITEMS.register("essence_of_greed", () -> new RisusSpawnItem (RisusEntities.HOLDER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = ITEMS.register("essence_of_sloth", () -> new RisusSpawnItem (RisusEntities.ANGEL.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> ESSENCE_OF_LUST = ITEMS.register("essence_of_lust", () -> new RisusSpawnItem (RisusEntities.LOVER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> ESSENCE_OF_MELANCHOLY = ITEMS.register("essence_of_melancholy", () -> new RisusSpawnItem (RisusEntities.WEAVER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = ITEMS.register("embodiment_of_intimacy", () -> new RisusSpawnItem (RisusEntities.LICKER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = ITEMS.register("embodiment_of_devotion", () -> new RisusSpawnItem (RisusEntities.STALKER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = ITEMS.register("embodiment_of_courtship", () -> new RisusSpawnItem (RisusEntities.SINGER.get() , new Item.Properties().rarity(BLOOD)));
 
+
+	//PSEUDO BLOCK ITEMS
 	public static final DeferredItem<Item> BONDKNOT_DOOR = register("bondknot_door", properties -> new DoubleHighBlockItem(RisusBlocks.BONDKNOT_DOOR.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> BONDKNOT_SIGN = register("bondknot_sign", properties -> new SignItem(properties, RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_WALL_SIGN.get()), () -> new Item.Properties().rarity(BLOOD).stacksTo(16));
 	public static final DeferredItem<Item> BONDKNOT_HANGING_SIGN = register("bondknot_hanging_sign", properties -> new HangingSignItem(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(16));
@@ -101,14 +108,6 @@ public class RisusItems {
 	//DISPLAY ONLY ITEMS
 
 	public static final DeferredItem<Item> SMILE = register("smile", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = register("essence_of_gluttony", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ESSENCE_OF_GREED = register("essence_of_greed", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = register("essence_of_sloth", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ESSENCE_OF_LUST = register("essence_of_lust", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> ESSENCE_OF_MELANCHOLY = register("essence_of_melancholy", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = register("embodiment_of_intimacy", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = register("embodiment_of_devotion", Item::new, () -> new Item.Properties().rarity(BLOOD));
-	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = register("embodiment_of_courtship", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	public static <T extends Item> DeferredItem<T> register(String name, Function<Item.Properties, T> item, Supplier<Item.Properties> properties) {
 		return ITEMS.register(name, () -> item.apply(properties.get()));

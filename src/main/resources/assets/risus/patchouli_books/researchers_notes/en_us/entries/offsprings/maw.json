@@ -57,6 +57,14 @@
     {
       "type": "patchouli:text",
       "text": "explosion was almost fully isolated to its guts which got destroyed, killing it in the process and giving my pick back. Anyway... it is interesting how the Gorger Traps are a regional phenomenon. While they are quite common here, they are basically nonexistent anywhere else I've been in, except the End. That could indicate that there is something in this region specifically causing them to appear."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Additional note: Through further tests, I've come across two interesting behaviors regarding Gorgers. First, Gorger Guts react to a Redstone Signal by tightening up, which is a useful way to turn off their ability to suck items in. Secondly, whenever a Gorger kills something, it will cause it to drop Experience, similarly to what happens when a person does the same. I've already taken advantage of this feature to remove some of the extra specimens of my Weaver breeding area. Now I simply need a more efficient method of storing said experience..."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "simply need a more efficient method of storing said experience..."
     }
   ]
 }

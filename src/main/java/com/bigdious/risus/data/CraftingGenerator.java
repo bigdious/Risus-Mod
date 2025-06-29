@@ -131,6 +131,13 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.ASHEN_SPIRE.get(), 8)
+			.pattern("#")
+			.pattern("#")
+			.define('#', Ingredient.of(RisusBlocks.ASHEN_REMAINS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.ASHEN_REMAINS.get()))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusItems.ORGANIC_MATTER.get(), 9)
 			.requires(Ingredient.of(RisusBlocks.ORGANIC_MATTER_BLOCK.get()))
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
@@ -534,9 +541,9 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.BOOMSTICK.get())
-			.pattern("TST")
-			.pattern("TST")
-			.pattern("GSG")
+			.pattern(" TT")
+			.pattern("GTT")
+			.pattern("SG ")
 			.define('T', Ingredient.of(Items.TNT))
 			.define('S', Ingredient.of(Items.STICK))
 			.define('G', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))

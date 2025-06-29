@@ -28,6 +28,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs cheekily");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.TOLLING_BELL, "entity/ophanim/tolling_bell", 1, "Heaven's Gaze sharpens");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.GORGER_BITE, "entity/gorger/bite", 1, "Gorger crushes");
 
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_SKIN, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Skin armor rustles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_WINGS, SoundEvents.ARMOR_EQUIP_ELYTRA.value(), "Ophanim Wings rustle");

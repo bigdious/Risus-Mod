@@ -157,16 +157,16 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.FULL_FOSSIL.get());
 		toBlock(RisusBlocks.BLOODY_SPONGE.get());
 
-		toBlock(RisusBlocks.EYE_ENDER.get());
-		toBlock(RisusBlocks.EYE_BLEACHED.get());
-		toBlock(RisusBlocks.EYE_BLOODSHOT.get());
-		toBlock(RisusBlocks.EYE_EMERALD.get());
-		toBlock(RisusBlocks.EYE_GOLDEN.get());
-		toBlock(RisusBlocks.EYE_ENDER_GLOWING.get());
-		toBlock(RisusBlocks.EYE_BLEACHED_GLOWING.get());
-		toBlock(RisusBlocks.EYE_BLOODSHOT_GLOWING.get());
-		toBlock(RisusBlocks.EYE_EMERALD_GLOWING.get());
-		toBlock(RisusBlocks.EYE_GOLDEN_GLOWING.get());
+		toBlockModel(RisusBlocks.EYE_ENDER.get(), Risus.prefix("block/eye/ender"));
+		toBlockModel(RisusBlocks.EYE_BLEACHED.get(), Risus.prefix("block/eye/bleached"));
+		toBlockModel(RisusBlocks.EYE_BLOODSHOT.get(), Risus.prefix("block/eye/bloodshot"));
+		toBlockModel(RisusBlocks.EYE_EMERALD.get(), Risus.prefix("block/eye/emerald"));
+		toBlockModel(RisusBlocks.EYE_GOLDEN.get(), Risus.prefix("block/eye/golden"));
+		toBlockModel(RisusBlocks.EYE_ENDER_GLOWING.get(), Risus.prefix("block/eye/ender_glowing"));
+		toBlockModel(RisusBlocks.EYE_BLEACHED_GLOWING.get(), Risus.prefix("block/eye/bleached_glowing"));
+		toBlockModel(RisusBlocks.EYE_BLOODSHOT_GLOWING.get(), Risus.prefix("block/eye/bloodshot_glowing"));
+		toBlockModel(RisusBlocks.EYE_EMERALD_GLOWING.get(), Risus.prefix("block/eye/emerald_glowing"));
+		toBlockModel(RisusBlocks.EYE_GOLDEN_GLOWING.get(), Risus.prefix("block/eye/golden_glowing"));
 		toBlock(RisusBlocks.SKIN.get());
 		toBlock(RisusBlocks.FLESHY_SKIN.get());
 		toBlock(RisusBlocks.CURVED_FLESHY_SKIN.get());
@@ -260,6 +260,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.VEINS);
 		singleTex(RisusBlocks.BIG_CHAIN);
 		generatedRenderType(RisusBlocks.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
+		generatedRenderType(RisusBlocks.ASHEN_SPIRE.getId().getPath(), "minecraft:cutout", Risus.prefix("block/ashen_spire_top"));
 		singleTex(RisusItems.MEMORY1_ITEM);
 		singleTex(RisusBlocks.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
