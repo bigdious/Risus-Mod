@@ -251,7 +251,7 @@ public class RisusEvents {
 		//check 10 random spots in a box around the player, excluding a small box defined by the padding
 		for (BlockPos checkPos : BlockPos.randomInCube(entity.getRandom(), 10, pos, radius)) {
 			if (paddingBox.intersects(new AABB(checkPos))) continue;
-			return checkPos.atY((int) Math.max(pos.getY() + 6, entity.getRandomY() + 2 + 11 * (entity.getRandomY() - entity.getRandomY())));
+			return checkPos.atY((int) Math.max(pos.getY() + 15, entity.getRandomY() + 2 + 11 * (entity.getRandomY() - entity.getRandomY())));
 		}
 		//didnt find a spot? Spawn 6 blocks above player
 		return pos.atY(pos.getY() + 6);

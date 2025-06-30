@@ -81,6 +81,7 @@ public class Angel extends Monster {
 	static class AngelLightningAttackGoal extends Goal {
 		private final Angel angel;
 		public int chargeTime;
+		public int soundCD;
 
 		public AngelLightningAttackGoal(Angel angel) {
 			this.angel = angel;
@@ -111,10 +112,12 @@ public class Angel extends Monster {
 			LivingEntity livingentity = this.angel.getTarget();
 			Level level = this.angel.level();
 			if (livingentity != null && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
-				if (this.chargeTime == 0) {
+				if (this.chargeTime == 1 && this.soundCD<1) {
 					level.playSound(null, livingentity.getOnPos().above(2), RisusSoundEvents.TOLLING_BELL.get() ,SoundSource.HOSTILE, 3, 1);
+					this.soundCD = 29;
 				}
 				++this.chargeTime;
+				--this.soundCD;
 				if (this.chargeTime == 30) {
 					LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
 					lightning.setPos(livingentity.getX(), livingentity.getEyeY(), livingentity.getZ());
@@ -123,6 +126,7 @@ public class Angel extends Monster {
 						RisusAdvancements.HOLY_GROUNDS.get().trigger(sp);
 					}
 					this.chargeTime = -40;
+					this.soundCD = 0;
 				}
 			} else if (this.chargeTime > 0) {
 				--this.chargeTime;

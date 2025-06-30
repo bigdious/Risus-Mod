@@ -419,7 +419,8 @@ public class RisusStructures {
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("angel_altar/0"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
-			Pair.of(StructurePoolElement.single(name("angel_altar/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("angel_altar/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("angel_altar/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GREAT_BODY_A_POOL, new StructureTemplatePool(emptyPool, List.of(
