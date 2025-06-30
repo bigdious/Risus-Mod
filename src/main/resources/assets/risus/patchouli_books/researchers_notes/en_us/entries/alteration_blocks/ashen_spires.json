@@ -1,0 +1,17 @@
+{
+  "name": "Ashen Spire",
+  "icon": "risus:ashen_spire",
+  "category": "risus:alteration",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ashen Spires are a common sight in Coalification biomes and look similar to tendrils emerging from the ground. Although the Spires are rather inert, they can still be useful as lantern holders. Simply use a lantern on the top half of them to hang it. Ashen Spires can be crafted by using two Ashen Remains. A Hoe can also be used to change what directiong the Spires face."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:ashen_spire",
+      "text": "Walking through Ashen Spires can tickle a bit."
+    }
+  ]
+}

@@ -355,7 +355,7 @@ public class RisusStructures {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
-			new RandomSpreadStructurePlacement(24, 0, RandomSpreadType.LINEAR, 1024321764)));
+			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
 			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
@@ -367,7 +367,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 5245123)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(26, 0, RandomSpreadType.LINEAR, 5297)));
+			new RandomSpreadStructurePlacement(31, 0, RandomSpreadType.LINEAR, 5297)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(37, 4, RandomSpreadType.LINEAR, 13414354)));
@@ -425,7 +425,8 @@ public class RisusStructures {
 		context.register(GREAT_BODY_A_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("great_body_a/0"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
 			Pair.of(StructurePoolElement.single(name("great_body_a/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
-			Pair.of(StructurePoolElement.single(name("great_body_a/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("great_body_a/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("great_body_a/3"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GREAT_BODY_B_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -434,7 +435,9 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("great_body_b/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
 			Pair.of(StructurePoolElement.single(name("great_body_b/1_connector")), 1),
 			Pair.of(StructurePoolElement.single(name("great_body_b/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
-			Pair.of(StructurePoolElement.single(name("great_body_b/2_connector")), 1)
+			Pair.of(StructurePoolElement.single(name("great_body_b/2_connector")), 1),
+			Pair.of(StructurePoolElement.single(name("great_body_b/3"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("great_body_b/3_connector")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FLOWER_FIELD_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -514,6 +517,13 @@ public class RisusStructures {
 						AlwaysTrueTest.INSTANCE,
 						RisusBlocks.HAIRY_SKIN.get().defaultBlockState()
 					)
+			)),
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.FULL_FOSSIL.get(), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					Blocks.STONE.defaultBlockState()
+				)
 			))
 		)));
 

@@ -18,6 +18,21 @@
       "type": "patchouli:crafting",
       "recipe": "risus:eye_bloodshot",
       "recipe2": "risus:eye_bleached"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:revert_to_golden_eye",
+      "recipe2": "risus:eye_golden_glowing"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:eye_emerald_glowing",
+      "recipe2": "risus:eye_ender_glowing"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:eye_bloodshot_glowing",
+      "recipe2": "risus:eye_bleached_glowing"
     }
   ]
 }
