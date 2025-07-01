@@ -2223,12 +2223,6 @@
     },
     "done": true
   },
-  "risus:angel": {
-    "criteria": {
-      "angel_altar": "2025-02-05 18:08:39 +0200"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting": {
     "criteria": {
       "has_waxed_oxidized_copper": "2025-02-05 18:08:39 +0200",
@@ -3751,13 +3745,6 @@
     "criteria": {
       "has_the_recipe": "2025-02-05 18:08:39 +0200",
       "has_red_nether_bricks": "2025-02-05 18:08:39 +0200"
-    },
-    "done": true
-  },
-  "risus:recipes/alteration/gluttony_scaleplate": {
-    "criteria": {
-      "has_item": "2025-02-05 18:08:39 +0200",
-      "has_the_recipe": "2025-02-05 18:08:39 +0200"
     },
     "done": true
   },
@@ -6043,7 +6030,6 @@
       "sandmaw": "2025-02-05 18:08:39 +0200",
       "grassmaw": "2025-02-05 18:08:39 +0200",
       "enter_site": "2025-02-05 18:08:39 +0200",
-      "angel": "2025-02-05 18:08:39 +0200",
       "lab": "2025-02-05 18:08:39 +0200",
       "family": "2025-02-05 18:08:39 +0200",
       "body": "2025-02-05 18:08:39 +0200",
@@ -10994,6 +10980,72 @@
   "risus:recipes/building_blocks/gluttony_scales": {
     "criteria": {
       "has_item": "2025-04-08 18:24:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_stairs": {
+    "criteria": {
+      "has_item": "2025-05-05 20:03:20 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_slab": {
+    "criteria": {
+      "has_item": "2025-05-05 20:03:20 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/imit_scaleplate_from_imit_block": {
+    "criteria": {
+      "has_item": "2025-05-05 20:03:20 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_wall": {
+    "criteria": {
+      "has_item": "2025-05-05 20:03:20 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/threaders_of_the_firmament": {
+    "criteria": {
+      "has_item": "2025-05-21 18:46:39 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/ashen_spire": {
+    "criteria": {
+      "has_item": "2025-06-30 17:08:05 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/eye_golden_glowing": {
+    "criteria": {
+      "has_item": "2025-06-30 17:12:46 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/revert_to_golden_eye": {
+    "criteria": {
+      "has_item": "2025-06-30 17:12:46 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/tissue_wall": {
+    "criteria": {
+      "has_item": "2025-06-30 17:12:46 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_to_wall": {
+    "criteria": {
+      "has_item": "2025-06-30 17:29:11 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_to_stairs": {
+    "criteria": {
+      "has_item": "2025-06-30 17:29:11 +0300"
     },
     "done": true
   },
