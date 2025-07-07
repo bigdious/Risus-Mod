@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-29T20:36:07.3922662	Risus Item Models
+// 1.21.1	2025-07-07T09:12:43.2632224	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -172,6 +172,17 @@ f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondkn
 fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_notes.json
 706b179039058f3860b31066fc0880c598bc50a2 assets/risus/models/item/ribcage.json
 0a5b1b7c29e867430657dcd5954e2127abe98210 assets/risus/models/item/rose_banner_pattern.json
+bf7b5c4aa7520a993e9f3f5c9a31696a7dde3d6e assets/risus/models/item/rose_crown.json
+9c3b22a5fd67664537a578ca152b0f3d04108803 assets/risus/models/item/rose_crown_amethyst_trim.json
+770857038495c6fb57183b6f82dbcfa55888134c assets/risus/models/item/rose_crown_copper_trim.json
+7e3f1955f22a5e536ec8a0202b9c35412656cb67 assets/risus/models/item/rose_crown_diamond_trim.json
+66936d3361d6bd9c4edd0a105b6c274808a89f90 assets/risus/models/item/rose_crown_emerald_trim.json
+ae2dd3d2a0ce518c85e0d2ffa4806b674638b936 assets/risus/models/item/rose_crown_gold_trim.json
+5a9751717b7d9c69f73c209a49a5c79f0b31a763 assets/risus/models/item/rose_crown_iron_trim.json
+f5e5d0740c01a273d454f788a2643a292f92de5d assets/risus/models/item/rose_crown_lapis_trim.json
+3520476042d18d26b5b4490b6bf088c7527ae785 assets/risus/models/item/rose_crown_netherite_trim.json
+f3c0bff87627ebff2b6281e618d63d93dfeb18ac assets/risus/models/item/rose_crown_quartz_trim.json
+a0c41bc55653b9b705a6065f6a3420b0447aebf7 assets/risus/models/item/rose_crown_redstone_trim.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotted_tissue.json
 bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue.json
 54c7e5e0c47024ade5d2795651d4d517b51c8aa3 assets/risus/models/item/sacrifice_catalyst.json

@@ -5,6 +5,7 @@ import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
 import com.bigdious.risus.items.armor.RisusArmorItem;
+import com.bigdious.risus.items.armor.RoseCrownItem;
 import com.bigdious.risus.items.summoners.*;
 import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
@@ -52,6 +53,7 @@ public class RisusItems {
 	public static final DeferredItem<ArmorItem> SKIN_LEGGINGS = register("skin_leggings", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.LEGGINGS, properties), () -> new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.LEGGINGS, 1)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> SKIN_BOOTS = register("skin_boots", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> THREADERS_OF_THE_FIRMAMENT = register("threaders_of_the_firmament", properties -> new RisusArmorItem(RisusArmorMaterials.BLOOD_FEATHER, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createBloodFeatherAttributes(ArmorItem.Type.BOOTS, 1)).rarity(BLOOD));
+	public static final DeferredItem<ArmorItem> ROSE_CROWN = register("rose_crown", properties -> new RoseCrownItem(RisusArmorMaterials.REGEN_ROSE, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(6)).attributes(RoseCrownItem.createRoseAttributes(ArmorItem.Type.HELMET, 1)));
 
 	//CONSUMABLES
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 45), 1.0F).build();

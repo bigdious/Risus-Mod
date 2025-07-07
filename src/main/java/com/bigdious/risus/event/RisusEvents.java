@@ -94,6 +94,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onLivingDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::roseCrownBehavior);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -490,6 +491,17 @@ public class RisusEvents {
 
 			return false;
 		}) > 1;
+	}
+
+	private static void roseCrownBehavior(LivingIncomingDamageEvent event) {
+		Entity attacker = event.getSource().getEntity();
+		LivingEntity victim = event.getEntity();
+		if (victim.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.ROSE_CROWN)) {
+			victim.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120));
+			if (attacker instanceof LivingEntity livingAttacker){
+				livingAttacker.addEffect(new MobEffectInstance(MobEffects.WITHER, 120));
+			}
+		};
 	}
 
 }

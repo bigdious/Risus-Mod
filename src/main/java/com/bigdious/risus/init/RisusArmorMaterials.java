@@ -25,6 +25,10 @@ public class RisusArmorMaterials {
 	);
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BLOOD_FEATHER = ARMOR_MATERIALS.register("blood_feather", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
 			map.put(ArmorItem.Type.BOOTS, 1);
-		}), 10, RisusSoundEvents.ARMOR_EQUIP_SKIN, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_feather"))), 0.0F, 0.0F)
+		}), 10, RisusSoundEvents.ARMOR_EQUIP_THREADS, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_feather"))), 0.0F, 0.0F)
+	);
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> REGEN_ROSE = ARMOR_MATERIALS.register("regen_rose", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+			map.put(ArmorItem.Type.HELMET, 1);
+		}), 10, RisusSoundEvents.ARMOR_EQUIP_ROSE, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "rose_crown"))), 0.0F, 0.0F)
 	);
 }

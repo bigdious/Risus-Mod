@@ -399,7 +399,8 @@ public class RisusClientEvents {
 	}
 
 	private static void renderHandOfGreed(RenderArmEvent event) {
-		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios") && curiosForArm(event.getPlayer())) {
+		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios")) {
+			if (curiosForArm(event.getPlayer())) {
 			CuriosApi.getCurio(RisusItems.HAND_OF_GREED.toStack()).flatMap(iCurio -> CuriosRendererRegistry.getRenderer(iCurio.getStack().getItem())).ifPresent(renderer -> {
 				RightHandPlayerModel model = ((HandCuriosRenderer) renderer).model;
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
@@ -409,7 +410,8 @@ public class RisusClientEvents {
 				model.setupArmSize(event.getPlayer().getSkin().model().id().equals("slim"));
 				model.setupAnim(event.getPlayer(), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
 				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandCuriosRenderer.RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
-			});
+				});
+			}
 		}
 	}
 }

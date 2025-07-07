@@ -204,6 +204,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
+				output.accept(RisusItems.ROSE_CROWN.get());
 				output.accept(RisusBlocks.NEURON_HEAD.get());
 				output.accept(RisusItems.VEINS.get());
 				output.accept(RisusItems.GUILTY_APPLE.get());

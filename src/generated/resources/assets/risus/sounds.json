@@ -152,6 +152,15 @@
     ],
     "subtitle": "subtitles.risus.entity.singer.scream"
   },
+  "item.armor.equip_rose": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.armor.equip_leather"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.armor.equip_rose"
+  },
   "item.armor.equip_skin": {
     "sounds": [
       {
@@ -160,6 +169,15 @@
       }
     ],
     "subtitle": "subtitles.risus.item.armor.equip_skin"
+  },
+  "item.armor.equip_threads": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.armor.equip_leather"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.armor.equip_threads"
   },
   "item.armor.equip_wings": {
     "sounds": [

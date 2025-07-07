@@ -237,6 +237,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
 		this.addItem(RisusItems.SKIN_LEGGINGS, "Skin Jeans");
+		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
 		this.addItem(RisusItems.SMILE, "Smile");
 		this.addItem(RisusItems.SOUL_SCYTHE, "Soul Scratcher");
 		this.addItem(RisusItems.STALKER_EYE, "Stalker Eye");
@@ -276,6 +277,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
+		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Summons Gorger");
 		this.add("tooltip.risus.spawnentity.risus.angel", "Summons Blood Ophanim");
 		this.add("tooltip.risus.spawnentity.risus.weaver", "Summons Weaver");
