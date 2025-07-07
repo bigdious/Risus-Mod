@@ -66,6 +66,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 import javax.annotation.Nullable;
@@ -387,8 +388,18 @@ public class RisusClientEvents {
 		}
 	}
 
+	private static boolean curiosForArm(LivingEntity entity) {
+		if (ModList.get().isLoaded("curios")) {
+			var handler = entity.getCapability(CuriosCapability.INVENTORY);
+			if (handler == null) return false;
+			var s = handler.findCurios(RisusItems.HAND_OF_GREED.get());
+			if (s.isEmpty()) return false; else return true;
+		}
+		return false;
+	}
+
 	private static void renderHandOfGreed(RenderArmEvent event) {
-		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios")) {
+		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios") && curiosForArm(event.getPlayer())) {
 			CuriosApi.getCurio(RisusItems.HAND_OF_GREED.toStack()).flatMap(iCurio -> CuriosRendererRegistry.getRenderer(iCurio.getStack().getItem())).ifPresent(renderer -> {
 				RightHandPlayerModel model = ((HandCuriosRenderer) renderer).model;
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
