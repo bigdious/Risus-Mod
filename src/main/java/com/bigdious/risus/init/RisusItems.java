@@ -60,12 +60,16 @@ public class RisusItems {
 	public static final FoodProperties ORGANIC_FOOD = new FoodProperties.Builder().alwaysEdible().saturationModifier(0.1F).fast().build();
 	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
 	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
+	public static final FoodProperties PETAL_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.1F).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 120), 1.0F).build();
+	public static final FoodProperties LOVER_CREAM_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.4F).build();
 	public static final DeferredItem<Item> GUILTY_APPLE = register("guilty_apple", Item::new, () -> new Item.Properties().rarity(BLOOD).food(GUILTY_FOOD));
 	public static final DeferredItem<Item> ORGANIC_MATTER = register("organic_matter", OrganicMatterItem::new, () -> new Item.Properties().rarity(BLOOD).food(ORGANIC_FOOD));
 	public static final DeferredItem<Item> STALKER_EYE = register("stalker_eye", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_FOOD));
 	public static final DeferredItem<Item> EYE_SANDWICH = register("eye_sandwich", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_SANDWICH_FOOD));
 	public static final DeferredItem<Item> EGG_SAC = register("egg_sac", EggSacItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
+	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD));
 
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
@@ -93,7 +97,7 @@ public class RisusItems {
 	//LEFTOVER CRAFTING MATERIALS
 	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", BloodFeatherItem::new, () -> new Item.Properties().fireResistant().attributes(BloodFeatherItem.createBloodFeatherAttributes()).rarity(BLOOD));
 	public static final DeferredItem<Item> CONCENTRATION_CORE = register("concentration_core", ConcentrationCoreItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
-	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", GluttonyScalesItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 

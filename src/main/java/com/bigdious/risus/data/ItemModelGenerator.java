@@ -213,6 +213,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		trimmedArmor(RisusItems.SKIN_BOOTS);
 		trimmedArmor(RisusItems.THREADERS_OF_THE_FIRMAMENT);
 		trimmedArmor(RisusItems.ROSE_CROWN);
+		singleTex(RisusItems.ROSE_PETAL);
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);
 		singleTex(RisusItems.TREE_PATTERN);
@@ -222,6 +223,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EGG_SAC);
 		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
+		singleTex(RisusItems.LOVER_CREAM);
 
 		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
 		var crescentCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster_pulled"), Risus.prefix("item/crescent_disaster_item_pulled"), "axe");

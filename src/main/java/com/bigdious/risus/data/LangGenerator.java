@@ -226,6 +226,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.HAND_OF_GREED, "Hand of Greed");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
 		this.addItem(RisusItems.LITTER, "Litter");
+		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
 		this.addItem(RisusItems.MEMORY1_ITEM, "Faded Statue");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
 		this.addItem(RisusItems.ORGANIC_MATTER, "Organic Matter");
@@ -238,6 +239,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
 		this.addItem(RisusItems.SKIN_LEGGINGS, "Skin Jeans");
 		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
+		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
 		this.addItem(RisusItems.SMILE, "Smile");
 		this.addItem(RisusItems.SOUL_SCYTHE, "Soul Scratcher");
 		this.addItem(RisusItems.STALKER_EYE, "Stalker Eye");
@@ -373,6 +375,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
+		this.addAdvancement("cream", "Why... WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 		this.addBiome(RisusBiomes.COALIFICATION_FEIGR, "Coalification");

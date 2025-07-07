@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "risus:regen_rose"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "risus:rose_petal"
+  }
+}

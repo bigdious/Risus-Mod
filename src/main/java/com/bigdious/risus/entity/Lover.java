@@ -115,7 +115,7 @@ public class Lover extends Monster {
 		return flag;
 	}
 
-	private <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
+	private  <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
 		boolean flag = true;
 		if (EventHooks.canLivingConvert(from, to, (timer) -> {})) {
 			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {

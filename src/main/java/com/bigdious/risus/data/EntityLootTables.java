@@ -123,6 +123,12 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.when(LootItemKilledByPlayerCondition.killedByPlayer())
 					.when((LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.registries, 0.06F, 0.03F)))));
 
+		add(RisusEntities.LOVER.get(),
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(LootItem.lootTableItem(RisusItems.LOVER_CREAM))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))));
 	}
 
 	@Override

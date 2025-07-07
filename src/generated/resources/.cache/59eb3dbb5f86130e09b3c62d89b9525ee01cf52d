@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-29T20:19:47.1549465	Loot Tables
+// 1.21.1	2025-07-07T22:16:10.7111321	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -167,7 +167,7 @@ e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.js
 2453a580902ea892c6a35935e7eb81730b906409 data/risus/loot_table/entities/baby_spider.json
 25b3cc1e75d8400e6497ca947025cd9da8d72646 data/risus/loot_table/entities/holder.json
 2723d12ffeb4a1fbea5799007875fb1de7240c86 data/risus/loot_table/entities/licker.json
-ac15bf48d7a30e86f1de03e9bbe197893f6617b2 data/risus/loot_table/entities/lover.json
+0ea87423cfed51f69daa3d2b104603ad8a9dc928 data/risus/loot_table/entities/lover.json
 899a1181d1faf62ef9f0b2848055cda65d1288a4 data/risus/loot_table/entities/maw.json
 43249e37e72788d275b68e5c1cf5dab074b49db0 data/risus/loot_table/entities/memory1.json
 046b7694f2c0f2eb62a7cbf3f70d949ad90d71d6 data/risus/loot_table/entities/question_mark.json
