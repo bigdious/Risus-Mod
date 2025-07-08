@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-07T22:16:10.7031305	Risus Item Models
+// 1.21.1	2025-07-08T21:33:58.8278544	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -37,6 +37,7 @@ f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 8fab586c083d40f9f2e85a3cf54c3621fd1cb5b4 assets/risus/models/item/boomstick.json
 78b584169858ce09bdd73113805b54da22047316 assets/risus/models/item/boomstick_base.json
 3c4010ec05956ec210ff14e938a5c9d1ae52e257 assets/risus/models/item/budding_imitation_scaleplate.json
+f096c33a5d1479afe0e46bfd4b8f6baeb4dc3766 assets/risus/models/item/budding_unalloyed_scaleplate.json
 bc2524f52eb27cd34ec72174c5c2ee66d1102477 assets/risus/models/item/bundle_of_hair.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
@@ -97,6 +98,7 @@ c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scal
 3bc38e51ed584679a51f10e9c8983d430b1e46d0 assets/risus/models/item/fleshy_skin.json
 37e7c664bb219542fd02536212d4a9a14816b7b5 assets/risus/models/item/fleshy_spawner.json
 66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
+26b80df6c7ccca63e5c1bf0b6b1ff65e7964275f assets/risus/models/item/flowering_unalloyed_scaleplate.json
 e5b990f36e13214ba7d29353bfe45aca28e7b999 assets/risus/models/item/fossil.json
 a44d3443d16d50067e6517af1e17e8e1343fc900 assets/risus/models/item/fossil_slab.json
 4f2d72c32feba95b09cb75ff0470d8f05dfdcd3e assets/risus/models/item/fossil_stairs.json
@@ -168,6 +170,7 @@ eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak
 70a811fc17afb67e5702edc41350a74187465ee2 assets/risus/models/item/polished_grimstone_wall.json
 f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondknot_log.json
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
+d3f2c741cc06d0ad548cf376c6fb344a18e4d320 assets/risus/models/item/purifying_paste.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 06f695423b6813ef3cd11a76d7606414c416ee90 assets/risus/models/item/regen_rose.json
 fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_notes.json
@@ -191,7 +194,7 @@ bdb5715482f11cf059a444cdc4ec20eaec17cfda assets/risus/models/item/rotting_tissue
 6846d2ae47181489ef3caae70a1b0a86eb232ea2 assets/risus/models/item/scab.json
 88924e06e7615d7d0847c395026ad3c408a43f24 assets/risus/models/item/scythe.json
 41bd975a547aaa19a4c5789852ad24ca183a26af assets/risus/models/item/scythe_base.json
-1f8c31c8284ea353e56243f3ef81976a3481f960 assets/risus/models/item/scythe_held.json
+4575e9c9404f568f4e98ded01e30805d8b6a39f3 assets/risus/models/item/scythe_held.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/singer_spawn_egg.json
 64e5bd0a479d77d885d260c8f0ecf66cfcfe2e34 assets/risus/models/item/skin.json
 a06b5197b45455a7b971e1ee7ffef11368d38782 assets/risus/models/item/skin_boots.json
@@ -274,6 +277,11 @@ b8cc83c30b0a48177a4caf5919ec411c2f2ae97b assets/risus/models/item/tissue_stairs.
 5e8aa60c562b9bfb00eabecd95e4c56cf3da45cf assets/risus/models/item/toothknocker_base.json
 a1ba871503c6dd650b347fa420bd20cd998f8cb4 assets/risus/models/item/totem_of_unyielding.json
 8a61f9a79180f9455dfd8470384ee6b73c875168 assets/risus/models/item/tree_banner_pattern.json
+e21257df5f246dd81ae720b8eff778a1d3a895fb assets/risus/models/item/unalloyed_scaleplate.json
+396fda489a4b027d862219304efa13c56f0f1f23 assets/risus/models/item/unalloyed_scales_block.json
+7ceb18ced8d908ee8c132ba786919c0cb014a3d5 assets/risus/models/item/unalloyed_scales_block_slab.json
+c5d4eaf1769ae9aa7ce8bcc11e3ab4e8a5c0c8b1 assets/risus/models/item/unalloyed_scales_block_stairs.json
+0d503539af029a3e69b632c46c809f0f2efd7f0b assets/risus/models/item/unalloyed_scales_block_wall.json
 b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json
 593a2e82a779cb7f0b577677ce31aff17bac3884 assets/risus/models/item/unawakened_vessel_base.json
 e7b13f6aeb60562c279778a751de4448fa6755b0 assets/risus/models/item/veins.json

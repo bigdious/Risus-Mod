@@ -58,6 +58,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.IMITATION_SCALEPLATE.get(), Risus.prefix("block/gluttony_scaleplate"));
 		toBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
 		toBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
+		toBlock(RisusBlocks.UNALLOYED_SCALEPLATE.get());
+		toBlock(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get());
+		toBlock(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get());
 		toBlock(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		toBlockModel(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(), Risus.prefix("block/flattened_scales_block"));
 		toBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
@@ -65,6 +68,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 		getBuilder(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", Risus.prefix("block/flat_scales_block_side"));
+		toBlockModel(RisusBlocks.UNALLOYED_SCALES_BLOCK.get(), Risus.prefix("block/unalloyed_scales_block"));
+		toBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get());
+		toBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get());
+		getBuilder(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.getId().getPath())
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/unalloyed_scales/side"));
 		toBlock(RisusBlocks.CRYSTALLIZED_BONDS.get());
 		toBlock(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
 		toBlock(RisusBlocks.MIRAGE_SAND.get());
@@ -224,6 +233,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.SACRIFICE_CATALYST);
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
 		singleTex(RisusItems.LOVER_CREAM);
+		singleTex(RisusItems.PURIFYING_PASTE);
 
 		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
 		var crescentCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster_pulled"), Risus.prefix("item/crescent_disaster_item_pulled"), "axe");
@@ -236,7 +246,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
 
 
-		handheldItemWithNoAnim(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
+		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
 		var noAnimSoulScythe = handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
 		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture")
 			.override().predicate(Risus.prefix("no_anim"), 1).model(noAnimSoulScythe).end();

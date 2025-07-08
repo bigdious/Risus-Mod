@@ -175,6 +175,10 @@ public class BlockModelGenerator extends BlockStateProvider {
 		stairsBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get(), Risus.prefix("block/flat_scales_block_side"));
 		slabBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(), Risus.prefix("block/flat_scales_block_side"), Risus.prefix("block/flat_scales_block_side"));
 		risusWallBlock(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get(), models().wallPost("imitation_scale_wall_post",Risus.prefix("block/flat_scales_block_side")), models().wallSide("imitation_scale_wall_side", Risus.prefix("block/flat_scales_block_side")), models().wallSideTall("imitation_scale_wall_side_tall", Risus.prefix("block/flat_scales_block_side")));
+		directionalBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK.get(), models().cubeBottomTop("unalloyed_scales_block", Risus.prefix("block/unalloyed_scales/side"), Risus.prefix("block/unalloyed_scales/bottom"), Risus.prefix("block/unalloyed_scales/top")));
+		stairsBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get(), Risus.prefix("block/unalloyed_scales/side"));
+		slabBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get(), Risus.prefix("block/unalloyed_scales_block_side"), Risus.prefix("block/unalloyed_scales/side"));
+		risusWallBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get(), models().wallPost("unalloyed_scales_wall_post",Risus.prefix("block/unalloyed_scales/side")), models().wallSide("unalloyed_scales_wall_side", Risus.prefix("block/unalloyed_scales/side")), models().wallSideTall("unalloyed_scales_wall_side_tall", Risus.prefix("block/unalloyed_scales/side")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), Risus.prefix("block/bondknot_log"), Risus.prefix("block/bondknot_log_top"));

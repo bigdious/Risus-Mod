@@ -529,6 +529,13 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
 			.save(consumer, "petal_to_sugar");
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.PURIFYING_PASTE.get(), 1)
+			.requires(RisusItems.ROSE_PETAL.get())
+			.requires(RisusItems.LOVER_CREAM.get())
+			.requires(Items.BOWL)
+			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.ROSE_CROWN.get())
 			.pattern("WBR")
 			.pattern("B B")

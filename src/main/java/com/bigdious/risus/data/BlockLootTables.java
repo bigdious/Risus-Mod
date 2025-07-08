@@ -90,11 +90,18 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.IMITATION_SCALEPLATE.get());
 		dropSelf(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE.get());
 		dropSelf(RisusBlocks.BUDDING_IMITATION_SCALEPLATE.get());
+		dropSelf(RisusBlocks.UNALLOYED_SCALEPLATE.get());
+		dropSelf(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get());
+		dropSelf(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get());
 		dropSelf(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get());
 		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
 		add(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(), createSlabItemTable(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get()));
 		dropSelf(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
+		dropSelf(RisusBlocks.UNALLOYED_SCALES_BLOCK.get());
+		dropSelf(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get());
+		add(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get(), createSlabItemTable(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get()));
+		dropSelf(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get());
 		add(RisusBlocks.BABY_RIBCAGE.get(), createSilkTouchDispatchTable(RisusBlocks.BABY_RIBCAGE.get(), LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.RIBCAGE.get(), createRibcageDrops(RisusBlocks.RIBCAGE.get()));
 		add(RisusBlocks.ASHEN_SPIRE.get(), createSpireDrops(RisusBlocks.ASHEN_SPIRE.get()));

@@ -69,7 +69,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> EGG_SAC = register("egg_sac", EggSacItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
-	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD));
+	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD).rarity(BLOOD));
 
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
@@ -100,6 +100,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", GluttonyScalesItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
+	public static final DeferredItem<Item> PURIFYING_PASTE = register("purifying_paste", Item::new, Item.Properties::new);
 
 	//COLLECTABLES
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
