@@ -108,13 +108,13 @@ public class RisusBlocks {
 	public static final DeferredBlock<StairBlock> IMITATION_SCALES_BLOCK_STAIRS = registerWithFireResistantItem("imitation_scales_block_stairs", properties -> new RisusStairBlock(() -> FLATTENED_IMITATION_SCALES_BLOCK.get().defaultBlockState(), properties), () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
 	public static final DeferredBlock<SlabBlock> IMITATION_SCALES_BLOCK_SLAB = registerWithFireResistantItem("imitation_scales_block_slab",  RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
 	public static final DeferredBlock<RisusWallBlock> IMITATION_SCALES_BLOCK_WALL = registerWithFireResistantItem("imitation_scales_block_wall",  RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
-	public static final DeferredBlock<Block> UNALLOYED_SCALES_BLOCK = registerWithFireResistantItem("unalloyed_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS));
-	public static final DeferredBlock<StairBlock> UNALLOYED_SCALES_BLOCK_STAIRS = registerWithFireResistantItem("unalloyed_scales_block_stairs", properties -> new RisusStairBlock(() -> FLATTENED_IMITATION_SCALES_BLOCK.get().defaultBlockState(), properties), () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
-	public static final DeferredBlock<SlabBlock> UNALLOYED_SCALES_BLOCK_SLAB = registerWithFireResistantItem("unalloyed_scales_block_slab",  RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
-	public static final DeferredBlock<RisusWallBlock> UNALLOYED_SCALES_BLOCK_WALL = registerWithFireResistantItem("unalloyed_scales_block_wall",  RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
-	public static final DeferredBlock<Block> UNALLOYED_SCALEPLATE = registerWithFireResistantItem("unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> FLOWERING_UNALLOYED_SCALEPLATE = registerWithFireResistantItem("flowering_unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> BUDDING_UNALLOYED_SCALEPLATE = registerWithFireResistantItem("budding_unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> UNALLOYED_SCALES_BLOCK = registerWithFireResistantItemWithoutRarity("unalloyed_scales_block", ActuallyUseableDirectionalBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS));
+	public static final DeferredBlock<StairBlock> UNALLOYED_SCALES_BLOCK_STAIRS = registerWithFireResistantItemWithoutRarity("unalloyed_scales_block_stairs", properties -> new RisusStairBlock(() -> FLATTENED_IMITATION_SCALES_BLOCK.get().defaultBlockState(), properties), () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
+	public static final DeferredBlock<SlabBlock> UNALLOYED_SCALES_BLOCK_SLAB = registerWithFireResistantItemWithoutRarity("unalloyed_scales_block_slab",  RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
+	public static final DeferredBlock<RisusWallBlock> UNALLOYED_SCALES_BLOCK_WALL = registerWithFireResistantItemWithoutRarity("unalloyed_scales_block_wall",  RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(FLATTENED_IMITATION_SCALES_BLOCK.get()));
+	public static final DeferredBlock<Block> UNALLOYED_SCALEPLATE = registerWithFireResistantItemWithoutRarity("unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> FLOWERING_UNALLOYED_SCALEPLATE = registerWithFireResistantItemWithoutRarity("flowering_unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> BUDDING_UNALLOYED_SCALEPLATE = registerWithFireResistantItemWithoutRarity("budding_unalloyed_scaleplate", ScaleplateBlock::new, () -> Block.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 
 	//REMAINS
 	public static final DeferredBlock<Block> ASHEN_REMAINS = registerWithItem("ashen_remains", RemainsBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SOUL_SOIL).mapColor(MapColor.COLOR_BLACK));
@@ -243,6 +243,11 @@ public class RisusBlocks {
 	public static <T extends Block> DeferredBlock<T> registerWithItemWithoutRarity(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
 		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
 		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), Item.Properties::new);
+		return ret;
+	}
+	public static <T extends Block> DeferredBlock<T> registerWithFireResistantItemWithoutRarity(String name, Function<BlockBehaviour.Properties, T> block, Supplier<BlockBehaviour.Properties> properties) {
+		DeferredBlock<T> ret = BLOCKS.register(name, () -> block.apply(properties.get()));
+		RisusItems.register(name, itemProps -> new BlockItem(ret.get(), itemProps), () -> new Item.Properties().fireResistant());
 		return ret;
 	}
 

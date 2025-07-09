@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "risus:flattened_imitation_scales_block"
+    },
+    "/": {
+      "item": "risus:purifying_paste"
+    }
+  },
+  "pattern": [
+    "###",
+    "#/#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "risus:unalloyed_scales_block"
+  }
+}

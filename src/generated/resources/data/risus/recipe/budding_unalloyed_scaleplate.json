@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": {
+      "item": "risus:unalloyed_scaleplate"
+    }
+  },
+  "pattern": [
+    " / ",
+    "///",
+    " / "
+  ],
+  "result": {
+    "count": 5,
+    "id": "risus:budding_unalloyed_scaleplate"
+  }
+}

@@ -94,7 +94,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.DECOMPOSED_TISSUE.get(),
 			RisusBlocks.DECAYED_TISSUE.get(),
 			RisusBlocks.TISSUE_WALL.get(),
-			RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
+			RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get()
+		);
 
 
 		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(RisusTags.Blocks.BONDKNOT_LOGS)
@@ -180,6 +182,13 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get(),
 			RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(),
 			RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get(),
+			RisusBlocks.UNALLOYED_SCALEPLATE.get(),
+			RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get(),
+			RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get(),
 			RisusBlocks.BONE_WALL.get(),
 			RisusBlocks.FULL_BONE_BLOCK.get(),
 			RisusBlocks.BONE_SLAB.get(),
@@ -279,7 +288,14 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get(),
 				RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get(),
 				RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(),
-				RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get()
+				RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get(),
+				RisusBlocks.UNALLOYED_SCALEPLATE.get(),
+				RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get(),
+				RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get(),
+				RisusBlocks.UNALLOYED_SCALES_BLOCK.get(),
+				RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get(),
+				RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get(),
+				RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get()
 			);
 		this.tag(BlockTags.NEEDS_STONE_TOOL).add(
 			RisusBlocks.COPPER_AMALGAM.get(),

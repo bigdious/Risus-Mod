@@ -29,7 +29,7 @@
         "item": "risus:maw_guts"
       },
       "link_recipe": true,
-      "text": "Gorgers are made up of a mouth and Gorger Guts, as well as Gluttony Scaleplates protecting their innards. The Scales can be harvested without hurting the Gorger, however, removing the Guts will obviously kill it. The Gorger Guts can be used for storage and its ability to swallow items remains even after the Gorger's death."
+      "text": "Gorgers are made up of a mouth and Gorger Guts, as well as Gluttonous Scaleplates protecting their innards. The Scales can be harvested without hurting the Gorger, however, removing the Guts will obviously kill it. The Gorger Guts can be used for storage and its ability to swallow items remains even after the Gorger's death."
     },
     {
       "type": "patchouli:spotlight",
@@ -37,7 +37,7 @@
         "item": "risus:gluttony_scales"
       },
       "link_recipe": true,
-      "text": "Gluttony Scales are a widely used material, especially for equipment. They can be harvested from Gorger traps using a Diamond Pickaxe. They are also valued for their aesthetic design, which results in many people mixing them with Obsidian to create Imitiation Scale decorations."
+      "text": "Gluttonous Scales are a widely used material, especially for equipment. They can be harvested from Gorger traps using a Diamond Pickaxe. They are also valued for their aesthetic design, which results in many people mixing them with Obsidian to create Imitiation Scale decorations."
     },
     {
       "type": "patchouli:crafting",

@@ -12,6 +12,7 @@
     "risus:decomposed_tissue",
     "risus:decayed_tissue",
     "risus:tissue_wall",
-    "risus:imitation_scales_block_wall"
+    "risus:imitation_scales_block_wall",
+    "risus:unalloyed_scales_block_wall"
   ]
 }

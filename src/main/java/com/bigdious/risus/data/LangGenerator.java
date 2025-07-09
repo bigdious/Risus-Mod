@@ -48,7 +48,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BONE_SLAB, "Bone Slab");
 		this.addBlock(RisusBlocks.BONE_STAIRS, "Bone Stairs");
 		this.addBlock(RisusBlocks.BONE_WALL, "Bone Wall");
-		this.addBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE, "Budding Scaleplate");
+		this.addBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE, "Budding Imitation Scaleplate");
+		this.addBlock(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE, "Budding Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.BUNDLE_OF_HAIR, "Bundle of Hair");
 		this.addBlock(RisusBlocks.BURNT_HYPHAE, "Burnt Hyphae");
 		this.addBlock(RisusBlocks.CHISELED_GRIMSTONE, "Chiseled Grimstone");
@@ -85,7 +86,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.FLATTENED_SCALES_BLOCK, "Gluttonous Scales Block");
 		this.addBlock(RisusBlocks.FLESHY_SKIN, "Fleshy Skin");
 		this.addBlock(RisusBlocks.FLESHY_SPAWNER, "Fleshy Monster Spawner");
-		this.addBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE, "Flowering Scaleplate");
+		this.addBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE, "Flowering Imitation Scaleplate");
+		this.addBlock(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE, "Flowering Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.FOSSIL, "Fossil");
 		this.addBlock(RisusBlocks.FOSSIL_SLAB, "Fossil Slab");
 		this.addBlock(RisusBlocks.FOSSIL_STAIRS, "Fossil Stairs");
@@ -154,6 +156,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.TISSUE_SLAB, "Tissue Slab");
 		this.addBlock(RisusBlocks.TISSUE_STAIRS, "Tissue Stairs");
 		this.addBlock(RisusBlocks.TISSUE_WALL, "Tissue Wall");
+		this.addBlock(RisusBlocks.UNALLOYED_SCALEPLATE, "Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK, "Unalloyed Scales Block");
 		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS, "Unalloyed Scales Stairs");
 		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB, "Unalloyed Scales Slab");
@@ -196,7 +199,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addMusicDisc(RisusItems.MUSIC_DISC_RAK, "Kizbe - Rak");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_REGN, "Kizbe - Regn");
 
-		this.addTrim("gluttony_scales", "Gluttony");
+		this.addTrim("gluttony_scales", "Gluttonous");
 		this.addTrim("skin", "Skin");
 		this.addTrim("organic_matter", "Organic Matter");
 
@@ -373,7 +376,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
 		this.addAdvancement("angel", "Holy Grounds", "Trespass onto land protected by an Ophanim.");
-		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttony Scales");
+		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
 		this.addAdvancement("lab", "Deep Core Fallout", "Approach a failed experiment");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");
 		this.addAdvancement("parentmode", "Parent Mode: Dedicated", "Witness the creation of a Weaver Nest through the self-willed death of a memory fed Weaver.");

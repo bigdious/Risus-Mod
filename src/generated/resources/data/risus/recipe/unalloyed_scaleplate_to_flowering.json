@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "risus:unalloyed_scaleplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:flowering_unalloyed_scaleplate"
+  }
+}

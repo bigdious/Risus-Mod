@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "risus:flattened_imitation_scales_block"
+            "items": "risus:gluttony_scales"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:imitation_scales_block_to_stairs"
+        "recipe": "minecraft:unalloyed_scaleplate_from_unalloyed_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "risus:imitation_scales_block_to_stairs"
+      "minecraft:unalloyed_scaleplate_from_unalloyed_block"
     ]
   }
 }

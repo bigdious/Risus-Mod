@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "risus:unalloyed_scales_block"
+  },
+  "result": {
+    "count": 4,
+    "id": "risus:unalloyed_scaleplate"
+  }
+}
