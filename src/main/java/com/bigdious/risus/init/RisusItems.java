@@ -70,6 +70,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
 	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD).rarity(BLOOD));
+	public static final DeferredItem<Item> ETERNAL_YOUTH = register("eternal_youth", EternalYouthItem::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

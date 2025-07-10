@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:sniffer_egg"
+    },
+    {
+      "item": "minecraft:turtle_egg"
+    },
+    {
+      "item": "minecraft:axolotl_bucket"
+    },
+    {
+      "item": "minecraft:tadpole_bucket"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:cake"
+    },
+    {
+      "tag": "minecraft:candles"
+    },
+    {
+      "item": "risus:lover_cream"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:eternal_youth"
+  }
+}

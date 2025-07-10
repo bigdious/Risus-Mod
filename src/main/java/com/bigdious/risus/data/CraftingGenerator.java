@@ -596,7 +596,21 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.PURIFYING_PASTE.get(), 1)
 			.requires(RisusItems.ROSE_PETAL.get())
 			.requires(RisusItems.LOVER_CREAM.get())
+			.requires(RisusBlocks.ORGANIC_MATTER_BLOCK.get())
 			.requires(Items.BOWL)
+			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.ETERNAL_YOUTH.get(), 1)
+			.requires(Items.EGG)
+			.requires(Items.SNIFFER_EGG)
+			.requires(Items.TURTLE_EGG)
+			.requires(Items.AXOLOTL_BUCKET)
+			.requires(Items.TADPOLE_BUCKET)
+			.requires(Items.HONEY_BOTTLE)
+			.requires(Items.CAKE)
+			.requires(ItemTags.CANDLES)
+			.requires(RisusItems.LOVER_CREAM.get())
 			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
 			.save(consumer);
 

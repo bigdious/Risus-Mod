@@ -26,11 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.event.EventHooks;
-
-import java.util.List;
 
 public class LoverCreamItem extends Item {
 	public LoverCreamItem(Properties properties) {

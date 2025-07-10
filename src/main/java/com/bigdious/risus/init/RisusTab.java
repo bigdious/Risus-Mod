@@ -210,6 +210,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.BIG_CHAIN.get());
 				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusItems.LOVER_CREAM.get());
+				output.accept(RisusItems.ETERNAL_YOUTH.get());
 				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusItems.ROSE_PETAL.get());

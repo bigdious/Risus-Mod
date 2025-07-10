@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-08T21:33:58.8278544	Risus Item Models
+// 1.21.1	2025-07-10T08:57:11.9881266	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -78,6 +78,7 @@ f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.
 a914f6a65b1dff773175099de325673a9debac1b assets/risus/models/item/essence_of_lust.json
 f22dee71228e4e6083a695473efc03ecfc6cda4f assets/risus/models/item/essence_of_melancholy.json
 4fb22221e7afc543c6a201db0e4176a8976ca64f assets/risus/models/item/essence_of_sloth.json
+d1f03992c3ae5f00088c1f606287f6c96519bf0a assets/risus/models/item/eternal_youth.json
 002385919efb8adfb30cf09274f73e7eaa957f5d assets/risus/models/item/exposed_copper_amalgam.json
 505278bffada7d7753307c915113ae80d50f9c75 assets/risus/models/item/eye_bleached.json
 c3907447e910f8b59b0e905b31da7fd01671cd0b assets/risus/models/item/eye_bleached_glowing.json
