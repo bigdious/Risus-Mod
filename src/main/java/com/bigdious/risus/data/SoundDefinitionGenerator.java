@@ -47,6 +47,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.DEPTH_VASE_INSERT_FAIL, SoundEvents.DECORATED_POT_INSERT_FAIL, "Depth Vase wobbles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_BREAK, SoundEvents.TURTLE_EGG_HATCH, "Baby Spiders are unleashed");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_THROW, SoundEvents.SNOWBALL_THROW, "Baby Spiders learn aerodynamics");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ETERNAL_YOUTH_BREAK, SoundEvents.TURTLE_EGG_BREAK, "Eternal Youth releases");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HAIR_GROW, SoundEvents.SCULK_BLOCK_SPREAD, "Hair grows");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LITTER_LAY_EXCREMENT, SoundEvents.CHICKEN_EGG, "Litter excretes");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover impregnates");

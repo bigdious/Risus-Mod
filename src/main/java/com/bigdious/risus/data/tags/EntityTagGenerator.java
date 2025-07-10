@@ -1,4 +1,4 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusEntities;
@@ -47,6 +47,23 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 		tag(RisusTags.Entities.BREAKS_DEPTH_VASES)
 			.add(RisusEntities.THROWN_AXE.get())
 			.add(EntityType.TRIDENT)
+		;
+		tag(RisusTags.Entities.YOUTH_BANNED)
+			.add(EntityType.ENDER_DRAGON)
+			.add(EntityType.WITHER)
+		;
+		tag(RisusTags.Entities.YOUTH_SHRINKS)
+			.add(EntityType.PARROT)
+			.add(EntityType.ALLAY)
+			.add(EntityType.BAT)
+			.add(EntityType.COD)
+			.add(EntityType.DOLPHIN)
+			.add(EntityType.GLOW_SQUID)
+			.add(EntityType.SQUID)
+			.add(EntityType.PUFFERFISH)
+			.add(EntityType.TROPICAL_FISH)
+			.add(EntityType.SALMON)
+
 		;
 	}
 }

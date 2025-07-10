@@ -1,4 +1,4 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusDamageTypes;
@@ -25,10 +25,8 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 			RisusDamageTypes.DESTINED_DEATH
 		);
 		this.tag(DamageTypeTags.BYPASSES_INVULNERABILITY).add(
-			RisusDamageTypes.VAMPIRISM,
 			RisusDamageTypes.INEXISTENCE,
-			RisusDamageTypes.DESTINED_DEATH,
-			RisusDamageTypes.GLUTTONY
+			RisusDamageTypes.DESTINED_DEATH
 		);
 		this.tag(DamageTypeTags.NO_KNOCKBACK).add(
 			RisusDamageTypes.VAMPIRISM,

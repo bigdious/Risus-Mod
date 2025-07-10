@@ -1,6 +1,5 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.data.BlockTagGenerator;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;

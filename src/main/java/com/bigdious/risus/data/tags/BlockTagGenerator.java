@@ -1,4 +1,4 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;

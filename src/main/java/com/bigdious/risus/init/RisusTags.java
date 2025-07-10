@@ -90,6 +90,8 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> BELOVED = create("beloved");
 		public static final TagKey<EntityType<?>> CANT_BE_STOLEN_FROM = create("cant_be_stolen_from");
 		public static final TagKey<EntityType<?>> BREAKS_DEPTH_VASES = create("breaks_depth_vases");
+		public static final TagKey<EntityType<?>> YOUTH_BANNED = create("youth_banned");
+		public static final TagKey<EntityType<?>> YOUTH_SHRINKS = create("youth_shrinks");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

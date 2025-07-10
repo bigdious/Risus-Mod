@@ -6,20 +6,18 @@ import com.bigdious.risus.client.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
 import com.bigdious.risus.config.ConfigSetup;
 import com.bigdious.risus.data.*;
+import com.bigdious.risus.data.tags.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusDataMaps;
 import com.bigdious.risus.network.CreateCritParticlePacket;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
-import com.google.common.base.Suppliers;
 import com.google.common.reflect.Reflection;
-import net.minecraft.Util;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -42,7 +40,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Locale;
-import java.util.function.Supplier;
 
 @Mod(Risus.MODID)
 public class Risus {
