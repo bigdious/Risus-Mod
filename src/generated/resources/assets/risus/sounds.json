@@ -224,6 +224,15 @@
     ],
     "subtitle": "subtitles.risus.item.egg_sac.throw"
   },
+  "item.eternal_youth.break": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.turtle.egg_break"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.eternal_youth.break"
+  },
   "item.light_devourer.place_darkness": {
     "sounds": [
       {

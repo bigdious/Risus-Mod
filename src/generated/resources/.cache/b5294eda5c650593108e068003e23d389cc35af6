@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-22T23:34:47.4686992	Particle Descriptions
+// 1.21.1	2025-07-13T22:53:07.3847696	Particle Descriptions
 c403d364b67a65d0917ca461704158e739cd44d0 assets/risus/particles/alteration.json
 c403d364b67a65d0917ca461704158e739cd44d0 assets/risus/particles/alteration_finished.json
 95bcab4f21a0ffd319a8acf37332485ec9483ab9 assets/risus/particles/block_organic.json
@@ -14,5 +14,6 @@ e343eb76da161bf8b0cea0dab837e452ff230655 assets/risus/particles/fiery_organic.js
 e7d2e283d4db3853d03dd5011b94c348d3251587 assets/risus/particles/joyflame.json
 ac5a59c178ba96aede09c102f594284e417b8e5d assets/risus/particles/landing_blood.json
 3e12d774506378dd3cecc8859fc8b0899a5d311c assets/risus/particles/landing_joy.json
+8f33602739609208c30803ce8582eb74bcc0e7cb assets/risus/particles/rising_smile.json
 62a2cb2efd81dcfbc65eb9d8b98303430ae4233d assets/risus/particles/risus_soul.json
 5ade15b5cb5a86a19e2e381ec1ac212a6fe06e3a assets/risus/particles/toothical.json

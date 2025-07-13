@@ -14,7 +14,6 @@ import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
 import com.bigdious.risus.client.render.player.ThreadWingsLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
-import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
@@ -34,7 +33,6 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
@@ -165,6 +163,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOCK_ORGANIC_PARTICLE.get(), BlockOrganicParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
+		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
 	}
 
 	private static void registerScreens(RegisterMenuScreensEvent event) {
