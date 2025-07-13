@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.fluid.BloodFluid;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -20,13 +21,11 @@ public class RisusFluids {
 		.motionScale(0.00116666666)
 		.canDrown(false)
 		.canSwim(true)
-		.density(1500)
-		.viscosity(1000)
 		.supportsBoating(true)
 		.canConvertToSource(true)
 		.canPushEntity(true)
-	) {
-	});
+		.density(1500)
+		.viscosity(2000)));
 
 	public static final DeferredHolder<Fluid, BloodFluid.Source> SOURCE_BLOOD = FLUIDS.register("blood_fluid", () -> new BloodFluid.Source(RisusFluids.BLOOD_FLUID_PROPERTIES));
 	public static final DeferredHolder<Fluid, BloodFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood_fluid", () -> new BloodFluid.Flowing(RisusFluids.BLOOD_FLUID_PROPERTIES));

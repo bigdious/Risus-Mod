@@ -182,13 +182,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get());
 				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get());
 				output.accept(RisusBlocks.IMITATION_SCALES_BLOCK_WALL.get());
-				output.accept(RisusBlocks.UNALLOYED_SCALEPLATE.get());
-				output.accept(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get());
-				output.accept(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get());
-				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK.get());
-				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get());
-				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get());
-				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
 				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
@@ -209,7 +202,6 @@ public class RisusTab {
 
 				output.accept(RisusBlocks.BIG_CHAIN.get());
 				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
-				output.accept(RisusItems.LOVER_CREAM.get());
 				output.accept(RisusItems.ETERNAL_YOUTH.get());
 				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());

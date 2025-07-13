@@ -263,68 +263,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.UNALLOYED_SCALEPLATE.get(), 32)
-			.pattern("###")
-			.pattern("#/#")
-			.pattern("###")
-			.define('#', Ingredient.of(Tags.Items.OBSIDIANS))
-			.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.UNALLOYED_SCALEPLATE.get(), 4)
-			.pattern("#")
-			.define('#', Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer, "unalloyed_scaleplate_from_unalloyed_block");
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get(), 5)
-			.pattern("/ /")
-			.pattern(" / ")
-			.pattern("/ /")
-			.define('/', Ingredient.of(RisusBlocks.UNALLOYED_SCALEPLATE.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE.get(), 5)
-			.pattern(" / ")
-			.pattern("///")
-			.pattern(" / ")
-			.define('/', Ingredient.of(RisusBlocks.UNALLOYED_SCALEPLATE.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.UNALLOYED_SCALES_BLOCK.get(), 8)
-			.pattern("###")
-			.pattern("#/#")
-			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK))
-			.define('/', Ingredient.of(RisusItems.PURIFYING_PASTE.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get(), 4)
-			.pattern("#  ")
-			.pattern("## ")
-			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get(), 6)
-			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get(), 6)
-			.pattern("###")
-			.pattern("###")
-			.define('#', Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
-
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.TALL_HAIR.get(), 4)
 				.pattern("##")
@@ -592,27 +530,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.requires(RisusItems.ROSE_PETAL.get())
 			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
 			.save(consumer, "petal_to_sugar");
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.PURIFYING_PASTE.get(), 1)
-			.requires(RisusItems.ROSE_PETAL.get())
-			.requires(RisusItems.LOVER_CREAM.get())
-			.requires(RisusBlocks.ORGANIC_MATTER_BLOCK.get())
-			.requires(Items.BOWL)
-			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
-			.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.ETERNAL_YOUTH.get(), 1)
-			.requires(Items.EGG)
-			.requires(Items.SNIFFER_EGG)
-			.requires(Items.TURTLE_EGG)
-			.requires(Items.AXOLOTL_BUCKET)
-			.requires(Items.TADPOLE_BUCKET)
-			.requires(Items.HONEY_BOTTLE)
-			.requires(Items.CAKE)
-			.requires(ItemTags.CANDLES)
-			.requires(RisusItems.LOVER_CREAM.get())
-			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
-			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.ROSE_CROWN.get())
 			.pattern("WBR")
@@ -1050,31 +967,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.IMITATION_SCALEPLATE))
 			.save(consumer, prefix("imitation_scaleplate_to_budding"));
 
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB,2)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_slabs"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.UNALLOYED_SCALEPLATE,4)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_scaleplate"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE,4)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_flowering"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE,4)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_budding"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS,1)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_stairs"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL,1)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALES_BLOCK))
-			.save(consumer, prefix("unalloyed_scales_block_to_wall"));
-
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALEPLATE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE,1)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALEPLATE))
-			.save(consumer, prefix("unalloyed_scaleplate_to_flowering"));
-		SingleItemRecipeBuilder.stonecutting( Ingredient.of(RisusBlocks.UNALLOYED_SCALEPLATE.get()), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE,1)
-			.unlockedBy("has_item", has(RisusBlocks.UNALLOYED_SCALEPLATE))
-			.save(consumer, prefix("unalloyed_scaleplate_to_budding"));
 
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusTags.Items.BONE_BLOCK_VARIATION), RecipeCategory.BUILDING_BLOCKS,RisusBlocks.BONE_SLAB,2)
 			.unlockedBy("has_item", has(RisusTags.Items.BONE_BLOCK_VARIATION))

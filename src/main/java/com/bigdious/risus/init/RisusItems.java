@@ -61,7 +61,6 @@ public class RisusItems {
 	public static final FoodProperties EYE_FOOD = new FoodProperties.Builder().nutrition(4).saturationModifier(0.5F).fast().effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 7200), 1.0F).build();
 	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
 	public static final FoodProperties PETAL_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.1F).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 120), 1.0F).build();
-	public static final FoodProperties LOVER_CREAM_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.4F).build();
 	public static final DeferredItem<Item> GUILTY_APPLE = register("guilty_apple", Item::new, () -> new Item.Properties().rarity(BLOOD).food(GUILTY_FOOD));
 	public static final DeferredItem<Item> ORGANIC_MATTER = register("organic_matter", OrganicMatterItem::new, () -> new Item.Properties().rarity(BLOOD).food(ORGANIC_FOOD));
 	public static final DeferredItem<Item> STALKER_EYE = register("stalker_eye", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_FOOD));
@@ -69,7 +68,6 @@ public class RisusItems {
 	public static final DeferredItem<Item> EGG_SAC = register("egg_sac", EggSacItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
-	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD).rarity(BLOOD));
 	public static final DeferredItem<Item> ETERNAL_YOUTH = register("eternal_youth", EternalYouthItem::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//SUMMONERS

@@ -7,6 +7,7 @@ import com.bigdious.risus.init.RisusTags;
 import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -21,6 +22,8 @@ import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.Objects;
 
 public class EternalYouthItem extends Item {
 	public EternalYouthItem(Properties properties) {
@@ -38,39 +41,43 @@ public class EternalYouthItem extends Item {
 			targetAnimal.setBaby(true);
 			targetAnimal.setAge(-2000000000);
 			targetAnimal.setInvulnerable(true);
-			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) && targetAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
-				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"),  -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+				Objects.requireNonNull(targetAnimal.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"),  -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 			}
 			did = true;
 			itemUsed = true;
 		} else if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() < -24000){
 			targetAnimal.kill();
 			itemUsed = true;
-		} else if (entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS) && entity.getAttributes().getInstance(Attributes.SCALE) != null) {
-			if (entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+			killed = true;
+		} else if (entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) {
+			if (Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 				entity.kill();
+				killed = true;
 			} else {
 				entity.setInvulnerable(true);
-				entity.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"),  -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+				Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"),  -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 				did = true;
 			}
 			itemUsed = true;
 		}
-		if (did){
-
-		}
-		if (killed){
-
-		}
-
-		if (itemUsed) {
-			boolean isClient = entity.level().isClientSide();
-			if (!isClient) {
-				stack.shrink(1);
+		if (entity.level() instanceof ServerLevel serverLevel) {
+			if (did) {
+				serverLevel.sendParticles(ParticleTypes.POOF, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 20, 0, 0.0, 0.0, 0.1);
 			}
-			ServerParticleUtils.spawnParticles(player.level(), entity.getOnPos().above(), 5, 1, 1, true, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())));
-			player.level().playSound(player, entity.getX(), entity.getY(), entity.getY(), RisusSoundEvents.ETERNAL_YOUTH_BREAK.get(), SoundSource.PLAYERS);
-			return InteractionResult.sidedSuccess(isClient);
+			if (killed) {
+				serverLevel.sendParticles(ParticleTypes.ANGRY_VILLAGER, entity.getRandomX(0.5), entity.getRandomY(), entity.getRandomZ(0.5), 3, 0, 0.0, 0.0, 0.1);
+			}
+
+			if (itemUsed) {
+				boolean isClient = entity.level().isClientSide();
+				if (!isClient) {
+					stack.shrink(1);
+					entity.level().playSound(player, entity.getX(), entity.getY(), entity.getY(), RisusSoundEvents.ETERNAL_YOUTH_BREAK.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
+				}
+				serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())), entity.getRandomX(1), entity.getRandomY(), entity.getRandomZ(1), 5, 0, 0.0, 0.0, 0.1);
+				return InteractionResult.sidedSuccess(isClient);
+			}
 		}
 
 		return InteractionResult.PASS;

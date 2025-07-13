@@ -209,7 +209,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 		var maws = this.getLevel().getEntitiesOfClass(Maw.class, new AABB(this.getBlockPos()).inflate(0.0D, 1.0D, 0.0D));
 		if (!maws.isEmpty()) {
 			maws.forEach(maw -> {
-				maw.hasGutsAssigned = false;
+//				maw.hasGutsAssigned = false;
 				maw.hurt(source, Float.MAX_VALUE);
 			});
 		}

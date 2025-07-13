@@ -49,7 +49,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BONE_STAIRS, "Bone Stairs");
 		this.addBlock(RisusBlocks.BONE_WALL, "Bone Wall");
 		this.addBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE, "Budding Imitation Scaleplate");
-		this.addBlock(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE, "Budding Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.BUNDLE_OF_HAIR, "Bundle of Hair");
 		this.addBlock(RisusBlocks.BURNT_HYPHAE, "Burnt Hyphae");
 		this.addBlock(RisusBlocks.CHISELED_GRIMSTONE, "Chiseled Grimstone");
@@ -87,7 +86,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.FLESHY_SKIN, "Fleshy Skin");
 		this.addBlock(RisusBlocks.FLESHY_SPAWNER, "Fleshy Monster Spawner");
 		this.addBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE, "Flowering Imitation Scaleplate");
-		this.addBlock(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE, "Flowering Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.FOSSIL, "Fossil");
 		this.addBlock(RisusBlocks.FOSSIL_SLAB, "Fossil Slab");
 		this.addBlock(RisusBlocks.FOSSIL_STAIRS, "Fossil Stairs");
@@ -156,11 +154,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.TISSUE_SLAB, "Tissue Slab");
 		this.addBlock(RisusBlocks.TISSUE_STAIRS, "Tissue Stairs");
 		this.addBlock(RisusBlocks.TISSUE_WALL, "Tissue Wall");
-		this.addBlock(RisusBlocks.UNALLOYED_SCALEPLATE, "Unalloyed Scaleplate");
-		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK, "Unalloyed Scales Block");
-		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS, "Unalloyed Scales Stairs");
-		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB, "Unalloyed Scales Slab");
-		this.addBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL, "Unalloyed Scales Wall");
 		this.addBlock(RisusBlocks.VEINS, "Veins");
 		this.addBlock(RisusBlocks.VEINS_END, "Veins");
 		this.addBlock(RisusBlocks.WAXED_COPPER_AMALGAM, "Waxed Copper Amalgam");
@@ -234,7 +227,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.HAND_OF_GREED, "Hand of Greed");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
 		this.addItem(RisusItems.LITTER, "Litter");
-		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
 		this.addItem(RisusItems.MEMORY1_ITEM, "Faded Statue");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
 		this.addItem(RisusItems.ORGANIC_MATTER, "Organic Matter");

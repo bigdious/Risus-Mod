@@ -250,14 +250,6 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("light_devourer", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.LIGHT_DEVOURER.get()))
 			.save(consumer, "risus:light_devourer");
 
-		AdvancementHolder cream = Advancement.Builder.advancement().parent(first)
-			.display(
-				RisusItems.LOVER_CREAM.get(),
-				Component.translatable("advancement.risus.cream"),
-				Component.translatable("advancement.risus.cream.desc"), null, AdvancementType.TASK, true, true, true)
-			.addCriterion("swallowed", ConsumeItemTrigger.TriggerInstance.usedItem(RisusItems.LOVER_CREAM.get()))
-			.save(consumer, "risus:cream");
-
 
 		AdvancementHolder cupid = Advancement.Builder.advancement().parent(irresistible).display(
 				PotionContents.createItemStack(Items.POTION, RisusPotions.MATING_FRENZY),

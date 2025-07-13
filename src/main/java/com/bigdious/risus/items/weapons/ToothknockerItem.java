@@ -86,8 +86,8 @@ public class ToothknockerItem extends SwordItem {
 			f3 *= f5 / f4;
 			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
-			for (int i=0;i <6; i++) {
-				pLevel.addParticle(ParticleTypes.POOF, player.getX(), player.getRandomY(), player.getZ(), 0, 0, 0);
+			for (int i=0;i <10; i++) {
+				pLevel.addParticle(ParticleTypes.POOF, player.getRandomX(0.5), player.getRandomY(), player.getRandomZ(0.5), 0, 0, 0);
 			}
 			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 			player.getCooldowns().addCooldown(this, 30);

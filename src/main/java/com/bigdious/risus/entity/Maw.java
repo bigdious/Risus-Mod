@@ -41,7 +41,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Nullable
 	private PrimedTnt eatenTNT;
 	private int eatenTNTTimer;
-	public boolean hasGutsAssigned;
+//	public boolean hasGutsAssigned;
 
 	public final AnimationState biteAnim = new AnimationState();
 
@@ -73,13 +73,14 @@ public class Maw extends Monster implements CacheTargetOnClient {
 
 	@Override
 	public void tick() {
-		if (this.firstTick) {
-			if (this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
-				this.hasGutsAssigned = true;
-			}
-		}
+		//commented due to causing conflicts with worldgen, creating moveable gorgers
+//		if (this.firstTick) {
+//			if (this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
+//				this.hasGutsAssigned = true;
+//			}
+//		}
 		if (this.tickCount % 60 == 0){
-			if (!this.firstTick && this.hasGutsAssigned && !this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
+			if (!this.firstTick && !this.level().getBlockState(this.blockPosition().below()).is(RisusBlocks.MAW_GUTS)) {
 				this.kill();
 			}
 		}
@@ -94,7 +95,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 			((ServerLevel) this.level()).sendParticles(ParticleTypes.SMOKE, this.position().x(), this.position().y() + 0.5F, this.position().z(), 2, 0.1F, 0.1F, 0.1F, 0);
 
 			if (this.eatenTNTTimer >= 60) {
-				this.hasGutsAssigned = false;
+//				this.hasGutsAssigned = false;
 				this.hurt(Explosion.getDefaultDamageSource(this.level(), this.eatenTNT), Float.MAX_VALUE);
 				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 3.0F, Level.ExplosionInteraction.NONE);
 
@@ -104,10 +105,10 @@ public class Maw extends Monster implements CacheTargetOnClient {
 
 	@Override
 	public boolean isInvulnerableTo(DamageSource source) {
-		if (this.hasGutsAssigned) {
+//		if (this.hasGutsAssigned) {
 			return !source.is(DamageTypeTags.IS_EXPLOSION) && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY);
-		}
-		return super.isInvulnerableTo(source);
+//		}
+//		return super.isInvulnerableTo(source);
 	}
 
 	@Override

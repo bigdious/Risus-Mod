@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "risus:block/unalloyed_scales/side",
-    "side": "risus:block/unalloyed_scales/side",
-    "top": "risus:block/unalloyed_scales/side"
-  }
-}
