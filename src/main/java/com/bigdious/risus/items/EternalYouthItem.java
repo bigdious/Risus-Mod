@@ -7,17 +7,16 @@ import com.bigdious.risus.init.RisusTags;
 import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -34,11 +33,11 @@ public class EternalYouthItem extends Item {
 		boolean did = false;
 		boolean itemUsed = false;
 		boolean killed = false;
-		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000){
+		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))){
 			targetAnimal.setBaby(true);
 			targetAnimal.setAge(-2000000000);
 			targetAnimal.setInvulnerable(true);
-			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) && targetAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
+			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS))) {
 				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"),  -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 			}
 			did = true;
@@ -56,21 +55,23 @@ public class EternalYouthItem extends Item {
 			}
 			itemUsed = true;
 		}
-		if (did){
-
-		}
-		if (killed){
-
-		}
-
-		if (itemUsed) {
-			boolean isClient = entity.level().isClientSide();
-			if (!isClient) {
-				stack.shrink(1);
+		if (entity.level() instanceof ServerLevel serverLevel){
+			if (did) {
+				serverLevel.sendParticles(ParticleTypes.POOF, entity.getRandomX(1), entity.getRandomY(), entity.getRandomZ(20), 6, 0, 0.0, 0.0, 0.1);
 			}
-			ServerParticleUtils.spawnParticles(player.level(), entity.getOnPos().above(), 5, 1, 1, true, new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())));
-			player.level().playSound(player, entity.getX(), entity.getY(), entity.getY(), RisusSoundEvents.ETERNAL_YOUTH_BREAK.get(), SoundSource.PLAYERS);
-			return InteractionResult.sidedSuccess(isClient);
+			if (killed) {
+
+			}
+
+			if (itemUsed) {
+				boolean isClient = entity.level().isClientSide();
+				if (!isClient) {
+					stack.shrink(1);
+				}
+				serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())), entity.getRandomX(1), entity.getRandomY(), entity.getRandomZ(1), 6, 0, 0.0, 0.0, 0.1);
+				entity.level().playSound(player, entity.getX(), entity.getY(), entity.getY(), RisusSoundEvents.ETERNAL_YOUTH_BREAK.get(), SoundSource.PLAYERS);
+				return InteractionResult.sidedSuccess(isClient);
+			}
 		}
 
 		return InteractionResult.PASS;

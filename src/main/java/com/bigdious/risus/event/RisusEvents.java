@@ -21,6 +21,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -240,19 +241,20 @@ public class RisusEvents {
 			for (int i = 0; i < 13; i++) {
 				QuestionMark witness = RisusEntities.QUESTION_MARK.get().create(level);
 				witness.setTransient();
-				witness.moveTo(getBoxAround(player, 2, 40), 0.0F, 0.0F);
+				witness.moveTo(getBoxAround(player, 4, 40), 0.0F, 0.0F);
 				level.addFreshEntity(witness);
 			}
 		}
 	}
 
 	private static BlockPos getBoxAround(Entity entity, int padding, int radius) {
+		RandomSource random = RandomSource.create();
 		BlockPos pos = entity.blockPosition();
 		AABB paddingBox = new AABB(pos).inflate(padding);
 		//check 10 random spots in a box around the player, excluding a small box defined by the padding
 		for (BlockPos checkPos : BlockPos.randomInCube(entity.getRandom(), 10, pos, radius)) {
 			if (paddingBox.intersects(new AABB(checkPos))) continue;
-			return checkPos.atY((int) Math.max(pos.getY() + 15, entity.getRandomY() + 2 + 11 * (entity.getRandomY() - entity.getRandomY())));
+			return checkPos.atY( Math.max(pos.getY()-10, pos.getY()-5+random.nextInt(40)));
 		}
 		//didnt find a spot? Spawn 6 blocks above player
 		return pos.atY(pos.getY() + 6);
