@@ -5,6 +5,7 @@ import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.dispenser.RisusDispenserBehaviours;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.items.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.collect.Maps;
@@ -24,9 +25,11 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
@@ -68,6 +71,7 @@ import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosCapability;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -96,6 +100,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::roseCrownBehavior);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::eternalizeTamables);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -504,6 +509,33 @@ public class RisusEvents {
 				livingAttacker.addEffect(new MobEffectInstance(MobEffects.WITHER, 120));
 			}
 		};
+	}
+
+	private static void eternalizeTamables(PlayerInteractEvent.EntityInteract event){
+		//copy of interaction from EternalYouthItem to handle tamed animals (order of events issue)
+		if (event.getItemStack().is(RisusItems.ETERNAL_YOUTH)) {
+			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwnerUUID() == event.getEntity().getUUID()) {
+				boolean itemUsed = false;
+				if (tamableAnimal.getAge() > -24000 && !Objects.requireNonNull(tamableAnimal.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+					EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);
+					itemUsed = true;
+				} else if (tamableAnimal.getAge() < -24000) {
+					itemUsed = true;
+					EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
+				} else if (tamableAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) && tamableAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
+					if (tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+						EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
+					} else {
+						EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);
+					}
+					itemUsed = true;
+				}
+				if (itemUsed) {
+					event.getItemStack().shrink(1);
+					event.getLevel().playSound(null, tamableAnimal.blockPosition(), RisusSoundEvents.ETERNAL_YOUTH_BREAK.get(), SoundSource.PLAYERS);
+				}
+			}
+		}
 	}
 
 }

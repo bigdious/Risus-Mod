@@ -289,14 +289,14 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
-		this.add("tooltip.risus.spawnentity.risus.maw", "Summons Gorger");
-		this.add("tooltip.risus.spawnentity.risus.angel", "Summons Blood Ophanim");
-		this.add("tooltip.risus.spawnentity.risus.weaver", "Summons Weaver");
-		this.add("tooltip.risus.spawnentity.risus.holder", "Summons Holder");
-		this.add("tooltip.risus.spawnentity.risus.lover", "Summons Lover");
-		this.add("tooltip.risus.spawnentity.risus.singer", "Summons Singer");
-		this.add("tooltip.risus.spawnentity.risus.stalker", "Summons Stalker");
-		this.add("tooltip.risus.spawnentity.risus.licker", "Summons Licker");
+		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
+		this.add("tooltip.risus.spawnentity.risus.angel", "Blood Ophanim");
+		this.add("tooltip.risus.spawnentity.risus.weaver", "Weaver");
+		this.add("tooltip.risus.spawnentity.risus.holder", "Holder");
+		this.add("tooltip.risus.spawnentity.risus.lover", "Lover");
+		this.add("tooltip.risus.spawnentity.risus.singer", "Singer");
+		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
+		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");

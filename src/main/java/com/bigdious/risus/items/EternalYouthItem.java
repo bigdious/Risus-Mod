@@ -15,6 +15,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -23,6 +24,9 @@ import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+
+import java.util.Objects;
 
 public class EternalYouthItem extends Item {
 	public EternalYouthItem(Properties properties) {
@@ -33,53 +37,56 @@ public class EternalYouthItem extends Item {
 		if (entity.getType().is(RisusTags.Entities.YOUTH_BANNED)) {
 			return InteractionResult.PASS;
 		}
-		boolean did = false;
 		boolean itemUsed = false;
-		boolean killed = false;
-		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
-			targetAnimal.setBaby(true);
-			targetAnimal.setAge(-2000000000);
-			targetAnimal.setInvulnerable(true);
-			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS))) {
-				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-			}
-			did = true;
+		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+			youthEnable(entity.level(), player, entity);
 			itemUsed = true;
 		} else if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() < -24000) {
-			targetAnimal.kill();
 			itemUsed = true;
-			killed = true;
+			youthDisable(entity.level(), player, entity);
 		} else if (entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS) && entity.getAttributes().getInstance(Attributes.SCALE) != null) {
-			if (entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
-				entity.kill();
+			if (Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+				youthDisable(entity.level(), player, entity);
 			} else {
-				entity.setInvulnerable(true);
-				entity.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-				did = true;
+				youthEnable(entity.level(), player, entity);
 			}
 			itemUsed = true;
-		}
-		if (entity.level() instanceof ServerLevel serverLevel) {
-			if (did) {
-				serverLevel.sendParticles(ParticleTypes.POOF, entity.getX(), entity.getRandomY(), entity.getZ(), 20, 0, 0.0, 0.0, 0.1);
-				serverLevel.sendParticles(RisusParticles.RISING_SMILE.get(), entity.getX(), entity.getEyeY(), entity.getZ(), 1, 0, 0.0, 0.0, 0.2);
-			}
-			if (killed) {
-				serverLevel.sendParticles(ParticleTypes.ANGRY_VILLAGER, entity.getX(), entity.getEyeY(), entity.getZ(), 1, 0, 0.0, 0.0, 0.1);
-			}
 		}
 		if (itemUsed) {
 			boolean isClient = entity.level().isClientSide();
 			if (!isClient) {
 				stack.shrink(1);
 			}
-			if (entity.level() instanceof ServerLevel serverLevel) {
-				serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())), entity.getX(), entity.getEyeY(), entity.getZ(), 6, 0, 0.0, 0.0, 0.1);
-			}
-			player.playSound(RisusSoundEvents.ETERNAL_YOUTH_BREAK.get());
 			return InteractionResult.sidedSuccess(isClient);
 		}
-
 		return InteractionResult.PASS;
+	}
+
+	public static void youthEnable(Level level, Player player, LivingEntity target) {
+		if (target instanceof AgeableMob targetAnimal) {
+			targetAnimal.setBaby(true);
+			targetAnimal.setAge(-2000000000);
+			targetAnimal.setInvulnerable(true);
+			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS))) {
+				Objects.requireNonNull(targetAnimal.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			}
+		} else if (target.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) {
+			target.setInvulnerable(true);
+			Objects.requireNonNull(target.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+		}
+		if (level instanceof ServerLevel serverLevel) {
+			serverLevel.sendParticles(ParticleTypes.POOF, target.getX(), target.getRandomY(), target.getZ(), 20, 0, 0.0, 0.0, 0.1);
+			serverLevel.sendParticles(RisusParticles.RISING_SMILE.get(), target.getX(), target.getEyeY(), target.getZ(), 1, 0, 0.0, 0.0, 0.2);
+			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())), target.getX(), target.getEyeY(), target.getZ(), 6, 0, 0.0, 0.0, 0.1);
+		}
+		player.playSound(RisusSoundEvents.ETERNAL_YOUTH_BREAK.get());
+	}
+	public static void youthDisable(Level level, Player player, LivingEntity target){
+		target.kill();
+		if (level instanceof ServerLevel serverLevel) {
+			serverLevel.sendParticles(ParticleTypes.ANGRY_VILLAGER, target.getX(), target.getEyeY(), target.getZ(), 1, 0, 0.0, 0.0, 0.1);
+			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.ETERNAL_YOUTH.get())), target.getX(), target.getEyeY(), target.getZ(), 6, 0, 0.0, 0.0, 0.1);
+		}
+		player.playSound(RisusSoundEvents.ETERNAL_YOUTH_BREAK.get());
 	}
 }
