@@ -216,7 +216,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.ESSENCE_OF_LUST, "Essence of Lust");
 		this.addItem(RisusItems.ESSENCE_OF_MELANCHOLY, "Essence of Melancholy");
 		this.addItem(RisusItems.ESSENCE_OF_SLOTH, "Essence of Sloth");
-		this.addItem(RisusItems.ETERNAL_YOUTH, "Eternal Youth");
+//		this.addItem(RisusItems.ETERNAL_YOUTH, "Eternal Youth");
 		this.addItem(RisusItems.EYE_SANDWICH, "Eye Sandwich");
 		this.addItem(RisusItems.FIRE_SCYTHE, "Flame Fiend");
 		this.addItem(RisusItems.GLUTTONY_SCALES, "Gluttonous Scales");
@@ -230,10 +230,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.MEMORY1_ITEM, "Faded Statue");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
 		this.addItem(RisusItems.ORGANIC_MATTER, "Organic Matter");
-		this.addItem(RisusItems.PURIFYING_PASTE, "Purifying Paste");
+//		this.addItem(RisusItems.PURIFYING_PASTE, "Purifying Paste");
 		this.addItem(RisusItems.RESEARCHERS_NOTES, "Researcher's Notes");
-		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
-		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
+//		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
+//		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Sacrificial Catalyst");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
 		this.addItem(RisusItems.SKIN_BOOTS, "Skin Socks");

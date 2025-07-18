@@ -53,7 +53,7 @@ public class RisusItems {
 	public static final DeferredItem<ArmorItem> SKIN_LEGGINGS = register("skin_leggings", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.LEGGINGS, properties), () -> new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.LEGGINGS, 1)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> SKIN_BOOTS = register("skin_boots", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.BOOTS, 1)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> THREADERS_OF_THE_FIRMAMENT = register("threaders_of_the_firmament", properties -> new RisusArmorItem(RisusArmorMaterials.BLOOD_FEATHER, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(12)).attributes(RisusArmorItem.createBloodFeatherAttributes(ArmorItem.Type.BOOTS, 1)).rarity(BLOOD));
-	public static final DeferredItem<ArmorItem> ROSE_CROWN = register("rose_crown", properties -> new RoseCrownItem(RisusArmorMaterials.REGEN_ROSE, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(6)).attributes(RoseCrownItem.createRoseAttributes(ArmorItem.Type.HELMET, 1)));
+//	public static final DeferredItem<ArmorItem> ROSE_CROWN = register("rose_crown", properties -> new RoseCrownItem(RisusArmorMaterials.REGEN_ROSE, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(6)).attributes(RoseCrownItem.createRoseAttributes(ArmorItem.Type.HELMET, 1)));
 
 	//CONSUMABLES
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 45), 1.0F).build();
@@ -67,8 +67,8 @@ public class RisusItems {
 	public static final DeferredItem<Item> EYE_SANDWICH = register("eye_sandwich", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_SANDWICH_FOOD));
 	public static final DeferredItem<Item> EGG_SAC = register("egg_sac", EggSacItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> TOTEM_OF_UNYIELDING = register("totem_of_unyielding", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
-	public static final DeferredItem<Item> ETERNAL_YOUTH = register("eternal_youth", EternalYouthItem::new, () -> new Item.Properties().rarity(BLOOD));
+//	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
+//	public static final DeferredItem<Item> ETERNAL_YOUTH = register("eternal_youth", EternalYouthItem::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
@@ -99,7 +99,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> MEMORY_CORE = register("memory_core", ExperienceItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", GluttonyScalesItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
-	public static final DeferredItem<Item> PURIFYING_PASTE = register("purifying_paste", Item::new, Item.Properties::new);
+//	public static final DeferredItem<Item> PURIFYING_PASTE = register("purifying_paste", Item::new, Item.Properties::new);
 
 	//COLLECTABLES
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

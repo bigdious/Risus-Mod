@@ -520,26 +520,26 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.ROSE_PETAL.get(), 4)
-			.requires(RisusBlocks.REGEN_ROSE.get())
-			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
-			.save(consumer);
-
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SUGAR, 1)
-			.requires(RisusItems.ROSE_PETAL.get())
-			.requires(RisusItems.ROSE_PETAL.get())
-			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
-			.save(consumer, "petal_to_sugar");
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.ROSE_CROWN.get())
-			.pattern("WBR")
-			.pattern("B B")
-			.pattern("RBW")
-			.define('B', Ingredient.of(Items.ROSE_BUSH))
-			.define('W', Ingredient.of(Items.WITHER_ROSE))
-			.define('R', Ingredient.of(RisusBlocks.REGEN_ROSE.get()))
-			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
-			.save(consumer);
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.ROSE_PETAL.get(), 4)
+//			.requires(RisusBlocks.REGEN_ROSE.get())
+//			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
+//			.save(consumer);
+//
+//		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SUGAR, 1)
+//			.requires(RisusItems.ROSE_PETAL.get())
+//			.requires(RisusItems.ROSE_PETAL.get())
+//			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
+//			.save(consumer, "petal_to_sugar");
+//
+//		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.ROSE_CROWN.get())
+//			.pattern("WBR")
+//			.pattern("B B")
+//			.pattern("RBW")
+//			.define('B', Ingredient.of(Items.ROSE_BUSH))
+//			.define('W', Ingredient.of(Items.WITHER_ROSE))
+//			.define('R', Ingredient.of(RisusBlocks.REGEN_ROSE.get()))
+//			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
+//			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
 				.pattern("BGC")
