@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusBlocks;
@@ -22,6 +23,7 @@ import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -34,6 +36,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -52,7 +55,9 @@ public class OrganicMatterItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-		entity.getData(RisusDataAttachments.EX_BURN).incrementHealth(entity);
+		if (RisusConfig.canonExBurn && entity.getAttribute(Attributes.MAX_HEALTH).getValue() < 20.0F) {
+			entity.getAttributes().getInstance(Attributes.MAX_HEALTH).setBaseValue(entity.getAttributes().getInstance(Attributes.MAX_HEALTH).getBaseValue()+1);
+		} else entity.getData(RisusDataAttachments.EX_BURN).incrementHealth(entity);
 		return super.finishUsingItem(stack, level, entity);
 	}
 

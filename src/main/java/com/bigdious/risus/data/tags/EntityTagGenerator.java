@@ -49,20 +49,26 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(EntityType.TRIDENT)
 		;
 		tag(RisusTags.Entities.YOUTH_BANNED)
-			.add(EntityType.ENDER_DRAGON)
-			.add(EntityType.WITHER)
+			.add(
+				EntityType.ENDER_DRAGON,
+				EntityType.TADPOLE,
+				RisusEntities.QUESTION_MARK.get()
+			)
+
 		;
 		tag(RisusTags.Entities.YOUTH_SHRINKS)
-			.add(EntityType.PARROT)
-			.add(EntityType.ALLAY)
-			.add(EntityType.BAT)
-			.add(EntityType.COD)
-			.add(EntityType.DOLPHIN)
-			.add(EntityType.GLOW_SQUID)
-			.add(EntityType.SQUID)
-			.add(EntityType.PUFFERFISH)
-			.add(EntityType.TROPICAL_FISH)
-			.add(EntityType.SALMON)
+			.add(
+				EntityType.PARROT,
+				EntityType.ALLAY,
+				EntityType.BAT,
+				EntityType.COD,
+				EntityType.DOLPHIN,
+				EntityType.GLOW_SQUID,
+				EntityType.SQUID,
+				EntityType.PUFFERFISH,
+				EntityType.TROPICAL_FISH,
+				EntityType.SALMON
+			)
 
 		;
 	}

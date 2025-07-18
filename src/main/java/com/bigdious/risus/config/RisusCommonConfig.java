@@ -8,6 +8,8 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue illegalLitters;
 	final ModConfigSpec.BooleanValue stripperWorksOnMobArmor;
 	final ModConfigSpec.BooleanValue customWeaponAnims;
+	final ModConfigSpec.BooleanValue canonExBurn;
+	final ModConfigSpec.BooleanValue everythingYouthable;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -29,6 +31,17 @@ public final class RisusCommonConfig {
 			.translation("config.risus.stripper_works_on_mob_armor")
 			.comment(ConfigComments.STRIPPER_WORKS_ON_MOB_ARMOR)
 			.define("stripperWorksOnMobArmor", true);
+
+		this.canonExBurn = builder
+			.translation("config.risus.canon_ex_burn")
+			.comment(ConfigComments.CANON_EX_BURN)
+			.define("canonExBurn", false);
+
+		this.everythingYouthable = builder
+			.translation("config.risus.everything_youthable")
+			.comment(ConfigComments.EVERYTHING_YOUTHABLE)
+			.define("everythingYouthable", false);
+
 		this.customWeaponAnims = builder
 			.translation("config.risus.custom_weapon_anims")
 			.comment(ConfigComments.CUSTOM_WEAPON_ANIMS)

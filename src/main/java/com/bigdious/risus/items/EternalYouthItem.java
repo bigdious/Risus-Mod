@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -14,10 +15,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.frog.Tadpole;
@@ -38,14 +36,14 @@ public class EternalYouthItem extends Item {
 			return InteractionResult.PASS;
 		}
 		boolean itemUsed = false;
-		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 			youthEnable(entity.level(), player, entity);
 			itemUsed = true;
 		} else if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() < -24000) {
 			itemUsed = true;
 			youthDisable(entity.level(), player, entity);
-		} else if (entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS) && entity.getAttributes().getInstance(Attributes.SCALE) != null) {
-			if (Objects.requireNonNull(entity.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+		} else if ((entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable) && entity.getAttributes().getInstance(Attributes.SCALE) != null) {
+			if (entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 				youthDisable(entity.level(), player, entity);
 			} else {
 				youthEnable(entity.level(), player, entity);
@@ -67,12 +65,19 @@ public class EternalYouthItem extends Item {
 			targetAnimal.setBaby(true);
 			targetAnimal.setAge(-2000000000);
 			targetAnimal.setInvulnerable(true);
-			if ((!targetAnimal.isBaby() || targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS))) {
-				Objects.requireNonNull(targetAnimal.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			targetAnimal.setPersistenceRequired();
+			//pay attention to the stacking of (). Correct order is mandatory
+			if ((!targetAnimal.isBaby() && (targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable)) && target.getAttribute(Attributes.SCALE) != null) {
+				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 			}
-		} else if (target.getType().is(RisusTags.Entities.YOUTH_SHRINKS)) {
+			if (target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
+				targetAnimal.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(0.0F);
+			}
+		} else if ((target.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable) && target.getAttribute(Attributes.SCALE) != null && target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
 			target.setInvulnerable(true);
-			Objects.requireNonNull(target.getAttribute(Attributes.SCALE)).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			if (target instanceof Mob mob) mob.setPersistenceRequired();
+			target.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			target.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(0.0F);
 		}
 		if (level instanceof ServerLevel serverLevel) {
 			serverLevel.sendParticles(ParticleTypes.POOF, target.getX(), target.getRandomY(), target.getZ(), 20, 0, 0.0, 0.0, 0.1);

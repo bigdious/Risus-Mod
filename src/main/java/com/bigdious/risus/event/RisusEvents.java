@@ -2,6 +2,7 @@ package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.dispenser.RisusDispenserBehaviours;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.init.*;
@@ -516,13 +517,13 @@ public class RisusEvents {
 		if (event.getItemStack().is(RisusItems.ETERNAL_YOUTH)) {
 			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwnerUUID() == event.getEntity().getUUID()) {
 				boolean itemUsed = false;
-				if (tamableAnimal.getAge() > -24000 && !Objects.requireNonNull(tamableAnimal.getAttribute(Attributes.SCALE)).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+				if (tamableAnimal.getAge() > -24000 && !tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 					EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);
 					itemUsed = true;
 				} else if (tamableAnimal.getAge() < -24000) {
 					itemUsed = true;
 					EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
-				} else if (tamableAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) && tamableAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
+				} else if ((tamableAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable)  && tamableAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
 					if (tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 						EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
 					} else {

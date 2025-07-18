@@ -24,6 +24,8 @@ public class RisusConfig {
 	public static boolean illegalLitters = false;
 	public static boolean stripperWorksOnMobArmor = true;
 	public static boolean customWeaponAnims = true;
+	public static boolean canonExBurn = false;
+	public static boolean everythingYouthable = false;
 
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();
@@ -31,6 +33,8 @@ public class RisusConfig {
 		illegalLitters = config.illegalLitters.get();
 		stripperWorksOnMobArmor = config.stripperWorksOnMobArmor.get();
 		customWeaponAnims = config.customWeaponAnims.get();
+		canonExBurn = config.canonExBurn.get();
+		everythingYouthable = config.everythingYouthable.get();
 
 		MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
 		if (server != null && server.isDedicatedServer()) {

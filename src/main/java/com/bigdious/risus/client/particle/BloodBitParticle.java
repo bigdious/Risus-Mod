@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -37,13 +38,18 @@ public class BloodBitParticle extends TextureSheetParticle {
 		new Vec3(0, 0, 0.5),
 	};
 
-	private static final ParticleRenderType renderType = (tesselator, textureManager) -> {
-
-		RenderSystem.depthMask(false);
-		RenderSystem.enableBlend();
-		RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
-
-		return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
+	private static final ParticleRenderType renderType = new ParticleRenderType() {
+		@Override
+		public @Nullable BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
+			RenderSystem.depthMask(false);
+			RenderSystem.enableBlend();
+			RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+			return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
+		}
+		@Override
+		public boolean isTranslucent() {
+			return false;
+		}
 	};
 
 	protected float scale;
