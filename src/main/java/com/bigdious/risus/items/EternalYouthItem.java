@@ -71,13 +71,16 @@ public class EternalYouthItem extends Item {
 				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 			}
 			if (target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
-				targetAnimal.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(0.0F);
+				targetAnimal.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(-1024.0F);
 			}
 		} else if ((target.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable) && target.getAttribute(Attributes.SCALE) != null && target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
 			target.setInvulnerable(true);
 			if (target instanceof Mob mob) mob.setPersistenceRequired();
 			target.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-			target.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(0.0F);
+			if (target instanceof Player){
+				target.getAttribute(Attributes.ATTACK_DAMAGE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_passive"), -1024F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			} else target.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(-1024.0F);
+
 		}
 		if (level instanceof ServerLevel serverLevel) {
 			serverLevel.sendParticles(ParticleTypes.POOF, target.getX(), target.getRandomY(), target.getZ(), 20, 0, 0.0, 0.0, 0.1);
