@@ -1,0 +1,27 @@
+{
+  "parent": "risus:item/default_warhorn",
+  "overrides": [
+    {
+      "model": "risus:item/warhorn_2",
+      "predicate": {
+        "risus:filled": 1.0
+      }
+    },
+    {
+      "model": "risus:item/warhorn_1",
+      "predicate": {
+        "risus:toot": 1.0
+      }
+    },
+    {
+      "model": "risus:item/warhorn_3",
+      "predicate": {
+        "risus:filled": 1.0,
+        "risus:toot": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "under_texture": "risus:block/no_texture"
+  }
+}

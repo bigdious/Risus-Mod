@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-10T08:57:11.9881266	Risus Item Models
+// 1.21.1	2025-07-20T17:24:12.025414	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -286,6 +286,10 @@ c5d4eaf1769ae9aa7ce8bcc11e3ab4e8a5c0c8b1 assets/risus/models/item/unalloyed_scal
 b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json
 593a2e82a779cb7f0b577677ce31aff17bac3884 assets/risus/models/item/unawakened_vessel_base.json
 e7b13f6aeb60562c279778a751de4448fa6755b0 assets/risus/models/item/veins.json
+79e044b23d4c975874d2c398168b762c2aaa5f3a assets/risus/models/item/warhorn.json
+a264cc298f1066542b3e236c3cde4dbb4ae63a32 assets/risus/models/item/warhorn_1.json
+9a2d685659c79613d1cc8a2438c281f240d1057d assets/risus/models/item/warhorn_2.json
+2402f4c5529c8439deb816386b499d37c60d20b7 assets/risus/models/item/warhorn_3.json
 a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/waxed_copper_amalgam.json
 002385919efb8adfb30cf09274f73e7eaa957f5d assets/risus/models/item/waxed_exposed_copper_amalgam.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/waxed_oxidized_copper_amalgam.json

@@ -236,6 +236,14 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.LOVER_CREAM);
 		singleTex(RisusItems.PURIFYING_PASTE);
 
+		var warhornFilled = withExistingParent("warhorn_2", Risus.prefix("item/default_warhorn")).texture("under_texture", "item/warhorn_1");
+		var warhornFilledTooting = withExistingParent("warhorn_3", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "item/warhorn_1");
+		var warhornTooting = withExistingParent("warhorn_1", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "block/no_texture");
+		withExistingParent(RisusItems.WARHORN.getId().getPath(), Risus.prefix("item/default_warhorn")).texture("under_texture", "block/no_texture")
+			.override().predicate(Risus.prefix("filled"), 1).model(warhornFilled).end()
+			.override().predicate(Risus.prefix("toot"), 1).model(warhornTooting).end()
+			.override().predicate(Risus.prefix("toot"), 1).predicate(Risus.prefix("filled"), 1).model(warhornFilledTooting).end();
+
 		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
 		var crescentCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster_pulled"), Risus.prefix("item/crescent_disaster_item_pulled"), "axe");
 		var croissantCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_named_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster_pulled"), Risus.prefix("item/croissant_disaster_item_pulled"), "axe");
@@ -351,13 +359,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		}
 	}
 
-	public void nameableWeapon(Item item, String location, String renamedVariant) {
-		this.withExistingParent(renamedVariant, this.mcLoc("item/handheld")).texture("layer0", this.modLoc("item/" + location + renamedVariant));
-		this.withExistingParent(this.itemName(item), this.mcLoc("item/handheld"))
-			.texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
-			.override().predicate(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "named"), 1).model(this.getExistingFile(modLoc("item/" + renamedVariant))).end();
-	}
-
 	private void trimmedArmor(DeferredItem<ArmorItem> armor) {
 		ItemModelBuilder base = this.singleTex(armor);
 		for (ItemModelGenerators.TrimModelData trim : ItemModelGenerators.GENERATED_TRIM_MODELS) {
@@ -395,6 +396,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
 			.perspective(ItemDisplayContext.HEAD, heldVersion).end();
 	}
+
+
 
 	@Override
 	public String getName() {

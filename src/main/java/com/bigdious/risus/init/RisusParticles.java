@@ -2,6 +2,7 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
+import com.bigdious.risus.client.particle.MobEffectParticleOption;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -35,15 +36,26 @@ public class RisusParticles {
 		}
 	});
 
+	public static final DeferredHolder<ParticleType<?>, ParticleType<MobEffectParticleOption>> MOB_EFFECT_ICON = PARTICLES.register("mob_effect_icon", () -> new ParticleType<>(false) {
+
+		@Override
+		public MapCodec<MobEffectParticleOption> codec() {
+			return MobEffectParticleOption.codec(RisusParticles.MOB_EFFECT_ICON.get());
+		}
+
+		@Override
+		public StreamCodec<? super RegistryFriendlyByteBuf, MobEffectParticleOption> streamCodec() {
+			return MobEffectParticleOption.streamCodec(RisusParticles.MOB_EFFECT_ICON.get());
+		}
+	});
+
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> ALTERATION_FINISHED = PARTICLES.register("alteration_finished", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TOOTHICAL = PARTICLES.register("toothical", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RISUS_SOUL_PARTICLE = PARTICLES.register("risus_soul", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOODSLASH_TRAIL = PARTICLES.register("bloodslash_trail", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FIERY_ORGANIC_PARTICLE = PARTICLES.register("fiery_organic", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOCK_ORGANIC_PARTICLE = PARTICLES.register("block_organic", () -> new SimpleParticleType(true));
-
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> JOYFLAME = PARTICLES.register("joyflame", () -> new SimpleParticleType(false));
-
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOOD = PARTICLES.register("blood_particle", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOOD_BIT = PARTICLES.register("blood_bit_particle", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DESTINED_DEATH_PARTICLE = PARTICLES.register("destined_death_particle", () -> new SimpleParticleType(true));

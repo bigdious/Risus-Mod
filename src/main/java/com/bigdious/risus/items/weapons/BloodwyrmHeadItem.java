@@ -32,7 +32,7 @@ public class BloodwyrmHeadItem extends Item {
 				ItemStack ammo = player.getInventory().getItem(validSlot);
 				//fuck you -1
 				if (validSlot != -1 && ammo.is(Items.DRAGON_BREATH)) {
-					itemstack.hurtAndBreak(-200, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+					itemstack.hurtAndBreak(-200, player, LivingEntity.getSlotForHand(hand));
 					ItemUtils.createFilledResult(ammo, player, new ItemStack(Items.GLASS_BOTTLE));
 					level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_EMPTY, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				}

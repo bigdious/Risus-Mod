@@ -256,6 +256,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.TOOTHKNOCKER, "Toothknocker");
 		this.addItem(RisusItems.TOTEM_OF_UNYIELDING, "Totem of Unyielding");
 		this.addItem(RisusItems.UNAWAKENED_VESSEL, "Unawakened Vessel");
+		this.addItem(RisusItems.WARHORN, "War Horn");
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");
 		this.add("item.minecraft.splash_potion.effect.mating_frenzy", "Splash Potion of Love");
@@ -405,7 +406,9 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.add("fluid_type.risus.blood_fluid", "Blood");
 		this.add("container.risus.maw_guts", "Gorger Guts");
-		this.add("itemGroup.risus.main", "Risus");
+		this.add("itemGroup.risus.blocks", "Risus Blocks");
+		this.add("itemGroup.risus.gear", "Risus Gear and Materials");
+		this.add("itemGroup.risus.summoners", "Risus Entity Summoners");
 		this.add("gui.risus.alteration_jei", "Alteration");
 		this.add("rarity.risus.blood.name", "Blood");
 		this.add("entity.risus.player_doesnt_own", "I don't like you");

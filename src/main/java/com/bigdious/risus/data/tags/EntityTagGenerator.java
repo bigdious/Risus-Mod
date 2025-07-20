@@ -52,7 +52,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(
 				EntityType.ENDER_DRAGON,
 				EntityType.TADPOLE,
-				RisusEntities.QUESTION_MARK.get()
+				RisusEntities.QUESTION_MARK.get(),
+				RisusEntities.MEMORY1.get()
 			)
 
 		;
@@ -69,7 +70,22 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				EntityType.TROPICAL_FISH,
 				EntityType.SALMON
 			)
-
+		;
+		tag(RisusTags.Entities.HORN_BUFFS)
+			.add(
+				EntityType.IRON_GOLEM,
+				EntityType.SNOW_GOLEM,
+				EntityType.ALLAY,
+				EntityType.HORSE,
+				EntityType.SKELETON_HORSE,
+				EntityType.ZOMBIE_HORSE,
+				EntityType.MULE,
+				EntityType.DONKEY,
+				EntityType.LLAMA,
+				EntityType.STRIDER,
+				EntityType.CAMEL,
+				EntityType.TRADER_LLAMA
+			)
 		;
 	}
 }

@@ -43,6 +43,7 @@ public class ParticleGenerator extends ParticleDescriptionProvider {
 		this.spriteSet(RisusParticles.BLOODSLASH_TRAIL.get(), Risus.prefix("bloodslash_trail"), 7, false);
 		this.specialTexture(RisusParticles.BLOOD.get());
 		this.specialTexture(RisusParticles.BLOOD_BIT.get());
+		this.specialTexture(RisusParticles.MOB_EFFECT_ICON.get());
 		this.sprite(RisusParticles.DESTINED_DEATH_PARTICLE.get(), Risus.prefix("destined_death"));
 		this.sprite(RisusParticles.DRIPPING_BLOOD.get(), Risus.prefix("blood_hang"));
 		this.sprite(RisusParticles.DRIPPING_JOY.get(), Risus.prefix("joy_hang"));

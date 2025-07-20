@@ -1,12 +1,14 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.tags.InstrumentTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -18,10 +20,9 @@ public class RisusTab {
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Risus.MODID);
 
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> INSTANCE = CREATIVE_TABS.register("risus", () -> CreativeModeTab.builder()
-		.title(Component.translatable("itemGroup.risus.main"))
-		.icon(() -> new ItemStack(RisusItems.SMILE.get()))
-		.withTabsImage(RISUS_TABS)
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS = CREATIVE_TABS.register("blocks", () -> CreativeModeTab.builder()
+		.title(Component.translatable("itemGroup.risus.blocks"))
+		.icon(() -> new ItemStack(RisusBlocks.ORGANIC_MATTER_BLOCK.get()))
 		.displayItems(
 			(parameters, output) -> {
 				output.accept(RisusBlocks.ALTERATION_CATALYST.get());
@@ -43,7 +44,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.JOYFLAME_TORCH.get());
 
 				output.accept(RisusBlocks.LAUGHING_OBSIDIAN.get());
-				output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
 				output.accept(RisusBlocks.BLOODWYRM_HEAD.get());
 				output.accept(RisusBlocks.BURNT_HYPHAE.get());
 				output.accept(RisusBlocks.CURVED_RITUAL_BLOCK.get());
@@ -51,7 +51,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.ENGRAVED_BASALT.get());
 				output.accept(RisusBlocks.BLOODWEAVE.get());
 				output.accept(RisusBlocks.WEAVER_NEST.get());
-				output.accept(RisusItems.BLOOD_BUCKET.get());
 				output.accept(RisusBlocks.BLOODY_SPONGE.get());
 				output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 				output.accept(RisusBlocks.SCAB.get());
@@ -73,8 +72,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.BONDKNOT_HANGING_SIGN.get());
 				output.accept(RisusBlocks.BONDKNOT_FENCE.get());
 				output.accept(RisusBlocks.BONDKNOT_FENCE_GATE.get());
-				output.accept(RisusItems.BONDKNOT_BOAT.get());
-				output.accept(RisusItems.GUTS_BOAT.get());
 
 				output.accept(RisusBlocks.CRYSTALLIZED_BONDS.get());
 				output.accept(RisusItems.CRYSTALLIZED_BOND.get());
@@ -101,17 +98,12 @@ public class RisusTab {
 				output.accept(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
 				output.accept(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
 
-				output.accept(RisusItems.SKIN_HELMET.get());
-				output.accept(RisusItems.SKIN_CHESTPLATE.get());
-				output.accept(RisusItems.SKIN_LEGGINGS.get());
-				output.accept(RisusItems.SKIN_BOOTS.get());
 				output.accept(RisusBlocks.SKIN.get());
 				output.accept(RisusBlocks.FLESHY_SKIN.get());
 				output.accept(RisusBlocks.CURVED_FLESHY_SKIN.get());
 				output.accept(RisusBlocks.HAIRY_SKIN.get());
 				output.accept(RisusBlocks.HAIRY_FLESHY_SKIN.get());
 				output.accept(RisusBlocks.HAIRY_CURVED_FLESHY_SKIN.get());
-				output.accept(RisusItems.HAIR_FOLLICLES.get());
 				output.accept(RisusBlocks.TALL_HAIR.get());
 				output.accept(RisusBlocks.BUNDLE_OF_HAIR.get());
 
@@ -150,8 +142,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.FULL_FOSSIL_STAIRS.get());
 				output.accept(RisusBlocks.FULL_FOSSIL_SLAB.get());
 
-				output.accept(RisusItems.STALKER_EYE.get());
-				output.accept(RisusItems.EYE_SANDWICH.get());
 				output.accept(RisusBlocks.EYE_GOLDEN.get());
 				output.accept(RisusBlocks.EYE_ENDER.get());
 				output.accept(RisusBlocks.EYE_BLEACHED.get());
@@ -164,9 +154,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.EYE_EMERALD_GLOWING.get());
 
 				output.accept(RisusBlocks.TEETH.get());
-				output.accept(RisusItems.TOOTHKNOCKER.get());
-				output.accept(RisusItems.HAND_OF_GREED.get());
-				output.accept(RisusItems.GOLD_FIST.get());
 
 				output.accept(RisusBlocks.MAW_GUTS.get());
 				output.accept(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
@@ -189,6 +176,35 @@ public class RisusTab {
 				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get());
 				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get());
 				output.accept(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get());
+
+
+				output.accept(RisusBlocks.BIG_CHAIN.get());
+				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
+				output.accept(RisusBlocks.REGEN_ROSE.get());
+				output.accept(RisusBlocks.NEURON_HEAD.get());
+				output.accept(RisusItems.VEINS.get());
+			}
+		)
+		.build());
+
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GEAR = CREATIVE_TABS.register("gear", () -> CreativeModeTab.builder()
+		.withTabsBefore(BLOCKS.getKey())
+		.title(Component.translatable("itemGroup.risus.gear"))
+		.icon(() -> new ItemStack(RisusItems.RESEARCHERS_NOTES.get()))
+		.displayItems(
+			(parameters, output) -> {
+				output.accept(RisusItems.RESEARCHERS_NOTES.get());
+				output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
+				output.accept(RisusItems.BLOOD_BUCKET.get());
+				output.accept(RisusItems.SKIN_HELMET.get());
+				output.accept(RisusItems.SKIN_CHESTPLATE.get());
+				output.accept(RisusItems.SKIN_LEGGINGS.get());
+				output.accept(RisusItems.SKIN_BOOTS.get());
+				output.accept(RisusItems.STALKER_EYE.get());
+				output.accept(RisusItems.EYE_SANDWICH.get());
+				output.accept(RisusItems.TOOTHKNOCKER.get());
+				output.accept(RisusItems.HAND_OF_GREED.get());
+				output.accept(RisusItems.GOLD_FIST.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
 				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
@@ -206,22 +222,15 @@ public class RisusTab {
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
 				output.accept(RisusItems.ENDLESS_PEARL.get());
-
-				output.accept(RisusBlocks.BIG_CHAIN.get());
-				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusItems.LOVER_CREAM.get());
 				output.accept(RisusItems.ETERNAL_YOUTH.get());
-				output.accept(RisusItems.MEMORY1_ITEM.get());
-				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusItems.ROSE_PETAL.get());
 				output.accept(RisusItems.PURIFYING_PASTE.get());
 				output.accept(RisusItems.ROSE_CROWN.get());
-				output.accept(RisusBlocks.NEURON_HEAD.get());
-				output.accept(RisusItems.VEINS.get());
 				output.accept(RisusItems.GUILTY_APPLE.get());
 				output.accept(RisusItems.EGG_SAC.get());
+				output.accept(RisusItems.HAIR_FOLLICLES.get());
 				output.accept(RisusItems.TOTEM_OF_UNYIELDING.get());
-				output.accept(RisusItems.RESEARCHERS_NOTES.get());
 				output.accept(RisusItems.SMILE_PATTERN.get());
 				output.accept(RisusItems.DIVINITY_PATTERN.get());
 				output.accept(RisusItems.TREE_PATTERN.get());
@@ -230,7 +239,25 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_REGN.get());
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
+				parameters.holders()
+					.lookup(Registries.INSTRUMENT)
+					.ifPresent(
+						instruments -> generateInstrumentTypes(
+							output, instruments, RisusItems.WARHORN.get(), InstrumentTags.GOAT_HORNS, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+						)
+					);
 
+			}).build());
+
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SUMMONERS = CREATIVE_TABS.register("summoners", () -> CreativeModeTab.builder()
+		.withTabsBefore(GEAR.getKey())
+		.title(Component.translatable("itemGroup.risus.summoner"))
+		.icon(() -> new ItemStack(RisusItems.ESSENCE_OF_LUST.get()))
+		.displayItems(
+			(parameters, output) -> {
+				output.accept(RisusItems.BONDKNOT_BOAT.get());
+				output.accept(RisusItems.GUTS_BOAT.get());
+				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusItems.ESSENCE_OF_GLUTTONY.get());
 				output.accept(RisusItems.ESSENCE_OF_MELANCHOLY.get());
 				output.accept(RisusItems.ESSENCE_OF_GREED.get());
@@ -239,7 +266,15 @@ public class RisusTab {
 				output.accept(RisusItems.EMBODIMENT_OF_COURTSHIP.get());
 				output.accept(RisusItems.EMBODIMENT_OF_DEVOTION.get());
 				output.accept(RisusItems.EMBODIMENT_OF_INTIMACY.get());
-			}
-		)
-		.build());
+			}).build());
+
+	private static void generateInstrumentTypes(CreativeModeTab.Output output, HolderLookup<Instrument> instruments, Item item, TagKey<Instrument> instrument, CreativeModeTab.TabVisibility tabVisibility
+	) {
+		instruments.get(instrument)
+			.ifPresent(
+				instrumentNamed -> instrumentNamed.stream()
+					.map(instrumentHolder -> InstrumentItem.create(item, instrumentHolder))
+					.forEach(stack -> output.accept(stack, tabVisibility))
+			);
+	}
 }

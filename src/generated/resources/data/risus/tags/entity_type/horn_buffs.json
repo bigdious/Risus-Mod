@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:iron_golem",
+    "minecraft:snow_golem",
+    "minecraft:allay",
+    "minecraft:horse",
+    "minecraft:skeleton_horse",
+    "minecraft:zombie_horse",
+    "minecraft:mule",
+    "minecraft:donkey",
+    "minecraft:llama",
+    "minecraft:strider",
+    "minecraft:camel",
+    "minecraft:trader_llama"
+  ]
+}

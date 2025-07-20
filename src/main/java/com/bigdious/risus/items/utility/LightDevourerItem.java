@@ -1,11 +1,10 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.utility;
 
 import com.bigdious.risus.blocks.DarknessBlock;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;

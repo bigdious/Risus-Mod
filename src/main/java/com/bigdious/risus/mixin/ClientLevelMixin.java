@@ -1,8 +1,7 @@
 package com.bigdious.risus.mixin;
 
-import com.bigdious.risus.blocks.DarknessBlock;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.items.LightDevourerItem;
+import com.bigdious.risus.items.utility.LightDevourerItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.entity.player.Player;

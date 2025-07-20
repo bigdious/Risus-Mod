@@ -1,6 +1,8 @@
-package com.bigdious.risus.client;
+package com.bigdious.risus.client.event;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.client.MawGutsScreen;
+import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.model.entity.player.AngelWingsModel;
@@ -14,6 +16,7 @@ import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
 import com.bigdious.risus.client.render.player.ThreadWingsLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
+import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
@@ -96,6 +99,7 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerItemColors);
 		bus.addListener(RisusClientEvents::registerClientExtensions);
 		bus.addListener(EntityRenderersEvent.AddLayers.class, RisusClientEvents::attachRenderLayers);
+		bus.addListener(ColorHandler::registerItemColors);
 
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
@@ -132,7 +136,8 @@ public class RisusClientEvents {
 					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F > 0.9F ? 1.0F : 0.0F;
 				}
 			});
-			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("croissant"), (stack, level, entity, seed) -> stack.getHoverName().getString().equalsIgnoreCase("croissant disaster") ? 1.0F : 0.0F);
+			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("croissant"), (stack, level, entity, seed) ->
+				stack.getHoverName().getString().equalsIgnoreCase("croissant disaster") ? 1.0F : 0.0F);
 			ItemProperties.register(RisusItems.CRESCENT_DISASTER.get(), Risus.prefix("charged"), (stack, level, entity, seed) -> {
 				if (entity == null || entity.getUseItem() != stack) {
 					return 0.0F;
@@ -140,6 +145,14 @@ public class RisusClientEvents {
 					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 10.0F > 0.9F ? 1.0F : 0.0F;
 				}
 			});
+			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("toot"), (stack, level, entity, i) ->
+				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
+			);
+			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) -> {
+				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
+				else return 1;
+			});
+
 		});
 	}
 
@@ -164,6 +177,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
+		event.registerSpecial(RisusParticles.MOB_EFFECT_ICON.get(),new MobEffectIconParticle.Provider());
 	}
 
 	private static void registerScreens(RegisterMenuScreensEvent event) {

@@ -2,7 +2,7 @@ package com.bigdious.risus;
 
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.MawGutsBlockEntity;
-import com.bigdious.risus.client.RisusClientEvents;
+import com.bigdious.risus.client.event.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
 import com.bigdious.risus.config.ConfigSetup;
 import com.bigdious.risus.data.*;

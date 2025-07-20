@@ -1,15 +1,18 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
 import com.bigdious.risus.items.armor.RisusArmorItem;
 import com.bigdious.risus.items.armor.RoseCrownItem;
 import com.bigdious.risus.items.summoners.*;
+import com.bigdious.risus.items.utility.*;
 import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.InstrumentTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -46,6 +49,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(666));
 	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> LITTER = register("litter", LitterItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> WARHORN = register("warhorn", properties -> new WarhornItem(properties, InstrumentTags.GOAT_HORNS), () -> new Item.Properties().stacksTo(1).rarity(BLOOD).fireResistant().component(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));

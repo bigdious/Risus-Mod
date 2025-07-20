@@ -6,7 +6,7 @@ import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.dispenser.RisusDispenserBehaviours;
 import com.bigdious.risus.entity.*;
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.items.EternalYouthItem;
+import com.bigdious.risus.items.utility.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.collect.Maps;
@@ -26,7 +26,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -72,7 +71,6 @@ import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosCapability;
 
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -515,7 +513,7 @@ public class RisusEvents {
 	private static void eternalizeTamables(PlayerInteractEvent.EntityInteract event){
 		//copy of interaction from EternalYouthItem to handle tamed animals (order of events issue)
 		if (event.getItemStack().is(RisusItems.ETERNAL_YOUTH)) {
-			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwnerUUID() == event.getEntity().getUUID()) {
+			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner() == event.getEntity()) {
 				boolean itemUsed = false;
 				if (tamableAnimal.getAge() > -24000 && !tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
 					EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);

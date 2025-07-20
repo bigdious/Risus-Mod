@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.utility;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
@@ -6,25 +6,18 @@ import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
-import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-
-import java.util.Objects;
 
 public class EternalYouthItem extends Item {
 	public EternalYouthItem(Properties properties) {
@@ -36,7 +29,7 @@ public class EternalYouthItem extends Item {
 			return InteractionResult.PASS;
 		}
 		boolean itemUsed = false;
-		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale")) && !(targetAnimal instanceof TamableAnimal)) {
 			youthEnable(entity.level(), player, entity);
 			itemUsed = true;
 		} else if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() < -24000) {

@@ -92,6 +92,7 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> BREAKS_DEPTH_VASES = create("breaks_depth_vases");
 		public static final TagKey<EntityType<?>> YOUTH_BANNED = create("youth_banned");
 		public static final TagKey<EntityType<?>> YOUTH_SHRINKS = create("youth_shrinks");
+		public static final TagKey<EntityType<?>> HORN_BUFFS = create("horn_buffs");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
