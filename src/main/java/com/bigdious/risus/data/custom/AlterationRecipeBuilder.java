@@ -1,21 +1,29 @@
 package com.bigdious.risus.data.custom;
 
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
+import com.bigdious.risus.items.utility.WarhornItem;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.InstrumentTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Instrument;
+import net.minecraft.world.item.InstrumentItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
 import javax.annotation.Nullable;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -31,6 +39,14 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 
 	public static AlterationRecipeBuilder alteration(Ingredient input, ItemLike result) {
 		return new AlterationRecipeBuilder(result, input);
+	}
+
+	public static AlterationRecipeBuilder hornyAlteration(ItemStack input, ItemLike result) {
+		if (input.getItem() instanceof WarhornItem) {
+			Holder<Instrument> holder = input.get(DataComponents.INSTRUMENT).getDelegate();
+			return new AlterationRecipeBuilder((ItemLike) result.asItem().getDefaultInstance().set(DataComponents.INSTRUMENT, holder), Ingredient.of(input));
+		}
+		return new AlterationRecipeBuilder(result, Ingredient.of(input));
 	}
 
 	@Override

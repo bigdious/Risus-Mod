@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-10T08:38:56.864574	Recipes
+// 1.21.1	2025-07-21T10:09:04.593614	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 300676d74d0bc2a1e915f1203aabebc629e0a228 data/minecraft/advancement/recipes/decorations/imit_scaleplate_from_imit_block.json
@@ -91,6 +91,7 @@ f589957142134f25dac506cee758ec42facf4f72 data/risus/advancement/recipes/alterati
 62d001638ff5e3da6a0ca8de73001e110c44394f data/risus/advancement/recipes/alteration/tissue.json
 3ae758df2709a9406a1346105f4151779da5cff9 data/risus/advancement/recipes/alteration/totem_of_unyielding.json
 d2ecc76bc33b204702f987d4acc58ccbfde17be8 data/risus/advancement/recipes/alteration/veins.json
+5fac704cedde1a3d32dc4e109c33d01338b81517 data/risus/advancement/recipes/alteration/warhorn.json
 38632cf620565458ee69d613769a29dc1e83cc4f data/risus/advancement/recipes/alteration/zit.json
 533e2c35d5e653f18160fcb19f7f45b68834ae69 data/risus/advancement/recipes/building_blocks/ashen_spire.json
 cbc6a4b7b2536ce931d2ed9049aa890d879a4429 data/risus/advancement/recipes/building_blocks/bondknot_planks.json
@@ -310,6 +311,7 @@ d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chest
 74bb16182977a201384d016cc602877eac624ba0 data/risus/recipe/alteration/tissue.json
 be52867032b72cde59c9c580b7d060af42306728 data/risus/recipe/alteration/totem_of_unyielding.json
 34b4d87cdd699e04068bbd2b9b905810445a8623 data/risus/recipe/alteration/veins.json
+702b556da507a3c4065358d1d0d203a6d5151c20 data/risus/recipe/alteration/warhorn.json
 825c36bd61168704c516131f63448e774789f21c data/risus/recipe/alteration/zit.json
 89cffd5d0bdb0c0fd7140e91441ac7e682f6872c data/risus/recipe/ashen_spire.json
 836b759378dd997215fcb974816b9fa7119d3828 data/risus/recipe/big_chain.json

@@ -37,11 +37,15 @@ import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -55,7 +59,13 @@ public class WarhornItem extends InstrumentItem {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-		tooltipComponents.add(Component.literal("Potion:" + stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion()).withStyle(ChatFormatting.GRAY));
+		WarhornComponent warhornComponent = stack.get(RisusDataComponents.WARHORN_CONTENT);
+		if (warhornComponent != null) {
+			Objects.requireNonNull(tooltipComponents);
+			warhornComponent.addPotionTooltip(tooltipComponents::add, 1.0F, context.tickRate());
+		} else {
+			tooltipComponents.add(Component.translatable("tooltip.risus.warhorn_dunk").withStyle(ChatFormatting.GRAY));
+		}
 	}
 
 	private Optional<Holder<Instrument>> getInstrument(ItemStack stack) {
@@ -98,7 +108,7 @@ public class WarhornItem extends InstrumentItem {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		WarhornComponent warhornContent = stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
 		Optional<? extends Holder<Instrument>> optional = this.getInstrument(stack);
@@ -107,7 +117,7 @@ public class WarhornItem extends InstrumentItem {
 			Instrument instrument = (Instrument)((Holder)optional.get()).value();
 			player.startUsingItem(hand);
 			play(level, player, instrument);
-			player.getCooldowns().addCooldown(this, 1200);
+			player.getCooldowns().addCooldown(this, 1200-100*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.QUICK_CHARGE))));
 			player.awardStat(Stats.ITEM_USED.get(this));
 			used = true;
 		}
@@ -118,7 +128,7 @@ public class WarhornItem extends InstrumentItem {
 					serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), player.getX(), player.getEyeY(), player.getZ(), 1, 0, 0.0, 0.0, 0.2);
 				}
 			}
-			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D));
+			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D + 4*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
 			if (player.getTeam() != null) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() == player.getTeam()) {
@@ -150,6 +160,7 @@ public class WarhornItem extends InstrumentItem {
 
 
 		if (used) {
+			player.awardStat(Stats.ITEM_USED.get(this));
 			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
 			return InteractionResultHolder.consume(stack);
 		}
@@ -162,23 +173,14 @@ public class WarhornItem extends InstrumentItem {
 		level.gameEvent(GameEvent.INSTRUMENT_PLAY, player.position(), GameEvent.Context.of(player));
 	}
 
-//	@Override
-//	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-//		WarhornComponent warhornContent = stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
-//		if (warhornContent.potion() != PotionContents.EMPTY) {
-//			if (entity instanceof Player player) {
-//				if (!level.isClientSide()) {
-//					for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
-//						if (mobeffectinstance.getEffect().value().isInstantenous()) {
-//							mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, player, mobeffectinstance.getAmplifier(), 1.0D);
-//						} else {
-//							player.addEffect(new MobEffectInstance(mobeffectinstance));
-//						}
-//					}
-//				}
-//				player.awardStat(Stats.ITEM_USED.get(this));
-//			}
-//		}
-//		return super.finishUsingItem(stack, level, entity);
-//	}
+	@Override
+	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(RisusTags.Enchantments.WARHORN_ALLOWED_ENCHANTS);
+	}
+
+	@Override
+	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+		return enchantment.is(RisusTags.Enchantments.WARHORN_ALLOWED_ENCHANTS);
+	}
+
 }

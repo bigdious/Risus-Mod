@@ -10,6 +10,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -90,6 +91,7 @@ public class ToothknockerItem extends SwordItem {
 				pLevel.addParticle(ParticleTypes.POOF, player.getX(), player.getRandomY(), player.getZ(), 0, 0, 0);
 			}
 			itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+			player.awardStat(Stats.ITEM_USED.get(this));
 			player.getCooldowns().addCooldown(this, 30);
 			pLevel.playSound(player, player.getOnPos().above(), RisusSoundEvents.TOOTHKNOCKER_DASH.get(), SoundSource.PLAYERS);
 			return InteractionResultHolder.consume(itemstack);

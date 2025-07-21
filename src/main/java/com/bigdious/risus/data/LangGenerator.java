@@ -290,6 +290,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
+		this.add("tooltip.risus.warhorn_dunk", "Right click with a Potion to fill it.");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
 		this.add("tooltip.risus.spawnentity.risus.angel", "Blood Ophanim");
 		this.add("tooltip.risus.spawnentity.risus.weaver", "Weaver");
@@ -408,7 +409,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("container.risus.maw_guts", "Gorger Guts");
 		this.add("itemGroup.risus.blocks", "Risus Blocks");
 		this.add("itemGroup.risus.gear", "Risus Gear and Materials");
-		this.add("itemGroup.risus.summoners", "Risus Entity Summoners");
+		this.add("itemGroup.risus.summoner", "Risus Entity Summoners");
 		this.add("gui.risus.alteration_jei", "Alteration");
 		this.add("rarity.risus.blood.name", "Blood");
 		this.add("entity.risus.player_doesnt_own", "I don't like you");

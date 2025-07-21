@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -32,6 +33,7 @@ public class LightDevourerItem extends Item {
 			BlockState blockstate1 = RisusBlocks.DARKNESS.get().defaultBlockState().setValue(DarknessBlock.FLUIDLOGGED, SimpleMultiloggedBlock.MultiloggingEnum.getFromFluid(level.getFluidState(blockpos1).getType()));
 			level.setBlock(blockpos1, blockstate1, 11);
 			level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
+			player.awardStat(Stats.ITEM_USED.get(this));
 			return InteractionResult.sidedSuccess(level.isClientSide());
 		} else {
 			return InteractionResult.FAIL;

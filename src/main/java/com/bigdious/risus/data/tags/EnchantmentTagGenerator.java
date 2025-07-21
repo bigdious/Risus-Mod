@@ -104,5 +104,12 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.MULTISHOT,
 			Enchantments.FLAME
 		);
+
+		this.tag(RisusTags.Enchantments.WARHORN_ALLOWED_ENCHANTS).add(
+			Enchantments.UNBREAKING,
+			Enchantments.POWER,
+			Enchantments.MENDING,
+			Enchantments.QUICK_CHARGE
+		);
 	}
 }

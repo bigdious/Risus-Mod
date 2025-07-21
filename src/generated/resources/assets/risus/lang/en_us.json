@@ -472,7 +472,7 @@
   "item.risus.weaver_spawn_egg": "Weaver Spawn Egg",
   "itemGroup.risus.blocks": "Risus Blocks",
   "itemGroup.risus.gear": "Risus Gear and Materials",
-  "itemGroup.risus.summoners": "Risus Entity Summoners",
+  "itemGroup.risus.summoner": "Risus Entity Summoners",
   "jukebox_song.risus.feigr": "Kizbe - Feigr",
   "jukebox_song.risus.mork": "Kizbe - Mǫrk",
   "jukebox_song.risus.rak": "Kizbe - Rak",
@@ -543,6 +543,7 @@
   "tooltip.risus.spawnentity.risus.singer": "Singer",
   "tooltip.risus.spawnentity.risus.stalker": "Stalker",
   "tooltip.risus.spawnentity.risus.weaver": "Weaver",
+  "tooltip.risus.warhorn_dunk": "Right click with a Potion to fill it.",
   "trim_material.risus.gluttony_scales": "Gluttonous Material",
   "trim_material.risus.organic_matter": "Organic Matter Material",
   "trim_material.risus.skin": "Skin Material"

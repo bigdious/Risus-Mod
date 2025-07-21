@@ -3,6 +3,7 @@ package com.bigdious.risus.items.utility;
 import com.bigdious.risus.entity.projectile.ThrownEndlessPearl;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -47,6 +48,7 @@ public class EndlessPearlItem extends EnderpearlItem {
 				thrownEndlessPearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
 				level.addFreshEntity(thrownEndlessPearl);
 				itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+				player.awardStat(Stats.ITEM_USED.get(this));
 			}
 
 			return InteractionResultHolder.success(player.getItemInHand(hand));
