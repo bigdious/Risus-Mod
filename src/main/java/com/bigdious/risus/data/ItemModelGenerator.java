@@ -235,14 +235,23 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.TOTEM_OF_UNYIELDING);
 		singleTex(RisusItems.LOVER_CREAM);
 		singleTex(RisusItems.PURIFYING_PASTE);
+		singleTex(RisusItems.ECHO_PEARL);
 
-		var warhornFilled = withExistingParent("warhorn_2", Risus.prefix("item/default_warhorn")).texture("under_texture", "item/warhorn_1");
-		var warhornFilledTooting = withExistingParent("warhorn_3", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "item/warhorn_1");
-		var warhornTooting = withExistingParent("warhorn_1", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "block/no_texture");
-		withExistingParent(RisusItems.WARHORN.getId().getPath(), Risus.prefix("item/default_warhorn")).texture("under_texture", "block/no_texture")
+		var warhornFilled = withExistingParent("warhorn_2", Risus.prefix("item/default_warhorn")).texture("under_texture", "item/warhorn_1").texture("over_texture", "item/warhorn");
+		var warhornFilledTooting = withExistingParent("warhorn_3", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "item/warhorn_1").texture("over_texture", "item/warhorn");
+		var warhornTooting = withExistingParent("warhorn_1", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "block/no_texture").texture("over_texture", "item/warhorn");
+		withExistingParent(RisusItems.WARHORN.getId().getPath(), Risus.prefix("item/default_warhorn")).texture("under_texture", "block/no_texture").texture("over_texture", "item/warhorn")
 			.override().predicate(Risus.prefix("filled"), 1).model(warhornFilled).end()
 			.override().predicate(Risus.prefix("toot"), 1).model(warhornTooting).end()
 			.override().predicate(Risus.prefix("toot"), 1).predicate(Risus.prefix("filled"), 1).model(warhornFilledTooting).end();
+
+		var hexhornFilled = withExistingParent("hexhorn_2", Risus.prefix("item/default_warhorn")).texture("under_texture", "item/hexhorn_1").texture("over_texture", "item/hexhorn");
+		var hexhornFilledTooting = withExistingParent("hexhorn_3", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "item/hexhorn_1").texture("over_texture", "item/hexhorn");
+		var hexhornTooting = withExistingParent("hexhorn_1", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "block/no_texture").texture("over_texture", "item/hexhorn");
+		withExistingParent(RisusItems.HEXHORN.getId().getPath(), Risus.prefix("item/default_warhorn")).texture("under_texture", "block/no_texture").texture("over_texture", "item/hexhorn")
+			.override().predicate(Risus.prefix("filled"), 1).model(hexhornFilled).end()
+			.override().predicate(Risus.prefix("toot"), 1).model(hexhornTooting).end()
+			.override().predicate(Risus.prefix("toot"), 1).predicate(Risus.prefix("filled"), 1).model(hexhornFilledTooting).end();
 
 		var crescentNamed = handheldItem(RisusItems.CRESCENT_DISASTER, "_named", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/croissant_disaster"), Risus.prefix("item/croissant_disaster_item"), "axe");
 		var crescentCharged = handheldItem(RisusItems.CRESCENT_DISASTER, "_charged", getExistingFile(Risus.prefix("item/base_axe_model")), Risus.prefix("item/crescent_disaster_pulled"), Risus.prefix("item/crescent_disaster_item_pulled"), "axe");

@@ -10,6 +10,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue customWeaponAnims;
 	final ModConfigSpec.BooleanValue canonExBurn;
 	final ModConfigSpec.BooleanValue everythingYouthable;
+	final ModConfigSpec.BooleanValue reverseHornsPlayerBehavior;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -46,5 +47,10 @@ public final class RisusCommonConfig {
 			.translation("config.risus.custom_weapon_anims")
 			.comment(ConfigComments.CUSTOM_WEAPON_ANIMS)
 			.define("customWeaponAnims", true);
+
+		this.reverseHornsPlayerBehavior = builder
+			.translation("config.risus.reverse_horns_player_behavior")
+			.comment(ConfigComments.REVERSE_HORNS_PLAYER_BEHAVIOR)
+			.define("reverseHornsPlayerBehavior", true);
 	}
 }

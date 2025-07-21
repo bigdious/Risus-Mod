@@ -111,5 +111,13 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.MENDING,
 			Enchantments.QUICK_CHARGE
 		);
+
+		this.tag(RisusTags.Enchantments.HEXHORN_ALLOWED_ENCHANTS).add(
+			Enchantments.UNBREAKING,
+			Enchantments.POWER,
+			Enchantments.MENDING,
+			Enchantments.QUICK_CHARGE,
+			Enchantments.FLAME
+		);
 	}
 }

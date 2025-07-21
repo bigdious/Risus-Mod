@@ -3,7 +3,7 @@
     "id": "risus:endless_pearl",
     "count": 1,
     "components": {
-      "minecraft:damage": 9996
+      "minecraft:damage": 9997
     }
   },
   "pattern": [
@@ -14,13 +14,13 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "P": {
-      "item": "minecraft:ender_pearl"
+      "item": "risus:rose_petal"
     },
     "S": {
       "item": "risus:gluttony_scales"
     },
     "R": {
-      "item": "risus:regen_rose"
+      "item": "risus:echo_pearl"
     }
   }
 }

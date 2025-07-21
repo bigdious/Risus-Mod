@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "#under_texture",
-    "layer1": "risus:item/warhorn"
+    "layer1": "#over_texture"
   },
   "display": {
     "thirdperson_righthand": {

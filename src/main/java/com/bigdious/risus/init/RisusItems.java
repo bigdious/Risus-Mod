@@ -50,6 +50,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> LITTER = register("litter", LitterItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> WARHORN = register("warhorn", properties -> new WarhornItem(properties, InstrumentTags.GOAT_HORNS), () -> new Item.Properties().stacksTo(1).durability(256).rarity(BLOOD).fireResistant().component(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY));
+	public static final DeferredItem<Item> HEXHORN = register("hexhorn", properties -> new HexhornItem(properties, InstrumentTags.GOAT_HORNS), () -> new Item.Properties().stacksTo(1).durability(256).rarity(BLOOD).fireResistant().component(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));
@@ -106,6 +107,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> HAIR_FOLLICLES = register("hair_follicles", Item::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", GluttonyScalesItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> PURIFYING_PASTE = register("purifying_paste", Item::new, Item.Properties::new);
+	public static final DeferredItem<Item> ECHO_PEARL = register("echo_pearl", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//COLLECTABLES
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

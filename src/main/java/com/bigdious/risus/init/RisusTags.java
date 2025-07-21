@@ -93,6 +93,8 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> YOUTH_BANNED = create("youth_banned");
 		public static final TagKey<EntityType<?>> YOUTH_SHRINKS = create("youth_shrinks");
 		public static final TagKey<EntityType<?>> HORN_BUFFS = create("horn_buffs");
+		public static final TagKey<EntityType<?>> HEXHORN_BANNED = create("hexhorn_banned");
+		public static final TagKey<EntityType<?>> HEXHORN_ALLOWED = create("hexhorn_allowed");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -109,6 +111,7 @@ public class RisusTags {
 		public static final TagKey<Enchantment> TOOTHKNOCKER_ALLOWED_ENCHANTS = create("toothknocker_allowed_enchants");
 		public static final TagKey<Enchantment> BOOMSTICK_ALLOWED_ENCHANTS = create("boomstick_allowed_enchants");
 		public static final TagKey<Enchantment> WARHORN_ALLOWED_ENCHANTS = create("warhorn_allowed_enchants");
+		public static final TagKey<Enchantment> HEXHORN_ALLOWED_ENCHANTS = create("hexhorn_allowed_enchants");
 
 		private static TagKey<Enchantment> create(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

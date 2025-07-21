@@ -1,7 +1,0 @@
-{
-  "type": "risus:alteration",
-  "input": {
-    "item": "minecraft:goat_horn"
-  },
-  "result": "risus:warhorn"
-}

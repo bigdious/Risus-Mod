@@ -2,19 +2,19 @@
   "parent": "risus:item/default_warhorn",
   "overrides": [
     {
-      "model": "risus:item/warhorn_2",
+      "model": "risus:item/hexhorn_2",
       "predicate": {
         "risus:filled": 1.0
       }
     },
     {
-      "model": "risus:item/warhorn_1",
+      "model": "risus:item/hexhorn_1",
       "predicate": {
         "risus:toot": 1.0
       }
     },
     {
-      "model": "risus:item/warhorn_3",
+      "model": "risus:item/hexhorn_3",
       "predicate": {
         "risus:filled": 1.0,
         "risus:toot": 1.0
@@ -22,7 +22,7 @@
     }
   ],
   "textures": {
-    "over_texture": "risus:item/warhorn",
+    "over_texture": "risus:item/hexhorn",
     "under_texture": "risus:block/no_texture"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "risus:echo_pearl"
+  },
+  "base": {
+    "item": "risus:warhorn"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:hexhorn"
+  },
+  "template": {
+    "item": "risus:blood_feather"
+  }
+}

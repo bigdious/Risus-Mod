@@ -2,12 +2,15 @@ package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusRecipes;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
@@ -18,9 +21,12 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +54,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		int craftingLength = 100;
 
 		if (te.isCrafting) {
-			if (te.getRecipe(level, te.item) == null) {
+			if (!te.item.is(Items.GOAT_HORN) || te.getRecipe(level, te.item) == null) {
 				te.isCrafting = false;
 				te.setChanged();
 			}
@@ -77,7 +83,19 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 			if (te.isCrafting) {
 				AlterationRecipe recipe = te.getRecipe(level, te.item);
-				if (recipe != null) {
+				if (te.item.is(Items.GOAT_HORN)){
+					ItemStack warhorn = new ItemStack(RisusItems.WARHORN.get());
+					if (te.item.get(DataComponents.INSTRUMENT) != null) {
+						Holder<Instrument> holder = te.item.get(DataComponents.INSTRUMENT).getDelegate();
+						warhorn.set(DataComponents.INSTRUMENT, holder);
+					}
+					te.item = warhorn;
+					te.setChanged();
+					te.finishedCrafting = true;
+					te.finishedCounter = 0;
+					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
+				}
+				else if (recipe != null) {
 					te.item = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
 					te.setChanged();
 					te.finishedCrafting = true;

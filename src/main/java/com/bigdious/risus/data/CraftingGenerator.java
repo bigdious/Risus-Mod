@@ -11,6 +11,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -20,6 +21,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class CraftingGenerator extends RecipeProvider {
 	public CraftingGenerator(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
@@ -706,6 +708,11 @@ public class CraftingGenerator extends RecipeProvider {
 				.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 				.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ENDER_PEARL, 3)
+			.requires(RisusItems.ECHO_PEARL.get())
+			.unlockedBy("has_item", has(RisusItems.ECHO_PEARL.get()))
+			.save(consumer, "echo_to_pearl");
+
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.BIG_CHAIN.get(), 4)
 				.pattern("I I")
@@ -1117,12 +1124,51 @@ public class CraftingGenerator extends RecipeProvider {
 
 		smeltingRecipe(RisusBlocks.GRIMSTONE_BRICKS.get(),RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().asItem(),0.1F,1).save(consumer, prefix("smelt_cracked_grimstone_bricks"));
 		smeltingRecipe(RisusBlocks.BLOODY_SPONGE,Blocks.SPONGE.asItem(),0.1F,1).save(consumer, prefix("smelt_bloody_sponge"));
+
+		SmithingTransformRecipeBuilder.smithing(
+			Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+			Ingredient.of(Items.ELYTRA),
+			Ingredient.of(RisusItems.ORGANIC_MATTER),
+			RecipeCategory.TRANSPORTATION,
+			RisusItems.ANGEL_WINGS.get())
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "elytra_to_angel_wings");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+				Ingredient.of(RisusItems.UNAWAKENED_VESSEL),
+				Ingredient.of(RisusItems.ORGANIC_MATTER),
+				RecipeCategory.COMBAT,
+				RisusItems.CRESCENT_DISASTER.get())
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "unawakened_to_crescent");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+				Ingredient.of(RisusItems.BLOODWYRM_HEAD),
+				Ingredient.of(RisusItems.ORGANIC_MATTER),
+				RecipeCategory.COMBAT,
+				RisusItems.BLOODWYRM_HEAD_WEAPON.get())
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "head_to_spewer");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+				Ingredient.of(RisusItems.WARHORN),
+				Ingredient.of(RisusItems.ECHO_PEARL),
+				RecipeCategory.COMBAT,
+				RisusItems.HEXHORN.get())
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "warhorn_to_hexhorn");
+
 	}
 
 	public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike input, ItemLike result, float exp, int count) {
 		return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(input, count)), RecipeCategory.MISC, result, exp, 200)
 			.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(input.asItem()), has(input));
 	}
+
+
 	private ResourceLocation prefix(String prefix) {
 		return ResourceLocation.fromNamespaceAndPath(Risus.MODID, prefix);
 	}

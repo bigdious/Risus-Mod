@@ -1,4 +1,4 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.loottables;
 
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
@@ -87,8 +87,8 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F))))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(LootItem.lootTableItem(Items.ENDER_PEARL))
-					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))));
+					.add(LootItem.lootTableItem(RisusItems.ECHO_PEARL.get()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
 
 		add(RisusEntities.LICKER.get(),
 			LootTable.lootTable()

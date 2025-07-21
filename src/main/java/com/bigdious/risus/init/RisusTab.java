@@ -31,7 +31,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.DISPLAY_NOTCH.get());
 				output.accept(RisusBlocks.LAUGHING_STALK.get());
 
-				output.accept(RisusItems.ORGANIC_MATTER.get());
 				output.accept(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 				output.accept(RisusBlocks.SMILING_REMAINS.get());
 				output.accept(RisusBlocks.ASHEN_REMAINS.get());
@@ -194,6 +193,7 @@ public class RisusTab {
 		.displayItems(
 			(parameters, output) -> {
 				output.accept(RisusItems.RESEARCHERS_NOTES.get());
+				output.accept(RisusItems.ORGANIC_MATTER.get());
 				output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
 				output.accept(RisusItems.BLOOD_BUCKET.get());
 				output.accept(RisusItems.SKIN_HELMET.get());
@@ -221,6 +221,7 @@ public class RisusTab {
 				output.accept(RisusItems.CRESCENT_DISASTER.get());
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
+				output.accept(RisusItems.ECHO_PEARL.get());
 				output.accept(RisusItems.ENDLESS_PEARL.get());
 				output.accept(RisusItems.LOVER_CREAM.get());
 				output.accept(RisusItems.ETERNAL_YOUTH.get());
@@ -244,6 +245,13 @@ public class RisusTab {
 					.ifPresent(
 						instruments -> generateInstrumentTypes(
 							output, instruments, RisusItems.WARHORN.get(), InstrumentTags.GOAT_HORNS, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+						)
+					);
+				parameters.holders()
+					.lookup(Registries.INSTRUMENT)
+					.ifPresent(
+						instruments -> generateInstrumentTypes(
+							output, instruments, RisusItems.HEXHORN.get(), InstrumentTags.GOAT_HORNS, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
 						)
 					);
 

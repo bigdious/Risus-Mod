@@ -87,5 +87,10 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				EntityType.TRADER_LLAMA
 			)
 		;
+		tag(RisusTags.Entities.HEXHORN_BANNED)
+			.add(
+				RisusEntities.MEMORY1.get()
+			)
+		;
 	}
 }

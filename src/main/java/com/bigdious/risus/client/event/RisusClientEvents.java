@@ -152,6 +152,13 @@ public class RisusClientEvents {
 				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
 				else return 1;
 			});
+			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("toot"), (stack, level, entity, i) ->
+				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
+			);
+			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) -> {
+				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
+				else return 1;
+			});
 
 		});
 	}

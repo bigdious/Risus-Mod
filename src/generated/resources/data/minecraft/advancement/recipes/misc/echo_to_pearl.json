@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:goat_horn"
+            "items": "risus:echo_pearl"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:alteration/warhorn"
+        "recipe": "minecraft:echo_to_pearl"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "risus:alteration/warhorn"
+      "minecraft:echo_to_pearl"
     ]
   }
 }

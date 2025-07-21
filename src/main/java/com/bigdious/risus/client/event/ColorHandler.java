@@ -21,5 +21,12 @@ public class ColorHandler {
 			if (contents.potion().potion().isEmpty()) return -1;
 			return contents.potion().getColor();
 		}, RisusItems.WARHORN.get());
+
+		event.register((stack, index) -> {
+			if (index > 0) return -1;
+			var contents = stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
+			if (contents.potion().potion().isEmpty()) return -1;
+			return contents.potion().getColor();
+		}, RisusItems.HEXHORN.get());
 	}
 }

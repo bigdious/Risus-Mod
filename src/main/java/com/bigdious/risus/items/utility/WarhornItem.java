@@ -3,6 +3,7 @@ package com.bigdious.risus.items.utility;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.MobEffectParticleOption;
 import com.bigdious.risus.components.item.WarhornComponent;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.TamableMonster;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
@@ -32,6 +33,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
@@ -63,12 +65,13 @@ public class WarhornItem extends InstrumentItem {
 		if (warhornComponent != null) {
 			Objects.requireNonNull(tooltipComponents);
 			warhornComponent.addPotionTooltip(tooltipComponents::add, 1.0F, context.tickRate());
-		} else {
+		}
+		if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) {
 			tooltipComponents.add(Component.translatable("tooltip.risus.warhorn_dunk").withStyle(ChatFormatting.GRAY));
 		}
 	}
 
-	private Optional<Holder<Instrument>> getInstrument(ItemStack stack) {
+	public Optional<Holder<Instrument>> getInstrument(ItemStack stack) {
 		Holder<Instrument> holder = stack.get(DataComponents.INSTRUMENT);
 		if (holder != null) {
 			return Optional.of(holder);
@@ -103,7 +106,7 @@ public class WarhornItem extends InstrumentItem {
 		return false;
 	}
 
-	private void changeAndConsumeWarhorn(ItemStack stack, Consumer<ItemStack> onDrink) {
+	public void changeAndConsumeWarhorn(ItemStack stack, Consumer<ItemStack> onDrink) {
 		onDrink.accept(stack);
 	}
 
@@ -144,7 +147,7 @@ public class WarhornItem extends InstrumentItem {
 			} else {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living) {
-						if (living instanceof Player || living.getType().is(RisusTags.Entities.HORN_BUFFS) ||(living instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner().is(player)) || (living instanceof TamableMonster tamableMonster && tamableMonster.getOwner().is(player))) {
+						if ((!RisusConfig.reverseHornsPlayerBehavior ? living instanceof Player : living.getType().is(RisusTags.Entities.HORN_BUFFS)) || living.getType().is(RisusTags.Entities.HORN_BUFFS) ||(living instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner() != null && tamableAnimal.getOwner().is(player)) || (living instanceof TamableMonster tamableMonster && tamableMonster.getOwner() != null && tamableMonster.getOwner().is(player))) {
 							for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration()/2, mobeffectinstance.getAmplifier()));
 								if (level instanceof ServerLevel serverLevel) {
@@ -166,7 +169,7 @@ public class WarhornItem extends InstrumentItem {
 		}
 		return InteractionResultHolder.fail(player.getItemInHand(hand));
 	}
-	private static void play(Level level, Player player, Instrument instrument) {
+	public static void play(Level level, Player player, Instrument instrument) {
 		SoundEvent soundevent = instrument.soundEvent().value();
 		float f = instrument.range() / 16.0F;
 		level.playSound(player, player, soundevent, SoundSource.RECORDS, f, 1.0F);

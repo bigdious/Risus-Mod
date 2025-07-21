@@ -1,4 +1,4 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.loottables;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

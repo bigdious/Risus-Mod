@@ -213,6 +213,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.CONCENTRATION_CORE, "Concentration Core");
 		this.addItem(RisusItems.CRESCENT_DISASTER, "Crescent Disaster");
 		this.addItem(RisusItems.CRYSTALLIZED_BOND, "Crystallized Bond");
+		this.addItem(RisusItems.ECHO_PEARL, "Echo Pearl");
 		this.addItem(RisusItems.EGG_SAC, "Egg Sac");
 		this.addItem(RisusItems.EMBODIMENT_OF_COURTSHIP, "Embodiment of Courtship");
 		this.addItem(RisusItems.EMBODIMENT_OF_DEVOTION, "Embodiment of Devotion");
@@ -257,6 +258,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.TOTEM_OF_UNYIELDING, "Totem of Unyielding");
 		this.addItem(RisusItems.UNAWAKENED_VESSEL, "Unawakened Vessel");
 		this.addItem(RisusItems.WARHORN, "War Horn");
+		this.addItem(RisusItems.HEXHORN, "Hex Horn");
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");
 		this.add("item.minecraft.splash_potion.effect.mating_frenzy", "Splash Potion of Love");
