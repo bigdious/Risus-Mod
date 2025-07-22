@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-21T21:35:48.4345356	Recipes
+// 1.21.1	2025-07-22T22:07:30.9490552	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 2900f03497680804a1832b02632e2761c902a096 data/minecraft/advancement/recipes/combat/head_to_spewer.json
@@ -6,6 +6,7 @@
 e89cdada19b19c06854b01bdc845a3019d911c91 data/minecraft/advancement/recipes/combat/warhorn_to_hexhorn.json
 300676d74d0bc2a1e915f1203aabebc629e0a228 data/minecraft/advancement/recipes/decorations/imit_scaleplate_from_imit_block.json
 d21ef7ea95f18a3b558bae04af94d09e9bdf52c7 data/minecraft/advancement/recipes/decorations/unalloyed_scaleplate_from_unalloyed_block.json
+a168d19af7f9c398abddda14819d4211b1c26b4c data/minecraft/advancement/recipes/food/petal_to_dye.json
 cc1639e25cc540de0b37652d9338a8557c10a2ed data/minecraft/advancement/recipes/food/petal_to_sugar.json
 ac1d17643497e904a8dc3fc58e6bf43951db7890 data/minecraft/advancement/recipes/misc/adding_hair_to_curved_fleshy_skin.json
 b3f061798f4a76d0be074c9fdecd411272541006 data/minecraft/advancement/recipes/misc/adding_hair_to_fleshy_skin.json
@@ -32,6 +33,7 @@ f25a46aebaa1111ecee3d9e85164555b473491e8 data/minecraft/recipe/decaying_to_decay
 dbf122e6575441993ad55007d1833e8ac1f2e607 data/minecraft/recipe/head_to_spewer.json
 0427a7a66c84c661d355d933174b715545ec2bdc data/minecraft/recipe/imit_scaleplate_from_imit_block.json
 b16c5d261c08fcb7018a0af009436dea6454cd0a data/minecraft/recipe/litter_to_concentration_core.json
+21873dc3a08c6e9c1eeccc4a38c51cc48bf1c8b1 data/minecraft/recipe/petal_to_dye.json
 29cce1758517d4995ffa4e7671b418f7952f91e0 data/minecraft/recipe/petal_to_sugar.json
 5329d088a15b906c614fac014f4b4bde71aa4a43 data/minecraft/recipe/revert_to_golden_eye.json
 65dae9ad1359d3a6f26bdc076cac4033223e749b data/minecraft/recipe/rotting_to_rotted.json
@@ -101,6 +103,7 @@ f589957142134f25dac506cee758ec42facf4f72 data/risus/advancement/recipes/alterati
 62d001638ff5e3da6a0ca8de73001e110c44394f data/risus/advancement/recipes/alteration/tissue.json
 3ae758df2709a9406a1346105f4151779da5cff9 data/risus/advancement/recipes/alteration/totem_of_unyielding.json
 d2ecc76bc33b204702f987d4acc58ccbfde17be8 data/risus/advancement/recipes/alteration/veins.json
+5c2449886a14461cabfddabc19672dad9a815135 data/risus/advancement/recipes/alteration/wretched_charm.json
 38632cf620565458ee69d613769a29dc1e83cc4f data/risus/advancement/recipes/alteration/zit.json
 533e2c35d5e653f18160fcb19f7f45b68834ae69 data/risus/advancement/recipes/building_blocks/ashen_spire.json
 cbc6a4b7b2536ce931d2ed9049aa890d879a4429 data/risus/advancement/recipes/building_blocks/bondknot_planks.json
@@ -256,6 +259,7 @@ d8c5860baafb46ee3e5dc4760dcac6c0f087c0c7 data/risus/advancement/recipes/redstone
 83eac5c1499c5f0967758387a03036ab9a659729 data/risus/advancement/recipes/redstone/bondknot_trapdoor.json
 669ef4200b33fca2bccd7c8c2af325f53a915ae6 data/risus/advancement/recipes/tools/eternal_youth.json
 d0aab298101321b21b3961b6b107cdc0614bdd66 data/risus/advancement/recipes/tools/light_devourer.json
+c19e951e1281ccc9060a05bf77a92a3bd8ebf46b data/risus/advancement/recipes/tools/lucky_charm.json
 5d9aafde7cbe74a8f61052800ba55e0abdccb4bd data/risus/advancement/recipes/transportation/bondknot_boat.json
 a6048b1953c43e6b9efc50a46981ece9b3108c89 data/risus/advancement/recipes/transportation/guts_boat.json
 f6fef0b1ec407eafeccc43b96e0e7010e5c21929 data/risus/recipe/alteration/active_grimstone.json
@@ -320,6 +324,7 @@ d5129a8873cc17b98411964686893fc8bd61701d data/risus/recipe/alteration/skin_chest
 74bb16182977a201384d016cc602877eac624ba0 data/risus/recipe/alteration/tissue.json
 be52867032b72cde59c9c580b7d060af42306728 data/risus/recipe/alteration/totem_of_unyielding.json
 34b4d87cdd699e04068bbd2b9b905810445a8623 data/risus/recipe/alteration/veins.json
+d92a17ed30a8a80b6fac4ff303aee43b601261b1 data/risus/recipe/alteration/wretched_charm.json
 825c36bd61168704c516131f63448e774789f21c data/risus/recipe/alteration/zit.json
 89cffd5d0bdb0c0fd7140e91441ac7e682f6872c data/risus/recipe/ashen_spire.json
 836b759378dd997215fcb974816b9fa7119d3828 data/risus/recipe/big_chain.json
@@ -417,6 +422,7 @@ abc0a00dabf6a9e6a7298c7d7a7faf360c9b56c2 data/risus/recipe/joyflame_campfire.jso
 5bdacb023206fc0592572f167d763dcb24326f00 data/risus/recipe/joyflame_torch.json
 305081d34461a2aa90a6289df76c7f4b2636bc33 data/risus/recipe/light_devourer.json
 5a050e85334c03102d1b5449aadfa512323cad11 data/risus/recipe/linear_ritual_block.json
+6040f7f728bc5c7ab4d958b4896c7047d39529c8 data/risus/recipe/lucky_charm.json
 5d215a341a0166a04a0a27c6e901071340fd5c47 data/risus/recipe/maw_guts.json
 548cb3c7c5bfc340b50dc7fec6af7ed7f5e16111 data/risus/recipe/organic_matter.json
 994dcb359b8deb8437356054c46d8849dc79faf1 data/risus/recipe/organic_matter_block.json
@@ -424,7 +430,7 @@ abc0a00dabf6a9e6a7298c7d7a7faf360c9b56c2 data/risus/recipe/joyflame_campfire.jso
 120625a60e980e7da3dd9a4981c1f48b37319937 data/risus/recipe/polished_grimstone_slab.json
 c61c40c197f3f48d37bbe5a0a8e23412da34ea3b data/risus/recipe/polished_grimstone_stairs.json
 e5a6b6e225ec9f69e58c6a2c9e23868f281654f8 data/risus/recipe/polished_grimstone_wall.json
-48bd7bd581d0fd8cd62bd85f9d93b2738e966da7 data/risus/recipe/purifying_paste.json
+390550694cee30d1d70ff8858470af2783a0c958 data/risus/recipe/purifying_paste.json
 02af0254d6042f9c895337a684d87127049eaecb data/risus/recipe/rose_banner_pattern.json
 e5187054b4a02838affa9fc429cb3f155d102eec data/risus/recipe/rose_crown.json
 b838077920724f88898be2622fd3893daf19ab0b data/risus/recipe/rose_petal.json

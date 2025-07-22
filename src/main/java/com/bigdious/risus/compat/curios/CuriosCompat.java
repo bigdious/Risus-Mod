@@ -40,7 +40,7 @@ public class CuriosCompat {
 					return builder.build();
 				}
 
-			}, RisusItems.HAND_OF_GREED, RisusItems.BLOOD_FEATHER);
+			}, RisusItems.HAND_OF_GREED, RisusItems.BLOOD_FEATHER, RisusItems.LUCKY_CHARM, RisusItems.WRETCHED_CHARM);
 	}
 
 	public static void registerCurioRenderers(FMLClientSetupEvent event) {
@@ -48,7 +48,10 @@ public class CuriosCompat {
 			CuriosRendererRegistry.register(RisusItems.HAND_OF_GREED.get(), HandCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.BLOODWYRM_HEAD.get(), HeadCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.TOTEM_OF_UNYIELDING.get(), BodyCuriosRenderer::new);
+			CuriosRendererRegistry.register(RisusItems.LUCKY_CHARM.get(), BodyCuriosRenderer::new);
+			CuriosRendererRegistry.register(RisusItems.WRETCHED_CHARM.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.BLOOD_FEATHER.get(), HeadCuriosRenderer::new);
+
 		});
 	}
 }

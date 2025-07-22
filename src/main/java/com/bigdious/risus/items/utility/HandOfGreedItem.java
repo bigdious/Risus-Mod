@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.utility;
 
 import com.bigdious.risus.Risus;
 import net.minecraft.ChatFormatting;
@@ -8,8 +8,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import top.theillusivec4.curios.api.CurioAttributeModifiers;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import java.util.List;
 

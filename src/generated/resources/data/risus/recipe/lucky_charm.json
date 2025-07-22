@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "minecraft:rabbit_foot"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "P": {
+      "item": "risus:rose_petal"
+    }
+  },
+  "pattern": [
+    "G",
+    "P",
+    "F"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:lucky_charm"
+  }
+}

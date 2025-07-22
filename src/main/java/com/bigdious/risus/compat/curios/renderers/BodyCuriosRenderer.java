@@ -26,6 +26,15 @@ public class BodyCuriosRenderer implements ICurioRenderer {
 				stack.translate(0.50D, -0.25D, 0.15D);
 				stack.scale(-0.4F, -0.4F, 0.4F);
 			}
+			if (item.is(RisusItems.LUCKY_CHARM)) {
+				stack.translate(-0.16D, 0.7D, -0.15D);
+				stack.scale(-0.4F, -0.4F, 0.4F);
+			}
+			if (item.is(RisusItems.WRETCHED_CHARM)) {
+				stack.translate(0.16D, 0.7D, -0.15D);
+				stack.rotateAround(Axis.YP.rotation(3.15F), 0, 0, 0);
+				stack.scale(-0.4F, -0.4F, 0.4F);
+			}
 			ItemInHandRenderer renderer = new ItemInHandRenderer(Minecraft.getInstance(), Minecraft.getInstance().getEntityRenderDispatcher(), Minecraft.getInstance().getItemRenderer());
 			renderer.renderItem(slotContext.entity(), item, ItemDisplayContext.FIXED, false, stack, buffer, light);
 			stack.popPose();

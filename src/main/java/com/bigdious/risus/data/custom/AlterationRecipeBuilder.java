@@ -41,14 +41,6 @@ public class AlterationRecipeBuilder implements RecipeBuilder {
 		return new AlterationRecipeBuilder(result, input);
 	}
 
-	public static AlterationRecipeBuilder hornyAlteration(ItemStack input, ItemLike result) {
-		if (input.getItem() instanceof WarhornItem) {
-			Holder<Instrument> holder = input.get(DataComponents.INSTRUMENT).getDelegate();
-			return new AlterationRecipeBuilder((ItemLike) result.asItem().getDefaultInstance().set(DataComponents.INSTRUMENT, holder), Ingredient.of(input));
-		}
-		return new AlterationRecipeBuilder(result, Ingredient.of(input));
-	}
-
 	@Override
 	public AlterationRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
 		this.criteria.put(name, criterion);

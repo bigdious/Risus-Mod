@@ -77,6 +77,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.PAPER), RisusItems.SMILE_PATTERN).unlockedBy("has_item", has(Items.PAPER)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.LUCKY_CHARM), RisusItems.WRETCHED_CHARM).unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE)).save(consumer);
+
 		//bone to fossil
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BONE_BLOCK), RisusBlocks.FOSSIL).unlockedBy("has_item", has(Items.BONE_BLOCK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusBlocks.BONE_STAIRS), RisusBlocks.FOSSIL_STAIRS).unlockedBy("has_item", has(Items.BONE_BLOCK)).save(consumer);
@@ -589,6 +591,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.WHITE_DYE, 1)
+			.requires(RisusItems.ROSE_PETAL.get())
+			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
+			.save(consumer, "petal_to_dye");
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SUGAR, 1)
 			.requires(RisusItems.ROSE_PETAL.get())
 			.requires(RisusItems.ROSE_PETAL.get())
@@ -598,9 +605,18 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.PURIFYING_PASTE.get(), 1)
 			.requires(RisusItems.ROSE_PETAL.get())
 			.requires(RisusItems.LOVER_CREAM.get())
-			.requires(RisusBlocks.ORGANIC_MATTER_BLOCK.get())
 			.requires(Items.BOWL)
 			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, RisusItems.LUCKY_CHARM.get())
+			.pattern("G")
+			.pattern("P")
+			.pattern("F")
+			.define('G', Ingredient.of(Items.GOLD_INGOT))
+			.define('P', Ingredient.of(RisusItems.ROSE_PETAL.get()))
+			.define('F', Ingredient.of(Items.RABBIT_FOOT))
+			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.ETERNAL_YOUTH.get(), 1)

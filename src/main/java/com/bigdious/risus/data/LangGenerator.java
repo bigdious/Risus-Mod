@@ -233,9 +233,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.GUTS_BOAT, "Bondknot Boat with Gorger Guts");
 		this.addItem(RisusItems.HAIR_FOLLICLES, "Hair Follicles");
 		this.addItem(RisusItems.HAND_OF_GREED, "Hand of Greed");
+		this.addItem(RisusItems.HEXHORN, "Hex Horn");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
 		this.addItem(RisusItems.LITTER, "Litter");
 		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
+		this.addItem(RisusItems.LUCKY_CHARM, "Lucky Charm");
 		this.addItem(RisusItems.MEMORY1_ITEM, "Faded Statue");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
 		this.addItem(RisusItems.ORGANIC_MATTER, "Organic Matter");
@@ -258,7 +260,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.TOTEM_OF_UNYIELDING, "Totem of Unyielding");
 		this.addItem(RisusItems.UNAWAKENED_VESSEL, "Unawakened Vessel");
 		this.addItem(RisusItems.WARHORN, "War Horn");
-		this.addItem(RisusItems.HEXHORN, "Hex Horn");
+		this.addItem(RisusItems.WRETCHED_CHARM, "Wretched Charm");
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");
 		this.add("item.minecraft.splash_potion.effect.mating_frenzy", "Splash Potion of Love");

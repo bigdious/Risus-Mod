@@ -163,7 +163,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(RisusTags.Items.CURIOS_CHARM).add(
 			RisusItems.TOTEM_OF_UNYIELDING.get(),
-			RisusItems.BLOOD_FEATHER.get()
+			RisusItems.BLOOD_FEATHER.get(),
+			RisusItems.LUCKY_CHARM.get(),
+			RisusItems.WRETCHED_CHARM.get()
 		);
 
 		this.tag(RisusTags.Items.CURIOS_BELT).add(
