@@ -21,6 +21,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
@@ -35,6 +36,7 @@ import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -49,7 +51,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -72,6 +76,7 @@ import top.theillusivec4.curios.api.CuriosCapability;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class RisusEvents {
@@ -96,6 +101,10 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::hurtWings);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::getWaxedRisusStyle);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onLivingDeath);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::luckyCharmMiracle);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::luckyCharmBenefit);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::wretchedCharmDeath);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::wretchedCharmMisfortune);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockPlacedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::roseCrownBehavior);
@@ -407,11 +416,11 @@ public class RisusEvents {
 		}
 	}
 
-	private static boolean curiosForUnyielding(LivingEntity entity) {
+	private static boolean curiosSearch(LivingEntity entity, Item item) {
 		if (ModList.get().isLoaded("curios")) {
 			var handler = entity.getCapability(CuriosCapability.INVENTORY);
 			if (handler == null) return false;
-			var s = handler.findCurios(RisusItems.TOTEM_OF_UNYIELDING.get());
+			var s = handler.findCurios(item);
 			if (s.isEmpty()) return false; else return true;
 		}
 		return false;
@@ -427,7 +436,7 @@ public class RisusEvents {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
 				//this is just barely stupid enough to work
-				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING) || curiosForUnyielding(dyingEntity)) {
+				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING) || curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
 					dyingEntity.setHealth(1.0F);
 					dyingEntity.removeAllEffects();
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4, false, false));
@@ -435,7 +444,7 @@ public class RisusEvents {
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
 					dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
 					level.playSound(null, dyingEntity.blockPosition(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
-					if (curiosForUnyielding(dyingEntity)) {
+					if (curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
 						var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
 						var s = handler.findCurios(RisusItems.TOTEM_OF_UNYIELDING.get());
 						s.get(0).stack().shrink(1);
@@ -445,6 +454,153 @@ public class RisusEvents {
 					}
 					event.setCanceled(true);
 					return;
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	private static void luckyCharmMiracle(@NotNull LivingDeathEvent event) {
+		LivingEntity dyingEntity = event.getEntity();
+		Level level = dyingEntity.level();
+		if (!level.isClientSide()) {
+			for (InteractionHand interactionhand : InteractionHand.values()) {
+				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
+				if ((stack.is(RisusItems.LUCKY_CHARM) || curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) && !event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
+					if (level.random.nextInt(20 - (dyingEntity.getAttribute(Attributes.LUCK).getValue() > 18 ? 19 : (int) dyingEntity.getAttribute(Attributes.LUCK).getValue())) < 2) {
+						dyingEntity.setHealth(1.0F);
+						level.playSound(null, dyingEntity.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
+						if (curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) {
+							var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
+							var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
+							s.get(0).stack().hurtAndBreak(1, dyingEntity, s.get(0).stack().getEquipmentSlot());
+						} else stack.hurtAndBreak(1, dyingEntity, stack.getEquipmentSlot());
+						event.setCanceled(true);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	private static void luckyCharmBenefit(LivingIncomingDamageEvent event) {
+		Entity entity = event.getSource().getEntity();
+		Entity entity2 = event.getEntity();
+		Level level = entity2.level();
+		if (entity instanceof Player attacker && entity2 instanceof LivingEntity victim) {
+			for (InteractionHand interactionhand : InteractionHand.values()) {
+				ItemStack stack = attacker.getItemInHand(interactionhand);
+				if ((stack.is(RisusItems.LUCKY_CHARM) || curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null) {
+					switch (level.random.nextInt(20 - (attacker.getAttribute(Attributes.LUCK).getValue() > 18 ? 19 : (int) attacker.getAttribute(Attributes.LUCK).getValue()))) {
+						case 1 -> {
+							if (attacker.getHealth() < attacker.getMaxHealth()) {
+								attacker.heal(1);
+								level.playSound(null, attacker.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
+								if (curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
+									var handler = attacker.getCapability(CuriosCapability.INVENTORY);
+									var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
+									s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());
+								} else stack.hurtAndBreak(1, attacker, stack.getEquipmentSlot());
+							}
+						}
+						case 0 -> {
+							if (!victim.isDeadOrDying()) {
+								event.setAmount(event.getAmount()*2);
+								level.playSound(null, attacker.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
+								if (curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
+									var handler = attacker.getCapability(CuriosCapability.INVENTORY);
+									var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
+									s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());
+								} else stack.hurtAndBreak(1, attacker, stack.getEquipmentSlot());
+							}
+						}
+						default -> {
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	private static void wretchedCharmDeath(@NotNull LivingDeathEvent event) {
+		LivingEntity dyingEntity = event.getEntity();
+		Level level = dyingEntity.level();
+		if (!level.isClientSide()) {
+			for (InteractionHand interactionhand : InteractionHand.values()) {
+				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
+				if ((stack.is(RisusItems.WRETCHED_CHARM) || curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
+					if (level.random.nextInt(20 + (dyingEntity.getAttribute(Attributes.LUCK).getValue() < -18 ? -19 : (int) dyingEntity.getAttribute(Attributes.LUCK).getValue())) < 2) {
+						level.playSound(null, dyingEntity.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
+						if (curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) {
+							var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
+							var s = handler.findCurios(RisusItems.WRETCHED_CHARM.get());
+							s.get(0).stack().hurtAndBreak(1, dyingEntity, s.get(0).stack().getEquipmentSlot());
+						} else stack.hurtAndBreak(1, dyingEntity, stack.getEquipmentSlot());
+						level.explode(null, level.damageSources().explosion(dyingEntity, null), null, dyingEntity.getX(), dyingEntity.getY(), dyingEntity.getZ(), 5F, false, Level.ExplosionInteraction.BLOCK);
+						return;
+					}
+				}
+			}
+		}
+	}
+
+	private static void wretchedCharmMisfortune(LivingIncomingDamageEvent event) {
+		Entity entity = event.getSource().getEntity();
+		Entity entity2 = event.getEntity();
+		Level level = entity2.level();
+		if (entity instanceof Player attacker && entity2 instanceof LivingEntity victim) {
+			for (InteractionHand interactionhand : InteractionHand.values()) {
+				ItemStack stack = attacker.getItemInHand(interactionhand);
+				if ((stack.is(RisusItems.WRETCHED_CHARM) || curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null && !victim.isDeadOrDying()) {
+					boolean activated = false;
+					switch (level.random.nextInt(100 + (attacker.getAttribute(Attributes.LUCK).getValue() > -18 ? 5 * (int) attacker.getAttribute(Attributes.LUCK).getValue() : -93))) {
+						case 1 -> {
+							LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+							lightning.setPos(victim.getX(), victim.getEyeY(), victim.getZ());
+							level.addFreshEntity(lightning);
+							activated = true;
+						}
+						case 2 -> {
+							victim.igniteForTicks(400);
+							activated = true;
+						}
+						case 3 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 0));
+							activated = true;
+						}
+						case 4 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 0));
+							activated = true;
+						}
+						case 5 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 2));
+							activated = true;
+						}
+						case 6 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+							activated = true;
+						}
+						case 7 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 0));
+							activated = true;
+						}
+						case 0 -> {
+							victim.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 0));
+							activated = true;
+						}
+						default -> {
+						}
+					}
+					if (activated) {
+						if (curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) {
+							var handler = attacker.getCapability(CuriosCapability.INVENTORY);
+							var s = handler.findCurios(RisusItems.WRETCHED_CHARM.get());
+							s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());
+						} else stack.hurtAndBreak(1, attacker, stack.getEquipmentSlot());
+					}
+
 				}
 			}
 		}

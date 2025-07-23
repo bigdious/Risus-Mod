@@ -242,6 +242,15 @@
     ],
     "subtitle": "subtitles.risus.item.light_devourer.place_darkness"
   },
+  "item.lucky_charm.fortune_triggered": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.amethyst_block.resonate"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.lucky_charm.fortune_triggered"
+  },
   "item.organic_matter.use": {
     "sounds": [
       {
@@ -277,6 +286,15 @@
       }
     ],
     "subtitle": "subtitles.risus.item.toothknocker.dash"
+  },
+  "item.wretched_charm.fortune_triggered": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.wither.break_block"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.wretched_charm.fortune_triggered"
   },
   "music.ambient.feigr": {
     "sounds": [

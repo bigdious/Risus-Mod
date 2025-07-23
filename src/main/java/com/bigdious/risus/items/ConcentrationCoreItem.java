@@ -44,7 +44,7 @@ public class ConcentrationCoreItem extends Item {
 		.where('y', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y))
 		.where('z', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Z))
 		.where('x', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X))
-		.where('B', BlockInWorld.hasState(state -> state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))
+		.where('B', BlockInWorld.hasState(state -> state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (RisusConfig.illegalLitters && state.getLightEmission() > 0)))
 		.build();
 
 	private static final BlockPattern RITUAL_SIDEWAYS = BlockPatternBuilder.start()
@@ -62,7 +62,7 @@ public class ConcentrationCoreItem extends Item {
 		.where('y', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y))
 		.where('z', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Z))
 		.where('x', BlockInWorld.hasState(state -> state.is(RisusBlocks.LINEAR_RITUAL_BLOCK.get()) && state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.X))
-		.where('B', BlockInWorld.hasState(state -> state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))
+		.where('B', BlockInWorld.hasState(state -> state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (RisusConfig.illegalLitters && state.getLightEmission() > 0)))
 		.build();
 
 	public ConcentrationCoreItem(Properties properties) {
@@ -74,7 +74,7 @@ public class ConcentrationCoreItem extends Item {
 		Level level = context.getLevel();
 		BlockPos pos = context.getClickedPos();
 		BlockState state = level.getBlockState(pos);
-		if ((state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (RisusConfig.illegalLitters && state.is(RisusTags.Blocks.ILLEGAL_LITTER_ALLOWED_LIGHT_BLOCKS)))) {
+		if ((state.is(RisusTags.Blocks.LITTER_ALLOWED_LIGHT_BLOCKS) || (RisusConfig.illegalLitters && state.getLightEmission() > 0))) {
 			var ritual = this.getUsedRitual(level, pos);
 			if (ritual != null) {
 				level.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());

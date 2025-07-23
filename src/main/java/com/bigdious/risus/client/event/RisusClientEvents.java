@@ -17,6 +17,7 @@ import com.bigdious.risus.client.render.player.HandOfGreedLayer;
 import com.bigdious.risus.client.render.player.ThreadWingsLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
 import com.bigdious.risus.components.item.WarhornComponent;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
@@ -159,6 +160,10 @@ public class RisusClientEvents {
 				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
 				else return 1;
 			});
+			ItemProperties.register(RisusItems.SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.SOUL_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.FIRE_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.CINDERGLEE_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
 
 		});
 	}

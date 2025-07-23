@@ -48,10 +48,12 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_BREAK, SoundEvents.TURTLE_EGG_HATCH, "Baby Spiders are unleashed");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.EGG_SAC_THROW, SoundEvents.SNOWBALL_THROW, "Baby Spiders learn aerodynamics");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ETERNAL_YOUTH_BREAK, SoundEvents.TURTLE_EGG_BREAK, "Eternal Youth releases");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.FORTUNE_TRIGGERED, SoundEvents.AMETHYST_BLOCK_RESONATE, "Fortune triggered");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HAIR_GROW, SoundEvents.SCULK_BLOCK_SPREAD, "Hair grows");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LITTER_LAY_EXCREMENT, SoundEvents.CHICKEN_EGG, "Litter excretes");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover impregnates");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MAW_GUTS_SHATTER, SoundEvents.WITHER_BREAK_BLOCK, "Gorger Guts break");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MISFORTUNE_TRIGGERED, SoundEvents.WITHER_BREAK_BLOCK, "Misfortune triggered");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ORGANIC_MATTER_USE, SoundEvents.SCULK_VEIN_BREAK, "Organic Matter crinkles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.SINGER_SCREAM, SoundEvents.ENDERMAN_SCREAM, "Singer serenades");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.STRIPPER_STRIP, SoundEvents.ARROW_HIT, "Debt is claimed");

@@ -15,8 +15,6 @@ import java.util.Locale;
 import java.util.function.IntFunction;
 
 public class RisusConfig {
-	// -- CLIENT CONFIG --
-	public static boolean animScythes = true;
 
 	// -- COMMON CONFIG --
 	public static SpinningSource spinningSource = SpinningSource.SIGNAL;

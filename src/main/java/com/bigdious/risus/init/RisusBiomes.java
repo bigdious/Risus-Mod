@@ -42,7 +42,7 @@ public class RisusBiomes {
 			.hasPrecipitation(false)
 			.downfall(0.0F)
 			.temperature(0.8F)
-			.specialEffects(addBackgroundLoop(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_MORK)
+			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_MORK)
 				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
 			.build());
 		context.register(COALIFICATION_FEIGR, new Biome.BiomeBuilder()
@@ -51,7 +51,7 @@ public class RisusBiomes {
 			.hasPrecipitation(false)
 			.downfall(0.0F)
 			.temperature(0.8F)
-			.specialEffects(addBackgroundLoop(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_FEIGR)
+			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_FEIGR)
 				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
 			.build());
 	}
@@ -68,9 +68,5 @@ public class RisusBiomes {
 	private static BiomeSpecialEffects.Builder addMusic(BiomeSpecialEffects.Builder builder,  DeferredHolder<SoundEvent, SoundEvent> music) {
 	return builder
 		.backgroundMusic(new Music(music, 3000, 6000, true));
-	}
-	private static BiomeSpecialEffects.Builder addBackgroundLoop(BiomeSpecialEffects.Builder builder,  DeferredHolder<SoundEvent, SoundEvent> music) {
-		return builder
-			.ambientLoopSound(music);
 	}
 }

@@ -54,6 +54,8 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> THOUSAND_BLADE_SLASH = register("item.boat.slash");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TOOTHKNOCKER_CRACK = register("item.toothknocker.crack");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TOOTHKNOCKER_DASH = register("item.toothknocker.dash");
+	public static final DeferredHolder<SoundEvent, SoundEvent> FORTUNE_TRIGGERED = register("item.lucky_charm.fortune_triggered");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MISFORTUNE_TRIGGERED = register("item.wretched_charm.fortune_triggered");
 
 
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {

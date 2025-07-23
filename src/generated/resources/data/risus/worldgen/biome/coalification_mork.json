@@ -2,10 +2,15 @@
   "carvers": {},
   "downfall": 0.0,
   "effects": {
-    "ambient_sound": "risus:music.ambient.mork",
     "fog_color": 6620164,
     "foliage_color": 1842204,
     "grass_color": 1842204,
+    "music": {
+      "max_delay": 6000,
+      "min_delay": 3000,
+      "replace_current_music": true,
+      "sound": "risus:music.ambient.mork"
+    },
     "particle": {
       "options": {
         "type": "risus:risus_soul"
