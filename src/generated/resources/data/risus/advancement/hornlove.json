@@ -1,0 +1,45 @@
+{
+  "parent": "risus:irresistible",
+  "criteria": {
+    "hornlove": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:hexhorn",
+            "predicates": {
+              "minecraft:potion_contents": [
+                "risus:long_mating_frenzy",
+                "risus:mating_frenzy"
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.hornlove.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "risus:mating_frenzy"
+        }
+      },
+      "count": 1,
+      "id": "risus:hexhorn"
+    },
+    "title": {
+      "translate": "advancement.risus.hornlove"
+    }
+  },
+  "requirements": [
+    [
+      "hornlove"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

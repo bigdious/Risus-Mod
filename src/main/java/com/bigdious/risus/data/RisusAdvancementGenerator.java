@@ -267,6 +267,22 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("love", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:cupid");
 
+		AdvancementHolder warlove = Advancement.Builder.advancement().parent(cupid).display(
+				PotionContents.createItemStack(RisusItems.WARHORN.get(), RisusPotions.MATING_FRENZY),
+				Component.translatable("advancement.risus.warlove"),
+				Component.translatable("advancement.risus.warlove.desc"), null, AdvancementType.TASK, true, true, true)
+			.requirements(AdvancementRequirements.Strategy.OR)
+			.addCriterion("warlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.WARHORN.get()).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
+			.save(consumer, "risus:warlove");
+
+		AdvancementHolder hornlove = Advancement.Builder.advancement().parent(warlove).display(
+				PotionContents.createItemStack(RisusItems.HEXHORN.get(), RisusPotions.MATING_FRENZY),
+				Component.translatable("advancement.risus.hornlove"),
+				Component.translatable("advancement.risus.hornlove.desc"), null, AdvancementType.TASK, true, true, true)
+			.requirements(AdvancementRequirements.Strategy.OR)
+			.addCriterion("hornlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.HEXHORN.get()).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
+			.save(consumer, "risus:hornlove");
+
 		AdvancementHolder shave = Advancement.Builder.advancement().parent(fleshing).display(
 				RisusBlocks.HAIRY_SKIN.get(),
 				Component.translatable("advancement.risus.shave"),

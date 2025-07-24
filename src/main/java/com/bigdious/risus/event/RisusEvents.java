@@ -171,6 +171,17 @@ public class RisusEvents {
 		builder.addMix(RisusPotions.LIFE_SMOULDERING, Items.REDSTONE, RisusPotions.LONG_LIFE_SMOULDERING);
 		builder.addMix(RisusPotions.LIFE_SMOULDERING, Items.GLOWSTONE_DUST, RisusPotions.STRONG_LIFE_SMOULDERING);
 
+		builder.addMix(Potions.AWKWARD, RisusItems.LUCKY_CHARM.get(), Potions.LUCK);
+		builder.addMix(Potions.LUCK, Items.REDSTONE, RisusPotions.LONG_LUCK);
+		builder.addMix(Potions.LUCK, Items.GLOWSTONE_DUST, RisusPotions.STRONG_LUCK);
+
+		builder.addMix(Potions.AWKWARD, RisusItems.WRETCHED_CHARM.get(), RisusPotions.BAD_LUCK);
+		builder.addMix(Potions.LUCK, Items.REDSTONE, RisusPotions.LONG_BAD_LUCK);
+		builder.addMix(RisusPotions.BAD_LUCK, Items.GLOWSTONE_DUST, RisusPotions.STRONG_BAD_LUCK);
+
+		builder.addMix(Potions.AWKWARD, RisusBlocks.LIGHT_EXCREMENT.asItem(), RisusPotions.GLOWING);
+		builder.addMix(RisusPotions.GLOWING, Items.REDSTONE, RisusPotions.LONG_GLOWING);
+
 	}
 
 	private static void registerAttributes(EntityAttributeCreationEvent event) {

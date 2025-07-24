@@ -1,11 +1,15 @@
 package com.bigdious.risus.components.item;
 
+import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusPotions;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -15,6 +19,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.Instrument;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionContents;
 
 import java.util.List;
@@ -37,6 +45,12 @@ public record WarhornComponent (PotionContents potion) {
 	public void addPotionTooltip(Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
 		addPotionTooltip(this.potion.getAllEffects(), tooltipAdder, durationFactor, ticksPerSecond);
 	}
+
+//	public static ItemStack createHornItemStack(Item item, Holder<Potion> potion) {
+//		ItemStack itemstack = new ItemStack(item);
+//		itemstack.set(RisusDataComponents.WARHORN_CONTENT, new RisusPotions.MATING_FRENZY);
+//		return itemstack;
+//	}
 
 	public static void addPotionTooltip(Iterable<MobEffectInstance> effects, Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
 		List<Pair<Holder<Attribute>, AttributeModifier>> list = Lists.newArrayList();

@@ -54,7 +54,11 @@ public class HexhornItem extends WarhornItem{
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() != player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
-							living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration()/2, mobeffectinstance.getAmplifier()));
+							if (mobeffectinstance.getEffect().value().isInstantenous()) {
+								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+							} else {
+								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+							}
 							if (level instanceof ServerLevel serverLevel) {
 								serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), maybeBingo.getX(), maybeBingo.getEyeY(), maybeBingo.getZ(), 1, 0, 0.0, 0.0, 0.2);
 							}
@@ -67,7 +71,11 @@ public class HexhornItem extends WarhornItem{
 					if (maybeBingo instanceof LivingEntity living) {
 						if ((living instanceof Monster || living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED) || (RisusConfig.reverseHornsPlayerBehavior ? living instanceof Player : living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED))) && !living.getType().is(RisusTags.Entities.HEXHORN_BANNED) && !(living instanceof TamableMonster tamableMonster && tamableMonster.getOwner() != null)) {
 							for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
-								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration()/2, mobeffectinstance.getAmplifier()));
+								if (mobeffectinstance.getEffect().value().isInstantenous()) {
+									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+								} else {
+									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+								}
 								living.igniteForTicks(stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FLAME)))>0 ? 200 : 0);
 								if (level instanceof ServerLevel serverLevel) {
 									serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), maybeBingo.getX(), maybeBingo.getEyeY(), maybeBingo.getZ(), 1, 0, 0.0, 0.0, 0.2);

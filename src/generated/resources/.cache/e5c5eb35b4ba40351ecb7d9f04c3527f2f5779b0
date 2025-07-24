@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-07T22:24:26.4930154	Advancements
+// 1.21.1	2025-07-24T08:53:51.9056717	Advancements
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
 04bc759fe0dc807c7ed82249b11a01fe70104d06 data/risus/advancement/boomstick.json
 4790785abff988381beaadc68df2d2ec1a8165a3 data/risus/advancement/cream.json
@@ -11,6 +11,7 @@ b85cf8e41d0631d45c910173165c4b682173a7a6 data/risus/advancement/devour.json
 30749e1c77081f1756810674fdd80c5b58b5d92f data/risus/advancement/gluttony.json
 8ab42249142426a11a4980cf08781959a7ba694a data/risus/advancement/great_body.json
 1c53cc1a3b7951623323f7fc62d9e58a503a9014 data/risus/advancement/homewrecker.json
+21e003eff2c15a53853bec3c9cd01cb9d740759d data/risus/advancement/hornlove.json
 5505920bb3c65b003e9c91a48affc6fb71cf2988 data/risus/advancement/irresistible.json
 ba3ea24343a11784fa507b7ad333e61b3e96838e data/risus/advancement/knuckles.json
 22e370e0ff1a6db01916fc1ebcffc1757effe303 data/risus/advancement/lab.json
@@ -31,3 +32,4 @@ d6e518e24cb608d7a3c25d1e09a840b339f19623 data/risus/advancement/step.json
 102620b25ff9476f70c4e88111e48c97a68a14e7 data/risus/advancement/tight.json
 764ca786a5fa975411ca7a2ebbe78822a825e14e data/risus/advancement/unleashed.json
 d17f4b7647a25d79198e8c890f250a90e60a1ff1 data/risus/advancement/warcrimes.json
+0fb5d9c5aa78a241c9b5f850c81c39b7cfb24616 data/risus/advancement/warlove.json

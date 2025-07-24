@@ -285,6 +285,37 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("item.minecraft.tipped_arrow.effect.long_life_smouldering", "Arrow of Life Smouldering");
 		this.add("item.minecraft.tipped_arrow.effect.strong_life_smouldering", "Arrow of Life Smouldering");
 
+		this.add("item.minecraft.potion.effect.long_luck", "Potion of Luck");
+		this.add("item.minecraft.potion.effect.strong_luck", "Potion of Luck");
+		this.add("item.minecraft.splash_potion.effect.long_luck", "Splash Potion of Luck");
+		this.add("item.minecraft.splash_potion.effect.strong_luck", "Splash Potion of Luck");
+		this.add("item.minecraft.lingering_potion.effect.long_luck", "Lingering Potion of Luck");
+		this.add("item.minecraft.lingering_potion.effect.strong_luck", "Lingering Potion of Luck");
+		this.add("item.minecraft.tipped_arrow.effect.long_luck", "Arrow of Luck");
+		this.add("item.minecraft.tipped_arrow.effect.strong_luck", "Arrow of Luck");
+
+		this.add("item.minecraft.potion.effect.bad_luck", "Potion of Misfortune");
+		this.add("item.minecraft.potion.effect.long_bad_luck", "Potion of Misfortune");
+		this.add("item.minecraft.potion.effect.strong_bad_luck", "Potion of Misfortune");
+		this.add("item.minecraft.splash_potion.effect.bad_luck", "Splash Potion of Misfortune");
+		this.add("item.minecraft.splash_potion.effect.long_bad_luck", "Splash Potion of Misfortune");
+		this.add("item.minecraft.splash_potion.effect.strong_bad_luck", "Splash Potion of Misfortune");
+		this.add("item.minecraft.lingering_potion.effect.bad_luck", "Lingering Potion of Misfortune");
+		this.add("item.minecraft.lingering_potion.effect.long_bad_luck", "Lingering Potion of Misfortune");
+		this.add("item.minecraft.lingering_potion.effect.strong_bad_luck", "Lingering Potion of Misfortune");
+		this.add("item.minecraft.tipped_arrow.effect.bad_luck", "Arrow of Misfortune");
+		this.add("item.minecraft.tipped_arrow.effect.long_bad_luck", "Arrow of Misfortune");
+		this.add("item.minecraft.tipped_arrow.effect.strong_bad_luck", "Arrow of Misfortune");
+
+		this.add("item.minecraft.potion.effect.glowing", "Potion of Radiance");
+		this.add("item.minecraft.potion.effect.long_glowing", "Potion of Radiance");
+		this.add("item.minecraft.splash_potion.effect.glowing", "Splash Potion of Radiance");
+		this.add("item.minecraft.splash_potion.effect.long_glowing", "Splash Potion of Radiance");
+		this.add("item.minecraft.lingering_potion.effect.glowing", "Lingering Potion of Radiance");
+		this.add("item.minecraft.lingering_potion.effect.long_glowing", "Lingering Potion of Radiance");
+		this.add("item.minecraft.tipped_arrow.effect.glowing", "Arrow of Radiance");
+		this.add("item.minecraft.tipped_arrow.effect.long_glowing", "Arrow of Radiance");
+
 		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
@@ -367,6 +398,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("devour", "Devoured", "Fall into a Gorger's trap");
 		this.addAdvancement("satiate", "Satiated", "Obtain the Gorger's Guts");
 		this.addAdvancement("cupid", "Cupid", "Bring love to the world");
+		this.addAdvancement("warlove", "Make Love, Not War", "Fill a Warhorn with a Potion of Love");
+		this.addAdvancement("hornlove", "Horny Love", "Fill a Hexhorn with a Potion of Love");
 		this.addAdvancement("irresistible", "Irresistible", "Taste Pleasure");
 		this.addAdvancement("crusade", "Crusade", "Kill an Ophanim");
 		this.addAdvancement("potential", "Potential", "Craft an Unawakened Vessel");

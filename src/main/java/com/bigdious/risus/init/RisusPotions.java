@@ -20,5 +20,15 @@ public class RisusPotions {
 
 	public static final DeferredHolder<Potion, Potion> LIFE_SMOULDERING = POTIONS.register("life_smouldering", () -> new Potion(new MobEffectInstance(RisusMobEffects.EXBURN, 1800), new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 1)));
 	public static final DeferredHolder<Potion, Potion> LONG_LIFE_SMOULDERING = POTIONS.register("long_life_smouldering", () -> new Potion(new MobEffectInstance(RisusMobEffects.EXBURN, 3600), new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1)));
-	public static final DeferredHolder<Potion, Potion> STRONG_LIFE_SMOULDERING = POTIONS.register("strong_life_smouldering", () -> new Potion(new MobEffectInstance(RisusMobEffects.EXBURN, 1800, 1), new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 2)));
+	public static final DeferredHolder<Potion, Potion> STRONG_LIFE_SMOULDERING = POTIONS.register("strong_life_smouldering", () -> new Potion(new MobEffectInstance(RisusMobEffects.EXBURN, 900, 1), new MobEffectInstance(MobEffects.DAMAGE_BOOST, 900, 2)));
+
+	public static final DeferredHolder<Potion, Potion> LONG_LUCK = POTIONS.register("long_luck", () -> new Potion(new MobEffectInstance(MobEffects.LUCK, 12000)));
+	public static final DeferredHolder<Potion, Potion> STRONG_LUCK = POTIONS.register("strong_luck", () -> new Potion(new MobEffectInstance(MobEffects.LUCK, 3000, 1)));
+
+	public static final DeferredHolder<Potion, Potion> BAD_LUCK = POTIONS.register("bad_luck", () -> new Potion(new MobEffectInstance(MobEffects.UNLUCK, 6000)));
+	public static final DeferredHolder<Potion, Potion> LONG_BAD_LUCK = POTIONS.register("long_bad_luck", () -> new Potion(new MobEffectInstance(MobEffects.UNLUCK, 12000)));
+	public static final DeferredHolder<Potion, Potion> STRONG_BAD_LUCK = POTIONS.register("strong_bad_luck", () -> new Potion(new MobEffectInstance(MobEffects.UNLUCK, 3000, 1)));
+
+	public static final DeferredHolder<Potion, Potion> GLOWING = POTIONS.register("glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 4800)));
+	public static final DeferredHolder<Potion, Potion> LONG_GLOWING = POTIONS.register("long_glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 9600)));
 }

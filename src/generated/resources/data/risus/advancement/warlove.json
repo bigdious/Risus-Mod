@@ -1,0 +1,45 @@
+{
+  "parent": "risus:irresistible",
+  "criteria": {
+    "warlove": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:warhorn",
+            "predicates": {
+              "minecraft:potion_contents": [
+                "risus:long_mating_frenzy",
+                "risus:mating_frenzy"
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.warlove.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "risus:mating_frenzy"
+        }
+      },
+      "count": 1,
+      "id": "risus:warhorn"
+    },
+    "title": {
+      "translate": "advancement.risus.warlove"
+    }
+  },
+  "requirements": [
+    [
+      "warlove"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
