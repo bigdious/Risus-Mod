@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionContents;
 
@@ -46,11 +47,12 @@ public record WarhornComponent (PotionContents potion) {
 		addPotionTooltip(this.potion.getAllEffects(), tooltipAdder, durationFactor, ticksPerSecond);
 	}
 
-//	public static ItemStack createHornItemStack(Item item, Holder<Potion> potion) {
-//		ItemStack itemstack = new ItemStack(item);
-//		itemstack.set(RisusDataComponents.WARHORN_CONTENT, new RisusPotions.MATING_FRENZY);
-//		return itemstack;
-//	}
+	public static ItemStack createHornItemStack(Item item, Holder<Potion> potion) {
+		ItemStack itemstack = new ItemStack(item);
+		ItemStack potionstack = PotionContents.createItemStack(Items.POTION, potion);
+		itemstack.set(RisusDataComponents.WARHORN_CONTENT, new WarhornComponent(potionstack.get(DataComponents.POTION_CONTENTS)));
+		return itemstack;
+	}
 
 	public static void addPotionTooltip(Iterable<MobEffectInstance> effects, Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
 		List<Pair<Holder<Attribute>, AttributeModifier>> list = Lists.newArrayList();

@@ -69,6 +69,7 @@ public class Risus {
 		RisusStructures.STRUCTURES.register(bus);
 		RisusDataComponents.COMPONENTS.register(bus);
 		RisusAdvancements.TRIGGERS.register(bus);
+		RisusItemSubPredicates.TYPES.register(bus);
 		if (ModList.get().isLoaded("curios")) loadCuriosCompat(bus);
 
 		bus.addListener(this::registerPackets);

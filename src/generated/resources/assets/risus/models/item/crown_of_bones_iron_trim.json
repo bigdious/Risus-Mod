@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "risus:item/crown_of_bones",
+    "layer1": "minecraft:trims/items/helmet_trim_iron"
+  }
+}

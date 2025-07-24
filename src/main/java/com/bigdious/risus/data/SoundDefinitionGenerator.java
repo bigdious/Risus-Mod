@@ -33,6 +33,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_SKIN, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Skin armor rustles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_THREADS, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Feathers rustle");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_ROSE, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Roses flutter");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_BONE, SoundEvents.ARMOR_EQUIP_CHAIN.value(), "Bones rattle");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_WINGS, SoundEvents.ARMOR_EQUIP_ELYTRA.value(), "Ophanim Wings rustle");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_AMBIENT, SoundEvents.WATER_AMBIENT, "Blood courses");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.BLOOD_SLASH_WHOOSH, SoundEvents.BREEZE_WHIRL, "Blood slash whooshes");

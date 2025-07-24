@@ -152,6 +152,15 @@
     ],
     "subtitle": "subtitles.risus.entity.singer.scream"
   },
+  "item.armor.equip_bone": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.armor.equip_chain"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.armor.equip_bone"
+  },
   "item.armor.equip_rose": {
     "sounds": [
       {

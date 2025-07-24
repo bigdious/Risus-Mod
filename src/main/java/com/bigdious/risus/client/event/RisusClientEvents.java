@@ -3,6 +3,7 @@ package com.bigdious.risus.client.event;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.MawGutsScreen;
 import com.bigdious.risus.client.RisusModelLayers;
+import com.bigdious.risus.client.model.armor.CrownOfBonesModel;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.model.entity.player.AngelWingsModel;
@@ -21,6 +22,7 @@ import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
+import com.bigdious.risus.items.armor.CrownOfBonesItem;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
@@ -36,7 +38,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.player.LocalPlayer;
@@ -47,6 +52,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
@@ -101,6 +107,7 @@ public class RisusClientEvents {
 		bus.addListener(RisusClientEvents::registerClientExtensions);
 		bus.addListener(EntityRenderersEvent.AddLayers.class, RisusClientEvents::attachRenderLayers);
 		bus.addListener(ColorHandler::registerItemColors);
+		bus.addListener(RisusClientEvents::registerClientReloadListeners);
 
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
@@ -236,6 +243,8 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THREAD_WINGS, ThreadWingsModel::create);
 		event.registerLayerDefinition(RisusModelLayers.ANGEL_WINGS, AngelWingsModel::create);
+		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_OUTER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_INNER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -298,6 +307,10 @@ public class RisusClientEvents {
 		event.registerItem(ThousandBladeItem.ItemExtensions.INSTANCE, RisusItems.THOUSAND_BLADE.get());
 		event.registerItem(ScytheItem.ItemExtensions.INSTANCE, RisusItems.SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.DEPTH_VASE.asItem());
+		event.registerItem(
+			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.CROWN_OF_BONES_INNER, RisusModelLayers.CROWN_OF_BONES_OUTER),
+			RisusItems.CROWN_OF_BONES.get()
+		);
 		event.registerFluidType(new IClientFluidTypeExtensions() {
 			@Override
 			public ResourceLocation getStillTexture() {
@@ -334,6 +347,10 @@ public class RisusClientEvents {
 				RenderSystem.setShaderFogEnd(6f);
 			}
 		}, RisusFluids.BLOOD_FLUID_TYPE.get());
+	}
+
+	private static void registerClientReloadListeners(RegisterClientReloadListenersEvent event) {
+		event.registerReloadListener(new RisusSimpleArmorRenderer.ResourceReloadListener());
 	}
 
 	private static void registerOverlays(RegisterGuiLayersEvent event) {

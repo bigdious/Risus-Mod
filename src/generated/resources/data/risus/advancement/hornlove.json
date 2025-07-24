@@ -1,5 +1,5 @@
 {
-  "parent": "risus:irresistible",
+  "parent": "risus:warlove",
   "criteria": {
     "hornlove": {
       "conditions": {
@@ -7,7 +7,7 @@
           {
             "items": "risus:hexhorn",
             "predicates": {
-              "minecraft:potion_contents": [
+              "risus:horns": [
                 "risus:long_mating_frenzy",
                 "risus:mating_frenzy"
               ]
@@ -25,8 +25,10 @@
     "hidden": true,
     "icon": {
       "components": {
-        "minecraft:potion_contents": {
-          "potion": "risus:mating_frenzy"
+        "risus:warhorn_content": {
+          "potion": {
+            "potion": "risus:mating_frenzy"
+          }
         }
       },
       "count": 1,

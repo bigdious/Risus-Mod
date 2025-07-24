@@ -5,6 +5,8 @@ import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
 import com.bigdious.risus.advancement.HolyGroundsTrigger;
 import com.bigdious.risus.advancement.KilledByDevourTrigger;
 import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
+import com.bigdious.risus.advancement.predicate.ItemHornsPredicate;
+import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
@@ -268,19 +270,19 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.save(consumer, "risus:cupid");
 
 		AdvancementHolder warlove = Advancement.Builder.advancement().parent(cupid).display(
-				PotionContents.createItemStack(RisusItems.WARHORN.get(), RisusPotions.MATING_FRENZY),
+				WarhornComponent.createHornItemStack(RisusItems.WARHORN.get(), RisusPotions.MATING_FRENZY),
 				Component.translatable("advancement.risus.warlove"),
 				Component.translatable("advancement.risus.warlove.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("warlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.WARHORN.get()).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
+			.addCriterion("warlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.WARHORN.get()).withSubPredicate(RisusItemSubPredicates.HORNS.get(), new ItemHornsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:warlove");
 
 		AdvancementHolder hornlove = Advancement.Builder.advancement().parent(warlove).display(
-				PotionContents.createItemStack(RisusItems.HEXHORN.get(), RisusPotions.MATING_FRENZY),
+				WarhornComponent.createHornItemStack(RisusItems.HEXHORN.get(), RisusPotions.MATING_FRENZY),
 				Component.translatable("advancement.risus.hornlove"),
 				Component.translatable("advancement.risus.hornlove.desc"), null, AdvancementType.TASK, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("hornlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.HEXHORN.get()).withSubPredicate(ItemSubPredicates.POTIONS, new ItemPotionsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
+			.addCriterion("hornlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.HEXHORN.get()).withSubPredicate(RisusItemSubPredicates.HORNS.get(), new ItemHornsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:hornlove");
 
 		AdvancementHolder shave = Advancement.Builder.advancement().parent(fleshing).display(
