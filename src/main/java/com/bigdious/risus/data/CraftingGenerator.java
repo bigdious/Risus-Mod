@@ -642,6 +642,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.CROWN_OF_BONES.get())
+			.pattern("HBH")
+			.pattern("BSB")
+			.pattern("HBH")
+			.define('B', Ingredient.of(Items.BONE))
+			.define('H', Ingredient.of(RisusTags.Items.HORNS))
+			.define('S', Ingredient.of(Items.SKELETON_SKULL))
+			.unlockedBy("has_item", has(Items.BONE))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.UNAWAKENED_VESSEL.get())
 				.pattern("BGC")
 				.pattern("BGL")

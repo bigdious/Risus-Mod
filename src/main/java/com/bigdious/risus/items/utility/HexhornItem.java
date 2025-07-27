@@ -5,6 +5,7 @@ import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.TamableMonster;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
@@ -15,6 +16,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -49,15 +51,15 @@ public class HexhornItem extends WarhornItem{
 			used = true;
 		}
 		if (warhornContent.potion() != PotionContents.EMPTY) {
-			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D + 4*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
+			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(50D + 10*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
 			if (player.getTeam() != null) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() != player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 							if (mobeffectinstance.getEffect().value().isInstantenous()) {
-								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
 							} else {
-								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 							}
 							if (level instanceof ServerLevel serverLevel) {
 								serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), maybeBingo.getX(), maybeBingo.getEyeY(), maybeBingo.getZ(), 1, 0, 0.0, 0.0, 0.2);
@@ -72,9 +74,9 @@ public class HexhornItem extends WarhornItem{
 						if ((living instanceof Monster || living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED) || (RisusConfig.reverseHornsPlayerBehavior ? living instanceof Player : living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED))) && !living.getType().is(RisusTags.Entities.HEXHORN_BANNED) && !(living instanceof TamableMonster tamableMonster && tamableMonster.getOwner() != null)) {
 							for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 								if (mobeffectinstance.getEffect().value().isInstantenous()) {
-									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
 								} else {
-									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 								}
 								living.igniteForTicks(stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FLAME)))>0 ? 200 : 0);
 								if (level instanceof ServerLevel serverLevel) {

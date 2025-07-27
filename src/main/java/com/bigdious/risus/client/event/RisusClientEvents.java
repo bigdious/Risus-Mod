@@ -54,6 +54,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -154,19 +155,19 @@ public class RisusClientEvents {
 				}
 			});
 			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("toot"), (stack, level, entity, i) ->
-				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
-			);
-			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) -> {
-				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
-				else return 1;
-			});
+				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) ->
+				stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty() ? 0 : 1);
+			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("active"), (stack, level, entity, i) ->
+				entity != null && entity.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0);
+
 			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("toot"), (stack, level, entity, i) ->
-				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
-			);
-			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) -> {
-				if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) return 0;
-				else return 1;
-			});
+				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) ->
+				stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty() ? 0 : 1);
+			ItemProperties.register(RisusItems.HEXHORN.get(), Risus.prefix("active"), (stack, level, entity, i) ->
+				entity != null && entity.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0);
+
 			ItemProperties.register(RisusItems.SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
 			ItemProperties.register(RisusItems.SOUL_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
 			ItemProperties.register(RisusItems.FIRE_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);

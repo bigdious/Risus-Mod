@@ -43,8 +43,8 @@ public record WarhornComponent (PotionContents potion) {
 	public WarhornComponent updateContents(PotionContents potion) {
 		return new WarhornComponent(potion);
 	}
-	public void addPotionTooltip(Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
-		addPotionTooltip(this.potion.getAllEffects(), tooltipAdder, durationFactor, ticksPerSecond);
+	public void addModifiedPotionTooltip(Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
+		addModifiedPotionTooltip(this.potion.getAllEffects(), tooltipAdder, durationFactor, ticksPerSecond);
 	}
 
 	public static ItemStack createHornItemStack(Item item, Holder<Potion> potion) {
@@ -54,7 +54,7 @@ public record WarhornComponent (PotionContents potion) {
 		return itemstack;
 	}
 
-	public static void addPotionTooltip(Iterable<MobEffectInstance> effects, Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
+	public static void addModifiedPotionTooltip(Iterable<MobEffectInstance> effects, Consumer<Component> tooltipAdder, float durationFactor, float ticksPerSecond) {
 		List<Pair<Holder<Attribute>, AttributeModifier>> list = Lists.newArrayList();
 		boolean flag = true;
 

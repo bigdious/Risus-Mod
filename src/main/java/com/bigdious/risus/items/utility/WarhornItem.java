@@ -30,10 +30,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.SlotAccess;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
@@ -65,7 +62,7 @@ public class WarhornItem extends InstrumentItem {
 		WarhornComponent warhornComponent = stack.get(RisusDataComponents.WARHORN_CONTENT);
 		if (warhornComponent != null) {
 			Objects.requireNonNull(tooltipComponents);
-			warhornComponent.addPotionTooltip(tooltipComponents::add, 1.0F, context.tickRate());
+			warhornComponent.addModifiedPotionTooltip(tooltipComponents::add, 1.0F, context.tickRate());
 		}
 		if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) {
 			tooltipComponents.add(Component.translatable("tooltip.risus.warhorn_dunk").withStyle(ChatFormatting.GRAY));
@@ -128,9 +125,9 @@ public class WarhornItem extends InstrumentItem {
 		if (warhornContent.potion() != PotionContents.EMPTY) {
 			for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 				if (mobeffectinstance.getEffect().value().isInstantenous()) {
-					mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, player, mobeffectinstance.getAmplifier(), 1.0D);
+					mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, player, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
 				} else {
-					player.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+					player.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 				}
 				if (level instanceof ServerLevel serverLevel) {
 					serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), player.getX(), player.getEyeY(), player.getZ(), 1, 0, 0.0, 0.0, 0.2);
@@ -142,9 +139,9 @@ public class WarhornItem extends InstrumentItem {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() == player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 							if (mobeffectinstance.getEffect().value().isInstantenous()) {
-								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
 							} else {
-								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0) ));
 							}
 							if (level instanceof ServerLevel serverLevel) {
 								serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), maybeBingo.getX(), maybeBingo.getEyeY(), maybeBingo.getZ(), 1, 0, 0.0, 0.0, 0.2);
@@ -159,9 +156,9 @@ public class WarhornItem extends InstrumentItem {
 						if ((!RisusConfig.reverseHornsPlayerBehavior ? living instanceof Player : living.getType().is(RisusTags.Entities.HORN_BUFFS)) || living.getType().is(RisusTags.Entities.HORN_BUFFS) ||(living instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner() != null && tamableAnimal.getOwner().is(player)) || (living instanceof TamableMonster tamableMonster && tamableMonster.getOwner() != null && tamableMonster.getOwner().is(player))) {
 							for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 								if (mobeffectinstance.getEffect().value().isInstantenous()) {
-									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
 								} else {
-									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / 2, mobeffectinstance.getAmplifier()));
+									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier()+ (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 								}
 								if (level instanceof ServerLevel serverLevel) {
 									serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), maybeBingo.getX(), maybeBingo.getEyeY(), maybeBingo.getZ(), 1, 0, 0.0, 0.0, 0.2);

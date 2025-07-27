@@ -196,6 +196,7 @@ public class RisusTab {
 				output.accept(RisusItems.ORGANIC_MATTER.get());
 				output.accept(RisusItems.BLOODWYRM_HEAD_WEAPON.get());
 				output.accept(RisusItems.BLOOD_BUCKET.get());
+				output.accept(RisusItems.CROWN_OF_BONES.get());
 				output.accept(RisusItems.SKIN_HELMET.get());
 				output.accept(RisusItems.SKIN_CHESTPLATE.get());
 				output.accept(RisusItems.SKIN_LEGGINGS.get());

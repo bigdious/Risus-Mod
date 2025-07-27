@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -65,6 +66,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(ItemTags.TRIM_TEMPLATES).add(
 			RisusItems.BLOOD_FEATHER.get());
+
 		this.tag(RisusTags.Items.EYE).add(
 			RisusBlocks.EYE_EMERALD.asItem(),
 			RisusBlocks.EYE_BLOODSHOT.asItem(),
@@ -76,6 +78,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.EYE_ENDER_GLOWING.asItem(),
 			RisusBlocks.EYE_GOLDEN_GLOWING.asItem(),
 			RisusBlocks.EYE_BLEACHED_GLOWING.asItem());
+
 		this.tag(RisusTags.Items.BASE_TISSUE).add(
 			RisusBlocks.TISSUE.asItem(),
 			RisusBlocks.LIVING_TISSUE.asItem());
@@ -86,7 +89,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				RisusItems.SKIN_LEGGINGS.get(),
 				RisusItems.SKIN_BOOTS.get(),
 				RisusItems.THREADERS_OF_THE_FIRMAMENT.get(),
-				RisusItems.ROSE_CROWN.get()
+				RisusItems.ROSE_CROWN.get(),
+				RisusItems.CROWN_OF_BONES.get()
 		);
 
 		this.tag(Tags.Items.ARMORS).add(
@@ -95,12 +99,15 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.SKIN_HELMET.get(),
 			RisusItems.SKIN_LEGGINGS.get(),
 			RisusItems.THREADERS_OF_THE_FIRMAMENT.get(),
-			RisusItems.ROSE_CROWN.get()
+			RisusItems.ROSE_CROWN.get(),
+			RisusItems.CROWN_OF_BONES.get()
 		);
 
 		this.tag(ItemTags.HEAD_ARMOR).add(
 			RisusItems.SKIN_HELMET.get(),
-			RisusItems.ROSE_CROWN.get()
+			RisusItems.ROSE_CROWN.get(),
+			RisusItems.CROWN_OF_BONES.get()
+
 		);
 		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get());
 		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get());
@@ -151,6 +158,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			Items.ELYTRA,
 			RisusItems.ANGEL_WINGS.get()
 		);
+
+		this.tag(RisusTags.Items.HORNS).add(
+			Items.GOAT_HORN,
+			RisusItems.WARHORN.get(),
+			RisusItems.HEXHORN.get()
+		);
+
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

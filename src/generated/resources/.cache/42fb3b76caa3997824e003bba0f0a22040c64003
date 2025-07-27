@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-24T17:04:15.5307009	Risus Item Models
+// 1.21.1	2025-07-27T23:04:50.4596121	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -147,10 +147,14 @@ f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall
 d74f21cfe1ec8ebaaa5a7389043c32cf3b9ec32f assets/risus/models/item/hand_of_greed.json
 0b3744b69b4ed6640eb32a653d7253185bec2393 assets/risus/models/item/hand_of_greed_base.json
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
-4acce0efb6ea2bfad2141c26930402514a044d3c assets/risus/models/item/hexhorn.json
+a578a51a112313500ac42c9c0b0a283b22a1a3e0 assets/risus/models/item/hexhorn.json
 d3c97918b7bac6b68edd622832da877abc818c18 assets/risus/models/item/hexhorn_1.json
 ea1d1988c1a37b2ad36b434ea66a1425954e84f6 assets/risus/models/item/hexhorn_2.json
 307f8aeb2c2ba31545be201faffe8c7685c84f5b assets/risus/models/item/hexhorn_3.json
+4090d43eeab6504e97ea3e6e7d50988016a58974 assets/risus/models/item/hexhorn_4.json
+54da5b199b051929496448388f9423352b0297c9 assets/risus/models/item/hexhorn_5.json
+6d12c75d4b7496c2a696e07b6efe53987ae1f9b6 assets/risus/models/item/hexhorn_6.json
+9b00c7af8f964d9d31033ecc31e307241e456f28 assets/risus/models/item/hexhorn_7.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/imitation_scaleplate.json
 c86f65a28e5ed900a78de411442415af33eb177c assets/risus/models/item/imitation_scales_block_slab.json
@@ -315,10 +319,14 @@ c5d4eaf1769ae9aa7ce8bcc11e3ab4e8a5c0c8b1 assets/risus/models/item/unalloyed_scal
 b63fbc22ab0fa660a81e4abeb1b68f167051232c assets/risus/models/item/unawakened_vessel.json
 593a2e82a779cb7f0b577677ce31aff17bac3884 assets/risus/models/item/unawakened_vessel_base.json
 e7b13f6aeb60562c279778a751de4448fa6755b0 assets/risus/models/item/veins.json
-3c375dfd62ba5c4918fb519493322c68b415d895 assets/risus/models/item/warhorn.json
+8808f800b8938553b773e514965c61b47895a532 assets/risus/models/item/warhorn.json
 ecd7fb24944e4f93e4c45c48a51bc7390f557aca assets/risus/models/item/warhorn_1.json
 5b5b53064cf16635caf097730981372afa93c225 assets/risus/models/item/warhorn_2.json
 1ce76d6e33ffca557e04434913270b274feb65ed assets/risus/models/item/warhorn_3.json
+05c91e2327df718578ccb816282c4fb176d1a2e7 assets/risus/models/item/warhorn_4.json
+6ae7f9f72029fd74c6f5d1ea1d8d213e52fc2283 assets/risus/models/item/warhorn_5.json
+b28a460163ac7bc11efe773d09aa92a43413c749 assets/risus/models/item/warhorn_6.json
+2156100107c6270b718ce9540efd9e5978747c7e assets/risus/models/item/warhorn_7.json
 a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/waxed_copper_amalgam.json
 002385919efb8adfb30cf09274f73e7eaa957f5d assets/risus/models/item/waxed_exposed_copper_amalgam.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/waxed_oxidized_copper_amalgam.json

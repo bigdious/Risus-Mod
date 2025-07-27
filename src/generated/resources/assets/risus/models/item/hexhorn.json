@@ -14,8 +14,36 @@
       }
     },
     {
+      "model": "risus:item/hexhorn_7",
+      "predicate": {
+        "risus:active": 1.0
+      }
+    },
+    {
+      "model": "risus:item/hexhorn_4",
+      "predicate": {
+        "risus:active": 1.0,
+        "risus:filled": 1.0
+      }
+    },
+    {
+      "model": "risus:item/hexhorn_6",
+      "predicate": {
+        "risus:active": 1.0,
+        "risus:toot": 1.0
+      }
+    },
+    {
       "model": "risus:item/hexhorn_3",
       "predicate": {
+        "risus:filled": 1.0,
+        "risus:toot": 1.0
+      }
+    },
+    {
+      "model": "risus:item/hexhorn_5",
+      "predicate": {
+        "risus:active": 1.0,
         "risus:filled": 1.0,
         "risus:toot": 1.0
       }

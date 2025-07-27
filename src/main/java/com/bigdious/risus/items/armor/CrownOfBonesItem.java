@@ -1,18 +1,12 @@
 package com.bigdious.risus.items.armor;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-
-import java.util.List;
 
 public class CrownOfBonesItem extends RisusArmorItem {
 	public CrownOfBonesItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {

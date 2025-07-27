@@ -56,6 +56,7 @@ public class RisusTags {
 		public static final TagKey<Item> EYE = create("eye");
 		public static final TagKey<Item> BASE_TISSUE = create("base_tissue");
 		public static final TagKey<Item> HURTS_ANGEL_WINGS = create("hurts_angel_wings");
+		public static final TagKey<Item> HORNS = create("horns");
 		public static final TagKey<Item> LIGHTLY_HURTS_ANGEL_WINGS = create("lightly_hurts_angel_wings");
 		public static final TagKey<Item> STOPS_THREAD_WINGS_RENDERING = create("stops_thread_wings_rendering");
 		public static final TagKey<Item> ALTERABLE_GATES = create("alterable_gates");
