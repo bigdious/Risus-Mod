@@ -28,6 +28,13 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation ANGEL_WINGS = register("angel_wings");
 	public static final ModelLayerLocation CROWN_OF_BONES_OUTER = register("crown_of_bones_outer");
 	public static final ModelLayerLocation CROWN_OF_BONES_INNER = register("crown_of_bones_inner");
+	public static final ModelLayerLocation SINNER_ROBES_HELMET_OUTER = register("sinner_robes_helmet_outer");
+	public static final ModelLayerLocation SINNER_ROBES_HELMET_INNER = register("sinner_robes_helmet_inner");
+	public static final ModelLayerLocation SINNER_ROBES_CHESTPLATE_OUTER = register("sinner_robes_chestplate_outer");
+	public static final ModelLayerLocation SINNER_ROBES_CHESTPLATE_INNER = register("sinner_robes_chestplate_inner");
+	public static final ModelLayerLocation SINNER_ROBES_LEGGINGS_OUTER = register("sinner_robes_leggings_outer");
+	public static final ModelLayerLocation SINNER_ROBES_LEGGINGS_INNER = register("sinner_robes_leggings_inner");
+
 
 	private static ModelLayerLocation register(String name) {
 		return register(name, "main");

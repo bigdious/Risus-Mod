@@ -201,6 +201,10 @@ public class RisusTab {
 				output.accept(RisusItems.SKIN_CHESTPLATE.get());
 				output.accept(RisusItems.SKIN_LEGGINGS.get());
 				output.accept(RisusItems.SKIN_BOOTS.get());
+				output.accept(RisusItems.SINNER_ROBES_HELMET.get());
+				output.accept(RisusItems.SINNER_ROBES_CHESTPLATE.get());
+				output.accept(RisusItems.SINNER_ROBES_LEGGINGS.get());
+				output.accept(RisusItems.SINNER_ROBES_BOOTS.get());
 				output.accept(RisusItems.STALKER_EYE.get());
 				output.accept(RisusItems.EYE_SANDWICH.get());
 				output.accept(RisusItems.TOOTHKNOCKER.get());

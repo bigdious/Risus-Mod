@@ -31,6 +31,16 @@ public class RisusArmorItem extends ArmorItem {
 			.add(Attributes.MAX_HEALTH, new AttributeModifier(armorLocation, 5.0, AttributeModifier.Operation.ADD_VALUE), group)
 			.build();
 	}
+
+	public static ItemAttributeModifiers createSinnerAttributes(ArmorItem.Type type, int armor) {
+		ResourceLocation armorLocation = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+		EquipmentSlotGroup group = EquipmentSlotGroup.bySlot(type.getSlot());
+		return ItemAttributeModifiers.builder()
+			.add(Attributes.ARMOR, new AttributeModifier(armorLocation, armor, AttributeModifier.Operation.ADD_VALUE), group)
+			.add(Attributes.MAX_HEALTH, new AttributeModifier(armorLocation, 2.0, AttributeModifier.Operation.ADD_VALUE), group)
+			.build();
+	}
+
 	public static ItemAttributeModifiers createBloodFeatherAttributes(ArmorItem.Type type, int armor) {
 		ResourceLocation armorLocation = ResourceLocation.withDefaultNamespace("armor." + type.getName());
 		EquipmentSlotGroup group = EquipmentSlotGroup.bySlot(type.getSlot());

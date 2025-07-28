@@ -4,6 +4,9 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.MawGutsScreen;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.armor.CrownOfBonesModel;
+import com.bigdious.risus.client.model.armor.SinnerRobeChestplateModel;
+import com.bigdious.risus.client.model.armor.SinnerRobeHelmetModel;
+import com.bigdious.risus.client.model.armor.SinnerRobeLeggingsModel;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.model.entity.player.AngelWingsModel;
@@ -22,7 +25,6 @@ import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
-import com.bigdious.risus.items.armor.CrownOfBonesItem;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
@@ -52,7 +54,6 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -244,8 +245,15 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THREAD_WINGS, ThreadWingsModel::create);
 		event.registerLayerDefinition(RisusModelLayers.ANGEL_WINGS, AngelWingsModel::create);
-		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_OUTER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_OUTER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_INNER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+		//I know this is a lot, but if they aren't kept separate it doesn't work
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_HELMET_OUTER, () -> LayerDefinition.create(SinnerRobeHelmetModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_HELMET_INNER, () -> LayerDefinition.create(SinnerRobeHelmetModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_CHESTPLATE_OUTER, () -> LayerDefinition.create(SinnerRobeChestplateModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_CHESTPLATE_INNER, () -> LayerDefinition.create(SinnerRobeChestplateModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_OUTER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_INNER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 64));
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -312,6 +320,18 @@ public class RisusClientEvents {
 			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.CROWN_OF_BONES_INNER, RisusModelLayers.CROWN_OF_BONES_OUTER),
 			RisusItems.CROWN_OF_BONES.get()
 		);
+		event.registerItem(
+			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_HELMET_INNER, RisusModelLayers.SINNER_ROBES_HELMET_OUTER),
+			RisusItems.SINNER_ROBES_HELMET.get()
+		);
+		event.registerItem(
+			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_CHESTPLATE_INNER, RisusModelLayers.SINNER_ROBES_CHESTPLATE_OUTER),
+			RisusItems.SINNER_ROBES_CHESTPLATE.get()
+			);
+		event.registerItem(
+			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_LEGGINGS_INNER, RisusModelLayers.SINNER_ROBES_LEGGINGS_OUTER),
+			RisusItems.SINNER_ROBES_LEGGINGS.get()
+			);
 		event.registerFluidType(new IClientFluidTypeExtensions() {
 			@Override
 			public ResourceLocation getStillTexture() {

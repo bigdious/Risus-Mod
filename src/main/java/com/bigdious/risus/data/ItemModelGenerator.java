@@ -224,6 +224,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		trimmedArmor(RisusItems.THREADERS_OF_THE_FIRMAMENT);
 		trimmedArmor(RisusItems.ROSE_CROWN);
 		trimmedArmor(RisusItems.CROWN_OF_BONES);
+		trimmedArmor(RisusItems.SINNER_ROBES_HELMET);
+		trimmedArmor(RisusItems.SINNER_ROBES_CHESTPLATE);
+		trimmedArmor(RisusItems.SINNER_ROBES_LEGGINGS);
+		trimmedArmor(RisusItems.SINNER_ROBES_BOOTS);
 		singleTex(RisusItems.ROSE_PETAL);
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);

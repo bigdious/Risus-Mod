@@ -1,0 +1,35 @@
+package com.bigdious.risus.items.armor;
+
+import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusDataComponents;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.common.extensions.IItemExtension;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Locale;
+import java.util.Objects;
+
+public class SinnerRobeHelmetItem extends RisusArmorItem implements IItemExtension {
+	public SinnerRobeHelmetItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
+		super(armorMaterial, type, properties);
+	}
+
+	@Override
+	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
+		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null){
+			switch (stack.get(RisusDataComponents.ABILITY_VARIANT)) {
+				//check SmithingUpgradeRecipe for cases
+				case "skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_skeleton.png");
+				case "zombie": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_zombie.png");
+				case "wither_skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_wither_skeleton.png");
+				case "creeper": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_creeper.png");
+			}
+		}
+		return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_layer_1.png") ;
+	}
+}
