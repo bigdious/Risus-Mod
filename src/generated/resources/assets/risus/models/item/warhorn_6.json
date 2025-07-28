@@ -1,0 +1,7 @@
+{
+  "parent": "risus:item/default_tooting_warhorn",
+  "textures": {
+    "over_texture": "risus:item/warhorn_active",
+    "under_texture": "risus:block/no_texture"
+  }
+}

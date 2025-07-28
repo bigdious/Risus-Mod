@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "H": {
+      "tag": "risus:horns"
+    },
+    "S": {
+      "item": "minecraft:skeleton_skull"
+    }
+  },
+  "pattern": [
+    "HBH",
+    "BSB",
+    "HBH"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:crown_of_bones"
+  }
+}
