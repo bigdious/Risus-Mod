@@ -90,7 +90,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				RisusItems.SKIN_BOOTS.get(),
 				RisusItems.THREADERS_OF_THE_FIRMAMENT.get(),
 				RisusItems.ROSE_CROWN.get(),
-				RisusItems.CROWN_OF_BONES.get()
+				RisusItems.CROWN_OF_BONES.get(),
+				RisusItems.SINNER_ROBES_BOOTS.get(),
+				RisusItems.SINNER_ROBES_LEGGINGS.get(),
+				RisusItems.SINNER_ROBES_CHESTPLATE.get(),
+				RisusItems.SINNER_ROBES_HELMET.get()
 		);
 
 		this.tag(Tags.Items.ARMORS).add(
@@ -100,18 +104,23 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.SKIN_LEGGINGS.get(),
 			RisusItems.THREADERS_OF_THE_FIRMAMENT.get(),
 			RisusItems.ROSE_CROWN.get(),
-			RisusItems.CROWN_OF_BONES.get()
+			RisusItems.CROWN_OF_BONES.get(),
+			RisusItems.SINNER_ROBES_BOOTS.get(),
+			RisusItems.SINNER_ROBES_LEGGINGS.get(),
+			RisusItems.SINNER_ROBES_CHESTPLATE.get(),
+			RisusItems.SINNER_ROBES_HELMET.get()
 		);
 
 		this.tag(ItemTags.HEAD_ARMOR).add(
 			RisusItems.SKIN_HELMET.get(),
 			RisusItems.ROSE_CROWN.get(),
-			RisusItems.CROWN_OF_BONES.get()
+			RisusItems.CROWN_OF_BONES.get(),
+			RisusItems.SINNER_ROBES_HELMET.get()
 
 		);
-		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get());
-		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get());
-		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get(), RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
+		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SINNER_ROBES_CHESTPLATE.get());
+		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get(), RisusItems.SINNER_ROBES_LEGGINGS.get());
+		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get(), RisusItems.THREADERS_OF_THE_FIRMAMENT.get(), RisusItems.SINNER_ROBES_BOOTS.get());
 
 		this.tag(ItemTags.ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 		this.tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());

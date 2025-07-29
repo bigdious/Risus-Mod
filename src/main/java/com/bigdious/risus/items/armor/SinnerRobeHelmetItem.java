@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Locale;
 import java.util.Objects;
 
-public class SinnerRobeHelmetItem extends RisusArmorItem implements IItemExtension {
+public class SinnerRobeHelmetItem extends RisusArmorItem {
 	public SinnerRobeHelmetItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}

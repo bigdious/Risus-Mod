@@ -13,7 +13,7 @@ public class SinnerRobeChestplateModel {
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		var body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(1.0F))
-			.texOffs(44, 0).addBox(-3.0F, 0.0F, -2.0F, 6.0F, 12.0F, 4.0F, new CubeDeformation(0.5F))
+			.texOffs(52, 0).addBox(-3.0F, 0.0F, -2.0F, 6.0F, 12.0F, 0.0F, new CubeDeformation(0.6F))
 			.texOffs(0, 17).addBox(-3.0F, 0.0F, -2.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 			.texOffs(5, 16).addBox(-1.0F, -0.5F, 2.25F, 2.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
 			.texOffs(5, 16).addBox(-1.0F, 5.5F, 2.25F, 2.0F, 6.0F, 1.0F, new CubeDeformation(0.0F))
@@ -25,13 +25,14 @@ public class SinnerRobeChestplateModel {
 			.texOffs(0, 17).addBox(-3.0F, 0.0F, 0.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 			.texOffs(0, 17).addBox(-3.0F, 2.0F, 0.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 			.texOffs(0, 17).addBox(-3.0F, 4.0F, 0.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
-			.texOffs(0, 17).addBox(-3.0F, 6.0F, 0.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+			.texOffs(0, 17).addBox(-3.0F, 6.0F, 0.75F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 0).addBox(-3.0F, 0.0F, 2.0F, 6.0F, 12.0F, 0.0F, new CubeDeformation(0.6F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		var left_arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(0, 32).mirror().addBox(-1.1F, -1.5F, -2.0F, 4.0F, 9.0F, 4.0F, new CubeDeformation(0.9F)).mirror(false)
-			.texOffs(40, 16).mirror().addBox(-1.1F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.5F)).mirror(false), PartPose.offset(0.0F, 24.0F, 0.0F));
+		var left_arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(40, 16).mirror().addBox(-1.1F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.9F)).mirror(false)
+			.texOffs(36, 0).mirror().addBox(-1.1F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.5F)).mirror(false), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		var right_arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(40, 16).addBox(-2.9F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.5F))
-			.texOffs(0, 32).addBox(-2.9F, -1.5F, -2.0F, 4.0F, 9.0F, 4.0F, new CubeDeformation(0.9F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		var right_arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(36, 0).addBox(-2.9F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.5F))
+			.texOffs(40, 16).addBox(-2.9F, -1.5F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.9F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		return meshdefinition;
     }
