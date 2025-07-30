@@ -37,8 +37,8 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_HEAD.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WEEPING_VINES), RisusItems.VEINS.get()).unlockedBy("has_item", has(Items.WEEPING_VINES)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOLDEN_APPLE), RisusItems.GUILTY_APPLE.get()).unlockedBy("has_item", has(Items.GOLDEN_APPLE)).save(consumer);
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusBlocks.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BASALT, Items.POLISHED_BASALT, Items.SMOOTH_BASALT), RisusBlocks.ENGRAVED_BASALT.get()).unlockedBy("has_item", has(Items.BASALT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COBWEB), RisusBlocks.BLOODWEAVE.get()).unlockedBy("has_item", has(Items.COBWEB)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DRAGON_HEAD), RisusItems.BLOODWYRM_HEAD.get()).unlockedBy("has_item", has(Items.DRAGON_HEAD)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRYING_OBSIDIAN), RisusBlocks.LAUGHING_OBSIDIAN.get()).unlockedBy("has_item", has(Items.CRYING_OBSIDIAN)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.ROTTEN_FLESH), RisusItems.ORGANIC_MATTER.get()).unlockedBy("has_item", has(Items.ROTTEN_FLESH)).save(consumer);
@@ -1197,6 +1197,13 @@ public class CraftingGenerator extends RecipeProvider {
 				Ingredient.of(Items.ZOMBIE_HEAD), RecipeCategory.COMBAT)
 			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
 			.save(consumer, "zombie_helmet");
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(
+				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+				Ingredient.of(RisusItems.SINNER_ROBES_HELMET),
+				Ingredient.of(Items.GOLD_NUGGET), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "gold_cosmetic");
 
 	}
 

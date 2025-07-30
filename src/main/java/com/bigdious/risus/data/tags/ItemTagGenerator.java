@@ -174,6 +174,20 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.HEXHORN.get()
 		);
 
+		this.tag(RisusTags.Items.ROBES).add(
+			RisusItems.SINNER_ROBES_HELMET.get(),
+			RisusItems.SINNER_ROBES_CHESTPLATE.get(),
+			RisusItems.SINNER_ROBES_LEGGINGS.get(),
+			RisusItems.SINNER_ROBES_BOOTS.get()
+		);
+
+		this.tag(ItemTags.DYEABLE).add(
+			RisusItems.SINNER_ROBES_HELMET.get(),
+			RisusItems.SINNER_ROBES_CHESTPLATE.get(),
+			RisusItems.SINNER_ROBES_LEGGINGS.get(),
+			RisusItems.SINNER_ROBES_BOOTS.get()
+		);
+
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

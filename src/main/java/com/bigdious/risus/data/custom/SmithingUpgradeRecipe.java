@@ -50,7 +50,6 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 		ItemStack itemstack = input.base();
 		if (this.base.test(itemstack)) {
 				ItemStack itemstack1 = itemstack.copyWithCount(1);
-				//I'm doing boolean cause I am lazy
 				itemstack1.set(RisusDataComponents.ABILITY_VARIANT, UPGRADE_GALLERY.get(input.addition().getItem()));
 				return itemstack1;
 			}

@@ -34,6 +34,8 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation SINNER_ROBES_CHESTPLATE_INNER = register("sinner_robes_chestplate_inner");
 	public static final ModelLayerLocation SINNER_ROBES_LEGGINGS_OUTER = register("sinner_robes_leggings_outer");
 	public static final ModelLayerLocation SINNER_ROBES_LEGGINGS_INNER = register("sinner_robes_leggings_inner");
+	public static final ModelLayerLocation SINNER_ROBES_BOOTS_OUTER = register("sinner_robes_boots_outer");
+	public static final ModelLayerLocation SINNER_ROBES_BOOTS_INNER = register("sinner_robes_boots_inner");
 
 
 	private static ModelLayerLocation register(String name) {

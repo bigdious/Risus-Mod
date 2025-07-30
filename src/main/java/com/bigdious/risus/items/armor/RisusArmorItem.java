@@ -17,7 +17,7 @@ public class RisusArmorItem extends ArmorItem {
 	public RisusArmorItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}
-
+	public static final int DEFAULT_COLOR = 0xFFb50404;
 	@Override
 	public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
 		return stack.is(RisusItems.SKIN_BOOTS.get()) || stack.is(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());

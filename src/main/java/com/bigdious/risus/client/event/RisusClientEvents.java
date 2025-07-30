@@ -3,10 +3,7 @@ package com.bigdious.risus.client.event;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.MawGutsScreen;
 import com.bigdious.risus.client.RisusModelLayers;
-import com.bigdious.risus.client.model.armor.CrownOfBonesModel;
-import com.bigdious.risus.client.model.armor.SinnerRobeChestplateModel;
-import com.bigdious.risus.client.model.armor.SinnerRobeHelmetModel;
-import com.bigdious.risus.client.model.armor.SinnerRobeLeggingsModel;
+import com.bigdious.risus.client.model.armor.*;
 import com.bigdious.risus.client.model.block.BloodWyrmHeadModel;
 import com.bigdious.risus.client.model.entity.*;
 import com.bigdious.risus.client.model.entity.player.AngelWingsModel;
@@ -24,8 +21,7 @@ import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.items.armor.AngelWingsItem;
-import com.bigdious.risus.items.armor.SinnerRobeHelmetItem;
+import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
@@ -255,6 +251,8 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_CHESTPLATE_INNER, () -> LayerDefinition.create(SinnerRobeChestplateModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_OUTER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_INNER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_BOOTS_OUTER, () -> LayerDefinition.create(SinnerRobeBootsModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_BOOTS_OUTER, () -> LayerDefinition.create(SinnerRobeBootsModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
@@ -326,13 +324,17 @@ public class RisusClientEvents {
 			RisusItems.SINNER_ROBES_HELMET.get()
 		);
 		event.registerItem(
-			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_CHESTPLATE_INNER, RisusModelLayers.SINNER_ROBES_CHESTPLATE_OUTER),
+			new SinnerRobeChestplateItem.ArmorRender(),
 			RisusItems.SINNER_ROBES_CHESTPLATE.get()
 			);
 		event.registerItem(
-			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_LEGGINGS_INNER, RisusModelLayers.SINNER_ROBES_LEGGINGS_OUTER),
+			new SinnerRobeLeggingsItem.ArmorRender(),
 			RisusItems.SINNER_ROBES_LEGGINGS.get()
 			);
+		event.registerItem(
+			new SinnerRobeBootsItem.ArmorRender(),
+			RisusItems.SINNER_ROBES_BOOTS.get()
+		);
 		event.registerFluidType(new IClientFluidTypeExtensions() {
 			@Override
 			public ResourceLocation getStillTexture() {
