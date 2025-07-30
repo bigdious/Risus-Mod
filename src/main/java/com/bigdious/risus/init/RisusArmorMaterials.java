@@ -44,4 +44,10 @@ public class RisusArmorMaterials {
 		}), 10, RisusSoundEvents.ARMOR_EQUIP_BONE, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sinner_robe_chestplate"))), 0.0F, 0.0F)
 	);
 
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> SINNER_ROBE_HELMET = ARMOR_MATERIALS.register("sinner_robe_helmet", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+			map.put(ArmorItem.Type.HELMET, 1);
+
+		}), 10, RisusSoundEvents.ARMOR_EQUIP_BONE, () -> Ingredient.EMPTY, List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sinner_robe_helmet"), "_dyed", true), new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sinner_robe_helmet"), "_overlay", false)), 0.0F, 0.0F)
+	);
+
 }

@@ -9,7 +9,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-public class SinnerRobeBootsItem extends RisusArmorItem{
+public class SinnerRobeBootsItem extends RisusArmorItem {
 	public SinnerRobeBootsItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}

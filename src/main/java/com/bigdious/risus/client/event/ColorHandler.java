@@ -3,6 +3,7 @@ package com.bigdious.risus.client.event;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.items.armor.SinnerRobeHelmetItem;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.BlockItem;
@@ -28,5 +29,7 @@ public class ColorHandler {
 			if (contents.potion().potion().isEmpty()) return -1;
 			return contents.potion().getColor();
 		}, RisusItems.HEXHORN.get());
+
+		event.register((stack, index) -> index != 1 ? -1 : DyedItemColor.getOrDefault(stack, SinnerRobeHelmetItem.DEFAULT_COLOR), RisusItems.SINNER_ROBES_HELMET.get());
 	}
 }

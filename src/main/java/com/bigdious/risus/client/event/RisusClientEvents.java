@@ -25,6 +25,7 @@ import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.AngelWingsItem;
+import com.bigdious.risus.items.armor.SinnerRobeHelmetItem;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
@@ -249,7 +250,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.CROWN_OF_BONES_INNER, () -> LayerDefinition.create(CrownOfBonesModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 		//I know this is a lot, but if they aren't kept separate it doesn't work
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_HELMET_OUTER, () -> LayerDefinition.create(SinnerRobeHelmetModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
-		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_HELMET_INNER, () -> LayerDefinition.create(SinnerRobeHelmetModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_HELMET_INNER, () -> LayerDefinition.create(SinnerRobeHelmetModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_CHESTPLATE_OUTER, () -> LayerDefinition.create(SinnerRobeChestplateModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_CHESTPLATE_INNER, () -> LayerDefinition.create(SinnerRobeChestplateModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_OUTER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
@@ -321,7 +322,7 @@ public class RisusClientEvents {
 			RisusItems.CROWN_OF_BONES.get()
 		);
 		event.registerItem(
-			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.SINNER_ROBES_HELMET_INNER, RisusModelLayers.SINNER_ROBES_HELMET_OUTER),
+			new SinnerRobeHelmetItem.ArmorRender(),
 			RisusItems.SINNER_ROBES_HELMET.get()
 		);
 		event.registerItem(
