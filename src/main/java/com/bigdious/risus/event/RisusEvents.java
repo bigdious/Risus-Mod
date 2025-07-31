@@ -31,7 +31,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.AbstractIllager;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
@@ -60,6 +64,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
@@ -76,6 +81,7 @@ import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosCapability;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -111,6 +117,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::roseCrownBehavior);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::eternalizeTamables);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::updateVisibility);
+//		NeoForge.EVENT_BUS.addListener(RisusEvents::addFear);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -714,14 +721,52 @@ public class RisusEvents {
 				if (ability.equals("skeleton") && lookingEntity.getType()==EntityType.SKELETON ||
 					ability.equals("creeper") && lookingEntity.getType()==EntityType.CREEPER ||
 					ability.equals("zombie") && lookingEntity.getType()==EntityType.ZOMBIE ||
-					ability.equals("wither_skeleton") && lookingEntity.getType()==EntityType.WITHER_SKELETON
+					ability.equals("wither_skeleton") && lookingEntity.getType()==EntityType.WITHER_SKELETON ||
+					ability.equals("piglin") && lookingEntity.getType()==EntityType.PIGLIN ||
+					(
+						ability.equals("tuxedo_cat") ||
+						ability.equals("black_cat") ||
+						ability.equals("british_cat") ||
+						ability.equals("calico_cat") ||
+						ability.equals("jellie_cat") ||
+						ability.equals("persian_cat") ||
+						ability.equals("ragdoll_cat") ||
+						ability.equals("orange_cat") ||
+						ability.equals("siamese_cat") ||
+						ability.equals("tabby_cat") ||
+						ability.equals("white_cat")
+						) && lookingEntity.getType()==EntityType.PHANTOM
 				) {
-					event.modifyVisibility(0.5);
+					event.modifyVisibility(0.2);
 				}
 			}
 
 		}
 
 	}
+
+//	private static void addFear(EntityJoinLevelEvent event) {
+//		if (event.getEntity() instanceof Mob mob) {
+//			EntityType<?> type = mob.getType();
+//			if (type == EntityType.CREEPER) {
+//				mob.targetSelector.addGoal(0, new AvoidEntityGoal<>((Monster) mob, LivingEntity.class,
+//					entity -> entity instanceof Player player && player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.SINNER_ROBES_HELMET) && player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT) != null && (
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("tuxedo_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("black_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("british_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("calico_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("jellie_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("persian_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("ragdoll_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("orange_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("siamese_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("tabby_cat") ||
+//						player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("white_cat")
+//						),
+//					16.0F, 1.5D, 1.75D, livingentity -> true));
+//			}
+//
+//		}
+//	}
 
 }

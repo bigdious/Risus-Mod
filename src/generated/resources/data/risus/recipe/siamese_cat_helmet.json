@@ -1,0 +1,12 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:brown_wool"
+  },
+  "base": {
+    "item": "minecraft:blue_wool"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:string"
+  },
+  "base": {
+    "item": "minecraft:piglin_head"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

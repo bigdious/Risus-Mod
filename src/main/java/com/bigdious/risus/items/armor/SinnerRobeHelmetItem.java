@@ -25,13 +25,7 @@ public class SinnerRobeHelmetItem extends RisusArmorItem {
 	@Override
 	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && layer.texture(false).equals(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/upgrade_layer_1.png"))){
-			switch (stack.get(RisusDataComponents.ABILITY_VARIANT)) {
-				//check SmithingUpgradeRecipe for cases
-				case "skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/skeleton.png");
-				case "zombie": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/zombie.png");
-				case "wither_skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/wither_skeleton.png");
-				case "creeper": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/creeper.png");
-			}
+			return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".png");
 		}
 		return null;
 	}

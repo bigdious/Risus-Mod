@@ -36,11 +36,25 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 		this.addition = addition;
 	}
 
-	public static final Map<Item, String> UPGRADE_GALLERY = Map.of(
-		Items.SKELETON_SKULL, "skeleton",
-		Items.CREEPER_HEAD, "creeper",
-		Items.WITHER_SKELETON_SKULL, "wither_skeleton",
-		Items.ZOMBIE_HEAD, "zombie"
+	public static final Map<Item, String> UPGRADE_GALLERY = Map.ofEntries(
+		Map.entry(Items.SKELETON_SKULL, "skeleton"),
+		Map.entry(Items.CREEPER_HEAD, "creeper"),
+		Map.entry(Items.WITHER_SKELETON_SKULL, "wither_skeleton"),
+		Map.entry(Items.ZOMBIE_HEAD, "zombie"),
+		Map.entry(Items.PIGLIN_HEAD, "piglin"),
+		Map.entry(Items.DRAGON_HEAD, "ender_dragon"),
+		Map.entry(Items.LIME_WOOL, "tuxedo_cat"),
+		Map.entry(Items.BLACK_WOOL, "black_cat"),
+		Map.entry(Items.LIGHT_GRAY_WOOL, "british_cat"),
+		Map.entry(Items.ORANGE_WOOL, "calico_cat"),
+		Map.entry(Items.GRAY_WOOL, "jellie_cat"),
+		Map.entry(Items.WHITE_WOOL, "persian_cat"),
+		Map.entry(Items.LIGHT_BLUE_WOOL, "ragdoll_cat"),
+		Map.entry(Items.GREEN_WOOL, "orange_cat"),
+		Map.entry(Items.BLUE_WOOL, "siamese_cat"),
+		Map.entry(Items.BROWN_WOOL, "tabby_cat"),
+		Map.entry(Items.YELLOW_WOOL, "white_cat"),
+		Map.entry(Items.CARVED_PUMPKIN, "pumpkin")
 	);
 
 	public boolean matches(SmithingRecipeInput input, Level level) {
