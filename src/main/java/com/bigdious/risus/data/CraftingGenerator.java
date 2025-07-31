@@ -1185,25 +1185,32 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer, "warhorn_to_hexhorn");
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(
-				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
-				Ingredient.of(RisusItems.SINNER_ROBES_HELMET),
-				Ingredient.of(Items.SKELETON_SKULL), RecipeCategory.COMBAT)
-			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+				Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),
+				Ingredient.of(Items.SKELETON_SKULL),
+				Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, "skeleton_helmet");
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(
-				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
-				Ingredient.of(RisusItems.SINNER_ROBES_HELMET),
-				Ingredient.of(Items.ZOMBIE_HEAD), RecipeCategory.COMBAT)
-			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+				Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),
+				Ingredient.of(Items.ZOMBIE_HEAD),
+				Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, "zombie_helmet");
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(
-				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
-				Ingredient.of(RisusItems.SINNER_ROBES_HELMET),
-				Ingredient.of(Items.GOLD_NUGGET), RecipeCategory.COMBAT)
-			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
-			.save(consumer, "gold_cosmetic");
+				Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),
+				Ingredient.of(Items.CREEPER_HEAD),
+				Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "creeper_helmet");
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(
+				Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),
+				Ingredient.of(Items.WITHER_SKELETON_SKULL),
+				Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "wither_skeleton_helmet");
 
 	}
 

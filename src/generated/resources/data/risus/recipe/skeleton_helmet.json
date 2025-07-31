@@ -1,12 +1,12 @@
 {
   "type": "risus:smithing_upgrade",
   "addition": {
-    "item": "minecraft:skeleton_skull"
+    "item": "minecraft:string"
   },
   "base": {
-    "item": "risus:sinner_robes_helmet"
+    "item": "minecraft:skeleton_skull"
   },
   "template": {
-    "item": "risus:blood_feather"
+    "item": "risus:sinner_robes_helmet"
   }
 }

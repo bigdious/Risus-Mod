@@ -4,7 +4,7 @@
     "item": "minecraft:string"
   },
   "base": {
-    "item": "minecraft:zombie_head"
+    "item": "minecraft:creeper_head"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

@@ -15,11 +15,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-import java.util.Objects;
 
 public class SinnerRobeHelmetItem extends RisusArmorItem {
 	public SinnerRobeHelmetItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
@@ -31,9 +28,9 @@ public class SinnerRobeHelmetItem extends RisusArmorItem {
 			switch (stack.get(RisusDataComponents.ABILITY_VARIANT)) {
 				//check SmithingUpgradeRecipe for cases
 				case "skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/skeleton.png");
-				case "zombie": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_zombie.png");
-				case "wither_skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_wither_skeleton.png");
-				case "creeper": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/sinner_robe_helmet_creeper.png");
+				case "zombie": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/zombie.png");
+				case "wither_skeleton": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/wither_skeleton.png");
+				case "creeper": return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/creeper.png");
 			}
 		}
 		return null;

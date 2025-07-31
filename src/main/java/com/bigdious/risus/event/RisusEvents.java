@@ -63,6 +63,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -109,6 +110,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(RisusEvents::onSpongeBlockNeighborUpdatedEvent);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::roseCrownBehavior);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::eternalizeTamables);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::updateVisibility);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -702,6 +704,24 @@ public class RisusEvents {
 				}
 			}
 		}
+	}
+
+	private static void updateVisibility (LivingEvent.LivingVisibilityEvent event) {
+		if (event.getEntity() instanceof Player player && player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.SINNER_ROBES_HELMET)) {
+			String ability = player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT);
+			Entity lookingEntity = event.getLookingEntity();
+			if (ability != null) {
+				if (ability.equals("skeleton") && lookingEntity.getType()==EntityType.SKELETON ||
+					ability.equals("creeper") && lookingEntity.getType()==EntityType.CREEPER ||
+					ability.equals("zombie") && lookingEntity.getType()==EntityType.ZOMBIE ||
+					ability.equals("wither_skeleton") && lookingEntity.getType()==EntityType.WITHER_SKELETON
+				) {
+					event.modifyVisibility(0.5);
+				}
+			}
+
+		}
+
 	}
 
 }

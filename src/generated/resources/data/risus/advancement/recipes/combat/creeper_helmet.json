@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "risus:blood_feather"
+            "items": "risus:gluttony_scales"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "risus:gold_cosmetic"
+        "recipe": "risus:creeper_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "risus:gold_cosmetic"
+      "risus:creeper_helmet"
     ]
   }
 }

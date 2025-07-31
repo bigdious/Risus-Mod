@@ -2,6 +2,7 @@ package com.bigdious.risus.data.custom;
 
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.MapCodec;
@@ -45,25 +46,19 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 	public boolean matches(SmithingRecipeInput input, Level level) {
 		return this.template.test(input.template()) && this.base.test(input.base()) && this.addition.test(input.addition());
 	}
-
+//checking for nonnull is to prevent item diversity issue
 	public ItemStack assemble(SmithingRecipeInput input, HolderLookup.Provider registries) {
-		ItemStack itemstack = input.base();
-		if (this.base.test(itemstack)) {
+		ItemStack itemstack = input.template();
+		if (this.base.test(input.base()) && itemstack.get(RisusDataComponents.ABILITY_VARIANT) == null) {
 				ItemStack itemstack1 = itemstack.copyWithCount(1);
-				itemstack1.set(RisusDataComponents.ABILITY_VARIANT, UPGRADE_GALLERY.get(input.addition().getItem()));
+				itemstack1.set(RisusDataComponents.ABILITY_VARIANT, UPGRADE_GALLERY.get(input.base().getItem()));
 				return itemstack1;
 			}
 		return ItemStack.EMPTY;
 	}
 
 	public ItemStack getResultItem(HolderLookup.Provider registries) {
-		ItemStack itemstack = new ItemStack(Items.IRON_CHESTPLATE);
-		Optional<Holder.Reference<TrimPattern>> optional = registries.lookupOrThrow(Registries.TRIM_PATTERN).listElements().findFirst();
-		Optional<Holder.Reference<TrimMaterial>> optional1 = registries.lookupOrThrow(Registries.TRIM_MATERIAL).get(TrimMaterials.REDSTONE);
-		if (optional.isPresent() && optional1.isPresent()) {
-			itemstack.set(DataComponents.TRIM, new ArmorTrim(optional1.get(), optional.get()));
-		}
-
+		ItemStack itemstack = new ItemStack(RisusItems.SINNER_ROBES_CHESTPLATE.get());
 		return itemstack;
 	}
 
