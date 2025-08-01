@@ -54,7 +54,7 @@ neoForge {
 		client {
 			client()
 			systemProperty 'forge.enabledGameTestNamespaces', mod_id
-			programArguments.addAll '--username', secrets.getProperty("username") ?: 'DiscordMod', secrets.getProperty("uuid") ? '--uuid' : '', secrets.getProperty("uuid") ?: ''
+			programArguments.addAll '--username', secrets.getProperty("username") ?: 'bigdious', secrets.getProperty("uuid") ? '--uuid' : '', secrets.getProperty("uuid") ?: ''
 		}
 
 		server {

@@ -1,0 +1,12 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:orange_terracotta"
+  },
+  "base": {
+    "item": "minecraft:brown_terracotta"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

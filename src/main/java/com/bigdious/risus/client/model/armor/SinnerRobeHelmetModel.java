@@ -12,7 +12,7 @@ public class SinnerRobeHelmetModel {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		var head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F))
+		var head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.55F))
 			.texOffs(40, 27).addBox(-2.0F, -3.88F, -5.0F, 4.0F, 4.0F, 1.0F, new CubeDeformation(0.2F))
 			.texOffs(26, 17).addBox(-3.2F, -1.75F, -5.25F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
 			.texOffs(16, 16).addBox(-2.0F, -2.88F, -5.0F, 4.0F, 3.0F, 1.0F, new CubeDeformation(0.2F))
