@@ -54,7 +54,16 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 		Map.entry(Items.BLUE_WOOL, "siamese_cat"),
 		Map.entry(Items.BROWN_WOOL, "tabby_cat"),
 		Map.entry(Items.YELLOW_WOOL, "white_cat"),
-		Map.entry(Items.CARVED_PUMPKIN, "pumpkin")
+		Map.entry(Items.CARVED_PUMPKIN, "pumpkin"),
+		Map.entry(Items.LIGHT_GRAY_TERRACOTTA, "pale_wolf"),
+		Map.entry(Items.GRAY_TERRACOTTA, "ashen_wolf"),
+		Map.entry(Items.BLACK_TERRACOTTA, "black_wolf"),
+		Map.entry(Items.BROWN_TERRACOTTA, "chestnut_wolf"),
+		Map.entry(Items.RED_TERRACOTTA, "rusty_wolf"),
+		Map.entry(Items.CYAN_TERRACOTTA, "snowy_wolf"),
+		Map.entry(Items.ORANGE_TERRACOTTA, "spotted_wolf"),
+		Map.entry(Items.YELLOW_TERRACOTTA, "striped_wolf"),
+		Map.entry(Items.GREEN_TERRACOTTA, "woods_wolf")
 	);
 
 	public boolean matches(SmithingRecipeInput input, Level level) {

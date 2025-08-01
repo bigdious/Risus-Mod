@@ -1256,6 +1256,10 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, "pumpkin_helmet");
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_GRAY_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "pale_wolf_helmet");
+
 	}
 
 
