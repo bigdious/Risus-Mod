@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "risus:item/sinner_robes_boots"
+    "layer0": "risus:item/sinner_robes_boots",
+    "layer1": "risus:item/sinner_robes_boots_0"
   }
 }

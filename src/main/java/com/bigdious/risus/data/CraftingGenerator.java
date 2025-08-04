@@ -1274,6 +1274,29 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, "woods_wolf_helmet");
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_BLEACHED), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "bleached_eye_helmet");
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_BLOODSHOT), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "bloodshot_eye_helmet");
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_EMERALD), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "emerald_eye_helmet");
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_ENDER), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "ender_eye_helmet");
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_GOLDEN), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "golden_eye_helmet");
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.ASHEN_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "abyssal_eye_helmet");
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.SMILING_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "smile_helmet");
+
 	}
 
 

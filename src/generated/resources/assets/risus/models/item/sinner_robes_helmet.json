@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "risus:item/sinner_robes_helmet"
+    "layer0": "risus:item/sinner_robes_helmet",
+    "layer1": "risus:item/sinner_robes_helmet_0"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "risus:organic_matter"
+  },
+  "base": {
+    "item": "risus:eye_emerald"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

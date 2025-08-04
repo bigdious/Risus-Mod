@@ -1,6 +1,8 @@
-package com.bigdious.risus.compat;
+package com.bigdious.risus.compat.jei;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.compat.AlterationCategory;
+import com.bigdious.risus.data.custom.SmithingUpgradeRecipe;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusRecipes;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
@@ -14,6 +16,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SmithingRecipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,13 +44,15 @@ public class JeiCompat implements IModPlugin {
 	@SuppressWarnings("unchecked")
 	public void registerRecipes(IRecipeRegistration registration) {
 		RecipeManager manager = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
-		List<RecipeHolder<? extends AlterationRecipe>> recipes = getAllAlterationRecipes(manager);
-		registration.addRecipes(AlterationCategory.ALTERATION, (List<AlterationRecipe>) recipes.stream().map(RecipeHolder::value).toList());
+		List<RecipeHolder<? extends AlterationRecipe>> alterationRecipes = getAllAlterationRecipes(manager);
+		registration.addRecipes(AlterationCategory.ALTERATION, (List<AlterationRecipe>) alterationRecipes.stream().map(RecipeHolder::value).toList());
 	}
+
 	public static List<RecipeHolder<? extends AlterationRecipe>> getAllAlterationRecipes(RecipeManager manager) {
 			List<RecipeHolder<? extends AlterationRecipe>> recipes = new ArrayList<>(manager.getAllRecipesFor(RisusRecipes.ALTERATION_RECIPE.get()));
 			recipes = new ArrayList<>(recipes);
 			recipes.addAll(manager.getAllRecipesFor(RisusRecipes.ALTERATION_RECIPE.get()));
 			return recipes;
 	}
+
 }

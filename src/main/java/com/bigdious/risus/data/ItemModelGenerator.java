@@ -224,10 +224,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		trimmedArmor(RisusItems.THREADERS_OF_THE_FIRMAMENT);
 		trimmedArmor(RisusItems.ROSE_CROWN);
 		trimmedArmor(RisusItems.CROWN_OF_BONES);
-		trimmedArmor(RisusItems.SINNER_ROBES_HELMET);
-		trimmedArmor(RisusItems.SINNER_ROBES_CHESTPLATE);
-		trimmedArmor(RisusItems.SINNER_ROBES_LEGGINGS);
-		trimmedArmor(RisusItems.SINNER_ROBES_BOOTS);
+		trimmedLayeredArmor(RisusItems.SINNER_ROBES_HELMET);
+		trimmedLayeredArmor(RisusItems.SINNER_ROBES_CHESTPLATE);
+		trimmedLayeredArmor(RisusItems.SINNER_ROBES_LEGGINGS);
+		trimmedLayeredArmor(RisusItems.SINNER_ROBES_BOOTS);
 		singleTex(RisusItems.ROSE_PETAL);
 		singleTex(RisusItems.SMILE_PATTERN);
 		singleTex(RisusItems.DIVINITY_PATTERN);
@@ -422,15 +422,17 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.perspective(ItemDisplayContext.HEAD, heldVersion).end();
 	}
 
-	private ItemModelBuilder handheldItemWithNoAnim(DeferredItem<Item> item, ModelFile heldModel, ModelFile heldModelNoAnim, ResourceLocation heldTexture, ResourceLocation itemTexture, String textureName) {
-		ItemModelBuilder heldVersion = nested().parent(RisusConfig.customWeaponAnims ? heldModel : heldModelNoAnim).texture(textureName, heldTexture);
-		return withExistingParent(item.getId().getPath(), "item/handheld").customLoader(SeparateTransformsModelBuilder::begin)
-			.base(generated(item.getId()+ "_base", itemTexture))
-			.perspective(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, heldVersion)
-			.perspective(ItemDisplayContext.HEAD, heldVersion).end();
+	private void trimmedLayeredArmor(DeferredHolder<Item, ArmorItem> armor) {
+		ItemModelBuilder base = this.generated(armor.getId().getPath(), Risus.prefix("item/" + armor.getId().getPath()), Risus.prefix("item/" + armor.getId().getPath() + "_0"));
+		for (ItemModelGenerators.TrimModelData trim : ItemModelGenerators.GENERATED_TRIM_MODELS) {
+			String material = trim.name();
+			String name = armor.getId().getPath() + "_" + material + "_trim";
+			ModelFile trimModel = this.withExistingParent(name, this.mcLoc("item/generated"))
+				.texture("layer0", Risus.prefix("item/" + armor.getId().getPath()))
+				.texture("layer1", Risus.prefix("item/" + armor.getId().getPath() + "_0"))
+				.texture("layer2", this.mcLoc("trims/items/" + armor.get().getType().getName() + "_trim_" + material));
+			base.override().predicate(ResourceLocation.withDefaultNamespace("trim_type"), trim.itemModelIndex()).model(trimModel).end();
+		}
 	}
 
 

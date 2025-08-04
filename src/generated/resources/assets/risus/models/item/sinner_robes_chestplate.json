@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "risus:item/sinner_robes_chestplate"
+    "layer0": "risus:item/sinner_robes_chestplate",
+    "layer1": "risus:item/sinner_robes_chestplate_0"
   }
 }

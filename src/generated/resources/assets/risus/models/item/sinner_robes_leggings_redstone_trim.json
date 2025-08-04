@@ -2,6 +2,7 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "risus:item/sinner_robes_leggings",
-    "layer1": "minecraft:trims/items/leggings_trim_redstone"
+    "layer1": "risus:item/sinner_robes_leggings_0",
+    "layer2": "minecraft:trims/items/leggings_trim_redstone"
   }
 }

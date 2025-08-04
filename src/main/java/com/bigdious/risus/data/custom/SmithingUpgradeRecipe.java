@@ -36,13 +36,12 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 		this.addition = addition;
 	}
 
-	public static final Map<Item, String> UPGRADE_GALLERY = Map.ofEntries(
+	public static final Map<Item, String> ABILITY_GALLERY = Map.ofEntries(
 		Map.entry(Items.SKELETON_SKULL, "skeleton"),
 		Map.entry(Items.CREEPER_HEAD, "creeper"),
 		Map.entry(Items.WITHER_SKELETON_SKULL, "wither_skeleton"),
 		Map.entry(Items.ZOMBIE_HEAD, "zombie"),
 		Map.entry(Items.PIGLIN_HEAD, "piglin"),
-		Map.entry(Items.DRAGON_HEAD, "ender_dragon"),
 		Map.entry(Items.LIME_WOOL, "tuxedo_cat"),
 		Map.entry(Items.BLACK_WOOL, "black_cat"),
 		Map.entry(Items.LIGHT_GRAY_WOOL, "british_cat"),
@@ -63,22 +62,29 @@ public class SmithingUpgradeRecipe implements SmithingRecipe {
 		Map.entry(Items.CYAN_TERRACOTTA, "snowy_wolf"),
 		Map.entry(Items.ORANGE_TERRACOTTA, "spotted_wolf"),
 		Map.entry(Items.YELLOW_TERRACOTTA, "striped_wolf"),
-		Map.entry(Items.GREEN_TERRACOTTA, "woods_wolf")
+		Map.entry(Items.GREEN_TERRACOTTA, "woods_wolf"),
+		Map.entry(RisusBlocks.EYE_BLEACHED.asItem(), "bleached_eye"),
+		Map.entry(RisusBlocks.EYE_BLOODSHOT.asItem(), "bloodshot_eye"),
+		Map.entry(RisusBlocks.EYE_EMERALD.asItem(), "emerald_eye"),
+		Map.entry(RisusBlocks.EYE_ENDER.asItem(), "ender_eye"),
+		Map.entry(RisusBlocks.EYE_GOLDEN.asItem(), "golden_eye"),
+		Map.entry(RisusBlocks.ASHEN_REMAINS.asItem(), "abyssal_eye"),
+		Map.entry(RisusBlocks.SMILING_REMAINS.asItem(), "smile")
 	);
 
 	public boolean matches(SmithingRecipeInput input, Level level) {
 		return this.template.test(input.template()) && this.base.test(input.base()) && this.addition.test(input.addition());
 	}
 //checking for nonnull is to prevent item diversity issue
-	public ItemStack assemble(SmithingRecipeInput input, HolderLookup.Provider registries) {
-		ItemStack itemstack = input.template();
-		if (this.base.test(input.base()) && itemstack.get(RisusDataComponents.ABILITY_VARIANT) == null) {
-				ItemStack itemstack1 = itemstack.copyWithCount(1);
-				itemstack1.set(RisusDataComponents.ABILITY_VARIANT, UPGRADE_GALLERY.get(input.base().getItem()));
-				return itemstack1;
-			}
-		return ItemStack.EMPTY;
+public ItemStack assemble(SmithingRecipeInput input, HolderLookup.Provider registries) {
+	ItemStack itemstack = input.template();
+	if (this.base.test(input.base()) && itemstack.get(RisusDataComponents.ABILITY_VARIANT) == null) {
+		ItemStack itemstack1 = itemstack.copyWithCount(1);
+		itemstack1.set(RisusDataComponents.ABILITY_VARIANT, ABILITY_GALLERY.get(input.base().getItem()));
+		return itemstack1;
 	}
+	return ItemStack.EMPTY;
+}
 
 	public ItemStack getResultItem(HolderLookup.Provider registries) {
 		ItemStack itemstack = new ItemStack(RisusItems.SINNER_ROBES_CHESTPLATE.get());

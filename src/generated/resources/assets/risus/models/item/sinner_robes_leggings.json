@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "risus:item/sinner_robes_leggings"
+    "layer0": "risus:item/sinner_robes_leggings",
+    "layer1": "risus:item/sinner_robes_leggings_0"
   }
 }

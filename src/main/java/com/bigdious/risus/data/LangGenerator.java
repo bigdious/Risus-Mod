@@ -248,6 +248,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Sacrificial Catalyst");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
+		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner Robes Helmet");
+		this.addItem(RisusItems.SINNER_ROBES_CHESTPLATE, "Sinner Robes Chestplate");
+		this.addItem(RisusItems.SINNER_ROBES_LEGGINGS, "Sinner Robes Leggings");
+		this.addItem(RisusItems.SINNER_ROBES_BOOTS, "Sinner Robes Boots");
 		this.addItem(RisusItems.SKIN_BOOTS, "Skin Socks");
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
@@ -336,6 +340,42 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
+
+		this.add("tooltip.risus.ability", "Ability:");
+		this.add("tooltip.risus.sinner_robes_helmet.skeleton", " Skeleton Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.creeper", " Creeper Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.wither_skeleton", " Wither Skeleton Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.zombie", " Zombie Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.piglin", " Piglin Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.tuxedo_cat", " Tuxedo Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.black_cat", " Black Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.british_cat", " Shorthair Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.calico_cat", " Calico Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.jellie_cat", " Jellie Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.persian_cat", " Persian Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.ragdoll_cat", " Ragdoll Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.orange_cat", " Orange Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.siamese_cat", " Siamese Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.tabby_cat", " Tabby Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.white_cat", " White Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.pumpkin", " Pumpkin Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.pale_wolf", " Pale Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.ashen_wolf", " Ashen Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.black_wolf", " Black Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.chestnut_wolf", " Chestnut Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.rusty_wolf", " Rusty Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.snowy_wolf", " Snowy Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.spotted_wolf", " Spotted Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.striped_wolf", " Striped Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.woods_wolf", " Woods Wolf Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.bleached_eye", " Bleached Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.bloodshot_eye", " Bloodshot Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.emerald_eye", " Emerald Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.ender_eye", " Ender Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.golden_eye", " Golden Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye", " Abyssal Eye Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.smile", " Smile Mask");
+
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
