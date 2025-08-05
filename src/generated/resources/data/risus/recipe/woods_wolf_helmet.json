@@ -3,8 +3,11 @@
   "addition": {
     "item": "minecraft:brown_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "woods_wolf"
+  },
   "base": {
-    "item": "minecraft:green_terracotta"
+    "item": "minecraft:brown_terracotta"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

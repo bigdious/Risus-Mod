@@ -11,6 +11,7 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -40,6 +41,12 @@ public class JeiCompat implements IModPlugin {
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 		registration.addRecipeCatalyst(new ItemStack(RisusBlocks.ALTERATION_CATALYST), AlterationCategory.ALTERATION);
 	}
+
+	@Override
+	public void registerVanillaCategoryExtensions(IVanillaCategoryExtensionRegistration registration) {
+		registration.getSmithingCategory().addExtension(SmithingUpgradeRecipe.class, new SmithingUpgradeExtension());
+	}
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public void registerRecipes(IRecipeRegistration registration) {

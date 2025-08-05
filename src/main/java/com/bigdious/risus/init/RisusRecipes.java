@@ -16,6 +16,6 @@ public class RisusRecipes {
 	public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<AlterationRecipe>> ALTERATION_SERIALIZER = RECIPE_SERIALIZERS.register("alteration", AlterationRecipe.Serializer::new);
 
 	public static final DeferredHolder<RecipeType<?>, RecipeType<AlterationRecipe>> ALTERATION_RECIPE = RECIPE_TYPES.register("alteration", () -> RecipeType.simple(Risus.prefix("alteration")));
-	public static final DeferredHolder<RecipeSerializer<?>, SmithingUpgradeRecipe.Serializer> SMITHING_UPGRADE_SERIALIZER = RECIPE_SERIALIZERS.register("smithing_upgrade", SmithingUpgradeRecipe.Serializer::new);
+	public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<SmithingUpgradeRecipe>> SMITHING_UPGRADE_SERIALIZER = RECIPE_SERIALIZERS.register("smithing_upgrade", SmithingUpgradeRecipe.Serializer::new);
 
 }

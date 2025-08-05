@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:string"
   },
+  "additional_data": {
+    "risus:ability_variant": "zombie"
+  },
   "base": {
     "item": "minecraft:zombie_head"
   },

@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:white_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "pale_wolf"
+  },
   "base": {
     "item": "minecraft:light_gray_terracotta"
   },

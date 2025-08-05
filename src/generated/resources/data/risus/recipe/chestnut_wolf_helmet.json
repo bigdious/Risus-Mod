@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:orange_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "chestnut_wolf"
+  },
   "base": {
     "item": "minecraft:brown_terracotta"
   },

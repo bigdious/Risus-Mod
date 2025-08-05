@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:black_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "spotted_wolf"
+  },
   "base": {
     "item": "minecraft:orange_terracotta"
   },

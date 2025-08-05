@@ -3,8 +3,11 @@
   "addition": {
     "item": "minecraft:black_wool"
   },
+  "additional_data": {
+    "risus:ability_variant": "tuxedo_cat"
+  },
   "base": {
-    "item": "minecraft:lime_wool"
+    "item": "minecraft:white_wool"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

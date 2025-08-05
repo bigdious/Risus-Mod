@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:string"
   },
+  "additional_data": {
+    "risus:ability_variant": "creeper"
+  },
   "base": {
     "item": "minecraft:creeper_head"
   },

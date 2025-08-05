@@ -5,6 +5,7 @@ import com.bigdious.risus.data.custom.AlterationRecipeBuilder;
 import com.bigdious.risus.data.custom.SmithingUpgradeRecipe;
 import com.bigdious.risus.data.custom.SmithingUpgradeRecipeBuilder;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
@@ -1185,117 +1186,151 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer, "warhorn_to_hexhorn");
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.SKELETON_SKULL), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "skeleton")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "skeleton_helmet");
+			.save(consumer, Risus.prefix("skeleton_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.ZOMBIE_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "zombie")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "zombie_helmet");
+			.save(consumer, Risus.prefix("zombie_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.CREEPER_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "creeper")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "creeper_helmet");
+			.save(consumer, Risus.prefix("creeper_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.WITHER_SKELETON_SKULL), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "wither_skeleton")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "wither_skeleton_helmet");
+			.save(consumer, Risus.prefix("wither_skeleton_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.PIGLIN_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "piglin")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "piglin_helmet");
+			.save(consumer, Risus.prefix("piglin_helmet"));
 
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.DRAGON_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
-			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "dragon_helmet");
+//		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.DRAGON_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+//			.attachData(RisusDataComponents.ABILITY_VARIANT, "dragon")
+//			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+//			.save(consumer, Risus.prefix("dragon_helmet"));
 
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIME_WOOL), Ingredient.of(Items.BLACK_WOOL), RecipeCategory.COMBAT)
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.WHITE_WOOL), Ingredient.of(Items.BLACK_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "tuxedo_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "tuxedo_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BLACK_WOOL), Ingredient.of(Items.ORANGE_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("tuxedo_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BLACK_WOOL), Ingredient.of(Items.BLACK_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "black_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "black_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_GRAY_WOOL), Ingredient.of(Items.YELLOW_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("black_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_GRAY_WOOL), Ingredient.of(Items.LIGHT_GRAY_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "british_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "british_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.ORANGE_WOOL), Ingredient.of(Items.BROWN_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("british_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.ORANGE_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "calico_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "calico_cat_helmet");
+			.save(consumer, Risus.prefix("calico_cat_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.GRAY_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "jellie_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "jellie_cat_helmet");
+			.save(consumer, Risus.prefix("jellie_cat_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.WHITE_WOOL), Ingredient.of(Items.YELLOW_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "persian_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "persian_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_BLUE_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("persian_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.WHITE_WOOL), Ingredient.of(Items.BROWN_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "ragdoll_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "ragdoll_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.GREEN_WOOL), Ingredient.of(Items.ORANGE_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("ragdoll_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.YELLOW_WOOL), Ingredient.of(Items.ORANGE_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "orange_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "orange_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BLUE_WOOL), Ingredient.of(Items.BROWN_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("orange_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BROWN_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "siamese_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "siamese_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BROWN_WOOL), Ingredient.of(Items.YELLOW_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("siamese_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BROWN_WOOL), Ingredient.of(Items.BROWN_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "tabby_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "tabby_cat_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.YELLOW_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("tabby_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.WHITE_WOOL), Ingredient.of(Items.WHITE_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "white_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "white_cat_helmet");
+			.save(consumer, Risus.prefix("white_cat_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.CARVED_PUMPKIN), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "pumpkin")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "pumpkin_helmet");
+			.save(consumer, Risus.prefix("pumpkin_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_GRAY_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "pale_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "pale_wolf_helmet");
+			.save(consumer, Risus.prefix("pale_wolf_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.GRAY_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "ashen_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "ashen_wolf_helmet");
+			.save(consumer, Risus.prefix("ashen_wolf_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BLACK_TERRACOTTA), Ingredient.of(Items.BLACK_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "black_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "black_wolf_helmet");
+			.save(consumer, Risus.prefix("black_wolf_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BROWN_TERRACOTTA), Ingredient.of(Items.ORANGE_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "chestnut_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "chestnut_wolf_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.RED_TERRACOTTA), Ingredient.of(Items.BROWN_TERRACOTTA), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("chestnut_wolf_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.ORANGE_TERRACOTTA), Ingredient.of(Items.BROWN_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "rusty_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "rusty_wolf_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.CYAN_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("rusty_wolf_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.WHITE_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "snowy_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "snowy_wolf_helmet");
+			.save(consumer, Risus.prefix("snowy_wolf_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.ORANGE_TERRACOTTA), Ingredient.of(Items.BLACK_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "spotted_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "spotted_wolf_helmet");
+			.save(consumer, Risus.prefix("spotted_wolf_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.YELLOW_TERRACOTTA), Ingredient.of(Items.BLACK_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "striped_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "striped_wolf_helmet");
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.GREEN_TERRACOTTA), Ingredient.of(Items.BROWN_TERRACOTTA), RecipeCategory.COMBAT)
+			.save(consumer, Risus.prefix("striped_wolf_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BROWN_TERRACOTTA), Ingredient.of(Items.BROWN_TERRACOTTA), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "woods_wolf")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "woods_wolf_helmet");
+			.save(consumer, Risus.prefix("woods_wolf_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_BLEACHED), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "bleached_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "bleached_eye_helmet");
+			.save(consumer, Risus.prefix("bleached_eye_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_BLOODSHOT), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "bloodshot_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "bloodshot_eye_helmet");
+			.save(consumer, Risus.prefix("bloodshot_eye_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_EMERALD), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "emerald_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "emerald_eye_helmet");
+			.save(consumer, Risus.prefix("emerald_eye_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_ENDER), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "ender_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "ender_eye_helmet");
+			.save(consumer, Risus.prefix("ender_eye_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.EYE_GOLDEN), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "golden_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "golden_eye_helmet");
+			.save(consumer, Risus.prefix("golden_eye_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.ASHEN_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "abyssal_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "abyssal_eye_helmet");
+			.save(consumer, Risus.prefix("abyssal_eye_helmet"));
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.SMILING_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "smile")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, "smile_helmet");
+			.save(consumer, Risus.prefix("smile_helmet"));
 
 	}
 

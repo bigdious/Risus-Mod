@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:black_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "black_wolf"
+  },
   "base": {
     "item": "minecraft:black_terracotta"
   },

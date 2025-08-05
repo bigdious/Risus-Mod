@@ -3,6 +3,9 @@
   "addition": {
     "item": "risus:organic_matter"
   },
+  "additional_data": {
+    "risus:ability_variant": "ender_eye"
+  },
   "base": {
     "item": "risus:eye_ender"
   },

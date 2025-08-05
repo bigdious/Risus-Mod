@@ -3,8 +3,11 @@
   "addition": {
     "item": "minecraft:brown_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "rusty_wolf"
+  },
   "base": {
-    "item": "minecraft:red_terracotta"
+    "item": "minecraft:orange_terracotta"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

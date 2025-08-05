@@ -1,10 +1,13 @@
 {
   "type": "risus:smithing_upgrade",
   "addition": {
-    "item": "minecraft:white_wool"
+    "item": "minecraft:brown_wool"
+  },
+  "additional_data": {
+    "risus:ability_variant": "ragdoll_cat"
   },
   "base": {
-    "item": "minecraft:light_blue_wool"
+    "item": "minecraft:white_wool"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

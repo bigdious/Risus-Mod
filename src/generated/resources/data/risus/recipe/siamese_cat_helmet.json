@@ -1,10 +1,13 @@
 {
   "type": "risus:smithing_upgrade",
   "addition": {
-    "item": "minecraft:brown_wool"
+    "item": "minecraft:white_wool"
+  },
+  "additional_data": {
+    "risus:ability_variant": "siamese_cat"
   },
   "base": {
-    "item": "minecraft:blue_wool"
+    "item": "minecraft:brown_wool"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"

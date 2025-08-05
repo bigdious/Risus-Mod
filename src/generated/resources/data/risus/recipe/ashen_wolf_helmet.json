@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:white_terracotta"
   },
+  "additional_data": {
+    "risus:ability_variant": "ashen_wolf"
+  },
   "base": {
     "item": "minecraft:gray_terracotta"
   },

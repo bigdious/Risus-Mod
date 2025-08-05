@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:yellow_wool"
   },
+  "additional_data": {
+    "risus:ability_variant": "persian_cat"
+  },
   "base": {
     "item": "minecraft:white_wool"
   },

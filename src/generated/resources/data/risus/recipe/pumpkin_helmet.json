@@ -3,6 +3,9 @@
   "addition": {
     "item": "minecraft:string"
   },
+  "additional_data": {
+    "risus:ability_variant": "pumpkin"
+  },
   "base": {
     "item": "minecraft:carved_pumpkin"
   },

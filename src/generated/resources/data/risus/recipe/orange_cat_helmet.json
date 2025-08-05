@@ -3,8 +3,11 @@
   "addition": {
     "item": "minecraft:orange_wool"
   },
+  "additional_data": {
+    "risus:ability_variant": "orange_cat"
+  },
   "base": {
-    "item": "minecraft:green_wool"
+    "item": "minecraft:yellow_wool"
   },
   "template": {
     "item": "risus:sinner_robes_helmet"
