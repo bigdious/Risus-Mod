@@ -424,14 +424,22 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	private void trimmedLayeredArmor(DeferredHolder<Item, ArmorItem> armor) {
 		ItemModelBuilder base = this.generated(armor.getId().getPath(), Risus.prefix("item/" + armor.getId().getPath()), Risus.prefix("item/" + armor.getId().getPath() + "_0"));
+		var baseUpgraded = this.generated(armor.getId().getPath() + "_upgraded", Risus.prefix("item/" + armor.getId().getPath() + "_upgraded"), Risus.prefix("item/" + armor.getId().getPath() + "_0"));
+		var trueBase = base.override().predicate(Risus.prefix("upgraded"), 1).model(baseUpgraded).end();
 		for (ItemModelGenerators.TrimModelData trim : ItemModelGenerators.GENERATED_TRIM_MODELS) {
 			String material = trim.name();
 			String name = armor.getId().getPath() + "_" + material + "_trim";
-			ModelFile trimModel = this.withExistingParent(name, this.mcLoc("item/generated"))
+			String nameUpgraded = armor.getId().getPath() + "_upgraded" +"_" + material + "_trim";
+			var trimModel = this.withExistingParent(name, this.mcLoc("item/generated"))
 				.texture("layer0", Risus.prefix("item/" + armor.getId().getPath()))
 				.texture("layer1", Risus.prefix("item/" + armor.getId().getPath() + "_0"))
 				.texture("layer2", this.mcLoc("trims/items/" + armor.get().getType().getName() + "_trim_" + material));
-			base.override().predicate(ResourceLocation.withDefaultNamespace("trim_type"), trim.itemModelIndex()).model(trimModel).end();
+			var trimUpgradedModel = this.withExistingParent(nameUpgraded, this.mcLoc("item/generated"))
+				.texture("layer0", Risus.prefix("item/" + armor.getId().getPath() + "_upgraded"))
+				.texture("layer1", Risus.prefix("item/" + armor.getId().getPath() + "_0"))
+				.texture("layer2", this.mcLoc("trims/items/" + armor.get().getType().getName() + "_trim_" + material));
+			trueBase.override().predicate(ResourceLocation.withDefaultNamespace("trim_type"), trim.itemModelIndex()).model(trimModel).end()
+				.override().predicate(Risus.prefix("upgraded"), 1).predicate(ResourceLocation.withDefaultNamespace("trim_type"), trim.itemModelIndex()).model(trimUpgradedModel).end();
 		}
 	}
 

@@ -2,9 +2,22 @@
   "parent": "minecraft:item/generated",
   "overrides": [
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded",
+      "predicate": {
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_quartz_trim",
       "predicate": {
         "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_quartz_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.1,
+        "risus:upgraded": 1.0
       }
     },
     {
@@ -14,9 +27,23 @@
       }
     },
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_iron_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.2,
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_netherite_trim",
       "predicate": {
         "minecraft:trim_type": 0.3
+      }
+    },
+    {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_netherite_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.3,
+        "risus:upgraded": 1.0
       }
     },
     {
@@ -26,9 +53,23 @@
       }
     },
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_redstone_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.4,
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_copper_trim",
       "predicate": {
         "minecraft:trim_type": 0.5
+      }
+    },
+    {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_copper_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.5,
+        "risus:upgraded": 1.0
       }
     },
     {
@@ -38,9 +79,23 @@
       }
     },
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_gold_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.6,
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_emerald_trim",
       "predicate": {
         "minecraft:trim_type": 0.7
+      }
+    },
+    {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_emerald_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.7,
+        "risus:upgraded": 1.0
       }
     },
     {
@@ -50,15 +105,36 @@
       }
     },
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_diamond_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.8,
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_lapis_trim",
       "predicate": {
         "minecraft:trim_type": 0.9
       }
     },
     {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_lapis_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.9,
+        "risus:upgraded": 1.0
+      }
+    },
+    {
       "model": "risus:item/sinner_robes_chestplate_amethyst_trim",
       "predicate": {
         "minecraft:trim_type": 1.0
+      }
+    },
+    {
+      "model": "risus:item/sinner_robes_chestplate_upgraded_amethyst_trim",
+      "predicate": {
+        "minecraft:trim_type": 1.0,
+        "risus:upgraded": 1.0
       }
     }
   ],

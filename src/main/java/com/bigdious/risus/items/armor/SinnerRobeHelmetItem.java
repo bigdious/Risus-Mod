@@ -37,18 +37,17 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 		return null;
 	}
 
-
-
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
 			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(HELMET_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(HELMET_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
 		}
 		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
 	}
 
-	public static final Map<String, ChatFormatting> ABILITY_COLOR = Map.ofEntries(
+	public static final Map<String, ChatFormatting> HELMET_ABILITY_COLOR = Map.ofEntries(
 		Map.entry("skeleton", ChatFormatting.WHITE),
 		Map.entry("creeper", ChatFormatting.GREEN),
 		Map.entry("wither_skeleton", ChatFormatting.DARK_GRAY ),
@@ -86,7 +85,7 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 
 	@Override
 	public boolean isEnderMask(ItemStack stack, Player player, EnderMan endermanEntity) {
-		return stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT) == "pumpkin";
+		return stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("pumpkin");
 	}
 
 	@Override

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "risus:item/sinner_robes_chestplate_upgraded",
+    "layer1": "risus:item/sinner_robes_chestplate_0"
+  }
+}

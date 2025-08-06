@@ -171,6 +171,10 @@ public class RisusClientEvents {
 			ItemProperties.register(RisusItems.FIRE_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
 			ItemProperties.register(RisusItems.CINDERGLEE_SCYTHE.get(), Risus.prefix("noanim"), (stack, level, entity, i) -> RisusConfig.customWeaponAnims ? 0.0F : 1.0F);
 
+			ItemProperties.register(RisusItems.SINNER_ROBES_HELMET.get(), Risus.prefix("upgraded"), (stack, level, entity, i) -> stack.get(RisusDataComponents.ABILITY_VARIANT)==null ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.SINNER_ROBES_CHESTPLATE.get(), Risus.prefix("upgraded"), (stack, level, entity, i) -> stack.get(RisusDataComponents.ABILITY_VARIANT)==null ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.SINNER_ROBES_LEGGINGS.get(), Risus.prefix("upgraded"), (stack, level, entity, i) -> stack.get(RisusDataComponents.ABILITY_VARIANT)==null ? 0.0F : 1.0F);
+			ItemProperties.register(RisusItems.SINNER_ROBES_BOOTS.get(), Risus.prefix("upgraded"), (stack, level, entity, i) -> stack.get(RisusDataComponents.ABILITY_VARIANT)==null ? 0.0F : 1.0F);
 		});
 	}
 

@@ -6,6 +6,8 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.utility.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.bigdious.risus.util.ServerParticleUtils;
+import com.google.common.collect.Lists;
+import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -37,6 +39,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.SimpleExplosionDamageCalculator;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -45,10 +48,12 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosCapability;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
@@ -422,11 +427,11 @@ public class ItemEffectEvents {
 			String ability = player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT);
 			Entity lookingEntity = event.getLookingEntity();
 			if (ability != null) {
-				if (ability.equals("skeleton") && lookingEntity.getType()==EntityType.SKELETON ||
-					ability.equals("creeper") && lookingEntity.getType()==EntityType.CREEPER ||
-					ability.equals("zombie") && lookingEntity.getType()==EntityType.ZOMBIE ||
-					ability.equals("wither_skeleton") && lookingEntity.getType()==EntityType.WITHER_SKELETON ||
-					ability.equals("piglin") && lookingEntity.getType()==EntityType.PIGLIN ||
+				if (ability.equals("skeleton") && lookingEntity.getType() == EntityType.SKELETON ||
+					ability.equals("creeper") && lookingEntity.getType() == EntityType.CREEPER ||
+					ability.equals("zombie") && lookingEntity.getType() == EntityType.ZOMBIE ||
+					ability.equals("wither_skeleton") && lookingEntity.getType() == EntityType.WITHER_SKELETON ||
+					ability.equals("piglin") && lookingEntity.getType() == EntityType.PIGLIN ||
 					(
 						ability.equals("tuxedo_cat") ||
 							ability.equals("black_cat") ||
@@ -439,14 +444,56 @@ public class ItemEffectEvents {
 							ability.equals("siamese_cat") ||
 							ability.equals("tabby_cat") ||
 							ability.equals("white_cat")
-					) && lookingEntity.getType()==EntityType.PHANTOM
+					) && lookingEntity.getType() == EntityType.PHANTOM
 				) {
 					event.modifyVisibility(0.2);
+				} else if
+				((
+						ability.equals("pale_wolf") ||
+							ability.equals("ashen_wolf") ||
+							ability.equals("black_wolf") ||
+							ability.equals("chestnut_wolf") ||
+							ability.equals("rusty_wolf") ||
+							ability.equals("spotted_wolf") ||
+							ability.equals("snowy_wolf") ||
+							ability.equals("striped_wolf") ||
+							ability.equals("woods_wolf"))
+						&& lookingEntity.getType() == EntityType.SKELETON) {
+					event.modifyVisibility(0.5);
+				} else if ((ability.equals("smile") || (ability.equals("abyssaleye"))) && lookingEntity.getType().is(RisusTags.Entities.OFFSPRING)) {
+					event.modifyVisibility(0.6);
 				}
 			}
 
 		}
 
+	}
+
+	public static void increaseItemPickupRange(PlayerTickEvent.Pre event) {
+		Player player = event.getEntity();
+		if (player.getHealth() > 0.0F && !player.isSpectator() && player.getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && player.getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("guts") ) {
+			AABB aabb;
+			if (player.isPassenger() && !player.getVehicle().isRemoved()) {
+				aabb = player.getBoundingBox().minmax(player.getVehicle().getBoundingBox()).inflate(4.0F, 0.0F, 4.0F);
+			} else {
+				aabb = player.getBoundingBox().inflate(4.0F, 0.5F, 4.0F);
+			}
+
+			List<Entity> list = player.level().getEntities(player, aabb);
+			List<Entity> list1 = Lists.newArrayList();
+
+			for(Entity entity : list) {
+				if (entity.getType() == EntityType.EXPERIENCE_ORB) {
+					list1.add(entity);
+				} else if (!entity.isRemoved()) {
+					entity.playerTouch(player);
+				}
+			}
+
+			if (!list1.isEmpty()) {
+				(Util.getRandom(list1, player.getRandom())).playerTouch(player);
+			}
+		}
 	}
 
 }

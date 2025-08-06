@@ -342,6 +342,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 
 		this.add("tooltip.risus.ability", "Ability:");
+		//don't forget, a space before
 		this.add("tooltip.risus.sinner_robes_helmet.skeleton", " Skeleton Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.creeper", " Creeper Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.wither_skeleton", " Wither Skeleton Mask");
@@ -376,6 +377,43 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye", " Abyssal Eye Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.smile", " Smile Mask");
 
+		this.add("tooltip.risus.sinner_robes_helmet.skeleton.desc", " Less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.creeper.desc", " Less noticed by Creepers");
+		this.add("tooltip.risus.sinner_robes_helmet.wither_skeleton.desc", " Less noticed by Wither Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.zombie.desc", " Less noticed by Zombies");
+		this.add("tooltip.risus.sinner_robes_helmet.piglin.desc", " Piglins are Neutral");
+		this.add("tooltip.risus.sinner_robes_helmet.tuxedo_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.black_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.british_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.calico_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.jellie_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.persian_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.ragdoll_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.orange_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.siamese_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.tabby_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.white_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.pumpkin.desc", " Ignored by Endermen");
+		this.add("tooltip.risus.sinner_robes_helmet.pale_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.ashen_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.black_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.chestnut_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.rusty_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.snowy_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.spotted_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.striped_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.woods_wolf.desc", " Slightly less noticed by Skeletons");
+		this.add("tooltip.risus.sinner_robes_helmet.bleached_eye.desc", " Immune to Stalkers");
+		this.add("tooltip.risus.sinner_robes_helmet.bloodshot_eye.desc", " Immune to Stalkers");
+		this.add("tooltip.risus.sinner_robes_helmet.emerald_eye.desc", " Immune to Stalkers");
+		this.add("tooltip.risus.sinner_robes_helmet.ender_eye.desc", " Immune to Stalkers");
+		this.add("tooltip.risus.sinner_robes_helmet.golden_eye.desc", " Immune to Stalkers");
+		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye.desc", " Less noticed by Offsprings");
+		this.add("tooltip.risus.sinner_robes_helmet.smile.desc", " Less noticed by Offsprings");
+
+		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
+
+		this.add("tooltip.risus.sinner_robes_chestplate.guts.desc", " Increased Pickup Range");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
