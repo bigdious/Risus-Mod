@@ -1,8 +1,8 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.event.RisusEvents;
-import com.bigdious.risus.blocks.interfaces.OrganicMatterableBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusParticles;
@@ -17,9 +17,7 @@ import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,7 +34,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Supplier;
 

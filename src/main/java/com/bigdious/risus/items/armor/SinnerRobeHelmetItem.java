@@ -15,14 +15,17 @@ import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.neoforged.neoforge.common.extensions.IItemStackExtension;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
 
 
-public class SinnerRobeHelmetItem extends RisusArmorItem {
+public class SinnerRobeHelmetItem extends RisusArmorItem  {
 	public SinnerRobeHelmetItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}
@@ -80,6 +83,16 @@ public class SinnerRobeHelmetItem extends RisusArmorItem {
 		Map.entry("abyssal_eye", ChatFormatting.DARK_GRAY ),
 		Map.entry("smile", ChatFormatting.DARK_RED )
 	);
+
+	@Override
+	public boolean isEnderMask(ItemStack stack, Player player, EnderMan endermanEntity) {
+		return stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT) == "pumpkin";
+	}
+
+	@Override
+	public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
+		return stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("piglin");
+	}
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {
 		public ArmorRender() {
