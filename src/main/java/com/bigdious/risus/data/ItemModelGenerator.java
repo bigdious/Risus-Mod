@@ -243,6 +243,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.ECHO_PEARL);
 		singleTex(RisusItems.LUCKY_CHARM);
 		singleTex(RisusItems.WRETCHED_CHARM);
+		singleTex(RisusItems.STITCHING_NEEDLE);
 
 		var warhornFilled = withExistingParent("warhorn_2", Risus.prefix("item/default_warhorn")).texture("under_texture", "item/warhorn_1").texture("over_texture", "item/warhorn");
 		var warhornFilledTooting = withExistingParent("warhorn_3", Risus.prefix("item/default_tooting_warhorn")).texture("under_texture", "item/warhorn_1").texture("over_texture", "item/warhorn");

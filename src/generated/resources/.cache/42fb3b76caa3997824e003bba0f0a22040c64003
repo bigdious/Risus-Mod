@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-06T20:50:46.1790252	Risus Item Models
+// 1.21.1	2025-08-07T08:28:08.0082473	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -372,6 +372,7 @@ e142f3bd0a43e1bdd142f05d83392ffe3ff5c421 assets/risus/models/item/soul_scythe_no
 8aabd6109304e1691a4a7137fe92c70c77d1ebe2 assets/risus/models/item/spreading_remains.json
 c8ae8b493fb76c56a3635862ed57431896a05861 assets/risus/models/item/stalker_eye.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/stalker_spawn_egg.json
+b8f688dd57c5307c66ce95f0184f55d1b2ad568b assets/risus/models/item/stitching_needle.json
 a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondknot_log.json
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
 fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json

@@ -65,7 +65,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				RisusItems.THOUSAND_BLADE.get());
 
 		this.tag(ItemTags.TRIM_TEMPLATES).add(
-			RisusItems.BLOOD_FEATHER.get());
+			RisusItems.BLOOD_FEATHER.get(),
+			RisusItems.STITCHING_NEEDLE.get());
 
 		this.tag(RisusTags.Items.EYE).add(
 			RisusBlocks.EYE_EMERALD.asItem(),

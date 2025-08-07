@@ -937,6 +937,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.STALKER_EYE))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RisusItems.STITCHING_NEEDLE.get(), 1)
+			.pattern("OR")
+			.pattern("IB")
+			.define('I', Items.IRON_INGOT)
+			.define('R', Items.RED_WOOL)
+			.define('O', RisusBlocks.ORGANIC_MATTER_BLOCK.asItem())
+			.define('B', RisusBlocks.BLOODWEAVE.asItem())
+			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RisusBlocks.LIVING_TISSUE, 1)
 			.requires(RisusBlocks.TISSUE.get())
 			.requires(RisusItems.ORGANIC_MATTER.get())
@@ -1185,6 +1195,42 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
 			.save(consumer, "warhorn_to_hexhorn");
 
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.STITCHING_NEEDLE.get()),
+				Ingredient.of(RisusItems.SKIN_BOOTS),
+				Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK),
+				RecipeCategory.COMBAT,
+				RisusItems.SINNER_ROBES_BOOTS.get())
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "skin_boots_to_robes");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.STITCHING_NEEDLE.get()),
+				Ingredient.of(RisusItems.SKIN_LEGGINGS),
+				Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK),
+				RecipeCategory.COMBAT,
+				RisusItems.SINNER_ROBES_LEGGINGS.get())
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "skin_leggings_to_robes");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.STITCHING_NEEDLE.get()),
+				Ingredient.of(RisusItems.SKIN_CHESTPLATE),
+				Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK),
+				RecipeCategory.COMBAT,
+				RisusItems.SINNER_ROBES_CHESTPLATE.get())
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "skin_chestplate_to_robes");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.STITCHING_NEEDLE.get()),
+				Ingredient.of(RisusItems.SKIN_HELMET),
+				Ingredient.of(RisusBlocks.FLATTENED_SCALES_BLOCK),
+				RecipeCategory.COMBAT,
+				RisusItems.SINNER_ROBES_HELMET.get())
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, "skin_helmet_to_robes");
+
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.SKELETON_SKULL), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "skeleton")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
@@ -1336,6 +1382,8 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "guts")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("guts_chestplate"));
+
+
 
 	}
 

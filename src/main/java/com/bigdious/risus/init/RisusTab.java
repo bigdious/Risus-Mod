@@ -201,6 +201,7 @@ public class RisusTab {
 				output.accept(RisusItems.SKIN_CHESTPLATE.get());
 				output.accept(RisusItems.SKIN_LEGGINGS.get());
 				output.accept(RisusItems.SKIN_BOOTS.get());
+				output.accept(RisusItems.STITCHING_NEEDLE.get());
 				output.accept(RisusItems.SINNER_ROBES_HELMET.get());
 				output.accept(RisusItems.SINNER_ROBES_CHESTPLATE.get());
 				output.accept(RisusItems.SINNER_ROBES_LEGGINGS.get());

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "risus:flattened_scales_block"
+  },
+  "base": {
+    "item": "risus:skin_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:sinner_robes_helmet"
+  },
+  "template": {
+    "item": "risus:stitching_needle"
+  }
+}

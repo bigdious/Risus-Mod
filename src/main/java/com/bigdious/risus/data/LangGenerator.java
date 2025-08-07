@@ -259,6 +259,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.SMILE, "Smile");
 		this.addItem(RisusItems.SOUL_SCYTHE, "Soul Scratcher");
 		this.addItem(RisusItems.STALKER_EYE, "Stalker Eye");
+		this.addItem(RisusItems.STITCHING_NEEDLE, "Stitching Needle");
 		this.addItem(RisusItems.THOUSAND_BLADE, "Blade of a Thousand");
 		this.addItem(RisusItems.THREADERS_OF_THE_FIRMAMENT, "Threads Of The Firmament");
 		this.addItem(RisusItems.TOOTHKNOCKER, "Toothknocker");

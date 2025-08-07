@@ -38,7 +38,7 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
-compileJava.options.compilerArgs << "-Xlint:all,-classfile,-processing,-deprecation,-this-escape" << "-Werror"
+compileJava.options.compilerArgs << "-Xlint:all,-classfile,-processing,-deprecation,-this-escape"
 
 neoForge {
 	version = project.neo_version

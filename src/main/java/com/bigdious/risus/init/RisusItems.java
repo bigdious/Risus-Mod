@@ -113,6 +113,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> GLUTTONY_SCALES = register("gluttony_scales", GluttonyScalesItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> PURIFYING_PASTE = register("purifying_paste", Item::new, Item.Properties::new);
 	public static final DeferredItem<Item> ECHO_PEARL = register("echo_pearl", Item::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> STITCHING_NEEDLE = register("stitching_needle", Item::new, () -> new Item.Properties().rarity(BLOOD));
 
 	//COLLECTABLES
 	public static final DeferredItem<Item> SMILE_PATTERN = register("smile_banner_pattern", properties -> new BannerPatternItem(RisusTags.BannerPatterns.SMILE_PATTERN, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

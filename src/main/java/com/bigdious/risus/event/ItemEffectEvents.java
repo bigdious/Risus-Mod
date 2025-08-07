@@ -6,9 +6,12 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.utility.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
 import com.bigdious.risus.util.ServerParticleUtils;
+import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +23,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -38,8 +42,11 @@ import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.SimpleExplosionDamageCalculator;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FrostedIceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -460,7 +467,7 @@ public class ItemEffectEvents {
 							ability.equals("woods_wolf"))
 						&& lookingEntity.getType() == EntityType.SKELETON) {
 					event.modifyVisibility(0.5);
-				} else if ((ability.equals("smile") || (ability.equals("abyssaleye"))) && lookingEntity.getType().is(RisusTags.Entities.OFFSPRING)) {
+				} else if ((ability.equals("smile") || (ability.equals("abyssal_eye"))) && lookingEntity.getType().is(RisusTags.Entities.OFFSPRING)) {
 					event.modifyVisibility(0.6);
 				}
 			}
@@ -492,6 +499,37 @@ public class ItemEffectEvents {
 
 			if (!list1.isEmpty()) {
 				(Util.getRandom(list1, player.getRandom())).playerTouch(player);
+			}
+		}
+	}
+
+	public static void shadowWalk(PlayerTickEvent.Pre event){
+		Player player = event.getEntity();
+		Level level = player.level();
+
+		if (player.level() instanceof ServerLevel serverlevel1) {
+			BlockPos blockpos1 = player.blockPosition();
+			if (!Objects.equal(player.lastPos, blockpos1)) {
+				if (player.onGround() && player.getItemBySlot(EquipmentSlot.FEET).is(RisusItems.SINNER_ROBES_BOOTS)) {
+					BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
+					int i = Math.min(16, 2 + 1);
+					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+
+					for(BlockPos blockpos : BlockPos.betweenClosed(blockpos1.offset(-i, -1, -i), blockpos1.offset(i, -1, i))) {
+						if (blockpos.closerToCenterThan(player.position(), (double)i)) {
+							blockpos$mutableblockpos.set(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
+							BlockState blockstate1 = level.getBlockState(blockpos$mutableblockpos);
+							if (blockstate1.isAir()) {
+								BlockState blockstate2 = level.getBlockState(blockpos);
+								if (blockstate2 == FrostedIceBlock.meltsInto() && blockstate.canSurvive(level, blockpos) && level.isUnobstructed(blockstate, blockpos, CollisionContext.empty())) {
+									level.setBlockAndUpdate(blockpos, blockstate);
+									level.scheduleTick(blockpos, Blocks.FROSTED_ICE, Mth.nextInt(player.getRandom(), 60, 120));
+								}
+							}
+						}
+					}
+
+				}
 			}
 		}
 	}

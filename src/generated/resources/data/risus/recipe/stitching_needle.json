@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "risus:bloodweave"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "risus:organic_matter_block"
+    },
+    "R": {
+      "item": "minecraft:red_wool"
+    }
+  },
+  "pattern": [
+    "OR",
+    "IB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:stitching_needle"
+  }
+}

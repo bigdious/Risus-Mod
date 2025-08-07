@@ -74,6 +74,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::eternalizeTamables);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::updateVisibility);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::increaseItemPickupRange);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::shadowWalk);
 //		NeoForge.EVENT_BUS.addListener(RisusEvents::addFear);
 	}
 
