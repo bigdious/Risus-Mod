@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-21T20:31:33.5562326	Loot Tables
+// 1.21.1	2025-08-07T16:43:28.1338176	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -65,6 +65,7 @@ abdd8fb079dd268b419cfca40a8dfb5500530258 data/risus/loot_table/blocks/eye_emeral
 bfbeb9c5736761869da6bac03bb8c5338328aff5 data/risus/loot_table/blocks/eye_ender_glowing.json
 27bb7a5024fe840783f8bad4974255d7ecd9dc20 data/risus/loot_table/blocks/eye_golden.json
 63bf6b8337072e5de580fd38580f3e0a422c1ebb data/risus/loot_table/blocks/eye_golden_glowing.json
+27b6a6a6986497846020100d97fd566175f5f68b data/risus/loot_table/blocks/fading_shadow.json
 c0bb3bcc86044f545418770a66de418f9a567c33 data/risus/loot_table/blocks/flattened_imitation_scales_block.json
 919ce802a368b36ce4f8703b94e617787a5ca43d data/risus/loot_table/blocks/flattened_scales_block.json
 6a102d45f4922be27d077e47296fc3b48594118c data/risus/loot_table/blocks/fleshy_skin.json

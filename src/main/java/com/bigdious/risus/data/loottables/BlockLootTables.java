@@ -43,6 +43,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.WEAVER_NEST.get(), RisusBlocks.BLOODWEAVE);
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
+		add(RisusBlocks.FADING_SHADOW.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());
 		dropOther(RisusBlocks.INVISIBLE_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);

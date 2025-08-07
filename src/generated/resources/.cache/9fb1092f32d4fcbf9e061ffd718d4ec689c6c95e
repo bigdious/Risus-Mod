@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-07T10:43:13.1467828	Recipes
+// 1.21.1	2025-08-07T16:43:28.1409588	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 2900f03497680804a1832b02632e2761c902a096 data/minecraft/advancement/recipes/combat/head_to_spewer.json
@@ -252,6 +252,7 @@ c36907cce79f3b3913c5d55e9ea3396b7dd13a70 data/risus/advancement/recipes/combat/r
 5c5eec41a83735307f09e1c78cd3428e2863b714 data/risus/advancement/recipes/combat/rose_crown.json
 8dcfb85868d2eb63a9bded349537b47e799d672a data/risus/advancement/recipes/combat/rusty_wolf_helmet.json
 b293bd4931fa791111b2aba85d95f960ad4c9750 data/risus/advancement/recipes/combat/scythe.json
+6c433cc75d29d7ebf96d336046f7f7ae97fb96c8 data/risus/advancement/recipes/combat/shadow_walker_boots.json
 a6e5a355832774954061feacacbf1d50311f90d2 data/risus/advancement/recipes/combat/siamese_cat_helmet.json
 7e42c0bf35535febe02eb299d46a1bffd508ab95 data/risus/advancement/recipes/combat/skeleton_helmet.json
 317aade5443217ab6ec6d1039b1c561253a01185 data/risus/advancement/recipes/combat/smile_helmet.json
@@ -502,6 +503,7 @@ e5187054b4a02838affa9fc429cb3f155d102eec data/risus/recipe/rose_crown.json
 b838077920724f88898be2622fd3893daf19ab0b data/risus/recipe/rose_petal.json
 9d34f16a4a68c5aae18a035496d7122c58d1ad89 data/risus/recipe/rusty_wolf_helmet.json
 e2ae2c46c3f400e544566a95ac5823b147a47025 data/risus/recipe/scythe.json
+ebc10bfd8bc595a8bb4bf4cfb1a227103d88d9e1 data/risus/recipe/shadow_walker_boots.json
 52622014af62cc55c673d83c344204731bb8b521 data/risus/recipe/siamese_cat_helmet.json
 d04d225506d617512efdc21a0bf8d680e8571ec1 data/risus/recipe/skeleton_helmet.json
 1db6440c23cd494a875c8981f50300ad1efa3e4c data/risus/recipe/smelt_bloody_sponge.json

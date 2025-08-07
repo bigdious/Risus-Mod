@@ -2,12 +2,18 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusFluids;
 import com.bigdious.risus.init.RisusItems;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -20,16 +26,16 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.*;
 import net.neoforged.neoforge.client.model.IDynamicBakedModel;
 
 
 public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 	protected static final VoxelShape SHAPE = Block.box(1.0D, 1.0D, 1.0D, 14.0D, 14.0D, 14.0D);
+	protected static final VoxelShape SHAPE2 = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
+	private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, 0.9F, 1.0D);
+
 
 	public DarknessBlock(Properties properties) {
 		super(properties);
@@ -83,12 +89,36 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		return Shapes.empty();
 	}
 
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext collision) {
+		if (collision instanceof EntityCollisionContext entitycollisioncontext) {
+			Entity entity = entitycollisioncontext.getEntity();
+			if (entity != null) {
+				if (entity.fallDistance > 2.5F) {
+					return FALLING_COLLISION_SHAPE;
+				}
+
+				boolean flag = entity instanceof FallingBlockEntity;
+				if (flag || canEntityWalkOnShadows(entity) && collision.isAbove(Shapes.block(), pos, false) && !collision.isDescending()) {
+					return SHAPE2;
+				}
+			}
+		}
+
+		return Shapes.empty();
+	}
+
+	public static boolean canEntityWalkOnShadows(Entity entity) {
+		return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT) != null && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT).equals("shadow_walker");
+	}
+
 
 	@Override
 	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {
 		return 0.0F;
 	}
 
+	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
 		return false;
 	}

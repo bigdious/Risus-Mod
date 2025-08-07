@@ -40,6 +40,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.SimpleExplosionDamageCalculator;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -509,21 +510,24 @@ public class ItemEffectEvents {
 
 		if (player.level() instanceof ServerLevel serverlevel1) {
 			BlockPos blockpos1 = player.blockPosition();
+			ItemStack stack = player.getItemBySlot(EquipmentSlot.FEET);
 			if (!Objects.equal(player.lastPos, blockpos1)) {
-				if (player.onGround() && player.getItemBySlot(EquipmentSlot.FEET).is(RisusItems.SINNER_ROBES_BOOTS)) {
-					BlockState blockstate = Blocks.FROSTED_ICE.defaultBlockState();
-					int i = Math.min(16, 2 + 1);
+				if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("shadow_walker")) {
+					BlockState blockstate = RisusBlocks.FADING_SHADOW.get().defaultBlockState();
+					int i = 2;
 					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-
+					//if the logic gives you a headache, you are not alone
 					for(BlockPos blockpos : BlockPos.betweenClosed(blockpos1.offset(-i, -1, -i), blockpos1.offset(i, -1, i))) {
-						if (blockpos.closerToCenterThan(player.position(), (double)i)) {
-							blockpos$mutableblockpos.set(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
-							BlockState blockstate1 = level.getBlockState(blockpos$mutableblockpos);
-							if (blockstate1.isAir()) {
-								BlockState blockstate2 = level.getBlockState(blockpos);
-								if (blockstate2 == FrostedIceBlock.meltsInto() && blockstate.canSurvive(level, blockpos) && level.isUnobstructed(blockstate, blockpos, CollisionContext.empty())) {
-									level.setBlockAndUpdate(blockpos, blockstate);
-									level.scheduleTick(blockpos, Blocks.FROSTED_ICE, Mth.nextInt(player.getRandom(), 60, 120));
+						if ((!level.canSeeSky(blockpos) || ((level.canSeeSky(blockpos) && !level.isDay()))) && level.getBrightness(LightLayer.BLOCK, blockpos) < 1) {
+							if (blockpos.closerToCenterThan(player.position(), i)) {
+								blockpos$mutableblockpos.set(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
+								BlockState blockstate1 = level.getBlockState(blockpos$mutableblockpos);
+								if (blockstate1.isAir()) {
+									BlockState blockstate2 = level.getBlockState(blockpos);
+									if (blockstate2.isAir() && blockstate.canSurvive(level, blockpos) && level.isUnobstructed(blockstate, blockpos, CollisionContext.empty())) {
+										level.setBlockAndUpdate(blockpos, blockstate);
+										level.scheduleTick(blockpos, RisusBlocks.FADING_SHADOW.get(), Mth.nextInt(player.getRandom(), 60, 120));
+									}
 								}
 							}
 						}

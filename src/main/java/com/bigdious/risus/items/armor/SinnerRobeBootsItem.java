@@ -3,9 +3,12 @@ package com.bigdious.risus.items.armor;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.render.RisusSimpleArmorRenderer;
+import com.bigdious.risus.init.RisusDataComponents;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
@@ -13,12 +16,30 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.Map;
 
 public class SinnerRobeBootsItem extends RisusArmorItem {
 	public SinnerRobeBootsItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
+			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(BOOTS_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(BOOTS_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
+		}
+		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
+	}
+
+	public static final Map<String, ChatFormatting> BOOTS_ABILITY_COLOR = Map.ofEntries(
+		Map.entry("shadow_walker", ChatFormatting.DARK_GRAY)
+	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {
 		public ArmorRender() {

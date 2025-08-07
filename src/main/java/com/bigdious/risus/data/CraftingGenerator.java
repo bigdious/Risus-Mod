@@ -1383,6 +1383,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("guts_chestplate"));
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_BOOTS.get()),Ingredient.of(RisusItems.LIGHT_DEVOURER), Ingredient.of(RisusItems.BLOOD_FEATHER.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "shadow_walker")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("shadow_walker_boots"));
+
 
 
 	}

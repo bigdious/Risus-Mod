@@ -79,6 +79,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.EYE_EMERALD_GLOWING, "Glowing Emerald Eye Block");
 		this.addBlock(RisusBlocks.EYE_ENDER_GLOWING, "Glowing Ender Eye Block");
 		this.addBlock(RisusBlocks.EYE_GOLDEN_GLOWING, "Glowing Golden Eye Block");
+		this.addBlock(RisusBlocks.FADING_SHADOW, "Fading Shadow");
 		this.addBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK, "Imitation Scales Block");
 		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS, "Imitation Scales Stairs");
 		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, "Imitation Scales Slab");
@@ -415,6 +416,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts.desc", " Increased Pickup Range");
+
+		this.add("tooltip.risus.sinner_robes_boots.shadow_walker", " Shadow Walker");
+
+		this.add("tooltip.risus.sinner_robes_boots.shadow_walker.desc", " Turns Darkness solid");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
