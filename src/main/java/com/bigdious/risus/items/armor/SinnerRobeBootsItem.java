@@ -30,9 +30,10 @@ public class SinnerRobeBootsItem extends RisusArmorItem {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
+			ChatFormatting color = BOOTS_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
 			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(BOOTS_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(BOOTS_ABILITY_COLOR.get(stack.get(RisusDataComponents.ABILITY_VARIANT))));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
+			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(color));
 		}
 		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
 	}

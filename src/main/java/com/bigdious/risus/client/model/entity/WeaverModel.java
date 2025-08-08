@@ -101,7 +101,7 @@ public class WeaverModel<T extends Weaver> extends HierarchicalModel<T> {
 				.texOffs(31, 6).addBox(-3.7696F, -0.8415F, 1.5F, 1.0F, 2.0F, 1.0F)
 				.texOffs(31, 6).addBox(-3.7696F, -0.8415F, -2.5F, 1.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(-2.0F, 1.0F, -0.5F, 3.1416F, 0.0F, -0.3927F));
 
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(4, 12).addBox(0.0F, -8.0F, -1.5F, 4.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(5, 12).addBox(0.0F, -8.0F, -1.5F, 4.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
 		body.addOrReplaceChild("middleSegment_r1", CubeListBuilder.create().texOffs(0, 11).addBox(-3.0F, -2.0F, -2.5F, 6.0F, 4.0F, 5.0F), PartPose.offsetAndRotation(-2.0F, -6.0F, 0.0F, 0.0F, 0.0F, -0.3491F));
 

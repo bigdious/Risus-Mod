@@ -214,8 +214,12 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 					i = 8;
 				}
 				living.addEffect(new MobEffectInstance(RisusMobEffects.AMNESIA, i * 20, 0), this);
+				if (living instanceof Player player) {
+					player.giveExperiencePoints(-2);
+				}
 				if (living.isDeadOrDying() && level.getBlockState(pos.above()).is(Blocks.AIR) && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
 					this.memories++;
+					this.getAttributes().getInstance(Attributes.SCALE).setBaseValue(this.getAttributeBaseValue(Attributes.SCALE)+0.2);
 					level.setBlock(pos.above(), RisusBlocks.BLOODWEAVE.get().defaultBlockState(), 3);
 				}
 			}
