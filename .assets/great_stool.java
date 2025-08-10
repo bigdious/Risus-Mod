@@ -21,17 +21,17 @@ public class great_stool<T extends Entity> extends EntityModel<T> {
 		.texOffs(8, 18).addBox(-7.0F, -22.0F, -7.0F, 14.0F, 1.0F, 14.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 0).addBox(-5.5F, -16.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition support_4_r1 = bb_main.addOrReplaceChild("support_4_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition support_4_r1 = bb_main.addOrReplaceChild("support_4", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition support_3_r1 = bb_main.addOrReplaceChild("support_3_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
+		PartDefinition support_3_r1 = bb_main.addOrReplaceChild("support_3", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
-		PartDefinition support_2_r1 = bb_main.addOrReplaceChild("support_2_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition support_2_r1 = bb_main.addOrReplaceChild("support_2", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -2.0F, -3.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -14.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition leg_4_r1 = bb_main.addOrReplaceChild("leg_4_r1", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.5F, -10.5F, -4.5F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition leg_4_r1 = bb_main.addOrReplaceChild("leg_4", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.5F, -10.5F, -4.5F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition leg_3_r1 = bb_main.addOrReplaceChild("leg_3_r1", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, -10.5F, -4.5F, 0.0F, 3.1416F, 0.0F));
+		PartDefinition leg_3_r1 = bb_main.addOrReplaceChild("leg_3", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, -10.5F, -4.5F, 0.0F, 3.1416F, 0.0F));
 
-		PartDefinition leg_2_r1 = bb_main.addOrReplaceChild("leg_2_r1", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, -10.5F, 4.5F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition leg_2_r1 = bb_main.addOrReplaceChild("leg_2", CubeListBuilder.create().texOffs(0, 33).addBox(-1.5F, -10.5F, -1.5F, 3.0F, 21.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, -10.5F, 4.5F, 0.0F, 1.5708F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}

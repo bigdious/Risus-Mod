@@ -25,6 +25,7 @@ import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
+import com.bigdious.risus.network.SummonGreatnessPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.shaders.FogShape;
@@ -90,10 +91,17 @@ public class RisusClientEvents {
 		InputConstants.Type.KEYSYM,
 		GLFW.GLFW_KEY_R,
 		"key.categories.misc");
+	private static final KeyMapping SUMMON_GREATNESS = new KeyMapping(
+		"keybind.summon_greatness",
+		KeyConflictContext.IN_GAME,
+		InputConstants.Type.KEYSYM,
+		GLFW.GLFW_KEY_G,
+		"key.categories.misc");
 
 	public static void initEvents(IEventBus bus) {
 		bus.addListener(RegisterKeyMappingsEvent.class, event -> {
 			event.register(OPEN_BOOK_KEY);
+			event.register(SUMMON_GREATNESS);
 		});
 		bus.addListener(RisusClientEvents::clientSetup);
 		bus.addListener(RisusClientEvents::registerParticleFactories);
@@ -241,6 +249,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
+		event.registerLayerDefinition(RisusModelLayers.GREAT_STOOL, StoolModel::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.LITTER, LitterModel::create);
 		event.registerLayerDefinition(RisusModelLayers.RIGHT_HAND_OF_GREED, RightHandPlayerModel::create);
@@ -301,6 +310,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
+		event.registerEntityRenderer(RisusEntities.GREAT_STOOL.get(), StoolRenderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
 
@@ -427,6 +437,14 @@ public class RisusClientEvents {
 		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
 			if (event.getKey() == OPEN_BOOK_KEY.getKey().getValue() && OPEN_BOOK_KEY.consumeClick()) {
 				PacketDistributor.sendToServer(OpenBookPacket.INSTANCE);
+			}
+		}
+	}
+
+	private static void summonGreatness(InputEvent.Key event) {
+		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
+			if (event.getKey() == SUMMON_GREATNESS.getKey().getValue() && SUMMON_GREATNESS.consumeClick()) {
+				PacketDistributor.sendToServer(SummonGreatnessPacket.INSTANCE);
 			}
 		}
 	}

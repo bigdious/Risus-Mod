@@ -54,7 +54,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		int craftingLength = 100;
 
 		if (te.isCrafting) {
-			if (!te.item.is(Items.GOAT_HORN) || te.getRecipe(level, te.item) == null) {
+			if (!te.item.is(Items.GOAT_HORN) && te.getRecipe(level, te.item) == null) {
 				te.isCrafting = false;
 				te.setChanged();
 			}
@@ -95,7 +95,8 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 					te.finishedCounter = 0;
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
-				else if (recipe != null) {
+				else
+					if (recipe != null) {
 					te.item = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
 					te.setChanged();
 					te.finishedCrafting = true;
@@ -197,7 +198,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public boolean craftingPossible(Level level, ItemStack stack) {
 		if (this.isCrafting || stack.isEmpty())
 			return false;
-		return this.getRecipe(level, stack) != null;
+		return stack.is(Items.GOAT_HORN) || this.getRecipe(level, stack) != null;
 	}
 
 	public boolean updateBlock() {

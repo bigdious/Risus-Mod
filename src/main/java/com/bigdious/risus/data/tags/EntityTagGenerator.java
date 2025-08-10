@@ -53,7 +53,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				EntityType.ENDER_DRAGON,
 				EntityType.TADPOLE,
 				RisusEntities.QUESTION_MARK.get(),
-				RisusEntities.MEMORY1.get()
+				RisusEntities.MEMORY1.get(),
+				RisusEntities.GREAT_STOOL.get()
 			)
 
 		;
@@ -89,7 +90,9 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 		;
 		tag(RisusTags.Entities.HEXHORN_BANNED)
 			.add(
-				RisusEntities.MEMORY1.get()
+				RisusEntities.MEMORY1.get(),
+				RisusEntities.GREAT_STOOL.get()
+
 			)
 		;
 	}

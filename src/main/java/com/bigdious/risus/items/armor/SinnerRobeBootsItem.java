@@ -39,7 +39,8 @@ public class SinnerRobeBootsItem extends RisusArmorItem {
 	}
 
 	public static final Map<String, ChatFormatting> BOOTS_ABILITY_COLOR = Map.ofEntries(
-		Map.entry("shadow_walker", ChatFormatting.DARK_GRAY)
+		Map.entry("shadow_walker", ChatFormatting.DARK_GRAY),
+		Map.entry("great_stool", ChatFormatting.DARK_GRAY)
 	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {

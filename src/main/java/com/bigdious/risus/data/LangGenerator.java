@@ -331,6 +331,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
+		this.add("tooltip.risus.sinner_robe_boots.great_stool.button_press", "Press the %s key for Dominance.");
+		this.add("tooltip.risus.sinner_robe_boots.great_stool.button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
 		this.add("tooltip.risus.warhorn_dunk", "Right click with a Potion to fill it.");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
@@ -342,6 +344,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
+		this.add("keybind.summon_greatness", "Summon Great Stool");
 
 		this.add("tooltip.risus.ability", "Ability:");
 		//don't forget, a space before
@@ -439,6 +442,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.GUTS_BOAT, "Boat with Gorger Guts");
 		this.addEntityType(RisusEntities.LITTER, "Litter");
 		this.addEntityType(RisusEntities.MEMORY1, "Faded Statue");
+		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
 		SUBTITLE_GENERATOR.forEach(this::add);

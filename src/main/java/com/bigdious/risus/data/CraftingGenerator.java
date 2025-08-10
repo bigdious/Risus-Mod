@@ -32,7 +32,7 @@ public class CraftingGenerator extends RecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput consumer) {
 
-		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusBlocks.SMILING_REMAINS.get()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.NETHERRACK), RisusBlocks.SMILING_REMAINS.asItem()).unlockedBy("has_item", has(Items.STONE)).unlockedBy("has_item", has(Items.COBBLESTONE)).unlockedBy("has_item", has(Items.NETHERRACK)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.SOUL_SAND, Items.SOUL_SOIL), RisusBlocks.ASHEN_REMAINS.get()).unlockedBy("has_item", has(Items.SAND)).unlockedBy("has_item", has(Items.SOUL_SAND)).unlockedBy("has_item", has(Items.SOUL_SOIL)).unlockedBy("has_item", has(Items.DIRT)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GLOW_LICHEN), RisusBlocks.SPREADING_REMAINS.get()).unlockedBy("has_item", has(Items.VINE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TWISTING_VINES), RisusBlocks.NEURON_HEAD.get()).unlockedBy("has_item", has(Items.TWISTING_VINES)).save(consumer);
@@ -78,6 +78,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DISC_FRAGMENT_5), RisusItems.MUSIC_DISC_RAK).unlockedBy("has_item", has(Items.DISC_FRAGMENT_5)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.LUCKY_CHARM), RisusItems.WRETCHED_CHARM).unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOAT_HORN), RisusItems.WARHORN).unlockedBy("has_item", has(Items.GOAT_HORN)).save(consumer);
 
 		//bone to fossil
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BONE_BLOCK), RisusBlocks.FOSSIL).unlockedBy("has_item", has(Items.BONE_BLOCK)).save(consumer);
@@ -1387,6 +1388,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "shadow_walker")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("shadow_walker_boots"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_BOOTS.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("great_stool_boots"));
 
 
 
