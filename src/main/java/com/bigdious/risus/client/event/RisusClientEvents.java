@@ -123,6 +123,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::summonGreatness);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);

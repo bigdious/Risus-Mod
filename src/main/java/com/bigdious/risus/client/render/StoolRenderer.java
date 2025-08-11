@@ -5,6 +5,7 @@ import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.StoolModel;
 import com.bigdious.risus.entity.Stool;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -25,6 +26,8 @@ public class StoolRenderer extends EntityRenderer<Stool> {
 	public void render(Stool entity, float yaw, float partialTicks, PoseStack stack, MultiBufferSource buffer, int light) {
 		super.render(entity, yaw, partialTicks, stack, buffer, light);
 		stack.pushPose();
+		stack.mulPose(Axis.XP.rotationDegrees(180));
+		stack.translate(0, -1.5, 0);
 		this.model.renderToBuffer(stack, buffer.getBuffer(this.model.renderType(TEXTURE)), light, OverlayTexture.NO_OVERLAY);
 		stack.popPose();
 	}

@@ -34,8 +34,9 @@ public class SummonGreatnessPacket implements CustomPacketPayload {
 					Stool great_stool = new Stool(RisusEntities.GREAT_STOOL.get(), level);
 					great_stool.setPos(player.getX(), player.getY(), player.getZ());
 					great_stool.setOwnerUUID(player.getUUID());
-					level.addFreshEntity(player);
-					player.moveTo(player.getX(), player.getY()+1.5, player.getZ());
+					level.addFreshEntity(great_stool);
+					player.teleportTo(player.getX(), player.getY()+1.5, player.getZ());
+
 				}
 			});
 		}

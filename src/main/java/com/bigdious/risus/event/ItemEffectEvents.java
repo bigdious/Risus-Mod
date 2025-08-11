@@ -10,10 +10,12 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -51,10 +53,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
+import net.neoforged.neoforge.event.entity.EntityMountEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -535,6 +540,16 @@ public class ItemEffectEvents {
 
 				}
 			}
+		}
+	}
+
+	public static void noMovementOnStool(PlayerTickEvent.Post event) {
+		if (event.getEntity().hasEffect(MobEffects.GLOWING) && event.getEntity() instanceof LocalPlayer player) {
+			player.xxa = 0;
+			player.yya = 0;
+			player.input.jumping = false;
+			player.input.shiftKeyDown = false;
+			if (player.level().isClientSide()) player.displayClientMessage(Component.literal("ACTIVE"), true);
 		}
 	}
 
