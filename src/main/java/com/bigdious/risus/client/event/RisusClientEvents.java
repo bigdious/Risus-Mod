@@ -44,6 +44,7 @@ import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
@@ -52,6 +53,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -126,6 +128,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::summonGreatness);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::noMovementOnStool);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -475,6 +478,19 @@ public class RisusClientEvents {
 
 		if (!mc.isPaused()) {
 			AnimationRenderHelper.animate();
+		}
+	}
+
+	public static void noMovementOnStool(MovementInputUpdateEvent event) {
+		if (event.getEntity().hasEffect(RisusMobEffects.GREATNESS)) {
+			Input input = event.getInput();
+			input.up = false;
+			input.down = false;
+			input.left = false;
+			input.right = false;
+			input.forwardImpulse = 0;
+			input.leftImpulse = 0;
+			input.jumping = false;
 		}
 	}
 

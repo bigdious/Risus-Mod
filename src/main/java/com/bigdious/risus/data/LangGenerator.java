@@ -331,8 +331,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
-		this.add("tooltip.risus.sinner_robe_boots.great_stool.button_press", "Press the %s key for Dominance.");
-		this.add("tooltip.risus.sinner_robe_boots.great_stool.button_press.outline", "[%s]");
+		this.add("tooltip.risus.great_stool.button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
 		this.add("tooltip.risus.warhorn_dunk", "Right click with a Potion to fill it.");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
@@ -381,6 +380,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.golden_eye", " Golden Eye Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye", " Abyssal Eye Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.smile", " Smile Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.great_stool", " Great Stool");
 
 		this.add("tooltip.risus.sinner_robes_helmet.skeleton.desc", " Less noticed by Skeletons");
 		this.add("tooltip.risus.sinner_robes_helmet.creeper.desc", " Less noticed by Creepers");
@@ -415,14 +415,25 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.golden_eye.desc", " Immune to Stalkers");
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.smile.desc", " Less noticed by Offsprings");
+		this.add("tooltip.risus.sinner_robes_helmet.great_stool.button_press", " Press the %s key for Authority.");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
+		this.add("tooltip.risus.sinner_robes_chestplate.great_stool", " Great Stool");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts.desc", " Increased Pickup Range");
+		this.add("tooltip.risus.sinner_robes_chestplate.great_stool.button_press", " Press the %s key for Superiority.");
+
+		this.add("tooltip.risus.sinner_robes_leggings.great_stool", " Great Stool");
+
+		this.add("tooltip.risus.sinner_robes_leggings.great_stool.button_press", " Press the %s key for Ascension.");
 
 		this.add("tooltip.risus.sinner_robes_boots.shadow_walker", " Shadow Walker");
+		this.add("tooltip.risus.sinner_robes_boots.great_stool", " Great Stool");
 
 		this.add("tooltip.risus.sinner_robes_boots.shadow_walker.desc", " Turns Darkness solid");
+		this.add("tooltip.risus.sinner_robes_boots.great_stool.button_press", " Press the %s key for Dominance.");
+
+
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
@@ -478,6 +489,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("effect.risus.mating_frenzy.message", "You are incapable of Love");
 		this.addEffect(RisusMobEffects.PLEASURE, "Pleasure");
 		this.addEffect(RisusMobEffects.TOOTHLUSTER, "Toothluster");
+		this.addEffect(RisusMobEffects.GREATNESS, "Greatness");
 
 		this.addAdvancement("first", "Risus", "The Joyplague");
 		this.addAdvancement("mod_book", "Researcher's Notes", "Alter a book to gain access to lost knowledge");

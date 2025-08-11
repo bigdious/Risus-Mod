@@ -31,7 +31,7 @@ public class SinnerRobeChestplateItem extends RisusArmorItem {
 	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
 			return layer.texture(false).equals(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/upgrade_layer_1.png")) ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".png") :
-				layer.dyeable() ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + "_dyed.png") : null;
+				layer.dyeable() && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("guts") ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + "_dyed.png") : null;
 		}
 		return null;
 	}
@@ -42,13 +42,18 @@ public class SinnerRobeChestplateItem extends RisusArmorItem {
 			ChatFormatting color = CHESTPLATE_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
 			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
 			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_chestplate." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_chestplate." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(color));
+			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_chestplate.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
+			} else {
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_chestplate." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
+			}
 		}
 		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
 	}
 
 	public static final Map<String, ChatFormatting> CHESTPLATE_ABILITY_COLOR = Map.ofEntries(
-		Map.entry("guts", ChatFormatting.RED)
+		Map.entry("guts", ChatFormatting.RED),
+		Map.entry("great_stool", ChatFormatting.DARK_GRAY)
 	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {

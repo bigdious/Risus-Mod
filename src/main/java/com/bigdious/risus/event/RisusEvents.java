@@ -56,6 +56,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addHearts);
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addEggSack);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::sacrificeAccepted);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::stoolDiesOnDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::explodeStick);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::fireScythe);
@@ -75,7 +76,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::updateVisibility);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::increaseItemPickupRange);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::shadowWalk);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::noMovementOnStool);
+//		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::noMovementOnStool);
 //		NeoForge.EVENT_BUS.addListener(RisusEvents::addFear);
 	}
 

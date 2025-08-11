@@ -1379,10 +1379,25 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("smile_helmet"));
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("great_stool_helmet"));
+
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_CHESTPLATE.get()),Ingredient.of(RisusBlocks.MAW_GUTS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "guts")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("guts_chestplate"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_CHESTPLATE.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("great_stool_chestplate"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_LEGGINGS.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("great_stool_leggings"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_BOOTS.get()),Ingredient.of(RisusItems.LIGHT_DEVOURER), Ingredient.of(RisusItems.BLOOD_FEATHER.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "shadow_walker")

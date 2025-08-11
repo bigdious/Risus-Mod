@@ -2,6 +2,7 @@ package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
+import com.bigdious.risus.entity.Stool;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.utility.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
@@ -10,12 +11,9 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -161,6 +159,18 @@ public class ItemEffectEvents {
 					cultist.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(RisusItems.THOUSAND_BLADE.asItem()));
 				}
 			}
+		}
+	}
+
+	public static void stoolDiesOnDeath(LivingDeathEvent event) {
+		Entity entity = event.getEntity();
+		if (entity instanceof Player player && player.hasEffect(RisusMobEffects.GREATNESS)) {
+			player.level().getEntities((Entity) null, new AABB(player.getOnPos()).inflate(1, 10, 1), entity2 -> entity2 instanceof Stool).forEach(entity2 -> {
+				if (entity2 instanceof Stool stool && stool.getOwnerUUID() == player.getUUID()) {
+					stool.kill();
+				}
+
+			});
 		}
 	}
 
@@ -543,14 +553,6 @@ public class ItemEffectEvents {
 		}
 	}
 
-	public static void noMovementOnStool(PlayerTickEvent.Post event) {
-		if (event.getEntity().hasEffect(MobEffects.GLOWING) && event.getEntity() instanceof LocalPlayer player) {
-			player.xxa = 0;
-			player.yya = 0;
-			player.input.jumping = false;
-			player.input.shiftKeyDown = false;
-			if (player.level().isClientSide()) player.displayClientMessage(Component.literal("ACTIVE"), true);
-		}
-	}
+
 
 }

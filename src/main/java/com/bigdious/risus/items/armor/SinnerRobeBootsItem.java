@@ -33,7 +33,11 @@ public class SinnerRobeBootsItem extends RisusArmorItem {
 			ChatFormatting color = BOOTS_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
 			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
 			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT) +".desc").withStyle(color));
+			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
+			} else {
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_boots." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
+			}
 		}
 		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
 	}
