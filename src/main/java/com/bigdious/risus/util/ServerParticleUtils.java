@@ -90,8 +90,11 @@ public class ServerParticleUtils {
 		double d1 = blockstate.isAir() ? 1.0 : blockstate.getShape(level, pos).max(Direction.Axis.Y);
 		spawnParticles(level, pos, count, 0.5, d1, true, particle);
 	}
-
 	public static void spawnParticles(LevelAccessor level, BlockPos pos, int count, double xzSpread, double ySpread, boolean allowInAir, ParticleOptions particle) {
+		spawnParticles(level, pos.getX(), pos.getY(), pos.getZ(), count, xzSpread, ySpread, allowInAir, particle);
+	}
+
+	public static void spawnParticles(LevelAccessor level, int x, int y, int z, int count, double xzSpread, double ySpread, boolean allowInAir, ParticleOptions particle) {
 		if (level instanceof ServerLevel serverLevel) {
 			RandomSource randomsource = level.getRandom();
 
@@ -100,9 +103,9 @@ public class ServerParticleUtils {
 				double d1 = randomsource.nextGaussian() * 0.02;
 				double d2 = randomsource.nextGaussian() * 0.02;
 				double d3 = 0.5 - xzSpread;
-				double d4 = (double) pos.getX() + d3 + randomsource.nextDouble() * xzSpread * 2.0;
-				double d5 = (double) pos.getY() + randomsource.nextDouble() * ySpread;
-				double d6 = (double) pos.getZ() + d3 + randomsource.nextDouble() * xzSpread * 2.0;
+				double d4 = (double) x + d3 + randomsource.nextDouble() * xzSpread * 2.0;
+				double d5 = (double) y + randomsource.nextDouble() * ySpread;
+				double d6 = (double) z + d3 + randomsource.nextDouble() * xzSpread * 2.0;
 				if (allowInAir || !level.getBlockState(BlockPos.containing(d4, d5, d6).below()).isAir()) {
 					serverLevel.sendParticles(particle, d4, d5, d6, 1,0,0, 0, d0);
 				}

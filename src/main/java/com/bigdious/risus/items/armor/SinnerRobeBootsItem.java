@@ -28,6 +28,14 @@ public class SinnerRobeBootsItem extends RisusArmorItem {
 	}
 
 	@Override
+	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
+		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && layer.texture(false).equals(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/boots/upgrade_layer_1.png"))){
+			return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/boots/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".png");
+		}
+		return null;
+	}
+
+	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
 			ChatFormatting color = BOOTS_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
