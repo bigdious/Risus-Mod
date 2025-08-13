@@ -92,6 +92,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new StandingAndWallBlockItem(RisusBlocks.BLOODWYRM_HEAD.get(), RisusBlocks.BLOODWYRM_WALL_HEAD.get(), properties, Direction.DOWN), () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> CRYSTALLIZED_BOND = register("crystallized_bond", CrystallizedBondItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> VEINS = register("veins", properties -> new BlockItem(RisusBlocks.VEINS_END.get(), properties), () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> DISPLAY_NOTCH = register("display_notch", properties -> new DisplayNotchItem(RisusBlocks.DISPLAY_NOTCH.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS
 	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", BloodFeatherItem::new, () -> new Item.Properties().fireResistant().attributes(BloodFeatherItem.createBloodFeatherAttributes()).rarity(BLOOD));

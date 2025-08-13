@@ -20,7 +20,7 @@ public class RisusConfig {
 
 	// -- COMMON CONFIG --
 	public static SpinningSource spinningSource = SpinningSource.SIGNAL;
-	public static boolean holdersStealFromMonsters = true;
+	public static boolean holdersStealFromMonsters = false;
 	public static boolean illegalLitters = false;
 	public static boolean stripperWorksOnMobArmor = true;
 	public static boolean customWeaponAnims = true;
