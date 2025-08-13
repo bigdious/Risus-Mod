@@ -433,7 +433,18 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_boots.shadow_walker.desc", " Turns Darkness solid");
 		this.add("tooltip.risus.sinner_robes_boots.great_stool.button_press", " Press the %s key for Dominance.");
 
-
+		this.add("tooltip.risus.display_notch.hidden", "[Hold Shift for Usages]");
+		this.add("tooltip.risus.display_notch.start", "Once an Item is inserted, you can manipulate it:");
+		this.add("tooltip.risus.display_notch.pickaxe", " - Rotate the item with a Pickaxe");
+		this.add("tooltip.risus.display_notch.axe", " - Flip the item between horizontal or vertical with an Axe");
+		this.add("tooltip.risus.display_notch.glow_ink_sac", " - Make the item glow with a Glow Inc Sac");
+		this.add("tooltip.risus.display_notch.dye", " - Color the notch with Dyes");
+		this.add("tooltip.risus.display_notch.phantom_membrane", " - Make the notch non-solid with a Phantom Membrane");
+		this.add("tooltip.risus.display_notch.tripwire_hook", " - Lock the notch with a Tripwire Hook");
+		this.add("tooltip.risus.display_notch.glass", " - Make the notch invisible with a Glass Block");
+		this.add("tooltip.risus.display_notch.signal", " - Make the item continuously rotate by powering it with a Redstone Signal");
+		this.add("tooltip.risus.display_notch.shovel", " - Change the item's elevation using a Shovel");
+		this.add("tooltip.risus.display_notch.redstone_torch", " - Make the item continuously rotate by using a Redstone Torch");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");

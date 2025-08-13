@@ -11,22 +11,22 @@ public final class ConfigComments {
 	public static final String HOLDERS_STEAL_FROM_MONSTERS = """
 
 		Default: true
-		Whether Holders named GREED can steal from mobs. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
+		Allows Holders named GREED to steal from mobs. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
 
 	public static final String ILLEGAL_LITTERS = """
 
 		Default: false
-		Whether Litters can be made from non-full block light sources. Any block that gives off at least one light level will work, including brown mushrooms.""";
+		Allows Litters to be made from any block.""";
 
 	public static final String STRIPPER_WORKS_ON_MOB_ARMOR = """
 
 		Default: true
-		Whether Stripper works on mob's armor. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
+		Allows Stripper to work on mob's armor. The entity tag CANT_BE_STOLEN_FROM will be active and take precedence when this setting is true""";
 
 	public static final String CUSTOM_WEAPON_ANIMS = """
 
 		Default: true
-		Whether weapons like Scythes or Blade of a Thousand has custom holding animations. It is advised to set it to false if Better Combat is installed.""";
+		Allows weapons like Scythes or Blade of a Thousand to have a custom holding animations. It is advised to set it to false if Better Combat is installed.""";
 
 	public static final String CANON_EX_BURN = """
 
