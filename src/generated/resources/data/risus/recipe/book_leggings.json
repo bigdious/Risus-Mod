@@ -1,0 +1,15 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:leather"
+  },
+  "additional_data": {
+    "risus:ability_variant": "book"
+  },
+  "base": {
+    "item": "risus:researchers_notes"
+  },
+  "template": {
+    "item": "risus:sinner_robes_leggings"
+  }
+}

@@ -424,7 +424,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_chestplate.great_stool.button_press", " Press the %s key for Superiority.");
 
 		this.add("tooltip.risus.sinner_robes_leggings.great_stool", " Great Stool");
+		this.add("tooltip.risus.sinner_robes_leggings.book", " Researcher's Notes");
 
+		this.add("tooltip.risus.sinner_robes_leggings.book.button_press", " Press the %s key to open the book.");
+		this.add("tooltip.risus.sinner_robes_leggings.book.button_press.outline", "[%s]");
 		this.add("tooltip.risus.sinner_robes_leggings.great_stool.button_press", " Press the %s key for Ascension.");
 
 		this.add("tooltip.risus.sinner_robes_boots.shadow_walker", " Shadow Walker");

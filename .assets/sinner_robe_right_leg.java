@@ -1,4 +1,4 @@
-// Made with Blockbench 4.12.5
+// Made with Blockbench 4.12.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -18,7 +18,9 @@ public class sinner_robe_right_leg<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 0).addBox(-1.9F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition robe_r1 = bb_main.addOrReplaceChild("robe_r1", CubeListBuilder.create().texOffs(0, 16).addBox(-2.35F, -1.5F, -2.0F, 4.0F, 10.0F, 4.0F, new CubeDeformation(0.95F)), PartPose.offsetAndRotation(0.1F, 2.0F, 0.0F, 0.0F, 0.0F, 0.3927F));
+		PartDefinition binding_r1 = bb_main.addOrReplaceChild("binding_r1", CubeListBuilder.create().texOffs(60, 9).addBox(-3.35F, -1.5F, -1.0F, 0.0F, 7.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(50, 0).addBox(-4.35F, -0.5F, -3.0F, 1.0F, 5.0F, 6.0F, new CubeDeformation(0.0F))
+		.texOffs(0, 16).addBox(-2.35F, -1.5F, -2.0F, 4.0F, 10.0F, 4.0F, new CubeDeformation(0.95F)), PartPose.offsetAndRotation(0.1F, 2.0F, 0.0F, 0.0F, 0.0F, 0.3927F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

@@ -1,6 +1,7 @@
 package com.bigdious.risus.network;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -9,6 +10,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -40,7 +42,9 @@ public class OpenBookPacket implements CustomPacketPayload {
 						}
 					}
 				}
-				if (ModList.get().isLoaded("curios")) {
+				if (player.getItemBySlot(EquipmentSlot.LEGS).get(RisusDataComponents.ABILITY_VARIANT) != null && player.getItemBySlot(EquipmentSlot.LEGS).get(RisusDataComponents.ABILITY_VARIANT).equals("book") && player instanceof ServerPlayer playerser) {
+					PatchouliAPI.get().openBookGUI(playerser, BuiltInRegistries.ITEM.getKey(RisusItems.RESEARCHERS_NOTES.get()));
+				} else if (ModList.get().isLoaded("curios")) {
 					var handler = player.getCapability(CuriosCapability.INVENTORY);
 					if (handler == null) return;
 					var s = handler.findCurios(RisusItems.RESEARCHERS_NOTES.get());

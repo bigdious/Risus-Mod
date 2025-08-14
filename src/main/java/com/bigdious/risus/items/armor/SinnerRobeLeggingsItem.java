@@ -43,6 +43,8 @@ public class SinnerRobeLeggingsItem extends RisusArmorItem{
 			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
 			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
 				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
+			} else if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("book") ){
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings.book.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.researchers_notes_open").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
 			} else {
 				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
 			}
@@ -51,8 +53,8 @@ public class SinnerRobeLeggingsItem extends RisusArmorItem{
 	}
 
 	public static final Map<String, ChatFormatting> LEGGINGS_ABILITY_COLOR = Map.ofEntries(
-		Map.entry("shadow_walker", ChatFormatting.DARK_GRAY),
-		Map.entry("great_stool", ChatFormatting.DARK_GRAY)
+		Map.entry("great_stool", ChatFormatting.DARK_GRAY),
+		Map.entry("book", ChatFormatting.WHITE)
 	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {
