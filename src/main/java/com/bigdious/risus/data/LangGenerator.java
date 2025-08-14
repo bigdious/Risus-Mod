@@ -345,7 +345,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");
 
-		this.add("tooltip.risus.ability", "Ability:");
+		this.add("tooltip.risus.ability", "Selected Ability:");
 		//don't forget, a space before
 		this.add("tooltip.risus.sinner_robes_helmet.skeleton", " Skeleton Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.creeper", " Creeper Mask");
