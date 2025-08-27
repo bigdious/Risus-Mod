@@ -3,19 +3,20 @@ package com.bigdious.risus.entity;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.OwnableEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public class Stool extends Entity implements OwnableEntity {
+	protected static final EntityDataAccessor<Optional<UUID>> DATA_OWNERUUID_ID;
 
 	@Nullable
 	private UUID OwnerUUID;
@@ -47,6 +48,7 @@ public class Stool extends Entity implements OwnableEntity {
 
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(DATA_OWNERUUID_ID, Optional.empty());
 	}
 
 	@Override
@@ -72,4 +74,9 @@ public class Stool extends Entity implements OwnableEntity {
 	public UUID setOwnerUUID(UUID uuid) {
 		return this.OwnerUUID = uuid;
 	}
+
+	static {
+		DATA_OWNERUUID_ID = SynchedEntityData.defineId(Stool.class, EntityDataSerializers.OPTIONAL_UUID);
+	}
+
 }

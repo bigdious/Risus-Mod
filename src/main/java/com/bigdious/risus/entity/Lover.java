@@ -72,6 +72,11 @@ public class Lover extends Monster {
 	}
 
 	@Override
+	public boolean isOnFire() {
+		return false;
+	}
+
+	@Override
 	public void travel(Vec3 p_218382_) {
 		if (this.isControlledByLocalInstance()) {
 			if (this.isInWater()) {

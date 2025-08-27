@@ -146,6 +146,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE_WALL.get());
 		dropSelf(RisusBlocks.CHISELED_GRIMSTONE.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
 		dropSelf(RisusBlocks.CURVED_RITUAL_BLOCK.get());
 		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 

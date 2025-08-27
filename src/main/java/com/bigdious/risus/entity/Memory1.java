@@ -54,6 +54,11 @@ public class Memory1 extends Monster {
 	}
 
 	@Override
+	public boolean isOnFire() {
+		return false;
+	}
+
+	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.getEntity() instanceof LivingEntity living && living.getItemInHand(living.getUsedItemHand()).is(RisusTags.Items.WILLFUL_WEAPON)) {
 			return super.hurt(source, Float.MAX_VALUE);

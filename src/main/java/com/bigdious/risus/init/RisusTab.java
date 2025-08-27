@@ -82,20 +82,22 @@ public class RisusTab {
 				output.accept(RisusBlocks.ZIT.get());
 
 				output.accept(RisusBlocks.GRIMSTONE.get());
-				output.accept(RisusBlocks.ACTIVE_GRIMSTONE.get());
 				output.accept(RisusBlocks.GRIMSTONE_STAIRS.get());
 				output.accept(RisusBlocks.GRIMSTONE_SLAB.get());
 				output.accept(RisusBlocks.GRIMSTONE_WALL.get());
+				output.accept(RisusBlocks.GRIMSTONE_BRICKS.get());
+				output.accept(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
+				output.accept(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
+				output.accept(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_WALL.get());
-				output.accept(RisusBlocks.GRIMSTONE_BRICKS.get());
+				output.accept(RisusBlocks.ACTIVE_GRIMSTONE.get());
 				output.accept(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 				output.accept(RisusBlocks.CHISELED_GRIMSTONE.get());
-				output.accept(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
-				output.accept(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get());
-				output.accept(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());
+				output.accept(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
+
 
 				output.accept(RisusBlocks.SKIN.get());
 				output.accept(RisusBlocks.FLESHY_SKIN.get());

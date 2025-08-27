@@ -120,6 +120,10 @@ public class QuestionMark extends Monster {
 			}
 		}
 	}
+	@Override
+	public boolean isOnFire() {
+		return false;
+	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {

@@ -68,7 +68,7 @@ public class SummonGreatnessPacket implements CustomPacketPayload {
 					} else if (player.hasEffect(RisusMobEffects.GREATNESS)) {
 					player.removeEffect(RisusMobEffects.GREATNESS);
 					player.level().getEntities((Entity) null, new AABB(player.getOnPos()).inflate(1, 10, 1), entity -> entity instanceof Stool).forEach(entity -> {
-						if (entity instanceof Stool stool && stool.getOwnerUUID() == player.getUUID()) {
+						if (entity instanceof Stool stool && stool.getOwner() == player) {
 							((ServerLevel) stool.level()).sendParticles(ParticleTypes.POOF, stool.getX(), stool.getY()+0.5, stool.getZ(), 3, 0, 0, 0, 0.1);
 							stool.kill();
 							player.level().playSound(null, player.getOnPos().above(), SoundEvents.WOOD_BREAK, SoundSource.PLAYERS);

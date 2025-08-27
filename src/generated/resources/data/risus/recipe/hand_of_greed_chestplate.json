@@ -1,0 +1,15 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "risus:hand_of_greed"
+  },
+  "additional_data": {
+    "risus:ability_variant": "hand_of_greed"
+  },
+  "base": {
+    "item": "risus:hand_of_greed"
+  },
+  "template": {
+    "item": "risus:sinner_robes_chestplate"
+  }
+}

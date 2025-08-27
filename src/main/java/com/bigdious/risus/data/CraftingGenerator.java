@@ -416,6 +416,14 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES.get(), 2)
+			.pattern("B#")
+			.pattern("#B")
+			.define('#', Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()))
+			.define('B', Ingredient.of(RisusBlocks.COAGULATED_BLOOD_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LINEAR_RITUAL_BLOCK.get(), 1)
 			.requires(RisusBlocks.CURVED_RITUAL_BLOCK.get())
 			.unlockedBy("has_item", has(RisusBlocks.CURVED_RITUAL_BLOCK.get()))
@@ -1388,6 +1396,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "guts")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("guts_chestplate"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_CHESTPLATE.get()),Ingredient.of(RisusItems.HAND_OF_GREED), Ingredient.of(RisusItems.HAND_OF_GREED.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "hand_of_greed")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("hand_of_greed_chestplate"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_CHESTPLATE.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")

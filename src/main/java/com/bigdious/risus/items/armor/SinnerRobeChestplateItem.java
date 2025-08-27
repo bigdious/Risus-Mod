@@ -13,10 +13,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -25,6 +29,15 @@ import java.util.Map;
 public class SinnerRobeChestplateItem extends RisusArmorItem {
 	public SinnerRobeChestplateItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
+	}
+
+	@Override
+	public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+		return
+//			stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed") ?
+				super.getDefaultAttributeModifiers().withModifierAdded(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("reach_modifier"), 3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
+//				: this.getDefaultAttributeModifiers()
+				;
 	}
 
 	@Override

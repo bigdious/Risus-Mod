@@ -166,7 +166,7 @@ public class ItemEffectEvents {
 		Entity entity = event.getEntity();
 		if (entity instanceof Player player && player.hasEffect(RisusMobEffects.GREATNESS)) {
 			player.level().getEntities((Entity) null, new AABB(player.getOnPos()).inflate(1, 10, 1), entity2 -> entity2 instanceof Stool).forEach(entity2 -> {
-				if (entity2 instanceof Stool stool && stool.getOwnerUUID() == player.getUUID()) {
+				if (entity2 instanceof Stool stool && stool.getOwner() == player) {
 					stool.kill();
 				}
 
@@ -523,7 +523,7 @@ public class ItemEffectEvents {
 		Player player = event.getEntity();
 		Level level = player.level();
 
-		if (player.level() instanceof ServerLevel serverlevel1) {
+		if (player.level() instanceof ServerLevel) {
 			BlockPos blockpos1 = player.blockPosition();
 			ItemStack stack = player.getItemBySlot(EquipmentSlot.FEET);
 			if (!Objects.equal(player.lastPos, blockpos1)) {

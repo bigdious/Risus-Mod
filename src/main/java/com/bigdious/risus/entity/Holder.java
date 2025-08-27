@@ -6,6 +6,9 @@ import com.bigdious.risus.entity.goals.MonsterFollowOwnerGoal;
 import com.bigdious.risus.init.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,6 +31,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class Holder extends TamableMonster {
+	protected static final EntityDataAccessor<Optional<UUID>> DATA_OWNERUUID_ID;
 	private static final String TAG_GREED = "GREED";
 	boolean isGreed;
 	private boolean shouldAvoidEntity;
@@ -209,6 +213,16 @@ public class Holder extends TamableMonster {
 			this.isGreed = tag.getBoolean("GREED");
 		}
 	}
+
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_OWNERUUID_ID, Optional.empty());
+	}
+
+	static {
+		DATA_OWNERUUID_ID = SynchedEntityData.defineId(Holder.class, EntityDataSerializers.OPTIONAL_UUID);
+	}
+
 	public void setCustomName(@javax.annotation.Nullable Component name) {
 		super.setCustomName(name);
 		if (!this.isGreed && name != null && name.getString().equals("GREED")) {

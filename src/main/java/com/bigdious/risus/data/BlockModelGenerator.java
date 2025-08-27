@@ -308,6 +308,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		simpleBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
+		simpleBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
 		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), Risus.prefix("block/grimstone"));
 		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), Risus.prefix("block/grimstone_bricks"));
 		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), Risus.prefix("block/polished_grimstone"));

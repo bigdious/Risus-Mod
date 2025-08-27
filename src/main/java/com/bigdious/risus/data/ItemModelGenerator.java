@@ -131,6 +131,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE.get());
+		toBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
 		toBlock(RisusBlocks.BURNT_HYPHAE.get());
 		toBlock(RisusBlocks.ZIT.get());
 		toBlock(RisusBlocks.TISSUE.get());

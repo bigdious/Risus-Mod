@@ -20,18 +20,6 @@ public class YIncludedNearestAttackableTargetGoal<T extends LivingEntity> extend
 	protected LivingEntity target;
 	protected TargetingConditions targetConditions;
 
-	public YIncludedNearestAttackableTargetGoal(Mob mob, Class<T> targetType, boolean mustSee) {
-		this(mob, targetType, 10, mustSee, false, null);
-	}
-
-	public YIncludedNearestAttackableTargetGoal(Mob mob, Class<T> targetType, boolean mustSee, Predicate<LivingEntity> targetPredicate) {
-		this(mob, targetType, 10, mustSee, false, targetPredicate);
-	}
-
-	public YIncludedNearestAttackableTargetGoal(Mob mob, Class<T> targetType, boolean mustSee, boolean mustReach) {
-		this(mob, targetType, 10, mustSee, mustReach, null);
-	}
-
 	public YIncludedNearestAttackableTargetGoal(Mob mob, Class<T> targetType, int randomInterval, boolean mustSee, boolean mustReach, @Nullable Predicate<LivingEntity> targetPredicate) {
 		super(mob, mustSee, mustReach);
 		this.targetType = targetType;
