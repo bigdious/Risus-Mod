@@ -3,6 +3,8 @@ package com.bigdious.risus.client.render.player;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
+import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -26,16 +28,19 @@ public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> 
 	//will be expanded later, when sinner armor is added
 	public static final RenderType LEFT_RENDER_TYPE = RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/left_hand_of_greed.png"));
 	public final LeftHandPlayerModel model;
+	public final RightHandPlayerModel model2;
 
 	public HandOfGreedLayer(RenderLayerParent<T, M> parent) {
 		super(parent);
 		this.model = new LeftHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.LEFT_HAND_OF_GREED));
+		this.model2 = new RightHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.RIGHT_HAND_OF_GREED));
 	}
 
 	@Override
 	public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, T parent, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 		ItemStack itemstack = parent.getItemBySlot(EquipmentSlot.OFFHAND);
-		if (this.shouldRender(itemstack)) {
+		ItemStack itemstack2 = parent.getItemBySlot(EquipmentSlot.CHEST);
+		if (this.shouldRender(itemstack) || (itemstack2.get(RisusDataComponents.ABILITY_VARIANT) != null && itemstack2.get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed"))) {
 			boolean slim = false;
 			if (getParentModel() instanceof PlayerModel<?> player) {
 				slim = player.slim;
@@ -44,8 +49,17 @@ public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> 
 			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, partialTicks);
 			HandAnimHelper.followBodyRotations(parent, this.model);
+			if (slim) {poseStack.translate(-0.05,0,0);}
 			VertexConsumer vertexConsumer = buffer.getBuffer(LEFT_RENDER_TYPE);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
+			if (itemstack2.is(RisusItems.SINNER_ROBES_CHESTPLATE)) {
+				this.model2.setupArmSize(slim);
+				this.model2.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+				this.model2.prepareMobModel(parent, limbSwing, limbSwingAmount, partialTicks);
+				HandAnimHelper.followBodyRotations(parent, this.model2);
+				if (slim) {poseStack.translate(0.05, 0, 0);}
+				this.model2.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
+			}
 		}
 	}
 

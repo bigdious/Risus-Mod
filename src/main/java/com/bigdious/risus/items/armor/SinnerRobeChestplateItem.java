@@ -33,11 +33,25 @@ public class SinnerRobeChestplateItem extends RisusArmorItem {
 
 	@Override
 	public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
-		return
-//			stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed") ?
-				super.getDefaultAttributeModifiers().withModifierAdded(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("reach_modifier"), 3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.CHEST)
-//				: this.getDefaultAttributeModifiers()
-				;
+		var builder = ItemAttributeModifiers.builder();
+		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
+			builder.add(
+				Attributes.BLOCK_INTERACTION_RANGE,
+				new AttributeModifier(Risus.prefix("reach_modifier"), 3, AttributeModifier.Operation.ADD_VALUE),
+				EquipmentSlotGroup.CHEST
+			);
+		}
+		builder.add(
+			Attributes.MAX_HEALTH,
+			new AttributeModifier(Risus.prefix("health_modifier"), 2, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.CHEST
+		);
+		builder.add(
+			Attributes.ARMOR,
+			new AttributeModifier(Risus.prefix("armor_modifier"), 5, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.CHEST
+		);
+		return builder.build();
 	}
 
 	@Override
@@ -66,7 +80,8 @@ public class SinnerRobeChestplateItem extends RisusArmorItem {
 
 	public static final Map<String, ChatFormatting> CHESTPLATE_ABILITY_COLOR = Map.ofEntries(
 		Map.entry("guts", ChatFormatting.RED),
-		Map.entry("great_stool", ChatFormatting.DARK_GRAY)
+		Map.entry("great_stool", ChatFormatting.DARK_GRAY),
+		Map.entry("hand_of_greed", ChatFormatting.DARK_GRAY)
 	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {

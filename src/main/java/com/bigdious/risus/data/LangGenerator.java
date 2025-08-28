@@ -420,8 +420,10 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
 		this.add("tooltip.risus.sinner_robes_chestplate.great_stool", " Great Stool");
+		this.add("tooltip.risus.sinner_robes_chestplate.hand_of_greed", " Hand of Greed");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts.desc", " Increased Pickup Range");
+		this.add("tooltip.risus.sinner_robes_chestplate.hand_of_greed.desc", " Increased Block Interaction Range");
 		this.add("tooltip.risus.sinner_robes_chestplate.great_stool.button_press", " Press the %s key for Superiority.");
 
 		this.add("tooltip.risus.sinner_robes_leggings.great_stool", " Great Stool");

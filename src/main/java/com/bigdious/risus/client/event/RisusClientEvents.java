@@ -36,20 +36,20 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HumanoidArmorModel;
-import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
@@ -505,8 +505,8 @@ public class RisusClientEvents {
 	}
 
 	private static void renderHandOfGreed(RenderArmEvent event) {
-		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT && ModList.get().isLoaded("curios")) {
-			if (curiosForArm(event.getPlayer())) {
+		if (!event.isCanceled() && event.getArm() == HumanoidArm.RIGHT) {
+			if (ModList.get().isLoaded("curios") && curiosForArm(event.getPlayer())) {
 			CuriosApi.getCurio(RisusItems.HAND_OF_GREED.toStack()).flatMap(iCurio -> CuriosRendererRegistry.getRenderer(iCurio.getStack().getItem())).ifPresent(renderer -> {
 				RightHandPlayerModel model = ((HandCuriosRenderer) renderer).model;
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
@@ -517,6 +517,24 @@ public class RisusClientEvents {
 				model.setupAnim(event.getPlayer(), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
 				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandCuriosRenderer.RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
 				});
+			}
+			if (event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
+				Minecraft mc = Minecraft.getInstance();
+				LocalPlayer player = mc.player;
+				MultiBufferSource buffer = event.getMultiBufferSource();
+				if (!(mc.getEntityRenderDispatcher()
+					.getRenderer(player) instanceof PlayerRenderer pr))
+					return;
+
+				RightHandPlayerModel model = new RightHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.RIGHT_HAND_OF_GREED));
+				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;
+				model.attackTime = 0.0F;
+				model.crouching = false;
+				model.swimAmount = 0.0F;
+				model.setupArmSize(event.getPlayer().getSkin().model().id().equals("slim"));
+				model.setupAnim(event.getPlayer(), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandOfGreedLayer.LEFT_RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
+
 			}
 		}
 	}
