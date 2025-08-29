@@ -93,10 +93,13 @@ public class RisusTab {
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get());
 				output.accept(RisusBlocks.POLISHED_GRIMSTONE_WALL.get());
+				output.accept(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
+				output.accept(RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get());
+				output.accept(RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get());
 				output.accept(RisusBlocks.ACTIVE_GRIMSTONE.get());
 				output.accept(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 				output.accept(RisusBlocks.CHISELED_GRIMSTONE.get());
-				output.accept(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
+
 
 
 				output.accept(RisusBlocks.SKIN.get());

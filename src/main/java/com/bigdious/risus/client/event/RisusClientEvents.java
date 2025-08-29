@@ -521,10 +521,6 @@ public class RisusClientEvents {
 			if (event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
 				Minecraft mc = Minecraft.getInstance();
 				LocalPlayer player = mc.player;
-				MultiBufferSource buffer = event.getMultiBufferSource();
-				if (!(mc.getEntityRenderDispatcher()
-					.getRenderer(player) instanceof PlayerRenderer pr))
-					return;
 
 				RightHandPlayerModel model = new RightHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.RIGHT_HAND_OF_GREED));
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;

@@ -450,6 +450,14 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get(), 4)
+			.pattern("#  ")
+			.pattern("## ")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), 4)
 			.pattern("#  ")
 			.pattern("## ")
@@ -473,6 +481,12 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), 6)
 			.pattern("###")
 			.define('#', Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(), 6)
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()))
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
 			.save(consumer);
 
@@ -633,7 +647,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.requires(Items.TURTLE_EGG)
 			.requires(Items.AXOLOTL_BUCKET)
 			.requires(Items.TADPOLE_BUCKET)
-			.requires(Items.HONEY_BOTTLE)
+			.requires(RisusItems.EGG_SAC)
 			.requires(Items.CAKE)
 			.requires(ItemTags.CANDLES)
 			.requires(RisusItems.LOVER_CREAM.get())
@@ -1073,6 +1087,13 @@ public class CraftingGenerator extends RecipeProvider {
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS_WALL, 1)
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_bricks_to_bricks_wall"));
+
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS, 1)
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
+			.save(consumer, prefix("stonecutting_grimstone_blood_to_stairs"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB, 1)
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
+			.save(consumer, prefix("stonecutting_grimstone_blood_to_slab"));
 
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, 2)
 			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK))

@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-14T16:37:43.5913566	Tags for minecraft:item mod id risus
+// 1.21.1	2025-08-29T08:45:23.4969878	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -26,8 +26,8 @@ e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/item/logs_that_burn.json
 f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/item/planks.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/item/signs.json
-b99b5e2363c86958af7cd8ebc1527e36164fbe89 data/minecraft/tags/item/slabs.json
-c480b6b264bd793c3e2827b8d98ca4117efeed4a data/minecraft/tags/item/stairs.json
+758932dbc7f6bc7834920a5682a442ce670fbf20 data/minecraft/tags/item/slabs.json
+958093f24af470531ae9f8a798e3218a60a83357 data/minecraft/tags/item/stairs.json
 2cfa98b1ff1c74ac2db2374d208e8c7d802ecffe data/minecraft/tags/item/trimmable_armor.json
 e309aff39de96bf85003e31a0153c9aa57b63784 data/minecraft/tags/item/trim_materials.json
 d319acadaf62b7e6b4c484e8994639130ad7030d data/minecraft/tags/item/trim_templates.json

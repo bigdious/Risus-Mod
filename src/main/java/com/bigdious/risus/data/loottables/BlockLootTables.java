@@ -137,9 +137,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_STAIRS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
+		dropSelf(RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get());
 		dropSelf(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get());
 		add(RisusBlocks.GRIMSTONE_SLAB.get(), createSlabItemTable(RisusBlocks.GRIMSTONE_SLAB.get()));
 		add(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), createSlabItemTable(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get()));
+		add(RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(), createSlabItemTable(RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get()));
 		add(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), createSlabItemTable(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()));
 		dropSelf(RisusBlocks.GRIMSTONE_WALL.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_WALL.get());

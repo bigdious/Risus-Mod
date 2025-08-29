@@ -311,15 +311,18 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES.get());
 		stairsBlock(RisusBlocks.GRIMSTONE_STAIRS.get(), Risus.prefix("block/grimstone"));
 		stairsBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(), Risus.prefix("block/grimstone_bricks"));
+		stairsBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get(), Risus.prefix("block/grimstone_blood_tiles"));
 		stairsBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(), Risus.prefix("block/polished_grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_SLAB.get(), Risus.prefix("block/grimstone"), Risus.prefix("block/grimstone"));
 		slabBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(), Risus.prefix("block/grimstone_bricks"), Risus.prefix("block/grimstone_bricks"));
+		slabBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(), Risus.prefix("block/grimstone_blood_tiles"), Risus.prefix("block/grimstone_blood_tiles"));
 		slabBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(), Risus.prefix("block/polished_grimstone"), Risus.prefix("block/polished_grimstone"));
 		simpleBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		risusWallBlock(RisusBlocks.GRIMSTONE_WALL.get(), models().wallPost("grimstone_wall_post",Risus.prefix("block/grimstone")), models().wallSide("grimstone_wall_side", Risus.prefix("block/grimstone")), models().wallSideTall("grimstone_wall_side_tall", Risus.prefix("block/grimstone")));
 		risusWallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), models().wallPost("polished_grimstone_wall_post",Risus.prefix("block/polished_grimstone")), models().wallSide("polished_grimstone_wall_side", Risus.prefix("block/polished_grimstone")), models().wallSideTall("polished_grimstone_wall_side_tall", Risus.prefix("block/polished_grimstone")));
 		risusWallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), models().wallPost("grimstone_bricks_wall_post",Risus.prefix("block/grimstone_bricks")), models().wallSide("grimstone_bricks_wall_side", Risus.prefix("block/grimstone_bricks")), models().wallSideTall("grimstone_bricks_wall_side_tall", Risus.prefix("block/grimstone_bricks")));
 
+		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
 		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));

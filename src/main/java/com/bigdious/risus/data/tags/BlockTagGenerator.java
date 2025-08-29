@@ -51,6 +51,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FOSSIL_SLAB.get(),
 			RisusBlocks.FULL_FOSSIL_SLAB.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()
 		);
 		this.tag(BlockTags.WOODEN_STAIRS).add(RisusBlocks.BONDKNOT_STAIRS.get());
@@ -62,6 +63,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FOSSIL_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
 			RisusBlocks.TISSUE_STAIRS.get()
 		);
@@ -163,7 +165,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 			RisusBlocks.GRIMSTONE_BRICKS.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 
 			RisusBlocks.POLISHED_GRIMSTONE.get(),
