@@ -189,6 +189,10 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.SINNER_ROBES_BOOTS.get()
 		);
 
+		this.tag(RisusTags.Items.SWORD_AND_TRIDENT_ENCHANTABLE)
+			.addTag(ItemTags.WEAPON_ENCHANTABLE)
+			.addTag(ItemTags.TRIDENT_ENCHANTABLE)
+		;
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

@@ -60,6 +60,11 @@ public abstract class RisusLangProvider extends LanguageProvider {
 		}
 	}
 
+	public void addEnchantment(String key, String title, String desc) {
+		this.add("enchantment.risus." + key, title);
+		this.add("enchantment.risus." + key + ".desc", desc);
+	}
+
 	public void addMusicDisc(DeferredItem<Item> disc, String description) {
 		this.addItem(disc, "Music Disc");
 		this.add(Util.makeDescriptionId("jukebox_song", disc.get().components().get(DataComponents.JUKEBOX_PLAYABLE).song().key().location()), description);

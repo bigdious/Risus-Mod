@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#minecraft:sensitive_to_smite",
+    "#minecraft:sensitive_to_impaling",
+    "#minecraft:sensitive_to_bane_of_arthropods"
+  ]
+}

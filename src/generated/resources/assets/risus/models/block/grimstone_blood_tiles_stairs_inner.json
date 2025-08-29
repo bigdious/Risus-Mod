@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "risus:block/grimstone_blood_tiles",
+    "side": "risus:block/grimstone_blood_tiles",
+    "top": "risus:block/grimstone_blood_tiles"
+  }
+}

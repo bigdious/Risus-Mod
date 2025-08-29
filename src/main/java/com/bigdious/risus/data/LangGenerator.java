@@ -475,6 +475,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
+		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
+
 		SUBTITLE_GENERATOR.forEach(this::add);
 
 		this.addDeathMessage("inexistence", "%1$s has stepped into inexistence");

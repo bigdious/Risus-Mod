@@ -1,6 +1,7 @@
 package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.Corruptions;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -118,6 +119,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.MENDING,
 			Enchantments.QUICK_CHARGE,
 			Enchantments.FLAME
+		);
+
+		this.tag(RisusTags.Enchantments.CORRUPTION).add(
+			Corruptions.HUNTERS_EXULTATION
 		);
 	}
 }

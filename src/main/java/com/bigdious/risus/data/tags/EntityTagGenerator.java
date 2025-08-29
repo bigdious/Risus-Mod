@@ -95,5 +95,10 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 
 			)
 		;
+		tag(RisusTags.Entities.SENSITIVE_TO_HUNTERS)
+			.addTag(EntityTypeTags.SENSITIVE_TO_SMITE)
+			.addTag(EntityTypeTags.SENSITIVE_TO_IMPALING)
+			.addTag(EntityTypeTags.SENSITIVE_TO_BANE_OF_ARTHROPODS)
+		;
 	}
 }

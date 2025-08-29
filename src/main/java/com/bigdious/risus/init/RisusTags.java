@@ -75,7 +75,8 @@ public class RisusTags {
 		public static final TagKey<Item> CURIOS_BELT = createCurios("belt");
 		public static final TagKey<Item> CURIOS_CHARM = createCurios("charm");
 		public static final TagKey<Item> CURIOS_HEAD = createCurios("head");
-		public static final TagKey<Item> ROBES = createCurios("robes");
+		public static final TagKey<Item> ROBES = create("robes");
+		public static final TagKey<Item> SWORD_AND_TRIDENT_ENCHANTABLE = create("sword_and_trident_enchantable");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -96,6 +97,7 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> HORN_BUFFS = create("horn_buffs");
 		public static final TagKey<EntityType<?>> HEXHORN_BANNED = create("hexhorn_banned");
 		public static final TagKey<EntityType<?>> HEXHORN_ALLOWED = create("hexhorn_allowed");
+		public static final TagKey<EntityType<?>> SENSITIVE_TO_HUNTERS = create("sensitive_to_hunters");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -113,6 +115,7 @@ public class RisusTags {
 		public static final TagKey<Enchantment> BOOMSTICK_ALLOWED_ENCHANTS = create("boomstick_allowed_enchants");
 		public static final TagKey<Enchantment> WARHORN_ALLOWED_ENCHANTS = create("warhorn_allowed_enchants");
 		public static final TagKey<Enchantment> HEXHORN_ALLOWED_ENCHANTS = create("hexhorn_allowed_enchants");
+		public static final TagKey<Enchantment> CORRUPTION = create("corruption");
 
 		private static TagKey<Enchantment> create(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
