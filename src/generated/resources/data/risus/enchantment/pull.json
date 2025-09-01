@@ -1,0 +1,42 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "enchantment.risus.pull"
+  },
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "risus:attract_target",
+              "strength": {
+                "type": "minecraft:linear",
+                "base": 0.08,
+                "per_level_above_first": 0.04
+              }
+            }
+          ]
+        },
+        "enchanted": "attacker"
+      }
+    ]
+  },
+  "exclusive_set": "minecraft:punch",
+  "max_cost": {
+    "base": 37,
+    "per_level_above_first": 20
+  },
+  "max_level": 2,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 20
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/bow",
+  "weight": 2
+}

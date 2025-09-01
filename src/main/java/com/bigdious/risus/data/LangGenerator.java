@@ -476,6 +476,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
 		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
+		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, but increases damage taken from non-resisted sources.");
+		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
+		this.addEnchantment("pull", "Pull", "Pulls the target towards the attacker, with distance increasing the pulling power.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

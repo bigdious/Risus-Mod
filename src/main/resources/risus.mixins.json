@@ -6,7 +6,6 @@
     "AbstractFurnaceBlockEntityMixin",
     "EnchantmentMixin",
     "ClientLevelMixin"
-
   ],
   "injectors": {
     "defaultRequire": 1

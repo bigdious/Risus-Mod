@@ -17,18 +17,10 @@ public abstract class EnchantmentMixin {
 	@ModifyReturnValue(method = "getFullname(Lnet/minecraft/core/Holder;I)Lnet/minecraft/network/chat/Component;", at = @At("RETURN"))
 	private static Component spectrum$obfuscateEnchantmentNames(Component original, Holder<Enchantment> enchantment, int level) {
 		MutableComponent mutablecomponent = enchantment.value().description().copy();
-		if (enchantment.is(RisusTags.Enchantments.CORRUPTION)) {
-			ComponentUtils.mergeStyles(mutablecomponent, Style.EMPTY.withColor(ChatFormatting.DARK_RED));
-		} else  if (enchantment.is(EnchantmentTags.CURSE)) {
-			ComponentUtils.mergeStyles(mutablecomponent, Style.EMPTY.withColor(ChatFormatting.RED));
-		} else {
-			ComponentUtils.mergeStyles(mutablecomponent, Style.EMPTY.withColor(ChatFormatting.GRAY));
-		}
-
-		if (level != 1 || enchantment.value().getMaxLevel() != 1) {
+		ComponentUtils.mergeStyles(mutablecomponent, Style.EMPTY.withColor(ChatFormatting.DARK_RED));
+		if (level != 1 || (enchantment.value()).getMaxLevel() != 1) {
 			mutablecomponent.append(CommonComponents.SPACE).append(Component.translatable("enchantment.level." + level));
 		}
-
-		return mutablecomponent;
+		return enchantment.is(RisusTags.Enchantments.CORRUPTION) ? mutablecomponent : original;
 	}
 }

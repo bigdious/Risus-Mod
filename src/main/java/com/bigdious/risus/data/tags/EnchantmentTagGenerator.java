@@ -122,7 +122,11 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(RisusTags.Enchantments.CORRUPTION).add(
-			Corruptions.HUNTERS_EXULTATION
+			Corruptions.HUNTERS_EXULTATION,
+			Corruptions.ELEMENTAL_DEVIATION,
+			Corruptions.DREAM_EATER,
+			Corruptions.PULL
 		);
+
 	}
 }
