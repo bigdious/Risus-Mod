@@ -22,7 +22,7 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
 		.add(Registries.BANNER_PATTERN, RisusBannerPatterns::bootstrap)
 		.add(Registries.JUKEBOX_SONG, RisusJukeboxSongs::bootstrap)
 		.add(Registries.TEMPLATE_POOL,RisusStructures::bootstrapPools)
-		.add(Registries.ENCHANTMENT, Corruptions::bootstrap);
+		.add(Registries.ENCHANTMENT, Execrations::bootstrap);
 
 	public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, REGISTRIES, Set.of("minecraft", Risus.MODID));

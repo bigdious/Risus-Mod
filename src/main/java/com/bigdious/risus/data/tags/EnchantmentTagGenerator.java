@@ -1,7 +1,7 @@
 package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.init.Corruptions;
+import com.bigdious.risus.init.Execrations;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -122,13 +122,14 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(RisusTags.Enchantments.CORRUPTION).add(
-			Corruptions.HUNTERS_EXULTATION,
-			Corruptions.ELEMENTAL_DEVIATION,
-			Corruptions.DREAM_EATER,
-			Corruptions.PULL,
-			Corruptions.DENIAL,
-			Corruptions.CACKLING_CRAZE,
-			Corruptions.AGONY
+			Execrations.HUNTERS_EXULTATION,
+			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.DREAM_EATER,
+			Execrations.PULL,
+			Execrations.DENIAL,
+			Execrations.CACKLING_CRAZE,
+			Execrations.AGONY,
+			Execrations.PERPETUITY
 		);
 
 	}

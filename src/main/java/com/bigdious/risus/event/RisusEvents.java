@@ -76,6 +76,8 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::updateVisibility);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::increaseItemPickupRange);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::shadowWalk);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::staysUponDeath);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::onPlayerRespawn);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {

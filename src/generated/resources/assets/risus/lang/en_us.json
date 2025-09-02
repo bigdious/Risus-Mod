@@ -357,6 +357,8 @@
   "enchantment.risus.elemental_deviation.desc": "Combines the effects of Fire, Blast and Projectile Protection, in return - if worn - weakening any Protection enchanted pieces.",
   "enchantment.risus.hunters_exultation": "Hunter's Exultation",
   "enchantment.risus.hunters_exultation.desc": "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.",
+  "enchantment.risus.perpetuity": "Perpetuity",
+  "enchantment.risus.perpetuity.desc": "On top of the Curse of Binding effect, the item will not be dropped upon death. To remove the item, you must break it.",
   "enchantment.risus.pull": "Pull",
   "enchantment.risus.pull.desc": "Pulls the target towards the attacker, with distance increasing the pulling power.",
   "entity.risus.angel": "Blood Ophanim",

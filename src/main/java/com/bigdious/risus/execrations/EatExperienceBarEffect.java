@@ -1,4 +1,4 @@
-package com.bigdious.risus.corruptions;
+package com.bigdious.risus.execrations;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.server.level.ServerLevel;

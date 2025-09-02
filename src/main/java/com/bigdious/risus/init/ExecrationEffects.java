@@ -1,17 +1,17 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.corruptions.AttractTargetEffect;
-import com.bigdious.risus.corruptions.ConferAgonyEffect;
-import com.bigdious.risus.corruptions.EatExperienceBarEffect;
-import com.bigdious.risus.corruptions.TakeRevengeOnImbecileEffect;
+import com.bigdious.risus.execrations.AttractTargetEffect;
+import com.bigdious.risus.execrations.ConferAgonyEffect;
+import com.bigdious.risus.execrations.EatExperienceBarEffect;
+import com.bigdious.risus.execrations.TakeRevengeOnImbecileEffect;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class CorruptionEffects {
+public class ExecrationEffects {
 
 	public static final DeferredRegister<MapCodec<? extends EnchantmentEntityEffect>> ENTITY_EFFECTS = DeferredRegister.create(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Risus.MODID);
 

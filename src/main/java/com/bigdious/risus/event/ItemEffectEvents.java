@@ -6,14 +6,19 @@ import com.bigdious.risus.entity.Stool;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.utility.EternalYouthItem;
 import com.bigdious.risus.network.UnyieldingTotemPacket;
+import com.bigdious.risus.util.RisusItemStackUtil;
 import com.bigdious.risus.util.ServerParticleUtils;
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -33,26 +38,21 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.ExplosionDamageCalculator;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LightLayer;
-import net.minecraft.world.level.SimpleExplosionDamageCalculator;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FrostedIceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
-import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
-import net.neoforged.neoforge.event.entity.EntityMountEvent;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
@@ -71,6 +71,7 @@ import java.util.function.Function;
 
 public class ItemEffectEvents {
 	public static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR;
+	public static final String SAVED_INV_TAG = "RisusSavedInventory";
 
 	public static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
@@ -550,6 +551,54 @@ public class ItemEffectEvents {
 
 				}
 			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.HIGH)
+	public static void staysUponDeath(LivingDeathEvent event) {
+		LivingEntity living = event.getEntity();
+		ListTag tagList = new ListTag();
+		if (event.isCanceled() || living.level().isClientSide() || !(living instanceof Player player) || living instanceof FakePlayer || player.isCreative() || player.isSpectator() || living.level().getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY)) {
+			return;
+		}
+		Inventory keepInventory = new Inventory(player);
+
+		for (int i = 0; i < player.getInventory().armor.size(); i++) {
+			ItemStack armor = player.getInventory().armor.get(i);
+			if (armor.has(DataComponents.ENCHANTMENTS) && armor.get(DataComponents.ENCHANTMENTS).getLevel(living.level().registryAccess().holderOrThrow(Execrations.PERPETUITY)) > 0 && armor.isDamageableItem()) {
+				keepInventory.armor.set(i, armor.copy());
+				player.getInventory().armor.set(i, ItemStack.EMPTY);
+			}
+		}
+
+		if (!keepInventory.isEmpty()) {
+			keepInventory.save(tagList);
+			getPlayerData(player).put(SAVED_INV_TAG, tagList);
+		}
+	}
+
+	public static CompoundTag getPlayerData(Player player) {
+		if (!player.getPersistentData().contains(Player.PERSISTED_NBT_TAG)) {
+			player.getPersistentData().put(Player.PERSISTED_NBT_TAG, new CompoundTag());
+		}
+		return player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
+	}
+
+	public static void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
+		if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) return;
+		if (!event.isEndConquered()) {
+			returnStoredItems(serverPlayer);
+		}
+	}
+
+	private static void returnStoredItems(Player player) {
+		Risus.LOGGER.debug("Player {} ({}) respawned and received items held in storage", player.getName().getString(), player.getUUID());
+		CompoundTag playerData = getPlayerData(player);
+		if (!player.level().isClientSide() && playerData.contains(SAVED_INV_TAG)) {
+			ListTag tagList = playerData.getList(SAVED_INV_TAG, 10);
+			RisusItemStackUtil.loadNoClear(player.registryAccess(), tagList, player.getInventory());
+			getPlayerData(player).getList(SAVED_INV_TAG, 10).clear();
+			getPlayerData(player).remove(SAVED_INV_TAG);
 		}
 	}
 

@@ -1,23 +1,20 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.corruptions.AttractTargetEffect;
-import com.bigdious.risus.corruptions.ConferAgonyEffect;
-import com.bigdious.risus.corruptions.EatExperienceBarEffect;
-import com.bigdious.risus.corruptions.TakeRevengeOnImbecileEffect;
+import com.bigdious.risus.execrations.AttractTargetEffect;
+import com.bigdious.risus.execrations.ConferAgonyEffect;
+import com.bigdious.risus.execrations.EatExperienceBarEffect;
+import com.bigdious.risus.execrations.TakeRevengeOnImbecileEffect;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.*;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.UniformFloat;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -29,7 +26,7 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 
-public class Corruptions {
+public class Execrations {
 	public static final ResourceKey<Enchantment> HUNTERS_EXULTATION = registerKey("hunters_exultation");
 	public static final ResourceKey<Enchantment> ELEMENTAL_DEVIATION = registerKey("elemental_deviation");
 	public static final ResourceKey<Enchantment> DREAM_EATER = registerKey("dream_eater");
@@ -37,6 +34,7 @@ public class Corruptions {
 	public static final ResourceKey<Enchantment> DENIAL = registerKey("denial");
 	public static final ResourceKey<Enchantment> CACKLING_CRAZE = registerKey("cackling_craze");
 	public static final ResourceKey<Enchantment> AGONY = registerKey("agony");
+	public static final ResourceKey<Enchantment> PERPETUITY = registerKey("perpetuity");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -315,6 +313,19 @@ public class Corruptions {
 					),
 					LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(0.10F)))
 				)
+		);
+
+		register(context, PERPETUITY, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.EQUIPPABLE_ENCHANTABLE),
+				1,
+				1,
+				Enchantment.constantCost(25),
+				Enchantment.constantCost(50),
+				8,
+				EquipmentSlotGroup.ARMOR
+			))
+			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.BINDING_CURSE), enchantments.getOrThrow(Enchantments.VANISHING_CURSE)))
+			.withEffect(EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE)
 		);
 
 	}

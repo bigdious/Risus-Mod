@@ -482,6 +482,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("denial", "Denial", "When the item breaks, it will murder its user and repair itself.");
 		this.addEnchantment("cackling_craze", "Cackling Craze", "Increases speed on Remains-type blocks.");
 		this.addEnchantment("agony", "Agony", "Reflects the attacker's damage, boosted by the amount of health missing from the user. Whenever it triggers, it will also increase the damage taken by half.");
+		this.addEnchantment("perpetuity", "Perpetuity", "On top of the Curse of Binding effect, the item will not be dropped upon death. To remove the item, you must break it.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 
