@@ -2,7 +2,9 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.corruptions.AttractTargetEffect;
+import com.bigdious.risus.corruptions.ConferAgonyEffect;
 import com.bigdious.risus.corruptions.EatExperienceBarEffect;
+import com.bigdious.risus.corruptions.TakeRevengeOnImbecileEffect;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
@@ -15,5 +17,7 @@ public class CorruptionEffects {
 
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<EatExperienceBarEffect>> EAT_EXPERIENCE_BAR = ENTITY_EFFECTS.register("eat_experience_bar", () -> EatExperienceBarEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<AttractTargetEffect>> ATTRACT_TARGET = ENTITY_EFFECTS.register("attract_target", () -> AttractTargetEffect.CODEC);
+	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<TakeRevengeOnImbecileEffect>> TAKE_REVENGE_ON_IMBECILE = ENTITY_EFFECTS.register("take_revenge_on_imbecile", () -> TakeRevengeOnImbecileEffect.CODEC);
+	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<ConferAgonyEffect>> CONFER_AGONY = ENTITY_EFFECTS.register("confer_agony", () -> ConferAgonyEffect.CODEC);
 
 }

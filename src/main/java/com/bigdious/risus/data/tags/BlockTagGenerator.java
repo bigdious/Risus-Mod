@@ -353,5 +353,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.SMILING_REMAINS.get(),
 			Blocks.GRASS_BLOCK,
 			RisusBlocks.BURNT_HYPHAE.get());
+
+		this.tag(RisusTags.Blocks.REMAINS).add(
+			RisusBlocks.ASHEN_REMAINS.get(),
+			RisusBlocks.SMILING_REMAINS.get(),
+			RisusBlocks.SPREADING_REMAINS.get()
+		);
 	}
 }

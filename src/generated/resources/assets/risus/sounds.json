@@ -152,6 +152,20 @@
     ],
     "subtitle": "subtitles.risus.entity.singer.scream"
   },
+  "environment.laughter_echoes": {
+    "sounds": [
+      "risus:environment/laughter_echoes1",
+      "risus:environment/laughter_echoes2",
+      "risus:environment/laughter_echoes3",
+      "risus:environment/laughter_echoes4",
+      "risus:environment/laughter_echoes5",
+      "risus:environment/laughter_echoes6",
+      "risus:environment/laughter_echoes7",
+      "risus:environment/laughter_echoes8",
+      "risus:environment/laughter_echoes9"
+    ],
+    "subtitle": "subtitles.risus.environment.laughter_echoes"
+  },
   "item.armor.equip_bone": {
     "sounds": [
       {

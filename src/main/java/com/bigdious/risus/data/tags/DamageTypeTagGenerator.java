@@ -21,16 +21,20 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(
 			RisusDamageTypes.INEXISTENCE,
 			RisusDamageTypes.VAMPIRISM,
+			RisusDamageTypes.REVENGE,
 			RisusDamageTypes.PLEASURE,
 			RisusDamageTypes.DESTINED_DEATH
 		);
 		this.tag(DamageTypeTags.BYPASSES_INVULNERABILITY).add(
 			RisusDamageTypes.INEXISTENCE,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.REVENGE,
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.AGONY
 		);
 		this.tag(DamageTypeTags.NO_KNOCKBACK).add(
 			RisusDamageTypes.VAMPIRISM,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.AGONY
 		);
 		this.tag(DamageTypeTags.NO_IMPACT).add(
 			RisusDamageTypes.VAMPIRISM,
@@ -40,19 +44,22 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 			RisusDamageTypes.INEXISTENCE,
 			RisusDamageTypes.VAMPIRISM,
 			RisusDamageTypes.PLEASURE,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.REVENGE
 		);
 		this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(
 			RisusDamageTypes.INEXISTENCE,
 			RisusDamageTypes.VAMPIRISM,
 			RisusDamageTypes.PLEASURE,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.REVENGE
 		);
 		this.tag(DamageTypeTags.BYPASSES_SHIELD).add(
 			RisusDamageTypes.INEXISTENCE,
 			RisusDamageTypes.VAMPIRISM,
 			RisusDamageTypes.PLEASURE,
-			RisusDamageTypes.DESTINED_DEATH
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.REVENGE
 		);
 	}
 }

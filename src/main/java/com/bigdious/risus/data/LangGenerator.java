@@ -476,9 +476,12 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
 		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
-		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, but increases damage taken from non-resisted sources.");
+		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, in return - if worn - weakening any Protection enchanted pieces.");
 		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
 		this.addEnchantment("pull", "Pull", "Pulls the target towards the attacker, with distance increasing the pulling power.");
+		this.addEnchantment("denial", "Denial", "When the item breaks, it will murder its user and repair itself.");
+		this.addEnchantment("cackling_craze", "Cackling Craze", "Increases speed on Remains-type blocks.");
+		this.addEnchantment("agony", "Agony", "Reflects the attacker's damage, boosted by the amount of health missing from the user. Whenever it triggers, it will also increase the damage taken by half.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 
@@ -494,6 +497,12 @@ public class LangGenerator extends RisusLangProvider {
 		this.addDeathMessage("vampirism", "%1$s got sucked dry");
 		this.addDeathMessage("vampirism.player", "%1$s got sucked dry while trying to escape %2$s");
 		this.addDeathMessage("vampirism.item", "%1$s got sucked dry while trying to escape %2$s");
+		this.addDeathMessage("revenge", "%1$s neglected their loyal friend");
+		this.addDeathMessage("revenge.player", "%1$s neglected their loyal friend while trying to escape %2$s");
+		this.addDeathMessage("revenge.item", "%1$s neglected their loyal friend while trying to escape %2$s");
+		this.addDeathMessage("agony", "%1$s couldn't handle the agony they inflicted");
+		this.addDeathMessage("agony.player", "%1$s couldn't handle the agony they inflicted while trying to escape %2$s");
+		this.addDeathMessage("agony.item", "%1$s couldn't handle the agony they inflicted while trying to escape %2$s");
 		this.addDeathMessage("bloodslash", "%1$s was cut in half");
 		this.addDeathMessage("bloodslash.player", "%1$s was cut in half while trying to escape %2$s");
 		this.addDeathMessage("bloodslash.item", "%1$s was cut in half while trying to escape %2$s using %3$s");

@@ -125,7 +125,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Corruptions.HUNTERS_EXULTATION,
 			Corruptions.ELEMENTAL_DEVIATION,
 			Corruptions.DREAM_EATER,
-			Corruptions.PULL
+			Corruptions.PULL,
+			Corruptions.DENIAL,
+			Corruptions.CACKLING_CRAZE,
+			Corruptions.AGONY
 		);
 
 	}

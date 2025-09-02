@@ -1,8 +1,8 @@
-// 1.21.1	2025-08-14T16:37:43.5643502	Tags for minecraft:damage_type mod id risus
-e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_armor.json
-e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_enchantments.json
-c67bd19e6d6ead64ce1e0426ae15603be3d4735d data/minecraft/tags/damage_type/bypasses_invulnerability.json
-e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_resistance.json
-e29d61413d1d4139a0f62de2957c3e164bcc55c1 data/minecraft/tags/damage_type/bypasses_shield.json
+// 1.21.1	2025-09-02T17:35:24.9682866	Tags for minecraft:damage_type mod id risus
+5f06a3b2e36cb944d0df8305439c5b26973416cf data/minecraft/tags/damage_type/bypasses_armor.json
+43d7fc2cb7bb2b835d55c8462be5ac01904fa99c data/minecraft/tags/damage_type/bypasses_enchantments.json
+22458012e50b20485d141cdfbe0771fa697fb2d2 data/minecraft/tags/damage_type/bypasses_invulnerability.json
+5f06a3b2e36cb944d0df8305439c5b26973416cf data/minecraft/tags/damage_type/bypasses_resistance.json
+5f06a3b2e36cb944d0df8305439c5b26973416cf data/minecraft/tags/damage_type/bypasses_shield.json
 fe65b5451185af4d1df84baf33c8712d728e581e data/minecraft/tags/damage_type/no_impact.json
-fe65b5451185af4d1df84baf33c8712d728e581e data/minecraft/tags/damage_type/no_knockback.json
+f1aac26fd3ef9c21427c26cc496366ac31028a44 data/minecraft/tags/damage_type/no_knockback.json

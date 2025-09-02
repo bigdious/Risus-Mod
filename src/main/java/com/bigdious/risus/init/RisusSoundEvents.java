@@ -19,9 +19,9 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_REGN = register("music.disc.regn");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_MORK = register("music.ambient.mork");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_FEIGR = register("music.ambient.feigr");
-	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("entity.holder.cheeky_laugh");
-	public static final DeferredHolder<SoundEvent, SoundEvent> TOLLING_BELL = register("entity.ophanim.tolling_bell");
-	public static final DeferredHolder<SoundEvent, SoundEvent> GORGER_BITE = register("entity.gorger.bite");
+
+
+	public static final DeferredHolder<SoundEvent, SoundEvent> LAUGHTER_ECHOES = register("environment.laughter_echoes");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_AMBIENT = register("block.blood.ambient");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTALLIZED_BOND_GROW = register("block.popping_bondknot.crystallized_bond_grow");
@@ -39,6 +39,9 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_RETURN = register("entity.crescent_disaster.return");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_THROW = register("entity.crescent_disaster.throw");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_SLASH_WHOOSH = register("entity.blood_slash.whoosh");
+	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("entity.holder.cheeky_laugh");
+	public static final DeferredHolder<SoundEvent, SoundEvent> TOLLING_BELL = register("entity.ophanim.tolling_bell");
+	public static final DeferredHolder<SoundEvent, SoundEvent> GORGER_BITE = register("entity.gorger.bite");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_BREAK = register("item.egg_sac.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_THROW = register("item.egg_sac.throw");

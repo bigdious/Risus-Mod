@@ -21,6 +21,7 @@ public class RisusTags {
 		public static final TagKey<Block> WAXED_COPPER_AMALGAM_VARIATION = create("waxed_copper_amalgam_variation");
 		public static final TagKey<Block> LITTER_ALLOWED_LIGHT_BLOCKS = create("litter_allowed_light_blocks");
 		public static final TagKey<Block> SPAWN_SPIRE_ON = create("spawn_spire_on");
+		public static final TagKey<Block> REMAINS = create("remains");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
