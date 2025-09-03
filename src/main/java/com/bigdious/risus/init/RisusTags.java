@@ -116,7 +116,7 @@ public class RisusTags {
 		public static final TagKey<Enchantment> BOOMSTICK_ALLOWED_ENCHANTS = create("boomstick_allowed_enchants");
 		public static final TagKey<Enchantment> WARHORN_ALLOWED_ENCHANTS = create("warhorn_allowed_enchants");
 		public static final TagKey<Enchantment> HEXHORN_ALLOWED_ENCHANTS = create("hexhorn_allowed_enchants");
-		public static final TagKey<Enchantment> CORRUPTION = create("corruption");
+		public static final TagKey<Enchantment> EXECRATIONS = create("execrations");
 
 		private static TagKey<Enchantment> create(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

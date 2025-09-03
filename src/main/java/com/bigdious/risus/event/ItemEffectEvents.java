@@ -31,10 +31,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
@@ -43,6 +45,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
@@ -59,6 +62,7 @@ import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
@@ -602,6 +606,42 @@ public class ItemEffectEvents {
 		}
 	}
 
-
-
+	public static void genocideSweep(SweepAttackEvent event) {
+		Player player = event.getEntity();
+		Entity victim = event.getTarget();
+		ItemStack stack = event.getEntity().getWeaponItem();
+		if (stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE))>0) {
+			//mostly copy from Player attack()
+			float f = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+			DamageSource damagesource = player.damageSources().playerAttack(player);
+			f += stack.getItem().getAttackDamageBonus(victim, f, damagesource);
+			float f7 = 1.0F + (float) player.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO) * f;
+			int strength = stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE));
+			for (LivingEntity livingentity2 : player.level()
+				.getEntitiesOfClass(LivingEntity.class, victim.getBoundingBox().inflate(1.0 + strength, 0.25, 1.0 + strength))) {
+				double entityReachSq = Mth.square(player.entityInteractionRange()+ strength*2);
+				if (livingentity2 != player
+					&& livingentity2 != victim
+					&& !player.isAlliedTo(livingentity2)
+					&& (!(livingentity2 instanceof ArmorStand) || !((ArmorStand) livingentity2).isMarker())
+					&& player.distanceToSqr(livingentity2) < entityReachSq) {
+					float f2 = player.getAttackStrengthScale(0.5F);
+					float f5 = player.getEnchantedDamage(livingentity2, f7, damagesource) * f2;
+					livingentity2.knockback(
+						0.4F,
+						Mth.sin(player.getYRot() * (float) (Math.PI / 180.0)),
+						(-Mth.cos(player.getYRot() * (float) (Math.PI / 180.0)))
+					);
+					livingentity2.hurt(damagesource, f5);
+					if (player.level() instanceof ServerLevel serverlevel) {
+						EnchantmentHelper.doPostAttackEffects(serverlevel, livingentity2, damagesource);
+					}
+					player.level()
+						.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, player.getSoundSource(), 1.0F, 1.0F);
+					player.sweepAttack();
+					event.setCanceled(true);
+				}
+			}
+		}
+	}
 }

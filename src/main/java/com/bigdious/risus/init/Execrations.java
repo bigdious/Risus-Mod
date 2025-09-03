@@ -1,10 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.execrations.AttractTargetEffect;
-import com.bigdious.risus.execrations.ConferAgonyEffect;
-import com.bigdious.risus.execrations.EatExperienceBarEffect;
-import com.bigdious.risus.execrations.TakeRevengeOnImbecileEffect;
+import com.bigdious.risus.execrations.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
@@ -12,9 +9,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.*;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.UniformFloat;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -22,6 +21,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.*;
 import net.minecraft.world.item.enchantment.effects.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
@@ -35,6 +35,8 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> CACKLING_CRAZE = registerKey("cackling_craze");
 	public static final ResourceKey<Enchantment> AGONY = registerKey("agony");
 	public static final ResourceKey<Enchantment> PERPETUITY = registerKey("perpetuity");
+	public static final ResourceKey<Enchantment> GENOCIDE = registerKey("genocide");
+	public static final ResourceKey<Enchantment> EMPYREAN_CONDUIT = registerKey("empyrean_conduit");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -326,6 +328,59 @@ public class Execrations {
 			))
 			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.BINDING_CURSE), enchantments.getOrThrow(Enchantments.VANISHING_CURSE)))
 			.withEffect(EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE)
+		);
+
+		register(context, GENOCIDE, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+			2,
+			3,
+			Enchantment.dynamicCost(5, 9),
+			Enchantment.dynamicCost(20, 9),
+			4,
+			EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.SWEEPING_EDGE)))
+		);
+
+		register(context, EMPYREAN_CONDUIT, new Enchantment.Builder(Enchantment.definition(
+			items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
+			1,
+			1,
+			Enchantment.constantCost(25),
+			Enchantment.constantCost(50),
+			8,
+			EquipmentSlotGroup.MAINHAND
+			))
+			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.CHANNELING)))
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				AllOf.entityEffects(
+					new DoubleSummonEntityEffect(HolderSet.direct(EntityType.LIGHTNING_BOLT.builtInRegistryHolder()), false),
+					new PlaySoundEffect(SoundEvents.TRIDENT_THUNDER, ConstantFloat.of(5.0F), ConstantFloat.of(1.0F))
+				),
+				AllOfCondition.allOf(
+					LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().located(LocationPredicate.Builder.location().setCanSeeSky(true))
+					),
+					LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(EntityType.TRIDENT)
+					)
+				)
+			)
+			.withEffect(
+				EnchantmentEffectComponents.HIT_BLOCK,
+				AllOf.entityEffects(
+					new DoubleSummonEntityEffect(HolderSet.direct(EntityType.LIGHTNING_BOLT.builtInRegistryHolder()), false),
+					new PlaySoundEffect(SoundEvents.TRIDENT_THUNDER, ConstantFloat.of(5.0F), ConstantFloat.of(1.0F))
+				),
+				AllOfCondition.allOf(
+					LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().of(EntityType.TRIDENT)),
+					LocationCheck.checkLocation(LocationPredicate.Builder.location().setCanSeeSky(true)),
+					LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.LIGHTNING_ROD)
+				)
+			)
 		);
 
 	}

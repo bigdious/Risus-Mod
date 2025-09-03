@@ -121,7 +121,7 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.FLAME
 		);
 
-		this.tag(RisusTags.Enchantments.CORRUPTION).add(
+		this.tag(RisusTags.Enchantments.EXECRATIONS).add(
 			Execrations.HUNTERS_EXULTATION,
 			Execrations.ELEMENTAL_DEVIATION,
 			Execrations.DREAM_EATER,
@@ -129,7 +129,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.DENIAL,
 			Execrations.CACKLING_CRAZE,
 			Execrations.AGONY,
-			Execrations.PERPETUITY
+			Execrations.PERPETUITY,
+			Execrations.GENOCIDE,
+			Execrations.EMPYREAN_CONDUIT
 		);
 
 	}

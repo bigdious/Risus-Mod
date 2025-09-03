@@ -78,6 +78,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::shadowWalk);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::staysUponDeath);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::onPlayerRespawn);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::genocideSweep);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {

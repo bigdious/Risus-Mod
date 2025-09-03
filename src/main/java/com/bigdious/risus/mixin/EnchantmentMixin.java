@@ -21,6 +21,6 @@ public abstract class EnchantmentMixin {
 		if (level != 1 || (enchantment.value()).getMaxLevel() != 1) {
 			mutablecomponent.append(CommonComponents.SPACE).append(Component.translatable("enchantment.level." + level));
 		}
-		return enchantment.is(RisusTags.Enchantments.CORRUPTION) ? mutablecomponent : original;
+		return enchantment.is(RisusTags.Enchantments.EXECRATIONS) ? mutablecomponent : original;
 	}
 }
