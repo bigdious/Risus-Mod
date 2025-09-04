@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EnchantmentTagsProvider;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -132,6 +133,18 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.PERPETUITY,
 			Execrations.GENOCIDE,
 			Execrations.EMPYREAN_CONDUIT
+		);
+
+		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
+			Execrations.BATTERING
+		);
+
+		this.tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(
+			Execrations.HUNTERS_EXULTATION
+		);
+
+		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
+			Execrations.ELEMENTAL_DEVIATION
 		);
 
 	}

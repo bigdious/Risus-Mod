@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-29T22:46:01.4272081	Tags for minecraft:item mod id risus
+// 1.21.1	2025-09-04T09:35:33.9840367	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -59,6 +59,7 @@ ee2387014a0e77b1a5e2cbf21393c351832f3345 data/risus/tags/item/froglight_blocks.j
 c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
 2d4bb28011449fdf388a6360b5bb48a3fa19941b data/risus/tags/item/lightly_hurts_angel_wings.json
+153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/perpetuity_blacklist.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/risus/tags/item/robes.json
 153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/stops_thread_wings_rendering.json
 08e351805fe748da80be586314015c81df4a1211 data/risus/tags/item/sword_and_trident_enchantable.json

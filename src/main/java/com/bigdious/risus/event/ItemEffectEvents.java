@@ -569,7 +569,7 @@ public class ItemEffectEvents {
 
 		for (int i = 0; i < player.getInventory().armor.size(); i++) {
 			ItemStack armor = player.getInventory().armor.get(i);
-			if (armor.has(DataComponents.ENCHANTMENTS) && armor.get(DataComponents.ENCHANTMENTS).getLevel(living.level().registryAccess().holderOrThrow(Execrations.PERPETUITY)) > 0 && armor.isDamageableItem()) {
+			if (armor.has(DataComponents.ENCHANTMENTS) && armor.get(DataComponents.ENCHANTMENTS).getLevel(living.level().registryAccess().holderOrThrow(Execrations.PERPETUITY)) > 0 && armor.isDamageableItem() && !armor.is(RisusTags.Items.PERPETUITY_BLACKLIST)) {
 				keepInventory.armor.set(i, armor.copy());
 				player.getInventory().armor.set(i, ItemStack.EMPTY);
 			}

@@ -1,4 +1,7 @@
-// 1.21.1	2025-09-03T22:32:58.3036799	Tags for minecraft:enchantment mod id risus
+// 1.21.1	2025-09-04T09:35:33.9850375	Tags for minecraft:enchantment mod id risus
+efb7175d830acbe865374f93e5c59d381d7a08e5 data/minecraft/tags/enchantment/exclusive_set/armor.json
+5fe1af9ec0f63823d1d6de8ee09b65b866465f65 data/minecraft/tags/enchantment/exclusive_set/crossbow.json
+d272ac22bec8e0d0e3b82dfe14b6a42b1096436b data/minecraft/tags/enchantment/exclusive_set/damage.json
 9254c0b55c51ca4b22f8105f6fc10e8aad871f46 data/risus/tags/enchantment/boomstick_allowed_enchants.json
 89adb8efbd4ca78d240beab9b997ccd9e1df8a10 data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json
 371bdc717890667ed82528492314791a1fb2c681 data/risus/tags/enchantment/crescent_disaster_allowed_enchants.json

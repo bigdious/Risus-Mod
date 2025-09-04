@@ -485,6 +485,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("perpetuity", "Perpetuity", "On top of the Curse of Binding effect, the item will not be dropped upon death. To remove the item, you must break it.");
 		this.addEnchantment("genocide", "Genocide", "Increases the area of effect of sweeping attacks.");
 		this.addEnchantment("empyrean_conduit", "Empyrean Conduit", "Hitting enemies with a thrown trident will cause a lightning bolt to strike down from the sky on both the user and the target, regardless of weather.");
+		this.addEnchantment("battering", "Battering", "Increases damage based on the armor points of the target and increases knockback.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

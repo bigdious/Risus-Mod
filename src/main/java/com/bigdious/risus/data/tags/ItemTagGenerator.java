@@ -194,6 +194,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			.addTag(ItemTags.TRIDENT_ENCHANTABLE)
 		;
 
+		this.tag(RisusTags.Items.PERPETUITY_BLACKLIST).add(
+			Items.ELYTRA,
+			RisusItems.ANGEL_WINGS.get()
+		);
+
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(
 			RisusItems.HAND_OF_GREED.get()

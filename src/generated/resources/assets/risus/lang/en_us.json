@@ -347,6 +347,8 @@
   "effect.risus.toothluster": "Toothluster",
   "enchantment.risus.agony": "Agony",
   "enchantment.risus.agony.desc": "Reflects the attacker's damage, boosted by the amount of health missing from the user. Whenever it triggers, it will also increase the damage taken by half.",
+  "enchantment.risus.battering": "Battering",
+  "enchantment.risus.battering.desc": "Increases damage based on the armor points of the target.",
   "enchantment.risus.cackling_craze": "Cackling Craze",
   "enchantment.risus.cackling_craze.desc": "Increases speed on Remains-type blocks.",
   "enchantment.risus.denial": "Denial",

@@ -78,6 +78,15 @@
             },
             {
               "condition": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "location": {
+                  "can_see_sky": true
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
               "entity": "direct_attacker",
               "predicate": {
                 "type": "minecraft:trident"
