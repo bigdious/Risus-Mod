@@ -486,6 +486,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("genocide", "Genocide", "Increases the area of effect of sweeping attacks.");
 		this.addEnchantment("empyrean_conduit", "Empyrean Conduit", "Hitting enemies with a thrown trident will cause a lightning bolt to strike down from the sky on both the user and the target, regardless of weather.");
 		this.addEnchantment("battering", "Battering", "Increases damage based on the armor points of the target and increases knockback.");
+		this.addEnchantment("star_release", "Star Release", "Shoots eight projectiles out from the user in evenly distributed directions.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

@@ -132,11 +132,14 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.AGONY,
 			Execrations.PERPETUITY,
 			Execrations.GENOCIDE,
-			Execrations.EMPYREAN_CONDUIT
+			Execrations.EMPYREAN_CONDUIT,
+			Execrations.BATTERING,
+			Execrations.STAR_RELEASE
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
-			Execrations.BATTERING
+			Execrations.BATTERING,
+			Execrations.STAR_RELEASE
 		);
 
 		this.tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(
@@ -146,6 +149,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
 			Execrations.ELEMENTAL_DEVIATION
 		);
+
+
 
 	}
 }

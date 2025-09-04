@@ -39,6 +39,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> GENOCIDE = registerKey("genocide");
 	public static final ResourceKey<Enchantment> EMPYREAN_CONDUIT = registerKey("empyrean_conduit");
 	public static final ResourceKey<Enchantment> BATTERING = registerKey("battering");
+	public static final ResourceKey<Enchantment> STAR_RELEASE = registerKey("star_release");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -436,7 +437,22 @@ public class Execrations {
 				)
 		);
 
+		register(context, STAR_RELEASE, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.CROSSBOW_ENCHANTABLE),
+				2,
+				1,
+				Enchantment.constantCost(20),
+				Enchantment.constantCost(50),
+				4,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.CROSSBOW_EXCLUSIVE))
+				.withEffect(EnchantmentEffectComponents.PROJECTILE_COUNT, new AddValue(LevelBasedValue.perLevel(7.0F)))
+				.withEffect(EnchantmentEffectComponents.PROJECTILE_SPREAD, new AddValue(LevelBasedValue.perLevel(157.5F)))
+		);
+
 	}
+
 	private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
 		context.register(key, builder.build(key.location()));
 	}
