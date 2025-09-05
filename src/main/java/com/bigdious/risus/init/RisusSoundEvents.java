@@ -22,6 +22,7 @@ public class RisusSoundEvents {
 
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> LAUGHTER_ECHOES = register("environment.laughter_echoes");
+	public static final DeferredHolder<SoundEvent, SoundEvent> AIR_SUCKED_IN = register("environment.air_sucked_in");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_AMBIENT = register("block.blood.ambient");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTALLIZED_BOND_GROW = register("block.popping_bondknot.crystallized_bond_grow");

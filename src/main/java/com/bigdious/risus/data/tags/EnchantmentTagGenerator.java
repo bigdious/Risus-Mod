@@ -136,7 +136,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.BATTERING,
 			Execrations.STAR_RELEASE,
 			Execrations.OVERLOAD,
-			Execrations.MARITIME_SNARE
+			Execrations.MARITIME_SNARE,
+			Execrations.GRAVITY_WELL
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(

@@ -42,6 +42,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> STAR_RELEASE = registerKey("star_release");
 	public static final ResourceKey<Enchantment> OVERLOAD = registerKey("overload");
 	public static final ResourceKey<Enchantment> MARITIME_SNARE = registerKey("maritime_snare");
+	public static final ResourceKey<Enchantment> GRAVITY_WELL = registerKey("gravity_well");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -455,37 +456,49 @@ public class Execrations {
 
 		register(context, OVERLOAD, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.MINING_ENCHANTABLE),
-			10,
-			5,
-			Enchantment.dynamicCost(1, 10),
-			Enchantment.dynamicCost(51, 10),
-			1,
+				10,
+				5,
+				Enchantment.dynamicCost(1, 10),
+				Enchantment.dynamicCost(51, 10),
+				1,
 				EquipmentSlotGroup.MAINHAND
 			))
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.EFFICIENCY)))
-			.withEffect(
-				EnchantmentEffectComponents.ATTRIBUTES,
-				new EnchantmentAttributeEffect(
-					ResourceLocation.withDefaultNamespace("enchantment.efficiency"),
-					Attributes.MINING_EFFICIENCY,
-					new LevelBasedValue.Linear(15, 15),
-					AttributeModifier.Operation.ADD_VALUE
+				.withEffect(
+					EnchantmentEffectComponents.ATTRIBUTES,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.withDefaultNamespace("enchantment.efficiency"),
+						Attributes.MINING_EFFICIENCY,
+						new LevelBasedValue.Linear(15, 15),
+						AttributeModifier.Operation.ADD_VALUE
+					)
 				)
-			)
 		);
 
 		register(context, MARITIME_SNARE, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.FISHING_ENCHANTABLE),
-			2,
-			3,
-			Enchantment.dynamicCost(15, 9),
-			Enchantment.dynamicCost(65, 9),
-			4,
-			EquipmentSlotGroup.MAINHAND
+				2,
+				3,
+				Enchantment.dynamicCost(15, 9),
+				Enchantment.dynamicCost(65, 9),
+				4,
+				EquipmentSlotGroup.MAINHAND
 			))
-			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LUCK_OF_THE_SEA)))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LUCK_OF_THE_SEA)))
 		);
 
+		register(context, GRAVITY_WELL, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.FISHING_ENCHANTABLE),
+				2,
+				3,
+				Enchantment.dynamicCost(15, 9),
+				Enchantment.dynamicCost(65, 9),
+				4,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LURE)))
+			.withEffect(EnchantmentEffectComponents.FISHING_TIME_REDUCTION, new AddValue(LevelBasedValue.perLevel(7.5F)))
+		);
 
 
 	}

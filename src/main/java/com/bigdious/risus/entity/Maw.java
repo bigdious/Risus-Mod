@@ -26,6 +26,7 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
@@ -268,5 +269,8 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	public boolean isPushedByFluid(FluidType type) {
 		return false;
+	}
+	@Override
+	public void setDeltaMovement(Vec3 deltaMovement) {
 	}
 }

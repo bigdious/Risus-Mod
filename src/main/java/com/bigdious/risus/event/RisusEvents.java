@@ -81,6 +81,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::genocideSweep);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onOverload);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onMaritimeSnare);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onGravityWell);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {

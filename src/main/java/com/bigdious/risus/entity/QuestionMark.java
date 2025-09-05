@@ -14,6 +14,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 
 public class QuestionMark extends Monster {
@@ -143,5 +144,9 @@ public class QuestionMark extends Monster {
 	@Override
 	public boolean isPushedByFluid(FluidType type) {
 		return false;
+	}
+
+	@Override
+	public void setDeltaMovement(Vec3 deltaMovement) {
 	}
 }

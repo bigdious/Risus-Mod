@@ -152,6 +152,15 @@
     ],
     "subtitle": "subtitles.risus.entity.singer.scream"
   },
+  "environment.air_sucked_in": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.breeze.inhale"
+      }
+    ],
+    "subtitle": "subtitles.risus.environment.air_sucked_in"
+  },
   "environment.laughter_echoes": {
     "sounds": [
       "risus:environment/laughter_echoes1",

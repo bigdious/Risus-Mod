@@ -3,12 +3,14 @@ package com.bigdious.risus.event;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.Execrations;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import com.bigdious.risus.util.RisusItemStackUtil;
 import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -22,15 +24,13 @@ import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.GameRules;
@@ -44,6 +44,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ExecrationEvents {
@@ -102,7 +103,7 @@ public class ExecrationEvents {
 		Player player = event.getEntity();
 		Entity victim = event.getTarget();
 		ItemStack stack = event.getEntity().getWeaponItem();
-		if (stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE))>0) {
+		if (stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) {
 			//mostly copy from Player attack()
 			float f = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 			DamageSource damagesource = player.damageSources().playerAttack(player);
@@ -111,7 +112,7 @@ public class ExecrationEvents {
 			int strength = stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE));
 			for (LivingEntity livingentity2 : player.level()
 				.getEntitiesOfClass(LivingEntity.class, victim.getBoundingBox().inflate(1.0 + strength, 0.25, 1.0 + strength))) {
-				double entityReachSq = Mth.square(player.entityInteractionRange()+ strength*2);
+				double entityReachSq = Mth.square(player.entityInteractionRange() + strength * 2);
 				if (livingentity2 != player
 					&& livingentity2 != victim
 					&& !player.isAlliedTo(livingentity2)
@@ -139,9 +140,9 @@ public class ExecrationEvents {
 
 	public static void onOverload(BlockDropsEvent event) {
 		if (event.getBreaker() instanceof Player player) {
-			if (player.getWeaponItem().has(DataComponents.ENCHANTMENTS) && player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD))>0) {
+			if (player.getWeaponItem().has(DataComponents.ENCHANTMENTS) && player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD)) > 0) {
 				int i = player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD));
-				if (player.level().getRandom().nextFloat() <= i*0.15) {
+				if (player.level().getRandom().nextFloat() <= i * 0.15) {
 					event.getDrops().clear();
 					event.setDroppedExperience(0);
 					ServerParticleUtils.spawnParticleInBlock(player.level(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
@@ -153,18 +154,41 @@ public class ExecrationEvents {
 
 	public static void onMaritimeSnare(ItemFishedEvent event) {
 		Player player = event.getEntity();
-		if (player.getMainHandItem().has(DataComponents.ENCHANTMENTS) && player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().level().registryAccess().holderOrThrow(Execrations.MARITIME_SNARE)) > 0) {
-			int level = player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().level().registryAccess().holderOrThrow(Execrations.MARITIME_SNARE));
+		if (player.getMainHandItem().has(DataComponents.ENCHANTMENTS) && player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.MARITIME_SNARE)) > 0) {
+			int level = player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.MARITIME_SNARE));
 			if (player.level().getRandom().nextFloat() <= level * 0.10) {
-				TagKey<EntityType<?>> tagKey = level < 2 ? RisusTags.Entities.SMALL_MARITIME_SNARE_POOL : level == 2 ? RisusTags.Entities.MEDIUM_MARITIME_SNARE_POOL : RisusTags.Entities.LARGE_MARITIME_SNARE_POOL ;
-				Optional<Holder<EntityType<?>>> optional = BuiltInRegistries.ENTITY_TYPE.getTag(tagKey).map(t -> t.getRandomElement(event.getEntity().level().getRandom())).orElse(null);
+				TagKey<EntityType<?>> tagKey = level < 2 ? RisusTags.Entities.SMALL_MARITIME_SNARE_POOL : level == 2 ? RisusTags.Entities.MEDIUM_MARITIME_SNARE_POOL : RisusTags.Entities.LARGE_MARITIME_SNARE_POOL;
+				Optional<Holder<EntityType<?>>> optional = BuiltInRegistries.ENTITY_TYPE.getTag(tagKey).map(t -> t.getRandomElement(player.level().getRandom())).orElse(null);
 				if (!optional.isEmpty()) {
 					Entity entity = ((EntityType) ((Holder) optional.get()).value()).spawn((ServerLevel) player.level(), event.getHookEntity().getOnPos().below(), MobSpawnType.TRIGGERED);
 					entity.moveTo(event.getHookEntity().getX(), event.getHookEntity().getY(), event.getHookEntity().getZ());
-					Vec3 vec3 = (new Vec3(event.getEntity().getX() - event.getHookEntity().getX(), event.getEntity().getY() - event.getHookEntity().getY(), event.getEntity().getZ() - event.getHookEntity().getZ())).scale(0.2);
+					Vec3 vec3 = (new Vec3(player.getX() - event.getHookEntity().getX(), player.getY() - event.getHookEntity().getY(), player.getZ() - event.getHookEntity().getZ())).scale(0.2);
 					entity.setDeltaMovement(entity.getDeltaMovement().add(vec3));
 				}
 			}
 		}
+	}
+
+	public static void onGravityWell(ItemFishedEvent event) {
+		Player player = event.getEntity();
+		if (player.getMainHandItem().has(DataComponents.ENCHANTMENTS) && player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.registryAccess().holderOrThrow(Execrations.GRAVITY_WELL)) > 0) {
+			int level = player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GRAVITY_WELL));
+//			if (player.level().getRandom().nextFloat() <= level * 0.10) {
+			FishingHook hook = event.getHookEntity();
+			ServerParticleUtils.spawnParticles(player.level(), hook.getOnPos().above(), 1, 0, 0, true, ParticleTypes.GUST);
+			player.level().playSound(null, hook.getOnPos(), RisusSoundEvents.AIR_SUCKED_IN.get(), player.getSoundSource(), 0.1F, 1);
+			List<Entity> list = player.level().getEntities(hook, hook.getBoundingBox().inflate(level * 10));
+			for (Entity pulledEntity : list) {
+				Vec3 vec3 = (new Vec3(event.getHookEntity().getX() - pulledEntity.getX(), event.getHookEntity().getY() - pulledEntity.getY(), event.getHookEntity().getZ() - pulledEntity.getZ())).scale(level * 0.08);
+				if (pulledEntity instanceof Player player1) {
+					player1.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
+					player1.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
+					player1.hurtMarked=true;
+				} else {
+					pulledEntity.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
+				}
+			}
+		}
+//			}
 	}
 }
