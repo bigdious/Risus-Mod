@@ -134,7 +134,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.GENOCIDE,
 			Execrations.EMPYREAN_CONDUIT,
 			Execrations.BATTERING,
-			Execrations.STAR_RELEASE
+			Execrations.STAR_RELEASE,
+			Execrations.OVERLOAD
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(

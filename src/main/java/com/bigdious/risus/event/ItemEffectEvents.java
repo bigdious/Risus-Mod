@@ -63,6 +63,7 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
+import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
@@ -640,6 +641,20 @@ public class ItemEffectEvents {
 						.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, player.getSoundSource(), 1.0F, 1.0F);
 					player.sweepAttack();
 					event.setCanceled(true);
+				}
+			}
+		}
+	}
+
+	public static void onOverload(BlockDropsEvent event) {
+		if (event.getBreaker() instanceof Player player) {
+			if (player.getWeaponItem().has(DataComponents.ENCHANTMENTS) && player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD))>0) {
+				int i = player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD));
+				if (player.level().getRandom().nextFloat() <= i*0.15) {
+					event.getDrops().clear();
+					event.setDroppedExperience(0);
+					ServerParticleUtils.spawnParticleInBlock(player.level(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
+					player.level().playSound(null, event.getPos(), SoundEvents.GENERIC_BURN, player.getSoundSource(), 0.1F, 1);
 				}
 			}
 		}

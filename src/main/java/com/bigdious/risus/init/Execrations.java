@@ -40,6 +40,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> EMPYREAN_CONDUIT = registerKey("empyrean_conduit");
 	public static final ResourceKey<Enchantment> BATTERING = registerKey("battering");
 	public static final ResourceKey<Enchantment> STAR_RELEASE = registerKey("star_release");
+	public static final ResourceKey<Enchantment> OVERLOAD = registerKey("overload");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -450,6 +451,29 @@ public class Execrations {
 				.withEffect(EnchantmentEffectComponents.PROJECTILE_COUNT, new AddValue(LevelBasedValue.perLevel(7.0F)))
 				.withEffect(EnchantmentEffectComponents.PROJECTILE_SPREAD, new AddValue(LevelBasedValue.perLevel(157.5F)))
 		);
+
+		register(context, OVERLOAD, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.MINING_ENCHANTABLE),
+			10,
+			5,
+			Enchantment.dynamicCost(1, 10),
+			Enchantment.dynamicCost(51, 10),
+			1,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.EFFICIENCY)))
+			.withEffect(
+				EnchantmentEffectComponents.ATTRIBUTES,
+				new EnchantmentAttributeEffect(
+					ResourceLocation.withDefaultNamespace("enchantment.efficiency"),
+					Attributes.MINING_EFFICIENCY,
+					new LevelBasedValue.Linear(15, 15),
+					AttributeModifier.Operation.ADD_VALUE
+				)
+			)
+		);
+
+
 
 	}
 

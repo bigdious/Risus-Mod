@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.common.EffectCure;
 
 import java.util.Objects;
@@ -26,6 +27,7 @@ public class ExBurnEffect extends MobEffect {
 
 	@Override
 	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+		if (entity instanceof Player player && player.isCreative()) {return super.applyEffectTick(entity, amplifier);}
 		if (!entity.level().isClientSide()) {
 			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).getValue() > 6.0D) {
 				if (RisusConfig.canonExBurn) {
