@@ -100,5 +100,37 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.addTag(EntityTypeTags.SENSITIVE_TO_IMPALING)
 			.addTag(EntityTypeTags.SENSITIVE_TO_BANE_OF_ARTHROPODS)
 		;
+
+		tag(RisusTags.Entities.SMALL_MARITIME_SNARE_POOL)
+			.add(
+				EntityType.SALMON
+				,EntityType.COD
+				,EntityType.PUFFERFISH
+				,EntityType.TROPICAL_FISH
+				,EntityType.TADPOLE
+			)
+		;
+
+		tag(RisusTags.Entities.MEDIUM_MARITIME_SNARE_POOL)
+			.addTag(RisusTags.Entities.SMALL_MARITIME_SNARE_POOL)
+			.add(
+				EntityType.AXOLOTL
+				,EntityType.DOLPHIN
+				,EntityType.SQUID
+				,EntityType.GLOW_SQUID
+				,EntityType.DROWNED
+			)
+		;
+
+		tag(RisusTags.Entities.LARGE_MARITIME_SNARE_POOL)
+			.addTag(RisusTags.Entities.MEDIUM_MARITIME_SNARE_POOL)
+			.add(
+				EntityType.GUARDIAN
+				,EntityType.ELDER_GUARDIAN
+				,EntityType.TURTLE
+				,EntityType.BOAT
+				,EntityType.TRIDENT
+			)
+		;
 	}
 }

@@ -488,6 +488,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("battering", "Battering", "Increases damage based on the armor points of the target and increases knockback.");
 		this.addEnchantment("star_release", "Star Release", "Shoots eight projectiles out from the user in evenly distributed directions.");
 		this.addEnchantment("overload", "Overload", "Triple the mining power of Efficiency at level five, but each level adds a chance for the drops to be destroyed.");
+		this.addEnchantment("maritime_snare", "Maritime Snare", "Adds a small chance to fish out creatures, level increasing the likelihood and the size of the catch.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

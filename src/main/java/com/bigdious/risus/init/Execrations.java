@@ -41,6 +41,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> BATTERING = registerKey("battering");
 	public static final ResourceKey<Enchantment> STAR_RELEASE = registerKey("star_release");
 	public static final ResourceKey<Enchantment> OVERLOAD = registerKey("overload");
+	public static final ResourceKey<Enchantment> MARITIME_SNARE = registerKey("maritime_snare");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -471,6 +472,18 @@ public class Execrations {
 					AttributeModifier.Operation.ADD_VALUE
 				)
 			)
+		);
+
+		register(context, MARITIME_SNARE, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.FISHING_ENCHANTABLE),
+			2,
+			3,
+			Enchantment.dynamicCost(15, 9),
+			Enchantment.dynamicCost(65, 9),
+			4,
+			EquipmentSlotGroup.MAINHAND
+			))
+			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LUCK_OF_THE_SEA)))
 		);
 
 

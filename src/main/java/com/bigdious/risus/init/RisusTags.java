@@ -100,6 +100,9 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> HEXHORN_BANNED = create("hexhorn_banned");
 		public static final TagKey<EntityType<?>> HEXHORN_ALLOWED = create("hexhorn_allowed");
 		public static final TagKey<EntityType<?>> SENSITIVE_TO_HUNTERS = create("sensitive_to_hunters");
+		public static final TagKey<EntityType<?>> SMALL_MARITIME_SNARE_POOL = create("small_maritime_snare_pool");
+		public static final TagKey<EntityType<?>> MEDIUM_MARITIME_SNARE_POOL = create("medium_maritime_snare_pool");
+		public static final TagKey<EntityType<?>> LARGE_MARITIME_SNARE_POOL = create("large_maritime_snare_pool");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

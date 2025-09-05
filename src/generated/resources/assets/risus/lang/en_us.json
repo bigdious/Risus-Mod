@@ -363,6 +363,8 @@
   "enchantment.risus.genocide.desc": "Increases the area of effect of sweeping attacks.",
   "enchantment.risus.hunters_exultation": "Hunter's Exultation",
   "enchantment.risus.hunters_exultation.desc": "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.",
+  "enchantment.risus.maritime_snare": "Maritime Snare",
+  "enchantment.risus.maritime_snare.desc": "Adds a small chance to fish out creatures, level increasing the likelihood and the size of the catch.",
   "enchantment.risus.overload": "Overload",
   "enchantment.risus.overload.desc": "Triple the mining power of Efficiency at level five, but each level adds a chance for the drops to be destroyed.",
   "enchantment.risus.perpetuity": "Perpetuity",

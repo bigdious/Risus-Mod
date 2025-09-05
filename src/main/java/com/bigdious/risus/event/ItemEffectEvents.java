@@ -2,6 +2,7 @@ package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
+import com.bigdious.risus.entity.Angel;
 import com.bigdious.risus.entity.Stool;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.utility.EternalYouthItem;
@@ -36,6 +37,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Witch;
@@ -51,15 +53,18 @@ import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
@@ -76,7 +81,6 @@ import java.util.function.Function;
 
 public class ItemEffectEvents {
 	public static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR;
-	public static final String SAVED_INV_TAG = "RisusSavedInventory";
 
 	public static void explodeStick(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
@@ -559,104 +563,5 @@ public class ItemEffectEvents {
 		}
 	}
 
-	@SubscribeEvent(priority = EventPriority.HIGH)
-	public static void staysUponDeath(LivingDeathEvent event) {
-		LivingEntity living = event.getEntity();
-		ListTag tagList = new ListTag();
-		if (event.isCanceled() || living.level().isClientSide() || !(living instanceof Player player) || living instanceof FakePlayer || player.isCreative() || player.isSpectator() || living.level().getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY)) {
-			return;
-		}
-		Inventory keepInventory = new Inventory(player);
 
-		for (int i = 0; i < player.getInventory().armor.size(); i++) {
-			ItemStack armor = player.getInventory().armor.get(i);
-			if (armor.has(DataComponents.ENCHANTMENTS) && armor.get(DataComponents.ENCHANTMENTS).getLevel(living.level().registryAccess().holderOrThrow(Execrations.PERPETUITY)) > 0 && armor.isDamageableItem() && !armor.is(RisusTags.Items.PERPETUITY_BLACKLIST)) {
-				keepInventory.armor.set(i, armor.copy());
-				player.getInventory().armor.set(i, ItemStack.EMPTY);
-			}
-		}
-
-		if (!keepInventory.isEmpty()) {
-			keepInventory.save(tagList);
-			getPlayerData(player).put(SAVED_INV_TAG, tagList);
-		}
-	}
-
-	public static CompoundTag getPlayerData(Player player) {
-		if (!player.getPersistentData().contains(Player.PERSISTED_NBT_TAG)) {
-			player.getPersistentData().put(Player.PERSISTED_NBT_TAG, new CompoundTag());
-		}
-		return player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
-	}
-
-	public static void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
-		if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) return;
-		if (!event.isEndConquered()) {
-			returnStoredItems(serverPlayer);
-		}
-	}
-
-	private static void returnStoredItems(Player player) {
-		Risus.LOGGER.debug("Player {} ({}) respawned and received items held in storage", player.getName().getString(), player.getUUID());
-		CompoundTag playerData = getPlayerData(player);
-		if (!player.level().isClientSide() && playerData.contains(SAVED_INV_TAG)) {
-			ListTag tagList = playerData.getList(SAVED_INV_TAG, 10);
-			RisusItemStackUtil.loadNoClear(player.registryAccess(), tagList, player.getInventory());
-			getPlayerData(player).getList(SAVED_INV_TAG, 10).clear();
-			getPlayerData(player).remove(SAVED_INV_TAG);
-		}
-	}
-
-	public static void genocideSweep(SweepAttackEvent event) {
-		Player player = event.getEntity();
-		Entity victim = event.getTarget();
-		ItemStack stack = event.getEntity().getWeaponItem();
-		if (stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE))>0) {
-			//mostly copy from Player attack()
-			float f = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
-			DamageSource damagesource = player.damageSources().playerAttack(player);
-			f += stack.getItem().getAttackDamageBonus(victim, f, damagesource);
-			float f7 = 1.0F + (float) player.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO) * f;
-			int strength = stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE));
-			for (LivingEntity livingentity2 : player.level()
-				.getEntitiesOfClass(LivingEntity.class, victim.getBoundingBox().inflate(1.0 + strength, 0.25, 1.0 + strength))) {
-				double entityReachSq = Mth.square(player.entityInteractionRange()+ strength*2);
-				if (livingentity2 != player
-					&& livingentity2 != victim
-					&& !player.isAlliedTo(livingentity2)
-					&& (!(livingentity2 instanceof ArmorStand) || !((ArmorStand) livingentity2).isMarker())
-					&& player.distanceToSqr(livingentity2) < entityReachSq) {
-					float f2 = player.getAttackStrengthScale(0.5F);
-					float f5 = player.getEnchantedDamage(livingentity2, f7, damagesource) * f2;
-					livingentity2.knockback(
-						0.4F,
-						Mth.sin(player.getYRot() * (float) (Math.PI / 180.0)),
-						(-Mth.cos(player.getYRot() * (float) (Math.PI / 180.0)))
-					);
-					livingentity2.hurt(damagesource, f5);
-					if (player.level() instanceof ServerLevel serverlevel) {
-						EnchantmentHelper.doPostAttackEffects(serverlevel, livingentity2, damagesource);
-					}
-					player.level()
-						.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, player.getSoundSource(), 1.0F, 1.0F);
-					player.sweepAttack();
-					event.setCanceled(true);
-				}
-			}
-		}
-	}
-
-	public static void onOverload(BlockDropsEvent event) {
-		if (event.getBreaker() instanceof Player player) {
-			if (player.getWeaponItem().has(DataComponents.ENCHANTMENTS) && player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD))>0) {
-				int i = player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD));
-				if (player.level().getRandom().nextFloat() <= i*0.15) {
-					event.getDrops().clear();
-					event.setDroppedExperience(0);
-					ServerParticleUtils.spawnParticleInBlock(player.level(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
-					player.level().playSound(null, event.getPos(), SoundEvents.GENERIC_BURN, player.getSoundSource(), 0.1F, 1);
-				}
-			}
-		}
-	}
 }

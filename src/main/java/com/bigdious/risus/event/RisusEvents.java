@@ -76,10 +76,11 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::updateVisibility);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::increaseItemPickupRange);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::shadowWalk);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::staysUponDeath);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::onPlayerRespawn);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::genocideSweep);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::onOverload);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::staysUponDeath);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onPlayerRespawn);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::genocideSweep);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onOverload);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onMaritimeSnare);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
