@@ -44,6 +44,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -173,22 +174,44 @@ public class ExecrationEvents {
 		Player player = event.getEntity();
 		if (player.getMainHandItem().has(DataComponents.ENCHANTMENTS) && player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.registryAccess().holderOrThrow(Execrations.GRAVITY_WELL)) > 0) {
 			int level = player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GRAVITY_WELL));
-//			if (player.level().getRandom().nextFloat() <= level * 0.10) {
-			FishingHook hook = event.getHookEntity();
-			ServerParticleUtils.spawnParticles(player.level(), hook.getOnPos().above(), 1, 0, 0, true, ParticleTypes.GUST);
-			player.level().playSound(null, hook.getOnPos(), RisusSoundEvents.AIR_SUCKED_IN.get(), player.getSoundSource(), 0.1F, 1);
-			List<Entity> list = player.level().getEntities(hook, hook.getBoundingBox().inflate(level * 10));
-			for (Entity pulledEntity : list) {
-				Vec3 vec3 = (new Vec3(event.getHookEntity().getX() - pulledEntity.getX(), event.getHookEntity().getY() - pulledEntity.getY(), event.getHookEntity().getZ() - pulledEntity.getZ())).scale(level * 0.08);
-				if (pulledEntity instanceof Player player1) {
-					player1.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
-					player1.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
-					player1.hurtMarked=true;
-				} else {
-					pulledEntity.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
+			if (player.level().getRandom().nextFloat() <= level * 0.10) {
+				FishingHook hook = event.getHookEntity();
+				ServerParticleUtils.spawnParticles(player.level(), hook.getOnPos().above(), 1, 0, 0, true, ParticleTypes.GUST);
+				player.level().playSound(null, hook.getOnPos(), RisusSoundEvents.AIR_SUCKED_IN.get(), player.getSoundSource(), 0.1F, 1);
+				List<Entity> list = player.level().getEntities(hook, hook.getBoundingBox().inflate(level * 10));
+				for (Entity pulledEntity : list) {
+					Vec3 vec3 = (new Vec3(event.getHookEntity().getX() - pulledEntity.getX(), event.getHookEntity().getY() - pulledEntity.getY(), event.getHookEntity().getZ() - pulledEntity.getZ())).scale(level * 0.08);
+					if (pulledEntity instanceof Player player1) {
+						player1.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));
+						player1.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
+						player1.hurtMarked = true;
+					} else {
+						pulledEntity.setDeltaMovement(pulledEntity.getDeltaMovement().add(vec3));
+					}
 				}
 			}
 		}
-//			}
+	}
+
+	//not an event, but fits here
+	public static void performRelocation(LivingEntity user, ItemStack original, EquipmentSlot equipmentSlot ,int chance) {
+		if (user instanceof Player player) {
+			player.sendSystemMessage(Component.literal("Trigger"));
+		}
+
+		if (user.level().getRandom().nextFloat() <= 0.25 + chance && !user.level().isClientSide()) {
+			List<ItemStack> list = new ArrayList<>();
+			user.getAllSlots().iterator().forEachRemaining(list::add);
+			for (ItemStack itemStack : list) {
+				if (!itemStack.isEmpty() && itemStack.isDamageableItem() && user.getEquipmentSlotForItem(itemStack) != user.getEquipmentSlotForItem(original) && (!itemStack.has(DataComponents.ENCHANTMENTS) || itemStack.get(DataComponents.ENCHANTMENTS).getLevel(user.registryAccess().holderOrThrow(Execrations.RELOCATION)) < 1)) {
+					original.setDamageValue(original.getDamageValue()-1);
+					itemStack.hurtAndBreak(1, user, user.getEquipmentSlotForItem(itemStack));
+					if (user instanceof Player player) {
+						player.sendSystemMessage(Component.literal("Success"));
+					}
+					break;
+				}
+			}
+		}
 	}
 }

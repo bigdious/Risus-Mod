@@ -18,5 +18,4 @@ public class ExecrationEffects {
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<ConferAgonyEffect>> CONFER_AGONY = ENTITY_EFFECTS.register("confer_agony", () -> ConferAgonyEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<DoubleSummonEntityEffect>> DOUBLE_SUMMON_ENTITY = ENTITY_EFFECTS.register("double_summon_entity", () -> DoubleSummonEntityEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<BatteringEffect>> BATTERING = ENTITY_EFFECTS.register("battering", () -> BatteringEffect.CODEC);
-
 }

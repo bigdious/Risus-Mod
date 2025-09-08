@@ -70,6 +70,7 @@ public class Risus {
 		RisusFluids.FLUID_TYPES.register(bus);
 		RisusStructures.STRUCTURES.register(bus);
 		RisusDataComponents.COMPONENTS.register(bus);
+		RisusDataComponents.ENCHANTMENT_EFFECT_COMPONENTS.register(bus);
 		RisusAdvancements.TRIGGERS.register(bus);
 		RisusItemSubPredicates.TYPES.register(bus);
 		if (ModList.get().isLoaded("curios")) loadCuriosCompat(bus);

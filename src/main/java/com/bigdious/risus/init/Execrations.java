@@ -43,6 +43,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> OVERLOAD = registerKey("overload");
 	public static final ResourceKey<Enchantment> MARITIME_SNARE = registerKey("maritime_snare");
 	public static final ResourceKey<Enchantment> GRAVITY_WELL = registerKey("gravity_well");
+	public static final ResourceKey<Enchantment> RELOCATION = registerKey("relocation");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -500,7 +501,17 @@ public class Execrations {
 			.withEffect(EnchantmentEffectComponents.FISHING_TIME_REDUCTION, new AddValue(LevelBasedValue.perLevel(7.5F)))
 		);
 
-
+		register(context, RELOCATION, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.DURABILITY_ENCHANTABLE),
+				5,
+				3,
+				Enchantment.dynamicCost(5, 8),
+				Enchantment.dynamicCost(55, 8),
+				2,
+			EquipmentSlotGroup.ANY
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.UNBREAKING)))
+		);
 	}
 
 	private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {
