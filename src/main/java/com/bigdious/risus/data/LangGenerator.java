@@ -491,6 +491,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("maritime_snare", "Maritime Snare", "Adds a small chance to fish out creatures, level increasing the likelihood and the size of the catch.");
 		this.addEnchantment("gravity_well", "Gravity Well", "Fish bite faster than with Lure but there's a chance to pull in all entities nearby whenever retrieving a catch.");
 		this.addEnchantment("relocation", "Relocation", "Adds a chance to relocate any durability damage received onto a different equipped item.");
+		this.addEnchantment("pyromaniac", "Pyromaniac", "Increases speed when on fire.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

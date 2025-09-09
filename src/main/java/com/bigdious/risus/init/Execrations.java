@@ -13,6 +13,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.*;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.UniformFloat;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -44,6 +45,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> MARITIME_SNARE = registerKey("maritime_snare");
 	public static final ResourceKey<Enchantment> GRAVITY_WELL = registerKey("gravity_well");
 	public static final ResourceKey<Enchantment> RELOCATION = registerKey("relocation");
+	public static final ResourceKey<Enchantment> PYROMANIAC = registerKey("pyromaniac");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -131,7 +133,7 @@ public class Execrations {
 				.withEffect(
 					EnchantmentEffectComponents.ATTRIBUTES,
 					new EnchantmentAttributeEffect(
-						ResourceLocation.withDefaultNamespace("enchantment.fire_protection"),
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.elemental_deviation"),
 						Attributes.BURNING_TIME,
 						LevelBasedValue.perLevel(-0.15F),
 						AttributeModifier.Operation.ADD_MULTIPLIED_BASE
@@ -140,7 +142,7 @@ public class Execrations {
 				.withEffect(
 					EnchantmentEffectComponents.ATTRIBUTES,
 					new EnchantmentAttributeEffect(
-						ResourceLocation.withDefaultNamespace("enchantment.blast_protection"),
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.elemental_deviation"),
 						Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,
 						LevelBasedValue.perLevel(0.15F),
 						AttributeModifier.Operation.ADD_VALUE
@@ -215,7 +217,7 @@ public class Execrations {
 				.withEffect(
 					EnchantmentEffectComponents.LOCATION_CHANGED,
 					new EnchantmentAttributeEffect(
-						ResourceLocation.withDefaultNamespace("enchantment.soul_speed"),
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze"),
 						Attributes.MOVEMENT_SPEED,
 						LevelBasedValue.perLevel(0.0405F, 0.0105F),
 						AttributeModifier.Operation.ADD_VALUE
@@ -246,12 +248,23 @@ public class Execrations {
 									),
 									LootItemEntityPropertyCondition.hasProperties(
 										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location().setY(MinMaxBounds.Doubles.ANY)
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
 										EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(false)).build()
 									)
 								)
 							),
 							AllOfCondition.allOf(
 								EnchantmentActiveCheck.enchantmentInactiveCheck(),
+								AnyOfCondition.anyOf(
 								LootItemEntityPropertyCondition.hasProperties(
 									LootContext.EntityTarget.THIS,
 									EntityPredicate.Builder.entity()
@@ -260,41 +273,18 @@ public class Execrations {
 												.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
 										)
 										.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+								),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									)
 								)
 							)
-						)
-					)
-				)
-				.withEffect(
-					EnchantmentEffectComponents.LOCATION_CHANGED,
-					new EnchantmentAttributeEffect(
-						ResourceLocation.withDefaultNamespace("enchantment.soul_speed"),
-						Attributes.MOVEMENT_EFFICIENCY,
-						LevelBasedValue.constant(1.0F),
-						AttributeModifier.Operation.ADD_VALUE
-					),
-					LootItemEntityPropertyCondition.hasProperties(
-						LootContext.EntityTarget.THIS,
-						EntityPredicate.Builder.entity()
-							.movementAffectedBy(
-								LocationPredicate.Builder.location()
-									.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
-							)
-					)
-				)
-				.withEffect(
-					EnchantmentEffectComponents.LOCATION_CHANGED,
-					new DamageItem(LevelBasedValue.constant(1.0F)),
-					AllOfCondition.allOf(
-						LootItemRandomChanceCondition.randomChance(EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.constant(0.04F))),
-						LootItemEntityPropertyCondition.hasProperties(
-							LootContext.EntityTarget.THIS,
-							EntityPredicate.Builder.entity()
-								.flags(EntityFlagsPredicate.Builder.flags().setOnGround(true))
-								.movementAffectedBy(
-									LocationPredicate.Builder.location()
-										.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
-								)
 						)
 					)
 				)
@@ -468,7 +458,7 @@ public class Execrations {
 				.withEffect(
 					EnchantmentEffectComponents.ATTRIBUTES,
 					new EnchantmentAttributeEffect(
-						ResourceLocation.withDefaultNamespace("enchantment.efficiency"),
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.overload"),
 						Attributes.MINING_EFFICIENCY,
 						new LevelBasedValue.Linear(15, 15),
 						AttributeModifier.Operation.ADD_VALUE
@@ -511,6 +501,22 @@ public class Execrations {
 			EquipmentSlotGroup.ANY
 			))
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.UNBREAKING)))
+		);
+
+		register(context, PYROMANIAC, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+				2,
+				3,
+				Enchantment.dynamicCost(10, 10),
+				Enchantment.dynamicCost(25, 10),
+				4,
+				EquipmentSlotGroup.FEET
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.TICK,
+				new FierySpeedEffect()
+			)
 		);
 	}
 

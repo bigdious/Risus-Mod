@@ -154,6 +154,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.ELEMENTAL_DEVIATION
 		);
 
+		this.tag(EnchantmentTags.BOOTS_EXCLUSIVE).add(
+			Execrations.PYROMANIAC
+		);
+
 
 
 	}

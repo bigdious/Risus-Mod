@@ -357,7 +357,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(RisusTags.Blocks.REMAINS).add(
 			RisusBlocks.ASHEN_REMAINS.get(),
 			RisusBlocks.SMILING_REMAINS.get(),
-			RisusBlocks.SPREADING_REMAINS.get()
+			RisusBlocks.SPREADING_REMAINS.get(),
+			RisusBlocks.TEETH.get()
 		);
 	}
 }

@@ -12,7 +12,7 @@
           "per_level_above_first": 15.0
         },
         "attribute": "minecraft:player.mining_efficiency",
-        "id": "minecraft:enchantment.efficiency",
+        "id": "risus:execration.overload",
         "operation": "add_value"
       }
     ]

@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-08T22:41:26.1774884	Registries
+// 1.21.1	2025-09-09T20:13:22.0399701	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -15,18 +15,19 @@ fb66e00ba49e543bcffcef3c073930ced882203c data/risus/damage_type/gluttony.json
 280e134206536a849551a2b4bdc791e6fc85c7fb data/risus/damage_type/vampirism.json
 8585c98209547a6a7e04c60b804e59ccf837afb1 data/risus/enchantment/agony.json
 738d1e231f2f491bbe3ae5f38035843d31bedf36 data/risus/enchantment/battering.json
-0b4b4c8b07c9b0c8e997c2cc281f09bfec14df14 data/risus/enchantment/cackling_craze.json
+61c06d997f98280ff4271c7d73911fcd2ca9ab01 data/risus/enchantment/cackling_craze.json
 b331c3fe6b249b9f22dfef7031dd7630d47e29da data/risus/enchantment/denial.json
 3540262e587167d4e0e61f669c397b9f7fa907c6 data/risus/enchantment/dream_eater.json
-7221beb612a2e37e620b638f4cea0ba69aa3e30f data/risus/enchantment/elemental_deviation.json
+962ff4c533096c65f1f2d6c2e7463c1ecc7cc263 data/risus/enchantment/elemental_deviation.json
 13857d21d7c94855a53ef5fa4bc17f8557420936 data/risus/enchantment/empyrean_conduit.json
 43a62ba345700aa9eab45e29bfceef056ccd6c01 data/risus/enchantment/genocide.json
 27eaf4a49714623c5d2ba64bcca7b97b39741db8 data/risus/enchantment/gravity_well.json
 d440690c9cde32575f06fe8342127b567d03771e data/risus/enchantment/hunters_exultation.json
 0ee6959a7c43ce1ef26e87ef7180eb4e7e3e727c data/risus/enchantment/maritime_snare.json
-9c3f2edcae05078dc3c2e1b3d5525754115b51ec data/risus/enchantment/overload.json
+3d72ac01dbe05ba3f2b777d09bc25515c45758ea data/risus/enchantment/overload.json
 2e98d965999f5d97d85379dc1c0748360966dbba data/risus/enchantment/perpetuity.json
 6381a41d4ab3765f71d96e3de0958430c761160d data/risus/enchantment/pull.json
+d8400fe65cd6add44c7bcbcc50d21672e5498aa1 data/risus/enchantment/pyromaniac.json
 40d2b430f99ef80772533da8045ff71bcc514699 data/risus/enchantment/relocation.json
 70d4dd9f43bcf5273e598e478b04dfcc99be2343 data/risus/enchantment/star_release.json
 6562a4345759f85e13ce22563775bb0d44b21974 data/risus/jukebox_song/feigr.json

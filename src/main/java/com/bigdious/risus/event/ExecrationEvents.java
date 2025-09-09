@@ -17,6 +17,7 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -39,6 +40,7 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
@@ -46,6 +48,7 @@ import net.neoforged.neoforge.event.level.BlockDropsEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class ExecrationEvents {
@@ -194,24 +197,36 @@ public class ExecrationEvents {
 	}
 
 	//not an event, but fits here
-	public static void performRelocation(LivingEntity user, ItemStack original, EquipmentSlot equipmentSlot ,int chance) {
-		if (user instanceof Player player) {
-			player.sendSystemMessage(Component.literal("Trigger"));
-		}
-
-		if (user.level().getRandom().nextFloat() <= 0.25 + chance && !user.level().isClientSide()) {
+	public static void performRelocation(int i, LivingEntity user, ItemStack original, EquipmentSlot equipmentSlot ,int chance) {
+		if (user.level().getRandom().nextFloat() <= 0.25 + chance) {
 			List<ItemStack> list = new ArrayList<>();
 			user.getAllSlots().iterator().forEachRemaining(list::add);
 			for (ItemStack itemStack : list) {
-				if (!itemStack.isEmpty() && itemStack.isDamageableItem() && user.getEquipmentSlotForItem(itemStack) != user.getEquipmentSlotForItem(original) && (!itemStack.has(DataComponents.ENCHANTMENTS) || itemStack.get(DataComponents.ENCHANTMENTS).getLevel(user.registryAccess().holderOrThrow(Execrations.RELOCATION)) < 1)) {
+				if (!itemStack.isEmpty() &&
+					itemStack.isDamageableItem() &&
+					!itemStack.is(RisusTags.Items.NOT_RELOCATABLE_TO) &&
+					itemStack.getDamageValue() < itemStack.getMaxDamage()-1 &&
+					itemStack != original &&
+					(!itemStack.has(DataComponents.ENCHANTMENTS) || itemStack.get(DataComponents.ENCHANTMENTS).getLevel(user.registryAccess().holderOrThrow(Execrations.RELOCATION)) < 1)) {
+					EquipmentSlot targetSlot = user.getItemBySlot(EquipmentSlot.OFFHAND) == itemStack ? EquipmentSlot.OFFHAND :
+						user.getItemBySlot(EquipmentSlot.MAINHAND) == itemStack ? EquipmentSlot.MAINHAND :
+						user.getItemBySlot(EquipmentSlot.HEAD) == itemStack ? EquipmentSlot.HEAD :
+						user.getItemBySlot(EquipmentSlot.CHEST) == itemStack ? EquipmentSlot.CHEST :
+						user.getItemBySlot(EquipmentSlot.LEGS) == itemStack ? EquipmentSlot.LEGS :
+						EquipmentSlot.FEET;
 					original.setDamageValue(original.getDamageValue()-1);
-					itemStack.hurtAndBreak(1, user, user.getEquipmentSlotForItem(itemStack));
-					if (user instanceof Player player) {
-						player.sendSystemMessage(Component.literal("Success"));
-					}
+					itemStack.hurtAndBreak(1, user, targetSlot);
 					break;
 				}
 			}
+		}
+	}
+
+	public static void clearFierySpeed(LivingEquipmentChangeEvent event) {
+		if (event.getFrom().has(DataComponents.ENCHANTMENTS) &&
+			event.getFrom().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.PYROMANIAC)) > 0 &&
+			Objects.requireNonNull(event.getEntity().getAttribute(Attributes.MOVEMENT_SPEED)).getModifier(Risus.prefix("fiery_speed")) != null) {
+			Objects.requireNonNull(event.getEntity().getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(Risus.prefix("fiery_speed"));
 		}
 	}
 }
