@@ -20,6 +20,7 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.*;
 import net.minecraft.world.item.enchantment.effects.*;
 import net.minecraft.world.level.block.Block;
@@ -46,6 +47,9 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> GRAVITY_WELL = registerKey("gravity_well");
 	public static final ResourceKey<Enchantment> RELOCATION = registerKey("relocation");
 	public static final ResourceKey<Enchantment> PYROMANIAC = registerKey("pyromaniac");
+	public static final ResourceKey<Enchantment> AVARICIOUS_AMBIT = registerKey("avaricious_ambit");
+	public static final ResourceKey<Enchantment> PRESERVATION = registerKey("preservation");
+	public static final ResourceKey<Enchantment> VIGOR = registerKey("vigor");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -265,15 +269,15 @@ public class Execrations {
 							AllOfCondition.allOf(
 								EnchantmentActiveCheck.enchantmentInactiveCheck(),
 								AnyOfCondition.anyOf(
-								LootItemEntityPropertyCondition.hasProperties(
-									LootContext.EntityTarget.THIS,
-									EntityPredicate.Builder.entity()
-										.movementAffectedBy(
-											LocationPredicate.Builder.location()
-												.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
-										)
-										.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
-								),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									),
 									LootItemEntityPropertyCondition.hasProperties(
 										LootContext.EntityTarget.THIS,
 										EntityPredicate.Builder.entity()
@@ -488,7 +492,7 @@ public class Execrations {
 				EquipmentSlotGroup.MAINHAND
 			))
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LURE)))
-			.withEffect(EnchantmentEffectComponents.FISHING_TIME_REDUCTION, new AddValue(LevelBasedValue.perLevel(7.5F)))
+				.withEffect(EnchantmentEffectComponents.FISHING_TIME_REDUCTION, new AddValue(LevelBasedValue.perLevel(7.5F)))
 		);
 
 		register(context, RELOCATION, new Enchantment.Builder(Enchantment.definition(
@@ -498,7 +502,7 @@ public class Execrations {
 				Enchantment.dynamicCost(5, 8),
 				Enchantment.dynamicCost(55, 8),
 				2,
-			EquipmentSlotGroup.ANY
+				EquipmentSlotGroup.ANY
 			))
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.UNBREAKING)))
 		);
@@ -513,11 +517,57 @@ public class Execrations {
 				EquipmentSlotGroup.FEET
 			))
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
-			.withEffect(
-				EnchantmentEffectComponents.TICK,
-				new FierySpeedEffect()
-			)
+				.withEffect(
+					EnchantmentEffectComponents.TICK,
+					new FierySpeedEffect()
+				)
 		);
+
+		register(context, AVARICIOUS_AMBIT, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.MINING_LOOT_ENCHANTABLE),
+				1,
+				1,
+				Enchantment.constantCost(15),
+				Enchantment.constantCost(65),
+				8,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.MINING_EXCLUSIVE))
+				.withEffect(
+					EnchantmentEffectComponents.ATTRIBUTES,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.avaricious_ambit"),
+						Attributes.BLOCK_INTERACTION_RANGE,
+						LevelBasedValue.perLevel(3F),
+						AttributeModifier.Operation.ADD_VALUE
+					)
+				)
+				.withEffect(
+					EnchantmentEffectComponents.ATTRIBUTES,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.avaricious_ambit"),
+						Attributes.ENTITY_INTERACTION_RANGE,
+						LevelBasedValue.perLevel(-1F),
+						AttributeModifier.Operation.ADD_VALUE
+					)
+
+				)
+		);
+
+		register(context, PRESERVATION, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.BOW_ENCHANTABLE),
+			1,
+			1,
+			Enchantment.constantCost(20),
+			Enchantment.constantCost(50),
+			8,
+			EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.BOW_EXCLUSIVE))
+			.withEffect(EnchantmentEffectComponents.PROJECTILE_SPAWNED, new ReduceAmmoEffect())
+		);
+
+
 	}
 
 	private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {

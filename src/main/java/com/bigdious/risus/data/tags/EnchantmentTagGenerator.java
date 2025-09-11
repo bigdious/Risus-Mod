@@ -138,7 +138,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.OVERLOAD,
 			Execrations.MARITIME_SNARE,
 			Execrations.GRAVITY_WELL,
-			Execrations.RELOCATION
+			Execrations.RELOCATION,
+			Execrations.PYROMANIAC,
+			Execrations.AVARICIOUS_AMBIT,
+			Execrations.PRESERVATION
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -156,6 +159,14 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 
 		this.tag(EnchantmentTags.BOOTS_EXCLUSIVE).add(
 			Execrations.PYROMANIAC
+		);
+
+		this.tag(EnchantmentTags.MINING_EXCLUSIVE).add(
+			Execrations.AVARICIOUS_AMBIT
+		);
+
+		this.tag(EnchantmentTags.BOW_EXCLUSIVE).add(
+			Execrations.PRESERVATION
 		);
 
 
