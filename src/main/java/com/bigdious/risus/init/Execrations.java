@@ -567,6 +567,27 @@ public class Execrations {
 			.withEffect(EnchantmentEffectComponents.PROJECTILE_SPAWNED, new ReduceAmmoEffect())
 		);
 
+		register(context, VIGOR, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
+			10,
+			4,
+			Enchantment.dynamicCost(1, 11),
+			Enchantment.dynamicCost(12, 11),
+			1,
+			EquipmentSlotGroup.ARMOR
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.ARMOR_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.ATTRIBUTES,
+				new EnchantmentAttributeEffect(
+					ResourceLocation.fromNamespaceAndPath(Risus.MODID ,"execration.vigor"),
+					Attributes.MAX_HEALTH,
+					LevelBasedValue.perLevel(1F),
+					AttributeModifier.Operation.ADD_VALUE
+				)
+			)
+		);
+
 
 	}
 

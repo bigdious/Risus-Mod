@@ -141,7 +141,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.RELOCATION,
 			Execrations.PYROMANIAC,
 			Execrations.AVARICIOUS_AMBIT,
-			Execrations.PRESERVATION
+			Execrations.PRESERVATION,
+			Execrations.VIGOR
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -154,7 +155,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
-			Execrations.ELEMENTAL_DEVIATION
+			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.VIGOR
 		);
 
 		this.tag(EnchantmentTags.BOOTS_EXCLUSIVE).add(

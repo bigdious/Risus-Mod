@@ -494,6 +494,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("pyromaniac", "Pyromaniac", "Increases speed when on fire.");
 		this.addEnchantment("avaricious_ambit", "Avaricious Ambit", "Increases block interaction range, but lowers combat range.");
 		this.addEnchantment("preservation", "Preservation", "Adds a 50% chance not to use arrows. Extends beyond base arrows. Unaffected arrows can still be picked up.");
+		this.addEnchantment("vigor", "Vigor", "Increases max health with each level.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 
