@@ -1,0 +1,46 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "enchantment.risus.xenophobia"
+  },
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 2.0,
+            "per_level_above_first": 2.0
+          }
+        },
+        "requirements": {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "#risus:sensitive_to_hunters"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/damage",
+  "max_cost": {
+    "base": 21,
+    "per_level_above_first": 11
+  },
+  "max_level": 5,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "primary_items": "#minecraft:enchantable/sword",
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/sharp_weapon",
+  "weight": 10
+}

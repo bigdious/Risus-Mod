@@ -50,6 +50,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> AVARICIOUS_AMBIT = registerKey("avaricious_ambit");
 	public static final ResourceKey<Enchantment> PRESERVATION = registerKey("preservation");
 	public static final ResourceKey<Enchantment> VIGOR = registerKey("vigor");
+	public static final ResourceKey<Enchantment> XENOPHOBIA = registerKey("xenophobia");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -584,6 +585,28 @@ public class Execrations {
 					Attributes.MAX_HEALTH,
 					LevelBasedValue.perLevel(1F),
 					AttributeModifier.Operation.ADD_VALUE
+				)
+			)
+		);
+
+		register(context, XENOPHOBIA, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE),
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+			10,
+			5,
+			Enchantment.dynamicCost(1, 11),
+			Enchantment.dynamicCost(21, 11),
+			1,
+			EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.DAMAGE,
+				new AddValue(LevelBasedValue.perLevel(2F)),
+				InvertedLootItemCondition.invert(
+				LootItemEntityPropertyCondition.hasProperties(
+					LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
+				)
 				)
 			)
 		);

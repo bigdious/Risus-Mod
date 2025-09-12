@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-12T08:41:49.3329043	Registries
+// 1.21.1	2025-09-12T09:57:13.822927	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -33,6 +33,7 @@ d8400fe65cd6add44c7bcbcc50d21672e5498aa1 data/risus/enchantment/pyromaniac.json
 40d2b430f99ef80772533da8045ff71bcc514699 data/risus/enchantment/relocation.json
 70d4dd9f43bcf5273e598e478b04dfcc99be2343 data/risus/enchantment/star_release.json
 03d8b71e2de3f1e3106bdaa764d21315dc2e14af data/risus/enchantment/vigor.json
+aa81450af7239070450a5c59770868e24b9e4f40 data/risus/enchantment/xenophobia.json
 6562a4345759f85e13ce22563775bb0d44b21974 data/risus/jukebox_song/feigr.json
 d41d47bb317d598d17224c24a4b5b16658078de8 data/risus/jukebox_song/mork.json
 a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json

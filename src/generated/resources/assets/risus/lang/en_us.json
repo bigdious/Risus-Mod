@@ -385,6 +385,8 @@
   "enchantment.risus.star_release.desc": "Shoots eight projectiles out from the user in evenly distributed directions.",
   "enchantment.risus.vigor": "Vigor",
   "enchantment.risus.vigor.desc": "Increases max health with each level.",
+  "enchantment.risus.xenophobia": "Xenophobia",
+  "enchantment.risus.xenophobia.desc": "Increases damage against creatures that aren't undead, insectoid or aquatic.",
   "entity.risus.angel": "Blood Ophanim",
   "entity.risus.baby_spider": "Baby Spider",
   "entity.risus.bloodslash": "Sanguine Slash",

@@ -142,7 +142,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.PYROMANIAC,
 			Execrations.AVARICIOUS_AMBIT,
 			Execrations.PRESERVATION,
-			Execrations.VIGOR
+			Execrations.VIGOR,
+			Execrations.XENOPHOBIA
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -151,7 +152,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(
-			Execrations.HUNTERS_EXULTATION
+			Execrations.HUNTERS_EXULTATION,
+			Execrations.XENOPHOBIA
 		);
 
 		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
