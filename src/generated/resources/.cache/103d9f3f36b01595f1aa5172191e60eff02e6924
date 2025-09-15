@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-12T09:57:13.822927	Registries
+// 1.21.1	2025-09-15T17:40:24.2325663	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -17,6 +17,7 @@ fb66e00ba49e543bcffcef3c073930ced882203c data/risus/damage_type/gluttony.json
 ff9f2f83c206b9053b60adc00cb31269a3f7d0bb data/risus/enchantment/avaricious_ambit.json
 738d1e231f2f491bbe3ae5f38035843d31bedf36 data/risus/enchantment/battering.json
 61c06d997f98280ff4271c7d73911fcd2ca9ab01 data/risus/enchantment/cackling_craze.json
+0fb4656a0fc81ce4454ea31441186ae477b91408 data/risus/enchantment/defiance.json
 b331c3fe6b249b9f22dfef7031dd7630d47e29da data/risus/enchantment/denial.json
 3540262e587167d4e0e61f669c397b9f7fa907c6 data/risus/enchantment/dream_eater.json
 962ff4c533096c65f1f2d6c2e7463c1ecc7cc263 data/risus/enchantment/elemental_deviation.json

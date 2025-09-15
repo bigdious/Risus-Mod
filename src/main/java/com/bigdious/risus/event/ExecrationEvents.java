@@ -29,9 +29,11 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
+import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.GameRules;
@@ -39,8 +41,11 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.util.FakePlayer;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
@@ -229,4 +234,17 @@ public class ExecrationEvents {
 			Objects.requireNonNull(event.getEntity().getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(Risus.prefix("fiery_speed"));
 		}
 	}
+
+	public static void boostDefiantTrident(EntityJoinLevelEvent event) {
+		if (event.getEntity() instanceof ThrownTrident trident) {
+			if (trident.getPickupItemStackOrigin().has(DataComponents.ENCHANTMENTS) && trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE)) > 0) {
+				float strength = trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
+				trident.setDeltaMovement(trident.getDeltaMovement().scale(1+strength*0.20));
+				trident.setBaseDamage(trident.getBaseDamage()+strength*2);
+				trident.setCustomName(Component.literal("Defiant"));
+				trident.life = -10000000;
+			}
+		}
+	}
+
 }

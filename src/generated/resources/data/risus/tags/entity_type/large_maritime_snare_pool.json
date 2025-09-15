@@ -5,6 +5,9 @@
     "minecraft:elder_guardian",
     "minecraft:turtle",
     "minecraft:boat",
-    "minecraft:trident"
+    "minecraft:trident",
+    "#minecraft:arrows",
+    "minecraft:trident",
+    "risus:thrown_axe"
   ]
 }

@@ -496,6 +496,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("preservation", "Preservation", "Adds a 50% chance not to use arrows. Extends beyond base arrows. Unaffected arrows can still be picked up.");
 		this.addEnchantment("vigor", "Vigor", "Increases max health with each level.");
 		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against creatures that aren't undead, insectoid or aquatic.");
+		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Triden will not despawn.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

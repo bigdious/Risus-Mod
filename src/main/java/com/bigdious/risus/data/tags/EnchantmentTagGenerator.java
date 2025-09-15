@@ -143,7 +143,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.AVARICIOUS_AMBIT,
 			Execrations.PRESERVATION,
 			Execrations.VIGOR,
-			Execrations.XENOPHOBIA
+			Execrations.XENOPHOBIA,
+			Execrations.DEFIANCE
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(

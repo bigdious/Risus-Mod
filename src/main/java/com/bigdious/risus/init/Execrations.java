@@ -51,6 +51,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> PRESERVATION = registerKey("preservation");
 	public static final ResourceKey<Enchantment> VIGOR = registerKey("vigor");
 	public static final ResourceKey<Enchantment> XENOPHOBIA = registerKey("xenophobia");
+	public static final ResourceKey<Enchantment> DEFIANCE = registerKey("defiance");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -557,56 +558,75 @@ public class Execrations {
 
 		register(context, PRESERVATION, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.BOW_ENCHANTABLE),
-			1,
-			1,
-			Enchantment.constantCost(20),
-			Enchantment.constantCost(50),
-			8,
-			EquipmentSlotGroup.MAINHAND
+				1,
+				1,
+				Enchantment.constantCost(20),
+				Enchantment.constantCost(50),
+				8,
+				EquipmentSlotGroup.MAINHAND
 			))
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.BOW_EXCLUSIVE))
-			.withEffect(EnchantmentEffectComponents.PROJECTILE_SPAWNED, new ReduceAmmoEffect())
+				.withEffect(EnchantmentEffectComponents.PROJECTILE_SPAWNED, new ReduceAmmoEffect())
 		);
 
 		register(context, VIGOR, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
-			10,
-			4,
-			Enchantment.dynamicCost(1, 11),
-			Enchantment.dynamicCost(12, 11),
-			1,
-			EquipmentSlotGroup.ARMOR
+				10,
+				4,
+				Enchantment.dynamicCost(1, 11),
+				Enchantment.dynamicCost(12, 11),
+				1,
+				EquipmentSlotGroup.ARMOR
 			))
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.ARMOR_EXCLUSIVE))
-			.withEffect(
-				EnchantmentEffectComponents.ATTRIBUTES,
-				new EnchantmentAttributeEffect(
-					ResourceLocation.fromNamespaceAndPath(Risus.MODID ,"execration.vigor"),
-					Attributes.MAX_HEALTH,
-					LevelBasedValue.perLevel(1F),
-					AttributeModifier.Operation.ADD_VALUE
+				.withEffect(
+					EnchantmentEffectComponents.ATTRIBUTES,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.vigor"),
+						Attributes.MAX_HEALTH,
+						LevelBasedValue.perLevel(1F),
+						AttributeModifier.Operation.ADD_VALUE
+					)
 				)
-			)
 		);
 
 		register(context, XENOPHOBIA, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE),
 				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
-			10,
-			5,
-			Enchantment.dynamicCost(1, 11),
-			Enchantment.dynamicCost(21, 11),
-			1,
-			EquipmentSlotGroup.MAINHAND
+				10,
+				5,
+				Enchantment.dynamicCost(1, 11),
+				Enchantment.dynamicCost(21, 11),
+				1,
+				EquipmentSlotGroup.MAINHAND
 			))
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
+				.withEffect(
+					EnchantmentEffectComponents.DAMAGE,
+					new AddValue(LevelBasedValue.perLevel(2F)),
+					InvertedLootItemCondition.invert(
+						LootItemEntityPropertyCondition.hasProperties(
+							LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
+						)
+					)
+				)
+		);
+
+		register(context, DEFIANCE, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
+				5,
+				3,
+				Enchantment.dynamicCost(12, 7),
+				Enchantment.constantCost(50),
+				2,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LOYALTY)))
 			.withEffect(
 				EnchantmentEffectComponents.DAMAGE,
 				new AddValue(LevelBasedValue.perLevel(2F)),
-				InvertedLootItemCondition.invert(
 				LootItemEntityPropertyCondition.hasProperties(
-					LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
-				)
+					LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.DEFIANCE_PROJECTILES).build()
 				)
 			)
 		);

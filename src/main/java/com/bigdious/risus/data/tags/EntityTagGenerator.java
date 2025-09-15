@@ -132,5 +132,13 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				,EntityType.TRIDENT
 			)
 		;
+
+		tag(RisusTags.Entities.DEFIANCE_PROJECTILES)
+			.addTag(EntityTypeTags.ARROWS)
+			.add(
+				EntityType.TRIDENT,
+				RisusEntities.THROWN_AXE.get()
+			)
+		;
 	}
 }
