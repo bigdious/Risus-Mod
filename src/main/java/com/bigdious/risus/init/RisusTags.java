@@ -105,7 +105,7 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> SMALL_MARITIME_SNARE_POOL = create("small_maritime_snare_pool");
 		public static final TagKey<EntityType<?>> MEDIUM_MARITIME_SNARE_POOL = create("medium_maritime_snare_pool");
 		public static final TagKey<EntityType<?>> LARGE_MARITIME_SNARE_POOL = create("large_maritime_snare_pool");
-		public static final TagKey<EntityType<?>> DEFIANCE_PROJECTILES = create("large_maritime_snare_pool");
+		public static final TagKey<EntityType<?>> TRIDENT_LIKE_PROJECTILES = create("trident_like_projectiles");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

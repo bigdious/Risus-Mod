@@ -29,6 +29,8 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 
+import java.util.List;
+
 public class Execrations {
 	public static final ResourceKey<Enchantment> HUNTERS_EXULTATION = registerKey("hunters_exultation");
 	public static final ResourceKey<Enchantment> ELEMENTAL_DEVIATION = registerKey("elemental_deviation");
@@ -52,6 +54,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> VIGOR = registerKey("vigor");
 	public static final ResourceKey<Enchantment> XENOPHOBIA = registerKey("xenophobia");
 	public static final ResourceKey<Enchantment> DEFIANCE = registerKey("defiance");
+	public static final ResourceKey<Enchantment> ERUPTION = registerKey("eruption");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -626,7 +629,41 @@ public class Execrations {
 				EnchantmentEffectComponents.DAMAGE,
 				new AddValue(LevelBasedValue.perLevel(2F)),
 				LootItemEntityPropertyCondition.hasProperties(
-					LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.DEFIANCE_PROJECTILES).build()
+					LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES).build()
+				)
+			)
+		);
+
+		register(context, ERUPTION, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
+			2,
+			3,
+			Enchantment.dynamicCost(17, 7),
+			Enchantment.constantCost(50),
+			4,
+			EquipmentSlotGroup.HAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.RIPTIDE_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				AllOf.entityEffects(
+					new EruptEffect(LevelBasedValue.perLevel(3.0F))
+				),
+				AllOfCondition.allOf(
+					LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES).build()
+					)
+				)
+			)
+			.withEffect(
+				EnchantmentEffectComponents.HIT_BLOCK,
+				AllOf.entityEffects(
+					new EruptEffect(LevelBasedValue.perLevel(3.0F))
+				),
+				AllOfCondition.allOf(
+					LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES))
 				)
 			)
 		);

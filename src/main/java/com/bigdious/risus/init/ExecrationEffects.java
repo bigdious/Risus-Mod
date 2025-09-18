@@ -20,5 +20,5 @@ public class ExecrationEffects {
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<BatteringEffect>> BATTERING = ENTITY_EFFECTS.register("battering", () -> BatteringEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<FierySpeedEffect>> FIERY_SPEED = ENTITY_EFFECTS.register("fiery_speed", () -> FierySpeedEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<ReduceAmmoEffect>> REDUCE_AMMO = ENTITY_EFFECTS.register("reduce_ammo", () -> ReduceAmmoEffect.CODEC);
-	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<VelocityEffect>> VELOCITY = ENTITY_EFFECTS.register("velocity", () -> VelocityEffect.CODEC);
+	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<EruptEffect>> ERUPT = ENTITY_EFFECTS.register("erupt", () -> EruptEffect.CODEC);
 }

@@ -497,6 +497,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("vigor", "Vigor", "Increases max health with each level.");
 		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against creatures that aren't undead, insectoid or aquatic.");
 		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Triden will not despawn.");
+		this.addEnchantment("eruption", "Eruption", "When it hits a target, it makes the user erupt at the location, setting everyone aflame. Either the user or the target has to be on fire for this effect to trigger. The user must be crouching to activate effect on hitting a block.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

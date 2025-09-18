@@ -6,7 +6,8 @@
     "AbstractFurnaceBlockEntityMixin",
     "EnchantmentMixin",
     "ClientLevelMixin",
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "TridentItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

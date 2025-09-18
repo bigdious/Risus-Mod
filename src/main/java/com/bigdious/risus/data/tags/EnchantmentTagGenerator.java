@@ -144,7 +144,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.PRESERVATION,
 			Execrations.VIGOR,
 			Execrations.XENOPHOBIA,
-			Execrations.DEFIANCE
+			Execrations.DEFIANCE,
+			Execrations.ERUPTION
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -172,6 +173,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 
 		this.tag(EnchantmentTags.BOW_EXCLUSIVE).add(
 			Execrations.PRESERVATION
+		);
+
+		this.tag(EnchantmentTags.RIPTIDE_EXCLUSIVE).add(
+			Execrations.ERUPTION
 		);
 
 

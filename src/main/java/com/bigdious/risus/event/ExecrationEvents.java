@@ -32,6 +32,7 @@ import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
@@ -236,13 +237,13 @@ public class ExecrationEvents {
 	}
 
 	public static void boostDefiantTrident(EntityJoinLevelEvent event) {
-		if (event.getEntity() instanceof ThrownTrident trident) {
+		if (event.getEntity() instanceof ThrownTrident trident && trident.pickup == AbstractArrow.Pickup.ALLOWED) {
+			trident.life = -10000000;
 			if (trident.getPickupItemStackOrigin().has(DataComponents.ENCHANTMENTS) && trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE)) > 0) {
 				float strength = trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
 				trident.setDeltaMovement(trident.getDeltaMovement().scale(1+strength*0.20));
 				trident.setBaseDamage(trident.getBaseDamage()+strength*2);
 				trident.setCustomName(Component.literal("Defiant"));
-				trident.life = -10000000;
 			}
 		}
 	}

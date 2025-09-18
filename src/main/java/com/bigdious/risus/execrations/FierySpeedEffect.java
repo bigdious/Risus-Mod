@@ -2,6 +2,7 @@ package com.bigdious.risus.execrations;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.Execrations;
+import com.bigdious.risus.init.RisusMobEffects;
 import com.google.common.collect.HashMultimap;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Holder;
@@ -33,10 +34,11 @@ public record FierySpeedEffect() implements EnchantmentEntityEffect {
 	public static void fierySpeed(ItemStack item, Entity entity) {
 		if (entity instanceof LivingEntity living) {
 			int strength = item.get(DataComponents.ENCHANTMENTS).getLevel(living.level().registryAccess().holderOrThrow(Execrations.PYROMANIAC));
-			if (living.isOnFire() && Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).getModifier(Risus.prefix("fiery_speed")) == null) {
+			if ((living.isOnFire() || living.isInLava() || living.hasEffect(RisusMobEffects.EXBURN)) &&
+				Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).getModifier(Risus.prefix("fiery_speed")) == null) {
 				Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).addPermanentModifier(new AttributeModifier(Risus.prefix("fiery_speed"),  0.30*strength, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 			}
-			if (!entity.isOnFire() && Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).getModifier(Risus.prefix("fiery_speed")) != null) {
+			if (!living.isOnFire() && !living.hasEffect(RisusMobEffects.EXBURN) && !living.isInLava() && Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).getModifier(Risus.prefix("fiery_speed")) != null) {
 				Objects.requireNonNull(living.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(Risus.prefix("fiery_speed"));
 			}
 		}

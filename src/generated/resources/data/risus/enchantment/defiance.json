@@ -18,7 +18,7 @@
           "condition": "minecraft:entity_properties",
           "entity": "direct_attacker",
           "predicate": {
-            "type": "#risus:large_maritime_snare_pool"
+            "type": "#risus:trident_like_projectiles"
           }
         }
       }
