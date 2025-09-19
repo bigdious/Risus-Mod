@@ -1335,6 +1335,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "white_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("white_cat_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.BLACK_WOOL), Ingredient.of(Items.YELLOW_WOOL), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "audrey_cat")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("audrey_cat_helmet"));
+
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.CARVED_PUMPKIN), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "pumpkin")

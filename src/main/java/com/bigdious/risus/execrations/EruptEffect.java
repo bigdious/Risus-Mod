@@ -12,6 +12,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.enchantment.EnchantedItemInUse;
@@ -43,7 +44,9 @@ public record EruptEffect(LevelBasedValue strength) implements EnchantmentEntity
 		source.igniteForSeconds(length);
 		List<Entity> list = source.level().getEntities(source, source.getBoundingBox().inflate(length/2-1));
 		for (Entity victim : list) {
-			victim.igniteForSeconds(length);
+			if (!(victim instanceof ItemEntity)) {
+				victim.igniteForSeconds(length);
+			}
 		}
 		if (target.level() instanceof ServerLevel serverLevel) {
 			for (int i = 0; i < 20; ++i) {

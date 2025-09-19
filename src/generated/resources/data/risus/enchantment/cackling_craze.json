@@ -10,11 +10,398 @@
           "type": "minecraft:attribute",
           "amount": {
             "type": "minecraft:linear",
-            "base": 0.0405,
-            "per_level_above_first": 0.0105
+            "base": 0.0205,
+            "per_level_above_first": 0.0055
           },
           "attribute": "minecraft:generic.movement_speed",
-          "id": "risus:execration.cackling_craze",
+          "id": "risus:execration.cackling_craze_speed",
+          "operation": "add_value"
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "vehicle": {}
+                }
+              }
+            },
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": true,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "flags": {
+                          "is_flying": false
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_on_ground": false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": false,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:attribute",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 1.0,
+            "per_level_above_first": 1.0
+          },
+          "attribute": "minecraft:generic.attack_damage",
+          "id": "risus:execration.cackling_craze_attack",
+          "operation": "add_value"
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "vehicle": {}
+                }
+              }
+            },
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": true,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "flags": {
+                          "is_flying": false
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_on_ground": false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": false,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:attribute",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": -1.0,
+            "per_level_above_first": -1.0
+          },
+          "attribute": "minecraft:generic.max_health",
+          "id": "risus:execration.cackling_craze_health",
+          "operation": "add_value"
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "vehicle": {}
+                }
+              }
+            },
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": true,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "flags": {
+                          "is_flying": false
+                        }
+                      }
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_on_ground": false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "active": false,
+                      "condition": "minecraft:enchantment_active_check"
+                    },
+                    {
+                      "condition": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "flags": {
+                              "is_flying": false
+                            },
+                            "movement_affected_by": {
+                              "block": {
+                                "blocks": "#risus:remains"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:attribute",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.1,
+            "per_level_above_first": 0.1
+          },
+          "attribute": "minecraft:generic.knockback_resistance",
+          "id": "risus:execration.cackling_craze_kb_res",
           "operation": "add_value"
         },
         "requirements": {

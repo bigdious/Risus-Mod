@@ -69,6 +69,7 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 		Map.entry("siamese_cat", ChatFormatting.WHITE ),
 		Map.entry("tabby_cat", ChatFormatting.WHITE ),
 		Map.entry("white_cat", ChatFormatting.WHITE ),
+		Map.entry("audrey_cat", ChatFormatting.WHITE ),
 		Map.entry("pumpkin", ChatFormatting.GOLD ),
 		Map.entry("pale_wolf", ChatFormatting.WHITE ),
 		Map.entry("ashen_wolf", ChatFormatting.WHITE ),

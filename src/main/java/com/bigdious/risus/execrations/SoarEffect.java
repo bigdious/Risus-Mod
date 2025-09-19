@@ -10,22 +10,22 @@ import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
 
-public record AttractTargetEffect(LevelBasedValue strength) implements EnchantmentEntityEffect {
-	public static final MapCodec<AttractTargetEffect> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			LevelBasedValue.CODEC.fieldOf("strength").forGetter(AttractTargetEffect::strength))
-		.apply(instance, AttractTargetEffect::new));
+public record SoarEffect(LevelBasedValue strength) implements EnchantmentEntityEffect {
+	public static final MapCodec<SoarEffect> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+			LevelBasedValue.CODEC.fieldOf("strength").forGetter(SoarEffect::strength))
+		.apply(instance, SoarEffect::new));
 
 	@Override
 	public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
 		float strength = this.strength.calculate(i);
-		attract( enchantedItemInUse.owner(), strength , entity);
+		soar( enchantedItemInUse.owner(), strength , entity);
 	}
 
-	public static void attract(LivingEntity attacker, float strength, Entity entity) {
+	public static void soar(LivingEntity attacker, float strength, Entity entity) {
 		if (entity instanceof LivingEntity living) {
-			Vec3 vec3 = (new Vec3(attacker.getX() - entity.getX(), (attacker.getY() - entity.getY())*0.05, attacker.getZ() - entity.getZ()).scale(strength));
-			entity.setDeltaMovement(entity.getDeltaMovement().add(vec3));
-			entity.hurtMarked = true;
+			Vec3 vec3 = (new Vec3(0, 1, 0).scale(strength/3));
+			living.setDeltaMovement(entity.getDeltaMovement().add(vec3));
+			living.hurtMarked = true;
 		}
 	}
 

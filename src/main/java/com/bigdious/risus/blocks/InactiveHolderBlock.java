@@ -17,4 +17,10 @@ public class InactiveHolderBlock extends BaseRotatableBlock implements SimpleMul
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
 		return BOUNDING_BOX;
 	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
+		return true;
+	}
+
 }

@@ -55,6 +55,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> XENOPHOBIA = registerKey("xenophobia");
 	public static final ResourceKey<Enchantment> DEFIANCE = registerKey("defiance");
 	public static final ResourceKey<Enchantment> ERUPTION = registerKey("eruption");
+	public static final ResourceKey<Enchantment> SOAR = registerKey("soar");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -222,13 +223,236 @@ public class Execrations {
 				8,
 				EquipmentSlotGroup.FEET
 			))
+				//TODO get this to work while standing in Spreading Remains
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.SOUL_SPEED)))
 				.withEffect(
 					EnchantmentEffectComponents.LOCATION_CHANGED,
 					new EnchantmentAttributeEffect(
-						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze"),
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze_speed"),
 						Attributes.MOVEMENT_SPEED,
-						LevelBasedValue.perLevel(0.0405F, 0.0105F),
+						LevelBasedValue.perLevel(0.0205F, 0.0055F),
+						AttributeModifier.Operation.ADD_VALUE
+					),
+					AllOfCondition.allOf(
+						InvertedLootItemCondition.invert(
+							LootItemEntityPropertyCondition.hasProperties(
+								LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().vehicle(EntityPredicate.Builder.entity())
+							)
+						),
+						AnyOfCondition.anyOf(
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentActiveCheck(),
+								LootItemEntityPropertyCondition.hasProperties(
+									LootContext.EntityTarget.THIS,
+									EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+								),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location().setY(MinMaxBounds.Doubles.ANY)
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(false)).build()
+									)
+								)
+							),
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentInactiveCheck(),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									)
+								)
+							)
+						)
+					)
+				)
+				.withEffect(
+					EnchantmentEffectComponents.LOCATION_CHANGED,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze_attack"),
+						Attributes.ATTACK_DAMAGE,
+						LevelBasedValue.perLevel(1F),
+						AttributeModifier.Operation.ADD_VALUE
+					),
+					AllOfCondition.allOf(
+						InvertedLootItemCondition.invert(
+							LootItemEntityPropertyCondition.hasProperties(
+								LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().vehicle(EntityPredicate.Builder.entity())
+							)
+						),
+						AnyOfCondition.anyOf(
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentActiveCheck(),
+								LootItemEntityPropertyCondition.hasProperties(
+									LootContext.EntityTarget.THIS,
+									EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+								),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location().setY(MinMaxBounds.Doubles.ANY)
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(false)).build()
+									)
+								)
+							),
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentInactiveCheck(),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									)
+								)
+							)
+						)
+					)
+				)
+				.withEffect(
+					EnchantmentEffectComponents.LOCATION_CHANGED,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze_health"),
+						Attributes.MAX_HEALTH,
+						LevelBasedValue.perLevel(-1F),
+						AttributeModifier.Operation.ADD_VALUE
+					),
+					AllOfCondition.allOf(
+						InvertedLootItemCondition.invert(
+							LootItemEntityPropertyCondition.hasProperties(
+								LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().vehicle(EntityPredicate.Builder.entity())
+							)
+						),
+						AnyOfCondition.anyOf(
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentActiveCheck(),
+								LootItemEntityPropertyCondition.hasProperties(
+									LootContext.EntityTarget.THIS,
+									EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+								),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location().setY(MinMaxBounds.Doubles.ANY)
+													.setBlock(
+														net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS)
+													)
+											)
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(false)).build()
+									)
+								)
+							),
+							AllOfCondition.allOf(
+								EnchantmentActiveCheck.enchantmentInactiveCheck(),
+								AnyOfCondition.anyOf(
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									),
+									LootItemEntityPropertyCondition.hasProperties(
+										LootContext.EntityTarget.THIS,
+										EntityPredicate.Builder.entity()
+											.movementAffectedBy(
+												LocationPredicate.Builder.location()
+													.setBlock(net.minecraft.advancements.critereon.BlockPredicate.Builder.block().of(RisusTags.Blocks.REMAINS))
+											)
+											.flags(EntityFlagsPredicate.Builder.flags().setIsFlying(false))
+									)
+								)
+							)
+						)
+					)
+				)
+				.withEffect(
+					EnchantmentEffectComponents.LOCATION_CHANGED,
+					new EnchantmentAttributeEffect(
+						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.cackling_craze_kb_res"),
+						Attributes.KNOCKBACK_RESISTANCE,
+						LevelBasedValue.perLevel(0.1F),
 						AttributeModifier.Operation.ADD_VALUE
 					),
 					AllOfCondition.allOf(
@@ -625,50 +849,80 @@ public class Execrations {
 				EquipmentSlotGroup.MAINHAND
 			))
 				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.LOYALTY)))
-			.withEffect(
-				EnchantmentEffectComponents.DAMAGE,
-				new AddValue(LevelBasedValue.perLevel(2F)),
-				LootItemEntityPropertyCondition.hasProperties(
-					LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES).build()
-				)
-			)
-		);
-
-		register(context, ERUPTION, new Enchantment.Builder(Enchantment.definition(
-				items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
-			2,
-			3,
-			Enchantment.dynamicCost(17, 7),
-			Enchantment.constantCost(50),
-			4,
-			EquipmentSlotGroup.HAND
-			))
-				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.RIPTIDE_EXCLUSIVE))
-			.withEffect(
-				EnchantmentEffectComponents.POST_ATTACK,
-				EnchantmentTarget.ATTACKER,
-				EnchantmentTarget.VICTIM,
-				AllOf.entityEffects(
-					new EruptEffect(LevelBasedValue.perLevel(3.0F))
-				),
-				AllOfCondition.allOf(
+				.withEffect(
+					EnchantmentEffectComponents.DAMAGE,
+					new AddValue(LevelBasedValue.perLevel(2F)),
 					LootItemEntityPropertyCondition.hasProperties(
 						LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES).build()
 					)
 				)
-			)
-			.withEffect(
-				EnchantmentEffectComponents.HIT_BLOCK,
-				AllOf.entityEffects(
-					new EruptEffect(LevelBasedValue.perLevel(3.0F))
-				),
-				AllOfCondition.allOf(
-					LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES))
-				)
-			)
 		);
 
+		register(context, ERUPTION, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
+				2,
+				3,
+				Enchantment.dynamicCost(17, 7),
+				Enchantment.constantCost(50),
+				4,
+				EquipmentSlotGroup.HAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.RIPTIDE_EXCLUSIVE))
+				.withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					AllOf.entityEffects(
+						new EruptEffect(LevelBasedValue.perLevel(3.0F))
+					),
+					AllOfCondition.allOf(
+						LootItemEntityPropertyCondition.hasProperties(
+							LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES).build()
+						)
+					)
+				)
+				.withEffect(
+					EnchantmentEffectComponents.HIT_BLOCK,
+					AllOf.entityEffects(
+						new EruptEffect(LevelBasedValue.perLevel(3.0F))
+					),
+					AllOfCondition.allOf(
+						LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().of(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES))
+					)
+				)
+		);
 
+		register(context, SOAR, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+				5,
+				2,
+				Enchantment.dynamicCost(5, 20),
+				Enchantment.dynamicCost(55, 20),
+				2,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.KNOCKBACK)))
+				.withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					new SoarEffect(LevelBasedValue.perLevel(1.0F)),
+					DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true))
+				)
+				.withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					new ApplyMobEffect(
+						HolderSet.direct(MobEffects.SLOW_FALLING),
+						LevelBasedValue.constant(2F),
+						LevelBasedValue.perLevel(2F),
+						LevelBasedValue.constant(1.0F),
+						LevelBasedValue.constant(1.0F)
+					),
+					DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true))
+				)
+		);
 	}
 
 	private static void register(BootstrapContext<Enchantment> context, ResourceKey<Enchantment> key, Enchantment.Builder builder) {

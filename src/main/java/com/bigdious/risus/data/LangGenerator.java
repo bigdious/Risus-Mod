@@ -366,6 +366,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.siamese_cat", " Siamese Cat Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.tabby_cat", " Tabby Cat Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.white_cat", " White Cat Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.audrey_cat", " Audrey Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.pumpkin", " Pumpkin Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.pale_wolf", " Pale Wolf Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.ashen_wolf", " Ashen Wolf Mask");
@@ -401,6 +402,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.siamese_cat.desc", " Barely noticed by Phantoms");
 		this.add("tooltip.risus.sinner_robes_helmet.tabby_cat.desc", " Barely noticed by Phantoms");
 		this.add("tooltip.risus.sinner_robes_helmet.white_cat.desc", " Barely noticed by Phantoms");
+		this.add("tooltip.risus.sinner_robes_helmet.audrey_cat.desc", " Barely noticed by Phantoms");
 		this.add("tooltip.risus.sinner_robes_helmet.pumpkin.desc", " Ignored by Endermen");
 		this.add("tooltip.risus.sinner_robes_helmet.pale_wolf.desc", " Slightly less noticed by Skeletons");
 		this.add("tooltip.risus.sinner_robes_helmet.ashen_wolf.desc", " Slightly less noticed by Skeletons");
@@ -480,7 +482,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
 		this.addEnchantment("pull", "Pull", "Pulls the target towards the attacker, with distance increasing the pulling power.");
 		this.addEnchantment("denial", "Denial", "When the item breaks, it will murder its user and repair itself.");
-		this.addEnchantment("cackling_craze", "Cackling Craze", "Increases speed on Remains-type blocks.");
+		this.addEnchantment("cackling_craze", "Cackling Craze", "Increases damage, speed, knockback resistance and decreases max health while on Remains blocks.");
 		this.addEnchantment("agony", "Agony", "Reflects the attacker's damage, boosted by the amount of health missing from the user. Whenever it triggers, it will also increase the damage taken by half.");
 		this.addEnchantment("perpetuity", "Perpetuity", "On top of the Curse of Binding effect, the item will not be dropped upon death. To remove the item, you must break it.");
 		this.addEnchantment("genocide", "Genocide", "Increases the area of effect of sweeping attacks.");
@@ -498,6 +500,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against creatures that aren't undead, insectoid or aquatic.");
 		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Triden will not despawn.");
 		this.addEnchantment("eruption", "Eruption", "If the user is on fire when it hits a block, the user will erupt at the location, setting everyone aflame.");
+		this.addEnchantment("soar", "Soaring", "Sends the target up. Applies Slow Falling.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 
