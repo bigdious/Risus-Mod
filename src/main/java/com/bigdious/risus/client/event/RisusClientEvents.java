@@ -42,6 +42,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.particle.SuspendedTownParticle;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
@@ -221,6 +222,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.STARS.get(), SuspendedTownParticle.HappyVillagerProvider::new);
 		event.registerSpecial(RisusParticles.MOB_EFFECT_ICON.get(),new MobEffectIconParticle.Provider());
 	}
 

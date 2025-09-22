@@ -60,4 +60,5 @@ public class RisusParticles {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOOD_BIT = PARTICLES.register("blood_bit_particle", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DESTINED_DEATH_PARTICLE = PARTICLES.register("destined_death_particle", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RISING_SMILE = PARTICLES.register("rising_smile", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STARS = PARTICLES.register("stars", () -> new SimpleParticleType(true));
 }

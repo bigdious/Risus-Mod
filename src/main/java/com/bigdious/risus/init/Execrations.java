@@ -5,6 +5,7 @@ import com.bigdious.risus.execrations.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -25,11 +26,16 @@ import net.minecraft.world.item.enchantment.*;
 import net.minecraft.world.item.enchantment.effects.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Execrations {
 	public static final ResourceKey<Enchantment> HUNTERS_EXULTATION = registerKey("hunters_exultation");
@@ -56,6 +62,8 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> DEFIANCE = registerKey("defiance");
 	public static final ResourceKey<Enchantment> ERUPTION = registerKey("eruption");
 	public static final ResourceKey<Enchantment> SOAR = registerKey("soar");
+	public static final ResourceKey<Enchantment> FERVOUR = registerKey("fervour");
+	public static final ResourceKey<Enchantment> PROLIFERATION = registerKey("proliferation");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -676,6 +684,7 @@ public class Execrations {
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.CROSSBOW_EXCLUSIVE))
 				.withEffect(EnchantmentEffectComponents.PROJECTILE_COUNT, new AddValue(LevelBasedValue.perLevel(7.0F)))
 				.withEffect(EnchantmentEffectComponents.PROJECTILE_SPREAD, new AddValue(LevelBasedValue.perLevel(157.5F)))
+				.withEffect(EnchantmentEffectComponents.PROJECTILE_SPAWNED, new SummonStarParticlesEffect())
 		);
 
 		register(context, OVERLOAD, new Enchantment.Builder(Enchantment.definition(
@@ -922,6 +931,91 @@ public class Execrations {
 					),
 					DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true))
 				)
+		);
+
+		register(context, FERVOUR, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.FIRE_ASPECT_ENCHANTABLE),
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+			2,
+			2,
+			Enchantment.dynamicCost(10, 20),
+			Enchantment.dynamicCost(60, 20),
+			4,
+			EquipmentSlotGroup.MAINHAND
+			))
+			.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.FIRE_ASPECT)))
+				.withEffect(
+					EnchantmentEffectComponents.POST_ATTACK,
+					EnchantmentTarget.ATTACKER,
+					EnchantmentTarget.VICTIM,
+					AllOf.entityEffects(
+						new FervourEffect(LevelBasedValue.perLevel(3.0F))
+					),
+					DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true))
+				)
+
+		);
+
+		register(context, PROLIFERATION, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+			2,
+			2,
+			Enchantment.dynamicCost(10, 10),
+			Enchantment.dynamicCost(25, 10),
+			4,
+			EquipmentSlotGroup.FEET
+			))
+			.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.BOOTS_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.DAMAGE_IMMUNITY,
+				DamageImmunity.INSTANCE,
+				DamageSourceCondition.hasDamageSource(
+					DamageSourcePredicate.Builder.damageType()
+						.tag(TagPredicate.is(DamageTypeTags.BURN_FROM_STEPPING))
+						.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
+				)
+			)
+			.withEffect(
+				EnchantmentEffectComponents.LOCATION_CHANGED,
+				new ReplaceDisk(
+					new LevelBasedValue.Clamped(LevelBasedValue.perLevel(3.0F, 1.0F), 0.0F, 16.0F),
+					LevelBasedValue.constant(1.0F),
+					new Vec3i(0, -1, 0),
+					Optional.of(
+						net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.allOf(
+							net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.unobstructed(new Vec3i(0, 1, 0)),
+							net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.matchesTag(RisusTags.Blocks.PROLIFERABLE_SOILS),
+							BlockPredicate.alwaysTrue()
+						)
+					),
+					BlockStateProvider.simple(RisusBlocks.ASHEN_REMAINS.get()),
+					Optional.of(GameEvent.BLOCK_PLACE)
+				),
+				LootItemEntityPropertyCondition.hasProperties(
+					LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(true).setCrouching(true))
+				)
+			)
+			.withEffect(
+				EnchantmentEffectComponents.LOCATION_CHANGED,
+				new ReplaceDisk(
+					new LevelBasedValue.Clamped(LevelBasedValue.perLevel(3.0F, 1.0F), 0.0F, 16.0F),
+					LevelBasedValue.constant(1.0F),
+					new Vec3i(0, -1, 0),
+					Optional.of(
+						net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.allOf(
+							net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.unobstructed(new Vec3i(0, 1, 0)),
+							net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.matchesTag(RisusTags.Blocks.PROLIFERABLE_ROCKS),
+							BlockPredicate.alwaysTrue()
+						)
+					),
+					BlockStateProvider.simple(RisusBlocks.SMILING_REMAINS.get()),
+					Optional.of(GameEvent.BLOCK_PLACE)
+				),
+				LootItemEntityPropertyCondition.hasProperties(
+					LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnGround(true).setCrouching(true))
+				)
+			)
+
 		);
 	}
 

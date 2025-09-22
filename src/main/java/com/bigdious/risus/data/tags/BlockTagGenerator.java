@@ -7,6 +7,7 @@ import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -359,6 +360,32 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.SMILING_REMAINS.get(),
 			RisusBlocks.SPREADING_REMAINS.get(),
 			RisusBlocks.TEETH.get()
+		);
+
+		this.tag(RisusTags.Blocks.PROLIFERABLE_SOILS).add(
+			Blocks.SOUL_SAND
+			,Blocks.SOUL_SOIL
+			,Blocks.SAND
+			,Blocks.RED_SAND
+			,Blocks.DIRT
+			,Blocks.GRASS_BLOCK
+			,Blocks.PODZOL
+			,Blocks.MYCELIUM
+			,Blocks.GRAVEL
+		);
+
+		this.tag(RisusTags.Blocks.PROLIFERABLE_ROCKS).add(
+			Blocks.NETHERRACK
+			,Blocks.BASALT
+			,Blocks.BLACKSTONE
+			,Blocks.END_STONE
+			,Blocks.DEEPSLATE
+			,Blocks.STONE
+			,Blocks.GRANITE
+			,Blocks.DIORITE
+			,Blocks.ANDESITE
+			,Blocks.DRIPSTONE_BLOCK
+			,Blocks.TUFF
 		);
 	}
 }

@@ -22,6 +22,8 @@ public class RisusTags {
 		public static final TagKey<Block> LITTER_ALLOWED_LIGHT_BLOCKS = create("litter_allowed_light_blocks");
 		public static final TagKey<Block> SPAWN_SPIRE_ON = create("spawn_spire_on");
 		public static final TagKey<Block> REMAINS = create("remains");
+		public static final TagKey<Block> PROLIFERABLE_SOILS = create("proliferable_soils");
+		public static final TagKey<Block> PROLIFERABLE_ROCKS = create("proliferable_rocks");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -124,6 +126,7 @@ public class RisusTags {
 		public static final TagKey<Enchantment> WARHORN_ALLOWED_ENCHANTS = create("warhorn_allowed_enchants");
 		public static final TagKey<Enchantment> HEXHORN_ALLOWED_ENCHANTS = create("hexhorn_allowed_enchants");
 		public static final TagKey<Enchantment> EXECRATIONS = create("execrations");
+		public static final TagKey<Enchantment> ALTERABLE_ENCHANTS = create("alterable_enchants");
 
 		private static TagKey<Enchantment> create(String name) {
 			return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

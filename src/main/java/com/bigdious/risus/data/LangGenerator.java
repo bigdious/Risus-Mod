@@ -252,10 +252,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Sacrificial Catalyst");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
-		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner Robes Helmet");
-		this.addItem(RisusItems.SINNER_ROBES_CHESTPLATE, "Sinner Robes Chestplate");
-		this.addItem(RisusItems.SINNER_ROBES_LEGGINGS, "Sinner Robes Leggings");
-		this.addItem(RisusItems.SINNER_ROBES_BOOTS, "Sinner Robes Boots");
+		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner Robe Helmet");
+		this.addItem(RisusItems.SINNER_ROBES_CHESTPLATE, "Sinner Robe Chestplate");
+		this.addItem(RisusItems.SINNER_ROBES_LEGGINGS, "Sinner Robe Leggings");
+		this.addItem(RisusItems.SINNER_ROBES_BOOTS, "Sinner Robe Boots");
 		this.addItem(RisusItems.SKIN_BOOTS, "Skin Socks");
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
@@ -498,9 +498,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("preservation", "Preservation", "Adds a 50% chance not to use arrows. Extends beyond base arrows. Unaffected arrows can still be picked up.");
 		this.addEnchantment("vigor", "Vigor", "Increases max health with each level.");
 		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against creatures that aren't undead, insectoid or aquatic.");
-		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Triden will not despawn.");
+		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Trident will glow.");
 		this.addEnchantment("eruption", "Eruption", "If the user is on fire when it hits a block, the user will erupt at the location, setting everyone aflame.");
 		this.addEnchantment("soar", "Soaring", "Sends the target up. Applies Slow Falling.");
+		this.addEnchantment("fervour", "Fervour", "On hit, ignites the user and creatures around it.");
+		this.addEnchantment("proliferation", "Proliferation", "When moving and crouching, turns soils and rocks below the user into Ashen and Smiling Remains respectively.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

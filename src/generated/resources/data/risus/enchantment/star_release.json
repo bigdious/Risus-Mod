@@ -16,6 +16,13 @@
         }
       }
     ],
+    "minecraft:projectile_spawned": [
+      {
+        "effect": {
+          "type": "risus:summon_star_particles"
+        }
+      }
+    ],
     "minecraft:projectile_spread": [
       {
         "effect": {

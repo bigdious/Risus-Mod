@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:netherrack",
+    "minecraft:basalt",
+    "minecraft:blackstone",
+    "minecraft:end_stone",
+    "minecraft:deepslate",
+    "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "minecraft:dripstone_block",
+    "minecraft:tuff"
+  ]
+}

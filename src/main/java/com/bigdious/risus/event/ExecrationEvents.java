@@ -244,6 +244,12 @@ public class ExecrationEvents {
 				float strength = trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
 				trident.setDeltaMovement(trident.getDeltaMovement().scale(1+strength*0.20));
 				trident.setBaseDamage(trident.getBaseDamage()+strength*2);
+				trident.setGlowingTag(true);
+				if (trident.level() instanceof ServerLevel serverLevel) {
+					for (int i = 0; i < 5; ++i) {
+						serverLevel.sendParticles(ParticleTypes.CRIT, trident.getRandomX(1), trident.getRandomY(), trident.getRandomZ(1F), 1, 0.0F, 0.0F, 0.0F, 0.1);
+					}
+				}
 			}
 		}
 	}

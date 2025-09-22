@@ -1,18 +1,15 @@
 package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
-import com.bigdious.risus.init.RisusBlockEntities;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.init.RisusRecipes;
+import com.bigdious.risus.init.*;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -26,7 +23,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,7 +34,9 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Function;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer, ContainerSingleItem.BlockContainerSingleItem {
 
@@ -54,7 +56,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		int craftingLength = 100;
 
 		if (te.isCrafting) {
-			if (!te.item.is(Items.GOAT_HORN) && te.getRecipe(level, te.item) == null) {
+			if (!te.item.is(Items.GOAT_HORN) && !te.item.isEnchanted() && te.getRecipe(level, te.item) == null) {
 				te.isCrafting = false;
 				te.setChanged();
 			}
@@ -95,8 +97,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 					te.finishedCounter = 0;
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
-				else
-					if (recipe != null) {
+				else if (recipe != null) {
 					te.item = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
 					te.setChanged();
 					te.finishedCrafting = true;
@@ -104,6 +105,22 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
+				else if (te.item.isEnchanted()) {
+					for (Object2IntMap.Entry<Holder<Enchantment>> entry : te.item.getTagEnchantments().entrySet()) {
+						if (entry.getKey().is(RisusTags.Enchantments.ALTERABLE_ENCHANTS)) {
+							Holder<Enchantment> holder = level.holder(entry.getKey().getKey()).orElse(null);
+							ItemEnchantments ench = Optional.ofNullable(te.item.get(DataComponents.ENCHANTMENTS)).orElse(ItemEnchantments.EMPTY);
+							ItemEnchantments.Mutable mut = new ItemEnchantments.Mutable(ench);
+							mut.set(holder, 0);
+							te.item.set(DataComponents.ENCHANTMENTS, mut.toImmutable());
+						}
+					}
+					te.setChanged();
+					te.finishedCrafting = true;
+					te.finishedCounter = 0;
+					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
+				}
+
 
 				te.isCrafting = false;
 				te.setChanged();
@@ -198,7 +215,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public boolean craftingPossible(Level level, ItemStack stack) {
 		if (this.isCrafting || stack.isEmpty())
 			return false;
-		return stack.is(Items.GOAT_HORN) || this.getRecipe(level, stack) != null;
+		return stack.isEnchanted() || stack.is(Items.GOAT_HORN) || this.getRecipe(level, stack) != null;
 	}
 
 	public boolean updateBlock() {

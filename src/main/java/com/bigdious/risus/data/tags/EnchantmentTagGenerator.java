@@ -146,7 +146,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.XENOPHOBIA,
 			Execrations.DEFIANCE,
 			Execrations.ERUPTION,
-			Execrations.SOAR
+			Execrations.SOAR,
+			Execrations.FERVOUR,
+			Execrations.PROLIFERATION
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -165,7 +167,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(EnchantmentTags.BOOTS_EXCLUSIVE).add(
-			Execrations.PYROMANIAC
+			Execrations.PYROMANIAC,
+			Execrations.PROLIFERATION
 		);
 
 		this.tag(EnchantmentTags.MINING_EXCLUSIVE).add(
@@ -178,6 +181,39 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 
 		this.tag(EnchantmentTags.RIPTIDE_EXCLUSIVE).add(
 			Execrations.ERUPTION
+		);
+
+		this.tag(RisusTags.Enchantments.ALTERABLE_ENCHANTS).add(
+			Enchantments.SMITE
+			,Enchantments.BANE_OF_ARTHROPODS
+			,Enchantments.IMPALING
+			,Enchantments.FIRE_PROTECTION
+			,Enchantments.PROJECTILE_PROTECTION
+			,Enchantments.BLAST_PROTECTION
+			,Enchantments.MENDING
+			,Enchantments.PUNCH
+			,Enchantments.VANISHING_CURSE
+			,Enchantments.SOUL_SPEED
+			,Enchantments.THORNS
+			,Enchantments.BINDING_CURSE
+			,Enchantments.SWEEPING_EDGE
+			,Enchantments.CHANNELING
+			,Enchantments.PIERCING
+			,Enchantments.MULTISHOT
+			,Enchantments.EFFICIENCY
+			,Enchantments.LUCK_OF_THE_SEA
+			,Enchantments.LURE
+			,Enchantments.UNBREAKING
+			,Enchantments.DEPTH_STRIDER
+			,Enchantments.SILK_TOUCH
+			,Enchantments.INFINITY
+			,Enchantments.PROTECTION
+			,Enchantments.SHARPNESS
+			,Enchantments.LOYALTY
+			,Enchantments.RIPTIDE
+			,Enchantments.KNOCKBACK
+			,Enchantments.FIRE_ASPECT
+			,Enchantments.FROST_WALKER
 		);
 
 
