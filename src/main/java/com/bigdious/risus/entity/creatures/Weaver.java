@@ -1,5 +1,7 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures;
 
+import com.bigdious.risus.entity.CacheTargetOnClient;
+import com.bigdious.risus.entity.QuestionMark;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
@@ -7,7 +9,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

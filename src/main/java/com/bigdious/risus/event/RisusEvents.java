@@ -4,6 +4,9 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.dispenser.RisusDispenserBehaviours;
 import com.bigdious.risus.entity.*;
+import com.bigdious.risus.entity.creatures.*;
+import com.bigdious.risus.entity.creatures.pets.Holder;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.*;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
@@ -161,6 +164,7 @@ public class RisusEvents {
 
 	private static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(RisusEntities.ANGEL.get(), Angel.attributes().build());
+		event.put(RisusEntities.HEX.get(), Hex.attributes().build());
 		event.put(RisusEntities.HOLDER.get(), Holder.attributes().build());
 		event.put(RisusEntities.MAW.get(), Maw.attributes().build());
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());

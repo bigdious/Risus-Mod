@@ -1,6 +1,6 @@
 package com.bigdious.risus.client;
 
-import com.bigdious.risus.entity.Litter;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

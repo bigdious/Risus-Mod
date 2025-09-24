@@ -4,20 +4,25 @@ import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -32,10 +37,12 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class AlterationCatalystBlockEntity extends BlockEntity implements WorldlyContainer, ContainerSingleItem.BlockContainerSingleItem {
@@ -45,6 +52,8 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	private int craftingCounter;
 	public float rotationDegrees;
 	private boolean finishedCrafting;
+	private boolean craftingWorked;
+	private boolean failedCrafting;
 	private int finishedCounter;
 
 	public AlterationCatalystBlockEntity(BlockPos pos, BlockState state) {
@@ -56,7 +65,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		int craftingLength = 100;
 
 		if (te.isCrafting) {
-			if (!te.item.is(Items.GOAT_HORN) && !te.item.isEnchanted() && te.getRecipe(level, te.item) == null) {
+			if (!te.item.is(Items.GOAT_HORN) && !te.item.is(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT) && !te.item.isEnchanted() && te.getRecipe(level, te.item) == null) {
 				te.isCrafting = false;
 				te.setChanged();
 			}
@@ -105,20 +114,51 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
-				else if (te.item.isEnchanted()) {
-					for (Object2IntMap.Entry<Holder<Enchantment>> entry : te.item.getTagEnchantments().entrySet()) {
-						if (entry.getKey().is(RisusTags.Enchantments.ALTERABLE_ENCHANTS)) {
-							Holder<Enchantment> holder = level.holder(entry.getKey().getKey()).orElse(null);
-							ItemEnchantments ench = Optional.ofNullable(te.item.get(DataComponents.ENCHANTMENTS)).orElse(ItemEnchantments.EMPTY);
-							ItemEnchantments.Mutable mut = new ItemEnchantments.Mutable(ench);
-							mut.set(holder, 0);
-							te.item.set(DataComponents.ENCHANTMENTS, mut.toImmutable());
+				else if (te.item.isEnchanted() || te.item.is(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT)) {
+					//why the hell don't enchanted books use DataComponents.ENCHANTMENTS ???!!!
+					if (te.item.getItem() instanceof EnchantedBookItem) {
+						for (Object2IntMap.Entry<Holder<Enchantment>> entry : te.item.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY).entrySet()) {
+							if (entry.getKey().is(RisusTags.Enchantments.ALTERABLE_ENCHANTS)) {
+								te.item.enchant(
+									level.registryAccess().registry(Registries.ENCHANTMENT).get().getHolderOrThrow(ENCHANT_TO_EXEC.get(entry.getKey().getKey())),
+									te.item.get(DataComponents.STORED_ENCHANTMENTS).getLevel(level.registryAccess().holderOrThrow(entry.getKey().getKey()))
+								);
+								Holder<Enchantment> holder = level.holder(entry.getKey().getKey()).orElse(null);
+								ItemEnchantments ench = Optional.ofNullable(te.item.get(DataComponents.STORED_ENCHANTMENTS)).orElse(ItemEnchantments.EMPTY);
+								ItemEnchantments.Mutable mut = new ItemEnchantments.Mutable(ench);
+								mut.set(holder, 0);
+								te.item.set(DataComponents.STORED_ENCHANTMENTS, mut.toImmutable());
+								te.craftingWorked = true;
+							}
+						}
+					} else {
+						//we're looking through all the enchantments, seeing if we have any convertable ones, then adding the execration with the correct level and deleting the enchantment
+						for (Object2IntMap.Entry<Holder<Enchantment>> entry : te.item.getTagEnchantments().entrySet()) {
+							if (entry.getKey().is(RisusTags.Enchantments.ALTERABLE_ENCHANTS)) {
+								te.item.enchant(
+									level.registryAccess().registry(Registries.ENCHANTMENT).get().getHolderOrThrow(ENCHANT_TO_EXEC.get(entry.getKey().getKey())),
+									te.item.get(DataComponents.ENCHANTMENTS).getLevel(level.registryAccess().holderOrThrow(entry.getKey().getKey()))
+								);
+								Holder<Enchantment> holder = level.holder(entry.getKey().getKey()).orElse(null);
+								ItemEnchantments ench = Optional.ofNullable(te.item.get(DataComponents.ENCHANTMENTS)).orElse(ItemEnchantments.EMPTY);
+								ItemEnchantments.Mutable mut = new ItemEnchantments.Mutable(ench);
+								mut.set(holder, 0);
+								te.item.set(DataComponents.ENCHANTMENTS, mut.toImmutable());
+								te.craftingWorked = true;
+							}
 						}
 					}
 					te.setChanged();
-					te.finishedCrafting = true;
+					if (te.craftingWorked) {
+						te.finishedCrafting = true;
+						te.craftingWorked = false;
+						level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
+					} else {
+						te.failedCrafting = true;
+						level.playSound(null, pos, SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.BLOCKS, 1.0F, 0.5F);
+					}
 					te.finishedCounter = 0;
-					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
+
 				}
 
 
@@ -143,6 +183,21 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 				}
 			}
 		}
+		if (te.failedCrafting) {
+			if (te.finishedCounter++ >= 10) {
+				te.failedCrafting = false;
+				te.finishedCounter = 0;
+			}
+			if (level.isClientSide()) {
+				for (int i = 0; i < 7; i++) {
+					level.addParticle(ParticleTypes.SMOKE,
+						(pos.getX() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
+						pos.getY() + 1.0F,
+						(pos.getZ() + 0.15F) + (level.getRandom().nextFloat() * 0.75F),
+						0.0F, 0.1F, 0.0F);
+				}
+			}
+		}
 	}
 
 
@@ -153,6 +208,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		}
 		tag.putBoolean("isCrafting", this.isCrafting);
 		tag.putBoolean("finishedCrafting", this.finishedCrafting);
+		tag.putBoolean("failedCrafting", this.failedCrafting);
 		tag.putInt("counter", this.craftingCounter);
 		tag.putFloat("itemRotation", this.rotationDegrees);
 	}
@@ -168,6 +224,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 		this.isCrafting = tag.getBoolean("isCrafting");
 		this.finishedCrafting = tag.getBoolean("finishedCrafting");
+		this.failedCrafting = tag.getBoolean("failedCrafting");
 		this.craftingCounter = tag.getInt("counter");
 		this.rotationDegrees = tag.getFloat("itemRotation");
 		super.loadAdditional(tag, registries);
@@ -183,6 +240,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		tag.putInt("counter", this.craftingCounter);
 		tag.putBoolean("isCrafting", this.isCrafting);
 		tag.putBoolean("finishedCrafting", this.finishedCrafting);
+		tag.putBoolean("failedCrafting", this.failedCrafting);
 		tag.putFloat("itemRotation", this.rotationDegrees);
 		super.saveAdditional(tag, pRegistries);
 		return tag;
@@ -215,7 +273,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public boolean craftingPossible(Level level, ItemStack stack) {
 		if (this.isCrafting || stack.isEmpty())
 			return false;
-		return stack.isEnchanted() || stack.is(Items.GOAT_HORN) || this.getRecipe(level, stack) != null;
+		return stack.isEnchanted() || stack.is(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT) || stack.is(Items.GOAT_HORN) || this.getRecipe(level, stack) != null;
 	}
 
 	public boolean updateBlock() {
@@ -280,4 +338,37 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	public BlockEntity getContainerBlockEntity() {
 		return this;
 	}
+
+	public static final Map<ResourceKey<Enchantment>, ResourceKey<Enchantment>> ENCHANT_TO_EXEC = Map.ofEntries(
+		Map.entry(Enchantments.SMITE, Execrations.HUNTERS_EXULTATION)
+		,Map.entry(Enchantments.IMPALING, Execrations.HUNTERS_EXULTATION)
+		,Map.entry(Enchantments.BANE_OF_ARTHROPODS, Execrations.HUNTERS_EXULTATION)
+		,Map.entry(Enchantments.FIRE_PROTECTION, Execrations.ELEMENTAL_DEVIATION)
+		,Map.entry(Enchantments.PROJECTILE_PROTECTION, Execrations.ELEMENTAL_DEVIATION)
+		,Map.entry(Enchantments.BLAST_PROTECTION, Execrations.ELEMENTAL_DEVIATION)
+		,Map.entry(Enchantments.MENDING, Execrations.DREAM_EATER)
+		,Map.entry(Enchantments.PUNCH, Execrations.PULL)
+		,Map.entry(Enchantments.VANISHING_CURSE, Execrations.DENIAL)
+		,Map.entry(Enchantments.SOUL_SPEED, Execrations.CACKLING_CRAZE)
+		,Map.entry(Enchantments.THORNS, Execrations.AGONY)
+		,Map.entry(Enchantments.BINDING_CURSE, Execrations.PERPETUITY)
+		,Map.entry(Enchantments.SWEEPING_EDGE, Execrations.GENOCIDE)
+		,Map.entry(Enchantments.CHANNELING, Execrations.EMPYREAN_CONDUIT)
+		,Map.entry(Enchantments.PIERCING, Execrations.BATTERING)
+		,Map.entry(Enchantments.MULTISHOT, Execrations.STAR_RELEASE)
+		,Map.entry(Enchantments.EFFICIENCY, Execrations.OVERLOAD)
+		,Map.entry(Enchantments.LUCK_OF_THE_SEA, Execrations.MARITIME_SNARE)
+		,Map.entry(Enchantments.LURE, Execrations.GRAVITY_WELL)
+		,Map.entry(Enchantments.UNBREAKING, Execrations.RELOCATION)
+		,Map.entry(Enchantments.DEPTH_STRIDER, Execrations.PYROMANIAC)
+		,Map.entry(Enchantments.SILK_TOUCH, Execrations.AVARICIOUS_AMBIT)
+		,Map.entry(Enchantments.INFINITY, Execrations.PRESERVATION)
+		,Map.entry(Enchantments.PROTECTION, Execrations.VIGOR)
+		,Map.entry(Enchantments.SHARPNESS, Execrations.XENOPHOBIA)
+		,Map.entry(Enchantments.LOYALTY, Execrations.DEFIANCE)
+		,Map.entry(Enchantments.RIPTIDE, Execrations.ERUPTION)
+		,Map.entry(Enchantments.KNOCKBACK, Execrations.SOAR)
+		,Map.entry(Enchantments.FIRE_ASPECT, Execrations.FERVOUR)
+		,Map.entry(Enchantments.FROST_WALKER, Execrations.PROLIFERATION)
+	);
 }

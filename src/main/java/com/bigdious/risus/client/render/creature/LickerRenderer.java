@@ -1,9 +1,9 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.creature;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.LickerModel;
-import com.bigdious.risus.entity.Licker;
+import com.bigdious.risus.entity.creatures.Licker;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;

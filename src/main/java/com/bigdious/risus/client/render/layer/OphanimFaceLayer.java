@@ -2,7 +2,7 @@ package com.bigdious.risus.client.render.layer;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.model.entity.AngelModel;
-import com.bigdious.risus.entity.Angel;
+import com.bigdious.risus.entity.creatures.Angel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EyesLayer;

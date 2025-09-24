@@ -3,12 +3,19 @@ package com.bigdious.risus.client.render;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.QuestionMarkModel;
+import com.bigdious.risus.client.render.layer.AbsoluteWhiteLayer;
+import com.bigdious.risus.client.render.layer.StalkerEyeLayer;
 import com.bigdious.risus.entity.QuestionMark;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.FastColor;
 
 public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMarkModel<QuestionMark>> {
 
@@ -16,6 +23,7 @@ public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMark
 
 	public QuestionMarkRenderer(EntityRendererProvider.Context context) {
 		super(context, new QuestionMarkModel<>(context.bakeLayer(RisusModelLayers.QUESTION_MARK)), 0.0F);
+		this.addLayer(new AbsoluteWhiteLayer<>(this));
 	}
 
 	@Override
@@ -25,7 +33,7 @@ public class QuestionMarkRenderer extends MobRenderer<QuestionMark, QuestionMark
 
 	@Override
 	protected int getBlockLightLevel(QuestionMark entity, BlockPos pos) {
-		return 15;
+		return 0;
 	}
 
 	@Override

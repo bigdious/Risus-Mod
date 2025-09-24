@@ -1,6 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
-import com.bigdious.risus.entity.Weaver;
+import com.bigdious.risus.entity.creatures.Weaver;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusEntities;
 import com.mojang.datafixers.util.Either;

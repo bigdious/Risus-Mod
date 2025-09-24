@@ -1,5 +1,6 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures;
 
+import com.bigdious.risus.entity.CacheTargetOnClient;
 import com.bigdious.risus.init.RisusAdvancements;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
@@ -11,7 +12,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.Difficulty;

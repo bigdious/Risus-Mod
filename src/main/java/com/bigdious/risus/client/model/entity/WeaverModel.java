@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.Weaver;
+import com.bigdious.risus.entity.creatures.Weaver;
 import com.bigdious.risus.entity.animations.WeaverAnimations;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

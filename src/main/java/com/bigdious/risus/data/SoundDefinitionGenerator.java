@@ -32,6 +32,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.LAUGHTER_ECHOES, "environment/laughter_echoes", 9, "Laughter echoes");
 
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ALTERATION_FAILED, SoundEvents.REDSTONE_TORCH_BURNOUT, "Alteration failed");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_SKIN, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Skin armor rustles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_THREADS, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Feathers rustle");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ARMOR_EQUIP_ROSE, SoundEvents.ARMOR_EQUIP_LEATHER.value(), "Roses flutter");

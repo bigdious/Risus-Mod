@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class RisusModelLayers {
 	public static final ModelLayerLocation ANGEL = register("angel");
+	public static final ModelLayerLocation HEX = register("hex");
 	public static final ModelLayerLocation HOLDER = register("holder");
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation LICKER = register("licker");

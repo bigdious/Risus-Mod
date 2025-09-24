@@ -1,43 +1,57 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures;
 
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-public class Licker extends Monster {
+public class BabySpider extends Monster {
 	private int attackTimer;
+	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID;
 
-	public Licker(EntityType<? extends Monster> type, Level level) {
+	public BabySpider(EntityType<? extends Monster> type, Level level) {
 		super(type, level);
-		this.xpReward = 5;
+		this.xpReward=1;
+	}
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_FLAGS_ID, (byte) 0);
 	}
 
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
-			.add(Attributes.MAX_HEALTH, 32.0D)
+			.add(Attributes.MAX_HEALTH, 3.0D)
 			.add(Attributes.MOVEMENT_SPEED, 0.30F)
 			.add(Attributes.FOLLOW_RANGE, 24)
-			.add(Attributes.ATTACK_DAMAGE, 1D);
+			.add(Attributes.ENTITY_INTERACTION_RANGE, 1.5)
+			.add(Attributes.ATTACK_DAMAGE, 1F);
 	}
-
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -46,8 +60,14 @@ public class Licker extends Monster {
 		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
-	}
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
+			entity -> !(entity instanceof ArmorStand)
+				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
+				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
+				&& !(entity instanceof BabySpider)
+				&& !(entity instanceof Spider)));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, true));
+    }
 
 	@Override
 	public void aiStep() {
@@ -58,24 +78,6 @@ public class Licker extends Monster {
 		}
 	}
 
-	@Override
-	public boolean doHurtTarget(Entity entity) {
-		if (entity instanceof LivingEntity living) {
-			this.attackTimer = 10;
-			this.level().broadcastEntityEvent(this, (byte) 4);
-			int i = 5;
-			if (this.level().getDifficulty() == Difficulty.NORMAL) {
-				i = 10;
-			}
-			if (this.level().getDifficulty() == Difficulty.HARD) {
-				i = 15;
-			}
-			living.addEffect(new MobEffectInstance(MobEffects.WEAVING, i * 20, 0), this);
-			living.addEffect(new MobEffectInstance(RisusMobEffects.PLEASURE, i * 2, 0), this);
-		}
-		return super.doHurtTarget(entity);
-	}
-
 	public void handleEntityEvent(byte id) {
 		if (id == 4) {
 			this.attackTimer = 10;
@@ -83,7 +85,6 @@ public class Licker extends Monster {
 			super.handleEntityEvent(id);
 		}
 	}
-
 	protected SoundEvent getAmbientSound() {
 		return SoundEvents.SPIDER_AMBIENT;
 	}
@@ -99,27 +100,47 @@ public class Licker extends Monster {
 	protected void playStepSound(BlockPos p_33804_, BlockState p_33805_) {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
 	}
-
 	public void makeStuckInBlock(BlockState p_33796_, Vec3 p_33797_) {
 		if (!p_33796_.is(Blocks.COBWEB)) {
 			super.makeStuckInBlock(p_33796_, p_33797_);
 		}
 
 	}
-
 	public boolean canBeAffected(MobEffectInstance p_33809_) {
 		return !p_33809_.is(MobEffects.POISON) && super.canBeAffected(p_33809_);
 	}
+//make em climb
+protected PathNavigation createNavigation(Level level) {
+	return new WallClimberNavigation(this, level);
+}
 
-	public boolean hurt(DamageSource source, float amount) {
-		boolean flag = super.hurt(source, amount);
-		if (flag && this.getHealth() == 0) {
-			for (int i = 0; i < 4; i++) {
-				BabySpider babySpider = RisusEntities.BABY_SPIDER.get().create(this.level());
-				babySpider.moveTo(this.getX(), this.getY() + 1, this.getZ(), 0.0F, 0.0F);
-				this.level().addFreshEntity(babySpider);
-			}
+	public void tick() {
+		super.tick();
+		if (!this.level().isClientSide) {
+			this.setClimbing(this.horizontalCollision);
 		}
-		return flag;
+	}
+
+	public boolean onClimbable() {
+		return this.isClimbing();
+	}
+
+	public boolean isClimbing() {
+		return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+	}
+
+	public void setClimbing(boolean climbing) {
+		byte b0 = this.entityData.get(DATA_FLAGS_ID);
+		if (climbing) {
+			b0 = (byte) (b0 | 1);
+		} else {
+			b0 &= -2;
+		}
+
+		this.entityData.set(DATA_FLAGS_ID, b0);
+	}
+
+	static {
+		DATA_FLAGS_ID = SynchedEntityData.defineId(BabySpider.class, EntityDataSerializers.BYTE);
 	}
 }

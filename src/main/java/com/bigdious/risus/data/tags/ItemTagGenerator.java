@@ -199,6 +199,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.ANGEL_WINGS.get()
 		);
 
+		this.tag(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT).add(
+			Items.ENCHANTED_BOOK
+		);
+
+
+
+
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(
 			RisusItems.HAND_OF_GREED.get()

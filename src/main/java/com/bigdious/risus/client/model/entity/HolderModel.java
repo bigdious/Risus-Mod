@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.Holder;
+import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;

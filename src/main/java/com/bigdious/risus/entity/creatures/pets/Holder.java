@@ -1,4 +1,4 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures.pets;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
@@ -10,7 +10,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

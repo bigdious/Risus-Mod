@@ -1,6 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
-import com.bigdious.risus.entity.Maw;
+import com.bigdious.risus.entity.creatures.Maw;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.inventory.MawGutsMenu;
 import net.minecraft.core.BlockPos;

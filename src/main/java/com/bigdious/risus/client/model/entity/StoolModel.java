@@ -1,14 +1,10 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.Holder;
 import com.bigdious.risus.entity.Stool;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.HumanoidArm;
 
 public class StoolModel<T extends Stool> extends HierarchicalModel<T> {
 	private final ModelPart root;

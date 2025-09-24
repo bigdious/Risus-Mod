@@ -1,6 +1,6 @@
 package com.bigdious.risus.entity.projectile;
 
-import com.bigdious.risus.entity.BabySpider;
+import com.bigdious.risus.entity.creatures.BabySpider;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;

@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.Litter;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

@@ -12,6 +12,7 @@ import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.ThreadWingsModel;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
+import com.bigdious.risus.client.render.creature.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
@@ -38,35 +39,25 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
-import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.client.renderer.entity.VexRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.EnchantedBookItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.*;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
@@ -78,7 +69,6 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
@@ -89,8 +79,6 @@ import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 import javax.annotation.Nullable;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Objects;
 
 public class RisusClientEvents {
@@ -252,6 +240,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.ANGEL, AngelModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LICKER, LickerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BABY_SPIDER, BabySpiderModel::create);
+		event.registerLayerDefinition(RisusModelLayers.HEX, VexModel::createBodyLayer);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
@@ -311,6 +300,7 @@ public class RisusClientEvents {
 
 	private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
+		event.registerEntityRenderer(RisusEntities.HEX.get(), HexRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
@@ -328,6 +318,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.GREAT_STOOL.get(), StoolRenderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
+		event.registerEntityRenderer(RisusEntities.HEX.get(), VexRenderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));
 		event.registerEntityRenderer(RisusEntities.GUTS_BOAT.get(), (context) -> new RisusBoatRenderer(context, true));

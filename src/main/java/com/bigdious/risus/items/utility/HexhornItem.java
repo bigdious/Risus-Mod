@@ -3,7 +3,7 @@ package com.bigdious.risus.items.utility;
 import com.bigdious.risus.client.particle.MobEffectParticleOption;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.config.RisusConfig;
-import com.bigdious.risus.entity.TamableMonster;
+import com.bigdious.risus.entity.creatures.pets.TamableMonster;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;

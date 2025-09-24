@@ -1,9 +1,9 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.creature;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.LitterModel;
-import com.bigdious.risus.entity.Litter;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.LightTexture;

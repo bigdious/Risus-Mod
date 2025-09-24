@@ -1,9 +1,9 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.creature;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.WeaverModel;
-import com.bigdious.risus.entity.Weaver;
+import com.bigdious.risus.entity.creatures.Weaver;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

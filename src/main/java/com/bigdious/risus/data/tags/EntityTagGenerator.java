@@ -139,5 +139,11 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				RisusEntities.THROWN_AXE.get()
 			)
 		;
+
+		tag(EntityTypeTags.FALL_DAMAGE_IMMUNE)
+			.add(
+				RisusEntities.HEX.get()
+			)
+		;
 	}
 }

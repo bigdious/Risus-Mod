@@ -1,9 +1,8 @@
 package com.bigdious.risus.items;
 
-import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.config.RisusConfig;
-import com.bigdious.risus.entity.Litter;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
@@ -11,9 +10,7 @@ import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;

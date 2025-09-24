@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-04T21:25:14.6800002	Risus Item Models
+// 1.21.1	2025-09-24T15:40:20.2437396	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -158,6 +158,7 @@ ea1d1988c1a37b2ad36b434ea66a1425954e84f6 assets/risus/models/item/hexhorn_2.json
 54da5b199b051929496448388f9423352b0297c9 assets/risus/models/item/hexhorn_5.json
 6d12c75d4b7496c2a696e07b6efe53987ae1f9b6 assets/risus/models/item/hexhorn_6.json
 9b00c7af8f964d9d31033ecc31e307241e456f28 assets/risus/models/item/hexhorn_7.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/hex_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/holder_spawn_egg.json
 41d873cb0ffbec3d619e1216b41aa53afeb051fa assets/risus/models/item/imitation_scaleplate.json
 c86f65a28e5ed900a78de411442415af33eb177c assets/risus/models/item/imitation_scales_block_slab.json

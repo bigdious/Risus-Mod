@@ -1,7 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
-import com.bigdious.risus.entity.Angel;
+import com.bigdious.risus.entity.creatures.Angel;
 import com.bigdious.risus.init.RisusEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

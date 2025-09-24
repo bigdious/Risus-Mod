@@ -1,4 +1,4 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures.pets;
 
 import com.bigdious.risus.blocks.LightExcrementBlock;
 import com.bigdious.risus.init.*;
@@ -16,7 +16,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;

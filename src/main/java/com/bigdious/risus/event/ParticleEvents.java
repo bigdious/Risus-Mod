@@ -1,6 +1,6 @@
 package com.bigdious.risus.event;
 
-import com.bigdious.risus.entity.Licker;
+import com.bigdious.risus.entity.creatures.Licker;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusParticles;
 import net.minecraft.core.particles.ParticleTypes;

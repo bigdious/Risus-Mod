@@ -1,10 +1,10 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.creature;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.HolderModel;
 import com.bigdious.risus.client.render.layer.HolderFaceLayer;
-import com.bigdious.risus.entity.Holder;
+import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.ItemInHandRenderer;

@@ -1,4 +1,13 @@
 {
+  "block.alteration_catalyst.alteration_failed": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.redstone_torch.burnout"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.alteration_catalyst.alteration_failed"
+  },
   "block.blood.ambient": {
     "sounds": [
       {

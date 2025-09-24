@@ -1,4 +1,4 @@
-package com.bigdious.risus.entity;
+package com.bigdious.risus.entity.creatures;
 
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.sounds.SoundEvent;

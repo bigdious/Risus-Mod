@@ -1,6 +1,6 @@
 package com.bigdious.risus.items.summoners;
 
-import com.bigdious.risus.entity.Litter;
+import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusEntities;
 import net.minecraft.ChatFormatting;

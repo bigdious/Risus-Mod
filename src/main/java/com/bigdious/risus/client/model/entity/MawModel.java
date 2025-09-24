@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.Maw;
+import com.bigdious.risus.entity.creatures.Maw;
 import com.bigdious.risus.entity.animations.MawAnimations;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HierarchicalModel;

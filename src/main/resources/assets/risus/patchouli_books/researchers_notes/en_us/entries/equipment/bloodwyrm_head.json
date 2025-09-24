@@ -13,7 +13,7 @@
     },
     {
       "type": "patchouli:smithing",
-      "recipe": "risus:smithing/bloodwyrm_head",
+      "recipe": "minecraft:head_to_spewer",
       "text": "The Spewer can spread fire in front of the wielder and can be refueled with Dragon Breath. Additionally, the spray will also inflict the Flame Frailty effect onto the victim, making them considerably more susceptible to fire."
     },
     {

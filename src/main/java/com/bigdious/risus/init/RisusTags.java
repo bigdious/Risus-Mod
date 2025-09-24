@@ -81,8 +81,9 @@ public class RisusTags {
 		public static final TagKey<Item> ROBES = create("robes");
 		public static final TagKey<Item> SWORD_AND_TRIDENT_ENCHANTABLE = create("sword_and_trident_enchantable");
 		public static final TagKey<Item> PERPETUITY_BLACKLIST = create("perpetuity_blacklist");
-		public static final TagKey<Item> NOT_RELOCATABLE_FROM = create("not_relocatable");
-		public static final TagKey<Item> NOT_RELOCATABLE_TO = create("not_relocatable");
+		public static final TagKey<Item> NOT_RELOCATABLE_FROM = create("not_relocatable_from");
+		public static final TagKey<Item> NOT_RELOCATABLE_TO = create("not_relocatable_to");
+		public static final TagKey<Item> ENCHANTED_BOOK_EQUIVALENT = create("enchanted_book_equivalent");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
