@@ -318,7 +318,6 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.GREAT_STOOL.get(), StoolRenderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
-		event.registerEntityRenderer(RisusEntities.HEX.get(), VexRenderer::new);
 
 		event.registerEntityRenderer(RisusEntities.BOAT.get(), (context) -> new RisusBoatRenderer(context, false));
 		event.registerEntityRenderer(RisusEntities.GUTS_BOAT.get(), (context) -> new RisusBoatRenderer(context, true));

@@ -2,6 +2,7 @@ package com.bigdious.risus.entity.creatures;
 
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
@@ -84,7 +85,7 @@ public class Hex extends Vex {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_AXE));
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RisusItems.THOUSAND_BLADE.get()));
 		this.setDropChance(EquipmentSlot.MAINHAND, 0.0F);
 	}
 

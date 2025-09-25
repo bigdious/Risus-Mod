@@ -341,6 +341,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.angel", "Blood Ophanim");
 		this.add("tooltip.risus.spawnentity.risus.weaver", "Weaver");
 		this.add("tooltip.risus.spawnentity.risus.holder", "Holder");
+		this.add("tooltip.risus.spawnentity.risus.hex", "Hex");
 		this.add("tooltip.risus.spawnentity.risus.lover", "Lover");
 		this.add("tooltip.risus.spawnentity.risus.singer", "Singer");
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
@@ -458,6 +459,7 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
+		this.addEntityAndEgg(RisusEntities.HEX, "Hex");
 		this.addEntityAndEgg(RisusEntities.HOLDER, "Holder");
 		this.addEntityAndEgg(RisusEntities.LICKER, "Licker");
 		this.addEntityAndEgg(RisusEntities.LOVER, "Lover");
