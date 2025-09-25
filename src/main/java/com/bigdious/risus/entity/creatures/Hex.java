@@ -1,11 +1,9 @@
 package com.bigdious.risus.entity.creatures;
 
-import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusMobEffects;
+import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.EntityUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -83,6 +81,14 @@ public class Hex extends Vex {
 		return super.doHurtTarget(entity);
 	}
 
+	public void aiStep(){
+		super.aiStep();
+		if (this.level().isClientSide && this.tickCount % 15 == 0) {
+			this.level().addParticle(RisusParticles.FALLING_BLOOD.get(), this.getRandomX(0.5F), this.getY()+0.2, this.getRandomZ(0.5F), 0.0F, 0.0F, 0.0F);
+		}
+	}
+
+
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RisusItems.THOUSAND_BLADE.get()));
@@ -91,17 +97,17 @@ public class Hex extends Vex {
 
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.VEX_AMBIENT;
+		return RisusSoundEvents.HEX_AMBIENT.get();
 	}
 
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.VEX_DEATH;
+		return RisusSoundEvents.HEX_DEATH.get();
 	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) {
-		return SoundEvents.VEX_HURT;
+		return RisusSoundEvents.HEX_HURT.get();
 	}
 
 	public class HexChargeAttackGoal extends Goal {
@@ -126,7 +132,7 @@ public class Hex extends Vex {
 			}
 
 			Hex.this.setIsCharging(true);
-			Hex.this.playSound(SoundEvents.VEX_CHARGE, 1.0F, 1.0F);
+			Hex.this.playSound(RisusSoundEvents.HEX_CHARGE.get(), 1.0F, 1.0F);
 		}
 
 		public void stop() {

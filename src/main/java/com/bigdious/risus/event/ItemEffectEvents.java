@@ -46,6 +46,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
@@ -101,28 +102,25 @@ public class ItemEffectEvents {
 	}
 
 	//do not touch below scythe events. It's stupid, but they need to stay as is
-	public static void fireScythe(LivingDamageEvent.Post event) {
+	public static void fireCinderScythes(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
 		LivingEntity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker &&  attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
-			entity2.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
-			entity2.igniteForSeconds(2);
-		}
-	}
-
-	public static void cindergleeScythe(LivingDamageEvent.Post event) {
-		Entity entity = event.getSource().getEntity();
-		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
-			victim.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 1, false, false, true));
+		if (entity instanceof LivingEntity attacker) {
+			if (attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
+				entity2.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 1, false, false, true));
+			}
+			if (attacker.getMainHandItem().is(RisusItems.FIRE_SCYTHE.get())) {
+				entity2.addEffect(new MobEffectInstance(RisusMobEffects.FLAME_FRAILTY, 200, 0, false, false, true));
+				entity2.igniteForSeconds(2);
+			}
 		}
 	}
 
 	public static void soulScythe(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
-		Entity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker && entity2 instanceof LivingEntity victim && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
-			if (!victim.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(victim.getType().is(RisusTags.Entities.OFFSPRING))) {
+		LivingEntity entity2 = event.getEntity();
+		if (entity instanceof LivingEntity attacker && attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
+			if (!entity2.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(entity2.getType().is(RisusTags.Entities.OFFSPRING))) {
 				event.setAmount(event.getAmount() + 7);
 			} else {
 				event.setAmount(event.getAmount() - 3);

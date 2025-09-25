@@ -45,6 +45,10 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("entity.holder.cheeky_laugh");
 	public static final DeferredHolder<SoundEvent, SoundEvent> TOLLING_BELL = register("entity.ophanim.tolling_bell");
 	public static final DeferredHolder<SoundEvent, SoundEvent> GORGER_BITE = register("entity.gorger.bite");
+	public static final DeferredHolder<SoundEvent, SoundEvent> HEX_DEATH = register("entity.hex.death");
+	public static final DeferredHolder<SoundEvent, SoundEvent> HEX_AMBIENT = register("entity.hex.ambient");
+	public static final DeferredHolder<SoundEvent, SoundEvent> HEX_HURT = register("entity.hex.hurt");
+	public static final DeferredHolder<SoundEvent, SoundEvent> HEX_CHARGE = register("entity.hex.charge");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_BREAK = register("item.egg_sac.break");
 	public static final DeferredHolder<SoundEvent, SoundEvent> EGG_SAC_THROW = register("item.egg_sac.throw");

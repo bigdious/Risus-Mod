@@ -54,6 +54,10 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ETERNAL_YOUTH_BREAK, SoundEvents.TURTLE_EGG_BREAK, "Eternal Youth releases");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.FORTUNE_TRIGGERED, SoundEvents.AMETHYST_BLOCK_RESONATE, "Fortune triggered");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HAIR_GROW, SoundEvents.SCULK_BLOCK_SPREAD, "Hair grows");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HEX_AMBIENT, SoundEvents.VEX_AMBIENT, "Hex hexes");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HEX_CHARGE, SoundEvents.VEX_CHARGE, "Hex charges");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HEX_DEATH, SoundEvents.VEX_DEATH, "Hex dies");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.HEX_HURT, SoundEvents.VEX_HURT, "Hex hurts");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LITTER_LAY_EXCREMENT, SoundEvents.CHICKEN_EGG, "Litter excretes");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover impregnates");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MAW_GUTS_SHATTER, SoundEvents.WITHER_BREAK_BLOCK, "Gorger Guts break");

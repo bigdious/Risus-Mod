@@ -223,6 +223,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.EMBODIMENT_OF_COURTSHIP, "Embodiment of Courtship");
 		this.addItem(RisusItems.EMBODIMENT_OF_DEVOTION, "Embodiment of Devotion");
 		this.addItem(RisusItems.EMBODIMENT_OF_INTIMACY, "Embodiment of Intimacy");
+		this.addItem(RisusItems.EMBODIMENT_OF_LANGUISH, "Embodiment of Languish");
 		this.addItem(RisusItems.ENDLESS_PEARL, "Endless Pearl");
 		this.addItem(RisusItems.ESSENCE_OF_GLUTTONY, "Essence of Gluttony");
 		this.addItem(RisusItems.ESSENCE_OF_GREED, "Essence of Greed");

@@ -287,6 +287,7 @@ public class RisusTab {
 				output.accept(RisusItems.EMBODIMENT_OF_COURTSHIP.get());
 				output.accept(RisusItems.EMBODIMENT_OF_DEVOTION.get());
 				output.accept(RisusItems.EMBODIMENT_OF_INTIMACY.get());
+				output.accept(RisusItems.EMBODIMENT_OF_LANGUISH.get());
 			}).build());
 
 	private static void generateInstrumentTypes(CreativeModeTab.Output output, HolderLookup<Instrument> instruments, Item item, TagKey<Instrument> instrument, CreativeModeTab.TabVisibility tabVisibility

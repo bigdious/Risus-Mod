@@ -113,6 +113,42 @@
     ],
     "subtitle": "subtitles.risus.entity.gorger.bite"
   },
+  "entity.hex.ambient": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.vex.ambient"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hex.ambient"
+  },
+  "entity.hex.charge": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.vex.charge"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hex.charge"
+  },
+  "entity.hex.death": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.vex.death"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hex.death"
+  },
+  "entity.hex.hurt": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.vex.hurt"
+      }
+    ],
+    "subtitle": "subtitles.risus.entity.hex.hurt"
+  },
   "entity.holder.cheeky_laugh": {
     "sounds": [
       "risus:entity/holder/cheeky_laugh"

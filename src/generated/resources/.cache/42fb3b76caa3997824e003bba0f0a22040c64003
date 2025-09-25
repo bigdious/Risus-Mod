@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-24T15:40:20.2437396	Risus Item Models
+// 1.21.1	2025-09-25T16:55:37.7471341	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -85,6 +85,7 @@ cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banne
 2c0a81f02b99ae4fcec84b37b27aaad58ba25da3 assets/risus/models/item/embodiment_of_courtship.json
 435c93c5458c5f22825e13a357153b237b7cdf7f assets/risus/models/item/embodiment_of_devotion.json
 3f7e71feda15d609afabe97f25178e1996b279e1 assets/risus/models/item/embodiment_of_intimacy.json
+4dc501e0aca46864da5d111d7783a7ed2f91bec9 assets/risus/models/item/embodiment_of_languish.json
 f5b84446bcadae8e3f9a941e9bae0fada7f52822 assets/risus/models/item/endless_pearl.json
 747d5f97278a0666b0e362fe3f6b01efa337a064 assets/risus/models/item/engraved_basalt.json
 9e84a0a1212d608680da772ba45396dba5218b37 assets/risus/models/item/essence_of_gluttony.json

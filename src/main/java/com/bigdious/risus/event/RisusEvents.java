@@ -62,8 +62,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::stoolDiesOnDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::explodeStick);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::fireScythe);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::cindergleeScythe);
+		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::fireCinderScythes);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::soulScythe);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::hurtWings);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::getWaxedRisusStyle);

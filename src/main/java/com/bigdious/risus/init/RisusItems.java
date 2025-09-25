@@ -94,6 +94,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> EMBODIMENT_OF_INTIMACY = ITEMS.register("embodiment_of_intimacy", () -> new RisusSpawnItem (RisusEntities.LICKER.get() , new Item.Properties().rarity(BLOOD)));
 	public static final DeferredItem<Item> EMBODIMENT_OF_DEVOTION = ITEMS.register("embodiment_of_devotion", () -> new RisusSpawnItem (RisusEntities.STALKER.get() , new Item.Properties().rarity(BLOOD)));
 	public static final DeferredItem<Item> EMBODIMENT_OF_COURTSHIP = ITEMS.register("embodiment_of_courtship", () -> new RisusSpawnItem (RisusEntities.SINGER.get() , new Item.Properties().rarity(BLOOD)));
+	public static final DeferredItem<Item> EMBODIMENT_OF_LANGUISH = ITEMS.register("embodiment_of_languish", () -> new RisusSpawnItem (RisusEntities.HEX.get() , new Item.Properties().rarity(BLOOD)));
 
 
 	//PSEUDO BLOCK ITEMS
