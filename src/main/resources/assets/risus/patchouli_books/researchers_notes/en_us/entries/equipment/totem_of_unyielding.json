@@ -7,8 +7,7 @@
     {
       "type": "risus:alterationtemplate1",
       "header": "Totem of Unyielding",
-      "input1": "minecraft:totem_of_undying",
-      "output1": "risus:totem_of_unyielding",
+      "recipe": "risus:alteration/totem_of_unyielding",
       "text": "The Totem of Undying can be altered into a Totem of Unyielding. The resulting totem acts similarly to the original, where it activates during the user's death. However, the unyielding one doesn't fully prevent death, instead it delays it by ten seconds. This Destined Death cannot be avoided, not even with an Undying totem, but it can be "
     },
     {

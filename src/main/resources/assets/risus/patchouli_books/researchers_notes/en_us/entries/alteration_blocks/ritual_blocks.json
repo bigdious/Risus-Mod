@@ -7,10 +7,8 @@
     {
       "type": "risus:alterationtemplate2",
       "header": "Ritual Blocks",
-      "input1": "minecraft:black_glazed_terracotta",
-      "output1": "risus:curved_ritual_block",
-      "input2": "minecraft:basalt",
-      "output2": "risus:engraved_basalt",
+      "recipe": "risus:alteration/curved_ritual_block",
+      "recipe2": "risus:alteration/engraved_basalt",
       "text": "Attained by altering Black Glazed Terracotta, Curved and Linear Ritual Blocks offer a much grander design, ideal for ritualistic needs. Engraved Basalt - which is attained from altering Basalt - can further expand this palette."
     },
     {

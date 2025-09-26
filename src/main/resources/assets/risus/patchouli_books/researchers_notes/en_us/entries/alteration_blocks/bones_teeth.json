@@ -11,10 +11,8 @@
     {
       "type": "risus:alterationtemplate2",
       "header": "Fossils",
-      "input1": "minecraft:bone_block",
-      "output1": "risus:fossil",
-      "input2": "risus:full_bone_block",
-      "output2": "risus:full_fossil",
+      "recipe": "risus:alteration/fossil",
+      "recipe2": "risus:alteration/full_fossil",
       "text": "Lastly, by throwing Bone Blocks into an Alteration Catalyst, Fossils can be acquired. These share the same malleability, so stairs, slabs, walls and Full versions of these are all possible."
     },
     {

@@ -7,8 +7,7 @@
     {
       "type": "risus:alterationtemplate1",
       "header": "Organic Matter",
-      "input1": "minecraft:rotten_flesh",
-      "output1": "risus:organic_matter",
+      "recipe": "risus:alteration/organic_matter",
       "text": "Inbetween the remains and the flesh of the Risus is Organic Matter - a perfect mix of both. It can also be viewed as the primal form of Risus: a paradoxical fleshy matter that is simultaneously alive, 'existentially burning' and fossilizing. As such, it can be used to mend or propagate other parts of the Risus."
     },
     {

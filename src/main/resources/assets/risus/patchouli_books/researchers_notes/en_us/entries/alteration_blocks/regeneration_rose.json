@@ -7,8 +7,7 @@
     {
       "type": "risus:alterationtemplate1",
       "header": "Regeneration Rose",
-      "input1": "minecraft:wither_rose",
-      "output1": "risus:regen_rose",
+      "recipe": "risus:alteration/regen_rose",
       "text": "By altering a Wither Rose, a Regeneration Rose can be obtained. As its name implies, it applies Regeneration to any creature that touches it."
     },
     {

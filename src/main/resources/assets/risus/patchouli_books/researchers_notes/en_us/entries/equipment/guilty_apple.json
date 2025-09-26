@@ -7,8 +7,7 @@
     {
       "type": "risus:alterationtemplate1",
       "header": "Guilty Apple",
-      "input1": "minecraft:golden_apple",
-      "output1": "risus:guilty_apple",
+      "recipe": "risus:alteration/guilty_apple",
       "text": "Golden Apples can be altered into Guilty Apples. When consumed, these cause the Pleasure state which quickly breaks down the body while also making the control of it difficult. By refining it through brewing, it's possible to change this effect into Mating Frenzy."
     },
     {

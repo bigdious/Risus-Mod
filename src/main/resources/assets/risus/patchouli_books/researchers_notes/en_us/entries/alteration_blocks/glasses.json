@@ -7,8 +7,7 @@
     {
       "type": "risus:alterationtemplate1",
       "header": "Containment Glass",
-      "input1": "minecraft:glass",
-      "output1": "risus:containment_glass",
+      "recipe": "risus:alteration/containment_glass",
       "text": "Altering Glass will result in Containment Glass - a special, hollowed out version of glass. It can hold liquid inside of it, including Water, Lava and Blood. It is also slightly sturdier than normal glass and can therefore be harvested without the need for Silk Touch."
     },
     {
