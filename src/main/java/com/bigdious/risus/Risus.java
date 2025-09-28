@@ -11,10 +11,7 @@ import com.bigdious.risus.data.tags.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusDataMaps;
-import com.bigdious.risus.network.CreateCritParticlePacket;
-import com.bigdious.risus.network.OpenBookPacket;
-import com.bigdious.risus.network.SummonGreatnessPacket;
-import com.bigdious.risus.network.UnyieldingTotemPacket;
+import com.bigdious.risus.network.*;
 import com.google.common.reflect.Reflection;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
@@ -97,6 +94,7 @@ public class Risus {
 		registrar.playToClient(UnyieldingTotemPacket.TYPE, UnyieldingTotemPacket.STREAM_CODEC, UnyieldingTotemPacket::handle);
 		registrar.playToServer(OpenBookPacket.TYPE, OpenBookPacket.STREAM_CODEC,(payload, context) -> OpenBookPacket.handle(context));
 		registrar.playToServer(SummonGreatnessPacket.TYPE, SummonGreatnessPacket.STREAM_CODEC,(payload, context) -> SummonGreatnessPacket.handle(context));
+		registrar.playToClient(SyncCommonConfigPacket.TYPE, SyncCommonConfigPacket.STREAM_CODEC, SyncCommonConfigPacket::handle);
 	}
 
 	public void registerTypes(BlockEntityTypeAddBlocksEvent event) {
