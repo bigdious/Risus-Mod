@@ -73,8 +73,7 @@ public class Angel extends Monster {
 		this.targetSelector.addGoal(1, new YIncludedNearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
 			entity -> !entity.isInvulnerable() &&
 				!(entity instanceof ArmorStand) &&
-				!(entity.getType().is(RisusTags.Entities.OFFSPRING)) &&
-				!(entity.getType().is(RisusTags.Entities.BELOVED))
+				!(entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS))
 		));
 	}
 

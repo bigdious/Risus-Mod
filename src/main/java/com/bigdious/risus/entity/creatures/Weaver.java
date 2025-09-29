@@ -99,7 +99,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new WeaverHurtByTargetGoal(this).setAlertOthers());
-		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof QuestionMark) && !entity.getType().is(RisusTags.Entities.OFFSPRING) && !entity.getType().is(RisusTags.Entities.BELOVED)));
+		this.targetSelector.addGoal(2, new WeaverNeastAttackableGoal(this, LivingEntity.class, true, entity -> !(entity instanceof ArmorStand) && !(entity instanceof QuestionMark) && !entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)));
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
 	}
 

@@ -62,8 +62,7 @@ public class BabySpider extends Monster {
 		this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true,
 			entity -> !(entity instanceof ArmorStand)
-				&& !(entity.getType().is(RisusTags.Entities.OFFSPRING))
-				&& !(entity.getType().is(RisusTags.Entities.BELOVED))
+				&& !(entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS))
 				&& !(entity instanceof BabySpider)
 				&& !(entity instanceof Spider)));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Animal.class, true));

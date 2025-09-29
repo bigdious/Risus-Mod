@@ -23,7 +23,9 @@ public class BloodcloggedEffect extends MobEffect {
 
 	@Override
 	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-		if (entity.isAlive() && !(entity.getType().is(RisusTags.Entities.OFFSPRING))) {
+		if (entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)) {
+			entity.removeEffect(RisusMobEffects.BLOODCLOGGED);
+		} else if (entity.isAlive()) {
 			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && entity.getMaxHealth()>entity.getHealth()) {
 				entity.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, entity.getEffect(RisusMobEffects.BLOODCLOGGED).getDuration(), entity.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier()+1, false, false, true));
 			}

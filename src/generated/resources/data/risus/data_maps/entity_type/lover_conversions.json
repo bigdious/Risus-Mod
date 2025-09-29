@@ -8,6 +8,9 @@
     },
     "minecraft:spider": {
       "convert_to": "risus:licker"
+    },
+    "minecraft:vex": {
+      "convert_to": "risus:hex"
     }
   }
 }

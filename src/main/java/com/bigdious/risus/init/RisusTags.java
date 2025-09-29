@@ -97,6 +97,7 @@ public class RisusTags {
 	public static class Entities {
 		public static final TagKey<EntityType<?>> OFFSPRING = create("offspring");
 		public static final TagKey<EntityType<?>> BELOVED = create("beloved");
+		public static final TagKey<EntityType<?>> OFFSPRINGS_AND_BELOVEDS = create("offsprings_and_beloveds");
 		public static final TagKey<EntityType<?>> CANT_BE_STOLEN_FROM = create("cant_be_stolen_from");
 		public static final TagKey<EntityType<?>> BREAKS_DEPTH_VASES = create("breaks_depth_vases");
 		public static final TagKey<EntityType<?>> YOUTH_BANNED = create("youth_banned");

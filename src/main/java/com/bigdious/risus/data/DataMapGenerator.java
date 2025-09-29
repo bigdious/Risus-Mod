@@ -32,5 +32,6 @@ public class DataMapGenerator extends DataMapProvider {
 		conversions.add(EntityType.CREEPER.builtInRegistryHolder(), new LoverConversion(RisusEntities.STALKER.get()), false);
 		conversions.add(EntityType.ENDERMAN.builtInRegistryHolder(), new LoverConversion(RisusEntities.SINGER.get()), false);
 		conversions.add(EntityType.SPIDER.builtInRegistryHolder(), new LoverConversion(RisusEntities.LICKER.get()), false);
+		conversions.add(EntityType.VEX.builtInRegistryHolder(), new LoverConversion(RisusEntities.HEX.get()), false);
 	}
 }

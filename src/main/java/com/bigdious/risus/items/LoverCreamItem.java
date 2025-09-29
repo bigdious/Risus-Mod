@@ -5,6 +5,7 @@ import com.bigdious.risus.init.RisusDataMaps;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -45,7 +46,7 @@ public class LoverCreamItem extends Item {
 		return InteractionResult.PASS;
 	}
 
-private <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
+public <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
 	boolean flag = true;
 	if (EventHooks.canLivingConvert(from, to, (timer) -> {})) {
 		if (level.getDifficulty() != Difficulty.HARD && level.random.nextBoolean()) {
@@ -64,6 +65,8 @@ private <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T
 			for (int i = 0; i < 10; ++i) {
 				level.sendParticles(ParticleTypes.HEART, from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
 				level.sendParticles(RisusParticles.RISUS_SOUL_PARTICLE.get(), from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.0);
+				level.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE)), from.getRandomX(0.5), from.getRandomY(), from.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.2);
+
 			}
 			flag = false;
 		}

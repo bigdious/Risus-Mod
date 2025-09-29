@@ -36,9 +36,14 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			.add(RisusEntities.WEAVER.get())
 		;
 		tag(RisusTags.Entities.BELOVED)
-			.add(RisusEntities.LICKER.get())
-			.add(RisusEntities.SINGER.get())
-			.add(RisusEntities.STALKER.get())
+			.add(RisusEntities.LICKER.get(),
+				RisusEntities.SINGER.get(),
+				RisusEntities.HEX.get(),
+				RisusEntities.STALKER.get())
+		;
+		tag(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)
+			.addTag(RisusTags.Entities.BELOVED)
+			.addTag(RisusTags.Entities.OFFSPRING)
 		;
 		tag(RisusTags.Entities.CANT_BE_STOLEN_FROM)
 			.add(RisusEntities.HOLDER.get())

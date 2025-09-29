@@ -19,7 +19,7 @@ public class BloodFluidBlock extends LiquidBlock {
 
 	@Override
 	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-		if (entity.isAlive() && entity instanceof LivingEntity livingEntity && !(livingEntity.getType().is(RisusTags.Entities.OFFSPRING))) {
+		if (entity.isAlive() && entity instanceof LivingEntity livingEntity && !(livingEntity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS))) {
 			if (livingEntity.getAttribute(Attributes.MAX_HEALTH) != null && livingEntity.getAttribute(Attributes.MAX_HEALTH).getValue()>livingEntity.getHealth()) {
 			livingEntity.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 40, (int)livingEntity.getMaxHealth()-(int)livingEntity.getHealth()-1, false, false, true));
 			}
