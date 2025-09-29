@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:item",
-      "item": "#input1",
+      "item": "#input",
       "x": 14,
       "y": 18
     },
@@ -21,7 +21,7 @@
     },
     {
       "type": "patchouli:item",
-      "item": "#output1",
+      "item": "#output",
       "x": 86,
       "y": 18,
       "link_recipe": true

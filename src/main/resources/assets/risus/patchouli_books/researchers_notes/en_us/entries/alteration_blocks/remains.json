@@ -11,13 +11,10 @@
     {
       "type": "risus:alterationtemplate3",
       "header": "Alteration",
-      "input1": "minecraft:netherrack",
-      "output1": "risus:smiling_remains",
-      "input2": "minecraft:soul_soil",
-      "output2": "risus:ashen_remains",
-      "input3": "minecraft:glow_lichen",
-      "output3": "risus:spreading_remains",
-      "text": "These can be obtained by altering Netherrack, Soul Soil and Glow Lichen respectively. They can also serve as fuel in furnaces."
+      "recipe": "risus:alteration/smiling_remains",
+      "recipe2": "risus:alteration/ashen_remains",
+      "recipe3": "risus:alteration/spreading_remains",
+      "text": "These can be obtained by altering Netherrack, Soul Sand or Soil and Glow Lichen respectively. They can also serve as fuel in furnaces."
     }
   ]
 }
