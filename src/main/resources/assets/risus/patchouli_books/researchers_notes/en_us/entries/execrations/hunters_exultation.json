@@ -1,0 +1,17 @@
+{
+  "name": "Hunter's Exultation",
+  "icon": "minecraft:diamond_sword",
+  "category": "risus:execrations",
+  "sortnum": 5,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Smite$(), $(5)Bane of Arthropods$() or $(5)Impaling$(), $(4)Hunter's Exultation$() greatly increases damage against enemies that are undead, arthropods or aquatic, in return decreasing the base damage dealt against everything else. Maximum level is $(4)V$() and it conflicts with $(5)Sharpness$(), $(5)Smite$(), $(5)Bane of Arthropods$(), $(5)Impaling$() and $(4)Xenophobia$(). Hunter's Exultation represents a more generallly useable version of its original enchantments, yet also far more limited than something like Sharpness."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "usable version of its original enchantments, yet still more limited than something like Sharpness."
+    }
+  ]
+}

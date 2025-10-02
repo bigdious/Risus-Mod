@@ -1,0 +1,13 @@
+{
+  "name": "Xenophobia",
+  "icon": "minecraft:diamond_sword",
+  "category": "risus:execrations",
+  "sortnum": 4,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Sharpness$(), $(4)Xenophobia$() greatly increases damage against enemies that aren't undead, arthropods or aquatic. Maximum level is $(4)V$() and it conflicts with $(5)Sharpness$(), $(5)Smite$(), $(5)Bane of Arthropods$(), $(5)Impaling$() and $(4)Hunter's Exultation$(). While Sharpness is better for general use, Xenophobia still has its use cases, just like any other specialized damage enchantment."
+    }
+  ]
+}

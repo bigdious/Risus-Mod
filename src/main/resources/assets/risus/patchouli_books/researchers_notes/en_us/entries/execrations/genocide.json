@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": ""
+      "text": "Altered from $(5)Sweeping Edge$(), $(4)Genocide$() makes the weapon's sweeping range increase by a block with every level. The damage of the sweeping attack is not increased however, nor can it be used with $(5)Sweeping Edge$(), just like how all Execrations conflict with their origin. Maximum level is $(4)III$() and it is most effective on Scythes."
     }
   ]
 }
