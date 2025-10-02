@@ -1,0 +1,18 @@
+{
+  "name": "Gravity Well",
+  "icon": "minecraft:fishing_rod",
+  "category": "risus:execrations",
+  "sortnum": 14,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Lure$(), $(4)Gravity Well$() has a much higher chance of pulling in a catch, but also gives a chance for an implosion upon trying to reel it in, which will instead pull in any entities near the hook, including the user. Maximum level is $(4)III$() and it conflicts with $(5)Lure$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It does lower the delay between catches more than Lure would, but makes it nearly impossible to have a relaxing fishing session. It can often cause the user to meet face to face with a dangerous creature that also got pulled in."
+    }
+  ]
+}

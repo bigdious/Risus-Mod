@@ -1,0 +1,18 @@
+{
+  "name": "Preservation",
+  "icon": "minecraft:bow",
+  "category": "risus:execrations",
+  "sortnum": 10,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Infinity$(), $(4)Preservation$() gives a coin-flip chance to not consume ammo. Maximum level is $(4)I$() and it conflicts with $(5)Infinity$() and $(5)Mending$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Its biggest benefit is that - unlike Infinity - it does work with Tipped Arrows."
+    }
+  ]
+}

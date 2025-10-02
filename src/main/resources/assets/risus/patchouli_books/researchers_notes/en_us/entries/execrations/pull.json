@@ -1,0 +1,18 @@
+{
+  "name": "Pull",
+  "icon": "minecraft:bow",
+  "category": "risus:execrations",
+  "sortnum": 9,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Punch$(), $(4)Pull$() attracts the target towards the user, distance and level increasing the power. Maximum level is $(4)II$() and it conflicts with $(5)Punch$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It can be effective at pulling a fleeing enemy back, or dooming them into a pitfall."
+    }
+  ]
+}

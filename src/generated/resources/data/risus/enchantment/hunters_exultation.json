@@ -84,6 +84,6 @@
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/weapon",
+  "supported_items": "#risus:sword_and_trident_enchantable",
   "weight": 1
 }

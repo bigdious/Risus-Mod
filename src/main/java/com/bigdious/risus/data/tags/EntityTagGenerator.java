@@ -124,6 +124,7 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				,EntityType.SQUID
 				,EntityType.GLOW_SQUID
 				,EntityType.DROWNED
+				,EntityType.ARMOR_STAND
 			)
 		;
 

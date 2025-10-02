@@ -1,0 +1,18 @@
+{
+  "name": "Defiance",
+  "icon": "minecraft:trident",
+  "category": "risus:execrations",
+  "sortnum": 7,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Loyalty$(), $(4)Defiance$() increases the velocity and the damage of the thrown Trident. The Trident will also glow. Maximum level is $(4)III$() and it conflicts with $(5)Riptide$(), $(5)Loyalty$() and $(4)Eruption$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "While the damage dealt is lower than a fully enchanted Bow, and it's also more cumbersome to use, Defiance shines best when paired with Loyalty or Hunter's Exultation, heavily increasing its potential. Additionally, pairing it with Channeling or Empyrean Conduit will also work well."
+    }
+  ]
+}

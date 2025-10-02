@@ -1,0 +1,18 @@
+{
+  "name": "Avaricious Ambit",
+  "icon": "minecraft:diamond_pickaxe",
+  "category": "risus:execrations",
+  "sortnum": 15,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Silk Touch$(), $(4)Avaricious Ambit$() increases the range of the user, while decreasing their attacking speed. Maximum level is $(4)I$() and it conflicts with $(5)Silk Touch$() and $(5)Fortune$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "The ability to interact with blocks at range is almost indispensable. Meanwhile, the higher attack range does open up some combat options for tools, especially for Axes. Although, the attack speed loss is not negligible. Using it on Hoes, with their speed, can be a pretty effective way to push enemies away. "
+    }
+  ]
+}

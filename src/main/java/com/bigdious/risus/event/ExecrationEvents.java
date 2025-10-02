@@ -174,6 +174,10 @@ public class ExecrationEvents {
 					entity.moveTo(event.getHookEntity().getX(), event.getHookEntity().getY(), event.getHookEntity().getZ());
 					Vec3 vec3 = (new Vec3(player.getX() - event.getHookEntity().getX(), player.getY() - event.getHookEntity().getY(), player.getZ() - event.getHookEntity().getZ())).scale(0.2);
 					entity.setDeltaMovement(entity.getDeltaMovement().add(vec3));
+					if (entity instanceof ThrownTrident trident) {
+						trident.pickup = AbstractArrow.Pickup.ALLOWED;
+						trident.getPickupItemStackOrigin().setDamageValue(200);
+					}
 				}
 			}
 		}

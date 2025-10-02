@@ -7,7 +7,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Altered from $(5)Fire Aspect$(), $(4)Fervour$() makes the user emit flames upon hitting an enemy. These flames will set on fire the user and all entities around them, with level increasing the range and duration of the effect. Maximum level is $(4)II$() and it conflicts with $(5)Fire Aspect$(). It is best used alongside methods of applying Flame Frailty or with equipment that benefits from being on fire."
+      "text": "Altered from $(5)Fire Aspect$(), $(4)Fervour$() makes the user emit flames upon hitting an enemy. These flames will set on fire the user and all entities around them, with level increasing the range and duration of the effect. Maximum level is $(4)II$() and it conflicts with $(5)Fire Aspect$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It is best used alongside methods of applying Flame Frailty, or with equipment that benefits from being on fire."
     }
   ]
 }

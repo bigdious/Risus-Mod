@@ -180,7 +180,10 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(EnchantmentTags.RIPTIDE_EXCLUSIVE).add(
-			Execrations.ERUPTION
+			Execrations.ERUPTION,
+			Execrations.EMPYREAN_CONDUIT,
+			Execrations.DEFIANCE,
+			Enchantments.RIPTIDE
 		);
 
 		this.tag(RisusTags.Enchantments.ALTERABLE_ENCHANTS).add(

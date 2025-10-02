@@ -1,0 +1,18 @@
+{
+  "name": "Maritime Snare",
+  "icon": "minecraft:fishing_rod",
+  "category": "risus:execrations",
+  "sortnum": 13,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Luck Of The Sea$(), $(4)Maritime Snare$() enables the chance to fish out an aquatic creature alongside the usual fishing loot, with the level increasing the potential size of it. Maximum level is $(4)III$() and it conflicts with $(5)Luck Of The Sea$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "The occasional creatures can spice up an otherwise monotonous fishing session, with some of the possible catches being quite exotic, such as Guardians. If one wishes to obtain a specific creature, such as a Pufferfish, they may want to use a level I Maritime Snare, to shrink the possible pool. Level II includes medium sized creatures, and III has the larger ones within it too."
+    }
+  ]
+}

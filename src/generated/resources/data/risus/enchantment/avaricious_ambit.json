@@ -18,10 +18,20 @@
       {
         "amount": {
           "type": "minecraft:linear",
+          "base": 1.0,
+          "per_level_above_first": 1.0
+        },
+        "attribute": "minecraft:player.entity_interaction_range",
+        "id": "risus:execration.avaricious_ambit",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
           "base": -1.0,
           "per_level_above_first": -1.0
         },
-        "attribute": "minecraft:player.entity_interaction_range",
+        "attribute": "minecraft:generic.attack_speed",
         "id": "risus:execration.avaricious_ambit",
         "operation": "add_value"
       }

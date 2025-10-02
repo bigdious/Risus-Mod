@@ -75,7 +75,7 @@ public class Execrations {
 		HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
 
 		register(context, HUNTERS_EXULTATION, new Enchantment.Builder(Enchantment.definition(
-				items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+				items.getOrThrow(RisusTags.Items.SWORD_AND_TRIDENT_ENCHANTABLE),
 				items.getOrThrow(RisusTags.Items.SWORD_AND_TRIDENT_ENCHANTABLE),
 				1,
 				5,
@@ -89,7 +89,8 @@ public class Execrations {
 					EnchantmentEffectComponents.DAMAGE,
 					new AddValue(LevelBasedValue.perLevel(3F)),
 					LootItemEntityPropertyCondition.hasProperties(
-						LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
+						LootContext.EntityTarget.THIS,
+						EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
 					))
 				.withEffect(
 					EnchantmentEffectComponents.DAMAGE,
@@ -781,11 +782,20 @@ public class Execrations {
 					)
 				)
 				.withEffect(
+				EnchantmentEffectComponents.ATTRIBUTES,
+				new EnchantmentAttributeEffect(
+					ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.avaricious_ambit"),
+					Attributes.ENTITY_INTERACTION_RANGE,
+					LevelBasedValue.perLevel(1F),
+					AttributeModifier.Operation.ADD_VALUE
+					)
+				)
+				.withEffect(
 					EnchantmentEffectComponents.ATTRIBUTES,
 					new EnchantmentAttributeEffect(
 						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.avaricious_ambit"),
-						Attributes.ENTITY_INTERACTION_RANGE,
-						LevelBasedValue.perLevel(-1F),
+						Attributes.ATTACK_SPEED,
+						LevelBasedValue.perLevel(-0.5F),
 						AttributeModifier.Operation.ADD_VALUE
 					)
 

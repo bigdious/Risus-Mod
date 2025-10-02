@@ -1,0 +1,18 @@
+{
+  "name": "Eruption",
+  "icon": "minecraft:trident",
+  "category": "risus:execrations",
+  "sortnum": 6,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Riptide$(), $(4)Eruption$() allows the user to 'erupt' at the location the Trident lands, as long as the user is on fire. The eruption also ignites all enemies nearby. Maximum level is $(4)III$() and it conflicts with $(5)Riptide$(), $(5)Loyalty$(), $(5)Channeling$(), $(4)Defiance$() and $(4)Empyrean Conduit$(). "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Eruption is best suited for quick, high mobility combat, making it easier to jump behind shielded enemies or control distances. Therefore, it has an exceptional synergy with weapons that have the Fervour execration. It can also function well as a mobility option in the Nether."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Empyrean Conduit",
+  "icon": "minecraft:trident",
+  "category": "risus:execrations",
+  "sortnum": 8,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Channeling$(), $(4)Empyrean Conduit$() causes lightning to come down upon both the user and the enemy, as long as there is a view of the sky. Maximum level is $(4)I$() and it conflicts with $(5)Riptide$(), $(5)Channeling$() and $(4)Eruption$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "On top of working regardless of weather, Empyrean Conduit's lightning on the user can be used offensively too, since it still has its usual range of damage infliction; a crude and painful version of a sweeping attack, if you will..."
+    }
+  ]
+}

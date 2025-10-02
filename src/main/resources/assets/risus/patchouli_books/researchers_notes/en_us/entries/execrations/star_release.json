@@ -1,0 +1,18 @@
+{
+  "name": "Star Release",
+  "icon": "minecraft:crossbow",
+  "category": "risus:execrations",
+  "sortnum": 12,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Multishot$(), $(4)Star Release$() makes the user shoot in eight equally divided directions around them. Maximum level is $(4)I$() and it conflicts with $(5)Piercing$(), $(5)Multishot$() and $(4)Battering$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It is quite difficult to aim with, yet it can also be rather hard to miss."
+    }
+  ]
+}

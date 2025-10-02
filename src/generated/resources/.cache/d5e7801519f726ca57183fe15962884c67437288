@@ -1,11 +1,11 @@
-// 1.21.1	2025-09-22T21:47:41.2870527	Tags for minecraft:enchantment mod id risus
+// 1.21.1	2025-10-02T12:35:24.4410486	Tags for minecraft:enchantment mod id risus
 a5ecb1710034fe20ae476565a26be2e2f073728c data/minecraft/tags/enchantment/exclusive_set/armor.json
 dab77fbb49ab78146053334d61ccc54327d7f2c9 data/minecraft/tags/enchantment/exclusive_set/boots.json
 a16bd87f996d9b4d877b65da92755c5442c106b3 data/minecraft/tags/enchantment/exclusive_set/bow.json
 6ee79d6451cb1b2195498e69a5a6964cc9cff864 data/minecraft/tags/enchantment/exclusive_set/crossbow.json
 025844b4156bd55c0567e2f03c98eb1aba70dc16 data/minecraft/tags/enchantment/exclusive_set/damage.json
 36db2fb278ccf6fdfb0ce11ff1015acb57411d79 data/minecraft/tags/enchantment/exclusive_set/mining.json
-0ae0fd52fad882758a9f38992d5f3d7f2af00ad2 data/minecraft/tags/enchantment/exclusive_set/riptide.json
+3bda758e876c376f3e4f526ee3c22291b66fd400 data/minecraft/tags/enchantment/exclusive_set/riptide.json
 4d6b3077dc1c5cab62ed7e31adea8efb21bf040b data/risus/tags/enchantment/alterable_enchants.json
 9254c0b55c51ca4b22f8105f6fc10e8aad871f46 data/risus/tags/enchantment/boomstick_allowed_enchants.json
 89adb8efbd4ca78d240beab9b997ccd9e1df8a10 data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json

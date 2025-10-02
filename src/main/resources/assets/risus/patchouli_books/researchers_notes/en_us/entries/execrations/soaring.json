@@ -7,7 +7,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Altered from $(5)Knockback$(), $(4)Soaring$() shoots up any enemy hit, with level increasing height. The enemy also receives a short Slow Falling effect, negating fall damage. Maximum level is $(4)II$() and it conflicts with $(5)Knockback$(). While its primary use is controlling the enemy's movements, it can still be used alongside other 'weapons', such as placing a Bucket of Lava below the soaring enemy."
+      "text": "Altered from $(5)Knockback$(), $(4)Soaring$() shoots up any enemy hit, with level increasing height. The enemy also receives a short Slow Falling effect, negating fall damage. Maximum level is $(4)II$() and it conflicts with $(5)Knockback$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "While its primary use case is controlling the enemy's movements, it can still be used alongside other 'weapons', such as placing a Bucket of Lava below the soaring enemy."
     }
   ]
 }

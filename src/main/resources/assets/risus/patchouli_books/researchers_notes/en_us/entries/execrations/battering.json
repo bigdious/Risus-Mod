@@ -1,0 +1,18 @@
+{
+  "name": "Battering",
+  "icon": "minecraft:crossbow",
+  "category": "risus:execrations",
+  "sortnum": 11,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Piercing$(), $(4)Battering$() increases the damage dealt based on the amount of armor the enemy has. Maximum level is $(4)IV$() and it conflicts with $(5)Piercing$(), $(5)Multishot$() and $(4)Star Release$(). "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "When it comes to heavily armored targets, it can severely outperform other options damage-wise, but it's meaningless against unarmored ones."
+    }
+  ]
+}
