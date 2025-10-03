@@ -1,0 +1,18 @@
+{
+  "name": "Vigor",
+  "icon": "minecraft:diamond_chestplate",
+  "category": "risus:execrations",
+  "sortnum": 17,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Protection$(), $(4)Vigor$() Increases max health per level. Maximum level is $(4)IV$() and it conflicts with $(5)Protection$(), $(5)Fire Protection$(), $(5)Blast Protection$(), $(5)Projectile Protection$() and $(4)Elemental Deviation$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Vigor makes any armor act similarly to Skin Armor, becoming one with the user. The effect is a bit weaker than with Skin Armor and it locks out the possibility to combine the health increase with other 'protection enchantments'. It can still be a preferred choice for armors that have unique effects, such as the Sinner Robe pieces."
+    }
+  ]
+}

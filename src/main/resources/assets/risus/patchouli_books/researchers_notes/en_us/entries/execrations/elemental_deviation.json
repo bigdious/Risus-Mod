@@ -1,0 +1,18 @@
+{
+  "name": "Elemental Deviation",
+  "icon": "minecraft:diamond_chestplate",
+  "category": "risus:execrations",
+  "sortnum": 18,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Fire-$(), $(5)Blast-$() or $(5)Projectile Protection$(), $(4)Elemental Deviation$() increases resistance against projectiles, fires and explosions. The downside is that it nullifies the resistance of other armor pieces enchanted with Protection. Maximum level is $(4)IV$() and it conflicts with $(5)Protection$(), $(5)Fire Protection$(), $(5)Blast Protection$(), $(5)Projectile Protection$() and $(4)Vigor$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "While it does provide exceptional defense against the resisted damage types, Elemental Deviation's downside becomes apparent when wearing armor pieces that have Protection: Every level of Elemental Deviation will nullify the same amount of Protection levels on other pieces, making combinations of these two meaningless."
+    }
+  ]
+}

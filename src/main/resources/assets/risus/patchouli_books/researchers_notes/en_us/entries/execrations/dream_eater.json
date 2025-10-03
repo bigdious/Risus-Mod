@@ -1,0 +1,18 @@
+{
+  "name": "Dream Eater",
+  "icon": "minecraft:enchanted_book",
+  "category": "risus:execrations",
+  "sortnum": 24,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Mending$(), $(4)Dream Eater$() repairs the equipment directly with the user's experience, albeit at half the efficiency. Maximum level is $(4)I$() and it conflicts with $(5)Mending$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Even while being half as efficient as Mending at converting experience into durability repair, it can still be better due to the ease of use. On the other hand, it can be detrimental too, since it cannot be stopped from consuming the experience if the user has any. Unlike Mending, it does work alongside Infinity or Preservation."
+    }
+  ]
+}

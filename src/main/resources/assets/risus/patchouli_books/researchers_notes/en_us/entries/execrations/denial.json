@@ -1,0 +1,18 @@
+{
+  "name": "Denial",
+  "icon": "minecraft:enchanted_book",
+  "category": "risus:execrations",
+  "sortnum": 25,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(c)Curse Of Vanishing$(), $(4)Denial$() will kill the user when the equipment is about to break, repairing it slightly. Maximum level is $(4)I$() and it conflicts with $(c)Curse of Vanishing$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "If the user has a history of accidentally breaking their tools, this can be a sure-fire way to stop that from happening... assuming the tool is worth the user's life."
+    }
+  ]
+}

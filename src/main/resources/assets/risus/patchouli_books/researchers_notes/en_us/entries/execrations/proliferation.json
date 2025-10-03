@@ -1,0 +1,18 @@
+{
+  "name": "Proliferation",
+  "icon": "minecraft:diamond_boots",
+  "category": "risus:execrations",
+  "sortnum": 22,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Frost Walker$(), $(4)Proliferation$() turns soils and rocks into Ashen Remains and Smiling Remains whenever crouching. Maximum level is $(4)II$() and it conflicts with $(5)Frost Walker$(), $(5)Depth Strider$() and $(4)Pyromania$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It can be quite detrimental when activated unintentionally, since it can damage builds or terrain. Yet, in any area where that does not matter, such as potentially the Nether, it can be quite optimal to use, alongside the Cackling Craze execration."
+    }
+  ]
+}

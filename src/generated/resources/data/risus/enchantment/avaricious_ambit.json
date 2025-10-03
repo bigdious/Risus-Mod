@@ -28,8 +28,8 @@
       {
         "amount": {
           "type": "minecraft:linear",
-          "base": -1.0,
-          "per_level_above_first": -1.0
+          "base": -0.5,
+          "per_level_above_first": -0.5
         },
         "attribute": "minecraft:generic.attack_speed",
         "id": "risus:execration.avaricious_ambit",

@@ -1,0 +1,18 @@
+{
+  "name": "Perpetuity",
+  "icon": "minecraft:diamond_chestplate",
+  "category": "risus:execrations",
+  "sortnum": 19,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(c)Curse Of Binding$(), $(4)Perpetuity$() makes the armor not only bind to the user, but it will remain bound even through death. Maximum level is $(4)I$() and it conflicts with $(c)Curse Of Binding$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "While the armor still gets bound to the user, it can be a preferred option over the base curse, if the user is able to revive after death, since it will remain on their person and will not be lost. Unlike curses, it can also be removed at a Grindstone."
+    }
+  ]
+}

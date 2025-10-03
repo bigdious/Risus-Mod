@@ -1,0 +1,18 @@
+{
+  "name": "Pyromania",
+  "icon": "minecraft:diamond_boots",
+  "category": "risus:execrations",
+  "sortnum": 21,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Depth Strider$(), $(4)Pyromania$() increases speed when on fire. Maximum level is $(4)III$() and it conflicts with $(5)Depth Strider$(), $(5)Frost Walker$() and $(4)Proliferation$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It is best used in the Nether or alongside the Fervour execration. Being affected by Existential Burn will also enable the speed boost."
+    }
+  ]
+}

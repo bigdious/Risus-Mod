@@ -1,0 +1,18 @@
+{
+  "name": "Agony",
+  "icon": "minecraft:diamond_chestplate",
+  "category": "risus:execrations",
+  "sortnum": 19,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Thorns$(), $(4)Agony$() adds a level-determined chance to reflect the attacker's damage whenever the user is hit, further increased by the amount of health the user is missing. The amount of damage the wearer takes in this instance is also increased by half. Maximum level is $(4)III$() and it conflicts with $(5)Thorns$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It can be extremely dangerous to use, as the increased damage taken can make nonlethal hits lethal. Although, if it's combined with strong healing methods or with revival items, it does become a viable method to take down strong enemies, dwarfing any other weapon in the process."
+    }
+  ]
+}

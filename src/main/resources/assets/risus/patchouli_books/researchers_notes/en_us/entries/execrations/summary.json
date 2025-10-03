@@ -6,23 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Below is a list of alterable Enchantments and their Execrations:$(br)- $(5)Sweeping Edge$()->$(br)     $(l:execrations/genocide)$(4)Genocide$()$(br)- $(5)Fire Aspect$()->$(br)     $(4)Fervour$()$(br)- $(5)Knockback$()->$(br)     $(4)Soaring$()$(br)- $(5)Sharpness$()->$(br)     $(4)Xenophobia$()$(br)- $(5)Smite$()->$(br)     $(4)Hunter's Exultation$()"
+      "text": "Below is a list of alterable Enchantments and their Execrations:$(br)- $(5)Sweeping Edge$()->$(br)     $(l:execrations/genocide)$(4)Genocide$()$(br)- $(5)Fire Aspect$()->$(br)     $(l:execrations/fervour)$(4)Fervour$()$(br)- $(5)Knockback$()->$(br)     $(l:execrations/soaring)$(4)Soaring$()$(br)- $(5)Sharpness$()->$(br)     $(l:execrations/xenophobia)$(4)Xenophobia$()$(br)- $(5)Smite$()->$(br)     $(l:execrations/hunters_exultation)$(4)Hunter's Exultation$()"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Bane Of Arthropods$()->$(br)     $(4)Hunter's Exultation$()$(br)- $(5)Impaling$()->$(br)     $(4)Hunter's Exultation$()$(br)- $(5)Riptide$()->$(br)     $(4)Eruption$()$(br)- $(5)Loyalty$()->$(br)     $(4)Defiance$()$(br)- $(5)Channeling$()->$(br)     $(4)Empyrean Conduit$()$(br)- $(5)Punch$()->$(br)     $(4)Pull$()$(br)- $(5)Infinity$()->$(br)     $(4)Preservation$()$(br)- $(5)Piercing$()->$(br)     $(4)Battering$()"
+      "text": "- $(5)Bane Of Arthropods$()->$(br)     $(l:execrations/hunters_exultation)$(4)Hunter's Exultation$()$(br)- $(5)Impaling$()->$(br)     $(l:execrations/hunters_exultation)$(4)Hunter's Exultation$()$(br)- $(5)Riptide$()->$(br)     $(l:execrations/eruption)$(4)Eruption$()$(br)- $(5)Loyalty$()->$(br)     $(l:execrations/defiance)$(4)Defiance$()$(br)- $(5)Channeling$()->$(br)     $(l:execrations/empyrean_conduit)$(4)Empyrean Conduit$()$(br)- $(5)Punch$()->$(br)     $(l:execrations/pull)$(4)Pull$()$(br)- $(5)Infinity$()->$(br)     $(l:execrations/preservation)$(4)Preservation$()$(br)- $(5)Piercing$()->$(br)     $(l:execrations/battering)$(4)Battering$()"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Multishot$()->$(br)     $(4)Star Release$()$(br)- $(5)Luck Of The Sea$()->$(br)     $(4)Maritime Snare$()$(br)- $(5)Lure$()->$(br)     $(4)Gravity Well$()$(br)- $(5)Silk Touch$()->$(br)     $(4)Avaricious Ambit$()$(br)- $(5)Efficiency$()->$(br)     $(4)Overload$()$(br)- $(5)Protection$()->$(br)     $(4)Vigor$()$(br)- $(5)Fire Protection$()->$(br)     $(4)Elemental Deviation$()$(br)- $(5)Blast Protection$()->$(br)     $(4)Elemental Deviation$()$(br)"
+      "text": "- $(5)Multishot$()->$(br)     $(l:execrations/star_release)$(4)Star Release$()$(br)- $(5)Luck Of The Sea$()->$(br)     $(l:execrations/maritime_snare)$(4)Maritime Snare$()$(br)- $(5)Lure$()->$(br)     $(l:execrations/gravity_well)$(4)Gravity Well$()$(br)- $(5)Silk Touch$()->$(br)     $(l:execrations/avaricious_ambit)$(4)Avaricious Ambit$()$(br)- $(5)Efficiency$()->$(br)     $(l:execrations/overload)$(4)Overload$()$(br)- $(5)Protection$()->$(br)     $(l:execrations/vigor)$(4)Vigor$()$(br)- $(5)Fire Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Blast Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Projectile Protection$()->$(br)     $(4)Elemental Deviation$()$(br)- $(5)Thorns$()->$(br)     $(4)Agony$()$(br)- $(5)Soul Speed$()->$(br)     $(4)Cackling Craze$()$(br)- $(5)Depth Strider$()->$(br)     $(4)Pyromaniac$()$(br)- $(5)Frost Walker$()->$(br)     $(4)Proliferation$()$(br)- $(5)Unbreaking$()->$(br)     $(4)Relocation$()$(br)- $(5)Mending$()->$(br)     $(4)Dream Eater$()$(br)- $(5)Curse Of Vanishing$()->$(br)     $(4)Denial$()$(br)"
+      "text": "- $(5)Projectile Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Thorns$()->$(br)     $(l:execrations/agony)$(4)Agony$()$(br)- $(c)Curse Of Binding$()->$(br)     $(l:execrations/perpetuity)$(4)Perpetuity$()$(br)- $(5)Soul Speed$()->$(br)     $(l:execrations/cackling_craze)$(4)Cackling Craze$()$(br)- $(5)Depth Strider$()->$(br)     $(l:execrations/pyromaniac)$(4)Pyromania$()$(br)- $(5)Frost Walker$()->$(br)     $(l:execrations/proliferation)$(4)Proliferation$()$(br)- $(5)Unbreaking$()->$(br)     $(l:execrations/relocation)$(4)Relocation$()$(br)- $(5)Mending$()->$(br)     $(l:execrations/dream_eater)$(4)Dream Eater$()$(br)"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Curse Of Binding$()->$(br)     $(4)Perpetuity"
+      "text": "- $(c)Curse Of Vanishing$()->$(br)     $(l:execrations/denial)$(4)Denial$()$(br)"
     }
   ]
 }

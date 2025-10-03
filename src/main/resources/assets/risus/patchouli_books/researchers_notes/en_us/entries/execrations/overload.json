@@ -1,0 +1,18 @@
+{
+  "name": "Overload",
+  "icon": "minecraft:diamond_pickaxe",
+  "category": "risus:execrations",
+  "sortnum": 16,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Efficiency$(), $(4)Overload$() offers an incredibly high mining speed, but gives an increasing chance for the materials dropped to get burned up. Maximum level is $(4)V$() and it conflicts with $(5)Efficiency$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "The mining speed given by Overload makes it ideal for clearing out large areas when there's no need for the harvested blocks. It is ill advised to use it for mining ores."
+    }
+  ]
+}
