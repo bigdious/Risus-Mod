@@ -240,6 +240,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.HAIR_FOLLICLES, "Hair Follicles");
 		this.addItem(RisusItems.HAND_OF_GREED, "Hand of Greed");
 		this.addItem(RisusItems.HEXHORN, "Hex Horn");
+		this.addItem(RisusItems.KILLJOY, "Killjoy");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
 		this.addItem(RisusItems.LITTER, "Litter");
 		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
@@ -575,7 +576,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
 		this.addAdvancement("angel", "Holy Grounds", "Trespass onto land protected by an Ophanim.");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
-		this.addAdvancement("lab", "Deep Core Fallout", "Approach a failed experiment");
+		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment.");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");
 		this.addAdvancement("parentmode", "Parent Mode: Dedicated", "Witness the creation of a Weaver Nest through the self-willed death of a memory fed Weaver.");
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");

@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-25T16:55:37.7471341	Risus Item Models
+// 1.21.1	2025-10-13T20:28:55.0014468	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -169,6 +169,8 @@ aad878b7457913a6719c76eae0e5e83556037af6 assets/risus/models/item/imitation_scal
 1b635f19448bfd519e2722f31b533e5ac8e0553c assets/risus/models/item/joyflame_campfire.json
 65728b6525f3ba04a06445ad79aec1b9b2f6a1ae assets/risus/models/item/joyflame_lantern.json
 816bfe10a7db7e9282ba581bbf14fb5ff3f3a256 assets/risus/models/item/joyflame_torch.json
+c3a46bb52d909e205ffb8e5264214dfbeda47355 assets/risus/models/item/killjoy.json
+80bfebceee15384832f82e975d39e972078753bb assets/risus/models/item/killjoy_base.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
 8daac144a17d077e66d0e9f4a31cd65445d1f806 assets/risus/models/item/laughing_stalk.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/licker_spawn_egg.json

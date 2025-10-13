@@ -65,22 +65,6 @@ public class Hex extends Vex {
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
 	}
 
-	@Override
-	public boolean doHurtTarget(Entity entity) {
-		if (super.doHurtTarget(entity)) {
-			if (entity instanceof LivingEntity living) {
-				int i = 3;
-				if (this.level().getDifficulty() == Difficulty.NORMAL) {
-					i = 5;
-				} else if (this.level().getDifficulty() == Difficulty.HARD) {
-					i = 8;
-				}
-				living.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, i * 20, 0), this);
-			}
-		}
-		return super.doHurtTarget(entity);
-	}
-
 	public void aiStep(){
 		super.aiStep();
 		if (this.level().isClientSide && this.tickCount % 15 == 0) {
@@ -91,7 +75,7 @@ public class Hex extends Vex {
 
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RisusItems.THOUSAND_BLADE.get()));
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RisusItems.KILLJOY.get()));
 		this.setDropChance(EquipmentSlot.MAINHAND, 0.0F);
 	}
 

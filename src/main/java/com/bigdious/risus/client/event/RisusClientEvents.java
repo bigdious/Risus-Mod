@@ -49,7 +49,6 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.client.renderer.entity.VexRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
@@ -119,9 +118,7 @@ public class RisusClientEvents {
 
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExburnHearts);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderDeathHearts);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderBloodcloggedHearts);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::summonGreatness);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
@@ -240,7 +237,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.ANGEL, AngelModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LICKER, LickerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BABY_SPIDER, BabySpiderModel::create);
-		event.registerLayerDefinition(RisusModelLayers.HEX, VexModel::createBodyLayer);
+		event.registerLayerDefinition(RisusModelLayers.HEX, HexModel::createBodyLayer);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
@@ -420,19 +417,13 @@ public class RisusClientEvents {
 		}
 	}
 
-	private static void renderExburnHearts(PlayerHeartTypeEvent event) {
+	private static void renderHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.EXBURN)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_EXBURN"));
 		}
-	}
-
-	private static void renderDeathHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.DESTINED_DEATH)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_DEATH"));
 		}
-	}
-
-	private static void renderBloodcloggedHearts(PlayerHeartTypeEvent event) {
 		if (event.getEntity().hasEffect(RisusMobEffects.BLOODCLOGGED)) {
 			event.setType(Gui.HeartType.valueOf("RISUS_BLOODCLOGGED"));
 		}

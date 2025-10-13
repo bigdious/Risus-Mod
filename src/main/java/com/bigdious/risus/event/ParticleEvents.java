@@ -13,39 +13,25 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
 public class ParticleEvents {
-	public static void addExBurnParticles(EntityTickEvent.Post event) {
+	public static void addParticles(EntityTickEvent.Post event) {
 		Entity entity = event.getEntity();
 		if (entity instanceof LivingEntity living) {
-			if (living.tickCount % 5 == 0 && living.hasEffect(RisusMobEffects.EXBURN)) {
-				if (living.level() instanceof ServerLevel serverLevel) {
+			if (living.tickCount % 5 == 0 && living.level() instanceof ServerLevel serverLevel) {
+				if (living.hasEffect(RisusMobEffects.EXBURN)) {
 					for (int i = 0; i < 2; i++) {
 						serverLevel.sendParticles(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 1, 0.0, 0.0, 0.0, 0);
 					}
 				}
-			}
-		}
-	}
-
-	public static void addDeathParticles(EntityTickEvent.Post event) {
-		Entity entity = event.getEntity();
-		if (entity instanceof LivingEntity living) {
-			if (living.tickCount % 5 == 0 && living.hasEffect(RisusMobEffects.DESTINED_DEATH)) {
-				if (living.level() instanceof ServerLevel serverLevel) {
+				if (living.hasEffect(RisusMobEffects.DESTINED_DEATH)) {
 					for (int i = 0; i < 2; i++) {
 						serverLevel.sendParticles(RisusParticles.DESTINED_DEATH_PARTICLE.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 1, 0.0, 0.0, 0.0, 0);
 					}
 				}
-			}
-		}
-	}
-
-
-	public static void addHearts(EntityTickEvent.Pre event) {
-		Entity entity = event.getEntity();
-		if (entity instanceof LivingEntity living) {
-			if (living.tickCount % 5 == 0 && living.hasEffect(RisusMobEffects.MATING_FRENZY)) {
-				if (living.level() instanceof ServerLevel serverLevel) {
+				if (living.hasEffect(RisusMobEffects.MATING_FRENZY)) {
 					serverLevel.sendParticles(ParticleTypes.HEART, living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 3, 0, 0, 0, 0);
+				}
+				if (living.hasEffect(RisusMobEffects.BLOODCLOGGED)) {
+						serverLevel.sendParticles(RisusParticles.FALLING_BLOOD.get(), living.getRandomX(0.5), living.getRandomY(), living.getRandomZ(0.5), 1, 0.0, 0.0, 0.0, 0);
 				}
 			}
 		}

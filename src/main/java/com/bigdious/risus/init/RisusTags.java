@@ -122,6 +122,7 @@ public class RisusTags {
 		public static final TagKey<Enchantment> FIRE_SCYTHE_ALLOWED_ENCHANTS = create("fire_scythe_allowed_enchants");
 		public static final TagKey<Enchantment> CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS = create("cinderglee_scythe_allowed_enchants");
 		public static final TagKey<Enchantment> CRESCENT_DISASTER_ALLOWED_ENCHANTS = create("crescent_disaster_allowed_enchants");
+		public static final TagKey<Enchantment> KILLJOY_ALLOWED_ENCHANTS = create("killjoy_allowed_enchants");
 		public static final TagKey<Enchantment> THOUSAND_BLADE_ALLOWED_ENCHANTS = create("thousand_blade_allowed_enchants");
 		public static final TagKey<Enchantment> TOOTHKNOCKER_ALLOWED_ENCHANTS = create("toothknocker_allowed_enchants");
 		public static final TagKey<Enchantment> BOOMSTICK_ALLOWED_ENCHANTS = create("boomstick_allowed_enchants");

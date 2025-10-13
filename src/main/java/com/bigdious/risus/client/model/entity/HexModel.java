@@ -15,7 +15,7 @@ import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.item.ItemStack;
 
 public class HexModel extends HierarchicalModel<Hex> implements ArmedModel {
-	//VanillaCopy from VexModel to get renderer working
+	//partial VanillaCopy from VexModel
 	private final ModelPart root;
 	private final ModelPart body;
 	private final ModelPart rightArm;
@@ -23,28 +23,42 @@ public class HexModel extends HierarchicalModel<Hex> implements ArmedModel {
 	private final ModelPart rightWing;
 	private final ModelPart leftWing;
 	private final ModelPart head;
+	private final ModelPart rightItem;
 
 	public HexModel(ModelPart root) {
 		super(RenderType::entityTranslucent);
-		this.root = root.getChild("root");
+		this.root = root;
 		this.body = this.root.getChild("body");
-		this.rightArm = this.body.getChild("right_arm");
-		this.leftArm = this.body.getChild("left_arm");
-		this.rightWing = this.body.getChild("right_wing");
-		this.leftWing = this.body.getChild("left_wing");
-		this.head = this.root.getChild("head");
+		this.rightArm = this.body.getChild("rightArm");
+		this.leftArm = this.body.getChild("leftArm");
+		this.rightWing = this.body.getChild("rightWing");
+		this.leftWing = this.body.getChild("leftWing");
+		this.rightItem = this.rightArm.getChild("rightItem");
+		this.head = this.body.getChild("head");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, -2.5F, 0.0F));
-		partdefinition1.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-2.5F, -5.0F, -2.5F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 20.0F, 0.0F));
-		PartDefinition partdefinition2 = partdefinition1.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 10).addBox(-1.5F, 0.0F, -1.0F, 3.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 16).addBox(-1.5F, 1.0F, -1.0F, 3.0F, 5.0F, 2.0F, new CubeDeformation(-0.2F)), PartPose.offset(0.0F, 20.0F, 0.0F));
-		partdefinition2.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(23, 0).addBox(-1.25F, -0.5F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(-0.1F)), PartPose.offset(-1.75F, 0.25F, 0.0F));
-		partdefinition2.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(23, 6).addBox(-0.75F, -0.5F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(-0.1F)), PartPose.offset(1.75F, 0.25F, 0.0F));
-		partdefinition2.addOrReplaceChild("left_wing", CubeListBuilder.create().texOffs(16, 14).mirror().addBox(0.0F, 0.0F, 0.0F, 0.0F, 5.0F, 8.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.5F, 1.0F, 1.0F));
-		partdefinition2.addOrReplaceChild("right_wing", CubeListBuilder.create().texOffs(16, 14).addBox(0.0F, 0.0F, 0.0F, 0.0F, 5.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, 1.0F, 1.0F));
+
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 10).addBox(-1.5F, -4.0F, -1.0F, 3.0F, 4.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 16).addBox(-1.5F, -3.0F, -1.0F, 3.0F, 5.0F, 2.0F, new CubeDeformation(-0.2F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-2.5F, -5.0F, -2.5F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F))
+			.texOffs(12, 12).addBox(-2.5F, -5.0F, -2.5F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.3F)), PartPose.offset(0.0F, -4.0F, 0.0F));
+
+		head.addOrReplaceChild("hoodTwo", CubeListBuilder.create().texOffs(0, 25).addBox(-3.0F, -2.0F, -1.5F, 4.0F, 4.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, -1.5F, 3.0F, -0.5672F, 0.0F, 0.0F));
+
+		PartDefinition rightArm = body.addOrReplaceChild("rightArm", CubeListBuilder.create().texOffs(23, 0).addBox(-1.25F, -0.5F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(-0.1F)), PartPose.offset(-1.75F, -3.75F, 0.0F));
+
+		rightArm.addOrReplaceChild("rightItem", CubeListBuilder.create(), PartPose.offset(-0.25F, 2.75F, 0.0F));
+
+		body.addOrReplaceChild("leftArm", CubeListBuilder.create().texOffs(23, 6).addBox(-0.75F, -0.5F, -1.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(-0.1F)), PartPose.offset(1.75F, -3.75F, 0.0F));
+
+		body.addOrReplaceChild("leftWing", CubeListBuilder.create().texOffs(16, 22).mirror().addBox(0.0F, 0.0F, 0.0F, 8.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.5F, -3.0F, 1.0F));
+
+		body.addOrReplaceChild("rightWing", CubeListBuilder.create().texOffs(16, 22).addBox(-8.0F, 0.0F, 0.0F, 8.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, -3.0F, 1.0F));
+
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
@@ -62,12 +76,12 @@ public class HexModel extends HierarchicalModel<Hex> implements ArmedModel {
 			this.body.xRot = 0.15707964F;
 		}
 
-		this.leftWing.yRot = 1.0995574F + Mth.cos(ageInTicks * 45.836624F * ((float)Math.PI / 180F)) * ((float)Math.PI / 180F) * 16.2F;
+		this.leftWing.yRot = 0.0995574F + Mth.cos(ageInTicks * 45.836624F * ((float)Math.PI / 180F)) * ((float)Math.PI / 180F) * 16.2F;
 		this.rightWing.yRot = -this.leftWing.yRot;
 		this.leftWing.xRot = 0.47123888F;
-		this.leftWing.zRot = -0.47123888F;
+		this.leftWing.zRot = -0.87123888F;
 		this.rightWing.xRot = 0.47123888F;
-		this.rightWing.zRot = 0.47123888F;
+		this.rightWing.zRot = 0.87123888F;
 	}
 
 	private void setArmsCharging(ItemStack rightHandItem, ItemStack leftHandItem, float p_265125_) {

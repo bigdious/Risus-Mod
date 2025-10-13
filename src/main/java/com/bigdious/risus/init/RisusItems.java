@@ -51,6 +51,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> HEXHORN = register("hexhorn", properties -> new HexhornItem(properties, InstrumentTags.GOAT_HORNS), () -> new Item.Properties().stacksTo(1).durability(256).rarity(BLOOD).fireResistant().component(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY));
 	public static final DeferredItem<Item> LUCKY_CHARM = register("lucky_charm", LuckyCharmItem::new, () -> new Item.Properties().durability(100).attributes(LuckyCharmItem.createLuckyCharmAttributes()));
 	public static final DeferredItem<Item> WRETCHED_CHARM = register("wretched_charm", WretchedCharmItem::new, () -> new Item.Properties().fireResistant().durability(100).attributes(WretchedCharmItem.createWretchedCharmAttributes()).rarity(BLOOD));
+	public static final DeferredItem<Item> KILLJOY = register("killjoy", properties -> new KilljoyItem(RisusToolMaterials.BLOODMETAL, properties), () -> new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(RisusToolMaterials.BLOODMETAL, 8, -3F)).rarity(BLOOD));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));

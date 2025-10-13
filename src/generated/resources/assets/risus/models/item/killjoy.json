@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/killjoy_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/killjoy_held",
+      "textures": {
+        "texture": "risus:item/killjoy"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/killjoy_held",
+      "textures": {
+        "texture": "risus:item/killjoy"
+      }
+    },
+    "head": {
+      "parent": "risus:item/killjoy_held",
+      "textures": {
+        "texture": "risus:item/killjoy"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/killjoy_held",
+      "textures": {
+        "texture": "risus:item/killjoy"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/killjoy_held",
+      "textures": {
+        "texture": "risus:item/killjoy"
+      }
+    }
+  }
+}
