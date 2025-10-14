@@ -2,6 +2,7 @@ package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodSlash;
+import com.bigdious.risus.init.Execrations;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
@@ -75,8 +76,9 @@ public class ThousandBladeItem extends SwordItem {
 			if (i >= 20) {
 				if (!level.isClientSide()) {
 					int multishot = stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Enchantments.MULTISHOT));
-					this.shoot((ServerLevel) level, player, player.getUsedItemHand(), stack, multishot);
-					if (!player.isCreative()) player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1 + 2 * multishot);
+					int starRelease = stack.getEnchantmentLevel(level.registryAccess().holderOrThrow(Execrations.STAR_RELEASE));
+					this.shoot((ServerLevel) level, player, player.getUsedItemHand(), stack, multishot, starRelease);
+					if (!player.isCreative()) player.hurt(entity.damageSources().source(RisusDamageTypes.VAMPIRISM), 1 + 2 * multishot + 4 * starRelease);
 				}
 				level.playSound(null, entity, RisusSoundEvents.THOUSAND_BLADE_SLASH.get(), SoundSource.NEUTRAL, 1F, 0.6F);
 				player.awardStat(Stats.ITEM_USED.get(this));
@@ -84,8 +86,8 @@ public class ThousandBladeItem extends SwordItem {
 		}
 	}
 
-	protected void shoot(ServerLevel level, LivingEntity living, InteractionHand hand, ItemStack stack, int multishot) {
-		float arrowSize = 1 + multishot * 2;
+	protected void shoot(ServerLevel level, LivingEntity living, InteractionHand hand, ItemStack stack, int multishot, int starRelease) {
+		float arrowSize = 1 + multishot * 2 + starRelease * 7;
 		float f = EnchantmentHelper.processProjectileSpread(level, stack, living, 0.0F);
 		float f1 = arrowSize == 1 ? 0.0F : 2.0F * f / arrowSize - 1;
 		float f2 = ((arrowSize - 1) % 2) * f1 / 2.0F;

@@ -337,6 +337,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.book_button_press", "Press the %s key to open while in the inventory.");
 		this.add("tooltip.risus.book_button_press.outline", "[%s]");
 		this.add("tooltip.risus.great_stool.button_press.outline", "[%s]");
+		this.add("tooltip.risus.spyglass.button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
 		this.add("tooltip.risus.warhorn_dunk", "Right click with a Potion to fill it.");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
@@ -350,6 +351,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");
+		this.add("keybind.spyglass_mode", "Zoom With Spyglass Ability");
 
 		this.add("tooltip.risus.ability", "Selected Ability:");
 		//don't forget, a space before
@@ -370,6 +372,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.tabby_cat", " Tabby Cat Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.white_cat", " White Cat Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.audrey_cat", " Audrey Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.spyglass", " Spyglass Goggles");
 		this.add("tooltip.risus.sinner_robes_helmet.pumpkin", " Pumpkin Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.pale_wolf", " Pale Wolf Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.ashen_wolf", " Ashen Wolf Mask");
@@ -424,6 +427,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.smile.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.great_stool.button_press", " Press the %s key for Authority.");
+		this.add("tooltip.risus.sinner_robes_helmet.spyglass.button_press", " Press the %s key for Zoom.");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
 		this.add("tooltip.risus.sinner_robes_chestplate.great_stool", " Great Stool");

@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-19T20:16:57.5055909	Recipes
+// 1.21.1	2025-10-14T21:31:10.3542472	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 2900f03497680804a1832b02632e2761c902a096 data/minecraft/advancement/recipes/combat/head_to_spewer.json
@@ -271,6 +271,7 @@ a6e5a355832774954061feacacbf1d50311f90d2 data/risus/advancement/recipes/combat/s
 317aade5443217ab6ec6d1039b1c561253a01185 data/risus/advancement/recipes/combat/smile_helmet.json
 669e0e2554602bdc2838720db1ec3bed64e8bbdd data/risus/advancement/recipes/combat/snowy_wolf_helmet.json
 44a5b4bfd280d4b3c93a2e12c15ec45548b892e4 data/risus/advancement/recipes/combat/spotted_wolf_helmet.json
+38c6e476ccd92c88f5b7ea10c316201db333871b data/risus/advancement/recipes/combat/spyglass_helmet.json
 396d836bd244f570d608e8645be6030a8ab81e48 data/risus/advancement/recipes/combat/striped_wolf_helmet.json
 88cdc4c02eb873f365f43eb7e5d95e3a1b56e90e data/risus/advancement/recipes/combat/tabby_cat_helmet.json
 3ae706f0b130f57127154137601891d5b70ea255 data/risus/advancement/recipes/combat/threaders_of_the_firmament.json
@@ -535,6 +536,7 @@ ab773a823a0a7dfce27783aec85fb832a44144a5 data/risus/recipe/smelt_cracked_grimsto
 903ba0b512a741ef5b309ea3a45370b45be96e5b data/risus/recipe/smile_helmet.json
 13bc488327e9478eb1d9fd18690cb9e35f4e3c59 data/risus/recipe/snowy_wolf_helmet.json
 677c8f8bcc8636a319444c55d16cacf5f2ab43eb data/risus/recipe/spotted_wolf_helmet.json
+908657d0d136e9a7cf15a89b0b8df9d691811c50 data/risus/recipe/spyglass_helmet.json
 8aa249f0268682fdf3f0e129c413fd772eea220a data/risus/recipe/stitching_needle.json
 1c275bece78e88279010012df87b2fd2c25ae1a4 data/risus/recipe/stonecutting_grimstone_blood_to_slab.json
 6c611562982ab69661fc4c0a7d4fed72e4a2ba05 data/risus/recipe/stonecutting_grimstone_blood_to_stairs.json

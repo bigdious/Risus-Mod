@@ -1,12 +1,18 @@
 {
   "values": [
     "minecraft:sharpness",
+    "risus:xenophobia",
     "minecraft:bane_of_arthropods",
+    "risus:hunters_exultation",
     "minecraft:looting",
     "minecraft:smite",
     "minecraft:mending",
+    "risus:dream_eater",
     "minecraft:unbreaking",
+    "risus:relocation",
     "minecraft:knockback",
+    "risus:soar",
+    "risus:denial",
     "minecraft:vanishing_curse"
   ]
 }

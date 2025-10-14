@@ -1,10 +1,15 @@
 {
   "values": [
     "minecraft:unbreaking",
+    "risus:relocation",
     "minecraft:power",
     "minecraft:wind_burst",
     "minecraft:mending",
+    "risus:dream_eater",
     "minecraft:multishot",
-    "minecraft:flame"
+    "risus:star_release",
+    "minecraft:flame",
+    "risus:denial",
+    "minecraft:vanishing_curse"
   ]
 }

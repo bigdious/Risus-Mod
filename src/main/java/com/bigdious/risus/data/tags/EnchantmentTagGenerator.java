@@ -22,103 +22,181 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 	protected void addTags(HolderLookup.Provider provider) {
 		this.tag(RisusTags.Enchantments.THOUSAND_BLADE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
-			Enchantments.SWEEPING_EDGE,
-			Enchantments.LOOTING,
 			Enchantments.SMITE,
+			Execrations.HUNTERS_EXULTATION,
+			Enchantments.SWEEPING_EDGE,
+			Execrations.GENOCIDE,
+			Enchantments.LOOTING,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
 			Enchantments.POWER,
 			Enchantments.PIERCING,
+			Execrations.BATTERING,
 			Enchantments.MULTISHOT,
+			Execrations.STAR_RELEASE,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS).add(
-			Enchantments.LOYALTY,
 			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
+			Enchantments.LOYALTY,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
+			Execrations.HUNTERS_EXULTATION,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.FIRE_ASPECT,
+			Execrations.FERVOUR,
 			Enchantments.LOOTING,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
+			Enchantments.VANISHING_CURSE
+		);
+
+		this.tag(RisusTags.Enchantments.KILLJOY_ALLOWED_ENCHANTS).add(
+			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.SMITE,
+			Execrations.HUNTERS_EXULTATION,
+			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
+			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
+			Enchantments.FIRE_ASPECT,
+			Execrations.FERVOUR,
+			Enchantments.LOOTING,
+			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE
 		);
 
 		this.tag(RisusTags.Enchantments.SCYTHE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
-			Enchantments.LOOTING,
 			Enchantments.SMITE,
+			Execrations.HUNTERS_EXULTATION,
+			Enchantments.LOOTING,
+			Execrations.DREAM_EATER,
 			Enchantments.MENDING,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
-			Enchantments.BANE_OF_ARTHROPODS,
+			Execrations.XENOPHOBIA,
 			Enchantments.LOOTING,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.FIRE_SCYTHE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
+			Execrations.HUNTERS_EXULTATION,
 			Enchantments.LOOTING,
 			Enchantments.SMITE,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.FIRE_ASPECT,
+			Execrations.FERVOUR,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
+			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
+			Execrations.HUNTERS_EXULTATION,
 			Enchantments.LOOTING,
 			Enchantments.SMITE,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.TOOTHKNOCKER_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
-				Enchantments.BANE_OF_ARTHROPODS,
-				Enchantments.SMITE,
-				Enchantments.MENDING,
-				Enchantments.UNBREAKING,
-				Enchantments.FIRE_ASPECT,
-				Enchantments.KNOCKBACK,
-				Enchantments.LOOTING,
-				Enchantments.VANISHING_CURSE);
+			Execrations.XENOPHOBIA,
+			Enchantments.BANE_OF_ARTHROPODS,
+			Enchantments.SMITE,
+			Execrations.HUNTERS_EXULTATION,
+			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
+			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
+			Enchantments.FIRE_ASPECT,
+			Execrations.FERVOUR,
+			Enchantments.LOOTING,
+			Enchantments.KNOCKBACK,
+			Execrations.SOAR,
+			Execrations.DENIAL,
+			Enchantments.VANISHING_CURSE);
 
 		this.tag(RisusTags.Enchantments.BOOMSTICK_ALLOWED_ENCHANTS).add(
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.POWER,
 			Enchantments.WIND_BURST,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.MULTISHOT,
-			Enchantments.FLAME
+			Execrations.STAR_RELEASE,
+			Enchantments.FLAME,
+			Execrations.DENIAL,
+			Enchantments.VANISHING_CURSE
 		);
 
 		this.tag(RisusTags.Enchantments.WARHORN_ALLOWED_ENCHANTS).add(
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.POWER,
 			Enchantments.MENDING,
-			Enchantments.QUICK_CHARGE
+			Execrations.DREAM_EATER,
+			Enchantments.QUICK_CHARGE,
+			Execrations.DENIAL,
+			Enchantments.VANISHING_CURSE
 		);
 
 		this.tag(RisusTags.Enchantments.HEXHORN_ALLOWED_ENCHANTS).add(
 			Enchantments.UNBREAKING,
+			Execrations.RELOCATION,
 			Enchantments.POWER,
 			Enchantments.MENDING,
+			Execrations.DREAM_EATER,
 			Enchantments.QUICK_CHARGE,
+			Execrations.DENIAL,
+			Enchantments.VANISHING_CURSE,
 			Enchantments.FLAME
 		);
 

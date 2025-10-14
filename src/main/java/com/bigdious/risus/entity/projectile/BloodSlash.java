@@ -1,9 +1,6 @@
 package com.bigdious.risus.entity.projectile;
 
-import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.init.*;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.core.particles.ParticleTypes;
@@ -40,6 +37,7 @@ public class BloodSlash extends Projectile {
 
 	private static final EntityDataAccessor<Byte> ID_POWER = SynchedEntityData.defineId(BloodSlash.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_PIERCING = SynchedEntityData.defineId(BloodSlash.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Byte> ID_BATTERING = SynchedEntityData.defineId(BloodSlash.class, EntityDataSerializers.BYTE);
 	@Nullable
 	private IntOpenHashSet piercingIgnoreEntityIds;
 	private float baseDamage;
@@ -60,6 +58,7 @@ public class BloodSlash extends Projectile {
 		if (weapon != null) {
 			this.getEntityData().set(ID_POWER, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));
 			this.getEntityData().set(ID_PIERCING, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.PIERCING))));
+			this.getEntityData().set(ID_BATTERING, (byte) weapon.getEnchantmentLevel((level.registryAccess().holderOrThrow(Execrations.BATTERING))));
 
 		}
 	}
@@ -68,6 +67,7 @@ public class BloodSlash extends Projectile {
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		builder.define(ID_POWER, (byte) 0);
 		builder.define(ID_PIERCING, (byte) 0);
+		builder.define(ID_BATTERING, (byte) 0);
 	}
 
 	public byte getPierceLevel() {
@@ -106,7 +106,13 @@ public class BloodSlash extends Projectile {
 		Entity entity = result.getEntity();
 		float damage = this.baseDamage;
 
-		damage += this.getEntityData().get(ID_POWER);
+		damage += this.getEntityData().get(ID_POWER) +
+			(
+				this.getEntityData().get(ID_BATTERING) > 0 &&
+				entity instanceof LivingEntity living &&
+				living.getAttribute(Attributes.ARMOR) != null ?
+					(float)living.getAttributeValue(Attributes.ARMOR)/5*this.getEntityData().get(ID_BATTERING)
+					: 0);
 		Entity entity1 = this.getOwner();
 		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.BLOODSLASH, entity1 == null ? this : entity1);
 

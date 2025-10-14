@@ -26,6 +26,7 @@ import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
+import com.bigdious.risus.network.SpyglassModePacket;
 import com.bigdious.risus.network.SummonGreatnessPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
@@ -52,6 +53,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -96,11 +98,18 @@ public class RisusClientEvents {
 		InputConstants.Type.KEYSYM,
 		GLFW.GLFW_KEY_G,
 		"key.categories.misc");
+	private static final KeyMapping SPYGLASS_MODE = new KeyMapping(
+		"keybind.spyglass_mode",
+		KeyConflictContext.IN_GAME,
+		InputConstants.Type.KEYSYM,
+		GLFW.GLFW_KEY_Z,
+		"key.categories.misc");
 
 	public static void initEvents(IEventBus bus) {
 		bus.addListener(RegisterKeyMappingsEvent.class, event -> {
 			event.register(OPEN_BOOK_KEY);
 			event.register(SUMMON_GREATNESS);
+			event.register(SPYGLASS_MODE);
 		});
 		bus.addListener(RisusClientEvents::clientSetup);
 		bus.addListener(RisusClientEvents::registerParticleFactories);
@@ -124,6 +133,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::noMovementOnStool);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::setSpyglassMode);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -445,6 +455,12 @@ public class RisusClientEvents {
 		}
 	}
 
+	private static void spyGlassMode(RenderGuiLayerEvent.Post event) {
+		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {
+
+		}
+	}
+
 //	public static class CheckWhispers {
 //		public static void getWhispers(Player player) {
 //			int i = player.getRandom().nextInt(999);
@@ -524,6 +540,13 @@ public class RisusClientEvents {
 				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandOfGreedLayer.LEFT_RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
 
 			}
+		}
+	}
+
+	private static void setSpyglassMode (ComputeFovModifierEvent event) {
+		Player player = event.getPlayer();
+		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && player.isCrouching()) {
+			event.setNewFovModifier(0.1F);
 		}
 	}
 }

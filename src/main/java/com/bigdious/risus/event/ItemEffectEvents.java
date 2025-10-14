@@ -73,16 +73,15 @@ public class ItemEffectEvents {
 				if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
 					int burstRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST));
 					windBurstExplode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
-					if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
-						windBurstExplode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
-						windBurstExplode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					//we're superbooming
+					for (int j = 0; j < (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT))*2 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*7 ); j++) {
+						windBurstExplode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					}
 				} else {
 					//we explode stick in the attacker's crotch, this way the victim can use shield to defend
 					explode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
-					if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT)) > 0) {
-						explode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
-						explode(attacker.level(), attacker.getRandomX(10), attacker.getY(), attacker.getRandomZ(10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					for (int j = 0; j < (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT))*2 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*7 ); j++) {
+						explode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					}
 				}
 				attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);

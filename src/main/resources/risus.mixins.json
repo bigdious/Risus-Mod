@@ -8,7 +8,8 @@
     "ClientLevelMixin",
     "ItemStackMixin",
     "TridentItemMixin",
-    "VexMixin"
+    "VexMixin",
+    "PlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
