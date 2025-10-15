@@ -1,10 +1,7 @@
 package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.init.Execrations;
-import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.init.RisusSoundEvents;
-import com.bigdious.risus.init.RisusTags;
+import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusItemStackUtil;
 import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.Holder;
@@ -47,6 +44,7 @@ import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
+import net.neoforged.neoforge.event.entity.player.CanContinueSleepingEvent;
 import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
@@ -258,4 +256,11 @@ public class ExecrationEvents {
 		}
 	}
 
+
+	public static void continueHypersomnia(CanContinueSleepingEvent event) {
+		LivingEntity victim = event.getEntity();
+		if (victim.getItemBySlot(EquipmentSlot.HEAD).has(DataComponents.ENCHANTMENTS) && victim.getItemBySlot(EquipmentSlot.HEAD).get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.HYPERSOMNIA)) > 0) {
+			event.setContinueSleeping(true);
+		}
+	}
 }

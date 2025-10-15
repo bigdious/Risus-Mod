@@ -29,6 +29,7 @@
     "minecraft:riptide",
     "minecraft:knockback",
     "minecraft:fire_aspect",
-    "minecraft:frost_walker"
+    "minecraft:frost_walker",
+    "minecraft:respiration"
   ]
 }

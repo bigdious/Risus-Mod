@@ -226,7 +226,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.ERUPTION,
 			Execrations.SOAR,
 			Execrations.FERVOUR,
-			Execrations.PROLIFERATION
+			Execrations.PROLIFERATION,
+			Execrations.HYPERSOMNIA
 		);
 
 		this.tag(EnchantmentTags.CROSSBOW_EXCLUSIVE).add(
@@ -295,6 +296,7 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			,Enchantments.KNOCKBACK
 			,Enchantments.FIRE_ASPECT
 			,Enchantments.FROST_WALKER
+			,Enchantments.RESPIRATION
 		);
 
 

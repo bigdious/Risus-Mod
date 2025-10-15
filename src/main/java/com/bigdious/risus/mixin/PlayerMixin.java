@@ -1,5 +1,6 @@
 package com.bigdious.risus.mixin;
 
+import com.bigdious.risus.client.event.RisusClientEvents;
 import com.bigdious.risus.init.Execrations;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusMobEffects;
@@ -23,7 +24,7 @@ public abstract class PlayerMixin {
 	public void isScoping(CallbackInfoReturnable<Boolean> cir) {
 		if (cir.getReturnValue() == Boolean.TRUE) return;
 		Player player = (Player) (Object) this;
-		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && player.isCrouching()) {
+		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && RisusClientEvents.isSpyGlassModeActive) {
 			cir.setReturnValue(true);
 			return;
 		}

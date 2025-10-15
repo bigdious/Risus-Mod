@@ -370,5 +370,6 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		,Map.entry(Enchantments.KNOCKBACK, Execrations.SOAR)
 		,Map.entry(Enchantments.FIRE_ASPECT, Execrations.FERVOUR)
 		,Map.entry(Enchantments.FROST_WALKER, Execrations.PROLIFERATION)
+		,Map.entry(Enchantments.RESPIRATION, Execrations.HYPERSOMNIA)
 	);
 }

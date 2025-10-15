@@ -11,6 +11,7 @@ import com.bigdious.risus.init.*;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -84,12 +85,19 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::onGravityWell);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::clearFierySpeed);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::boostDefiantTrident);
+		NeoForge.EVENT_BUS.addListener(ExecrationEvents::continueHypersomnia);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			RisusCauldronInteractions.register();
 			RisusDispenserBehaviours.register();
+
+			//wash off dye
+			CauldronInteraction.WATER.map().put(RisusItems.SINNER_ROBES_HELMET.get(), CauldronInteraction.DYED_ITEM);
+			CauldronInteraction.WATER.map().put(RisusItems.SINNER_ROBES_CHESTPLATE.get(), CauldronInteraction.DYED_ITEM);
+			CauldronInteraction.WATER.map().put(RisusItems.SINNER_ROBES_LEGGINGS.get(), CauldronInteraction.DYED_ITEM);
+			CauldronInteraction.WATER.map().put(RisusItems.SINNER_ROBES_BOOTS.get(), CauldronInteraction.DYED_ITEM);
 
 			//block stripping
 			AxeItem.STRIPPABLES = Maps.newHashMap(AxeItem.STRIPPABLES);

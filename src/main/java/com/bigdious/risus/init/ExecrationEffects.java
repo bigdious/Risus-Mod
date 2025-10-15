@@ -24,4 +24,5 @@ public class ExecrationEffects {
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<SoarEffect>> SOAR = ENTITY_EFFECTS.register("soar", () -> SoarEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<FervourEffect>> FERVOUR = ENTITY_EFFECTS.register("fervour", () -> FervourEffect.CODEC);
 	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<SummonStarParticlesEffect>> SUMMON_STAR_PARTICLES = ENTITY_EFFECTS.register("summon_star_particles", () -> SummonStarParticlesEffect.CODEC);
+	public static final DeferredHolder<MapCodec<? extends EnchantmentEntityEffect>, MapCodec<FallAsleepAtNightEffect>> FALL_ASLEEP_AT_NIGHT = ENTITY_EFFECTS.register("fall_asleep_at_night", () -> FallAsleepAtNightEffect.CODEC);
 }

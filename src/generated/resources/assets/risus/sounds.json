@@ -238,6 +238,15 @@
     ],
     "subtitle": "subtitles.risus.item.armor.equip_bone"
   },
+  "item.armor.equip_robe": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.armor.equip_leather"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.armor.equip_robe"
+  },
   "item.armor.equip_rose": {
     "sounds": [
       {

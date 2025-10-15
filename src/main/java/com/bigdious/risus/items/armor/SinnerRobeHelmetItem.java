@@ -46,7 +46,7 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
 				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
 			} else if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("spyglass")) {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
+				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass_mode").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
 			} else {
 				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
 			}

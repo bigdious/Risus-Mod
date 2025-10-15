@@ -56,6 +56,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_SKIN = register("item.armor.equip_skin");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_THREADS = register("item.armor.equip_threads");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_ROSE = register("item.armor.equip_rose");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_ROBE = register("item.armor.equip_robe");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_BONE = register("item.armor.equip_bone");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ARMOR_EQUIP_WINGS = register("item.armor.equip_wings");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CONCENTRATION_CORE_LITTER = register("item.concentration_core.create_litter");

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-03T09:28:29.0317202	Registries
+// 1.21.1	2025-10-15T22:13:26.8282992	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -27,6 +27,7 @@ b06bb7bdaa130f6543e4e2e1dcedea0559eebc41 data/risus/enchantment/eruption.json
 43a62ba345700aa9eab45e29bfceef056ccd6c01 data/risus/enchantment/genocide.json
 27eaf4a49714623c5d2ba64bcca7b97b39741db8 data/risus/enchantment/gravity_well.json
 89dd0441111c23f5a83b96d6d1891953198466c1 data/risus/enchantment/hunters_exultation.json
+a0285c7fee10832ab264ade778f39d14addd8291 data/risus/enchantment/hypersomnia.json
 0ee6959a7c43ce1ef26e87ef7180eb4e7e3e727c data/risus/enchantment/maritime_snare.json
 3d72ac01dbe05ba3f2b777d09bc25515c45758ea data/risus/enchantment/overload.json
 2e98d965999f5d97d85379dc1c0748360966dbba data/risus/enchantment/perpetuity.json

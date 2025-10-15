@@ -64,6 +64,7 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> SOAR = registerKey("soar");
 	public static final ResourceKey<Enchantment> FERVOUR = registerKey("fervour");
 	public static final ResourceKey<Enchantment> PROLIFERATION = registerKey("proliferation");
+	public static final ResourceKey<Enchantment> HYPERSOMNIA = registerKey("hypersomnia");
 
 	private static ResourceKey<Enchantment> registerKey(String name) {
 		return ResourceKey.create(Registries.ENCHANTMENT, Risus.prefix(name));
@@ -1026,6 +1027,19 @@ public class Execrations {
 				)
 			)
 
+		);
+
+		register(context, HYPERSOMNIA, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.HEAD_ARMOR_ENCHANTABLE),
+			2,
+			3,
+			Enchantment.dynamicCost(10, 10),
+			Enchantment.dynamicCost(40, 10),
+			4,
+			EquipmentSlotGroup.HEAD
+			))
+				.exclusiveWith(HolderSet.direct(enchantments.getOrThrow(Enchantments.RESPIRATION)))
+			.withEffect(EnchantmentEffectComponents.TICK, new FallAsleepAtNightEffect(LevelBasedValue.perLevel(1F)))
 		);
 	}
 

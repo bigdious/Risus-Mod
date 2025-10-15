@@ -351,7 +351,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");
-		this.add("keybind.spyglass_mode", "Zoom With Spyglass Ability");
+		this.add("keybind.spyglass_mode", "Toggle Zoom With Spyglass Ability");
 
 		this.add("tooltip.risus.ability", "Selected Ability:");
 		//don't forget, a space before
@@ -427,7 +427,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.smile.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.great_stool.button_press", " Press the %s key for Authority.");
-		this.add("tooltip.risus.sinner_robes_helmet.spyglass.button_press", " Press the %s key for Zoom.");
+		this.add("tooltip.risus.sinner_robes_helmet.spyglass.button_press", " Press the %s key to toggle Zoom.");
 
 		this.add("tooltip.risus.sinner_robes_chestplate.guts", " Gorger Guts");
 		this.add("tooltip.risus.sinner_robes_chestplate.great_stool", " Great Stool");
@@ -511,6 +511,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("soar", "Soaring", "Sends the target up. Applies Slow Falling.");
 		this.addEnchantment("fervour", "Fervour", "On hit, ignites the user and creatures around it.");
 		this.addEnchantment("proliferation", "Proliferation", "When moving and crouching, turns soils and rocks below the user into Ashen and Smiling Remains respectively.");
+		this.addEnchantment("hypersomnia", "Hypersomnia", "Makes the user fall asleep at night, with level determining how commonly.");
 
 		SUBTITLE_GENERATOR.forEach(this::add);
 

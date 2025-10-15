@@ -85,7 +85,7 @@ import java.util.Objects;
 public class RisusClientEvents {
 
 	private static final RenderType MONOLITH_PORTAL = RenderType.create("risus:monolith_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, 256, true, false, RenderType.CompositeState.builder().setShaderState(RenderStateAccessor.getEndPortal()).setTextureState(RenderStateShard.MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION, false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false).build()).createCompositeState(false));
-
+	public static boolean isSpyGlassModeActive;
 	private static final KeyMapping OPEN_BOOK_KEY = new KeyMapping(
 		"keybind.researchers_notes_open",
 		KeyConflictContext.IN_GAME,
@@ -133,6 +133,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::noMovementOnStool);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::spyGlassMode);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::setSpyglassMode);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
@@ -455,11 +456,15 @@ public class RisusClientEvents {
 		}
 	}
 
-	private static void spyGlassMode(RenderGuiLayerEvent.Post event) {
-		if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(RisusMobEffects.AMNESIA)) {
-
+	private static void spyGlassMode(InputEvent.Key event) {
+		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
+			if (event.getKey() == SPYGLASS_MODE.getKey().getValue() && SPYGLASS_MODE.consumeClick()) {
+				isSpyGlassModeActive = !isSpyGlassModeActive;
+			}
 		}
 	}
+
+;
 
 //	public static class CheckWhispers {
 //		public static void getWhispers(Player player) {
@@ -545,7 +550,7 @@ public class RisusClientEvents {
 
 	private static void setSpyglassMode (ComputeFovModifierEvent event) {
 		Player player = event.getPlayer();
-		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && player.isCrouching()) {
+		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && isSpyGlassModeActive) {
 			event.setNewFovModifier(0.1F);
 		}
 	}
