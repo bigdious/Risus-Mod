@@ -9,6 +9,7 @@ import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.*;
 import com.google.common.collect.Maps;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -16,7 +17,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
@@ -40,10 +43,14 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Map;
+import java.util.UUID;
 
 
 public class RisusEvents {
@@ -86,6 +93,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::clearFierySpeed);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::boostDefiantTrident);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::continueHypersomnia);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::playerDropEasterEgg);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -164,6 +172,12 @@ public class RisusEvents {
 
 		builder.addMix(Potions.AWKWARD, RisusBlocks.LIGHT_EXCREMENT.asItem(), RisusPotions.GLOWING);
 		builder.addMix(RisusPotions.GLOWING, Items.REDSTONE, RisusPotions.LONG_GLOWING);
+
+		builder.addMix(Potions.AWKWARD, RisusItems.KILLJOY.get(), RisusPotions.CLOTTING);
+		builder.addMix(RisusPotions.CLOTTING, Items.REDSTONE, RisusPotions.LONG_CLOTTING);
+
+		builder.addMix(Potions.AWKWARD, RisusItems.HAND_OF_GREED.get(), RisusPotions.GOLDEN_GLORY);
+		builder.addMix(RisusPotions.GOLDEN_GLORY, Items.FERMENTED_SPIDER_EYE, RisusPotions.COPPER_AGE);
 
 	}
 
@@ -267,5 +281,22 @@ public class RisusEvents {
 			return false;
 		}) > 1;
 	}
+
+	private static void playerDropEasterEgg(LivingDeathEvent event) {
+		Map<String, ItemStack> PLAYERS_AND_DROPS = Map.ofEntries(
+			Map.entry("68754cb0-8b5f-4c16-94b9-593c3eba3676", Blocks.COPPER_BLOCK.asItem().getDefaultInstance()),
+			Map.entry("7a804249-c3da-4b35-b5a9-4f9b8cd9132e", RisusBlocks.SMILING_REMAINS.toStack()),
+			Map.entry("566dbb9b-ad89-41a7-9a73-65be81262e9e", Items.WRITABLE_BOOK.getDefaultInstance())
+		);
+		if (event.getEntity() instanceof Player player && PLAYERS_AND_DROPS.containsKey(player.getUUID().toString())) {
+			ItemEntity drop = EntityType.ITEM.create(player.level());
+			if (drop != null) {
+				drop.setItem(PLAYERS_AND_DROPS.get(player.getUUID().toString()));
+				drop.moveTo(player.getX(), player.getY(), player.getZ());
+				player.level().addFreshEntity(drop);
+			}
+		}
+	}
+
 
 }

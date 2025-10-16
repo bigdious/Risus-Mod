@@ -328,6 +328,25 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("item.minecraft.tipped_arrow.effect.glowing", "Arrow of Radiance");
 		this.add("item.minecraft.tipped_arrow.effect.long_glowing", "Arrow of Radiance");
 
+		this.add("item.minecraft.potion.effect.clotting", "Potion of Clotting");
+		this.add("item.minecraft.potion.effect.long_clotting", "Potion of Clotting");
+		this.add("item.minecraft.splash_potion.effect.clotting", "Splash Potion of Clotting");
+		this.add("item.minecraft.splash_potion.effect.long_clotting", "Splash Potion of Clotting");
+		this.add("item.minecraft.lingering_potion.effect.clotting", "Lingering Potion of Clotting");
+		this.add("item.minecraft.lingering_potion.effect.long_clotting", "Lingering Potion of Clotting");
+		this.add("item.minecraft.tipped_arrow.effect.clotting", "Arrow of Clotting");
+		this.add("item.minecraft.tipped_arrow.effect.long_clotting", "Arrow of Clotting");
+
+		this.add("item.minecraft.potion.effect.golden_glory", "Potion of Golden Glory");
+		this.add("item.minecraft.splash_potion.effect.golden_glory", "Splash Potion of Golden Glory");
+		this.add("item.minecraft.lingering_potion.effect.golden_glory", "Lingering Potion of Golden Glory");
+		this.add("item.minecraft.tipped_arrow.effect.golden_glory", "Arrow of Golden Glory");
+
+		this.add("item.minecraft.potion.effect.copper_age", "Potion of The Copper Age");
+		this.add("item.minecraft.splash_potion.effect.copper_age", "Splash Potion of The Copper Age");
+		this.add("item.minecraft.lingering_potion.effect.copper_age", "Lingering Potion of The Copper Age");
+		this.add("item.minecraft.tipped_arrow.effect.copper_age", "Arrow of The Copper Age");
+
 		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
@@ -553,6 +572,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEffect(RisusMobEffects.PLEASURE, "Pleasure");
 		this.addEffect(RisusMobEffects.TOOTHLUSTER, "Toothluster");
 		this.addEffect(RisusMobEffects.GREATNESS, "Greatness");
+		this.addEffect(RisusMobEffects.GOLD_RUSH, "Gold Rush");
+		this.addEffect(RisusMobEffects.VERDIGRIS_VEHEMENCE, "Verdigris Vehemence");
 
 		this.addAdvancement("first", "Risus", "The Joyplague");
 		this.addAdvancement("mod_book", "Researcher's Notes", "Alter a book to gain access to lost knowledge");

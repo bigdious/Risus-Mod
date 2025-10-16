@@ -76,7 +76,7 @@ public class Hex extends Vex {
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RisusItems.KILLJOY.get()));
-		this.setDropChance(EquipmentSlot.MAINHAND, 0.0F);
+		this.setDropChance(EquipmentSlot.MAINHAND, 0.05F);
 	}
 
 	@Override

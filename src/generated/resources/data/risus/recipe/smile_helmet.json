@@ -1,7 +1,7 @@
 {
   "type": "risus:smithing_upgrade",
   "addition": {
-    "item": "risus:organic_matter"
+    "item": "risus:fossil"
   },
   "additional_data": {
     "risus:ability_variant": "smile"

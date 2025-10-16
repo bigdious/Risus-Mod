@@ -31,4 +31,14 @@ public class RisusPotions {
 
 	public static final DeferredHolder<Potion, Potion> GLOWING = POTIONS.register("glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 4800)));
 	public static final DeferredHolder<Potion, Potion> LONG_GLOWING = POTIONS.register("long_glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 9600)));
+
+	public static final DeferredHolder<Potion, Potion> CLOTTING = POTIONS.register("clotting", () -> new Potion(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 400)));
+	public static final DeferredHolder<Potion, Potion> LONG_CLOTTING = POTIONS.register("long_clotting", () -> new Potion(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 800)));
+
+	public static final DeferredHolder<Potion, Potion> GOLDEN_GLORY = POTIONS.register("golden_glory", () -> new Potion(new MobEffectInstance(RisusMobEffects.GOLD_RUSH, 3600)));
+
+	public static final DeferredHolder<Potion, Potion> COPPER_AGE = POTIONS.register("copper_age", () -> new Potion(new MobEffectInstance(RisusMobEffects.VERDIGRIS_VEHEMENCE, 3600)));
+
+
 }
+

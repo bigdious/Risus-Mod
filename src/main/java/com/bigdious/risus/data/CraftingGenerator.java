@@ -1286,6 +1286,21 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("piglin_helmet"));
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.SPYGLASS), Ingredient.of(Items.SPYGLASS), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "spyglass")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("spyglass_helmet"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.CARVED_PUMPKIN), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "pumpkin")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("pumpkin_helmet"));
+
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("great_stool_helmet"));
+
 //		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.DRAGON_HEAD), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
 //			.attachData(RisusDataComponents.ABILITY_VARIANT, "dragon")
 //			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
@@ -1339,16 +1354,6 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "audrey_cat")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("audrey_cat_helmet"));
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.SPYGLASS), Ingredient.of(Items.SPYGLASS), RecipeCategory.COMBAT)
-			.attachData(RisusDataComponents.ABILITY_VARIANT, "spyglass")
-			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, Risus.prefix("spyglass_helmet"));
-
-
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.CARVED_PUMPKIN), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
-			.attachData(RisusDataComponents.ABILITY_VARIANT, "pumpkin")
-			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, Risus.prefix("pumpkin_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.LIGHT_GRAY_TERRACOTTA), Ingredient.of(Items.WHITE_TERRACOTTA), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "pale_wolf")
@@ -1412,15 +1417,10 @@ public class CraftingGenerator extends RecipeProvider {
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "abyssal_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("abyssal_eye_helmet"));
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.SMILING_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.SMILING_REMAINS), Ingredient.of(RisusBlocks.FOSSIL.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "smile")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("smile_helmet"));
-
-		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.BONDKNOT_LOG), Ingredient.of(RisusBlocks.BONDKNOT_PLANKS.get()), RecipeCategory.COMBAT)
-			.attachData(RisusDataComponents.ABILITY_VARIANT, "great_stool")
-			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
-			.save(consumer, Risus.prefix("great_stool_helmet"));
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_CHESTPLATE.get()),Ingredient.of(RisusBlocks.MAW_GUTS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "guts")

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-14T21:31:10.3542472	Recipes
+// 1.21.1	2025-10-16T20:28:54.0623387	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 2900f03497680804a1832b02632e2761c902a096 data/minecraft/advancement/recipes/combat/head_to_spewer.json
@@ -533,7 +533,7 @@ ebc10bfd8bc595a8bb4bf4cfb1a227103d88d9e1 data/risus/recipe/shadow_walker_boots.j
 d04d225506d617512efdc21a0bf8d680e8571ec1 data/risus/recipe/skeleton_helmet.json
 1db6440c23cd494a875c8981f50300ad1efa3e4c data/risus/recipe/smelt_bloody_sponge.json
 ab773a823a0a7dfce27783aec85fb832a44144a5 data/risus/recipe/smelt_cracked_grimstone_bricks.json
-903ba0b512a741ef5b309ea3a45370b45be96e5b data/risus/recipe/smile_helmet.json
+af7d9e0ba0345743ebafeefe5e0055b7f77831ac data/risus/recipe/smile_helmet.json
 13bc488327e9478eb1d9fd18690cb9e35f4e3c59 data/risus/recipe/snowy_wolf_helmet.json
 677c8f8bcc8636a319444c55d16cacf5f2ab43eb data/risus/recipe/spotted_wolf_helmet.json
 908657d0d136e9a7cf15a89b0b8df9d691811c50 data/risus/recipe/spyglass_helmet.json
