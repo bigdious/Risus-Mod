@@ -26,7 +26,6 @@ import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
-import com.bigdious.risus.network.SpyglassModePacket;
 import com.bigdious.risus.network.SummonGreatnessPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
@@ -53,7 +52,6 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -218,6 +216,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOOD.get(), BloodParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.SLEEPY.get(), SleepyParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.STARS.get(), SuspendedTownParticle.HappyVillagerProvider::new);
 		event.registerSpecial(RisusParticles.MOB_EFFECT_ICON.get(),new MobEffectIconParticle.Provider());
 	}

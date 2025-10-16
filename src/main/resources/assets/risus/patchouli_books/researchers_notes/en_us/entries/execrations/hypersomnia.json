@@ -1,0 +1,18 @@
+{
+  "name": "Hypersomnia",
+  "icon": "minecraft:diamond_helmet",
+  "category": "risus:execrations",
+  "sortnum": 17,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Respiration$(), $(4)Hypersomnia$() causes the wearer to become extremely sleepy at night and falling completely asleep periodically, depending on level. Maximum level is $(4)III$() and it conflicts with $(5)Respiration$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "If you have difficulty falling asleep, this can be your wonder drug. Alternatively, if one wishes to get away from Phantoms but forgets to bring a bed or a sleeping sack around all the time, this can prove a viable alternative. Do be warned, however, that slumber may take you at inopportune times, such as in the middle of combat."
+    }
+  ]
+}

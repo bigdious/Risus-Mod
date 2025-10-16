@@ -1,6 +1,7 @@
 package com.bigdious.risus.execrations;
 
 import com.bigdious.risus.init.RisusDamageTypes;
+import com.bigdious.risus.init.RisusParticles;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.server.level.ServerLevel;
@@ -25,6 +26,9 @@ public record FallAsleepAtNightEffect(LevelBasedValue strength) implements Encha
 	public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
 		float strength = this.strength.calculate(i);
 		if (entity instanceof Player player && player.level().dimension() == ServerLevel.OVERWORLD) {
+			if (player.level().getDayTime() > 12600 && player.level().getDayTime() < 23400 && player.level().getDayTime() % 25 == 0) {
+				serverLevel.sendParticles(RisusParticles.SLEEPY.get(), player.getX(), player.getEyeY()+0.3, player.getZ(), 1, 0, 0.0, 0.0, 0.01);
+			}
 			if (player.level().getDayTime() > 12600 && player.level().getDayTime() < 23400 && (player.level().getDayTime() == 12640 || player.level().getDayTime() % 3600/(strength) == 0)) {
 				player.startSleepInBed(player.getOnPos().above());
 				player.stopFallFlying();

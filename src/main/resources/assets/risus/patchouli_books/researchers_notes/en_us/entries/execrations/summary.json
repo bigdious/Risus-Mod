@@ -14,15 +14,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Multishot$()->$(br)     $(l:execrations/star_release)$(4)Star Release$()$(br)- $(5)Luck Of The Sea$()->$(br)     $(l:execrations/maritime_snare)$(4)Maritime Snare$()$(br)- $(5)Lure$()->$(br)     $(l:execrations/gravity_well)$(4)Gravity Well$()$(br)- $(5)Silk Touch$()->$(br)     $(l:execrations/avaricious_ambit)$(4)Avaricious Ambit$()$(br)- $(5)Efficiency$()->$(br)     $(l:execrations/overload)$(4)Overload$()$(br)- $(5)Protection$()->$(br)     $(l:execrations/vigor)$(4)Vigor$()$(br)- $(5)Fire Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Blast Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)"
+      "text": "- $(5)Multishot$()->$(br)     $(l:execrations/star_release)$(4)Star Release$()$(br)- $(5)Luck Of The Sea$()->$(br)     $(l:execrations/maritime_snare)$(4)Maritime Snare$()$(br)- $(5)Lure$()->$(br)     $(l:execrations/gravity_well)$(4)Gravity Well$()$(br)- $(5)Silk Touch$()->$(br)     $(l:execrations/avaricious_ambit)$(4)Avaricious Ambit$()$(br)- $(5)Efficiency$()->$(br)     $(l:execrations/overload)$(4)Overload$()$(br)- $(5)Respiration$()->$(br)     $(l:execrations/hypersomnia)$(4)Hypersomnia$()$(br)- $(5)Protection$()->$(br)     $(l:execrations/vigor)$(4)Vigor$()$(br)- $(5)Fire Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(5)Projectile Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Thorns$()->$(br)     $(l:execrations/agony)$(4)Agony$()$(br)- $(c)Curse Of Binding$()->$(br)     $(l:execrations/perpetuity)$(4)Perpetuity$()$(br)- $(5)Soul Speed$()->$(br)     $(l:execrations/cackling_craze)$(4)Cackling Craze$()$(br)- $(5)Depth Strider$()->$(br)     $(l:execrations/pyromaniac)$(4)Pyromania$()$(br)- $(5)Frost Walker$()->$(br)     $(l:execrations/proliferation)$(4)Proliferation$()$(br)- $(5)Unbreaking$()->$(br)     $(l:execrations/relocation)$(4)Relocation$()$(br)- $(5)Mending$()->$(br)     $(l:execrations/dream_eater)$(4)Dream Eater$()$(br)"
+      "text": "- $(5)Blast Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Projectile Protection$()->$(br)     $(l:execrations/elemental_deviation)$(4)Elemental Deviation$()$(br)- $(5)Thorns$()->$(br)     $(l:execrations/agony)$(4)Agony$()$(br)- $(c)Curse Of Binding$()->$(br)     $(l:execrations/perpetuity)$(4)Perpetuity$()$(br)- $(5)Soul Speed$()->$(br)     $(l:execrations/cackling_craze)$(4)Cackling Craze$()$(br)- $(5)Depth Strider$()->$(br)     $(l:execrations/pyromaniac)$(4)Pyromania$()$(br)- $(5)Frost Walker$()->$(br)     $(l:execrations/proliferation)$(4)Proliferation$()$(br)- $(5)Unbreaking$()->$(br)     $(l:execrations/relocation)$(4)Relocation$()$(br)"
     },
     {
       "type": "patchouli:text",
-      "text": "- $(c)Curse Of Vanishing$()->$(br)     $(l:execrations/denial)$(4)Denial$()$(br)"
+      "text": "- $(5)Mending$()->$(br)     $(l:execrations/dream_eater)$(4)Dream Eater$()$(br)- $(c)Curse Of Vanishing$()->$(br)     $(l:execrations/denial)$(4)Denial$()$(br)"
     }
   ]
 }
