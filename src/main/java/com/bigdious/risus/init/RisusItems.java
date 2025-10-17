@@ -73,6 +73,7 @@ public class RisusItems {
 	public static final FoodProperties EYE_SANDWICH_FOOD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.9F).effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 4800), 1.0F).build();
 	public static final FoodProperties PETAL_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.1F).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 120), 1.0F).build();
 	public static final FoodProperties LOVER_CREAM_FOOD = new FoodProperties.Builder().alwaysEdible().fast().nutrition(0).saturationModifier(0.4F).build();
+	public static final FoodProperties GRILLED_TISSUE_FOOD = new FoodProperties.Builder().usingConvertsTo(Items.BONE).nutrition(5).saturationModifier(0.6F).build();
 	public static final DeferredItem<Item> GUILTY_APPLE = register("guilty_apple", Item::new, () -> new Item.Properties().rarity(BLOOD).food(GUILTY_FOOD));
 	public static final DeferredItem<Item> ORGANIC_MATTER = register("organic_matter", OrganicMatterItem::new, () -> new Item.Properties().rarity(BLOOD).food(ORGANIC_FOOD));
 	public static final DeferredItem<Item> STALKER_EYE = register("stalker_eye", Item::new, () -> new Item.Properties().rarity(BLOOD).food(EYE_FOOD));
@@ -82,6 +83,8 @@ public class RisusItems {
 	public static final DeferredItem<Item> ROSE_PETAL = register("rose_petal", Item::new, () -> new Item.Properties().food(PETAL_FOOD));
 	public static final DeferredItem<Item> LOVER_CREAM = register("lover_cream", LoverCreamItem::new, () -> new Item.Properties().food(LOVER_CREAM_FOOD).rarity(BLOOD));
 	public static final DeferredItem<Item> ETERNAL_YOUTH = register("eternal_youth", EternalYouthItem::new, () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> GRILLED_TISSUE = register("grilled_tissue", properties -> new BlockItem(RisusBlocks.GRILLED_TISSUE.get(), properties), () -> new Item.Properties().food(GRILLED_TISSUE_FOOD).rarity(BLOOD));
+	public static final DeferredItem<Item> PEELED_GRILLED_TISSUE = register("peeled_grilled_tissue", properties -> new BlockItem(RisusBlocks.PEELED_GRILLED_TISSUE.get(), properties), () -> new Item.Properties().food(GRILLED_TISSUE_FOOD).rarity(BLOOD));
 
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));

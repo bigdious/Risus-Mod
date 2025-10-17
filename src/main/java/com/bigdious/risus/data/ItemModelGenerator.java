@@ -137,6 +137,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.BURNT_HYPHAE.get());
 		toBlock(RisusBlocks.ZIT.get());
 		toBlock(RisusBlocks.TISSUE.get());
+		toBlock(RisusBlocks.GRILLED_TISSUE.get());
+		toBlock(RisusBlocks.PEELED_GRILLED_TISSUE.get());
 		toBlockModel(RisusBlocks.ROTTING_TISSUE.get(), Risus.prefix("block/tissue/rotting_tissue_post"));
 		toBlockModel(RisusBlocks.DECOMPOSING_TISSUE.get(), Risus.prefix("block/tissue/decomposing_tissue_post"));
 		toBlockModel(RisusBlocks.DECAYING_TISSUE.get(), Risus.prefix("block/tissue/decaying_tissue_post"));

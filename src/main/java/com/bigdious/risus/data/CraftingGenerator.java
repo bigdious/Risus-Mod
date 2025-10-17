@@ -1187,6 +1187,10 @@ public class CraftingGenerator extends RecipeProvider {
 
 
 		smeltingRecipe(RisusBlocks.GRIMSTONE_BRICKS.get(), RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get().asItem(), 0.1F, 1).save(consumer, prefix("smelt_cracked_grimstone_bricks"));
+		smeltingRecipe(RisusBlocks.TISSUE.get(), RisusBlocks.GRILLED_TISSUE.get().asItem(), 0.1F, 1).save(consumer, prefix("smelt_tissue"));
+		smokingRecipe(RisusBlocks.TISSUE.get(), RisusBlocks.GRILLED_TISSUE.get().asItem(), 0.1F, 1).save(consumer, prefix("smoke_tissue"));
+		smeltingRecipe(RisusBlocks.LIVING_TISSUE.get(), RisusBlocks.GRILLED_TISSUE.get().asItem(), 0.1F, 1).save(consumer, prefix("smelt_living_tissue"));
+		smokingRecipe(RisusBlocks.LIVING_TISSUE.get(), RisusBlocks.GRILLED_TISSUE.get().asItem(), 0.1F, 1).save(consumer, prefix("smoke_living_tissue"));
 		smeltingRecipe(RisusBlocks.BLOODY_SPONGE, Blocks.SPONGE.asItem(), 0.1F, 1).save(consumer, prefix("smelt_bloody_sponge"));
 
 		SmithingTransformRecipeBuilder.smithing(
@@ -1465,6 +1469,11 @@ public class CraftingGenerator extends RecipeProvider {
 
 	public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike input, ItemLike result, float exp, int count) {
 		return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(input, count)), RecipeCategory.MISC, result, exp, 200)
+			.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(input.asItem()), has(input));
+	}
+
+	public SimpleCookingRecipeBuilder smokingRecipe(ItemLike input, ItemLike result, float exp, int count) {
+		return SimpleCookingRecipeBuilder.smoking(Ingredient.of(new ItemStack(input, count)), RecipeCategory.MISC, result, exp, 100)
 			.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(input.asItem()), has(input));
 	}
 

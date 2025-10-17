@@ -340,6 +340,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.VEINS.get(), models().cross("veins", Risus.prefix("block/veins")).renderType("minecraft:cutout"));
 
 		simpleBlock(RisusBlocks.TISSUE.get());
+		axisBlock(RisusBlocks.GRILLED_TISSUE.get(), Risus.prefix("block/grilled_tissue"), Risus.prefix("block/grilled_tissue_top"));
+		axisBlock(RisusBlocks.PEELED_GRILLED_TISSUE.get(), Risus.prefix("block/peeled_grilled_tissue"), Risus.prefix("block/peeled_grilled_tissue_top"));
 		stairsBlock(RisusBlocks.TISSUE_STAIRS.get(), Risus.prefix("block/tissue"));
 		slabBlock(RisusBlocks.TISSUE_SLAB.get(), Risus.prefix("block/tissue"), Risus.prefix("block/tissue"));
 		risusWallBlock(RisusBlocks.TISSUE_WALL.get(), models().wallPost("tissue_wall_post",Risus.prefix("block/tissue")), models().wallSide("tissue_wall_side", Risus.prefix("block/tissue")), models().wallSideTall("tissue_wall_side_tall", Risus.prefix("block/tissue")));

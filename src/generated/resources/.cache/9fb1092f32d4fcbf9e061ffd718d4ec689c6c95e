@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-16T20:28:54.0623387	Recipes
+// 1.21.1	2025-10-17T21:33:09.2443162	Recipes
 1a35a5ef49c2e798f5de9a2a1ca5eb8c8706d64a data/minecraft/advancement/recipes/building_blocks/hair_unbundleing.json
 0ee1433b1d47a72dab19fb9469fc3401f577c64b data/minecraft/advancement/recipes/building_blocks/revert_to_golden_eye.json
 2900f03497680804a1832b02632e2761c902a096 data/minecraft/advancement/recipes/combat/head_to_spewer.json
@@ -310,6 +310,10 @@ e5208756f3bd20f4855b99fda0932fbe9ecf90d7 data/risus/advancement/recipes/food/pur
 6d9c1e26115dd843e7abda5e57a06741be111a4e data/risus/advancement/recipes/misc/rose_banner_pattern.json
 7c4d8a777ad2e93822ef2e443f19eeabf32ef2ea data/risus/advancement/recipes/misc/smelt_bloody_sponge.json
 478a1ce421ab9d6f6e8f7f77d8bc208e25c5e79b data/risus/advancement/recipes/misc/smelt_cracked_grimstone_bricks.json
+d7c03298a47fbb53c97f407e3c6a48818501aaf6 data/risus/advancement/recipes/misc/smelt_living_tissue.json
+f490c7ef1d136c9b9ccf65a033acc318dd35cf85 data/risus/advancement/recipes/misc/smelt_tissue.json
+ae51e8e168047ec1713ada8569a783f77ffac0c9 data/risus/advancement/recipes/misc/smoke_living_tissue.json
+4fde54871821841d9a60fd17e7dee54ca7b482a3 data/risus/advancement/recipes/misc/smoke_tissue.json
 b975f30519b94ee63f7dd7e913ae97cb8cab3ef3 data/risus/advancement/recipes/misc/stitching_needle.json
 6703caf7c5e196838b3ec4a3236d83def83b9944 data/risus/advancement/recipes/redstone/bondknot_button.json
 5cac949b692f79952e34d443a95cd6fcbfe8454c data/risus/advancement/recipes/redstone/bondknot_door.json
@@ -533,7 +537,11 @@ ebc10bfd8bc595a8bb4bf4cfb1a227103d88d9e1 data/risus/recipe/shadow_walker_boots.j
 d04d225506d617512efdc21a0bf8d680e8571ec1 data/risus/recipe/skeleton_helmet.json
 1db6440c23cd494a875c8981f50300ad1efa3e4c data/risus/recipe/smelt_bloody_sponge.json
 ab773a823a0a7dfce27783aec85fb832a44144a5 data/risus/recipe/smelt_cracked_grimstone_bricks.json
+821de23179a0d96a5bf82436d215929f35ab78f3 data/risus/recipe/smelt_living_tissue.json
+77da081baec0e707c4fa305b8c5324bb89575958 data/risus/recipe/smelt_tissue.json
 af7d9e0ba0345743ebafeefe5e0055b7f77831ac data/risus/recipe/smile_helmet.json
+171ba4bef5ffa7b2e4f2d02c3ae4f136cb8f370b data/risus/recipe/smoke_living_tissue.json
+3f9b93011af6f998bef6c8ec5b0c00ae26d5e49e data/risus/recipe/smoke_tissue.json
 13bc488327e9478eb1d9fd18690cb9e35f4e3c59 data/risus/recipe/snowy_wolf_helmet.json
 677c8f8bcc8636a319444c55d16cacf5f2ab43eb data/risus/recipe/spotted_wolf_helmet.json
 908657d0d136e9a7cf15a89b0b8df9d691811c50 data/risus/recipe/spyglass_helmet.json

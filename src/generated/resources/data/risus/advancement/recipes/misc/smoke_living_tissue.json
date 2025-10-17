@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_risus:living_tissue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:living_tissue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "risus:smoke_living_tissue"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_risus:living_tissue"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "risus:smoke_living_tissue"
+    ]
+  }
+}

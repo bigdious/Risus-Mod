@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "risus:block/peeled_grilled_tissue_top",
+    "side": "risus:block/peeled_grilled_tissue"
+  }
+}

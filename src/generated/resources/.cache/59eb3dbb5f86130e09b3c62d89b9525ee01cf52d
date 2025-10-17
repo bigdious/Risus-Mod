@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-24T15:40:20.2527423	Loot Tables
+// 1.21.1	2025-10-17T21:12:12.6428617	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -85,6 +85,7 @@ edeba87e9a4ac84ede2eb795ec3c36179c407f4f data/risus/loot_table/blocks/full_fossi
 c6017f17c73b2e6e918b265c7df0d0a16ea853ed data/risus/loot_table/blocks/gluttony_scaleplate.json
 f3c2d524e601e3e0a0a63f22e3b86f448e53b730 data/risus/loot_table/blocks/gray_display_notch.json
 eb53d817109d64030f1954679a4f8eabdf501d6b data/risus/loot_table/blocks/green_display_notch.json
+47c762bf50024df6fea04d545e9544de32a3b626 data/risus/loot_table/blocks/grilled_tissue.json
 a6a1244fd95622ea9607bfbec50ec0d7396ab4b5 data/risus/loot_table/blocks/grimstone.json
 7ece8fd886c5ecf2b7eacf9d25aeba43693e0a1b data/risus/loot_table/blocks/grimstone_blood_tiles.json
 51fdf15c971a7637c54aeba85eae706defaa4a92 data/risus/loot_table/blocks/grimstone_blood_tiles_slab.json
@@ -130,6 +131,7 @@ e7495f38c67ccafd2837640688bf688d41aa2107 data/risus/loot_table/blocks/neuron_hea
 7b6af40f68d433c78295c5edf46c0b02bb67602c data/risus/loot_table/blocks/orange_display_notch.json
 6e3a354c01154a2a6883adf48dcf129b8cc3a29c data/risus/loot_table/blocks/organic_matter_block.json
 5b8ebdd5bc5e98fe741fb5dfe727df7c17b1faf1 data/risus/loot_table/blocks/oxidized_copper_amalgam.json
+8c6937809e78c1435b951db3f112caa6572f2930 data/risus/loot_table/blocks/peeled_grilled_tissue.json
 160752cad94df9e77f2e870cd0d4801c9fbacad5 data/risus/loot_table/blocks/pink_display_notch.json
 ea992c368422c9067e7bcd7aa9dcf9671bddd897 data/risus/loot_table/blocks/polished_grimstone.json
 37980798071d986926020d8a20faa261341c856f data/risus/loot_table/blocks/polished_grimstone_slab.json

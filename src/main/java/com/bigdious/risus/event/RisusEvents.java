@@ -111,6 +111,7 @@ public class RisusEvents {
 			AxeItem.STRIPPABLES = Maps.newHashMap(AxeItem.STRIPPABLES);
 			AxeItem.STRIPPABLES.put(RisusBlocks.BONDKNOT_LOG.get(), RisusBlocks.STRIPPED_BONDKNOT_LOG.get());
 			AxeItem.STRIPPABLES.put(RisusBlocks.BONDKNOT_WOOD.get(), RisusBlocks.STRIPPED_BONDKNOT_WOOD.get());
+			AxeItem.STRIPPABLES.put(RisusBlocks.GRILLED_TISSUE.get(), RisusBlocks.PEELED_GRILLED_TISSUE.get());
 
 			//Flammable blocks
 			FireBlock fireblock = (FireBlock) Blocks.FIRE;
@@ -284,9 +285,11 @@ public class RisusEvents {
 
 	private static void playerDropEasterEgg(LivingDeathEvent event) {
 		Map<String, ItemStack> PLAYERS_AND_DROPS = Map.ofEntries(
-			Map.entry("68754cb0-8b5f-4c16-94b9-593c3eba3676", Blocks.COPPER_BLOCK.asItem().getDefaultInstance()),
-			Map.entry("7a804249-c3da-4b35-b5a9-4f9b8cd9132e", RisusBlocks.SMILING_REMAINS.toStack()),
-			Map.entry("566dbb9b-ad89-41a7-9a73-65be81262e9e", Items.WRITABLE_BOOK.getDefaultInstance())
+			Map.entry("68754cb0-8b5f-4c16-94b9-593c3eba3676", Blocks.COPPER_BLOCK.asItem().getDefaultInstance())
+			,Map.entry("7a804249-c3da-4b35-b5a9-4f9b8cd9132e", RisusBlocks.SMILING_REMAINS.toStack())
+			,Map.entry("c8649a16-96eb-4635-b150-6a4f04038a18", Items.GOAT_HORN.getDefaultInstance())
+			,Map.entry("566dbb9b-ad89-41a7-9a73-65be81262e9e", Items.WRITABLE_BOOK.getDefaultInstance())
+			,Map.entry("c47fe203-99e7-45c4-9c19-2c9281b74364", Items.PORKCHOP.getDefaultInstance())
 		);
 		if (event.getEntity() instanceof Player player && PLAYERS_AND_DROPS.containsKey(player.getUUID().toString())) {
 			ItemEntity drop = EntityType.ITEM.create(player.level());

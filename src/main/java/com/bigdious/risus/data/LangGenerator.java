@@ -100,6 +100,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.FULL_FOSSIL_SLAB, "Full Fossil Slab");
 		this.addBlock(RisusBlocks.FULL_FOSSIL_STAIRS, "Full Fossil Stairs");
 		this.addBlock(RisusBlocks.GLUTTONY_SCALEPLATE, "Gluttonous Scaleplate");
+		this.addBlock(RisusBlocks.GRILLED_TISSUE, "Grilled Tissue");
 		this.addBlock(RisusBlocks.GRIMSTONE, "Grimstone");
 		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES, "Grimstone Blood Tiles");
 		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS, "Grimstone Blood Tiles Stairs");
@@ -135,6 +136,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.NEURON_STEM, "Neuron Stem");
 		this.addBlock(RisusBlocks.ORGANIC_MATTER_BLOCK, "Organic Matter Block");
 		this.addBlock(RisusBlocks.OXIDIZED_COPPER_AMALGAM, "Oxidized Copper Amalgam");
+		this.addBlock(RisusBlocks.PEELED_GRILLED_TISSUE, "Peeled Grilled Tissue");
 		this.addBlock(RisusBlocks.POLISHED_GRIMSTONE, "Polished Grimstone");
 		this.addBlock(RisusBlocks.POLISHED_GRIMSTONE_SLAB, "Polished Grimstone Slab");
 		this.addBlock(RisusBlocks.POLISHED_GRIMSTONE_STAIRS, "Polished Grimstone Stairs");

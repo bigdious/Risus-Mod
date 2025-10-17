@@ -6,12 +6,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Elytras are a heavily used transportation method, offering not only the ability to glide but to even fly through the use of certain items. Ophanim Wings are created by imbuing an Elytra with a Blood Feather and some Organic matter, and are ideal for gliding endlessly, without decreasing the durability. In return, they don't resist to a sudden increase of velocity; losing a considerable amount of their"
+      "text": "Elytras are a heavily used transportation method, offering not only the ability to glide but to even fly through the use of certain items. Ophanim Wings - created by imbuing an Elytra with a Blood Feather and some Organic matter - are ideal for gliding near endlessly, barely losing durability while doing so. In return, they don't resist to a sudden increase of velocity; losing a considerable amount"
     },
     {
       "type": "patchouli:smithing",
       "recipe": "minecraft:elytra_to_angel_wings",
-      "text": "integrity whenever a firework rocket is fired for a boost. Using a Trident with Riptide will also lightly damage the Ophanim Wings. They can be repaired using Blood Feathers."
+      "text": " of their integrity whenever a firework rocket is fired for a boost. Using a Trident with Riptide will also lightly damage the Ophanim Wings. They can be repaired using Blood Feathers."
     }
   ]
 }

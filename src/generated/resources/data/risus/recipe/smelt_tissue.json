@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "risus:tissue"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:grilled_tissue"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-04T21:25:14.6940806	Risus blockstates and models
+// 1.21.1	2025-10-17T21:12:12.6508657	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -77,6 +77,7 @@ b905f64eeb004125c3f0d73dfb7bd1beb2cac549 assets/risus/blockstates/full_bone_stai
 68d0eb5f2385d2dc63ccc33820d333539432c8fe assets/risus/blockstates/full_fossil_stairs.json
 79711bb9614dbe71e55d898c7b7477cf8a1aa743 assets/risus/blockstates/gray_display_notch.json
 1da637fba711cb864344479fca4c0df4e72c37eb assets/risus/blockstates/green_display_notch.json
+87b6037feaf5141b108199fc9d04a3a2cf4f6703 assets/risus/blockstates/grilled_tissue.json
 1f463d973c1d6849035de5e8006483425d81783b assets/risus/blockstates/grimstone.json
 a590e8246c7e89f121bbd2b286aa3f08edb0ed73 assets/risus/blockstates/grimstone_blood_tiles.json
 3c8888cfdb34e245ed074b49d8c9734d42a2b0ff assets/risus/blockstates/grimstone_blood_tiles_slab.json
@@ -120,6 +121,7 @@ e94812cb276b4489d103a3484a4a90132be99f48 assets/risus/blockstates/mirage_netherr
 6989bf71d8284c04299b2682c8376cef1ee65743 assets/risus/blockstates/orange_display_notch.json
 93690b8d83e83eb83241836f72c687bcae99a574 assets/risus/blockstates/organic_matter_block.json
 debb775c7b698c2acdba8d9928260f709f58f5f9 assets/risus/blockstates/oxidized_copper_amalgam.json
+a83fc87bdc092f5324a15299e7dd4f563d46f02b assets/risus/blockstates/peeled_grilled_tissue.json
 3a4a31bfe7203886fc574d9e23c9e7114907333d assets/risus/blockstates/pink_display_notch.json
 2909a8096c350b95b8052670a5896278205b948c assets/risus/blockstates/polished_grimstone.json
 ba6edb6017617bdfc978142ef71feeb8d140223d assets/risus/blockstates/polished_grimstone_slab.json
@@ -255,6 +257,8 @@ ac638c4e4b1bf629384ecb494546b94c7c2a0095 assets/risus/models/block/full_fossil_s
 1c4c1b18de1dcdd8a624d3d677d3d6a6621a09be assets/risus/models/block/full_fossil_stairs_outer.json
 2dc2c1678f2bf5d180e71880eee75669b4d95269 assets/risus/models/block/gray_display_notch.json
 c1b9980ce340d8551eba9a7cd673f900ce9006bd assets/risus/models/block/green_display_notch.json
+9850adf152a1321be1981cb715eae0c230082a7d assets/risus/models/block/grilled_tissue.json
+a648e5f50bc875e7e4f5bbbb16feb448deae9cb4 assets/risus/models/block/grilled_tissue_horizontal.json
 33057f977bd46161422304ee8043e0ea1e28db59 assets/risus/models/block/grimstone.json
 015775ba7196055ca3655e6a9262a2e1e8eed0c3 assets/risus/models/block/grimstone_blood_tiles.json
 2dc5dfc15133f01936ad4da117c640486b1b2836 assets/risus/models/block/grimstone_blood_tiles_slab.json
@@ -313,6 +317,8 @@ daa895fb8217308aa4bc5d9f742cdc5d02539704 assets/risus/models/block/neuron.json
 2f29e1c1f4fec8a67ae48b311ec5390d4e46dfd0 assets/risus/models/block/neuron_head.json
 a979abeec5a5bb0acf9046f5e514583b39f5551b assets/risus/models/block/orange_display_notch.json
 5d538760b53c1efdf29d7b729f7bd5042c14a72f assets/risus/models/block/oxidized_copper_amalgam.json
+0b88e36304600ac72efc06e05f5e728540fc5c03 assets/risus/models/block/peeled_grilled_tissue.json
+16b2412ca162b7a9a9c1528cf2b6ba9fbf4a2eed assets/risus/models/block/peeled_grilled_tissue_horizontal.json
 31493aae45c657570b73467c51e30bfe4abeddee assets/risus/models/block/pink_display_notch.json
 b737e2187b501357c3db8afd02404b04c2f37388 assets/risus/models/block/polished_grimstone.json
 322212ab1f380f661303f04704c074014fe9b814 assets/risus/models/block/polished_grimstone_slab.json

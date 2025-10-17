@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-17T09:20:36.2232675	Risus Item Models
+// 1.21.1	2025-10-17T21:33:09.2343132	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -131,6 +131,7 @@ a22879083321d8f80168281f323378094723ff48 assets/risus/models/item/full_fossil_st
 64407bfe9021930d75aab764c3f2652e47e2b9aa assets/risus/models/item/gluttony_scales.json
 9d594daf3779925806462380e8036862612415b9 assets/risus/models/item/gold_fist.json
 115b385a79ea9954dc13fb9d8160af431d17735e assets/risus/models/item/gold_fist_base.json
+ac180f75e91f802d79c97b726137fb5170502fe6 assets/risus/models/item/grilled_tissue.json
 cf809d4f60040c6c19f177f9fe3a690fadd1af28 assets/risus/models/item/grimstone.json
 af8f4742a27b8082cb25df5a4e54c8eb94053fd3 assets/risus/models/item/grimstone_blood_tiles.json
 56d38bd2b4aa485e7c8c1b507f3a3062a7db8c2f assets/risus/models/item/grimstone_blood_tiles_slab.json
@@ -203,6 +204,7 @@ eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/oxidized_copper_amalgam.json
+3f03cf417d9b8e185bc9858a596105b8d493d407 assets/risus/models/item/peeled_grilled_tissue.json
 2f16712ae08ea3d4edd94c13c6224a3eb66bb354 assets/risus/models/item/polished_grimstone.json
 431609ba6ab8c91087e71a2b5143e070296a085f assets/risus/models/item/polished_grimstone_slab.json
 83e8086dba6b8421657b3122ab631812e1839f1f assets/risus/models/item/polished_grimstone_stairs.json

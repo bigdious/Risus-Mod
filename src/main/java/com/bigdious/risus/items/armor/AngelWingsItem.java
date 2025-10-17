@@ -36,7 +36,11 @@ public class AngelWingsItem extends Item implements Equipable {
 	}
 
 	public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
-		if (!entity.level().isClientSide()) {
+		int nextFlightTick = flightTicks + 1;
+		if (nextFlightTick % 10 == 0) {
+			if (nextFlightTick % 400 == 0) {
+				stack.hurtAndBreak(1, entity, EquipmentSlot.CHEST);
+			}
 			entity.gameEvent(GameEvent.ELYTRA_GLIDE);
 		}
 
