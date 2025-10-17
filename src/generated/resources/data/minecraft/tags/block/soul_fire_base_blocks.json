@@ -5,6 +5,10 @@
     "risus:bondknot_slab",
     "risus:bondknot_stairs",
     "risus:bondknot_fence_gate",
-    "risus:bondknot_fence"
+    "risus:bondknot_fence",
+    "risus:popping_bondknot_wood",
+    "risus:popping_bondknot_log",
+    "risus:bondknot_door",
+    "risus:bondknot_button"
   ]
 }

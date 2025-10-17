@@ -153,6 +153,7 @@ public class RisusClientEvents {
 
 			ItemProperties.register(RisusItems.ANGEL_WINGS.get(), Risus.prefix("broken"), (stack, level, entity, seed) -> AngelWingsItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 			ItemProperties.register(RisusItems.ANGEL_WINGS.get(), Risus.prefix("ashen"), (stack, level, entity, seed) -> stack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? 1.0F : 0.0F);
+			ItemProperties.register(RisusItems.ANGEL_WINGS.get(), Risus.prefix("oily"), (stack, level, entity, seed) -> stack.getHoverName().getString().equalsIgnoreCase("oily wings") ? 1.0F : 0.0F);
 			ItemProperties.register(RisusItems.THOUSAND_BLADE.get(), Risus.prefix("charged"), (stack, level, entity, seed) -> {
 				if (entity == null || entity.getUseItem() != stack) {
 					return 0.0F;

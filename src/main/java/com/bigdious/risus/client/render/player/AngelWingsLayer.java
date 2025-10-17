@@ -27,6 +27,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
 	private static final ResourceLocation ANGEL_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/angel_wings.png");
 	private static final ResourceLocation ASHEN_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/ashen_wings.png");
+	private static final ResourceLocation OILY_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/oily_wings.png");
 	private final AngelWingsModel model;
 
 	public AngelWingsLayer(RenderLayerParent<T, M> parent) {
@@ -39,7 +40,10 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 		ItemStack itemstack = parent.getItemBySlot(EquipmentSlot.CHEST);
 		if (shouldRender(itemstack)){
 			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? ASHEN_WINGS_RENDER : ANGEL_WINGS_RENDER), false, itemstack.hasFoil());
+			VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(
+				itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? ASHEN_WINGS_RENDER :
+					itemstack.getHoverName().getString().equalsIgnoreCase("oily wings") ? OILY_WINGS_RENDER :
+						ANGEL_WINGS_RENDER), false, itemstack.hasFoil());
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}

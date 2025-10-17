@@ -1,9 +1,9 @@
-// 1.21.1	2025-10-13T20:28:55.0014468	Risus Item Models
+// 1.21.1	2025-10-17T09:20:36.2232675	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/angel_spawn_egg.json
-21c30fbfbbe5230c44b44fa76d80d78adae25973 assets/risus/models/item/angel_wings.json
+34f67edd91d19cb32d81a01292f82a65acd2a07c assets/risus/models/item/angel_wings.json
 d2fcba569fbcee5726ad1c47afb00dddf324f2e1 assets/risus/models/item/angel_wings_broken.json
 af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.json
 6af107ea76eb93397be6c2a237c067dc39dc2cec assets/risus/models/item/ashen_spire.json
@@ -198,6 +198,8 @@ eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak
 1f8c31c8284ea353e56243f3ef81976a3481f960 assets/risus/models/item/noanim_fire_scythe_held.json
 1f8c31c8284ea353e56243f3ef81976a3481f960 assets/risus/models/item/noanim_scythe_held.json
 1f8c31c8284ea353e56243f3ef81976a3481f960 assets/risus/models/item/noanim_soul_scythe_held.json
+9d85c7657490407dae2aaed17f756184e18265b9 assets/risus/models/item/oily_wings.json
+35fd7a72e995b71cdd2e524facd511870ceb2ae9 assets/risus/models/item/oily_wings_broken.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/oxidized_copper_amalgam.json

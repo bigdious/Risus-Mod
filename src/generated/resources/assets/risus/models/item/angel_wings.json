@@ -19,6 +19,19 @@
         "risus:ashen": 1.0,
         "risus:broken": 1.0
       }
+    },
+    {
+      "model": "risus:item/oily_wings",
+      "predicate": {
+        "risus:oily": 1.0
+      }
+    },
+    {
+      "model": "risus:item/oily_wings_broken",
+      "predicate": {
+        "risus:broken": 1.0,
+        "risus:oily": 1.0
+      }
     }
   ],
   "textures": {

@@ -104,8 +104,16 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 
 		this.tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).addTag(RisusTags.Blocks.BONDKNOT_LOGS)
-			.add(RisusBlocks.BONDKNOT_PLANKS.get(), RisusBlocks.BONDKNOT_SLAB.get(), RisusBlocks.BONDKNOT_STAIRS.get())
-			.add(RisusBlocks.BONDKNOT_FENCE_GATE.get(), RisusBlocks.BONDKNOT_FENCE.get());
+			.add(RisusBlocks.BONDKNOT_PLANKS.get()
+				,RisusBlocks.BONDKNOT_SLAB.get()
+				,RisusBlocks.BONDKNOT_STAIRS.get()
+				,RisusBlocks.BONDKNOT_FENCE_GATE.get()
+				,RisusBlocks.BONDKNOT_FENCE.get()
+				,RisusBlocks.POPPING_BONDKNOT_WOOD.get()
+				,RisusBlocks.POPPING_BONDKNOT_LOG.get()
+				,RisusBlocks.BONDKNOT_DOOR.get()
+				,RisusBlocks.BONDKNOT_BUTTON.get()
+			);
 
 		this.tag(BlockTags.CAMPFIRES).add(RisusBlocks.JOYFLAME_CAMPFIRE.get());
 
