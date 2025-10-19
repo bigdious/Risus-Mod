@@ -32,6 +32,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BLOODWYRM_HEAD, "False Bloodwyrm Head");
 		this.addBlock(RisusBlocks.BLOODY_SPONGE, "Bloody Sponge");
 		this.addBlock(RisusBlocks.BOND_GLASS, "Crystallized Bond Glass");
+		this.addBlock(RisusBlocks.BOND_GLASS_PANE, "Crystallized Bond Glass Pane");
 		this.addBlock(RisusBlocks.BONDKNOT_BUTTON, "Bondknot Button");
 		this.addBlock(RisusBlocks.BONDKNOT_DOOR, "Bondknot Door");
 		this.addBlock(RisusBlocks.BONDKNOT_FENCE, "Bondknot Fence");
@@ -55,6 +56,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.CHISELED_GRIMSTONE, "Chiseled Grimstone");
 		this.addBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK, "Coagulated Blood Block");
 		this.addBlock(RisusBlocks.CONTAINMENT_GLASS, "Containment Glass");
+		this.addBlock(RisusBlocks.CONTAINMENT_GLASS_PANE, "Containment Glass Pane");
 		this.addBlock(RisusBlocks.COPPER_AMALGAM, "Copper Amalgam");
 		this.addBlock(RisusBlocks.CRACKED_GRIMSTONE_BRICKS, "Cracked Grimstone Bricks");
 		this.addBlock(RisusBlocks.CRYSTALLIZED_BONDS, "Crystallized Bonds");

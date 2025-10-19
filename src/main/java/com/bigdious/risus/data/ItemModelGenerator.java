@@ -170,6 +170,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.FULL_FOSSIL_SLAB.get());
 		toBlock(RisusBlocks.FULL_FOSSIL.get());
 		toBlock(RisusBlocks.BLOODY_SPONGE.get());
+		toBlock(RisusBlocks.EERIE_FENCE.get());
 
 		toBlockModel(RisusBlocks.EYE_ENDER.get(), Risus.prefix("block/eye/ender"));
 		toBlockModel(RisusBlocks.EYE_BLEACHED.get(), Risus.prefix("block/eye/bleached"));
@@ -220,6 +221,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.GUTS_BOAT);
 		singleTex(RisusItems.CONCENTRATION_CORE);
+		generatedRenderType(RisusBlocks.BOND_GLASS_PANE.getId().getPath(), "minecraft:translucent", Risus.prefix("item/bond_glass_pane"));
+		generatedRenderType(RisusBlocks.CONTAINMENT_GLASS_PANE.getId().getPath(), "minecraft:translucent", Risus.prefix("item/containment_glass_pane"));
 		singleTex(RisusItems.CRYSTALLIZED_BOND);
 		singleTex(RisusItems.GLUTTONY_SCALES);
 		singleTex(RisusItems.GUILTY_APPLE);

@@ -1,5 +1,8 @@
 {
   "values": [
+    "risus:eerie_fence",
+    "risus:containment_glass_pane",
+    "risus:bond_glass_pane",
     "risus:grimstone_wall",
     "risus:grimstone_bricks_wall",
     "risus:polished_grimstone_wall",

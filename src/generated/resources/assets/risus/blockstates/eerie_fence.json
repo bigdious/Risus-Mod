@@ -1,0 +1,192 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_post"
+      },
+      "when": {
+        "height_type": "down_tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_post"
+      },
+      "when": {
+        "height_type": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_post_down"
+      },
+      "when": {
+        "height_type": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_post_down"
+      },
+      "when": {
+        "height_type": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side",
+        "uvlock": true
+      },
+      "when": {
+        "north": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_tall",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_tall",
+        "uvlock": true
+      },
+      "when": {
+        "north": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_tall",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_tall",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "down_low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down",
+        "uvlock": true
+      },
+      "when": {
+        "north": "down_low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "down_low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "down_low"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down_tall",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "down_tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down_tall",
+        "uvlock": true
+      },
+      "when": {
+        "north": "down_tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down_tall",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "down_tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "risus:block/eerie_fence_side_down_tall",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "down_tall"
+      }
+    }
+  ]
+}

@@ -86,6 +86,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.WALL_SIGNS).add(RisusBlocks.BONDKNOT_WALL_SIGN.get());
 
 		this.tag(BlockTags.WALLS).add(
+			RisusBlocks.EERIE_FENCE.get(),
+			RisusBlocks.CONTAINMENT_GLASS_PANE.get(),
+			RisusBlocks.BOND_GLASS_PANE.get(),
 			RisusBlocks.GRIMSTONE_WALL.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
@@ -162,7 +165,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.MIRAGE_NETHERRACK.get(),
 
 			RisusBlocks.BOND_GLASS.get(),
+			RisusBlocks.BOND_GLASS_PANE.get(),
 			RisusBlocks.CONTAINMENT_GLASS.get(),
+			RisusBlocks.CONTAINMENT_GLASS_PANE.get(),
 
 			RisusBlocks.GRIMSTONE.get(),
 			RisusBlocks.GRIMSTONE_SLAB.get(),

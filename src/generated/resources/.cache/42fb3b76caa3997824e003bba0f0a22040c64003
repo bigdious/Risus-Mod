@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-17T21:33:09.2343132	Risus Item Models
+// 1.21.1	2025-10-19T22:24:31.522464	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -31,6 +31,7 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 523c6c687656d5c97791226624cc2cea28d44c23 assets/risus/models/item/bondknot_trapdoor.json
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
 3f30f32e94595944c43f723d9e2f590cbe60ef13 assets/risus/models/item/bond_glass.json
+9919de4eaa900ba10c96009fad76e4b9f5f947f6 assets/risus/models/item/bond_glass_pane.json
 47cd4ff2e2fde19bdf58563a9eef7dc57bcb2d17 assets/risus/models/item/bone_slab.json
 4322a3de8473f7dfc0d81f733372b97e34fe4c81 assets/risus/models/item/bone_stairs.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
@@ -49,6 +50,7 @@ bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grims
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
 887a891e9ea0cfca9359bcb13ec78e6600b1b686 assets/risus/models/item/containment_glass.json
+d7d30ceafde32f2f0fc2d4169a653fa76bc82f7b assets/risus/models/item/containment_glass_pane.json
 a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/copper_amalgam.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
 da679f6ba42c0395210798ef7e213a26e909d04a assets/risus/models/item/crescent_disaster.json
@@ -81,6 +83,7 @@ ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_ti
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.json
 cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banner_pattern.json
 6b5efeac1f88304624d2754f071d1eb290e40827 assets/risus/models/item/echo_pearl.json
+da6caad60786024c618c8cc0584d7f5c0c1b65e7 assets/risus/models/item/eerie_fence.json
 9bbd4572fb9e05f6ac0c6647c99335026ac0ebd7 assets/risus/models/item/egg_sac.json
 2c0a81f02b99ae4fcec84b37b27aaad58ba25da3 assets/risus/models/item/embodiment_of_courtship.json
 435c93c5458c5f22825e13a357153b237b7cdf7f assets/risus/models/item/embodiment_of_devotion.json

@@ -2,18 +2,24 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
+import com.bigdious.risus.blocks.enums.FenceHeight;
+import com.bigdious.risus.blocks.enums.FenceSide;
 import com.bigdious.risus.init.RisusBlocks;
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.WallSide;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -25,6 +31,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
+
 
 	public BlockModelGenerator(PackOutput output, ExistingFileHelper helper) {
 		super(output, Risus.MODID, helper);
@@ -324,8 +331,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 
+		superFenceBlock(RisusBlocks.EERIE_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_tall")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down_tall")));
+
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.BOND_GLASS_PANE.get(), Risus.prefix("block/bond_glass"), Risus.prefix("block/bond_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.CONTAINMENT_GLASS_PANE.get(), Risus.prefix("block/containment_glass"), Risus.prefix("block/containment_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
@@ -505,6 +516,34 @@ public class BlockModelGenerator extends BlockStateProvider {
 		(builder.part().modelFile(model).rotationY(((int)(entry.getKey()).toYRot() + 180) % 360).uvLock(true).addModel()).condition(entry.getValue(), height);
 	}
 
+	private void superFenceBlock(SuperFenceBlock block, ModelFile post, ModelFile postDown, ModelFile side, ModelFile sideTall, ModelFile sideDown, ModelFile sideDownTall) {
+		//doing this the ugly way cause immutable map thinks he's funny
+		(this.getMultipartBuilder(block).part().modelFile(postDown).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.DOWN_TALL);
+		(this.getMultipartBuilder(block).part().modelFile(postDown).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.DOWN);
+		(this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.NONE);
+		(this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.TALL);
+
+		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.EAST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.EAST_WALL, FenceSide.LOW);
+		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.NORTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.NORTH_WALL, FenceSide.LOW);
+		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.WEST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.WEST_WALL, FenceSide.LOW);
+		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.SOUTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.SOUTH_WALL, FenceSide.LOW);
+
+		(this.getMultipartBuilder(block).part().modelFile(sideTall).rotationY(((int)(Direction.EAST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.EAST_WALL, FenceSide.TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideTall).rotationY(((int)(Direction.NORTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.NORTH_WALL, FenceSide.TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideTall).rotationY(((int)(Direction.WEST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.WEST_WALL, FenceSide.TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideTall).rotationY(((int)(Direction.SOUTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.SOUTH_WALL, FenceSide.TALL);
+
+		(this.getMultipartBuilder(block).part().modelFile(sideDown).rotationY(((int)(Direction.EAST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.EAST_WALL, FenceSide.DOWN_LOW);
+		(this.getMultipartBuilder(block).part().modelFile(sideDown).rotationY(((int)(Direction.NORTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.NORTH_WALL, FenceSide.DOWN_LOW);
+		(this.getMultipartBuilder(block).part().modelFile(sideDown).rotationY(((int)(Direction.WEST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.WEST_WALL, FenceSide.DOWN_LOW);
+		(this.getMultipartBuilder(block).part().modelFile(sideDown).rotationY(((int)(Direction.SOUTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.SOUTH_WALL, FenceSide.DOWN_LOW);
+
+		(this.getMultipartBuilder(block).part().modelFile(sideDownTall).rotationY(((int)(Direction.EAST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.EAST_WALL, FenceSide.DOWN_TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideDownTall).rotationY(((int)(Direction.NORTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.NORTH_WALL, FenceSide.DOWN_TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideDownTall).rotationY(((int)(Direction.WEST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.WEST_WALL, FenceSide.DOWN_TALL);
+		(this.getMultipartBuilder(block).part().modelFile(sideDownTall).rotationY(((int)(Direction.SOUTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.SOUTH_WALL, FenceSide.DOWN_TALL);
+	}
+
 	private void rotatingDirectionalBlock (Block block, ModelFile model, ModelFile tiltedModel, int angleOffset) {
 		this.getVariantBuilder(block).forAllStates((state) -> {
 			Direction dir = state.getValue(BlockStateProperties.FACING);
@@ -525,6 +564,45 @@ public class BlockModelGenerator extends BlockStateProvider {
 				.build();
 		});
 	}
+
+	public void betterPaneBlock(RisusBarsBlock block, String name, ResourceLocation pane, ResourceLocation edge) {
+		betterPaneBlockInternal(block, name + "_pane", pane, edge);
+	}
+
+	public void betterPaneBlockWithRenderType(RisusBarsBlock block, ResourceLocation pane, ResourceLocation edge, ResourceLocation renderType) {
+		this.betterPaneBlockInternalWithRenderType(block, BuiltInRegistries.BLOCK.getKey(block).toString(), pane, edge, renderType);
+	}
+
+	private void betterPaneBlockInternal(RisusBarsBlock block, String baseName, ResourceLocation pane, ResourceLocation edge) {
+		ModelFile post = models().panePost(baseName + "_post", pane, edge);
+		ModelFile side = models().paneSide(baseName + "_side", pane, edge);
+		ModelFile sideAlt = models().paneSideAlt(baseName + "_side_alt", pane, edge);
+		ModelFile noSide = models().paneNoSide(baseName + "_noside", pane);
+		ModelFile noSideAlt = models().paneNoSideAlt(baseName + "_noside_alt", pane);
+		betterPaneBlock(block, post, side, sideAlt, noSide, noSideAlt);
+	}
+
+	private void betterPaneBlockInternalWithRenderType(RisusBarsBlock block, String baseName, ResourceLocation pane, ResourceLocation edge, ResourceLocation renderType) {
+		ModelFile post = (this.models().panePost(baseName + "_post", pane, edge)).renderType(renderType);
+		ModelFile side = (this.models().paneSide(baseName + "_side", pane, edge)).renderType(renderType);
+		ModelFile sideAlt = (this.models().paneSideAlt(baseName + "_side_alt", pane, edge)).renderType(renderType);
+		ModelFile noSide = (this.models().paneNoSide(baseName + "_noside", pane)).renderType(renderType);
+		ModelFile noSideAlt = (this.models().paneNoSideAlt(baseName + "_noside_alt", pane)).renderType(renderType);
+		this.betterPaneBlock(block, post, side, sideAlt, noSide, noSideAlt);
+	}
+
+	public void betterPaneBlock(RisusBarsBlock block, ModelFile post, ModelFile side, ModelFile sideAlt, ModelFile noSide, ModelFile noSideAlt) {
+		MultiPartBlockStateBuilder builder = (this.getMultipartBuilder(block).part().modelFile(post).addModel()).end();
+		PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach((e) -> {
+			Direction dir = e.getKey();
+			if (dir.getAxis().isHorizontal()) {
+				boolean alt = dir == Direction.SOUTH;
+				((builder.part().modelFile(!alt && dir != Direction.WEST ? side : sideAlt).rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()).condition(e.getValue(), true).end().part().modelFile(!alt && dir != Direction.EAST ? noSide : noSideAlt).rotationY(dir == Direction.WEST ? 270 : (dir == Direction.SOUTH ? 90 : 0)).addModel()).condition(e.getValue(), false);
+			}
+
+		});
+	}
+
 
 	@Nonnull
 	@Override
