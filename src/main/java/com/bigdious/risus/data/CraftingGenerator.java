@@ -79,6 +79,7 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.TOTEM_OF_UNDYING), RisusItems.TOTEM_OF_UNYIELDING).unlockedBy("has_item", has(Items.TOTEM_OF_UNDYING)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusItems.LUCKY_CHARM), RisusItems.WRETCHED_CHARM).unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.GOAT_HORN), RisusItems.WARHORN).unlockedBy("has_item", has(Items.GOAT_HORN)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.IRON_BARS), RisusBlocks.EERIE_FENCE).unlockedBy("has_item", has(Items.IRON_BARS)).save(consumer);
 
 		//bone to fossil
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.BONE_BLOCK), RisusBlocks.FOSSIL).unlockedBy("has_item", has(Items.BONE_BLOCK)).save(consumer);
@@ -335,6 +336,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.pattern("##")
 			.define('#', Ingredient.of(RisusItems.HAIR_FOLLICLES.get()))
 			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_FENCE.get())
+			.requires(Ingredient.of(RisusBlocks.DARK_FENCE))
+			.unlockedBy("has_item", has(RisusBlocks.DARK_FENCE))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DARK_FENCE.get())
+			.requires(Ingredient.of(RisusBlocks.EERIE_FENCE))
+			.unlockedBy("has_item", has(RisusBlocks.EERIE_FENCE))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())

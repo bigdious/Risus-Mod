@@ -1,5 +1,5 @@
-// 1.21.1	2025-10-19T22:27:27.4727852	Tags for minecraft:block mod id risus
-86196d8d301039609134e790f381774456113206 data/c/tags/block/fences.json
+// 1.21.1	2025-10-20T22:06:12.8585414	Tags for minecraft:block mod id risus
+5b3cf4cb104ff23a8bc84a485a299efc48779360 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/block/fence_gates/wooden.json
@@ -7,7 +7,7 @@ ddc76049a559e6ddf6013e0a5688a846920be0bb data/minecraft/tags/block/campfires.jso
 ec753b81e9558b44c846e98e909ffa33f075cae4 data/minecraft/tags/block/cauldrons.json
 55db3c4812da3496be8eccb68a963c8613455bea data/minecraft/tags/block/climbable.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/doors.json
-86196d8d301039609134e790f381774456113206 data/minecraft/tags/block/fences.json
+5b3cf4cb104ff23a8bc84a485a299efc48779360 data/minecraft/tags/block/fences.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/minecraft/tags/block/fence_gates.json
 bd91bab90901281b6022e8156f5d31aa13cd8f6f data/minecraft/tags/block/fire.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/block/flowers.json
@@ -15,7 +15,7 @@ e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs.json
 e2c83d02993fb0780cd7dc0fc6b58380845db69b data/minecraft/tags/block/logs_that_burn.json
 c065dfbe43fdbb7fe55162e1e837148512c97062 data/minecraft/tags/block/mineable/axe.json
 28820266b8da1cc77d68aae1c7e7c5f3c062b9cc data/minecraft/tags/block/mineable/hoe.json
-da21d5987cf0fabb7957f8be7d51bffabc7942ab data/minecraft/tags/block/mineable/pickaxe.json
+001c715719fe5b6c1a84051dbfb76ab4fed20ef9 data/minecraft/tags/block/mineable/pickaxe.json
 08e2b2328521bd43408bdb0d31d54dc781c200cd data/minecraft/tags/block/mineable/shovel.json
 a13c45b8b26246c4fc74f961e53a18f2ab7c6fb0 data/minecraft/tags/block/needs_diamond_tool.json
 af8e4bc49d1dcfcbc3323fd65345a4e5c8f60224 data/minecraft/tags/block/needs_stone_tool.json
@@ -28,7 +28,7 @@ f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/block/planks.json
 958093f24af470531ae9f8a798e3218a60a83357 data/minecraft/tags/block/stairs.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/block/standing_signs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/block/trapdoors.json
-54b7d4cf380e91b5204b0f1ca43ba608e8b50b53 data/minecraft/tags/block/walls.json
+08d32fbf45c6f9ec002dbe9b84b1011f7026d7a5 data/minecraft/tags/block/walls.json
 e98f56bd0edb12f5acbbd746df1f53af5d86b2a7 data/minecraft/tags/block/wall_signs.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/block/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/wooden_doors.json

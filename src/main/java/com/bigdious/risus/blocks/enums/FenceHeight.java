@@ -5,10 +5,8 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public enum FenceHeight implements StringRepresentable {
-	NONE("none"),
-	TALL("tall"),
-	DOWN("down"),
-	DOWN_TALL("down_tall");
+	BASE("base"),
+	DOWN("down");
 
 	private final String name;
 

@@ -170,7 +170,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.FULL_FOSSIL_SLAB.get());
 		toBlock(RisusBlocks.FULL_FOSSIL.get());
 		toBlock(RisusBlocks.BLOODY_SPONGE.get());
-		toBlock(RisusBlocks.EERIE_FENCE.get());
 
 		toBlockModel(RisusBlocks.EYE_ENDER.get(), Risus.prefix("block/eye/ender"));
 		toBlockModel(RisusBlocks.EYE_BLEACHED.get(), Risus.prefix("block/eye/bleached"));
@@ -193,6 +192,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		getBuilder(RisusBlocks.BONE_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", ResourceLocation.withDefaultNamespace("block/bone_block_side"));
+		getBuilder(RisusBlocks.EERIE_FENCE.getId().getPath())
+			.parent(getExistingFile(Risus.prefix("block/eerie_fence_item")));
+		getBuilder(RisusBlocks.DARK_FENCE.getId().getPath())
+			.parent(getExistingFile(Risus.prefix("block/dark_fence_item")));
 
 		//items
 		singleTex(RisusItems.RESEARCHERS_NOTES);

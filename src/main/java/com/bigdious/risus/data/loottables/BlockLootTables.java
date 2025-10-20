@@ -85,6 +85,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.LAUGHING_OBSIDIAN.get());
 		dropSelf(RisusBlocks.ENGRAVED_BASALT.get());
 		dropSelf(RisusBlocks.EERIE_FENCE.get());
+		dropSelf(RisusBlocks.DARK_FENCE.get());
 		dropSelf(RisusBlocks.MAW_GUTS.get());
 		add(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), createSilkTouchDispatchTable(RisusBlocks.MIRAGE_GRASS_BLOCK.get(), LootItem.lootTableItem(Blocks.DIRT).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));
 		add(RisusBlocks.MIRAGE_SAND.get(), createSilkTouchDispatchTable(RisusBlocks.MIRAGE_SAND.get(), LootItem.lootTableItem(Blocks.SAND).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))));

@@ -332,6 +332,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 
 		superFenceBlock(RisusBlocks.EERIE_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_tall")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down_tall")));
+		superFenceBlock(RisusBlocks.DARK_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side")), models().getExistingFile(Risus.prefix("block/dark_fence_side_tall")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down_tall")));
 
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
 		betterPaneBlockWithRenderType(RisusBlocks.BOND_GLASS_PANE.get(), Risus.prefix("block/bond_glass"), Risus.prefix("block/bond_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
@@ -518,10 +519,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	private void superFenceBlock(SuperFenceBlock block, ModelFile post, ModelFile postDown, ModelFile side, ModelFile sideTall, ModelFile sideDown, ModelFile sideDownTall) {
 		//doing this the ugly way cause immutable map thinks he's funny
-		(this.getMultipartBuilder(block).part().modelFile(postDown).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.DOWN_TALL);
-		(this.getMultipartBuilder(block).part().modelFile(postDown).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.DOWN);
-		(this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.NONE);
-		(this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(SuperFenceBlock.FENCE_HEIGHT, FenceHeight.TALL);
+		(this.getMultipartBuilder(block).part().modelFile(postDown).addModel()).condition(SuperFenceBlock.DOWN, true);
+		(this.getMultipartBuilder(block).part().modelFile(post).addModel()).condition(SuperFenceBlock.DOWN, false);
 
 		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.EAST).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.EAST_WALL, FenceSide.LOW);
 		(this.getMultipartBuilder(block).part().modelFile(side).rotationY(((int)(Direction.NORTH).toYRot() + 180) % 360).uvLock(true).addModel()).condition(SuperFenceBlock.NORTH_WALL, FenceSide.LOW);

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-19T22:13:25.2418336	Loot Tables
+// 1.21.1	2025-10-20T21:30:08.7427926	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -49,6 +49,7 @@ ce318dc412fd4ac060a7d830180de73f8f131f3e data/risus/loot_table/blocks/containmen
 3f70b4e7ee99e9317fabd500d8fbd35c5751da29 data/risus/loot_table/blocks/curved_ritual_block.json
 b42aafc954cdb15dad1d4e458705a395de728dce data/risus/loot_table/blocks/cyan_display_notch.json
 2b215889cd9907fc6952fb1d629f15ae6ca39dbb data/risus/loot_table/blocks/darkness.json
+af729eed5f5a582e3ea0c2fc678299b927f087c1 data/risus/loot_table/blocks/dark_fence.json
 decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_table/blocks/decayed_tissue.json
 46b68cae6160b2510334f558d196451c82481bc2 data/risus/loot_table/blocks/decaying_tissue.json
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_table/blocks/decomposed_tissue.json

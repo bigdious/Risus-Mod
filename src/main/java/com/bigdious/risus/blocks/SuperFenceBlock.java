@@ -33,7 +33,7 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 	//this is an upside down super wall disguised as iron bars
 
 	public static final EnumProperty<MultiloggingEnum> FLUIDLOGGED = MultiloggingEnum.FLUIDLOGGED;
-	public static final EnumProperty<FenceHeight> FENCE_HEIGHT = FenceHeight.HEIGHT_TYPE;
+	public static final BooleanProperty DOWN;
 	public static final EnumProperty<FenceSide> EAST_WALL;
 	public static final EnumProperty<FenceSide> NORTH_WALL;
 	public static final EnumProperty<FenceSide> SOUTH_WALL;
@@ -49,24 +49,28 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 	public SuperFenceBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.getStateDefinition().any()
-			.setValue(FENCE_HEIGHT, FenceHeight.NONE)
+			.setValue(DOWN, false)
 			.setValue(NORTH_WALL, FenceSide.NONE)
 			.setValue(EAST_WALL, FenceSide.NONE)
 			.setValue(SOUTH_WALL, FenceSide.NONE)
 			.setValue(WEST_WALL, FenceSide.NONE)
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY));
-		this.shapeByIndex = this.makeShapes(4.0F, 3.0F, 16.0F, 0.0F, 16.0F, 16.0F);
-		this.collisionShapeByIndex = this.makeShapes(4.0F, 3F, 24.0F, 0.0F, 24.0F, 24.0F);
+		this.shapeByIndex = this.makeShapes(1.0F, 0.5F, 16.0F, 0.0F, 16.0F, 16.0F);
+		this.collisionShapeByIndex = this.makeShapes(1.0F, 0.5F, 24.0F, 0.0F, 24.0F, 24.0F);
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FENCE_HEIGHT, NORTH_WALL, EAST_WALL, WEST_WALL, SOUTH_WALL, FLUIDLOGGED);
+		builder.add(DOWN, NORTH_WALL, EAST_WALL, WEST_WALL, SOUTH_WALL, FLUIDLOGGED);
 	}
 
-	public static VoxelShape applyFenceShape(VoxelShape baseShape, FenceSide height, VoxelShape lowShape, VoxelShape tallShape) {
+	public static VoxelShape applyFenceShape(VoxelShape baseShape, FenceSide height, VoxelShape lowShape, VoxelShape tallShape, VoxelShape downShape, VoxelShape downTallShape) {
 		if (height == FenceSide.TALL) {
 			return Shapes.or(baseShape, tallShape);
+		} else if (height == FenceSide.DOWN_LOW) {
+			return Shapes.or(baseShape, downShape);
+		} else if (height == FenceSide.DOWN_TALL) {
+			return Shapes.or(baseShape, downTallShape);
 		} else {
 			return height == FenceSide.LOW ? Shapes.or(baseShape, lowShape) : baseShape;
 		}
@@ -78,32 +82,40 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		float f2 = 8.0F - pDepth;
 		float f3 = 8.0F + pDepth;
 		VoxelShape voxelshape = Block.box(f, 0.0D, f, f1, pWallPostHeight, f1);
-		VoxelShape voxelshape_down = Block.box(f, -8.0D, f, f1, pWallPostHeight + 8.0D, f1);
-		VoxelShape voxelshape1 = Block.box(f2, pWallMinY, 0.0D, f3, pWallLowHeight, f3);
-		VoxelShape voxelshape2 = Block.box(f2, pWallMinY, f2, f3, pWallLowHeight, 16.0D);
-		VoxelShape voxelshape3 = Block.box(0.0D, pWallMinY, f2, f3, pWallLowHeight, f3);
-		VoxelShape voxelshape4 = Block.box(f2, pWallMinY, f2, 16.0D, pWallLowHeight, f3);
-		VoxelShape voxelshape5 = Block.box(f2, pWallMinY - 8.0D, 0.0D, f3, pWallTallHeight, f3);
-		VoxelShape voxelshape6 = Block.box(f2, pWallMinY - 8.0D, f2, f3, pWallTallHeight, 16.0D);
-		VoxelShape voxelshape7 = Block.box(0.0D, pWallMinY - 8.0D, f2, f3, pWallTallHeight, f3);
-		VoxelShape voxelshape8 = Block.box(f2, pWallMinY - 8.0D, f2, 16.0D, pWallTallHeight, f3);
+		VoxelShape voxelshape_down = Block.box(f, -8.0D, f, f1, pWallPostHeight, f1);
+		VoxelShape voxelshape1 = Block.box(f2, pWallMinY, 0.0D, f3, pWallLowHeight-1, f3);
+		VoxelShape voxelshape2 = Block.box(f2, pWallMinY, f2, f3, pWallLowHeight-1, 16.0D);
+		VoxelShape voxelshape3 = Block.box(0.0D, pWallMinY, f2, f3, pWallLowHeight-1, f3);
+		VoxelShape voxelshape4 = Block.box(f2, pWallMinY, f2, 16.0D, pWallLowHeight-1, f3);
+		VoxelShape voxelshape5 = Block.box(f2, pWallMinY, 0.0D, f3, pWallTallHeight, f3);
+		VoxelShape voxelshape6 = Block.box(f2, pWallMinY, f2, f3, pWallTallHeight, 16.0D);
+		VoxelShape voxelshape7 = Block.box(0.0D, pWallMinY, f2, f3, pWallTallHeight, f3);
+		VoxelShape voxelshape8 = Block.box(f2, pWallMinY, f2, 16.0D, pWallTallHeight, f3);
+		VoxelShape voxelshape10 = Block.box(f2, pWallMinY- 8.0D, 0.0D, f3, pWallLowHeight-1, f3);
+		VoxelShape voxelshape11 = Block.box(f2, pWallMinY- 8.0D, f2, f3, pWallLowHeight-1, 16.0D);
+		VoxelShape voxelshape12 = Block.box(0.0D, pWallMinY- 8.0D, f2, f3, pWallLowHeight-1, f3);
+		VoxelShape voxelshape13 = Block.box(f2, pWallMinY- 8.0D, f2, 16.0D, pWallLowHeight-1, f3);
+		VoxelShape voxelshape14 = Block.box(f2, pWallMinY - 8.0D, 0.0D, f3, pWallTallHeight, f3);
+		VoxelShape voxelshape15 = Block.box(f2, pWallMinY - 8.0D, f2, f3, pWallTallHeight, 16.0D);
+		VoxelShape voxelshape16 = Block.box(0.0D, pWallMinY - 8.0D, f2, f3, pWallTallHeight, f3);
+		VoxelShape voxelshape17 = Block.box(f2, pWallMinY - 8.0D, f2, 16.0D, pWallTallHeight, f3);
 		ImmutableMap.Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
-		for (FenceHeight height : FENCE_HEIGHT.getPossibleValues()) {
+		for (Boolean height : DOWN.getPossibleValues()) {
 			for (FenceSide wallside : EAST_WALL.getPossibleValues()) {
 				for (FenceSide wallside1 : NORTH_WALL.getPossibleValues()) {
 					for (FenceSide wallside2 : WEST_WALL.getPossibleValues()) {
 						for (FenceSide wallside3 : SOUTH_WALL.getPossibleValues()) {
 							VoxelShape voxelshape9 = Shapes.empty();
-							voxelshape9 = applyFenceShape(voxelshape9, wallside, voxelshape4, voxelshape8);
-							voxelshape9 = applyFenceShape(voxelshape9, wallside2, voxelshape3, voxelshape7);
-							voxelshape9 = applyFenceShape(voxelshape9, wallside1, voxelshape1, voxelshape5);
-							voxelshape9 = applyFenceShape(voxelshape9, wallside3, voxelshape2, voxelshape6);
-							if (height == FenceHeight.DOWN || height == FenceHeight.DOWN_TALL) {
+							voxelshape9 = applyFenceShape(voxelshape9, wallside, voxelshape4, voxelshape8, voxelshape13, voxelshape17);
+							voxelshape9 = applyFenceShape(voxelshape9, wallside2, voxelshape3, voxelshape7, voxelshape12, voxelshape16);
+							voxelshape9 = applyFenceShape(voxelshape9, wallside1, voxelshape1, voxelshape5, voxelshape10, voxelshape14);
+							voxelshape9 = applyFenceShape(voxelshape9, wallside3, voxelshape2, voxelshape6, voxelshape11, voxelshape15);
+							if (height) {
 								voxelshape9 = Shapes.or(voxelshape9, voxelshape_down);
 							} else {
 								voxelshape9 = Shapes.or(voxelshape9, voxelshape);
 							}
-							BlockState blockstate = this.defaultBlockState().setValue(FENCE_HEIGHT, height).setValue(EAST_WALL, wallside).setValue(WEST_WALL, wallside2).setValue(NORTH_WALL, wallside1).setValue(SOUTH_WALL, wallside3);
+							BlockState blockstate = this.defaultBlockState().setValue(DOWN, height).setValue(EAST_WALL, wallside).setValue(WEST_WALL, wallside2).setValue(NORTH_WALL, wallside1).setValue(SOUTH_WALL, wallside3);
 							builder.put(blockstate.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY), voxelshape9);
 							builder.put(blockstate.setValue(FLUIDLOGGED, MultiloggingEnum.LAVA), voxelshape9);
 							builder.put(blockstate.setValue(FLUIDLOGGED, MultiloggingEnum.WATER), voxelshape9);
@@ -134,7 +146,7 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 	private boolean connectsTo(BlockState state, boolean sideSolid, Direction direction) {
 		Block block = state.getBlock();
 		boolean flag = block instanceof FenceGateBlock && FenceGateBlock.connectsToDirection(state, direction);
-		return state.is(BlockTags.WALLS) || !isExceptionForConnection(state) && sideSolid || block instanceof IronBarsBlock || flag;
+		return state.is(BlockTags.WALLS) || state.getBlock() instanceof SlabBlock && state.getValue(SlabBlock.TYPE) == SlabType.BOTTOM || !isExceptionForConnection(state) && sideSolid || block instanceof IronBarsBlock || flag;
 	}
 
 	@Override
@@ -158,7 +170,7 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		boolean flag3 = this.connectsTo(blockstate3, blockstate3.isFaceSturdy(levelreader, blockpos4, Direction.EAST), Direction.EAST);
 		BlockState blockstate5 = this.defaultBlockState()
 			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
-		return this.updateShape(levelreader, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3);
+		return this.updateShape(levelreader, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3, blockpos.below());
 	}
 
 	@Override
@@ -172,11 +184,9 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 			accessor.scheduleTick(pos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(accessor));
 		}
 
-		if (direction == Direction.DOWN) {
-			return state;
-		} else {
-			return direction == Direction.UP ? this.topUpdate(accessor, state, neighborPos, neighborState) : this.sideUpdate(accessor, pos, state, neighborPos, neighborState, direction);
-		}
+
+		return direction == Direction.UP ? this.topUpdate(accessor, state, neighborPos, neighborState, pos.below()) : this.sideUpdate(accessor, pos, state, neighborPos, neighborState, direction, pos.below());
+
 	}
 
 	private static boolean isConnected(BlockState state, Property<FenceSide> heightProperty) {
@@ -187,15 +197,15 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		return !Shapes.joinIsNotEmpty(secondShape, firstShape, BooleanOp.ONLY_FIRST);
 	}
 
-	public BlockState topUpdate(LevelReader level, BlockState state, BlockPos pos, BlockState secondState) {
+	public BlockState topUpdate(LevelReader level, BlockState state, BlockPos pos, BlockState secondState, BlockPos below) {
 		boolean flag = isConnected(state, NORTH_WALL);
 		boolean flag1 = isConnected(state, EAST_WALL);
 		boolean flag2 = isConnected(state, SOUTH_WALL);
 		boolean flag3 = isConnected(state, WEST_WALL);
-		return this.updateShape(level, state, pos, secondState, flag, flag1, flag2, flag3);
+		return this.updateShape(level, state, pos, secondState, flag, flag1, flag2, flag3, below);
 	}
 
-	public BlockState sideUpdate(LevelReader level, BlockPos firstPos, BlockState firstState, BlockPos secondPos, BlockState secondState, Direction dir) {
+	public BlockState sideUpdate(LevelReader level, BlockPos firstPos, BlockState firstState, BlockPos secondPos, BlockState secondState, Direction dir, BlockPos below) {
 		Direction direction = dir.getOpposite();
 		boolean flag = dir == Direction.NORTH ? this.connectsTo(secondState, secondState.isFaceSturdy(level, secondPos, direction), direction) : isConnected(firstState, NORTH_WALL);
 		boolean flag1 = dir == Direction.EAST ? this.connectsTo(secondState, secondState.isFaceSturdy(level, secondPos, direction), direction) : isConnected(firstState, EAST_WALL);
@@ -203,45 +213,33 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		boolean flag3 = dir == Direction.WEST ? this.connectsTo(secondState, secondState.isFaceSturdy(level, secondPos, direction), direction) : isConnected(firstState, WEST_WALL);
 		BlockPos blockpos = firstPos.above();
 		BlockState blockstate = level.getBlockState(blockpos);
-		return this.updateShape(level, firstState, blockpos, blockstate, flag, flag1, flag2, flag3);
+		return this.updateShape(level, firstState, blockpos, blockstate, flag, flag1, flag2, flag3, below);
 	}
 
-	public BlockState updateShape(LevelReader level, BlockState state, BlockPos pos, BlockState neighbour, boolean northConnection, boolean eastConnection, boolean southConnection, boolean westConnection) {
+	public BlockState updateShape(LevelReader level, BlockState state, BlockPos pos, BlockState neighbour, boolean northConnection, boolean eastConnection, boolean southConnection, boolean westConnection, BlockPos below) {
 		VoxelShape voxelshape = neighbour.getCollisionShape(level, pos).getFaceShape(Direction.DOWN);
-		BlockState blockstate = this.updateSides(state, northConnection, eastConnection, southConnection, westConnection, voxelshape);
-		return this.shouldRaisePost(blockstate, neighbour, voxelshape) ? blockstate.setValue(FENCE_HEIGHT, FenceHeight.TALL) : blockstate.setValue(FENCE_HEIGHT, state.getValue(FENCE_HEIGHT));
+		BlockState blockstate = this.updateSides(this.shouldGoDown(level, below) ,state, northConnection, eastConnection, southConnection, westConnection, voxelshape);
+		return blockstate.setValue(DOWN, this.shouldGoDown(level, below));
 	}
 
-	private boolean shouldRaisePost(BlockState state, BlockState neighbour, VoxelShape shape) {
-		boolean flag = neighbour.getBlock() instanceof WallBlock && neighbour.getValue(WallBlock.UP);
-		if (flag) {
-			return true;
-		} else {
-			FenceSide wallside = state.getValue(NORTH_WALL);
-			FenceSide wallside1 = state.getValue(SOUTH_WALL);
-			FenceSide wallside2 = state.getValue(EAST_WALL);
-			FenceSide wallside3 = state.getValue(WEST_WALL);
-			boolean flag1 = wallside1 == FenceSide.NONE;
-			boolean flag2 = wallside3 == FenceSide.NONE;
-			boolean flag3 = wallside2 == FenceSide.NONE;
-			boolean flag4 = wallside == FenceSide.NONE;
-			boolean flag5 = flag4 && flag1 && flag2 && flag3 || flag4 != flag1 || flag2 != flag3;
-			if (flag5) {
-				return true;
-			} else {
-				boolean flag6 = wallside == FenceSide.TALL && wallside1 == FenceSide.TALL || wallside2 == FenceSide.TALL && wallside3 == FenceSide.TALL;
-				return !flag6 && (neighbour.is(BlockTags.WALL_POST_OVERRIDE) || isCovered(shape, POST_TEST));
-			}
-		}
+	private boolean shouldGoDown(LevelReader level, BlockPos pos) {
+		return level.getBlockState(pos).getBlock() instanceof SlabBlock && level.getBlockState(pos).getValue(SlabBlock.TYPE) == SlabType.BOTTOM;
 	}
 
-	private BlockState updateSides(BlockState state, boolean northConnection, boolean eastConnection, boolean southConnection, boolean westConnection, VoxelShape wallShape) {
-		return (((state.setValue(NORTH_WALL, this.makeWallState(northConnection, wallShape, NORTH_TEST))).setValue(EAST_WALL, this.makeWallState(eastConnection, wallShape, EAST_TEST))).setValue(SOUTH_WALL, this.makeWallState(southConnection, wallShape, SOUTH_TEST))).setValue(WEST_WALL, this.makeWallState(westConnection, wallShape, WEST_TEST));
+	private BlockState updateSides(boolean shouldDown, BlockState state, boolean northConnection, boolean eastConnection, boolean southConnection, boolean westConnection, VoxelShape wallShape) {
+		return (((state.setValue(NORTH_WALL, this.makeWallState(shouldDown, northConnection, wallShape, NORTH_TEST)))
+			.setValue(EAST_WALL, this.makeWallState(shouldDown, eastConnection, wallShape, EAST_TEST)))
+			.setValue(SOUTH_WALL, this.makeWallState(shouldDown, southConnection, wallShape, SOUTH_TEST)))
+			.setValue(WEST_WALL, this.makeWallState(shouldDown, westConnection, wallShape, WEST_TEST));
 	}
 
-	private FenceSide makeWallState(boolean allowConnection, VoxelShape shape, VoxelShape neighbourShape) {
+	private FenceSide makeWallState(boolean shouldDown, boolean allowConnection, VoxelShape shape, VoxelShape neighbourShape) {
 		if (allowConnection) {
-			return isCovered(shape, neighbourShape) ? FenceSide.TALL : FenceSide.LOW;
+			if (isCovered(shape, neighbourShape)) {
+				return shouldDown ? FenceSide.DOWN_TALL : FenceSide.TALL;
+			} else {
+				return shouldDown ? FenceSide.DOWN_LOW : FenceSide.LOW;
+			}
 		} else {
 			return FenceSide.NONE;
 		}
@@ -305,15 +303,16 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 
 
 	static {
+		DOWN = BlockStateProperties.DOWN;
 		EAST_WALL = EnumProperty.create("east", FenceSide.class);
 		NORTH_WALL = EnumProperty.create("north", FenceSide.class);
 		SOUTH_WALL = EnumProperty.create("south", FenceSide.class);
 		WEST_WALL = EnumProperty.create("west", FenceSide.class);
-		POST_TEST = Block.box(7.0F, 0.0F, 7.0F, 9.0F, 16.0F, 9.0F);
-		NORTH_TEST = Block.box(7.0F, 0.0F, 0.0F, 9.0F, 16.0F, 9.0F);
-		SOUTH_TEST = Block.box(7.0F, 0.0F, 7.0F, 9.0F, 16.0F, 16.0F);
-		WEST_TEST = Block.box(0.0F, 0.0F, 7.0F, 9.0F, 16.0F, 9.0F);
-		EAST_TEST = Block.box(7.0F, 0.0F, 7.0F, 16.0F, 16.0F, 9.0F);
+		POST_TEST = Block.box(7.0F, 0.0F, 7.0F, 9F, 16.0F, 9F);
+		NORTH_TEST = Block.box(7.5F, 0.0F, 0.0F, 8.5F, 16.0F, 8.5F);
+		SOUTH_TEST = Block.box(7.5F, 0.0F, 7.5F, 8.5F, 16.0F, 16.0F);
+		WEST_TEST = Block.box(0.0F, 0.0F, 7.5F, 8.5F, 16.0F, 8.5F);
+		EAST_TEST = Block.box(7.5F, 0.0F, 7.5F, 16.0F, 16.0F, 8.5F);
 	}
 
 

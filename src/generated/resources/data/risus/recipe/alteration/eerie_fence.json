@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:iron_bars"
+  },
+  "result": "risus:eerie_fence"
+}

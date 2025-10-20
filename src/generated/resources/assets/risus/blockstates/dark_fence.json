@@ -18,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side",
+        "model": "risus:block/dark_fence_side",
         "uvlock": true,
         "y": 90
       },
@@ -28,7 +28,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side",
+        "model": "risus:block/dark_fence_side",
         "uvlock": true
       },
       "when": {
@@ -37,7 +37,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side",
+        "model": "risus:block/dark_fence_side",
         "uvlock": true,
         "y": 270
       },
@@ -47,7 +47,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side",
+        "model": "risus:block/dark_fence_side",
         "uvlock": true,
         "y": 180
       },
@@ -57,7 +57,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_tall",
+        "model": "risus:block/dark_fence_side_tall",
         "uvlock": true,
         "y": 90
       },
@@ -67,7 +67,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_tall",
+        "model": "risus:block/dark_fence_side_tall",
         "uvlock": true
       },
       "when": {
@@ -76,7 +76,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_tall",
+        "model": "risus:block/dark_fence_side_tall",
         "uvlock": true,
         "y": 270
       },
@@ -86,7 +86,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_tall",
+        "model": "risus:block/dark_fence_side_tall",
         "uvlock": true,
         "y": 180
       },
@@ -96,7 +96,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down",
+        "model": "risus:block/dark_fence_side_down",
         "uvlock": true,
         "y": 90
       },
@@ -106,7 +106,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down",
+        "model": "risus:block/dark_fence_side_down",
         "uvlock": true
       },
       "when": {
@@ -115,7 +115,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down",
+        "model": "risus:block/dark_fence_side_down",
         "uvlock": true,
         "y": 270
       },
@@ -125,7 +125,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down",
+        "model": "risus:block/dark_fence_side_down",
         "uvlock": true,
         "y": 180
       },
@@ -135,7 +135,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down_tall",
+        "model": "risus:block/dark_fence_side_down_tall",
         "uvlock": true,
         "y": 90
       },
@@ -145,7 +145,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down_tall",
+        "model": "risus:block/dark_fence_side_down_tall",
         "uvlock": true
       },
       "when": {
@@ -154,7 +154,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down_tall",
+        "model": "risus:block/dark_fence_side_down_tall",
         "uvlock": true,
         "y": 270
       },
@@ -164,7 +164,7 @@
     },
     {
       "apply": {
-        "model": "risus:block/eerie_fence_side_down_tall",
+        "model": "risus:block/dark_fence_side_down_tall",
         "uvlock": true,
         "y": 180
       },

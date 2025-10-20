@@ -287,9 +287,11 @@ public class RisusEvents {
 		Map<String, ItemStack> PLAYERS_AND_DROPS = Map.ofEntries(
 			Map.entry("68754cb0-8b5f-4c16-94b9-593c3eba3676", Blocks.COPPER_BLOCK.asItem().getDefaultInstance())
 			,Map.entry("7a804249-c3da-4b35-b5a9-4f9b8cd9132e", RisusBlocks.SMILING_REMAINS.toStack())
+			,Map.entry("853d0097-3169-4eaa-babd-e5a52c11c0f9", Items.CAT_SPAWN_EGG.getDefaultInstance())
 			,Map.entry("c8649a16-96eb-4635-b150-6a4f04038a18", Items.GOAT_HORN.getDefaultInstance())
 			,Map.entry("566dbb9b-ad89-41a7-9a73-65be81262e9e", Items.WRITABLE_BOOK.getDefaultInstance())
 			,Map.entry("c47fe203-99e7-45c4-9c19-2c9281b74364", Items.PORKCHOP.getDefaultInstance())
+			,Map.entry("c0159419-7eec-49fb-a4fe-b6fe76f84ade", Items.EMERALD_ORE.getDefaultInstance())
 		);
 		if (event.getEntity() instanceof Player player && PLAYERS_AND_DROPS.containsKey(player.getUUID().toString())) {
 			ItemEntity drop = EntityType.ITEM.create(player.level());

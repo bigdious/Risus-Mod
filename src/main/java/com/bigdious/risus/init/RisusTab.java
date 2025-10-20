@@ -104,8 +104,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 				output.accept(RisusBlocks.CHISELED_GRIMSTONE.get());
 
-
-
 				output.accept(RisusBlocks.SKIN.get());
 				output.accept(RisusBlocks.FLESHY_SKIN.get());
 				output.accept(RisusBlocks.CURVED_FLESHY_SKIN.get());
@@ -189,6 +187,8 @@ public class RisusTab {
 
 
 				output.accept(RisusBlocks.BIG_CHAIN.get());
+				output.accept(RisusBlocks.EERIE_FENCE.get());
+				output.accept(RisusBlocks.DARK_FENCE.get());
 				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusBlocks.NEURON_HEAD.get());
