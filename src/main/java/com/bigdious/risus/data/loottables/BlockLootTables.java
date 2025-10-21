@@ -129,6 +129,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.BONDKNOT_FENCE.get());
 		dropSelf(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 		dropSelf(RisusBlocks.BONDKNOT_TRAPDOOR.get());
+		dropSelf(RisusBlocks.DARK_TRAPDOOR.get());
+		dropSelf(RisusBlocks.EERIE_TRAPDOOR.get());
 		add(RisusBlocks.BONDKNOT_DOOR.get(), createSinglePropConditionTable(RisusBlocks.BONDKNOT_DOOR.get(), DoorBlock.HALF, DoubleBlockHalf.LOWER));
 		dropOther(RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		dropOther(RisusBlocks.BONDKNOT_WALL_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());

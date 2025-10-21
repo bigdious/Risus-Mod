@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-20T21:30:08.7427926	Loot Tables
+// 1.21.1	2025-10-21T20:41:58.4841836	Loot Tables
 6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -50,6 +50,7 @@ ce318dc412fd4ac060a7d830180de73f8f131f3e data/risus/loot_table/blocks/containmen
 b42aafc954cdb15dad1d4e458705a395de728dce data/risus/loot_table/blocks/cyan_display_notch.json
 2b215889cd9907fc6952fb1d629f15ae6ca39dbb data/risus/loot_table/blocks/darkness.json
 af729eed5f5a582e3ea0c2fc678299b927f087c1 data/risus/loot_table/blocks/dark_fence.json
+c97cedeb67def06c250d7b8789bf492929af63d7 data/risus/loot_table/blocks/dark_trapdoor.json
 decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_table/blocks/decayed_tissue.json
 46b68cae6160b2510334f558d196451c82481bc2 data/risus/loot_table/blocks/decaying_tissue.json
 b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_table/blocks/decomposed_tissue.json
@@ -57,6 +58,7 @@ b67814e344b9631628a957679cd72e2468a12da2 data/risus/loot_table/blocks/decomposed
 ca2326db70dfc01aeb34a908c692fca8d6c4a5cf data/risus/loot_table/blocks/depth_vase.json
 41aeec2a7e56a1d9b385df088b16a68c630f2914 data/risus/loot_table/blocks/display_notch.json
 46d8f86af6129e00b9323a2c8560af3bffdc8a23 data/risus/loot_table/blocks/eerie_fence.json
+adfc2cca3f8ee686279f92662738881ebfd8702b data/risus/loot_table/blocks/eerie_trapdoor.json
 0848c6823beedc155b3d4e8a94adb6ba946c9dfb data/risus/loot_table/blocks/engraved_basalt.json
 bbc87c1ba54263a6c17fbb8f38e6eb683031064f data/risus/loot_table/blocks/exposed_copper_amalgam.json
 2d359175a49e732b876057db3d1b377f0f09ba73 data/risus/loot_table/blocks/eye_bleached.json

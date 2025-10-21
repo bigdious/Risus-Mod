@@ -103,6 +103,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/button_inventory")))
 			.texture("texture", Risus.prefix("block/bondknot_planks"));
 		toBlockModel(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor_bottom"));
+		toBlockModel(RisusBlocks.EERIE_TRAPDOOR.get(), Risus.prefix("block/eerie_trapdoor_bottom"));
+		toBlockModel(RisusBlocks.DARK_TRAPDOOR.get(), Risus.prefix("block/dark_trapdoor_bottom"));
 		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), Risus.prefix("item/bondknot_door"));
 		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), Risus.prefix("item/bondknot_sign"));
 		generated(RisusBlocks.BONDKNOT_HANGING_SIGN.getId().getPath(), Risus.prefix("item/bondknot_hanging_sign"));

@@ -52,7 +52,7 @@ public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultilogg
 		if (!this.type.canOpenByHand()) {
 			return InteractionResult.PASS;
 		} else {
-			this.toggle(state, level, pos, player);
+			this.toggleTwo(state, level, pos, player);
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		}
 	}
@@ -60,14 +60,13 @@ public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultilogg
 	@Override
 	protected void onExplosionHit(BlockState state, Level level, BlockPos pos, Explosion explosion, BiConsumer<ItemStack, BlockPos> dropConsumer) {
 		if (explosion.canTriggerBlocks() && this.type.canOpenByWindCharge() && !state.getValue(POWERED)) {
-			this.toggle(state, level, pos,
-				null);
+			this.toggleTwo(state, level, pos, null);
 		}
 
 		super.onExplosionHit(state, level, pos, explosion, dropConsumer);
 	}
 
-	private void toggle(BlockState state, Level level, BlockPos pos, @Nullable Player player) {
+	public void toggleTwo(BlockState state, Level level, BlockPos pos, @Nullable Player player) {
 		BlockState blockstate = state.cycle(OPEN);
 		level.setBlock(pos, blockstate, 2);
 		if (blockstate.getValue(FLUIDLOGGED)==MultiloggingEnum.WATER) {

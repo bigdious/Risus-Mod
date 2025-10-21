@@ -29,6 +29,8 @@ public class RisusBlocks {
 
 	//FAMILY TREE
 	public static final BlockSetType BONDKNOT_SET = new BlockSetType(Risus.prefix("bondknot").toString());
+	public static final BlockSetType EERIE_SET = new BlockSetType(Risus.prefix("eerie").toString());
+	public static final BlockSetType DARK_SET = new BlockSetType(Risus.prefix("dark").toString());
 	public static final WoodType BONDKNOT_TYPE = WoodType.register(new WoodType(Risus.prefix("bondknot").toString(), BONDKNOT_SET));
 	public static final DeferredBlock<Block> CRYSTALLIZED_BONDS = registerWithItem("crystallized_bonds", CrystallizedBondsBlock::new, () -> Block.Properties.of().mapColor(MapColor.NONE).instrument(NoteBlockInstrument.HAT).noOcclusion().sound(SoundType.GLASS).strength(0.25F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<RotatedPillarBlock> BONDKNOT_LOG = registerWithItem("bondknot_log", RotatedPillarBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).ignitedByLava().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD));
@@ -138,6 +140,8 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BIG_CHAIN = registerWithItem("big_chain", BigChainBlock::new, () -> Block.Properties.ofFullCopy(Blocks.CHAIN).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<SuperFenceBlock> EERIE_FENCE = registerWithItem("eerie_fence", SuperFenceBlock::new, () -> Block.Properties.ofFullCopy(Blocks.IRON_BARS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<SuperFenceBlock> DARK_FENCE = registerWithItem("dark_fence", SuperFenceBlock::new, () -> Block.Properties.ofFullCopy(Blocks.IRON_BARS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<LockableTrapdoor> EERIE_TRAPDOOR = registerWithItem("eerie_trapdoor", properties -> new LockableTrapdoor(EERIE_SET, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
+	public static final DeferredBlock<LockableTrapdoor> DARK_TRAPDOOR = registerWithItem("dark_trapdoor", properties -> new LockableTrapdoor(DARK_SET, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
 	public static final DeferredBlock<Block> ZIT = registerWithItem("zit", ZitBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak());
 	public static final DeferredBlock<Block> BLOODWEAVE = registerWithItem("bloodweave", BloodweaveBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn());
 	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());

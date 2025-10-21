@@ -63,6 +63,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.CURVED_FLESHY_SKIN, "Curved Fleshy Skin");
 		this.addBlock(RisusBlocks.CURVED_RITUAL_BLOCK, "Curved Ritual Block");
 		this.addBlock(RisusBlocks.DARK_FENCE, "Dark Fence");
+		this.addBlock(RisusBlocks.DARK_TRAPDOOR, "Dark Trapdoor");
 		this.addBlock(RisusBlocks.DARKNESS, "Darkness");
 		this.addBlock(RisusBlocks.DECAYED_TISSUE, "Decayed Tissue");
 		this.addBlock(RisusBlocks.DECAYING_TISSUE, "Decaying Tissue");
@@ -71,6 +72,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.DEPTH_VASE, "Depth Vase");
 		this.addBlock(RisusBlocks.DISPLAY_NOTCH, "Display Notch");
 		this.addBlock(RisusBlocks.EERIE_FENCE, "Eerie Fence");
+		this.addBlock(RisusBlocks.EERIE_TRAPDOOR, "Eerie Trapdoor");
 		this.addBlock(RisusBlocks.ENGRAVED_BASALT, "Engraved Basalt");
 		this.addBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM, "Exposed Copper Amalgam");
 		this.addBlock(RisusBlocks.EYE_BLEACHED, "Bleached Eye Block");
@@ -487,6 +489,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.display_notch.signal", " - Make the item continuously rotate by powering it with a Redstone Signal");
 		this.add("tooltip.risus.display_notch.shovel", " - Change the item's elevation using a Shovel");
 		this.add("tooltip.risus.display_notch.redstone_torch", " - Make the item continuously rotate by using a Redstone Torch");
+
+		this.add("lockable_trapdoor.locked", "Locked");
+		this.add("lockable_trapdoor.unlocked", "Unlocked");
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");

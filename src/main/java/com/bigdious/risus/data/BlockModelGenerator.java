@@ -302,6 +302,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), Risus.prefix("block/bondknot_planks"));
 		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), Risus.prefix("block/bondknot_planks"));
 		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor"), true, ResourceLocation.withDefaultNamespace("cutout"));
+		trapdoorBlock(RisusBlocks.EERIE_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/eerie_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_top")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_open")), true);
+		trapdoorBlock(RisusBlocks.DARK_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/dark_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_top")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_open")), true);
 		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), Risus.prefix("block/bondknot_door_bottom"), Risus.prefix("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
 		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), Risus.prefix("block/bondknot_planks"));
 		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), Risus.prefix("block/bondknot_planks"));

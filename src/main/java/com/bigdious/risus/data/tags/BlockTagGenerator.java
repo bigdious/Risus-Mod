@@ -82,7 +82,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.DOORS).add(RisusBlocks.BONDKNOT_DOOR.get());
 		this.tag(BlockTags.WOODEN_DOORS).add(RisusBlocks.BONDKNOT_DOOR.get());
 
-		this.tag(BlockTags.TRAPDOORS).add(RisusBlocks.BONDKNOT_TRAPDOOR.get());
+		this.tag(BlockTags.TRAPDOORS).add(
+			RisusBlocks.BONDKNOT_TRAPDOOR.get()
+			,RisusBlocks.EERIE_TRAPDOOR.get()
+			,RisusBlocks.DARK_TRAPDOOR.get()
+		);
 		this.tag(BlockTags.WOODEN_TRAPDOORS).add(RisusBlocks.BONDKNOT_TRAPDOOR.get());
 
 		this.tag(BlockTags.SIGNS).add(
