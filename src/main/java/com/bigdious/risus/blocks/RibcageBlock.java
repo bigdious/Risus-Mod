@@ -136,7 +136,7 @@ public class RibcageBlock extends BaseRotatableBlock implements SimpleMultilogge
 		super.playerDestroy(level, player, pos, Blocks.AIR.defaultBlockState(), blockEntity, stack);
 	}
 
-	protected static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
+	public static void preventCreativeDropFromBottomPart(Level level, BlockPos pos, BlockState state, Player player) {
 		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
 		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
 			BlockPos blockpos = pos.below();

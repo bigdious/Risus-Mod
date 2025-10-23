@@ -15,10 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.block.state.properties.WallSide;
+import net.minecraft.world.level.block.state.properties.*;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
@@ -302,9 +299,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		pressurePlateBlock(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get(), Risus.prefix("block/bondknot_planks"));
 		buttonBlock(RisusBlocks.BONDKNOT_BUTTON.get(), Risus.prefix("block/bondknot_planks"));
 		trapdoorBlockWithRenderType(RisusBlocks.BONDKNOT_TRAPDOOR.get(), Risus.prefix("block/bondknot_trapdoor"), true, ResourceLocation.withDefaultNamespace("cutout"));
-		trapdoorBlock(RisusBlocks.EERIE_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/eerie_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_top")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_open")), true);
-		trapdoorBlock(RisusBlocks.DARK_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/dark_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_top")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_open")), true);
-		doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), Risus.prefix("block/bondknot_door_bottom"), Risus.prefix("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
+			doorBlockWithRenderType(RisusBlocks.BONDKNOT_DOOR.get(), Risus.prefix("block/bondknot_door_bottom"), Risus.prefix("block/bondknot_door_top"), ResourceLocation.withDefaultNamespace("cutout"));
 		builtinEntity(RisusBlocks.BONDKNOT_SIGN.get(), Risus.prefix("block/bondknot_planks"));
 		builtinEntity(RisusBlocks.BONDKNOT_WALL_SIGN.get(), Risus.prefix("block/bondknot_planks"));
 		builtinEntity(RisusBlocks.BONDKNOT_HANGING_SIGN.get(), Risus.prefix("block/stripped_bondknot_log"));
@@ -335,6 +330,10 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 		superFenceBlock(RisusBlocks.EERIE_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_tall")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down_tall")));
 		superFenceBlock(RisusBlocks.DARK_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side")), models().getExistingFile(Risus.prefix("block/dark_fence_side_tall")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down_tall")));
+		trapdoorBlock(RisusBlocks.EERIE_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/eerie_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_top")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_open")), true);
+		trapdoorBlock(RisusBlocks.DARK_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/dark_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_top")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_open")), true);
+		gateBlock(RisusBlocks.EERIE_GATE.get(),  models().getExistingFile(Risus.prefix("block/eerie_gate")),  models().getExistingFile(Risus.prefix("block/eerie_gate_open")));
+		gateBlock(RisusBlocks.DARK_GATE.get(),  models().getExistingFile(Risus.prefix("block/dark_gate")),  models().getExistingFile(Risus.prefix("block/dark_gate_open")));
 
 		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
 		betterPaneBlockWithRenderType(RisusBlocks.BOND_GLASS_PANE.get(), Risus.prefix("block/bond_glass"), Risus.prefix("block/bond_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
@@ -602,6 +601,54 @@ public class BlockModelGenerator extends BlockStateProvider {
 			}
 
 		});
+	}
+
+	public void gateBlock(RisusGateBlock block, ModelFile gate, ModelFile gateOpen) {
+		this.getVariantBuilder(block).forAllStatesExcept((state) -> {
+			ModelFile model = gate;
+
+			if (state.getValue(RisusGateBlock.OPEN)) {
+				model = gateOpen;
+			}
+
+			return ConfiguredModel.builder().modelFile(model).rotationY((int)(state.getValue(RisusGateBlock.FACING)).toYRot()).uvLock(true).build();
+		}, RisusGateBlock.POWERED);
+	}
+
+	public void largeGateBlock(LargeGateBlock block, ModelFile bottom, ModelFile bottomOpen, ModelFile bottomRight, ModelFile bottomRightOpen, ModelFile topLeft, ModelFile topLeftOpen, ModelFile topRight, ModelFile topRightOpen) {
+		this.getVariantBuilder(block).forAllStatesExcept((state) -> {
+			int yRot = (int)(state.getValue(LargeGateBlock.FACING)).toYRot() + 90;
+			boolean open = state.getValue(LargeGateBlock.OPEN);
+			boolean lower = state.getValue(LargeGateBlock.HALF) == DoubleBlockHalf.LOWER;
+			if (open) {
+				yRot += 90;
+			}
+
+			yRot %= 360;
+			ModelFile model = null;
+			if (lower && open) {
+				model = bottomOpen;
+			}
+
+			if (lower && !open) {
+				model = bottomRight;
+			} else if (lower && !open) {
+				model = bottom;
+			}
+
+			if (!lower && open) {
+				model = topRightOpen;
+			} else if (!lower && open) {
+				model = topLeftOpen;
+			}
+
+			if (!lower && !open) {
+				model = topRight;
+			} else if (!lower && !open) {
+				model = topLeft;
+			}
+
+			return ConfiguredModel.builder().modelFile(model).rotationY(yRot).build();}, LargeGateBlock.POWERED);
 	}
 
 

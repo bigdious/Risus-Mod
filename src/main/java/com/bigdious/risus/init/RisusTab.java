@@ -191,6 +191,8 @@ public class RisusTab {
 				output.accept(RisusBlocks.DARK_FENCE.get());
 				output.accept(RisusBlocks.EERIE_TRAPDOOR.get());
 				output.accept(RisusBlocks.DARK_TRAPDOOR.get());
+				output.accept(RisusBlocks.EERIE_GATE.get());
+				output.accept(RisusBlocks.DARK_GATE.get());
 				output.accept(RisusBlocks.LIGHT_EXCREMENT.get());
 				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusBlocks.NEURON_HEAD.get());

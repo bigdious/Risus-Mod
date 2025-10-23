@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-21T20:41:58.4891865	Risus blockstates and models
+// 1.21.1	2025-10-23T19:35:49.987555	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -45,6 +45,7 @@ a958fbb8a0703e45f23671ba732591fd356db172 assets/risus/blockstates/cracked_grimst
 c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_block.json
 120aa44e2f7fc829e99b9ac893c7fd59c044dae2 assets/risus/blockstates/cyan_display_notch.json
 1ff5f4a3dc27a2f688eace5d5afb0569a37135f2 assets/risus/blockstates/dark_fence.json
+48ae47823e322a3ed95402de1d6c58e06d173ea5 assets/risus/blockstates/dark_gate.json
 2e1e4c19205aa78865da62a97ca3f1cbc8f560ab assets/risus/blockstates/dark_trapdoor.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decayed_tissue.json
 828f926ebe554bf863ef20bd15213c18100da53c assets/risus/blockstates/decaying_tissue.json
@@ -53,6 +54,7 @@ c2e5354cf8bdeaaaafe45b869f3585b387ffaef7 assets/risus/blockstates/curved_ritual_
 92ecc67ae39c415d2a27b9146fabcc73fac59dc7 assets/risus/blockstates/depth_vase.json
 a487ba986b9bbdbca90a22c76339cc6374741f88 assets/risus/blockstates/display_notch.json
 0107eb26dc1d7f6241492ec96e16ea4de013e4de assets/risus/blockstates/eerie_fence.json
+a10e259399e7d9d8dbeb830f130582294df9c92f assets/risus/blockstates/eerie_gate.json
 5234541f45ac65c5dc06e47675c3e18853f80aef assets/risus/blockstates/eerie_trapdoor.json
 0334039c8198fbf554420b89f960ca5c90f925b6 assets/risus/blockstates/engraved_basalt.json
 a8a90185e8fac50a6bc160fd53cd5bd0302a7660 assets/risus/blockstates/exposed_copper_amalgam.json

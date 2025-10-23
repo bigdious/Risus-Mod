@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:iron_trapdoor"
+  },
+  "result": "risus:eerie_trapdoor"
+}
