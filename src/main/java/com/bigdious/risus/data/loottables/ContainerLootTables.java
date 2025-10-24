@@ -32,11 +32,11 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusBlocks.HEART_TRANSPLANT)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.TREE_PATTERN)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_MORK)))
 		);
 		register.accept(RisusLootTables.ANGEL_ALTAR,
@@ -56,7 +56,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.DIVINITY_PATTERN)))
 		);
 		register.accept(RisusLootTables.GREAT_BODY,
@@ -97,7 +97,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 		);
 		register.accept(RisusLootTables.STALKER_ROOM,
@@ -123,7 +123,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 		);
 		register.accept(RisusLootTables.SINGER_ROOM,
@@ -149,7 +149,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 		);
 		register.accept(RisusLootTables.HOLDER_ROOM,
@@ -175,7 +175,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
@@ -206,7 +206,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 		);
 		register.accept(RisusLootTables.CENTER_ROOM,
@@ -229,7 +229,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_REGN)))
 		);
 		register.accept(RisusLootTables.STAIRWELL_FLESH,
@@ -252,7 +252,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_FEIGR)))
 		);
 		register.accept(RisusLootTables.STAIRWELL_REMAINS,
@@ -282,7 +282,7 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE)))
 				.withPool(LootPool.lootPool()
 					.setRolls(ConstantValue.exactly(1.0F))
-					.add(EmptyLootItem.emptyItem().setWeight(20))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
 					.add(LootItem.lootTableItem(RisusItems.MUSIC_DISC_FEIGR)))
 		);
 		register.accept(RisusLootTables.REACTOR,

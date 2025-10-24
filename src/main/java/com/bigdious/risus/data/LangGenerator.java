@@ -65,6 +65,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.DARK_FENCE, "Dark Fence");
 		this.addBlock(RisusBlocks.DARK_TRAPDOOR, "Dark Trapdoor");
 		this.addBlock(RisusBlocks.DARK_GATE, "Dark Small Gate");
+		this.addBlock(RisusBlocks.DARK_LARGE_GATE, "Dark Large Gate");
 		this.addBlock(RisusBlocks.DARKNESS, "Darkness");
 		this.addBlock(RisusBlocks.DECAYED_TISSUE, "Decayed Tissue");
 		this.addBlock(RisusBlocks.DECAYING_TISSUE, "Decaying Tissue");
@@ -74,6 +75,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.DISPLAY_NOTCH, "Display Notch");
 		this.addBlock(RisusBlocks.EERIE_FENCE, "Eerie Fence");
 		this.addBlock(RisusBlocks.EERIE_GATE, "Eerie Small Gate");
+		this.addBlock(RisusBlocks.EERIE_LARGE_GATE, "Eerie Large Gate");
 		this.addBlock(RisusBlocks.EERIE_TRAPDOOR, "Eerie Trapdoor");
 		this.addBlock(RisusBlocks.ENGRAVED_BASALT, "Engraved Basalt");
 		this.addBlock(RisusBlocks.EXPOSED_COPPER_AMALGAM, "Exposed Copper Amalgam");

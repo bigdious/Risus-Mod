@@ -2,6 +2,8 @@
   "values": [
     "risus:eerie_gate",
     "risus:dark_gate",
+    "risus:eerie_large_gate",
+    "risus:dark_large_gate",
     "risus:eerie_fence",
     "risus:dark_fence",
     "risus:containment_glass_pane",

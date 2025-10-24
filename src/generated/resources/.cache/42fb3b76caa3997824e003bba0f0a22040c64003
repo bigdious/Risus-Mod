@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-23T18:44:10.0201552	Risus Item Models
+// 1.21.1	2025-10-24T09:15:15.0641057	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -78,6 +78,7 @@ f7efc6655d09f91da7e518c0901da297debbb40e assets/risus/models/item/crown_of_bones
 c4bed38446813184de537893bb74d28c19ca4db1 assets/risus/models/item/curved_ritual_block.json
 acf6043dc54e1e4bd01cd335431cdbfb69131f35 assets/risus/models/item/dark_fence.json
 234878d1acd56b45e2f43ea26ef601ab9dc735a6 assets/risus/models/item/dark_gate.json
+90bda58a9fc42a54444065a26743888ff9ec8542 assets/risus/models/item/dark_large_gate.json
 58245ec065d2cfa6f6166c62ce1f3ca25e82e0f5 assets/risus/models/item/dark_trapdoor.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decayed_tissue.json
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissue.json
@@ -88,6 +89,7 @@ cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banne
 6b5efeac1f88304624d2754f071d1eb290e40827 assets/risus/models/item/echo_pearl.json
 369ce297d9134486499dfc0afa08259341e11103 assets/risus/models/item/eerie_fence.json
 ce36bbaf5207b3a7a0bc793243b415534b000f53 assets/risus/models/item/eerie_gate.json
+70079de282474597113c3e871be26b96db192b4e assets/risus/models/item/eerie_large_gate.json
 236207a907916ab3ed17175eff8bb4abb9f75985 assets/risus/models/item/eerie_trapdoor.json
 9bbd4572fb9e05f6ac0c6647c99335026ac0ebd7 assets/risus/models/item/egg_sac.json
 2c0a81f02b99ae4fcec84b37b27aaad58ba25da3 assets/risus/models/item/embodiment_of_courtship.json

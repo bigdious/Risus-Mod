@@ -41,6 +41,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			,RisusBlocks.DARK_FENCE.get()
 			,RisusBlocks.EERIE_GATE.get()
 			,RisusBlocks.DARK_GATE.get()
+			,RisusBlocks.EERIE_LARGE_GATE.get()
+			,RisusBlocks.DARK_LARGE_GATE.get()
 		);
 		this.tag(BlockTags.WOODEN_FENCES).add(
 			RisusBlocks.BONDKNOT_FENCE.get()
@@ -48,6 +50,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			,RisusBlocks.DARK_FENCE.get()
 			,RisusBlocks.EERIE_GATE.get()
 			,RisusBlocks.DARK_GATE.get()
+			,RisusBlocks.EERIE_LARGE_GATE.get()
+			,RisusBlocks.DARK_LARGE_GATE.get()
 		);
 		this.tag(Tags.Blocks.FENCES).add(
 			RisusBlocks.BONDKNOT_FENCE.get()
@@ -110,7 +114,11 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.WOODEN_BUTTONS).add(RisusBlocks.BONDKNOT_BUTTON.get());
 		this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
 
-		this.tag(BlockTags.DOORS).add(RisusBlocks.BONDKNOT_DOOR.get());
+		this.tag(BlockTags.DOORS).add(
+			RisusBlocks.BONDKNOT_DOOR.get()
+			,RisusBlocks.EERIE_LARGE_GATE.get()
+			,RisusBlocks.DARK_LARGE_GATE.get()
+		);
 		this.tag(BlockTags.WOODEN_DOORS).add(RisusBlocks.BONDKNOT_DOOR.get());
 
 		this.tag(BlockTags.TRAPDOORS).add(
@@ -131,6 +139,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.WALLS).add(
 			RisusBlocks.EERIE_GATE.get(),
 			RisusBlocks.DARK_GATE.get(),
+			RisusBlocks.EERIE_LARGE_GATE.get(),
+			RisusBlocks.DARK_LARGE_GATE.get(),
 			RisusBlocks.EERIE_FENCE.get(),
 			RisusBlocks.DARK_FENCE.get(),
 			RisusBlocks.CONTAINMENT_GLASS_PANE.get(),

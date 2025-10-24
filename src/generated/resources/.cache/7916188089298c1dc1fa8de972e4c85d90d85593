@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-23T19:10:46.8856194	Tags for minecraft:item mod id risus
+// 1.21.1	2025-10-24T09:58:33.361371	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -32,7 +32,7 @@ e309aff39de96bf85003e31a0153c9aa57b63784 data/minecraft/tags/item/trim_materials
 d319acadaf62b7e6b4c484e8994639130ad7030d data/minecraft/tags/item/trim_templates.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/item/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/item/wooden_doors.json
-8c85383a0ff4d19a7784c646e12dfcfb922eca02 data/minecraft/tags/item/wooden_fences.json
+91daa6490e600cc2ec1ba07d22cc71a138968ecc data/minecraft/tags/item/wooden_fences.json
 1054786ec86125b98db2f406a3d8a88a4f0e5306 data/minecraft/tags/item/wooden_pressure_plates.json
 fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/item/wooden_slabs.json
 4e1a395d41189d294b952ba2d28d3ac5dee03b7d data/minecraft/tags/item/wooden_stairs.json

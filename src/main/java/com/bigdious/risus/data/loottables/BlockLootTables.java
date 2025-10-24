@@ -1,5 +1,6 @@
 package com.bigdious.risus.data.loottables;
 
+import com.bigdious.risus.blocks.LargeGateBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.advancements.critereon.*;
@@ -133,6 +134,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.EERIE_TRAPDOOR.get());
 		dropSelf(RisusBlocks.EERIE_GATE.get());
 		dropSelf(RisusBlocks.DARK_GATE.get());
+		add(RisusBlocks.EERIE_LARGE_GATE.get(), createSinglePropConditionTable(RisusBlocks.EERIE_LARGE_GATE.get(), LargeGateBlock.HALF, DoubleBlockHalf.LOWER));
+		add(RisusBlocks.DARK_LARGE_GATE.get(), createSinglePropConditionTable(RisusBlocks.DARK_LARGE_GATE.get(), LargeGateBlock.HALF, DoubleBlockHalf.LOWER));
 		add(RisusBlocks.BONDKNOT_DOOR.get(), createSinglePropConditionTable(RisusBlocks.BONDKNOT_DOOR.get(), DoorBlock.HALF, DoubleBlockHalf.LOWER));
 		dropOther(RisusBlocks.BONDKNOT_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());
 		dropOther(RisusBlocks.BONDKNOT_WALL_SIGN.get(), RisusBlocks.BONDKNOT_SIGN.get().asItem());

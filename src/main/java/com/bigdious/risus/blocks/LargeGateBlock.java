@@ -44,9 +44,17 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 	public static final BooleanProperty POWERED;
 	public static final EnumProperty<DoubleBlockHalf> HALF;
 	protected static final VoxelShape SOUTH_AABB;
+	protected static final VoxelShape SOUTH_OPEN_AABB;
+	protected static final VoxelShape SOUTH_OPEN_REVERSE_AABB;
 	protected static final VoxelShape NORTH_AABB;
+	protected static final VoxelShape NORTH_OPEN_AABB;
+	protected static final VoxelShape NORTH_OPEN_REVERSE_AABB;
 	protected static final VoxelShape WEST_AABB;
+	protected static final VoxelShape WEST_OPEN_AABB;
+	protected static final VoxelShape WEST_OPEN_REVERSE_AABB;
 	protected static final VoxelShape EAST_AABB;
+	protected static final VoxelShape EAST_OPEN_AABB;
+	protected static final VoxelShape EAST_OPEN_REVERSE_AABB;
 
 	public MapCodec<LargeGateBlock> codec() {
 		return CODEC;
@@ -66,12 +74,14 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		Direction direction = state.getValue(FACING);
+		Boolean open = state.getValue(OPEN);
+		Boolean reversed = state.getValue(REVERSE_OPENING);
 		VoxelShape shape;
 		switch (direction) {
-			case SOUTH -> shape = SOUTH_AABB;
-			case WEST -> shape = WEST_AABB;
-			case NORTH -> shape = NORTH_AABB;
-			default -> shape = EAST_AABB;
+			case SOUTH -> shape = reversed ? SOUTH_OPEN_REVERSE_AABB : open ? SOUTH_OPEN_AABB : SOUTH_AABB;
+			case WEST -> shape = reversed ? WEST_OPEN_REVERSE_AABB : open ? WEST_OPEN_AABB : WEST_AABB;
+			case NORTH -> shape = reversed ? NORTH_OPEN_REVERSE_AABB : open ? NORTH_OPEN_AABB : NORTH_AABB;
+			default -> shape = reversed ? EAST_OPEN_REVERSE_AABB : open ? EAST_OPEN_AABB : EAST_AABB;
 		}
 
 		return shape;
@@ -149,8 +159,18 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 	}
 
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-			state = state.cycle(OPEN);
+		if (state.getValue(OPEN)) {
+			state = state.setValue(OPEN, false).setValue(REVERSE_OPENING, false);
 			level.setBlock(pos, state, 10);
+		} else {
+			Direction direction = player.getDirection();
+			if (state.getValue(FACING) == direction.getClockWise()) {
+				state = state.setValue(REVERSE_OPENING, true);
+			}
+
+			state = state.setValue(OPEN, true);
+			level.setBlock(pos, state, 10);
+		}
 			this.playSound(player, level, pos, state.getValue(OPEN));
 			level.gameEvent(player, this.isOpen(state) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
 			return InteractionResult.sidedSuccess(level.isClientSide);
@@ -194,9 +214,17 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 		OPEN = BlockStateProperties.OPEN;
 		HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 		POWERED = BlockStateProperties.POWERED;
-		SOUTH_AABB = Block.box(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 3.0F);
-		NORTH_AABB = Block.box(0.0F, 0.0F, 13.0F, 16.0F, 16.0F, 16.0F);
-		WEST_AABB = Block.box(13.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F);
-		EAST_AABB = Block.box(0.0F, 0.0F, 0.0F, 3.0F, 16.0F, 16.0F);
+		SOUTH_AABB = Block.box(7.0F, 0.0F, 0.0F, 9.0F, 16.0F, 16.0F);
+		SOUTH_OPEN_AABB = Block.box(-5.5F, 0.0F, 0.0F, 9F, 16.0F, 3.0F);
+		SOUTH_OPEN_REVERSE_AABB = Block.box(7.0F, 0.0F, 0.0F, 21.5F, 16.0F, 3.0F);
+		NORTH_AABB = Block.box(7.0F, 0.0F, 0.0F, 9.0F, 16.0F, 16.0F);
+		NORTH_OPEN_AABB = Block.box(7.0F, 0.0F, 13.0F, 21.5F, 16.0F, 16.0F);
+		NORTH_OPEN_REVERSE_AABB = Block.box(-5.5F, 0.0F, 13.0F, 9.0F, 16.0F, 16.0F);
+		WEST_AABB = Block.box(0.0F, 0.0F, 7.0F, 16.0F, 16.0F, 9.0F);
+		WEST_OPEN_AABB = Block.box(13.0F, 0.0F, -5.5F, 16.0F, 16.0F, 9.0F);
+		WEST_OPEN_REVERSE_AABB = Block.box(13.0F, 0.0F, 7.0F, 16.0F, 16.0F, 21.5F);
+		EAST_AABB = Block.box(0.0F, 0.0F, 7.0F, 16.0F, 16.0F, 9.0F);
+		EAST_OPEN_AABB = Block.box(0.0F, 0.0F, 7.0F, 3.0F, 16.0F, 21.5F);
+		EAST_OPEN_REVERSE_AABB = Block.box(0.0F, 0.0F, -5.5F, 3.0F, 16.0F, 9.0F);
 	}
 }

@@ -1,5 +1,5 @@
-// 1.21.1	2025-10-23T18:44:10.0364699	Loot Tables
-6b535d9f701c04c0ed46a07175e30fb0bfa08aeb data/risus/loot_table/angel_altar_1.json
+// 1.21.1	2025-10-24T09:15:15.0799639	Loot Tables
+50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
@@ -51,6 +51,7 @@ b42aafc954cdb15dad1d4e458705a395de728dce data/risus/loot_table/blocks/cyan_displ
 2b215889cd9907fc6952fb1d629f15ae6ca39dbb data/risus/loot_table/blocks/darkness.json
 af729eed5f5a582e3ea0c2fc678299b927f087c1 data/risus/loot_table/blocks/dark_fence.json
 8f3967399ad808253bf1b48ef13ddec2b2423166 data/risus/loot_table/blocks/dark_gate.json
+032a2d484917f54b2aa1e79486471d080d47d396 data/risus/loot_table/blocks/dark_large_gate.json
 c97cedeb67def06c250d7b8789bf492929af63d7 data/risus/loot_table/blocks/dark_trapdoor.json
 decde94fc47a6461e8e4758f6738e19d659cd17a data/risus/loot_table/blocks/decayed_tissue.json
 46b68cae6160b2510334f558d196451c82481bc2 data/risus/loot_table/blocks/decaying_tissue.json
@@ -60,6 +61,7 @@ ca2326db70dfc01aeb34a908c692fca8d6c4a5cf data/risus/loot_table/blocks/depth_vase
 41aeec2a7e56a1d9b385df088b16a68c630f2914 data/risus/loot_table/blocks/display_notch.json
 46d8f86af6129e00b9323a2c8560af3bffdc8a23 data/risus/loot_table/blocks/eerie_fence.json
 91eb8906aba78031c0906c6be9488031aa6a0b82 data/risus/loot_table/blocks/eerie_gate.json
+142cee586cb413bc9a53047b40b22e91dc0420ae data/risus/loot_table/blocks/eerie_large_gate.json
 adfc2cca3f8ee686279f92662738881ebfd8702b data/risus/loot_table/blocks/eerie_trapdoor.json
 0848c6823beedc155b3d4e8a94adb6ba946c9dfb data/risus/loot_table/blocks/engraved_basalt.json
 bbc87c1ba54263a6c17fbb8f38e6eb683031064f data/risus/loot_table/blocks/exposed_copper_amalgam.json
@@ -183,7 +185,7 @@ a2420d83024edde3efff8e457fa9eb61b8420ca5 data/risus/loot_table/blocks/waxed_weat
 684db703cfba5b31d66620b617fa030b45814c86 data/risus/loot_table/blocks/white_display_notch.json
 5e44ed43e4b71cac0e10bf73072ae33da980320e data/risus/loot_table/blocks/yellow_display_notch.json
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_table/blocks/zit.json
-d9a73f7e7c099d0053c0052d733d0bbd6ef60431 data/risus/loot_table/center_room.json
+e19a6aebce0ccf2b9a52b81ae3af04aaf312d830 data/risus/loot_table/center_room.json
 e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.json
 2453a580902ea892c6a35935e7eb81730b906409 data/risus/loot_table/entities/baby_spider.json
 2838e5ae14356c7e3fa8b283efa5c09e1ca3f90e data/risus/loot_table/entities/hex.json
@@ -196,14 +198,14 @@ e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.js
 3cb5014024d2df30761bd9792de6f9112dd70f96 data/risus/loot_table/entities/singer.json
 1a8691354eccd798ee6d5e89e069c06253b99795 data/risus/loot_table/entities/stalker.json
 115d870e5802c6c7f23b83f569c8e426f57e0e19 data/risus/loot_table/entities/weaver.json
-cf611a099c7a227e0cc066d1f8c1c26600eff924 data/risus/loot_table/family_tree_1.json
+01760144f96ea947c40d7a4d55f6bd2184cae60d data/risus/loot_table/family_tree_1.json
 eabad1db50737ac8ce7af7818530056905a2c6df data/risus/loot_table/great_body_1.json
-2a82d04331ce679d18c5bf6b5ba31cf5445e31d2 data/risus/loot_table/holder_room.json
-a7b67c19fbf03ebcf92061d2c9a57d0b0f7b526e data/risus/loot_table/licker_room.json
+8ddc5c4a775245a2acf065fc1527e62ec7122999 data/risus/loot_table/holder_room.json
+1a09779fbcb0e1a03b0316ce816f80052147d303 data/risus/loot_table/licker_room.json
 ed09f8fca850fb222469eff6142d20c121924e93 data/risus/loot_table/reactor.json
-c9261f89a52c602a510005da1e0cade9859fe4ff data/risus/loot_table/singer_room.json
-78caba22cb0cd7218b94c8a8201f5b59edf50dc6 data/risus/loot_table/stairwell_flesh.json
-dbeffd7df65d780984b12ad4d8e3ec1adb019280 data/risus/loot_table/stairwell_remains.json
-274e83e67688e5cbbce2394eaf5841960e6cfbc1 data/risus/loot_table/stalker_room.json
+af257720fbd3ea2ff723cd41e64cbd1d77e6d57a data/risus/loot_table/singer_room.json
+967bd5fe9b318d78b852a6e49e7fc0f09b10d5dc data/risus/loot_table/stairwell_flesh.json
+5c2418dd17724a19ad82c0c07283da6e1fa4cec9 data/risus/loot_table/stairwell_remains.json
+66a34bf6935029e0429da6a38b85ec2b46f42e84 data/risus/loot_table/stalker_room.json
 caf5009d01cd39178283e3e50998a3238bee754f data/risus/loot_table/storage_room.json
-92cfd4165ef794fda4faa817ef0aced3336d7364 data/risus/loot_table/zombie_room.json
+2bc632336193a4f5ef619a00788792380fcd4bb8 data/risus/loot_table/zombie_room.json
