@@ -184,8 +184,6 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
 			accessor.scheduleTick(pos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(accessor));
 		}
-
-
 		return direction == Direction.UP ? this.topUpdate(accessor, state, neighborPos, neighborState, pos.below()) : this.sideUpdate(accessor, pos, state, neighborPos, neighborState, direction, pos.below());
 
 	}

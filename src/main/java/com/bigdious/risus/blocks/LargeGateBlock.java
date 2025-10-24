@@ -92,6 +92,9 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
 			level.scheduleTick(currentPos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(level));
 		}
+		if (facingState.is(this.asBlock()) && facingState.getValue(HALF) == state.getValue(HALF) && facingState.getValue(FACING) == state.getValue(FACING).getOpposite()) {
+			return state.setValue(OPEN, facingState.getValue(OPEN)).setValue(REVERSE_OPENING, facingState.getValue(OPEN) && !facingState.getValue(REVERSE_OPENING));
+		}
 		if (facing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP)) {
 			return facingState.getBlock() instanceof LargeGateBlock && facingState.getValue(HALF) != doubleblockhalf ? facingState.setValue(HALF, doubleblockhalf) : Blocks.AIR.defaultBlockState();
 		} else {
@@ -154,9 +157,17 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 	}
 
 
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
-		level.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER), 3);
+	@Override
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
+		boolean top = state.getValue(HALF) == DoubleBlockHalf.UPPER;
+		BlockPos blockpos = top ? pos.below() : pos.above();
+		level.setBlock(blockpos, copyFluidLoggingFrom(level, blockpos, this.defaultBlockState().setValue(HALF, top ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER).setValue(FACING, state.getValue(FACING))), 3);
 	}
+
+	public static BlockState copyFluidLoggingFrom(LevelReader reader, BlockPos pos, BlockState state) {
+		return state.hasProperty(FLUIDLOGGED) ? state.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(reader.getFluidState(pos).getType())) : state;
+	}
+
 
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 		if (state.getValue(OPEN)) {
@@ -188,8 +199,9 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 				level.gameEvent(null, flag ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
 			}
 
-			level.setBlock(pos, state.setValue(POWERED, flag).setValue(OPEN, flag), 2);
+			level.setBlock(pos, state.setValue(POWERED, flag).setValue(OPEN, flag).setValue(REVERSE_OPENING, (!state.getValue(POWERED) || !state.getValue(OPEN)) && state.getValue(REVERSE_OPENING)), 2);
 		}
+
 	}
 
 	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {

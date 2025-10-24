@@ -1,6 +1,7 @@
 package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
+import com.bigdious.risus.init.RisusBlocks;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
@@ -142,7 +143,10 @@ public class RibcageBlock extends BaseRotatableBlock implements SimpleMultilogge
 			BlockPos blockpos = pos.below();
 			BlockState blockstate = level.getBlockState(blockpos);
 			if (blockstate.is(state.getBlock()) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
-				BlockState blockstate1 = blockstate.hasProperty(BlockStateProperties.WATERLOGGED) && blockstate.getValue(BlockStateProperties.WATERLOGGED) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+				BlockState blockstate1 = blockstate.hasProperty(MultiloggingEnum.FLUIDLOGGED) &&
+					blockstate.getValue(MultiloggingEnum.FLUIDLOGGED).getFluidBlock() == Blocks.WATER ? Blocks.WATER.defaultBlockState() :
+					blockstate.getValue(MultiloggingEnum.FLUIDLOGGED).getFluidBlock() == Blocks.LAVA ? Blocks.LAVA.defaultBlockState() :
+						blockstate.getValue(MultiloggingEnum.FLUIDLOGGED).getFluidBlock() == RisusBlocks.BLOOD_FLUID_BLOCK.get() ? RisusBlocks.BLOOD_FLUID_BLOCK.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
 				level.setBlock(blockpos, blockstate1, 35);
 				level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
 			}
