@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:dark_large_gate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:eerie_large_gate"
+  }
+}

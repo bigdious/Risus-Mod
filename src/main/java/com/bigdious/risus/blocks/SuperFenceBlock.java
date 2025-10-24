@@ -147,7 +147,7 @@ public class SuperFenceBlock extends Block implements SimpleMultiloggedBlock {
 		Block block = state.getBlock();
 		boolean flag = block instanceof FenceGateBlock && FenceGateBlock.connectsToDirection(state, direction);
 		boolean flag1 = block instanceof RisusGateBlock && RisusGateBlock.connectsToDirection(state, direction);
-		return (state.is(BlockTags.WOODEN_FENCES) && !(block instanceof RisusGateBlock)) || (state.is(BlockTags.WALLS) && !(block instanceof RisusGateBlock)) || state.getBlock() instanceof SlabBlock && state.getValue(SlabBlock.TYPE) == SlabType.BOTTOM || !isExceptionForConnection(state) && sideSolid || block instanceof IronBarsBlock || flag || flag1;
+		return (state.is(BlockTags.WALLS) && !(block instanceof RisusGateBlock)) || state.getBlock() instanceof SlabBlock && state.getValue(SlabBlock.TYPE) == SlabType.BOTTOM || !isExceptionForConnection(state) && sideSolid || block instanceof IronBarsBlock || flag || flag1;
 	}
 
 	@Override

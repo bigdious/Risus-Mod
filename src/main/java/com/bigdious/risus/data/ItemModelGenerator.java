@@ -107,8 +107,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlockModel(RisusBlocks.DARK_TRAPDOOR.get(), Risus.prefix("block/dark_trapdoor_bottom"));
 		toBlock(RisusBlocks.EERIE_GATE.get());
 		toBlock(RisusBlocks.DARK_GATE.get());
-		toBlockModel(RisusBlocks.EERIE_LARGE_GATE.get(), Risus.prefix("block/eerie_large_gate_bottom"));
-		toBlockModel(RisusBlocks.DARK_LARGE_GATE.get(), Risus.prefix("block/dark_large_gate_bottom"));
+		singleTex(RisusBlocks.EERIE_LARGE_GATE.get());
+		singleTex(RisusBlocks.DARK_LARGE_GATE.get());
 		generated(RisusBlocks.BONDKNOT_DOOR.getId().getPath(), Risus.prefix("item/bondknot_door"));
 		generated(RisusBlocks.BONDKNOT_SIGN.getId().getPath(), Risus.prefix("item/bondknot_sign"));
 		generated(RisusBlocks.BONDKNOT_HANGING_SIGN.getId().getPath(), Risus.prefix("item/bondknot_hanging_sign"));

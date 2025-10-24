@@ -1,3 +1,6 @@
 {
-  "parent": "risus:block/eerie_large_gate_bottom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "risus:item/eerie_large_gate"
+  }
 }

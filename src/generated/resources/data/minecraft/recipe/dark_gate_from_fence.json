@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:bondknot_fence_gate"
+    },
+    {
+      "item": "risus:dark_fence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:dark_gate"
+  }
+}

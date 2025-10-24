@@ -350,6 +350,18 @@ public class CraftingGenerator extends RecipeProvider {
 			.save(consumer);
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_GATE.get())
+			.requires(Ingredient.of(RisusBlocks.BONDKNOT_FENCE_GATE))
+			.requires(Ingredient.of(RisusBlocks.EERIE_FENCE))
+			.unlockedBy("has_item", has(RisusBlocks.EERIE_FENCE))
+			.save(consumer, "eerie_gate_from_fence");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DARK_GATE.get())
+			.requires(Ingredient.of(RisusBlocks.BONDKNOT_FENCE_GATE))
+			.requires(Ingredient.of(RisusBlocks.DARK_FENCE))
+			.unlockedBy("has_item", has(RisusBlocks.DARK_FENCE))
+			.save(consumer, "dark_gate_from_fence");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_GATE.get())
 			.requires(Ingredient.of(RisusBlocks.DARK_GATE))
 			.unlockedBy("has_item", has(RisusBlocks.DARK_GATE))
 			.save(consumer);
@@ -357,6 +369,30 @@ public class CraftingGenerator extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DARK_GATE.get())
 			.requires(Ingredient.of(RisusBlocks.EERIE_GATE))
 			.unlockedBy("has_item", has(RisusBlocks.EERIE_GATE))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.DARK_LARGE_GATE.get())
+			.pattern("#")
+			.pattern("#")
+			.define('#', Ingredient.of(RisusBlocks.DARK_GATE.get()))
+			.unlockedBy("has_item", has(RisusBlocks.DARK_GATE.get()))
+			.save(consumer, "dark_large_gate_from_small");
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.EERIE_LARGE_GATE.get())
+			.pattern("#")
+			.pattern("#")
+			.define('#', Ingredient.of(RisusBlocks.EERIE_GATE.get()))
+			.unlockedBy("has_item", has(RisusBlocks.EERIE_GATE.get()))
+			.save(consumer, "eerie_large_gate_from_small");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_LARGE_GATE.get())
+			.requires(Ingredient.of(RisusBlocks.DARK_LARGE_GATE))
+			.unlockedBy("has_item", has(RisusBlocks.DARK_LARGE_GATE))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DARK_LARGE_GATE.get())
+			.requires(Ingredient.of(RisusBlocks.EERIE_LARGE_GATE))
+			.unlockedBy("has_item", has(RisusBlocks.EERIE_LARGE_GATE))
 			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())

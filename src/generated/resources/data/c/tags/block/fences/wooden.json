@@ -1,9 +1,5 @@
 {
   "values": [
-    "risus:bondknot_fence",
-    "risus:eerie_fence",
-    "risus:dark_fence",
-    "risus:eerie_gate",
-    "risus:dark_gate"
+    "risus:bondknot_fence"
   ]
 }
