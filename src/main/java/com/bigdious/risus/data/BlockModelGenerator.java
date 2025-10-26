@@ -11,6 +11,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -337,10 +340,27 @@ public class BlockModelGenerator extends BlockStateProvider {
 		largeGateBlock(RisusBlocks.EERIE_LARGE_GATE.get(),  models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom")),  models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom_open")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom_open_reverse")),models().getExistingFile(Risus.prefix("block/eerie_large_gate_top")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_top_open")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_top_open_reverse")));
 		largeGateBlock(RisusBlocks.DARK_LARGE_GATE.get(),  models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom")),  models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom_open")), models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom_open_reverse")),models().getExistingFile(Risus.prefix("block/dark_large_gate_top")), models().getExistingFile(Risus.prefix("block/dark_large_gate_top_open")), models().getExistingFile(Risus.prefix("block/dark_large_gate_top_open_reverse")));
 
-		simpleBlock(RisusBlocks.BOND_GLASS.get(), models().cubeAll("bond_glass", Risus.prefix("block/bond_glass")).renderType("minecraft:translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BOND_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		betterPaneBlockWithRenderType(RisusBlocks.BOND_GLASS_PANE.get(), Risus.prefix("block/bond_glass"), Risus.prefix("block/bond_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlock(RisusBlocks.CONTAINMENT_GLASS.get(), models().cubeAll("containment_glass", Risus.prefix("block/containment_glass")).renderType("minecraft:translucent"));
+		simpleBlockWithRenderType(RisusBlocks.CONTAINMENT_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		betterPaneBlockWithRenderType(RisusBlocks.CONTAINMENT_GLASS_PANE.get(), Risus.prefix("block/containment_glass"), Risus.prefix("block/containment_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+
+		simpleBlockWithRenderType(RisusBlocks.WHITE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BLACK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BROWN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.RED_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.ORANGE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.YELLOW_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIME_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.GREEN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.CYAN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.PINK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
@@ -647,6 +667,17 @@ public class BlockModelGenerator extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(model).rotationY(yRot).build();}, LargeGateBlock.POWERED);
 	}
 
+	public void simpleBlockWithRenderType(Block block, ResourceLocation type) {
+		simpleBlock(block, models().cubeAll(name(block), blockTexture(block)).renderType(type));
+	}
+
+	protected String name(Block block) {
+		return key(block).getPath();
+	}
+
+	protected ResourceLocation key(Block block) {
+		return BuiltInRegistries.BLOCK.getKey(block);
+	}
 
 	@Nonnull
 	@Override

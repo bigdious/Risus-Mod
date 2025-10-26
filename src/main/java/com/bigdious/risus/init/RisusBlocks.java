@@ -20,6 +20,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.awt.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -84,7 +85,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> MAGENTA_DISPLAY_NOTCH = register("magenta_display_notch", DisplayNotchBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).strength(1.5F, 6.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> PINK_DISPLAY_NOTCH = register("pink_display_notch", DisplayNotchBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.5F, 6.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> BROWN_DISPLAY_NOTCH = register("brown_display_notch", DisplayNotchBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F, 6.0F).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> FLESHY_SPAWNER = registerWithItem("fleshy_spawner", RisusSpawnerBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPAWNER).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> FLESHY_SPAWNER = registerWithItem("fleshy_spawner", RisusSpawnerBlock::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<Block> BLOODY_SPONGE = registerWithItem("bloody_sponge", BloodySpongeBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPONGE));
 	public static final DeferredBlock<Block> LIGHT_EXCREMENT = registerWithItem("light_excrement", LightExcrementBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OCHRE_FROGLIGHT).instabreak().lightLevel(state -> 15));
 	public static final DeferredBlock<Block> RITUAL = register("ritual", RitualBlock::new, () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).noLootTable());
@@ -140,6 +141,13 @@ public class RisusBlocks {
 
 	//NONFULLBLOCK DECO
 	public static final DeferredBlock<Block> BIG_CHAIN = registerWithItem("big_chain", BigChainBlock::new, () -> Block.Properties.ofFullCopy(Blocks.CHAIN).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
+	public static final DeferredBlock<Block> ZIT = registerWithItem("zit", ZitBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak());
+	public static final DeferredBlock<Block> BLOODWEAVE = registerWithItem("bloodweave", BloodweaveBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn());
+	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());
+	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", properties -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak());
+	public static final DeferredBlock<Block> INACTIVE_HOLDER = registerWithItem("inactive_holder", InactiveHolderBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion());
+
+	//EERIE/DARK SET
 	public static final DeferredBlock<SuperFenceBlock> EERIE_FENCE = registerWithItem("eerie_fence", SuperFenceBlock::new, () -> Block.Properties.ofFullCopy(Blocks.IRON_BARS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<SuperFenceBlock> DARK_FENCE = registerWithItem("dark_fence", SuperFenceBlock::new, () -> Block.Properties.ofFullCopy(Blocks.IRON_BARS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
 	public static final DeferredBlock<LockableTrapdoor> EERIE_TRAPDOOR = registerWithItem("eerie_trapdoor", properties -> new LockableTrapdoor(EERIE_SET, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
@@ -148,11 +156,22 @@ public class RisusBlocks {
 	public static final DeferredBlock<RisusGateBlock> DARK_GATE = registerWithItem("dark_gate", properties -> new RisusGateBlock(DARK_TYPE, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
 	public static final DeferredBlock<LargeGateBlock> EERIE_LARGE_GATE = registerWithItem("eerie_large_gate", LargeGateBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
 	public static final DeferredBlock<LargeGateBlock> DARK_LARGE_GATE = registerWithItem("dark_large_gate", LargeGateBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).noOcclusion());
-	public static final DeferredBlock<Block> ZIT = registerWithItem("zit", ZitBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak());
-	public static final DeferredBlock<Block> BLOODWEAVE = registerWithItem("bloodweave", BloodweaveBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn());
-	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());
-	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", properties -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak());
-	public static final DeferredBlock<Block> INACTIVE_HOLDER = registerWithItem("inactive_holder", InactiveHolderBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion());
+	public static final DeferredBlock<Block> WHITE_MOSAIC_GLASS = registerWithItem("white_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.QUARTZ));
+	public static final DeferredBlock<Block> LIGHT_GRAY_MOSAIC_GLASS = registerWithItem("light_gray_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_GRAY));
+	public static final DeferredBlock<Block> GRAY_MOSAIC_GLASS = registerWithItem("gray_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GRAY));
+	public static final DeferredBlock<Block> BLACK_MOSAIC_GLASS = registerWithItem("black_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BLACK));
+	public static final DeferredBlock<Block> BROWN_MOSAIC_GLASS = registerWithItem("brown_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BROWN));
+	public static final DeferredBlock<Block> RED_MOSAIC_GLASS = registerWithItem("red_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_RED));
+	public static final DeferredBlock<Block> ORANGE_MOSAIC_GLASS = registerWithItem("orange_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE));
+	public static final DeferredBlock<Block> YELLOW_MOSAIC_GLASS = registerWithItem("yellow_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW));
+	public static final DeferredBlock<Block> LIME_MOSAIC_GLASS = registerWithItem("lime_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_GREEN));
+	public static final DeferredBlock<Block> GREEN_MOSAIC_GLASS = registerWithItem("green_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN));
+	public static final DeferredBlock<Block> CYAN_MOSAIC_GLASS = registerWithItem("cyan_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_CYAN));
+	public static final DeferredBlock<Block> LIGHT_BLUE_MOSAIC_GLASS = registerWithItem("light_blue_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_BLUE));
+	public static final DeferredBlock<Block> BLUE_MOSAIC_GLASS = registerWithItem("blue_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BLUE));
+	public static final DeferredBlock<Block> PURPLE_MOSAIC_GLASS = registerWithItem("purple_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PURPLE));
+	public static final DeferredBlock<Block> MAGENTA_MOSAIC_GLASS = registerWithItem("magenta_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_MAGENTA));
+	public static final DeferredBlock<Block> PINK_MOSAIC_GLASS = registerWithItem("pink_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PINK));
 
 
 	//PLANTS

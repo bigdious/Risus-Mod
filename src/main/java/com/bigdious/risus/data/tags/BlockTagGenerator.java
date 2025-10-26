@@ -203,8 +203,6 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.EERIE_LARGE_GATE.get(),
 
 			RisusBlocks.BIG_CHAIN.get(),
-			RisusBlocks.DARK_FENCE.get(),
-			RisusBlocks.EERIE_FENCE.get(),
 
 			RisusBlocks.ASHEN_REMAINS.get(),
 			RisusBlocks.SMILING_REMAINS.get(),
