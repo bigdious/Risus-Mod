@@ -44,4 +44,5 @@ public class RisusBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RisusHangingSignBlockEntity>> RISUS_HANGING_SIGN = BLOCK_ENTITIES.register("risus_hanging_sign", () -> BlockEntityType.Builder.of(RisusHangingSignBlockEntity::new, RisusBlocks.BONDKNOT_HANGING_SIGN.get(), RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WeaverNestBlockEntity>> WEAVER_NEST = BLOCK_ENTITIES.register("weaver_nest", () -> BlockEntityType.Builder.of(WeaverNestBlockEntity::new, RisusBlocks.WEAVER_NEST.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RitualBlockEntity>> RITUAL = BLOCK_ENTITIES.register("ritual", () -> BlockEntityType.Builder.of(RitualBlockEntity::new, RisusBlocks.RITUAL.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RisusSpawnerBlockEntity>> SPAWNER = BLOCK_ENTITIES.register("spawner", () -> BlockEntityType.Builder.of(RisusSpawnerBlockEntity::new, RisusBlocks.FLESHY_SPAWNER.get()).build(null));
 }

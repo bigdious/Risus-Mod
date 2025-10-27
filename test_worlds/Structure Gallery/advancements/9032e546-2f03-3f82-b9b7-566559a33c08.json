@@ -1,0 +1,1203 @@
+{
+  "risus:unleashed": {
+    "criteria": {
+      "strongaxe": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/sandstone_slab": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "risus:light_devourer": {
+    "criteria": {
+      "light_devourer": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/smooth_sandstone": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/sandstone_wall_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cut_sandstone": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/alteration/totem_of_unyielding": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/sandstone_stairs_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/transportation/guts_boat": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/sandstone_stairs": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/elytra_to_angel_wings": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/threaders_of_the_firmament": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/warhorn_to_hexhorn": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cut_sandstone_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_sandstone_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/head_to_spewer": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cut_sandstone_slab_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/sandstone_slab_from_sandstone_stonecutting": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/armor_stand": {
+    "criteria": {
+      "has_stone_slab": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/sandstone_wall": {
+    "criteria": {
+      "has_sandstone": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/copper_amalgam": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/unawakened_to_crescent": {
+    "criteria": {
+      "has_item": "2025-10-02 18:29:47 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:desert": "2025-10-02 18:29:48 +0300"
+    },
+    "done": false
+  },
+  "risus:mod_book": {
+    "criteria": {
+      "modbook": "2025-10-02 18:33:33 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_leggings": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/great_stool_leggings": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smelt_living_tissue": {
+    "criteria": {
+      "has_risus:living_tissue": "2025-10-27 20:48:20 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/tissue_to_living": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/ender_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/pumpkin_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/rusty_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/book_leggings": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/polished_grimstone_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_axe": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_polished_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_chestplate": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_pickaxe": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/black_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/tools/light_devourer": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/smile_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/bleached_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/unawakened_vessel": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/bloodshot_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_brick_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/british_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/tissue_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bucket": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/organic_matter": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_helmet": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_shovel": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/minecart": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_hoe": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/golden_apple": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/decomposing_to_decomposed": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/end_crystal": {
+    "criteria": {
+      "has_ender_eye": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_boots": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smoke_living_tissue": {
+    "criteria": {
+      "has_risus:living_tissue": "2025-10-27 20:48:20 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_bricks_to_chiseled": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/great_stool_boots": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/persian_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_helmet": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/flattened_imitation_scales_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/eye_golden_glowing": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:story/smelt_iron": {
+    "criteria": {
+      "iron": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_bricks_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/skeleton_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/shears": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/skin_boots_to_robes": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_blood_tiles_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/teeth": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/black_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/revert_to_golden_eye": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/great_stool_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_bricks": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/grimstone_bricks_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chain": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/big_chain": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/pale_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_fleshy_skin": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_chestplate": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/iron_block": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_blood_tiles": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_bricks_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_bricks_to_bricks_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/unalloyed_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/decaying_to_decayed": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/smithing_table": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/jellie_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_bricks": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_bricks": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_bricks_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/polished_grimstone_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_polished_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_curved_fleshy_skin": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/ragdoll_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/light_weighted_pressure_plate": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/spotted_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_polished_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/polished_grimstone_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_blood_tiles_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_polished_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smelt_tissue": {
+    "criteria": {
+      "has_risus:tissue": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:gluttony": {
+    "criteria": {
+      "gluttony": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/calico_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/rotting_to_rotted": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/orange_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_polished_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_sword": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_pickaxe": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/chiseled_grimstone": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/shield": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/hopper": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_bricks_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/iron_bars": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/abyssal_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/guts_chestplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/white_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/imit_scaleplate_from_imit_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_blood_to_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_boots": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/spyglass_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/stitching_needle": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/skin_leggings_to_robes": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/lantern": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/striped_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/shadow_walker_boots": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/emerald_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/grimstone_bricks_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/great_stool_chestplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_blood_to_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_shovel": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/creeper_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/budding_imitation_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/scythe": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/chestnut_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/piglin_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/flowering_unalloyed_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/organic_matter_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smoke_tissue": {
+    "criteria": {
+      "has_risus:tissue": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/unalloyed_scaleplate_from_unalloyed_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/skin_helmet_to_robes": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/imitation_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_bricks_to_bricks_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/tabby_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_sword": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/grimstone_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/tuxedo_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/snowy_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/audrey_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/flattened_scales_block": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/gold_block": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_bricks_to_bricks_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scales_block_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_polished_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_trapdoor": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/hand_of_greed_chestplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/tissue_wall": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/wither_skeleton_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/zombie_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_polished": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_axe": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/siamese_cat_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/crossbow": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/flowering_imitation_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_chiseled": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_chiseled": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/ashen_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_grimstone_to_bricks_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_hoe": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/decorations/budding_unalloyed_scaleplate": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stonecutting_polished_grimstone_to_bricks_slab": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/woods_wolf_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/adding_hair_to_skin": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/ender_chest": {
+    "criteria": {
+      "has_ender_eye": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/tissue_stairs": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/polished_grimstone": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/eye_golden": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/golden_eye_helmet": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/boomstick": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_door": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/skin_chestplate_to_robes": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
+    "criteria": {
+      "has_iron_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_leggings": {
+    "criteria": {
+      "has_gold_ingot": "2025-10-27 20:48:03 +0200"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/toothknocker": {
+    "criteria": {
+      "has_item": "2025-10-27 20:48:04 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

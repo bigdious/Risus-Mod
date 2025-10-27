@@ -73,7 +73,6 @@ public class Risus {
 		if (ModList.get().isLoaded("curios")) loadCuriosCompat(bus);
 
 		bus.addListener(this::registerPackets);
-		bus.addListener(this::registerTypes);
 		bus.addListener(this::gatherData);
 		bus.addListener(this::registerGenericItemHandlers);
 		bus.addListener(RegisterDataMapTypesEvent.class, event -> event.register(RisusDataMaps.LOVER_CONVERSION));
@@ -95,10 +94,6 @@ public class Risus {
 		registrar.playToServer(OpenBookPacket.TYPE, OpenBookPacket.STREAM_CODEC,(payload, context) -> OpenBookPacket.handle(context));
 		registrar.playToServer(SummonGreatnessPacket.TYPE, SummonGreatnessPacket.STREAM_CODEC,(payload, context) -> SummonGreatnessPacket.handle(context));
 		registrar.playToClient(SyncCommonConfigPacket.TYPE, SyncCommonConfigPacket.STREAM_CODEC, SyncCommonConfigPacket::handle);
-	}
-
-	public void registerTypes(BlockEntityTypeAddBlocksEvent event) {
-		event.modify(BlockEntityType.MOB_SPAWNER, RisusBlocks.FLESHY_SPAWNER.get());
 	}
 
 	private void gatherData(GatherDataEvent event) {

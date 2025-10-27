@@ -211,6 +211,22 @@ public class RisusTab {
 				output.accept(RisusBlocks.PURPLE_MOSAIC_GLASS.get());
 				output.accept(RisusBlocks.MAGENTA_MOSAIC_GLASS.get());
 				output.accept(RisusBlocks.PINK_MOSAIC_GLASS.get());
+				output.accept(RisusBlocks.WHITE_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.GRAY_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.BLACK_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.BROWN_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.RED_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.ORANGE_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.YELLOW_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.LIME_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.GREEN_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.CYAN_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.BLUE_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.PURPLE_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.MAGENTA_MOSAIC_LAMP.get());
+				output.accept(RisusBlocks.PINK_MOSAIC_LAMP.get());
 
 
 

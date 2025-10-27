@@ -361,6 +361,22 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.PINK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.WHITE_MOSAIC_LAMP.get(), RisusBlocks.WHITE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get(), RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.GRAY_MOSAIC_LAMP.get(), RisusBlocks.GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BLACK_MOSAIC_LAMP.get(), RisusBlocks.BLACK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BROWN_MOSAIC_LAMP.get(), RisusBlocks.BROWN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.RED_MOSAIC_LAMP.get(), RisusBlocks.RED_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.ORANGE_MOSAIC_LAMP.get(), RisusBlocks.ORANGE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.YELLOW_MOSAIC_LAMP.get(), RisusBlocks.YELLOW_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIME_MOSAIC_LAMP.get(), RisusBlocks.LIME_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.GREEN_MOSAIC_LAMP.get(), RisusBlocks.GREEN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.CYAN_MOSAIC_LAMP.get(), RisusBlocks.CYAN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get(), RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BLUE_MOSAIC_LAMP.get(), RisusBlocks.BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.PURPLE_MOSAIC_LAMP.get(), RisusBlocks.PURPLE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.MAGENTA_MOSAIC_LAMP.get(), RisusBlocks.MAGENTA_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.PINK_MOSAIC_LAMP.get(), RisusBlocks.PINK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
@@ -669,6 +685,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	public void simpleBlockWithRenderType(Block block, ResourceLocation type) {
 		simpleBlock(block, models().cubeAll(name(block), blockTexture(block)).renderType(type));
+	}
+	public void simpleBlockWithRenderTypeOtherTexture(Block block, Block block2, ResourceLocation type) {
+		simpleBlock(block, models().cubeAll(name(block2), blockTexture(block2)).renderType(type));
 	}
 
 	protected String name(Block block) {

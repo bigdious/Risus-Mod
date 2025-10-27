@@ -188,6 +188,14 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.ZIT, "Zit");
 
 		for (DyeColor color : DyeColor.values()) {
+			this.add("block.risus." + color.getName() + "_mosaic_glass", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Mosaic Glass");
+		}
+
+		for (DyeColor color : DyeColor.values()) {
+			this.add("block.risus." + color.getName() + "_mosaic_lamp", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Mosaic Lamp");
+		}
+
+		for (DyeColor color : DyeColor.values()) {
 			if (color != DyeColor.BLACK) {
 				this.add("block.risus." + color.getName() + "_display_notch", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Display Notch");
 			}

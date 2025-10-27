@@ -172,6 +172,22 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> PURPLE_MOSAIC_GLASS = registerWithItem("purple_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PURPLE));
 	public static final DeferredBlock<Block> MAGENTA_MOSAIC_GLASS = registerWithItem("magenta_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_MAGENTA));
 	public static final DeferredBlock<Block> PINK_MOSAIC_GLASS = registerWithItem("pink_mosaic_glass", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PINK));
+	public static final DeferredBlock<Block> WHITE_MOSAIC_LAMP = registerWithItem("white_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.QUARTZ).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> LIGHT_GRAY_MOSAIC_LAMP = registerWithItem("light_gray_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_GRAY).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> GRAY_MOSAIC_LAMP = registerWithItem("gray_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GRAY).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> BLACK_MOSAIC_LAMP = registerWithItem("black_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BLACK).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> BROWN_MOSAIC_LAMP = registerWithItem("brown_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BROWN).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> RED_MOSAIC_LAMP = registerWithItem("red_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_RED).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> ORANGE_MOSAIC_LAMP = registerWithItem("orange_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_ORANGE).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> YELLOW_MOSAIC_LAMP = registerWithItem("yellow_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_YELLOW).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> LIME_MOSAIC_LAMP = registerWithItem("lime_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_GREEN).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> GREEN_MOSAIC_LAMP = registerWithItem("green_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_GREEN).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> CYAN_MOSAIC_LAMP = registerWithItem("cyan_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_CYAN).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> LIGHT_BLUE_MOSAIC_LAMP = registerWithItem("light_blue_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_LIGHT_BLUE).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> BLUE_MOSAIC_LAMP = registerWithItem("blue_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_BLUE).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> PURPLE_MOSAIC_LAMP = registerWithItem("purple_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PURPLE).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> MAGENTA_MOSAIC_LAMP = registerWithItem("magenta_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_MAGENTA).lightLevel((state) -> 15));
+	public static final DeferredBlock<Block> PINK_MOSAIC_LAMP = registerWithItem("pink_mosaic_lamp", TransparentBlock::new, () -> Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 15));
 
 
 	//PLANTS
