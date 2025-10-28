@@ -335,8 +335,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		superFenceBlock(RisusBlocks.DARK_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side")), models().getExistingFile(Risus.prefix("block/dark_fence_side_tall")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down_tall")));
 		trapdoorBlock(RisusBlocks.EERIE_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/eerie_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_top")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_open")), true);
 		trapdoorBlock(RisusBlocks.DARK_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/dark_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_top")), models().getExistingFile(Risus.prefix("block/dark_trapdoor_open")), true);
-		gateBlock(RisusBlocks.EERIE_GATE.get(),  models().getExistingFile(Risus.prefix("block/eerie_gate")),  models().getExistingFile(Risus.prefix("block/eerie_gate_open")));
-		gateBlock(RisusBlocks.DARK_GATE.get(),  models().getExistingFile(Risus.prefix("block/dark_gate")),  models().getExistingFile(Risus.prefix("block/dark_gate_open")));
+		gateBlock(RisusBlocks.EERIE_GATE.get(),  models().getExistingFile(Risus.prefix("block/eerie_gate")),  models().getExistingFile(Risus.prefix("block/eerie_gate_open")),  models().getExistingFile(Risus.prefix("block/eerie_gate_tall")),  models().getExistingFile(Risus.prefix("block/eerie_gate_open_tall")));
+		gateBlock(RisusBlocks.DARK_GATE.get(),  models().getExistingFile(Risus.prefix("block/dark_gate")),  models().getExistingFile(Risus.prefix("block/dark_gate_open")),  models().getExistingFile(Risus.prefix("block/dark_gate_tall")),  models().getExistingFile(Risus.prefix("block/dark_gate_open_tall")));
 		largeGateBlock(RisusBlocks.EERIE_LARGE_GATE.get(),  models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom")),  models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom_open")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_bottom_open_reverse")),models().getExistingFile(Risus.prefix("block/eerie_large_gate_top")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_top_open")), models().getExistingFile(Risus.prefix("block/eerie_large_gate_top_open_reverse")));
 		largeGateBlock(RisusBlocks.DARK_LARGE_GATE.get(),  models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom")),  models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom_open")), models().getExistingFile(Risus.prefix("block/dark_large_gate_bottom_open_reverse")),models().getExistingFile(Risus.prefix("block/dark_large_gate_top")), models().getExistingFile(Risus.prefix("block/dark_large_gate_top_open")), models().getExistingFile(Risus.prefix("block/dark_large_gate_top_open_reverse")));
 
@@ -361,22 +361,22 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.PINK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.WHITE_MOSAIC_LAMP.get(), RisusBlocks.WHITE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get(), RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.GRAY_MOSAIC_LAMP.get(), RisusBlocks.GRAY_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BLACK_MOSAIC_LAMP.get(), RisusBlocks.BLACK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BROWN_MOSAIC_LAMP.get(), RisusBlocks.BROWN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.RED_MOSAIC_LAMP.get(), RisusBlocks.RED_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.ORANGE_MOSAIC_LAMP.get(), RisusBlocks.ORANGE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.YELLOW_MOSAIC_LAMP.get(), RisusBlocks.YELLOW_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIME_MOSAIC_LAMP.get(), RisusBlocks.LIME_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.GREEN_MOSAIC_LAMP.get(), RisusBlocks.GREEN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.CYAN_MOSAIC_LAMP.get(), RisusBlocks.CYAN_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get(), RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.BLUE_MOSAIC_LAMP.get(), RisusBlocks.BLUE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.PURPLE_MOSAIC_LAMP.get(), RisusBlocks.PURPLE_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.MAGENTA_MOSAIC_LAMP.get(), RisusBlocks.MAGENTA_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
-		simpleBlockWithRenderTypeOtherTexture(RisusBlocks.PINK_MOSAIC_LAMP.get(), RisusBlocks.PINK_MOSAIC_GLASS.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.WHITE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.GRAY_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BLACK_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BROWN_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.RED_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.ORANGE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.YELLOW_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIME_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.GREEN_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.CYAN_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.BLUE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		simpleBlockWithRenderType(RisusBlocks.PINK_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));
@@ -641,12 +641,12 @@ public class BlockModelGenerator extends BlockStateProvider {
 		});
 	}
 
-	public void gateBlock(RisusGateBlock block, ModelFile gate, ModelFile gateOpen) {
+	public void gateBlock(RisusGateBlock block, ModelFile gate, ModelFile gateOpen, ModelFile gateTall, ModelFile gateOpenTall) {
 		this.getVariantBuilder(block).forAllStatesExcept((state) -> {
-			ModelFile model = gate;
+			ModelFile model = state.getValue(RisusGateBlock.TALL) ? gateTall : gate;
 
 			if (state.getValue(RisusGateBlock.OPEN)) {
-				model = gateOpen;
+				model = state.getValue(RisusGateBlock.TALL) ? gateOpenTall :  gateOpen;
 			}
 
 			return ConfiguredModel.builder().modelFile(model).rotationY((int)(state.getValue(RisusGateBlock.FACING)).toYRot()).uvLock(true).build();

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "risus:blue_mosaic_lamp"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "risus:blocks/blue_mosaic_lamp"
+}

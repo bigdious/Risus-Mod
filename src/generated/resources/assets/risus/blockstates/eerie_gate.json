@@ -1,154 +1,306 @@
 {
   "variants": {
-    "facing=east,fluid=blood,open=false": {
+    "facing=east,fluid=blood,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=blood,open=true": {
+    "facing=east,fluid=blood,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=blood,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=empty,open=false": {
+    "facing=east,fluid=blood,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=empty,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=empty,open=true": {
+    "facing=east,fluid=empty,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=empty,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=lava,open=false": {
+    "facing=east,fluid=empty,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=lava,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=lava,open=true": {
+    "facing=east,fluid=lava,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=lava,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=water,open=false": {
+    "facing=east,fluid=lava,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=water,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 270
     },
-    "facing=east,fluid=water,open=true": {
+    "facing=east,fluid=water,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,fluid=water,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 270
     },
-    "facing=north,fluid=blood,open=false": {
+    "facing=east,fluid=water,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,fluid=blood,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=blood,open=true": {
+    "facing=north,fluid=blood,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=blood,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=empty,open=false": {
+    "facing=north,fluid=blood,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=empty,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=empty,open=true": {
+    "facing=north,fluid=empty,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=empty,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=lava,open=false": {
+    "facing=north,fluid=empty,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=lava,open=true": {
+    "facing=north,fluid=lava,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=lava,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=water,open=false": {
+    "facing=north,fluid=lava,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 180
     },
-    "facing=north,fluid=water,open=true": {
+    "facing=north,fluid=water,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,fluid=water,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 180
     },
-    "facing=south,fluid=blood,open=false": {
+    "facing=north,fluid=water,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=south,fluid=blood,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true
     },
-    "facing=south,fluid=blood,open=true": {
+    "facing=south,fluid=blood,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=blood,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true
     },
-    "facing=south,fluid=empty,open=false": {
+    "facing=south,fluid=blood,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=empty,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true
     },
-    "facing=south,fluid=empty,open=true": {
+    "facing=south,fluid=empty,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=empty,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true
     },
-    "facing=south,fluid=lava,open=false": {
+    "facing=south,fluid=empty,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=lava,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true
     },
-    "facing=south,fluid=lava,open=true": {
+    "facing=south,fluid=lava,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=lava,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true
     },
-    "facing=south,fluid=water,open=false": {
+    "facing=south,fluid=lava,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=water,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true
     },
-    "facing=south,fluid=water,open=true": {
+    "facing=south,fluid=water,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true
+    },
+    "facing=south,fluid=water,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true
     },
-    "facing=west,fluid=blood,open=false": {
+    "facing=south,fluid=water,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true
+    },
+    "facing=west,fluid=blood,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=blood,open=true": {
+    "facing=west,fluid=blood,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=blood,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=empty,open=false": {
+    "facing=west,fluid=blood,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=empty,open=true": {
+    "facing=west,fluid=empty,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=empty,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=lava,open=false": {
+    "facing=west,fluid=empty,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=lava,open=true": {
+    "facing=west,fluid=lava,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=lava,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=water,open=false": {
+    "facing=west,fluid=lava,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,open=false,tall=false": {
       "model": "risus:block/eerie_gate",
       "uvlock": true,
       "y": 90
     },
-    "facing=west,fluid=water,open=true": {
+    "facing=west,fluid=water,open=false,tall=true": {
+      "model": "risus:block/eerie_gate_tall",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,open=true,tall=false": {
       "model": "risus:block/eerie_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,fluid=water,open=true,tall=true": {
+      "model": "risus:block/eerie_gate_open_tall",
       "uvlock": true,
       "y": 90
     }

@@ -12,19 +12,14 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -42,6 +37,7 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 	public static final MapCodec<RisusGateBlock> CODEC = RecordCodecBuilder.mapCodec((p_308823_) -> p_308823_.group(WoodType.CODEC.optionalFieldOf("wood_type").forGetter((p_304842_) -> Optional.ofNullable(p_304842_.type)), propertiesCodec(), SoundEvent.DIRECT_CODEC.optionalFieldOf("open_sound").forGetter((fence) -> Optional.of(fence.openSound).filter((s) -> fence.type == null || s != fence.type.fenceGateOpen())), SoundEvent.DIRECT_CODEC.optionalFieldOf("close_sound").forGetter((fence) -> Optional.of(fence.closeSound).filter((s) -> fence.type == null || s != fence.type.fenceGateClose()))).apply(p_308823_, RisusGateBlock::new));
 	public static final BooleanProperty OPEN;
 	public static final BooleanProperty POWERED;
+	public static final BooleanProperty TALL;
 	protected static final VoxelShape Z_SHAPE;
 	protected static final VoxelShape X_SHAPE;
 	protected static final VoxelShape Z_COLLISION_SHAPE;
@@ -69,10 +65,11 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 		this.type = type.orElse(null);
 		this.openSound = openSound.orElseGet(() -> this.type.fenceGateOpen());
 		this.closeSound = closeSound.orElseGet(() -> this.type.fenceGateClose());
-		this.registerDefaultState((((this.stateDefinition.any())
+		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(FLUIDLOGGED, MultiloggingEnum.EMPTY)
-			.setValue(OPEN, false))
-			.setValue(POWERED, false)));
+			.setValue(OPEN, false)
+			.setValue(TALL, false)
+			.setValue(POWERED, false));
 	}
 
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -84,12 +81,19 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
 			level.scheduleTick(currentPos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(level));
 		}
-		if ((state.getValue(FACING)).getClockWise().getAxis() != direction$axis) {
-			return super.updateShape(state, facing, facingState, level, currentPos, facingPos);
-		} else {
-		return state;
+		if (facingState.getBlock() instanceof RisusGateBlock && (facing==Direction.DOWN || facing==Direction.UP) && (facingState.getValue(FACING) == state.getValue(FACING).getOpposite() || facingState.getValue(FACING) == state.getValue(FACING))) {
+			return state.setValue(OPEN, facingState.getValue(OPEN)).setValue(FACING, facingState.getValue(FACING)).setValue(TALL, shouldTall(level, currentPos.above()));
 		}
+		if ((state.getValue(FACING)).getClockWise().getAxis() != direction$axis) {
+			return state.setValue(TALL, shouldTall(level, currentPos.above()));
+		}
+		 	return state.setValue(TALL, shouldTall(level, currentPos.above()));
 	}
+
+	private boolean shouldTall(LevelReader level, BlockPos pos) {
+		return level.getBlockState(pos).getBlock() instanceof RisusGateBlock;
+	}
+
 
 	@Override
 	public FluidState getFluidState(BlockState state) {
@@ -137,7 +141,12 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		boolean flag = level.hasNeighborSignal(blockpos);
 		Direction direction = context.getHorizontalDirection();
-		return this.defaultBlockState().setValue(FACING, direction).setValue(OPEN, flag).setValue(POWERED, flag).setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
+		return this.defaultBlockState()
+			.setValue(FACING, direction)
+			.setValue(OPEN, flag)
+			.setValue(POWERED, flag)
+			.setValue(TALL, shouldTall(level, blockpos.above()))
+			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 	}
 
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
@@ -197,7 +206,7 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, OPEN, POWERED, FLUIDLOGGED);
+		builder.add(FACING, OPEN, POWERED, FLUIDLOGGED, TALL);
 	}
 
 	public static boolean connectsToDirection(BlockState state, Direction direction) {
@@ -218,6 +227,7 @@ public class RisusGateBlock extends HorizontalDirectionalBlock implements Simple
 	static {
 		OPEN = BlockStateProperties.OPEN;
 		POWERED = BlockStateProperties.POWERED;
+		TALL = BooleanProperty.create("tall");
 		Z_SHAPE = Block.box(0.0F, 0.0F, 7.0F, 16.0F, 16.0F, 9.0F);
 		X_SHAPE = Block.box(7.0F, 0.0F, 0.0F, 9.0F, 16.0F, 16.0F);
 		Z_COLLISION_SHAPE = Block.box(0.0F, 0.0F, 7.0F, 16.0F, 24.0F, 9.0F);
