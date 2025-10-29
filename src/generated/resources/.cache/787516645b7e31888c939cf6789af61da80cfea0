@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-26T17:58:09.5694298	Tags for minecraft:block mod id risus
+// 1.21.1	2025-10-29T19:02:59.6007232	Tags for minecraft:block mod id risus
 8c85383a0ff4d19a7784c646e12dfcfb922eca02 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/block/fence_gates.json
@@ -28,7 +28,7 @@ f54aa188ba185e3dcaba799de53044b591a34e58 data/minecraft/tags/block/planks.json
 958093f24af470531ae9f8a798e3218a60a83357 data/minecraft/tags/block/stairs.json
 cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/block/standing_signs.json
 eac7a36f24cc434b6cfccc0c3802671b6c65b8da data/minecraft/tags/block/trapdoors.json
-bd7ac8253d57496516222b0ba0eae8caf5ba9d34 data/minecraft/tags/block/walls.json
+ef9563f5db7afb0075407a8d79b4d89c11760d49 data/minecraft/tags/block/walls.json
 e98f56bd0edb12f5acbbd746df1f53af5d86b2a7 data/minecraft/tags/block/wall_signs.json
 ca275a840ea2f269ae2e24c8f218df235e27de09 data/minecraft/tags/block/wooden_buttons.json
 508987ffa1b14fdf69f2b5a5c8e807b70420e3ad data/minecraft/tags/block/wooden_doors.json

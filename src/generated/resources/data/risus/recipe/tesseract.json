@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "/": {
+      "item": "minecraft:feather"
+    },
+    "F": {
+      "item": "risus:blood_feather"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "/P/",
+    "GFG",
+    "/R/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:tesseract"
+  }
+}

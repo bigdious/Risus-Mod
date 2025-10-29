@@ -339,6 +339,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), DepthVaseRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.TESSERACT.get(), TesseractRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RITUAL.get(), RitualBlockEntityRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.SPAWNER.get(), RisusSpawnerRenderer::new);
 	}

@@ -168,6 +168,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.STRIPPED_BONDKNOT_WOOD, "Stripped Bondknot Wood");
 		this.addBlock(RisusBlocks.TALL_HAIR, "Hair Strands");
 		this.addBlock(RisusBlocks.TEETH, "Teeth");
+		this.addBlock(RisusBlocks.TESSERACT, "Tesseract");
 		this.addBlock(RisusBlocks.TISSUE, "Living Tissue");
 		this.addBlock(RisusBlocks.TISSUE_SLAB, "Tissue Slab");
 		this.addBlock(RisusBlocks.TISSUE_STAIRS, "Tissue Stairs");
@@ -193,6 +194,10 @@ public class LangGenerator extends RisusLangProvider {
 
 		for (DyeColor color : DyeColor.values()) {
 			this.add("block.risus." + color.getName() + "_mosaic_lamp", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Mosaic Lamp");
+		}
+
+		for (DyeColor color : DyeColor.values()) {
+			this.add("block.risus." + color.getName() + "_mosaic_glass_pane", WordUtils.capitalize(color.getName().replace('_', ' ')) + " Mosaic Glass Pane");
 		}
 
 		for (DyeColor color : DyeColor.values()) {

@@ -395,6 +395,336 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.EERIE_LARGE_GATE))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.WHITE_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.WHITE_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.LIGHT_GRAY_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRAY_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.GRAY_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLACK_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.BLACK_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BROWN_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.BROWN_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.RED_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.RED_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.ORANGE_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.ORANGE_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.YELLOW_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.YELLOW_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIME_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.LIME_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GREEN_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.GREEN_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CYAN_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.CYAN_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.LIGHT_BLUE_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLUE_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.BLUE_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PURPLE_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.PURPLE_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.MAGENTA_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.MAGENTA_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PINK_MOSAIC_GLASS.get())
+			.requires(Ingredient.of(RisusTags.Items.GOTHIC_FENCES))
+			.requires(Ingredient.of(Blocks.PINK_STAINED_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.WHITE_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.WHITE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRAY_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.GRAY_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLACK_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.BLACK_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BROWN_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.BROWN_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.RED_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.RED_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.ORANGE_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.ORANGE_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.YELLOW_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.YELLOW_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIME_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.LIME_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GREEN_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.GREEN_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CYAN_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.CYAN_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLUE_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.BLUE_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PURPLE_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.PURPLE_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.MAGENTA_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.MAGENTA_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PINK_MOSAIC_LAMP.get())
+			.requires(Ingredient.of(Items.GLOWSTONE_DUST))
+			.requires(Ingredient.of(RisusBlocks.PINK_MOSAIC_GLASS))
+			.unlockedBy("has_item", has(RisusTags.Items.GOTHIC_FENCES))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BOND_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.BOND_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.BOND_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CONTAINMENT_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.CONTAINMENT_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.CONTAINMENT_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.WHITE_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.WHITE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.WHITE_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRAY_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.GRAY_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GRAY_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLACK_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.BLACK_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.BLACK_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BROWN_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.BROWN_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.BROWN_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.RED_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.RED_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.RED_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.ORANGE_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.ORANGE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.ORANGE_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.YELLOW_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.YELLOW_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.YELLOW_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIME_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.LIME_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.LIME_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GREEN_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.GREEN_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GREEN_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CYAN_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.CYAN_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.CYAN_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BLUE_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.BLUE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.BLUE_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PURPLE_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.PURPLE_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.PURPLE_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.MAGENTA_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.MAGENTA_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.MAGENTA_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.PINK_MOSAIC_GLASS_PANE.get(), 16)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.PINK_MOSAIC_GLASS.get()))
+			.unlockedBy("has_item", has(RisusBlocks.PINK_MOSAIC_GLASS.get()))
+			.save(consumer);
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.TESSERACT.get())
+			.pattern("/P/")
+			.pattern("GFG")
+			.pattern("/R/")
+			.define('G', Ingredient.of(Items.GOLD_INGOT))
+			.define('P', Ingredient.of(Items.PHANTOM_MEMBRANE))
+			.define('R', Ingredient.of(Items.REDSTONE))
+			.define('F', Ingredient.of(RisusItems.BLOOD_FEATHER.get()))
+			.define('/', Ingredient.of(Items.FEATHER))
+			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.BONDKNOT_FENCE_GATE.get())
 			.pattern("/#/")
 			.pattern("/#/")

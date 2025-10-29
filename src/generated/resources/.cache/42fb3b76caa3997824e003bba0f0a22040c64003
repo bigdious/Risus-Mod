@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-28T19:37:33.1324498	Risus Item Models
+// 1.21.1	2025-10-29T20:47:18.5991134	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -13,12 +13,14 @@ af4d81b57c170c5e745fd86b1ee29798dcfcaa38 assets/risus/models/item/ashen_remains.
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/baby_spider_spawn_egg.json
 a9297a9874dd7a160133700fb097cfaec3be403b assets/risus/models/item/big_chain.json
 357c3147a6ad745bf1056eaeddc26c51e3b8a973 assets/risus/models/item/black_mosaic_glass.json
+bc54c58ab83f1e7cacfd030de99f7bd0f138dc42 assets/risus/models/item/black_mosaic_glass_pane.json
 3fcdaec63c09d80a9ba56facf86cba9114829a42 assets/risus/models/item/black_mosaic_lamp.json
 1b3ea05631dc4b732c8bce6181f842fd02f8709e assets/risus/models/item/bloodweave.json
 2babc7951488e545c201996da976e63d9f2e0534 assets/risus/models/item/bloody_sponge.json
 6880705945049d4584957f7a8b66a39140bec06b assets/risus/models/item/blood_bucket.json
 cbb514343969bd6a16134c4f39bf7439a2cf1640 assets/risus/models/item/blood_feather.json
 bd772d0a4c6e32ad6223098a81542bf4fdac7d89 assets/risus/models/item/blue_mosaic_glass.json
+2d013b75f4fae282bf878cfa4a490538b49208cc assets/risus/models/item/blue_mosaic_glass_pane.json
 965088c3203bc02cfd24b44dafd9eec70049cad8 assets/risus/models/item/blue_mosaic_lamp.json
 b565c0d2d9d018aec0aa853f6aa8a7fa0b19bd55 assets/risus/models/item/bondknot_boat.json
 20b8e727e6a5549901f6372e2a332d4c5c5db12c assets/risus/models/item/bondknot_button.json
@@ -42,6 +44,7 @@ f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 8fab586c083d40f9f2e85a3cf54c3621fd1cb5b4 assets/risus/models/item/boomstick.json
 78b584169858ce09bdd73113805b54da22047316 assets/risus/models/item/boomstick_base.json
 5897dc1e3af8b157eed59cf39eba230cca4ad829 assets/risus/models/item/brown_mosaic_glass.json
+b3326580c5f5973731dc924df6a3f3ace6a5f029 assets/risus/models/item/brown_mosaic_glass_pane.json
 45952ed5a8debeceda4d84f14696077c746f8100 assets/risus/models/item/brown_mosaic_lamp.json
 3c4010ec05956ec210ff14e938a5c9d1ae52e257 assets/risus/models/item/budding_imitation_scaleplate.json
 f096c33a5d1479afe0e46bfd4b8f6baeb4dc3766 assets/risus/models/item/budding_unalloyed_scaleplate.json
@@ -83,6 +86,7 @@ f7efc6655d09f91da7e518c0901da297debbb40e assets/risus/models/item/crown_of_bones
 12cff6f1b09f0649b65d4f6af7869b2cf470db9c assets/risus/models/item/curved_fleshy_skin.json
 c4bed38446813184de537893bb74d28c19ca4db1 assets/risus/models/item/curved_ritual_block.json
 17098f5a2a326d9c9149313ce0c6ee875b43f715 assets/risus/models/item/cyan_mosaic_glass.json
+19064aec23533067b1014dc3f068520d0e7a9f86 assets/risus/models/item/cyan_mosaic_glass_pane.json
 6f1afe2385f0b119d2608cefc8bbf89d4507ad79 assets/risus/models/item/cyan_mosaic_lamp.json
 acf6043dc54e1e4bd01cd335431cdbfb69131f35 assets/risus/models/item/dark_fence.json
 234878d1acd56b45e2f43ea26ef601ab9dc735a6 assets/risus/models/item/dark_gate.json
@@ -150,8 +154,10 @@ a22879083321d8f80168281f323378094723ff48 assets/risus/models/item/full_fossil_st
 9d594daf3779925806462380e8036862612415b9 assets/risus/models/item/gold_fist.json
 115b385a79ea9954dc13fb9d8160af431d17735e assets/risus/models/item/gold_fist_base.json
 4faaaef53ae3d94ee6c9f85ebe22c9768d68d677 assets/risus/models/item/gray_mosaic_glass.json
+c11bb1a409fcf060c5917b4e8fbc83375938ec9b assets/risus/models/item/gray_mosaic_glass_pane.json
 7bac33c62e2aac0b4fe0fb93a45f242dcba250d2 assets/risus/models/item/gray_mosaic_lamp.json
 6c87de6ddd09b4fb89a57e5d769f4c482146401b assets/risus/models/item/green_mosaic_glass.json
+203b03b14e340220e25ecc565215909ae0562bca assets/risus/models/item/green_mosaic_glass_pane.json
 118724ec9c3c890cd14e4ec09ef237f109732c01 assets/risus/models/item/green_mosaic_lamp.json
 ac180f75e91f802d79c97b726137fb5170502fe6 assets/risus/models/item/grilled_tissue.json
 cf809d4f60040c6c19f177f9fe3a690fadd1af28 assets/risus/models/item/grimstone.json
@@ -198,12 +204,15 @@ ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsid
 8daac144a17d077e66d0e9f4a31cd65445d1f806 assets/risus/models/item/laughing_stalk.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/licker_spawn_egg.json
 f61d6e9c2aec1ccdd8cfcbe1e99b9d4228c3e071 assets/risus/models/item/light_blue_mosaic_glass.json
+e2d4c05a426b781651abc90c9ea945fba78c863a assets/risus/models/item/light_blue_mosaic_glass_pane.json
 b2172b76865cce48c46ba7b778811e5160478788 assets/risus/models/item/light_blue_mosaic_lamp.json
 3f71090ec126de65116f5cbad0ee920b4bc67609 assets/risus/models/item/light_devourer.json
 483fe1d03b869f17117c2d92c051d239024e4d8d assets/risus/models/item/light_excrement.json
 0ef9495db9936b488d45d8c1211e32891b690a0c assets/risus/models/item/light_gray_mosaic_glass.json
+81f3460da332979b23ce970af99facf76b9a3fd5 assets/risus/models/item/light_gray_mosaic_glass_pane.json
 f3a0c814db5251283e26c4d199bcfed3131da5a5 assets/risus/models/item/light_gray_mosaic_lamp.json
 2470189ae22017155a581f4a11b26192cf094348 assets/risus/models/item/lime_mosaic_glass.json
+abc82d75388a2d9e171cf47f7eeec9068cdd6d1a assets/risus/models/item/lime_mosaic_glass_pane.json
 149cf4d7eb055f5d1a766854491b1f7d095fbfae assets/risus/models/item/lime_mosaic_lamp.json
 51684b556608835ca1035a3df128d31710131489 assets/risus/models/item/linear_ritual_block.json
 06597f16771e91b6405524cef39ebacfe8e6f5be assets/risus/models/item/living_tissue.json
@@ -211,6 +220,7 @@ f3a0c814db5251283e26c4d199bcfed3131da5a5 assets/risus/models/item/light_gray_mos
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/lover_spawn_egg.json
 eac3a637d94a273d56e29ec811730468bb328db3 assets/risus/models/item/lucky_charm.json
 ec8befb518a16c8557bb2299538cc0115d01c7e7 assets/risus/models/item/magenta_mosaic_glass.json
+93a95ea37daf0aa4f994ebb88c855d9dd03a26c3 assets/risus/models/item/magenta_mosaic_glass_pane.json
 a4bfb7cfd330c4a79b8aba1c85fa01543854ff95 assets/risus/models/item/magenta_mosaic_lamp.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
@@ -232,12 +242,14 @@ eee1c93e3f5a1bfc3b6baa0932cfd2efb898f637 assets/risus/models/item/music_disc_rak
 9d85c7657490407dae2aaed17f756184e18265b9 assets/risus/models/item/oily_wings.json
 35fd7a72e995b71cdd2e524facd511870ceb2ae9 assets/risus/models/item/oily_wings_broken.json
 acb81e26b63a9589d03eb2d539578e14549b9e8a assets/risus/models/item/orange_mosaic_glass.json
+e8c84998b0211f47ea06201eaaae6715305d9173 assets/risus/models/item/orange_mosaic_glass_pane.json
 256992788cc1e55d9065f2780dd26379616ff056 assets/risus/models/item/orange_mosaic_lamp.json
 0b1acc0bbe5bab7e69e17aa9ffed4417befcc77b assets/risus/models/item/organic_matter.json
 4272695bf0c1b0951f04eef275cc627817341103 assets/risus/models/item/organic_matter_block.json
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/oxidized_copper_amalgam.json
 3f03cf417d9b8e185bc9858a596105b8d493d407 assets/risus/models/item/peeled_grilled_tissue.json
 07e295816c0ec9d765313d0a7fd950558659a121 assets/risus/models/item/pink_mosaic_glass.json
+e966b147fb003ca60a32a1b51f0f7b74de297e8c assets/risus/models/item/pink_mosaic_glass_pane.json
 7953d6e1c3983f958813c4843ab687dabde94b25 assets/risus/models/item/pink_mosaic_lamp.json
 2f16712ae08ea3d4edd94c13c6224a3eb66bb354 assets/risus/models/item/polished_grimstone.json
 431609ba6ab8c91087e71a2b5143e070296a085f assets/risus/models/item/polished_grimstone_slab.json
@@ -247,9 +259,11 @@ f1651fa02abf97aba718d3174803b0ac6c101c9a assets/risus/models/item/popping_bondkn
 01aa32f3c0e2d13bceac67ba853d1e84d49c8b61 assets/risus/models/item/popping_bondknot_wood.json
 d3f2c741cc06d0ad548cf376c6fb344a18e4d320 assets/risus/models/item/purifying_paste.json
 6553b61e63fad281bad7d6c7f85d7eb1f5cce92b assets/risus/models/item/purple_mosaic_glass.json
+95c043a6eabd6c858c01bc00a764c74cc4396153 assets/risus/models/item/purple_mosaic_glass_pane.json
 f169020799d8fe232a5037dd3afa76080abb6a7b assets/risus/models/item/purple_mosaic_lamp.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 c51d0f0bfcbb910b1ad048531316609894418ea8 assets/risus/models/item/red_mosaic_glass.json
+d421c2df0a2ebd0e1394a070bfbe1432d0bd9594 assets/risus/models/item/red_mosaic_glass_pane.json
 26c873cb4ec5b89b9b2983cc465b34f0ac5a2746 assets/risus/models/item/red_mosaic_lamp.json
 06f695423b6813ef3cd11a76d7606414c416ee90 assets/risus/models/item/regen_rose.json
 fd620e16bafb6171980c38fd5fc9e4e7799b9fb2 assets/risus/models/item/researchers_notes.json
@@ -426,6 +440,7 @@ a5d1593a3a898fab01351dca0c2adac5644196a9 assets/risus/models/item/stripped_bondk
 498c366c8177734c904bed9b873b6b39b742bbb4 assets/risus/models/item/stripped_bondknot_wood.json
 fd972353f65ced1b764d9169353fbe723fb39940 assets/risus/models/item/tall_hair.json
 e8f1a7021150a497d64cd7cba88e334a9aa8d1fe assets/risus/models/item/teeth.json
+f5b3aef7db3eb0b4a2ad170610034d7eda3b1747 assets/risus/models/item/tesseract.json
 edc75aed3d5b60c1b13fabe34a18c981e963285b assets/risus/models/item/thousand_blade.json
 cd7e728eba311ff07068b2978b8306a7b5eb70df assets/risus/models/item/thousand_blade_base.json
 2957046bcf77667b31ff4cb0a0a72bc0e60baf61 assets/risus/models/item/thousand_blade_charged.json
@@ -473,8 +488,10 @@ a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/waxed_copper_a
 28471e64d52282881d849bf8ff62d4e0cfb0db94 assets/risus/models/item/weaver_nest.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/weaver_spawn_egg.json
 a941b2394f3f6046760e124a3cfc4b9c18492aa4 assets/risus/models/item/white_mosaic_glass.json
+48f632f2d406231cd5764474e8a3a11a04186cd4 assets/risus/models/item/white_mosaic_glass_pane.json
 cf700c250c9e8f06e93cadc4f5f4b516b6dd3ee5 assets/risus/models/item/white_mosaic_lamp.json
 10ae78aa7a30ac8bed9d5b285f4c96004f7ab074 assets/risus/models/item/wretched_charm.json
 60fa245dd108359e31ca042c98844247a2db5983 assets/risus/models/item/yellow_mosaic_glass.json
+b1e9aeaf692fcfeb079de0da147ae605c95b4385 assets/risus/models/item/yellow_mosaic_glass_pane.json
 e479b87ae50c0d269f792f7919b4ce9eb570f297 assets/risus/models/item/yellow_mosaic_lamp.json
 8c5ad3232707ee120d84a4343db5ea635f468057 assets/risus/models/item/zit.json

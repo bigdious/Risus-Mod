@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "risus:gothic_fences"
+    },
+    {
+      "item": "minecraft:black_stained_glass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:black_mosaic_glass"
+  }
+}

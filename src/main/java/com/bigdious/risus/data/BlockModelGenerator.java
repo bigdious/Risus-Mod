@@ -188,6 +188,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		risusWallBlock(RisusBlocks.UNALLOYED_SCALES_BLOCK_WALL.get(), models().wallPost("unalloyed_scales_wall_post",Risus.prefix("block/unalloyed_scales/side")), models().wallSide("unalloyed_scales_wall_side", Risus.prefix("block/unalloyed_scales/side")), models().wallSideTall("unalloyed_scales_wall_side_tall", Risus.prefix("block/unalloyed_scales/side")));
 		simpleBlock(RisusBlocks.BLOODWYRM_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
 		simpleBlock(RisusBlocks.BLOODWYRM_WALL_HEAD.get(), models().getExistingFile(ResourceLocation.withDefaultNamespace("block/skull")));
+		simpleBlock(RisusBlocks.TESSERACT.get(), models().getExistingFile(Risus.prefix("block/tesseract")));
 		axisBlock(RisusBlocks.BONDKNOT_LOG.get(), Risus.prefix("block/bondknot_log"), Risus.prefix("block/bondknot_log_top"));
 		axisBlock(RisusBlocks.BONDKNOT_WOOD.get(), Risus.prefix("block/bondknot_log"), Risus.prefix("block/bondknot_log"));
 		getVariantBuilder(RisusBlocks.POPPING_BONDKNOT_LOG.get()).forAllStates(state -> {
@@ -331,6 +332,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 
+
+
 		superFenceBlock(RisusBlocks.EERIE_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_tall")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down")), models().getExistingFile(Risus.prefix("block/eerie_fence_side_down_tall")));
 		superFenceBlock(RisusBlocks.DARK_FENCE.get(), models().getExistingFile(Risus.prefix("block/eerie_fence_post")), models().getExistingFile(Risus.prefix("block/eerie_fence_post_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side")), models().getExistingFile(Risus.prefix("block/dark_fence_side_tall")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down")), models().getExistingFile(Risus.prefix("block/dark_fence_side_down_tall")));
 		trapdoorBlock(RisusBlocks.EERIE_TRAPDOOR.get(),  models().getExistingFile(Risus.prefix("block/eerie_trapdoor_bottom")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_top")), models().getExistingFile(Risus.prefix("block/eerie_trapdoor_open")), true);
@@ -377,6 +380,23 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
 		simpleBlockWithRenderType(RisusBlocks.PINK_MOSAIC_LAMP.get(), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.WHITE_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/white_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/light_gray_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.GRAY_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/gray_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.BLACK_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/black_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.BROWN_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/brown_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.RED_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/red_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.ORANGE_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/orange_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.YELLOW_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/yellow_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.LIME_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/lime_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.GREEN_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/green_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.CYAN_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/cyan_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/light_blue_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.BLUE_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/blue_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.PURPLE_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/purple_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.MAGENTA_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/magenta_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+		betterPaneBlockWithRenderType(RisusBlocks.PINK_MOSAIC_GLASS_PANE.get(), Risus.prefix("block/pink_mosaic_glass"), Risus.prefix("block/mosaic_glass_pane_top"), ResourceLocation.withDefaultNamespace("translucent"));
+
 
 		horizontalBlock(RisusBlocks.CURVED_RITUAL_BLOCK.get(), models().withExistingParent("curved_ritual_block", ResourceLocation.withDefaultNamespace("block/template_glazed_terracotta")).texture("pattern", Risus.prefix("block/curved_ritual_block")));
 		axisBlock((RotatedPillarBlock) RisusBlocks.LINEAR_RITUAL_BLOCK.get(), Risus.prefix("block/linear_ritual_block_side"), Risus.prefix("block/linear_ritual_block_top"));

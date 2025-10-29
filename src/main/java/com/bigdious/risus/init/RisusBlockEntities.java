@@ -1,6 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.TesseractBlockEntity;
 import com.bigdious.risus.blocks.entity.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Blocks;
@@ -45,4 +46,5 @@ public class RisusBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WeaverNestBlockEntity>> WEAVER_NEST = BLOCK_ENTITIES.register("weaver_nest", () -> BlockEntityType.Builder.of(WeaverNestBlockEntity::new, RisusBlocks.WEAVER_NEST.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RitualBlockEntity>> RITUAL = BLOCK_ENTITIES.register("ritual", () -> BlockEntityType.Builder.of(RitualBlockEntity::new, RisusBlocks.RITUAL.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RisusSpawnerBlockEntity>> SPAWNER = BLOCK_ENTITIES.register("spawner", () -> BlockEntityType.Builder.of(RisusSpawnerBlockEntity::new, RisusBlocks.FLESHY_SPAWNER.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TesseractBlockEntity>> TESSERACT = BLOCK_ENTITIES.register("tesseract", () -> BlockEntityType.Builder.of(TesseractBlockEntity::new, RisusBlocks.TESSERACT.get()).build(null));
 }

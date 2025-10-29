@@ -203,6 +203,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			Items.ENCHANTED_BOOK
 		);
 
+		this.tag(RisusTags.Items.GOTHIC_FENCES).add(
+			RisusBlocks.DARK_FENCE.asItem()
+			,RisusBlocks.EERIE_FENCE.asItem()
+		);
+
 
 
 

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "risus:red_mosaic_glass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:red_mosaic_lamp"
+  }
+}
