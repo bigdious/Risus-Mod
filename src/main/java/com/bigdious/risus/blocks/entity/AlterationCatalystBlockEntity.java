@@ -115,7 +115,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
 				else if (te.item.isEnchanted() || te.item.is(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT)) {
-					//why the hell don't enchanted books use DataComponents.ENCHANTMENTS ???!!!
+					//why the hell don't enchanted books use DataComponents.ENCHANTMENTS ??? Update: Got the answer, still disagree
 					if (te.item.getItem() instanceof EnchantedBookItem) {
 						for (Object2IntMap.Entry<Holder<Enchantment>> entry : te.item.getOrDefault(DataComponents.STORED_ENCHANTMENTS, ItemEnchantments.EMPTY).entrySet()) {
 							if (entry.getKey().is(RisusTags.Enchantments.ALTERABLE_ENCHANTS)) {

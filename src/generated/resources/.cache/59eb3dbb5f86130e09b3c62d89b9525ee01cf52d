@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-29T20:47:18.6046898	Loot Tables
+// 1.21.1	2025-10-30T21:58:07.0366033	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -225,6 +225,7 @@ f8964a085f0c69af6d7aab48ead7575de618e459 data/risus/loot_table/blocks/waxed_expo
 a2420d83024edde3efff8e457fa9eb61b8420ca5 data/risus/loot_table/blocks/waxed_weathered_copper_amalgam.json
 4e62f17d3ce5fd1cb5c1eea86cf41c2ad3cbb126 data/risus/loot_table/blocks/weathered_copper_amalgam.json
 31c196bd8868b6d0fc48647bd82539a44646c0d2 data/risus/loot_table/blocks/weaver_nest.json
+ea459fafc520b7b9fa113f1d10e6800ea658d786 data/risus/loot_table/blocks/weaving_mechanism.json
 684db703cfba5b31d66620b617fa030b45814c86 data/risus/loot_table/blocks/white_display_notch.json
 210c8390908cb0101a048ee7dab2d969af30166d data/risus/loot_table/blocks/white_mosaic_glass.json
 82f4788841f0c9f9fcf713593a4b29c078d36539 data/risus/loot_table/blocks/white_mosaic_glass_pane.json

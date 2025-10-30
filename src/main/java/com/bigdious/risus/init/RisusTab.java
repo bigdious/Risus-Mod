@@ -52,6 +52,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.ENGRAVED_BASALT.get());
 				output.accept(RisusBlocks.BLOODWEAVE.get());
 				output.accept(RisusBlocks.WEAVER_NEST.get());
+				output.accept(RisusBlocks.WEAVING_MECHANISM.get());
 				output.accept(RisusBlocks.BLOODY_SPONGE.get());
 				output.accept(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 				output.accept(RisusBlocks.SCAB.get());

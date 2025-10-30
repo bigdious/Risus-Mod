@@ -186,6 +186,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM, "Waxed Weathered Copper Amalgam");
 		this.addBlock(RisusBlocks.WEATHERED_COPPER_AMALGAM, "Weathered Copper Amalgam");
 		this.addBlock(RisusBlocks.WEAVER_NEST, "Weaver Nest");
+		this.addBlock(RisusBlocks.WEAVING_MECHANISM, "Weaving Mechanism");
 		this.addBlock(RisusBlocks.ZIT, "Zit");
 
 		for (DyeColor color : DyeColor.values()) {

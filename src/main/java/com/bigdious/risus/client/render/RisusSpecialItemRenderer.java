@@ -1,7 +1,9 @@
 package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.blocks.DepthVaseBlock;
+import com.bigdious.risus.blocks.WeavingMechanismBlock;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
+import com.bigdious.risus.blocks.entity.WeavingMechanismBlockEntity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.google.common.base.Suppliers;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -22,6 +24,7 @@ import java.util.function.Supplier;
 public class RisusSpecialItemRenderer extends BlockEntityWithoutLevelRenderer {
 
 	private final DepthVaseBlockEntity vase = new DepthVaseBlockEntity(BlockPos.ZERO, RisusBlocks.DEPTH_VASE.get().defaultBlockState());
+	private final WeavingMechanismBlockEntity weaving_mechanism = new WeavingMechanismBlockEntity(BlockPos.ZERO, RisusBlocks.WEAVING_MECHANISM.get().defaultBlockState());
 
 	public static final Supplier<RisusSpecialItemRenderer> INSTANCE = Suppliers.memoize(RisusSpecialItemRenderer::new);
 	public static final IClientItemExtensions CLIENT_ITEM_EXTENSION = Util.make(() -> new IClientItemExtensions() {
@@ -43,6 +46,9 @@ public class RisusSpecialItemRenderer extends BlockEntityWithoutLevelRenderer {
 			Minecraft minecraft = Minecraft.getInstance();
 			if (block instanceof DepthVaseBlock) {
 				minecraft.getBlockEntityRenderDispatcher().renderItem(this.vase, stack, buffer, light, overlay);
+			}
+			if (block instanceof WeavingMechanismBlock) {
+				minecraft.getBlockEntityRenderDispatcher().renderItem(this.weaving_mechanism, stack, buffer, light, overlay);
 			}
 		}
 	}

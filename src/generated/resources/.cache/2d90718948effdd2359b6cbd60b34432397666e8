@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-29T20:47:18.6046898	Risus blockstates and models
+// 1.21.1	2025-10-30T21:58:07.0446053	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -212,6 +212,7 @@ debb775c7b698c2acdba8d9928260f709f58f5f9 assets/risus/blockstates/waxed_oxidized
 0d0d0c2ea4247364ec7379d03413ffe880188609 assets/risus/blockstates/waxed_weathered_copper_amalgam.json
 0d0d0c2ea4247364ec7379d03413ffe880188609 assets/risus/blockstates/weathered_copper_amalgam.json
 e33852e2a28b57bf6a06369f4c8e139c0836558d assets/risus/blockstates/weaver_nest.json
+498f13509c9cf0d7a5700a592a6a57d6b7fba461 assets/risus/blockstates/weaving_mechanism.json
 2142777eabaab1ae1b823a7b6c2a39c77598ad33 assets/risus/blockstates/white_display_notch.json
 4a44212cc6bd2bc559afd261926774c37512190a assets/risus/blockstates/white_mosaic_glass.json
 f29acfbac0f69d9b17319dc306545dcd266881c9 assets/risus/blockstates/white_mosaic_glass_pane.json
@@ -551,6 +552,7 @@ a4de08fd07842d0bb465148968eb8119bd981670 assets/risus/models/block/unalloyed_sca
 48de0139c11d3673cc4260d614e88dda41ca0cd0 assets/risus/models/block/veins.json
 393048aaddb672b9d84ef124259f83b4803c3042 assets/risus/models/block/veins_end.json
 501a1e7e80b609c9f691ea92020a8b2811b0afbf assets/risus/models/block/weathered_copper_amalgam.json
+867e03366a72b19527775f7dae262cb3ff6e2244 assets/risus/models/block/weaving_mechanism.json
 c85974cc4059b1bc7a1a122bafaa2ad0c52f50cb assets/risus/models/block/white_display_notch.json
 36da05952874122a123c1842eb2a9beae5b38118 assets/risus/models/block/white_mosaic_glass.json
 7b43bc73c6ecd8b547229435f53839affd7f5d19 assets/risus/models/block/white_mosaic_glass_pane_noside.json

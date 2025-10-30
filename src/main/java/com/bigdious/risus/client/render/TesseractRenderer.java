@@ -1,9 +1,6 @@
 package com.bigdious.risus.client.render;
 
-import com.bigdious.risus.blocks.DisplayNotchBlock;
-import com.bigdious.risus.blocks.TesseractBlockEntity;
-import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
-import com.bigdious.risus.config.RisusConfig;
+import com.bigdious.risus.blocks.entity.TesseractBlockEntity;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -13,7 +10,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 

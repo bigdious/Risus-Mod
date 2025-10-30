@@ -1,4 +1,4 @@
-package com.bigdious.risus.blocks;
+package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.init.RisusBlockEntities;
 import net.minecraft.core.BlockPos;

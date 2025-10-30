@@ -24,9 +24,9 @@ public class ExperienceItem extends Item {
 		ItemStack itemstack = player.getItemInHand(hand);
 		if (!level.isClientSide) {
 			int i = 3 + level.random.nextInt(5) + level.random.nextInt(5);
-			ExperienceOrb.award((ServerLevel)level, player.position(), i);
+			ExperienceOrb.award((ServerLevel)level, player.position(), player.isCrouching() ? itemstack.getCount()*i : i );
 		}
-		itemstack.consume(1, player);
+		itemstack.consume(player.isCrouching() ? itemstack.getCount() : 1, player);
 		player.awardStat(Stats.ITEM_USED.get(this));
 		return InteractionResultHolder.consume(itemstack);
 	}

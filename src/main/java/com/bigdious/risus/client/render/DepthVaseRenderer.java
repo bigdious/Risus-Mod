@@ -25,8 +25,8 @@ public class DepthVaseRenderer implements BlockEntityRenderer<DepthVaseBlockEnti
 	private final ModelPart vaseBody;
 	private final ModelPart decoration;
 	protected static final float WOBBLE_AMPLITUDE = 0.125F;
-	public DepthVaseRenderer(BlockEntityRendererProvider.Context p_272872_) {
-		ModelPart modelpart = p_272872_.bakeLayer(RisusModelLayers.DEPTH_VASE);
+	public DepthVaseRenderer(BlockEntityRendererProvider.Context context) {
+		ModelPart modelpart = context.bakeLayer(RisusModelLayers.DEPTH_VASE);
 		this.vaseBody = modelpart.getChild("vaseBody");
 		this.decoration = modelpart.getChild("decoration");
 	}

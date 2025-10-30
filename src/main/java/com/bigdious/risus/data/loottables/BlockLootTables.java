@@ -78,6 +78,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get());
 		dropSelf(RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get());
 		dropSelf(RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get());
+		add(RisusBlocks.WEAVING_MECHANISM.get(), createSilkTouchDispatchTable(RisusBlocks.WEAVING_MECHANISM.get(), LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE.get())));
 		add(RisusBlocks.CRYSTALLIZED_BONDS.get(), createSilkTouchDispatchTable(RisusBlocks.CRYSTALLIZED_BONDS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
 		add(RisusBlocks.BOND_GLASS.get(), createSilkTouchDispatchTable(RisusBlocks.BOND_GLASS.get(), LootItem.lootTableItem(RisusItems.CRYSTALLIZED_BOND.get())));
 		add(RisusBlocks.BOND_GLASS_PANE.get(), createSilkTouchDispatchTable(RisusBlocks.BOND_GLASS_PANE.get(), LootItem.lootTableItem(Items.AIR)));

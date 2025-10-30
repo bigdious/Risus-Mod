@@ -266,6 +266,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
 		event.registerLayerDefinition(RisusModelLayers.GREAT_STOOL, StoolModel::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
+		event.registerLayerDefinition(RisusModelLayers.WEAVING_MECHANISM, WeavingMechanismRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.LITTER, LitterModel::create);
 		event.registerLayerDefinition(RisusModelLayers.RIGHT_HAND_OF_GREED, RightHandPlayerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LEFT_HAND_OF_GREED, LeftHandPlayerModel::create);
@@ -338,6 +339,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.RISUS_CAMPFIRE.get(), CampfireRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.ALTERATION_CATALYST.get(), AlterationCatalystRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DEPTH_VASE.get(), DepthVaseRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.WEAVING_MECHANISM.get(), WeavingMechanismRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.TESSERACT.get(), TesseractRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RITUAL.get(), RitualBlockEntityRenderer::new);
@@ -348,6 +350,7 @@ public class RisusClientEvents {
 		event.registerItem(ThousandBladeItem.ItemExtensions.INSTANCE, RisusItems.THOUSAND_BLADE.get());
 		event.registerItem(ScytheItem.ItemExtensions.INSTANCE, RisusItems.SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.DEPTH_VASE.asItem());
+		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.WEAVING_MECHANISM.asItem());
 		event.registerItem(
 			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.CROWN_OF_BONES_INNER, RisusModelLayers.CROWN_OF_BONES_OUTER),
 			RisusItems.CROWN_OF_BONES.get()
