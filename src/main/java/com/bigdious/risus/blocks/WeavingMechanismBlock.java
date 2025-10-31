@@ -8,6 +8,7 @@ import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.FallingBlockEntity;
@@ -59,6 +60,7 @@ public class WeavingMechanismBlock extends BaseEntityBlock implements SimpleMult
 				level.addFreshEntity(item);
 				weaver.setTheItem(ItemStack.EMPTY);
 			} else {
+				player.sendSystemMessage(Component.literal(weaver.getTheItem()+ " "));
 				return ItemInteractionResult.FAIL;
 			}
 			level.sendBlockUpdated(pos, state, state, 2);

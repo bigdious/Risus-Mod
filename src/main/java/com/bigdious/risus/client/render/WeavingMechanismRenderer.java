@@ -1,6 +1,7 @@
 package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.blocks.entity.WeavingMechanismBlockEntity;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -14,9 +15,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
@@ -114,21 +119,99 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F + direction.toYRot()));
 		VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityTranslucent(TEXTURE));
 		this.base.render(poseStack, vertexconsumer, light, overlay);
-		this.leg1.render(poseStack, vertexconsumer, light, overlay);
-		this.leg2.render(poseStack, vertexconsumer, light, overlay);
-		this.leg3.render(poseStack, vertexconsumer, light, overlay);
-		this.leg4.render(poseStack, vertexconsumer, light, overlay);
-		this.leg5.render(poseStack, vertexconsumer, light, overlay);
-		this.leg6.render(poseStack, vertexconsumer, light, overlay);
-		this.half1.render(poseStack, vertexconsumer, light, overlay);
-		this.half2.render(poseStack, vertexconsumer, light, overlay);
-		this.half3.render(poseStack, vertexconsumer, light, overlay);
-		this.half4.render(poseStack, vertexconsumer, light, overlay);
-		this.half5.render(poseStack, vertexconsumer, light, overlay);
-		this.half6.render(poseStack, vertexconsumer, light, overlay);
+		scutterLeg1(entity, this.leg1, poseStack, vertexconsumer, light, overlay);
+		scutterLeg2(entity, this.leg2, poseStack, vertexconsumer, light, overlay);
+		scutterLeg3(entity, this.leg3, poseStack, vertexconsumer, light, overlay);
+		scutterLeg4(entity, this.leg4, poseStack, vertexconsumer, light, overlay);
+		scutterLeg5(entity, this.leg5, poseStack, vertexconsumer, light, overlay);
+		scutterLeg6(entity, this.leg6, poseStack, vertexconsumer, light, overlay);
+
 		if (!itemstack.isEmpty() && itemstack != null && itemstack == entity.getTheItem()) {
-			this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, light, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.getLevel(), (int) entity.getBlockPos().asLong());
+			this.renderItem(entity, itemstack, poseStack, buffer, light);
 		}
+		poseStack.popPose();
+	}
+
+	protected void renderItem(WeavingMechanismBlockEntity entity, ItemStack itemstack, PoseStack poseStack, MultiBufferSource buffer, int light) {
+		poseStack.pushPose();
+		poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
+		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));
+		poseStack.scale(0.5F, 0.5F, 0.5F);
+		poseStack.translate(0, -2.35, -0.5);
+
+		this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, light, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.getLevel(), (int) entity.getBlockPos().asLong());
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg1 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+			if (entity.isWeaving) {
+				float f = AnimationRenderHelper.rotation;
+				poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.3F) * 3F), 0.1F, -0.6F, 0.3F);
+				poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.5F) * 1.5F), 0.0F, -0.2F, 0.0F);
+				poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*0.3F) * 2.2F), 0.1F, -0.2F, 0.1F);
+			}
+			part.render(poseStack, vertexconsumer, light, overlay);
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg2 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+		if (entity.isWeaving) {
+			float f = AnimationRenderHelper.rotation;
+			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.sin(f*1.3F) * 3F), 0.1F, -0.6F, 0.3F);
+			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f) * 0.9F), 0.0F, -0.2F, 0.0F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.sin(f) * -0.5F), 0.1F, -0.2F, 0.1F);
+		}
+		part.render(poseStack, vertexconsumer, light, overlay);
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg3 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+		if (entity.isWeaving) {
+			float f = AnimationRenderHelper.rotation;
+			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.5F) * 2F), 0.1F, -0.6F, 0.3F);
+			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.sin(f*0.4F) * 1.5F), 0.0F, -0.2F, 0.0F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*0.2F) * 3F), 0.1F, -0.2F, 0.1F);
+		}
+		part.render(poseStack, vertexconsumer, light, overlay);
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg4 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+		if (entity.isWeaving) {
+			float f = AnimationRenderHelper.rotation;
+			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.sin(f*0.1F) * 3.2F), 0.1F, -0.6F, 0.3F);
+			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.25F) * 2.5F), 0.0F, -0.2F, 0.0F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f) * 0.5F), 0.1F, -0.2F, 0.1F);
+		}
+		part.render(poseStack, vertexconsumer, light, overlay);
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg5 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+		if (entity.isWeaving) {
+			float f = AnimationRenderHelper.rotation;
+			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.5F) * 1.2F), 0.1F, -0.6F, 0.3F);
+			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.7F) * 2.7F), 0.0F, -0.2F, 0.0F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*0.3F) * 2.3F), 0.1F, -0.2F, 0.1F);
+		}
+		part.render(poseStack, vertexconsumer, light, overlay);
+		poseStack.popPose();
+	}
+
+	protected void scutterLeg6 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
+		poseStack.pushPose();
+		if (entity.isWeaving) {
+			float f = AnimationRenderHelper.rotation;
+			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.8F) * 1.8F), 0.1F, -0.6F, 0.3F);
+			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.4F) * 0.5F), 0.0F, -0.2F, 0.0F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*1.1F) * 1.7F), 0.1F, -0.2F, 0.1F);
+		}
+		part.render(poseStack, vertexconsumer, light, overlay);
 		poseStack.popPose();
 	}
 }
