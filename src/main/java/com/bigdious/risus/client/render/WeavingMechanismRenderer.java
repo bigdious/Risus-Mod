@@ -13,11 +13,16 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
 
 public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMechanismBlockEntity> {
 	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/block/weaving_mechanism.png");
+	private final ItemRenderer itemRenderer;
 	private final ModelPart base;
 	private final ModelPart leg1;
 	private final ModelPart leg2;
@@ -34,6 +39,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	public WeavingMechanismRenderer(BlockEntityRendererProvider.Context context) {
 		ModelPart modelpart = context.bakeLayer(RisusModelLayers.WEAVING_MECHANISM);
+		this.itemRenderer = context.getItemRenderer();
 		this.base = modelpart.getChild("base");
 		this.leg1 = modelpart.getChild("leg1");
 		this.leg2 = modelpart.getChild("leg2");
@@ -98,27 +104,31 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
 
-	public void render(WeavingMechanismBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+	public void render(WeavingMechanismBlockEntity entity, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int light, int overlay) {
+		ItemStack itemstack = entity.getTheItem();
 		poseStack.pushPose();
-		Direction direction = blockEntity.getDirection();
+		Direction direction = entity.getDirection();
 		poseStack.translate(0.5, 0, 0.5);
 		poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
 		poseStack.translate(0, -1.5, 0);
 		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F + direction.toYRot()));
-		VertexConsumer vertexconsumer = pBuffer.getBuffer(RenderType.entityTranslucent(TEXTURE));
-		this.base.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg1.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg2.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg3.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg4.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg5.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.leg6.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half1.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half2.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half3.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half4.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half5.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
-		this.half6.render(poseStack, vertexconsumer, pPackedLight, pPackedOverlay);
+		VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityTranslucent(TEXTURE));
+		this.base.render(poseStack, vertexconsumer, light, overlay);
+		this.leg1.render(poseStack, vertexconsumer, light, overlay);
+		this.leg2.render(poseStack, vertexconsumer, light, overlay);
+		this.leg3.render(poseStack, vertexconsumer, light, overlay);
+		this.leg4.render(poseStack, vertexconsumer, light, overlay);
+		this.leg5.render(poseStack, vertexconsumer, light, overlay);
+		this.leg6.render(poseStack, vertexconsumer, light, overlay);
+		this.half1.render(poseStack, vertexconsumer, light, overlay);
+		this.half2.render(poseStack, vertexconsumer, light, overlay);
+		this.half3.render(poseStack, vertexconsumer, light, overlay);
+		this.half4.render(poseStack, vertexconsumer, light, overlay);
+		this.half5.render(poseStack, vertexconsumer, light, overlay);
+		this.half6.render(poseStack, vertexconsumer, light, overlay);
+		if (!itemstack.isEmpty() && itemstack != null && itemstack == entity.getTheItem()) {
+			this.itemRenderer.renderStatic(itemstack, ItemDisplayContext.FIXED, light, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.getLevel(), (int) entity.getBlockPos().asLong());
+		}
 		poseStack.popPose();
 	}
 }

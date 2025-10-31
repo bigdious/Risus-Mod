@@ -6,6 +6,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.Entity;
@@ -46,8 +48,9 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements WorldlyC
 
 	public static void tick(Level level, BlockPos pos, BlockState state, WeavingMechanismBlockEntity weaver) {
 		int weavingTime=200;
-		if (weaver.xpStored > 12 && weaver.item == ItemStack.EMPTY) {
+		if (!level.isClientSide() && weaver.xpStored > 12 && weaver.item == ItemStack.EMPTY) {
 			weaver.isWeaving = true;
+			weaver.setChanged();
 		}
 
 		if (weaver.isWeaving) {
@@ -74,10 +77,12 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements WorldlyC
 			if (weaver.isWeaving) {
 				ItemStack core = new ItemStack(RisusItems.MEMORY_CORE.get());
 				weaver.item = core;
-				weaver.setChanged();
 				weaver.isWeaving = false;
 				weaver.weavingCounter = 0;
+				weaver.xpStored = weaver.xpStored-12;
+				weaver.setChanged();
 			}
+			weaver.updateBlock();
 		}
 	}
 
@@ -109,7 +114,23 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements WorldlyC
 
 	@Override
 	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-		return this.saveWithoutMetadata(registries);
+		CompoundTag tag = new CompoundTag();
+		if (this.item != null && !this.item.isEmpty()) {
+			Tag reagentTag = this.item.save(registries);
+			tag.put("item", reagentTag);
+		}
+		tag.putInt("counter", this.weavingCounter);
+		tag.putInt("xpStored", this.xpStored);
+		tag.putInt("xpCollectionCooldown", this.xpCollectionCooldown);
+		tag.putBoolean("isWeaving", this.isWeaving);
+		super.saveAdditional(tag, registries);
+		return tag;
+	}
+
+	@Override
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider pRegistries) {
+		super.onDataPacket(net, packet, pRegistries);
+		this.handleUpdateTag(packet.getTag() == null ? new CompoundTag() : packet.getTag(), pRegistries);
 	}
 
 	@Override
@@ -119,15 +140,25 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements WorldlyC
 	}
 
 	@Override
+	public ItemStack splitTheItem(int amount) {
+		return BlockContainerSingleItem.super.splitTheItem(amount);
+	}
+
+	@Override
 	public ItemStack getTheItem() {
 		return this.item;
 	}
 
 	@Override
 	public void setTheItem(ItemStack item) {
+		this.item = item;
+		this.updateBlock();
 	}
 
 	public boolean updateBlock() {
+		if (this.weavingCounter == 0) {
+			this.weavingCounter = 1;
+		}
 		if (this.getLevel() != null) {
 			BlockState state = this.getLevel().getBlockState(this.getBlockPos());
 			this.getLevel().sendBlockUpdated(this.getBlockPos(), state, state, 2);
@@ -150,6 +181,7 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements WorldlyC
 	public BlockEntity getContainerBlockEntity() {
 		return this;
 	}
+
 
 	@Override
 	public int[] getSlotsForFace(Direction direction) {return new int[]{0};}
