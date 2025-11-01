@@ -1,6 +1,7 @@
 package com.bigdious.risus.items;
 
 import com.bigdious.risus.blocks.BaseRotatableBlock;
+import com.bigdious.risus.blocks.WeavingMechanismBlock;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.RisusBlocks;
@@ -10,6 +11,7 @@ import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionResult;
@@ -95,9 +97,16 @@ public class ConcentrationCoreItem extends Item {
 				}
 
 				context.getItemInHand().consume(1, context.getPlayer());
-
 				return InteractionResult.sidedSuccess(level.isClientSide());
 			}
+		}
+
+		if (state.is(RisusBlocks.WEAVER_NEST.get())){
+			level.addDestroyBlockEffect(pos, RisusBlocks.BLOODWEAVE.get().defaultBlockState());
+			level.playSound(null, pos, SoundEvents.HONEY_BLOCK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+			level.setBlockAndUpdate(pos, RisusBlocks.WEAVING_MECHANISM.get().defaultBlockState().setValue(WeavingMechanismBlock.HORIZONTAL_FACING, context.getHorizontalDirection()));
+			context.getItemInHand().consume(1, context.getPlayer());
+			return InteractionResult.sidedSuccess(level.isClientSide());
 		}
 		return super.useOn(context);
 	}

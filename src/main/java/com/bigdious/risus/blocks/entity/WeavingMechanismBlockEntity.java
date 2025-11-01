@@ -2,14 +2,18 @@ package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.WeavingMechanismBlock;
+import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
@@ -66,14 +70,15 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, WeavingMechanismBlockEntity weaver) {
-		int weavingTime=200;
-		if (!level.isClientSide() && weaver.xpStored > 12 && weaver.weavingCounter < 2) {
+		int weavingTime=100;
+		if (weaver.xpStored > 12 && weaver.weavingCounter < 2) {
 			if (weaver.item != ItemStack.EMPTY) {
 				Direction direction = weaver.getBlockState().getValue(WeavingMechanismBlock.HORIZONTAL_FACING).getOpposite();
 				Position position = pos.getCenter().add(0.7 * direction.getStepX() + Vec3.ZERO.x(), 0.7 * direction.getStepY() + Vec3.ZERO.y(), 0.7 * direction.getStepZ() + Vec3.ZERO.z());
 				ItemStack itemstack = new ItemStack(RisusItems.MEMORY_CORE.get());
 				DefaultDispenseItemBehavior.spawnItem(level, itemstack, 0, direction, position);
 				weaver.item = ItemStack.EMPTY;
+				level.playSound(null, pos, RisusSoundEvents.ITEM_POPS_OUT.get(), SoundSource.BLOCKS, 1.0F, 1.2F);
 				weaver.updateBlock();
 			}
 			weaver.isWeaving = true;
@@ -82,6 +87,17 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 
 		if (weaver.isWeaving) {
 			weaver.weavingCounter++;
+			if (weaver.weavingCounter % 21 == 0 || weaver.weavingCounter == 2)
+				level.playSound(null, pos, RisusSoundEvents.WEAVING.get(), SoundSource.BLOCKS, 0.3F, 0.3F);
+			if (level.isClientSide()) {
+				Direction direction = weaver.getBlockState().getValue(WeavingMechanismBlock.HORIZONTAL_FACING);
+				switch (direction) {
+					case NORTH -> level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().x(), ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().y()-0.1, pos.getCenter().z()+0.25, 0, 0,0);
+					case SOUTH -> level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().x(), ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().y()-0.1, pos.getCenter().z()-0.25, 0, 0,0);
+					case EAST -> level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), pos.getCenter().x()-0.25, ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().y()-0.1, ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().z(), 0, 0,0);
+					default -> level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), pos.getCenter().x()+0.25, ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().y()-0.1, ((double) level.getRandom().nextIntBetweenInclusive(-1, 1) /10)+pos.getCenter().z(), 0, 0, 0);
+				}
+			}
 		}
 
 		if (weaver.xpCollectionCooldown > 1 && weaver.xpStored < 30000) {
@@ -93,6 +109,9 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 			for (ExperienceOrb xpOrb : xpOrbs) {
 				if (weaver.xpStored < 30000) {
 					weaver.xpStored = weaver.xpStored+xpOrb.getValue();
+					if (level instanceof ServerLevel serverLevel) {
+						serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), xpOrb.getX(), xpOrb.getY()+0.1, xpOrb.getZ(), 1, 0, 0, 0, 0);
+					}
 					xpOrb.remove(Entity.RemovalReason.DISCARDED);
 				}
 			}

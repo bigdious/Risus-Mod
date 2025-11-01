@@ -44,6 +44,15 @@
     ],
     "subtitle": "subtitles.risus.block.hair.grow"
   },
+  "block.item_pops_out": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.item_frame.remove_item"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.item_pops_out"
+  },
   "block.popping_bondknot.crystallized_bond_grow": {
     "sounds": [
       {
@@ -52,6 +61,15 @@
       }
     ],
     "subtitle": "subtitles.risus.block.popping_bondknot.crystallized_bond_grow"
+  },
+  "block.weaving_mechanism.weaving": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.spider.step"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.weaving_mechanism.weaving"
   },
   "block.zit.pop": {
     "sounds": [

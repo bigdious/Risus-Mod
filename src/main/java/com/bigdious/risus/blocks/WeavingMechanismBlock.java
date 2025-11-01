@@ -60,7 +60,6 @@ public class WeavingMechanismBlock extends BaseEntityBlock implements SimpleMult
 				level.addFreshEntity(item);
 				weaver.setTheItem(ItemStack.EMPTY);
 			} else {
-				player.sendSystemMessage(Component.literal(weaver.getTheItem()+ " "));
 				return ItemInteractionResult.FAIL;
 			}
 			level.sendBlockUpdated(pos, state, state, 2);

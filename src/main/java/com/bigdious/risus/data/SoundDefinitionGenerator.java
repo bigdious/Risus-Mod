@@ -72,6 +72,8 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ZIT_POP, SoundEvents.LLAMA_SPIT, "Zit pops");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.AIR_SUCKED_IN, SoundEvents.BREEZE_INHALE, "Air gets sucked");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ERUPT, SoundEvents.DRAGON_FIREBALL_EXPLODE, "Someone erupts");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_POPS_OUT, SoundEvents.ITEM_FRAME_REMOVE_ITEM, "Item pops out");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.WEAVING, SoundEvents.SPIDER_STEP, "Weaving");
 	}
 
 	public void generateNewSoundWithSubtitle(DeferredHolder<SoundEvent, SoundEvent> event, String baseSoundDirectory, int numberOfSounds, String subtitle) {

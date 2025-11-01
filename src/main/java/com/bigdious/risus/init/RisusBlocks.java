@@ -90,7 +90,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> LIGHT_EXCREMENT = registerWithItem("light_excrement", LightExcrementBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OCHRE_FROGLIGHT).instabreak().lightLevel(state -> 15));
 	public static final DeferredBlock<Block> RITUAL = register("ritual", RitualBlock::new, () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).noLootTable());
 	public static final DeferredBlock<Block> TESSERACT = register("tesseract", TesseractBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion().pushReaction(PushReaction.BLOCK));
-	public static final DeferredBlock<Block> WEAVING_MECHANISM = registerWithItem("weaving_mechanism", WeavingMechanismBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion().pushReaction(PushReaction.BLOCK));
+	public static final DeferredBlock<Block> WEAVING_MECHANISM = registerWithItem("weaving_mechanism", WeavingMechanismBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).sound(SoundType.HONEY_BLOCK).noOcclusion().pushReaction(PushReaction.BLOCK));
 
 	//COPPER AMALGAM
 	public static final DeferredBlock<Block> COPPER_AMALGAM = registerWithItem("copper_amalgam", properties -> new CopperAmalgamBlock(RisusWeatheringCopper.RisusWeatherState.UNAFFECTED, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion().lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));

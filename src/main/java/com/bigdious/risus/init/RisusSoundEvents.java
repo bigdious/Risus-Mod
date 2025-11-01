@@ -32,6 +32,8 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> HAIR_GROW = register("block.hair.grow");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ZIT_POP = register("block.zit.pop");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ALTERATION_FAILED = register("block.alteration_catalyst.alteration_failed");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_POPS_OUT = register("block.item_pops_out");
+	public static final DeferredHolder<SoundEvent, SoundEvent> WEAVING = register("block.weaving_mechanism.weaving");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> LITTER_LAY_EXCREMENT = register("entity.litter.excrement");
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOVER_INFECT = register("entity.lover.infect");

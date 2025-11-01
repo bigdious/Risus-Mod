@@ -1,7 +1,6 @@
 package com.bigdious.risus.client.render;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.blocks.entity.WeavingMechanismBlockEntity;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -15,13 +14,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
@@ -90,8 +86,8 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 		partdefinition.addOrReplaceChild("base", CubeListBuilder.create().texOffs(42, 0).addBox(-2.5F, -2.98F, -6.5F, 5.0F, 1.0F, 5.0F, new CubeDeformation(0.0F))
 			.texOffs(16, 16).addBox(-3.5F, -6.0F, 0.0F, 7.0F, 4.0F, 7.0F, new CubeDeformation(0.0F))
-			.texOffs(42, 6).addBox(2.0F, -6.98F, -7.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
-			.texOffs(0, 0).addBox(-7.0F, -2.0F, -7.0F, 14.0F, 2.0F, 14.0F, new CubeDeformation(0.0F))
+			.texOffs(42, 6).addBox(2.0F, -6.96F, -7.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 0).addBox(-7.0F, -2.02F, -7.0F, 14.0F, 2.0F, 14.0F, new CubeDeformation(0.0F))
 			.texOffs(0, 16).addBox(3.5F, -3.0F, -7.0F, 1.0F, 1.0F, 14.0F, new CubeDeformation(0.0F))
 			.texOffs(0, 16).addBox(-4.5F, -3.0F, -7.0F, 1.0F, 1.0F, 14.0F, new CubeDeformation(0.0F))
 			.texOffs(19, 19).addBox(-3.5F, -8.0F, 2.0F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
@@ -102,9 +98,9 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 			.texOffs(0, 16).addBox(-2.5F, -11.0F, 0.0F, 5.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
 			.texOffs(46, 22).addBox(-2.5F, -11.5F, 2.0F, 5.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
 			.texOffs(46, 6).addBox(-1.5F, -5.5F, 2.5F, 3.0F, 4.0F, 3.0F, new CubeDeformation(0.0F))
-			.texOffs(42, 6).addBox(2.0F, -6.98F, -2.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
-			.texOffs(42, 6).addBox(-3.0F, -6.98F, -2.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
-			.texOffs(42, 6).addBox(-3.0F, -6.98F, -7.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+			.texOffs(42, 6).addBox(2.0F, -6.96F, -2.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(42, 6).addBox(-3.0F, -6.96F, -2.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(42, 6).addBox(-3.0F, -6.96F, -7.0F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
@@ -197,7 +193,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.5F) * 1.2F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.7F) * 2.7F), 0.0F, -0.2F, 0.0F);
-			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*0.3F) * 2.3F), 0.1F, -0.2F, 0.1F);
+			poseStack.rotateAround(Axis.XP.rotationDegrees(Mth.cos(f*0.4F) * 2.3F), 0.1F, -0.2F, 0.1F);
 		}
 		part.render(poseStack, vertexconsumer, light, overlay);
 		poseStack.popPose();
