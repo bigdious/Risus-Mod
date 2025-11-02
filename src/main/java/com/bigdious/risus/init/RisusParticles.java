@@ -22,6 +22,9 @@ public class RisusParticles {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DRIPPING_BLOOD = PARTICLES.register("dripping_blood", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FALLING_BLOOD = PARTICLES.register("falling_blood", () -> new SimpleParticleType(false));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> LANDING_BLOOD = PARTICLES.register("landing_blood", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DRIPPING_CREAM = PARTICLES.register("dripping_cream", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FALLING_CREAM = PARTICLES.register("falling_cream", () -> new SimpleParticleType(false));
+	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> LANDING_CREAM = PARTICLES.register("landing_cream", () -> new SimpleParticleType(false));
 
 
 	public static final DeferredHolder<ParticleType<?>, ParticleType<AlterationParticleOptions>> ALTERATION = PARTICLES.register("alteration", () -> new ParticleType<>(false) {

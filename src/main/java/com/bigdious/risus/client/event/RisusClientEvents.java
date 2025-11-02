@@ -208,6 +208,9 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.DRIPPING_BLOOD.get(), RisusDripParticle.BloodDripHangProvider::new);
 		event.registerSpriteSet(RisusParticles.FALLING_BLOOD.get(), RisusDripParticle.BloodDripFallProvider::new);
 		event.registerSpriteSet(RisusParticles.LANDING_BLOOD.get(), RisusDripParticle.BloodDripLandProvider::new);
+		event.registerSpriteSet(RisusParticles.DRIPPING_CREAM.get(), RisusDripParticle.CreamDripHangProvider::new);
+		event.registerSpriteSet(RisusParticles.FALLING_CREAM.get(), RisusDripParticle.CreamDripFallProvider::new);
+		event.registerSpriteSet(RisusParticles.LANDING_CREAM.get(), RisusDripParticle.CreamDripLandProvider::new);
 		event.registerSpriteSet(RisusParticles.JOYFLAME.get(), FlameParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.TOOTHICAL.get(), ToothicalParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), RisusSoulParticle.EmissiveProvider::new);

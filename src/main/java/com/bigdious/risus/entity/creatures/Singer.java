@@ -39,6 +39,8 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 
+import java.util.List;
+
 public class Singer extends Monster {
 	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Singer.class, EntityDataSerializers.BOOLEAN);
 	private int targetChangeTime;
@@ -242,8 +244,18 @@ public class Singer extends Monster {
 					++this.chargeTime;
 					if (this.chargeTime == 4) {
 						singer.playSound(RisusSoundEvents.SINGER_SCREAM.get(), 4, 1.1F);
-						livingentity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false, true));
+						if (livingentity instanceof Player) {
+							List<Player> players = this.singer.level().getEntitiesOfClass(Player.class, this.singer.getBoundingBox().inflate(48), EntitySelector.ENTITY_STILL_ALIVE);
+								for (Player player : players) {
+									player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false, true));
+									player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, false, false, true));
+								}
+						} else {
+							livingentity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, false, false, true));
+							livingentity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0, false, false, true));
+						}
 						this.chargeTime = -8;
+
 					}
 				}
 			} else if (this.chargeTime > 0) {

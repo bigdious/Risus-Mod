@@ -22,6 +22,7 @@
     "description": {
       "translate": "advancement.risus.hornlove.desc"
     },
+    "frame": "challenge",
     "hidden": true,
     "icon": {
       "components": {

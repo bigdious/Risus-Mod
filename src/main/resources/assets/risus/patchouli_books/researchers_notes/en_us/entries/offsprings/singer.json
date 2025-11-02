@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Singer is the beloved version of an Enderman. Through the impregnation, the Enderman's body experiences uncontrolled growth. The torso ruptures and forms a mouth, revealing a hollow inside with the center core of the Enderman: an Ender Pearl. Its head increases in size, becoming eight times bigger and splitting the skull. When stimulated, the head opens up, showcasing a brain adorned by "
+      "text": "The Singer is the beloved version of an Enderman. Through the impregnation, the Enderman's body experiences uncontrolled growth: the torso ruptures and forms a mouth, revealing a hollow inside with the center core being a mutated Ender Pearl. Its head increases in size, becoming eight times bigger and splitting the skull. When stimulated, the head opens up, showcasing a brain adorned by "
     },
     {
       "type": "patchouli:text",
-      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unchanged limbs, therefore Singers are always found sitting. They can still teleport though. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea in the target of the song. Upon death, it can drop Ender Pearls, Organic Matter and Eyes of Ender."
+      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an Echo Pearl, Organic Matter and an Eye of Ender."
     },
     {
       "type": "patchouli:entity",
@@ -19,13 +19,21 @@
       "text": "Its song is full of passion, yet still feels awful to the ears."
     },
     {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:echo_pearl"
+      },
+      "link_recipe": true,
+      "text": "On its own, the Echo Pearl dropped by Singers is rather inert, as it even lacks the spacial abilities of a normal Ender Pearl. Its main benefit can be seen when used to enhance the abilities of a Warhorn or when creating an $(l:equipment/endless_pearl)$(0)$(n)Endless Pearl$(). Otherwise, it can be disassembled into three Ender Pearls."
+    },
+    {
       "type": "patchouli:text",
       "title": "Addendum",
       "text": "It's fascinating to see that the true desire of an Enderman is to just get attention - something it can only handle as a Singer, as a simple Enderman can't help but respond with aggression to its own shyness... But what I find even more interesting is the sound-making capabilities of a Singer. Endermen are relatively loud to begin with, but Singers enhance the power behind their voices using their hollow torso and the "
     },
     {
       "type": "patchouli:text",
-      "text": "Ender Pearl inside as a sort of 'echo chamber'. At one time, even I underestimated just how strong their singing was. Using a Lover, I managed to create a Singer near my research lab and placed it into an observation cell. Everything went swimmingly until I took off the Carved Pumpkin, after which it began singing. The vibrations of its voice broke the glass wall of the cell - including the walls of neighbouring cells that had their own specimens inside... It was very chaotic."
+      "text": "Echo Pearl inside as a sort of 'echo chamber'. At one time, even I underestimated just how strong their singing was. Using a Lover, I managed to create a Singer near my research lab and placed it into an observation cell. Everything went swimmingly until I took off the Carved Pumpkin, after which it began singing. The vibrations of its voice broke the glass wall of the cell - including the walls of neighbouring cells that had their own specimens inside... It was very chaotic."
     }
   ]
 }

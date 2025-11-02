@@ -20,18 +20,19 @@
         "item": "risus:memory_core"
       },
       "link_recipe": true,
-      "text": "Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or be used to craft a Concentration Core. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has consumed sufficient memories. "
+      "text": "Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or be used to craft a Concentration Core. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has consumed sufficient memories; through the victims it kills. "
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:concentration_core",
+      "anchor": "core",
+      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the capability of hurting divine beings, such as angels."
     },
     {
       "type": "risus:alterationtemplate1",
       "header": "Bloodweave",
       "recipe": "risus:alteration/bloodweave",
-      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system. When pushed by a Piston, all connected Bloodweave will move together."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:concentration_core",
-      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the capability of hurting divine beings, such as angels."
+      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system. When pushed by a Piston, all connected Bloodweave will move together. It can also be used to create living mechanism."
     }
   ]
 }

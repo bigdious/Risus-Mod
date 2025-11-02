@@ -629,7 +629,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it...");
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
-		this.addAdvancement("angel", "Holy Grounds", "Trespass onto land protected by an Ophanim.");
+		this.addAdvancement("angel", "Hallowed Grounds", "Trespass onto land protected by an Ophanim.");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
 		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment.");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");
@@ -637,7 +637,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
-		this.addAdvancement("cream", "Why... WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
+		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 		this.addBiome(RisusBiomes.COALIFICATION_FEIGR, "Coalification");

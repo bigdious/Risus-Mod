@@ -8,16 +8,16 @@ import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
 import com.bigdious.risus.advancement.predicate.ItemHornsPredicate;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.*;
-import net.minecraft.advancements.*;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRequirements;
+import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.component.DataComponentPredicate;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -155,7 +155,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.ESSENCE_OF_SLOTH.get(),
 				Component.translatable("advancement.risus.crusade"),
-				Component.translatable("advancement.risus.crusade.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.crusade.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("murder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.ANGEL.get())))
 			.save(consumer, "risus:crusade");
 
@@ -272,7 +272,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 		AdvancementHolder warlove = Advancement.Builder.advancement().parent(cupid).display(
 				WarhornComponent.createHornItemStack(RisusItems.WARHORN.get(), RisusPotions.MATING_FRENZY),
 				Component.translatable("advancement.risus.warlove"),
-				Component.translatable("advancement.risus.warlove.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.warlove.desc"), null, AdvancementType.GOAL, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("warlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.WARHORN.get()).withSubPredicate(RisusItemSubPredicates.HORNS.get(), new ItemHornsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:warlove");
@@ -280,7 +280,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 		AdvancementHolder hornlove = Advancement.Builder.advancement().parent(warlove).display(
 				WarhornComponent.createHornItemStack(RisusItems.HEXHORN.get(), RisusPotions.MATING_FRENZY),
 				Component.translatable("advancement.risus.hornlove"),
-				Component.translatable("advancement.risus.hornlove.desc"), null, AdvancementType.TASK, true, true, true)
+				Component.translatable("advancement.risus.hornlove.desc"), null, AdvancementType.CHALLENGE, true, true, true)
 			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("hornlove", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(RisusItems.HEXHORN.get()).withSubPredicate(RisusItemSubPredicates.HORNS.get(), new ItemHornsPredicate(HolderSet.direct(RisusPotions.LONG_MATING_FRENZY, RisusPotions.MATING_FRENZY)))))
 			.save(consumer, "risus:hornlove");
@@ -316,7 +316,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.GOLD_FIST.get(),
 				Component.translatable("advancement.risus.stripper"),
-				Component.translatable("advancement.risus.stripper.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.stripper.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("stripper", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GOLD_FIST.get()))
 			.save(consumer, "risus:stripper");
 

@@ -47,12 +47,15 @@ public class ParticleGenerator extends ParticleDescriptionProvider {
 		this.sprite(RisusParticles.DESTINED_DEATH_PARTICLE.get(), Risus.prefix("destined_death"));
 		this.sprite(RisusParticles.DRIPPING_BLOOD.get(), Risus.prefix("blood_hang"));
 		this.sprite(RisusParticles.DRIPPING_JOY.get(), Risus.prefix("joy_hang"));
+		this.sprite(RisusParticles.DRIPPING_CREAM.get(), Risus.prefix("cream_hang"));
 		this.sprite(RisusParticles.FALLING_BLOOD.get(), Risus.prefix("blood_fall"));
 		this.sprite(RisusParticles.FALLING_JOY.get(), Risus.prefix("joy_fall"));
+		this.sprite(RisusParticles.FALLING_CREAM.get(), Risus.prefix("cream_fall"));
 		this.sprite(RisusParticles.FIERY_ORGANIC_PARTICLE.get(), Risus.prefix("fiery_organic"));
 		this.sprite(RisusParticles.JOYFLAME.get(), Risus.prefix("joyflame"));
 		this.sprite(RisusParticles.LANDING_BLOOD.get(), Risus.prefix("blood_land"));
 		this.sprite(RisusParticles.LANDING_JOY.get(), Risus.prefix("joy_land"));
+		this.sprite(RisusParticles.LANDING_CREAM.get(), Risus.prefix("cream_land"));
 		this.sprite(RisusParticles.RISING_SMILE.get(), Risus.prefix("rising_smile"));
 		this.sprite(RisusParticles.SLEEPY.get(), Risus.prefix("sleepy"));
 		this.sprite(RisusParticles.STARS.get(), Risus.prefix("stars"));

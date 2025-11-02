@@ -9,7 +9,7 @@
       "header": "Climbables",
       "recipe": "risus:alteration/neuron_head",
       "recipe2": "risus:alteration/veins",
-      "text": "There are a few climbable blocks commonly found within the Risus. Neurons can be altered from Twisting Vines and grow upwards. Veins are obtained by altering Weeping Vines and can be hanged from a surface and they will grow downwards."
+      "text": "There are a few climbable blocks commonly found within the Risus. Neurons can be altered from Twisting Vines and grow upwards. Veins are obtained by altering Weeping Vines and can be hanged from a ceiling; as they will grow downwards."
     },
     {
       "type": "patchouli:crafting",

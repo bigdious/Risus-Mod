@@ -1,0 +1,53 @@
+{
+  "name": "The Foreign Ones",
+  "icon": "minecraft:writable_book",
+  "category": "risus:observations",
+  "advancement": "risus:warcrimes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "It's well known by those who have lived for a good few years, that the world had recently changed. It started about two decades ago, when things seemed to suddenly become volatile. At first, the effects were minimal, easily missed. Then, major changes started to happen. The flora exploded in variety, then oceans sprang to life with ancient monuments, yet in other parts they began freezing "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "over. Even in the End, people began finding more islands in the distance, with abstract cities and warships. I recall when the Nether was just a pure wasteland with magma and netherrack. Yet, since then a mycelial spread has taken over, with other places experiencing heightened geothermal activity; and lastly some valleys were also taken over by the souls of the dead. All we know is changing and doing so quickly. Most unsettling of all is that these events coincide with the"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "appearance of the so called 'foreign ones'. They seem unrelated to the Joyplague and while there are plenty of witnesses and documentation about them, very little is actually known. They seem to appear almost as if from thin air, then begin acting in different ways. Worst of all is their power. While some may seem mortal, in truth, they can revive endlessly, with no obvious downside. Then some of them are true immortals, impervious to any damage, and with likely an unlimited power"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "to create. They can summon forth creatures and even people on a whim; bring forth materials that may not even exist; cause the day and night to spin to their will; and even annihilate entire landmasses. They are like children, playing with the world as their toy. While they may seem human, they oftentimes either wear the skin of animals or monsters - or don't even look like anything that could be alive. As far as I've heard, there are a number of them who only show up in two forms: either a"
+
+    },
+    {
+      "type": "patchouli:text",
+      "text": "male with a beard, cyan shirt and blue pants, or as a female with reddish hair, green shirt and brown pants. Witnesses describe their face as uncannily wrong. These beings are also incapable of communication. While they do seem to have a written language, its deciphering has been unsuccesful so far. At most - of those foreign ones who behave somewhat passively - they partake in simple trading with village folk. There have, however, been cases of entire villages being"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "kidnapped or destroyed soon after taking part in trades. There is an implicit understanding in those who ever meet a foreign one: either be passive and submissive towards them or attack them on sight. If nothing else, in case it's a semi-mortal one and you manage to kill it, the time it takes them to revive may be enough for you to escape. If not, it was too late to begin with... I'm simply glad I have never met one of them. For me, in practice, they are nothing"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "more than urban tales that commonly slip my mind. After all, my focus sits with the plague and not these 'gods'..."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Update:$() I have met one. My hands still shake, even as I am writing this note. He appeared at the entrance of my lab from thin air as I was about to leave. He was floating in the air, looking down at me. It was a bearded one, but all I could truly focus on was those aimless eyes, which seemed to almost be looking past me. I tried to speak with it, but it had no reaction to my words. When I moved around, his gaze followed me. I did not know what I was really doing in that moment. My panic mixed with my "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "morbid curiosity and my will to survive. I took out a sign I had on hand and wrote my name on it. I tried to gesture 'That's me'. I'm still not sure if he understood it or not, but he materialized a sign from a wood type I have never even seen, and wrote on it. It was one word, maybe his name or maybe something else. It said $(k)REDACTED$(). Following this, he broke the sign and flew to a pig nearby. After killing it, he dropped the meat to my feet and disappeared into nothing..."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "I have heard of cases where foreign ones help. I must have been lucky too. My heart still pounds heavily as I recall it. Truly, I must be careful in the future. I need assurances... I need a way to stop them or find out where they even come from... There's too much I don't know. I'm just one person in a world of disasters, with my only option being to try and seek them out. I need something else, a method through which I could peer into things from beyond the world; to see things from "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "outside the box I am stuck in. This isn't a matter of powerlessness, as much as it is an issue of ignorance. I've already lost enough due to a lack of knowledge and I have no intention to lose my life as well. Just like I grew determined to learn as much as I can about the Risus - which allowed me to no longer be scared of it in the same way I once was - I must now act again to solidify my future."
+    }
+    ]
+}

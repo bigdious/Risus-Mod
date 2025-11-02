@@ -1,6 +1,6 @@
 {
   "name": "Eye For A Mind",
-  "icon": "minecraft:paper",
+  "icon": "minecraft:writable_book",
   "category": "risus:observations",
   "pages": [
     {
@@ -14,7 +14,7 @@
 
     {
       "type": "patchouli:text",
-      "text": "little to no regrets. I sat by her as she laid on her deathbed and she spoke to me one last hint about the plague. She told me: \"The quickest way to the mind... is through the eye\". She truly was a wise person, since even that simple sentence ended up sending the cogs in my head into overdrive. After the funeral, I immediately went to my temporary research base and went through all my studies. Until then, despite noticing the reappearing eye motif throughout the plague, I hadn't "
+      "text": "little to no regrets. I sat by her as she laid on her deathbed and she spoke to me one last hint about the plague. She told me: 'The quickest way to the mind... is through the eye'. She truly was a wise person, since even that simple sentence ended up sending the cogs in my head into overdrive. After the funeral, I immediately went to my temporary research base and went through all my studies. Until then, despite noticing the reappearing eye motif throughout the plague, I hadn't "
     },
     {
       "type": "patchouli:text",

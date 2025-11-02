@@ -128,4 +128,43 @@ public class RisusDripParticle extends DripParticle {
 		}
 	}
 
+	public record CreamDripFallProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.FallAndLandParticle(level, x, y, z, Fluids.EMPTY, RisusParticles.LANDING_CREAM.get());
+			try {
+				handle_particle_Gravity_set.invokeExact((Particle) dripparticle, 0.01F);
+			} catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
+	public record CreamDripHangProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.DripHangParticle(level, x, y, z, Fluids.EMPTY, RisusParticles.FALLING_CREAM.get());
+			try {
+				handle_particle_Gravity_set.invokeExact((Particle) dripparticle, (float) handle_particle_Gravity_get.invokeExact((Particle) dripparticle) * 0.01F);
+			} catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
+			dripparticle.setLifetime(100);
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
+	public record CreamDripLandProvider(SpriteSet sprite) implements ParticleProvider<SimpleParticleType> {
+
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xMotion, double yMotion, double zMotion) {
+			DripParticle dripparticle = new DripParticle.DripLandParticle(level, x, y, z, Fluids.EMPTY);
+			dripparticle.setLifetime((int) (28.0D / (Math.random() * 0.8D + 0.2D)));
+			dripparticle.pickSprite(this.sprite());
+			return dripparticle;
+		}
+	}
+
 }

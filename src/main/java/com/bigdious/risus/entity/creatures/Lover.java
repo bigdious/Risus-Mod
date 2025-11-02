@@ -67,6 +67,13 @@ public class Lover extends Monster {
 		return flyingpathnavigation;
 	}
 
+	public void aiStep(){
+		super.aiStep();
+		if (this.level().isClientSide && this.tickCount % 15 == 0) {
+			this.level().addParticle(RisusParticles.FALLING_CREAM.get(), this.getRandomX(1F), this.getRandomY(), this.getRandomZ(1F), 0.0F, 0.0F, 0.0F);
+		}
+	}
+
 	@Override
 	protected void checkFallDamage(double p_218316_, boolean p_218317_, BlockState p_218318_, BlockPos p_218319_) {
 	}

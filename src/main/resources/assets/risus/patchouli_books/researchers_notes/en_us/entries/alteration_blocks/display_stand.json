@@ -12,7 +12,7 @@
       "type": "risus:alterationtemplate1",
       "header": "Alteration",
       "recipe": "risus:alteration/display_notch",
-      "text": "Phantom Membrane will make  the Notch itself immaterial; a Tripwire Hook will lock it, stopping all other interactions; and lastly, being powered by a Redstone signal will cause the item to rotate continuously."
+      "text": "Phantom Membrane will make  the Notch itself immaterial; a Glass block will make the Notch invisible; a Tripwire Hook will lock it, stopping all other interactions; and lastly, being powered by a Redstone signal will cause the item to rotate continuously."
     }
   ]
 }
