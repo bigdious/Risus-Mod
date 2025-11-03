@@ -24,7 +24,7 @@
         "item": "risus:echo_pearl"
       },
       "link_recipe": true,
-      "text": "On its own, the Echo Pearl dropped by Singers is rather inert, as it even lacks the spacial abilities of a normal Ender Pearl. Its main benefit can be seen when used to enhance the abilities of a Warhorn or when creating an $(l:equipment/endless_pearl)$(0)$(n)Endless Pearl$(). Otherwise, it can be disassembled into three Ender Pearls."
+      "text": "On its own, the Echo Pearl dropped by Singers is rather inert, as it even lacks the spacial abilities of a normal Ender Pearl. Its main benefit can be seen when used to enhance the abilities of a $(l:equipment/warhorn)$(0)$(n)Warhorn$() or when creating an $(l:equipment/endless_pearl)$(0)$(n)Endless Pearl$(). Otherwise, it can be disassembled into three Ender Pearls."
     },
     {
       "type": "patchouli:text",

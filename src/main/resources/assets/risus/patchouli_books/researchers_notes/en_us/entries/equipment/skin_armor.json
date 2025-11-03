@@ -11,14 +11,10 @@
     {
       "type": "risus:alterationtemplate4",
       "header": "Alteration",
-      "input1": "minecraft:leather_helmet",
-      "output1": "risus:skin_helmet",
-      "input2": "minecraft:leather_chestplate",
-      "output2": "risus:skin_chestplate",
-      "input3": "minecraft:leather_leggings",
-      "output3": "risus:skin_leggings",
-      "input4": "minecraft:leather_boots",
-      "output4": "risus:skin_boots",
+      "recipe": "risus:alteration/skin_helmet",
+      "recipe2": "risus:alteration/skin_chestplate",
+      "recipe3": "risus:alteration/skin_leggings",
+      "recipe4": "risus:alteration/skin_boots",
       "text": "A total of 24 leather pieces are needed to create a full set."
     },
     {
@@ -28,7 +24,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "And as if being tightly enveloped by fleshy skin wasn't bad enough, it also wiggles a bit. On top of that, the layer between your skin and the armor slowly becomes sticky and moist. Even just remembering that feeling sends shivers down my spine... "
+      "text": "And as if being tightly enveloped by fleshy skin wasn't bad enough, it also wiggles a bit sometimes. On top of that, the layer between your skin and the armor slowly becomes sticky and moist. Even just remembering that feeling sends shivers down my spine... "
     }
   ]
 }

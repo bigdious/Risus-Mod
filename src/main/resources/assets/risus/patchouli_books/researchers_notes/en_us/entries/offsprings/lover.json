@@ -21,7 +21,7 @@
         "item": "risus:lover_cream"
       },
       "link_recipe": true,
-      "text": "The Lover's Cream that drops upon their death is quite the powerful substance. It can be used as is on creatures that can be impregnated to convert them, just like a Lover would. It can also be used as a melding agent in the $(l:equipment/eternal_youth)$(0)$(n)Eternal Youth$(), or mixed with Rose Petals to create a Purifying Paste, which is mostly used for Unalloyed Scales."
+      "text": "The Lover's Cream that drops upon their death is quite the powerful substance. It can be used as is on creatures that can be impregnated to convert them, just like a Lover would. It can also be used as a melding agent in the $(l:equipment/eternal_youth)$(0)$(n)Eternal Youth$(), or mixed with Rose Petals to create a Purifying Paste, which is mostly used for $(l:offsprings/maw#paste)$(0)$(n)Unalloyed Scales$()."
     },
     {
       "type": "patchouli:text",

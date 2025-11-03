@@ -269,21 +269,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
-
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.UNALLOYED_SCALEPLATE.get(), 32)
-			.pattern("###")
-			.pattern("#/#")
-			.pattern("###")
-			.define('#', Ingredient.of(Tags.Items.OBSIDIANS))
-			.define('/', Ingredient.of(RisusItems.GLUTTONY_SCALES.get()))
-			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer);
-
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.UNALLOYED_SCALEPLATE.get(), 4)
 			.pattern("#")
 			.define('#', Ingredient.of(RisusBlocks.UNALLOYED_SCALES_BLOCK.get()))
 			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
-			.save(consumer, "unalloyed_scaleplate_from_unalloyed_block");
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE.get(), 5)
 			.pattern("/ /")

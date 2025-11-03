@@ -280,10 +280,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Sacrificial Catalyst");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
-		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner Robe Helmet");
-		this.addItem(RisusItems.SINNER_ROBES_CHESTPLATE, "Sinner Robe Chestplate");
-		this.addItem(RisusItems.SINNER_ROBES_LEGGINGS, "Sinner Robe Leggings");
-		this.addItem(RisusItems.SINNER_ROBES_BOOTS, "Sinner Robe Boots");
+		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner's Robe Helmet");
+		this.addItem(RisusItems.SINNER_ROBES_CHESTPLATE, "Sinner's Robe Chestplate");
+		this.addItem(RisusItems.SINNER_ROBES_LEGGINGS, "Sinner's Robe Leggings");
+		this.addItem(RisusItems.SINNER_ROBES_BOOTS, "Sinner's Robe Boots");
 		this.addItem(RisusItems.SKIN_BOOTS, "Skin Socks");
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");

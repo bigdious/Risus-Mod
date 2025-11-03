@@ -1,0 +1,31 @@
+{
+  "name": "Sinner's Robe",
+  "icon": "risus:stitching_needle",
+  "category": "risus:equipment",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Unlike most armors that can be made from resources found in the world, the Sinner's Robe that can be made from Risus-related materials holds far more potential. On top of decent defensive abilities and a health boosting capability, each piece of the set can have its own 'Unique Ability'. These can vary greatly: from increased stealth against certain creatures; to the ability to walk on darkness."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:stitching_needle",
+      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:equipment/skin_armor)$(0)$(n)Skin Armor$() is needed. After that, four $(l:offsprings/maw#scale)$(0)$(n)Gluttony Scales$() are needed for each piece, totaling sixteen. Finally, a Stitching Needle is required for each."
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "minecraft:skin_helmet_to_robes",
+      "recipe2": "minecraft:skin_chestplate_to_robes"
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "minecraft:skin_leggings_to_robes",
+      "recipe2": "minecraft:skin_boots_to_robes"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : []
+    }
+  ]
+}

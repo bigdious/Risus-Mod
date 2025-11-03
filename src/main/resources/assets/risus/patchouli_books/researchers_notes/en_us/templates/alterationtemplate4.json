@@ -1,4 +1,5 @@
 {
+  "processor": "com.bigdious.risus.client.patchouli.AlterationProcessor",
   "components": [
     {
       "type": "patchouli:header",
