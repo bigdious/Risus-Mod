@@ -11,21 +11,28 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:stitching_needle",
-      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:equipment/skin_armor)$(0)$(n)Skin Armor$() is needed. After that, four $(l:offsprings/maw#scale)$(0)$(n)Gluttony Scales$() are needed for each piece, totaling sixteen. Finally, a Stitching Needle is required for each."
+      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:equipment/skin_armor)$(0)$(n)Skin Armor$() is needed. After that, four $(l:offsprings/maw#scale)$(0)$(n)Gluttony Scales$() are used for each piece, totaling sixteen. Finally, one Stitching Needle is required per piece."
     },
     {
       "type": "patchouli:smithing",
       "recipe": "minecraft:skin_helmet_to_robes",
-      "recipe2": "minecraft:skin_chestplate_to_robes"
+      "recipe2": "minecraft:skin_chestplate_to_robes",
+      "text": "This armor can be dyed and trimmed. These aesthetic effects will appear alongside the abilities' visuals."
     },
     {
       "type": "patchouli:smithing",
       "recipe": "minecraft:skin_leggings_to_robes",
-      "recipe2": "minecraft:skin_boots_to_robes"
+      "recipe2": "minecraft:skin_boots_to_robes",
+      "text": "A Cauldron of Water will remove the dye applied, while a Cauldron of Lava will remove the ability."
     },
     {
       "type": "patchouli:relations",
-      "entries" : []
+      "entries" : [
+        "risus:equipment/sinner_helmet",
+        "risus:equipment/sinner_chest",
+        "risus:equipment/sinner_legs",
+        "risus:equipment/sinner_boots"
+      ]
     }
   ]
 }

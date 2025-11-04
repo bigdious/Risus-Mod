@@ -1,0 +1,36 @@
+{
+  "name": "Hex",
+  "icon": "risus:embodiment_of_languish",
+  "category": "risus:offsprings",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Hex is the beloved version of a Vex. Through the impregnation, the Vex's very being transforms, from a near intangible spirit-like lifeform, to one made up of coagulating blood. This new, semi-stable form allows the Hex to survive for a near indefinite duration, unlike the fleeting nature of a Vex. However, this physical body results in the loss of the ability to fly through terrain. "
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "risus:hex",
+      "border": "true",
+      "offset": "-0.3",
+      "text": "When killed, it has a chance to drop its weapon."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:killjoy"
+      },
+      "link_recipe": true,
+      "text": "During the impregnation process, the Vex's characteristic sword will also undergo a transformation - likely due to the Hex itself - and it will be transfigured into a large axe made of hardened metallic blood. The Killjoy will apply the Bloodclogged effect on hit and deals extra damage against Offsprings and the Beloved."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "The Hex is quite fascinating when compared to other offsprings. While its bodily changes are one of the most drastic ones, its behaviour doesn't change. My hypothesis is that this is because Vexes are artificial beings. Their cognitive capabilities are limited to begin with, with their primary task being to follow and protect their summoners. It might simply be that for Vexes the only requirement to reach a form of"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "'heightened happiness' is to be able to stay at their summoner's side for longer."
+    }
+  ]
+}
