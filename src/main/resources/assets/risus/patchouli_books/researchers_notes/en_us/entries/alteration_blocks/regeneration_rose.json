@@ -8,7 +8,17 @@
       "type": "risus:alterationtemplate1",
       "header": "Regeneration Rose",
       "recipe": "risus:alteration/regen_rose",
-      "text": "By altering a Wither Rose, a Regeneration Rose can be obtained. As its name implies, it applies Regeneration to any creature that touches it."
+      "text": "By altering a Wither Rose, a Regeneration Rose can be obtained. As its name implies, it applies Regeneration to any creature that touches it. The flower can also be crafted into Rose Petals, which can be consumed for some quick Regeneration or to make Purifying Paste. The petals can also be turned into White Dye or grinded down into Sugar."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:rose_petal",
+      "recipe2": "risus:purifying_paste"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:petal_to_dye",
+      "recipe2": "minecraft:petal_to_sugar"
     },
     {
       "type": "patchouli:text",
@@ -18,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Addendum",
-      "text": "figure with broken chains at their neck, holding another figure. There was no indication of the Risus there; yet the only way to get Regeneration Roses is through alteration. Of course, it could have been a man-made too, but I believe that it was something formed by the plague. After all, this pure flower is clearly an exception carved directly into the Risus. Possibly an untainted memory inside of it, given physical shape...?"
+      "text": "figure with broken chains at their neck, holding another figure. There was no indication of the Risus there; yet the only way to get Regeneration Roses is through alteration. Of course, it could have been man-made too, but I believe that it was something formed by the plague. After all, this pure flower is clearly an exception carved directly into the Risus. Possibly an untainted memory inside of it, given physical shape...?"
     }
   ]
 }

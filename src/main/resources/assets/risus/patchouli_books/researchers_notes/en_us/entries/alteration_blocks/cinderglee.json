@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cinderglee is a flame that burns with the very essence of Risus and can be created by setting Remains on fire. Though, saying that it 'burns' is not entirely correct. It does not burn physical matter for fuel. The only thing it can burn is the 'existence' of creatures. Whenever one steps in it, they experience Existential Burn, that in practice, greatly decreases their potential to stay alive."
+      "text": "Cinderglee is a flame that burns with the very essence of Risus and can be created by setting Remains on fire. Though, saying that it 'burns' is not entirely correct. It does not burn physical matter for fuel. The only thing it can burn is the 'existence' of creatures. Whenever one steps in it, they experience Existential Burn, that - in practice - greatly decreases their max vitality."
     },
     {
       "type": "patchouli:crafting",
@@ -17,6 +17,10 @@
       "type": "patchouli:crafting",
       "recipe": "risus:joyflame_campfire",
       "text": "The fact that it cannot burn physical matter also means that a Cinderglee Campfire cannot actually cook anything, nor release signal smoke. Existential Burn can also not be put out with Water or any other liquid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The only way to recover from Existential Burn is to consume $(l:alteration_blocks/organic_matter)$(0)$(n)Organic Matter$(). This process will reinstate most of the lost 'existence'. It is important to note, however, that this repair of one's 'existence' does not come without risks; even if they may not be obvious at first. Willingly consuming Organic Matter acts as a signal to the Risus: representing a consensual welcome. This does not mean immediate infection, instead it's simply the first step towards Assimilation."
     }
   ]
 }

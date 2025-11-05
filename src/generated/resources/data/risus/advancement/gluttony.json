@@ -1,6 +1,16 @@
 {
   "parent": "risus:devour",
   "criteria": {
+    "core": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:concentration_core"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "gluttony": {
       "conditions": {
         "items": [
@@ -26,7 +36,8 @@
   },
   "requirements": [
     [
-      "gluttony"
+      "gluttony",
+      "core"
     ]
   ],
   "sends_telemetry_event": true

@@ -58,7 +58,8 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:budding_imitation_scaleplate",
-      "recipe2": "risus:unalloyed_scales_block"
+      "recipe2": "risus:unalloyed_scales_block",
+      "anchor": "paste"
     },
     {
       "type": "patchouli:crafting",
@@ -68,8 +69,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:unalloyed_scales_block_wall",
-      "recipe2": "risus:unalloyed_scaleplate",
-      "anchor": "paste"
+      "recipe2": "risus:unalloyed_scaleplate"
     },
     {
       "type": "patchouli:crafting",

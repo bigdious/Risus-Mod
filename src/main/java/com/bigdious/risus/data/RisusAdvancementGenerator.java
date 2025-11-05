@@ -129,8 +129,9 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusItems.GLUTTONY_SCALES.get(),
 				Component.translatable("advancement.risus.gluttony"),
 				Component.translatable("advancement.risus.gluttony.desc"), null, AdvancementType.TASK, true, true, false)
-			.requirements(AdvancementRequirements.Strategy.AND)
+			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("gluttony", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.GLUTTONY_SCALES.get()))
+			.addCriterion("core", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CONCENTRATION_CORE.get()))
 			.save(consumer, "risus:gluttony");
 
 		AdvancementHolder satiate = Advancement.Builder.advancement().parent(devour)

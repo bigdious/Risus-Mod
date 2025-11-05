@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Great Bodies are the primary nesting places of Weavers. They are formed underground and can be found in three main stages of formation: skeletal, muscly, and pseudo-formed. The Great Body resembles an upside down human lacking limbs and can most easily be found by the end of their spine that sticks out at the surface, from which it's possible to descend down into the skull."
+      "text": "Great Bodies are the primary nesting places of $(l:offsprings/weaver)$(0)$(n)Weavers$(). They are formed underground and can be found in three main stages of formation: skeletal, muscly, and pseudo-formed. The Great Body resembles an upside down human lacking limbs and can most easily be found by the end of their spine that sticks out at the surface, from which it's possible to descend down into the skull."
     },
     {
       "type": "patchouli:image",

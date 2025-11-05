@@ -32,7 +32,11 @@
       "type": "risus:alterationtemplate1",
       "header": "Bloodweave",
       "recipe": "risus:alteration/bloodweave",
-      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system. When pushed by a Piston, all connected Bloodweave will move together. It can also be used to create living mechanism."
+      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself and can form complex webs of memories; similar to a neural system. When pushed by a Piston, all connected Bloodweave will move together. It can also be used"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "to create living mechanisms."
     }
   ]
 }

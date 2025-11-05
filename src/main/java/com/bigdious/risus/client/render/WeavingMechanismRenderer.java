@@ -31,12 +31,6 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 	private final ModelPart leg4;
 	private final ModelPart leg5;
 	private final ModelPart leg6;
-	private final ModelPart half1;
-	private final ModelPart half2;
-	private final ModelPart half3;
-	private final ModelPart half4;
-	private final ModelPart half5;
-	private final ModelPart half6;
 
 	public WeavingMechanismRenderer(BlockEntityRendererProvider.Context context) {
 		ModelPart modelpart = context.bakeLayer(RisusModelLayers.WEAVING_MECHANISM);
@@ -48,12 +42,6 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 		this.leg4 = modelpart.getChild("leg4");
 		this.leg5 = modelpart.getChild("leg5");
 		this.leg6 = modelpart.getChild("leg6");
-		this.half1 = modelpart.getChild("leg1");
-		this.half2 = modelpart.getChild("leg2");
-		this.half3 = modelpart.getChild("leg3");
-		this.half4 = modelpart.getChild("leg4");
-		this.half5 = modelpart.getChild("leg5");
-		this.half6 = modelpart.getChild("leg6");
 	}
 
 	public static LayerDefinition createBaseLayer() {
@@ -141,7 +129,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg1 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-			if (entity.isWeaving) {
+			if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 				float f = AnimationRenderHelper.rotation;
 				poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.3F) * 3F), 0.1F, -0.6F, 0.3F);
 				poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.5F) * 1.5F), 0.0F, -0.2F, 0.0F);
@@ -153,7 +141,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg2 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-		if (entity.isWeaving) {
+		if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.sin(f*1.3F) * 3F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f) * 0.9F), 0.0F, -0.2F, 0.0F);
@@ -165,7 +153,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg3 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-		if (entity.isWeaving) {
+		if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.5F) * 2F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.sin(f*0.4F) * 1.5F), 0.0F, -0.2F, 0.0F);
@@ -177,7 +165,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg4 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-		if (entity.isWeaving) {
+		if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.sin(f*0.1F) * 3.2F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.25F) * 2.5F), 0.0F, -0.2F, 0.0F);
@@ -189,7 +177,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg5 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-		if (entity.isWeaving) {
+		if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.5F) * 1.2F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.7F) * 2.7F), 0.0F, -0.2F, 0.0F);
@@ -201,7 +189,7 @@ public class WeavingMechanismRenderer implements BlockEntityRenderer<WeavingMech
 
 	protected void scutterLeg6 (WeavingMechanismBlockEntity entity, ModelPart part, PoseStack poseStack, VertexConsumer vertexconsumer, int light, int overlay) {
 		poseStack.pushPose();
-		if (entity.isWeaving) {
+		if (entity.isWeaving && !entity.getLevel().hasNeighborSignal(entity.getBlockPos())) {
 			float f = AnimationRenderHelper.rotation;
 			poseStack.rotateAround(Axis.YP.rotationDegrees(Mth.cos(f*0.8F) * 1.8F), 0.1F, -0.6F, 0.3F);
 			poseStack.rotateAround(Axis.ZP.rotationDegrees(Mth.cos(f*0.4F) * 0.5F), 0.0F, -0.2F, 0.0F);

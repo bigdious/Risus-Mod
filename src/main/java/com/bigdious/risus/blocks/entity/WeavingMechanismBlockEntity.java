@@ -1,8 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
-import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.WeavingMechanismBlock;
-import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -10,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Position;
-import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,18 +16,14 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
-import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -85,7 +78,7 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 			weaver.setChanged();
 		}
 
-		if (weaver.isWeaving) {
+		if (weaver.isWeaving && !level.hasNeighborSignal(pos)) {
 			weaver.weavingCounter++;
 			if (weaver.weavingCounter % 21 == 0 || weaver.weavingCounter == 2)
 				level.playSound(null, pos, RisusSoundEvents.WEAVING.get(), SoundSource.BLOCKS, 0.3F, 0.3F);
@@ -100,14 +93,14 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 			}
 		}
 
-		if (weaver.xpCollectionCooldown > 1 && weaver.xpStored < 30000) {
+		if (weaver.xpCollectionCooldown > 1 && weaver.xpStored < 1500 && !level.hasNeighborSignal(pos)) {
 			weaver.xpCollectionCooldown--;
 		}
 
-		if (weaver.xpCollectionCooldown < 2 && weaver.xpStored < 30000) {
+		if (weaver.xpCollectionCooldown < 2 && weaver.xpStored < 1500) {
 			List<ExperienceOrb> xpOrbs = level.getEntitiesOfClass(ExperienceOrb.class, weaver.getSuckAabb().move(weaver.getBlockPos().getX(), weaver.getBlockPos().getY(), weaver.getBlockPos().getZ()), EntitySelector.ENTITY_STILL_ALIVE);
 			for (ExperienceOrb xpOrb : xpOrbs) {
-				if (weaver.xpStored < 30000) {
+				if (weaver.xpStored < 1500) {
 					weaver.xpStored = weaver.xpStored+xpOrb.getValue();
 					if (level instanceof ServerLevel serverLevel) {
 						serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusItems.MEMORY_CORE.get())), xpOrb.getX(), xpOrb.getY()+0.1, xpOrb.getZ(), 1, 0, 0, 0, 0);

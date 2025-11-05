@@ -1,0 +1,17 @@
+{
+  "name": "Crown Of Roses",
+  "icon": "risus:rose_crown",
+  "category": "risus:equipment",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Crown Of Roses can be made from a pair of Wither Roses, a pair of Regeneration Roses and a few Rose Bushes. Whenever the wearer is damaged, they will gain Regeneration and the attacker will be afflicted with Wither. Its defense is subpar, but it can hold Enchantments."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:rose_crown",
+      "text": "Wearing it can cause an odd feeling of confliction and grief."
+    }
+  ]
+}

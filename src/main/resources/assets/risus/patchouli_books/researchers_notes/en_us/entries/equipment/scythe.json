@@ -65,7 +65,7 @@
       "item": {
         "item": "risus:cinderglee_scythe"
       },
-      "text": "The Existential Executioner allows you to inflict the Existential Burn state onto enemies, causing their existence to slowly burn away and reducing their life. The lost health cannot be reclaimed through regeneration or other healing methods, with the exception of consuming Organic Matter, as that can restore their existence.",
+      "text": "The Existential Executioner allows you to inflict the $(l:alteration_blocks/cinderglee)$(0)$(n)Existential Burn$() state onto enemies. It's best used against enemies with considerable regeneration or healing capabilities; or to otherwise slowly whittle down a greater target.",
       "link_recipe": true
     }
   ]
