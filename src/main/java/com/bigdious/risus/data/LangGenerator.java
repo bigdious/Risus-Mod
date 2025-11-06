@@ -136,7 +136,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.LAUGHING_STALK, "Laughing Stalk");
 		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Dropping");
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
-		this.addBlock(RisusBlocks.LIVING_TISSUE, "Tissue");
+		this.addBlock(RisusBlocks.LIVING_TISSUE, "Dying Tissue");
 		this.addBlock(RisusBlocks.MAW_GUTS, "Gorger Guts");
 		this.addBlock(RisusBlocks.MIRAGE_END_STONE, "Mirage End Stone");
 		this.addBlock(RisusBlocks.MIRAGE_GRASS_BLOCK, "Mirage Grass Block");

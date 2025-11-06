@@ -1,0 +1,35 @@
+{
+  "name": "Eerie and Dark set",
+  "icon": "risus:eerie_fence",
+  "category": "risus:alteration",
+  "advancement": "risus:site_zero",
+  "pages": [
+    {
+      "type": "risus:alterationtemplate2",
+      "header": "Eerie and Dark Set",
+      "recipe": "risus:alteration/eerie_fence",
+      "recipe2": "risus:alteration/eerie_trapdoor",
+      "text": "Altering Iron Bars and Iron Trapdoors will create Eerie Fences and Eerie Trapdoors. These are highly stylized alternatives, similar to wrought iron, and depicting the plague. The fences can be further crafted into Eerie Gates and Eerie Large Gates."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:eerie_gate_from_fence",
+      "recipe2": "minecraft:eerie_large_gate_from_small"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:dark_fence",
+      "text": "In case the user dislikes the Risus motifs on the designs, they can re-craft each decoration into a Dark variant, which lack the smiles."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:dark_trapdoor",
+      "recipe2": "risus:dark_gate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:dark_large_gate_from_small",
+      "recipe2": "risus:dark_large_gate"
+    }
+  ]
+}

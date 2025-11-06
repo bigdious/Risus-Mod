@@ -2,7 +2,7 @@
   "name": "Ophanim",
   "icon": "risus:essence_of_sloth",
   "category": "risus:offsprings",
-  "advancement": "risus:little",
+  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:entity",

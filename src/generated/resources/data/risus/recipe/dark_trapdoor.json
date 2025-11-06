@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "risus:eerie_trapdoor"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:dark_trapdoor"
+  }
+}

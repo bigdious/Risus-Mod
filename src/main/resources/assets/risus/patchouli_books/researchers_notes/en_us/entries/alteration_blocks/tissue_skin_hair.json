@@ -29,6 +29,11 @@
       "type": "patchouli:crafting",
       "recipe": "risus:tall_hair",
       "recipe2": "risus:bundle_of_hair"
+    },
+    {
+      "type": "patchouli:smelting",
+      "recipe": "risus:smelt_tissue",
+      "text": "Tissue can also be smelted into Grilled Tissue and then peeled with an Axe to remove the crispier outer layer. Despite the seemingly large quantity of meat, it is rather airy and bland, making it barely more saturating than a Baked Potato. There will also be a bit of Bone left over after consumption."
     }
   ]
 }

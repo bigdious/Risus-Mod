@@ -14,6 +14,11 @@
       "type": "patchouli:crafting",
       "recipe": "risus:bond_glass",
       "text": "Crystallized Bond Glass is similar to Containment Glass, with the exception that it's slightly less sturdy. This means that harvesting it without Silk Touch will result in it breaking and only returning a Crystallized Bond."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:containment_glass_pane",
+      "recipe2": "risus:bond_glass_pane"
     }
   ]
 }

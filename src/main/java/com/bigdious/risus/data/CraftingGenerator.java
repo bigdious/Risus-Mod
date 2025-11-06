@@ -339,6 +339,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.EERIE_FENCE))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_TRAPDOOR.get())
+			.requires(Ingredient.of(RisusBlocks.DARK_TRAPDOOR))
+			.unlockedBy("has_item", has(RisusBlocks.DARK_TRAPDOOR))
+			.save(consumer, "eerie_trapdoor_from_dark");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.DARK_TRAPDOOR.get())
+			.requires(Ingredient.of(RisusBlocks.EERIE_TRAPDOOR))
+			.unlockedBy("has_item", has(RisusBlocks.EERIE_TRAPDOOR))
+			.save(consumer);
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.EERIE_GATE.get())
 			.requires(Ingredient.of(RisusBlocks.BONDKNOT_FENCE_GATE))
 			.requires(Ingredient.of(RisusBlocks.EERIE_FENCE))
