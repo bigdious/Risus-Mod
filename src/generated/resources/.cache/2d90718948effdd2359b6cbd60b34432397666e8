@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-30T21:58:07.0446053	Risus blockstates and models
+// 1.21.1	2025-11-06T21:57:47.2986896	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -110,6 +110,7 @@ c92aa8a129a28b4238babdeedbba199f594f1dd4 assets/risus/blockstates/gray_mosaic_la
 a590e8246c7e89f121bbd2b286aa3f08edb0ed73 assets/risus/blockstates/grimstone_blood_tiles.json
 3c8888cfdb34e245ed074b49d8c9734d42a2b0ff assets/risus/blockstates/grimstone_blood_tiles_slab.json
 d32dd806853931315ab9ecd4ced0fd67fbd1f8e4 assets/risus/blockstates/grimstone_blood_tiles_stairs.json
+abd7f0f48371a58d957da7d004ead8a06c721651 assets/risus/blockstates/grimstone_blood_tiles_wall.json
 97b91ef869229af18838b230b0af8b19d10619a3 assets/risus/blockstates/grimstone_bricks.json
 0a740a6b8074b3d00dda9ef650be2768c3092a8b assets/risus/blockstates/grimstone_bricks_slab.json
 46d31d787a56c0eeb3ebef823d1f0d0575d7d7b1 assets/risus/blockstates/grimstone_bricks_stairs.json
@@ -378,6 +379,9 @@ ef873909c81919aa01aff1e01cbe46c87f868dcc assets/risus/models/block/grimstone_blo
 127419d50cb605d28cf787592d44170d5d6902a2 assets/risus/models/block/grimstone_blood_tiles_stairs.json
 15a447875c6407a7b980040b6bfe42b0800aab2d assets/risus/models/block/grimstone_blood_tiles_stairs_inner.json
 679083d65773e7b7f0fee4d810cdd915092a31e7 assets/risus/models/block/grimstone_blood_tiles_stairs_outer.json
+de0517a071f7022c3807529d73eeaa8d5176ade6 assets/risus/models/block/grimstone_blood_tiles_wall_post.json
+7ef95d9baca8f0bc772b2033fe7745f2c5b439ba assets/risus/models/block/grimstone_blood_tiles_wall_side.json
+3bc48b0254e6e0228a7fd341c3d8d34525b2ef22 assets/risus/models/block/grimstone_blood_tiles_wall_side_tall.json
 b50a2827be14d5417ca5b1ff0f1f4ca36af153f8 assets/risus/models/block/grimstone_bricks.json
 2927018df91cf18e3d8a5a082c8eacb8bdeabc04 assets/risus/models/block/grimstone_bricks_slab.json
 af13d8d33c93a9738732c2a063ab203d53e2ad59 assets/risus/models/block/grimstone_bricks_slab_top.json

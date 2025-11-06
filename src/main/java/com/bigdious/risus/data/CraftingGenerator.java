@@ -898,6 +898,12 @@ public class CraftingGenerator extends RecipeProvider {
 			.define('#', Ingredient.of(RisusBlocks.POLISHED_GRIMSTONE.get()))
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
 			.save(consumer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.get(), 6)
+			.pattern("###")
+			.pattern("###")
+			.define('#', Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()))
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE.get()))
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.CHISELED_GRIMSTONE.get())
 			.pattern(" # ")
@@ -1479,9 +1485,12 @@ public class CraftingGenerator extends RecipeProvider {
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS, 1)
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_blood_to_stairs"));
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB, 1)
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB, 2)
 			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
 			.save(consumer, prefix("stonecutting_grimstone_blood_to_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE_BLOOD_TILES.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL, 1)
+			.unlockedBy("has_item", has(RisusBlocks.GRIMSTONE))
+			.save(consumer, prefix("stonecutting_grimstone_blood_to_wall"));
 
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, 2)
 			.unlockedBy("has_item", has(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK))

@@ -184,6 +184,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		getBuilder(RisusBlocks.POLISHED_GRIMSTONE_WALL.getId().getPath())
 			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
 			.texture("wall", Risus.prefix("block/polished_grimstone"));
+		getBuilder(RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.getId().getPath())
+			.parent(getExistingFile(ResourceLocation.withDefaultNamespace("block/wall_inventory")))
+			.texture("wall", Risus.prefix("block/grimstone_blood_tiles"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));

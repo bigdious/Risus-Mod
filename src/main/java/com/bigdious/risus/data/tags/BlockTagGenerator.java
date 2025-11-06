@@ -150,6 +150,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.GRIMSTONE_WALL.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_WALL.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.get(),
 			RisusBlocks.BONE_WALL.get(),
 			RisusBlocks.FOSSIL_WALL.get(),
 			RisusBlocks.ROTTING_TISSUE.get(),
@@ -257,6 +258,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_WALL.get(),
+			RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.get(),
 
 			RisusBlocks.GLUTTONY_SCALEPLATE.get(),
 			RisusBlocks.JOYFLAME_LANTERN.get(),

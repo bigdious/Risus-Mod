@@ -330,6 +330,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		risusWallBlock(RisusBlocks.GRIMSTONE_WALL.get(), models().wallPost("grimstone_wall_post",Risus.prefix("block/grimstone")), models().wallSide("grimstone_wall_side", Risus.prefix("block/grimstone")), models().wallSideTall("grimstone_wall_side_tall", Risus.prefix("block/grimstone")));
 		risusWallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), models().wallPost("polished_grimstone_wall_post",Risus.prefix("block/polished_grimstone")), models().wallSide("polished_grimstone_wall_side", Risus.prefix("block/polished_grimstone")), models().wallSideTall("polished_grimstone_wall_side_tall", Risus.prefix("block/polished_grimstone")));
 		risusWallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), models().wallPost("grimstone_bricks_wall_post",Risus.prefix("block/grimstone_bricks")), models().wallSide("grimstone_bricks_wall_side", Risus.prefix("block/grimstone_bricks")), models().wallSideTall("grimstone_bricks_wall_side_tall", Risus.prefix("block/grimstone_bricks")));
+		risusWallBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.get(), models().wallPost("grimstone_blood_tiles_wall_post",Risus.prefix("block/grimstone_blood_tiles")), models().wallSide("grimstone_blood_tiles_wall_side", Risus.prefix("block/grimstone_blood_tiles")), models().wallSideTall("grimstone_blood_tiles_wall_side_tall", Risus.prefix("block/grimstone_blood_tiles")));
 
 		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 

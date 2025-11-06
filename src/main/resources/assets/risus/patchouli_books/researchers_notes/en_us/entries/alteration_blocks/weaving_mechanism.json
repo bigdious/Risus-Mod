@@ -18,6 +18,10 @@
     },
     {
       "type": "patchouli:text",
+      "text": "The Weaving Mechanism, while somewhat sturdier than a Weaver Nest, is still quite fragile. Silk Touch is required to reliable relocate it, otherwise it will break, returning the Concentration Core used in its creation."
+    },
+    {
+      "type": "patchouli:text",
       "title": "Addendum",
       "text": "The Weaving Mechanism was quite a wonderful accidental discovery for me, as I have been searching for a way to store the materialized experience of dead beings for a while. I happened upon it while testing for further applications of the Concentration Core - having learned about the Litter not too long ago - and decided to use it on a Weaver Nest. To my surprise, it immediately reorganized the body of the "
     },

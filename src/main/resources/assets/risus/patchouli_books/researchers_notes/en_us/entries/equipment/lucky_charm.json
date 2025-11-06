@@ -1,0 +1,23 @@
+{
+  "name": "Lucky & Wretched Charm",
+  "icon": "risus:lucky_charm",
+  "category": "risus:equipment",
+  "advancement": "risus:first",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Lucky Charm is crafted with a Gold Ingot, a Rose Petal and a Rabbit's Foot. When worn, it provides Luck and also enables multiple chance based effects, high luck increasing their likelihood. These effects can be dealing twice the damage against enemies, healing a bit after an attack or surviving a lethal hit."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:lucky_charm",
+      "text": "Triggering a lucky effect will decrease the durability of the charm, starting from one hundred."
+    },
+    {
+      "type": "risus:alterationtemplate1",
+      "header": "Wretched Charm",
+      "recipe": "risus:alteration/wretched_charm",
+      "text": "The Wretched Charm, obtained by altering a Lucky Charm, works in the opposite way: it reduces Luck while enabling effects that have their chance to happen improve with lower luck. The charm can cause attacks to apply negative potion effects, set the enemy aflame, or even bring down lightning. When the user dies, it can cause an explosion."
+    }
+  ]
+}

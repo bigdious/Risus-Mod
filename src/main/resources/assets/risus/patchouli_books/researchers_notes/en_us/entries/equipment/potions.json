@@ -1,0 +1,29 @@
+{
+  "name": "Potions",
+  "icon": "minecraft:brewing_stand",
+  "category": "risus:equipment",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "With the numerous materials obtainable with the Risus, there are a few that are perfect for the creation of potions. $(br)$(br) - To start, a $(l:alteration_blocks/cinderglee#camp)$(0)$(n)Cinderglee Campfire$() will make a Potion of Life Smouldering, applying both Strength and $(l:alteration_blocks/cinderglee)$(0)$(n)Existential Burn$(). $(br)$(br) - Brewing a $(l:offsprings/hex#killjoy)$(0)$(n)Killjoy$() will create a Potion of Clotting with the $(l:alteration_blocks/blood)$(0)$(n)Bloodclogged$() effect. "
+    },
+    {
+      "type": "patchouli:text",
+      "text": " - A $(l:equipment/litter)$(0)$(n)Light Dropping$() can be used to make a Potion of Radiance, which applies the same Glowing effect as Spectral Arrows do. $(br)$(br) - $(l:equipment/lucky_charm)$(0)$(n)Lucky Charms and Wretched Charms$() can be used to brew Potions of Luck and Misfortune respectively, causing a Luck increase or decrease. $(br)$(br) - Refining a Guilty Apple through brewing will result in a $(l:equipment/guilty_apple)$(0)$(n)Potion of Love$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": " - Alongside all of its other uses, the $(l:offsprings/weaver#core)$(0)$(n)Memory Core$() can also be made into a Potion of Forgetfulness, which causes short term Amnesia. $(br)$(br) - The $(l:offsprings/holder#hand)$(0)$(n)Hand Of Greed$() from Holders can be turned into a Potion of Golden Glory, which applies the Gold Rush effect. When a creature or a person is under this effect, they have a chance to drop Gold upon their death. If this potion is inverted by adding a Fermented Spider Eye, it will turn into a Potion of The Copper Age, with"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the Verdigris Vehemence effect. This will cause the dead to drop Copper."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "Of all the potions I have ever drank, the Potion of the Copper Age must be the worst. Not because of its effect or anything, but because of its oxidized copper taste. Ugh..."
+    }
+  ]
+}

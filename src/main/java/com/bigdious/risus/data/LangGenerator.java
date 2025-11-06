@@ -115,6 +115,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES, "Grimstone Blood Tiles");
 		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS, "Grimstone Blood Tiles Stairs");
 		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB, "Grimstone Blood Tiles Slab");
+		this.addBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL, "Grimstone Blood Tiles Wall");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS, "Grimstone Bricks");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB, "Grimstone Brick Slab");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS, "Grimstone Brick Stairs");
