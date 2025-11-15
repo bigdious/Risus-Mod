@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,9 +26,25 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 	public static final BooleanProperty TOP = BooleanProperty.create("top");
 	public static final BooleanProperty BOTTOM = BooleanProperty.create("bottom");
 
-	protected static final VoxelShape Y_BASE_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
-	protected static final VoxelShape X_BASE_SHAPE = Block.box(0.0D, 2.0D, 2.0D, 16.0D, 14.0D, 14.0D);
-	protected static final VoxelShape Z_BASE_SHAPE = Block.box(2.0D, 2.0D, 0.0D, 14.0D, 14.0D, 16.0D);
+	protected static final VoxelShape Y_NONE_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
+	protected static final VoxelShape Y_BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
+	protected static final VoxelShape Y_TOP_SHAPE = Block.box(0.0D, 14.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape Y_NO_TOP_SHAPE = Shapes.or(Y_NONE_SHAPE, Y_BOTTOM_SHAPE);
+	protected static final VoxelShape Y_NO_BOTTOM_SHAPE = Shapes.or(Y_NONE_SHAPE, Y_TOP_SHAPE);
+	protected static final VoxelShape Y_BASE_SHAPE = Shapes.or(Y_NONE_SHAPE, Y_TOP_SHAPE, Y_BOTTOM_SHAPE);
+	protected static final VoxelShape X_NONE_SHAPE = Block.box(0.0D, 2.0D, 2.0D, 16.0D, 14.0D, 14.0D);
+	protected static final VoxelShape X_BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 2.0D, 16.0D, 16.0D);
+	protected static final VoxelShape X_TOP_SHAPE = Block.box(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape X_NO_TOP_SHAPE = Shapes.or(X_NONE_SHAPE, X_BOTTOM_SHAPE);
+	protected static final VoxelShape X_NO_BOTTOM_SHAPE = Shapes.or(X_NONE_SHAPE, X_TOP_SHAPE);
+	protected static final VoxelShape X_BASE_SHAPE = Shapes.or(X_NONE_SHAPE, X_TOP_SHAPE, X_BOTTOM_SHAPE);
+	protected static final VoxelShape Z_NONE_SHAPE = Block.box(2.0D, 2.0D, 0.0D, 14.0D, 14.0D, 16.0D);
+	protected static final VoxelShape Z_BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 14.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape Z_TOP_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 2.0D);
+	protected static final VoxelShape Z_NO_TOP_SHAPE = Shapes.or(Z_NONE_SHAPE, Z_BOTTOM_SHAPE);
+	protected static final VoxelShape Z_NO_BOTTOM_SHAPE = Shapes.or(Z_NONE_SHAPE, Z_TOP_SHAPE);
+	protected static final VoxelShape Z_BASE_SHAPE = Shapes.or(Z_NONE_SHAPE, Z_TOP_SHAPE, Z_BOTTOM_SHAPE);
+
 
 
 	public RisusPillarBlock(Properties properties) {
@@ -43,31 +60,6 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 		if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
 			level.scheduleTick(currentPos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(level));
 		}
-//		switch (state.getValue(AXIS)) {
-//				case Y -> {
-//					if (facing==Direction.UP) {
-//						return state.setValue(TOP, !canConnectTo(state, facingState));
-//					} else if (facing==Direction.DOWN) {
-//						state.setValue(BOTTOM, !canConnectTo(state, facingState));
-//					}
-//				}
-//				case X -> {
-//					if (facing==Direction.WEST) {
-//						state.setValue(TOP, !canConnectTo(state, facingState));
-//					}
-//					else if (facing==Direction.EAST) {
-//						state.setValue(BOTTOM, !canConnectTo(state, facingState));
-//					}
-//				}
-//				case Z -> {
-//					if (facing==Direction.NORTH) {
-//						state.setValue(TOP, !canConnectTo(state, facingState));
-//					}
-//					else if (facing==Direction.SOUTH) {
-//						state.setValue(BOTTOM, !canConnectTo(state, facingState));
-//					}
-//				}
-//			}
 		return state.setValue(TOP, switch (state.getValue(AXIS)) {
 				case X -> facing == Direction.EAST ? canConnectTo(state, facingState) : state.getValue(TOP);
 				case Y -> facing == Direction.UP ? canConnectTo(state, facingState) : state.getValue(TOP);
@@ -86,10 +78,12 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		boolean top = state.getValue(TOP);
+		boolean bot = state.getValue(BOTTOM);
 		return switch (state.getValue(AXIS)) {
-			case X -> X_BASE_SHAPE;
-			case Z -> Z_BASE_SHAPE;
-			default ->  Y_BASE_SHAPE;
+			case X -> top && bot ? X_NONE_SHAPE : top ? X_NO_TOP_SHAPE : bot ? X_NO_BOTTOM_SHAPE : X_BASE_SHAPE;
+			case Z -> top && bot ? Z_NONE_SHAPE : top ? Z_NO_TOP_SHAPE : bot ? Z_NO_BOTTOM_SHAPE : Z_BASE_SHAPE;
+			default ->  top && bot ? Y_NONE_SHAPE : top ? Y_NO_TOP_SHAPE : bot ? Y_NO_BOTTOM_SHAPE : Y_BASE_SHAPE;
 		};
 	}
 

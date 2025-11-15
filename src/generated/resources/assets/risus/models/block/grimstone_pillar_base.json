@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/pillar_base",
+  "textures": {
+    "texture": "risus:block/grimstone_pillar_base"
+  }
+}
