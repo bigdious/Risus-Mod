@@ -241,6 +241,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> POLISHED_GRIMSTONE = registerWithItem("polished_grimstone", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 	public static final DeferredBlock<Block> GRIMSTONE_BLOOD_TILES = registerWithItem("grimstone_blood_tiles", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = registerWithItem("chiseled_grimstone", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
+	public static final DeferredBlock<RisusPillarBlock> GRIMSTONE_PILLAR = registerWithItem("grimstone_pillar", RisusPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 
 	//TISSUE, BONE, SKIN, EYES AND HAIR
 	public static final DeferredBlock<DecomposingTissueBlock> TISSUE = registerWithItem("tissue", properties -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, properties), () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));

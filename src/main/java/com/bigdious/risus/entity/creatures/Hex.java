@@ -54,6 +54,12 @@ public class Hex extends Vex {
 	}
 
 	@Override
+	public void tick() {
+		this.noPhysics = false;
+		super.tick();
+	}
+
+	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(4, new HexChargeAttackGoal());

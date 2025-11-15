@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-06T21:57:47.2926891	Loot Tables
+// 1.21.1	2025-11-15T11:52:37.3586426	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -123,6 +123,7 @@ ebf2d6c77dffa9978ac59aacec925760b74b98ed data/risus/loot_table/blocks/grimstone_
 9d5c06aa9dfc0e3a7624826e87975878e948dc0b data/risus/loot_table/blocks/grimstone_bricks_slab.json
 bed1a2a81121c8d3b7fe496854a0e5bcc8f2b76e data/risus/loot_table/blocks/grimstone_bricks_stairs.json
 5b8e04419b3e820bfbfaa59252e8ea0e9fa63a6f data/risus/loot_table/blocks/grimstone_bricks_wall.json
+96b05cee24a228e15c7ae4b070208e68cede2668 data/risus/loot_table/blocks/grimstone_pillar.json
 4706bc9b237a6bf36e609ff7a9af6d76a6771920 data/risus/loot_table/blocks/grimstone_slab.json
 bb3a2a5c36c195c93090f35a96a2f37f140ae7e4 data/risus/loot_table/blocks/grimstone_stairs.json
 240bb789f4b29fabf00d6a859dca283290137215 data/risus/loot_table/blocks/grimstone_wall.json

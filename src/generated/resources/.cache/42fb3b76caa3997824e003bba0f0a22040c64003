@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-06T21:57:47.2816862	Risus Item Models
+// 1.21.1	2025-11-15T11:52:37.3466398	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -169,6 +169,7 @@ bd14c0ea1ef4f8294188081f5815492c76b7c9d1 assets/risus/models/item/grimstone_bloo
 3d3b5ef19f0fe96bf19d4b91144e31d3ac29a114 assets/risus/models/item/grimstone_bricks_slab.json
 b62225d1c2cec16aa9b8f0451a0fbc295efe6f8c assets/risus/models/item/grimstone_bricks_stairs.json
 ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_bricks_wall.json
+190af438860500e8882ed82edd73f399b38687dd assets/risus/models/item/grimstone_pillar.json
 68f5ebfdd55f2e759f7685f2692d77129ac93182 assets/risus/models/item/grimstone_slab.json
 ad303ac58685ef969d5e334b5dda8de86d4b04f5 assets/risus/models/item/grimstone_stairs.json
 f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall.json

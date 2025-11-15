@@ -106,6 +106,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.ACTIVE_GRIMSTONE.get());
 				output.accept(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 				output.accept(RisusBlocks.CHISELED_GRIMSTONE.get());
+				output.accept(RisusBlocks.GRIMSTONE_PILLAR.get());
 
 				output.accept(RisusBlocks.SKIN.get());
 				output.accept(RisusBlocks.FLESHY_SKIN.get());

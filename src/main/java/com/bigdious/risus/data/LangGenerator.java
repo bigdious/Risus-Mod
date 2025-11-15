@@ -120,6 +120,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS_SLAB, "Grimstone Brick Slab");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS_STAIRS, "Grimstone Brick Stairs");
 		this.addBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL, "Grimstone Brick Wall");
+		this.addBlock(RisusBlocks.GRIMSTONE_PILLAR, "Grimstone Pillar");
 		this.addBlock(RisusBlocks.GRIMSTONE_SLAB, "Grimstone Slab");
 		this.addBlock(RisusBlocks.GRIMSTONE_STAIRS, "Grimstone Stairs");
 		this.addBlock(RisusBlocks.GRIMSTONE_WALL, "Grimstone Wall");
@@ -137,7 +138,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.LAUGHING_STALK, "Laughing Stalk");
 		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Dropping");
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
-		this.addBlock(RisusBlocks.LIVING_TISSUE, "Dying Tissue");
+		this.addBlock(RisusBlocks.LIVING_TISSUE, "Tissue");
 		this.addBlock(RisusBlocks.MAW_GUTS, "Gorger Guts");
 		this.addBlock(RisusBlocks.MIRAGE_END_STONE, "Mirage End Stone");
 		this.addBlock(RisusBlocks.MIRAGE_GRASS_BLOCK, "Mirage Grass Block");
@@ -170,7 +171,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.TALL_HAIR, "Hair Strands");
 		this.addBlock(RisusBlocks.TEETH, "Teeth");
 		this.addBlock(RisusBlocks.TESSERACT, "Tesseract");
-		this.addBlock(RisusBlocks.TISSUE, "Living Tissue");
+		this.addBlock(RisusBlocks.TISSUE, "Dying Tissue");
 		this.addBlock(RisusBlocks.TISSUE_SLAB, "Tissue Slab");
 		this.addBlock(RisusBlocks.TISSUE_STAIRS, "Tissue Stairs");
 		this.addBlock(RisusBlocks.TISSUE_WALL, "Tissue Wall");

@@ -38,7 +38,7 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 	protected ItemStack item = ItemStack.EMPTY;
 	AABB SUCK_AABB = Block.box(-16.0F, 0.0F, -16.0F, 32.0F, 32.0F, 32.0F).toAabbs().get(0);
 	public int xpStored;
-	public boolean isWeaving;
+	public boolean isWeaving = false;
 	private int weavingCounter;
 	private int xpCollectionCooldown;
 
@@ -75,7 +75,7 @@ public class WeavingMechanismBlockEntity extends BlockEntity implements Containe
 				weaver.updateBlock();
 			}
 			weaver.isWeaving = true;
-			weaver.setChanged();
+			weaver.updateBlock();
 		}
 
 		if (weaver.isWeaving && !level.hasNeighborSignal(pos)) {

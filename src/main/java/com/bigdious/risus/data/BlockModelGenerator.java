@@ -331,6 +331,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		risusWallBlock(RisusBlocks.POLISHED_GRIMSTONE_WALL.get(), models().wallPost("polished_grimstone_wall_post",Risus.prefix("block/polished_grimstone")), models().wallSide("polished_grimstone_wall_side", Risus.prefix("block/polished_grimstone")), models().wallSideTall("polished_grimstone_wall_side_tall", Risus.prefix("block/polished_grimstone")));
 		risusWallBlock(RisusBlocks.GRIMSTONE_BRICKS_WALL.get(), models().wallPost("grimstone_bricks_wall_post",Risus.prefix("block/grimstone_bricks")), models().wallSide("grimstone_bricks_wall_side", Risus.prefix("block/grimstone_bricks")), models().wallSideTall("grimstone_bricks_wall_side_tall", Risus.prefix("block/grimstone_bricks")));
 		risusWallBlock(RisusBlocks.GRIMSTONE_BLOOD_TILES_WALL.get(), models().wallPost("grimstone_blood_tiles_wall_post",Risus.prefix("block/grimstone_blood_tiles")), models().wallSide("grimstone_blood_tiles_wall_side", Risus.prefix("block/grimstone_blood_tiles")), models().wallSideTall("grimstone_blood_tiles_wall_side_tall", Risus.prefix("block/grimstone_blood_tiles")));
+		pillarBlock(RisusBlocks.GRIMSTONE_PILLAR.get(), Risus.prefix("block/grimstone_pillar_base"), Risus.prefix("block/grimstone_pillar_no_top"), Risus.prefix("block/grimstone_pillar_no_bottom"), Risus.prefix("block/grimstone_pillar_none"));
 
 		simpleBlock(RisusBlocks.FADING_SHADOW.get());
 
@@ -703,6 +704,24 @@ public class BlockModelGenerator extends BlockStateProvider {
 			}
 
 			return ConfiguredModel.builder().modelFile(model).rotationY(yRot).build();}, LargeGateBlock.POWERED);
+	}
+
+	public void pillarBlock(RisusPillarBlock block, ResourceLocation textureBase, ResourceLocation textureNoTop, ResourceLocation textureNoBottom, ResourceLocation textureNone) {
+		ModelFile base = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_base" ,Risus.prefix("block/pillar_base")).texture("texture", textureBase);
+		ModelFile noTop = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_top" ,Risus.prefix("block/pillar_no_top")).texture("texture", textureNoTop);
+		ModelFile noBottom = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_bottom" ,Risus.prefix("block/pillar_no_bottom")).texture("texture", textureNoBottom);
+		ModelFile none = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_none" ,Risus.prefix("block/pillar_none")).texture("texture", textureNone);
+
+		this.getVariantBuilder(block).forAllStates((state) -> {
+			boolean top = state.getValue(RisusPillarBlock.TOP);
+			boolean bottom = state.getValue(RisusPillarBlock.BOTTOM);
+			ModelFile model = null;
+			model = top && bottom ? none : !top && bottom ? noBottom : top && !bottom ? noTop : base;
+			int xRot = state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.X || state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.Z ? 90 : 0;
+			int yRot = state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0;
+
+			return ConfiguredModel.builder().modelFile(model).rotationY(yRot).rotationX(xRot).build();
+		});
 	}
 
 	public void simpleBlockWithRenderType(Block block, ResourceLocation type) {
