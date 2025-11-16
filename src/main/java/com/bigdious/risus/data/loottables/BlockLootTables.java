@@ -254,6 +254,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.FULL_BONE_BLOCK.get());
 		add(RisusBlocks.FULL_BONE_SLAB.get(), createSlabItemTable(RisusBlocks.FULL_BONE_SLAB.get()));
 		dropSelf(RisusBlocks.FULL_BONE_STAIRS.get());
+		dropSelf(RisusBlocks.BONE_PILLAR.get());
 		dropSelf(RisusBlocks.FOSSIL.get());
 		dropSelf(RisusBlocks.FOSSIL_STAIRS.get());
 		add(RisusBlocks.FOSSIL_SLAB.get(), createSlabItemTable(RisusBlocks.FOSSIL_SLAB.get()));
@@ -261,6 +262,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.FULL_FOSSIL.get());
 		dropSelf(RisusBlocks.FULL_FOSSIL_STAIRS.get());
 		add(RisusBlocks.FULL_FOSSIL_SLAB.get(), createSlabItemTable(RisusBlocks.FULL_FOSSIL_SLAB.get()));
+		dropSelf(RisusBlocks.FOSSIL_PILLAR.get());
 
 		dropSelf(RisusBlocks.EYE_ENDER.get());
 		dropSelf(RisusBlocks.EYE_BLEACHED.get());

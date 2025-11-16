@@ -287,6 +287,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FULL_BONE_SLAB.get(),
 			RisusBlocks.FULL_BONE_STAIRS.get(),
 			RisusBlocks.BONE_STAIRS.get(),
+			RisusBlocks.BONE_PILLAR.get(),
 			RisusBlocks.FOSSIL.get(),
 			RisusBlocks.FOSSIL_WALL.get(),
 			RisusBlocks.FULL_FOSSIL.get(),
@@ -294,6 +295,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FULL_FOSSIL_SLAB.get(),
 			RisusBlocks.FULL_FOSSIL_STAIRS.get(),
 			RisusBlocks.FOSSIL_STAIRS.get(),
+			RisusBlocks.FOSSIL_PILLAR.get(),
 
 			RisusBlocks.FLESHY_SPAWNER.get(),
 

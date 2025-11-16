@@ -46,6 +46,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BONDKNOT_STAIRS, "Bondknot Stairs");
 		this.addBlock(RisusBlocks.BONDKNOT_TRAPDOOR, "Bondknot Trapdoor");
 		this.addBlock(RisusBlocks.BONDKNOT_WOOD, "Bondknot Wood");
+		this.addBlock(RisusBlocks.BONE_PILLAR, "Bone Pillar");
 		this.addBlock(RisusBlocks.BONE_SLAB, "Bone Slab");
 		this.addBlock(RisusBlocks.BONE_STAIRS, "Bone Stairs");
 		this.addBlock(RisusBlocks.BONE_WALL, "Bone Wall");
@@ -91,15 +92,13 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.EYE_GOLDEN_GLOWING, "Glowing Golden Eye Block");
 		this.addBlock(RisusBlocks.FADING_SHADOW, "Fading Shadow");
 		this.addBlock(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK, "Imitation Scales Block");
-		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS, "Imitation Scales Stairs");
-		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, "Imitation Scales Slab");
-		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_WALL, "Imitation Scales Wall");
 		this.addBlock(RisusBlocks.FLATTENED_SCALES_BLOCK, "Gluttonous Scales Block");
 		this.addBlock(RisusBlocks.FLESHY_SKIN, "Fleshy Skin");
 		this.addBlock(RisusBlocks.FLESHY_SPAWNER, "Fleshy Monster Spawner");
 		this.addBlock(RisusBlocks.FLOWERING_IMITATION_SCALEPLATE, "Flowering Imitation Scaleplate");
 		this.addBlock(RisusBlocks.FLOWERING_UNALLOYED_SCALEPLATE, "Flowering Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.FOSSIL, "Fossil");
+		this.addBlock(RisusBlocks.FOSSIL_PILLAR, "Fossil Pillar");
 		this.addBlock(RisusBlocks.FOSSIL_SLAB, "Fossil Slab");
 		this.addBlock(RisusBlocks.FOSSIL_STAIRS, "Fossil Stairs");
 		this.addBlock(RisusBlocks.FOSSIL_WALL, "Fossil Wall");
@@ -129,6 +128,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.HAIRY_SKIN, "Hairy Skin");
 		this.addBlock(RisusBlocks.HEART_TRANSPLANT, "Heart Transplant");
 		this.addBlock(RisusBlocks.IMITATION_SCALEPLATE, "Imitation Scaleplate");
+		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS, "Imitation Scales Stairs");
+		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_SLAB, "Imitation Scales Slab");
+		this.addBlock(RisusBlocks.IMITATION_SCALES_BLOCK_WALL, "Imitation Scales Wall");
 		this.addBlock(RisusBlocks.INACTIVE_HOLDER, "Inactive Holder");
 		this.addBlock(RisusBlocks.JOYFLAME_CAMPFIRE, "Cinderglee Campfire");
 		this.addBlock(RisusBlocks.JOYFLAME_FIRE, "Cinderglee Fire");

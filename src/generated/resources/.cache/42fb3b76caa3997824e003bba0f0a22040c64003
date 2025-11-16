@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-15T11:52:37.3466398	Risus Item Models
+// 1.21.1	2025-11-16T13:58:13.5930484	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -38,6 +38,7 @@ a3ad829d018d630d875fd156bc96c8b305669f54 assets/risus/models/item/bondknot_sign.
 cace5038bf7bf3f3b7dfdf09fdedc77652419d37 assets/risus/models/item/bondknot_wood.json
 3f30f32e94595944c43f723d9e2f590cbe60ef13 assets/risus/models/item/bond_glass.json
 9919de4eaa900ba10c96009fad76e4b9f5f947f6 assets/risus/models/item/bond_glass_pane.json
+db19c48fce75e674e0b9099d0112435abb532455 assets/risus/models/item/bone_pillar.json
 47cd4ff2e2fde19bdf58563a9eef7dc57bcb2d17 assets/risus/models/item/bone_slab.json
 4322a3de8473f7dfc0d81f733372b97e34fe4c81 assets/risus/models/item/bone_stairs.json
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
@@ -140,6 +141,7 @@ c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scal
 66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
 26b80df6c7ccca63e5c1bf0b6b1ff65e7964275f assets/risus/models/item/flowering_unalloyed_scaleplate.json
 e5b990f36e13214ba7d29353bfe45aca28e7b999 assets/risus/models/item/fossil.json
+577d1da765e3a5dff6074a8a3481306bd39458fe assets/risus/models/item/fossil_pillar.json
 a44d3443d16d50067e6517af1e17e8e1343fc900 assets/risus/models/item/fossil_slab.json
 4f2d72c32feba95b09cb75ff0470d8f05dfdcd3e assets/risus/models/item/fossil_stairs.json
 2be5a56597fd583d8980432737eab08a489cf12a assets/risus/models/item/fossil_wall.json

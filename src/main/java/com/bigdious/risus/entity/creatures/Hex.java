@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
@@ -53,11 +54,6 @@ public class Hex extends Vex {
 			.add(Attributes.ATTACK_DAMAGE, 4.0D);
 	}
 
-	@Override
-	public void tick() {
-		this.noPhysics = false;
-		super.tick();
-	}
 
 	@Override
 	protected void registerGoals() {
@@ -71,10 +67,10 @@ public class Hex extends Vex {
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
 	}
 
-	public void aiStep(){
+	public void aiStep() {
 		super.aiStep();
 		if (this.level().isClientSide && this.tickCount % 15 == 0) {
-			this.level().addParticle(RisusParticles.FALLING_BLOOD.get(), this.getRandomX(0.5F), this.getY()+0.2, this.getRandomZ(0.5F), 0.0F, 0.0F, 0.0F);
+			this.level().addParticle(RisusParticles.FALLING_BLOOD.get(), this.getRandomX(0.5F), this.getY() + 0.2, this.getRandomZ(0.5F), 0.0F, 0.0F, 0.0F);
 		}
 	}
 
@@ -118,7 +114,7 @@ public class Hex extends Vex {
 			LivingEntity livingentity = Hex.this.getTarget();
 			if (livingentity != null) {
 				Vec3 vec3 = livingentity.getEyePosition();
-				Hex.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, (double)1.0F);
+				Hex.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, (double) 1.0F);
 			}
 
 			Hex.this.setIsCharging(true);
@@ -145,4 +141,148 @@ public class Hex extends Vex {
 		}
 	}
 
+	//dumping the entire super tick here to jump over Vexes having no physics.
+	//I did try using Mixin, but it fucking broke when in Multiplayer, so fuck mixins. Why can't I just directly call Monster's tick
+	@Override
+	public void tick() {
+		this.setNoGravity(true);
+		if (!this.level().isClientSide && this.tickCount % 5 == 0) {
+			this.updateControlFlags();
+		}
+
+		if (this.canUseSlot(EquipmentSlot.BODY)) {
+			ItemStack stack = this.getBodyArmorItem();
+			if (this.isBodyArmorItem(stack)) {
+				stack.onAnimalArmorTick(this.level(), this);
+			}
+		}
+		this.updatingUsingItem();
+		this.updateSwimAmount();
+		if (!this.level().isClientSide) {
+			int i = this.getArrowCount();
+			if (i > 0) {
+				if (this.removeArrowTime <= 0) {
+					this.removeArrowTime = 20 * (30 - i);
+				}
+
+				--this.removeArrowTime;
+				if (this.removeArrowTime <= 0) {
+					this.setArrowCount(i - 1);
+				}
+			}
+
+			int j = this.getStingerCount();
+			if (j > 0) {
+				if (this.removeStingerTime <= 0) {
+					this.removeStingerTime = 20 * (30 - j);
+				}
+
+				--this.removeStingerTime;
+				if (this.removeStingerTime <= 0) {
+					this.setStingerCount(j - 1);
+				}
+			}
+
+			this.detectEquipmentUpdates();
+			if (this.tickCount % 20 == 0) {
+				this.getCombatTracker().recheckStatus();
+			}
+
+			if (this.isSleeping() && !this.checkBedExists()) {
+				this.stopSleeping();
+			}
+		}
+
+		if (!this.isRemoved()) {
+			this.aiStep();
+		}
+
+		double d1 = this.getX() - this.xo;
+		double d0 = this.getZ() - this.zo;
+		float f = (float)(d1 * d1 + d0 * d0);
+		float f1 = this.yBodyRot;
+		float f2 = 0.0F;
+		this.oRun = this.run;
+		float f3 = 0.0F;
+		if (f > 0.0025000002F) {
+			f3 = 1.0F;
+			f2 = (float)Math.sqrt((double)f) * 3.0F;
+			float f4 = (float)Mth.atan2(d0, d1) * (180F / (float)Math.PI) - 90.0F;
+			float f5 = Mth.abs(Mth.wrapDegrees(this.getYRot()) - f4);
+			if (95.0F < f5 && f5 < 265.0F) {
+				f1 = f4 - 180.0F;
+			} else {
+				f1 = f4;
+			}
+		}
+
+		if (this.attackAnim > 0.0F) {
+			f1 = this.getYRot();
+		}
+
+		if (!this.onGround()) {
+			f3 = 0.0F;
+		}
+
+		this.run += (f3 - this.run) * 0.3F;
+		this.level().getProfiler().push("headTurn");
+		f2 = this.tickHeadTurn(f1, f2);
+		this.level().getProfiler().pop();
+		this.level().getProfiler().push("rangeChecks");
+
+		while(this.getYRot() - this.yRotO < -180.0F) {
+			this.yRotO -= 360.0F;
+		}
+
+		while(this.getYRot() - this.yRotO >= 180.0F) {
+			this.yRotO += 360.0F;
+		}
+
+		while(this.yBodyRot - this.yBodyRotO < -180.0F) {
+			this.yBodyRotO -= 360.0F;
+		}
+
+		while(this.yBodyRot - this.yBodyRotO >= 180.0F) {
+			this.yBodyRotO += 360.0F;
+		}
+
+		while(this.getXRot() - this.xRotO < -180.0F) {
+			this.xRotO -= 360.0F;
+		}
+
+		while(this.getXRot() - this.xRotO >= 180.0F) {
+			this.xRotO += 360.0F;
+		}
+
+		while(this.yHeadRot - this.yHeadRotO < -180.0F) {
+			this.yHeadRotO -= 360.0F;
+		}
+
+		while(this.yHeadRot - this.yHeadRotO >= 180.0F) {
+			this.yHeadRotO += 360.0F;
+		}
+
+		this.level().getProfiler().pop();
+		this.animStep += f2;
+		if (this.isFallFlying()) {
+			++this.fallFlyTicks;
+		} else {
+			this.fallFlyTicks = 0;
+		}
+
+		if (this.isSleeping()) {
+			this.setXRot(0.0F);
+		}
+
+		this.refreshDirtyAttributes();
+		float f6 = this.getScale();
+		if (f6 != this.appliedScale) {
+			this.appliedScale = f6;
+			this.refreshDimensions();
+		}
+
+
+		this.baseTick();
+
+	}
 }

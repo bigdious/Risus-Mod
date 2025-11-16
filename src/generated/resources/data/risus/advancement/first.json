@@ -16,6 +16,38 @@
       },
       "trigger": "minecraft:location"
     },
+    "draxolotl": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:draxolotl_remains"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "dungeon": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:dungeon"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "endmaw": {
       "conditions": {
         "player": [
@@ -130,6 +162,22 @@
         ]
       },
       "trigger": "minecraft:location"
+    },
+    "well": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:blood_well"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
     }
   },
   "display": {
@@ -157,7 +205,10 @@
       "holy_grounds",
       "family",
       "body",
-      "lab"
+      "lab",
+      "dungeon",
+      "well",
+      "draxolotl"
     ]
   ],
   "sends_telemetry_event": true

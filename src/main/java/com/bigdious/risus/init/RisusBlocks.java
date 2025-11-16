@@ -240,8 +240,8 @@ public class RisusBlocks {
 	public static final DeferredBlock<RisusWallBlock> GRIMSTONE_BLOOD_TILES_WALL = registerWithItem("grimstone_blood_tiles_wall", RisusWallBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 	public static final DeferredBlock<Block> POLISHED_GRIMSTONE = registerWithItem("polished_grimstone", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
 	public static final DeferredBlock<Block> GRIMSTONE_BLOOD_TILES = registerWithItem("grimstone_blood_tiles", Block::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
-	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = registerWithItem("chiseled_grimstone", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()).noOcclusion());
-	public static final DeferredBlock<RisusPillarBlock> GRIMSTONE_PILLAR = registerWithItem("grimstone_pillar", RisusPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
+	public static final DeferredBlock<Block> CHISELED_GRIMSTONE = registerWithItem("chiseled_grimstone", BaseRotatableBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()));
+	public static final DeferredBlock<RisusPillarBlock> GRIMSTONE_PILLAR = registerWithItem("grimstone_pillar", RisusPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(GRIMSTONE.get()).noOcclusion());
 
 	//TISSUE, BONE, SKIN, EYES AND HAIR
 	public static final DeferredBlock<DecomposingTissueBlock> TISSUE = registerWithItem("tissue", properties -> new DecomposingTissueBlock(DecomposingBlock.DecomposeState.NONE, properties), () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
@@ -259,6 +259,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<RisusWallBlock> BONE_WALL = registerWithItem("bone_wall", RisusWallBlock::new, () -> Block.Properties.ofFullCopy(Blocks.BONE_BLOCK));
 	public static final DeferredBlock<StairBlock> BONE_STAIRS = registerWithItem("bone_stairs", properties -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK));
 	public static final DeferredBlock<SlabBlock> BONE_SLAB = registerWithItem("bone_slab", RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK));
+	public static final DeferredBlock<RisusPillarBlock> BONE_PILLAR = registerWithItem("bone_pillar", RisusPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).noOcclusion());
 	public static final DeferredBlock<RotatedPillarBlock> FOSSIL = registerWithItem("fossil", RotatedPillarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON));
 	public static final DeferredBlock<StairBlock> FOSSIL_STAIRS = registerWithItem("fossil_stairs", properties -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON));
 	public static final DeferredBlock<SlabBlock> FOSSIL_SLAB = registerWithItem("fossil_slab", RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(RisusBlocks.FULL_BONE_BLOCK.get()).mapColor(MapColor.RAW_IRON));
@@ -266,6 +267,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<RotatedPillarBlock> FULL_FOSSIL = registerWithItem("full_fossil", RotatedPillarBlock::new, () -> Block.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON));
 	public static final DeferredBlock<StairBlock> FULL_FOSSIL_STAIRS = registerWithItem("full_fossil_stairs", properties -> new RisusStairBlock(Blocks.BONE_BLOCK::defaultBlockState, properties), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON));
 	public static final DeferredBlock<SlabBlock> FULL_FOSSIL_SLAB = registerWithItem("full_fossil_slab", RisusSlabBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON));
+	public static final DeferredBlock<RisusPillarBlock> FOSSIL_PILLAR = registerWithItem("fossil_pillar", RisusPillarBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK).mapColor(MapColor.RAW_IRON).noOcclusion());
 	public static final DeferredBlock<Block> LIVING_TISSUE = registerWithItem("living_tissue", Block::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
 	public static final DeferredBlock<RisusWallBlock> ROTTED_TISSUE = registerWithItem("rotted_tissue", RisusWallBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));
 	public static final DeferredBlock<RisusWallBlock> DECOMPOSED_TISSUE = registerWithItem("decomposed_tissue", RisusWallBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK));

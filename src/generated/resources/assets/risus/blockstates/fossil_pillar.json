@@ -1,0 +1,148 @@
+{
+  "variants": {
+    "axis=x,bottom=false,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_base_x"
+    },
+    "axis=x,bottom=false,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_x"
+    },
+    "axis=x,bottom=false,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_base_x"
+    },
+    "axis=x,bottom=false,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_x"
+    },
+    "axis=x,bottom=false,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_base_x"
+    },
+    "axis=x,bottom=false,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_x"
+    },
+    "axis=x,bottom=false,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_base_x"
+    },
+    "axis=x,bottom=false,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_x"
+    },
+    "axis=x,bottom=true,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_x"
+    },
+    "axis=x,bottom=true,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_none_x"
+    },
+    "axis=x,bottom=true,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_x"
+    },
+    "axis=x,bottom=true,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_none_x"
+    },
+    "axis=x,bottom=true,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_x"
+    },
+    "axis=x,bottom=true,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_none_x"
+    },
+    "axis=x,bottom=true,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_x"
+    },
+    "axis=x,bottom=true,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_none_x"
+    },
+    "axis=y,bottom=false,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_base"
+    },
+    "axis=y,bottom=false,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_no_top"
+    },
+    "axis=y,bottom=false,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_base"
+    },
+    "axis=y,bottom=false,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_no_top"
+    },
+    "axis=y,bottom=false,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_base"
+    },
+    "axis=y,bottom=false,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_no_top"
+    },
+    "axis=y,bottom=false,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_base"
+    },
+    "axis=y,bottom=false,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_no_top"
+    },
+    "axis=y,bottom=true,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom"
+    },
+    "axis=y,bottom=true,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_none"
+    },
+    "axis=y,bottom=true,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom"
+    },
+    "axis=y,bottom=true,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_none"
+    },
+    "axis=y,bottom=true,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom"
+    },
+    "axis=y,bottom=true,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_none"
+    },
+    "axis=y,bottom=true,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom"
+    },
+    "axis=y,bottom=true,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_none"
+    },
+    "axis=z,bottom=false,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_base_z"
+    },
+    "axis=z,bottom=false,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_z"
+    },
+    "axis=z,bottom=false,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_base_z"
+    },
+    "axis=z,bottom=false,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_z"
+    },
+    "axis=z,bottom=false,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_base_z"
+    },
+    "axis=z,bottom=false,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_z"
+    },
+    "axis=z,bottom=false,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_base_z"
+    },
+    "axis=z,bottom=false,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_no_top_z"
+    },
+    "axis=z,bottom=true,fluid=blood,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_z"
+    },
+    "axis=z,bottom=true,fluid=blood,top=true": {
+      "model": "risus:block/fossil_pillar_none_z"
+    },
+    "axis=z,bottom=true,fluid=empty,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_z"
+    },
+    "axis=z,bottom=true,fluid=empty,top=true": {
+      "model": "risus:block/fossil_pillar_none_z"
+    },
+    "axis=z,bottom=true,fluid=lava,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_z"
+    },
+    "axis=z,bottom=true,fluid=lava,top=true": {
+      "model": "risus:block/fossil_pillar_none_z"
+    },
+    "axis=z,bottom=true,fluid=water,top=false": {
+      "model": "risus:block/fossil_pillar_no_bottom_z"
+    },
+    "axis=z,bottom=true,fluid=water,top=true": {
+      "model": "risus:block/fossil_pillar_none_z"
+    }
+  }
+}

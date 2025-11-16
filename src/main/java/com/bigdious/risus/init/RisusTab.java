@@ -146,6 +146,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.FULL_BONE_BLOCK.get());
 				output.accept(RisusBlocks.FULL_BONE_STAIRS.get());
 				output.accept(RisusBlocks.FULL_BONE_SLAB.get());
+				output.accept(RisusBlocks.BONE_PILLAR.get());
 				output.accept(RisusBlocks.FOSSIL.get());
 				output.accept(RisusBlocks.FOSSIL_WALL.get());
 				output.accept(RisusBlocks.FOSSIL_STAIRS.get());
@@ -153,6 +154,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.FULL_FOSSIL.get());
 				output.accept(RisusBlocks.FULL_FOSSIL_STAIRS.get());
 				output.accept(RisusBlocks.FULL_FOSSIL_SLAB.get());
+				output.accept(RisusBlocks.FOSSIL_PILLAR.get());
 
 				output.accept(RisusBlocks.EYE_GOLDEN.get());
 				output.accept(RisusBlocks.EYE_ENDER.get());

@@ -432,6 +432,8 @@ public class BlockModelGenerator extends BlockStateProvider {
 		axisBlock(RisusBlocks.FULL_BONE_BLOCK.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		slabBlock(RisusBlocks.FULL_BONE_SLAB.get(), Risus.prefix("block/full_bone_block"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
 		stairsBlock(RisusBlocks.FULL_BONE_STAIRS.get(), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"), Risus.prefix("block/bone_block_side"));
+		pillarBlock(RisusBlocks.BONE_PILLAR.get(), Risus.prefix("block/bone_pillar_base"), Risus.prefix("block/bone_pillar_no_top"), Risus.prefix("block/bone_pillar_no_bottom"), Risus.prefix("block/bone_pillar_none"));
+
 		axisBlock(RisusBlocks.FOSSIL.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_top"));
 		risusWallBlock(RisusBlocks.FOSSIL_WALL.get(), models().getExistingFile(Risus.prefix("block/tissue/fossil_wall_post")), models().getExistingFile(Risus.prefix("block/tissue/fossil_wall_side")), models().getExistingFile(Risus.prefix("block/tissue/fossil_wall_tall_side")));
 		stairsBlock(RisusBlocks.FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_top"), Risus.prefix("block/fossil_top"));
@@ -439,7 +441,9 @@ public class BlockModelGenerator extends BlockStateProvider {
 		axisBlock(RisusBlocks.FULL_FOSSIL.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 		slabBlock(RisusBlocks.FULL_FOSSIL_SLAB.get(), Risus.prefix("block/full_fossil"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 		stairsBlock(RisusBlocks.FULL_FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
-//keep below eye stuff to have custom head display
+		pillarBlock(RisusBlocks.FOSSIL_PILLAR.get(), Risus.prefix("block/fossil_pillar_base"), Risus.prefix("block/fossil_pillar_no_top"), Risus.prefix("block/fossil_pillar_no_bottom"), Risus.prefix("block/fossil_pillar_none"));
+
+		//keep below eye stuff to have custom head display
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye/ender")));
 		directionalBlock(RisusBlocks.EYE_BLEACHED.get(), models().getExistingFile(Risus.prefix("block/eye/bleached")));
 		directionalBlock(RisusBlocks.EYE_BLOODSHOT.get(), models().getExistingFile(Risus.prefix("block/eye/bloodshot")));
@@ -707,20 +711,31 @@ public class BlockModelGenerator extends BlockStateProvider {
 	}
 
 	public void pillarBlock(RisusPillarBlock block, ResourceLocation textureBase, ResourceLocation textureNoTop, ResourceLocation textureNoBottom, ResourceLocation textureNone) {
-		ModelFile base = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_base" ,Risus.prefix("block/pillar_base")).texture("texture", textureBase);
-		ModelFile noTop = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_top" ,Risus.prefix("block/pillar_no_top")).texture("texture", textureNoTop);
-		ModelFile noBottom = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_bottom" ,Risus.prefix("block/pillar_no_bottom")).texture("texture", textureNoBottom);
-		ModelFile none = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_none" ,Risus.prefix("block/pillar_none")).texture("texture", textureNone);
+		//separate models are needed for each axis to avoid lighting issues
+		ModelFile base = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_base" ,Risus.prefix("block/pillar/pillar_base")).texture("texture", textureBase);
+		ModelFile base_x = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_base_x" ,Risus.prefix("block/pillar/pillar_base_x")).texture("texture", textureBase);
+		ModelFile base_z = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_base_z" ,Risus.prefix("block/pillar/pillar_base_z")).texture("texture", textureBase);
+		ModelFile noTop = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_top" ,Risus.prefix("block/pillar/pillar_no_top")).texture("texture", textureNoTop);
+		ModelFile noTop_x = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_top_x" ,Risus.prefix("block/pillar/pillar_no_top_x")).texture("texture", textureNoTop);
+		ModelFile noTop_z = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_top_z" ,Risus.prefix("block/pillar/pillar_no_top_z")).texture("texture", textureNoTop);
+		ModelFile noBottom = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_bottom" ,Risus.prefix("block/pillar/pillar_no_bottom")).texture("texture", textureNoBottom);
+		ModelFile noBottom_x = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_bottom_x" ,Risus.prefix("block/pillar/pillar_no_bottom_x")).texture("texture", textureNoBottom);
+		ModelFile noBottom_z = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_no_bottom_z" ,Risus.prefix("block/pillar/pillar_no_bottom_z")).texture("texture", textureNoBottom);
+		ModelFile none = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_none" ,Risus.prefix("block/pillar/pillar_none")).texture("texture", textureNone);
+		ModelFile none_x = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_none_x" ,Risus.prefix("block/pillar/pillar_none_x")).texture("texture", textureNone);
+		ModelFile none_z = models().withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath()+"_none_z" ,Risus.prefix("block/pillar/pillar_none_z")).texture("texture", textureNone);
 
 		this.getVariantBuilder(block).forAllStates((state) -> {
 			boolean top = state.getValue(RisusPillarBlock.TOP);
 			boolean bottom = state.getValue(RisusPillarBlock.BOTTOM);
 			ModelFile model = null;
-			model = top && bottom ? none : !top && bottom ? noBottom : top && !bottom ? noTop : base;
-			int xRot = state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.X || state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.Z ? 90 : 0;
-			int yRot = state.getValue(RisusPillarBlock.AXIS) == Direction.Axis.X ? 90 : 0;
+			model = switch (state.getValue(RisusPillarBlock.AXIS)) {
+				case X -> top && bottom ? none_x : !top && bottom ? noBottom_x : top && !bottom ? noTop_x : base_x;
+				case Y -> top && bottom ? none : !top && bottom ? noBottom : top && !bottom ? noTop : base;
+				case Z -> top && bottom ? none_z : !top && bottom ? noBottom_z : top && !bottom ? noTop_z : base_z;
+			};
 
-			return ConfiguredModel.builder().modelFile(model).rotationY(yRot).rotationX(xRot).build();
+			return ConfiguredModel.builder().modelFile(model).build();
 		});
 	}
 

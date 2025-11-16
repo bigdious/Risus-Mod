@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-15T11:52:37.3586426	Loot Tables
+// 1.21.1	2025-11-16T13:58:13.608672	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -36,6 +36,7 @@ ddfd7d233204c1b01626a566581fea6e0f11ecce data/risus/loot_table/blocks/bondknot_t
 0ed92d2bb4603ffe9d5cbdaadbeb29439b3cd0d4 data/risus/loot_table/blocks/bondknot_wood.json
 69f41bc4b3358c2bdf85f6e68c96f271a0537c39 data/risus/loot_table/blocks/bond_glass.json
 28d8cec0cdcd1d2657d36a2ec2e59a43ada513d3 data/risus/loot_table/blocks/bond_glass_pane.json
+5b24db51b158183a010dbb8513ce80795cc8bc65 data/risus/loot_table/blocks/bone_pillar.json
 296b06dde1d726b0572f5d1d865b42877e318ebe data/risus/loot_table/blocks/bone_slab.json
 70d3e72c15a5e81628dba5d0e1c81630276546ee data/risus/loot_table/blocks/bone_stairs.json
 00ab5e7f42299bd3cd16e75b261679dae3671cf3 data/risus/loot_table/blocks/bone_wall.json
@@ -95,6 +96,7 @@ c0bb3bcc86044f545418770a66de418f9a567c33 data/risus/loot_table/blocks/flattened_
 500d95171b0032a957f53bf0d507eda2f9c3089a data/risus/loot_table/blocks/flowering_imitation_scaleplate.json
 d2c164ace7351c657bf7bcb383b1196cfaca60ca data/risus/loot_table/blocks/flowering_unalloyed_scaleplate.json
 658728b498c47a36ece57151e424b69e668ed2a3 data/risus/loot_table/blocks/fossil.json
+0398fec9b47330e0cb1b3ac80b020d9ae50009a0 data/risus/loot_table/blocks/fossil_pillar.json
 bcc31712cd979e03b411952a0a08924a56ce92c9 data/risus/loot_table/blocks/fossil_slab.json
 d13e9a316df093d17857137add9c7ef8e0efc677 data/risus/loot_table/blocks/fossil_stairs.json
 831fa4bc6ec325b10a569c79f930fd4dd339cf85 data/risus/loot_table/blocks/fossil_wall.json

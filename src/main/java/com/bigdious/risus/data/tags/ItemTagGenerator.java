@@ -208,6 +208,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,RisusBlocks.EERIE_FENCE.asItem()
 		);
 
+		this.tag(RisusTags.Items.GRIMSTONES).add(
+			RisusBlocks.GRIMSTONE.asItem()
+			,RisusBlocks.POLISHED_GRIMSTONE.asItem()
+			,RisusBlocks.GRIMSTONE_BRICKS.asItem()
+		);
+
 
 
 

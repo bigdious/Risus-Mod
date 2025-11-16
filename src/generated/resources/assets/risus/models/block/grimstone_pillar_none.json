@@ -1,5 +1,5 @@
 {
-  "parent": "risus:block/pillar_none",
+  "parent": "risus:block/pillar/pillar_none",
   "textures": {
     "texture": "risus:block/grimstone_pillar_none"
   }

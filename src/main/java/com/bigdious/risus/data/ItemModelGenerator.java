@@ -189,6 +189,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.texture("wall", Risus.prefix("block/grimstone_blood_tiles"));
 		toBlock(RisusBlocks.CHISELED_GRIMSTONE.get());
 		toBlockModel(RisusBlocks.GRIMSTONE_PILLAR.get(), Risus.prefix("block/grimstone_pillar_base"));
+		toBlockModel(RisusBlocks.BONE_PILLAR.get(), Risus.prefix("block/bone_pillar_base"));
+		toBlockModel(RisusBlocks.FOSSIL_PILLAR.get(), Risus.prefix("block/fossil_pillar_base"));
 		toBlock(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 		toBlockModel(RisusBlocks.CURVED_RITUAL_BLOCK.get(), Risus.prefix("block/curved_ritual_block"));
 		toBlock(RisusBlocks.POLISHED_GRIMSTONE.get());

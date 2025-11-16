@@ -85,6 +85,7 @@ public class RisusTags {
 		public static final TagKey<Item> NOT_RELOCATABLE_TO = create("not_relocatable_to");
 		public static final TagKey<Item> ENCHANTED_BOOK_EQUIVALENT = create("enchanted_book_equivalent");
 		public static final TagKey<Item> GOTHIC_FENCES = create("gothic_fences");
+		public static final TagKey<Item> GRIMSTONES = create("grimstones");
 		public static final TagKey<Item> GLUTTONY_STUFF = create("gluttony_stuff");
 
 		private static TagKey<Item> create(String name) {
