@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/pillar/pillar_no_bottom_z",
+  "textures": {
+    "texture": "risus:block/grimstone_pillar_no_bottom"
+  }
+}

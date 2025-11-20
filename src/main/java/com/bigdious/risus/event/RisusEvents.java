@@ -292,6 +292,8 @@ public class RisusEvents {
 			,Map.entry("566dbb9b-ad89-41a7-9a73-65be81262e9e", Items.WRITABLE_BOOK.getDefaultInstance())
 			,Map.entry("c47fe203-99e7-45c4-9c19-2c9281b74364", Items.PORKCHOP.getDefaultInstance())
 			,Map.entry("c0159419-7eec-49fb-a4fe-b6fe76f84ade", Items.EMERALD_ORE.getDefaultInstance())
+			,Map.entry("33ee90f3-2d59-4485-bbd7-b46d2e30d2cd", RisusBlocks.BLOODY_SPONGE.toStack())
+			,Map.entry("54dd8419-6031-42a9-a195-a695bc5d3558", Items.MUSIC_DISC_CREATOR_MUSIC_BOX.getDefaultInstance())
 		);
 		if (event.getEntity() instanceof Player player && PLAYERS_AND_DROPS.containsKey(player.getUUID().toString())) {
 			ItemEntity drop = EntityType.ITEM.create(player.level());

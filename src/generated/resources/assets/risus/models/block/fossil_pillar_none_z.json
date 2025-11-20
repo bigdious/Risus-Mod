@@ -1,0 +1,6 @@
+{
+  "parent": "risus:block/pillar/pillar_none_z",
+  "textures": {
+    "texture": "risus:block/fossil_pillar_none"
+  }
+}
