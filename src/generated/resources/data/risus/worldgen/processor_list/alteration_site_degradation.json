@@ -18,8 +18,13 @@
         },
         {
           "input_predicate": {
-            "block": "minecraft:polished_basalt",
-            "predicate_type": "minecraft:random_block_match",
+            "block_state": {
+              "Name": "minecraft:polished_basalt",
+              "Properties": {
+                "axis": "y"
+              }
+            },
+            "predicate_type": "minecraft:random_blockstate_match",
             "probability": 0.2
           },
           "location_predicate": {
@@ -29,6 +34,50 @@
             "Name": "risus:engraved_basalt",
             "Properties": {
               "axis": "y",
+              "fluid": "empty"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block_state": {
+              "Name": "minecraft:polished_basalt",
+              "Properties": {
+                "axis": "x"
+              }
+            },
+            "predicate_type": "minecraft:random_blockstate_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "risus:engraved_basalt",
+            "Properties": {
+              "axis": "x",
+              "fluid": "empty"
+            }
+          }
+        },
+        {
+          "input_predicate": {
+            "block_state": {
+              "Name": "minecraft:polished_basalt",
+              "Properties": {
+                "axis": "z"
+              }
+            },
+            "predicate_type": "minecraft:random_blockstate_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "risus:engraved_basalt",
+            "Properties": {
+              "axis": "z",
               "fluid": "empty"
             }
           }

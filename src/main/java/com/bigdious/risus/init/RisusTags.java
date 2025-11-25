@@ -32,6 +32,7 @@ public class RisusTags {
 
 	public static class Biomes {
 		public static final TagKey<Biome> HAS_ALTERATION_SITE = create("has_structure/alteration_site");
+		public static final TagKey<Biome> HAS_GRASSY_SITE = create("has_structure/grassy_site");
 		public static final TagKey<Biome> HAS_GRASSY_MAW = create("has_structure/grassy_maw");
 		public static final TagKey<Biome> HAS_SANDY_MAW = create("has_structure/sandy_maw");
 		public static final TagKey<Biome> HAS_ENDY_MAW = create("has_structure/endy_maw");

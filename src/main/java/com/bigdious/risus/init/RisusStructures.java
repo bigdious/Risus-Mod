@@ -41,10 +41,19 @@ public class RisusStructures {
 	//based off of Undergarden's UGStructures class
 	public static final DeferredRegister<StructureType<?>> STRUCTURES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Risus.MODID);
 	public static final ResourceKey<StructureProcessorList> BIOME_BLOCK_ACTIVATION = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "biome_block_activation"));
+
 	public static final ResourceKey<Structure> ALTERATION_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureSet> ALTERATION_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureTemplatePool> ALTERATION_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureProcessorList> ALTERATION_SITE_DEGRADATION = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site_degradation"));
+	public static final ResourceKey<Structure> GRASSY_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_site"));
+	public static final ResourceKey<StructureSet> GRASSY_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_site"));
+	public static final ResourceKey<StructureTemplatePool> GRASSY_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_site"));
+	public static final ResourceKey<Structure> BURRIED_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
+	public static final ResourceKey<StructureSet> BURRIED_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
+	public static final ResourceKey<StructureTemplatePool> BURRIED_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
+
+
 	public static final ResourceKey<Structure> GRASSY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
 	public static final ResourceKey<StructureSet> GRASSY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
 	public static final ResourceKey<StructureTemplatePool> GRASSY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
@@ -116,6 +125,52 @@ public class RisusStructures {
 			Optional.empty(),
 			5,
 			ConstantHeight.of(VerticalAnchor.absolute(0)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.APPLY_WATERLOGGING
+		));
+
+		context.register(GRASSY_SITE, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_SITE),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
+					))
+				),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.BEARD_THIN
+			),
+			pools.getOrThrow(GRASSY_SITE_POOL),
+			Optional.empty(),
+			5,
+			ConstantHeight.of(VerticalAnchor.absolute(0)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.APPLY_WATERLOGGING
+		));
+
+		context.register(BURRIED_SITE, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_SITE),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
+					))
+				),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(BURRIED_SITE_POOL),
+			Optional.empty(),
+			5,
+			ConstantHeight.of(VerticalAnchor.absolute(-8)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
@@ -357,6 +412,12 @@ public class RisusStructures {
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
 			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
 
+		context.register(GRASSY_SITE_SET, new StructureSet(structures.getOrThrow(GRASSY_SITE),
+			new RandomSpreadStructurePlacement(136, 0, RandomSpreadType.LINEAR, 985328795)));
+
+		context.register(BURRIED_SITE_SET, new StructureSet(structures.getOrThrow(BURRIED_SITE),
+			new RandomSpreadStructurePlacement(204, 0, RandomSpreadType.LINEAR, 548753487)));
+
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
 			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
 
@@ -396,7 +457,20 @@ public class RisusStructures {
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("alteration_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
-			Pair.of(StructurePoolElement.single(name("alteration_site/1"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("alteration_site/1"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("alteration_site/2"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("alteration_site/3"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("alteration_site/4"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("alteration_site/5"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(BURRIED_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("burried_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(GRASSY_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("grassy_site/0")), 1),
+			Pair.of(StructurePoolElement.single(name("grassy_site/1")), 2)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GRASSY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -414,13 +488,16 @@ public class RisusStructures {
 		context.register(FAMILY_TREE_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 5),
 			Pair.of(StructurePoolElement.single(name("family_tree/1"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
-			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3)
+			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
+			Pair.of(StructurePoolElement.single(name("family_tree/3"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
+			Pair.of(StructurePoolElement.single(name("family_tree/4"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("angel_altar/0"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
 			Pair.of(StructurePoolElement.single(name("angel_altar/1"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
-			Pair.of(StructurePoolElement.single(name("angel_altar/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1)
+			Pair.of(StructurePoolElement.single(name("angel_altar/2"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 1),
+			Pair.of(StructurePoolElement.single(name("angel_altar/3"), processors.getOrThrow(GREAT_BODY_DEGRADATION)), 2)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(GREAT_BODY_A_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -442,8 +519,9 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FLOWER_FIELD_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("flower_field"),processors.getOrThrow(FLOWER_FIELD_WITHERING)), 1)
+			Pair.of(StructurePoolElement.single(name("flower_field/field"),processors.getOrThrow(FLOWER_FIELD_WITHERING)), 1)
 		), StructureTemplatePool.Projection.TERRAIN_MATCHING));
+
 
 		context.register(DUNGEON_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("dungeon"),processors.getOrThrow(DUNGEON_BLENDING)), 1)
@@ -475,6 +553,7 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/stalker_room")), 1),
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/singer_room")), 1),
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/zombie_room")), 1),
+			Pair.of(StructurePoolElement.single(name("dungeon_rooms/hex_room")), 1),
 			Pair.of(StructurePoolElement.single(name("dungeon_rooms/licker_room")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
@@ -492,6 +571,7 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("spawner/lover")), 1),
 			Pair.of(StructurePoolElement.single(name("spawner/creeper")), 1),
 			Pair.of(StructurePoolElement.single(name("spawner/spider")), 1),
+			Pair.of(StructurePoolElement.single(name("spawner/hex")), 1),
 			Pair.of(StructurePoolElement.single(name("spawner/enderman")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 	}
@@ -504,10 +584,21 @@ public class RisusStructures {
 					Blocks.AIR.defaultBlockState()
 				),
 				new ProcessorRule(
-					new RandomBlockMatchTest(Blocks.POLISHED_BASALT, 0.2F),
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.Y), 0.2F),
 					AlwaysTrueTest.INSTANCE,
-					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState()
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y)
+				),
+				new ProcessorRule(
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.X), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.X)
+				),
+				new ProcessorRule(
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.Z), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z)
 				)
+
 			))
 		)));
 
@@ -531,7 +622,7 @@ public class RisusStructures {
 		context.register(FLOWER_FIELD_WITHERING, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
 				new ProcessorRule(
-					new RandomBlockMatchTest(RisusBlocks.REGEN_ROSE.get(), 0.3F),
+					new RandomBlockMatchTest(RisusBlocks.REGEN_ROSE.get(), 0.6F),
 					AlwaysTrueTest.INSTANCE,
 					Blocks.AIR.defaultBlockState()
 				)

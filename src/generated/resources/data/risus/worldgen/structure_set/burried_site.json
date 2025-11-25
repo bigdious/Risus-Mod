@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 548753487,
+    "separation": 0,
+    "spacing": 204
+  },
+  "structures": [
+    {
+      "structure": "risus:burried_site",
+      "weight": 1
+    }
+  ]
+}

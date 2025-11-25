@@ -7,7 +7,7 @@
           "input_predicate": {
             "block": "risus:regen_rose",
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.3
+            "probability": 0.6
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"

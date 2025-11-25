@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 985328795,
+    "separation": 0,
+    "spacing": 136
+  },
+  "structures": [
+    {
+      "structure": "risus:grassy_site",
+      "weight": 1
+    }
+  ]
+}

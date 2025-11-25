@@ -58,6 +58,17 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "risus:dungeon_rooms/hex_room",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "risus:dungeon_rooms/licker_room",
         "processors": {
           "processors": []

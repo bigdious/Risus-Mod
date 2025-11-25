@@ -58,6 +58,17 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "risus:spawner/hex",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "risus:spawner/enderman",
         "processors": {
           "processors": []

@@ -3,9 +3,9 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:flower_field/field",
-        "processors": "risus:flower_field_withering",
-        "projection": "terrain_matching"
+        "location": "risus:burried_site/0",
+        "processors": "risus:alteration_site_degradation",
+        "projection": "rigid"
       },
       "weight": 1
     }
