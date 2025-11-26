@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-25T22:23:56.5579589	Registries
+// 1.21.1	2025-11-26T23:31:10.8422577	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -51,16 +51,18 @@ a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json
 90018c6e6a0a7383494283f5d819dc155b653ae8 data/risus/worldgen/biome/coalification_feigr.json
 67d6c3f8ef4033cb4d4c499dee14bd1109e60a6a data/risus/worldgen/biome/coalification_mork.json
 771b3b969eed39cf2d9cc11fe4cde0c68d603369 data/risus/worldgen/processor_list/alteration_site_degradation.json
+537ea1231d45ec180a736001cdf8493a6c347a61 data/risus/worldgen/processor_list/church_replacer.json
 c79b8f87e0d628cce628bfa80a103c35c6ba5f51 data/risus/worldgen/processor_list/draxolotl_remains_blending.json
 bb6cba1b58dfc9924d7d68bb1b215a33a5a148f4 data/risus/worldgen/processor_list/dungeon_blending.json
 7315c3016f0f2b83f37c682b3b7636b2ff507a00 data/risus/worldgen/processor_list/family_tree_popping.json
-6e6510bbfc7684e69a5b03d79487bb7f280fe345 data/risus/worldgen/processor_list/flower_field_withering.json
+cddeae9284db6b88bb4aa57c6536dfa52cfa0583 data/risus/worldgen/processor_list/flower_field_withering.json
 ef302e517e11d5ef7607d040a732f2589787bce4 data/risus/worldgen/processor_list/great_body_degradation.json
 24b56aa101c5938140177355b4f98b79e6aed735 data/risus/worldgen/processor_list/lab_spreading.json
 fbf1e355ed00bbdd7b8e2d88a536d3e7dc684f38 data/risus/worldgen/structure/alteration_site.json
 5a603f30ff92d2e4ee538c3204892980aec4ef20 data/risus/worldgen/structure/angel_altar.json
 0e0b736c95034d349ce7a069fed28ca483abcff8 data/risus/worldgen/structure/blood_well.json
 d1a57284505e84c2064ecaa733d7c13bb4b1b626 data/risus/worldgen/structure/burried_site.json
+1fefbb352874fd06266bc87208ad1e6d11b9ae65 data/risus/worldgen/structure/church.json
 ca9e0dd47b94ac8c7942665b3ee4f44de6f03792 data/risus/worldgen/structure/draxolotl_remains.json
 b8f53b28f1255a98a7fe4f6193be8873670440be data/risus/worldgen/structure/dungeon.json
 c6b03d7d6b3edb1facf975ba05a982bf61d96b8a data/risus/worldgen/structure/endy_maw.json
@@ -75,6 +77,7 @@ ffd044ea09c725f596365b133a123317dbd30ebe data/risus/worldgen/structure_set/alter
 06f3e746972653ceb8df98f2a54e9e067da7a8ce data/risus/worldgen/structure_set/angel_altar.json
 d9e0e3cfaf38fcd744c04f0831319d5d2e170746 data/risus/worldgen/structure_set/blood_well.json
 0c105c0796c892ed7390a20e37d739bb36f63b83 data/risus/worldgen/structure_set/burried_site.json
+56a8e4587d861078307390ccdc8a3a3a28d5f27e data/risus/worldgen/structure_set/church.json
 2c3e4bfd61c7fe118e910fc3309cf371bd7bb29d data/risus/worldgen/structure_set/draxolotl_remains.json
 f0887106c9e53c142cb9f9b733927fdc8cf9a578 data/risus/worldgen/structure_set/dungeon.json
 af24c6eb5b34590b8b43179b82b3d3a11d4bd019 data/risus/worldgen/structure_set/endy_maw.json
@@ -89,6 +92,8 @@ af24c6eb5b34590b8b43179b82b3d3a11d4bd019 data/risus/worldgen/structure_set/endy_
 e2422987b2ceabe6c33140b45cc5bee4552b14c8 data/risus/worldgen/template_pool/angel_altar.json
 4873c18046c4192c67a86e263848742594cc831b data/risus/worldgen/template_pool/blood_well.json
 e05977c9a8d04a69722dd99edaf1883bb960253a data/risus/worldgen/template_pool/burried_site.json
+e5ebd2e8424ab2d0a4af4e620155887fc06641bc data/risus/worldgen/template_pool/church.json
+f680859d03152be0a6f25c6565f4fe58f3140bcf data/risus/worldgen/template_pool/church_stuff.json
 d5a26f4b3ba1e57f25fbdcffde1f2aa92c09f453 data/risus/worldgen/template_pool/draxolotl_remains.json
 0295f595ecd28fa815a075b1653e6e84ca52a5f4 data/risus/worldgen/template_pool/dungeon.json
 c461f080f31f092ad1f8769e750ca42c672be014 data/risus/worldgen/template_pool/dungeon_rooms.json
@@ -101,6 +106,7 @@ cf2d02e24fc3ccf92a1644b70a0f8138bb7d32a3 data/risus/worldgen/template_pool/great
 1eb4c9e99504f260ca6212a7f6d764d97872dc5b data/risus/worldgen/template_pool/great_body_b.json
 6a7e731c0901c01d660106900d26845eadf63af1 data/risus/worldgen/template_pool/lab.json
 6e151bb221379a6e9d054798aab062caa07ee49f data/risus/worldgen/template_pool/lab_start.json
+a65a3e9038dd7366ed638a3447041c7a6f90a149 data/risus/worldgen/template_pool/rigid_stuff.json
 2695b0897da84f18c0c7862c8cd9ba9f5facd728 data/risus/worldgen/template_pool/sandy_maw.json
 0eafde2bfc1c205a48c97cfb415f123811c06f81 data/risus/worldgen/template_pool/spawner.json
 fe42689598dcf74aa441dcc5935fd89cf47e1b88 data/risus/worldgen/template_pool/trigger.json

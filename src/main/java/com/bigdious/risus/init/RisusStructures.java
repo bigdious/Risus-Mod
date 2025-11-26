@@ -75,6 +75,11 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> ANGEL_ALTAR_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel_altar"));
 	public static final ResourceKey<StructureTemplatePool> ANGEL_ALTAR_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel_altar"));
 
+	public static final ResourceKey<Structure> CHURCH = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church"));
+	public static final ResourceKey<StructureSet> CHURCH_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church"));
+	public static final ResourceKey<StructureTemplatePool> CHURCH_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church"));
+
+
 	public static final ResourceKey<Structure> GREAT_BODY = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
 	public static final ResourceKey<StructureSet> GREAT_BODY_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
 	public static final ResourceKey<StructureTemplatePool> GREAT_BODY_A_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body_a"));
@@ -104,11 +109,34 @@ public class RisusStructures {
 	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
 	public static final ResourceKey<StructureTemplatePool> SPAWNER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spawner"));
 	public static final ResourceKey<StructureTemplatePool> LAB = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab"));
+	public static final ResourceKey<StructureTemplatePool> CHURCH_STUFF = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church_stuff"));
+	public static final ResourceKey<StructureTemplatePool> RIGID_STUFF = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "rigid_stuff"));
+
 	public static final ResourceKey<StructureProcessorList> LAB_SPREADING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab_spreading"));
+	public static final ResourceKey<StructureProcessorList> CHURCH_REPLACER = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church_replacer"));
 
 	public static void bootstrapStructures(BootstrapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+		context.register(CHURCH, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_CHURCH),
+				Map.of(),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(CHURCH_POOL),
+			Optional.empty(),
+			10,
+			ConstantHeight.of(VerticalAnchor.absolute(-22)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			100,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
 
 		context.register(ALTERATION_SITE, new JigsawStructure(
 			new Structure.StructureSettings(
@@ -409,6 +437,9 @@ public class RisusStructures {
 	public static void bootstrapSets(BootstrapContext<StructureSet> context) {
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
+		context.register(CHURCH_SET, new StructureSet(structures.getOrThrow(CHURCH),
+			new RandomSpreadStructurePlacement(180, 0, RandomSpreadType.TRIANGULAR, 867534873)));
+
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
 			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
 
@@ -454,6 +485,10 @@ public class RisusStructures {
 	public static void bootstrapPools(BootstrapContext<StructureTemplatePool> context) {
 		Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);
 		HolderGetter<StructureProcessorList> processors = context.lookup(Registries.PROCESSOR_LIST);
+
+		context.register(CHURCH_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("church_front"), processors.getOrThrow(CHURCH_REPLACER)), 1)
+		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("alteration_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1),
@@ -565,6 +600,20 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("lab/lab_main"), processors.getOrThrow(LAB_SPREADING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
+		context.register(CHURCH_STUFF, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("church_stuff/back"), processors.getOrThrow(CHURCH_REPLACER)), 1),
+			Pair.of(StructurePoolElement.single(name("church_stuff/entrance"), processors.getOrThrow(CHURCH_REPLACER)), 1),
+			Pair.of(StructurePoolElement.single(name("church_stuff/main"), processors.getOrThrow(CHURCH_REPLACER)), 1),
+			Pair.of(StructurePoolElement.single(name("church_stuff/ritual_0")), 1),
+			Pair.of(StructurePoolElement.single(name("church_stuff/ritual_1")), 1),
+			Pair.of(StructurePoolElement.single(name("church_stuff/ritual_2")), 1)
+
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(RIGID_STUFF, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("rigid_stuff/statue")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
 		context.register(SPAWNER, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("spawner/holder")),  1),
 			Pair.of(StructurePoolElement.single(name("spawner/weaver")), 1),
@@ -582,6 +631,32 @@ public class RisusStructures {
 					new RandomBlockMatchTest(RisusBlocks.SPREADING_REMAINS.get(), 0.5F),
 					AlwaysTrueTest.INSTANCE,
 					Blocks.AIR.defaultBlockState()
+				),
+				new ProcessorRule(
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.Y), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y)
+				),
+				new ProcessorRule(
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.X), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.X)
+				),
+				new ProcessorRule(
+					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.Z), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ENGRAVED_BASALT.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z)
+				)
+
+			))
+		)));
+
+		context.register(CHURCH_REPLACER, new StructureProcessorList(List.of(
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.GRIMSTONE.get(), 0.2F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.ACTIVE_GRIMSTONE.get().defaultBlockState()
 				),
 				new ProcessorRule(
 					new RandomBlockStateMatchTest(Blocks.POLISHED_BASALT.defaultBlockState().setValue(AXIS, Direction.Axis.Y), 0.2F),
@@ -622,7 +697,7 @@ public class RisusStructures {
 		context.register(FLOWER_FIELD_WITHERING, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
 				new ProcessorRule(
-					new RandomBlockMatchTest(RisusBlocks.REGEN_ROSE.get(), 0.6F),
+					new RandomBlockMatchTest(RisusBlocks.REGEN_ROSE.get(), 0.9F),
 					AlwaysTrueTest.INSTANCE,
 					Blocks.AIR.defaultBlockState()
 				)

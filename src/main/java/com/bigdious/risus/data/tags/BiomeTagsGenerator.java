@@ -308,5 +308,34 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 		tag(RisusTags.Biomes.HAS_DRAXOLOTL_REMAINS)
 			.add(Biomes.NETHER_WASTES)
 		;
+		tag(RisusTags.Biomes.HAS_CHURCH).add(
+				Biomes.BAMBOO_JUNGLE,
+				Biomes.BIRCH_FOREST,
+				Biomes.CHERRY_GROVE,
+				Biomes.DARK_FOREST,
+				Biomes.FOREST,
+				Biomes.GROVE,
+				Biomes.JUNGLE,
+				Biomes.MEADOW,
+				Biomes.OLD_GROWTH_BIRCH_FOREST,
+				Biomes.OLD_GROWTH_PINE_TAIGA,
+				Biomes.OLD_GROWTH_SPRUCE_TAIGA,
+				Biomes.PLAINS,
+				Biomes.SAVANNA,
+				Biomes.SAVANNA_PLATEAU,
+				Biomes.SPARSE_JUNGLE,
+				Biomes.SUNFLOWER_PLAINS,
+				Biomes.WINDSWEPT_FOREST,
+				Biomes.WINDSWEPT_GRAVELLY_HILLS,
+				Biomes.WINDSWEPT_HILLS,
+				Biomes.WINDSWEPT_SAVANNA
+			)
+			.addTag(Tags.Biomes.IS_BIRCH_FOREST)
+			.addTag(Tags.Biomes.IS_JUNGLE)
+			.addTag(Tags.Biomes.IS_FOREST)
+			.addTag(Tags.Biomes.IS_OLD_GROWTH)
+			.addTag(Tags.Biomes.IS_SAVANNA)
+			.addTag(Tags.Biomes.IS_HILL)
+		;
 	}
 }

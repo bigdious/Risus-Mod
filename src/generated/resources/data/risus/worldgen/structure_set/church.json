@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 867534873,
+    "separation": 0,
+    "spacing": 180,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "risus:church",
+      "weight": 1
+    }
+  ]
+}
