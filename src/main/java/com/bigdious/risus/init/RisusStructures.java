@@ -52,6 +52,9 @@ public class RisusStructures {
 	public static final ResourceKey<Structure> BURRIED_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
 	public static final ResourceKey<StructureSet> BURRIED_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
 	public static final ResourceKey<StructureTemplatePool> BURRIED_SITE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "burried_site"));
+	public static final ResourceKey<Structure> BEDROCK_HAND = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
+	public static final ResourceKey<StructureSet> BEDROCK_HAND_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
+	public static final ResourceKey<StructureTemplatePool> BEDROCK_HAND_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
 
 
 	public static final ResourceKey<Structure> GRASSY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
@@ -129,7 +132,7 @@ public class RisusStructures {
 			pools.getOrThrow(CHURCH_POOL),
 			Optional.empty(),
 			10,
-			ConstantHeight.of(VerticalAnchor.absolute(-22)),
+			ConstantHeight.of(VerticalAnchor.absolute(-21)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			100,
@@ -201,6 +204,29 @@ public class RisusStructures {
 			ConstantHeight.of(VerticalAnchor.absolute(-8)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			80,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.APPLY_WATERLOGGING
+		));
+
+		context.register(BEDROCK_HAND, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_DUNGEON),
+				Map.of(
+					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
+						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
+					))
+				),
+				GenerationStep.Decoration.UNDERGROUND_DECORATION,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(BEDROCK_HAND_POOL),
+			Optional.empty(),
+			5,
+			ConstantHeight.of(VerticalAnchor.absolute(-64)),
+			false,
+			Optional.empty(),
 			80,
 			List.of(),
 			DimensionPadding.ZERO,
@@ -344,7 +370,7 @@ public class RisusStructures {
 			Optional.empty(),
 			5,
 			ConstantHeight.of(VerticalAnchor.absolute(-1)),
-			false,
+			true,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
 			List.of(),
@@ -425,9 +451,9 @@ public class RisusStructures {
 			pools.getOrThrow(DRAXOLOTL_REMAINS_POOL),
 			Optional.empty(),
 			6,
-			UniformHeight.of(VerticalAnchor.aboveBottom(-122), VerticalAnchor.aboveBottom(-28)),
+			ConstantHeight.of(VerticalAnchor.absolute(28)),
 			false,
-			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			Optional.empty(),
 			80,
 			List.of(),
 			DimensionPadding.ZERO,
@@ -448,6 +474,9 @@ public class RisusStructures {
 
 		context.register(BURRIED_SITE_SET, new StructureSet(structures.getOrThrow(BURRIED_SITE),
 			new RandomSpreadStructurePlacement(204, 0, RandomSpreadType.LINEAR, 548753487)));
+
+		context.register(BEDROCK_HAND_SET, new StructureSet(structures.getOrThrow(BEDROCK_HAND),
+			new RandomSpreadStructurePlacement(102, 0, RandomSpreadType.TRIANGULAR, 364875348)));
 
 		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
 			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
@@ -503,6 +532,10 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("burried_site/0"), processors.getOrThrow(ALTERATION_SITE_DEGRADATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
+		context.register(BEDROCK_HAND_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("bedrock_hand")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
 		context.register(GRASSY_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("grassy_site/0")), 1),
 			Pair.of(StructurePoolElement.single(name("grassy_site/1")), 2)
@@ -524,8 +557,8 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 5),
 			Pair.of(StructurePoolElement.single(name("family_tree/1"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
 			Pair.of(StructurePoolElement.single(name("family_tree/2"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
-			Pair.of(StructurePoolElement.single(name("family_tree/3"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3),
-			Pair.of(StructurePoolElement.single(name("family_tree/4"), processors.getOrThrow(FAMILY_TREE_POPPING)), 3)
+			Pair.of(StructurePoolElement.single(name("family_tree/3"), processors.getOrThrow(FAMILY_TREE_POPPING)), 2),
+			Pair.of(StructurePoolElement.single(name("family_tree/4"), processors.getOrThrow(FAMILY_TREE_POPPING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ANGEL_ALTAR_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -756,16 +789,6 @@ public class RisusStructures {
 					new RandomBlockMatchTest(RisusBlocks.BONE_WALL.get(), 0.6F),
 					AlwaysTrueTest.INSTANCE,
 					RisusBlocks.TISSUE.get().defaultBlockState()
-				),
-				new ProcessorRule(
-					new RandomBlockMatchTest(Blocks.NETHERRACK, 0.2F),
-					AlwaysTrueTest.INSTANCE,
-					Blocks.BASALT.defaultBlockState()
-				),
-				new ProcessorRule(
-					new RandomBlockMatchTest(Blocks.NETHERRACK, 0.2F),
-					AlwaysTrueTest.INSTANCE,
-					Blocks.SOUL_SAND.defaultBlockState()
 				)
 			))
 		)));

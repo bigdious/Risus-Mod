@@ -51,7 +51,7 @@ public class Hex extends Vex {
 	public static AttributeSupplier.Builder attributes() {
 		return Mob.createMobAttributes()
 			.add(Attributes.MAX_HEALTH, 14.0D)
-			.add(Attributes.ATTACK_DAMAGE, 4.0D);
+			.add(Attributes.ATTACK_DAMAGE, 0.0D);
 	}
 
 

@@ -7,7 +7,7 @@
   "size": 10,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": -22
+    "absolute": -21
   },
   "start_pool": "risus:church",
   "step": "surface_structures",

@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 364875348,
+    "separation": 0,
+    "spacing": 102,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "risus:bedrock_hand",
+      "weight": 1
+    }
+  ]
+}
