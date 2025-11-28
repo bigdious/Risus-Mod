@@ -45,6 +45,8 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				false, false, false)
 			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("enter_site", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ALTERATION_SITE))))
+			.addCriterion("enter_site2", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
+			.addCriterion("enter_site3", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
 			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
 			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
 			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
@@ -63,7 +65,10 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusBlocks.ALTERATION_CATALYST.get(),
 				Component.translatable("advancement.risus.site_zero"),
 				Component.translatable("advancement.risus.site_zero.desc"), null, AdvancementType.TASK, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.OR)
 			.addCriterion("enter_site1", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ALTERATION_SITE))))
+			.addCriterion("enter_site2", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
+			.addCriterion("enter_site3", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
 			.save(consumer, "risus:site_zero");
 
 		AdvancementHolder angel = Advancement.Builder.advancement().parent(first)

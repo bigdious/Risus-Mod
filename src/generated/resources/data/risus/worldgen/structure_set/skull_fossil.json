@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 3425687,
+    "separation": 0,
+    "spacing": 183
+  },
+  "structures": [
+    {
+      "structure": "risus:skull_fossil",
+      "weight": 1
+    }
+  ]
+}

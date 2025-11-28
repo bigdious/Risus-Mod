@@ -82,6 +82,11 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> CHURCH_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church"));
 	public static final ResourceKey<StructureTemplatePool> CHURCH_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church"));
 
+	public static final ResourceKey<Structure> SKULL_FOSSIL = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skull_fossil"));
+	public static final ResourceKey<StructureSet> SKULL_FOSSIL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skull_fossil"));
+	public static final ResourceKey<StructureTemplatePool> SKULL_FOSSIL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skull_fossil"));
+
+
 
 	public static final ResourceKey<Structure> GREAT_BODY = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
 	public static final ResourceKey<StructureSet> GREAT_BODY_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
@@ -136,6 +141,25 @@ public class RisusStructures {
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			100,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.IGNORE_WATERLOGGING
+		));
+
+		context.register(SKULL_FOSSIL, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_FOSSILS),
+				Map.of(),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.NONE
+			),
+			pools.getOrThrow(SKULL_FOSSIL_POOL),
+			Optional.empty(),
+			10,
+			ConstantHeight.of(VerticalAnchor.absolute(-6)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			50,
 			List.of(),
 			DimensionPadding.ZERO,
 			LiquidSettings.IGNORE_WATERLOGGING
@@ -402,7 +426,7 @@ public class RisusStructures {
 				biomes.getOrThrow(RisusTags.Biomes.HAS_BLOOD_WELL),
 				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.BEARD_THIN
+				TerrainAdjustment.NONE
 			),
 			pools.getOrThrow(BLOOD_WELL_POOL),
 			Optional.empty(),
@@ -466,6 +490,9 @@ public class RisusStructures {
 		context.register(CHURCH_SET, new StructureSet(structures.getOrThrow(CHURCH),
 			new RandomSpreadStructurePlacement(180, 0, RandomSpreadType.TRIANGULAR, 867534873)));
 
+		context.register(SKULL_FOSSIL_SET, new StructureSet(structures.getOrThrow(SKULL_FOSSIL),
+			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.LINEAR, 3425687)));
+
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
 			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
 
@@ -517,6 +544,10 @@ public class RisusStructures {
 
 		context.register(CHURCH_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("church_front"), processors.getOrThrow(CHURCH_REPLACER)), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(SKULL_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("skull_fossil")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(

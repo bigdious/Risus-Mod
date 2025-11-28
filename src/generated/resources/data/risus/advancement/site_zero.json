@@ -16,6 +16,38 @@
         ]
       },
       "trigger": "minecraft:location"
+    },
+    "enter_site2": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:burried_site"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "enter_site3": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:grassy_site"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
     }
   },
   "display": {
@@ -32,7 +64,9 @@
   },
   "requirements": [
     [
-      "enter_site1"
+      "enter_site1",
+      "enter_site2",
+      "enter_site3"
     ]
   ],
   "sends_telemetry_event": true

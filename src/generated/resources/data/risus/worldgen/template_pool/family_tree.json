@@ -34,7 +34,7 @@
         "processors": "risus:family_tree_popping",
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 2
     },
     {
       "element": {
@@ -43,7 +43,7 @@
         "processors": "risus:family_tree_popping",
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 1
     }
   ],
   "fallback": "minecraft:empty"

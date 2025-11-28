@@ -128,6 +128,7 @@ public class Risus {
 		generator.addProvider(isServer, new DamageTypeTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
 		generator.addProvider(isServer, new EnchantmentTagGenerator(packOutput, registryDataGenerator.getRegistryProvider(), existingFileHelper));
 		generator.addProvider(isServer, new EntityTagGenerator(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(isServer, new StructureTagGenerator(packOutput, lookupProvider));
 		generator.addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
 	}

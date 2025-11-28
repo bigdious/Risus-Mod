@@ -12,6 +12,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
+import net.minecraft.world.level.levelgen.structure.Structure;
 
 public class RisusTags {
 	public static class Blocks {
@@ -45,6 +46,7 @@ public class RisusTags {
 		public static final TagKey<Biome> HAS_LAB = create("has_structure/lab");
 		public static final TagKey<Biome> HAS_DRAXOLOTL_REMAINS = create("has_structure/draxolotl_remains");
 		public static final TagKey<Biome> HAS_CHURCH = create("has_structure/church");
+		public static final TagKey<Biome> HAS_FOSSILS = create("has_structure/fossils");
 
 		private static TagKey<Biome> create(String name) {
 			return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -149,6 +151,14 @@ public class RisusTags {
 
 		private static TagKey<BannerPattern> create(String name) {
 			return TagKey.create(Registries.BANNER_PATTERN, Risus.prefix(name));
+		}
+	}
+
+	public static class Structures {
+		public static final TagKey<Structure> RISUS = create("risus");
+
+		private static TagKey<Structure> create(String name) {
+			return TagKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 		}
 	}
 }
