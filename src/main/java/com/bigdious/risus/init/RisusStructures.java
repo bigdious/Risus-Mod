@@ -86,6 +86,9 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> SKULL_FOSSIL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skull_fossil"));
 	public static final ResourceKey<StructureTemplatePool> SKULL_FOSSIL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "skull_fossil"));
 
+	public static final ResourceKey<Structure> RIBS_FOSSIL = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ribs_fossil"));
+	public static final ResourceKey<StructureSet> RIBS_FOSSIL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ribs_fossil"));
+	public static final ResourceKey<StructureTemplatePool> RIBS_FOSSIL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ribs_fossil"));
 
 
 	public static final ResourceKey<Structure> GREAT_BODY = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
@@ -163,6 +166,25 @@ public class RisusStructures {
 			List.of(),
 			DimensionPadding.ZERO,
 			LiquidSettings.IGNORE_WATERLOGGING
+		));
+
+		context.register(RIBS_FOSSIL, new JigsawStructure(
+			new Structure.StructureSettings(
+				biomes.getOrThrow(RisusTags.Biomes.HAS_FOSSILS),
+				Map.of(),
+				GenerationStep.Decoration.SURFACE_STRUCTURES,
+				TerrainAdjustment.BEARD_THIN
+			),
+			pools.getOrThrow(RIBS_FOSSIL_POOL),
+			Optional.empty(),
+			10,
+			ConstantHeight.of(VerticalAnchor.absolute(0)),
+			false,
+			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			50,
+			List.of(),
+			DimensionPadding.ZERO,
+			LiquidSettings.APPLY_WATERLOGGING
 		));
 
 		context.register(ALTERATION_SITE, new JigsawStructure(
@@ -493,6 +515,9 @@ public class RisusStructures {
 		context.register(SKULL_FOSSIL_SET, new StructureSet(structures.getOrThrow(SKULL_FOSSIL),
 			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.LINEAR, 3425687)));
 
+		context.register(RIBS_FOSSIL_SET, new StructureSet(structures.getOrThrow(RIBS_FOSSIL),
+			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.TRIANGULAR, 836475)));
+
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
 			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
 
@@ -548,6 +573,10 @@ public class RisusStructures {
 
 		context.register(SKULL_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("skull_fossil")), 1)
+		), StructureTemplatePool.Projection.RIGID));
+
+		context.register(RIBS_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("ribs_fossil")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(

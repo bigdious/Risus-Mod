@@ -9,7 +9,9 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -136,5 +138,30 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 		return state.getValue(MultiloggingEnum.FLUIDLOGGED) == MultiloggingEnum.LAVA ? 15 : 0;
 	}
 
+	@Override
+	protected BlockState mirror(BlockState state, Mirror mirror) {
+		return state.setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
+	}
+
+	@Override
+	protected BlockState rotate(BlockState state, Rotation rot) {
+		switch (rot) {
+			case COUNTERCLOCKWISE_90:
+			case CLOCKWISE_90:
+				switch (state.getValue(AXIS)) {
+					case X -> {
+						return state.setValue(AXIS, Direction.Axis.Z).setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
+					}
+					case Z -> {
+						return state.setValue(AXIS, Direction.Axis.X);
+					}
+					default -> {
+						return state;
+					}
+				}
+			default:
+				return state;
+		}
+	}
 
 }
