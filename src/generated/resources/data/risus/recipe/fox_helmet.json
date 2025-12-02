@@ -1,0 +1,15 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:spruce_log"
+  },
+  "additional_data": {
+    "risus:ability_variant": "fox"
+  },
+  "base": {
+    "item": "minecraft:sweet_berries"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

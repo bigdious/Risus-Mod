@@ -81,11 +81,7 @@ public class Litter extends TamableAnimal {
 		if (!this.unableToMoveToOwner()) {
 			this.lightCheckInterval--;
 			if (this.lightCheckInterval <= 0) {
-				if (this.level().getBrightness(LightLayer.BLOCK, this.blockPosition()) <= 3 && this.level().isEmptyBlock(this.blockPosition())) {
-					if (this.level().canSeeSky(this.blockPosition()) && this.level().isDay()) {
-						this.lightCheckInterval = 100;
-						return;
-					}
+				if (this.level().getBrightness(LightLayer.BLOCK, this.blockPosition()) <= 3 && (this.level().getBrightness(LightLayer.SKY, this.blockPosition()) <= 3 || this.level().isNight()) && this.level().isEmptyBlock(this.blockPosition())) {
 					BlockState excrement = RisusBlocks.LIGHT_EXCREMENT.get().defaultBlockState().setValue(LightExcrementBlock.FACING, Direction.UP);
 					if (excrement.canSurvive(this.level(), this.blockPosition()) && this.level().getBlockState(this.blockPosition()).isAir()) {
 						this.level().setBlockAndUpdate(this.blockPosition(), excrement);

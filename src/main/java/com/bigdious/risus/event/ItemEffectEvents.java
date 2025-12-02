@@ -453,6 +453,7 @@ public class ItemEffectEvents {
 					ability.equals("zombie") && lookingEntity.getType() == EntityType.ZOMBIE ||
 					ability.equals("wither_skeleton") && lookingEntity.getType() == EntityType.WITHER_SKELETON ||
 					ability.equals("piglin") && lookingEntity.getType() == EntityType.PIGLIN ||
+					(ability.equals("fox") || ability.equals("snow_fox")) && lookingEntity.getType() == EntityType.RABBIT ||
 					(
 						ability.equals("tuxedo_cat") ||
 							ability.equals("black_cat") ||
@@ -531,7 +532,7 @@ public class ItemEffectEvents {
 					BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 					//if the logic gives you a headache, you are not alone
 					for(BlockPos blockpos : BlockPos.betweenClosed(blockpos1.offset(-i, -1, -i), blockpos1.offset(i, -1, i))) {
-						if ((!level.canSeeSky(blockpos) || ((level.canSeeSky(blockpos) && !level.isDay()))) && level.getBrightness(LightLayer.BLOCK, blockpos) < 1) {
+						if ((level.getBrightness(LightLayer.SKY, blockpos) < 1 || level.isNight()) && level.getBrightness(LightLayer.BLOCK, blockpos) < 1) {
 							if (blockpos.closerToCenterThan(player.position(), i)) {
 								blockpos$mutableblockpos.set(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
 								BlockState blockstate1 = level.getBlockState(blockpos$mutableblockpos);

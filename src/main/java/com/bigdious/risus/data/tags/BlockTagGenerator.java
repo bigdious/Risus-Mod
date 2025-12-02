@@ -435,6 +435,22 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			Blocks.VERDANT_FROGLIGHT,
 			Blocks.SCULK_CATALYST,
 			Blocks.CRYING_OBSIDIAN,
+			RisusBlocks.WHITE_MOSAIC_LAMP.get(),
+			RisusBlocks.LIGHT_GRAY_MOSAIC_LAMP.get(),
+			RisusBlocks.GRAY_MOSAIC_LAMP.get(),
+			RisusBlocks.BLACK_MOSAIC_LAMP.get(),
+			RisusBlocks.BROWN_MOSAIC_LAMP.get(),
+			RisusBlocks.RED_MOSAIC_LAMP.get(),
+			RisusBlocks.ORANGE_MOSAIC_LAMP.get(),
+			RisusBlocks.YELLOW_MOSAIC_LAMP.get(),
+			RisusBlocks.LIME_MOSAIC_LAMP.get(),
+			RisusBlocks.GREEN_MOSAIC_LAMP.get(),
+			RisusBlocks.CYAN_MOSAIC_LAMP.get(),
+			RisusBlocks.LIGHT_BLUE_MOSAIC_LAMP.get(),
+			RisusBlocks.BLUE_MOSAIC_LAMP.get(),
+			RisusBlocks.PURPLE_MOSAIC_LAMP.get(),
+			RisusBlocks.MAGENTA_MOSAIC_LAMP.get(),
+			RisusBlocks.PINK_MOSAIC_LAMP.get(),
 			RisusBlocks.LAUGHING_OBSIDIAN.get());
 
 		tag(BlockTags.CAULDRONS).add(RisusBlocks.BLOOD_CAULDRON.get());

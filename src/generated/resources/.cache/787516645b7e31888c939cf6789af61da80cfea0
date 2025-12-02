@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-16T13:58:13.608672	Tags for minecraft:block mod id risus
+// 1.21.1	2025-12-02T19:32:59.4314013	Tags for minecraft:block mod id risus
 8c85383a0ff4d19a7784c646e12dfcfb922eca02 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/block/fence_gates.json
@@ -40,7 +40,7 @@ fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/block/wooden_slabs.
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/block/bondknot_logs.json
 086a5ada21429600844477604ecba07e6ef5c61a data/risus/tags/block/copper_amalgam_variation.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/block/joyflame_fire_base_blocks.json
-cb96af7a6282aed3beecbf9dcad73a664d876d76 data/risus/tags/block/litter_allowed_light_blocks.json
+c51b9132c86a5e71c340a87838752d0b4f192bd7 data/risus/tags/block/litter_allowed_light_blocks.json
 241d15bc8373940381fcf82bc1cfc9f31c4ac6be data/risus/tags/block/proliferable_rocks.json
 3b731f7f5487378cbb074fd935a6899a188d2b6f data/risus/tags/block/proliferable_soils.json
 c710aa2a2f57c50e954278c2d0aea251a130830e data/risus/tags/block/remains.json

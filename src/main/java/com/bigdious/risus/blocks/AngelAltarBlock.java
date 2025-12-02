@@ -5,17 +5,17 @@ import com.bigdious.risus.entity.creatures.Angel;
 import com.bigdious.risus.init.RisusEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -26,6 +26,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.Optional;
+import java.util.function.Function;
 
 public class AngelAltarBlock extends Block implements SimpleMultiloggedBlock {
 
@@ -87,7 +90,7 @@ public class AngelAltarBlock extends Block implements SimpleMultiloggedBlock {
 
 	private void explode(Level level, BlockPos pos) {
 		Vec3 vec3 = pos.getCenter().add(0, 2, 0);
-		level.explode(null, level.damageSources().magic(), null, vec3, 3.0F, true, Level.ExplosionInteraction.BLOCK);
+		level.explode(null, null, new SimpleExplosionDamageCalculator(false, false, Optional.of(4F), BuiltInRegistries.BLOCK.getTag(BlockTags.BLOCKS_WIND_CHARGE_EXPLOSIONS).map(Function.identity())), vec3, 3.0F, false, Level.ExplosionInteraction.BLOCK);
 	}
 	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {

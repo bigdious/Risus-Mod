@@ -440,6 +440,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye", " Abyssal Eye Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.smile", " Smile Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.great_stool", " Great Stool");
+		this.add("tooltip.risus.sinner_robes_helmet.fox", " Fox Mask");
+		this.add("tooltip.risus.sinner_robes_helmet.snow_fox", " Snow Fox Mask");
 
 		this.add("tooltip.risus.sinner_robes_helmet.skeleton.desc", " Less noticed by Skeletons");
 		this.add("tooltip.risus.sinner_robes_helmet.creeper.desc", " Less noticed by Creepers");
@@ -475,6 +477,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_helmet.golden_eye.desc", " Immune to Stalkers");
 		this.add("tooltip.risus.sinner_robes_helmet.abyssal_eye.desc", " Less noticed by Offsprings");
 		this.add("tooltip.risus.sinner_robes_helmet.smile.desc", " Less noticed by Offsprings");
+		this.add("tooltip.risus.sinner_robes_helmet.fox.desc", " Less noticed by Rabbits");
+		this.add("tooltip.risus.sinner_robes_helmet.snow_fox.desc", " Less noticed by Rabbits");
 		this.add("tooltip.risus.sinner_robes_helmet.great_stool.button_press", " Press the %s key for Authority.");
 		this.add("tooltip.risus.sinner_robes_helmet.spyglass.button_press", " Press the %s key to toggle Zoom.");
 

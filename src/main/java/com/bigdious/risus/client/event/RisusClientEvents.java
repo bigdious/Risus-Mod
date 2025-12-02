@@ -26,6 +26,7 @@ import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
+import com.bigdious.risus.network.ScopePacket;
 import com.bigdious.risus.network.SummonGreatnessPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
@@ -55,6 +56,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -470,6 +472,7 @@ public class RisusClientEvents {
 	private static void spyGlassMode(InputEvent.Key event) {
 		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
 			if (event.getKey() == SPYGLASS_MODE.getKey().getValue() && SPYGLASS_MODE.consumeClick()) {
+				PacketDistributor.sendToServer(ScopePacket.INSTANCE);
 				isSpyGlassModeActive = !isSpyGlassModeActive;
 			}
 		}

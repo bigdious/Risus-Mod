@@ -1,0 +1,15 @@
+{
+  "type": "risus:smithing_upgrade",
+  "addition": {
+    "item": "minecraft:snow_block"
+  },
+  "additional_data": {
+    "risus:ability_variant": "snow_fox"
+  },
+  "base": {
+    "item": "minecraft:sweet_berries"
+  },
+  "template": {
+    "item": "risus:sinner_robes_helmet"
+  }
+}

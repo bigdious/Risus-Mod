@@ -1852,6 +1852,15 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, Risus.prefix("golden_eye_helmet"));
 
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Items.SPRUCE_LOG), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "fox")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("fox_helmet"));
+		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(Items.SWEET_BERRIES), Ingredient.of(Blocks.SNOW_BLOCK), RecipeCategory.COMBAT)
+			.attachData(RisusDataComponents.ABILITY_VARIANT, "snow_fox")
+			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
+			.save(consumer, Risus.prefix("snow_fox_helmet"));
+
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()),Ingredient.of(RisusBlocks.ASHEN_REMAINS), Ingredient.of(RisusItems.ORGANIC_MATTER.get()), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "abyssal_eye")
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))

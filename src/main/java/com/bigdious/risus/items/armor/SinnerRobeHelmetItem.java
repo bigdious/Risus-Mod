@@ -90,7 +90,9 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 		Map.entry("abyssal_eye", ChatFormatting.DARK_GRAY ),
 		Map.entry("smile", ChatFormatting.DARK_RED ),
 		Map.entry("great_stool", ChatFormatting.DARK_GRAY),
-		Map.entry("spyglass", ChatFormatting.GOLD)
+		Map.entry("spyglass", ChatFormatting.GOLD),
+		Map.entry("fox", ChatFormatting.GOLD),
+		Map.entry("snow_fox", ChatFormatting.WHITE)
 	);
 
 	@Override

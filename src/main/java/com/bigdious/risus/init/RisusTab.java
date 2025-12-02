@@ -366,6 +366,8 @@ public class RisusTab {
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "spotted_wolf");
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "striped_wolf");
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "woods_wolf");
+				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "fox");
+				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "snow_fox");
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "bleached_eye");
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "bloodshot_eye");
 				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "emerald_eye");

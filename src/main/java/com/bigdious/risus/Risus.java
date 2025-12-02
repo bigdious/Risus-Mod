@@ -89,6 +89,7 @@ public class Risus {
 		registrar.playToClient(CreateCritParticlePacket.TYPE, CreateCritParticlePacket.STREAM_CODEC, CreateCritParticlePacket::handle);
 		registrar.playToClient(UnyieldingTotemPacket.TYPE, UnyieldingTotemPacket.STREAM_CODEC, UnyieldingTotemPacket::handle);
 		registrar.playToServer(OpenBookPacket.TYPE, OpenBookPacket.STREAM_CODEC,(payload, context) -> OpenBookPacket.handle(context));
+		registrar.playToServer(ScopePacket.TYPE, ScopePacket.STREAM_CODEC,(payload, context) -> ScopePacket.handle(context));
 		registrar.playToServer(SummonGreatnessPacket.TYPE, SummonGreatnessPacket.STREAM_CODEC,(payload, context) -> SummonGreatnessPacket.handle(context));
 		registrar.playToClient(SyncCommonConfigPacket.TYPE, SyncCommonConfigPacket.STREAM_CODEC, SyncCommonConfigPacket::handle);
 	}

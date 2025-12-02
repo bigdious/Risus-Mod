@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-16T13:58:13.6242985	Recipes
+// 1.21.1	2025-12-02T19:32:59.4344025	Recipes
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
 75b9b3f3daea3cc20168ed8077c90bb6a6550ab6 data/minecraft/advancement/recipes/building_blocks/eerie_trapdoor_from_dark.json
@@ -323,6 +323,7 @@ bf370f8fede3ae0e4987b258845d58b66401cbb3 data/risus/advancement/recipes/combat/c
 3e28197c58f7e89cd6b61c7c1635bc0a2689b39a data/risus/advancement/recipes/combat/crown_of_bones.json
 e6b3f1b1bb9c21343b2c262b1d2b5cf58307311d data/risus/advancement/recipes/combat/emerald_eye_helmet.json
 3e4b3c63c246dd2b7d3d7ee631a5a40eef3b9e78 data/risus/advancement/recipes/combat/ender_eye_helmet.json
+bd331c877e6cede65cdda88eaad0034a920e6c70 data/risus/advancement/recipes/combat/fox_helmet.json
 c276196d71f6968dd0faaf9c6502144ae34ac62a data/risus/advancement/recipes/combat/golden_eye_helmet.json
 25a4a7c7289fe2ff8270ebd47b2493f5f936f4be data/risus/advancement/recipes/combat/gold_fist.json
 ee320fd43b18d3a40492400a0526091b95c16f35 data/risus/advancement/recipes/combat/great_stool_boots.json
@@ -346,6 +347,7 @@ a6e5a355832774954061feacacbf1d50311f90d2 data/risus/advancement/recipes/combat/s
 7e42c0bf35535febe02eb299d46a1bffd508ab95 data/risus/advancement/recipes/combat/skeleton_helmet.json
 317aade5443217ab6ec6d1039b1c561253a01185 data/risus/advancement/recipes/combat/smile_helmet.json
 669e0e2554602bdc2838720db1ec3bed64e8bbdd data/risus/advancement/recipes/combat/snowy_wolf_helmet.json
+ff9aff95dfb3e40c28c863a7405917368d9071e7 data/risus/advancement/recipes/combat/snow_fox_helmet.json
 44a5b4bfd280d4b3c93a2e12c15ec45548b892e4 data/risus/advancement/recipes/combat/spotted_wolf_helmet.json
 38c6e476ccd92c88f5b7ea10c316201db333871b data/risus/advancement/recipes/combat/spyglass_helmet.json
 396d836bd244f570d608e8645be6030a8ab81e48 data/risus/advancement/recipes/combat/striped_wolf_helmet.json
@@ -570,6 +572,7 @@ a78dd8995a16b6aa2bb250d339fa042f47499414 data/risus/recipe/fossils_to_slabs.json
 147d75edfd5b5b439408dcf3bf36bf99cbf604d0 data/risus/recipe/fossil_slab.json
 29b44649cfcd0950246de3403e66b997c2786b61 data/risus/recipe/fossil_stairs.json
 e1d7760e5df5ef61e2630934e2ca216456a6ecc0 data/risus/recipe/fossil_wall.json
+8dce2e47ebc275637f6a4d0e3adc7a5965faf529 data/risus/recipe/fox_helmet.json
 1e27daf186ef7816264662b5717228a6cb268dde data/risus/recipe/full_bone_block.json
 f72f1b531b301bbb3e8b770a6d4ca2bbefcbfde3 data/risus/recipe/full_bone_slab.json
 71c9aee05dd9efa168c8915cfc4403837a208d05 data/risus/recipe/full_bone_stairs.json
@@ -680,6 +683,7 @@ af7d9e0ba0345743ebafeefe5e0055b7f77831ac data/risus/recipe/smile_helmet.json
 171ba4bef5ffa7b2e4f2d02c3ae4f136cb8f370b data/risus/recipe/smoke_living_tissue.json
 3f9b93011af6f998bef6c8ec5b0c00ae26d5e49e data/risus/recipe/smoke_tissue.json
 13bc488327e9478eb1d9fd18690cb9e35f4e3c59 data/risus/recipe/snowy_wolf_helmet.json
+ee3d529eaa208ca28fcea1f5256f921a8ee91160 data/risus/recipe/snow_fox_helmet.json
 677c8f8bcc8636a319444c55d16cacf5f2ab43eb data/risus/recipe/spotted_wolf_helmet.json
 908657d0d136e9a7cf15a89b0b8df9d691811c50 data/risus/recipe/spyglass_helmet.json
 8aa249f0268682fdf3f0e129c413fd772eea220a data/risus/recipe/stitching_needle.json

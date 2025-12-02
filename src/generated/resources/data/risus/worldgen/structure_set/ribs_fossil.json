@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 836475,
+    "separation": 0,
+    "spacing": 183,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "risus:ribs_fossil",
+      "weight": 1
+    }
+  ]
+}

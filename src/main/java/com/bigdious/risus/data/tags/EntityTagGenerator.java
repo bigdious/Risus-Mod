@@ -151,5 +151,7 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				RisusEntities.HEX.get()
 			)
 		;
+
+
 	}
 }

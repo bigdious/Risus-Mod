@@ -94,7 +94,7 @@ public class FadingShadowBlock extends Block{
 
 	protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 
-		if ((random.nextInt(3) == 0 || this.fewerNeigboursThan(level, pos, 4)) && level.getMaxLocalRawBrightness(pos) > 11 - state.getValue(AGE) - state.getLightBlock(level, pos) && this.slightlyFade(state, level, pos)) {
+		if ((random.nextInt(3) == 0 || this.fewerNeigboursThan(level, pos, 4)) && (level.isDay() || level.getBrightness(LightLayer.BLOCK, pos) > 1) && this.slightlyFade(state, level, pos)) {
 			BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
 			for(Direction direction : Direction.values()) {

@@ -10,6 +10,22 @@
     "minecraft:verdant_froglight",
     "minecraft:sculk_catalyst",
     "minecraft:crying_obsidian",
+    "risus:white_mosaic_lamp",
+    "risus:light_gray_mosaic_lamp",
+    "risus:gray_mosaic_lamp",
+    "risus:black_mosaic_lamp",
+    "risus:brown_mosaic_lamp",
+    "risus:red_mosaic_lamp",
+    "risus:orange_mosaic_lamp",
+    "risus:yellow_mosaic_lamp",
+    "risus:lime_mosaic_lamp",
+    "risus:green_mosaic_lamp",
+    "risus:cyan_mosaic_lamp",
+    "risus:light_blue_mosaic_lamp",
+    "risus:blue_mosaic_lamp",
+    "risus:purple_mosaic_lamp",
+    "risus:magenta_mosaic_lamp",
+    "risus:pink_mosaic_lamp",
     "risus:laughing_obsidian"
   ]
 }

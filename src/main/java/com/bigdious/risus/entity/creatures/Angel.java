@@ -39,6 +39,8 @@ public class Angel extends Monster {
 			.add(Attributes.MAX_HEALTH, 100.0F)
 			.add(Attributes.MOVEMENT_SPEED, 0.0F)
 			.add(Attributes.ATTACK_DAMAGE, 5.0F)
+			.add(Attributes.KNOCKBACK_RESISTANCE, 4)
+			.add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 4)
 			.add(Attributes.FOLLOW_RANGE, 60.0F);
 	}
 
@@ -127,7 +129,7 @@ public class Angel extends Monster {
 					this.chargeTime = -40;
 					this.soundCD = 0;
 				}
-			} else if (this.chargeTime > 0) {
+			} else if (livingentity == null && this.chargeTime > 0) {
 				--this.chargeTime;
 			}
 
