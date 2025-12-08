@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-16T13:58:13.608672	Loot Tables
+// 1.21.1	2025-12-08T22:28:16.1767508	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -92,7 +92,7 @@ bfbeb9c5736761869da6bac03bb8c5338328aff5 data/risus/loot_table/blocks/eye_ender_
 c0bb3bcc86044f545418770a66de418f9a567c33 data/risus/loot_table/blocks/flattened_imitation_scales_block.json
 919ce802a368b36ce4f8703b94e617787a5ca43d data/risus/loot_table/blocks/flattened_scales_block.json
 6a102d45f4922be27d077e47296fc3b48594118c data/risus/loot_table/blocks/fleshy_skin.json
-09374bd4c378ce6d3553abb35d48a2f7608603f6 data/risus/loot_table/blocks/fleshy_spawner.json
+26cca5185d5ef11e3280ecf8e52d0945a25b1fd5 data/risus/loot_table/blocks/fleshy_spawner.json
 500d95171b0032a957f53bf0d507eda2f9c3089a data/risus/loot_table/blocks/flowering_imitation_scaleplate.json
 d2c164ace7351c657bf7bcb383b1196cfaca60ca data/risus/loot_table/blocks/flowering_unalloyed_scaleplate.json
 658728b498c47a36ece57151e424b69e668ed2a3 data/risus/loot_table/blocks/fossil.json
@@ -240,6 +240,9 @@ c0dd8c12b69352b8a7ba78179540768c3b8616ab data/risus/loot_table/blocks/yellow_mos
 13e6252ba431ee37f1ee194eede15375598b24ed data/risus/loot_table/blocks/yellow_mosaic_lamp.json
 cc9d4ee25c8b7e9792f242657b019be8a70b9dd3 data/risus/loot_table/blocks/zit.json
 e19a6aebce0ccf2b9a52b81ae3af04aaf312d830 data/risus/loot_table/center_room.json
+d0df93661868d35c45d52ee7441688b72ce8376f data/risus/loot_table/church_hanging.json
+50c660777542a7dc16440888a057556c854ba9d5 data/risus/loot_table/church_litter.json
+aa8b53f173e757e3d6c9de52b04a35d0b18853fd data/risus/loot_table/church_tomb.json
 e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.json
 2453a580902ea892c6a35935e7eb81730b906409 data/risus/loot_table/entities/baby_spider.json
 2838e5ae14356c7e3fa8b283efa5c09e1ca3f90e data/risus/loot_table/entities/hex.json

@@ -138,15 +138,22 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 		return state.getValue(MultiloggingEnum.FLUIDLOGGED) == MultiloggingEnum.LAVA ? 15 : 0;
 	}
 
-	@Override
-	protected BlockState mirror(BlockState state, Mirror mirror) {
-		return state.setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
-	}
 
 	@Override
 	protected BlockState rotate(BlockState state, Rotation rot) {
 		switch (rot) {
 			case COUNTERCLOCKWISE_90:
+				switch (state.getValue(AXIS)) {
+					case X -> {
+						return state.setValue(AXIS, Direction.Axis.Z);
+					}
+					case Z -> {
+						return state.setValue(AXIS, Direction.Axis.X).setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
+					}
+					default -> {
+						return state;
+					}
+				}
 			case CLOCKWISE_90:
 				switch (state.getValue(AXIS)) {
 					case X -> {
@@ -154,6 +161,18 @@ public class RisusPillarBlock extends RotatedPillarBlock implements SimpleMultil
 					}
 					case Z -> {
 						return state.setValue(AXIS, Direction.Axis.X);
+					}
+					default -> {
+						return state;
+					}
+				}
+			case CLOCKWISE_180:
+				switch (state.getValue(AXIS)) {
+					case Z -> {
+						return state.setValue(AXIS, Direction.Axis.Z).setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
+					}
+					case X -> {
+						return state.setValue(AXIS, Direction.Axis.X).setValue(BOTTOM, state.getValue(TOP)).setValue(TOP, state.getValue(BOTTOM));
 					}
 					default -> {
 						return state;

@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
@@ -352,6 +353,70 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES))
 					.add(LootItem.lootTableItem(Items.DIAMOND)))
 
+		);
+		register.accept(RisusLootTables.CHURCH_HANGING,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 6))
+					.add(LootItem.lootTableItem(RisusBlocks.TISSUE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(Items.EMERALD).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.LINEAR_RITUAL_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.GRIMSTONE_PILLAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.BONE_PILLAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.BIG_CHAIN).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.RED_MOSAIC_LAMP).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.RED_MOSAIC_GLASS).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(1))
+					.add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING))
+					.add(LootItem.lootTableItem(Items.EMERALD_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES)))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(5))
+					.add(LootItem.lootTableItem(RisusItems.DIVINITY_PATTERN)))
+		);
+
+		register.accept(RisusLootTables.CHURCH_TOMB,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(3, 6))
+					.add(LootItem.lootTableItem(RisusBlocks.EERIE_FENCE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.LINEAR_RITUAL_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.GRIMSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.GRIMSTONE_PILLAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.BONE_PILLAR).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.BLOODWEAVE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.RED_MOSAIC_LAMP).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5))))
+					.add(LootItem.lootTableItem(RisusBlocks.RED_MOSAIC_GLASS).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 5)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(3))
+					.add(LootItem.lootTableItem(RisusItems.MEMORY_CORE))
+					.add(LootItem.lootTableItem(RisusBlocks.BLOODY_SPONGE))
+					.add(LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE)))
+		);
+
+		register.accept(RisusLootTables.CHURCH_LITTER,
+			LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+					.setRolls(UniformGenerator.between(10, 15))
+					.add(LootItem.lootTableItem(Blocks.GLOWSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.SHROOMLIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.JACK_O_LANTERN).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.SEA_LANTERN).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.OCHRE_FROGLIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.PEARLESCENT_FROGLIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.VERDANT_FROGLIGHT).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(Blocks.CRYING_OBSIDIAN).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(RisusBlocks.LAUGHING_OBSIDIAN).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15))))
+					.add(LootItem.lootTableItem(RisusBlocks.WHITE_MOSAIC_LAMP).apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 15)))))
+				.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(EmptyLootItem.emptyItem().setWeight(10))
+					.add(LootItem.lootTableItem(RisusItems.CONCENTRATION_CORE)))
 		);
 
 	}

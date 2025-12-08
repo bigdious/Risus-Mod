@@ -25,6 +25,9 @@ public class RisusLootTables {
 	public static final ResourceKey<LootTable> STAIRWELL_FLESH = register("stairwell_flesh");
 	public static final ResourceKey<LootTable> STAIRWELL_REMAINS = register("stairwell_remains");
 	public static final ResourceKey<LootTable> STORAGE_ROOM = register("storage_room");
+	public static final ResourceKey<LootTable> CHURCH_HANGING = register("church_hanging");
+	public static final ResourceKey<LootTable> CHURCH_TOMB = register("church_tomb");
+	public static final ResourceKey<LootTable> CHURCH_LITTER = register("church_litter");
 
 	private static ResourceKey<LootTable> register(String id) {
 		return register(ResourceKey.create(Registries.LOOT_TABLE, Risus.prefix(id)));

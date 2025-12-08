@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-02T19:32:59.4344025	Recipes
+// 1.21.1	2025-12-08T20:36:58.5417811	Recipes
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
 75b9b3f3daea3cc20168ed8077c90bb6a6550ab6 data/minecraft/advancement/recipes/building_blocks/eerie_trapdoor_from_dark.json
@@ -11,6 +11,7 @@ ba51a224d408ec42f166760b386767f304864373 data/minecraft/advancement/recipes/comb
 d6d4206d873646c2af938df9f42695892735c2e5 data/minecraft/advancement/recipes/combat/skin_leggings_to_robes.json
 7dbf32a4a7f7db67ebf1e969d17cd77d82a8e07a data/minecraft/advancement/recipes/combat/unawakened_to_crescent.json
 e89cdada19b19c06854b01bdc845a3019d911c91 data/minecraft/advancement/recipes/combat/warhorn_to_hexhorn.json
+c9389a88b5dbdef2ada58b15f1b149951d68abf0 data/minecraft/advancement/recipes/decorations/hair_brush.json
 300676d74d0bc2a1e915f1203aabebc629e0a228 data/minecraft/advancement/recipes/decorations/imit_scaleplate_from_imit_block.json
 a168d19af7f9c398abddda14819d4211b1c26b4c data/minecraft/advancement/recipes/food/petal_to_dye.json
 cc1639e25cc540de0b37652d9338a8557c10a2ed data/minecraft/advancement/recipes/food/petal_to_sugar.json
@@ -42,6 +43,7 @@ f25a46aebaa1111ecee3d9e85164555b473491e8 data/minecraft/recipe/decaying_to_decay
 4f5282e4cdf3bcb7410ca8e7b01a6ecc4a9cd08a data/minecraft/recipe/elytra_to_angel_wings.json
 8825cdb6cc6330bdfe7a1f1621d539cab64f5d2f data/minecraft/recipe/fossils_to_bone_meal.json
 27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
+b8da034bc683ca9a319b73fac1bef86332ebb1f3 data/minecraft/recipe/hair_brush.json
 989370b1ddb4f1f6d47fee7a005f52c051fa12ff data/minecraft/recipe/hair_unbundleing.json
 dbf122e6575441993ad55007d1833e8ac1f2e607 data/minecraft/recipe/head_to_spewer.json
 0427a7a66c84c661d355d933174b715545ec2bdc data/minecraft/recipe/imit_scaleplate_from_imit_block.json

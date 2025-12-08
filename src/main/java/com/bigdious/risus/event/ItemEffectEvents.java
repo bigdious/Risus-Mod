@@ -130,7 +130,11 @@ public class ItemEffectEvents {
 				if (entity2.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)) {
 					event.setAmount(event.getAmount() + 3);
 				} else {
-					entity2.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 200, 0, false, false, true));
+					if (entity2.hasEffect(RisusMobEffects.BLOODCLOGGED)) {
+						entity2.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, Math.max(entity2.getEffect(RisusMobEffects.BLOODCLOGGED).getDuration(), 200), entity2.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier(), false, false, true));
+					} else {
+						entity2.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 200, 0, false, false, true));
+					}
 				}
 			}
 		}

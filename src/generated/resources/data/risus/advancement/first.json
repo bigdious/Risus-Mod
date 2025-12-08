@@ -16,6 +16,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "church": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:church"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "draxolotl": {
       "conditions": {
         "player": [
@@ -112,6 +128,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "enter_site4": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:bedrock_hand"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "family": {
       "conditions": {
         "player": [
@@ -179,6 +211,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "ribs": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:ribs_fossil"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "sandmaw": {
       "conditions": {
         "player": [
@@ -188,6 +236,22 @@
             "predicate": {
               "location": {
                 "structures": "risus:sandy_maw"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "skull": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "risus:skull_fossil"
               }
             }
           }
@@ -232,6 +296,7 @@
       "enter_site",
       "enter_site2",
       "enter_site3",
+      "enter_site4",
       "grassmaw",
       "sandmaw",
       "endmaw",
@@ -242,7 +307,10 @@
       "lab",
       "dungeon",
       "well",
-      "draxolotl"
+      "draxolotl",
+      "church",
+      "ribs",
+      "skull"
     ]
   ],
   "sends_telemetry_event": true

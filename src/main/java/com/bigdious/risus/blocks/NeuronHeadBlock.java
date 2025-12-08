@@ -106,6 +106,7 @@ public class NeuronHeadBlock extends RisusGrowingPlantHeadBlock implements Simpl
 		if (stack.canPerformAction(ItemAbilities.SHEARS_HARVEST) && state.getValue(AGE) < 25) {
 			level.setBlock(pos, RisusBlocks.NEURON_HEAD.get().defaultBlockState().setValue(AGE, 25), 2);
 			level.playSound(player, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS);
+			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}
 		return super.useItemOn(stack, state, level, pos, player, hand, result);
 	}

@@ -216,7 +216,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropSelf(RisusBlocks.LINEAR_RITUAL_BLOCK.get());
 
 		add(RisusBlocks.JOYFLAME_FIRE.get(), LootTable.lootTable());
-		add(RisusBlocks.FLESHY_SPAWNER.get(), LootTable.lootTable());
+		dropOther(RisusBlocks.FLESHY_SPAWNER.get(), RisusBlocks.TISSUE.get().asItem());
 		dropSelf(RisusBlocks.BIG_CHAIN.get());
 		dropSelf(RisusBlocks.HEART_TRANSPLANT.get());
 		dropSelf(RisusBlocks.REGEN_ROSE.get());

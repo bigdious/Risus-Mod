@@ -797,6 +797,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.BUNDLE_OF_HAIR.get()))
 			.save(consumer, "hair_unbundleing");
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.BRUSH, 1)
+			.pattern("#")
+			.pattern("C")
+			.pattern("S")
+			.define('#', Ingredient.of(RisusBlocks.TALL_HAIR.get()))
+			.define('C', Ingredient.of(Items.COPPER_INGOT))
+			.define('S', Ingredient.of(Items.STICK))
+			.unlockedBy("has_item", has(RisusItems.HAIR_FOLLICLES.get()))
+			.save(consumer, "hair_brush");
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS.get(), 4)
 			.pattern("##")
 			.pattern("##")
