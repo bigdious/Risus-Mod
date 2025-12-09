@@ -232,6 +232,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addMusicDisc(RisusItems.MUSIC_DISC_MORK, "Kizbe - Mǫrk");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_RAK, "Kizbe - Rak");
 		this.addMusicDisc(RisusItems.MUSIC_DISC_REGN, "Kizbe - Regn");
+		this.addMusicDisc(RisusItems.MUSIC_DISC_CYCLE, "Akiak - Cycle");
 
 		this.addTrim("gluttony_scales", "Gluttonous");
 		this.addTrim("skin", "Skin");

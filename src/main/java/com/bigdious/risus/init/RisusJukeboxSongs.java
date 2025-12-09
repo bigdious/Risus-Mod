@@ -16,6 +16,7 @@ public class RisusJukeboxSongs {
 	public static final ResourceKey<JukeboxSong> REGN = create("regn");
 	public static final ResourceKey<JukeboxSong> FEIGR = create("feigr");
 	public static final ResourceKey<JukeboxSong> MORK = create("mork");
+	public static final ResourceKey<JukeboxSong> CYCLE = create("cycle");
 	private static ResourceKey<JukeboxSong> create(String name) {
 		return ResourceKey.create(Registries.JUKEBOX_SONG,  ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
 	}
@@ -27,5 +28,6 @@ public class RisusJukeboxSongs {
 		register(context, REGN, RisusSoundEvents.MUSIC_DISC_REGN, 121, 14);
 		register(context, FEIGR, RisusSoundEvents.MUSIC_DISC_FEIGR, 82, 10);
 		register(context, MORK, RisusSoundEvents.MUSIC_DISC_MORK, 67, 7);
+		register(context, CYCLE, RisusSoundEvents.MUSIC_DISC_CYCLE, 159, 6);
 	}
 }

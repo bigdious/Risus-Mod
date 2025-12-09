@@ -264,6 +264,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.MUSIC_DISC_REGN);
 		singleTex(RisusItems.MUSIC_DISC_FEIGR);
 		singleTex(RisusItems.MUSIC_DISC_MORK);
+		singleTex(RisusItems.MUSIC_DISC_CYCLE);
 		singleTex(RisusItems.ANGEL_WINGS)
 			.override().predicate(Risus.prefix("broken"), 1.0F).model(singleTex("angel_wings_broken")).end()
 			.override().predicate(Risus.prefix("ashen"), 1.0F).model(singleTex("ashen_wings")).end()

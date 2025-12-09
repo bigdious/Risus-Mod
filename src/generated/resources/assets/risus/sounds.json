@@ -425,6 +425,15 @@
       }
     ]
   },
+  "music.disc.cycle": {
+    "sounds": [
+      {
+        "name": "risus:music/disc/cycle",
+        "stream": true,
+        "volume": 2.0
+      }
+    ]
+  },
   "music.disc.feigr": {
     "sounds": [
       {

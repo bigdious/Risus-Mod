@@ -57,7 +57,7 @@ public class HexhornItem extends WarhornItem{
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() != player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 							if (mobeffectinstance.getEffect().value().isInstantenous()) {
-								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
+								mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
 							} else {
 								living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 							}
@@ -74,7 +74,7 @@ public class HexhornItem extends WarhornItem{
 						if ((living instanceof Monster || living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED) || (RisusConfig.reverseHornsPlayerBehavior ? living instanceof Player : living.getType().is(RisusTags.Entities.HEXHORN_ALLOWED))) && !living.getType().is(RisusTags.Entities.HEXHORN_BANNED) && !(living instanceof TamableMonster tamableMonster && tamableMonster.getOwner() != null)) {
 							for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 								if (mobeffectinstance.getEffect().value().isInstantenous()) {
-									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0), 1.0D);
+									mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
 								} else {
 									living.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(), mobeffectinstance.getDuration() / (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 3 : 2), mobeffectinstance.getAmplifier() + (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.CROWN_OF_BONES.get()) ? 1 : 0)));
 								}

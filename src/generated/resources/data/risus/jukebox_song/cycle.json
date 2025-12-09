@@ -1,0 +1,8 @@
+{
+  "comparator_output": 6,
+  "description": {
+    "translate": "jukebox_song.risus.cycle"
+  },
+  "length_in_seconds": 159.0,
+  "sound_event": "risus:music.disc.cycle"
+}

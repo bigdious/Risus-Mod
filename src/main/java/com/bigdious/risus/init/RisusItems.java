@@ -131,6 +131,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> MUSIC_DISC_FEIGR = register("music_disc_feigr", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.FEIGR));
 	public static final DeferredItem<Item> MUSIC_DISC_MORK = register("music_disc_mork", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.MORK));
 	public static final DeferredItem<Item> MUSIC_DISC_REGN = register("music_disc_regn", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.REGN));
+	public static final DeferredItem<Item> MUSIC_DISC_CYCLE = register("music_disc_cycle", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.CYCLE));
 
 	//DISPLAY ONLY ITEMS
 

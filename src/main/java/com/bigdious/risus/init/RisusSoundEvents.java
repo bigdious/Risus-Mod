@@ -17,6 +17,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_MORK = register("music.disc.mork");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_FEIGR = register("music.disc.feigr");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_REGN = register("music.disc.regn");
+	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_CYCLE = register("music.disc.cycle");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_MORK = register("music.ambient.mork");
 	public static final DeferredHolder<SoundEvent, SoundEvent> AMBIENT_FEIGR = register("music.ambient.feigr");
 
