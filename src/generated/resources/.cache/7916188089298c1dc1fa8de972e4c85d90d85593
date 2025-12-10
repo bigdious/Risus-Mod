@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-16T13:13:07.3966372	Tags for minecraft:item mod id risus
+// 1.21.1	2025-12-10T21:53:18.2082847	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -8,7 +8,6 @@ ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/item/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates/wooden.json
-4fa4ef3fee986b3a9f5d145b9430d8c911716691 data/c/tags/item/foods/raw_meat.json
 90246e9d74b4b2bbf5464f742536a68e568d6022 data/c/tags/item/obsidians.json
 a9a99ee09bf13187a929030b20cefcf7f6f6f9c7 data/c/tags/item/storage_blocks.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/item/bee_food.json
@@ -63,6 +62,7 @@ c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
 2d4bb28011449fdf388a6360b5bb48a3fa19941b data/risus/tags/item/lightly_hurts_angel_wings.json
 153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/perpetuity_blacklist.json
+77d12b0b03e0c64dcca79ec97a2e071ea9be0515 data/risus/tags/item/raw_meat.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/risus/tags/item/robes.json
 153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/stops_thread_wings_rendering.json
 08e351805fe748da80be586314015c81df4a1211 data/risus/tags/item/sword_and_trident_enchantable.json

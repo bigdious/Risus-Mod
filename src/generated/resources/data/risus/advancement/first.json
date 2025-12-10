@@ -211,6 +211,16 @@
       },
       "trigger": "minecraft:location"
     },
+    "modbook": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:researchers_notes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "ribs": {
       "conditions": {
         "player": [
@@ -310,7 +320,8 @@
       "draxolotl",
       "church",
       "ribs",
-      "skull"
+      "skull",
+      "modbook"
     ]
   ],
   "sends_telemetry_event": true

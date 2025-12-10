@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "item": "minecraft:oak_log"
+  },
+  "result": "risus:bondknot_log"
+}

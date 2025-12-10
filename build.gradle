@@ -116,8 +116,8 @@ dependencies {
 	implementation "top.theillusivec4.curios:curios-neoforge:${project.curios_version}+${project.minecraft_version}"
 
 	implementation "curse.maven:jade-324717:${project.jade_version}"
-	compileOnly "vazkii.patchouli:Patchouli:1.21-${project.patchouli_version}:api"
-	runtimeOnly "vazkii.patchouli:Patchouli:1.21-${project.patchouli_version}"
+	compileOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}:api"
+	runtimeOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}"
 
 	runtimeOnly "curse.maven:atlasviewer-633577:6088094"
 }

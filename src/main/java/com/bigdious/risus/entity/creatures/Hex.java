@@ -39,12 +39,13 @@ import java.util.EnumSet;
 
 public class Hex extends Vex {
 
+
 	@Nullable
 	Mob owner;
 
 	public Hex(EntityType<? extends Vex> entityType, Level level) {
 		super(entityType, level);
-		this.moveControl = new VexMoveControl(this);
+		this.moveControl = new HexMoveControl(this);
 		this.xpReward = 3;
 	}
 
@@ -103,7 +104,7 @@ public class Hex extends Vex {
 
 		public boolean canUse() {
 			LivingEntity livingentity = Hex.this.getTarget();
-			return livingentity != null && livingentity.isAlive() && !Hex.this.getMoveControl().hasWanted() && Hex.this.random.nextInt(reducedTickDelay(7)) == 0;
+			return livingentity != null && livingentity.isAlive() && Hex.this.random.nextInt(reducedTickDelay(7)) == 0 ? Hex.this.distanceToSqr(livingentity) > (double)25.0F : false;
 		}
 
 		public boolean canContinueToUse() {
@@ -114,7 +115,7 @@ public class Hex extends Vex {
 			LivingEntity livingentity = Hex.this.getTarget();
 			if (livingentity != null) {
 				Vec3 vec3 = livingentity.getEyePosition();
-				Hex.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, (double) 1.0F);
+				Hex.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, 1.0F);
 			}
 
 			Hex.this.setIsCharging(true);
@@ -132,9 +133,45 @@ public class Hex extends Vex {
 		public void tick() {
 			LivingEntity livingentity = Hex.this.getTarget();
 			if (livingentity != null) {
-				if (Hex.this.getBoundingBox().intersects(livingentity.getBoundingBox())) {
+				if (Hex.this.getBoundingBox().inflate(0.8).intersects(livingentity.getBoundingBox())) {
 					Hex.this.doHurtTarget(livingentity);
 					Hex.this.setIsCharging(false);
+				} else {
+					double d0 = Hex.this.distanceToSqr(livingentity);
+					if (d0 < (double)1.0F) {
+						Vec3 vec3 = livingentity.getEyePosition();
+						Hex.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, 1.0F);
+					}
+				}
+			}
+
+		}
+	}
+
+	public class HexMoveControl extends MoveControl {
+		public HexMoveControl(Hex hex) {
+			super(hex);
+		}
+
+		public void tick() {
+			if (this.operation == Operation.MOVE_TO) {
+				Vec3 vec3 = new Vec3(this.wantedX - Hex.this.getX(), this.wantedY - Hex.this.getY(), this.wantedZ - Hex.this.getZ());
+				double d0 = vec3.length();
+				if (d0 < Hex.this.getBoundingBox().getSize()) {
+					this.operation = Operation.WAIT;
+					Hex.this.setDeltaMovement(Hex.this.getDeltaMovement().scale(0.5F));
+				} else {
+					Hex.this.setDeltaMovement(Hex.this.getDeltaMovement().add(vec3.scale(this.speedModifier * 0.05 / d0)));
+					if (Hex.this.getTarget() == null) {
+						Vec3 vec31 = Hex.this.getDeltaMovement();
+						Hex.this.setYRot(-((float)Mth.atan2(vec31.x, vec31.z)) * (180F / (float)Math.PI));
+						Hex.this.yBodyRot = Hex.this.getYRot();
+					} else {
+						double d2 = Hex.this.getTarget().getX() - Hex.this.getX();
+						double d1 = Hex.this.getTarget().getZ() - Hex.this.getZ();
+						Hex.this.setYRot(-((float)Mth.atan2(d2, d1)) * (180F / (float)Math.PI));
+						Hex.this.yBodyRot = Hex.this.getYRot();
+					}
 				}
 			}
 

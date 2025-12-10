@@ -58,8 +58,10 @@ public class CraftingGenerator extends RecipeProvider {
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_STAIRS), RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_SLAB), RisusBlocks.GRIMSTONE_BRICKS_SLAB.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.POLISHED_BLACKSTONE_BRICK_WALL), RisusBlocks.GRIMSTONE_BRICKS_WALL.get()).unlockedBy("has_item", has(Items.BLACKSTONE)).save(consumer);
-		//TODO enchanted book to corrupt book handler
-		AlterationRecipeBuilder.alteration(Ingredient.of(Tags.Items.FOODS_RAW_MEAT), RisusBlocks.TISSUE.get()).unlockedBy("has_item", has(Items.PORKCHOP)).unlockedBy("has_item", has(Items.BEEF)).unlockedBy("has_item", has(Items.MUTTON)).unlockedBy("has_item", has(Items.RABBIT)).save(consumer);
+		//double
+
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.COD, Items.SALMON, Items.TROPICAL_FISH, Items.RABBIT, Items.PORKCHOP, Items.BEEF, Items.MUTTON, Items.CHICKEN), RisusBlocks.TISSUE.get()).unlockedBy("has_item", has(Items.PORKCHOP)).unlockedBy("has_item", has(Items.BEEF)).unlockedBy("has_item", has(Items.MUTTON)).unlockedBy("has_item", has(Items.RABBIT)).save(consumer);
+		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.RAW_MEAT), RisusBlocks.TISSUE.get()).unlockedBy("has_item", has(Items.PORKCHOP)).unlockedBy("has_item", has(Items.BEEF)).unlockedBy("has_item", has(Items.MUTTON)).unlockedBy("has_item", has(Items.RABBIT)).save(consumer, "tissue_two");
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.CRIMSON_HYPHAE, Items.CRIMSON_STEM, Items.WARPED_HYPHAE, Items.WARPED_STEM), RisusBlocks.BURNT_HYPHAE.get()).unlockedBy("has_item", has(Items.CRIMSON_HYPHAE)).unlockedBy("has_item", has(Items.CRIMSON_STEM)).unlockedBy("has_item", has(Items.WARPED_HYPHAE)).unlockedBy("has_item", has(Items.WARPED_STEM)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.WITHER_ROSE), RisusBlocks.REGEN_ROSE.get()).unlockedBy("has_item", has(Items.WITHER_ROSE)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(Items.DECORATED_POT), RisusBlocks.DEPTH_VASE.get()).unlockedBy("has_item", has(Items.DECORATED_POT)).save(consumer);
@@ -115,6 +117,9 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
 		AlterationRecipeBuilder.alteration(Ingredient.of(RisusTags.Items.ALTERABLE_LOGS), RisusBlocks.BONDKNOT_LOG.get())
 			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer);
+		//dummy for book (tags break with certain mods, like ModernFix)
+		AlterationRecipeBuilder.alteration(Ingredient.of(Items.OAK_LOG), RisusBlocks.BONDKNOT_LOG.get())
+			.unlockedBy("has_item", has(RisusTags.Items.ALTERABLE_LOGS)).save(consumer, "bondknot_dummy");
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.BONDKNOT_WOOD.get(), 3)
 			.pattern("##")

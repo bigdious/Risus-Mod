@@ -30,7 +30,7 @@ side = "BOTH"
 [[dependencies.risus]]
 modId = "patchouli"
 type = "required"
-versionRange = "[1.21-88-NEOFORGE,]"
+versionRange = "[1.21.1-92-NEOFORGE,]"
 ordering = "NONE"
 side = "BOTH"
 

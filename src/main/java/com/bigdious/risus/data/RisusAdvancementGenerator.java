@@ -62,6 +62,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("church", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.CHURCH))))
 			.addCriterion("ribs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.RIBS_FOSSIL))))
 			.addCriterion("skull", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SKULL_FOSSIL))))
+			.addCriterion("modbook", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.RESEARCHERS_NOTES))
 			.save(consumer, "risus:first");
 
 		AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first)

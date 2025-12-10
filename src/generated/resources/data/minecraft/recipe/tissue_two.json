@@ -1,0 +1,7 @@
+{
+  "type": "risus:alteration",
+  "input": {
+    "tag": "risus:raw_meat"
+  },
+  "result": "risus:tissue"
+}
