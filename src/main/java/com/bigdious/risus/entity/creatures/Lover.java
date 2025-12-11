@@ -1,5 +1,6 @@
 package com.bigdious.risus.entity.creatures;
 
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -126,7 +127,7 @@ public class Lover extends Monster {
 		return false;
 	}
 
-	public  <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
+	public <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T> to, Mob from) {
 		boolean flag = true;
 		if (EventHooks.canLivingConvert(from, to, (timer) -> {})) {
 			if (level.getDifficulty() != Difficulty.HARD && this.random.nextBoolean()) {
@@ -141,7 +142,7 @@ public class Lover extends Monster {
 					this.playSound(RisusSoundEvents.LOVER_INFECT.get(), 2.0F, (this.getRandom().nextFloat() - this.getRandom().nextFloat()) * 0.2F + 1.0F);
 				}
 				BlockState spreading = RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true);
-				if (spreading.canSurvive(this.level(), offspring.blockPosition()) && level.getBlockState(offspring.blockPosition()).isAir() && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+				if (spreading.canSurvive(this.level(), offspring.blockPosition()) && level.getBlockState(offspring.blockPosition()).isAir() && RisusConfig.loverSpreads) {
 					this.level().setBlockAndUpdate(offspring.blockPosition(), spreading);
 				}
 				for (int i = 0; i < 10; ++i) {

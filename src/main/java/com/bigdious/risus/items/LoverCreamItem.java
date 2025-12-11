@@ -1,5 +1,6 @@
 package com.bigdious.risus.items;
 
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDataMaps;
 import com.bigdious.risus.init.RisusParticles;
@@ -59,7 +60,7 @@ public <T extends Mob> boolean tryConvertEntity(ServerLevel level, EntityType<T>
 			EventHooks.onLivingConvert(from, offspring);
 
 			BlockState spreading = RisusBlocks.SPREADING_REMAINS.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true);
-			if (spreading.canSurvive(level, offspring.blockPosition()) && level.getBlockState(offspring.blockPosition()).isAir() && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+			if (spreading.canSurvive(level, offspring.blockPosition()) && level.getBlockState(offspring.blockPosition()).isAir() && RisusConfig.loverSpreads) {
 				level.setBlockAndUpdate(offspring.blockPosition(), spreading);
 			}
 			for (int i = 0; i < 10; ++i) {

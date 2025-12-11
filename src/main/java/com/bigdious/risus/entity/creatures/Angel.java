@@ -197,4 +197,9 @@ public class Angel extends Monster {
 	public boolean isNoGravity() {
 		return true;
 	}
+
+	@Override
+	public boolean isAffectedByPotions() {
+		return false;
+	}
 }

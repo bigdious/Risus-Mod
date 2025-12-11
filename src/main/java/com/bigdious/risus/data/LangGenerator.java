@@ -647,6 +647,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
 		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
+		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church.");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 		this.addBiome(RisusBiomes.COALIFICATION_FEIGR, "Coalification");

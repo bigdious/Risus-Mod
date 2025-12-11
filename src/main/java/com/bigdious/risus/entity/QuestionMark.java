@@ -113,6 +113,11 @@ public class QuestionMark extends Monster {
 	}
 
 	@Override
+	public boolean isAffectedByPotions() {
+		return false;
+	}
+
+	@Override
 	public void playerTouch(Player player) {
 		if (this.getBoundingBox().intersects(player.getBoundingBox()) && this.isAlive()) {
 				if (this.hasLineOfSight(player) && player.hurt(this.damageSources().source(RisusDamageTypes.INEXISTENCE), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {

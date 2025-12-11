@@ -43,4 +43,10 @@ public final class ConfigComments {
 		Default: false
 		When set to true, Warhorns WILL NOT target others players and Hexhorn WILL target other players.""";
 
+	public static final String LOVER_SPREADS = """
+
+		Default: true
+		When set to true, Lovers will place Spreading Remains upon impregnation.""";
+
+
 }

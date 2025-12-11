@@ -25,6 +25,7 @@ public class RisusConfig {
 	public static boolean canonExBurn = false;
 	public static boolean everythingYouthable = false;
 	public static boolean reverseHornsPlayerBehavior = false;
+	public static boolean loverSpreads = true;
 
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();
@@ -35,6 +36,7 @@ public class RisusConfig {
 		canonExBurn = config.canonExBurn.get();
 		everythingYouthable = config.everythingYouthable.get();
 		reverseHornsPlayerBehavior = config.reverseHornsPlayerBehavior.get();
+		loverSpreads = config.loverSpreads.get();
 
 		MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
 		if (server != null && server.isDedicatedServer()) {

@@ -21,7 +21,7 @@ public class SinnerRobeHelmetModel {
 
 		head.addOrReplaceChild("spyglass_4", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -2.5F, -0.5F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.2F)), PartPose.offsetAndRotation(-2.0F, -3.5F, -12.2F, -1.5708F, 0.0F, 3.1416F));
 
-		head.addOrReplaceChild("spyglass_2", CubeListBuilder.create().texOffs(56, 19).addBox(-1.0F, -2.0F, -0.5F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, -3.5F, -6.5F, -1.5708F, 0.0F, -3.1416F));
+		head.addOrReplaceChild("spyglass_3", CubeListBuilder.create().texOffs(56, 19).addBox(-1.0F, -2.0F, -0.5F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, -3.5F, -6.5F, -1.5708F, 0.0F, -3.1416F));
 
 		head.addOrReplaceChild("spyglass_2", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -2.5F, -0.5F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.2F)), PartPose.offsetAndRotation(2.0F, -3.5F, -12.2F, -1.5708F, 0.0F, 3.1416F));
 

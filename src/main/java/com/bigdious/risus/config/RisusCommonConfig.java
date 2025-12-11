@@ -11,6 +11,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue canonExBurn;
 	final ModConfigSpec.BooleanValue everythingYouthable;
 	final ModConfigSpec.BooleanValue reverseHornsPlayerBehavior;
+	final ModConfigSpec.BooleanValue loverSpreads;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -52,5 +53,10 @@ public final class RisusCommonConfig {
 			.translation("config.risus.reverse_horns_player_behavior")
 			.comment(ConfigComments.REVERSE_HORNS_PLAYER_BEHAVIOR)
 			.define("reverseHornsPlayerBehavior", true);
+
+		this.loverSpreads = builder
+			.translation("config.risus.lover_spreads")
+			.comment(ConfigComments.LOVER_SPREADS)
+			.define("loverSpread", true);
 	}
 }

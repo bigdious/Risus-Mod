@@ -180,10 +180,6 @@ public class Litter extends TamableAnimal {
 	}
 
 	@Override
-	protected void pushEntities() {
-	}
-
-	@Override
 	public boolean addEffect(MobEffectInstance instance, @Nullable Entity entity) {
 		return false;
 	}

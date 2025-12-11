@@ -65,6 +65,14 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("modbook", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.RESEARCHERS_NOTES))
 			.save(consumer, "risus:first");
 
+		AdvancementHolder church = Advancement.Builder.advancement().parent(first)
+			.display(
+				RisusBlocks.GRIMSTONE_PILLAR.get(),
+				Component.translatable("advancement.risus.church"),
+				Component.translatable("advancement.risus.church.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("church", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.CHURCH))))
+			.save(consumer, "risus:church");
+
 		AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first)
 			.display(
 				RisusBlocks.ALTERATION_CATALYST.get(),
