@@ -143,7 +143,7 @@ public class RisusBlocks {
 
 	//NONFULLBLOCK DECO
 	public static final DeferredBlock<Block> BIG_CHAIN = registerWithItem("big_chain", BigChainBlock::new, () -> Block.Properties.ofFullCopy(Blocks.CHAIN).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));
-	public static final DeferredBlock<Block> ZIT = registerWithItem("zit", ZitBlock::new, () -> Block.Properties.ofFullCopy(Blocks.SCULK).noCollission().noOcclusion().forceSolidOn().instabreak());
+	public static final DeferredBlock<Block> ZIT = registerWithItem("zit", ZitBlock::new, () -> Block.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noCollission().noOcclusion().forceSolidOn().instabreak());
 	public static final DeferredBlock<Block> BLOODWEAVE = registerWithItem("bloodweave", BloodweaveBlock::new, () -> Block.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().instabreak().sound(SoundType.HONEY_BLOCK).noCollission().forceSolidOn());
 	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());
 	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", properties -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak());
