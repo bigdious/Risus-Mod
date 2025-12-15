@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.render.RisusSimpleArmorRenderer;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.core.Holder;
@@ -34,6 +35,11 @@ public class SinnerRobeBootsItem extends RisusArmorItem {
 		}
 		return null;
 	}
+	@Override
+	public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
+		return true;
+	}
+
 
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {

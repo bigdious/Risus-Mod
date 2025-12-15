@@ -409,22 +409,6 @@
     ],
     "subtitle": "subtitles.risus.item.wretched_charm.fortune_triggered"
   },
-  "music.ambient.feigr": {
-    "sounds": [
-      {
-        "name": "risus:music/ambient/ambient_feigr",
-        "stream": true
-      }
-    ]
-  },
-  "music.ambient.mork": {
-    "sounds": [
-      {
-        "name": "risus:music/ambient/ambient_mork",
-        "stream": true
-      }
-    ]
-  },
   "music.disc.cycle": {
     "sounds": [
       {

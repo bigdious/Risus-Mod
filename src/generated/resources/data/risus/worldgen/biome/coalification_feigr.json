@@ -9,7 +9,7 @@
       "max_delay": 6000,
       "min_delay": 3000,
       "replace_current_music": true,
-      "sound": "risus:music.ambient.feigr"
+      "sound": "risus:music.disc.feigr"
     },
     "particle": {
       "options": {

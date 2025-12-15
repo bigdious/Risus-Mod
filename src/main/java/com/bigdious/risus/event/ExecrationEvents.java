@@ -50,10 +50,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.SweepAttackEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 public class ExecrationEvents {
 
@@ -209,6 +206,7 @@ public class ExecrationEvents {
 		if (user.level().getRandom().nextFloat() <= 0.25 + chance) {
 			List<ItemStack> list = new ArrayList<>();
 			user.getAllSlots().iterator().forEachRemaining(list::add);
+			Collections.shuffle(list);
 			for (ItemStack itemStack : list) {
 				if (!itemStack.isEmpty() &&
 					itemStack.isDamageableItem() &&

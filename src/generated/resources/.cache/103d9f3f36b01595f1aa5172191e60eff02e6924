@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-09T22:17:27.4224152	Registries
+// 1.21.1	2025-12-15T20:42:32.0044793	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -41,7 +41,7 @@ a81a94447bef14d36a88208466f4803f7a8f73f5 data/risus/enchantment/soar.json
 03d8b71e2de3f1e3106bdaa764d21315dc2e14af data/risus/enchantment/vigor.json
 aa81450af7239070450a5c59770868e24b9e4f40 data/risus/enchantment/xenophobia.json
 f1603bb6570657aca4ddd361dbfc5fba0af6e068 data/risus/jukebox_song/cycle.json
-6562a4345759f85e13ce22563775bb0d44b21974 data/risus/jukebox_song/feigr.json
+63f659114e67e06e145819e86e9ebf31363b509d data/risus/jukebox_song/feigr.json
 d41d47bb317d598d17224c24a4b5b16658078de8 data/risus/jukebox_song/mork.json
 a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json
 1ccb12921a5f5bec01b7cab8db4e3248e8f6065d data/risus/jukebox_song/regn.json
@@ -49,8 +49,8 @@ a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json
 1601d81366c8acda3a3517440ea4030ca0801386 data/risus/trim_material/organic_matter.json
 228fc26bf4b2e5564cbd6b508d7981763f029bef data/risus/trim_material/skin.json
 5726a63524cd7a203c8e1649ffc5b13914cb2136 data/risus/worldgen/biome/coalification.json
-90018c6e6a0a7383494283f5d819dc155b653ae8 data/risus/worldgen/biome/coalification_feigr.json
-67d6c3f8ef4033cb4d4c499dee14bd1109e60a6a data/risus/worldgen/biome/coalification_mork.json
+b8aae70229f71cce17d203b04fcd39b526c6408a data/risus/worldgen/biome/coalification_feigr.json
+b09b8d6c80e5db095041f4e4461d1b27bc9b7e50 data/risus/worldgen/biome/coalification_mork.json
 771b3b969eed39cf2d9cc11fe4cde0c68d603369 data/risus/worldgen/processor_list/alteration_site_degradation.json
 537ea1231d45ec180a736001cdf8493a6c347a61 data/risus/worldgen/processor_list/church_replacer.json
 509f5f4522341a68f6e1f0402a4e24fa5eeca815 data/risus/worldgen/processor_list/draxolotl_remains_blending.json

@@ -72,7 +72,7 @@ public class ToothknockerItem extends SwordItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand pHand) {
 		ItemStack itemstack = player.getItemInHand(pHand);
-		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1 || player.isFallFlying() || player.isInWater()) {
+		if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1 || player.isFallFlying() || player.isInWater() || player.hasEffect(RisusMobEffects.GREATNESS)) {
 			return InteractionResultHolder.fail(itemstack);
 		} else {
 			float f7 = player.getYRot();
