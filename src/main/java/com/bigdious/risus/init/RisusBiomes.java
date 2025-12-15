@@ -42,7 +42,7 @@ public class RisusBiomes {
 			.hasPrecipitation(false)
 			.downfall(0.0F)
 			.temperature(0.8F)
-			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_MORK)
+			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.MUSIC_DISC_MORK)
 				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
 			.build());
 		context.register(COALIFICATION_FEIGR, new Biome.BiomeBuilder()
@@ -51,7 +51,7 @@ public class RisusBiomes {
 			.hasPrecipitation(false)
 			.downfall(0.0F)
 			.temperature(0.8F)
-			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.AMBIENT_FEIGR)
+			.specialEffects(addMusic(generateColors(new BiomeSpecialEffects.Builder(), 0x650404, 1842204), RisusSoundEvents.MUSIC_DISC_FEIGR)
 				.ambientParticle(new AmbientParticleSettings(RisusParticles.RISUS_SOUL_PARTICLE.get(), 0.0001F)).build())
 			.build());
 	}

@@ -24,8 +24,6 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.add(RisusSoundEvents.MUSIC_DISC_FEIGR, definition().with(sound("risus:music/disc/feigr").volume(2).stream()));
 		this.add(RisusSoundEvents.MUSIC_DISC_REGN, definition().with(sound("risus:music/disc/regn").volume(2).stream()));
 		this.add(RisusSoundEvents.MUSIC_DISC_CYCLE, definition().with(sound("risus:music/disc/cycle").volume(2).stream()));
-		this.add(RisusSoundEvents.AMBIENT_MORK, definition().with(sound("risus:music/ambient/ambient_mork").stream()));
-		this.add(RisusSoundEvents.AMBIENT_FEIGR, definition().with(sound("risus:music/ambient/ambient_feigr").stream()));
 
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs cheekily");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.TOLLING_BELL, "entity/ophanim/tolling_bell", 1, "Heaven's Gaze sharpens");

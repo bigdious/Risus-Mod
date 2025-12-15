@@ -26,7 +26,7 @@ public class RisusJukeboxSongs {
 	public static void bootstrap(BootstrapContext<JukeboxSong> context) {
 		register(context, RAK, RisusSoundEvents.MUSIC_DISC_RAK, 135, 15);
 		register(context, REGN, RisusSoundEvents.MUSIC_DISC_REGN, 121, 14);
-		register(context, FEIGR, RisusSoundEvents.MUSIC_DISC_FEIGR, 82, 10);
+		register(context, FEIGR, RisusSoundEvents.MUSIC_DISC_FEIGR, 102, 10);
 		register(context, MORK, RisusSoundEvents.MUSIC_DISC_MORK, 67, 7);
 		register(context, CYCLE, RisusSoundEvents.MUSIC_DISC_CYCLE, 159, 6);
 	}

@@ -11,10 +11,10 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.List;
 
-public class HandOfGreedItem extends TieredItem {
+public class HandOfGreedItem extends Item {
 
-	public HandOfGreedItem(Tier tier, Item.Properties properties) {
-		super(tier, properties);
+	public HandOfGreedItem(Item.Properties properties) {
+		super(properties);
 	}
 
 	public static ItemAttributeModifiers createHandOfGreedAttributes() {

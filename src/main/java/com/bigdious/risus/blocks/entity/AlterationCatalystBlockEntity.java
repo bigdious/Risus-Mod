@@ -49,12 +49,13 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 
 	protected ItemStack item = ItemStack.EMPTY;
 	public boolean isCrafting;
-	private int craftingCounter;
+	public int craftingCounter;
 	public float rotationDegrees;
 	private boolean finishedCrafting;
 	private boolean craftingWorked;
-	private boolean failedCrafting;
+	public boolean failedCrafting;
 	private int finishedCounter;
+	private int failedCounter;
 
 	public AlterationCatalystBlockEntity(BlockPos pos, BlockState state) {
 		super(RisusBlockEntities.ALTERATION_CATALYST.get(), pos, state);
@@ -155,7 +156,6 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 						level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 					} else {
 						te.failedCrafting = true;
-						level.playSound(null, pos, SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.BLOCKS, 1.0F, 0.5F);
 					}
 					te.finishedCounter = 0;
 
@@ -183,10 +183,13 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 				}
 			}
 		}
-		if (te.failedCrafting) {
-			if (te.finishedCounter++ >= 10) {
+		if (te.failedCrafting ) {
+			if (te.failedCounter < 1) {
+				level.playSound(null, pos, SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.BLOCKS, 1.0F, 0.5F);
+			}
+			if (te.failedCounter++ >= 20) {
 				te.failedCrafting = false;
-				te.finishedCounter = 0;
+				te.failedCounter = 0;
 			}
 			if (level.isClientSide()) {
 				for (int i = 0; i < 7; i++) {
