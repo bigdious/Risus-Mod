@@ -202,7 +202,7 @@ public class ExecrationEvents {
 	}
 
 	//not an event, but fits here
-	public static void performRelocation(int i, LivingEntity user, ItemStack original, EquipmentSlot equipmentSlot ,int chance) {
+	public static void performRelocation(int i, LivingEntity user, ItemStack original,int chance) {
 		if (user.level().getRandom().nextFloat() <= 0.25 + chance) {
 			List<ItemStack> list = new ArrayList<>();
 			user.getAllSlots().iterator().forEachRemaining(list::add);

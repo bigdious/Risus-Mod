@@ -385,11 +385,7 @@ public class RisusStructures {
 		context.register(GREAT_BODY, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_GREAT_BODY),
-				Map.of(
-					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
-						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
-					))
-				),
+				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
 				TerrainAdjustment.NONE
 			),
