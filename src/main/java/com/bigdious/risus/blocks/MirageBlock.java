@@ -67,7 +67,7 @@ public class MirageBlock extends Block {
 
 	@Override
 	public boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
-		return true;
+		return false;
 	}
 
 	@Override
