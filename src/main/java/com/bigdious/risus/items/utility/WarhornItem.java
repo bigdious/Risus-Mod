@@ -4,10 +4,7 @@ import com.bigdious.risus.client.particle.MobEffectParticleOption;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.creatures.pets.TamableMonster;
-import com.bigdious.risus.init.RisusDataComponents;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusParticles;
-import com.bigdious.risus.init.RisusTags;
+import com.bigdious.risus.init.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -15,6 +12,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
@@ -87,6 +85,7 @@ public class WarhornItem extends InstrumentItem {
 					if (!player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE))) {
 						player.drop(new ItemStack(Items.GLASS_BOTTLE), false);
 					}
+					player.playSound(RisusSoundEvents.IMBIBING.get());
 				}
 				this.changeAndConsumeWarhorn(stack, warhorn -> warhorn.update(RisusDataComponents.WARHORN_CONTENT, warhornContents, component -> component.updateContents(potionContents)));
 				return true;

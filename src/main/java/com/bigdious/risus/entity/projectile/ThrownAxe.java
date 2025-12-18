@@ -45,6 +45,7 @@ public class ThrownAxe extends AbstractArrow {
 	private boolean shouldSpin = true;
 	public int spinTickCount;
 	public int clientSideReturnAxeTickCount;
+	private double baseDamage = 9;
 
 	public ThrownAxe(EntityType<ThrownAxe> type, Level level) {
 		super(type, level);
@@ -59,6 +60,15 @@ public class ThrownAxe extends AbstractArrow {
 		this.entityData.set(ID_ARTHROPODS, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.BANE_OF_ARTHROPODS))));
 		this.entityData.set(ID_FIRE_ASPECT, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
 		this.entityData.set(ID_FOIL, pPickupItemStack.hasFoil());
+	}
+	@Override
+	public void setBaseDamage(double baseDamage) {
+		this.baseDamage = baseDamage;
+	}
+
+	@Override
+	public double getBaseDamage() {
+		return this.baseDamage;
 	}
 
 	private byte getLoyaltyFromItem(ItemStack p_345571_) {
@@ -162,7 +172,7 @@ public class ThrownAxe extends AbstractArrow {
 			return;
 		}
 		//update base attack when needed
-		if (entity.hurt(damagesource, 9 +
+		if (entity.hurt(damagesource, (float) this.getBaseDamage() +
 			(this.entityData.get(ID_SHARPNESS) < 1 ? 0 : 0.5F * this.entityData.get(ID_SHARPNESS) + 0.5F) +
 			((entity.getType().is(EntityTypeTags.ARTHROPOD) && this.entityData.get(ID_ARTHROPODS) >= 1) ? 2.5F * this.entityData.get(ID_ARTHROPODS) : 0) +
 			((entity.getType().is(EntityTypeTags.SENSITIVE_TO_SMITE) && this.entityData.get(ID_SMITE) >= 1) ? 2.5F * this.entityData.get(ID_SMITE) : 0)

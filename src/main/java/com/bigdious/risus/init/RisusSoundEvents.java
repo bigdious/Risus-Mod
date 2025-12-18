@@ -24,6 +24,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> AIR_SUCKED_IN = register("environment.air_sucked_in");
 	public static final DeferredHolder<SoundEvent, SoundEvent> ERUPT = register("environment.explode");
 
+
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_AMBIENT = register("block.blood.ambient");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRYSTALLIZED_BOND_GROW = register("block.popping_bondknot.crystallized_bond_grow");
 	public static final DeferredHolder<SoundEvent, SoundEvent> DEPTH_VASE_INSERT = register("block.depth_vase.insert");
@@ -69,6 +70,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> TOOTHKNOCKER_DASH = register("item.toothknocker.dash");
 	public static final DeferredHolder<SoundEvent, SoundEvent> FORTUNE_TRIGGERED = register("item.lucky_charm.fortune_triggered");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MISFORTUNE_TRIGGERED = register("item.wretched_charm.fortune_triggered");
+	public static final DeferredHolder<SoundEvent, SoundEvent> IMBIBING = register("item.imbibe");
 
 
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {
