@@ -696,6 +696,8 @@ public class LangGenerator extends RisusLangProvider {
 			"I feel the Birthplace trembling",
 			"You didn't abandon me...?",
 			"Till Death do us part",
-			"I can sense my... Composer");
+			"I can sense my... Composer",
+			"I love the skin you're in");
+		//23
 	}
 }

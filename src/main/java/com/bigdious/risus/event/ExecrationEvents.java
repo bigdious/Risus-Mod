@@ -1,6 +1,7 @@
 package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusItemStackUtil;
 import com.bigdious.risus.util.ServerParticleUtils;
@@ -238,16 +239,30 @@ public class ExecrationEvents {
 
 	public static void boostDefiantTrident(EntityJoinLevelEvent event) {
 		//let's make all tridents that can be picked up not despawn
-		if (event.getEntity() instanceof ThrownTrident trident && trident.pickup == AbstractArrow.Pickup.ALLOWED) {
+		if ((event.getEntity() instanceof ThrownTrident trident && trident.pickup == AbstractArrow.Pickup.ALLOWED)) {
 			trident.life = -10000000;
 			if (trident.getPickupItemStackOrigin().has(DataComponents.ENCHANTMENTS) && trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE)) > 0) {
 				float strength = trident.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
 				trident.setDeltaMovement(trident.getDeltaMovement().scale(1+strength*0.20));
-				trident.setBaseDamage(trident.getBaseDamage()+strength*2);
+				trident.setBaseDamage(trident.getBaseDamage()+strength*3);
 				trident.setGlowingTag(true);
 				if (trident.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 5; ++i) {
 						serverLevel.sendParticles(ParticleTypes.CRIT, trident.getRandomX(1), trident.getRandomY(), trident.getRandomZ(1F), 1, 0.0F, 0.0F, 0.0F, 0.1);
+					}
+				}
+			}
+		}
+		if ((event.getEntity() instanceof ThrownAxe axe && axe.pickup == AbstractArrow.Pickup.ALLOWED)) {
+			axe.life = -10000000;
+			if (axe.getPickupItemStackOrigin().has(DataComponents.ENCHANTMENTS) && axe.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE)) > 0) {
+				float strength = axe.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
+				axe.setDeltaMovement(axe.getDeltaMovement().scale(1+strength*0.20));
+				axe.setBaseDamage(axe.getBaseDamage()+strength*3);
+				axe.setGlowingTag(true);
+				if (axe.level() instanceof ServerLevel serverLevel) {
+					for (int i = 0; i < 5; ++i) {
+						serverLevel.sendParticles(ParticleTypes.CRIT, axe.getRandomX(1), axe.getRandomY(), axe.getRandomZ(1F), 1, 0.0F, 0.0F, 0.0F, 0.1);
 					}
 				}
 			}

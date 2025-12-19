@@ -47,6 +47,7 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.SHARPNESS,
 			Execrations.XENOPHOBIA,
 			Enchantments.LOYALTY,
+			Execrations.DEFIANCE,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
 			Execrations.HUNTERS_EXULTATION,

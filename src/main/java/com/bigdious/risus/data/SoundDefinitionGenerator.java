@@ -62,6 +62,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.LOVER_INFECT, SoundEvents.ZOMBIE_INFECT, "Lover impregnates");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MAW_GUTS_SHATTER, SoundEvents.WITHER_BREAK_BLOCK, "Gorger Guts break");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.MISFORTUNE_TRIGGERED, SoundEvents.WITHER_BREAK_BLOCK, "Misfortune triggered");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.IMBIBING, SoundEvents.BREWING_STAND_BREW, "Horn imbibed");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ORGANIC_MATTER_USE, SoundEvents.SCULK_VEIN_BREAK, "Organic Matter crinkles");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.SINGER_SCREAM, SoundEvents.ENDERMAN_SCREAM, "Singer serenades");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.STRIPPER_STRIP, SoundEvents.ARROW_HIT, "Debt is claimed");

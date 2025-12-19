@@ -346,6 +346,15 @@
     ],
     "subtitle": "subtitles.risus.item.eternal_youth.break"
   },
+  "item.imbibe": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.brewing_stand.brew"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.imbibe"
+  },
   "item.light_devourer.place_darkness": {
     "sounds": [
       {
