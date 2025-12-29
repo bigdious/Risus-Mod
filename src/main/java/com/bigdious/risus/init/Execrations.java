@@ -778,7 +778,7 @@ public class Execrations {
 					new EnchantmentAttributeEffect(
 						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.avaricious_ambit"),
 						Attributes.BLOCK_INTERACTION_RANGE,
-						LevelBasedValue.perLevel(3F),
+						LevelBasedValue.perLevel(6F),
 						AttributeModifier.Operation.ADD_VALUE
 					)
 				)

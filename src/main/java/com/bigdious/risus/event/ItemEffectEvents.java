@@ -73,16 +73,16 @@ public class ItemEffectEvents {
 				int powerRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.POWER)) / 2;
 				if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
 					int burstRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST));
-					windBurstExplode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					windBurstExplode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), 3+burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					//we're superbooming
 					for (int j = 0; j < (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT))*2 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*7 ); j++) {
-						windBurstExplode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), burstRadius + powerRadius, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+						windBurstExplode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), (3+burstRadius + powerRadius)/2, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					}
 				} else {
 					//we explode stick in the attacker's crotch, this way the victim can use shield to defend
-					explode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+					explode(attacker.level(), attacker.getX(), attacker.getY(), attacker.getZ(), 3+powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					for (int j = 0; j < (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.MULTISHOT))*2 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*7 ); j++) {
-						explode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), powerRadius, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
+						explode(attacker.level(), attacker.getRandomX(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), attacker.getY(), attacker.getRandomZ(10 + boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Execrations.STAR_RELEASE))*10), (3+powerRadius)/2, attacker, boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.FLAME)) > 0);
 					}
 				}
 				attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
@@ -91,13 +91,13 @@ public class ItemEffectEvents {
 	}
 
 	public static void explode(Level level, double x, double y, double z, int radius, LivingEntity entity, Boolean isFiery) {
-		level.explode(null, level.damageSources().explosion(entity, null), null, x, y, z, radius+3F, isFiery, Level.ExplosionInteraction.BLOCK);
+		level.explode(null, level.damageSources().explosion(entity, null), null, x, y, z, radius, isFiery, Level.ExplosionInteraction.BLOCK);
 	}
 	static {
 		EXPLOSION_DAMAGE_CALCULATOR = new SimpleExplosionDamageCalculator(true, false, Optional.empty(), BuiltInRegistries.BLOCK.getTag(BlockTags.BLOCKS_WIND_CHARGE_EXPLOSIONS).map(Function.identity()));
 	}
 	public static void windBurstExplode(Level level, double x, double y, double z, int radius ,Boolean isFiery) {
-		level.explode(null, null, EXPLOSION_DAMAGE_CALCULATOR, x, y, z, radius+3, isFiery, Level.ExplosionInteraction.TRIGGER, ParticleTypes.GUST_EMITTER_SMALL, ParticleTypes.GUST_EMITTER_LARGE, SoundEvents.BREEZE_WIND_CHARGE_BURST);
+		level.explode(null, null, EXPLOSION_DAMAGE_CALCULATOR, x, y, z, radius, isFiery, Level.ExplosionInteraction.TRIGGER, ParticleTypes.GUST_EMITTER_SMALL, ParticleTypes.GUST_EMITTER_LARGE, SoundEvents.BREEZE_WIND_CHARGE_BURST);
 	}
 
 	//do not touch below scythe events. It's stupid, but they need to stay as is

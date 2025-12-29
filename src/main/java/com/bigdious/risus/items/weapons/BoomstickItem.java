@@ -26,6 +26,7 @@ public class BoomstickItem extends Item {
 
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
+
 		return enchantment.is(RisusTags.Enchantments.BOOMSTICK_ALLOWED_ENCHANTS);
 	}
 

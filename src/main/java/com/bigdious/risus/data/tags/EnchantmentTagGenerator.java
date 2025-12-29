@@ -96,6 +96,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
 			Execrations.SOAR,
+			Enchantments.SWEEPING_EDGE,
+			Execrations.GENOCIDE,
 			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
@@ -109,6 +111,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
 			Execrations.SOAR,
+			Enchantments.SWEEPING_EDGE,
+			Execrations.GENOCIDE,
 			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
@@ -127,6 +131,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.FERVOUR,
 			Enchantments.KNOCKBACK,
 			Execrations.SOAR,
+			Enchantments.SWEEPING_EDGE,
+			Execrations.GENOCIDE,
 			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 
@@ -143,6 +149,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.RELOCATION,
 			Enchantments.KNOCKBACK,
 			Execrations.SOAR,
+			Enchantments.SWEEPING_EDGE,
+			Execrations.GENOCIDE,
 			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE);
 

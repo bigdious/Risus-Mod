@@ -214,7 +214,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,RisusBlocks.GRIMSTONE_BRICKS.asItem()
 		);
 
-
+		this.tag(RisusTags.Items.SCYTHES).add(
+			RisusItems.SCYTHE.get()
+			,RisusItems.SOUL_SCYTHE.get()
+			,RisusItems.FIRE_SCYTHE.get()
+			,RisusItems.CINDERGLEE_SCYTHE.get()
+		);
 
 
 		//curios

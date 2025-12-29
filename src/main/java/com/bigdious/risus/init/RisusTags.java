@@ -92,6 +92,7 @@ public class RisusTags {
 		public static final TagKey<Item> GRIMSTONES = create("grimstones");
 		public static final TagKey<Item> GLUTTONY_STUFF = create("gluttony_stuff");
 		public static final TagKey<Item> RAW_MEAT = create("raw_meat");
+		public static final TagKey<Item> SCYTHES = create("scythes");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

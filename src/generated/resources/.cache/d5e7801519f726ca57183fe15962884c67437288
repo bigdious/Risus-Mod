@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-18T19:16:13.4489201	Tags for minecraft:enchantment mod id risus
+// 1.21.1	2025-12-29T22:27:31.9946977	Tags for minecraft:enchantment mod id risus
 a5ecb1710034fe20ae476565a26be2e2f073728c data/minecraft/tags/enchantment/exclusive_set/armor.json
 dab77fbb49ab78146053334d61ccc54327d7f2c9 data/minecraft/tags/enchantment/exclusive_set/boots.json
 a16bd87f996d9b4d877b65da92755c5442c106b3 data/minecraft/tags/enchantment/exclusive_set/bow.json
@@ -8,14 +8,14 @@ a16bd87f996d9b4d877b65da92755c5442c106b3 data/minecraft/tags/enchantment/exclusi
 3bda758e876c376f3e4f526ee3c22291b66fd400 data/minecraft/tags/enchantment/exclusive_set/riptide.json
 e477a533db96edc91a2029d02a63a4a6cccf9949 data/risus/tags/enchantment/alterable_enchants.json
 c1f39f4b43d689a390c1e10f46711d825163cec2 data/risus/tags/enchantment/boomstick_allowed_enchants.json
-9adf92eb94f8480d2fa6a1f047c6a543ef9da7ad data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json
+a6c0cf3b01b8e69a211f04539474c3b9d6f0a8f6 data/risus/tags/enchantment/cinderglee_scythe_allowed_enchants.json
 2ffbea8f8e594a46d32f045d2f8e4b65863f7c20 data/risus/tags/enchantment/crescent_disaster_allowed_enchants.json
 c5d6d0144b2cf0055f6b57ca5bb4057578c32159 data/risus/tags/enchantment/execrations.json
-1fde12120b88efdaac2f86137a0ac1522ae4185a data/risus/tags/enchantment/fire_scythe_allowed_enchants.json
+2884cae04cd61b59c2276bcdaf62044fd2ac0d5d data/risus/tags/enchantment/fire_scythe_allowed_enchants.json
 297737429387ee11536bc5f076ef6c632de612f4 data/risus/tags/enchantment/hexhorn_allowed_enchants.json
 0897611aa903943f4bf3ddeae19686a74de85c11 data/risus/tags/enchantment/killjoy_allowed_enchants.json
-a8df2bde14baab47547d251707cecd6d41044e9c data/risus/tags/enchantment/scythe_allowed_enchants.json
-8683df66d538cb0accd5ecf159fb49e28fbeb4f6 data/risus/tags/enchantment/soul_scythe_allowed_enchants.json
+d93aee21ba6cd1335a031b40d3a89ae269429f3b data/risus/tags/enchantment/scythe_allowed_enchants.json
+d8dd80b3bd3c390b7da31d4e658d46a276c04a8f data/risus/tags/enchantment/soul_scythe_allowed_enchants.json
 8771f8762381646335f2f051b428a615cc4ac755 data/risus/tags/enchantment/thousand_blade_allowed_enchants.json
 0897611aa903943f4bf3ddeae19686a74de85c11 data/risus/tags/enchantment/toothknocker_allowed_enchants.json
 b60eb57c061fe6eca29befed2c60773289096489 data/risus/tags/enchantment/warhorn_allowed_enchants.json

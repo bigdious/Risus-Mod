@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
@@ -109,13 +110,15 @@ public class ExecrationEvents {
 		Player player = event.getEntity();
 		Entity victim = event.getTarget();
 		ItemStack stack = event.getEntity().getWeaponItem();
-		if (stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) {
+		if ((stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) || stack.is(RisusTags.Items.SCYTHES)) {
 			//mostly copy from Player attack()
 			float f = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 			DamageSource damagesource = player.damageSources().playerAttack(player);
 			f += stack.getItem().getAttackDamageBonus(victim, f, damagesource);
 			float f7 = 1.0F + (float) player.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO) * f;
-			int strength = stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE));
+			int strength =
+				((stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) ? stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) : 0)
+					+ (stack.is(RisusTags.Items.SCYTHES) ? 1 : 0);
 			for (LivingEntity livingentity2 : player.level()
 				.getEntitiesOfClass(LivingEntity.class, victim.getBoundingBox().inflate(1.0 + strength, 0.25, 1.0 + strength))) {
 				double entityReachSq = Mth.square(player.entityInteractionRange() + strength * 2);
@@ -145,17 +148,20 @@ public class ExecrationEvents {
 	}
 
 	public static void onOverload(BlockDropsEvent event) {
-		if (event.getBreaker() instanceof Player player) {
-			if (player.getWeaponItem().has(DataComponents.ENCHANTMENTS) && player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD)) > 0) {
-				int i = player.getWeaponItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.OVERLOAD));
-				if (player.level().getRandom().nextFloat() <= i * 0.15) {
+			if (event.getTool().has(DataComponents.ENCHANTMENTS) && event.getTool().get(DataComponents.ENCHANTMENTS).getLevel(event.getLevel().registryAccess().holderOrThrow(Execrations.OVERLOAD)) > 0) {
+				int i = event.getTool().get(DataComponents.ENCHANTMENTS).getLevel(event.getLevel().registryAccess().holderOrThrow(Execrations.OVERLOAD));
+				if (event.getLevel().getRandom().nextFloat() <= i * 0.15) {
 					event.getDrops().clear();
 					event.setDroppedExperience(0);
-					ServerParticleUtils.spawnParticleInBlock(player.level(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
-					player.level().playSound(null, event.getPos(), SoundEvents.GENERIC_BURN, player.getSoundSource(), 0.1F, 1);
+					ServerParticleUtils.spawnParticleInBlock(event.getLevel(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
+					event.getLevel().playSound(null, event.getPos(), SoundEvents.GENERIC_BURN, SoundSource.BLOCKS, 0.1F, 1);
 				}
 			}
-		}
+			if (event.getBreaker() != null && event.getTool().has(DataComponents.ENCHANTMENTS) && event.getTool().get(DataComponents.ENCHANTMENTS).getLevel(event.getLevel().registryAccess().holderOrThrow(Execrations.AVARICIOUS_AMBIT)) > 0) {
+				for (ItemEntity drop : event.getDrops()) {
+					drop.moveTo(event.getBreaker().getX(), event.getBreaker().getY(), event.getBreaker().getZ());
+				}
+			}
 	}
 
 	public static void onMaritimeSnare(ItemFishedEvent event) {
