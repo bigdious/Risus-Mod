@@ -210,7 +210,7 @@ public class MawGutsBlockEntity extends BaseContainerBlockEntity implements Worl
 		if (!maws.isEmpty()) {
 			maws.forEach(maw -> {
 				maw.hasGutsAssigned = false;
-				maw.hurt(source, Float.MAX_VALUE);
+				maw.hurt(source, maw.getMaxHealth()+1);
 			});
 		}
 	}

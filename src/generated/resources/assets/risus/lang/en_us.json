@@ -418,7 +418,7 @@
   "enchantment.risus.agony": "Agony",
   "enchantment.risus.agony.desc": "Reflects the attacker's damage, boosted by the amount of health missing from the user. Whenever it triggers, it will also increase the damage taken by half.",
   "enchantment.risus.avaricious_ambit": "Avaricious Ambit",
-  "enchantment.risus.avaricious_ambit.desc": "Increases block interaction range, but lowers combat range.",
+  "enchantment.risus.avaricious_ambit.desc": "Increases block interaction range and combat range, but decreases attack speed. Harvested drops are pulled to the user.",
   "enchantment.risus.battering": "Battering",
   "enchantment.risus.battering.desc": "Increases damage based on the armor points of the target and increases knockback.",
   "enchantment.risus.cackling_craze": "Cackling Craze",

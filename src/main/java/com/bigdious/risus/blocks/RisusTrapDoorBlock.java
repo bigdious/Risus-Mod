@@ -112,6 +112,24 @@ public class RisusTrapDoorBlock extends TrapDoorBlock implements SimpleMultilogg
 	}
 
 	@Override
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+		if (!level.isClientSide) {
+			boolean flag = level.hasNeighborSignal(pos);
+			if (flag !=  state.getValue(POWERED)) {
+				if ( state.getValue(OPEN) != flag) {
+					state =  state.setValue(OPEN, flag);
+					this.playSound( null, level, pos, flag);
+				}
+
+				level.setBlock(pos, state.setValue(POWERED, flag), 2);
+				if (state.getValue(FLUIDLOGGED) != MultiloggingEnum.EMPTY) {
+					level.scheduleTick(pos, state.getValue(FLUIDLOGGED).getFluid(), state.getValue(FLUIDLOGGED).getFluid().getTickDelay(level));
+				}
+			}
+		}
+	}
+
+	@Override
 	public boolean canPlaceLiquid(@Nullable Player player, BlockGetter getter, BlockPos pos, BlockState state, Fluid fluid) {
 		return SimpleMultiloggedBlock.super.canPlaceLiquid(player, getter, pos, state, fluid);
 	}

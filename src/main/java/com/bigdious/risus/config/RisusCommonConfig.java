@@ -12,6 +12,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue everythingYouthable;
 	final ModConfigSpec.BooleanValue reverseHornsPlayerBehavior;
 	final ModConfigSpec.BooleanValue loverSpreads;
+	final ModConfigSpec.BooleanValue hornsPrioritizeTeams;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -52,11 +53,16 @@ public final class RisusCommonConfig {
 		this.reverseHornsPlayerBehavior = builder
 			.translation("config.risus.reverse_horns_player_behavior")
 			.comment(ConfigComments.REVERSE_HORNS_PLAYER_BEHAVIOR)
-			.define("reverseHornsPlayerBehavior", true);
+			.define("reverseHornsPlayerBehavior", false);
 
 		this.loverSpreads = builder
 			.translation("config.risus.lover_spreads")
 			.comment(ConfigComments.LOVER_SPREADS)
 			.define("loverSpread", true);
+
+		this.hornsPrioritizeTeams = builder
+			.translation("config.risus.horns_prioritize_teams")
+			.comment(ConfigComments.HORNS_PRIORITIZE_TEAMS)
+			.define("hornsPrioritizeTeams", false);
 	}
 }

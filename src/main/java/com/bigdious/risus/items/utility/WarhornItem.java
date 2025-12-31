@@ -123,7 +123,7 @@ public class WarhornItem extends InstrumentItem {
 				}
 			}
 			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D + 4*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
-			if (player.getTeam() != null) {
+			if (player.getTeam() != null && RisusConfig.hornsPrioritizeTeams) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() == player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
