@@ -52,7 +52,7 @@ public class HexhornItem extends WarhornItem{
 		}
 		if (warhornContent.potion() != PotionContents.EMPTY) {
 			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(50D + 10*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
-			if (player.getTeam() != null) {
+			if (player.getTeam() != null && RisusConfig.hornsPrioritizeTeams) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() != player.getTeam()) {
 						for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {

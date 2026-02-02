@@ -96,7 +96,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 
 			if (this.eatenTNTTimer >= 60) {
 				this.hasGutsAssigned = false;
-				this.hurt(Explosion.getDefaultDamageSource(this.level(), this.eatenTNT), Float.MAX_VALUE);
+				this.hurt(Explosion.getDefaultDamageSource(this.level(), this.eatenTNT), this.getMaxHealth()+1);
 				this.level().explode(this, this.getX(), this.getY(), this.getZ(), 3.0F, Level.ExplosionInteraction.NONE);
 
 			}

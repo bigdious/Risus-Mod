@@ -48,5 +48,10 @@ public final class ConfigComments {
 		Default: true
 		When set to true, Lovers will place Spreading Remains upon impregnation.""";
 
+	public static final String HORNS_PRIORITIZE_TEAMS = """
+
+		Default: false
+		When set to true, Horns will prioritize the user's team when deciding allies and enemies.""";
+
 
 }

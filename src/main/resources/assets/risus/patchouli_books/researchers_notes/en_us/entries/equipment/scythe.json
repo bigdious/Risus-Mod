@@ -11,7 +11,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:scythe",
-      "text": "Compared to a sword, a scythe requires considerably more dexterity, making it a rather slow weapon to use. In return, it allows the user to attack at a higher range as well as sweep through enemies with much more force and efficiency."
+      "text": "Compared to a sword, a scythe requires considerably more dexterity, making it a rather slow weapon to use. In return, it allows the user to attack at a a higher range, as well as a sweep a larger area."
     },
     {
       "type": "patchouli:spotlight",

@@ -36,7 +36,7 @@ public class Angel extends Monster {
 
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
-			.add(Attributes.MAX_HEALTH, 100.0F)
+			.add(Attributes.MAX_HEALTH, 777.0F)
 			.add(Attributes.MOVEMENT_SPEED, 0.0F)
 			.add(Attributes.ATTACK_DAMAGE, 5.0F)
 			.add(Attributes.KNOCKBACK_RESISTANCE, 4)
@@ -178,7 +178,7 @@ public class Angel extends Monster {
 				source.getWeaponItem().is(RisusItems.THOUSAND_BLADE)
 
 			))) {
-			return super.hurt(source, Float.MAX_VALUE);
+			return super.hurt(source, this.getMaxHealth()+1);
 		}
 		return false;
 	}

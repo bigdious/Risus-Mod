@@ -1,5 +1,7 @@
 package com.bigdious.risus.entity.creatures;
 
+import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -50,6 +52,14 @@ public class Stalker extends Monster {
 	@Override
 	public void playerTouch(Player player) {
 		if (this.isAlive() && !player.getItemBySlot(EquipmentSlot.HEAD).is(RisusTags.Items.EYE)) {
+			if (player.getItemBySlot(EquipmentSlot.HEAD).is(RisusItems.SINNER_ROBES_HELMET) && player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT) != null &&
+				(player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("golden_eye") ||
+				player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("ender_eye") ||
+				player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("emerald_eye") ||
+				player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("bloodshot_eye") ||
+				player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("bleached_eye"))) {
+				return;
+			}
 			int i = 3;
 			if (this.level().getDifficulty() == Difficulty.NORMAL) {
 				i = 5;

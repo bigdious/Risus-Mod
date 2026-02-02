@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Altered from $(5)Silk Touch$(), $(4)Avaricious Ambit$() increases the range of the user, while decreasing their attacking speed. Maximum level is $(4)I$() and it conflicts with $(5)Silk Touch$() and $(5)Fortune$()."
+      "text": "Altered from $(5)Silk Touch$(), $(4)Avaricious Ambit$() increases the range of the user, while decreasing their attacking speed. It also moves all the harvested drops to the user. Maximum level is $(4)I$() and it conflicts with $(5)Silk Touch$() and $(5)Fortune$()."
     },
     {
       "type": "patchouli:text",
