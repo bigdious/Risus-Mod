@@ -154,6 +154,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusBlocks.STRIPPED_BONDKNOT_WOOD.asItem()
 		);
 
+		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
+			RisusItems.ANGEL_WINGS.asItem()
+
+		);
+
 		this.tag(ItemTags.BEE_FOOD).add(
 			RisusBlocks.REGEN_ROSE.asItem()
 		);
