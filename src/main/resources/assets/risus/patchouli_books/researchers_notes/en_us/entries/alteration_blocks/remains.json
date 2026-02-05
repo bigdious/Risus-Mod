@@ -2,7 +2,6 @@
   "name": "Remains",
   "icon": "risus:smiling_remains",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

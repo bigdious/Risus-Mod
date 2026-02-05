@@ -74,18 +74,19 @@ public class FadingShadowBlock extends Block{
 				if (entity.fallDistance > 2.5F) {
 					return FALLING_COLLISION_SHAPE;
 				}
-
-				boolean flag = entity instanceof FallingBlockEntity;
-				if (flag || canEntityWalkOnShadows(entity, entity.level(), pos) && collision.isAbove(Shapes.block(), pos, false) && !collision.isDescending()) {
-//			level.removeBlock(pos, false);
-//			return true;
-//		}) {
+				if (entity instanceof FallingBlockEntity ||
+					canEntityWalkOnShadows(entity, pos) && entity.getY()>pos.getY() && collision.isDescending()) {
 					return SHAPE2;
 				}
 			}
 		}
 
 		return Shapes.empty();
+	}
+
+	@Override
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float f) {
+		entity.causeFallDamage(f, canEntityWalkOnShadows(entity, pos) ? 0.0F : 1F, level.damageSources().fall());
 	}
 
 	protected int getLightBlock(BlockState p_154828_, BlockGetter p_154829_, BlockPos p_154830_) {
@@ -111,7 +112,7 @@ public class FadingShadowBlock extends Block{
 
 	}
 
-	public static boolean canEntityWalkOnShadows(Entity entity, Level level, BlockPos pos) {
+	public static boolean canEntityWalkOnShadows(Entity entity, BlockPos pos) {
 		return entity.level().getBrightness(LightLayer.BLOCK, pos) < 1 && entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT) != null && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT).equals("shadow_walker");
 	}
 

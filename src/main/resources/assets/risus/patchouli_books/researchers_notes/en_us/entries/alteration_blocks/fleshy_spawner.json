@@ -2,7 +2,6 @@
   "name": "Fleshy Spawner",
   "icon": "risus:fleshy_spawner",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:spotlight",

@@ -772,7 +772,7 @@
   "tooltip.risus.sinner_robes_boots.great_stool": " Great Stool",
   "tooltip.risus.sinner_robes_boots.great_stool.button_press": " Press the %s key for Dominance.",
   "tooltip.risus.sinner_robes_boots.shadow_walker": " Shadow Walker",
-  "tooltip.risus.sinner_robes_boots.shadow_walker.desc": " Turns Darkness solid",
+  "tooltip.risus.sinner_robes_boots.shadow_walker.desc": " Turns Darkness solid when crouching",
   "tooltip.risus.sinner_robes_chestplate.great_stool": " Great Stool",
   "tooltip.risus.sinner_robes_chestplate.great_stool.button_press": " Press the %s key for Superiority.",
   "tooltip.risus.sinner_robes_chestplate.guts": " Gorger Guts",

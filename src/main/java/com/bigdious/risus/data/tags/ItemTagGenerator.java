@@ -156,7 +156,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
 			RisusItems.ANGEL_WINGS.asItem()
-
 		);
 
 		this.tag(ItemTags.BEE_FOOD).add(

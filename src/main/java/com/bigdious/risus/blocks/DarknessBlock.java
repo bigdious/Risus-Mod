@@ -110,9 +110,8 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 				if (entity.fallDistance > 2.5F) {
 					return FALLING_COLLISION_SHAPE;
 				}
-
-				boolean flag = entity instanceof FallingBlockEntity;
-				if (flag || canEntityWalkOnShadows(entity) && collision.isAbove(Shapes.block(), pos, false) && !collision.isDescending()) {
+				if (entity instanceof FallingBlockEntity ||
+					FadingShadowBlock.canEntityWalkOnShadows(entity, pos) && entity.getY()>pos.getY() && collision.isDescending()) {
 					return SHAPE2;
 				}
 			}
@@ -121,10 +120,10 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		return Shapes.empty();
 	}
 
-	public static boolean canEntityWalkOnShadows(Entity entity) {
-		return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT) != null && living.getItemBySlot(EquipmentSlot.FEET).get(RisusDataComponents.ABILITY_VARIANT).equals("shadow_walker");
+	@Override
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float f) {
+		entity.causeFallDamage(f, FadingShadowBlock.canEntityWalkOnShadows(entity, pos) ? 0.0F : 1F, level.damageSources().fall());
 	}
-
 
 	@Override
 	public float getShadeBrightness(BlockState state, BlockGetter getter, BlockPos pos) {

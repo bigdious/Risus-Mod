@@ -501,7 +501,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.sinner_robes_boots.shadow_walker", " Shadow Walker");
 		this.add("tooltip.risus.sinner_robes_boots.great_stool", " Great Stool");
 
-		this.add("tooltip.risus.sinner_robes_boots.shadow_walker.desc", " Turns Darkness solid");
+		this.add("tooltip.risus.sinner_robes_boots.shadow_walker.desc", " Turns Darkness solid when crouching");
 		this.add("tooltip.risus.sinner_robes_boots.great_stool.button_press", " Press the %s key for Dominance.");
 
 		this.add("tooltip.risus.display_notch.hidden", "[Hold Shift for Usages]");

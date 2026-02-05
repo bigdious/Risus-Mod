@@ -2,7 +2,6 @@
   "name": "Totem of Unyielding",
   "icon": "risus:totem_of_unyielding",
   "category": "risus:equipment",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "risus:alterationtemplate1",

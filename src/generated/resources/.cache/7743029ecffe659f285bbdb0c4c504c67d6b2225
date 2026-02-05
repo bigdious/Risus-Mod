@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-02T19:34:10.5324094	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2026-02-05T20:50:37.2633748	Tags for minecraft:entity_type mod id risus
 2f4b01121522a65f3e8ebd0601757165181873da data/minecraft/tags/entity_type/arthropod.json
 15d5d6e65cf2c51ca5466c5e955eae74c4157688 data/minecraft/tags/entity_type/fall_damage_immune.json
 5aaaa22307c0351daa5cd2e96f23a03707070cf9 data/risus/tags/entity_type/beloved.json
@@ -14,4 +14,3 @@ c6328b4935e4975b2fea1156b6537d67b38dca38 data/risus/tags/entity_type/offsprings_
 55ba4e50b806aacef9fd467476191218dec02084 data/risus/tags/entity_type/small_maritime_snare_pool.json
 9b47585d99573786d752992d0578918c1a1dac9a data/risus/tags/entity_type/trident_like_projectiles.json
 e8068ea57f3c698815b7654383eabef03f483a23 data/risus/tags/entity_type/youth_banned.json
-414fc955bdf7db27bb77a64bba6ebce85ddfb61f data/risus/tags/entity_type/youth_shrinks.json

@@ -2,7 +2,6 @@
   "name": "Laughing Stalk",
   "icon": "risus:laughing_stalk",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:spotlight",

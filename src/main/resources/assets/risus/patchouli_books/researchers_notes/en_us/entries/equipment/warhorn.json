@@ -2,7 +2,6 @@
   "name": "Warhorn & Hexhorn",
   "icon": "risus:hexhorn",
   "category": "risus:equipment",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "risus:alterationtemplate1",

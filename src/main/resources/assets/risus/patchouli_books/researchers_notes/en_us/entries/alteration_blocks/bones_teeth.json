@@ -2,7 +2,6 @@
   "name": "Bones, Teeth & Fossils",
   "icon": "risus:teeth",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

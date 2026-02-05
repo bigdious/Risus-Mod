@@ -423,21 +423,14 @@ public class ItemEffectEvents {
 	public static void eternalizeTamables(PlayerInteractEvent.EntityInteract event){
 		//copy of interaction from EternalYouthItem to handle tamed animals (order of events issue)
 		if (event.getItemStack().is(RisusItems.ETERNAL_YOUTH)) {
-			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner() == event.getEntity()) {
+			if (event.getTarget() instanceof TamableAnimal tamableAnimal && tamableAnimal.getOwner() == event.getEntity() && !tamableAnimal.getType().is(RisusTags.Entities.YOUTH_BANNED)) {
 				boolean itemUsed = false;
-				if (tamableAnimal.getAge() > -24000 && !tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
+				if (tamableAnimal.getAge() > -24000 ) {
 					EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);
 					itemUsed = true;
 				} else if (tamableAnimal.getAge() < -24000) {
 					itemUsed = true;
 					EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
-				} else if ((tamableAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable)  && tamableAnimal.getAttributes().getInstance(Attributes.SCALE) != null) {
-					if (tamableAnimal.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
-						EternalYouthItem.youthDisable(event.getLevel(), event.getEntity(), tamableAnimal);
-					} else {
-						EternalYouthItem.youthEnable(event.getLevel(), event.getEntity(), tamableAnimal);
-					}
-					itemUsed = true;
 				}
 				if (itemUsed) {
 					event.getItemStack().shrink(1);
@@ -529,7 +522,7 @@ public class ItemEffectEvents {
 		if (player.level() instanceof ServerLevel) {
 			BlockPos blockpos1 = player.blockPosition();
 			ItemStack stack = player.getItemBySlot(EquipmentSlot.FEET);
-			if (!Objects.equal(player.lastPos, blockpos1)) {
+			if (!Objects.equal(player.lastPos, blockpos1) && player.isCrouching()) {
 				if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("shadow_walker")) {
 					BlockState blockstate = RisusBlocks.FADING_SHADOW.get().defaultBlockState();
 					int i = 2;

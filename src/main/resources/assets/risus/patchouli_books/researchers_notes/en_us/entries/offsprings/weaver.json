@@ -2,7 +2,6 @@
   "name": "Weaver",
   "icon": "risus:essence_of_melancholy",
   "category": "risus:offsprings",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

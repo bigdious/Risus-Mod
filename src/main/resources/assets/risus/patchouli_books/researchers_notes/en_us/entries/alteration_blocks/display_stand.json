@@ -2,7 +2,6 @@
   "name": "Display Notch",
   "icon": "risus:display_notch",
   "category": "risus:alteration",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

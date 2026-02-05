@@ -2,7 +2,6 @@
   "name": "Grimstone",
   "icon": "risus:grimstone",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

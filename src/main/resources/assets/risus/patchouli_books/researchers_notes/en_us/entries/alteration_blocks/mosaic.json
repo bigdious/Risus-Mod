@@ -2,7 +2,6 @@
   "name": "Mosaic Glass & Lamp",
   "icon": "risus:blue_mosaic_glass",
   "category": "risus:alteration",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

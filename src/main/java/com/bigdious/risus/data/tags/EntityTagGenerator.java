@@ -61,22 +61,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 				RisusEntities.MEMORY1.get(),
 				RisusEntities.GREAT_STOOL.get()
 			)
+		;
 
-		;
-		tag(RisusTags.Entities.YOUTH_SHRINKS)
-			.add(
-				EntityType.PARROT,
-				EntityType.ALLAY,
-				EntityType.BAT,
-				EntityType.COD,
-				EntityType.DOLPHIN,
-				EntityType.GLOW_SQUID,
-				EntityType.SQUID,
-				EntityType.PUFFERFISH,
-				EntityType.TROPICAL_FISH,
-				EntityType.SALMON
-			)
-		;
 		tag(RisusTags.Entities.HORN_BUFFS)
 			.add(
 				EntityType.IRON_GOLEM,

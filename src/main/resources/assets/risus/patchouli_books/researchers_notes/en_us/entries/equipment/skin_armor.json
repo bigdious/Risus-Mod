@@ -2,7 +2,6 @@
   "name": "Skin Armor",
   "icon": "risus:skin_chestplate",
   "category": "risus:equipment",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

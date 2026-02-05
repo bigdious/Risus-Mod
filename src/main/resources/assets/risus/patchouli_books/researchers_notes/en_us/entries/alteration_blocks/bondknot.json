@@ -2,7 +2,6 @@
   "name": "Bondknot Wood",
   "icon": "risus:bondknot_log",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "risus:alterationtemplate1",

@@ -2,7 +2,6 @@
   "name": "Depth Vase",
   "icon": "risus:depth_vase",
   "category": "risus:alteration",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

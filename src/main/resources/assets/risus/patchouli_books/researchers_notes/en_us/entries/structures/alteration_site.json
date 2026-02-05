@@ -2,7 +2,6 @@
   "name": "Alteration Sites",
   "icon": "risus:alteration_catalyst",
   "category": "risus:structures",
-  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

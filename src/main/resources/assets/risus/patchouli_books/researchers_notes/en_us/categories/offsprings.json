@@ -1,6 +1,5 @@
 {
   "name": "Offsprings & Beloved",
   "description": "Offsprings are monster-like manifestations of the Risus with various shapes and behaviours. Since they are a part of Risus and not their own separate individuals, their memories cannot be extracted in the form of experience. The Beloved are instead beings forcefully impregnated with the Risus by a Lover but still retain their individual self.",
-  "icon": "risus:essence_of_greed",
-  "advancement": "risus:first"
+  "icon": "risus:essence_of_greed"
 }

@@ -2,7 +2,6 @@
   "name": "Summary",
   "icon": "minecraft:writable_book",
   "category": "risus:execrations",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

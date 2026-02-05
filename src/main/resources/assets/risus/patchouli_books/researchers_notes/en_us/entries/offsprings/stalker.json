@@ -2,7 +2,6 @@
   "name": "Stalker",
   "icon": "risus:embodiment_of_devotion",
   "category": "risus:offsprings",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

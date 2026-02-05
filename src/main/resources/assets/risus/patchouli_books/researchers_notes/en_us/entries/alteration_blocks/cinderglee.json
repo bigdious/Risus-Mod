@@ -2,7 +2,6 @@
   "name": "Cinderglee",
   "icon": "risus:joyflame_campfire",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

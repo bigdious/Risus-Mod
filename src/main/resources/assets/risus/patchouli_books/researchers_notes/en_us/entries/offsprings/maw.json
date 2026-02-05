@@ -2,7 +2,6 @@
   "name": "Gorger",
   "icon": "risus:essence_of_gluttony",
   "category": "risus:offsprings",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

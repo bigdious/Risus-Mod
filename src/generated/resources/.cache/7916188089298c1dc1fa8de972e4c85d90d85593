@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-29T22:20:37.0854704	Tags for minecraft:item mod id risus
+// 1.21.1	2026-02-05T19:10:10.6527143	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -14,6 +14,7 @@ a9a99ee09bf13187a929030b20cefcf7f6f6f9c7 data/c/tags/item/storage_blocks.json
 404277d823015a85660dc0c721600643edd4ecca data/minecraft/tags/item/chest_armor.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/minecraft/tags/item/dyeable.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/armor.json
+defc5efc088117fbdc5bbd983fc8401c88f26e13 data/minecraft/tags/item/enchantable/durability.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/equippable.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/foot_armor.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/vanishing.json

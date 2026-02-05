@@ -29,52 +29,27 @@ public class EternalYouthItem extends Item {
 			return InteractionResult.PASS;
 		}
 		boolean itemUsed = false;
-		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale")) && !(targetAnimal instanceof TamableAnimal)) {
-			youthEnable(entity.level(), player, entity);
+		if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() > -24000 && !(targetAnimal instanceof TamableAnimal)) {
+			youthEnable(entity.level(), player, targetAnimal);
 			itemUsed = true;
 		} else if (entity instanceof AgeableMob targetAnimal && targetAnimal.getAge() < -24000) {
 			itemUsed = true;
 			youthDisable(entity.level(), player, entity);
-		} else if ((entity.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable) && entity.getAttributes().getInstance(Attributes.SCALE) != null) {
-			if (entity.getAttribute(Attributes.SCALE).hasModifier(Risus.prefix("eternal_youth_scale"))) {
-				youthDisable(entity.level(), player, entity);
-			} else {
-				youthEnable(entity.level(), player, entity);
-			}
-			itemUsed = true;
 		}
 		if (itemUsed) {
-			boolean isClient = entity.level().isClientSide();
-			if (!isClient) {
+			if (!entity.level().isClientSide()) {
 				stack.shrink(1);
 			}
-			return InteractionResult.sidedSuccess(isClient);
+			return InteractionResult.sidedSuccess(entity.level().isClientSide());
 		}
 		return InteractionResult.PASS;
 	}
 
-	public static void youthEnable(Level level, Player player, LivingEntity target) {
-		if (target instanceof AgeableMob targetAnimal) {
-			targetAnimal.setBaby(true);
-			targetAnimal.setAge(-2000000000);
-			targetAnimal.setInvulnerable(true);
-			targetAnimal.setPersistenceRequired();
-			//pay attention to the stacking of (). Correct order is mandatory
-			if ((!targetAnimal.isBaby() && (targetAnimal.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable)) && target.getAttribute(Attributes.SCALE) != null) {
-				targetAnimal.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-			}
-			if (target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
-				targetAnimal.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(-1024.0F);
-			}
-		} else if ((target.getType().is(RisusTags.Entities.YOUTH_SHRINKS) || RisusConfig.everythingYouthable) && target.getAttribute(Attributes.SCALE) != null && target.getAttribute(Attributes.ATTACK_DAMAGE) != null) {
-			target.setInvulnerable(true);
-			if (target instanceof Mob mob) mob.setPersistenceRequired();
-			target.getAttribute(Attributes.SCALE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_scale"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-			if (target instanceof Player){
-				target.getAttribute(Attributes.ATTACK_DAMAGE).addPermanentModifier(new AttributeModifier(Risus.prefix("eternal_youth_passive"), -1024F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-			} else target.getAttributes().getInstance(Attributes.ATTACK_DAMAGE).setBaseValue(-1024.0F);
-
-		}
+	public static void youthEnable(Level level, Player player, AgeableMob target) {
+		target.setBaby(true);
+		target.setAge(-2000000000);
+		target.setInvulnerable(true);
+		target.setPersistenceRequired();
 		if (level instanceof ServerLevel serverLevel) {
 			serverLevel.sendParticles(ParticleTypes.POOF, target.getX(), target.getRandomY(), target.getZ(), 20, 0, 0.0, 0.0, 0.1);
 			serverLevel.sendParticles(RisusParticles.RISING_SMILE.get(), target.getX(), target.getEyeY(), target.getZ(), 1, 0, 0.0, 0.0, 0.2);
@@ -82,6 +57,7 @@ public class EternalYouthItem extends Item {
 		}
 		player.playSound(RisusSoundEvents.ETERNAL_YOUTH_BREAK.get());
 	}
+
 	public static void youthDisable(Level level, Player player, LivingEntity target){
 		target.kill();
 		if (level instanceof ServerLevel serverLevel) {

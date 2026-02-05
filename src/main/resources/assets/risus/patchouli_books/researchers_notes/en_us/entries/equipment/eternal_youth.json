@@ -2,7 +2,6 @@
   "name": "Eternal Youth",
   "icon": "risus:eternal_youth",
   "category": "risus:equipment",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

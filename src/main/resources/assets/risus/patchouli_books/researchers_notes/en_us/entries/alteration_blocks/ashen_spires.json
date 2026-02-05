@@ -2,7 +2,6 @@
   "name": "Ashen Spire",
   "icon": "risus:ashen_spire",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

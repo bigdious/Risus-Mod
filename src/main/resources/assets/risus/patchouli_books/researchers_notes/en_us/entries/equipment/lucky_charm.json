@@ -2,7 +2,6 @@
   "name": "Lucky & Wretched Charm",
   "icon": "risus:lucky_charm",
   "category": "risus:equipment",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:text",

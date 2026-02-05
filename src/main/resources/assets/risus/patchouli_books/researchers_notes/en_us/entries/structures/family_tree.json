@@ -2,7 +2,6 @@
   "name": "Family Trees",
   "icon": "risus:popping_bondknot_log",
   "category": "risus:structures",
-  "advancement": "risus:family",
   "pages": [
     {
       "type": "patchouli:text",

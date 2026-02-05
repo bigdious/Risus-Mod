@@ -2,7 +2,6 @@
   "name": "Eyes",
   "icon": "risus:eye_golden",
   "category": "risus:alteration",
-  "advancement": "risus:first",
   "pages": [
     {
       "type": "patchouli:crafting",
