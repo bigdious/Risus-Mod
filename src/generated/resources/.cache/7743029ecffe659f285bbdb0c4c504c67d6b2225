@@ -1,10 +1,10 @@
-// 1.21.1	2026-02-05T20:50:37.2633748	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2026-02-12T22:05:10.5410775	Tags for minecraft:entity_type mod id risus
 2f4b01121522a65f3e8ebd0601757165181873da data/minecraft/tags/entity_type/arthropod.json
 15d5d6e65cf2c51ca5466c5e955eae74c4157688 data/minecraft/tags/entity_type/fall_damage_immune.json
 5aaaa22307c0351daa5cd2e96f23a03707070cf9 data/risus/tags/entity_type/beloved.json
 fc145e1830c415c2fb07d264d8915e01a8e67381 data/risus/tags/entity_type/breaks_depth_vases.json
 c8b1538b650862afbfc87c6caef62a5359493f0c data/risus/tags/entity_type/cant_be_stolen_from.json
-d4b2ce95c8f878e708cd86be259cbba9ae709bff data/risus/tags/entity_type/hexhorn_banned.json
+a3119ac3e4f63081a7af1c3c0fbddfa74588c85a data/risus/tags/entity_type/hexhorn_banned.json
 e99dd445774fec929fb59b9731170440673f9908 data/risus/tags/entity_type/horn_buffs.json
 6002f9f35ee9c924b0ee861d6b568975d3faeb8b data/risus/tags/entity_type/large_maritime_snare_pool.json
 789a25fe8f770cfd7dfa1458e5055d7257dff8e8 data/risus/tags/entity_type/medium_maritime_snare_pool.json
@@ -13,4 +13,4 @@ c6328b4935e4975b2fea1156b6537d67b38dca38 data/risus/tags/entity_type/offsprings_
 00e45344a8246a59696ee296a43612ae52e9a6f7 data/risus/tags/entity_type/sensitive_to_hunters.json
 55ba4e50b806aacef9fd467476191218dec02084 data/risus/tags/entity_type/small_maritime_snare_pool.json
 9b47585d99573786d752992d0578918c1a1dac9a data/risus/tags/entity_type/trident_like_projectiles.json
-e8068ea57f3c698815b7654383eabef03f483a23 data/risus/tags/entity_type/youth_banned.json
+b0a1184384892236e2048a8c3c4b6d068f1eea9f data/risus/tags/entity_type/youth_banned.json

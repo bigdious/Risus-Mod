@@ -307,7 +307,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_EXPOSED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get(),
+
 			RisusBlocks.BLOOD_CAULDRON.get()
+			,RisusBlocks.MEMORY1.get()
 		);
 
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(RisusBlocks.ASHEN_REMAINS.get());

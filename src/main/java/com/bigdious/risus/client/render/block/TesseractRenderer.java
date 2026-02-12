@@ -1,6 +1,7 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.block;
 
 import com.bigdious.risus.blocks.entity.TesseractBlockEntity;
+import com.bigdious.risus.client.render.AnimationRenderHelper;
 import com.bigdious.risus.init.RisusItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

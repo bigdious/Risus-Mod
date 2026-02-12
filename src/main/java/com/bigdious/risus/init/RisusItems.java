@@ -89,7 +89,6 @@ public class RisusItems {
 	//SUMMONERS
 	public static final DeferredItem<Item> BONDKNOT_BOAT = register("bondknot_boat", properties -> new RisusBoatItem(false, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> GUTS_BOAT = register("guts_boat", properties -> new RisusBoatItem(true, RisusBoat.Type.BONDKNOT, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> MEMORY1_ITEM = register("memory1_item", Memory1Item::new, Item.Properties::new);
 	public static final DeferredItem<Item> ESSENCE_OF_GLUTTONY = ITEMS.register("essence_of_gluttony", () -> new RisusSpawnItem (RisusEntities.MAW.get() , new Item.Properties().rarity(BLOOD)));
 	public static final DeferredItem<Item> ESSENCE_OF_GREED = ITEMS.register("essence_of_greed", () -> new RisusSpawnItem (RisusEntities.HOLDER.get() , new Item.Properties().rarity(BLOOD)));
 	public static final DeferredItem<Item> ESSENCE_OF_SLOTH = ITEMS.register("essence_of_sloth", () -> new RisusSpawnItem (RisusEntities.ANGEL.get() , new Item.Properties().rarity(BLOOD)));

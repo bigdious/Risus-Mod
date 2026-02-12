@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-09T22:24:02.778348	Risus Item Models
+// 1.21.1	2026-02-12T20:45:14.9004172	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -228,7 +228,7 @@ ec8befb518a16c8557bb2299538cc0115d01c7e7 assets/risus/models/item/magenta_mosaic
 a4bfb7cfd330c4a79b8aba1c85fa01543854ff95 assets/risus/models/item/magenta_mosaic_lamp.json
 09a5c403c2120fa126b630fe7b56167b3a5ef9ee assets/risus/models/item/maw_guts.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/maw_spawn_egg.json
-e6750c58900f9570eaff52702ccbb55e7d04ba66 assets/risus/models/item/memory1_item.json
+1e320dd44bef2ff97d3ebdf301a6452eb434d4c0 assets/risus/models/item/memory1.json
 595dc05b2e34262747e65cfd3a032fc150fc3182 assets/risus/models/item/memory_core.json
 602c469e5d7ff8b51c997c6d004bd1845af3e8f7 assets/risus/models/item/mirage_end_stone.json
 4f9af2019320b5a9761a720842dd4512c6ec0050 assets/risus/models/item/mirage_grass_block.json

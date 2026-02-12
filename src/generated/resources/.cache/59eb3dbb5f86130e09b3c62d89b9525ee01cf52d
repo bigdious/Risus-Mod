@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-08T22:28:16.1767508	Loot Tables
+// 1.21.1	2026-02-12T22:05:10.5310749	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -166,6 +166,7 @@ f5feecc9c7687404e3678963dcfb800c0851cff3 data/risus/loot_table/blocks/magenta_mo
 6bd19df97bed4f98cd8f49daec617d2291a51aed data/risus/loot_table/blocks/magenta_mosaic_glass_pane.json
 e89a5de09995fbafe6c84ebc177484bfc49e2cd8 data/risus/loot_table/blocks/magenta_mosaic_lamp.json
 320374d0153b1c45e537be87ce578bfe58b000b1 data/risus/loot_table/blocks/maw_guts.json
+fce3e616595f425b08a3e07a1910b4ba844e5751 data/risus/loot_table/blocks/memory1.json
 70e9f8deae5d068d7acde7c21b502a9d321df37b data/risus/loot_table/blocks/mirage_end_stone.json
 7d1bd797320b256876212566f142078609cbbd8d data/risus/loot_table/blocks/mirage_grass_block.json
 83d76e206c6ef174ea7d9ae1842facad996a0215 data/risus/loot_table/blocks/mirage_netherrack.json
@@ -250,7 +251,6 @@ e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.js
 2723d12ffeb4a1fbea5799007875fb1de7240c86 data/risus/loot_table/entities/licker.json
 0ea87423cfed51f69daa3d2b104603ad8a9dc928 data/risus/loot_table/entities/lover.json
 899a1181d1faf62ef9f0b2848055cda65d1288a4 data/risus/loot_table/entities/maw.json
-43249e37e72788d275b68e5c1cf5dab074b49db0 data/risus/loot_table/entities/memory1.json
 046b7694f2c0f2eb62a7cbf3f70d949ad90d71d6 data/risus/loot_table/entities/question_mark.json
 3cb5014024d2df30761bd9792de6f9112dd70f96 data/risus/loot_table/entities/singer.json
 1a8691354eccd798ee6d5e89e069c06253b99795 data/risus/loot_table/entities/stalker.json

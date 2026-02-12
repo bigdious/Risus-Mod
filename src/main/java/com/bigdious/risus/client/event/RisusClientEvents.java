@@ -12,6 +12,7 @@ import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.ThreadWingsModel;
 import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
+import com.bigdious.risus.client.render.block.*;
 import com.bigdious.risus.client.render.creature.*;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.player.AngelWingsLayer;
@@ -56,7 +57,6 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -268,7 +268,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.STALKER, StalkerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
-		event.registerLayerDefinition(RisusModelLayers.MEMORY1, Memory1Model::create);
+		event.registerLayerDefinition(RisusModelLayers.MEMORY1, MemoryRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.GREAT_STOOL, StoolModel::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.WEAVING_MECHANISM, WeavingMechanismRenderer::createBaseLayer);
@@ -331,7 +331,6 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.BABY_SPIDER.get(), BabySpiderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
-		event.registerEntityRenderer(RisusEntities.MEMORY1.get(), Memory1Renderer::new);
 		event.registerEntityRenderer(RisusEntities.GREAT_STOOL.get(), StoolRenderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
@@ -347,6 +346,7 @@ public class RisusClientEvents {
 		event.registerBlockEntityRenderer(RisusBlockEntities.WEAVING_MECHANISM.get(), WeavingMechanismRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.DISPLAY_NOTCH.get(), DisplayNotchRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.TESSERACT.get(), TesseractRenderer::new);
+		event.registerBlockEntityRenderer(RisusBlockEntities.MEMORY.get(), MemoryRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.RITUAL.get(), RitualBlockEntityRenderer::new);
 		event.registerBlockEntityRenderer(RisusBlockEntities.SPAWNER.get(), RisusSpawnerRenderer::new);
 	}

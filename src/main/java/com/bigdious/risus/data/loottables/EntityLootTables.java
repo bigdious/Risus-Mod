@@ -40,13 +40,6 @@ public class EntityLootTables extends EntityLootSubProvider {
 					.add(LootItem.lootTableItem(RisusItems.BLOOD_FEATHER.get()))
 					.when(LootItemKilledByPlayerCondition.killedByPlayer())));
 
-		add(RisusEntities.MEMORY1.get(),
-			LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-					.setRolls(ConstantValue.exactly(1.0F))
-					.add(LootItem.lootTableItem(RisusItems.MEMORY1_ITEM.get()))
-					.when(LootItemKilledByPlayerCondition.killedByPlayer())));
-
 
 		add(RisusEntities.HOLDER.get(),
 			LootTable.lootTable()

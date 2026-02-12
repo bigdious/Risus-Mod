@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-16T14:27:45.7452386	Risus blockstates and models
+// 1.21.1	2026-02-12T21:52:18.6773781	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -127,7 +127,7 @@ e435a565179d6af5e2fbdd7b0f6f54b84922de4a assets/risus/blockstates/heart_transpla
 bbd030f1c29cc22730467ef06010618d5064cc85 assets/risus/blockstates/imitation_scales_block_slab.json
 2b6656e6e976a250ce217e59e24d624608479aa2 assets/risus/blockstates/imitation_scales_block_stairs.json
 867a6bd478be655a019c3c276b0471d82104245d assets/risus/blockstates/imitation_scales_block_wall.json
-e127d2d59745e1b1da9a24e544aab62011aee968 assets/risus/blockstates/inactive_holder.json
+9a6f161cb0deefdf2e278e23c8858d4d3ca43f0f assets/risus/blockstates/inactive_holder.json
 285b617f70ee59d739d9d31c864f85a90d45316e assets/risus/blockstates/invisible_display_notch.json
 1fd71209d75e35a63066f63d837bcebddbeca187 assets/risus/blockstates/joyflame_campfire.json
 408e75aad347e7ec440938d5e18de92b9a2d4ec8 assets/risus/blockstates/joyflame_fire.json
@@ -156,6 +156,7 @@ abaa5b83bdfd461f6725a89b5d4254fa25c6865a assets/risus/blockstates/lime_mosaic_gl
 ef65271a145443d37081dddd5035b82021e932ae assets/risus/blockstates/magenta_mosaic_glass_pane.json
 d578cb2e7c0e37d2fe0dad410bd6ae6537ce1eba assets/risus/blockstates/magenta_mosaic_lamp.json
 6788b1496053443e949a64b483ec2bb93ca42a2d assets/risus/blockstates/maw_guts.json
+2d2dad190ff93141e58571f0791219975aeea4d2 assets/risus/blockstates/memory1.json
 2afdde2e36763cbba0c90feb065a8589659c0eeb assets/risus/blockstates/mirage_end_stone.json
 320b65e49da8d9f97c85916fe302c422a151dd85 assets/risus/blockstates/mirage_grass_block.json
 e94812cb276b4489d103a3484a4a90132be99f48 assets/risus/blockstates/mirage_netherrack.json
@@ -492,6 +493,7 @@ a33a80f77a22b54c2f06145c69fb77f0bf41a7bd assets/risus/models/block/magenta_mosai
 c43cb14e6d201d5233f69d40b0d2bd9242e564e6 assets/risus/models/block/magenta_mosaic_glass_pane_side.json
 200249d8ccb99e0b8523b598a999f19b0c2d1821 assets/risus/models/block/magenta_mosaic_glass_pane_side_alt.json
 c0eec490683e86eb0235e592a244c7f53a1defa4 assets/risus/models/block/magenta_mosaic_lamp.json
+0655612b0333c4879af1bea5563fbd0bd79dae5e assets/risus/models/block/memory1.json
 26a7832ef3aae4775f4dbe2debf7905c7b1cc0ab assets/risus/models/block/mirage_end_stone.json
 81c8d9fb74255ca1d996f7c275c3ee97faf4f933 assets/risus/models/block/mirage_grass_block.json
 f4de1746bb77a1513d428904cc0389a5b3c4211b assets/risus/models/block/mirage_netherrack.json

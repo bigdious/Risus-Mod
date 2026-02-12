@@ -194,7 +194,6 @@ public class RisusEvents {
 		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
 		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
-		event.put(RisusEntities.MEMORY1.get(), Memory1.attributes().build());
 		event.put(RisusEntities.LITTER.get(), Litter.createAttributes().build());
 	}
 

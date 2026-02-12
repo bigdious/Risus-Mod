@@ -1,11 +1,11 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.block;
 
 import com.bigdious.risus.blocks.DisplayNotchBlock;
 import com.bigdious.risus.blocks.entity.DisplayNotchBlockEntity;
+import com.bigdious.risus.client.render.AnimationRenderHelper;
 import com.bigdious.risus.config.RisusConfig;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -15,8 +15,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.Objects;
 
 public class DisplayNotchRenderer implements BlockEntityRenderer<DisplayNotchBlockEntity> {
 

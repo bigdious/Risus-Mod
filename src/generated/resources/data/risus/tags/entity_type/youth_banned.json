@@ -1,9 +1,6 @@
 {
   "values": [
-    "minecraft:ender_dragon",
     "minecraft:tadpole",
-    "risus:question_mark",
-    "risus:memory1",
-    "risus:great_stool"
+    "minecraft:frog"
   ]
 }

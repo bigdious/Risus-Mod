@@ -45,7 +45,6 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x14ff14, 0xffd414);
 	public static final DeferredHolder<EntityType<?>, EntityType<Hex>> HEX = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "hex"), EntityType.Builder.of(Hex::new, MobCategory.MONSTER).fireImmune().sized(0.4F, 0.6F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8), 0x14ff14, 0xffd414);
 
-	public static final DeferredHolder<EntityType<?>, EntityType<Memory1>> MEMORY1 = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "memory1"), EntityType.Builder.of(Memory1::new, MobCategory.MONSTER).sized(2F, 2F));
 	public static final DeferredHolder<EntityType<?>, EntityType<Stool>> GREAT_STOOL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_stool"), EntityType.Builder.of(Stool::new, MobCategory.MISC).sized(1F, 1.5F));
 
 	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {

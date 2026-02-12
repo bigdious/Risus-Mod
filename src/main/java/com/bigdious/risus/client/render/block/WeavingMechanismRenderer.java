@@ -1,8 +1,9 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.block;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.entity.WeavingMechanismBlockEntity;
 import com.bigdious.risus.client.RisusModelLayers;
+import com.bigdious.risus.client.render.AnimationRenderHelper;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;

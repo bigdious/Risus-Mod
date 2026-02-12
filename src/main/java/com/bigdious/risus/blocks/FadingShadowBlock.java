@@ -71,9 +71,6 @@ public class FadingShadowBlock extends Block{
 		if (collision instanceof EntityCollisionContext entitycollisioncontext) {
 			Entity entity = entitycollisioncontext.getEntity();
 			if (entity != null) {
-				if (entity.fallDistance > 2.5F) {
-					return FALLING_COLLISION_SHAPE;
-				}
 				if (entity instanceof FallingBlockEntity ||
 					canEntityWalkOnShadows(entity, pos) && entity.getY()>pos.getY() && collision.isDescending()) {
 					return SHAPE2;

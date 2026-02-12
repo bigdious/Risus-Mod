@@ -255,6 +255,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.REGEN_ROSE.get());
 				output.accept(RisusBlocks.NEURON_HEAD.get());
 				output.accept(RisusItems.VEINS.get());
+				output.accept(RisusBlocks.MEMORY1.get());
 			}
 		)
 		.build());
@@ -394,7 +395,6 @@ public class RisusTab {
 			(parameters, output) -> {
 				output.accept(RisusItems.BONDKNOT_BOAT.get());
 				output.accept(RisusItems.GUTS_BOAT.get());
-				output.accept(RisusItems.MEMORY1_ITEM.get());
 				output.accept(RisusItems.ESSENCE_OF_GLUTTONY.get());
 				output.accept(RisusItems.ESSENCE_OF_MELANCHOLY.get());
 				output.accept(RisusItems.ESSENCE_OF_GREED.get());

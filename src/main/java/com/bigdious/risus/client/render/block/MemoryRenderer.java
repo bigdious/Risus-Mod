@@ -1,35 +1,31 @@
-package com.bigdious.risus.client.model.entity;
+package com.bigdious.risus.client.render.block;
 
-import com.bigdious.risus.entity.Memory1;
-import net.minecraft.client.model.HierarchicalModel;
+import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
+import com.bigdious.risus.blocks.entity.MemoryBlockEntity;
+import com.bigdious.risus.client.RisusModelLayers;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 
-public class Memory1Model<T extends Memory1> extends HierarchicalModel<T> {
-	private final ModelPart root;
-
-	public Memory1Model(ModelPart root) {
-		this.root = root;
-		ModelPart man = root.getChild("man");
-		ModelPart woman = root.getChild("woman");
-		ModelPart chain1 = root.getChild("chain1");
-		ModelPart chain2 = root.getChild("chain2");
-		ModelPart chain3 = root.getChild("chain3");
-		ModelPart chain4 = root.getChild("chain4");
-		ModelPart chain5 = root.getChild("chain5");
-		ModelPart chain6 = root.getChild("chain6");
-		ModelPart chain7 = root.getChild("chain7");
-		ModelPart chain8 = root.getChild("chain8");
-		ModelPart chain9 = root.getChild("chain9");
-		ModelPart chain10 = root.getChild("chain10");
-		ModelPart chain11 = root.getChild("chain11");
-		ModelPart chain12 = root.getChild("chain12");
-		ModelPart chain13 = root.getChild("chain13");
-		ModelPart chain14 = root.getChild("chain14");
+public class MemoryRenderer implements BlockEntityRenderer<MemoryBlockEntity> {
+	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/entity/memory1.png");
+	private final ModelPart body;
+	public MemoryRenderer(BlockEntityRendererProvider.Context context) {
+		this.body = context.bakeLayer(RisusModelLayers.MEMORY1);
 	}
 
-	public static LayerDefinition create() {
+	public static LayerDefinition createBaseLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
@@ -82,87 +78,87 @@ public class Memory1Model<T extends Memory1> extends HierarchicalModel<T> {
 		woman.addOrReplaceChild("womanShinLeft_r1", CubeListBuilder.create().texOffs(96, 104).addBox(-13.9487F, -1.0F, 2.7832F, 13.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(6.0F, -3.0F, 0.0F, 0.0F, -0.1309F, -0.5236F));
 
 		PartDefinition chain1 = partdefinition.addOrReplaceChild("chain1", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, 0.5F, 0.0F, 0.0F, -0.3491F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, 0.5F, 0.0F, 0.0F, -0.3491F));
 
 		PartDefinition chain7 = partdefinition.addOrReplaceChild("chain7", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.1987F, 9.4941F, -5.7752F, 1.8044F, -1.2589F, -0.295F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.1987F, 9.4941F, -5.7752F, 1.8044F, -1.2589F, -0.295F));
 
 		PartDefinition chain8 = partdefinition.addOrReplaceChild("chain8", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5953F, 0.3216F, -3.4897F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5953F, -1.6784F, -3.4897F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5953F, -1.6784F, -4.4897F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5953F, -1.6784F, -0.4897F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.9827F, 10.4787F, -5.5621F, 1.7229F, 0.2734F, 0.2214F));
+			.texOffs(49, 77).addBox(-0.5953F, -1.6784F, -3.4897F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5953F, -1.6784F, -4.4897F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5953F, -1.6784F, -0.4897F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.9827F, 10.4787F, -5.5621F, 1.7229F, 0.2734F, 0.2214F));
 
 		PartDefinition chain6 = partdefinition.addOrReplaceChild("chain6", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.511F, 6.6148F, -6.056F, 1.8242F, 0.3447F, -0.2111F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.511F, 6.6148F, -6.056F, 1.8242F, 0.3447F, -0.2111F));
 
 		PartDefinition chain5 = partdefinition.addOrReplaceChild("chain5", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.7811F, 4.2851F, -6.4964F, 1.4255F, -1.0499F, -0.9711F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.7811F, 4.2851F, -6.4964F, 1.4255F, -1.0499F, -0.9711F));
 
 		PartDefinition chain4 = partdefinition.addOrReplaceChild("chain4", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.1349F, 3.2109F, -6.1884F, 0.975F, 0.2926F, -1.4149F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.1349F, 3.2109F, -6.1884F, 0.975F, 0.2926F, -1.4149F));
 
 		PartDefinition chain3 = partdefinition.addOrReplaceChild("chain3", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-7.3633F, 2.5F, -4.5765F, 0.4927F, -0.9149F, -0.5954F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-7.3633F, 2.5F, -4.5765F, 0.4927F, -0.9149F, -0.5954F));
 
 		PartDefinition chain2 = partdefinition.addOrReplaceChild("chain2", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -3.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -3.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, -4.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, -0.5F, -0.1685F, -0.0019F, -1.8361F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -3.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, -4.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, -0.5F, -0.1685F, -0.0019F, -1.8361F));
 
 		PartDefinition chain9 = partdefinition.addOrReplaceChild("chain9", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, 0.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, 0.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 3.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, 1.5F, 0.1685F, 0.0019F, -1.8361F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, 0.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 3.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.5F, 2.5F, 1.5F, 0.1685F, 0.0019F, -1.8361F));
 
 		PartDefinition chain10 = partdefinition.addOrReplaceChild("chain10", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-7.8493F, 2.7106F, 5.8934F, -0.3295F, 0.7268F, -0.3008F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-7.8493F, 2.7106F, 5.8934F, -0.3295F, 0.7268F, -0.3008F));
 
 		PartDefinition chain12 = partdefinition.addOrReplaceChild("chain12", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0012F, 5.9025F, 7.7235F, -1.5642F, 0.7691F, -0.8625F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0012F, 5.9025F, 7.7235F, -1.5642F, 0.7691F, -0.8625F));
 
 		PartDefinition chain11 = partdefinition.addOrReplaceChild("chain11", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-6.0339F, 4.2805F, 7.562F, -0.943F, -0.5841F, -1.2094F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-6.0339F, 4.2805F, 7.562F, -0.943F, -0.5841F, -1.2094F));
 
 		PartDefinition chain14 = partdefinition.addOrReplaceChild("chain14", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.8452F, 9.9965F, 8.8006F, -1.0522F, 0.832F, -0.0269F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.8452F, 9.9965F, 8.8006F, -1.0522F, 0.832F, -0.0269F));
 
 		PartDefinition chain13 = partdefinition.addOrReplaceChild("chain13", CubeListBuilder.create().texOffs(48, 78).addBox(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
-				.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0949F, 7.5425F, 7.8609F, -1.2711F, -0.5838F, -0.8702F));
+			.texOffs(49, 77).addBox(-0.5F, -1.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
+			.texOffs(46, 79).addBox(-0.5F, -1.5F, 1.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
+			.texOffs(52, 79).addBox(-0.5F, -1.5F, -2.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0949F, 7.5425F, 7.8609F, -1.2711F, -0.5838F, -0.8702F));
 
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
+	public void render(MemoryBlockEntity blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+		poseStack.pushPose();
+		Direction direction = blockEntity.getDirection();
+		poseStack.translate(0.5, 0, 0.5);
+		poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
+		poseStack.translate(0, -1.5, 0);
+		poseStack.mulPose(Axis.YP.rotationDegrees(90.0F + direction.toYRot()));
 
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+		VertexConsumer vertexconsumer = pBuffer.getBuffer(RenderType.entityCutout(TEXTURE));
+		this.body.render(poseStack, vertexconsumer, pPackedLight,pPackedOverlay);
+		poseStack.popPose();
 	}
-
-	@Override
-	public ModelPart root() {
-		return this.root;
-	}
-
 }
-

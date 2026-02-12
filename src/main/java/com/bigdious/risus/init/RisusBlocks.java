@@ -20,7 +20,6 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.awt.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -148,6 +147,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> BLOODWYRM_HEAD = register("bloodwyrm_head", properties -> new RisusSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_HEAD).instabreak());
 	public static final DeferredBlock<Block> BLOODWYRM_WALL_HEAD = register("bloodwyrm_wall_head", properties -> new RisusWallSkullBlock(RisusSkullType.BLOODWYRM, properties), () -> Block.Properties.ofFullCopy(Blocks.DRAGON_WALL_HEAD).instabreak());
 	public static final DeferredBlock<Block> INACTIVE_HOLDER = registerWithItem("inactive_holder", InactiveHolderBlock::new, () -> Block.Properties.ofFullCopy(RisusBlocks.ASHEN_REMAINS.get()).noOcclusion());
+	public static final DeferredBlock<Block> MEMORY1 = registerWithItemWithoutRarity("memory1", MemoryBlock::new, () -> Block.Properties.ofFullCopy(Blocks.STONE).noOcclusion());
 
 	//EERIE/DARK SET
 	public static final DeferredBlock<SuperFenceBlock> EERIE_FENCE = registerWithItem("eerie_fence", SuperFenceBlock::new, () -> Block.Properties.ofFullCopy(Blocks.IRON_BARS).lightLevel(state -> state.getValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED) == SimpleMultiloggedBlock.MultiloggingEnum.LAVA ? 15 : 0));

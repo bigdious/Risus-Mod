@@ -107,9 +107,6 @@ public class DarknessBlock extends Block implements SimpleMultiloggedBlock {
 		if (collision instanceof EntityCollisionContext entitycollisioncontext) {
 			Entity entity = entitycollisioncontext.getEntity();
 			if (entity != null) {
-				if (entity.fallDistance > 2.5F) {
-					return FALLING_COLLISION_SHAPE;
-				}
 				if (entity instanceof FallingBlockEntity ||
 					FadingShadowBlock.canEntityWalkOnShadows(entity, pos) && entity.getY()>pos.getY() && collision.isDescending()) {
 					return SHAPE2;

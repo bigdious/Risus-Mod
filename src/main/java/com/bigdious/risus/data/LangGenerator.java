@@ -142,6 +142,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
 		this.addBlock(RisusBlocks.LIVING_TISSUE, "Tissue");
 		this.addBlock(RisusBlocks.MAW_GUTS, "Gorger Guts");
+		this.addBlock(RisusBlocks.MEMORY1, "Faded Statue");
 		this.addBlock(RisusBlocks.MIRAGE_END_STONE, "Mirage End Stone");
 		this.addBlock(RisusBlocks.MIRAGE_GRASS_BLOCK, "Mirage Grass Block");
 		this.addBlock(RisusBlocks.MIRAGE_NETHERRACK, "Mirage Netherrack");
@@ -276,7 +277,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.LITTER, "Litter");
 		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
 		this.addItem(RisusItems.LUCKY_CHARM, "Lucky Charm");
-		this.addItem(RisusItems.MEMORY1_ITEM, "Faded Statue");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
 		this.addItem(RisusItems.ORGANIC_MATTER, "Organic Matter");
 		this.addItem(RisusItems.PURIFYING_PASTE, "Purifying Paste");
@@ -538,7 +538,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.EGG_SAC, "Thrown Egg Sac");
 		this.addEntityType(RisusEntities.GUTS_BOAT, "Boat with Gorger Guts");
 		this.addEntityType(RisusEntities.LITTER, "Litter");
-		this.addEntityType(RisusEntities.MEMORY1, "Faded Statue");
 		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
