@@ -408,6 +408,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		simpleBlock(RisusBlocks.SCAB.get());
 		simpleBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 		builtinEntity(RisusBlocks.RITUAL.get(), Risus.prefix("block/ashen_remains"));
+		builtinEntity(RisusBlocks.COALIFICATION.get(), Risus.prefix("block/blank"));
 
 		simpleBlock(RisusBlocks.NEURON_HEAD.get(), models().cross("neuron_head", Risus.prefix("block/neuron_head")).renderType("minecraft:cutout"));
 		simpleBlock(RisusBlocks.NEURON_STEM.get(), models().cross("neuron", Risus.prefix("block/neuron")).renderType("minecraft:cutout"));

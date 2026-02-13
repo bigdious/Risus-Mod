@@ -256,6 +256,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.NEURON_HEAD.get());
 				output.accept(RisusItems.VEINS.get());
 				output.accept(RisusBlocks.MEMORY1.get());
+				output.accept(RisusBlocks.COALIFICATION.get());
 			}
 		)
 		.build());

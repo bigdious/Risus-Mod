@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-12T20:45:14.9004172	Risus Item Models
+// 1.21.1	2026-02-13T21:54:51.1795397	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -58,6 +58,7 @@ bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grims
 67accb454b0846c935ab93195226f1cf781c704c assets/risus/models/item/cinderglee_scythe_noanim.json
 52df45674db0583530fe0d6e7ca00cf4b0346160 assets/risus/models/item/cinderglee_scythe_noanim_base.json
 2ed3c6986e088651a900c40c94b17ecc13ad8ca2 assets/risus/models/item/coagulated_blood_block.json
+f8cc6d561ac1e81a456d6f645f0d319a56adff7d assets/risus/models/item/coalification.json
 c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_core.json
 887a891e9ea0cfca9359bcb13ec78e6600b1b686 assets/risus/models/item/containment_glass.json
 d7d30ceafde32f2f0fc2d4169a653fa76bc82f7b assets/risus/models/item/containment_glass_pane.json
@@ -429,7 +430,6 @@ d5d2c0874456a76475cdbcad4352d10ef0d97848 assets/risus/models/item/skin_leggings_
 913923034d4b4098beb9da695e58ee36cd2cb5d8 assets/risus/models/item/skin_leggings_netherite_trim.json
 b8859bdc337e6118a375b01c630f11be66bbf23c assets/risus/models/item/skin_leggings_quartz_trim.json
 a2330498168d989f9c81bc25edb9109d5da9a0bf assets/risus/models/item/skin_leggings_redstone_trim.json
-204e42e611581a644e2eedfc2b21f53c22e5bee9 assets/risus/models/item/smile.json
 c5acdd3360ec4c1cab407437d31935ce56fd28c6 assets/risus/models/item/smile_banner_pattern.json
 4321ad9d12f48a0247f4e7be0ae482957dc00521 assets/risus/models/item/smiling_remains.json
 48c32ac2ee7687e9f39582ef7cdd51e6ba053cd0 assets/risus/models/item/soul_scythe.json

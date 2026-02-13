@@ -389,7 +389,6 @@ public class ItemModelGenerator extends ItemModelProvider {
 		handheldItem(RisusItems.KILLJOY, getExistingFile(Risus.prefix("item/killjoy_held")), Risus.prefix("item/killjoy"), Risus.prefix("item/killjoy_item"), "texture");
 
 
-		singleTex(RisusItems.SMILE);
 		singleTex(RisusBlocks.JOYFLAME_CAMPFIRE);
 		singleTex(RisusBlocks.JOYFLAME_LANTERN);
 		singleTex(RisusItems.JOYFLAME_TORCH);
@@ -403,6 +402,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.LIGHT_DEVOURER);
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusBlocks.TEETH);
+		singleTex(RisusBlocks.COALIFICATION);
 
 		singleTex(RisusBlocks.NEURON_HEAD.asItem());
 		singleTex(RisusItems.HAIR_FOLLICLES);

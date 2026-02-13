@@ -56,6 +56,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BURNT_HYPHAE, "Burnt Hyphae");
 		this.addBlock(RisusBlocks.CHISELED_GRIMSTONE, "Chiseled Grimstone");
 		this.addBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK, "Coagulated Blood Block");
+		this.addBlock(RisusBlocks.COALIFICATION, "Coalification");
 		this.addBlock(RisusBlocks.CONTAINMENT_GLASS, "Containment Glass");
 		this.addBlock(RisusBlocks.CONTAINMENT_GLASS_PANE, "Containment Glass Pane");
 		this.addBlock(RisusBlocks.COPPER_AMALGAM, "Copper Amalgam");
@@ -293,7 +294,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.SKIN_CHESTPLATE, "Skin Flabs");
 		this.addItem(RisusItems.SKIN_HELMET, "Skin Head");
 		this.addItem(RisusItems.SKIN_LEGGINGS, "Skin Jeans");
-		this.addItem(RisusItems.SMILE, "Smile");
 		this.addItem(RisusItems.SOUL_SCYTHE, "Soul Scratcher");
 		this.addItem(RisusItems.STALKER_EYE, "Stalker Eye");
 		this.addItem(RisusItems.STITCHING_NEEDLE, "Stitching Needle");

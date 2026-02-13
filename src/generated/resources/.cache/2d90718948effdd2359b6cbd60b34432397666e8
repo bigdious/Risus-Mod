@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-12T21:52:18.6773781	Risus blockstates and models
+// 1.21.1	2026-02-13T20:00:02.1885876	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -47,6 +47,7 @@ dced16f6e500a371f97d09e7ee1160701e9231f8 assets/risus/blockstates/bundle_of_hair
 7d6470e8d9b8c8fd032052c931d8c515c2b91cc7 assets/risus/blockstates/burnt_hyphae.json
 661d5d853c2ae502d3e63979048ca934e3282b8f assets/risus/blockstates/chiseled_grimstone.json
 622a8d5ef6b2850e393ca1a4f7e6686ba736d180 assets/risus/blockstates/coagulated_blood_block.json
+b15412c516ed7531856778d9b547b214f2f68647 assets/risus/blockstates/coalification.json
 d88cf4b76d271f049efb269e33897b8776844028 assets/risus/blockstates/containment_glass.json
 d39f0319599031b96dc7717482b148fa37241e5b assets/risus/blockstates/containment_glass_pane.json
 b36a33309a27cff749b799ebb8e506662e4daa58 assets/risus/blockstates/copper_amalgam.json
@@ -324,6 +325,7 @@ bce535e4d325d0075b366c5625c87628614166a7 assets/risus/models/block/bundle_of_hai
 903b739eb2ff9f59841b64c24b4d799e992fe54e assets/risus/models/block/cinderglee.json
 f52f03ad0cf229fe08297156eba441c81fb2d1a1 assets/risus/models/block/cinderglee_flipped.json
 ff7841ba6d523e79dfa98fc199ab5c5248631e3f assets/risus/models/block/coagulated_blood_block.json
+4d2bb8163f19bd2814943862bcbc0212e8749e80 assets/risus/models/block/coalification.json
 fc8efde1ce8ff111d299054e8477453d3dcf320b assets/risus/models/block/containment_glass.json
 52c3e7da53bc193d115d7ad0bab8f3553c721e97 assets/risus/models/block/containment_glass_pane_noside.json
 6d03b475b2ce550aa526cd2130634c7527a0b85d assets/risus/models/block/containment_glass_pane_noside_alt.json

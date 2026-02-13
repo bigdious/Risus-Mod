@@ -132,10 +132,6 @@ public class RisusItems {
 	public static final DeferredItem<Item> MUSIC_DISC_REGN = register("music_disc_regn", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.REGN));
 	public static final DeferredItem<Item> MUSIC_DISC_CYCLE = register("music_disc_cycle", Item::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1).jukeboxPlayable(RisusJukeboxSongs.CYCLE));
 
-	//DISPLAY ONLY ITEMS
-
-	public static final DeferredItem<Item> SMILE = register("smile", Item::new, () -> new Item.Properties().rarity(BLOOD));
-
 	public static <T extends Item> DeferredItem<T> register(String name, Function<Item.Properties, T> item, Supplier<Item.Properties> properties) {
 		return ITEMS.register(name, () -> item.apply(properties.get()));
 	}

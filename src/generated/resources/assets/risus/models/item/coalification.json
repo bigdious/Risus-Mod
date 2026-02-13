@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "risus:item/smile"
+    "layer0": "risus:item/coalification"
   }
 }

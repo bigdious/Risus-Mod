@@ -37,7 +37,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 
 		AdvancementHolder first = Advancement.Builder.advancement()
 			.display(
-				RisusItems.SMILE.get(),
+				RisusBlocks.COALIFICATION.get(),
 				Component.translatable("advancement.risus.first"),
 				Component.translatable("advancement.risus.first.desc"),
 				ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/block/ashen_remains.png"),
