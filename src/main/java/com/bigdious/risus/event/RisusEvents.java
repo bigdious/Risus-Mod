@@ -157,7 +157,7 @@ public class RisusEvents {
 		builder.addMix(RisusPotions.MATING_FRENZY, Items.REDSTONE, RisusPotions.LONG_MATING_FRENZY);
 
 		builder.addMix(Potions.AWKWARD, RisusItems.MEMORY_CORE.get(), RisusPotions.AMNESIA);
-		builder.addMix(RisusPotions.MATING_FRENZY, Items.REDSTONE, RisusPotions.LONG_AMNESIA);
+		builder.addMix(RisusPotions.AMNESIA, Items.REDSTONE, RisusPotions.LONG_AMNESIA);
 
 		builder.addMix(Potions.AWKWARD, RisusBlocks.JOYFLAME_CAMPFIRE.asItem(), RisusPotions.LIFE_SMOULDERING);
 		builder.addMix(RisusPotions.LIFE_SMOULDERING, Items.REDSTONE, RisusPotions.LONG_LIFE_SMOULDERING);

@@ -639,14 +639,14 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
 		this.addAdvancement("angel", "Hallowed Grounds", "Trespass onto land protected by an Ophanim.");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
-		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment.");
+		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");
-		this.addAdvancement("parentmode", "Parent Mode: Dedicated", "Witness the creation of a Weaver Nest through the self-willed death of a memory fed Weaver.");
+		this.addAdvancement("parentmode", "Parent Mode: Dedicated", "Witness the creation of a Weaver Nest through the self-willed death of a memory fed Weaver");
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
 		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
-		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church.");
+		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 		this.addBiome(RisusBiomes.COALIFICATION_FEIGR, "Coalification");

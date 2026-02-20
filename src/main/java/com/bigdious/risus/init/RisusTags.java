@@ -157,6 +157,8 @@ public class RisusTags {
 
 	public static class Structures {
 		public static final TagKey<Structure> RISUS = create("risus");
+		public static final TagKey<Structure> MORK_MUSIC_STRUCTURES = create("mork_music");
+		public static final TagKey<Structure> FEIGR_MUSIC_STRUCTURES = create("unique_music_structures");
 
 		private static TagKey<Structure> create(String name) {
 			return TagKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

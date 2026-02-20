@@ -8,7 +8,12 @@
     "ClientLevelMixin",
     "ItemStackMixin",
     "TridentItemMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "ServerPlayerMixin",
+    "SoundEngineAccessor",
+    "SoundManagerAccessor",
+    "PlayerTickClientMixin",
+    "MusicManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

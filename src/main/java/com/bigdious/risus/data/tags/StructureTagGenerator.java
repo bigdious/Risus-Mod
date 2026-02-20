@@ -32,6 +32,16 @@ public class StructureTagGenerator extends StructureTagsProvider {
 			,RisusStructures.DRAXOLOTL_REMAINS
 			,RisusStructures.FLOWER_FIELD
 			,RisusStructures.LAB_START
+			,RisusStructures.RIBS_FOSSIL
+			,RisusStructures.SKULL_FOSSIL
+		);
+
+		this.tag(RisusTags.Structures.MORK_MUSIC_STRUCTURES).add(
+			RisusStructures.FAMILY_TREE
+		);
+
+		this.tag(RisusTags.Structures.FEIGR_MUSIC_STRUCTURES).add(
+			RisusStructures.LAB_START
 		);
 	}
 
