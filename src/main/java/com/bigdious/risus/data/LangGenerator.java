@@ -25,6 +25,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.ASHEN_REMAINS, "Ashen Remains");
 		this.addBlock(RisusBlocks.ASHEN_SPIRE, "Ashen Spire");
 		this.addBlock(RisusBlocks.BABY_RIBCAGE, "Baby Ribcage");
+		this.addBlock(RisusBlocks.BEATING_HEART, "Beating Heart");
 		this.addBlock(RisusBlocks.BIG_CHAIN, "Big Chain");
 		this.addBlock(RisusBlocks.BLOOD_CAULDRON, "Blood Cauldron");
 		this.addBlock(RisusBlocks.BLOOD_FLUID_BLOCK, "Blood");

@@ -50,4 +50,5 @@ public class RisusBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TesseractBlockEntity>> TESSERACT = BLOCK_ENTITIES.register("tesseract", () -> BlockEntityType.Builder.of(TesseractBlockEntity::new, RisusBlocks.TESSERACT.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MemoryBlockEntity>> MEMORY = BLOCK_ENTITIES.register("memory", () -> BlockEntityType.Builder.of(MemoryBlockEntity::new, RisusBlocks.MEMORY1.get()).build(null));
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WeavingMechanismBlockEntity>> WEAVING_MECHANISM = BLOCK_ENTITIES.register("weaving_mechanism", () -> BlockEntityType.Builder.of(WeavingMechanismBlockEntity::new, RisusBlocks.WEAVING_MECHANISM.get()).build(null));
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BeatingHeartBlockEntity>> BEATING_HEART = BLOCK_ENTITIES.register("beating_heart", () -> BlockEntityType.Builder.of(BeatingHeartBlockEntity::new, RisusBlocks.BEATING_HEART.get()).build(null));
 }

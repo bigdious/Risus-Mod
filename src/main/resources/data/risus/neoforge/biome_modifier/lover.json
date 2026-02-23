@@ -3,7 +3,7 @@
   "biomes": "#minecraft:is_overworld",
   "spawners": {
     "type": "risus:lover",
-    "weight": 5,
+    "weight": 7,
     "minCount": 1,
     "maxCount": 1
   }

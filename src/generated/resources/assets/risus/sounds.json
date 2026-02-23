@@ -8,6 +8,12 @@
     ],
     "subtitle": "subtitles.risus.block.alteration_catalyst.alteration_failed"
   },
+  "block.beating_heart.heartbeat": {
+    "sounds": [
+      "risus:block/beating_heart/heartbeat"
+    ],
+    "subtitle": "subtitles.risus.block.beating_heart.heartbeat"
+  },
   "block.blood.ambient": {
     "sounds": [
       {

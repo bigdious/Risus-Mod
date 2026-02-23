@@ -153,7 +153,7 @@ public class ExecrationEvents {
 				if (event.getLevel().getRandom().nextFloat() <= i * 0.15) {
 					event.getDrops().clear();
 					event.setDroppedExperience(0);
-					ServerParticleUtils.spawnParticleInBlock(event.getLevel(), event.getPos(), 6, RisusParticles.JOYFLAME.get());
+					ServerParticleUtils.spawnParticleInBlock(event.getLevel(), event.getPos(), 6, ParticleTypes.FLAME);
 					event.getLevel().playSound(null, event.getPos(), SoundEvents.GENERIC_BURN, SoundSource.BLOCKS, 0.1F, 1);
 				}
 			}

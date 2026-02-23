@@ -1,11 +1,12 @@
-// 1.21.1	2026-02-12T22:05:10.5310749	Loot Tables
+// 1.21.1	2026-02-23T20:09:08.6060373	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
-bb24327a10bf784fe69ab844aa75195bea6fe576 data/risus/loot_table/blocks/active_grimstone.json
+85e409631c2d14155202cca72531e8ddaaa93a5e data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
 25b78ea1ea2d8e82ad5f41c4952613f530757a97 data/risus/loot_table/blocks/angel_altar.json
 30a4e6dc126c751ac5074e76055086f2f65f1d4d data/risus/loot_table/blocks/ashen_remains.json
 2e7455809e397437a75efb0eab92320649d64bd3 data/risus/loot_table/blocks/ashen_spire.json
 02e4d8d387488a6d0516c493ad9d36a9c3364917 data/risus/loot_table/blocks/baby_ribcage.json
+4b99bed6770a14be7b72d9ff04e3a115120a7be3 data/risus/loot_table/blocks/beating_heart.json
 c0432644875bc3ff0dcc04e1cc5dd1f90d8f9f2d data/risus/loot_table/blocks/big_chain.json
 57a51890ad2f5eb4f7de68c837ff97bf3a2d1e47 data/risus/loot_table/blocks/black_mosaic_glass.json
 1b5ab475a32a88d6578ca61b2da7546efd3e68a5 data/risus/loot_table/blocks/black_mosaic_glass_pane.json

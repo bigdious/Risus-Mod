@@ -44,6 +44,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.WEAVER_NEST.get(), RisusBlocks.BLOODWEAVE);
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
+		add(RisusBlocks.BEATING_HEART.get(), LootTable.lootTable());
 		add(RisusBlocks.FADING_SHADOW.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());
@@ -194,7 +195,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		dropSelf(RisusBlocks.GRIMSTONE.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS.get());
-		dropSelf(RisusBlocks.ACTIVE_GRIMSTONE.get());
+		add(RisusBlocks.ACTIVE_GRIMSTONE.get(), createSilkTouchDispatchTable(RisusBlocks.ACTIVE_GRIMSTONE.get(), LootItem.lootTableItem(Items.REDSTONE)));
 		dropSelf(RisusBlocks.CRACKED_GRIMSTONE_BRICKS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_STAIRS.get());
 		dropSelf(RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get());
