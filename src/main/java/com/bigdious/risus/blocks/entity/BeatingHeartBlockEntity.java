@@ -10,6 +10,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.InstantenousMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -44,9 +46,11 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 					if (effectType != BeatingHeartBlock.HealthEffectEnum.HEALING) {
 						entities.addEffect(new MobEffectInstance(HEALTH_EFFECTS.get(effectType).getFirst(), 100));
 					} else {
-						entities.heal(entities.isInvertedHealAndHarm() ? -1 : 1);
-
-
+						if (!entities.isInvertedHealAndHarm()) {
+							entities.heal(1);
+						} else {
+							entities.hurt(level.damageSources().source(DamageTypes.MAGIC),1);
+						}
 					}
 				}
 			}

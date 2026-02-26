@@ -73,8 +73,6 @@ public class BeatingHeartRenderer implements BlockEntityRenderer<BeatingHeartBlo
 			float f = ((float) (entity.getLevel().getGameTime() - entity.beatStartedAtTick) + partialTick) / (float) 7;
 			if (f >= 0.6F && f <= 1.0F) {
 				float f1 = f + 0.25F;
-				float f2 = f * (float) (Math.PI * 2);
-				float f3 = -1.5F * (Mth.cos(f2)+1) * Mth.sin(f2 / 2.0F);
 				poseStack.scale(f1, 1, f1);
 			}
 		}

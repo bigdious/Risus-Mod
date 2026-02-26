@@ -13,13 +13,16 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class BeatingHeartItemRenderer extends BlockEntityWithoutLevelRenderer {
 	public BeatingHeartItemRenderer() {
@@ -28,18 +31,16 @@ public class BeatingHeartItemRenderer extends BlockEntityWithoutLevelRenderer {
 
 	@Override
 	public void renderByItem(ItemStack stack, ItemDisplayContext context, PoseStack pose, MultiBufferSource buffer, int light, int overlay) {
-		Item item = stack.getItem();
-		if (item instanceof BlockItem blockItem) {
-			Block block = blockItem.getBlock();
-			Minecraft minecraft = Minecraft.getInstance();
-			if (block instanceof BeatingHeartBlock heartBlock) {
-				BlockState state = (BlockState) stack.getOrDefault(DataComponents.BLOCK_STATE, RisusBlocks.BEATING_HEART.get().defaultBlockState());
-				BeatingHeartBlockEntity beatingHeart = new BeatingHeartBlockEntity(BlockPos.ZERO, RisusBlocks.BEATING_HEART.get().defaultBlockState().setValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT,  state.getValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT)));
-
-				if (minecraft.getBlockEntityRenderDispatcher().getRenderer(beatingHeart) instanceof BeatingHeartRenderer renderer) {
-					renderer.render(beatingHeart, 0, pose, buffer, light, overlay);
-				}
-			}
+		Minecraft minecraft = Minecraft.getInstance();
+		BlockItemStateProperties stateProperties = stack.getOrDefault(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY);
+		BeatingHeartBlockEntity beatingHeart = new BeatingHeartBlockEntity(BlockPos.ZERO, RisusBlocks.BEATING_HEART.get().defaultBlockState()
+			.setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST)
+			.setValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT,
+				stateProperties.isEmpty() ? BeatingHeartBlock.HealthEffectEnum.EMPTY : stateProperties.get(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT)));
+		if (minecraft.getBlockEntityRenderDispatcher().getRenderer(beatingHeart) instanceof BeatingHeartRenderer renderer) {
+			renderer.render(beatingHeart, 0, pose, buffer, light, overlay);
 		}
+
 	}
+
 }
