@@ -1,6 +1,7 @@
 package com.bigdious.risus.client.render.block;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.blocks.BeatingHeartBlock;
 import com.bigdious.risus.blocks.entity.BeatingHeartBlockEntity;
 import com.bigdious.risus.blocks.entity.DepthVaseBlockEntity;
 import com.bigdious.risus.blocks.entity.WeavingMechanismBlockEntity;
@@ -20,7 +21,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 public class BeatingHeartRenderer implements BlockEntityRenderer<BeatingHeartBlockEntity> {
-	protected static final ResourceLocation TEXTURE = Risus.prefix("textures/block/beating_heart.png");
 	private final ModelPart heartMeat;
 	private final ModelPart pinkTube;
 	private final ModelPart redTube;
@@ -68,7 +68,7 @@ public class BeatingHeartRenderer implements BlockEntityRenderer<BeatingHeartBlo
 		poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
 		poseStack.translate(0, -1.5, 0);
 		poseStack.mulPose(Axis.YP.rotationDegrees(direction.getOpposite().toYRot()));
-		VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityCutout(TEXTURE));
+		VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityCutout(BeatingHeartBlockEntity.HEALTH_EFFECTS.get(entity.getBlockState().getValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT)).getSecond()));
 		if (entity.getLevel() != null) {
 			float f = ((float) (entity.getLevel().getGameTime() - entity.beatStartedAtTick) + partialTick) / (float) 7;
 			if (f >= 0.6F && f <= 1.0F) {

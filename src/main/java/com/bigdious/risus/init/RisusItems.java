@@ -110,6 +110,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> VEINS = register("veins", properties -> new BlockItem(RisusBlocks.VEINS_END.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> DISPLAY_NOTCH = register("display_notch", properties -> new DisplayNotchItem(RisusBlocks.DISPLAY_NOTCH.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> TESSERACT = register("tesseract", properties -> new AirPlaceBlockItem(RisusBlocks.TESSERACT.get(), properties), () -> new Item.Properties().rarity(BLOOD));
+	public static final DeferredItem<Item> BEATING_HEART = register("beating_heart", properties -> new BlockItem(RisusBlocks.BEATING_HEART.get(), properties), () -> new Item.Properties().rarity(BLOOD));
 
 	//LEFTOVER CRAFTING MATERIALS
 	public static final DeferredItem<Item> BLOOD_FEATHER = register("blood_feather", BloodFeatherItem::new, () -> new Item.Properties().fireResistant().attributes(BloodFeatherItem.createBloodFeatherAttributes()).rarity(BLOOD));

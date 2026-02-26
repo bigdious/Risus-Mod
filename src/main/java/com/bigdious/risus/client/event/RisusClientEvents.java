@@ -14,6 +14,7 @@ import com.bigdious.risus.client.particle.*;
 import com.bigdious.risus.client.render.*;
 import com.bigdious.risus.client.render.block.*;
 import com.bigdious.risus.client.render.creature.*;
+import com.bigdious.risus.client.render.item.BeatingHeartItemRenderer;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
 import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
@@ -145,6 +146,13 @@ public class RisusClientEvents {
 				return new LitterItemRenderer();
 			}
 		}, RisusItems.LITTER.get()));
+
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
+			@Override
+			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+				return new BeatingHeartItemRenderer();
+			}
+		}, RisusItems.BEATING_HEART.get()));
 	}
 
 	private static void clientSetup(FMLClientSetupEvent event) {
@@ -358,7 +366,6 @@ public class RisusClientEvents {
 		event.registerItem(ScytheItem.ItemExtensions.INSTANCE, RisusItems.SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.DEPTH_VASE.asItem());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.WEAVING_MECHANISM.asItem());
-		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.BEATING_HEART.asItem());
 		event.registerItem(
 			new RisusSimpleArmorRenderer(HumanoidArmorModel::new, RisusModelLayers.CROWN_OF_BONES_INNER, RisusModelLayers.CROWN_OF_BONES_OUTER),
 			RisusItems.CROWN_OF_BONES.get()

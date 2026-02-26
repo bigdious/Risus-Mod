@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:builtin/entity",
   "textures": {
-    "particle": "risus:block/beating_heart"
+    "particle": "risus:block/beating_heart/empty"
   }
 }

@@ -1,5 +1,6 @@
 package com.bigdious.risus.data.loottables;
 
+import com.bigdious.risus.blocks.BeatingHeartBlock;
 import com.bigdious.risus.blocks.LargeGateBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
@@ -7,6 +8,7 @@ import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -21,6 +23,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -44,7 +48,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.WEAVER_NEST.get(), RisusBlocks.BLOODWEAVE);
 		add(RisusBlocks.ANGEL_ALTAR.get(), LootTable.lootTable());
 		add(RisusBlocks.DARKNESS.get(), LootTable.lootTable());
-		add(RisusBlocks.BEATING_HEART.get(), LootTable.lootTable());
+		add(RisusBlocks.BEATING_HEART.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(RisusBlocks.BEATING_HEART.get()).when(this.hasSilkTouch()).apply(CopyBlockState.copyState(RisusBlocks.BEATING_HEART.get()).copy(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT)).otherwise(LootItem.lootTableItem(RisusBlocks.BEATING_HEART.get())))));
 		add(RisusBlocks.FADING_SHADOW.get(), LootTable.lootTable());
 		dropSelf(RisusBlocks.DEPTH_VASE.get());
 		dropSelf(RisusBlocks.DISPLAY_NOTCH.get());

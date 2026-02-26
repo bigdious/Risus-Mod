@@ -90,7 +90,7 @@ public class RisusBlocks {
 	public static final DeferredBlock<Block> RITUAL = register("ritual", RitualBlock::new, () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).noLootTable());
 	public static final DeferredBlock<Block> TESSERACT = register("tesseract", TesseractBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion().pushReaction(PushReaction.BLOCK));
 	public static final DeferredBlock<Block> WEAVING_MECHANISM = registerWithItem("weaving_mechanism", WeavingMechanismBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).sound(SoundType.HONEY_BLOCK).noOcclusion().pushReaction(PushReaction.BLOCK));
-	public static final DeferredBlock<Block> BEATING_HEART = registerWithItem("beating_heart", BeatingHeartBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noOcclusion().pushReaction(PushReaction.BLOCK));
+	public static final DeferredBlock<Block> BEATING_HEART = register("beating_heart", BeatingHeartBlock::new, () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK).noOcclusion().pushReaction(PushReaction.BLOCK));
 	public static final DeferredBlock<Block> COALIFICATION = registerWithItem("coalification", CoalificationBlock::new, () -> BlockBehaviour.Properties.of().sound(SoundType.EMPTY).strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).noLootTable());
 
 

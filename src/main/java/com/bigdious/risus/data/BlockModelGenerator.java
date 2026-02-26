@@ -144,7 +144,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		builtinEntity(RisusBlocks.DEPTH_VASE.get(), Risus.prefix("block/depth_vase"));
 		builtinEntity(RisusBlocks.MEMORY1.get(), Risus.prefix("block/memory1"));
 		builtinEntity(RisusBlocks.WEAVING_MECHANISM.get(), Risus.prefix("block/weaving_mechanism"));
-		builtinEntity(RisusBlocks.BEATING_HEART.get(), Risus.prefix("block/beating_heart"));
+		builtinEntity(RisusBlocks.BEATING_HEART.get(), Risus.prefix("block/beating_heart/empty"));
 		horizontalBlock(RisusBlocks.INACTIVE_HOLDER.get(), models().getExistingFile(Risus.prefix("block/inactive_holder")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(Risus.prefix("block/baby_ribcage")));
 		horizontalBlock(RisusBlocks.COPPER_AMALGAM.get(), models().withExistingParent("copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/copper_amalgam")));
