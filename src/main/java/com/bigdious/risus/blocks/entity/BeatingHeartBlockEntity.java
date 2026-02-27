@@ -8,11 +8,10 @@ import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.InstantenousMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -29,29 +28,31 @@ import java.util.Map;
 
 public class BeatingHeartBlockEntity extends BlockEntity {
 	public static final int EVENT_HEART_BEATS = 1;
+	public int beatInterval;
 	public long beatStartedAtTick;
 	public BeatingHeartBlockEntity(BlockPos pos, BlockState blockState) {
 		super(RisusBlockEntities.BEATING_HEART.get(), pos, blockState);
+		this.beatInterval = 70;
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, BeatingHeartBlockEntity heart) {
 		BeatingHeartBlock.HealthEffectEnum effectType = heart.getBlockState().getValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT);
-		if (level.getGameTime() % 70L == 0L) {
+		if (level.getGameTime() % heart.beatInterval == 0L) {
 			heart.beat();
 			level.playSound(null, pos, RisusSoundEvents.HEARTBEAT.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
 			if (effectType != BeatingHeartBlock.HealthEffectEnum.EMPTY) {
+				Holder<MobEffect> effect = HEALTH_EFFECTS.get(effectType).getFirst();
+				if (!effect.value().isBeneficial() ) {
+					heart.beatInterval = level.getRandom().nextIntBetweenInclusive(20, 100);
+				}
 				AABB aabb = (new AABB(pos)).inflate(30);
 				List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, aabb);
 				for (LivingEntity entities : list) {
-					if (effectType != BeatingHeartBlock.HealthEffectEnum.HEALING) {
-						entities.addEffect(new MobEffectInstance(HEALTH_EFFECTS.get(effectType).getFirst(), 100));
-					} else {
-						if (!entities.isInvertedHealAndHarm()) {
-							entities.heal(1);
+						if (effect.is(RisusMobEffects.BLOODCLOGGED) && entities.hasEffect(RisusMobEffects.BLOODCLOGGED)) {
+							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval+40, entities.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier()));
 						} else {
-							entities.hurt(level.damageSources().source(DamageTypes.MAGIC),1);
+							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval + 40));
 						}
-					}
 				}
 			}
 		}
@@ -74,6 +75,25 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 		}
 	}
 
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.saveAdditional(tag, registries);
+		tag.putInt("beatInterval", this.beatInterval);
+	}
+
+
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		this.beatInterval = tag.getInt("beatInterval");
+		super.loadAdditional(tag, registries);
+	}
+
+
+	public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+		CompoundTag tag = new CompoundTag();
+		tag.putInt("beatInterval", this.beatInterval);
+		super.saveAdditional(tag, pRegistries);
+		return tag;
+	}
+
 	public Direction getDirection() {
 		return this.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING);
 	}
@@ -85,7 +105,7 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 		BeatingHeartBlock.HealthEffectEnum.BLOODCLOGGED, Pair.of(RisusMobEffects.BLOODCLOGGED, Risus.prefix("textures/block/beating_heart/bloodclogged.png")),
 		BeatingHeartBlock.HealthEffectEnum.POISON, Pair.of(MobEffects.POISON, Risus.prefix("textures/block/beating_heart/poison.png")),
 		BeatingHeartBlock.HealthEffectEnum.WITHER, Pair.of(MobEffects.WITHER, Risus.prefix("textures/block/beating_heart/wither.png")),
-		BeatingHeartBlock.HealthEffectEnum.HEALING, Pair.of(MobEffects.HEAL, Risus.prefix("textures/block/beating_heart/heal.png"))
+		BeatingHeartBlock.HealthEffectEnum.ABSORPTION, Pair.of(MobEffects.ABSORPTION, Risus.prefix("textures/block/beating_heart/heal.png"))
 	);
 
 }

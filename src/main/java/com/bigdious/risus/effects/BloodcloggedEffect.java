@@ -1,18 +1,21 @@
 package com.bigdious.risus.effects;
 
-import com.bigdious.risus.config.RisusConfig;
-import com.bigdious.risus.init.RisusDataAttachments;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusTags;
+import it.unimi.dsi.fastutil.ints.Int2DoubleFunction;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.*;
 import net.neoforged.neoforge.common.EffectCure;
 
-import java.util.Objects;
+import javax.annotation.Nullable;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -26,7 +29,7 @@ public class BloodcloggedEffect extends MobEffect {
 		if (entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)) {
 			entity.removeEffect(RisusMobEffects.BLOODCLOGGED);
 		} else if (entity.isAlive()) {
-			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && entity.getMaxHealth()>entity.getHealth()) {
+			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && Math.round(entity.getMaxHealth())> Math.round(entity.getHealth())) {
 				entity.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, entity.getEffect(RisusMobEffects.BLOODCLOGGED).getDuration(), entity.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier()+1, false, false, true));
 			}
 		}
@@ -37,6 +40,15 @@ public class BloodcloggedEffect extends MobEffect {
 	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
 	}
+
+	@Override
+	public void addAttributeModifiers(AttributeMap attributeMap, int amplifier) {
+		if (amplifier>0) {
+			super.addAttributeModifiers(attributeMap, amplifier);
+		}
+
+	}
+
 
 	@Override
 	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {

@@ -125,7 +125,7 @@ public class BeatingHeartBlock extends BaseEntityBlock implements SimpleMultilog
 		BLOODCLOGGED,
 		POISON,
 		WITHER,
-		HEALING;
+		ABSORPTION;
 
 		public static final EnumProperty<BeatingHeartBlock.HealthEffectEnum> HEALTH_EFFECT = EnumProperty.create("health_effect", BeatingHeartBlock.HealthEffectEnum.class);
 
