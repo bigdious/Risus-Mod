@@ -43,15 +43,15 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 			if (effectType != BeatingHeartBlock.HealthEffectEnum.EMPTY) {
 				Holder<MobEffect> effect = HEALTH_EFFECTS.get(effectType).getFirst();
 				if (!effect.value().isBeneficial() ) {
-					heart.beatInterval = level.getRandom().nextIntBetweenInclusive(20, 100);
+					heart.beatInterval = level.getRandom().nextIntBetweenInclusive(30, 100);
 				}
 				AABB aabb = (new AABB(pos)).inflate(30);
 				List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, aabb);
 				for (LivingEntity entities : list) {
 						if (effect.is(RisusMobEffects.BLOODCLOGGED) && entities.hasEffect(RisusMobEffects.BLOODCLOGGED)) {
-							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval+40, entities.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier()));
+							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval+40, entities.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier(), true, false, true));
 						} else {
-							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval + 40));
+							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval + 40,0,true, false, true));
 						}
 				}
 			}
@@ -105,7 +105,7 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 		BeatingHeartBlock.HealthEffectEnum.BLOODCLOGGED, Pair.of(RisusMobEffects.BLOODCLOGGED, Risus.prefix("textures/block/beating_heart/bloodclogged.png")),
 		BeatingHeartBlock.HealthEffectEnum.POISON, Pair.of(MobEffects.POISON, Risus.prefix("textures/block/beating_heart/poison.png")),
 		BeatingHeartBlock.HealthEffectEnum.WITHER, Pair.of(MobEffects.WITHER, Risus.prefix("textures/block/beating_heart/wither.png")),
-		BeatingHeartBlock.HealthEffectEnum.ABSORPTION, Pair.of(MobEffects.ABSORPTION, Risus.prefix("textures/block/beating_heart/heal.png"))
+		BeatingHeartBlock.HealthEffectEnum.ABSORPTION, Pair.of(MobEffects.ABSORPTION, Risus.prefix("textures/block/beating_heart/absorption.png"))
 	);
 
 }

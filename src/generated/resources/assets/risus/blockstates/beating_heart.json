@@ -1,7 +1,340 @@
 {
   "variants": {
-    "": {
-      "model": "risus:block/beating_heart"
+    "facing=east,fluid=blood,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=east,fluid=blood,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=east,fluid=blood,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=east,fluid=blood,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=east,fluid=blood,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=east,fluid=blood,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=east,fluid=blood,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=east,fluid=empty,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=east,fluid=empty,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=east,fluid=empty,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=east,fluid=empty,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=east,fluid=empty,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=east,fluid=empty,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=east,fluid=empty,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=east,fluid=lava,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=east,fluid=lava,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=east,fluid=lava,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=east,fluid=lava,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=east,fluid=lava,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=east,fluid=lava,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=east,fluid=lava,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=east,fluid=water,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=east,fluid=water,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=east,fluid=water,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=east,fluid=water,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=east,fluid=water,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=east,fluid=water,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=east,fluid=water,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=north,fluid=blood,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=north,fluid=blood,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=north,fluid=blood,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=north,fluid=blood,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=north,fluid=blood,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=north,fluid=blood,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=north,fluid=blood,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=north,fluid=empty,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=north,fluid=empty,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=north,fluid=empty,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=north,fluid=empty,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=north,fluid=empty,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=north,fluid=empty,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=north,fluid=empty,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=north,fluid=lava,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=north,fluid=lava,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=north,fluid=lava,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=north,fluid=lava,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=north,fluid=lava,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=north,fluid=lava,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=north,fluid=lava,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=north,fluid=water,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=north,fluid=water,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=north,fluid=water,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=north,fluid=water,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=north,fluid=water,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=north,fluid=water,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=north,fluid=water,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=south,fluid=blood,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=south,fluid=blood,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=south,fluid=blood,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=south,fluid=blood,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=south,fluid=blood,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=south,fluid=blood,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=south,fluid=blood,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=south,fluid=empty,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=south,fluid=empty,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=south,fluid=empty,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=south,fluid=empty,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=south,fluid=empty,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=south,fluid=empty,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=south,fluid=empty,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=south,fluid=lava,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=south,fluid=lava,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=south,fluid=lava,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=south,fluid=lava,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=south,fluid=lava,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=south,fluid=lava,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=south,fluid=lava,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=south,fluid=water,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=south,fluid=water,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=south,fluid=water,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=south,fluid=water,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=south,fluid=water,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=south,fluid=water,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=south,fluid=water,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=west,fluid=blood,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=west,fluid=blood,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=west,fluid=blood,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=west,fluid=blood,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=west,fluid=blood,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=west,fluid=blood,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=west,fluid=blood,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=west,fluid=empty,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=west,fluid=empty,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=west,fluid=empty,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=west,fluid=empty,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=west,fluid=empty,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=west,fluid=empty,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=west,fluid=empty,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=west,fluid=lava,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=west,fluid=lava,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=west,fluid=lava,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=west,fluid=lava,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=west,fluid=lava,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=west,fluid=lava,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=west,fluid=lava,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
+    },
+    "facing=west,fluid=water,health_effect=absorption": {
+      "model": "risus:block/beating_heart_6"
+    },
+    "facing=west,fluid=water,health_effect=bloodclogged": {
+      "model": "risus:block/beating_heart_3"
+    },
+    "facing=west,fluid=water,health_effect=empty": {
+      "model": "risus:block/beating_heart_0"
+    },
+    "facing=west,fluid=water,health_effect=health_boost": {
+      "model": "risus:block/beating_heart_4"
+    },
+    "facing=west,fluid=water,health_effect=poison": {
+      "model": "risus:block/beating_heart_2"
+    },
+    "facing=west,fluid=water,health_effect=regen": {
+      "model": "risus:block/beating_heart_5"
+    },
+    "facing=west,fluid=water,health_effect=wither": {
+      "model": "risus:block/beating_heart_1"
     }
   }
 }

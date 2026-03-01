@@ -144,7 +144,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		builtinEntity(RisusBlocks.DEPTH_VASE.get(), Risus.prefix("block/depth_vase"));
 		builtinEntity(RisusBlocks.MEMORY1.get(), Risus.prefix("block/memory1"));
 		builtinEntity(RisusBlocks.WEAVING_MECHANISM.get(), Risus.prefix("block/weaving_mechanism"));
-		builtinEntity(RisusBlocks.BEATING_HEART.get(), Risus.prefix("block/beating_heart/empty"));
+		beatingHeartBlock(RisusBlocks.BEATING_HEART.get(), Risus.prefix("block/beating_heart/empty"), Risus.prefix("block/beating_heart/wither"), Risus.prefix("block/beating_heart/poison"), Risus.prefix("block/beating_heart/bloodclogged"), Risus.prefix("block/beating_heart/health_boost"), Risus.prefix("block/beating_heart/regen"), Risus.prefix("block/beating_heart/absorption"));
 		horizontalBlock(RisusBlocks.INACTIVE_HOLDER.get(), models().getExistingFile(Risus.prefix("block/inactive_holder")));
 		horizontalBlock(RisusBlocks.BABY_RIBCAGE.get(), models().getExistingFile(Risus.prefix("block/baby_ribcage")));
 		horizontalBlock(RisusBlocks.COPPER_AMALGAM.get(), models().withExistingParent("copper_amalgam", Risus.prefix("block/template_copper_amalgam")).texture("texture", Risus.prefix("block/copper_amalgam")));
@@ -528,8 +528,37 @@ public class BlockModelGenerator extends BlockStateProvider {
 
 	protected void builtinEntity(Block b, ResourceLocation particle) {
 		simpleBlock(b, models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath())
-				.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
-				.texture("particle", particle));
+			.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+			.texture("particle", particle));
+	}
+
+	protected void beatingHeartBlock(Block b, ResourceLocation particle0, ResourceLocation particle1, ResourceLocation particle2, ResourceLocation particle3, ResourceLocation particle4, ResourceLocation particle5, ResourceLocation particle6) {
+		getVariantBuilder(b).forAllStates(state -> {
+			ModelFile model = switch (state.getValue(BeatingHeartBlock.HealthEffectEnum.HEALTH_EFFECT)) {
+				case WITHER -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_1")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle1);
+				case POISON -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_2")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle2);
+				case BLOODCLOGGED -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_3")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle3);
+				case HEALTH_BOOST -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_4")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle4);
+				case REGEN -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_5")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle5);
+				case ABSORPTION -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_6")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle6);
+				default -> models().getBuilder(BuiltInRegistries.BLOCK.getKey(b).getPath()+"_0")
+					.parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+					.texture("particle", particle0);
+			};
+			return ConfiguredModel.builder().modelFile(model).build();
+		});
 	}
 
 	public void torchBlock(Supplier<? extends Block> block, Supplier<? extends Block> wall) {

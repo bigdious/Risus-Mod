@@ -1,11 +1,11 @@
-// 1.21.1	2026-02-26T19:16:50.8720641	Risus blockstates and models
+// 1.21.1	2026-03-01T20:59:20.7721935	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
 3dc537e05089a8a50784dc3d834e25471578d49a assets/risus/blockstates/ashen_remains.json
 a35b9c48cff538f048f40d8357c01cd25e0dacf5 assets/risus/blockstates/ashen_spire.json
 8c187b98938e7c75f7bc710b32dd5399c938dd84 assets/risus/blockstates/baby_ribcage.json
-9173d7fdbf0cd8e1bc33183ae27615f095611899 assets/risus/blockstates/beating_heart.json
+fdf80c3fd8a89bd9d619f14ded130b9ecf3709a5 assets/risus/blockstates/beating_heart.json
 5ce6cb803d2713ef86a692658c7dd7bf901bd3b3 assets/risus/blockstates/big_chain.json
 849b64347bbe4616c85b99aa1b6bd462ac23ddab assets/risus/blockstates/black_mosaic_glass.json
 edef80683ec4c77c4d8315d5d844a7c2b91c2f15 assets/risus/blockstates/black_mosaic_glass_pane.json
@@ -233,7 +233,13 @@ d8192c49c84beab20986dcac7194f87583b61284 assets/risus/blockstates/yellow_mosaic_
 12222bc257de82c9b38b3e0cd92a204214bf9339 assets/risus/models/block/alteration_catalyst_inventory.json
 569e6e6441c2aca9d2a913395d3863348399ad4f assets/risus/models/block/ashen_remains.json
 10fd20f950500ed987bd79ff9f6415b103c481ed assets/risus/models/block/ashen_remains_eyes.json
-4580f81083724982e30132d524d38ca0818fe6bf assets/risus/models/block/beating_heart.json
+4580f81083724982e30132d524d38ca0818fe6bf assets/risus/models/block/beating_heart_0.json
+fe978a4dd9b5c2c8f4641b4e843b3cf4c91ef1e1 assets/risus/models/block/beating_heart_1.json
+ec0ad94a95f799f3946a8acdda68a47b334d3a43 assets/risus/models/block/beating_heart_2.json
+e80820053ca97040d264b336a805b7a58f75158a assets/risus/models/block/beating_heart_3.json
+f67c8dbd0f3c1c5a1e554f5396aaf64fba40523a assets/risus/models/block/beating_heart_4.json
+b1fca6ff3df821c66b46cdb5ea084917d6225527 assets/risus/models/block/beating_heart_5.json
+ce6598e3290d3b946918e6f3d6e494c75db7606f assets/risus/models/block/beating_heart_6.json
 59fef00905cb7dc1d70a0747ea7cd58c3f419955 assets/risus/models/block/black_mosaic_glass.json
 cb011a308efcf86fd5a91f04e13308b7da96bfb5 assets/risus/models/block/black_mosaic_glass_pane_noside.json
 6f402f4ae49b1280b4255eb92ce83dd288378106 assets/risus/models/block/black_mosaic_glass_pane_noside_alt.json
