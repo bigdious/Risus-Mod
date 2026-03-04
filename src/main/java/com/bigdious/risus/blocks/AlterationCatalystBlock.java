@@ -3,9 +3,13 @@ package com.bigdious.risus.blocks;
 import com.bigdious.risus.blocks.entity.AlterationCatalystBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
 import com.bigdious.risus.init.RisusBlockEntities;
+import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.init.RisusTags;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -87,7 +91,8 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 
 		if (!level.isClientSide()) {
 			if (alteration.getTheItem().isEmpty()) {
-				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, 1));
+				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, stack.is(RisusTags.Items.ALTERATION_STACKING_EXCEPTION) ? 1 : stack.getCount()));
+				level.playSound(null, pos, RisusSoundEvents.ITEM_INSERT.get(), SoundSource.BLOCKS);
 			} else {
 				if (alteration.isCrafting) {
 					alteration.failedCrafting = true;
@@ -99,9 +104,11 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 				level.addFreshEntity(item);
 				alteration.setInputItem(ItemStack.EMPTY);
 				alteration.setChanged();
+				level.playSound(null, pos, RisusSoundEvents.ITEM_REMOVED.get(), SoundSource.BLOCKS);
 			}
 			level.sendBlockUpdated(pos, state, state, 2);
 		}
+
 		return ItemInteractionResult.sidedSuccess(level.isClientSide());
 	}
 

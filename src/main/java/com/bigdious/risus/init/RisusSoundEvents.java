@@ -11,7 +11,7 @@ public class RisusSoundEvents {
 
 	//items
 
-	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.bloodwyrm_head.squirt");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRT = register("item.squirt");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_RAK = register("music.disc.rak");
 	public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_MORK = register("music.disc.mork");
@@ -35,6 +35,8 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_POPS_OUT = register("block.item_pops_out");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WEAVING = register("block.weaving_mechanism.weaving");
 	public static final DeferredHolder<SoundEvent, SoundEvent> HEARTBEAT = register("block.beating_heart.heartbeat");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_INSERT = register("block.item_insert");
+	public static final DeferredHolder<SoundEvent, SoundEvent> ITEM_REMOVED = register("block.item_removed");
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> LITTER_LAY_EXCREMENT = register("entity.litter.excrement");
 	public static final DeferredHolder<SoundEvent, SoundEvent> LOVER_INFECT = register("entity.lover.infect");

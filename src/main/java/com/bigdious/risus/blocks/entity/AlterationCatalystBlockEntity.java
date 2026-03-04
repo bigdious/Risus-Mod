@@ -4,7 +4,6 @@ import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -29,7 +28,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
@@ -37,11 +35,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.ticks.ContainerSingleItem;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -108,7 +103,9 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 					level.playSound(null, pos, SoundEvents.PLAYER_BREATH, SoundSource.BLOCKS, 1.0F, 0.5F);
 				}
 				else if (recipe != null) {
-					te.item = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
+					ItemStack resultItem = recipe.assemble(new SingleRecipeInput(te.item), level.registryAccess());
+					resultItem.setCount(te.item.getCount());
+					te.item = resultItem;
 					te.setChanged();
 					te.finishedCrafting = true;
 					te.finishedCounter = 0;

@@ -225,6 +225,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,RisusItems.CINDERGLEE_SCYTHE.get()
 		);
 
+		this.tag(RisusTags.Items.ALTERATION_STACKING_EXCEPTION).add(
+			Items.BOOK,
+			Items.PAPER,
+			Items.DISC_FRAGMENT_5
+		);
+
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

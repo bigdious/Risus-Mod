@@ -50,6 +50,15 @@
     ],
     "subtitle": "subtitles.risus.block.hair.grow"
   },
+  "block.item_insert": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.item_frame.add_item"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.item_insert"
+  },
   "block.item_pops_out": {
     "sounds": [
       {
@@ -58,6 +67,15 @@
       }
     ],
     "subtitle": "subtitles.risus.block.item_pops_out"
+  },
+  "block.item_removed": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.chiseled_bookshelf.pickup"
+      }
+    ],
+    "subtitle": "subtitles.risus.block.item_removed"
   },
   "block.popping_bondknot.crystallized_bond_grow": {
     "sounds": [
