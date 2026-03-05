@@ -1,7 +1,6 @@
 package com.bigdious.risus.dispenser;
 
 import com.bigdious.risus.blocks.ActuallyUseableDirectionalBlock;
-import com.bigdious.risus.blocks.BiomeBlock;
 import com.bigdious.risus.blocks.MultiDirectionalBlock;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.items.OrganicMatterItem;
@@ -45,11 +44,6 @@ public class OrganicMatterDispenseBehaviour extends DefaultDispenseItemBehavior 
 		BlockState state = level.getBlockState(pos);
 		RandomSource random = RandomSource.create();
 		Block checkingForBlock = state.getBlock();
-		//This gets horny
-		if (state.is(RisusBlocks.LAUGHING_STALK) && !state.getValue(BiomeBlock.SPREADING)) {
-			level.setBlock(pos, RisusBlocks.LAUGHING_STALK.get().withPropertiesOf(state).setValue(BiomeBlock.SPREADING, true), 3);
-			stack.shrink(1);
-		}
 
 		//These get preserved
 		if (ORGANIC_MATTER_CONVERSIONS.containsKey(checkingForBlock)) {

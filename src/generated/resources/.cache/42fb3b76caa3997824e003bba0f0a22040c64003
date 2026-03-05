@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-13T21:54:51.1795397	Risus Item Models
+// 1.21.1	2026-03-05T18:23:01.4173407	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -206,7 +206,6 @@ aad878b7457913a6719c76eae0e5e83556037af6 assets/risus/models/item/imitation_scal
 c3a46bb52d909e205ffb8e5264214dfbeda47355 assets/risus/models/item/killjoy.json
 80bfebceee15384832f82e975d39e972078753bb assets/risus/models/item/killjoy_base.json
 ba865eda468baabdc3faedad39038e5fae9c9be0 assets/risus/models/item/laughing_obsidian.json
-8daac144a17d077e66d0e9f4a31cd65445d1f806 assets/risus/models/item/laughing_stalk.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/licker_spawn_egg.json
 f61d6e9c2aec1ccdd8cfcbe1e99b9d4228c3e071 assets/risus/models/item/light_blue_mosaic_glass.json
 e2d4c05a426b781651abc90c9ea945fba78c863a assets/risus/models/item/light_blue_mosaic_glass_pane.json

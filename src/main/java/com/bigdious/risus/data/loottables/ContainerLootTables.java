@@ -308,7 +308,6 @@ public record ContainerLootTables(HolderLookup.Provider registries) implements L
 					.add(LootItem.lootTableItem(RisusItems.GUILTY_APPLE))
 					.add(LootItem.lootTableItem(RisusBlocks.FLATTENED_SCALES_BLOCK))
 					.add(LootItem.lootTableItem(RisusBlocks.ORGANIC_MATTER_BLOCK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
-					.add(LootItem.lootTableItem(RisusBlocks.LAUGHING_STALK).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
 					.add(LootItem.lootTableItem(RisusItems.GLUTTONY_SCALES).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
 					.add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)))
 				.withPool(LootPool.lootPool()

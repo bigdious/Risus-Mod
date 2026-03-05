@@ -245,21 +245,6 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:laughing_stalk"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "risus:gluttony_scales"
         },
         {

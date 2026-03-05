@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-26T19:16:50.8660669	Loot Tables
+// 1.21.1	2026-03-05T18:23:01.4279701	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 85e409631c2d14155202cca72531e8ddaaa93a5e data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -146,7 +146,6 @@ c382ba88778232e13d12e9e398a6316cfe4c1483 data/risus/loot_table/blocks/joyflame_f
 795df9c1c241ea27db6aa7e825984fce3cd59e17 data/risus/loot_table/blocks/joyflame_torch.json
 71cdcb97017aedf78971c429fa3a834934f1e9fb data/risus/loot_table/blocks/joyflame_wall_torch.json
 4435c8cb0c257f8dfb092d9dc856f952c7fc2758 data/risus/loot_table/blocks/laughing_obsidian.json
-c0be40aa18a2d2e6cee8f214585d1888188714ef data/risus/loot_table/blocks/laughing_stalk.json
 cebe2d43eb9f2e07a8c20cf26c8ed6af1983dd16 data/risus/loot_table/blocks/light_blue_display_notch.json
 2269a1bed01776996c23fa2179d6b590a7e9d4b6 data/risus/loot_table/blocks/light_blue_mosaic_glass.json
 4da52b64bc9830746ccdc051e1ae3a214aa6654f data/risus/loot_table/blocks/light_blue_mosaic_glass_pane.json
@@ -260,7 +259,7 @@ e79a115a855d3c4f8fdcfd20168bb2ff56fd4e3b data/risus/loot_table/entities/angel.js
 eabad1db50737ac8ce7af7818530056905a2c6df data/risus/loot_table/great_body_1.json
 8ddc5c4a775245a2acf065fc1527e62ec7122999 data/risus/loot_table/holder_room.json
 1a09779fbcb0e1a03b0316ce816f80052147d303 data/risus/loot_table/licker_room.json
-ed09f8fca850fb222469eff6142d20c121924e93 data/risus/loot_table/reactor.json
+5b384849fd7fafe9ba1d649d42199bd15599b90f data/risus/loot_table/reactor.json
 af257720fbd3ea2ff723cd41e64cbd1d77e6d57a data/risus/loot_table/singer_room.json
 967bd5fe9b318d78b852a6e49e7fc0f09b10d5dc data/risus/loot_table/stairwell_flesh.json
 5c2418dd17724a19ad82c0c07283da6e1fa4cec9 data/risus/loot_table/stairwell_remains.json

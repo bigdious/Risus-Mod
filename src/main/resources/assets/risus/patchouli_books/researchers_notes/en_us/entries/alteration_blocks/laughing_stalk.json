@@ -4,9 +4,7 @@
   "category": "risus:alteration",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "risus:laughing_stalk",
-      "link_recipe": true,
+      "type": "patchouli:text",
       "text": "Oftentimes found attached to or hidden in Risus related ruins, Laughing Stalks are the primary method through which the Coalification is spread. They can be harvested and when fed an Organic Matter, they will start spreading the special biome."
     },
     {

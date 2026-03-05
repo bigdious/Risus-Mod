@@ -1,5 +1,6 @@
 package com.bigdious.risus.blocks.entity;
 
+import com.bigdious.risus.blocks.RisusBaseSpawner;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusBlocks;
 import com.mojang.datafixers.util.Either;
@@ -24,7 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import javax.annotation.Nullable;
 
 public class RisusSpawnerBlockEntity extends BlockEntity implements Spawner {
-	private final BaseSpawner spawner = new BaseSpawner() {
+	private final RisusBaseSpawner spawner = new RisusBaseSpawner() {
 		public void broadcastEvent(Level level, BlockPos pos, int i) {
 			level.blockEvent(pos, RisusBlocks.FLESHY_SPAWNER.get(), i, 0);
 		}
@@ -46,6 +47,7 @@ public class RisusSpawnerBlockEntity extends BlockEntity implements Spawner {
 	public RisusSpawnerBlockEntity(BlockPos pos, BlockState blockState) {
 		super(RisusBlockEntities.SPAWNER.get(), pos, blockState);
 	}
+
 
 	protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
 		super.loadAdditional(tag, registries);

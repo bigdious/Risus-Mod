@@ -40,7 +40,6 @@ import static net.minecraft.world.level.block.RotatedPillarBlock.AXIS;
 public class RisusStructures {
 	//based off of Undergarden's UGStructures class
 	public static final DeferredRegister<StructureType<?>> STRUCTURES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Risus.MODID);
-	public static final ResourceKey<StructureProcessorList> BIOME_BLOCK_ACTIVATION = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "biome_block_activation"));
 
 	public static final ResourceKey<Structure> ALTERATION_SITE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
 	public static final ResourceKey<StructureSet> ALTERATION_SITE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "alteration_site"));
@@ -116,7 +115,7 @@ public class RisusStructures {
 	public static final ResourceKey<StructureTemplatePool> DRAXOLOTL_REMAINS_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains"));
 	public static final ResourceKey<StructureProcessorList> DRAXOLOTL_REMAINS_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains_blending"));
 
-	public static final ResourceKey<StructureTemplatePool> TRIGGER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "trigger"));
+	public static final ResourceKey<StructureTemplatePool> SPREADER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spreader"));
 	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
 	public static final ResourceKey<StructureTemplatePool> SPAWNER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spawner"));
 	public static final ResourceKey<StructureTemplatePool> LAB = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab"));
@@ -663,12 +662,9 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("draxolotl_remains"), processors.getOrThrow(DRAXOLOTL_REMAINS_BLENDING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
-		context.register(TRIGGER, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("trigger/bondknot")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/grimstone")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/ashen_remains")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/living_tissue")), 1),
-			Pair.of(StructurePoolElement.single(name("trigger/flesh_feigr")), 1)
+		context.register(SPREADER, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("spreader/default")), 1),
+			Pair.of(StructurePoolElement.single(name("spreader/thirty")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(DUNGEON_ROOMS, new StructureTemplatePool(emptyPool, List.of(

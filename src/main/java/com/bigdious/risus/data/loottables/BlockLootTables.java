@@ -68,7 +68,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		dropOther(RisusBlocks.MAGENTA_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropOther(RisusBlocks.PINK_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
 		dropOther(RisusBlocks.BROWN_DISPLAY_NOTCH.get(), RisusBlocks.DISPLAY_NOTCH);
-		dropSelf(RisusBlocks.LAUGHING_STALK.get());
 		dropSelf(RisusBlocks.ASHEN_REMAINS.get());
 		dropSelf(RisusBlocks.INACTIVE_HOLDER.get());
 		dropSelf(RisusBlocks.SMILING_REMAINS.get());

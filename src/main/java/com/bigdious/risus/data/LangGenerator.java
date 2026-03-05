@@ -139,7 +139,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.JOYFLAME_LANTERN, "Cinderglee Lantern");
 		this.addBlock(RisusBlocks.JOYFLAME_TORCH, "Cinderglee Torch");
 		this.addBlock(RisusBlocks.LAUGHING_OBSIDIAN, "Smiling Obsidian");
-		this.addBlock(RisusBlocks.LAUGHING_STALK, "Laughing Stalk");
 		this.addBlock(RisusBlocks.LIGHT_EXCREMENT, "Light Dropping");
 		this.addBlock(RisusBlocks.LINEAR_RITUAL_BLOCK, "Linear Ritual Block");
 		this.addBlock(RisusBlocks.LIVING_TISSUE, "Tissue");
@@ -650,8 +649,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
-		this.addBiome(RisusBiomes.COALIFICATION_FEIGR, "Coalification");
-		this.addBiome(RisusBiomes.COALIFICATION_MORK, "Coalification");
 
 		this.addStructure(RisusStructures.ALTERATION_SITE, "Alteration Site");
 		this.addStructure(RisusStructures.ANGEL_ALTAR, "Angel Altar");

@@ -47,9 +47,9 @@ public class CoalificationBlockEntity extends BlockEntity {
 	}
 
 	public static void tick(Level level, BlockPos pos, BlockState state, CoalificationBlockEntity entity) {
-		if (entity.timer > 200) {
+		//I imagine the below math looks puzzling to someone who is better versed in mathematics than I am, but even so, it does exactly what I want it to
+		if (entity.timer > Math.pow(entity.range, 2)) {
 			level.setBlock(pos,entity.getBlockState().getValue(CoalificationBlock.FLUIDLOGGED).getFluidBlock().defaultBlockState(), 11);
-
 		} else {
 			entity.timer++;
 		}
@@ -62,8 +62,13 @@ public class CoalificationBlockEntity extends BlockEntity {
 		BlockPos blockpos = pos.offset(dx, dy, dz);
 		BlockState blockstate = level.getBlockState(blockpos);
 		if (blockstate.is(RisusTags.Blocks.SPAWN_SPIRE_ON) && level.getBlockState(blockpos.above()).canBeReplaced() && level.getBlockState(blockpos.above(2)).canBeReplaced()) {
-			level.setBlock(blockpos.above(), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState(), 3);
-			level.setBlock(blockpos.above(2), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState().setValue(AshenSpireBlock.HALF, DoubleBlockHalf.UPPER).setValue(AshenSpireBlock.FLIPPED, level.getBlockState(blockpos.above()).getBlock().defaultBlockState().is(RisusBlocks.ASHEN_SPIRE) ? level.getBlockState(blockpos.above()).getValue(AshenSpireBlock.FLIPPED) : false), 3);
+			level.setBlock(blockpos.above(), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState()
+				.setValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED, SimpleMultiloggedBlock.MultiloggingEnum.getFromFluid(level.getFluidState(blockpos.above()).getType()))
+				, 3);
+			level.setBlock(blockpos.above(2), RisusBlocks.ASHEN_SPIRE.get().defaultBlockState()
+				.setValue(AshenSpireBlock.HALF, DoubleBlockHalf.UPPER).setValue(AshenSpireBlock.FLIPPED, level.getBlockState(blockpos.above()).getBlock().defaultBlockState().is(RisusBlocks.ASHEN_SPIRE) ? level.getBlockState(blockpos.above()).getValue(AshenSpireBlock.FLIPPED) : false)
+				.setValue(SimpleMultiloggedBlock.MultiloggingEnum.FLUIDLOGGED, SimpleMultiloggedBlock.MultiloggingEnum.getFromFluid(level.getFluidState(blockpos.above(2)).getType()))
+				, 3);
 			ServerParticleUtils.spawnParticleInBlock(level, blockpos.above(2), 3, new BlockParticleOption(ParticleTypes.BLOCK, RisusBlocks.ASHEN_SPIRE.get().defaultBlockState()));
 			level.playSound(null, blockpos.above(), SoundEvents.CAVE_VINES_PLACE, SoundSource.BLOCKS);
 		}

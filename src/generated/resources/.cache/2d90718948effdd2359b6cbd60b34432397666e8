@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-01T20:59:20.7721935	Risus blockstates and models
+// 1.21.1	2026-03-05T18:23:01.4329724	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -137,7 +137,6 @@ bbd030f1c29cc22730467ef06010618d5064cc85 assets/risus/blockstates/imitation_scal
 128ffb02e3991bb5e9c88a51568ffea31dbd83b4 assets/risus/blockstates/joyflame_torch.json
 74b5d21c6f994105a71a61733e6274456c2b1c1e assets/risus/blockstates/joyflame_wall_torch.json
 26e8f41888f374209b1e4c301c0fd5dba379e957 assets/risus/blockstates/laughing_obsidian.json
-9f5e4dc974ea5e5b2adf8d874bab9d2c5dc671ca assets/risus/blockstates/laughing_stalk.json
 d22017f299fc7f1945d838e9a03005e7f0260070 assets/risus/blockstates/light_blue_display_notch.json
 dec0aeeecf0222d1ef38e430ca9b75c4f7088769 assets/risus/blockstates/light_blue_mosaic_glass.json
 ad085cc41779d2335f31d4987445196ead6e18ba assets/risus/blockstates/light_blue_mosaic_glass_pane.json

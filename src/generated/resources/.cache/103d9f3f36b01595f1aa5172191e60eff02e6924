@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-29T22:54:21.3635999	Registries
+// 1.21.1	2026-03-05T20:54:57.0372849	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -48,9 +48,7 @@ a2f394ad5e28d418a0a88c512cc0dfde85928725 data/risus/jukebox_song/rak.json
 4d1f05854d84877ea22cc4fde810f9698a5168bc data/risus/trim_material/gluttony_scales.json
 1601d81366c8acda3a3517440ea4030ca0801386 data/risus/trim_material/organic_matter.json
 228fc26bf4b2e5564cbd6b508d7981763f029bef data/risus/trim_material/skin.json
-5726a63524cd7a203c8e1649ffc5b13914cb2136 data/risus/worldgen/biome/coalification.json
-b8aae70229f71cce17d203b04fcd39b526c6408a data/risus/worldgen/biome/coalification_feigr.json
-b09b8d6c80e5db095041f4e4461d1b27bc9b7e50 data/risus/worldgen/biome/coalification_mork.json
+33795520f99718ffd0d7fb827fd3598a5cca5275 data/risus/worldgen/biome/coalification.json
 771b3b969eed39cf2d9cc11fe4cde0c68d603369 data/risus/worldgen/processor_list/alteration_site_degradation.json
 537ea1231d45ec180a736001cdf8493a6c347a61 data/risus/worldgen/processor_list/church_replacer.json
 509f5f4522341a68f6e1f0402a4e24fa5eeca815 data/risus/worldgen/processor_list/draxolotl_remains_blending.json
@@ -119,4 +117,4 @@ a65a3e9038dd7366ed638a3447041c7a6f90a149 data/risus/worldgen/template_pool/rigid
 2695b0897da84f18c0c7862c8cd9ba9f5facd728 data/risus/worldgen/template_pool/sandy_maw.json
 75fa874f518d4cbb60bcb98bf56dfd77a2ed4b6b data/risus/worldgen/template_pool/skull_fossil.json
 0eafde2bfc1c205a48c97cfb415f123811c06f81 data/risus/worldgen/template_pool/spawner.json
-fe42689598dcf74aa441dcc5935fd89cf47e1b88 data/risus/worldgen/template_pool/trigger.json
+66333b9c0b18ee48a501aeb0c54cbbc090626cec data/risus/worldgen/template_pool/spreader.json

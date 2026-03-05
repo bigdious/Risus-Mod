@@ -31,7 +31,6 @@ public class RisusTab {
 				output.accept(RisusBlocks.ANGEL_ALTAR.get());
 				output.accept(RisusBlocks.DEPTH_VASE.get());
 				output.accept(RisusBlocks.DISPLAY_NOTCH.get());
-				output.accept(RisusBlocks.LAUGHING_STALK.get());
 
 				output.accept(RisusBlocks.ORGANIC_MATTER_BLOCK.get());
 				output.accept(RisusBlocks.SMILING_REMAINS.get());
