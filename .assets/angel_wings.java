@@ -1,4 +1,4 @@
-// Made with Blockbench 4.12.5
+// Made with Blockbench 5.0.7
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -6,69 +6,53 @@
 public class angel_wings<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "angel_wings"), "main");
-	private final ModelPart RightWing;
-	private final ModelPart RightThreeQuarter;
-	private final ModelPart RightTwoQuarter;
-	private final ModelPart RightOneQuarter;
-	private final ModelPart LeftWing;
-	private final ModelPart LeftThreeQuarter;
-	private final ModelPart LeftTwoQuarter;
-	private final ModelPart LeftOneQuarter;
+	private final ModelPart leftWing0;
+	private final ModelPart leftWing1;
+	private final ModelPart leftWing2;
+	private final ModelPart leftWing3;
+	private final ModelPart rightWing0;
+	private final ModelPart rightWing1;
+	private final ModelPart rightWing2;
+	private final ModelPart rightWing3;
 
 	public angel_wings(ModelPart root) {
-		this.RightWing = root.getChild("RightWing");
-		this.RightThreeQuarter = this.RightWing.getChild("RightThreeQuarter");
-		this.RightTwoQuarter = this.RightThreeQuarter.getChild("RightTwoQuarter");
-		this.RightOneQuarter = this.RightTwoQuarter.getChild("RightOneQuarter");
-		this.LeftWing = root.getChild("LeftWing");
-		this.LeftThreeQuarter = this.LeftWing.getChild("LeftThreeQuarter");
-		this.LeftTwoQuarter = this.LeftThreeQuarter.getChild("LeftTwoQuarter");
-		this.LeftOneQuarter = this.LeftTwoQuarter.getChild("LeftOneQuarter");
+		this.leftWing0 = root.getChild("leftWing0");
+		this.leftWing1 = this.leftWing0.getChild("leftWing1");
+		this.leftWing2 = this.leftWing1.getChild("leftWing2");
+		this.leftWing3 = this.leftWing2.getChild("leftWing3");
+		this.rightWing0 = root.getChild("rightWing0");
+		this.rightWing1 = this.rightWing0.getChild("rightWing1");
+		this.rightWing2 = this.rightWing1.getChild("rightWing2");
+		this.rightWing3 = this.rightWing2.getChild("rightWing3");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition RightWing = partdefinition.addOrReplaceChild("RightWing", CubeListBuilder.create().texOffs(29, 19).addBox(-1.1F, -1.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 2.0F, 2.0F, 0.232F, -0.8035F, -0.3171F));
+		PartDefinition leftWing0 = partdefinition.addOrReplaceChild("leftWing0", CubeListBuilder.create().texOffs(0, 2).addBox(-8.0F, -1.0F, -1.0F, 9.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(42, 14).addBox(-8.0F, 1.0F, 0.0F, 9.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, 1.0F, 3.0F, 0.2748F, 0.3169F, 0.5969F));
 
-		PartDefinition RightThreeQuarter = RightWing.addOrReplaceChild("RightThreeQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.4316F, -0.656F, 0.2048F));
+		PartDefinition leftWing1 = leftWing0.addOrReplaceChild("leftWing1", CubeListBuilder.create().texOffs(0, 6).addBox(-8.0F, -1.0F, -1.0F, 9.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(22, 12).addBox(-8.0F, 1.0F, 0.0F, 10.0F, 9.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.0F, 0.0F, 0.0F, -0.1033F, -0.8195F, 0.0774F));
 
-		PartDefinition RightFeatherOne_r1 = RightThreeQuarter.addOrReplaceChild("RightFeatherOne_r1", CubeListBuilder.create().texOffs(47, 19).addBox(0.0F, -2.0F, -1.0F, 0.0F, 6.0F, 7.0F, new CubeDeformation(0.02F)), PartPose.offsetAndRotation(0.0F, 3.0F, 0.0F, 0.0F, 0.1309F, 0.0F));
+		PartDefinition leftWing2 = leftWing1.addOrReplaceChild("leftWing2", CubeListBuilder.create().texOffs(22, 6).addBox(-11.0F, -1.0F, -1.0F, 12.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(0, 10).addBox(-11.0F, 1.0F, 0.0F, 11.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.0F, 0.0F, 0.0F, -0.0662F, -0.2606F, -1.312F));
 
-		PartDefinition RightMemberTwo_r1 = RightThreeQuarter.addOrReplaceChild("RightMemberTwo_r1", CubeListBuilder.create().texOffs(26, 10).addBox(-1.0F, -1.0F, -0.5F, 2.0F, 2.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.1F, 0.0F, 0.5F, 0.0F, 0.0F, -0.0074F));
+		PartDefinition leftWing3 = leftWing2.addOrReplaceChild("leftWing3", CubeListBuilder.create().texOffs(22, 10).addBox(-11.0F, -0.5F, -0.5F, 12.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+		.texOffs(0, 21).addBox(-23.0F, -0.5F, 0.0F, 24.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-11.0F, 0.0F, 0.0F, 0.2424F, -0.3878F, -0.793F));
 
-		PartDefinition RightTwoQuarter = RightThreeQuarter.addOrReplaceChild("RightTwoQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 7.0F, -1.4668F, -0.1365F, -0.1373F));
+		PartDefinition rightWing0 = partdefinition.addOrReplaceChild("rightWing0", CubeListBuilder.create().texOffs(0, 2).mirror().addBox(-1.0F, -1.0F, -1.0F, 9.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(42, 14).mirror().addBox(-1.0F, 1.0F, 0.0F, 9.0F, 7.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(3.0F, 1.0F, 3.0F, 0.2748F, -0.3169F, -0.5969F));
 
-		PartDefinition RightFeatherTwo_r1 = RightTwoQuarter.addOrReplaceChild("RightFeatherTwo_r1", CubeListBuilder.create().texOffs(44, -10).addBox(0.0F, -3.0F, -5.0F, 0.0F, 9.0F, 10.0F, new CubeDeformation(0.02F)), PartPose.offsetAndRotation(0.0F, 4.0F, 4.0F, 0.0F, -0.0436F, 0.0F));
+		PartDefinition rightWing1 = rightWing0.addOrReplaceChild("rightWing1", CubeListBuilder.create().texOffs(0, 6).mirror().addBox(-1.0F, -1.0F, -1.0F, 9.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(22, 12).mirror().addBox(-2.0F, 1.0F, 0.0F, 10.0F, 9.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(8.0F, 0.0F, 0.0F, -0.1033F, 0.8195F, -0.0774F));
 
-		PartDefinition RightMemberThree_r1 = RightTwoQuarter.addOrReplaceChild("RightMemberThree_r1", CubeListBuilder.create().texOffs(0, 10).addBox(-0.4F, 0.0F, -0.5F, 1.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.1F, 0.0F, 0.5F, 0.0F, 0.0F, -0.0074F));
+		PartDefinition rightWing2 = rightWing1.addOrReplaceChild("rightWing2", CubeListBuilder.create().texOffs(22, 6).mirror().addBox(-1.0F, -1.0F, -1.0F, 12.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(0, 10).mirror().addBox(0.0F, 1.0F, 0.0F, 11.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(8.0F, 0.0F, 0.0F, -0.0662F, 0.2606F, 1.312F));
 
-		PartDefinition RightOneQuarter = RightTwoQuarter.addOrReplaceChild("RightOneQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 9.0F, -0.7897F, -0.1609F, 0.1716F));
-
-		PartDefinition RightFeatherThree_r1 = RightOneQuarter.addOrReplaceChild("RightFeatherThree_r1", CubeListBuilder.create().texOffs(0, -20).addBox(0.0F, -2.0F, -1.0F, 0.0F, 10.0F, 20.0F, new CubeDeformation(0.02F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, -0.0873F, 0.0F, 0.0F));
-
-		PartDefinition RightMemberFour_r1 = RightOneQuarter.addOrReplaceChild("RightMemberFour_r1", CubeListBuilder.create().texOffs(0, 20).addBox(-0.4F, 0.0F, -0.5F, 1.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.1F, 0.0F, 0.5F, 0.0F, 0.0F, -0.0074F));
-
-		PartDefinition LeftWing = partdefinition.addOrReplaceChild("LeftWing", CubeListBuilder.create().texOffs(29, 19).mirror().addBox(-0.9F, -1.0F, 0.0F, 2.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(1.0F, 2.0F, 2.0F, 0.232F, 0.8035F, 0.3171F));
-
-		PartDefinition LeftThreeQuarter = LeftWing.addOrReplaceChild("LeftThreeQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.4316F, 0.656F, -0.2048F));
-
-		PartDefinition LeftFeatherOne_r1 = LeftThreeQuarter.addOrReplaceChild("LeftFeatherOne_r1", CubeListBuilder.create().texOffs(47, 19).mirror().addBox(0.0F, -2.0F, -1.0F, 0.0F, 6.0F, 7.0F, new CubeDeformation(0.02F)).mirror(false), PartPose.offsetAndRotation(0.0F, 3.0F, 0.0F, 0.0F, -0.1309F, 0.0F));
-
-		PartDefinition LeftMemberTwo_r1 = LeftThreeQuarter.addOrReplaceChild("LeftMemberTwo_r1", CubeListBuilder.create().texOffs(26, 10).mirror().addBox(-1.0F, -1.0F, -0.5F, 2.0F, 2.0F, 7.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.1F, 0.0F, 0.5F, 0.0F, 0.0F, 0.0074F));
-
-		PartDefinition LeftTwoQuarter = LeftThreeQuarter.addOrReplaceChild("LeftTwoQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 7.0F, -1.4668F, 0.1365F, 0.1373F));
-
-		PartDefinition LeftFeatherTwo_r1 = LeftTwoQuarter.addOrReplaceChild("LeftFeatherTwo_r1", CubeListBuilder.create().texOffs(44, -10).mirror().addBox(0.0F, -3.0F, -5.0F, 0.0F, 9.0F, 10.0F, new CubeDeformation(0.02F)).mirror(false), PartPose.offsetAndRotation(0.0F, 4.0F, 4.0F, 0.0F, 0.0436F, 0.0F));
-
-		PartDefinition LeftMemberThree_r1 = LeftTwoQuarter.addOrReplaceChild("LeftMemberThree_r1", CubeListBuilder.create().texOffs(0, 10).mirror().addBox(-0.6F, 0.0F, -0.5F, 1.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.1F, 0.0F, 0.5F, 0.0F, 0.0F, 0.0074F));
-
-		PartDefinition LeftOneQuarter = LeftTwoQuarter.addOrReplaceChild("LeftOneQuarter", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 0.0F, 9.0F, -0.7897F, 0.1609F, -0.1716F));
-
-		PartDefinition LeftFeatherThree_r1 = LeftOneQuarter.addOrReplaceChild("LeftFeatherThree_r1", CubeListBuilder.create().texOffs(0, -20).mirror().addBox(0.0F, -2.0F, -1.0F, 0.0F, 10.0F, 20.0F, new CubeDeformation(0.02F)).mirror(false), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, -0.0873F, 0.0F, 0.0F));
-
-		PartDefinition LeftMemberFour_r1 = LeftOneQuarter.addOrReplaceChild("LeftMemberFour_r1", CubeListBuilder.create().texOffs(0, 20).mirror().addBox(-0.6F, 0.0F, -0.5F, 1.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.1F, 0.0F, 0.5F, 0.0F, 0.0F, 0.0074F));
+		PartDefinition rightWing3 = rightWing2.addOrReplaceChild("rightWing3", CubeListBuilder.create().texOffs(22, 10).mirror().addBox(-1.0F, -0.5F, -0.5F, 12.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(0, 21).mirror().addBox(-1.0F, -0.5F, 0.0F, 24.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(11.0F, 0.0F, 0.0F, 0.2424F, 0.3878F, 0.793F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
@@ -80,7 +64,7 @@ public class angel_wings<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		RightWing.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		LeftWing.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		leftWing0.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		rightWing0.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 }
