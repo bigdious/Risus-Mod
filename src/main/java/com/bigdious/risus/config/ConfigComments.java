@@ -33,11 +33,6 @@ public final class ConfigComments {
 		Default: false
 		Allows Existential Burn's MAX HEALTH LOSS to be permanent through death. Organic Matter will still restore it. This was the original intent, but it was deemed too cruel for the average player.""";
 
-	public static final String EVERYTHING_YOUTHABLE = """
-
-		Default: false
-		Enables the ability for Eternal Youth to work on anything, ignoring the youth_shrinks tag, with the exception of entities with the tag youth_banned. WARNING: 1. This setting will allow all non-banned entities to be oneshottable through the item. 2. The size decrease and damage decrease may not work on all mobs.""";
-
 	public static final String REVERSE_HORNS_PLAYER_BEHAVIOR = """
 
 		Default: false

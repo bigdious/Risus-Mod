@@ -9,7 +9,6 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue stripperWorksOnMobArmor;
 	final ModConfigSpec.BooleanValue customWeaponAnims;
 	final ModConfigSpec.BooleanValue canonExBurn;
-	final ModConfigSpec.BooleanValue everythingYouthable;
 	final ModConfigSpec.BooleanValue reverseHornsPlayerBehavior;
 	final ModConfigSpec.BooleanValue loverSpreads;
 	final ModConfigSpec.BooleanValue hornsPrioritizeTeams;
@@ -39,11 +38,6 @@ public final class RisusCommonConfig {
 			.translation("config.risus.canon_ex_burn")
 			.comment(ConfigComments.CANON_EX_BURN)
 			.define("canonExBurn", false);
-
-		this.everythingYouthable = builder
-			.translation("config.risus.everything_youthable")
-			.comment(ConfigComments.EVERYTHING_YOUTHABLE)
-			.define("everythingYouthable", false);
 
 		this.customWeaponAnims = builder
 			.translation("config.risus.custom_weapon_anims")

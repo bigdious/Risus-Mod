@@ -1,13 +1,17 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.init.RisusDataMaps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BaseSpawner;
+import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -68,8 +72,11 @@ public abstract class RisusBaseSpawner extends BaseSpawner {
 							return;
 						}
 
-						int k = serverLevel.getEntities(EntityTypeTest.forExactClass(entity.getClass()), (new AABB((double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), (double)(pos.getX() + 1), (double)(pos.getY() + 1), (double)(pos.getZ() + 1))).inflate((double)this.spawnRange), EntitySelector.NO_SPECTATORS).size();
-						if (k >= this.maxNearbyEntities) {
+						int k = serverLevel.getEntities(EntityTypeTest.forExactClass(entity.getClass()), (new AABB(pos.getX(), pos.getY(), pos.getZ(), (pos.getX() + 1), (pos.getY() + 1), (pos.getZ() + 1))).inflate(this.spawnRange), EntitySelector.NO_SPECTATORS).size();
+
+						//here's the change compared to base. We want to account for beloved versions too to avoid for ex. Lover converting creepers to stalkers and then spawner never stops spawning creepers
+						int l = entity.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION) == null ? 0 : serverLevel.getEntities(entity.getType().builtInRegistryHolder().getData(RisusDataMaps.LOVER_CONVERSION).result(), (new AABB(pos.getX(), pos.getY(), pos.getZ(), (pos.getX() + 1), (pos.getY() + 1), (pos.getZ() + 1))).inflate(this.spawnRange), EntitySelector.NO_SPECTATORS).size();
+						if (k + l>= this.maxNearbyEntities) {
 							this.delay(serverLevel, pos);
 							return;
 						}
@@ -82,7 +89,7 @@ public abstract class RisusBaseSpawner extends BaseSpawner {
 							}
 
 							boolean flag1 = spawndata.getEntityToSpawn().size() == 1 && spawndata.getEntityToSpawn().contains("id", 8);
-							EventHooks.finalizeMobSpawnSpawner(mob, serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.SPAWNER, (SpawnGroupData)null, this, flag1);
+							EventHooks.finalizeMobSpawnSpawner(mob, serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.SPAWNER, null, this, flag1);
 							Optional<EquipmentTable> var10000 = spawndata.getEquipment();
 							Objects.requireNonNull(mob);
 							var10000.ifPresent(mob::equip);

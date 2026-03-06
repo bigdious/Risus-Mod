@@ -23,7 +23,6 @@ public class RisusConfig {
 	public static boolean stripperWorksOnMobArmor = true;
 	public static boolean customWeaponAnims = true;
 	public static boolean canonExBurn = false;
-	public static boolean everythingYouthable = false;
 	public static boolean reverseHornsPlayerBehavior = false;
 	public static boolean loverSpreads = true;
 	public static boolean hornsPrioritizeTeams = false;
@@ -35,7 +34,6 @@ public class RisusConfig {
 		stripperWorksOnMobArmor = config.stripperWorksOnMobArmor.get();
 		customWeaponAnims = config.customWeaponAnims.get();
 		canonExBurn = config.canonExBurn.get();
-		everythingYouthable = config.everythingYouthable.get();
 		reverseHornsPlayerBehavior = config.reverseHornsPlayerBehavior.get();
 		loverSpreads = config.loverSpreads.get();
 		hornsPrioritizeTeams = config.hornsPrioritizeTeams.get();

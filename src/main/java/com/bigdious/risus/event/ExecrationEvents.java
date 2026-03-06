@@ -188,7 +188,7 @@ public class ExecrationEvents {
 	public static void onGravityWell(ItemFishedEvent event) {
 		Player player = event.getEntity();
 		if (player.getMainHandItem().has(DataComponents.ENCHANTMENTS) && player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.registryAccess().holderOrThrow(Execrations.GRAVITY_WELL)) > 0) {
-			int level = player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GRAVITY_WELL));
+			int level = Math.min(player.getMainHandItem().get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GRAVITY_WELL)), 3);
 			if (player.level().getRandom().nextFloat() <= level * 0.10) {
 				FishingHook hook = event.getHookEntity();
 				ServerParticleUtils.spawnParticles(player.level(), hook.getOnPos().above(), 1, 0, 0, true, ParticleTypes.GUST);

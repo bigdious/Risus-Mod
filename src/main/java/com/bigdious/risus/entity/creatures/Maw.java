@@ -173,7 +173,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	protected void doPush(Entity entity) {
 
-		if (entity instanceof LivingEntity living && living.attackable() && entity.level().getDifficulty() != Difficulty.PEACEFUL) {
+		if (entity instanceof LivingEntity living && living.attackable() && entity.level().getDifficulty() != Difficulty.PEACEFUL && !this.isDeadOrDying()) {
 			//set up the victim to think theyre being killed by a player
 			if (this.level() instanceof ServerLevel server)
 				living.setLastHurtByPlayer(FakePlayerFactory.getMinecraft(server));
