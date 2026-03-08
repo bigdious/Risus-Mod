@@ -45,6 +45,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(10000));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(666));
+	public static final DeferredItem<Item> DIAMOND_TIPPED_ANGEL_WINGS = register("diamond_tipped_angel_wings", AngelWingsItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(666));
 	public static final DeferredItem<Item> SACRIFICE_CATALYST = register("sacrifice_catalyst", Item::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> LITTER = register("litter", LitterItem::new, () -> new Item.Properties().rarity(BLOOD));
 	public static final DeferredItem<Item> WARHORN = register("warhorn", properties -> new WarhornItem(properties, InstrumentTags.GOAT_HORNS), () -> new Item.Properties().stacksTo(1).durability(256).rarity(BLOOD).fireResistant().component(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY));

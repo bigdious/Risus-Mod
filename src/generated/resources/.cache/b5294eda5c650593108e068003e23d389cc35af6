@@ -1,9 +1,10 @@
-// 1.21.1	2025-11-02T21:09:00.0576489	Particle Descriptions
+// 1.21.1	2026-03-08T19:01:02.3721416	Particle Descriptions
 c403d364b67a65d0917ca461704158e739cd44d0 assets/risus/particles/alteration.json
 c403d364b67a65d0917ca461704158e739cd44d0 assets/risus/particles/alteration_finished.json
 95bcab4f21a0ffd319a8acf37332485ec9483ab9 assets/risus/particles/block_organic.json
 0f16f08608d294ea00988f6251d96a6ad2f33675 assets/risus/particles/bloodslash_trail.json
 1f48cb061f09f3e56b905623f7cc35d8e68e8c3c assets/risus/particles/blood_bit_particle.json
+377e144e019eee8f07d0bdd913fece0a6b74ee40 assets/risus/particles/blood_feather.json
 1f48cb061f09f3e56b905623f7cc35d8e68e8c3c assets/risus/particles/blood_particle.json
 a1c7ea2c4868d2159b7890de0d2bcfa130879f01 assets/risus/particles/destined_death_particle.json
 3bff6e343ed6e6409e526244c4f2ad7d2ed30c5b assets/risus/particles/dripping_blood.json

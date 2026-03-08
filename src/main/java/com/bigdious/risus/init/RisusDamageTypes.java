@@ -32,6 +32,7 @@ public class RisusDamageTypes {
 	public static final ResourceKey<DamageType> DESTINED_DEATH = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("destined_death"));
 	public static final ResourceKey<DamageType> REVENGE = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("revenge"));
 	public static final ResourceKey<DamageType> AGONY = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("agony"));
+	public static final ResourceKey<DamageType> WING_STAB = ResourceKey.create(Registries.DAMAGE_TYPE, Risus.prefix("wing_stab"));
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {
 		context.register(INEXISTENCE, new DamageType("risus.inexistence", 0));
@@ -44,5 +45,6 @@ public class RisusDamageTypes {
 		context.register(DESTINED_DEATH, new DamageType("risus.destined_death", 0));
 		context.register(REVENGE, new DamageType("risus.revenge", 0));
 		context.register(AGONY, new DamageType("risus.agony", 0));
+		context.register(WING_STAB, new DamageType("risus.wing_stab", 0));
 	}
 }

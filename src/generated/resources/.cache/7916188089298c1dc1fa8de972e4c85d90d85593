@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-04T21:39:14.4721095	Tags for minecraft:item mod id risus
+// 1.21.1	2026-03-08T22:26:27.3192916	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ad6dc2d003288ac32ec225cfaa208c0ab991da02 data/curios/tags/item/charm.json
 1160aadd2e4ed0619d2f85e4d7af91344c4e4044 data/curios/tags/item/hands.json
@@ -14,7 +14,7 @@ a9a99ee09bf13187a929030b20cefcf7f6f6f9c7 data/c/tags/item/storage_blocks.json
 404277d823015a85660dc0c721600643edd4ecca data/minecraft/tags/item/chest_armor.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/minecraft/tags/item/dyeable.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/armor.json
-defc5efc088117fbdc5bbd983fc8401c88f26e13 data/minecraft/tags/item/enchantable/durability.json
+a9ce230f788572a8b0896574018c68ba564e9ab2 data/minecraft/tags/item/enchantable/durability.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/equippable.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/foot_armor.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/vanishing.json
@@ -57,16 +57,17 @@ fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variati
 5d687e27c85871b9aa5140dfa30f216e42229ff0 data/risus/tags/item/eye.json
 e828be5c6d5677743282d9c2997a9d43f402ca83 data/risus/tags/item/fossil_variation.json
 ee2387014a0e77b1a5e2cbf21393c351832f3345 data/risus/tags/item/froglight_blocks.json
+a9ce230f788572a8b0896574018c68ba564e9ab2 data/risus/tags/item/gliding_wings.json
 81a26927cc3089355baa9f5a33d4f02dd5453ebd data/risus/tags/item/gothic_fences.json
 089104ea9858188076aa7df6cab4d64cd993db00 data/risus/tags/item/grimstones.json
 9d7fb9833e6aa795be522d192dd8621e7387ee30 data/risus/tags/item/horns.json
 c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
 2d4bb28011449fdf388a6360b5bb48a3fa19941b data/risus/tags/item/lightly_hurts_angel_wings.json
-153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/perpetuity_blacklist.json
+5fa04fd14d6467f12a8c3e62583842bb92ac210e data/risus/tags/item/perpetuity_blacklist.json
 77d12b0b03e0c64dcca79ec97a2e071ea9be0515 data/risus/tags/item/raw_meat.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/risus/tags/item/robes.json
 4a082aa84a89090b8f136ee9bebe76220e6efa42 data/risus/tags/item/scythes.json
-153def5fced487da37a529bacf97db05cc33cacd data/risus/tags/item/stops_thread_wings_rendering.json
+5fa04fd14d6467f12a8c3e62583842bb92ac210e data/risus/tags/item/stops_thread_wings_rendering.json
 08e351805fe748da80be586314015c81df4a1211 data/risus/tags/item/sword_and_trident_enchantable.json
 dc322590c36f41ea8d7be7e3bbd6e575407ddd3c data/risus/tags/item/willful_weapon.json

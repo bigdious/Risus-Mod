@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-05T18:23:01.4173407	Risus Item Models
+// 1.21.1	2026-03-08T22:26:27.3082891	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -98,6 +98,12 @@ c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decayed_tissue
 c65f76a685332f1c3dc7f20f6b8a0fd7aa1e2437 assets/risus/models/item/decaying_tissue.json
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposed_tissue.json
 ab2a8f908038431e6861e0554ba8d87dba9fe80c assets/risus/models/item/decomposing_tissue.json
+11ca783cadb4b3fe44ea26a99fc9cb8b57841477 assets/risus/models/item/diamond_tipped_angel_wings.json
+1947ac93495c50bff0196b653af890325c68479f assets/risus/models/item/diamond_tipped_angel_wings_broken.json
+d6030f7ae4425d1a470be51b4544c60bafd4551c assets/risus/models/item/diamond_tipped_ashen_wings.json
+87db6b65e4dd573cfd66ab01b49ffb6cf9c3562b assets/risus/models/item/diamond_tipped_ashen_wings_broken.json
+f5920164094f8f658944f352258ded37ce63572d assets/risus/models/item/diamond_tipped_oily_wings.json
+1488e5197774fa8692e4a62067cedea1edfc0ecc assets/risus/models/item/diamond_tipped_oily_wings_broken.json
 ffc0b43476f24c0a4f356a3f0bfdd45d36cbd0d1 assets/risus/models/item/display_notch.json
 cec2392e78984cf8df47012aa4d2cac5582c7e2c assets/risus/models/item/divinity_banner_pattern.json
 6b5efeac1f88304624d2754f071d1eb290e40827 assets/risus/models/item/echo_pearl.json

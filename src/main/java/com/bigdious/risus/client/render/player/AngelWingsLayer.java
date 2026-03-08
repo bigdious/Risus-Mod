@@ -26,6 +26,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
 	private static final ResourceLocation ANGEL_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/angel_wings.png");
+	private static final ResourceLocation DIAMOND_TIPPED_ANGEL_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/diamond_tipped_angel_wings.png");
 	private static final ResourceLocation ASHEN_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/ashen_wings.png");
 	private static final ResourceLocation OILY_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/oily_wings.png");
 	private final AngelWingsModel model;
@@ -47,8 +48,20 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}
+		if (shouldRenderTipped(itemstack)){
+			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+			VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(
+				itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? ASHEN_WINGS_RENDER :
+					itemstack.getHoverName().getString().equalsIgnoreCase("oily wings") ? OILY_WINGS_RENDER :
+						DIAMOND_TIPPED_ANGEL_WINGS_RENDER), false, itemstack.hasFoil());
+			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
+			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
+		}
 	}
 	public boolean shouldRender(ItemStack stack) {
-		return stack.is(RisusItems.ANGEL_WINGS);
+		return stack.is(RisusItems.ANGEL_WINGS.get());
+	}
+	public boolean shouldRenderTipped(ItemStack stack) {
+		return stack.is(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get());
 	}
 }

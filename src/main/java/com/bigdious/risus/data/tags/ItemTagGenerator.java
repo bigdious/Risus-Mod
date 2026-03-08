@@ -155,7 +155,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 
 		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
-			RisusItems.ANGEL_WINGS.asItem()
+			RisusItems.ANGEL_WINGS.get(),
+			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
 		);
 
 		this.tag(ItemTags.BEE_FOOD).add(
@@ -170,7 +171,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(RisusTags.Items.STOPS_THREAD_WINGS_RENDERING).add(
 			Items.ELYTRA,
-			RisusItems.ANGEL_WINGS.get()
+			RisusItems.ANGEL_WINGS.get(),
+			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
+
 		);
 
 		this.tag(RisusTags.Items.HORNS).add(
@@ -200,7 +203,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(RisusTags.Items.PERPETUITY_BLACKLIST).add(
 			Items.ELYTRA,
-			RisusItems.ANGEL_WINGS.get()
+			RisusItems.ANGEL_WINGS.get(),
+			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
 		);
 
 		this.tag(RisusTags.Items.ENCHANTED_BOOK_EQUIVALENT).add(
@@ -229,6 +233,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			Items.BOOK,
 			Items.PAPER,
 			Items.DISC_FRAGMENT_5
+		);
+
+		this.tag(RisusTags.Items.GLIDING_WINGS).add(
+			RisusItems.ANGEL_WINGS.get(),
+			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
 		);
 
 

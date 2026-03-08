@@ -69,43 +69,50 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 		float f = 0.000F;
 		float f1 = 0.0F;
 		float f2 = 0.0F;
-//		float f3 = 0.655878F;
-//		float f5 = -1.48F;
-//		float f6 = -0.78F;
-		if (entity.isSprinting()) {
+		float f3 = 0.0F;
 
-		}
 		if (entity.isCrouching()) {
 			f = ((float) Math.PI / 4F);
 			f1 = ((float) Math.PI / 8F);
+			f3 = ((float) Math.PI / 16F);
 			f2 = 3.0F;
 		}
 		if (entity.isFallFlying()) {
+			float f4 = 1.0F;
+			Vec3 vec3 = entity.getDeltaMovement();
+			if (vec3.y < (double)0.0F) {
+				Vec3 vec31 = vec3.normalize();
+				f4 = 0.9F - (float)Math.pow(-vec31.y, 3F);
+			}
+			this.leftWing0.xRot =  (float)Math.toRadians(8.9555D);
+			this.leftWing0.yRot = (float)Math.toRadians(12.1363);
+			this.leftWing0.zRot = (float)Math.toRadians(-34.3408) + f4;
 
-//			float f4 = 1.0F;
-//			Vec3 vec3 = entity.getDeltaMovement();
-//			if (vec3.y < (double)0.0F) {
-//				Vec3 vec31 = vec3.normalize();
-//				f4 = 1.0F - (float)Math.pow(-vec31.y, 1.5F);
-//			}
-//
-//
-//			f = f4 * ((float)Math.PI / 2F) + (1F - f4) * f1;
-//			f5 = f4 * ((float)Math.PI / 2F) + (-1.15F - f4);
-//			f6 = f4 * ((float)Math.PI / 2F) + (-1.25F - f4);
+			this.leftWing1.xRot = (float)Math.toRadians(-4.3047D);
+			this.leftWing1.yRot = (float)Math.toRadians(20.3428D);
+			this.leftWing1.zRot = (float)Math.toRadians(-1.3938D);
+
+			this.leftWing2.xRot = (float)Math.toRadians(-0.1289D);
+			this.leftWing2.yRot = (float)Math.toRadians(-17.9235D);
+			this.leftWing2.zRot = (float)Math.toRadians(-10.2501D);
+
+			this.leftWing3.xRot = (float)Math.toRadians(-2.2206D);
+			this.leftWing3.yRot = (float)Math.toRadians(-25.9244D);
+			this.leftWing3.zRot = (float)Math.toRadians(7.1836D);
+
 
 		} else {
-			this.leftWing0.xRot =  (float)Math.toRadians(15.7442D) - f1;
+			this.leftWing0.xRot =  (float)Math.toRadians(15.7442D) - f3*0.9F;
 			this.leftWing0.yRot = (float)Math.toRadians(18.1577) - f;
 			this.leftWing0.zRot = (float)Math.toRadians(34.2017);
 
 			this.leftWing1.xRot = (float)Math.toRadians(-5.9178D);
 			this.leftWing1.yRot = (float)Math.toRadians(-46.9517D);
-			this.leftWing1.zRot = (float)Math.toRadians(-4.4369D);
+			this.leftWing1.zRot = (float)Math.toRadians(-4.4369D) ;
 
 			this.leftWing2.xRot = (float)Math.toRadians(-3.7913D);
-			this.leftWing2.yRot = (float)Math.toRadians(-14.9331D);
-			this.leftWing2.zRot = (float)Math.toRadians(-75.1746D) + f;
+			this.leftWing2.yRot = (float)Math.toRadians(-14.9331D) - f3;
+			this.leftWing2.zRot = (float)Math.toRadians(-75.1746D) + f *1.5F;
 
 			this.leftWing3.xRot = (float)Math.toRadians(13.8884D) - f1;
 			this.leftWing3.yRot = (float)Math.toRadians(-22.2166D);
@@ -113,20 +120,6 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 
 		}
 		this.leftWing0.y = f2;
-//		this.leftWing1.xRot = f5;
-//		this.leftWing2.xRot = f6;
-//		if (entity instanceof AbstractClientPlayer abstractclientplayer) {
-////			abstractclientplayer.elytraRotX += (f + abstractclientplayer.elytraRotX) * 0.1F;
-////			abstractclientplayer.elytraRotY += (f - abstractclientplayer.elytraRotY) * 0.1F;
-////			abstractclientplayer.elytraRotZ += (f - abstractclientplayer.elytraRotZ) * 0.1F;
-////			this.leftWing1.xRot = abstractclientplayer.elytraRotX;
-////			this.leftWing1.yRot = abstractclientplayer.elytraRotY;
-////			this.leftWing1.zRot = abstractclientplayer.elytraRotZ;
-//		} else {
-
-//		}
-//
-//
 		this.rightWing0.y = this.leftWing0.y;
 		this.rightWing0.xRot = this.leftWing0.xRot;
 		this.rightWing0.yRot = -this.leftWing0.yRot;
@@ -140,9 +133,7 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 		this.rightWing3.zRot = -this.leftWing3.zRot;
 		this.rightWing3.yRot = -this.leftWing3.yRot;
 		this.rightWing3.xRot = this.leftWing3.xRot;
-//
-//		this.rightWing2.xRot = this.leftWing2.xRot;
-//		this.rightWing3.xRot = this.leftWing3.xRot;
+
 	}
 
 	@Override

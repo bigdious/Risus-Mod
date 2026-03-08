@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "risus:item/diamond_tipped_angel_wings_broken",
+      "predicate": {
+        "risus:broken": 1.0
+      }
+    },
+    {
+      "model": "risus:item/diamond_tipped_ashen_wings",
+      "predicate": {
+        "risus:ashen": 1.0
+      }
+    },
+    {
+      "model": "risus:item/diamond_tipped_ashen_wings_broken",
+      "predicate": {
+        "risus:ashen": 1.0,
+        "risus:broken": 1.0
+      }
+    },
+    {
+      "model": "risus:item/diamond_tipped_oily_wings",
+      "predicate": {
+        "risus:oily": 1.0
+      }
+    },
+    {
+      "model": "risus:item/diamond_tipped_oily_wings_broken",
+      "predicate": {
+        "risus:broken": 1.0,
+        "risus:oily": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "risus:item/diamond_tipped_angel_wings"
+  }
+}

@@ -251,6 +251,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.CRESCENT_DISASTER, "Crescent Disaster");
 		this.addItem(RisusItems.CROWN_OF_BONES, "Ivory Crown");
 		this.addItem(RisusItems.CRYSTALLIZED_BOND, "Crystallized Bond");
+		this.addItem(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS, "Diamond Tipped Ophanim Wings");
 		this.addItem(RisusItems.ECHO_PEARL, "Echo Pearl");
 		this.addItem(RisusItems.EGG_SAC, "Egg Sac");
 		this.addItem(RisusItems.EMBODIMENT_OF_COURTSHIP, "Embodiment of Courtship");
@@ -598,6 +599,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addDeathMessage("destined_death", "%1$s couldn't flee from their Destined Death");
 		this.addDeathMessage("destined_death.player", "%1$s couldn't flee from their Destined Death while trying to escape %2$s");
 		this.addDeathMessage("destined_death.item", "%1$s couldn't flee from their Destined Death while trying to escape %2$s using %3$s");
+		this.addDeathMessage("wing_attack", "%1$s was skewered by wings");
+		this.addDeathMessage("wing_attack.player", "%1$s was skewered by wings while trying to escape %2$s");
+		this.addDeathMessage("wing_attack.item", "%1$s was skewered by wings while trying to escape %2$s");
 
 		this.addEffect(RisusMobEffects.AMNESIA, "Amnesia");
 		this.addEffect(RisusMobEffects.BLOODCLOGGED, "Bloodclogged");

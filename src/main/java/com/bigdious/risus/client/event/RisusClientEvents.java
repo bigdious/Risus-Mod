@@ -30,6 +30,7 @@ import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.ScopePacket;
 import com.bigdious.risus.network.SummonGreatnessPacket;
+import com.bigdious.risus.network.WingAttackPacket;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.shaders.FogShape;
@@ -39,6 +40,7 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Camera;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.Options;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
@@ -73,6 +75,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;
+import net.neoforged.neoforge.client.settings.KeyMappingLookup;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -134,6 +137,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHearts);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::remoteOpenBook);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::summonGreatness);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::wingAttack);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::noMovementOnStool);
@@ -234,6 +238,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.SLEEPY.get(), SleepyParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.BLOOD_FEATHER.get(), BloodFeatherParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.STARS.get(), SuspendedTownParticle.HappyVillagerProvider::new);
 		event.registerSpecial(RisusParticles.MOB_EFFECT_ICON.get(),new MobEffectIconParticle.Provider());
 	}
@@ -475,6 +480,14 @@ public class RisusClientEvents {
 		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
 			if (event.getKey() == SUMMON_GREATNESS.getKey().getValue() && SUMMON_GREATNESS.consumeClick()) {
 				PacketDistributor.sendToServer(SummonGreatnessPacket.INSTANCE);
+			}
+		}
+	}
+
+	private static void wingAttack(InputEvent.Key event) {
+		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
+			if (event.getKey() == Minecraft.getInstance().options.keyShift.getKey().getValue() && Minecraft.getInstance().options.keyShift.consumeClick()) {
+				PacketDistributor.sendToServer(WingAttackPacket.INSTANCE);
 			}
 		}
 	}

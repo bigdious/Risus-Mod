@@ -94,6 +94,7 @@ public class RisusTags {
 		public static final TagKey<Item> RAW_MEAT = create("raw_meat");
 		public static final TagKey<Item> SCYTHES = create("scythes");
 		public static final TagKey<Item> ALTERATION_STACKING_EXCEPTION = create("alteration_stacking_exception");
+		public static final TagKey<Item> GLIDING_WINGS = create("gliding_wings");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

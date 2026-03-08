@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-05T20:54:57.0372849	Registries
+// 1.21.1	2026-03-08T18:31:49.9176581	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -13,6 +13,7 @@ fb66e00ba49e543bcffcef3c073930ced882203c data/risus/damage_type/gluttony.json
 64fa4e9c0f4f52697ede36b84fc28e6d72f23288 data/risus/damage_type/pleasure.json
 36847bc3660ff319599f3a89ca3ebae8cb76d6c7 data/risus/damage_type/revenge.json
 280e134206536a849551a2b4bdc791e6fc85c7fb data/risus/damage_type/vampirism.json
+693f03f3347583414baf154766a4e68a26107bea data/risus/damage_type/wing_stab.json
 8585c98209547a6a7e04c60b804e59ccf837afb1 data/risus/enchantment/agony.json
 dbbc749bf7416ca5dd3694e9739938bf5ff428a1 data/risus/enchantment/avaricious_ambit.json
 738d1e231f2f491bbe3ae5f38035843d31bedf36 data/risus/enchantment/battering.json

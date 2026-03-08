@@ -288,6 +288,7 @@ public class RisusTab {
 				output.accept(RisusItems.GOLD_FIST.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
+				output.accept(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get());
 				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 				output.accept(RisusItems.CRYSTALLIZED_BOND.get());
 				output.accept(RisusItems.GLUTTONY_SCALES.get());
