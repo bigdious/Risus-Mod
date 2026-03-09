@@ -40,22 +40,24 @@ public class WingAttackPacket implements CustomPacketPayload {
 			ctx.enqueueWork(() -> {
 				Player player = ctx.player();
 				Level level = player.level();
-				boolean flag = player.getItemBySlot(EquipmentSlot.CHEST).getDamageValue() < player.getItemBySlot(EquipmentSlot.CHEST).getMaxDamage()-5;
-				if (player.onGround() && player.getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()) && flag) {
-					Vec3 lookVec = Vec3.directionFromRotation(0, player.getRotationVector().y);
-					List<Entity> possibleList = level.getEntities(player, player.getBoundingBox().expandTowards(lookVec.x()*1.5, 0, lookVec.z() * 1.5).inflate(0.5, 0, 0.5));
-					for (Entity attackable : possibleList) {
-						//don't believe the yellow underlined lies
-						if (attackable instanceof LivingEntity target && !level.isClientSide() && !target.isDeadOrDying() && flag) {
-							target.hurt(player.damageSources().source(RisusDamageTypes.WING_STAB), 4);
-							target.knockback(1, -lookVec.x, -lookVec.z);
-							if (level instanceof ServerLevel serverLevel) {
+				if (player.getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get())) {
+					boolean flag = player.getItemBySlot(EquipmentSlot.CHEST).getDamageValue() < player.getItemBySlot(EquipmentSlot.CHEST).getMaxDamage() - 5;
+					if (!player.isFallFlying() && !player.isSwimming() && !player.isVisuallyCrawling() && flag) {
+						Vec3 lookVec = Vec3.directionFromRotation(0, player.getRotationVector().y);
+						List<Entity> possibleList = level.getEntities(player, player.getBoundingBox().expandTowards(lookVec.x() * 1.5, 0, lookVec.z() * 1.5).inflate(0.5, 0, 0.5));
+						for (Entity attackable : possibleList) {
+							//don't believe the yellow underlined lies
+							if (attackable instanceof LivingEntity target && !level.isClientSide() && !target.isDeadOrDying() && flag) {
+								target.hurt(player.damageSources().source(RisusDamageTypes.WING_STAB), 4);
+								target.knockback(1, -lookVec.x, -lookVec.z);
+								if (level instanceof ServerLevel serverLevel) {
 									serverLevel.sendParticles(RisusParticles.BLOOD_FEATHER.get(), target.getRandomX(1), target.getEyeY(), target.getRandomZ(1), 1, 0, 0, 0, 0);
+								}
+								player.getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(4, player, EquipmentSlot.CHEST);
 							}
-							player.getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(4, player, EquipmentSlot.CHEST);
 						}
-					}
 
+					}
 				}
 			});
 		}

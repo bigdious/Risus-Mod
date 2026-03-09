@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond_block"
+  },
+  "base": {
+    "item": "risus:angel_wings"
+  },
+  "result": {
+    "count": 1,
+    "id": "risus:diamond_tipped_angel_wings"
+  },
+  "template": {
+    "item": "risus:blood_feather"
+  }
+}

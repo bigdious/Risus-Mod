@@ -35,6 +35,11 @@ public class BodyCuriosRenderer implements ICurioRenderer {
 				stack.rotateAround(Axis.YP.rotation(3.15F), 0, 0, 0);
 				stack.scale(-0.4F, -0.4F, 0.4F);
 			}
+			if (item.is(RisusItems.COUNTERWEIGHT)) {
+				stack.translate(0.01D, 0.3D, -0.15D);
+				stack.rotateAround(Axis.YP.rotation(3.15F), 0, 0, 0);
+				stack.scale(-0.3F, -0.3F, 0.3F);
+			}
 			ItemInHandRenderer renderer = new ItemInHandRenderer(Minecraft.getInstance(), Minecraft.getInstance().getEntityRenderDispatcher(), Minecraft.getInstance().getItemRenderer());
 			renderer.renderItem(slotContext.entity(), item, ItemDisplayContext.FIXED, false, stack, buffer, light);
 			stack.popPose();

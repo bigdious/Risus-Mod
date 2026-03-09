@@ -17,26 +17,21 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class BloodFeatherItem extends Item {
-
-	public BloodFeatherItem(Properties properties) {
+public class CounterweightItem extends Item {
+	public CounterweightItem(Properties properties) {
 		super(properties);
 	}
 
-	@Override
-	public boolean hasCustomEntity(ItemStack stack) {
-		return true;
-	}
-
-	@Override
-	public @Nullable Entity createEntity(Level level, Entity location, ItemStack stack) {
-		var entity = new LightningResistantItemEntity(level, location.getX(), location.getY(), location.getZ(), stack);
-		entity.setDeltaMovement(location.getDeltaMovement());
-		entity.setDefaultPickUpDelay();
-		return entity;
-	}
-	@Override
-	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-		tooltipComponents.add(Component.translatable("tooltip.risus.blood_feather").withStyle(ChatFormatting.GRAY));
+	public static ItemAttributeModifiers createCounterweightAttributes() {
+		return ItemAttributeModifiers.builder()
+			.add(Attributes.GRAVITY,
+				new AttributeModifier(
+					Risus.prefix("gravity_modifier"),
+					-0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), EquipmentSlotGroup.HAND)
+			.add(Attributes.SAFE_FALL_DISTANCE,
+				new AttributeModifier(
+					Risus.prefix("safe_fall_distance_modifier"),
+					5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
+			.build();
 	}
 }

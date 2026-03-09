@@ -287,6 +287,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.EMBODIMENT_OF_LANGUISH);
 		singleTex(RisusItems.ETERNAL_YOUTH);
 		singleTex(RisusItems.BLOOD_FEATHER);
+		singleTex(RisusItems.COUNTERWEIGHT);
 		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.GUTS_BOAT);

@@ -48,11 +48,7 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 				AABB aabb = (new AABB(pos)).inflate(30);
 				List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, aabb);
 				for (LivingEntity entities : list) {
-						if (effect.is(RisusMobEffects.BLOODCLOGGED) && entities.hasEffect(RisusMobEffects.BLOODCLOGGED)) {
-							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval+40, entities.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier(), true, false, true));
-						} else {
-							entities.addEffect(new MobEffectInstance(effect, heart.beatInterval + 40,0,true, false, true));
-						}
+					entities.addEffect(new MobEffectInstance(effect, heart.beatInterval + 40,0,true, false, true));
 				}
 			}
 		}

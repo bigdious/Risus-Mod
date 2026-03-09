@@ -11,7 +11,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
@@ -28,7 +27,11 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 	private static final ResourceLocation ANGEL_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/angel_wings.png");
 	private static final ResourceLocation DIAMOND_TIPPED_ANGEL_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/diamond_tipped_angel_wings.png");
 	private static final ResourceLocation ASHEN_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/ashen_wings.png");
+	private static final ResourceLocation DIAMOND_TIPPED_ASHEN_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/diamond_tipped_ashen_wings.png");
 	private static final ResourceLocation OILY_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/oily_wings.png");
+	private static final ResourceLocation DIAMOND_TIPPED_OILY_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/diamond_tipped_oily_wings.png");
+	private static final ResourceLocation OXIDIZING_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/oxidizing_wings.png");
+	private static final ResourceLocation DIAMOND_TIPPED_OXIDIZING_WINGS_RENDER = ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/player/diamond_tipped_oxidizing_wings.png");
 	private final AngelWingsModel model;
 
 	public AngelWingsLayer(RenderLayerParent<T, M> parent) {
@@ -43,6 +46,7 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(
 				itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? ASHEN_WINGS_RENDER :
+				itemstack.getHoverName().getString().equalsIgnoreCase("oxidizing wings") ? OXIDIZING_WINGS_RENDER :
 					itemstack.getHoverName().getString().equalsIgnoreCase("oily wings") ? OILY_WINGS_RENDER :
 						ANGEL_WINGS_RENDER), false, itemstack.hasFoil());
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
@@ -51,8 +55,9 @@ public class AngelWingsLayer <T extends LivingEntity, M extends EntityModel<T>> 
 		if (shouldRenderTipped(itemstack)){
 			this.model.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 			VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, this.model.renderType(
-				itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? ASHEN_WINGS_RENDER :
-					itemstack.getHoverName().getString().equalsIgnoreCase("oily wings") ? OILY_WINGS_RENDER :
+				itemstack.getHoverName().getString().equalsIgnoreCase("ashen wings") ? DIAMOND_TIPPED_ASHEN_WINGS_RENDER :
+					itemstack.getHoverName().getString().equalsIgnoreCase("oxidizing wings") ? DIAMOND_TIPPED_OXIDIZING_WINGS_RENDER :
+					itemstack.getHoverName().getString().equalsIgnoreCase("oily wings") ? DIAMOND_TIPPED_OILY_WINGS_RENDER :
 						DIAMOND_TIPPED_ANGEL_WINGS_RENDER), false, itemstack.hasFoil());
 			this.model.prepareMobModel(parent, limbSwing, limbSwingAmount, ageInTicks);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);

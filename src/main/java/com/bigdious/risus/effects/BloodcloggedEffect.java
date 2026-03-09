@@ -28,10 +28,6 @@ public class BloodcloggedEffect extends MobEffect {
 	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)) {
 			entity.removeEffect(RisusMobEffects.BLOODCLOGGED);
-		} else if (entity.isAlive()) {
-			if (entity.getAttribute(Attributes.MAX_HEALTH) != null && Math.round(entity.getMaxHealth())> Math.round(entity.getHealth())) {
-				entity.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, entity.getEffect(RisusMobEffects.BLOODCLOGGED).getDuration(), entity.getEffect(RisusMobEffects.BLOODCLOGGED).getAmplifier()+1, false, false, true));
-			}
 		}
 		return super.applyEffectTick(entity, amplifier);
 	}
@@ -40,15 +36,6 @@ public class BloodcloggedEffect extends MobEffect {
 	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
 	}
-
-	@Override
-	public void addAttributeModifiers(AttributeMap attributeMap, int amplifier) {
-		if (amplifier>0) {
-			super.addAttributeModifiers(attributeMap, amplifier);
-		}
-
-	}
-
 
 	@Override
 	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {

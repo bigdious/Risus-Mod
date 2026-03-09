@@ -1,6 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.config.RisusConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -82,6 +83,7 @@ public class RisusTags {
 		public static final TagKey<Item> CURIOS_BELT = createCurios("belt");
 		public static final TagKey<Item> CURIOS_CHARM = createCurios("charm");
 		public static final TagKey<Item> CURIOS_HEAD = createCurios("head");
+		public static final TagKey<Item> CURIOS_BODY = createCurios("body");
 		public static final TagKey<Item> ROBES = create("robes");
 		public static final TagKey<Item> SWORD_AND_TRIDENT_ENCHANTABLE = create("sword_and_trident_enchantable");
 		public static final TagKey<Item> PERPETUITY_BLACKLIST = create("perpetuity_blacklist");

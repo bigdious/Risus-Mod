@@ -27,12 +27,6 @@ public class HeadCuriosRenderer implements ICurioRenderer {
 				matrixStack.translate(0.0D, -0.60D, 0.0D);
 				matrixStack.scale(1.20F, -1.20F, -1.20F);
 			}
-			if (stack.is(RisusItems.BLOOD_FEATHER)) {
-				headModel.getHead().translateAndRotate(matrixStack);
-				matrixStack.mulPose(Axis.YP.rotationDegrees(270));
-				matrixStack.translate(0D, -0.10D, 0.05D);
-				matrixStack.scale(-0.5F, -0.5F, 0.5F);
-			}
 			ItemInHandRenderer renderer = new ItemInHandRenderer(Minecraft.getInstance(), Minecraft.getInstance().getEntityRenderDispatcher(), Minecraft.getInstance().getItemRenderer());
 			renderer.renderItem(slotContext.entity(), stack, ItemDisplayContext.HEAD, false, matrixStack, renderTypeBuffer, light);
 			matrixStack.popPose();

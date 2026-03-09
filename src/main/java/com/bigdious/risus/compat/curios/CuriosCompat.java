@@ -10,10 +10,13 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import top.theillusivec4.curios.api.CuriosCapability;
@@ -40,7 +43,7 @@ public class CuriosCompat {
 					return builder.build();
 				}
 
-			}, RisusItems.HAND_OF_GREED, RisusItems.BLOOD_FEATHER, RisusItems.LUCKY_CHARM, RisusItems.WRETCHED_CHARM);
+			}, RisusItems.HAND_OF_GREED, RisusItems.COUNTERWEIGHT, RisusItems.LUCKY_CHARM, RisusItems.WRETCHED_CHARM);
 	}
 
 	public static void registerCurioRenderers(FMLClientSetupEvent event) {
@@ -50,8 +53,18 @@ public class CuriosCompat {
 			CuriosRendererRegistry.register(RisusItems.TOTEM_OF_UNYIELDING.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.LUCKY_CHARM.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.WRETCHED_CHARM.get(), BodyCuriosRenderer::new);
-			CuriosRendererRegistry.register(RisusItems.BLOOD_FEATHER.get(), HeadCuriosRenderer::new);
+			CuriosRendererRegistry.register(RisusItems.COUNTERWEIGHT.get(), BodyCuriosRenderer::new);
 
 		});
+	}
+
+	public static boolean curiosSearch(LivingEntity entity, Item item) {
+		if (ModList.get().isLoaded("curios")) {
+			var handler = entity.getCapability(CuriosCapability.INVENTORY);
+			if (handler == null) return false;
+			var s = handler.findCurios(item);
+			if (s.isEmpty()) return false; else return true;
+		}
+		return false;
 	}
 }

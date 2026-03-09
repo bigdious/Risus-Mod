@@ -1026,6 +1026,13 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.COUNTERWEIGHT.get(), 1)
+			.requires(RisusItems.BLOOD_FEATHER.get())
+			.requires(Items.SHULKER_SHELL)
+			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
+			.save(consumer);
+
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.ROSE_PETAL.get(), 4)
 			.requires(RisusBlocks.REGEN_ROSE.get())
 			.unlockedBy("has_item", has(RisusBlocks.REGEN_ROSE.get()))
@@ -1714,6 +1721,15 @@ public class CraftingGenerator extends RecipeProvider {
 				RisusItems.SINNER_ROBES_HELMET.get())
 			.unlocks("has_item", has(RisusItems.GLUTTONY_SCALES))
 			.save(consumer, "skin_helmet_to_robes");
+
+		SmithingTransformRecipeBuilder.smithing(
+				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
+				Ingredient.of(RisusItems.ANGEL_WINGS),
+				Ingredient.of(Items.DIAMOND_BLOCK),
+				RecipeCategory.TRANSPORTATION,
+				RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get())
+			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))
+			.save(consumer, "angel_wings_to_diamond_tipped_angel_wings");
 
 		SmithingUpgradeRecipeBuilder.smithingUpgrade(Ingredient.of(RisusItems.SINNER_ROBES_HELMET.get()), Ingredient.of(Items.SKELETON_SKULL), Ingredient.of(Items.STRING), RecipeCategory.COMBAT)
 			.attachData(RisusDataComponents.ABILITY_VARIANT, "skeleton")

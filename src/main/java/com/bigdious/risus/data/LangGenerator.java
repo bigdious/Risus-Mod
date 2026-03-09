@@ -248,6 +248,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.BOOMSTICK, "Boomstick");
 		this.addItem(RisusItems.CINDERGLEE_SCYTHE, "Existential Executioner");
 		this.addItem(RisusItems.CONCENTRATION_CORE, "Concentration Core");
+		this.addItem(RisusItems.COUNTERWEIGHT, "Counterweight");
 		this.addItem(RisusItems.CRESCENT_DISASTER, "Crescent Disaster");
 		this.addItem(RisusItems.CROWN_OF_BONES, "Ivory Crown");
 		this.addItem(RisusItems.CRYSTALLIZED_BOND, "Crystallized Bond");

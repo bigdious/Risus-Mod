@@ -287,6 +287,7 @@ public class RisusTab {
 				output.accept(RisusItems.HAND_OF_GREED.get());
 				output.accept(RisusItems.GOLD_FIST.get());
 				output.accept(RisusItems.BLOOD_FEATHER.get());
+				output.accept(RisusItems.COUNTERWEIGHT.get());
 				output.accept(RisusItems.ANGEL_WINGS.get());
 				output.accept(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get());
 				output.accept(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());

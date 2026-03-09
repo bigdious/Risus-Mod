@@ -44,6 +44,7 @@ import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
@@ -94,6 +95,7 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::boostDefiantTrident);
 		NeoForge.EVENT_BUS.addListener(ExecrationEvents::continueHypersomnia);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::playerDropEasterEgg);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::healingDenied);
 	}
 
 	private static void commonSetup(FMLCommonSetupEvent event) {
@@ -302,6 +304,12 @@ public class RisusEvents {
 				drop.moveTo(player.getX(), player.getY(), player.getZ());
 				player.level().addFreshEntity(drop);
 			}
+		}
+	}
+
+	private static void healingDenied(LivingHealEvent event) {
+		if (event.getEntity().hasEffect(RisusMobEffects.BLOODCLOGGED)) {
+			event.setCanceled(true);
 		}
 	}
 

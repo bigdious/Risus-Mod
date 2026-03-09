@@ -82,7 +82,7 @@ public class AngelWingsModel extends HumanoidModel<LivingEntity> {
 			Vec3 vec3 = entity.getDeltaMovement();
 			if (vec3.y < (double)0.0F) {
 				Vec3 vec31 = vec3.normalize();
-				f4 = 0.9F - (float)Math.pow(-vec31.y, 3F);
+				f4 = 0.9F - (float)Math.pow(-vec31.y, 0.5F);
 			}
 			this.leftWing0.xRot =  (float)Math.toRadians(8.9555D);
 			this.leftWing0.yRot = (float)Math.toRadians(12.1363);

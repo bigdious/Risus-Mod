@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-08T22:26:27.3082891	Risus Item Models
+// 1.21.1	2026-03-09T22:15:44.8012527	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -63,6 +63,7 @@ c04c7efde5d8dca1829ecd528267db08398e03df assets/risus/models/item/concentration_
 887a891e9ea0cfca9359bcb13ec78e6600b1b686 assets/risus/models/item/containment_glass.json
 d7d30ceafde32f2f0fc2d4169a653fa76bc82f7b assets/risus/models/item/containment_glass_pane.json
 a8736d4ec001af23ea321bd03e3ce4085aea2758 assets/risus/models/item/copper_amalgam.json
+2418202b84aa4b7d13c77acb43b2262460721e78 assets/risus/models/item/counterweight.json
 16e71f96b32786b26a465258a2ea947383f2ea0a assets/risus/models/item/cracked_grimstone_bricks.json
 da679f6ba42c0395210798ef7e213a26e909d04a assets/risus/models/item/crescent_disaster.json
 e6e3f9d2ba983c27e9e5941c41cd07d94039aa62 assets/risus/models/item/crescent_disaster_base.json
