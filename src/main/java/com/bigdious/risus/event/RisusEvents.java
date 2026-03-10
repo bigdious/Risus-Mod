@@ -8,7 +8,9 @@ import com.bigdious.risus.entity.creatures.*;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.villagers.RisusVillagers;
 import com.google.common.collect.Maps;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,12 +22,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -35,6 +41,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.saveddata.maps.MapDecorationTypes;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -47,9 +54,11 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -62,6 +71,7 @@ public class RisusEvents {
 		bus.addListener(RisusEvents::registerAttributes);
 		bus.addListener(RisusEvents::registerSpawnPlacements);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::registerPotionRecipes);
+		NeoForge.EVENT_BUS.addListener(RisusEvents::registerVillagerTrades);
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::knockOutSomeTeeth);
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addParticles);
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addEggSack);
@@ -182,6 +192,20 @@ public class RisusEvents {
 		builder.addMix(Potions.AWKWARD, RisusItems.HAND_OF_GREED.get(), RisusPotions.GOLDEN_GLORY);
 		builder.addMix(RisusPotions.GOLDEN_GLORY, Items.FERMENTED_SPIDER_EYE, RisusPotions.COPPER_AGE);
 
+	}
+	private static void registerVillagerTrades(VillagerTradesEvent event) {
+		if (event.getType() == RisusVillagers.ASCETIC.value()) {
+			Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+			trades.get(1).add(((new VillagerTrades.TreasureMapForEmeralds(
+			12, RisusTags.Structures.CHURCH, "filled_map.church", MapDecorationTypes.OCEAN_MONUMENT, 12, 10)
+			)));
+
+			trades.get(1).add((((entity, randomSource) -> new MerchantOffer(
+				new ItemCost(Items.RED_DYE, 24),
+				new ItemStack(Items.EMERALD, 1), 14, 10, 0.05F)
+			)));
+		}
 	}
 
 	private static void registerAttributes(EntityAttributeCreationEvent event) {

@@ -240,6 +240,15 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
 		);
 
+		this.tag(Tags.Items.MUSIC_DISCS).add(
+			RisusItems.MUSIC_DISC_CYCLE.get()
+			,RisusItems.MUSIC_DISC_FEIGR.get()
+			,RisusItems.MUSIC_DISC_MORK.get()
+			,RisusItems.MUSIC_DISC_RAK.get()
+			,RisusItems.MUSIC_DISC_REGN.get()
+
+		);
+
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

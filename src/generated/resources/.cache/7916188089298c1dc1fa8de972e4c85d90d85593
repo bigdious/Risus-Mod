@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-09T22:15:44.8142554	Tags for minecraft:item mod id risus
+// 1.21.1	2026-03-10T17:57:09.3590569	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ee200672c17830ea323ac6342fbc88149feb8c65 data/curios/tags/item/body.json
 0147c7e2049f5e1a179687d6f3ae4fab096657e3 data/curios/tags/item/charm.json
@@ -9,6 +9,7 @@ ee200672c17830ea323ac6342fbc88149feb8c65 data/curios/tags/item/body.json
 86196d8d301039609134e790f381774456113206 data/c/tags/item/fences/wooden.json
 f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/item/fence_gates.json
 0a80db2ea17cf55028af255bf15dfe86d3fee162 data/c/tags/item/fence_gates/wooden.json
+d1e20a2a4b0c9654ccff4c6d8f467c91a6232d1c data/c/tags/item/music_discs.json
 90246e9d74b4b2bbf5464f742536a68e568d6022 data/c/tags/item/obsidians.json
 a9a99ee09bf13187a929030b20cefcf7f6f6f9c7 data/c/tags/item/storage_blocks.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/item/bee_food.json

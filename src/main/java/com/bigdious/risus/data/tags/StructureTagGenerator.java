@@ -43,6 +43,10 @@ public class StructureTagGenerator extends StructureTagsProvider {
 		this.tag(RisusTags.Structures.FEIGR_MUSIC_STRUCTURES).add(
 			RisusStructures.LAB_START
 		);
+
+		this.tag(RisusTags.Structures.CHURCH).add(
+			RisusStructures.CHURCH
+		);
 	}
 
 }

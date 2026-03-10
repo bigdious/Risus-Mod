@@ -544,6 +544,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 
+		this.add("entity.minecraft.villager.risus.ascetic", "Ascetic");
+
 		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
 		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, in return - if worn - weakening any Protection enchanted pieces.");
 		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
@@ -668,6 +670,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addStructure(RisusStructures.GREAT_BODY, "Great Body");
 		this.addStructure(RisusStructures.LAB_START, "Lab");
 		this.addStructure(RisusStructures.SANDY_MAW, "Sand Gorger Trap");
+
+		this.add("filled_map.church", "Church Explorer Map");
 
 		this.add("fluid_type.risus.blood_fluid", "Blood");
 		this.add("container.risus.maw_guts", "Gorger Guts");
