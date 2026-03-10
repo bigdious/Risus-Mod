@@ -26,6 +26,7 @@ public class RisusConfig {
 	public static boolean reverseHornsPlayerBehavior = false;
 	public static boolean loverSpreads = true;
 	public static boolean hornsPrioritizeTeams = false;
+	public static boolean hornsUsePotionCharges = false;
 
 	static void rebakeCommonOptions(RisusCommonConfig config) {
 		spinningSource = config.spinningSource.get();
@@ -37,6 +38,7 @@ public class RisusConfig {
 		reverseHornsPlayerBehavior = config.reverseHornsPlayerBehavior.get();
 		loverSpreads = config.loverSpreads.get();
 		hornsPrioritizeTeams = config.hornsPrioritizeTeams.get();
+		hornsUsePotionCharges = config.hornsUsePotionCharges.get();
 
 		MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
 		if (server != null && server.isDedicatedServer()) {

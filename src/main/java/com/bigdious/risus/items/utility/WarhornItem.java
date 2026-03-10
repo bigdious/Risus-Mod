@@ -55,6 +55,9 @@ public class WarhornItem extends InstrumentItem {
 		if (stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY).potion().potion().isEmpty()) {
 			tooltipComponents.add(Component.translatable("tooltip.risus.warhorn_dunk").withStyle(ChatFormatting.GRAY));
 		}
+		if (RisusConfig.hornsUsePotionCharges && stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) > 0 ) {
+			tooltipComponents.add(Component.translatable("tooltip.risus.potion_charges", Component.translatable("" + stack.get(RisusDataComponents.POTION_CHARGES))).withStyle(ChatFormatting.WHITE));
+		}
 	}
 
 	public Optional<Holder<Instrument>> getInstrument(ItemStack stack) {
@@ -79,7 +82,7 @@ public class WarhornItem extends InstrumentItem {
 		WarhornComponent warhornContents = stack.getOrDefault(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
 		PotionContents potionContents = other.get(DataComponents.POTION_CONTENTS);
 
-		if (action == ClickAction.SECONDARY && potionContents != null) {
+		if (action == ClickAction.SECONDARY && potionContents != null && (!RisusConfig.hornsUsePotionCharges || (stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) == 0 || (warhornContents.potion().potion().get() == potionContents.potion().get() && stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) < 3)))) {
 				if (!player.getAbilities().instabuild) {
 					other.shrink(1);
 					if (!player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE))) {
@@ -87,7 +90,11 @@ public class WarhornItem extends InstrumentItem {
 					}
 					player.playSound(RisusSoundEvents.IMBIBING.get());
 				}
+				if (RisusConfig.hornsUsePotionCharges && (stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) == 0  || (warhornContents.potion().potion().get() == potionContents.potion().get() && stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) < 3))) {
+					stack.set(RisusDataComponents.POTION_CHARGES, stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) + 1);
+				}
 				this.changeAndConsumeWarhorn(stack, warhorn -> warhorn.update(RisusDataComponents.WARHORN_CONTENT, warhornContents, component -> component.updateContents(potionContents)));
+
 				return true;
 		}
 		return false;
@@ -111,7 +118,7 @@ public class WarhornItem extends InstrumentItem {
 			player.awardStat(Stats.ITEM_USED.get(this));
 			used = true;
 		}
-		if (warhornContent.potion() != PotionContents.EMPTY) {
+		if (warhornContent.potion() != PotionContents.EMPTY && (!RisusConfig.hornsUsePotionCharges || stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) > 0)) {
 			for (MobEffectInstance mobeffectinstance : warhornContent.potion().getAllEffects()) {
 				if (mobeffectinstance.getEffect().value().isInstantenous()) {
 					mobeffectinstance.getEffect().value().applyInstantenousEffect(player, player, player, mobeffectinstance.getAmplifier(), 1.0D);
@@ -164,6 +171,13 @@ public class WarhornItem extends InstrumentItem {
 		if (used) {
 			player.awardStat(Stats.ITEM_USED.get(this));
 			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+			if (RisusConfig.hornsUsePotionCharges) {
+				stack.set(RisusDataComponents.POTION_CHARGES, stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 1) - 1);
+				if (stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) < 1) {
+					stack.set(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
+					stack.set(RisusDataComponents.POTION_CHARGES, 0);
+				}
+			}
 			return InteractionResultHolder.consume(stack);
 		}
 		return InteractionResultHolder.fail(player.getItemInHand(hand));

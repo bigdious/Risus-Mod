@@ -392,6 +392,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spyglass.button_press.outline", "[%s]");
 		this.add("tooltip.risus.rose_crown", "Once painful, then sweet - yet now puzzling memories...");
 		this.add("tooltip.risus.warhorn_dunk", "Right click with a Potion to fill it.");
+		this.add("tooltip.risus.potion_charges", "Potion Charges: %s");
 		this.add("tooltip.risus.spawnentity.risus.maw", "Gorger");
 		this.add("tooltip.risus.spawnentity.risus.angel", "Blood Ophanim");
 		this.add("tooltip.risus.spawnentity.risus.weaver", "Weaver");

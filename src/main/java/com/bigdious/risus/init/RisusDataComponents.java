@@ -28,5 +28,6 @@ public class RisusDataComponents {
 	public static final DeferredHolder<DataComponentType<?>, DataComponentType<WarhornComponent>> WARHORN_CONTENT = COMPONENTS.register("warhorn_content", () -> DataComponentType.<WarhornComponent>builder().persistent(WarhornComponent.CODEC).networkSynchronized(WarhornComponent.STREAM_CODEC).build());
 	public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> ABILITY_VARIANT = COMPONENTS.register("ability_variant", () -> DataComponentType.<String>builder().persistent(Codec.STRING).networkSynchronized(ByteBufCodecs.STRING_UTF8).build());
 	public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<ConditionalEffect<EnchantmentEntityEffect>>>> ITEM_DAMAGED_ENTITY = ENCHANTMENT_EFFECT_COMPONENTS.register("item_damaged_entity", () -> DataComponentType.<List<ConditionalEffect<EnchantmentEntityEffect>>>builder().persistent(ConditionalEffect.codec(EnchantmentEntityEffect.CODEC, LootContextParamSets.ENCHANTED_ENTITY).listOf()).build());
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> POTION_CHARGES = COMPONENTS.register("potion_charges", () -> DataComponentType.<Integer>builder().persistent(Codec.INT).networkSynchronized(ByteBufCodecs.INT).build());
 
 }

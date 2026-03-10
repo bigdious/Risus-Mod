@@ -48,5 +48,10 @@ public final class ConfigComments {
 		Default: false
 		When set to true, Horns will prioritize the user's team when deciding allies and enemies.""";
 
+	public static final String HORNS_USE_POTION_CHARGES = """
+
+		Default: false
+		When set to true, Horns will have potion charges. They can hold up to three charges of a potion type and cannot be imbibed with a new potion until all charges of the previous one are used up. Disclaimer: Changing this config with an existing world with warhorns may cause some of them to remain infinite uses.""";
+
 
 }

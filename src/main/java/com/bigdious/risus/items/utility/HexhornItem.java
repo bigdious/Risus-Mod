@@ -50,7 +50,7 @@ public class HexhornItem extends WarhornItem{
 			player.awardStat(Stats.ITEM_USED.get(this));
 			used = true;
 		}
-		if (warhornContent.potion() != PotionContents.EMPTY) {
+		if (warhornContent.potion() != PotionContents.EMPTY && (!RisusConfig.hornsUsePotionCharges || stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) > 0)) {
 			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(50D + 10*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
 			if (player.getTeam() != null && RisusConfig.hornsPrioritizeTeams) {
 				for (Entity maybeBingo : targets) {
@@ -94,6 +94,13 @@ public class HexhornItem extends WarhornItem{
 		if (used) {
 			player.awardStat(Stats.ITEM_USED.get(this));
 			stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+			if (RisusConfig.hornsUsePotionCharges) {
+				stack.set(RisusDataComponents.POTION_CHARGES, stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 1) - 1);
+				if (stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) < 1) {
+					stack.set(RisusDataComponents.WARHORN_CONTENT, WarhornComponent.EMPTY);
+					stack.set(RisusDataComponents.POTION_CHARGES, 0);
+				}
+			}
 			return InteractionResultHolder.consume(stack);
 		}
 		return InteractionResultHolder.fail(player.getItemInHand(hand));

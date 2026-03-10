@@ -12,6 +12,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue reverseHornsPlayerBehavior;
 	final ModConfigSpec.BooleanValue loverSpreads;
 	final ModConfigSpec.BooleanValue hornsPrioritizeTeams;
+	final ModConfigSpec.BooleanValue hornsUsePotionCharges;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -58,5 +59,10 @@ public final class RisusCommonConfig {
 			.translation("config.risus.horns_prioritize_teams")
 			.comment(ConfigComments.HORNS_PRIORITIZE_TEAMS)
 			.define("hornsPrioritizeTeams", false);
+
+		this.hornsUsePotionCharges = builder
+			.translation("config.risus.horns_use_potion_charges")
+			.comment(ConfigComments.HORNS_USE_POTION_CHARGES)
+			.define("hornsUsePotionCharges", false);
 	}
 }

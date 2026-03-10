@@ -772,6 +772,7 @@
   "tooltip.risus.great_stool.button_press.outline": "[%s]",
   "tooltip.risus.hand_of_greed": "Uncommonly dropped by Holders.",
   "tooltip.risus.memory_core": "Uncommonly dropped by Weavers.",
+  "tooltip.risus.potion_charges": "Potion Charges: %s",
   "tooltip.risus.researchers_notes": "Carry in hotbar to access item lookup feature.",
   "tooltip.risus.rose_crown": "Once painful, then sweet - yet now puzzling memories...",
   "tooltip.risus.sinner_robes_boots.great_stool": " Great Stool",
