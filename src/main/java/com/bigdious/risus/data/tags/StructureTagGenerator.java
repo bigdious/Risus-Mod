@@ -44,8 +44,35 @@ public class StructureTagGenerator extends StructureTagsProvider {
 			RisusStructures.LAB_START
 		);
 
+		this.tag(RisusTags.Structures.ANGEL_ALTAR).add(
+			RisusStructures.ANGEL_ALTAR
+		);
+
+		this.tag(RisusTags.Structures.HEART_CHAMBER).add(
+		);
+
+		this.tag(RisusTags.Structures.RIBS_FOSSIL).add(
+			RisusStructures.RIBS_FOSSIL
+		);
+
+		this.tag(RisusTags.Structures.SKULL_FOSSIL).add(
+			RisusStructures.SKULL_FOSSIL
+		);
+
+		this.tag(RisusTags.Structures.GREAT_BODY).add(
+			RisusStructures.GREAT_BODY
+		);
+
 		this.tag(RisusTags.Structures.CHURCH).add(
 			RisusStructures.CHURCH
+		);
+
+		this.tag(RisusTags.Structures.BLOOD_POOL).add(
+			RisusStructures.LAB_START
+		);
+
+		this.tag(RisusTags.Structures.FLOWER_FIELD).add(
+			RisusStructures.FLOWER_FIELD
 		);
 	}
 

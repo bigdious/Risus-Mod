@@ -163,7 +163,14 @@ public class RisusTags {
 		public static final TagKey<Structure> RISUS = create("risus");
 		public static final TagKey<Structure> MORK_MUSIC_STRUCTURES = create("mork_music");
 		public static final TagKey<Structure> FEIGR_MUSIC_STRUCTURES = create("unique_music_structures");
+		public static final TagKey<Structure> ANGEL_ALTAR = create("angel_altar");
+		public static final TagKey<Structure> HEART_CHAMBER = create("heart_chamber");
+		public static final TagKey<Structure> RIBS_FOSSIL = create("ribs_fossil");
+		public static final TagKey<Structure> SKULL_FOSSIL = create("skull_fossil");
+		public static final TagKey<Structure> GREAT_BODY = create("great_body");
 		public static final TagKey<Structure> CHURCH = create("church");
+		public static final TagKey<Structure> BLOOD_POOL = create("blood_pool");
+		public static final TagKey<Structure> FLOWER_FIELD = create("flower_field");
 
 		private static TagKey<Structure> create(String name) {
 			return TagKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

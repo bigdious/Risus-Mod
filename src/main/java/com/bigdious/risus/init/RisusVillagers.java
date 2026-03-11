@@ -1,10 +1,7 @@
-package com.bigdious.risus.villagers;
+package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.items.utility.RisusBookItem;
 import com.google.common.collect.ImmutableSet;
-import com.google.errorprone.annotations.Immutable;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;

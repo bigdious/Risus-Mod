@@ -11,7 +11,7 @@ import com.bigdious.risus.data.tags.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.*;
-import com.bigdious.risus.villagers.RisusVillagers;
+import com.bigdious.risus.init.RisusVillagers;
 import com.google.common.reflect.Reflection;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
@@ -70,6 +70,7 @@ public class Risus {
 		RisusItemSubPredicates.TYPES.register(bus);
 		RisusVillagers.POI_TYPES.register(bus);
 		RisusVillagers.VILLAGER_PROFESSIONS.register(bus);
+		RisusMapDecorations.MAP_DECORATION_TYPES.register(bus);
 		if (ModList.get().isLoaded("curios")) loadCuriosCompat(bus);
 
 		bus.addListener(this::registerPackets);

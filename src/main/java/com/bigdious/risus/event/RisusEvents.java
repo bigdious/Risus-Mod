@@ -8,10 +8,9 @@ import com.bigdious.risus.entity.creatures.*;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.villagers.RisusVillagers;
+import com.bigdious.risus.init.RisusVillagers;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -22,7 +21,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -30,8 +28,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.trading.ItemCost;
-import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -60,7 +56,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 
 public class RisusEvents {
@@ -197,14 +192,38 @@ public class RisusEvents {
 		if (event.getType() == RisusVillagers.ASCETIC.value()) {
 			Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
+			trades.get(1).add(((new VillagerTrades.EmeraldForItems(Items.RED_DYE, 32, 16, 2))));
+			trades.get(1).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.HEART_TRANSPLANT.get().asItem(), 5, 1, 3))));
+			trades.get(1).add(((new VillagerTrades.EmeraldForItems(RisusItems.MEMORY_CORE, 2, 12, 4))));
 			trades.get(1).add(((new VillagerTrades.TreasureMapForEmeralds(
-			12, RisusTags.Structures.CHURCH, "filled_map.church", MapDecorationTypes.OCEAN_MONUMENT, 12, 10)
-			)));
+				12, RisusTags.Structures.ANGEL_ALTAR, "filled_map.angel_altar", RisusMapDecorations.ANGEL_ALTAR, 12, 10))));
 
-			trades.get(1).add((((entity, randomSource) -> new MerchantOffer(
-				new ItemCost(Items.RED_DYE, 24),
-				new ItemStack(Items.EMERALD, 1), 14, 10, 0.05F)
-			)));
+			trades.get(2).add(((new VillagerTrades.TreasureMapForEmeralds(
+				12, RisusTags.Structures.HEART_CHAMBER, "filled_map.heart_chamber", MapDecorationTypes.WHITE_BANNER, 12, 10))));
+			trades.get(2).add(((new VillagerTrades.TreasureMapForEmeralds(
+				13, RisusTags.Structures.RIBS_FOSSIL, "filled_map.ribs_fossil", MapDecorationTypes.WHITE_BANNER, 12, 10))));
+			trades.get(2).add(((new VillagerTrades.TreasureMapForEmeralds(
+				13, RisusTags.Structures.SKULL_FOSSIL, "filled_map.skull_fossil", MapDecorationTypes.WHITE_BANNER, 12, 10))));
+			trades.get(2).add(((new VillagerTrades.TreasureMapForEmeralds(
+				10, RisusTags.Structures.GREAT_BODY, "filled_map.great_body", MapDecorationTypes.WHITE_BANNER, 12, 10))));
+
+			trades.get(3).add(((new VillagerTrades.EmeraldForItems(RisusBlocks.ORGANIC_MATTER_BLOCK.get().asItem(), 4, 16, 5))));
+			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.BABY_RIBCAGE.get().asItem(), 5, 1, 7))));
+			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.RIBCAGE.get().asItem(), 10, 1, 7))));
+			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get().asItem(), 3, 8, 7))));
+			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.UNALLOYED_SCALES_BLOCK.get().asItem(), 4, 8, 7))));
+
+
+			trades.get(4).add(((new VillagerTrades.TreasureMapForEmeralds(
+				24, RisusTags.Structures.CHURCH, "filled_map.church", MapDecorationTypes.WHITE_BANNER, 12, 20))));
+			trades.get(4).add(((new VillagerTrades.TreasureMapForEmeralds(
+				24, RisusTags.Structures.BLOOD_POOL, "filled_map.blood_pool", MapDecorationTypes.WHITE_BANNER, 12, 20))));
+			trades.get(4).add(((new VillagerTrades.TreasureMapForEmeralds(
+				24, RisusTags.Structures.FLOWER_FIELD, "filled_map.flower_field", MapDecorationTypes.WHITE_BANNER, 12, 20))));
+
+			trades.get(5).add(((new VillagerTrades.EnchantBookForEmeralds(20, RisusTags.Enchantments.EXECRATIONS))));
+			trades.get(5).add(((new VillagerTrades.ItemsForEmeralds(RisusItems.TOTEM_OF_UNYIELDING.get(), 32, 1, 4, 30))));
+
 		}
 	}
 
