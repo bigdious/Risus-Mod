@@ -10,6 +10,13 @@ public class RisusMapDecorations {
 	public static final DeferredRegister<MapDecorationType> MAP_DECORATION_TYPES = DeferredRegister.create(BuiltInRegistries.MAP_DECORATION_TYPE, Risus.MODID);
 
 	public static final DeferredHolder<MapDecorationType, MapDecorationType> ANGEL_ALTAR = register("angel_altar");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> HEART_CHAMBER = register("heart_chamber");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> RIBS_FOSSIL = register("ribs_fossil");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> SKULL_FOSSIL = register("skull_fossil");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> GREAT_BODY = register("great_body");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> CHURCH = register("church");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> BLOOD_POOL = register("blood_pool");
+	public static final DeferredHolder<MapDecorationType, MapDecorationType> FLOWER_FIELD = register("flower_field");
 
 
 	private static DeferredHolder<MapDecorationType, MapDecorationType> register(String name) {
