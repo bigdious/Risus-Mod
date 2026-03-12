@@ -22,6 +22,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 public abstract class RisusBaseSpawner extends BaseSpawner {
+
 	public void serverTick(ServerLevel serverLevel, BlockPos pos) {
 		if (this.isNearPlayer(serverLevel, pos)) {
 			if (this.spawnDelay == -1) {

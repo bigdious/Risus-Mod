@@ -240,6 +240,10 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
 		);
 
+		this.tag(RisusTags.Items.SACRIFICIAL_CATALYST).add(
+			RisusItems.SACRIFICE_CATALYST.get()
+		);
+
 		this.tag(Tags.Items.MUSIC_DISCS).add(
 			RisusItems.MUSIC_DISC_CYCLE.get()
 			,RisusItems.MUSIC_DISC_FEIGR.get()

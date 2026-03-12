@@ -84,6 +84,9 @@ public class BeatingHeartBlock extends BaseEntityBlock implements SimpleMultilog
 				serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(BeatingHeartBlockEntity.HEALTH_EFFECTS.get(STATE_ITEMS.get(stack.getItem())).getFirst())), pos.getX()+0.5, pos.getY()+0.5, pos.getZ()+0.5, 1, 0, 0.0, 0.0, 0.2);
 				serverLevel.playSound(null, pos, SoundEvents.HONEY_BLOCK_BREAK, SoundSource.BLOCKS);
 			}
+			if (stack.is(RisusItems.BLOOD_BUCKET)) {
+				popResource(level, player.getOnPos().above(), Items.BUCKET.getDefaultInstance());
+			}
 			stack.shrink(1);
 			return ItemInteractionResult.sidedSuccess(level.isClientSide());
 		}

@@ -3,11 +3,11 @@
     "type": "minecraft:random_spread",
     "salt": 938752732,
     "separation": 0,
-    "spacing": 18
+    "spacing": 34
   },
   "structures": [
     {
-      "structure": "risus:dungeon",
+      "structure": "risus:heart_chamber",
       "weight": 1
     }
   ]

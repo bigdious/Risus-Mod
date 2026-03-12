@@ -5,9 +5,9 @@
       "rules": [
         {
           "input_predicate": {
-            "block": "risus:grimstone",
+            "block": "risus:living_tissue",
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.03
+            "probability": 0.02
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
@@ -18,38 +18,17 @@
         },
         {
           "input_predicate": {
-            "block": "risus:grimstone",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.2
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "minecraft:deepslate",
-            "Properties": {
-              "axis": "y"
-            }
-          }
-        },
-        {
-          "input_predicate": {
             "block": "risus:living_tissue",
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.3
+            "probability": 0.38
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "risus:tissue",
+            "Name": "risus:grimstone",
             "Properties": {
-              "east": "none",
-              "fluid": "empty",
-              "north": "none",
-              "south": "none",
-              "up": "true",
-              "west": "none"
+              "axis": "y"
             }
           }
         }

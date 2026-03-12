@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#risus:has_structure/dungeon",
+  "biomes": "#risus:has_structure/heart_chamber",
   "max_distance_from_center": 80,
   "size": 5,
   "spawn_overrides": {

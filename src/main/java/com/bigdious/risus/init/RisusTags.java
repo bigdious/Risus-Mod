@@ -42,7 +42,7 @@ public class RisusTags {
 		public static final TagKey<Biome> HAS_ANGEL_ALTAR = create("has_structure/angel_altar");
 		public static final TagKey<Biome> HAS_GREAT_BODY = create("has_structure/great_body");
 		public static final TagKey<Biome> HAS_FLOWER_FIELD = create("has_structure/flower_field");
-		public static final TagKey<Biome> HAS_DUNGEON = create("has_structure/dungeon");
+		public static final TagKey<Biome> HAS_HEART_CHAMBER = create("has_structure/heart_chamber");
 		public static final TagKey<Biome> HAS_BLOOD_WELL = create("has_structure/blood_well");
 		public static final TagKey<Biome> HAS_LAB = create("has_structure/lab");
 		public static final TagKey<Biome> HAS_DRAXOLOTL_REMAINS = create("has_structure/draxolotl_remains");
@@ -97,6 +97,7 @@ public class RisusTags {
 		public static final TagKey<Item> SCYTHES = create("scythes");
 		public static final TagKey<Item> ALTERATION_STACKING_EXCEPTION = create("alteration_stacking_exception");
 		public static final TagKey<Item> GLIDING_WINGS = create("gliding_wings");
+		public static final TagKey<Item> SACRIFICIAL_CATALYST = create("sacrificial_catalyst");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

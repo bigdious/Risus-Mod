@@ -105,6 +105,10 @@ repositories {
 		name = "Curse Maven"
 		url "https://cursemaven.com"
 	}
+	maven {
+		url "https://nexus.resourcefulbees.com/repository/maven-public/"
+	}
+
 }
 
 dependencies {
@@ -115,6 +119,7 @@ dependencies {
 
 	implementation "top.theillusivec4.curios:curios-neoforge:${project.curios_version}+${project.minecraft_version}"
 
+	implementation "com.telepathicgrunt:StructureVoidToggle-Neoforge:${project.structure_void_toggle_version}"
 	implementation "curse.maven:jade-324717:${project.jade_version}"
 	compileOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}:api"
 	runtimeOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}"

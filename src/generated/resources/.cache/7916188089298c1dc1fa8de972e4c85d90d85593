@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-10T17:57:09.3590569	Tags for minecraft:item mod id risus
+// 1.21.1	2026-03-12T18:14:40.4930507	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ee200672c17830ea323ac6342fbc88149feb8c65 data/curios/tags/item/body.json
 0147c7e2049f5e1a179687d6f3ae4fab096657e3 data/curios/tags/item/charm.json
@@ -69,6 +69,7 @@ e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base
 5fa04fd14d6467f12a8c3e62583842bb92ac210e data/risus/tags/item/perpetuity_blacklist.json
 77d12b0b03e0c64dcca79ec97a2e071ea9be0515 data/risus/tags/item/raw_meat.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/risus/tags/item/robes.json
+b7920fe808ba8b4fa6dcc29b261c9d22b7a119bc data/risus/tags/item/sacrificial_catalyst.json
 4a082aa84a89090b8f136ee9bebe76220e6efa42 data/risus/tags/item/scythes.json
 5fa04fd14d6467f12a8c3e62583842bb92ac210e data/risus/tags/item/stops_thread_wings_rendering.json
 08e351805fe748da80be586314015c81df4a1211 data/risus/tags/item/sword_and_trident_enchantable.json

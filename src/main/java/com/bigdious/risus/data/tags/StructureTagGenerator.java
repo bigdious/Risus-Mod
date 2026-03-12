@@ -27,7 +27,7 @@ public class StructureTagGenerator extends StructureTagsProvider {
 			,RisusStructures.ENDY_MAW
 			,RisusStructures.GRASSY_MAW
 			,RisusStructures.SANDY_MAW
-			,RisusStructures.DUNGEON
+			,RisusStructures.HEART_CHAMBER
 			,RisusStructures.GREAT_BODY
 			,RisusStructures.DRAXOLOTL_REMAINS
 			,RisusStructures.FLOWER_FIELD
@@ -49,6 +49,7 @@ public class StructureTagGenerator extends StructureTagsProvider {
 		);
 
 		this.tag(RisusTags.Structures.HEART_CHAMBER).add(
+			RisusStructures.HEART_CHAMBER
 		);
 
 		this.tag(RisusTags.Structures.RIBS_FOSSIL).add(

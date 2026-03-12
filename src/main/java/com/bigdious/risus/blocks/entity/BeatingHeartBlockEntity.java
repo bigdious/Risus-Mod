@@ -42,6 +42,9 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 			level.playSound(null, pos, RisusSoundEvents.HEARTBEAT.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
 			if (effectType != BeatingHeartBlock.HealthEffectEnum.EMPTY) {
 				Holder<MobEffect> effect = HEALTH_EFFECTS.get(effectType).getFirst();
+				if (effectType== BeatingHeartBlock.HealthEffectEnum.ABSORPTION) {
+					heart.beatInterval = 200;
+				}
 				if (!effect.value().isBeneficial() ) {
 					heart.beatInterval = level.getRandom().nextIntBetweenInclusive(30, 100);
 				}

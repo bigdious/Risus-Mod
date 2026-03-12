@@ -54,7 +54,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.BUDDING_IMITATION_SCALEPLATE, "Budding Imitation Scaleplate");
 		this.addBlock(RisusBlocks.BUDDING_UNALLOYED_SCALEPLATE, "Budding Unalloyed Scaleplate");
 		this.addBlock(RisusBlocks.BUNDLE_OF_HAIR, "Bundle of Hair");
-		this.addBlock(RisusBlocks.BURNT_HYPHAE, "Burnt Hyphae");
+		this.addBlock(RisusBlocks.BURNT_HYPHAE, "Pulsing Fiber");
 		this.addBlock(RisusBlocks.CHISELED_GRIMSTONE, "Chiseled Grimstone");
 		this.addBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK, "Coagulated Blood Block");
 		this.addBlock(RisusBlocks.COALIFICATION, "Coalification");
@@ -662,7 +662,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addStructure(RisusStructures.ANGEL_ALTAR, "Angel Altar");
 		this.addStructure(RisusStructures.BLOOD_WELL, "Blood Well");
 		this.addStructure(RisusStructures.DRAXOLOTL_REMAINS, "Draxolotl Remains");
-		this.addStructure(RisusStructures.DUNGEON, "Dungeon");
+		this.addStructure(RisusStructures.HEART_CHAMBER, "Heart Chamber");
 		this.addStructure(RisusStructures.ENDY_MAW, "End Gorger Trap");
 		this.addStructure(RisusStructures.FAMILY_TREE, "Family Tree");
 		this.addStructure(RisusStructures.FLOWER_FIELD, "Flower Field");

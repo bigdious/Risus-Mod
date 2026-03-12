@@ -3,8 +3,8 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "risus:dungeon",
-        "processors": "risus:dungeon_blending",
+        "location": "risus:heart_chamber",
+        "processors": "risus:heart_chamber_blending",
         "projection": "rigid"
       },
       "weight": 1

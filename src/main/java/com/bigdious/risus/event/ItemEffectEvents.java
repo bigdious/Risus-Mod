@@ -145,17 +145,31 @@ public class ItemEffectEvents {
 			sacrifice instanceof AbstractIllager ||
 			sacrifice instanceof Witch
 		) {
-			if (murderer instanceof Player cultist && cultist.getOffhandItem().is(RisusItems.SACRIFICE_CATALYST)) {
-
-				if (murderer.level() instanceof ServerLevel serverLevel) {
+			if (murderer instanceof Player cultist && cultist.getInventory().contains(RisusTags.Items.SACRIFICIAL_CATALYST)) {
+				if (cultist.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 5; i++) {
 						serverLevel.sendParticles(RisusParticles.FALLING_JOY.get(), sacrifice.getRandomX(0.5), sacrifice.getRandomY(), sacrifice.getRandomZ(0.5), 1, 0, 0, 0, 0);
 					}
 				}
-				if (cultist.getOffhandItem().getDamageValue() > 1) {
-					cultist.getOffhandItem().setDamageValue(cultist.getOffhandItem().getDamageValue() - 1);
+				if (cultist.getOffhandItem().is(RisusItems.SACRIFICE_CATALYST.get())) {
+					if (cultist.getOffhandItem().getDamageValue() > 1) {
+						cultist.getOffhandItem().setDamageValue(cultist.getOffhandItem().getDamageValue() - 1);
+					} else {
+						cultist.setItemSlot(EquipmentSlot.OFFHAND, RisusItems.THOUSAND_BLADE.toStack());
+						cultist.level().playSound(null, cultist.getOnPos().above(), RisusSoundEvents.LAUGHTER_ECHOES.get(), SoundSource.PLAYERS);
+					}
 				} else {
-					cultist.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(RisusItems.THOUSAND_BLADE.asItem()));
+					for (ItemStack stack : cultist.getInventory().items) {
+						if (stack.is(RisusItems.SACRIFICE_CATALYST.get())) {
+							if (stack.getDamageValue() > 1) {
+								stack.setDamageValue(stack.getDamageValue() - 1);
+							} else {
+								cultist.getInventory().setItem(cultist.getInventory().findSlotMatchingItem(stack), RisusItems.THOUSAND_BLADE.get().getDefaultInstance());
+								cultist.level().playSound(null, cultist.getOnPos().above(), RisusSoundEvents.LAUGHTER_ECHOES.get(), SoundSource.PLAYERS);
+							}
+							break;
+						}
+					}
 				}
 			}
 		}

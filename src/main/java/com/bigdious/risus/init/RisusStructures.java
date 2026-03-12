@@ -100,10 +100,10 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> FLOWER_FIELD_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureTemplatePool> FLOWER_FIELD_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field"));
 	public static final ResourceKey<StructureProcessorList> FLOWER_FIELD_WITHERING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "flower_field_withering"));
-	public static final ResourceKey<Structure> DUNGEON = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
-	public static final ResourceKey<StructureSet> DUNGEON_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
-	public static final ResourceKey<StructureTemplatePool> DUNGEON_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon"));
-	public static final ResourceKey<StructureProcessorList> DUNGEON_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_blending"));
+	public static final ResourceKey<Structure> HEART_CHAMBER = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "heart_chamber"));
+	public static final ResourceKey<StructureSet> HEART_CHAMBER_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "heart_chamber"));
+	public static final ResourceKey<StructureTemplatePool> HEART_CHAMBER_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "heart_chamber"));
+	public static final ResourceKey<StructureProcessorList> HEART_CHAMBER_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "heart_chamber_blending"));
 	public static final ResourceKey<Structure> BLOOD_WELL = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
 	public static final ResourceKey<StructureSet> BLOOD_WELL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
 	public static final ResourceKey<StructureTemplatePool> BLOOD_WELL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "blood_well"));
@@ -116,7 +116,7 @@ public class RisusStructures {
 	public static final ResourceKey<StructureProcessorList> DRAXOLOTL_REMAINS_BLENDING = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "draxolotl_remains_blending"));
 
 	public static final ResourceKey<StructureTemplatePool> SPREADER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spreader"));
-	public static final ResourceKey<StructureTemplatePool> DUNGEON_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "dungeon_rooms"));
+	public static final ResourceKey<StructureTemplatePool> HEART_CHAMBER_ROOMS = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "heart_chamber_rooms"));
 	public static final ResourceKey<StructureTemplatePool> SPAWNER = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "spawner"));
 	public static final ResourceKey<StructureTemplatePool> LAB = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lab"));
 	public static final ResourceKey<StructureTemplatePool> CHURCH_STUFF = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "church_stuff"));
@@ -257,7 +257,7 @@ public class RisusStructures {
 
 		context.register(BEDROCK_HAND, new JigsawStructure(
 			new Structure.StructureSettings(
-				biomes.getOrThrow(RisusTags.Biomes.HAS_DUNGEON),
+				biomes.getOrThrow(RisusTags.Biomes.HAS_HEART_CHAMBER),
 				Map.of(
 					MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(
 						new MobSpawnSettings.SpawnerData(RisusEntities.HOLDER.get(), 10, 1, 2)
@@ -419,19 +419,19 @@ public class RisusStructures {
 			LiquidSettings.IGNORE_WATERLOGGING
 		));
 
-		context.register(DUNGEON, new JigsawStructure(
+		context.register(HEART_CHAMBER, new JigsawStructure(
 			new Structure.StructureSettings(
-				biomes.getOrThrow(RisusTags.Biomes.HAS_DUNGEON),
+				biomes.getOrThrow(RisusTags.Biomes.HAS_HEART_CHAMBER),
 				Map.of(),
 				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.NONE
+				TerrainAdjustment.ENCAPSULATE
 			),
-			pools.getOrThrow(DUNGEON_POOL),
+			pools.getOrThrow(HEART_CHAMBER_POOL),
 			Optional.empty(),
 			5,
-			UniformHeight.of(VerticalAnchor.aboveBottom(-59), VerticalAnchor.aboveBottom(-10)),
+			UniformHeight.of(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(-20)),
 			false,
-			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+			Optional.empty(),
 			80,
 			List.of(),
 			DimensionPadding.ZERO,
@@ -546,8 +546,8 @@ public class RisusStructures {
 		context.register(FLOWER_FIELD_SET, new StructureSet(structures.getOrThrow(FLOWER_FIELD),
 			new RandomSpreadStructurePlacement(53, 0, RandomSpreadType.LINEAR, 29213393)));
 
-		context.register(DUNGEON_SET, new StructureSet(structures.getOrThrow(DUNGEON),
-			new RandomSpreadStructurePlacement(18, 0, RandomSpreadType.LINEAR, 938752732)));
+		context.register(HEART_CHAMBER_SET, new StructureSet(structures.getOrThrow(HEART_CHAMBER),
+			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 938752732)));
 
 		context.register(BLOOD_WELL_SET, new StructureSet(structures.getOrThrow(BLOOD_WELL),
 			new RandomSpreadStructurePlacement(19, 0, RandomSpreadType.LINEAR, 894328793)));
@@ -646,8 +646,8 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.TERRAIN_MATCHING));
 
 
-		context.register(DUNGEON_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("dungeon"),processors.getOrThrow(DUNGEON_BLENDING)), 1)
+		context.register(HEART_CHAMBER_POOL, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("heart_chamber"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(BLOOD_WELL_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -667,14 +667,20 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("spreader/thirty")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
-		context.register(DUNGEON_ROOMS, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/holder_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/weaver_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/stalker_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/singer_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/zombie_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/hex_room")), 1),
-			Pair.of(StructurePoolElement.single(name("dungeon_rooms/licker_room")), 1)
+		context.register(HEART_CHAMBER_ROOMS, new StructureTemplatePool(emptyPool, List.of(
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/holder_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/weaver_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/stalker_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/singer_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/hex_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/licker_room"),processors.getOrThrow(HEART_CHAMBER_BLENDING)), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/regen_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/empty_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/wither_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/poison_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/absorption_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/health_boost_heart")), 1),
+			Pair.of(StructurePoolElement.single(name("heart_chamber_rooms/bloodclogged_heart")), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(LAB, new StructureTemplatePool(emptyPool, List.of(
@@ -789,22 +795,17 @@ public class RisusStructures {
 			))
 		)));
 
-		context.register(DUNGEON_BLENDING, new StructureProcessorList(List.of(
+		context.register(HEART_CHAMBER_BLENDING, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
 				new ProcessorRule(
-					new RandomBlockMatchTest(RisusBlocks.GRIMSTONE.get(), 0.03F),
+					new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.02F),
 					AlwaysTrueTest.INSTANCE,
 					RisusBlocks.ACTIVE_GRIMSTONE.get().defaultBlockState()
 				),
 				new ProcessorRule(
-					new RandomBlockMatchTest(RisusBlocks.GRIMSTONE.get(), 0.2F),
-					AlwaysTrueTest.INSTANCE,
-					Blocks.DEEPSLATE.defaultBlockState()
-				),
-				new ProcessorRule(
-				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.3F),
+				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.38F),
 				AlwaysTrueTest.INSTANCE,
-				RisusBlocks.TISSUE.get().defaultBlockState()
+				RisusBlocks.GRIMSTONE.get().defaultBlockState()
 				)
 			))
 		)));
