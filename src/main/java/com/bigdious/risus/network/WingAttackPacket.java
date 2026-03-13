@@ -48,7 +48,7 @@ public class WingAttackPacket implements CustomPacketPayload {
 						for (Entity attackable : possibleList) {
 							//don't believe the yellow underlined lies
 							if (attackable instanceof LivingEntity target && !level.isClientSide() && !target.isDeadOrDying() && flag) {
-								target.hurt(player.damageSources().source(RisusDamageTypes.WING_STAB), 4);
+								target.hurt(player.damageSources().source(RisusDamageTypes.WING_STAB), 10);
 								target.knockback(1, -lookVec.x, -lookVec.z);
 								if (level instanceof ServerLevel serverLevel) {
 									serverLevel.sendParticles(RisusParticles.BLOOD_FEATHER.get(), target.getRandomX(1), target.getEyeY(), target.getRandomZ(1), 1, 0, 0, 0, 0);

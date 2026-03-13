@@ -7,23 +7,20 @@
     }
   },
   "pattern": [
-    "PGP",
+    "PBP",
     "BHB",
     "PCP"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
-    "G": {
-      "item": "risus:organic_matter_block"
-    },
     "H": {
-      "item": "risus:heart_transplant"
+      "item": "risus:beating_heart"
     },
     "P": {
       "item": "risus:coagulated_blood_block"
     },
     "B": {
-      "item": "risus:bloodweave"
+      "item": "risus:heart_transplant"
     },
     "C": {
       "item": "risus:concentration_core"

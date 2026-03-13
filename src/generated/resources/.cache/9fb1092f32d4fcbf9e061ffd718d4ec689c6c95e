@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-09T22:33:46.747353	Recipes
+// 1.21.1	2026-03-13T22:43:24.182128	Recipes
 b488a9de4ce4f24bbf62811cc175b45425a9b530 data/minecraft/advancement/recipes/bondknot_dummy.json
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
@@ -732,7 +732,7 @@ ad2f11d67f9fdb852ee1d743a3cc14a4ceeda544 data/risus/recipe/stonecutting_polished
 0cc39d47d87866a047fea1bc470c0aeffb815ad6 data/risus/recipe/tabby_cat_helmet.json
 c24b31f0b80393fcbe03c3af0ec4d6c1edcfe9f6 data/risus/recipe/tall_hair.json
 30c45b48c9145a533301e44d2a896c12a215854c data/risus/recipe/teeth.json
-0333e2ef0a5d7aa5633ee83e117365f70d3f37c2 data/risus/recipe/tesseract.json
+5d917f30f6c6ad9f9387871575d9800d58bca6e9 data/risus/recipe/tesseract.json
 75a675ff0434f337249176b00ee21cce4655b268 data/risus/recipe/threaders_of_the_firmament.json
 d14ab8fcff9e6d3aa6f714f352b4d6bc92165651 data/risus/recipe/tissue_slab.json
 6a84f8a28ce788f71a9a605367081047cc693c6a data/risus/recipe/tissue_stairs.json

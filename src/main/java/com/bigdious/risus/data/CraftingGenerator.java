@@ -718,7 +718,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusBlocks.PINK_MOSAIC_GLASS.get()))
 			.save(consumer);
 
-		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.TESSERACT.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RisusBlocks.TESSERACT.get(), 8)
 			.pattern("/P/")
 			.pattern("GFG")
 			.pattern("/R/")
