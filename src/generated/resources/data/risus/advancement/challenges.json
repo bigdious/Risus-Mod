@@ -1,7 +1,6 @@
 {
-  "parent": "risus:potential",
   "criteria": {
-    "previous": {
+    "first": {
       "conditions": {
         "player": [
           {
@@ -11,7 +10,7 @@
               "type_specific": {
                 "type": "minecraft:player",
                 "advancements": {
-                  "risus:potential": true
+                  "risus:first": true
                 }
               }
             }
@@ -19,37 +18,26 @@
         ]
       },
       "trigger": "minecraft:tick"
-    },
-    "strongaxe": {
-      "conditions": {
-        "items": [
-          {
-            "items": "risus:crescent_disaster"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
+    "announce_to_chat": false,
+    "background": "risus:textures/block/flat_scales_block_side.png",
     "description": {
-      "translate": "advancement.risus.unleashed.desc"
+      "translate": "advancement.risus.challenges.desc"
     },
-    "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "risus:crescent_disaster"
+      "id": "risus:killjoy"
     },
+    "show_toast": false,
     "title": {
-      "translate": "advancement.risus.unleashed"
+      "translate": "advancement.risus.challenges"
     }
   },
   "requirements": [
     [
-      "strongaxe"
-    ],
-    [
-      "previous"
+      "first"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,0 +1,170 @@
+{
+  "parent": "risus:challenges",
+  "criteria": {
+    "axes": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:unleashed": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "boat": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:warcrimes": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "boomstick": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:boomstick": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "flamethrower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:bloodwyrm_head_weapon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hexhorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:hexhorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "killjoy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:killjoy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scythes": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:rainbow": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "stripper": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:stripper": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.arsenal.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "risus:thousand_blade"
+    },
+    "title": {
+      "translate": "advancement.risus.arsenal"
+    }
+  },
+  "requirements": [
+    [
+      "scythes"
+    ],
+    [
+      "axes"
+    ],
+    [
+      "boomstick"
+    ],
+    [
+      "boat"
+    ],
+    [
+      "stripper"
+    ],
+    [
+      "hexhorn"
+    ],
+    [
+      "killjoy"
+    ],
+    [
+      "flamethrower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

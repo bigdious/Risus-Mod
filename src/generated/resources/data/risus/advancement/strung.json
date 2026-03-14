@@ -1,26 +1,26 @@
 {
   "parent": "risus:homewrecker",
   "criteria": {
-    "parentmode": {
-      "trigger": "risus:witness_weaver_nest"
+    "strung": {
+      "trigger": "risus:create_weaving_mechanism"
     }
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.parentmode.desc"
+      "translate": "advancement.risus.strung.desc"
     },
     "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "risus:essence_of_melancholy"
+      "id": "risus:weaving_mechanism"
     },
     "title": {
-      "translate": "advancement.risus.parentmode"
+      "translate": "advancement.risus.strung"
     }
   },
   "requirements": [
     [
-      "parentmode"
+      "strung"
     ]
   ],
   "sends_telemetry_event": true

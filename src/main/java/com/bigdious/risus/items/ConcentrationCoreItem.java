@@ -4,6 +4,7 @@ import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.blocks.WeavingMechanismBlock;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.creatures.pets.Litter;
+import com.bigdious.risus.init.RisusAdvancements;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
@@ -11,6 +12,7 @@ import com.bigdious.risus.util.ServerParticleUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -106,6 +108,9 @@ public class ConcentrationCoreItem extends Item {
 			level.playSound(null, pos, SoundEvents.HONEY_BLOCK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
 			level.setBlockAndUpdate(pos, RisusBlocks.WEAVING_MECHANISM.get().defaultBlockState().setValue(WeavingMechanismBlock.HORIZONTAL_FACING, context.getHorizontalDirection()));
 			context.getItemInHand().consume(1, context.getPlayer());
+			if (context.getPlayer() instanceof ServerPlayer sp) {
+				RisusAdvancements.CREATE_WEAVING_MECHANISM.get().trigger(sp);
+			}
 			return InteractionResult.sidedSuccess(level.isClientSide());
 		}
 		return super.useOn(context);

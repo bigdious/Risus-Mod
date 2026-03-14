@@ -1,0 +1,169 @@
+{
+  "parent": "risus:arsenal",
+  "criteria": {
+    "counter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:counterweight"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "diamond_wings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:diamond_tipped_angel_wings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hand": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:revenge": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "ivory": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:crown_of_bones"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lucky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:lucky_charm"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "robes": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:robes": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
+    "rosy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:rose_crown"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "threads": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:threaders_of_the_firmament"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "totem": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:totem_of_unyielding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wretched": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:wretched_charm"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.armory.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "risus:crown_of_bones"
+    },
+    "title": {
+      "translate": "advancement.risus.armory"
+    }
+  },
+  "requirements": [
+    [
+      "robes"
+    ],
+    [
+      "hand"
+    ],
+    [
+      "ivory"
+    ],
+    [
+      "rosy"
+    ],
+    [
+      "counter"
+    ],
+    [
+      "diamond_wings"
+    ],
+    [
+      "threads"
+    ],
+    [
+      "lucky"
+    ],
+    [
+      "wretched"
+    ],
+    [
+      "totem"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

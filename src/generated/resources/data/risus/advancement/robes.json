@@ -1,0 +1,65 @@
+{
+  "parent": "risus:tight",
+  "criteria": {
+    "robess": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:sinner_robes_helmet"
+          },
+          {
+            "items": "risus:sinner_robes_boots"
+          },
+          {
+            "items": "risus:sinner_robes_chestplate"
+          },
+          {
+            "items": "risus:sinner_robes_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "skin": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:tight": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.robes.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "risus:sinner_robes_helmet"
+    },
+    "title": {
+      "translate": "advancement.risus.robes"
+    }
+  },
+  "requirements": [
+    [
+      "skin"
+    ],
+    [
+      "robess"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

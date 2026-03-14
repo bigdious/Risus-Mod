@@ -40,10 +40,12 @@ public class AirPlaceBlockItem extends BlockItem {
 			if (level.getBlockState(blockPos).isAir()) {
 				level.setBlock(blockPos, RisusBlocks.TESSERACT.get().defaultBlockState(), 11);
 				if (!player.isCreative()) {
-					itemstack.shrink(1);
+					itemstack.consume(1, player);
 				}
 				player.awardStat(Stats.ITEM_USED.get(this));
-			return InteractionResultHolder.consume(itemstack);
+				SoundType soundtype = RisusBlocks.TESSERACT.get().defaultBlockState().getSoundType(level, blockPos, player);
+				level.playSound(player, blockPos, this.getPlaceSound(RisusBlocks.TESSERACT.get().defaultBlockState(), level, blockPos, player), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+				return InteractionResultHolder.consume(itemstack);
 			}
 		}
 		return InteractionResultHolder.fail(itemstack);

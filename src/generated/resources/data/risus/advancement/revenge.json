@@ -1,6 +1,25 @@
 {
   "parent": "risus:little",
   "criteria": {
+    "previous": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:little": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    },
     "revenge": {
       "conditions": {
         "items": [
@@ -16,6 +35,7 @@
     "description": {
       "translate": "advancement.risus.revenge.desc"
     },
+    "frame": "goal",
     "icon": {
       "count": 1,
       "id": "risus:hand_of_greed"
@@ -27,6 +47,9 @@
   "requirements": [
     [
       "revenge"
+    ],
+    [
+      "previous"
     ]
   ],
   "sends_telemetry_event": true

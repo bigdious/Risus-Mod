@@ -628,8 +628,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("devour", "Devoured", "Fall into a Gorger's trap");
 		this.addAdvancement("satiate", "Satiated", "Obtain the Gorger's Guts");
 		this.addAdvancement("cupid", "Cupid", "Bring love to the world");
-		this.addAdvancement("warlove", "Make Love, Not War", "Fill a Warhorn with a Potion of Love");
-		this.addAdvancement("hornlove", "Horny Love", "Fill a Hexhorn with a Potion of Love");
+		this.addAdvancement("warlove", "Make Love, Not War", "Fill a War Horn with a Potion of Love");
+		this.addAdvancement("hornlove", "Horny Love", "Fill a Hex Horn with a Potion of Love");
 		this.addAdvancement("irresistible", "Irresistible", "Taste Pleasure");
 		this.addAdvancement("crusade", "Crusade", "Kill an Ophanim");
 		this.addAdvancement("potential", "Potential", "Craft an Unawakened Vessel");
@@ -639,6 +639,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("great_body", "Cord Crawler", "Enter a Great Body");
 		this.addAdvancement("rainbow", "Rainbow Destined To Burn", "Obtain all Scorched Scythes");
 		this.addAdvancement("tight", "IT'S SO TIGHT!", "Obtain a set of Skin armor");
+		this.addAdvancement("robes", "Embraced", "Obtain a set of Sinner's Robe");
 		this.addAdvancement("scythe", "It Craves Fire", "Obtain an Unlit Vessel");
 		this.addAdvancement("thousand", "Wanted For Warcrimes", "Obtain the Blade of a Thousand by sacrificing a thousand people");
 		this.addAdvancement("licked", "Mmmm, Tasty~", "Get licked!");
@@ -655,6 +656,13 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
 		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
 		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
+		this.addAdvancement("strung", "Strung To Serve", "Create a Weaving Mechanism");
+		this.addAdvancement("challenges", "Risus Challenges", "Prove the results of your research");
+		this.addAdvancement("arsenal", "Arsenal", "Obtain all weapons and combat-oriented tools");
+		this.addAdvancement("armory", "Armory", "Obtain all armors and equippables");
+		this.addAdvancement("destroy", "Annihilation", "Kill all Beloved and Offsprings");
+		this.addAdvancement("analysis", "Analysis", "Find all Risus structures");
+		this.addAdvancement("hearty", "A Hearty Challenge", "Find a Heart Chamber");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 

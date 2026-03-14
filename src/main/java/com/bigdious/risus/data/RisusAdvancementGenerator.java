@@ -1,17 +1,11 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.advancement.BreakWeaverNestTrigger;
-import com.bigdious.risus.advancement.HolyGroundsTrigger;
-import com.bigdious.risus.advancement.KilledByDevourTrigger;
-import com.bigdious.risus.advancement.WitnessWeaverNestTrigger;
+import com.bigdious.risus.advancement.*;
 import com.bigdious.risus.advancement.predicate.ItemHornsPredicate;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.*;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.AdvancementRequirements;
-import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
@@ -21,9 +15,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 
@@ -73,6 +70,14 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("church", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.CHURCH))))
 			.save(consumer, "risus:church");
 
+		AdvancementHolder hearty = Advancement.Builder.advancement().parent(first)
+			.display(
+				RisusBlocks.BEATING_HEART.get(),
+				Component.translatable("advancement.risus.hearty"),
+				Component.translatable("advancement.risus.hearty.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("hearty", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.HEART_CHAMBER))))
+			.save(consumer, "risus:hearty");
+
 		AdvancementHolder site_zero = Advancement.Builder.advancement().parent(first)
 			.display(
 				RisusBlocks.ALTERATION_CATALYST.get(),
@@ -121,8 +126,10 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusItems.HAND_OF_GREED.get(),
 				Component.translatable("advancement.risus.revenge"),
-				Component.translatable("advancement.risus.revenge.desc"), null, AdvancementType.TASK, true, true, false)
+				Component.translatable("advancement.risus.revenge.desc"), null, AdvancementType.GOAL, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
 			.addCriterion("revenge", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.HAND_OF_GREED))
+			.addCriterion("previous", this.advancementTrigger(little))
 			.save(consumer, "risus:revenge");
 
 		AdvancementHolder step = Advancement.Builder.advancement().parent(first)
@@ -186,7 +193,9 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusItems.CRESCENT_DISASTER.get(),
 				Component.translatable("advancement.risus.unleashed"),
 				Component.translatable("advancement.risus.unleashed.desc"), null, AdvancementType.GOAL, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
 			.addCriterion("strongaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CRESCENT_DISASTER))
+			.addCriterion("previous", this.advancementTrigger(potential))
 			.save(consumer, "risus:unleashed");
 
 
@@ -225,6 +234,16 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.tight.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("skins", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SKIN_HELMET.get(), RisusItems.SKIN_BOOTS.get(), RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SKIN_LEGGINGS.get()))
 			.save(consumer, "risus:tight");
+
+		AdvancementHolder robes = Advancement.Builder.advancement().parent(tight)
+			.display(
+				RisusItems.SINNER_ROBES_HELMET.get(),
+				Component.translatable("advancement.risus.robes"),
+				Component.translatable("advancement.risus.robes.desc"), null, AdvancementType.GOAL, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("skin", this.advancementTrigger(tight))
+			.addCriterion("robess", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SINNER_ROBES_HELMET.get(), RisusItems.SINNER_ROBES_BOOTS.get(), RisusItems.SINNER_ROBES_CHESTPLATE.get(), RisusItems.SINNER_ROBES_LEGGINGS.get()))
+			.save(consumer, "risus:robes");
 
 		AdvancementHolder scythe = Advancement.Builder.advancement().parent(gluttony)
 			.display(
@@ -346,16 +365,116 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.display(
 				RisusBlocks.WEAVER_NEST.get(),
 				Component.translatable("advancement.risus.homewrecker"),
-				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.GOAL, true, true, false)
+				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.TASK, true, true, false)
 			.addCriterion("homewrecker", BreakWeaverNestTrigger.TriggerInstance.breakNest())
 			.save(consumer, "risus:homewrecker");
 
-		AdvancementHolder parentmode = Advancement.Builder.advancement().parent(first)
+		AdvancementHolder parentmode = Advancement.Builder.advancement().parent(homewrecker)
 			.display(
 				RisusItems.ESSENCE_OF_MELANCHOLY.get(),
 				Component.translatable("advancement.risus.parentmode"),
 				Component.translatable("advancement.risus.parentmode.desc"), null, AdvancementType.GOAL, true, true, false)
 			.addCriterion("parentmode", WitnessWeaverNestTrigger.TriggerInstance.witnessNest())
 			.save(consumer, "risus:parentmode");
+
+		AdvancementHolder strung = Advancement.Builder.advancement().parent(homewrecker)
+			.display(
+				RisusBlocks.WEAVING_MECHANISM.get(),
+				Component.translatable("advancement.risus.strung"),
+				Component.translatable("advancement.risus.strung.desc"), null, AdvancementType.GOAL, true, true, false)
+			.addCriterion("strung", CreateWeavingMechanismTrigger.TriggerInstance.createWeavingMechanism())
+			.save(consumer, "risus:strung");
+
+		AdvancementHolder challenges = Advancement.Builder.advancement()
+			.display(
+				RisusItems.KILLJOY.get(),
+				Component.translatable("advancement.risus.challenges"),
+				Component.translatable("advancement.risus.challenges.desc"),
+				ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/block/flat_scales_block_side.png"),
+				AdvancementType.TASK,
+				false, false, false)
+			.addCriterion("first", this.advancementTrigger(first))
+			.save(consumer, "risus:challenges");
+
+		AdvancementHolder arsenal = Advancement.Builder.advancement().parent(challenges)
+			.display(
+				RisusItems.THOUSAND_BLADE.get(),
+				Component.translatable("advancement.risus.arsenal"),
+				Component.translatable("advancement.risus.arsenal.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("scythes", this.advancementTrigger(rainbow))
+			.addCriterion("axes", this.advancementTrigger(unleashed))
+			.addCriterion("boomstick", this.advancementTrigger(boomstick))
+			.addCriterion("boat", this.advancementTrigger(warcrimes))
+			.addCriterion("stripper", this.advancementTrigger(stripper))
+			.addCriterion("hexhorn", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.HEXHORN))
+			.addCriterion("killjoy", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.KILLJOY))
+			.addCriterion("flamethrower", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.BLOODWYRM_HEAD_WEAPON))
+			.save(consumer, "risus:arsenal");
+
+		AdvancementHolder armory = Advancement.Builder.advancement().parent(arsenal)
+			.display(
+				RisusItems.CROWN_OF_BONES.get(),
+				Component.translatable("advancement.risus.armory"),
+				Component.translatable("advancement.risus.armory.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("robes", this.advancementTrigger(robes))
+			.addCriterion("hand", this.advancementTrigger(revenge))
+			.addCriterion("ivory", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CROWN_OF_BONES))
+			.addCriterion("rosy", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.ROSE_CROWN))
+			.addCriterion("counter", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.COUNTERWEIGHT))
+			.addCriterion("diamond_wings", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS))
+			.addCriterion("threads", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.THREADERS_OF_THE_FIRMAMENT))
+			.addCriterion("lucky", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.LUCKY_CHARM))
+			.addCriterion("wretched", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.WRETCHED_CHARM))
+			.addCriterion("totem", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.TOTEM_OF_UNYIELDING))
+			.save(consumer, "risus:armory");
+
+		AdvancementHolder destroy = Advancement.Builder.advancement().parent(armory)
+			.display(
+				RisusItems.EMBODIMENT_OF_LANGUISH.get(),
+				Component.translatable("advancement.risus.destroy"),
+				Component.translatable("advancement.risus.destroy.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("angel", this.advancementTrigger(crusade))
+			.addCriterion("gorger", this.advancementTrigger(satiate))
+			.addCriterion("weaver", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.WEAVER.get())))
+			.addCriterion("holder", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.HOLDER.get())))
+			.addCriterion("lover", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.LOVER.get())))
+			.addCriterion("singer", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.SINGER.get())))
+			.addCriterion("stalker", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.STALKER.get())))
+			.addCriterion("licker", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.LICKER.get())))
+			.addCriterion("hex", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.HEX.get())))
+			.save(consumer, "risus:destroy");
+
+		AdvancementHolder analysis = Advancement.Builder.advancement().parent(destroy)
+			.display(
+				RisusBlocks.TESSERACT.get(),
+				Component.translatable("advancement.risus.analysis"),
+				Component.translatable("advancement.risus.analysis.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("church", this.advancementTrigger(church))
+			.addCriterion("body", this.advancementTrigger(great_body))
+			.addCriterion("tree", this.advancementTrigger(family))
+			.addCriterion("site1", this.advancementTrigger(site_zero))
+			.addCriterion("chamber", this.advancementTrigger(hearty))
+			.addCriterion("lab", this.advancementTrigger(lab))
+			.addCriterion("burried", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
+			.addCriterion("bedrock", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BEDROCK_HAND))))
+			.addCriterion("grassy", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
+			.addCriterion("blood_well", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BLOOD_WELL))))
+			.addCriterion("draxolotl", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.DRAXOLOTL_REMAINS))))
+			.addCriterion("field", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
+			.addCriterion("ribs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.RIBS_FOSSIL))))
+			.addCriterion("skull", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SKULL_FOSSIL))))
+			.save(consumer, "risus:analysis");
+	}
+
+	private Criterion<PlayerTrigger.TriggerInstance> advancementTrigger(AdvancementHolder advancement) {
+		return this.advancementTrigger(advancement.id().getPath());
+	}
+
+	private Criterion<PlayerTrigger.TriggerInstance> advancementTrigger(String name) {
+		return CriteriaTriggers.TICK.createCriterion(new PlayerTrigger.TriggerInstance(Optional.of(ContextAwarePredicate.create(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().subPredicate(PlayerPredicate.Builder.player().checkAdvancementDone(Risus.prefix(name), true).build())).build()))));
 	}
 }

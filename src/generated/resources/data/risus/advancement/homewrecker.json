@@ -9,7 +9,6 @@
     "description": {
       "translate": "advancement.risus.homewrecker.desc"
     },
-    "frame": "goal",
     "icon": {
       "count": 1,
       "id": "risus:weaver_nest"
