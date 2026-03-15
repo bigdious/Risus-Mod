@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.data.helper.RisusLangProvider;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.worldgen.structures.RisusStructures;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.DyeColor;
 import org.apache.commons.lang3.text.WordUtils;
@@ -674,7 +675,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addStructure(RisusStructures.ENDY_MAW, "End Gorger Trap");
 		this.addStructure(RisusStructures.FAMILY_TREE, "Family Tree");
 		this.addStructure(RisusStructures.FLOWER_FIELD, "Flower Field");
-		this.addStructure(RisusStructures.GRASSY_MAW, "Grass Gorger Trap");
+//		this.addStructure(RisusStructures.GRASSY_MAW, "Grass Gorger Trap");
 		this.addStructure(RisusStructures.GREAT_BODY, "Great Body");
 		this.addStructure(RisusStructures.LAB_START, "Lab");
 		this.addStructure(RisusStructures.SANDY_MAW, "Sand Gorger Trap");

@@ -1,6 +1,6 @@
 package com.bigdious.risus.data.tags;
 
-import com.bigdious.risus.init.RisusStructures;
+import com.bigdious.risus.worldgen.structures.RisusStructures;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -25,7 +25,7 @@ public class StructureTagGenerator extends StructureTagsProvider {
 			,RisusStructures.BLOOD_WELL
 			,RisusStructures.FAMILY_TREE
 			,RisusStructures.ENDY_MAW
-			,RisusStructures.GRASSY_MAW
+//			,RisusStructures.GRASSY_MAW
 			,RisusStructures.SANDY_MAW
 			,RisusStructures.HEART_CHAMBER
 			,RisusStructures.GREAT_BODY

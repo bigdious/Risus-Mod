@@ -12,6 +12,8 @@ import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.network.*;
 import com.bigdious.risus.init.RisusVillagers;
+import com.bigdious.risus.worldgen.RisusFeatures;
+import com.bigdious.risus.worldgen.structures.RisusStructures;
 import com.bigdious.risus.worldgen.structures.VillageStructures;
 import com.google.common.reflect.Reflection;
 import net.minecraft.core.Direction;
@@ -72,6 +74,7 @@ public class Risus {
 		RisusVillagers.POI_TYPES.register(bus);
 		RisusVillagers.VILLAGER_PROFESSIONS.register(bus);
 		RisusMapDecorations.MAP_DECORATION_TYPES.register(bus);
+		RisusFeatures.FEATURES.register(bus);
 		if (ModList.get().isLoaded("curios")) loadCuriosCompat(bus);
 
 		NeoForge.EVENT_BUS.addListener(VillageStructures::addNewVillageBuilding);

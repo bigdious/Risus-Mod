@@ -5,6 +5,7 @@ import com.bigdious.risus.advancement.*;
 import com.bigdious.risus.advancement.predicate.ItemHornsPredicate;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.*;
+import com.bigdious.risus.worldgen.structures.RisusStructures;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
@@ -45,7 +46,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("enter_site2", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
 			.addCriterion("enter_site3", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
 			.addCriterion("enter_site4", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BEDROCK_HAND))))
-			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
+//			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
 			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
 			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
 			.addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
@@ -138,7 +139,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.step"),
 				Component.translatable("advancement.risus.step.desc"), null, AdvancementType.TASK, true, true, false)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
+//			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
 			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
 			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
 			.save(consumer, "risus:step");

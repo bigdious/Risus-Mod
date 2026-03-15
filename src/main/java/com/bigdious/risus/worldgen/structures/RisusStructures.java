@@ -1,6 +1,9 @@
-package com.bigdious.risus.init;
+package com.bigdious.risus.worldgen.structures;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusEntities;
+import com.bigdious.risus.init.RisusTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -56,9 +59,9 @@ public class RisusStructures {
 	public static final ResourceKey<StructureTemplatePool> BEDROCK_HAND_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
 
 
-	public static final ResourceKey<Structure> GRASSY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
-	public static final ResourceKey<StructureSet> GRASSY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
-	public static final ResourceKey<StructureTemplatePool> GRASSY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
+//	public static final ResourceKey<Structure> GRASSY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
+//	public static final ResourceKey<StructureSet> GRASSY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
+//	public static final ResourceKey<StructureTemplatePool> GRASSY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
 
 	public static final ResourceKey<Structure> SANDY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sandy_maw"));
 	public static final ResourceKey<StructureSet> SANDY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sandy_maw"));
@@ -278,24 +281,24 @@ public class RisusStructures {
 			LiquidSettings.APPLY_WATERLOGGING
 		));
 
-		context.register(GRASSY_MAW, new JigsawStructure(
-			new Structure.StructureSettings(
-				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_MAW),
-				Map.of(),
-				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.NONE
-			),
-			pools.getOrThrow(GRASSY_MAW_POOL),
-			Optional.empty(),
-			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-9)),
-			false,
-			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-			80,
-			List.of(),
-			DimensionPadding.ZERO,
-			LiquidSettings.APPLY_WATERLOGGING
-		));
+//		context.register(GRASSY_MAW, new JigsawStructure(
+//			new Structure.StructureSettings(
+//				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_MAW),
+//				Map.of(),
+//				GenerationStep.Decoration.SURFACE_STRUCTURES,
+//				TerrainAdjustment.NONE
+//			),
+//			pools.getOrThrow(GRASSY_MAW_POOL),
+//			Optional.empty(),
+//			5,
+//			ConstantHeight.of(VerticalAnchor.absolute(-9)),
+//			false,
+//			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
+//			80,
+//			List.of(),
+//			DimensionPadding.ZERO,
+//			LiquidSettings.APPLY_WATERLOGGING
+//		));
 
 		context.register(SANDY_MAW, new JigsawStructure(
 			new Structure.StructureSettings(
@@ -525,8 +528,8 @@ public class RisusStructures {
 		context.register(BEDROCK_HAND_SET, new StructureSet(structures.getOrThrow(BEDROCK_HAND),
 			new RandomSpreadStructurePlacement(102, 0, RandomSpreadType.TRIANGULAR, 364875348)));
 
-		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
-			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
+//		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
+//			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
 
 		context.register(SANDY_MAW_SET, new StructureSet(structures.getOrThrow(SANDY_MAW),
 			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 3452493)));
@@ -596,9 +599,9 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("grassy_site/1")), 2)
 		), StructureTemplatePool.Projection.RIGID));
 
-		context.register(GRASSY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("grassy_maw")), 1)
-		), StructureTemplatePool.Projection.RIGID));
+//		context.register(GRASSY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
+//			Pair.of(StructurePoolElement.single(name("grassy_maw")), 1)
+//		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(SANDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("sandy_maw")), 1)

@@ -273,4 +273,6 @@ public class Maw extends Monster implements CacheTargetOnClient {
 	@Override
 	public void setDeltaMovement(Vec3 deltaMovement) {
 	}
+	@Override
+	public boolean isInWall() {return false;}
 }

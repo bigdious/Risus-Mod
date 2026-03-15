@@ -496,5 +496,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			,Blocks.DRIPSTONE_BLOCK
 			,Blocks.TUFF
 		);
+
+		this.tag(RisusTags.Blocks.GORGER_GRASS).add(
+			Blocks.GRASS_BLOCK
+		);
 	}
 }

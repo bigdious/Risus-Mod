@@ -26,6 +26,7 @@ public class RisusTags {
 		public static final TagKey<Block> REMAINS = create("remains");
 		public static final TagKey<Block> PROLIFERABLE_SOILS = create("proliferable_soils");
 		public static final TagKey<Block> PROLIFERABLE_ROCKS = create("proliferable_rocks");
+		public static final TagKey<Block> GORGER_GRASS = create("gorger_grass");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
