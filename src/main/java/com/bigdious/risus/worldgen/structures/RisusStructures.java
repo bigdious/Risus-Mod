@@ -58,19 +58,6 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> BEDROCK_HAND_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
 	public static final ResourceKey<StructureTemplatePool> BEDROCK_HAND_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bedrock_hand"));
 
-
-//	public static final ResourceKey<Structure> GRASSY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
-//	public static final ResourceKey<StructureSet> GRASSY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
-//	public static final ResourceKey<StructureTemplatePool> GRASSY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "grassy_maw"));
-
-	public static final ResourceKey<Structure> SANDY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sandy_maw"));
-	public static final ResourceKey<StructureSet> SANDY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sandy_maw"));
-	public static final ResourceKey<StructureTemplatePool> SANDY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "sandy_maw"));
-
-	public static final ResourceKey<Structure> ENDY_MAW = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "endy_maw"));
-	public static final ResourceKey<StructureSet> ENDY_MAW_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "endy_maw"));
-	public static final ResourceKey<StructureTemplatePool> ENDY_MAW_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "endy_maw"));
-
 	public static final ResourceKey<Structure> FAMILY_TREE = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "family_tree"));
 	public static final ResourceKey<StructureSet> FAMILY_TREE_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "family_tree"));
 	public static final ResourceKey<StructureTemplatePool> FAMILY_TREE_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "family_tree"));
@@ -281,63 +268,6 @@ public class RisusStructures {
 			LiquidSettings.APPLY_WATERLOGGING
 		));
 
-//		context.register(GRASSY_MAW, new JigsawStructure(
-//			new Structure.StructureSettings(
-//				biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_MAW),
-//				Map.of(),
-//				GenerationStep.Decoration.SURFACE_STRUCTURES,
-//				TerrainAdjustment.NONE
-//			),
-//			pools.getOrThrow(GRASSY_MAW_POOL),
-//			Optional.empty(),
-//			5,
-//			ConstantHeight.of(VerticalAnchor.absolute(-9)),
-//			false,
-//			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-//			80,
-//			List.of(),
-//			DimensionPadding.ZERO,
-//			LiquidSettings.APPLY_WATERLOGGING
-//		));
-
-		context.register(SANDY_MAW, new JigsawStructure(
-			new Structure.StructureSettings(
-				biomes.getOrThrow(RisusTags.Biomes.HAS_SANDY_MAW),
-				Map.of(),
-				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.NONE
-			),
-			pools.getOrThrow(SANDY_MAW_POOL),
-			Optional.empty(),
-			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-9)),
-			false,
-			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-			80,
-			List.of(),
-			DimensionPadding.ZERO,
-			LiquidSettings.APPLY_WATERLOGGING
-		));
-
-		context.register(ENDY_MAW, new JigsawStructure(
-			new Structure.StructureSettings(
-				biomes.getOrThrow(RisusTags.Biomes.HAS_ENDY_MAW),
-				Map.of(),
-				GenerationStep.Decoration.SURFACE_STRUCTURES,
-				TerrainAdjustment.NONE
-			),
-			pools.getOrThrow(ENDY_MAW_POOL),
-			Optional.empty(),
-			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-9)),
-			false,
-			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-			80,
-			List.of(),
-			DimensionPadding.ZERO,
-			LiquidSettings.APPLY_WATERLOGGING
-		));
-
 		context.register(FAMILY_TREE, new JigsawStructure(
 			new Structure.StructureSettings(
 				biomes.getOrThrow(RisusTags.Biomes.HAS_FAMILY_TREE),
@@ -528,15 +458,6 @@ public class RisusStructures {
 		context.register(BEDROCK_HAND_SET, new StructureSet(structures.getOrThrow(BEDROCK_HAND),
 			new RandomSpreadStructurePlacement(102, 0, RandomSpreadType.TRIANGULAR, 364875348)));
 
-//		context.register(GRASSY_MAW_SET, new StructureSet(structures.getOrThrow(GRASSY_MAW),
-//			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 2223393)));
-
-		context.register(SANDY_MAW_SET, new StructureSet(structures.getOrThrow(SANDY_MAW),
-			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 3452493)));
-
-		context.register(ENDY_MAW_SET, new StructureSet(structures.getOrThrow(ENDY_MAW),
-			new RandomSpreadStructurePlacement(9, 0, RandomSpreadType.LINEAR, 5245123)));
-
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
 			new RandomSpreadStructurePlacement(31, 0, RandomSpreadType.LINEAR, 5297)));
 
@@ -599,17 +520,6 @@ public class RisusStructures {
 			Pair.of(StructurePoolElement.single(name("grassy_site/1")), 2)
 		), StructureTemplatePool.Projection.RIGID));
 
-//		context.register(GRASSY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-//			Pair.of(StructurePoolElement.single(name("grassy_maw")), 1)
-//		), StructureTemplatePool.Projection.RIGID));
-
-		context.register(SANDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("sandy_maw")), 1)
-		), StructureTemplatePool.Projection.RIGID));
-
-		context.register(ENDY_MAW_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("endy_maw")), 1)
-		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(FAMILY_TREE_POOL, new StructureTemplatePool(emptyPool, List.of(
 			Pair.of(StructurePoolElement.single(name("family_tree/0"), processors.getOrThrow(FAMILY_TREE_POPPING)), 5),

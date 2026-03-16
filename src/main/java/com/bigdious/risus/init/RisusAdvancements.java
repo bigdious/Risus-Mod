@@ -15,4 +15,5 @@ public class RisusAdvancements {
 	public static final DeferredHolder<CriterionTrigger<?>, WitnessWeaverNestTrigger> WITNESS_WEAVER_NEST = TRIGGERS.register("witness_weaver_nest", WitnessWeaverNestTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, KilledByDevourTrigger> KILLED_BY_DEVOUR = TRIGGERS.register("killed_by_devour", KilledByDevourTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, HolyGroundsTrigger> HOLY_GROUNDS = TRIGGERS.register("holy_grounds", HolyGroundsTrigger::new);
+	public static final DeferredHolder<CriterionTrigger<?>, MirageTrapTrigger> MIRAGE_TRAP = TRIGGERS.register("mirage_trap", MirageTrapTrigger::new);
 }

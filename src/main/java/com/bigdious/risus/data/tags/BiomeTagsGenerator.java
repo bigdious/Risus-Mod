@@ -149,49 +149,20 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 			.addTag(Tags.Biomes.IS_SNOWY)
 		;
 
-		tag(RisusTags.Biomes.HAS_GRASSY_MAW).add(
-				Biomes.BAMBOO_JUNGLE,
-				Biomes.BIRCH_FOREST,
-				Biomes.CHERRY_GROVE,
-				Biomes.DARK_FOREST,
-				Biomes.FOREST,
-				Biomes.GROVE,
-				Biomes.JUNGLE,
-				Biomes.MEADOW,
-				Biomes.OLD_GROWTH_BIRCH_FOREST,
-				Biomes.OLD_GROWTH_PINE_TAIGA,
-				Biomes.OLD_GROWTH_SPRUCE_TAIGA,
-				Biomes.PLAINS,
-				Biomes.SAVANNA,
-				Biomes.SAVANNA_PLATEAU,
-				Biomes.SPARSE_JUNGLE,
-				Biomes.SUNFLOWER_PLAINS,
-				Biomes.SWAMP,
-				Biomes.TAIGA,
-				Biomes.WINDSWEPT_FOREST,
-				Biomes.WINDSWEPT_GRAVELLY_HILLS,
-				Biomes.WINDSWEPT_HILLS,
-				Biomes.WINDSWEPT_SAVANNA
-			)
-			.addTag(Tags.Biomes.IS_JUNGLE)
-			.addTag(Tags.Biomes.IS_FOREST)
-			.addTag(Tags.Biomes.IS_PLAINS)
-			.addTag(Tags.Biomes.IS_SAVANNA)
-			.addTag(Tags.Biomes.IS_SWAMP)
+		tag(RisusTags.Biomes.HAS_GRASSY_MAW)
+			.addTag(Tags.Biomes.IS_OVERWORLD)
 		;
 
-		tag(RisusTags.Biomes.HAS_SANDY_MAW).add(
-				Biomes.DESERT
-			)
-			.addTag(Tags.Biomes.IS_DESERT)
+		tag(RisusTags.Biomes.HAS_SANDY_MAW)
+			.addTag(Tags.Biomes.IS_OVERWORLD)
 		;
 
-		tag(RisusTags.Biomes.HAS_ENDY_MAW).add(
-				Biomes.END_BARRENS,
-				Biomes.END_MIDLANDS,
-				Biomes.END_HIGHLANDS
-			)
+		tag(RisusTags.Biomes.HAS_ENDY_MAW)
 			.addTag(Tags.Biomes.IS_END)
+		;
+
+		tag(RisusTags.Biomes.HAS_NETHERY_MAW)
+			.addTag(Tags.Biomes.IS_NETHER)
 		;
 
 		tag(RisusTags.Biomes.HAS_ANGEL_ALTAR).add(

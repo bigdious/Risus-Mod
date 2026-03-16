@@ -48,22 +48,6 @@
       },
       "trigger": "minecraft:location"
     },
-    "endmaw": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "risus:endy_maw"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
     "enter_site": {
       "conditions": {
         "player": [
@@ -195,6 +179,9 @@
       },
       "trigger": "minecraft:location"
     },
+    "mirage": {
+      "trigger": "risus:mirage_trap"
+    },
     "modbook": {
       "conditions": {
         "items": [
@@ -214,22 +201,6 @@
             "predicate": {
               "location": {
                 "structures": "risus:ribs_fossil"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "sandmaw": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "risus:sandy_maw"
               }
             }
           }
@@ -291,8 +262,7 @@
       "enter_site2",
       "enter_site3",
       "enter_site4",
-      "sandmaw",
-      "endmaw",
+      "mirage",
       "flower",
       "holy_grounds",
       "family",

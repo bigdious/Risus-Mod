@@ -2,5 +2,5 @@
   "type": "neoforge:add_features",
   "biomes": "#risus:has_structure/grassy_maw",
   "features": "risus:grassy_gorger_placed",
-  "step": "surface_structures"
+  "step": "top_layer_modification"
 }

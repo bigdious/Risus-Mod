@@ -18,17 +18,37 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class RisusBiomeModifiers {
 
 	public static final ResourceKey<BiomeModifier> ADD_GRASSY_GORGER = create("add_grassy_gorger");
+	public static final ResourceKey<BiomeModifier> ADD_SANDY_GORGER = create("add_sandy_gorger");
+	public static final ResourceKey<BiomeModifier> ADD_ENDY_GORGER = create("add_endy_gorger");
+	public static final ResourceKey<BiomeModifier> ADD_NETHERY_GORGER = create("add_nethery_gorger");
 
 
 	public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 		var biomes = context.lookup(Registries.BIOME);
 		var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
-
    		context.register(ADD_GRASSY_GORGER, new BiomeModifiers.AddFeaturesBiomeModifier(
 			   biomes.getOrThrow(RisusTags.Biomes.HAS_GRASSY_MAW),
 			HolderSet.direct(placedFeatures.getOrThrow(RisusPlacedFeatures.GRASSY_GORGER)),
-			GenerationStep.Decoration.SURFACE_STRUCTURES
+			GenerationStep.Decoration.TOP_LAYER_MODIFICATION
+		));
+
+		context.register(ADD_SANDY_GORGER, new BiomeModifiers.AddFeaturesBiomeModifier(
+			biomes.getOrThrow(RisusTags.Biomes.HAS_SANDY_MAW),
+			HolderSet.direct(placedFeatures.getOrThrow(RisusPlacedFeatures.SANDY_GORGER)),
+			GenerationStep.Decoration.TOP_LAYER_MODIFICATION
+		));
+
+		context.register(ADD_ENDY_GORGER, new BiomeModifiers.AddFeaturesBiomeModifier(
+			biomes.getOrThrow(RisusTags.Biomes.HAS_ENDY_MAW),
+			HolderSet.direct(placedFeatures.getOrThrow(RisusPlacedFeatures.ENDY_GORGER)),
+			GenerationStep.Decoration.TOP_LAYER_MODIFICATION
+		));
+
+		context.register(ADD_NETHERY_GORGER, new BiomeModifiers.AddFeaturesBiomeModifier(
+			biomes.getOrThrow(RisusTags.Biomes.HAS_NETHERY_MAW),
+			HolderSet.direct(placedFeatures.getOrThrow(RisusPlacedFeatures.NETHERY_GORGER)),
+			GenerationStep.Decoration.TOP_LAYER_MODIFICATION
 		));
 	}
 

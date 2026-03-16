@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-15T19:41:53.3481358	Tags for minecraft:worldgen/structure mod id vanilla
+// 1.21.1	2026-03-16T20:01:17.7225766	Tags for minecraft:worldgen/structure mod id vanilla
 e635433e0c1e794c907026e300d7198266bcaa6d data/risus/tags/worldgen/structure/angel_altar.json
 d6c1a7fa8ebd656971a7d5d4a53c83dcf002f216 data/risus/tags/worldgen/structure/blood_pool.json
 38a582cbf80b454dc120ef873b4f1035ba63fa5b data/risus/tags/worldgen/structure/church.json
@@ -7,6 +7,6 @@ d6c1a7fa8ebd656971a7d5d4a53c83dcf002f216 data/risus/tags/worldgen/structure/bloo
 1d70d3a0840e9b48ae6bfa695b29342e9e014304 data/risus/tags/worldgen/structure/heart_chamber.json
 b067a6112056e11059af318c93cfbcac06dff9f9 data/risus/tags/worldgen/structure/mork_music.json
 515aab9519396f7487a9418b32352a0e520025aa data/risus/tags/worldgen/structure/ribs_fossil.json
-e367d3ae4e256ca1f1dc432c8e8c6804039e0d7f data/risus/tags/worldgen/structure/risus.json
+bb2db930bb45b833479d314d0c6f22ff77ae718b data/risus/tags/worldgen/structure/risus.json
 5084fb391115b8692290f807107aaea213873377 data/risus/tags/worldgen/structure/skull_fossil.json
 d6c1a7fa8ebd656971a7d5d4a53c83dcf002f216 data/risus/tags/worldgen/structure/unique_music_structures.json

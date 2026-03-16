@@ -1,6 +1,5 @@
 {
   "values": [
-    "minecraft:desert",
-    "#c:is_desert"
+    "#c:is_overworld"
   ]
 }

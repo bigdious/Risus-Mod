@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#risus:has_structure/sandy_maw",
+  "features": "risus:sandy_gorger_placed",
+  "step": "top_layer_modification"
+}

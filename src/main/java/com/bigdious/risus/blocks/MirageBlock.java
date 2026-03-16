@@ -1,6 +1,9 @@
 package com.bigdious.risus.blocks;
 
+import com.bigdious.risus.init.RisusAdvancements;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -9,6 +12,7 @@ import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,6 +62,13 @@ public class MirageBlock extends Block {
 		} else {
 			return entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).canWalkOnPowderedSnow(living);
 		}
+	}
+	@Override
+	protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+		if (entity instanceof ServerPlayer sp){
+			RisusAdvancements.MIRAGE_TRAP.get().trigger(sp);
+		}
+		super.entityInside(state, level, pos, entity);
 	}
 
 	@Override

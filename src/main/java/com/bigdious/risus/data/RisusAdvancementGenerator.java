@@ -46,9 +46,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("enter_site2", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
 			.addCriterion("enter_site3", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
 			.addCriterion("enter_site4", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BEDROCK_HAND))))
-//			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
-			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
-			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
+			.addCriterion("mirage", MirageTrapTrigger.TriggerInstance.getFooled())
 			.addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
 			.addCriterion("holy_grounds", HolyGroundsTrigger.TriggerInstance.getsmitten())
 			.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
@@ -139,9 +137,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.step"),
 				Component.translatable("advancement.risus.step.desc"), null, AdvancementType.TASK, true, true, false)
 			.requirements(AdvancementRequirements.Strategy.OR)
-//			.addCriterion("grassmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_MAW))))
-			.addCriterion("sandmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SANDY_MAW))))
-			.addCriterion("endmaw", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.ENDY_MAW))))
+			.addCriterion("mirage", MirageTrapTrigger.TriggerInstance.getFooled())
 			.save(consumer, "risus:step");
 
 

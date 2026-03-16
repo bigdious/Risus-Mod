@@ -24,9 +24,6 @@ public class StructureTagGenerator extends StructureTagsProvider {
 			,RisusStructures.ANGEL_ALTAR
 			,RisusStructures.BLOOD_WELL
 			,RisusStructures.FAMILY_TREE
-			,RisusStructures.ENDY_MAW
-//			,RisusStructures.GRASSY_MAW
-			,RisusStructures.SANDY_MAW
 			,RisusStructures.HEART_CHAMBER
 			,RisusStructures.GREAT_BODY
 			,RisusStructures.DRAXOLOTL_REMAINS

@@ -24,6 +24,9 @@ import java.util.List;
 public class RisusPlacedFeatures {
 
 	public static final ResourceKey<PlacedFeature> GRASSY_GORGER = create("grassy_gorger_placed");
+	public static final ResourceKey<PlacedFeature> SANDY_GORGER = create("sandy_gorger_placed");
+	public static final ResourceKey<PlacedFeature> ENDY_GORGER = create("endy_gorger_placed");
+	public static final ResourceKey<PlacedFeature> NETHERY_GORGER = create("nethery_gorger_placed");
 
 	public static ResourceKey<PlacedFeature> create(String name) {
 		return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -34,12 +37,17 @@ public class RisusPlacedFeatures {
 
 
 		context.register(GRASSY_GORGER, new PlacedFeature(features.getOrThrow(RisusConfiguredFeatures.GRASSY_GORGER), gorger(Blocks.GRASS_BLOCK).build()));
+		context.register(SANDY_GORGER, new PlacedFeature(features.getOrThrow(RisusConfiguredFeatures.SANDY_GORGER), gorger(Blocks.SAND).build()));
+		context.register(ENDY_GORGER, new PlacedFeature(features.getOrThrow(RisusConfiguredFeatures.ENDY_GORGER), gorger(Blocks.END_STONE).build()));
+		context.register(NETHERY_GORGER, new PlacedFeature(features.getOrThrow(RisusConfiguredFeatures.NETHERY_GORGER), netherGorger(Blocks.NETHERRACK).build()));
 
 
 	}
 	private static ImmutableList.Builder<PlacementModifier> gorger(Block block) {
-		return ImmutableList.<PlacementModifier>builder().add(RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(BlockPos.ZERO.atY(-1), block)), BiomeFilter.biome());
+		return ImmutableList.<PlacementModifier>builder().add(RarityFilter.onAverageOnceEvery(140), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(BlockPos.ZERO.atY(-1), block), BlockPredicate.ONLY_IN_AIR_PREDICATE)), BiomeFilter.biome());
+	}
 
-//		return ImmutableList.of(RarityFilter.onAverageOnceEvery(3), BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)));
+	private static ImmutableList.Builder<PlacementModifier> netherGorger(Block block) {
+		return ImmutableList.<PlacementModifier>builder().add(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(BlockPos.ZERO.atY(-1), block), BlockPredicate.ONLY_IN_AIR_PREDICATE)), BiomeFilter.biome());
 	}
 }

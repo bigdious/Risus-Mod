@@ -16,16 +16,17 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 public class RisusConfiguredFeatures {
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> GRASSY_GORGER = create("grassy_gorger");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SANDY_GORGER = create("sandy_gorger");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> ENDY_GORGER = create("endy_gorger");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> NETHERY_GORGER = create("nethery_gorger");
 
 
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-		HolderGetter<ConfiguredFeature<?, ?>> features = context.lookup(Registries.CONFIGURED_FEATURE);
-
-		RuleTest grassBlockReplacable = new BlockMatchTest(Blocks.GRASS_BLOCK);
-
 		context.register(GRASSY_GORGER, new ConfiguredFeature<>(RisusFeatures.GRASSY_GORGER.get(), FeatureConfiguration.NONE));
+		context.register(SANDY_GORGER, new ConfiguredFeature<>(RisusFeatures.SANDY_GORGER.get(), FeatureConfiguration.NONE));
+		context.register(ENDY_GORGER, new ConfiguredFeature<>(RisusFeatures.ENDY_GORGER.get(), FeatureConfiguration.NONE));
+		context.register(NETHERY_GORGER, new ConfiguredFeature<>(RisusFeatures.NETHERY_GORGER.get(), FeatureConfiguration.NONE));
 	}
 
 	public static ResourceKey<ConfiguredFeature<?, ?>> create(String name) {

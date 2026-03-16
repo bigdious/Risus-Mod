@@ -1,5 +1,5 @@
 {
-  "feature": "risus:grassy_gorger",
+  "feature": "risus:endy_gorger",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
@@ -19,7 +19,7 @@
         "predicates": [
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:grass_block",
+            "blocks": "minecraft:end_stone",
             "offset": [
               0,
               -1,

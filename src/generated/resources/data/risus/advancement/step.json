@@ -1,37 +1,8 @@
 {
   "parent": "risus:first",
   "criteria": {
-    "endmaw": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "risus:endy_maw"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "sandmaw": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "risus:sandy_maw"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
+    "mirage": {
+      "trigger": "risus:mirage_trap"
     }
   },
   "display": {
@@ -48,8 +19,7 @@
   },
   "requirements": [
     [
-      "sandmaw",
-      "endmaw"
+      "mirage"
     ]
   ],
   "sends_telemetry_event": true

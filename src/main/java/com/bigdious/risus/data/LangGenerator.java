@@ -672,13 +672,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addStructure(RisusStructures.BLOOD_WELL, "Blood Well");
 		this.addStructure(RisusStructures.DRAXOLOTL_REMAINS, "Draxolotl Remains");
 		this.addStructure(RisusStructures.HEART_CHAMBER, "Heart Chamber");
-		this.addStructure(RisusStructures.ENDY_MAW, "End Gorger Trap");
 		this.addStructure(RisusStructures.FAMILY_TREE, "Family Tree");
 		this.addStructure(RisusStructures.FLOWER_FIELD, "Flower Field");
-//		this.addStructure(RisusStructures.GRASSY_MAW, "Grass Gorger Trap");
 		this.addStructure(RisusStructures.GREAT_BODY, "Great Body");
 		this.addStructure(RisusStructures.LAB_START, "Lab");
-		this.addStructure(RisusStructures.SANDY_MAW, "Sand Gorger Trap");
 
 		this.add("filled_map.angel_altar", "Angel Altar Explorer Map");
 		this.add("filled_map.ribs_fossil", "Ribcage Fossil Explorer Map");
