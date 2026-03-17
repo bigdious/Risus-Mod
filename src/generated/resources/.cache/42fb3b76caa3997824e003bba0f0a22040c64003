@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-09T22:15:44.8012527	Risus Item Models
+// 1.21.1	2026-03-17T21:02:41.0548775	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -189,8 +189,6 @@ f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall
 67e94359f35a511b0b82629402b66c558675d9ec assets/risus/models/item/hairy_fleshy_skin.json
 0d96a533eaa522b90b2880cc919c43ae619ed400 assets/risus/models/item/hairy_skin.json
 194dc95b7dfa2424d85c66a27c4d3d9b8ece552b assets/risus/models/item/hair_follicles.json
-d74f21cfe1ec8ebaaa5a7389043c32cf3b9ec32f assets/risus/models/item/hand_of_greed.json
-0b3744b69b4ed6640eb32a653d7253185bec2393 assets/risus/models/item/hand_of_greed_base.json
 b52a2faa344afa8843095863cff9028ec7d5dee0 assets/risus/models/item/heart_transplant.json
 a578a51a112313500ac42c9c0b0a283b22a1a3e0 assets/risus/models/item/hexhorn.json
 d3c97918b7bac6b68edd622832da877abc818c18 assets/risus/models/item/hexhorn_1.json

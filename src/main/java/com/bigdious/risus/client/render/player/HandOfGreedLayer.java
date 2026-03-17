@@ -2,6 +2,7 @@ package com.bigdious.risus.client.render.player;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
+import com.bigdious.risus.client.event.RisusClientEvents;
 import com.bigdious.risus.client.model.entity.player.LeftHandPlayerModel;
 import com.bigdious.risus.client.model.entity.player.RightHandPlayerModel;
 import com.bigdious.risus.init.RisusDataComponents;
@@ -22,6 +23,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.fml.ModList;
 
 @OnlyIn(Dist.CLIENT)
 public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> implements HandAnimHelper {
@@ -52,7 +54,7 @@ public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> 
 			if (slim) {poseStack.translate(-0.05,0,0);}
 			VertexConsumer vertexConsumer = buffer.getBuffer(LEFT_RENDER_TYPE);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
-			if (itemstack2.is(RisusItems.SINNER_ROBES_CHESTPLATE)) {
+			if (itemstack2.is(RisusItems.SINNER_ROBES_CHESTPLATE) && (!ModList.get().isLoaded("curios") || !RisusClientEvents.curiosForArm(parent))) {
 				this.model2.setupArmSize(slim);
 				this.model2.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 				this.model2.prepareMobModel(parent, limbSwing, limbSwingAmount, partialTicks);

@@ -338,6 +338,7 @@ public class RisusEvents {
 			,Map.entry("c0159419-7eec-49fb-a4fe-b6fe76f84ade", Items.EMERALD_ORE.getDefaultInstance())
 			,Map.entry("33ee90f3-2d59-4485-bbd7-b46d2e30d2cd", RisusBlocks.BLOODY_SPONGE.toStack())
 			,Map.entry("95e2a3cb-e967-40fa-a50d-28b122b6d7cd", RisusBlocks.JOYFLAME_CAMPFIRE.toStack())
+			,Map.entry("4b09d332-fa2f-4610-aa33-cec55326f5fb", Items.PUFFERFISH.getDefaultInstance())
 			,Map.entry("54dd8419-6031-42a9-a195-a695bc5d3558", Items.MUSIC_DISC_CREATOR_MUSIC_BOX.getDefaultInstance())
 		);
 		if (event.getEntity() instanceof Player player && PLAYERS_AND_DROPS.containsKey(player.getUUID().toString())) {

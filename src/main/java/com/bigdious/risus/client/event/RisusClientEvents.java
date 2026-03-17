@@ -85,6 +85,7 @@ import org.lwjgl.glfw.GLFW;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -552,12 +553,14 @@ public class RisusClientEvents {
 		}
 	}
 
-	private static boolean curiosForArm(LivingEntity entity) {
+	public static boolean curiosForArm(LivingEntity entity) {
 		if (ModList.get().isLoaded("curios")) {
+
 			var handler = entity.getCapability(CuriosCapability.INVENTORY);
 			if (handler == null) return false;
-			var s = handler.findCurios(RisusItems.HAND_OF_GREED.get());
-			if (s.isEmpty()) return false; else return true;
+			var s = handler.findFirstCurio(RisusItems.HAND_OF_GREED.get());
+			if (s.isEmpty()) return false;
+			return s.get().slotContext().visible();
 		}
 		return false;
 	}
@@ -575,8 +578,8 @@ public class RisusClientEvents {
 				model.setupAnim(event.getPlayer(), 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
 				model.renderToBuffer(event.getPoseStack(), event.getMultiBufferSource().getBuffer(HandCuriosRenderer.RENDER_TYPE), event.getPackedLight(), OverlayTexture.NO_OVERLAY);
 				});
-			}
-			if (event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
+			} else
+			if ((!ModList.get().isLoaded("curios") || !curiosForArm(event.getPlayer())) && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
 				Minecraft mc = Minecraft.getInstance();
 				LocalPlayer player = mc.player;
 
