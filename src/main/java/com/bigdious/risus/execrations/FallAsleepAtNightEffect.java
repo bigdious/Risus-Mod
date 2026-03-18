@@ -25,11 +25,11 @@ public record FallAsleepAtNightEffect(LevelBasedValue strength) implements Encha
 	@Override
 	public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
 		float strength = this.strength.calculate(i);
-		if (entity instanceof Player player && serverLevel.dimension() == ServerLevel.OVERWORLD ) {
-			if (serverLevel.getDayTime() > 12600 && serverLevel.getDayTime() < 23400 && serverLevel.getGameTime() % 25 == 0) {
-				serverLevel.sendParticles(RisusParticles.SLEEPY.get(), player.getX(), player.getEyeY()+0.3, player.getZ(), 1, 0, 0.0, 0.0, 0.01);
+		if (entity instanceof Player player && !player.level().isClientSide() && player.level().dimensionType().bedWorks()) {
+			if (player.level() instanceof ServerLevel playerServerLevel && player.level().getDayTime() > 12600 && player.level().getDayTime() < 23400 && player.level().getGameTime() % 25 == 0) {
+				playerServerLevel.sendParticles(RisusParticles.SLEEPY.get(), player.getX(), player.getEyeY()+0.3, player.getZ(), 1, 0, 0.0, 0.0, 0.01);
 			}
-			if (serverLevel.getDayTime() > 12600 && serverLevel.getDayTime() < 23400 && (serverLevel.getDayTime() == 12640 || serverLevel.getDayTime() % 3600/(strength) == 0)) {
+			if (player.level().getDayTime() > 12600 && player.level().getDayTime() < 23400 && (player.level().getDayTime() == 12640 || player.level().getDayTime() % 3600/(strength) == 0)) {
 				player.stopFallFlying();
 				player.stopRiding();
 				player.startSleepInBed(player.getOnPos().above());

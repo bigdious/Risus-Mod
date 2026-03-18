@@ -32,6 +32,19 @@
         "risus:broken": 1.0,
         "risus:oily": 1.0
       }
+    },
+    {
+      "model": "risus:item/diamond_tipped_oxidizing_wings",
+      "predicate": {
+        "risus:oxidizing": 1.0
+      }
+    },
+    {
+      "model": "risus:item/diamond_tipped_oxidizing_wings_broken",
+      "predicate": {
+        "risus:broken": 1.0,
+        "risus:oxidizing": 1.0
+      }
     }
   ],
   "textures": {

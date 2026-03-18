@@ -269,13 +269,17 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.override().predicate(Risus.prefix("ashen"), 1.0F).model(singleTex("ashen_wings")).end()
 			.override().predicate(Risus.prefix("ashen"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("ashen_wings_broken")).end()
 			.override().predicate(Risus.prefix("oily"), 1.0F).model(singleTex("oily_wings")).end()
-			.override().predicate(Risus.prefix("oily"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("oily_wings_broken"));
+			.override().predicate(Risus.prefix("oily"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("oily_wings_broken")).end()
+			.override().predicate(Risus.prefix("oxidizing"), 1.0F).model(singleTex("oxidizing_wings")).end()
+			.override().predicate(Risus.prefix("oxidizing"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("oxidizing_wings_broken"));
 		singleTex(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS)
 			.override().predicate(Risus.prefix("broken"), 1.0F).model(singleTex("diamond_tipped_angel_wings_broken")).end()
 			.override().predicate(Risus.prefix("ashen"), 1.0F).model(singleTex("diamond_tipped_ashen_wings")).end()
 			.override().predicate(Risus.prefix("ashen"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("diamond_tipped_ashen_wings_broken")).end()
 			.override().predicate(Risus.prefix("oily"), 1.0F).model(singleTex("diamond_tipped_oily_wings")).end()
-			.override().predicate(Risus.prefix("oily"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("diamond_tipped_oily_wings_broken"));
+			.override().predicate(Risus.prefix("oily"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("diamond_tipped_oily_wings_broken")).end()
+			.override().predicate(Risus.prefix("oxidizing"), 1.0F).model(singleTex("diamond_tipped_oxidizing_wings")).end()
+			.override().predicate(Risus.prefix("oxidizing"), 1.0F).predicate(Risus.prefix("broken"), 1.0F).model(singleTex("diamond_tipped_oxidizing_wings_broken"));
 		singleTex(RisusItems.ESSENCE_OF_GLUTTONY);
 		singleTex(RisusItems.ESSENCE_OF_GREED);
 		singleTex(RisusItems.ESSENCE_OF_SLOTH);
