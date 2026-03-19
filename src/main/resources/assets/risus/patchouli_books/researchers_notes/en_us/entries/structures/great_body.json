@@ -11,7 +11,7 @@
       "type": "patchouli:image",
       "images": ["risus:textures/gui/entries/great_body.png"],
       "border": "true",
-      "title": "Skeletal Great Body",
+      "title": "Fleshy Great Body",
       "text": "The skull and the heart are the most valuable parts of it."
       },
     {

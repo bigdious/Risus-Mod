@@ -27,7 +27,6 @@ public record FallAsleepAtNightEffect(LevelBasedValue strength) implements Encha
 	public void apply(ServerLevel serverLevel, int i, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
 		float strength = this.strength.calculate(i);
 		if (entity instanceof Player player && !player.level().isClientSide() && player.level().dimensionType().bedWorks()) {
-			player.sendSystemMessage(Component.literal(  player.level().getDayTime() + " " + player.level().getDayTime() % 12000));
 			if (player.level() instanceof ServerLevel playerServerLevel && player.level().isNight() && player.level().getGameTime() % 25 == 0) {
 				playerServerLevel.sendParticles(RisusParticles.SLEEPY.get(), player.getX(), player.getEyeY()+0.3, player.getZ(), 1, 0, 0.0, 0.0, 0.01);
 			}

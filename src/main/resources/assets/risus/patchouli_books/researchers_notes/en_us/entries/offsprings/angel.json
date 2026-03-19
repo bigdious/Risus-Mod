@@ -1,5 +1,5 @@
 {
-  "name": "Ophanim",
+  "name": "Blood Ophanim",
   "icon": "risus:essence_of_sloth",
   "category": "risus:offsprings",
   "advancement": "risus:angel",
@@ -18,11 +18,11 @@
         "item": "risus:blood_feather"
       },
       "link_recipe": true,
-      "text": "Ophanims are rare, divine beings, only found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter its range with lightning. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a Blood Feather upon death."
+      "text": "Blood Ophanims are rare, divine beings, found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter their range with lightning. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a Blood Feather upon death."
     },
     {
       "type": "patchouli:text",
-      "text": "It is important to note that despite the immense death Ophanims are capable of, they can be quite easy to survive due to how slothful their behavior is. They are entirely stationary and will only move when pushed. On top of having a limited range - albeit still quite huge - they will also not target anything they cannot directly see; even if said target would be in range. Lastly, since their attack comes down from the skies, a sufficiently low ceiling will block any and all attempts of"
+      "text": "It is important to note that despite the immense death they are capable of, Ophanims can be quite easy to survive due to how slothful their behavior is. They are entirely stationary and will only move when pushed. On top of having a limited range - albeit still quite huge - they will also not target anything they cannot directly see; even if said target would be in range. Lastly, since their attack comes down from the skies, a sufficiently low ceiling will block any and all attempts of"
     },
     {
       "type": "patchouli:text",

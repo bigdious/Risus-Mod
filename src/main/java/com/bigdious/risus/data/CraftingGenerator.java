@@ -1079,6 +1079,18 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RisusBlocks.COALIFICATION.get(), 1)
+			.pattern(" S ")
+			.pattern("RBA")
+			.pattern(" O ")
+			.define('S', Ingredient.of(RisusBlocks.SPREADING_REMAINS))
+			.define('R', Ingredient.of(RisusBlocks.SMILING_REMAINS.get()))
+			.define('B', Ingredient.of(Items.BONE_MEAL))
+			.define('A', Ingredient.of(RisusBlocks.ASHEN_REMAINS.get()))
+			.define('O', Ingredient.of(RisusBlocks.ORGANIC_MATTER_BLOCK.get()))
+			.unlockedBy("has_item", has(RisusItems.LOVER_CREAM.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.ROSE_CROWN.get())
 			.pattern("WBR")
 			.pattern("B B")

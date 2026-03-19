@@ -1,0 +1,37 @@
+{
+  "name": "Churches",
+  "icon": "risus:grimstone_pillar",
+  "category": "risus:structures",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Churches are rare and massive buildings dedicated to the worship of the Risus. Inside they feature a hallway leading to a central praying chamber, featuring three $(l:offsprings/angel)$(0)$(n)Blood Ophanims$() as well as an Alteration Catalyst. Behind those there is a hidden entrance to catacombs filled with blood and $(l:offsprings/weaver)$(0)$(n)Weavers$(). The entire building is filled with $(l:offsprings/hex)$(0)$(n)Hexes$() making it extremely dangerous to enter. Adequate weaponry is a must."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["risus:textures/gui/entries/church.png"],
+      "border": "true",
+      "title": "Church",
+      "text": "Churches tend to tower over their surrounding environment, making them easy to spot."
+      },
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:alteration_catalyst",
+      "link_recipe": true,
+      "text": "The cornerstone of rituals, the Alteration Catalyst allows a person to possibly infect an object or material with the Risus. One must simply place it in the bowl in the middle and witness as the essence pours into it, altering its form and function to better adapt to the new powers within."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Unfortunately, Alteration Catalysts seem to be entirely unbreakable, and they also do not react to any attempts of being moved. Therefore, while it can be frustrating, it's necessary to settle near an Alteration Site or simply repurpose one if a person wishes to research and use an Alteration Catalyst. There may be a method to relocate it but I couldn't find one through my testing."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "These structures are most fascinating. As with the majority of things that are infected by the joyplague, it's nearly impossible to ascertain the age, as the plague will keep them ruinous but intact. I have two main hypothesis: First, these represent the origin of the plague. In this case, these would be the ancient places where, by unknown and likely horrific methods, the plague was created and spread."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Though this doesn't quite explain why there are so many. Secondly, the Sites could have been made by cultists after the appearance of the plague. Harvesting the near divine powers of the plague would necessitate appropriate conditions and these places seem to achieve exactly that. However, this idea still leaves just as many questions behind. The possibility of both hypothesis being correct is not negligible either. Then come the catalysts, which are simply baffling..."
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-13T22:43:24.182128	Recipes
+// 1.21.1	2026-03-19T17:48:30.4578719	Recipes
 b488a9de4ce4f24bbf62811cc175b45425a9b530 data/minecraft/advancement/recipes/bondknot_dummy.json
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
@@ -160,6 +160,7 @@ a86c1e6487876f67ae4e9b76705a944089f4100a data/risus/advancement/recipes/building
 678ef54e0afebf258d1f63f452c7260c4afee49f data/risus/advancement/recipes/building_blocks/brown_mosaic_glass_pane.json
 869c09c91ba72249afe7c852e12b7b193baa6a7d data/risus/advancement/recipes/building_blocks/brown_mosaic_lamp.json
 e4ab881ed0749624eca3eed7bf77aefed402c60d data/risus/advancement/recipes/building_blocks/chiseled_grimstone.json
+6026430b39899de61a1c63d38b743ce41f2903e4 data/risus/advancement/recipes/building_blocks/coalification.json
 b941acdb49156058eb292cab939526fae36e9506 data/risus/advancement/recipes/building_blocks/containment_glass_pane.json
 897ab84dab0de7968194f7f981dd7fc3dac159da data/risus/advancement/recipes/building_blocks/copper_amalgam.json
 42e0065b9ace888c1d8b87f1cb74281b0d81bf17 data/risus/advancement/recipes/building_blocks/curved_fleshy_skin.json
@@ -534,6 +535,7 @@ ff895cef053a0eb7e53fa40a98a8fffe7a265e33 data/risus/recipe/budding_unalloyed_sca
 9b4b8c0771e795c6bdf75e621657cecc61f2bdd4 data/risus/recipe/calico_cat_helmet.json
 ecaf69a945d8084999c30d75161001ff4105e9ee data/risus/recipe/chestnut_wolf_helmet.json
 dff4413748faa74453390ce5bb0e704182296845 data/risus/recipe/chiseled_grimstone.json
+8bcc41a12e5039a679c06eb47c40f0acd88e2e8b data/risus/recipe/coalification.json
 64f05689811844398666f6b818323f1301b71888 data/risus/recipe/concentration_core.json
 e8062c015574fc7378b7a2b497053d424f7083ba data/risus/recipe/containment_glass_pane.json
 8172028be02fab6185460fc98d3ab2ea1d0726f4 data/risus/recipe/copper_amalgam.json

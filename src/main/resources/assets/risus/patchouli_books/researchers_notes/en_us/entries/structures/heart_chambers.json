@@ -1,0 +1,31 @@
+{
+  "name": "Heart Chambers",
+  "icon": "risus:beating_heart",
+  "category": "risus:structures",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Heart Chambers are underground rooms in the Deepslate layer, covered in Tissue and centered around a $(l:alteration_blocks/beating_heart)$(0)$(n)Beating Heart$() in the middle. The main chamber features a pool of blood at its bottom and a Lover Spawner. The walkway leads to four additional chambers located at the sides. These rooms can contain various resources and Risus-related creatures."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["risus:textures/gui/entries/heart_chamber.png"],
+      "border": "true",
+      "title": "Heart Chamber Center",
+      "text": "Due to how challenging it can be, conquering them without a strategy is ill advised."
+      },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "These Heart Chambers feel like an alternative to the Great Bodies. While those are closer to a recreation of the human body, the chambers are reminiscent of a body's function and internal ecosystem. There is a heart in the middle, seemingly 'powering' the entire construct, with the additional rooms being close to organs working on processing their own resources. Although, these correlations are lackluster at "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "best, since in practice the plague's nature of recreating the past still strikes through. For example, one of the side rooms can sometimes feature a piece of a mineshaft made with Bondknot planks. Meanwhile another room type can have a piece of the End in it (which is fascinating in itself, as it highlights the transmutational capacity of the Risus). From my perspective, and with no true insight into the inner workings of the Risus, it looks like the plague is missing a sort of 'focus'. It gives the impression "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "of having multiple goals but lacking the factor by which to only invest into one at a time. This is a theory at best for now though, as it's mainly conjecture from my observations, lacking meaningful evidence."
+    }
+  ]
+}

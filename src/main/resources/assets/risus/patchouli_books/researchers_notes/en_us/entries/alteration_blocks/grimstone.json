@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Grimstone is a Risus specific stone variant, obtained by altering Blackstone. What sets it apart is its resistance to both Lava and Blood, allowing the possibility to place those fluids too into Stairs, Slabs and Walls made from Grimstone."
+      "text": "Grimstone is a Risus specific stone variant, obtained by altering Blackstone. What sets it apart is its resistance to both Lava and Blood, allowing the possibility to place those fluids too into Stairs, Slabs and Walls made from Grimstone. The Active Grimstone altered from Gilded Blackstone will drop Redstone when mined without Silk Touch."
     },
     {
       "type": "risus:alterationtemplate5",

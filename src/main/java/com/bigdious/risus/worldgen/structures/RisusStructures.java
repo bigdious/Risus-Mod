@@ -710,15 +710,15 @@ public class RisusStructures {
 
 		context.register(HEART_CHAMBER_BLENDING, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
+//				new ProcessorRule(
+//					new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.02F),
+//					AlwaysTrueTest.INSTANCE,
+//					RisusBlocks.ACTIVE_GRIMSTONE.get().defaultBlockState()
+//				),
 				new ProcessorRule(
-					new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.02F),
-					AlwaysTrueTest.INSTANCE,
-					RisusBlocks.ACTIVE_GRIMSTONE.get().defaultBlockState()
-				),
-				new ProcessorRule(
-				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.38F),
+				new RandomBlockMatchTest(RisusBlocks.LIVING_TISSUE.get(), 0.60F),
 				AlwaysTrueTest.INSTANCE,
-				RisusBlocks.GRIMSTONE.get().defaultBlockState()
+				Blocks.DEEPSLATE.defaultBlockState()
 				)
 			))
 		)));
