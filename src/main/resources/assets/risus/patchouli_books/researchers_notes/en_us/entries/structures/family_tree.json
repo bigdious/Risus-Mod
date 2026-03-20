@@ -18,7 +18,14 @@
       "type": "patchouli:spotlight",
       "item": "risus:crystallized_bond",
       "link_recipe": true,
-      "text": "Crystallized Bonds are a unique resource that can be found on parts of the trunk and used for the manufacture of a special glass or to create a sharp edge for a weapon. These are renewable and formed on Popping Bondknot wood, which cannot be removed without losing their ability to generate Crystallized Bonds."
+      "text": "Crystallized Bonds are a unique resource that can be found on parts of the trunk and used for the manufacturing of special glass or to create sharp edges for weapons. These are renewable and formed on Popping Bondknot wood, which cannot be removed without losing their ability to generate Crystallized Bonds."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:heart_transplant",
+      "link_recipe": true,
+      "anchor" : "heart",
+      "text": "Heart Transplants are primarily decorative blocks that form on Family Trees. They tend to match the number of ribcages on the tree, pointing to a correlation between them. They are also used by Ascetics for research purposes."
     },
 
     {

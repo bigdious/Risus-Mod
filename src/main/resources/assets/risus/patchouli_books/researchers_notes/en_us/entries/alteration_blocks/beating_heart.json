@@ -1,0 +1,16 @@
+{
+  "name": "Beating Heart",
+  "icon": "risus:beating_heart",
+  "category": "risus:alteration",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Beating Hearts are a relatively rare block, only found within $(l:structures/heart_chamber)$(0)$(n)Heart Chambers$(). Depending on their type, they beat on varied intervals and apply a health related effect to all creatures and people in their radius. The type can be changed by using the correct item on it: Ghast Tear for Regeneration, $(l:structures/family_tree#heart)$(0)$(n)Heart Transplant$() for Health Boost, Enchanted Golden Apple for Absorption, $(l:alteration/blood)$(0)$(n)Blood Bucket for Bloodclogged$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:coalification",
+      "text": "The Coalification can be forcefully spread by amassing Remains, Organic Matter and Bone Meal. Since usual monsters don't appear in it, living in land covered by Coalification can be preferred."
+    }
+  ]
+}
