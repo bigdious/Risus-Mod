@@ -212,6 +212,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		this.tag(RisusTags.Enchantments.EXECRATIONS).add(
 			Execrations.HUNTERS_EXULTATION,
 			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.ALGID_RESISTOR,
+			Execrations.ATHEISM,
 			Execrations.DREAM_EATER,
 			Execrations.PULL,
 			Execrations.DENIAL,
@@ -251,6 +253,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 
 		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
 			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.ALGID_RESISTOR,
+			Execrations.ATHEISM,
 			Execrations.VIGOR
 		);
 

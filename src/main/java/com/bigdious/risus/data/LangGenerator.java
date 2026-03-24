@@ -549,6 +549,8 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
 		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, in return - if worn - weakening any Protection enchanted pieces.");
+		this.addEnchantment("atheism", "Atheism", "Increases protection against magical attacks.");
+		this.addEnchantment("algid_resistor", "Algid Resistor", "Increases protection against freezing and lightning strikes.");
 		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
 		this.addEnchantment("pull", "Pull", "Pulls the target towards the attacker, with distance increasing the pulling power.");
 		this.addEnchantment("denial", "Denial", "When the item breaks, it will murder its user and repair itself.");

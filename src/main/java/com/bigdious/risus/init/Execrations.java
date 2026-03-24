@@ -40,6 +40,8 @@ import java.util.Optional;
 public class Execrations {
 	public static final ResourceKey<Enchantment> HUNTERS_EXULTATION = registerKey("hunters_exultation");
 	public static final ResourceKey<Enchantment> ELEMENTAL_DEVIATION = registerKey("elemental_deviation");
+	public static final ResourceKey<Enchantment> ATHEISM = registerKey("atheism");
+	public static final ResourceKey<Enchantment> ALGID_RESISTOR = registerKey("algid_resistor");
 	public static final ResourceKey<Enchantment> DREAM_EATER = registerKey("dream_eater");
 	public static final ResourceKey<Enchantment> PULL = registerKey("pull");
 	public static final ResourceKey<Enchantment> DENIAL = registerKey("denial");
@@ -140,15 +142,13 @@ public class Execrations {
 					)
 				)
 				.withEffect(
-					EnchantmentEffectComponents.DAMAGE_PROTECTION,
-					new AddValue(LevelBasedValue.perLevel(-1.0F)),
-					DamageSourceCondition.hasDamageSource(
-						DamageSourcePredicate.Builder.damageType()
-							.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
-							.tag(TagPredicate.isNot(DamageTypeTags.IS_FIRE))
-							.tag(TagPredicate.isNot(DamageTypeTags.IS_EXPLOSION))
-							.tag(TagPredicate.isNot(DamageTypeTags.IS_PROJECTILE))
-					)
+				EnchantmentEffectComponents.ATTRIBUTES,
+				new EnchantmentAttributeEffect(
+					ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.overload"),
+					Attributes.ARMOR,
+					LevelBasedValue.perLevel(-0.5F),
+					AttributeModifier.Operation.ADD_VALUE
+				)
 				)
 				.withEffect(
 					EnchantmentEffectComponents.ATTRIBUTES,
@@ -168,6 +168,55 @@ public class Execrations {
 						AttributeModifier.Operation.ADD_VALUE
 					)
 				)
+		);
+
+		register(context, ATHEISM, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
+				5,
+				4,
+				Enchantment.dynamicCost(10, 8),
+				Enchantment.dynamicCost(18, 8),
+				2,
+				EquipmentSlotGroup.ARMOR
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.ARMOR_EXCLUSIVE))
+				.withEffect(
+					EnchantmentEffectComponents.DAMAGE_PROTECTION,
+					new AddValue(LevelBasedValue.perLevel(2.0F)),
+					AllOfCondition.allOf(
+						DamageSourceCondition.hasDamageSource(
+							DamageSourcePredicate.Builder.damageType()
+								.tag(TagPredicate.is(DamageTypeTags.WITCH_RESISTANT_TO))
+								.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
+						)
+					)
+				)
+
+		);
+
+		register(context, ALGID_RESISTOR, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
+				5,
+				4,
+				Enchantment.dynamicCost(10, 8),
+				Enchantment.dynamicCost(18, 8),
+				2,
+				EquipmentSlotGroup.ARMOR
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.ARMOR_EXCLUSIVE))
+				.withEffect(
+					EnchantmentEffectComponents.DAMAGE_PROTECTION,
+					new AddValue(LevelBasedValue.perLevel(2.0F)),
+					AllOfCondition.allOf(
+						DamageSourceCondition.hasDamageSource(
+							DamageSourcePredicate.Builder.damageType()
+								.tag(TagPredicate.is(DamageTypeTags.IS_LIGHTNING))
+								.tag(TagPredicate.is(DamageTypeTags.IS_FREEZING))
+								.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
+						)
+					)
+				)
+
 		);
 
 		register(context, DREAM_EATER, new Enchantment.Builder(Enchantment.definition(

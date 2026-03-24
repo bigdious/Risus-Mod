@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-19T19:51:00.9598907	Registries
+// 1.21.1	2026-03-24T23:04:02.142967	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -15,13 +15,15 @@ fb66e00ba49e543bcffcef3c073930ced882203c data/risus/damage_type/gluttony.json
 280e134206536a849551a2b4bdc791e6fc85c7fb data/risus/damage_type/vampirism.json
 693f03f3347583414baf154766a4e68a26107bea data/risus/damage_type/wing_stab.json
 8585c98209547a6a7e04c60b804e59ccf837afb1 data/risus/enchantment/agony.json
+0a777de9bcb7760796d8f2ff2263bb7d6ab2a0ec data/risus/enchantment/algid_resistor.json
+0a63ae6e8fbe000160fbb1abffb91076c214026a data/risus/enchantment/atheism.json
 dbbc749bf7416ca5dd3694e9739938bf5ff428a1 data/risus/enchantment/avaricious_ambit.json
 738d1e231f2f491bbe3ae5f38035843d31bedf36 data/risus/enchantment/battering.json
 2344b6cc30c552a6cbe278d1b29e3b58e8c25ee7 data/risus/enchantment/cackling_craze.json
 3ef0313ed2f7fd075b8c137d3794773e782163bb data/risus/enchantment/defiance.json
 b331c3fe6b249b9f22dfef7031dd7630d47e29da data/risus/enchantment/denial.json
 3540262e587167d4e0e61f669c397b9f7fa907c6 data/risus/enchantment/dream_eater.json
-962ff4c533096c65f1f2d6c2e7463c1ecc7cc263 data/risus/enchantment/elemental_deviation.json
+ae1db75fdeee32f9eeaf5bdcdd7062276cb83ead data/risus/enchantment/elemental_deviation.json
 13857d21d7c94855a53ef5fa4bc17f8557420936 data/risus/enchantment/empyrean_conduit.json
 b06bb7bdaa130f6543e4e2e1dcedea0559eebc41 data/risus/enchantment/eruption.json
 57ada403bd1d2297d9a67eb6bbda449d01f0c25d data/risus/enchantment/fervour.json

@@ -1,41 +1,9 @@
 {
   "anvil_cost": 2,
   "description": {
-    "translate": "enchantment.risus.elemental_deviation"
+    "translate": "enchantment.risus.algid_resistor"
   },
   "effects": {
-    "minecraft:attributes": [
-      {
-        "amount": {
-          "type": "minecraft:linear",
-          "base": -0.5,
-          "per_level_above_first": -0.5
-        },
-        "attribute": "minecraft:generic.armor",
-        "id": "risus:execration.overload",
-        "operation": "add_value"
-      },
-      {
-        "amount": {
-          "type": "minecraft:linear",
-          "base": -0.15,
-          "per_level_above_first": -0.15
-        },
-        "attribute": "minecraft:generic.burning_time",
-        "id": "risus:execration.elemental_deviation",
-        "operation": "add_multiplied_base"
-      },
-      {
-        "amount": {
-          "type": "minecraft:linear",
-          "base": 0.15,
-          "per_level_above_first": 0.15
-        },
-        "attribute": "minecraft:generic.explosion_knockback_resistance",
-        "id": "risus:execration.elemental_deviation",
-        "operation": "add_value"
-      }
-    ],
     "minecraft:damage_protection": [
       {
         "effect": {
@@ -55,15 +23,11 @@
                 "tags": [
                   {
                     "expected": true,
-                    "id": "minecraft:is_fire"
+                    "id": "minecraft:is_lightning"
                   },
                   {
                     "expected": true,
-                    "id": "minecraft:is_explosion"
-                  },
-                  {
-                    "expected": true,
-                    "id": "minecraft:is_projectile"
+                    "id": "minecraft:is_freezing"
                   },
                   {
                     "expected": false,
