@@ -1,0 +1,13 @@
+{
+  "remove": [
+    "minecraft:fall",
+    "minecraft:on_fire",
+    "minecraft:freeze",
+    "minecraft:magic",
+    "minecraft:indirect_magic",
+    "minecraft:sonic_boom"
+  ],
+  "values": [
+    "#minecraft:bypasses_armor"
+  ]
+}

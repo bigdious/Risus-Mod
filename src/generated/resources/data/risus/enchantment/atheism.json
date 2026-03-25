@@ -24,10 +24,6 @@
                   {
                     "expected": true,
                     "id": "minecraft:witch_resistant_to"
-                  },
-                  {
-                    "expected": false,
-                    "id": "minecraft:bypasses_invulnerability"
                   }
                 ]
               }

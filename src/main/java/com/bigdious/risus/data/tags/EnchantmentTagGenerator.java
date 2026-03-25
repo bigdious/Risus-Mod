@@ -25,7 +25,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.SWEEPING_EDGE,
 			Execrations.GENOCIDE,
 			Enchantments.LOOTING,
@@ -50,7 +52,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.DEFIANCE,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.MENDING,
 			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
@@ -69,7 +73,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.MENDING,
 			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
@@ -88,7 +94,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.LOOTING,
 			Execrations.DREAM_EATER,
 			Enchantments.MENDING,
@@ -103,7 +111,7 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 
 		this.tag(RisusTags.Enchantments.SOUL_SCYTHE_ALLOWED_ENCHANTS).add(
 			Enchantments.SHARPNESS,
-			Execrations.XENOPHOBIA,
+			Execrations.VELOCITY,
 			Enchantments.LOOTING,
 			Enchantments.MENDING,
 			Execrations.DREAM_EATER,
@@ -120,7 +128,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.SHARPNESS,
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.LOOTING,
 			Enchantments.SMITE,
 			Enchantments.MENDING,
@@ -140,7 +150,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.SHARPNESS,
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.LOOTING,
 			Enchantments.SMITE,
 			Enchantments.MENDING,
@@ -159,7 +171,9 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.XENOPHOBIA,
 			Enchantments.BANE_OF_ARTHROPODS,
 			Enchantments.SMITE,
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.VELOCITY,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Enchantments.MENDING,
 			Execrations.DREAM_EATER,
 			Enchantments.UNBREAKING,
@@ -210,8 +224,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(RisusTags.Enchantments.EXECRATIONS).add(
-			Execrations.HUNTERS_EXULTATION,
-			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.VELOCITY,
+			Execrations.CORPOREALITY,
 			Execrations.ALGID_RESISTOR,
 			Execrations.ATHEISM,
 			Execrations.DREAM_EATER,
@@ -233,6 +247,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Execrations.PRESERVATION,
 			Execrations.VIGOR,
 			Execrations.XENOPHOBIA,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
 			Execrations.DEFIANCE,
 			Execrations.ERUPTION,
 			Execrations.SOAR,
@@ -247,12 +263,14 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 		);
 
 		this.tag(EnchantmentTags.DAMAGE_EXCLUSIVE).add(
-			Execrations.HUNTERS_EXULTATION,
+			Execrations.HEAVENFALL,
+			Execrations.SMOTHERING,
+			Execrations.VELOCITY,
 			Execrations.XENOPHOBIA
 		);
 
 		this.tag(EnchantmentTags.ARMOR_EXCLUSIVE).add(
-			Execrations.ELEMENTAL_DEVIATION,
+			Execrations.CORPOREALITY,
 			Execrations.ALGID_RESISTOR,
 			Execrations.ATHEISM,
 			Execrations.VIGOR

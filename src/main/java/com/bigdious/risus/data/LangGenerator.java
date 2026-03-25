@@ -548,7 +548,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("entity.minecraft.villager.risus.ascetic", "Ascetic");
 
 		this.addEnchantment("hunters_exultation", "Hunter's Exultation", "Combines the effects of Smite, Bane of Arthropods and Impaling, but decreases damage against non-affected creatures.");
-		this.addEnchantment("elemental_deviation", "Elemental Deviation", "Combines the effects of Fire, Blast and Projectile Protection, in return - if worn - weakening any Protection enchanted pieces.");
+		this.addEnchantment("corporeality", "Corporeality", "Increases protection against non-magic damage that ignore armor.");
 		this.addEnchantment("atheism", "Atheism", "Increases protection against magical attacks.");
 		this.addEnchantment("algid_resistor", "Algid Resistor", "Increases protection against freezing and lightning strikes.");
 		this.addEnchantment("dream_eater", "Dream Eater", "Consumes the player's experience directly to repair an item, with half the effectiveness of Mending.");
@@ -569,7 +569,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEnchantment("avaricious_ambit", "Avaricious Ambit", "Increases block interaction range and combat range, but decreases attack speed. Harvested drops are pulled to the user.");
 		this.addEnchantment("preservation", "Preservation", "Adds a 50% chance not to use arrows. Extends beyond base arrows. Unaffected arrows can still be picked up.");
 		this.addEnchantment("vigor", "Vigor", "Increases max health with each level.");
-		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against creatures that aren't undead, insectoid or aquatic.");
+		this.addEnchantment("xenophobia", "Xenophobia", "Increases damage against people.");
+		this.addEnchantment("heavenfall", "Heavenfall", "Increases damage against fall damage immune enemies. Additionally sends targets downwards.");
+		this.addEnchantment("smothering", "Smothering", "Increases damage against fire based enemies.");
+		this.addEnchantment("velocity", "Velocity", "Increases attack speed.");
 		this.addEnchantment("defiance", "Defiance", "Increases projectile velocity and damage. Thrown Trident will glow.");
 		this.addEnchantment("eruption", "Eruption", "If the user is on fire when it hits a block, the user will erupt at the location, setting everyone aflame.");
 		this.addEnchantment("soar", "Soaring", "Sends the target up. Applies Slow Falling.");

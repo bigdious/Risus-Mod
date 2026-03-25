@@ -1,0 +1,18 @@
+{
+  "name": "Velocity",
+  "icon": "minecraft:diamond_sword",
+  "category": "risus:execrations",
+  "sortnum": 5,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Sharpness$(), $(4)Velocity$() increases the attacking speed. Maximum level is $(4)V$() and it conflicts with $(5)Sharpness$(), $(5)Smite$(), $(5)Bane of Arthropods$(), $(4)Heavenfall$() and $(4)Xenophobia$(). "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Even though Velocity uses up the space of the damage increasing enchantments, it can still result in a higher overall output than using for example Smite on an undead. Since the attack speed increase is flat, the slower a weapon is originally, the larger the relative boost will be. Therefore, it can allow even twice as many attacks when used on the slowest ones."
+    }
+  ]
+}

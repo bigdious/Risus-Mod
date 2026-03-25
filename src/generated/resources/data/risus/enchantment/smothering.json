@@ -1,7 +1,7 @@
 {
   "anvil_cost": 1,
   "description": {
-    "translate": "enchantment.risus.xenophobia"
+    "translate": "enchantment.risus.smothering"
   },
   "effects": {
     "minecraft:damage": [
@@ -18,13 +18,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#risus:people"
+            "type": "#minecraft:freeze_hurts_extra_types"
           }
         }
       }
     ]
   },
-  "exclusive_set": "#minecraft:exclusive_set/damage",
   "max_cost": {
     "base": 21,
     "per_level_above_first": 11
@@ -34,10 +33,9 @@
     "base": 1,
     "per_level_above_first": 11
   },
-  "primary_items": "#minecraft:enchantable/sword",
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/weapon",
+  "supported_items": "#minecraft:enchantable/trident",
   "weight": 10
 }

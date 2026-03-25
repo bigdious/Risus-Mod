@@ -340,11 +340,11 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 	}
 
 	public static final Map<ResourceKey<Enchantment>, ResourceKey<Enchantment>> ENCHANT_TO_EXEC = Map.ofEntries(
-		Map.entry(Enchantments.SMITE, Execrations.HUNTERS_EXULTATION)
-		,Map.entry(Enchantments.IMPALING, Execrations.HUNTERS_EXULTATION)
-		,Map.entry(Enchantments.BANE_OF_ARTHROPODS, Execrations.HUNTERS_EXULTATION)
+		Map.entry(Enchantments.SMITE, Execrations.XENOPHOBIA)
+		,Map.entry(Enchantments.IMPALING, Execrations.SMOTHERING)
+		,Map.entry(Enchantments.BANE_OF_ARTHROPODS, Execrations.HEAVENFALL)
 		,Map.entry(Enchantments.FIRE_PROTECTION, Execrations.ALGID_RESISTOR)
-		,Map.entry(Enchantments.PROJECTILE_PROTECTION, Execrations.VIGOR)
+		,Map.entry(Enchantments.PROJECTILE_PROTECTION, Execrations.CORPOREALITY)
 		,Map.entry(Enchantments.BLAST_PROTECTION, Execrations.ATHEISM)
 		,Map.entry(Enchantments.MENDING, Execrations.DREAM_EATER)
 		,Map.entry(Enchantments.PUNCH, Execrations.PULL)
@@ -363,8 +363,8 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		,Map.entry(Enchantments.DEPTH_STRIDER, Execrations.PYROMANIAC)
 		,Map.entry(Enchantments.SILK_TOUCH, Execrations.AVARICIOUS_AMBIT)
 		,Map.entry(Enchantments.INFINITY, Execrations.PRESERVATION)
-		,Map.entry(Enchantments.PROTECTION, Execrations.ELEMENTAL_DEVIATION)
-		,Map.entry(Enchantments.SHARPNESS, Execrations.XENOPHOBIA)
+		,Map.entry(Enchantments.PROTECTION, Execrations.VIGOR)
+		,Map.entry(Enchantments.SHARPNESS, Execrations.VELOCITY)
 		,Map.entry(Enchantments.LOYALTY, Execrations.DEFIANCE)
 		,Map.entry(Enchantments.RIPTIDE, Execrations.ERUPTION)
 		,Map.entry(Enchantments.KNOCKBACK, Execrations.SOAR)

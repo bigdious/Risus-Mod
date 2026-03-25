@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -125,6 +126,7 @@ public class RisusTags {
 		public static final TagKey<EntityType<?>> MEDIUM_MARITIME_SNARE_POOL = create("medium_maritime_snare_pool");
 		public static final TagKey<EntityType<?>> LARGE_MARITIME_SNARE_POOL = create("large_maritime_snare_pool");
 		public static final TagKey<EntityType<?>> TRIDENT_LIKE_PROJECTILES = create("trident_like_projectiles");
+		public static final TagKey<EntityType<?>> PEOPLE = create("people");
 
 		private static TagKey<EntityType<?>> create(String name) {
 			return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));
@@ -159,6 +161,13 @@ public class RisusTags {
 
 		private static TagKey<BannerPattern> create(String name) {
 			return TagKey.create(Registries.BANNER_PATTERN, Risus.prefix(name));
+		}
+	}
+
+	public static class DamageTypes {
+		public static final TagKey<DamageType> ARMOR_PIERCING = create("armor_piercing");
+		private static TagKey<DamageType> create(String name) {
+			return TagKey.create(Registries.DAMAGE_TYPE, Risus.prefix(name));
 		}
 	}
 

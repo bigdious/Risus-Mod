@@ -1,7 +1,7 @@
 {
   "anvil_cost": 2,
   "description": {
-    "translate": "enchantment.risus.algid_resistor"
+    "translate": "enchantment.risus.corporeality"
   },
   "effects": {
     "minecraft:damage_protection": [
@@ -23,11 +23,7 @@
                 "tags": [
                   {
                     "expected": true,
-                    "id": "minecraft:is_lightning"
-                  },
-                  {
-                    "expected": true,
-                    "id": "minecraft:is_freezing"
+                    "id": "risus:armor_piercing"
                   }
                 ]
               }

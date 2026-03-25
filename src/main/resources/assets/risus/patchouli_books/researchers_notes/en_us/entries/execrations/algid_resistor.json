@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Altered from $(5)Fire Protection$(), $(4)Algid Resistor$() protects against freezing and lightning damage. Maximum level is $(4)IV$() and it conflicts with $(5)Protection$(), $(5)Fire Protection$(), $(5)Blast Protection$(), $(5)Projectile Protection$(), $(4)Elemental Deviation$(), $(4)Atheism$() and $(4)Vigor$()."
+      "text": "Altered from $(5)Fire Protection$(), $(4)Algid Resistor$() protects against freezing and lightning damage. Maximum level is $(4)IV$() and it conflicts with $(5)Protection$(), $(5)Fire Protection$(), $(5)Blast Protection$(), $(5)Projectile Protection$(), $(4)Corporeality$(), $(4)Atheism$() and $(4)Vigor$()."
     },
     {
       "type": "patchouli:text",

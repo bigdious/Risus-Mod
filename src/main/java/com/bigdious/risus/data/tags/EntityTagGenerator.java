@@ -134,6 +134,14 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 			)
 		;
 
+		tag(RisusTags.Entities.PEOPLE)
+			.addTag(EntityTypeTags.ILLAGER)
+			.add(
+				EntityType.VILLAGER,
+				EntityType.PLAYER
+			)
+		;
+
 
 	}
 }

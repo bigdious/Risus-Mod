@@ -2,10 +2,12 @@ package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusDamageTypes;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.DamageTypeTagsProvider;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,6 +19,7 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	protected void addTags(HolderLookup.Provider provider) {
 		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(
 			RisusDamageTypes.INEXISTENCE,
@@ -61,5 +64,17 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 			RisusDamageTypes.DESTINED_DEATH,
 			RisusDamageTypes.REVENGE
 		);
+
+		this.tag(RisusTags.DamageTypes.ARMOR_PIERCING)
+			.addTag(DamageTypeTags.BYPASSES_ARMOR)
+			.remove(
+				DamageTypes.FALL,
+				DamageTypes.ON_FIRE,
+				DamageTypes.FREEZE,
+				DamageTypes.MAGIC,
+				DamageTypes.INDIRECT_MAGIC,
+				DamageTypes.SONIC_BOOM
+			);
+
 	}
 }

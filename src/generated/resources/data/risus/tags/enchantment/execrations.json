@@ -1,7 +1,7 @@
 {
   "values": [
-    "risus:hunters_exultation",
-    "risus:elemental_deviation",
+    "risus:velocity",
+    "risus:corporeality",
     "risus:algid_resistor",
     "risus:atheism",
     "risus:dream_eater",
@@ -23,6 +23,8 @@
     "risus:preservation",
     "risus:vigor",
     "risus:xenophobia",
+    "risus:heavenfall",
+    "risus:smothering",
     "risus:defiance",
     "risus:eruption",
     "risus:soar",

@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-12T22:05:10.5410775	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2026-03-25T21:05:30.3381736	Tags for minecraft:entity_type mod id risus
 2f4b01121522a65f3e8ebd0601757165181873da data/minecraft/tags/entity_type/arthropod.json
 15d5d6e65cf2c51ca5466c5e955eae74c4157688 data/minecraft/tags/entity_type/fall_damage_immune.json
 5aaaa22307c0351daa5cd2e96f23a03707070cf9 data/risus/tags/entity_type/beloved.json
@@ -10,6 +10,7 @@ e99dd445774fec929fb59b9731170440673f9908 data/risus/tags/entity_type/horn_buffs.
 789a25fe8f770cfd7dfa1458e5055d7257dff8e8 data/risus/tags/entity_type/medium_maritime_snare_pool.json
 36ecdfa2197965bf3609725d22b9b7587817a1b3 data/risus/tags/entity_type/offspring.json
 c6328b4935e4975b2fea1156b6537d67b38dca38 data/risus/tags/entity_type/offsprings_and_beloveds.json
+f3fb71adae613c47cce60bbcc23822f0a6c57347 data/risus/tags/entity_type/people.json
 00e45344a8246a59696ee296a43612ae52e9a6f7 data/risus/tags/entity_type/sensitive_to_hunters.json
 55ba4e50b806aacef9fd467476191218dec02084 data/risus/tags/entity_type/small_maritime_snare_pool.json
 9b47585d99573786d752992d0578918c1a1dac9a data/risus/tags/entity_type/trident_like_projectiles.json

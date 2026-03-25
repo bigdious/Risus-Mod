@@ -38,8 +38,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Execrations {
-	public static final ResourceKey<Enchantment> HUNTERS_EXULTATION = registerKey("hunters_exultation");
-	public static final ResourceKey<Enchantment> ELEMENTAL_DEVIATION = registerKey("elemental_deviation");
+	public static final ResourceKey<Enchantment> CORPOREALITY = registerKey("corporeality");
 	public static final ResourceKey<Enchantment> ATHEISM = registerKey("atheism");
 	public static final ResourceKey<Enchantment> ALGID_RESISTOR = registerKey("algid_resistor");
 	public static final ResourceKey<Enchantment> DREAM_EATER = registerKey("dream_eater");
@@ -61,6 +60,9 @@ public class Execrations {
 	public static final ResourceKey<Enchantment> PRESERVATION = registerKey("preservation");
 	public static final ResourceKey<Enchantment> VIGOR = registerKey("vigor");
 	public static final ResourceKey<Enchantment> XENOPHOBIA = registerKey("xenophobia");
+	public static final ResourceKey<Enchantment> VELOCITY = registerKey("velocity");
+	public static final ResourceKey<Enchantment> SMOTHERING = registerKey("smothering");
+	public static final ResourceKey<Enchantment> HEAVENFALL = registerKey("heavenfall");
 	public static final ResourceKey<Enchantment> DEFIANCE = registerKey("defiance");
 	public static final ResourceKey<Enchantment> ERUPTION = registerKey("eruption");
 	public static final ResourceKey<Enchantment> SOAR = registerKey("soar");
@@ -77,48 +79,7 @@ public class Execrations {
 		HolderGetter<Item> items = context.lookup(Registries.ITEM);
 		HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
 
-		register(context, HUNTERS_EXULTATION, new Enchantment.Builder(Enchantment.definition(
-				items.getOrThrow(RisusTags.Items.SWORD_AND_TRIDENT_ENCHANTABLE),
-				items.getOrThrow(RisusTags.Items.SWORD_AND_TRIDENT_ENCHANTABLE),
-				1,
-				5,
-				Enchantment.dynamicCost(5, 8),
-				Enchantment.dynamicCost(25, 8),
-				2,
-				EquipmentSlotGroup.MAINHAND
-			))
-				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
-				.withEffect(
-					EnchantmentEffectComponents.DAMAGE,
-					new AddValue(LevelBasedValue.perLevel(3F)),
-					LootItemEntityPropertyCondition.hasProperties(
-						LootContext.EntityTarget.THIS,
-						EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
-					))
-				.withEffect(
-					EnchantmentEffectComponents.DAMAGE,
-					new AddValue(LevelBasedValue.perLevel(-1, -0.5F))
-				)
-				.withEffect(
-					EnchantmentEffectComponents.POST_ATTACK,
-					EnchantmentTarget.ATTACKER,
-					EnchantmentTarget.VICTIM,
-					new ApplyMobEffect(
-						HolderSet.direct(MobEffects.MOVEMENT_SLOWDOWN),
-						LevelBasedValue.constant(1.5F),
-						LevelBasedValue.perLevel(1.5F, 0.5F),
-						LevelBasedValue.constant(3.0F),
-						LevelBasedValue.constant(3.0F)
-					),
-					LootItemEntityPropertyCondition.hasProperties(
-							LootContext.EntityTarget.THIS,
-							EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_BANE_OF_ARTHROPODS))
-						)
-						.and(DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true)))
-				)
-		);
-
-		register(context, ELEMENTAL_DEVIATION, new Enchantment.Builder(Enchantment.definition(
+		register(context, CORPOREALITY, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
 				5,
 				4,
@@ -134,38 +95,8 @@ public class Execrations {
 					AllOfCondition.allOf(
 						DamageSourceCondition.hasDamageSource(
 							DamageSourcePredicate.Builder.damageType()
-								.tag(TagPredicate.is(DamageTypeTags.IS_FIRE))
-								.tag(TagPredicate.is(DamageTypeTags.IS_EXPLOSION))
-								.tag(TagPredicate.is(DamageTypeTags.IS_PROJECTILE))
-								.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
+								.tag(TagPredicate.is(RisusTags.DamageTypes.ARMOR_PIERCING))
 						)
-					)
-				)
-				.withEffect(
-				EnchantmentEffectComponents.ATTRIBUTES,
-				new EnchantmentAttributeEffect(
-					ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.overload"),
-					Attributes.ARMOR,
-					LevelBasedValue.perLevel(-0.5F),
-					AttributeModifier.Operation.ADD_VALUE
-				)
-				)
-				.withEffect(
-					EnchantmentEffectComponents.ATTRIBUTES,
-					new EnchantmentAttributeEffect(
-						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.elemental_deviation"),
-						Attributes.BURNING_TIME,
-						LevelBasedValue.perLevel(-0.15F),
-						AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-					)
-				)
-				.withEffect(
-					EnchantmentEffectComponents.ATTRIBUTES,
-					new EnchantmentAttributeEffect(
-						ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.elemental_deviation"),
-						Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,
-						LevelBasedValue.perLevel(0.15F),
-						AttributeModifier.Operation.ADD_VALUE
 					)
 				)
 		);
@@ -187,7 +118,6 @@ public class Execrations {
 						DamageSourceCondition.hasDamageSource(
 							DamageSourcePredicate.Builder.damageType()
 								.tag(TagPredicate.is(DamageTypeTags.WITCH_RESISTANT_TO))
-								.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
 						)
 					)
 				)
@@ -212,7 +142,6 @@ public class Execrations {
 							DamageSourcePredicate.Builder.damageType()
 								.tag(TagPredicate.is(DamageTypeTags.IS_LIGHTNING))
 								.tag(TagPredicate.is(DamageTypeTags.IS_FREEZING))
-								.tag(TagPredicate.isNot(DamageTypeTags.BYPASSES_INVULNERABILITY))
 						)
 					)
 				)
@@ -887,7 +816,67 @@ public class Execrations {
 		);
 
 		register(context, XENOPHOBIA, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+				10,
+				5,
+				Enchantment.dynamicCost(1, 11),
+				Enchantment.dynamicCost(21, 11),
+				1,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
+				.withEffect(
+				EnchantmentEffectComponents.DAMAGE,
+				new AddValue(LevelBasedValue.perLevel(2.5F)),
+				LootItemEntityPropertyCondition.hasProperties(
+					LootContext.EntityTarget.THIS,
+					EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.PEOPLE))
+				))
+		);
+
+		register(context, VELOCITY, new Enchantment.Builder(Enchantment.definition(
 				items.getOrThrow(ItemTags.SHARP_WEAPON_ENCHANTABLE),
+				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+				10,
+				5,
+				Enchantment.dynamicCost(1, 11),
+				Enchantment.dynamicCost(21, 11),
+				1,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
+			.withEffect(
+				EnchantmentEffectComponents.ATTRIBUTES,
+				new EnchantmentAttributeEffect(
+					ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.velocity"),
+					Attributes.ATTACK_SPEED,
+					LevelBasedValue.perLevel(0.1F),
+					AttributeModifier.Operation.ADD_VALUE
+				)
+			)
+		);
+
+		register(context, SMOTHERING, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
+				10,
+				5,
+				Enchantment.dynamicCost(1, 11),
+				Enchantment.dynamicCost(21, 11),
+				1,
+				EquipmentSlotGroup.MAINHAND
+			))
+				.withEffect(
+					EnchantmentEffectComponents.DAMAGE,
+					new AddValue(LevelBasedValue.perLevel(2.5F)),
+					LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.THIS,
+						EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES))
+					))
+		);
+
+		register(context, HEAVENFALL, new Enchantment.Builder(Enchantment.definition(
+				items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
 				items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
 				10,
 				5,
@@ -899,13 +888,18 @@ public class Execrations {
 				.exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
 				.withEffect(
 					EnchantmentEffectComponents.DAMAGE,
-					new AddValue(LevelBasedValue.perLevel(2F)),
-					InvertedLootItemCondition.invert(
-						LootItemEntityPropertyCondition.hasProperties(
-							LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(RisusTags.Entities.SENSITIVE_TO_HUNTERS))
-						)
-					)
-				)
+					new AddValue(LevelBasedValue.perLevel(2.5F)),
+					LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.THIS,
+						EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(EntityTypeTags.FALL_DAMAGE_IMMUNE))
+					))
+			.withEffect(
+				EnchantmentEffectComponents.POST_ATTACK,
+				EnchantmentTarget.ATTACKER,
+				EnchantmentTarget.VICTIM,
+				new DownfallEffect(LevelBasedValue.perLevel(1.0F)),
+				DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().isDirect(true))
+			)
 		);
 
 		register(context, DEFIANCE, new Enchantment.Builder(Enchantment.definition(

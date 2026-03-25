@@ -1,0 +1,18 @@
+{
+  "name": "Smothering",
+  "icon": "minecraft:trident",
+  "category": "risus:execrations",
+  "sortnum": 6,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Impaling$(), $(4)Smothering$() greatly increases damage against fire based enemies. Maximum level is $(4)V$() and it conflicts with $(5)Impaling$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "Its usefulness matches that of Impaling, since there are only so few enemies to use it on. If a Trident with the Eruption execration is used for Nether exploration, might as well have Smothering on it too."
+    }
+  ]
+}

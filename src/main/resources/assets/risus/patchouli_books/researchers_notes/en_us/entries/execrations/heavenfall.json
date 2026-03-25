@@ -1,0 +1,18 @@
+{
+  "name": "Heavenfall",
+  "icon": "minecraft:diamond_sword",
+  "category": "risus:execrations",
+  "sortnum": 5,
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Altered from $(5)Bane of Arthropods$(), $(4)Heavenfall$() greatly increases damage against enemies that are immune to fall damage. As an additional effect, it sends all targets downwards. Maximum level is $(4)V$() and it conflicts with $(5)Sharpness$(), $(5)Smite$(), $(5)Bane of Arthropods$(), $(4)Velocity$() and $(4)Xenophobia$(). "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "It's a surprisingly flexible Execration, as it not only works against many flying enemies, but also most golems. It also has some overlap with other damage focused enchantments and execrations, since it can affect flying insects or undead. The secondary effect of sending the target downwards can situationally be either a benefit or a downside."
+    }
+  ]
+}
