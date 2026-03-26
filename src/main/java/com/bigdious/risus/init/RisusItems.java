@@ -54,6 +54,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> WRETCHED_CHARM = register("wretched_charm", WretchedCharmItem::new, () -> new Item.Properties().fireResistant().durability(100).attributes(WretchedCharmItem.createWretchedCharmAttributes()).rarity(BLOOD));
 	public static final DeferredItem<Item> KILLJOY = register("killjoy", properties -> new KilljoyItem(RisusToolMaterials.BLOODMETAL, properties), () -> new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(RisusToolMaterials.BLOODMETAL, 8, -3F)).rarity(BLOOD));
 	public static final DeferredItem<Item> COUNTERWEIGHT = register("counterweight", CounterweightItem::new, () -> new Item.Properties().fireResistant().attributes(CounterweightItem.createCounterweightAttributes()).rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> BORN_TO_BURN = register("born_to_burn", BurnItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).stacksTo(1));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));

@@ -1032,6 +1032,16 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.BORN_TO_BURN.get(), 1)
+			.pattern("BCB")
+			.pattern("CMC")
+			.pattern("BCB")
+			.define('B', Ingredient.of(Items.BLAZE_POWDER))
+			.define('C', Ingredient.of(Items.CAMPFIRE))
+			.define('M', Ingredient.of(RisusItems.MEMORY_CORE.get()))
+			.unlockedBy("has_item", has(RisusItems.MEMORY_CORE.get()))
+			.save(consumer);
+
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, RisusItems.ROSE_PETAL.get(), 4)
 			.requires(RisusBlocks.REGEN_ROSE.get())

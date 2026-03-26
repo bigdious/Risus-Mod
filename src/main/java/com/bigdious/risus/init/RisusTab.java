@@ -313,6 +313,7 @@ public class RisusTab {
 				output.accept(RisusItems.ROSE_PETAL.get());
 				output.accept(RisusItems.PURIFYING_PASTE.get());
 				output.accept(RisusItems.ROSE_CROWN.get());
+				output.accept(RisusItems.BORN_TO_BURN.get());
 				output.accept(RisusItems.LUCKY_CHARM.get());
 				output.accept(RisusItems.WRETCHED_CHARM.get());
 				output.accept(RisusItems.GUILTY_APPLE.get());

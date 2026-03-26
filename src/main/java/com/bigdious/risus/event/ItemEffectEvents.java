@@ -233,7 +233,7 @@ public class ItemEffectEvents {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
 				//this is just barely stupid enough to work
-				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING) || CuriosCompat.curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
+				if (stack.is(RisusItems.TOTEM_OF_UNYIELDING) || Risus.curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
 					dyingEntity.setHealth(1.0F);
 					dyingEntity.removeAllEffects();
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 4, false, false));
@@ -241,7 +241,7 @@ public class ItemEffectEvents {
 					dyingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1, false, false));
 					dyingEntity.addEffect(new MobEffectInstance(RisusMobEffects.DESTINED_DEATH, 200, 0, false, false, true));
 					level.playSound(null, dyingEntity.blockPosition(), SoundEvents.TOTEM_USE, SoundSource.NEUTRAL);
-					if (CuriosCompat.curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
+					if (Risus.curiosSearch(dyingEntity, RisusItems.TOTEM_OF_UNYIELDING.get())) {
 						var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
 						var s = handler.findCurios(RisusItems.TOTEM_OF_UNYIELDING.get());
 						s.get(0).stack().shrink(1);
@@ -263,11 +263,11 @@ public class ItemEffectEvents {
 		if (!level.isClientSide()) {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
-				if ((stack.is(RisusItems.LUCKY_CHARM) || CuriosCompat.curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) && !event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
+				if ((stack.is(RisusItems.LUCKY_CHARM) || Risus.curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) && !event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
 					if (level.random.nextInt(20 - (dyingEntity.getAttribute(Attributes.LUCK).getValue() > 18 ? 19 : (int) dyingEntity.getAttribute(Attributes.LUCK).getValue())) < 2) {
 						dyingEntity.setHealth(1.0F);
 						level.playSound(null, dyingEntity.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
-						if (CuriosCompat.curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) {
+						if (Risus.curiosSearch(dyingEntity, RisusItems.LUCKY_CHARM.get())) {
 							var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
 							var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
 							s.get(0).stack().hurtAndBreak(1, dyingEntity, s.get(0).stack().getEquipmentSlot());
@@ -287,13 +287,13 @@ public class ItemEffectEvents {
 		if (entity instanceof Player attacker && entity2 instanceof LivingEntity victim) {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = attacker.getItemInHand(interactionhand);
-				if ((stack.is(RisusItems.LUCKY_CHARM) || CuriosCompat.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null) {
+				if ((stack.is(RisusItems.LUCKY_CHARM) || Risus.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null) {
 					switch (level.random.nextInt(20 - (attacker.getAttribute(Attributes.LUCK).getValue() > 18 ? 19 : (int) attacker.getAttribute(Attributes.LUCK).getValue()))) {
 						case 1 -> {
 							if (attacker.getHealth() < attacker.getMaxHealth()) {
 								attacker.heal(1);
 								level.playSound(null, attacker.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
-								if (CuriosCompat.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
+								if (Risus.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
 									var handler = attacker.getCapability(CuriosCapability.INVENTORY);
 									var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
 									s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());
@@ -304,7 +304,7 @@ public class ItemEffectEvents {
 							if (!victim.isDeadOrDying()) {
 								event.setAmount(event.getAmount()*2);
 								level.playSound(null, attacker.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
-								if (CuriosCompat.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
+								if (Risus.curiosSearch(attacker, RisusItems.LUCKY_CHARM.get())) {
 									var handler = attacker.getCapability(CuriosCapability.INVENTORY);
 									var s = handler.findCurios(RisusItems.LUCKY_CHARM.get());
 									s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());
@@ -327,10 +327,10 @@ public class ItemEffectEvents {
 		if (!level.isClientSide()) {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = dyingEntity.getItemInHand(interactionhand);
-				if ((stack.is(RisusItems.WRETCHED_CHARM) || CuriosCompat.curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
+				if ((stack.is(RisusItems.WRETCHED_CHARM) || Risus.curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) && dyingEntity.getAttributes().getInstance(Attributes.LUCK) != null) {
 					if (level.random.nextInt(20 + (dyingEntity.getAttribute(Attributes.LUCK).getValue() < -18 ? -19 : (int) dyingEntity.getAttribute(Attributes.LUCK).getValue())) < 2) {
 						level.playSound(null, dyingEntity.blockPosition(), RisusSoundEvents.FORTUNE_TRIGGERED.get(), SoundSource.PLAYERS);
-						if (CuriosCompat.curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) {
+						if (Risus.curiosSearch(dyingEntity, RisusItems.WRETCHED_CHARM.get())) {
 							var handler = dyingEntity.getCapability(CuriosCapability.INVENTORY);
 							var s = handler.findCurios(RisusItems.WRETCHED_CHARM.get());
 							s.get(0).stack().hurtAndBreak(1, dyingEntity, s.get(0).stack().getEquipmentSlot());
@@ -350,7 +350,7 @@ public class ItemEffectEvents {
 		if (entity instanceof Player attacker && entity2 instanceof LivingEntity victim) {
 			for (InteractionHand interactionhand : InteractionHand.values()) {
 				ItemStack stack = attacker.getItemInHand(interactionhand);
-				if ((stack.is(RisusItems.WRETCHED_CHARM) || CuriosCompat.curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null && !victim.isDeadOrDying()) {
+				if ((stack.is(RisusItems.WRETCHED_CHARM) || Risus.curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) && attacker.getAttributes().getInstance(Attributes.LUCK) != null && !victim.isDeadOrDying()) {
 					boolean activated = false;
 					switch (level.random.nextInt(100 + (attacker.getAttribute(Attributes.LUCK).getValue() > -18 ? 5 * (int) attacker.getAttribute(Attributes.LUCK).getValue() : -93))) {
 						case 1 -> {
@@ -391,7 +391,7 @@ public class ItemEffectEvents {
 						}
 					}
 					if (activated) {
-						if (CuriosCompat.curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) {
+						if (Risus.curiosSearch(attacker, RisusItems.WRETCHED_CHARM.get())) {
 							var handler = attacker.getCapability(CuriosCapability.INVENTORY);
 							var s = handler.findCurios(RisusItems.WRETCHED_CHARM.get());
 							s.get(0).stack().hurtAndBreak(1, attacker, s.get(0).stack().getEquipmentSlot());

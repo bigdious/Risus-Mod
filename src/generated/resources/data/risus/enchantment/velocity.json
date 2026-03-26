@@ -8,8 +8,8 @@
       {
         "amount": {
           "type": "minecraft:linear",
-          "base": 0.1,
-          "per_level_above_first": 0.1
+          "base": 0.12,
+          "per_level_above_first": 0.12
         },
         "attribute": "minecraft:generic.attack_speed",
         "id": "risus:execration.velocity",

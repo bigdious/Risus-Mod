@@ -130,7 +130,56 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 
 		tag(EntityTypeTags.FALL_DAMAGE_IMMUNE)
 			.add(
-				RisusEntities.HEX.get()
+				RisusEntities.HEX.get(),
+				RisusEntities.ANGEL.get(),
+				RisusEntities.QUESTION_MARK.get()
+			)
+		;
+
+		tag(EntityTypeTags.IMMUNE_TO_INFESTED)
+			.add(
+				RisusEntities.BABY_SPIDER.get(),
+				RisusEntities.WEAVER.get(),
+				RisusEntities.HEX.get(),
+				RisusEntities.ANGEL.get()
+			)
+		;
+
+		tag(EntityTypeTags.IMMUNE_TO_OOZING)
+			.add(
+				RisusEntities.WEAVER.get(),
+				RisusEntities.HEX.get(),
+				RisusEntities.ANGEL.get()
+			)
+		;
+
+		tag(EntityTypeTags.IMPACT_PROJECTILES)
+			.add(
+				RisusEntities.THROWN_AXE.get()
+			)
+		;
+
+		tag(EntityTypeTags.REDIRECTABLE_PROJECTILE)
+			.add(
+				RisusEntities.EGG_SAC.get()
+			)
+		;
+
+		tag(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH)
+			.add(
+				RisusEntities.QUESTION_MARK.get()
+			)
+		;
+
+		tag(EntityTypeTags.CAN_BREATHE_UNDER_WATER)
+			.add(
+				RisusEntities.WEAVER.get()
+			)
+		;
+
+		tag(EntityTypeTags.FROG_FOOD)
+			.add(
+				RisusEntities.BABY_SPIDER.get()
 			)
 		;
 

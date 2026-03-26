@@ -1,6 +1,13 @@
-// 1.21.1	2026-03-25T21:05:30.3381736	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2026-03-26T23:18:08.2947823	Tags for minecraft:entity_type mod id risus
 2f4b01121522a65f3e8ebd0601757165181873da data/minecraft/tags/entity_type/arthropod.json
-15d5d6e65cf2c51ca5466c5e955eae74c4157688 data/minecraft/tags/entity_type/fall_damage_immune.json
+a8bd55836f6d3162adf373734967dfa95c2ea4d5 data/minecraft/tags/entity_type/can_breathe_under_water.json
+b4d32ec6e70edd041b17b879bd92cd93b581b562 data/minecraft/tags/entity_type/fall_damage_immune.json
+6299338c9d1d5c8ff7c552b3c15b17f9c82cde89 data/minecraft/tags/entity_type/frog_food.json
+0aabe91c491a8083165941173c6a7307b1ffe3b6 data/minecraft/tags/entity_type/immune_to_infested.json
+c0d2a6df1c5550584df1d562864fe1d4c98d3f98 data/minecraft/tags/entity_type/immune_to_oozing.json
+93b1c71f19980ea3b288d1721317c00e9ba40e2c data/minecraft/tags/entity_type/impact_projectiles.json
+a02a5e1ca4d25f24385f3dc8fd3f4a2208173b58 data/minecraft/tags/entity_type/not_scary_for_pufferfish.json
+7e482fb5f51cda07598d7f0495d78792bf295311 data/minecraft/tags/entity_type/redirectable_projectile.json
 5aaaa22307c0351daa5cd2e96f23a03707070cf9 data/risus/tags/entity_type/beloved.json
 fc145e1830c415c2fb07d264d8915e01a8e67381 data/risus/tags/entity_type/breaks_depth_vases.json
 c8b1538b650862afbfc87c6caef62a5359493f0c data/risus/tags/entity_type/cant_be_stolen_from.json

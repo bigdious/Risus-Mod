@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-18T18:58:56.5963885	Risus Item Models
+// 1.21.1	2026-03-26T19:38:29.2893628	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -44,6 +44,7 @@ db19c48fce75e674e0b9099d0112435abb532455 assets/risus/models/item/bone_pillar.js
 f089da358a73f5eeae65afd2c2b8cd7829d214eb assets/risus/models/item/bone_wall.json
 8fab586c083d40f9f2e85a3cf54c3621fd1cb5b4 assets/risus/models/item/boomstick.json
 78b584169858ce09bdd73113805b54da22047316 assets/risus/models/item/boomstick_base.json
+8d7b6fc8055221a1f1e165dee863dd60903d6c74 assets/risus/models/item/born_to_burn.json
 5897dc1e3af8b157eed59cf39eba230cca4ad829 assets/risus/models/item/brown_mosaic_glass.json
 b3326580c5f5973731dc924df6a3f3ace6a5f029 assets/risus/models/item/brown_mosaic_glass_pane.json
 45952ed5a8debeceda4d84f14696077c746f8100 assets/risus/models/item/brown_mosaic_lamp.json

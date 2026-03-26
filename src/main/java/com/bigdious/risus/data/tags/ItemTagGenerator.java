@@ -260,6 +260,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 
 		this.tag(RisusTags.Items.CURIOS_HEAD).add(
+			RisusItems.BORN_TO_BURN.get(),
 			RisusItems.BLOODWYRM_HEAD.get()
 		);
 

@@ -20,6 +20,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
@@ -38,6 +40,7 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.theillusivec4.curios.api.CuriosCapability;
 
 import java.util.Locale;
 
@@ -163,7 +166,16 @@ public class Risus {
 		);
 	}
 
-
+//keep this fucker here, likes to cause problems otherwise
+	public static boolean curiosSearch(LivingEntity entity, Item item) {
+		if (ModList.get().isLoaded("curios")) {
+			var handler = entity.getCapability(CuriosCapability.INVENTORY);
+			if (handler == null) return false;
+			var s = handler.findCurios(item);
+			if (s.isEmpty()) return false; else return true;
+		}
+		return false;
+	}
 	public static ResourceLocation prefix(String name) {
 		return ResourceLocation.fromNamespaceAndPath(MODID, name.toLowerCase(Locale.ROOT));
 	}

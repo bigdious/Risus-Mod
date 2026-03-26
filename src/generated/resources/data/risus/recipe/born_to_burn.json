@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "C": {
+      "item": "minecraft:campfire"
+    },
+    "M": {
+      "item": "risus:memory_core"
+    }
+  },
+  "pattern": [
+    "BCB",
+    "CMC",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "risus:born_to_burn"
+  }
+}

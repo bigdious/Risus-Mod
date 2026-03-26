@@ -247,6 +247,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.BLOODWYRM_HEAD_WEAPON, "False Bloodwyrm Spewer");
 		this.addItem(RisusItems.BONDKNOT_BOAT, "Bondknot Boat");
 		this.addItem(RisusItems.BOOMSTICK, "Boomstick");
+		this.addItem(RisusItems.BORN_TO_BURN, "Born To Burn");
 		this.addItem(RisusItems.CINDERGLEE_SCYTHE, "Existential Executioner");
 		this.addItem(RisusItems.CONCENTRATION_CORE, "Concentration Core");
 		this.addItem(RisusItems.COUNTERWEIGHT, "Counterweight");

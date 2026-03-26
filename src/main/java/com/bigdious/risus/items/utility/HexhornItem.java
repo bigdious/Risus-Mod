@@ -51,7 +51,7 @@ public class HexhornItem extends WarhornItem{
 			used = true;
 		}
 		if (warhornContent.potion() != PotionContents.EMPTY && (!RisusConfig.hornsUsePotionCharges || stack.getOrDefault(RisusDataComponents.POTION_CHARGES, 0) > 0)) {
-			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(50D + 10*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
+			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D + 4*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
 			if (player.getTeam() != null && RisusConfig.hornsPrioritizeTeams) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() != player.getTeam()) {

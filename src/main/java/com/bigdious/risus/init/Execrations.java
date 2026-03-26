@@ -851,7 +851,7 @@ public class Execrations {
 				new EnchantmentAttributeEffect(
 					ResourceLocation.fromNamespaceAndPath(Risus.MODID, "execration.velocity"),
 					Attributes.ATTACK_SPEED,
-					LevelBasedValue.perLevel(0.1F),
+					LevelBasedValue.perLevel(0.12F),
 					AttributeModifier.Operation.ADD_VALUE
 				)
 			)

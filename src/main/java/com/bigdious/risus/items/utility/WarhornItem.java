@@ -129,7 +129,7 @@ public class WarhornItem extends InstrumentItem {
 					serverLevel.sendParticles(new MobEffectParticleOption(RisusParticles.MOB_EFFECT_ICON.get(), new MobEffectInstance(mobeffectinstance)), player.getX(), player.getEyeY(), player.getZ(), 1, 0, 0.0, 0.0, 0.2);
 				}
 			}
-			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(20D + 4*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
+			List<Entity> targets = level.getEntities(player, player.getBoundingBox().inflate(10D + 2*stack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER)))));
 			if (player.getTeam() != null && RisusConfig.hornsPrioritizeTeams) {
 				for (Entity maybeBingo : targets) {
 					if (maybeBingo instanceof LivingEntity living && living.getTeam() == player.getTeam()) {

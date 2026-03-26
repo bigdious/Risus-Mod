@@ -1,0 +1,17 @@
+{
+  "name": "Counterweight",
+  "icon": "risus:counterweight",
+  "category": "risus:equipment",
+  "advancement": "risus:angel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "By taking advantage of the remnant levitative energies left in a Shulker Shell and molding them through the use of a Blood Feather, a Counterweight can be made that will decrease the gravity experienced by the user. The effect is similar to that of a Potion of Slow Falling, while also being able to stack with it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:counterweight",
+      "text": "It works exceptionally well when used alongside methods of increasing jump height."
+    }
+  ]
+}

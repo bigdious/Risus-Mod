@@ -83,7 +83,7 @@ public class ToothknockerItem extends SwordItem {
 			float f4 = Mth.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
 			float f5 = 3.0F * ((1F) / 4.0F);
 			f1 *= f5 / f4;
-			f2 *= f5 / f4;
+			f2 *= f5 / f4 / 2.5F;
 			f3 *= f5 / f4;
 			player.push(f1, f2, f3);
 			player.move(MoverType.PISTON, new Vec3(0.0, 1.1999999F, 0.0));

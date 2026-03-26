@@ -54,17 +54,8 @@ public class CuriosCompat {
 			CuriosRendererRegistry.register(RisusItems.LUCKY_CHARM.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.WRETCHED_CHARM.get(), BodyCuriosRenderer::new);
 			CuriosRendererRegistry.register(RisusItems.COUNTERWEIGHT.get(), BodyCuriosRenderer::new);
+			CuriosRendererRegistry.register(RisusItems.BORN_TO_BURN.get(), HeadCuriosRenderer::new);
 
 		});
-	}
-
-	public static boolean curiosSearch(LivingEntity entity, Item item) {
-		if (ModList.get().isLoaded("curios")) {
-			var handler = entity.getCapability(CuriosCapability.INVENTORY);
-			if (handler == null) return false;
-			var s = handler.findCurios(item);
-			if (s.isEmpty()) return false; else return true;
-		}
-		return false;
 	}
 }
