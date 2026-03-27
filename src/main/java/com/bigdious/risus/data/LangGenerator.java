@@ -385,6 +385,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
+		this.add("tooltip.risus.scythe", "Scythe");
+		this.add("tooltip.risus.heavy_axe", "Heavy Axe");
+		this.add("tooltip.risus.knuckleduser", "Knuckleduster");
+		this.add("tooltip.risus.war_sword", "War Sword");
+		this.add("tooltip.risus.flamethrower", "Flamethrower");
 		this.add("tooltip.risus.hand_of_greed", "Uncommonly dropped by Holders.");
 		this.add("tooltip.risus.crystallized_bond", "Found on Family Trees.");
 		this.add("tooltip.risus.researchers_notes", "Carry in hotbar to access item lookup feature.");

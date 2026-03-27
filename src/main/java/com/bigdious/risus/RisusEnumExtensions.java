@@ -2,6 +2,7 @@ package com.bigdious.risus;
 
 import com.bigdious.risus.config.RisusConfig;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.network.chat.Style;
@@ -78,11 +79,33 @@ public class RisusEnumExtensions {
 		if (idx == 0)
 			return true; //two handed. Set to false to only pose the hand holding the item
 		return (IArmPoseTransformer) (model, entity, arm) -> {
-			if (!entity.isUsingItem() && arm == HumanoidArm.RIGHT && RisusConfig.customWeaponAnims) {
-				ModelPart modelpart = model.rightArm;
-				ModelPart modelpart1 = model.leftArm;
-				modelpart.xRot = -Mth.HALF_PI + 0.65F;
-				modelpart1.xRot = -Mth.HALF_PI + 1.1F;
+			if (!entity.isUsingItem() && RisusConfig.customWeaponAnims) {
+				ModelPart right = model.rightArm;
+				ModelPart left = model.leftArm;
+				float armRotation = Mth.lerp(model.attackTime * 2, 0.0F, 1.0F);
+				model.attackTime = 0.0F;
+				if (arm == HumanoidArm.RIGHT) {
+					right.xRot = -1.35F + model.head.xRot * 0.5F - armRotation * 0.15F;
+					right.zRot = 0.45F;
+					right.yRot = -0.40F - armRotation * 0.5F ;
+
+					left.xRot = -0.75F + model.head.xRot * 0.7F;
+					left.zRot = -0.45F - model.head.xRot * 0.1F + armRotation * 0.2F;
+					left.yRot = -0.30F + model.head.xRot * 0.7F - armRotation * 1.25F ;
+
+				} else {
+					left.xRot = -1.65F + model.head.xRot * 0.5F - armRotation * 0.15F;
+					left.zRot = -0.05F;
+					left.yRot = 0.40F + armRotation * 0.5F;
+
+					right.xRot = -0.65F + model.head.xRot * 0.5F - armRotation * 0.4F;
+					right.zRot = 0.25F - model.head.xRot * 0.2F;
+					right.yRot = 0.20F + armRotation * 1.7F;
+				}
+				right.zRot += -1 * (Mth.cos(entity.tickCount * 0.09F) * 0.05F + 0.05F);
+				right.xRot += -1 * Mth.sin(entity.tickCount * 0.067F) * 0.05F;
+				left.zRot += 1 * (Mth.cos(entity.tickCount * 0.09F) * 0.05F + 0.05F);
+				left.xRot += 1 * Mth.sin(entity.tickCount * 0.067F) * 0.05F;
 
 			}
 		};

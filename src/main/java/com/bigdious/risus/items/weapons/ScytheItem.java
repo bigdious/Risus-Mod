@@ -5,15 +5,21 @@ import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.blocks.entity.RitualBlockEntity;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -32,6 +38,7 @@ import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -73,8 +80,7 @@ public class ScytheItem extends SwordItem {
 	}
 
 	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
-		return SwordItem.createAttributes(tier, damage, speed)
-			.withModifierAdded(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Risus.prefix("range_modifier"), 0.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+		return SwordItem.createAttributes(tier, damage, speed);
 	}
 
 	@Override
@@ -85,6 +91,11 @@ public class ScytheItem extends SwordItem {
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
 		return enchantment.is(this.allowedEnchants);
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		tooltipComponents.add(Component.translatable("tooltip.risus.scythe").withStyle(ChatFormatting.GRAY));
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 package com.bigdious.risus.items.weapons;
 
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -9,6 +11,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public class BloodwyrmHeadItem extends Item {
 
@@ -83,6 +87,11 @@ public class BloodwyrmHeadItem extends Item {
 	@Override
 	public boolean canContinueUsing(ItemStack oldStack, ItemStack newStack) {
 		return oldStack.getItem() == newStack.getItem();
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		tooltipComponents.add(Component.translatable("tooltip.risus.flamethrower").withStyle(ChatFormatting.GRAY));
 	}
 
 	@Override

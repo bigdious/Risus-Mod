@@ -10,7 +10,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:born_to_burn",
-      "text": "It is best used alongside effects that require to be on fire, such as the $(l:execrations/pyromaniac)$(0)$(n)Pyromania$() and $(l:execrations/eruption)$(0)$(n)Eruption$() Execrations."
+      "text": "It is best used alongside effects that require to be on fire, such as the $(l:execrations/pyromaniac)$(0)$(n)Pyromania$() and $(l:execrations/eruption)$(0)$(n)Eruption$() Execrations. It is also quite effective at clearing out Powdered Snow if walked into while holding it."
     }
   ]
 }

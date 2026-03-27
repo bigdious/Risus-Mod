@@ -1,12 +1,12 @@
 {
-  "name": "Knuckles",
+  "name": "Knuckledusters",
   "icon": "risus:toothknocker",
   "category": "risus:equipment",
   "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Knuckles are generally weapons that inflict a relatively low amount of damage but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste."
+      "text": "Knuckledusters are weapons that inflict a relatively low amount of damage but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste."
     },
     {
       "type": "patchouli:crafting",

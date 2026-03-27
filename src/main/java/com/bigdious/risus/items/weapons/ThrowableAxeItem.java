@@ -3,7 +3,9 @@ package com.bigdious.risus.items.weapons;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -17,6 +19,8 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public class ThrowableAxeItem extends AxeItem {
 	public ThrowableAxeItem(Tier tier, Properties properties) {
@@ -69,6 +73,11 @@ public class ThrowableAxeItem extends AxeItem {
 	@Override
 	public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
 		return enchantment.is(RisusTags.Enchantments.CRESCENT_DISASTER_ALLOWED_ENCHANTS);
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		tooltipComponents.add(Component.translatable("tooltip.risus.heavy_axe").withStyle(ChatFormatting.GRAY));
 	}
 
 	@Override

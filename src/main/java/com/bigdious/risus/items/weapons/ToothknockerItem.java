@@ -5,10 +5,12 @@ import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
@@ -26,6 +28,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.ItemAbility;
+
+import java.util.List;
 
 public class ToothknockerItem extends SwordItem {
 
@@ -96,6 +100,11 @@ public class ToothknockerItem extends SwordItem {
 			pLevel.playSound(player, player.getOnPos().above(), RisusSoundEvents.TOOTHKNOCKER_DASH.get(), SoundSource.PLAYERS);
 			return InteractionResultHolder.consume(itemstack);
 		}
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+		tooltipComponents.add(Component.translatable("tooltip.risus.knuckleduster").withStyle(ChatFormatting.GRAY));
 	}
 
 	@Override
