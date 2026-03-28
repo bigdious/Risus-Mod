@@ -387,7 +387,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
 		this.add("tooltip.risus.scythe", "Scythe");
 		this.add("tooltip.risus.heavy_axe", "Heavy Axe");
-		this.add("tooltip.risus.knuckleduser", "Knuckleduster");
+		this.add("tooltip.risus.knuckleduster", "Knuckleduster");
 		this.add("tooltip.risus.war_sword", "War Sword");
 		this.add("tooltip.risus.flamethrower", "Flamethrower");
 		this.add("tooltip.risus.hand_of_greed", "Uncommonly dropped by Holders.");
@@ -414,7 +414,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("keybind.spyglass_mode", "Toggle Zoom With Spyglass Ability");
 
 		this.add("tooltip.risus.ability", "Selected Ability:");
-		//don't forget, a space before
+		//don't forget: a space before
 		this.add("tooltip.risus.sinner_robes_helmet.skeleton", " Skeleton Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.creeper", " Creeper Mask");
 		this.add("tooltip.risus.sinner_robes_helmet.wither_skeleton", " Wither Skeleton Mask");

@@ -27,6 +27,7 @@ import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
+import com.bigdious.risus.items.weapons.ToothknockerItem;
 import com.bigdious.risus.network.OpenBookPacket;
 import com.bigdious.risus.network.ScopePacket;
 import com.bigdious.risus.network.SummonGreatnessPacket;
@@ -377,6 +378,7 @@ public class RisusClientEvents {
 
 	private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
 		event.registerItem(ThousandBladeItem.ItemExtensions.INSTANCE, RisusItems.THOUSAND_BLADE.get());
+		event.registerItem(ToothknockerItem.ItemExtensions.INSTANCE, RisusItems.TOOTHKNOCKER.get());
 		event.registerItem(ScytheItem.ItemExtensions.INSTANCE, RisusItems.SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.DEPTH_VASE.asItem());
 		event.registerItem(RisusSpecialItemRenderer.CLIENT_ITEM_EXTENSION, RisusBlocks.WEAVING_MECHANISM.asItem());

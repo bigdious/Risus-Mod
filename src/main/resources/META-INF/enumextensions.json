@@ -47,6 +47,15 @@
     },
     {
       "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "RISUS_TOOTHKNOCKER",
+      "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/bigdious/risus/RisusEnumExtensions",
+        "method": "TOOTHKNOCKER"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
       "name": "RISUS_SCYTHE",
       "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
       "parameters": {

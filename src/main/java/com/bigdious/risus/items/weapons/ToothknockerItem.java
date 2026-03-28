@@ -6,6 +6,7 @@ import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleType;
@@ -27,7 +28,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.common.ItemAbility;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -110,6 +113,16 @@ public class ToothknockerItem extends SwordItem {
 	@Override
 	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
 		return false;
+	}
+
+	public static class ItemExtensions implements IClientItemExtensions {
+
+		public static final ToothknockerItem.ItemExtensions INSTANCE = new ToothknockerItem.ItemExtensions();
+
+		@Override
+		public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+			return HumanoidModel.ArmPose.valueOf("RISUS_TOOTHKNOCKER");
+		}
 	}
 }
 
