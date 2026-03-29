@@ -3,8 +3,10 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.particle.AlterationParticleOptions;
 import com.bigdious.risus.client.particle.MobEffectParticleOption;
+import com.bigdious.risus.client.particle.data.StabParticleData;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -64,6 +66,17 @@ public class RisusParticles {
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DESTINED_DEATH_PARTICLE = PARTICLES.register("destined_death_particle", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RISING_SMILE = PARTICLES.register("rising_smile", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SLEEPY = PARTICLES.register("sleepy", () -> new SimpleParticleType(true));
+	public static final DeferredHolder<ParticleType<?>, ParticleType<StabParticleData>> STAB = PARTICLES.register("stab", () -> new ParticleType<>(true) {
+		@Override
+		public MapCodec<StabParticleData> codec() {
+			return StabParticleData.CODEC;
+		}
+
+		@Override
+		public StreamCodec<? super RegistryFriendlyByteBuf, StabParticleData> streamCodec() {
+			return StabParticleData.STREAM_CODEC;
+		}
+	});
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOOD_FEATHER = PARTICLES.register("blood_feather", () -> new SimpleParticleType(true));
 	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STARS = PARTICLES.register("stars", () -> new SimpleParticleType(true));
 }

@@ -58,6 +58,7 @@ public class ParticleGenerator extends ParticleDescriptionProvider {
 		this.sprite(RisusParticles.LANDING_CREAM.get(), Risus.prefix("cream_land"));
 		this.sprite(RisusParticles.RISING_SMILE.get(), Risus.prefix("rising_smile"));
 		this.sprite(RisusParticles.SLEEPY.get(), Risus.prefix("sleepy"));
+		this.spriteSet(RisusParticles.STAB.get(), Risus.prefix("stab"), 6, false);
 		this.sprite(RisusParticles.BLOOD_FEATHER.get(), Risus.prefix("blood_feather"));
 		this.sprite(RisusParticles.STARS.get(), Risus.prefix("stars"));
 		this.spriteSet(RisusParticles.RISUS_SOUL_PARTICLE.get(), Risus.prefix("risus_soul"), 11, false);

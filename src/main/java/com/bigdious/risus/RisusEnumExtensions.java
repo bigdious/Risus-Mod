@@ -123,7 +123,7 @@ public class RisusEnumExtensions {
 				ModelPart right = model.rightArm;
 				ModelPart left = model.leftArm;
 				float armRotationWithoutReturn = Mth.lerp(model.attackTime * 4, 0.0F, 1.0F);
-				float armRotation = armRotationWithoutReturn + (armRotationWithoutReturn < 2 ? 0 : 4 - 2*armRotationWithoutReturn);
+				float armRotation = 2 - Mth.abs(armRotationWithoutReturn - 2);
 				model.attackTime = 0.0F;
 				if (arm == HumanoidArm.RIGHT) {
 					right.xRot = -1.35F + model.head.xRot * 0.5F - armRotation * 0.15F;

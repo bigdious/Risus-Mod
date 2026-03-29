@@ -1,14 +1,17 @@
 package com.bigdious.risus.network;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.client.particle.data.StabParticleData;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -42,7 +45,10 @@ public class WingAttackPacket implements CustomPacketPayload {
 				Level level = player.level();
 				if (player.getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get())) {
 					boolean flag = player.getItemBySlot(EquipmentSlot.CHEST).getDamageValue() < player.getItemBySlot(EquipmentSlot.CHEST).getMaxDamage() - 5;
-					if (!player.isFallFlying() && !player.isSwimming() && !player.isVisuallyCrawling() && flag) {
+					if ((!player.isCreative() || player.onGround()) && !player.isFallFlying() && !player.isSwimming() && !player.isVisuallyCrawling() && flag) {
+						float yRot = player.getPreciseBodyRotation(1.0F);
+						boolean hitEntity = false;
+
 						Vec3 lookVec = Vec3.directionFromRotation(0, player.getRotationVector().y);
 						List<Entity> possibleList = level.getEntities(player, player.getBoundingBox().expandTowards(lookVec.x() * 1.5, 0, lookVec.z() * 1.5).inflate(0.5, 0, 0.5));
 						for (Entity attackable : possibleList) {
@@ -54,7 +60,20 @@ public class WingAttackPacket implements CustomPacketPayload {
 									serverLevel.sendParticles(RisusParticles.BLOOD_FEATHER.get(), target.getRandomX(1), target.getEyeY(), target.getRandomZ(1), 1, 0, 0, 0, 0);
 								}
 								player.getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(4, player, EquipmentSlot.CHEST);
+								hitEntity = true;
 							}
+						}
+						if (level instanceof ServerLevel serverLevel && hitEntity) {
+							//multiplication at the end determines range, everything before is just for rotation
+							double d0 = -Mth.sin(yRot * (float) (Math.PI / 180.0)) * 1.5;
+							double d1 = Mth.cos(yRot * (float) (Math.PI / 180.0)) * 1.5;
+							double right0 = -Mth.sin((yRot+90) * (float) (Math.PI / 180.0)) * 0.5;
+							double right1 = Mth.cos((yRot+90) * (float) (Math.PI / 180.0)) * 0.5;
+							double left0 = -Mth.sin((yRot-90) * (float) (Math.PI / 180.0)) * 0.5;
+							double left1 = Mth.cos((yRot-90) * (float) (Math.PI / 180.0)) * 0.5;
+							//we move the particles to the side, then forward
+							serverLevel.sendParticles(new StabParticleData(yRot-115), player.getX()+right0+d0, player.getY(0.40), player.getZ()+right1+d1, 1, 0, 0, 0, 0);
+							serverLevel.sendParticles(new StabParticleData(yRot-65), player.getX()+left0+d0, player.getY(0.40), player.getZ()+left1+d1, 1, 0, 0, 0, 0);
 						}
 
 					}

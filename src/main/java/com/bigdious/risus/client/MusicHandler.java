@@ -113,7 +113,7 @@ public class MusicHandler {
 				RISUS_MUSIC_PLAYING = true;
 				minecraftClient.getSoundManager().play(STRUCTURE_MUSIC);
 				setMusicVolume(minecraftClient, STRUCTURE_MUSIC, 0.01f);
-				addMusicFade(STRUCTURE_MUSIC, 200, true, (m) -> {
+				addMusicFade(STRUCTURE_MUSIC, 1500, true, (m) -> {
 					m.getSoundManager().stop(SoundEvents.MUSIC_CREATIVE.key().location(), SoundSource.MUSIC);
 					m.getSoundManager().stop(BIOME_MUSIC, SoundSource.MUSIC);
 					m.getSoundManager().stop(SoundEvents.MUSIC_CREATIVE.key().location(), SoundSource.MUSIC);
@@ -141,7 +141,7 @@ public class MusicHandler {
 
 	private static void setMusicVolume(Minecraft minecraftClient, SoundInstance soundInstance, float volume) {
 		float playerSetVolume = minecraftClient.options.getSoundSourceVolume(soundInstance.getSource());
-
+		//if this errors, just ignore
 		ChannelAccess.ChannelHandle channelHandle = ((SoundEngineAccessor)((SoundManagerAccessor) minecraftClient.getSoundManager())
 			.risus$getSoundEngine())
 			.risus$getInstanceToChannel()

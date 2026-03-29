@@ -248,6 +248,7 @@ public class RisusClientEvents {
 		event.registerSpriteSet(RisusParticles.BLOOD_BIT.get(), BloodBitParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.RISING_SMILE.get(), RisingSmileParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.SLEEPY.get(), SleepyParticle.Provider::new);
+		event.registerSpriteSet(RisusParticles.STAB.get(), StabParticle.Factory::new);
 		event.registerSpriteSet(RisusParticles.BLOOD_FEATHER.get(), BloodFeatherParticle.Provider::new);
 		event.registerSpriteSet(RisusParticles.STARS.get(), SuspendedTownParticle.HappyVillagerProvider::new);
 		event.registerSpecial(RisusParticles.MOB_EFFECT_ICON.get(),new MobEffectIconParticle.Provider());

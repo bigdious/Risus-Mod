@@ -36,42 +36,9 @@ public record MusicPacketFromServer (ResourceLocation musicRL, boolean play) imp
 		context.enqueueWork(() -> {
 			Player player = Minecraft.getInstance().player;
 			MusicHandler.playStopStructureMusic(player, packet.musicRL(), packet.play()
-//				&& BzClientConfigs.playSempiternalSanctumMusic
 			);
-//			MusicHandler.playStopEssenceEventMusic(player, packet.musicRL(), packet.play()
-////				&& BzClientConfigs.playSempiternalSanctumMusic
-//			);
 		});
 	}
 
-
-//	private static final class Handler implements ClientboundPacketType<MusicPacketFromServer> {
-//
-//		@Override
-//		public void encode(MusicPacketFromServer message, RegistryFriendlyByteBuf buffer) {
-//			buffer.writeResourceLocation(message.musicRL());
-//			buffer.writeBoolean(message.play());
-//		}
-//
-//		@Override
-//		public MusicPacketFromServer decode(RegistryFriendlyByteBuf buffer) {
-//			return new MusicPacketFromServer(buffer.readResourceLocation(), buffer.readBoolean());
-//		}
-//
-//		@Override
-//		public Runnable handle(MusicPacketFromServer message) {
-//			return () -> MusicPacketFromServerHandleBody.handle(message);
-//		}
-//
-//		@Override
-//		public Class<MusicPacketFromServer> type() {
-//			return MusicPacketFromServer.class;
-//		}
-//
-//		@Override
-//		public ResourceLocation id() {
-//			return ID;
-//		}
-//	}
 }
 

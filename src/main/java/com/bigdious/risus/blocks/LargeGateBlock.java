@@ -107,7 +107,7 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 		return state.getValue(FLUIDLOGGED).getFluid().defaultFluidState();
 	}
 
-
+	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
 		if (!level.isClientSide && (player.isCreative() || !player.hasCorrectToolForDrops(state, level, pos))) {
 			RibcageBlock.preventCreativeDropFromBottomPart(level, pos, state, player);
@@ -115,6 +115,7 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 		return super.playerWillDestroy(level, pos, state, player);
 	}
 
+	@Override
 	protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
 		boolean var10000;
 		switch (pathComputationType) {
@@ -136,19 +137,24 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Level level = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
-		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
 		Direction direction = context.getHorizontalDirection();
+		boolean flag = level.hasNeighborSignal(blockpos) || level.hasNeighborSignal(blockpos.above());
 		if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(context)) {
-			boolean flag = level.hasNeighborSignal(blockpos) || level.hasNeighborSignal(blockpos.above());
-		return this.defaultBlockState().setValue(FACING, direction).setValue(OPEN, flag).setValue(POWERED, flag).setValue(HALF, DoubleBlockHalf.LOWER).setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
+
+		return this.defaultBlockState().setValue(FACING, direction)
+			.setValue(OPEN, flag)
+			.setValue(POWERED, flag)
+			.setValue(HALF, DoubleBlockHalf.LOWER)
+			.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(fluidstate.getType()));
 		} else {
 			return null;
 		}
 	}
 
 	@Override
-	public boolean canPlaceLiquid(@org.jetbrains.annotations.Nullable Player player, BlockGetter getter, BlockPos pos, BlockState state, Fluid fluid) {
-		return SimpleMultiloggedBlock.super.canPlaceLiquid(player, getter, pos, state, fluid);
+	protected long getSeed(BlockState state, BlockPos pos) {
+		return Mth.getSeed(pos.getX(), pos.below(state.getValue(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
 	}
 
 	@Override
@@ -159,16 +165,14 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 
 	@Override
 	public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity entity, ItemStack stack) {
-		boolean top = state.getValue(HALF) == DoubleBlockHalf.UPPER;
-		BlockPos blockpos = top ? pos.below() : pos.above();
-		level.setBlock(blockpos, copyFluidLoggingFrom(level, blockpos, this.defaultBlockState().setValue(HALF, top ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER).setValue(FACING, state.getValue(FACING))), 3);
+		level.setBlock(pos.above(), copyFluidLoggingFrom(level, pos.above(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(FACING, state.getValue(FACING))), 3);
 	}
 
 	public static BlockState copyFluidLoggingFrom(LevelReader reader, BlockPos pos, BlockState state) {
 		return state.hasProperty(FLUIDLOGGED) ? state.setValue(FLUIDLOGGED, MultiloggingEnum.getFromFluid(reader.getFluidState(pos).getType())) : state;
 	}
 
-
+	@Override
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 		if (state.getValue(OPEN)) {
 			state = state.setValue(OPEN, false).setValue(REVERSE_OPENING, false);
@@ -187,10 +191,12 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 			return InteractionResult.sidedSuccess(level.isClientSide);
 	}
 
+
 	public boolean isOpen(BlockState state) {
 		return state.getValue(OPEN);
 	}
 
+	@Override
 	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
 		boolean flag = level.hasNeighborSignal(pos) || level.hasNeighborSignal(pos.relative(state.getValue(HALF) == DoubleBlockHalf.LOWER ? Direction.UP : Direction.DOWN));
 		if (!this.defaultBlockState().is(block) && flag != state.getValue(POWERED)) {
@@ -204,20 +210,19 @@ public class LargeGateBlock extends HorizontalDirectionalBlock implements Simple
 
 	}
 
+	@Override
 	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
 		BlockPos blockpos = pos.below();
 		BlockState blockstate = level.getBlockState(blockpos);
 		return state.getValue(HALF) == DoubleBlockHalf.LOWER || blockstate.is(this);
 	}
 
+
 	private void playSound(@Nullable Entity source, Level level, BlockPos pos, boolean isOpening) {
 		level.playSound(source, pos, isOpening ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
 	}
 
-	protected long getSeed(BlockState state, BlockPos pos) {
-		return Mth.getSeed(pos.getX(), pos.below(state.getValue(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), pos.getZ());
-	}
-
+	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(HALF, FACING, OPEN, POWERED, FLUIDLOGGED, REVERSE_OPENING);
 	}
