@@ -5,7 +5,7 @@
       "rules": [
         {
           "input_predicate": {
-            "block": "risus:skin",
+            "block": "risus:full_fossil",
             "predicate_type": "minecraft:random_block_match",
             "probability": 0.1
           },
@@ -13,7 +13,10 @@
             "predicate_type": "minecraft:always_true"
           },
           "output_state": {
-            "Name": "risus:hairy_skin"
+            "Name": "risus:fossil_fragmented",
+            "Properties": {
+              "axis": "y"
+            }
           }
         }
       ]
@@ -23,27 +26,9 @@
       "rules": [
         {
           "input_predicate": {
-            "block": "risus:full_fossil",
+            "block": "risus:fossil",
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.2
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "output_state": {
-            "Name": "minecraft:stone"
-          }
-        }
-      ]
-    },
-    {
-      "processor_type": "minecraft:rule",
-      "rules": [
-        {
-          "input_predicate": {
-            "block": "risus:full_fossil",
-            "predicate_type": "minecraft:random_block_match",
-            "probability": 0.05
+            "probability": 0.1
           },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"

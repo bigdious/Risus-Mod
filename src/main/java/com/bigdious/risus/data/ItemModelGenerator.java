@@ -1,7 +1,6 @@
 package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusEntities;
 import com.bigdious.risus.init.RisusItems;
@@ -223,6 +222,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.FULL_BONE_SLAB.get());
 		toBlock(RisusBlocks.FULL_BONE_BLOCK.get());
 		toBlock(RisusBlocks.BLOODY_SPONGE.get());
+		toBlockModel(RisusBlocks.FOSSIL_FRAGMENTED.get(), Risus.prefix("block/fossil_fragmented_3"));
 		toBlock(RisusBlocks.FOSSIL.get());
 		toBlock(RisusBlocks.FOSSIL_STAIRS.get());
 		toBlock(RisusBlocks.FOSSIL_SLAB.get());

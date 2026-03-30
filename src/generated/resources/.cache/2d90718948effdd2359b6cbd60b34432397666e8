@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-05T18:23:01.4329724	Risus blockstates and models
+// 1.21.1	2026-03-30T22:00:55.0184365	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -91,6 +91,7 @@ f068b60ae1d3b1e4e81f2b8c975876c476cf62e3 assets/risus/blockstates/flattened_scal
 ffd444b30b241e82a31e46cc55945a1f4341d193 assets/risus/blockstates/fleshy_skin.json
 6531c65deeeb84e5e5900487a41e3214ccfdbdf4 assets/risus/blockstates/fleshy_spawner.json
 c13786f6255b7ebcd5ac1a1836e499df73cfe1a1 assets/risus/blockstates/fossil.json
+6741ad5588f4da7f3707bc037e75e6e1cc256851 assets/risus/blockstates/fossil_fragmented.json
 3c9f7a6e2d87ebeaf4fd9096d1482bc26005557d assets/risus/blockstates/fossil_pillar.json
 6408179d85d6ada4daa3fe72a56d8c18de2c6a8d assets/risus/blockstates/fossil_slab.json
 7efac7bdac0428323398dbaa43a7e8120182fe4e assets/risus/blockstates/fossil_stairs.json
@@ -359,6 +360,12 @@ fdb9db1cd9030ce0ceba42a7c9227c24252fd80a assets/risus/models/block/cyan_mosaic_g
 c30bc60b83e62c4b6f8f2992ea7c7da8506a5554 assets/risus/models/block/flattened_scales_block.json
 9b035399d52c3f8dd646ecb38851447746272cf9 assets/risus/models/block/fleshy_skin.json
 4e4ca32b9b64d5cb08181715896a471ed01a1048 assets/risus/models/block/fossil.json
+8e1adbd0893315a3b6ad3f1ef44a5ee967c60124 assets/risus/models/block/fossil_fragmented_0.json
+576a752d1b512039fb19d0969282f346faab07ee assets/risus/models/block/fossil_fragmented_1.json
+816c5df229c1372e4e4f4d424f66f242b492049b assets/risus/models/block/fossil_fragmented_2.json
+f28bde39b94fdfc7aa5caf8707872e5b167e4017 assets/risus/models/block/fossil_fragmented_3.json
+3b99d4f03059eff76bde646f8e9483883cc0d46f assets/risus/models/block/fossil_fragmented_4.json
+8750dc23e2206bbc8c93e41306f871581b73a227 assets/risus/models/block/fossil_fragmented_5.json
 d7591023ce3600ffb2a9f0414c87c4bc005d22cd assets/risus/models/block/fossil_horizontal.json
 da42a57abeb0968ca290233966eda9dc32835215 assets/risus/models/block/fossil_pillar_base.json
 130dcf94869908065a0ec1ca5954c828054aae4f assets/risus/models/block/fossil_pillar_base_x.json

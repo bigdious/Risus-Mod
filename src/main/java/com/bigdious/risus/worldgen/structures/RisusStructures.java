@@ -79,6 +79,7 @@ public class RisusStructures {
 	public static final ResourceKey<StructureSet> RIBS_FOSSIL_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ribs_fossil"));
 	public static final ResourceKey<StructureTemplatePool> RIBS_FOSSIL_POOL = ResourceKey.create(Registries.TEMPLATE_POOL, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ribs_fossil"));
 
+	public static final ResourceKey<StructureProcessorList> FOSSIL_FRAGMENTATION = ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "fossil_fragmentation"));
 
 	public static final ResourceKey<Structure> GREAT_BODY = ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
 	public static final ResourceKey<StructureSet> GREAT_BODY_SET = ResourceKey.create(Registries.STRUCTURE_SET, ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_body"));
@@ -491,11 +492,11 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(SKULL_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("skull_fossil")), 1)
+			Pair.of(StructurePoolElement.single(name("skull_fossil"), processors.getOrThrow(FOSSIL_FRAGMENTATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(RIBS_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("ribs_fossil")), 1)
+			Pair.of(StructurePoolElement.single(name("ribs_fossil"), processors.getOrThrow(FOSSIL_FRAGMENTATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(
@@ -680,6 +681,22 @@ public class RisusStructures {
 
 			))
 		)));
+		context.register(FOSSIL_FRAGMENTATION, new StructureProcessorList(List.of(
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.FULL_FOSSIL.get(), 0.1F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.FOSSIL_FRAGMENTED.get().defaultBlockState()
+				)
+			)),
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.FOSSIL.get(), 0.1F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.FOSSIL_FRAGMENTED.get().defaultBlockState()
+				)
+			))
+		)));
 
 		context.register(GREAT_BODY_DEGRADATION, new StructureProcessorList(List.of(
 			new RuleProcessor(List.of(
@@ -694,6 +711,13 @@ public class RisusStructures {
 					new RandomBlockMatchTest(RisusBlocks.FULL_FOSSIL.get(), 0.2F),
 					AlwaysTrueTest.INSTANCE,
 					Blocks.STONE.defaultBlockState()
+				)
+			)),
+			new RuleProcessor(List.of(
+				new ProcessorRule(
+					new RandomBlockMatchTest(RisusBlocks.FULL_FOSSIL.get(), 0.05F),
+					AlwaysTrueTest.INSTANCE,
+					RisusBlocks.FOSSIL_FRAGMENTED.get().defaultBlockState()
 				)
 			))
 		)));

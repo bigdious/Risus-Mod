@@ -2,32 +2,20 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.*;
-import com.bigdious.risus.blocks.enums.FenceHeight;
 import com.bigdious.risus.blocks.enums.FenceSide;
 import com.bigdious.risus.init.RisusBlocks;
-import com.google.common.collect.ImmutableMap;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.model.ModelTemplate;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.*;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
-import java.util.Locale;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class BlockModelGenerator extends BlockStateProvider {
@@ -444,6 +432,24 @@ public class BlockModelGenerator extends BlockStateProvider {
 		slabBlock(RisusBlocks.FULL_FOSSIL_SLAB.get(), Risus.prefix("block/full_fossil"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 		stairsBlock(RisusBlocks.FULL_FOSSIL_STAIRS.get(), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"), Risus.prefix("block/fossil_side"));
 		pillarBlock(RisusBlocks.FOSSIL_PILLAR.get(), Risus.prefix("block/fossil_pillar_base"), Risus.prefix("block/fossil_pillar_no_top"), Risus.prefix("block/fossil_pillar_no_bottom"), Risus.prefix("block/fossil_pillar_none"));
+
+		getVariantBuilder(RisusBlocks.FOSSIL_FRAGMENTED.get()).forAllStates(state -> {
+			ModelFile fragmented_0 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_0", Risus.prefix("block/fossil_fragmented_0"), Risus.prefix("block/fossil_top"));
+			ModelFile fragmented_1 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_1", Risus.prefix("block/fossil_fragmented_1"), Risus.prefix("block/fossil_top"));
+			ModelFile fragmented_2 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_2", Risus.prefix("block/fossil_fragmented_2"), Risus.prefix("block/fossil_top"));
+			ModelFile fragmented_3 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_3", Risus.prefix("block/fossil_fragmented_3"), Risus.prefix("block/fossil_top"));
+			ModelFile fragmented_4 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_4", Risus.prefix("block/fossil_fragmented_4"), Risus.prefix("block/fossil_top"));
+			ModelFile fragmented_5 = models().cubeColumn(this.name(RisusBlocks.FOSSIL_FRAGMENTED.get())+"_5", Risus.prefix("block/fossil_fragmented_5"), Risus.prefix("block/fossil_top"));
+			Direction.Axis axis = state.getValue(BlockStateProperties.AXIS);
+			return ConfiguredModel.builder()
+					.modelFile(fragmented_0).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.nextModel().modelFile(fragmented_1).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.nextModel().modelFile(fragmented_2).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.nextModel().modelFile(fragmented_3).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.nextModel().modelFile(fragmented_4).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.nextModel().modelFile(fragmented_5).weight(1).rotationX(axis == Direction.Axis.Y ? 0 : 90).rotationY(axis == Direction.Axis.X ? 90 : 0)
+					.build();
+		});
 
 		//keep below eye stuff to have custom head display
 		directionalBlock(RisusBlocks.EYE_ENDER.get(), models().getExistingFile(Risus.prefix("block/eye/ender")));

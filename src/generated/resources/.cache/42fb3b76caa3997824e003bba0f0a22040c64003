@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-26T19:38:29.2893628	Risus Item Models
+// 1.21.1	2026-03-30T22:08:59.790529	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -152,6 +152,7 @@ c464dc4118339ee6ab169b4d2695517cc36cbf1a assets/risus/models/item/flattened_scal
 66598ff0d4a4db5b44cbd93189f7f9388f895580 assets/risus/models/item/flowering_imitation_scaleplate.json
 26b80df6c7ccca63e5c1bf0b6b1ff65e7964275f assets/risus/models/item/flowering_unalloyed_scaleplate.json
 e5b990f36e13214ba7d29353bfe45aca28e7b999 assets/risus/models/item/fossil.json
+608a9f5442c0aba2faca28c93846ba4ab49f41eb assets/risus/models/item/fossil_fragmented.json
 577d1da765e3a5dff6074a8a3481306bd39458fe assets/risus/models/item/fossil_pillar.json
 a44d3443d16d50067e6517af1e17e8e1343fc900 assets/risus/models/item/fossil_slab.json
 4f2d72c32feba95b09cb75ff0470d8f05dfdcd3e assets/risus/models/item/fossil_stairs.json

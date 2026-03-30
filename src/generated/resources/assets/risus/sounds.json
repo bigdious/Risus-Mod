@@ -433,6 +433,15 @@
     ],
     "subtitle": "subtitles.risus.item.toothknocker.dash"
   },
+  "item.wing_stab": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.player.attack.knockback"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.wing_stab"
+  },
   "item.wretched_charm.fortune_triggered": {
     "sounds": [
       {

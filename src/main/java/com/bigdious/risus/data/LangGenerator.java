@@ -111,6 +111,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addBlock(RisusBlocks.FULL_FOSSIL, "Full Fossil");
 		this.addBlock(RisusBlocks.FULL_FOSSIL_SLAB, "Full Fossil Slab");
 		this.addBlock(RisusBlocks.FULL_FOSSIL_STAIRS, "Full Fossil Stairs");
+		this.addBlock(RisusBlocks.FOSSIL_FRAGMENTED, "Fragmented Fossil");
 		this.addBlock(RisusBlocks.GLUTTONY_SCALEPLATE, "Gluttonous Scaleplate");
 		this.addBlock(RisusBlocks.GRILLED_TISSUE, "Grilled Tissue");
 		this.addBlock(RisusBlocks.GRIMSTONE, "Grimstone");

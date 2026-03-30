@@ -2,9 +2,9 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.*;
-import com.bigdious.risus.worldgen.RisusBiomeModifiers;
-import com.bigdious.risus.worldgen.RisusConfiguredFeatures;
-import com.bigdious.risus.worldgen.RisusPlacedFeatures;
+import com.bigdious.risus.worldgen.features.RisusBiomeModifiers;
+import com.bigdious.risus.worldgen.features.RisusConfiguredFeatures;
+import com.bigdious.risus.worldgen.features.RisusPlacedFeatures;
 import com.bigdious.risus.worldgen.structures.RisusStructures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;

@@ -1,0 +1,82 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "risus:block/fossil_fragmented_0",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_3",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_4",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_5",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "risus:block/fossil_fragmented_0"
+      },
+      {
+        "model": "risus:block/fossil_fragmented_1"
+      },
+      {
+        "model": "risus:block/fossil_fragmented_2"
+      },
+      {
+        "model": "risus:block/fossil_fragmented_3"
+      },
+      {
+        "model": "risus:block/fossil_fragmented_4"
+      },
+      {
+        "model": "risus:block/fossil_fragmented_5"
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "risus:block/fossil_fragmented_0",
+        "x": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_1",
+        "x": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_2",
+        "x": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_3",
+        "x": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_4",
+        "x": 90
+      },
+      {
+        "model": "risus:block/fossil_fragmented_5",
+        "x": 90
+      }
+    ]
+  }
+}

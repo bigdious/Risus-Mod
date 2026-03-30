@@ -74,6 +74,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ERUPT, SoundEvents.DRAGON_FIREBALL_EXPLODE, "Someone erupts");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_POPS_OUT, SoundEvents.ITEM_FRAME_REMOVE_ITEM, "Item pops out");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.WEAVING, SoundEvents.SPIDER_STEP, "Weaving");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.WING_STAB, SoundEvents.PLAYER_ATTACK_KNOCKBACK, "Wings stab");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_INSERT, SoundEvents.ITEM_FRAME_ADD_ITEM, "Item is inserted");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_REMOVED, SoundEvents.CHISELED_BOOKSHELF_PICKUP, "Item is removed");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.HEARTBEAT, "block/beating_heart/heartbeat", 1,"Heart beats");

@@ -1,15 +1,12 @@
 package com.bigdious.risus.data.tags;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -289,6 +286,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.BONE_STAIRS.get(),
 			RisusBlocks.BONE_PILLAR.get(),
 			RisusBlocks.FOSSIL.get(),
+			RisusBlocks.FOSSIL_FRAGMENTED.get(),
 			RisusBlocks.FOSSIL_WALL.get(),
 			RisusBlocks.FULL_FOSSIL.get(),
 			RisusBlocks.FOSSIL_SLAB.get(),

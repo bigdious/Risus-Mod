@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-05T18:23:01.4279701	Loot Tables
+// 1.21.1	2026-03-30T21:15:02.880919	Loot Tables
 50d905e8ef8147a15bbace6336ecc900424da253 data/risus/loot_table/angel_altar_1.json
 85e409631c2d14155202cca72531e8ddaaa93a5e data/risus/loot_table/blocks/active_grimstone.json
 8c62fddabdd73bff4bd7464f13690a1baf63cb99 data/risus/loot_table/blocks/alteration_catalyst.json
@@ -97,6 +97,7 @@ c0bb3bcc86044f545418770a66de418f9a567c33 data/risus/loot_table/blocks/flattened_
 500d95171b0032a957f53bf0d507eda2f9c3089a data/risus/loot_table/blocks/flowering_imitation_scaleplate.json
 d2c164ace7351c657bf7bcb383b1196cfaca60ca data/risus/loot_table/blocks/flowering_unalloyed_scaleplate.json
 658728b498c47a36ece57151e424b69e668ed2a3 data/risus/loot_table/blocks/fossil.json
+5b26376bb6ccf98a8edf0cdba28f3cd3e52c6361 data/risus/loot_table/blocks/fossil_fragmented.json
 0398fec9b47330e0cb1b3ac80b020d9ae50009a0 data/risus/loot_table/blocks/fossil_pillar.json
 bcc31712cd979e03b411952a0a08924a56ce92c9 data/risus/loot_table/blocks/fossil_slab.json
 d13e9a316df093d17857137add9c7ef8e0efc677 data/risus/loot_table/blocks/fossil_stairs.json

@@ -1,7 +1,6 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -9,12 +8,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.InstrumentTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.Collection;
 
 public class RisusTab {
 	private static final ResourceLocation RISUS_TABS = Risus.prefix("textures/gui/tabs.png");
@@ -147,6 +143,7 @@ public class RisusTab {
 				output.accept(RisusBlocks.FULL_BONE_SLAB.get());
 				output.accept(RisusBlocks.BONE_PILLAR.get());
 				output.accept(RisusBlocks.FOSSIL.get());
+				output.accept(RisusBlocks.FOSSIL_FRAGMENTED.get());
 				output.accept(RisusBlocks.FOSSIL_WALL.get());
 				output.accept(RisusBlocks.FOSSIL_STAIRS.get());
 				output.accept(RisusBlocks.FOSSIL_SLAB.get());

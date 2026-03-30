@@ -5,12 +5,14 @@ import com.bigdious.risus.client.particle.data.StabParticleData;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
+import com.bigdious.risus.init.RisusSoundEvents;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -65,8 +67,8 @@ public class WingAttackPacket implements CustomPacketPayload {
 						}
 						if (level instanceof ServerLevel serverLevel && hitEntity) {
 							//multiplication at the end determines range, everything before is just for rotation
-							double d0 = -Mth.sin(yRot * (float) (Math.PI / 180.0)) * 1.5;
-							double d1 = Mth.cos(yRot * (float) (Math.PI / 180.0)) * 1.5;
+							double d0 = -Mth.sin(yRot * (float) (Math.PI / 180.0)) * 1.6;
+							double d1 = Mth.cos(yRot * (float) (Math.PI / 180.0)) * 1.6;
 							double right0 = -Mth.sin((yRot+90) * (float) (Math.PI / 180.0)) * 0.5;
 							double right1 = Mth.cos((yRot+90) * (float) (Math.PI / 180.0)) * 0.5;
 							double left0 = -Mth.sin((yRot-90) * (float) (Math.PI / 180.0)) * 0.5;
@@ -74,8 +76,8 @@ public class WingAttackPacket implements CustomPacketPayload {
 							//we move the particles to the side, then forward
 							serverLevel.sendParticles(new StabParticleData(yRot-115), player.getX()+right0+d0, player.getY(0.40), player.getZ()+right1+d1, 1, 0, 0, 0, 0);
 							serverLevel.sendParticles(new StabParticleData(yRot-65), player.getX()+left0+d0, player.getY(0.40), player.getZ()+left1+d1, 1, 0, 0, 0, 0);
+							serverLevel.playSound(null, player.getOnPos().above(), RisusSoundEvents.WING_STAB.get(), SoundSource.PLAYERS);
 						}
-
 					}
 				}
 			});

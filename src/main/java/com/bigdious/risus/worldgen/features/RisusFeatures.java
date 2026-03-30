@@ -1,4 +1,4 @@
-package com.bigdious.risus.worldgen;
+package com.bigdious.risus.worldgen.features;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.worldgen.features.templates.GorgerFeature;
