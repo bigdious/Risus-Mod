@@ -499,7 +499,7 @@ public class RisusClientEvents {
 	private static void wingAttack(InputEvent.Key event) {
 		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
 			if (event.getKey() == Minecraft.getInstance().options.keyShift.getKey().getValue() && Minecraft.getInstance().options.keyShift.consumeClick()) {
-				PacketDistributor.sendToServer(WingAttackPacket.INSTANCE);
+				PacketDistributor.sendToServer(new WingAttackPacket(Minecraft.getInstance().player.getPreciseBodyRotation(1.0F)));
 			}
 		}
 	}

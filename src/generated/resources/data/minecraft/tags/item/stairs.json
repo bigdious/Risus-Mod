@@ -4,11 +4,13 @@
     "risus:bone_stairs",
     "risus:full_bone_stairs",
     "risus:fossil_stairs",
-    "risus:fossil_stairs",
+    "risus:full_fossil_stairs",
     "risus:grimstone_stairs",
     "risus:grimstone_bricks_stairs",
     "risus:grimstone_blood_tiles_stairs",
     "risus:polished_grimstone_stairs",
-    "risus:tissue_stairs"
+    "risus:tissue_stairs",
+    "risus:imitation_scales_block_stairs",
+    "risus:unalloyed_scales_block_stairs"
   ]
 }

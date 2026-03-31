@@ -1,0 +1,40 @@
+{
+  "name": "The End",
+  "icon": "minecraft:writable_book",
+  "category": "risus:observations",
+  "advancement": "minecraft:story/enter_the_end",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Before my focus on the Joyplague, my primary fascination was The End. It's a confusingly interesting dimension, where the entirety of the non-void terrain revolves around the Dragon and its nest in the middle. To even access it, a large and ancient underground stronghold with a dedicated portal room is needed. The portal frame itself makes little sense, since not only is it near "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "indestructible, but it seems to be partially made from the End Stone present in the dimension. If the frame was indeed artificially made, how did the builders of it even reach the End in the first place to get End Stone? It seems to be a chicken and the egg situation... Then the portal itself acts differently to Nether Portals. Entry location has no effect on the exit; always leading to the main island where the Ender Dragon is located. I'm uncertain if the Dragon is the tyrant or the victim of the "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dimension's design, but it's locked into a cycle of death and rebirth, where both the exit from the dimension and the gateways to explore it are locked to one of the many lives of hers. If killed, it can be forcefully brought back to life, but it seems to do so naturally too, with or without the inert Dragon Egg. As for the rest of the dimension, (highlighting the revolving effect) there are massive clusters of floating landmasses encircling the main island, and if traveled far enough,"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "there will be another abyss of void with another ring of landmasses beyond it. It's like a ripple on the water's surface, alternating endlessly. Then there are the End Cities; only populated by structure-infesting parasites. Not to mention, it's not just the terrain that is an echo, but the dimension itself too. Different portals lead to the same entry point, but to a different instance of the dimension itself. In some rare cases, these echoed instances can have major differences, "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "such as the desolate islands having exotic biomes decorating them... There are simply so many questions to be discovered and answered. What about the endless void? Why is it so much more present and darker than in any other dimension? What is even the source of the name \"The End\"? What end is there when even the symbol of the dimension is a dragon of rebirth? Honestly, it's overwhelming. Yet, in an absurd way, it brings me comfort. Whenever I travel to the End, I find myself sitting"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "down at the edge of an island and enjoying the view of the void. While others may feel dread, I somehow feel at home. Based on what my father said in the past, I apparently inherited this from him, as he did from grandpa. It must be something connected to our family... Either way, this is why I was so surprised when I saw a far too familiar pattern on the ring of the Alteration Catalyst. I did not think there was any major connection between my old fascination and my new obsession, but there it "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "was: the same stars that appear in the End Portal and End Gateways. I always thought of them as a medium of transportation, but if that's really the case, why is it on the unmoveable Alteration Catalyst? Could it be that the Catalyst is an anchor - the exit to a gateway? Or maybe it's a lens instead? After all, the plague is ever-present. It shouldn't need a gate... Although, in that case, what if the End Portal and Gateways are also lens, focusing whatever enters them into a specific spot...? Ah, really, can I never let go of the End?"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "specific spot...? $(br)Ah, really, can I never let go of the End?"
+    }
+  ]
+}

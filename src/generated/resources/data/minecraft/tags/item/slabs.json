@@ -9,6 +9,8 @@
     "risus:full_fossil_slab",
     "risus:grimstone_bricks_slab",
     "risus:grimstone_blood_tiles_slab",
-    "risus:polished_grimstone_slab"
+    "risus:polished_grimstone_slab",
+    "risus:imitation_scales_block_slab",
+    "risus:unalloyed_scales_block_slab"
   ]
 }

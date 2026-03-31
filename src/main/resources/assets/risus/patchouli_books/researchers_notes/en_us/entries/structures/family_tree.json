@@ -25,7 +25,7 @@
       "item": "risus:heart_transplant",
       "link_recipe": true,
       "anchor" : "heart",
-      "text": "Heart Transplants are primarily decorative blocks that form on Family Trees. They tend to match the number of ribcages on the tree, pointing to a correlation between them. They are also used by Ascetics for research purposes."
+      "text": "Heart Transplants are primarily decorative blocks that form on Family Trees. They tend to match the number of ribcages on the tree, pointing to a correlation between them. They are also used by $(l:offsprings/ascetic)$(0)$(n)Ascetics$() for research purposes."
     },
 
     {

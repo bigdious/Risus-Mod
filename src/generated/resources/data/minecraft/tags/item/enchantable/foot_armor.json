@@ -2,5 +2,9 @@
   "remove": [
     "risus:threaders_of_the_firmament"
   ],
-  "values": []
+  "values": [
+    "risus:skin_boots",
+    "risus:threaders_of_the_firmament",
+    "risus:sinner_robes_boots"
+  ]
 }

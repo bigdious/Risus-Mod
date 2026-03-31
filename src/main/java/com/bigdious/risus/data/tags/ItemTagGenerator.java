@@ -55,6 +55,30 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(Tags.Items.OBSIDIANS).add(RisusBlocks.LAUGHING_OBSIDIAN.asItem());
 
+		this.tag(ItemTags.BOATS).add(
+			RisusItems.BONDKNOT_BOAT.get()
+		);
+
+		this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(
+			RisusItems.THREADERS_OF_THE_FIRMAMENT.get(),
+			RisusItems.SKIN_BOOTS.get(),
+			RisusItems.SKIN_LEGGINGS.get(),
+			RisusItems.SKIN_CHESTPLATE.get(),
+			RisusItems.SKIN_HELMET.get(),
+			RisusItems.SINNER_ROBES_BOOTS.get(),
+			RisusItems.SINNER_ROBES_CHESTPLATE.get(),
+			RisusItems.SINNER_ROBES_LEGGINGS.get(),
+			RisusItems.SINNER_ROBES_HELMET.get()
+		);
+
+		this.tag(ItemTags.SKULLS).add(
+			RisusItems.BLOODWYRM_HEAD.get()
+		);
+
+		this.tag(ItemTags.SMALL_FLOWERS).add(
+			RisusBlocks.REGEN_ROSE.get().asItem()
+		);
+
 		this.tag(RisusTags.Items.WILLFUL_WEAPON).add(
 				RisusItems.UNAWAKENED_VESSEL.get(),
 				RisusItems.CRESCENT_DISASTER.get(),
@@ -117,11 +141,21 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			RisusItems.ROSE_CROWN.get(),
 			RisusItems.CROWN_OF_BONES.get(),
 			RisusItems.SINNER_ROBES_HELMET.get()
-
+		);
+		this.tag(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(
+			RisusItems.SKIN_HELMET.get(),
+			RisusItems.ROSE_CROWN.get(),
+			RisusItems.CROWN_OF_BONES.get(),
+			RisusItems.SINNER_ROBES_HELMET.get()
 		);
 		this.tag(ItemTags.CHEST_ARMOR).add(RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SINNER_ROBES_CHESTPLATE.get());
+		this.tag(ItemTags.CHEST_ARMOR_ENCHANTABLE).add(RisusItems.SKIN_CHESTPLATE.get(), RisusItems.SINNER_ROBES_CHESTPLATE.get());
+
 		this.tag(ItemTags.LEG_ARMOR).add(RisusItems.SKIN_LEGGINGS.get(), RisusItems.SINNER_ROBES_LEGGINGS.get());
+		this.tag(ItemTags.LEG_ARMOR_ENCHANTABLE).add(RisusItems.SKIN_LEGGINGS.get(), RisusItems.SINNER_ROBES_LEGGINGS.get());
+
 		this.tag(ItemTags.FOOT_ARMOR).add(RisusItems.SKIN_BOOTS.get(), RisusItems.THREADERS_OF_THE_FIRMAMENT.get(), RisusItems.SINNER_ROBES_BOOTS.get());
+		this.tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).add(RisusItems.SKIN_BOOTS.get(), RisusItems.THREADERS_OF_THE_FIRMAMENT.get(), RisusItems.SINNER_ROBES_BOOTS.get());
 
 		this.tag(ItemTags.ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
 		this.tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).remove(RisusItems.THREADERS_OF_THE_FIRMAMENT.get());
@@ -165,8 +199,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(Tags.Items.STORAGE_BLOCKS).add(
 			RisusBlocks.FLATTENED_SCALES_BLOCK.asItem(),
-			RisusBlocks.ORGANIC_MATTER_BLOCK.asItem(),
-			RisusBlocks.FULL_BONE_BLOCK.asItem()
+			RisusBlocks.ORGANIC_MATTER_BLOCK.asItem()
 		);
 
 		this.tag(RisusTags.Items.STOPS_THREAD_WINGS_RENDERING).add(
@@ -242,6 +275,10 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(RisusTags.Items.SACRIFICIAL_CATALYST).add(
 			RisusItems.SACRIFICE_CATALYST.get()
+		);
+
+		this.tag(ItemTags.BEACON_PAYMENT_ITEMS).add(
+			RisusItems.GLUTTONY_SCALES.get()
 		);
 
 		this.tag(Tags.Items.MUSIC_DISCS).add(

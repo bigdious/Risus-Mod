@@ -2,6 +2,7 @@
   "name": "Origins of the Risus",
   "icon": "minecraft:writable_book",
   "category": "risus:observations",
+  "advancement": "minecraft:story/enchant_item",
   "pages": [
     {
       "type": "patchouli:text",
@@ -9,15 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "its existence even in the past. When it comes to the earth below us, redstone might just be a mineral form of it, which would explain its ability to interact with both inorganic and organic materials, as well as hold near infinite power. However, this does require more research. A concrete clue is the written language shared between the Risus and enchantments. Enchanting is a very old practice and through time, the intricacies of how it works have been completely lost. In the present, all that"
+      "text": "its existence even in the past. When it comes to the earth below us, redstone might just be a mineral form of it, which would explain its ability to interact with both inorganic and organic materials, as well as hold near infinite power (however, this does require more research). A concrete clue is the written language shared between the Risus and enchantments. Enchanting is a very old practice and, through time, the intricacies of how it works have been completely lost. In the present, all that"
     },
     {
       "type": "patchouli:text",
-      "text": "is known is that memories can be turned into magic that empowers weapons and tools; that's it. Yet for some reason, the character of this enchanting language also appear in engravings related to Risus, or whenever it is imbued into items through an Alteration Catalyst. Since the use cases of the language are similar (imbuement of an essence into an object) it points to the idea of both enchanting and the Risus originating from the same era in the past. Of course, this"
+      "text": "is known is that memories can be turned into magic that empowers weapons and tools; that's it. Yet for some reason, the characters of this enchanting language also appear in engravings related to the Risus, or whenever it is imbued into items through an Alteration Catalyst. Since the use cases of the language are similar (imbuement of an essence into an object) it points to the idea of both enchanting and the Risus originating from the same era in the past. Of course, this"
     },
     {
       "type": "patchouli:text",
-      "text": "brings up even more questions, like what had happened in that time between the present and that era, as well as what enchanting is and it's true purpose."
+      "text": "brings up even more questions, like what had happened in that time between the present and that era, as well as what enchanting is and its true purpose."
     }
   ]
 }

@@ -79,7 +79,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.FULL_FOSSIL_SLAB.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_SLAB.get(),
 			RisusBlocks.GRIMSTONE_BLOOD_TILES_SLAB.get(),
-			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get()
+			RisusBlocks.POLISHED_GRIMSTONE_SLAB.get(),
+			RisusBlocks.IMITATION_SCALES_BLOCK_SLAB.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_SLAB.get()
 		);
 		this.tag(BlockTags.WOODEN_STAIRS).add(RisusBlocks.BONDKNOT_STAIRS.get());
 		this.tag(BlockTags.STAIRS).add(
@@ -87,12 +89,14 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.BONE_STAIRS.get(),
 			RisusBlocks.FULL_BONE_STAIRS.get(),
 			RisusBlocks.FOSSIL_STAIRS.get(),
-			RisusBlocks.FOSSIL_STAIRS.get(),
+			RisusBlocks.FULL_FOSSIL_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_BRICKS_STAIRS.get(),
 			RisusBlocks.GRIMSTONE_BLOOD_TILES_STAIRS.get(),
 			RisusBlocks.POLISHED_GRIMSTONE_STAIRS.get(),
-			RisusBlocks.TISSUE_STAIRS.get()
+			RisusBlocks.TISSUE_STAIRS.get(),
+			RisusBlocks.IMITATION_SCALES_BLOCK_STAIRS.get(),
+			RisusBlocks.UNALLOYED_SCALES_BLOCK_STAIRS.get()
 		);
 		this.tag(BlockTags.WOODEN_BUTTONS).add(RisusBlocks.BONDKNOT_BUTTON.get());
 		this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(RisusBlocks.BONDKNOT_PRESSURE_PLATE.get());
@@ -114,6 +118,14 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.SIGNS).add(
 			RisusBlocks.BONDKNOT_SIGN.get(),
 			RisusBlocks.BONDKNOT_WALL_SIGN.get()
+		);
+
+		this.tag(BlockTags.CEILING_HANGING_SIGNS).add(
+			RisusBlocks.BONDKNOT_HANGING_SIGN.get()
+		);
+
+		this.tag(BlockTags.WALL_HANGING_SIGNS).add(
+			RisusBlocks.BONDKNOT_WALL_HANGING_SIGN.get()
 		);
 
 		this.tag(BlockTags.STANDING_SIGNS).add(RisusBlocks.BONDKNOT_SIGN.get());
@@ -186,6 +198,68 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			.add(RisusBlocks.EYE_EMERALD_GLOWING.get())
 			.add(RisusBlocks.EYE_ENDER_GLOWING.get())
 			.add(RisusBlocks.EYE_GOLDEN_GLOWING.get());
+
+		this.tag(BlockTags.BEACON_BASE_BLOCKS).add(RisusBlocks.FLATTENED_SCALES_BLOCK.get());
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).add(RisusBlocks.FLATTENED_SCALES_BLOCK.get(), RisusBlocks.ORGANIC_MATTER_BLOCK.get());
+		this.tag(BlockTags.DRAGON_IMMUNE).add(
+			RisusBlocks.LAUGHING_OBSIDIAN.get(),
+			RisusBlocks.ALTERATION_CATALYST.get(),
+			RisusBlocks.MEMORY1.get(),
+			RisusBlocks.FLESHY_SPAWNER.get(),
+			RisusBlocks.ANGEL_ALTAR.get()
+		);
+		this.tag(BlockTags.WITHER_IMMUNE).add(
+			RisusBlocks.LAUGHING_OBSIDIAN.get(),
+			RisusBlocks.ALTERATION_CATALYST.get(),
+			RisusBlocks.MEMORY1.get(),
+			RisusBlocks.FLESHY_SPAWNER.get(),
+			RisusBlocks.ANGEL_ALTAR.get()
+		);
+		this.tag(BlockTags.DAMPENS_VIBRATIONS).add(RisusBlocks.TESSERACT.get(), RisusBlocks.BUNDLE_OF_HAIR.get());
+		this.tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(RisusBlocks.TESSERACT.get(), RisusBlocks.BUNDLE_OF_HAIR.get());
+		this.tag(BlockTags.SMALL_DRIPLEAF_PLACEABLE).add(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+		this.tag(BlockTags.FEATURES_CANNOT_REPLACE).add(
+			RisusBlocks.LAUGHING_OBSIDIAN.get(),
+			RisusBlocks.ALTERATION_CATALYST.get(),
+			RisusBlocks.MEMORY1.get(),
+			RisusBlocks.FLESHY_SPAWNER.get(),
+			RisusBlocks.ANGEL_ALTAR.get(),
+			RisusBlocks.INACTIVE_HOLDER.get()
+		);
+
+		this.tag(BlockTags.MUSHROOM_GROW_BLOCK).add(RisusBlocks.MIRAGE_GRASS_BLOCK.get());
+		this.tag(Tags.Blocks.RELOCATION_NOT_SUPPORTED).add(
+			RisusBlocks.ALTERATION_CATALYST.get()
+		);
+
+		this.tag(Tags.Blocks.GLASS_BLOCKS).add(
+			RisusBlocks.WHITE_MOSAIC_GLASS.get(),
+			RisusBlocks.LIGHT_GRAY_MOSAIC_GLASS.get(),
+			RisusBlocks.GRAY_MOSAIC_GLASS.get(),
+			RisusBlocks.BLACK_MOSAIC_GLASS.get(),
+			RisusBlocks.BROWN_MOSAIC_GLASS.get(),
+			RisusBlocks.RED_MOSAIC_GLASS.get(),
+			RisusBlocks.ORANGE_MOSAIC_GLASS.get(),
+			RisusBlocks.YELLOW_MOSAIC_GLASS.get(),
+			RisusBlocks.LIME_MOSAIC_GLASS.get(),
+			RisusBlocks.GREEN_MOSAIC_GLASS.get(),
+			RisusBlocks.CYAN_MOSAIC_GLASS.get(),
+			RisusBlocks.LIGHT_BLUE_MOSAIC_GLASS.get(),
+			RisusBlocks.BLUE_MOSAIC_GLASS.get(),
+			RisusBlocks.PURPLE_MOSAIC_GLASS.get(),
+			RisusBlocks.MAGENTA_MOSAIC_GLASS.get(),
+			RisusBlocks.PINK_MOSAIC_GLASS.get()
+		);
+		this.tag(Tags.Blocks.PLAYER_WORKSTATIONS_CRAFTING_TABLES).add(RisusBlocks.ALTERATION_CATALYST.get());
+		this.tag(BlockTags.FIRE)
+			.add(RisusBlocks.JOYFLAME_FIRE.get());
+
+		this.tag(BlockTags.ENDERMAN_HOLDABLE)
+			.add(RisusBlocks.ASHEN_REMAINS.get(),
+			RisusBlocks.SMILING_REMAINS.get());
+
+		this.tag(BlockTags.MAINTAINS_FARMLAND)
+			.add(RisusBlocks.BLOOD_FLUID_BLOCK.get());
 
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 			RisusBlocks.DISPLAY_NOTCH.get(),
@@ -498,5 +572,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		this.tag(BlockTags.DIRT).add(
 			RisusBlocks.MIRAGE_GRASS_BLOCK.get()
 		);
+
+
+
 	}
 }

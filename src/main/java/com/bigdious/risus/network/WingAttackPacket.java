@@ -7,6 +7,7 @@ import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusParticles;
 import com.bigdious.risus.init.RisusSoundEvents;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -30,17 +31,25 @@ import javax.xml.crypto.dsig.Transform;
 import java.util.List;
 import java.util.Optional;
 
-public class WingAttackPacket implements CustomPacketPayload {
+public record WingAttackPacket(float yRot) implements CustomPacketPayload {
 	public static final Type<WingAttackPacket> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "wing_attack"));
-	public static final WingAttackPacket INSTANCE = new WingAttackPacket();
-	public static final StreamCodec<ByteBuf, WingAttackPacket> STREAM_CODEC = StreamCodec.unit(INSTANCE);
+//	public static final WingAttackPacket INSTANCE = new WingAttackPacket();
+	public static final StreamCodec<RegistryFriendlyByteBuf, WingAttackPacket> STREAM_CODEC = CustomPacketPayload.codec(WingAttackPacket::write, WingAttackPacket::read);
 
+	public static WingAttackPacket read(RegistryFriendlyByteBuf buf) {
+		float yRot = buf.readFloat();
+		return new WingAttackPacket(yRot);
+	}
+
+	public void write(RegistryFriendlyByteBuf buf) {
+		buf.writeFloat(this.yRot());
+	}
 	@Override
 	public Type<? extends CustomPacketPayload> type() {
 		return TYPE;
 	}
 
-	public static void handle(IPayloadContext ctx) {
+	public static void handle(WingAttackPacket packet, IPayloadContext ctx) {
 		if (ctx.flow().isServerbound()) {
 			ctx.enqueueWork(() -> {
 				Player player = ctx.player();
@@ -48,10 +57,10 @@ public class WingAttackPacket implements CustomPacketPayload {
 				if (player.getItemBySlot(EquipmentSlot.CHEST).is(RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get())) {
 					boolean flag = player.getItemBySlot(EquipmentSlot.CHEST).getDamageValue() < player.getItemBySlot(EquipmentSlot.CHEST).getMaxDamage() - 5;
 					if ((!player.isCreative() || player.onGround()) && !player.isFallFlying() && !player.isSwimming() && !player.isVisuallyCrawling() && flag) {
-						float yRot = player.getPreciseBodyRotation(1.0F);
-						boolean hitEntity = false;
+						float yRot = packet.yRot();
+						boolean hitEntity = true;
 
-						Vec3 lookVec = Vec3.directionFromRotation(0, player.getRotationVector().y);
+						Vec3 lookVec = Vec3.directionFromRotation(0, yRot);
 						List<Entity> possibleList = level.getEntities(player, player.getBoundingBox().expandTowards(lookVec.x() * 1.5, 0, lookVec.z() * 1.5).inflate(0.5, 0, 0.5));
 						for (Entity attackable : possibleList) {
 							//don't believe the yellow underlined lies
@@ -59,7 +68,7 @@ public class WingAttackPacket implements CustomPacketPayload {
 								target.hurt(player.damageSources().source(RisusDamageTypes.WING_STAB), 5);
 								target.knockback(1, -lookVec.x, -lookVec.z);
 								if (level instanceof ServerLevel serverLevel) {
-									serverLevel.sendParticles(RisusParticles.BLOOD_FEATHER.get(), target.getRandomX(1), target.getEyeY(), target.getRandomZ(1), 1, 0, 0, 0, 0);
+									serverLevel.sendParticles(RisusParticles.BLOOD_FEATHER.get(), player.getRandomX(1), target.getY()+1.5, player.getRandomZ(1), 1, 0, 0, 0, 0);
 								}
 								player.getItemBySlot(EquipmentSlot.CHEST).hurtAndBreak(4, player, EquipmentSlot.CHEST);
 								hitEntity = true;
@@ -83,16 +92,4 @@ public class WingAttackPacket implements CustomPacketPayload {
 			});
 		}
 	}
-
-	//adapted from Twilight Forest LifedrainScepterItem
-	//https://github.com/TeamTwilight/twilightforest/blob/1.21.1/src/main/java/twilightforest/item/LifedrainScepterItem.java
-
-	@Nullable
-	private static List<Entity> getPlayerLookTarget(Level level, LivingEntity living) {
-		Vec3 lookVec = Vec3.directionFromRotation(0, living.getRotationVector().y);
-		List<Entity> possibleList = level.getEntities(living, living.getBoundingBox().expandTowards(lookVec.x()*3, 0, lookVec.z() * 3).inflate(0.5, 0, 0.5));
-		return possibleList;
-	}
-
-
 }

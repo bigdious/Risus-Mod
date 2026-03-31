@@ -2,6 +2,7 @@
   "name": "Composer of Tragedy",
   "icon": "minecraft:writable_book",
   "category": "risus:observations",
+  "advancement": "risus:light_devourer",
   "pages": [
     {
       "type": "patchouli:text",
