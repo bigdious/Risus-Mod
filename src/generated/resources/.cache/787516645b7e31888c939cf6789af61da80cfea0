@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-31T22:54:52.0529635	Tags for minecraft:block mod id risus
+// 1.21.1	2026-04-01T21:55:01.3364167	Tags for minecraft:block mod id risus
 8c85383a0ff4d19a7784c646e12dfcfb922eca02 data/c/tags/block/fences.json
 86196d8d301039609134e790f381774456113206 data/c/tags/block/fences/wooden.json
 f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/block/fence_gates.json
@@ -55,6 +55,7 @@ fb5ba0f17c81249c39ec9755dce8082aad3b85e6 data/minecraft/tags/block/wooden_slabs.
 4e1a395d41189d294b952ba2d28d3ac5dee03b7d data/minecraft/tags/block/wooden_stairs.json
 86ab81416345d81148337325d83e8b9b4acfeada data/minecraft/tags/block/wooden_trapdoors.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/block/bondknot_logs.json
+322d7c01f5ce4b3c53d6d38da5695680aa129842 data/risus/tags/block/carveable_tissue.json
 086a5ada21429600844477604ecba07e6ef5c61a data/risus/tags/block/copper_amalgam_variation.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/block/joyflame_fire_base_blocks.json
 c51b9132c86a5e71c340a87838752d0b4f192bd7 data/risus/tags/block/litter_allowed_light_blocks.json

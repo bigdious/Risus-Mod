@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-31T22:50:33.9529559	Tags for minecraft:item mod id risus
+// 1.21.1	2026-04-01T21:11:37.4936145	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ee200672c17830ea323ac6342fbc88149feb8c65 data/curios/tags/item/body.json
 0147c7e2049f5e1a179687d6f3ae4fab096657e3 data/curios/tags/item/charm.json
@@ -12,6 +12,7 @@ f3a7bb40bb57fc34df4c1c6ef786372c13bb77cb data/c/tags/item/fence_gates.json
 d1e20a2a4b0c9654ccff4c6d8f467c91a6232d1c data/c/tags/item/music_discs.json
 90246e9d74b4b2bbf5464f742536a68e568d6022 data/c/tags/item/obsidians.json
 6d3a24703ce2ee5f339edc8a83cc44e6f7f7ef52 data/c/tags/item/storage_blocks.json
+993647e54ead2979b1557f62029d9a16b972a985 data/minecraft/tags/item/beacon_payment_items.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/item/bee_food.json
 1628a46f0d5263065cfa9be1c06c7a0d2afe93bc data/minecraft/tags/item/boats.json
 404277d823015a85660dc0c721600643edd4ecca data/minecraft/tags/item/chest_armor.json
@@ -23,6 +24,7 @@ edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/eq
 6f8ecb1edbf88ad67a2d92a2d387e613317ee7e1 data/minecraft/tags/item/enchantable/foot_armor.json
 35f6f305f843962f73be01dbb76c72a0f028d93a data/minecraft/tags/item/enchantable/head_armor.json
 9055654af0f0047993d98e9705f31e6c504a8a0b data/minecraft/tags/item/enchantable/leg_armor.json
+2fa7a1812dff89be989089be9acc839e022ec334 data/minecraft/tags/item/enchantable/sword.json
 edb70dc6977de6e0f21d2a264e121d0cffa90c99 data/minecraft/tags/item/enchantable/vanishing.json
 ebdc9eb4e547ec2550a5f2373d9c6366f56381e0 data/minecraft/tags/item/foot_armor.json
 38e69f84fbf3615e80de05a04fc141130ff23444 data/minecraft/tags/item/freeze_immune_wearables.json
@@ -36,6 +38,7 @@ cf57dc679a0924b30bbab5227183863c17b2d99b data/minecraft/tags/item/signs.json
 d148ba8bf9e54d61fd25ff5192d2002bd411fa7d data/minecraft/tags/item/slabs.json
 6b101fbd4b3f334f5ad706527aceff8894a620a1 data/minecraft/tags/item/small_flowers.json
 50b1ba340ea1c6c37c2c0d23733e8792d6b1bd83 data/minecraft/tags/item/stairs.json
+2fa7a1812dff89be989089be9acc839e022ec334 data/minecraft/tags/item/swords.json
 2cfa98b1ff1c74ac2db2374d208e8c7d802ecffe data/minecraft/tags/item/trimmable_armor.json
 e309aff39de96bf85003e31a0153c9aa57b63784 data/minecraft/tags/item/trim_materials.json
 d319acadaf62b7e6b4c484e8994639130ad7030d data/minecraft/tags/item/trim_templates.json

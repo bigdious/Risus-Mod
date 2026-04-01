@@ -414,6 +414,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.ENDLESS_PEARL);
 		singleTex(RisusBlocks.TEETH);
 		singleTex(RisusBlocks.COALIFICATION);
+		handheldItem(RisusItems.CARVING_KNIFE.get());
 
 		singleTex(RisusBlocks.NEURON_HEAD.asItem());
 		singleTex(RisusItems.HAIR_FOLLICLES);

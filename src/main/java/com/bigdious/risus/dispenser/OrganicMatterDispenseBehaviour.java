@@ -3,7 +3,7 @@ package com.bigdious.risus.dispenser;
 import com.bigdious.risus.blocks.ActuallyUseableDirectionalBlock;
 import com.bigdious.risus.blocks.MultiDirectionalBlock;
 import com.bigdious.risus.init.RisusBlocks;
-import com.bigdious.risus.items.OrganicMatterItem;
+import com.bigdious.risus.items.utility.OrganicMatterItem;
 import com.bigdious.risus.util.ServerParticleUtils;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;

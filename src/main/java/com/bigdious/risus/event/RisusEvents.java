@@ -212,6 +212,7 @@ public class RisusEvents {
 			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.RIBCAGE.get().asItem(), 10, 1, 7))));
 			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.FLATTENED_IMITATION_SCALES_BLOCK.get().asItem(), 3, 8, 7))));
 			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.UNALLOYED_SCALES_BLOCK.get().asItem(), 4, 8, 7))));
+			trades.get(3).add(((new VillagerTrades.ItemsForEmeralds(RisusBlocks.FOSSIL_FRAGMENTED.get().asItem(), 4, 8, 7))));
 
 
 			trades.get(4).add(((new VillagerTrades.TreasureMapForEmeralds(

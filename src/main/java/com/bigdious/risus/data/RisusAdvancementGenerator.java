@@ -407,6 +407,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("hexhorn", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.HEXHORN))
 			.addCriterion("killjoy", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.KILLJOY))
 			.addCriterion("flamethrower", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.BLOODWYRM_HEAD_WEAPON))
+			.addCriterion("knife", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CARVING_KNIFE))
 			.save(consumer, "risus:arsenal");
 
 		AdvancementHolder armory = Advancement.Builder.advancement().parent(arsenal)
@@ -425,6 +426,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("lucky", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.LUCKY_CHARM))
 			.addCriterion("wretched", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.WRETCHED_CHARM))
 			.addCriterion("totem", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.TOTEM_OF_UNYIELDING))
+			.addCriterion("burn", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.BORN_TO_BURN))
 			.save(consumer, "risus:armory");
 
 		AdvancementHolder destroy = Advancement.Builder.advancement().parent(armory)

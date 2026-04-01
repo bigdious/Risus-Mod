@@ -61,7 +61,7 @@ public class BloodwyrmBreathEntity extends AbstractArrow {
 
 	@Override
 	protected SoundEvent getDefaultHitGroundSoundEvent() {
-		return SoundEvents.FIRE_EXTINGUISH;
+		return SoundEvents.EMPTY;
 	}
 
 	@Nullable

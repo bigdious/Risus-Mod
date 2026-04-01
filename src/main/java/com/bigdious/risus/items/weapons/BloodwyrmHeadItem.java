@@ -69,7 +69,7 @@ public class BloodwyrmHeadItem extends Item {
 				breath3.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.0F, 15F);
 				level.addFreshEntity(breath3);
 				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
-				player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, .5f, .75f);
+				player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRECHARGE_USE, SoundSource.PLAYERS, .2f, .75f);
 			}
 		}
 	}

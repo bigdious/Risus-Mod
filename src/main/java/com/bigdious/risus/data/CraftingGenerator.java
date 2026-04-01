@@ -1153,6 +1153,14 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.GLUTTONY_SCALES.get()))
 			.save(consumer);
 
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, RisusItems.CARVING_KNIFE.get())
+			.pattern(" C")
+			.pattern("SI")
+			.define('S', Ingredient.of(Items.STICK))
+			.define('C', Ingredient.of(RisusItems.CRYSTALLIZED_BOND.get()))
+			.define('I', Ingredient.of(Items.IRON_INGOT))
+			.unlockedBy("has_item", has(RisusItems.CRYSTALLIZED_BOND.get()))
+			.save(consumer);
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.TOOTHKNOCKER.get())
 			.pattern("BBB")
@@ -1693,7 +1701,7 @@ public class CraftingGenerator extends RecipeProvider {
 		SmithingTransformRecipeBuilder.smithing(
 				Ingredient.of(RisusItems.BLOOD_FEATHER.get()),
 				Ingredient.of(RisusItems.BLOODWYRM_HEAD),
-				Ingredient.of(RisusItems.ORGANIC_MATTER),
+				Ingredient.of(RisusItems.BORN_TO_BURN),
 				RecipeCategory.COMBAT,
 				RisusItems.BLOODWYRM_HEAD_WEAPON.get())
 			.unlocks("has_item", has(RisusItems.BLOOD_FEATHER))

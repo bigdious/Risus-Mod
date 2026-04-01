@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-26T20:06:50.6067922	Recipes
+// 1.21.1	2026-04-01T22:57:13.1506653	Recipes
 b488a9de4ce4f24bbf62811cc175b45425a9b530 data/minecraft/advancement/recipes/bondknot_dummy.json
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
@@ -50,7 +50,7 @@ f25a46aebaa1111ecee3d9e85164555b473491e8 data/minecraft/recipe/decaying_to_decay
 27a7ae4528bb331156d37252c11c18efa09d75cd data/minecraft/recipe/full_bone_to_bone_meal.json
 b8da034bc683ca9a319b73fac1bef86332ebb1f3 data/minecraft/recipe/hair_brush.json
 989370b1ddb4f1f6d47fee7a005f52c051fa12ff data/minecraft/recipe/hair_unbundleing.json
-dbf122e6575441993ad55007d1833e8ac1f2e607 data/minecraft/recipe/head_to_spewer.json
+e1e28aa6c78de64a2cbaabc04254c815076abec1 data/minecraft/recipe/head_to_spewer.json
 0427a7a66c84c661d355d933174b715545ec2bdc data/minecraft/recipe/imit_scaleplate_from_imit_block.json
 b16c5d261c08fcb7018a0af009436dea6454cd0a data/minecraft/recipe/litter_to_concentration_core.json
 21873dc3a08c6e9c1eeccc4a38c51cc48bf1c8b1 data/minecraft/recipe/petal_to_dye.json
@@ -410,6 +410,7 @@ b975f30519b94ee63f7dd7e913ae97cb8cab3ef3 data/risus/advancement/recipes/misc/sti
 d8c5860baafb46ee3e5dc4760dcac6c0f087c0c7 data/risus/advancement/recipes/redstone/bondknot_pressure_plate.json
 83eac5c1499c5f0967758387a03036ab9a659729 data/risus/advancement/recipes/redstone/bondknot_trapdoor.json
 05eeceb3fb1f08c680d5244ff7d30e52d2e79392 data/risus/advancement/recipes/redstone/tesseract.json
+3efbe2423f9d1b3bedf35ae8a665892852f88155 data/risus/advancement/recipes/tools/carving_knife.json
 2033ddaf660a04bd7165fe0f1c07686c2b2660b2 data/risus/advancement/recipes/tools/counterweight.json
 669ef4200b33fca2bccd7c8c2af325f53a915ae6 data/risus/advancement/recipes/tools/eternal_youth.json
 d0aab298101321b21b3961b6b107cdc0614bdd66 data/risus/advancement/recipes/tools/light_devourer.json
@@ -535,6 +536,7 @@ e86e670e76cde4693da888e144d05674974ee078 data/risus/recipe/budding_imitation_sca
 ff895cef053a0eb7e53fa40a98a8fffe7a265e33 data/risus/recipe/budding_unalloyed_scaleplate.json
 00eb2f29379425f64876d3d9464fd281b6c6f9ae data/risus/recipe/bundle_of_hair.json
 9b4b8c0771e795c6bdf75e621657cecc61f2bdd4 data/risus/recipe/calico_cat_helmet.json
+06b27311833efce0a04112a9a72ab5a5d3434e5c data/risus/recipe/carving_knife.json
 ecaf69a945d8084999c30d75161001ff4105e9ee data/risus/recipe/chestnut_wolf_helmet.json
 dff4413748faa74453390ce5bb0e704182296845 data/risus/recipe/chiseled_grimstone.json
 8bcc41a12e5039a679c06eb47c40f0acd88e2e8b data/risus/recipe/coalification.json

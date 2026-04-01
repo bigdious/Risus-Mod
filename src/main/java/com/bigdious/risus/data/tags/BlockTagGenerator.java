@@ -492,6 +492,12 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			RisusBlocks.WAXED_WEATHERED_COPPER_AMALGAM.get(),
 			RisusBlocks.WAXED_OXIDIZED_COPPER_AMALGAM.get()
 		);
+		this.tag(RisusTags.Blocks.CARVEABLE_TISSUE).add(
+			RisusBlocks.LIVING_TISSUE.get(),
+			RisusBlocks.DECAYED_TISSUE.get(),
+			RisusBlocks.DECOMPOSED_TISSUE.get(),
+			RisusBlocks.ROTTED_TISSUE.get()
+		);
 		this.tag(BlockTags.FIRE).add(
 			RisusBlocks.JOYFLAME_FIRE.get()
 		);

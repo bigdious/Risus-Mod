@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "risus:organic_matter"
+    "item": "risus:born_to_burn"
   },
   "base": {
     "item": "risus:bloodwyrm_head"

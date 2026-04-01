@@ -24,10 +24,10 @@ public class VillageStructures {
 		Registry<StructureProcessorList> processorLists = event.getServer().registryAccess().registry(Registries.PROCESSOR_LIST).get();
 
 		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/plains/houses"), Risus.MODID + ":village/houses/plains_ascetic_house", 5);
-		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/desert/houses"), Risus.MODID + ":village/houses/desert_ascetic_house", 5);
+		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/desert/houses"), Risus.MODID + ":village/houses/desert_ascetic_house", 6);
 		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/snowy/houses"), Risus.MODID + ":village/houses/snowy_ascetic_house", 5);
-		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/savanna/houses"), Risus.MODID + ":village/houses/savanna_ascetic_house", 5);
-		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/taiga/houses"), Risus.MODID + ":village/houses/taiga_ascetic_house", 5);
+		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/savanna/houses"), Risus.MODID + ":village/houses/savanna_ascetic_house", 4);
+		VillageStructures.addBuildingToPool(templatePools, processorLists, ResourceLocation.parse("minecraft:village/taiga/houses"), Risus.MODID + ":village/houses/taiga_ascetic_house", 7);
 
 	}
 

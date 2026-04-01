@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-30T22:08:59.790529	Risus Item Models
+// 1.21.1	2026-04-01T21:16:38.1860556	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -52,6 +52,7 @@ b3326580c5f5973731dc924df6a3f3ace6a5f029 assets/risus/models/item/brown_mosaic_g
 f096c33a5d1479afe0e46bfd4b8f6baeb4dc3766 assets/risus/models/item/budding_unalloyed_scaleplate.json
 bc2524f52eb27cd34ec72174c5c2ee66d1102477 assets/risus/models/item/bundle_of_hair.json
 6b7101fff09384fef77b18a35fae5921e38a5099 assets/risus/models/item/burnt_hyphae.json
+aba9d7f495dec9f8ea0e6fa791caf90dbb57b204 assets/risus/models/item/carving_knife.json
 bc0ef413e03ea6812e513afb2f932afc3584d86c assets/risus/models/item/chiseled_grimstone.json
 6b388f9895fe5fe34e9c05f041989a0e9f205e20 assets/risus/models/item/cinderglee_scythe.json
 52df45674db0583530fe0d6e7ca00cf4b0346160 assets/risus/models/item/cinderglee_scythe_base.json

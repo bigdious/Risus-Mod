@@ -249,6 +249,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.BONDKNOT_BOAT, "Bondknot Boat");
 		this.addItem(RisusItems.BOOMSTICK, "Boomstick");
 		this.addItem(RisusItems.BORN_TO_BURN, "Born To Burn");
+		this.addItem(RisusItems.CARVING_KNIFE, "Carving Knife");
 		this.addItem(RisusItems.CINDERGLEE_SCYTHE, "Existential Executioner");
 		this.addItem(RisusItems.CONCENTRATION_CORE, "Concentration Core");
 		this.addItem(RisusItems.COUNTERWEIGHT, "Counterweight");
@@ -658,7 +659,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("licked", "Mmmm, Tasty~", "Get licked!");
 		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it...");
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
-		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer, that can be used to place Darkness");
+		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer that can place Darkness");
 		this.addAdvancement("angel", "Hallowed Grounds", "Trespass onto land protected by an Ophanim.");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
 		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment");

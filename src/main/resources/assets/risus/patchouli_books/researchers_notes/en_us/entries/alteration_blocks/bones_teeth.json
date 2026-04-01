@@ -12,7 +12,7 @@
       "header": "Fossils",
       "recipe": "risus:alteration/fossil",
       "recipe2": "risus:alteration/full_fossil",
-      "text": "Lastly, by throwing Bone Blocks into an Alteration Catalyst, Fossils can be acquired. These share the same malleability, so stairs, slabs, walls and Full versions of these are all possible."
+      "text": "Lastly, by throwing Bone Blocks into an Alteration Catalyst, Fossils can be acquired. These share the   same malleability, so stairs, slabs, walls and Full versions of these are all possible."
     },
     {
       "type": "patchouli:crafting",

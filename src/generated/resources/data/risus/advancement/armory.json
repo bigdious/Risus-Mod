@@ -1,6 +1,16 @@
 {
   "parent": "risus:arsenal",
   "criteria": {
+    "burn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:born_to_burn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "counter": {
       "conditions": {
         "items": [
@@ -163,6 +173,9 @@
     ],
     [
       "totem"
+    ],
+    [
+      "burn"
     ]
   ],
   "sends_telemetry_event": true

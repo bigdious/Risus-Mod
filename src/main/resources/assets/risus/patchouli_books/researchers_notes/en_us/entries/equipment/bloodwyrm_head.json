@@ -8,12 +8,12 @@
       "type": "risus:alterationtemplate1",
       "header": "False Bloodwyrm Head",
       "recipe": "risus:alteration/bloodwyrm_head",
-      "text": "The Dragon Head commonly found in End Cities can be altered into a False Bloodwyrm Head. This change is primarily visual and offers no specific benefits. To unlock its offensive potential, it has to be combined with a Blood Feather and an Organic Matter in a Smithing Table, transforming it into a False Bloodwyrm Spewer."
+      "text": "The Dragon Head commonly found in End Cities can be altered into a False Bloodwyrm Head. This change is primarily visual and offers no specific benefits. To unlock its offensive potential, it has to be combined with a Blood Feather and a Born To Burn in a Smithing Table, transforming it into a False Bloodwyrm Spewer."
     },
     {
       "type": "patchouli:smithing",
       "recipe": "minecraft:head_to_spewer",
-      "text": "The Spewer can spread fire in front of the wielder and can be refueled with Dragon Breath. Additionally, the spray will also inflict the Flame Frailty effect onto the victim, making them considerably more susceptible to fire."
+      "text": "The Spewer can spread fire in front of the wielder and can be refueled with Dragon Breath. Additionally, the spray will also inflict the Flame Frailty effect onto the victims, making them considerably more susceptible to fire."
     },
     {
       "type": "patchouli:text",
