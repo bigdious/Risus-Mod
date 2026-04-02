@@ -39,6 +39,9 @@ public class RisusPotions {
 
 	public static final DeferredHolder<Potion, Potion> COPPER_AGE = POTIONS.register("copper_age", () -> new Potion(new MobEffectInstance(RisusMobEffects.VERDIGRIS_VEHEMENCE, 3600)));
 
+	public static final DeferredHolder<Potion, Potion> TRANSFUSION = POTIONS.register("transfusion", () -> new Potion(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600)));
+	public static final DeferredHolder<Potion, Potion> LONG_TRANSFUSION = POTIONS.register("long_transfusion", () -> new Potion(new MobEffectInstance(MobEffects.HEALTH_BOOST, 9600)));
+	public static final DeferredHolder<Potion, Potion> STRONG_TRANSFUSION = POTIONS.register("strong_transfusion", () -> new Potion(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1800, 1)));
 
 }
 

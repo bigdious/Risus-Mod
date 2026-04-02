@@ -187,6 +187,9 @@ public class RisusEvents {
 		builder.addMix(Potions.AWKWARD, RisusItems.HAND_OF_GREED.get(), RisusPotions.GOLDEN_GLORY);
 		builder.addMix(RisusPotions.GOLDEN_GLORY, Items.FERMENTED_SPIDER_EYE, RisusPotions.COPPER_AGE);
 
+		builder.addMix(Potions.AWKWARD, RisusBlocks.HEART_TRANSPLANT.asItem(), RisusPotions.TRANSFUSION);
+		builder.addMix(RisusPotions.TRANSFUSION, Items.REDSTONE, RisusPotions.LONG_TRANSFUSION);
+		builder.addMix(RisusPotions.TRANSFUSION, Items.GLOWSTONE_DUST, RisusPotions.STRONG_TRANSFUSION);
 	}
 	private static void registerVillagerTrades(VillagerTradesEvent event) {
 		if (event.getType() == RisusVillagers.ASCETIC.value()) {

@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": " - Alongside all of its other uses, the $(l:offsprings/weaver#core)$(0)$(n)Memory Core$() can also be made into a Potion of Forgetfulness, which causes short term Amnesia. $(br)$(br) - The $(l:offsprings/holder#hand)$(0)$(n)Hand Of Greed$() from Holders can be turned into a Potion of Golden Glory, which applies the Gold Rush effect. When a creature or a person is under this effect, they have a chance to drop Gold upon their death. If this potion is inverted by adding a Fermented Spider Eye, it will turn into a Potion of The Copper Age, with"
+      "text": " - Alongside all of its other uses, the $(l:offsprings/weaver#core)$(0)$(n)Memory Core$() can also be made into a Potion of Forgetfulness, which causes short term Amnesia. When used against monsters, it will cause them to forget their target. $(br)$(br) - The $(l:offsprings/holder#hand)$(0)$(n)Hand Of Greed$() from Holders can be turned into a Potion of Golden Glory, which applies the Gold Rush effect. When a creature or a person is under this effect, they have a chance to drop Gold upon their death. If this potion is inverted by adding a Fermented "
     },
     {
       "type": "patchouli:text",
-      "text": "the Verdigris Vehemence effect. This will cause the dead to drop Copper."
+      "text": "Spider Eye, it will turn into a Potion of The Copper Age, with the Verdigris Vehemence effect. This will cause the dead to drop Copper. $(br)$(br) - A $(l:structures/family_tree#heart)$(0)$(n)Heart Transplant$() can be brewed into a Potion of Transfusion, offering a temporary Health Boost."
     },
     {
       "type": "patchouli:text",

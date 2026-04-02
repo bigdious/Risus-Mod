@@ -334,6 +334,19 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("item.minecraft.tipped_arrow.effect.long_life_smouldering", "Arrow of Life Smouldering");
 		this.add("item.minecraft.tipped_arrow.effect.strong_life_smouldering", "Arrow of Life Smouldering");
 
+		this.add("item.minecraft.potion.effect.transfusion", "Potion of Transfusion");
+		this.add("item.minecraft.potion.effect.long_transfusion", "Potion of Transfusion");
+		this.add("item.minecraft.potion.effect.strong_transfusion", "Potion of Transfusion");
+		this.add("item.minecraft.splash_potion.effect.long_transfusion", "Splash Potion of Transfusion");
+		this.add("item.minecraft.splash_potion.effect.transfusion", "Splash Potion of Transfusion");
+		this.add("item.minecraft.splash_potion.effect.strong_transfusion", "Splash Potion of Transfusion");
+		this.add("item.minecraft.lingering_potion.effect.transfusion", "Lingering Potion of Transfusion");
+		this.add("item.minecraft.lingering_potion.effect.long_transfusion", "Lingering Potion of Transfusion");
+		this.add("item.minecraft.lingering_potion.effect.strong_transfusion", "Lingering Potion of Transfusion");
+		this.add("item.minecraft.tipped_arrow.effect.transfusion", "Arrow of Transfusion");
+		this.add("item.minecraft.tipped_arrow.effect.long_transfusion", "Arrow of Transfusion");
+		this.add("item.minecraft.tipped_arrow.effect.strong_transfusion", "Arrow of Transfusion");
+
 		this.add("item.minecraft.potion.effect.long_luck", "Potion of Luck");
 		this.add("item.minecraft.potion.effect.strong_luck", "Potion of Luck");
 		this.add("item.minecraft.splash_potion.effect.long_luck", "Splash Potion of Luck");

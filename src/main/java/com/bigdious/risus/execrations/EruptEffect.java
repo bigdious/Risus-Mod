@@ -33,6 +33,7 @@ public record EruptEffect(LevelBasedValue strength) implements EnchantmentEntity
 		if (enchantedItemInUse.owner() != null && entity.getType().is(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES)) {
 			LivingEntity attacker = enchantedItemInUse.owner();
 			if (attacker.isOnFire() || attacker.isInLava() || attacker.hasEffect(RisusMobEffects.EXBURN)) {
+				entity.igniteForSeconds(strength);
 				attacker.teleportTo(entity.getX(), entity.getY(), entity.getZ());
 				erupt(attacker, strength, entity);
 			}
@@ -42,7 +43,7 @@ public record EruptEffect(LevelBasedValue strength) implements EnchantmentEntity
 
 	public static void erupt(LivingEntity source, float length, Entity target) {
 		source.igniteForSeconds(length);
-		List<Entity> list = source.level().getEntities(source, source.getBoundingBox().inflate(length/2-1));
+		List<Entity> list = source.level().getEntities(source, source.getBoundingBox().inflate(length/2));
 		for (Entity victim : list) {
 			if (!(victim instanceof ItemEntity)) {
 				victim.igniteForSeconds(length);
@@ -51,6 +52,7 @@ public record EruptEffect(LevelBasedValue strength) implements EnchantmentEntity
 		if (target.level() instanceof ServerLevel serverLevel) {
 			for (int i = 0; i < 20; ++i) {
 				serverLevel.sendParticles(ParticleTypes.LAVA, target.getRandomX(2F), target.getRandomY(), target.getRandomZ(2F), 1, 0.0F, 0.0F, 0.0F, 2);
+				serverLevel.sendParticles(ParticleTypes.LARGE_SMOKE, source.getRandomX(1.5F), source.getRandomY(), source.getRandomZ(1.5F), 1, 0.0F, 0.0F, 0.0F, 0);
 			}
 			serverLevel.playSound(null, target.getOnPos().above(), RisusSoundEvents.ERUPT.get(), SoundSource.PLAYERS);
 		}
