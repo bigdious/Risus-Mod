@@ -72,7 +72,7 @@ public class Risus {
 		RisusStructures.STRUCTURES.register(bus);
 		RisusDataComponents.COMPONENTS.register(bus);
 		RisusDataComponents.ENCHANTMENT_EFFECT_COMPONENTS.register(bus);
-		RisusAdvancements.TRIGGERS.register(bus);
+		RisusCriterionTriggers.TRIGGERS.register(bus);
 		RisusItemSubPredicates.TYPES.register(bus);
 		RisusVillagers.POI_TYPES.register(bus);
 		RisusVillagers.VILLAGER_PROFESSIONS.register(bus);

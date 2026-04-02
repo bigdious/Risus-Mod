@@ -2,6 +2,7 @@ package com.bigdious.risus.data;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.advancement.*;
+import com.bigdious.risus.advancement.predicate.BasicBTrigger;
 import com.bigdious.risus.advancement.predicate.ItemHornsPredicate;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.init.*;
@@ -46,9 +47,9 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("enter_site2", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BURRIED_SITE))))
 			.addCriterion("enter_site3", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GRASSY_SITE))))
 			.addCriterion("enter_site4", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.BEDROCK_HAND))))
-			.addCriterion("mirage", MirageTrapTrigger.TriggerInstance.getFooled())
+			.addCriterion("mirage", BasicBTrigger.TriggerInstance.getFooled())
 			.addCriterion("flower", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FLOWER_FIELD))))
-			.addCriterion("holy_grounds", HolyGroundsTrigger.TriggerInstance.getsmitten())
+			.addCriterion("holy_grounds", BasicBTrigger.TriggerInstance.getSmitten())
 			.addCriterion("family", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.FAMILY_TREE))))
 			.addCriterion("body", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.GREAT_BODY))))
 			.addCriterion("lab", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.LAB_START))))
@@ -93,7 +94,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusBlocks.ANGEL_ALTAR.get(),
 				Component.translatable("advancement.risus.angel"),
 				Component.translatable("advancement.risus.angel.desc"), null, AdvancementType.TASK, true, true, false)
-			.addCriterion("holy_grounds", HolyGroundsTrigger.TriggerInstance.getsmitten())
+			.addCriterion("holy_grounds", BasicBTrigger.TriggerInstance.getSmitten())
 			.save(consumer, "risus:angel");
 
 		AdvancementHolder mod_book = Advancement.Builder.advancement().parent(site_zero)
@@ -137,7 +138,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				Component.translatable("advancement.risus.step"),
 				Component.translatable("advancement.risus.step.desc"), null, AdvancementType.TASK, true, true, false)
 			.requirements(AdvancementRequirements.Strategy.OR)
-			.addCriterion("mirage", MirageTrapTrigger.TriggerInstance.getFooled())
+			.addCriterion("mirage", BasicBTrigger.TriggerInstance.getFooled())
 			.save(consumer, "risus:step");
 
 
@@ -146,7 +147,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusItems.ESSENCE_OF_GLUTTONY.get(),
 				Component.translatable("advancement.risus.devour"),
 				Component.translatable("advancement.risus.devour.desc"), null, AdvancementType.TASK, true, true, false)
-			.addCriterion("devour0", KilledByDevourTrigger.TriggerInstance.getgood())
+			.addCriterion("devour0", BasicBTrigger.TriggerInstance.getGood())
 			.save(consumer, "risus:devour");
 
 		AdvancementHolder gluttony = Advancement.Builder.advancement().parent(devour)
@@ -363,7 +364,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusBlocks.WEAVER_NEST.get(),
 				Component.translatable("advancement.risus.homewrecker"),
 				Component.translatable("advancement.risus.homewrecker.desc"), null, AdvancementType.TASK, true, true, false)
-			.addCriterion("homewrecker", BreakWeaverNestTrigger.TriggerInstance.breakNest())
+			.addCriterion("homewrecker", BasicBTrigger.TriggerInstance.breakNest())
 			.save(consumer, "risus:homewrecker");
 
 		AdvancementHolder parentmode = Advancement.Builder.advancement().parent(homewrecker)
@@ -371,7 +372,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusItems.ESSENCE_OF_MELANCHOLY.get(),
 				Component.translatable("advancement.risus.parentmode"),
 				Component.translatable("advancement.risus.parentmode.desc"), null, AdvancementType.GOAL, true, true, false)
-			.addCriterion("parentmode", WitnessWeaverNestTrigger.TriggerInstance.witnessNest())
+			.addCriterion("parentmode", BasicBTrigger.TriggerInstance.witnessNest())
 			.save(consumer, "risus:parentmode");
 
 		AdvancementHolder strung = Advancement.Builder.advancement().parent(homewrecker)
@@ -379,8 +380,31 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 				RisusBlocks.WEAVING_MECHANISM.get(),
 				Component.translatable("advancement.risus.strung"),
 				Component.translatable("advancement.risus.strung.desc"), null, AdvancementType.GOAL, true, true, false)
-			.addCriterion("strung", CreateWeavingMechanismTrigger.TriggerInstance.createWeavingMechanism())
+			.addCriterion("strung", BasicBTrigger.TriggerInstance.createWeavingMechanism())
 			.save(consumer, "risus:strung");
+
+		AdvancementHolder lost_will_1 = Advancement.Builder.advancement().parent(first)
+			.addCriterion("lost_will_1", LostWillTrigger.TriggerInstance.readWill(1))
+			.save(consumer, "risus:lost_will_1");
+
+		AdvancementHolder lost_will_2 = Advancement.Builder.advancement().parent(lost_will_1)
+			.addCriterion("lost_will_2", LostWillTrigger.TriggerInstance.readWill(2))
+			.save(consumer, "risus:lost_will_2");
+
+		AdvancementHolder lost_will_3 = Advancement.Builder.advancement().parent(lost_will_2)
+			.addCriterion("lost_will_3", LostWillTrigger.TriggerInstance.readWill(3))
+			.save(consumer, "risus:lost_will_3");
+
+		AdvancementHolder lost_will_4 = Advancement.Builder.advancement().parent(lost_will_3)
+			.addCriterion("lost_will_4", LostWillTrigger.TriggerInstance.readWill(4))
+			.save(consumer, "risus:lost_will_4");
+
+		AdvancementHolder lost_will_5 = Advancement.Builder.advancement().parent(lost_will_4)
+			.addCriterion("lost_will_5", LostWillTrigger.TriggerInstance.readWill(5))
+			.save(consumer, "risus:lost_will_5");
+
+
+		//challenges
 
 		AdvancementHolder challenges = Advancement.Builder.advancement()
 			.display(

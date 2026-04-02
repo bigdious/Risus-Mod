@@ -1,0 +1,16 @@
+{
+  "name": "Anxiety",
+  "icon": "risus:lost_will",
+  "category": "risus:lost_wills",
+  "advancement": "risus:lost_will_4",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The thoughts of someone right before joining the Risus - materialized between the roots of a bonded tree. $(br2)I'm... so sorry, my children. I wasn't a good enough mother for you all. I-I tried everything I could. But I wasn't enough for you all. I'm sorry. I'm so sorry. If only I was better, maybe I could have healed you all. You wouldn't be just laying here then... I hope "
+    },
+    {
+      "type": "patchouli:text",
+      "text": " - no, I pray that in the next life, you will all be happier. Maybe even with me, all of us together, living like a big family once more. I-I would like that... And if I can't join you, I pray that you all receive better parents than I ever was... Please, just please don't hate me for not being better. I- I'm... $(br2)The Dead Mother of the World answered the request of the anxious."
+    }
+  ]
+}

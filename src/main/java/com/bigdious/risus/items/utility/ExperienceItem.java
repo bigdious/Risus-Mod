@@ -1,4 +1,4 @@
-package com.bigdious.risus.items;
+package com.bigdious.risus.items.utility;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

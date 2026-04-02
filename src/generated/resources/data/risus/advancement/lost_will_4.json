@@ -1,0 +1,17 @@
+{
+  "parent": "risus:lost_will_3",
+  "criteria": {
+    "lost_will_4": {
+      "conditions": {
+        "ordering": 4
+      },
+      "trigger": "risus:lost_will"
+    }
+  },
+  "requirements": [
+    [
+      "lost_will_4"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,7 +1,7 @@
 package com.bigdious.risus.entity.creatures;
 
 import com.bigdious.risus.entity.CacheTargetOnClient;
-import com.bigdious.risus.init.RisusAdvancements;
+import com.bigdious.risus.init.RisusCriterionTriggers;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusDamageTypes;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -182,7 +182,7 @@ public class Maw extends Monster implements CacheTargetOnClient {
 				entity.level().playSound(null, this.getOnPos(), RisusSoundEvents.GORGER_BITE.get() , SoundSource.HOSTILE, 1, 1);
 				this.doHurtTarget(living);
 				if (living instanceof ServerPlayer sp && living.isDeadOrDying()) {
-					RisusAdvancements.KILLED_BY_DEVOUR.get().trigger(sp);
+					RisusCriterionTriggers.KILLED_BY_DEVOUR.get().trigger(sp);
 				}
 			}
 			this.level().broadcastEntityEvent(this, (byte) 66);

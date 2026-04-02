@@ -121,7 +121,7 @@ public class Weaver extends Monster implements CacheTargetOnClient {
 				this.kill();
 				this.level().getEntities((Entity) null, new AABB(this.getOnPos()).inflate(30), entity -> entity instanceof ServerPlayer).forEach(entity -> {
 					if (entity instanceof ServerPlayer sp) {
-						RisusAdvancements.WITNESS_WEAVER_NEST.get().trigger(sp);
+						RisusCriterionTriggers.WITNESS_WEAVER_NEST.get().trigger(sp);
 					}
 				});
 			}

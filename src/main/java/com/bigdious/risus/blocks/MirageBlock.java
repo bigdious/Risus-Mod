@@ -1,8 +1,7 @@
 package com.bigdious.risus.blocks;
 
-import com.bigdious.risus.init.RisusAdvancements;
+import com.bigdious.risus.init.RisusCriterionTriggers;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
@@ -66,7 +65,7 @@ public class MirageBlock extends Block {
 	@Override
 	protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
 		if (entity instanceof ServerPlayer sp){
-			RisusAdvancements.MIRAGE_TRAP.get().trigger(sp);
+			RisusCriterionTriggers.MIRAGE_TRAP.get().trigger(sp);
 		}
 		super.entityInside(state, level, pos, entity);
 	}

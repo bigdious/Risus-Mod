@@ -1,0 +1,28 @@
+{
+  "name": "Exhaustion",
+  "icon": "risus:lost_will",
+  "category": "risus:lost_wills",
+  "advancement": "risus:lost_will_5",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The thoughts of someone right before joining the Risus - materialized between the roots of a bonded tree. $(br2)The village has decided. Everyone had enough of the constant pillage raids, the failing crops and the losses. We tried to protect ourselves with golems, but even they proved to be too weak. With a unanimous vote, everyone left had agreed to pray. "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Everyone has been bonded now, except me. As per the secret task from the chief, I need to make sure everyone has safely bonded. As I walk through the forest made up of my neighbors - the only family I ever knew - I can still hear them murmuring. Between the roots, the branches, and the tree bark, they are still there. Of those who have their face still visible, they look happy and content. I no longer see bags under their eyes or wrinkles from continued frowning. "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When the idea of praying to an unknown, freakish 'thing' was brought up, I was hesitant and skeptical - just as many others were. But no one could continue with how things were going either. We aren't warriors, nor are we rich enough to afford them. We tried to live to the best of our efforts, but it simply wasn't enough. Grief, hunger, exhaustion; it's just too much...$(br2)It's eerie and I am still scared. I don't think this is a good idea, but I also can't "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "come up with a better one. Even so, seeing everyone now - free of the pain, yet still alive - does make me feel a bit better. Maybe I am overthinking this... It might actually feel much better than I think. $(br2)I miss the festivals we used to hold. We danced, ate and celebrated all night long. Us, the kids, all playing together, and the adults watching us proudly. I miss Erik, who used to teach me about blacksmithing. I miss Agnes,"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "with who I used to spend all day. I miss... so many things. Maybe this way I can have those moments again? $(br2)I pray, next to this lantern's dying light, whoever or whatever you are... Please, let everyone be here again, happy, as we were in the past, with our exhaustion being a forgotten memory. $(br2)The Husk of the Old God answered the prayer of the exhausted."
+    }
+  ]
+}

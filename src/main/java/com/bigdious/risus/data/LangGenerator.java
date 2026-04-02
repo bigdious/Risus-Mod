@@ -282,6 +282,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.KILLJOY, "Killjoy");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
 		this.addItem(RisusItems.LITTER, "Litter");
+		this.addItem(RisusItems.LOST_WILL, "Lost Will");
 		this.addItem(RisusItems.LOVER_CREAM, "Lover's Cream");
 		this.addItem(RisusItems.LUCKY_CHARM, "Lucky Charm");
 		this.addItem(RisusItems.MEMORY_CORE, "Memory Core");
@@ -400,6 +401,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.gluttony_scales", "Harvested from the bodies of Gorgers.");
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
+		this.add("tooltip.risus.lost_will", "Right Click to use.");
 		this.add("tooltip.risus.scythe", "Scythe");
 		this.add("tooltip.risus.heavy_axe", "Heavy Axe");
 		this.add("tooltip.risus.knuckleduster", "Knuckleduster");

@@ -1,0 +1,20 @@
+{
+  "name": "Regret",
+  "icon": "risus:lost_will",
+  "category": "risus:lost_wills",
+  "advancement": "risus:lost_will_2",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The thoughts of someone right before joining the Risus - materialized between the roots of a bonded tree. $(br2)I am sorry. I cannot do this anymore. I cannot run from what I have done. His face haunts me every time I close my eyes. I know I did not have a choice. He knew I did not! That is why he smiled! Even with my sword going through his chest, all he did was smile "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "and tell me he was proud of me... $(br2)How could he betray the town he grew up in? How could he join the raiders and then just- just die to me?! He didn't even resist. He could have run away when he saw me alone, separated from the other guards. What did he do instead?! He came to me. He raised his sword... I did not know what to do. I grew up with him. He was like a brother to me. I do not even remember how I managed to stab him. It "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "has been years since then, and I can still remember him as if it was yesterday. I tried to forget. I tried... everything. I still miss him; that traitorous bastard. I just can't do this anymore. Please, I do not care what it will take. I just want to see my true brother again. $(br2)The Smiling Calamity answered the begging of the regretful."
+    }
+  ]
+}

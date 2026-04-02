@@ -2,7 +2,7 @@ package com.bigdious.risus.blocks;
 
 import com.bigdious.risus.blocks.entity.WeaverNestBlockEntity;
 import com.bigdious.risus.blocks.interfaces.SimpleMultiloggedBlock;
-import com.bigdious.risus.init.RisusAdvancements;
+import com.bigdious.risus.init.RisusCriterionTriggers;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -84,7 +84,7 @@ public class WeaverNestBlock extends BaseEntityBlock implements SimpleMultilogge
 	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
 		var ret = super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 		if (player instanceof ServerPlayer sp) {
-			RisusAdvancements.BREAK_WEAVER_NEST.get().trigger(sp);
+			RisusCriterionTriggers.BREAK_WEAVER_NEST.get().trigger(sp);
 			//wait, you can just trigger it like this? Holy hell, that's so stupidly simple. I'm gonna abuse the shit out of it
 		}
 		return ret;

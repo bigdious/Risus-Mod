@@ -293,6 +293,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.BLOOD_FEATHER);
 		singleTex(RisusItems.COUNTERWEIGHT);
 		singleTex(RisusItems.BORN_TO_BURN);
+		singleTex(RisusItems.LOST_WILL);
 		singleTex(RisusItems.BLOOD_BUCKET);
 		singleTex(RisusItems.BONDKNOT_BOAT);
 		singleTex(RisusItems.GUTS_BOAT);

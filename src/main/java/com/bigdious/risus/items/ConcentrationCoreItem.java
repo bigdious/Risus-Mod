@@ -4,7 +4,7 @@ import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.blocks.WeavingMechanismBlock;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.creatures.pets.Litter;
-import com.bigdious.risus.init.RisusAdvancements;
+import com.bigdious.risus.init.RisusCriterionTriggers;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
@@ -109,7 +109,7 @@ public class ConcentrationCoreItem extends Item {
 			level.setBlockAndUpdate(pos, RisusBlocks.WEAVING_MECHANISM.get().defaultBlockState().setValue(WeavingMechanismBlock.HORIZONTAL_FACING, context.getHorizontalDirection()));
 			context.getItemInHand().consume(1, context.getPlayer());
 			if (context.getPlayer() instanceof ServerPlayer sp) {
-				RisusAdvancements.CREATE_WEAVING_MECHANISM.get().trigger(sp);
+				RisusCriterionTriggers.CREATE_WEAVING_MECHANISM.get().trigger(sp);
 			}
 			return InteractionResult.sidedSuccess(level.isClientSide());
 		}

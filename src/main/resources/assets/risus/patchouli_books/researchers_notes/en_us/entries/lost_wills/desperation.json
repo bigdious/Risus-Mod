@@ -1,0 +1,20 @@
+{
+  "name": "Desperation",
+  "icon": "risus:lost_will",
+  "category": "risus:lost_wills",
+  "advancement": "risus:lost_will_1",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The thoughts of someone right before joining the Risus - materialized between the roots of a bonded tree. $(br2)I do not regret what I've done. Even if the entire village will look down on me, even if my parents hold me in contempt for the rest of their life, I will not regret it. If I was given the choice, I would have chosen him again. I knew him ever since we were children. "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "We grew up together, became partners and he was just about to make me his wife. There is no way that I could accept him being gone just like that. Not with him dying in my arms. He always protected and helped me and I, in return, supported him in his moments of weakness. I can't let that go. Not our moments together, not the dreams we shared, not the emotions I've had and definitely not the love I hold for him. We were supposed to have a future together, in a big house, with our kids"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "running around. He was not supposed to be murdered like this... I-I do not care what it takes, I do not care who - all I ask is to bring him back to my side. Don't take him away. Even if I have to throw everything else away... Just, let the two of us be together forever. Let us have our future! I can't forget him - I won't! Let me keep this happiness... Let us continue living together... $(br2)The Prototype answered the cry of the desperate. "
+    }
+  ]
+}

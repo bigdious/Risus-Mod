@@ -124,7 +124,7 @@ public class Angel extends Monster {
 					lightning.setPos(livingentity.getX(), livingentity.getEyeY(), livingentity.getZ());
 					level.addFreshEntity(lightning);
 					if (livingentity instanceof ServerPlayer sp){
-						RisusAdvancements.HOLY_GROUNDS.get().trigger(sp);
+						RisusCriterionTriggers.HOLY_GROUNDS.get().trigger(sp);
 					}
 					this.chargeTime = -40;
 					this.soundCD = 0;

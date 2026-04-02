@@ -1,0 +1,28 @@
+{
+  "name": "Loneliness",
+  "icon": "risus:lost_will",
+  "category": "risus:lost_wills",
+  "advancement": "risus:lost_will_3",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The thoughts of someone right before joining the Risus - materialized between the roots of a bonded tree. $(br2)Ugh... I don't have much time left in me. Even just sitting in my chair is difficult now. I can barely even walk with how my knees have given out. Maybe if I had some help, but no one comes out into woods to visit me... Those townsfolks stopped a decade ago. Not even that "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "damn merchant - who wanders to everywhere - comes here anymore. Not to mention those ungrateful bastards that I call my children. They know damn well I'm doing awful and what have they done in response? Just upped and disappeared! $(br2)Sigh... I know I wasn't the best father. I got angry at them way too easily and punished them way too much. But I still made sure that they were always well fed; that they would treat others with respect; and that they would have the skills to"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "make it in life. Yet now, I'm not sure if my efforts amounted to anything. I don't even know if I have any grandkids. $(br2)Regardless of how those bastards are treating me now, I still hope they are alive and well - with kids who love them. I don't want them to die alone, as old, decrepit nobodies. $(br2)My chest hurts from how violently my heart is beating. I need to drink that herb tea I have left but... I can't make it to the cabinet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "My limbs are starting to go numb. $(br2)Ugh... I heard that people become religious when they are close to death. I didn't expect I would be one of those church mutts too, but at this point, I don't have anything else left. So... whatever bastards are watching me, here's my half-arsed prayer: $(br)Make sure my kids are happy! As for me, I don't know... If there is a second life, just, don't make me die alone again. If there isn't...? Do..."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "whatever the hell you want, you fate... $(br)manipulating... $(br)basta- $(br2)The Witness answered the rambling of the lonely. "
+    }
+  ]
+}

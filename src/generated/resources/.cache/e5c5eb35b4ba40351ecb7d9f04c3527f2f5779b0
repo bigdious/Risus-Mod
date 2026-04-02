@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-01T22:10:57.7165758	Advancements
+// 1.21.1	2026-04-02T19:44:44.3385558	Advancements
 19150bcb72ef4df2fa33529f45d13d0dfdd6f572 data/risus/advancement/analysis.json
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
 011a51a05b8361a29814a8a7ca030ea465b503a9 data/risus/advancement/armory.json
@@ -25,6 +25,11 @@ ba3ea24343a11784fa507b7ad333e61b3e96838e data/risus/advancement/knuckles.json
 43cfa6c49cf7db9394e105911671e223af1e242c data/risus/advancement/licked.json
 4e8b670cac861767ec94b9a6c66a156234ccbbc4 data/risus/advancement/light_devourer.json
 bb81efcec332c32a15ba064cf52f864ea6b140d9 data/risus/advancement/little.json
+a3d4a6d69551509dffd72896c39b16a05aa0511d data/risus/advancement/lost_will_1.json
+bd0c42517a1e8d5733f2c8f005221d5d8e324209 data/risus/advancement/lost_will_2.json
+a8e6a73641387d607ab4574155d97ed7a059fe3d data/risus/advancement/lost_will_3.json
+fb3876d7180f48a6be866ea9482a8f9e6b1b4c47 data/risus/advancement/lost_will_4.json
+d1c38003543628f4e5eda12c845a5140ca996d55 data/risus/advancement/lost_will_5.json
 6c26d22dbedaaf59290b10dc01083a8eca050ccc data/risus/advancement/mod_book.json
 aeec319b2aa74fde1fab7eed7d4264d3ca558794 data/risus/advancement/parentmode.json
 c3216a49946d9bda668d55c7c0204d674a47e68a data/risus/advancement/potential.json

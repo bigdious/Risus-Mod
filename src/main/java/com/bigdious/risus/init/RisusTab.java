@@ -318,6 +318,7 @@ public class RisusTab {
 				output.accept(RisusItems.EGG_SAC.get());
 				output.accept(RisusItems.HAIR_FOLLICLES.get());
 				output.accept(RisusItems.TOTEM_OF_UNYIELDING.get());
+				output.accept(RisusItems.LOST_WILL.get());
 				output.accept(RisusItems.SMILE_PATTERN.get());
 				output.accept(RisusItems.DIVINITY_PATTERN.get());
 				output.accept(RisusItems.TREE_PATTERN.get());
