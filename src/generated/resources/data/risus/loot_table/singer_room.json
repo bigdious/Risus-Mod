@@ -26,7 +26,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
+                "max": 3.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -41,7 +41,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
+                "max": 3.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -56,13 +56,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 1.0
+                "max": 20.0,
+                "min": 10.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:grimstone"
+          "name": "minecraft:copper_ingot"
         },
         {
           "type": "minecraft:item",
@@ -71,7 +71,22 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "risus:burnt_hyphae"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -101,6 +116,21 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
+                "max": 10.0,
+                "min": 5.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:redstone"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
                 "max": 3.0,
                 "min": 1.0
               },
@@ -108,6 +138,10 @@
             }
           ],
           "name": "minecraft:bone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "risus:echo_pearl"
         }
       ],
       "rolls": {
@@ -120,19 +154,12 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:empty"
-        },
-        {
           "type": "minecraft:item",
           "name": "risus:guilty_apple"
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_apple"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:ender_eye"
         },
         {
           "type": "minecraft:item",
@@ -144,14 +171,56 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
           "name": "risus:gluttony_scales"
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
           "name": "minecraft:diamond"
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#risus:execrations"
+            }
+          ],
+          "name": "minecraft:book"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     },
     {
       "bonus_rolls": 0.0,

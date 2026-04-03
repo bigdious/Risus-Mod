@@ -3474,5 +3474,23 @@
     },
     "done": true
   },
+  "risus:step": {
+    "criteria": {
+      "mirage": "2026-03-30 21:10:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/concentration_core": {
+    "criteria": {
+      "has_item": "2026-04-03 21:34:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/combat/born_to_burn": {
+    "criteria": {
+      "has_item": "2026-04-03 21:34:01 +0300"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

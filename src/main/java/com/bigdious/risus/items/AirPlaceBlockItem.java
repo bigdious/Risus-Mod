@@ -32,9 +32,9 @@ public class AirPlaceBlockItem extends BlockItem {
 		ItemStack itemstack = player.getItemInHand(hand);
 		int range = (int) player.getAttribute(Attributes.BLOCK_INTERACTION_RANGE).getValue();
 		if (!level.isClientSide()) {
-			int x = (int) (player.getOnPos().getX()+0.25 + range * player.getLookAngle().x);
-			int y = (int) (player.getEyeY() + range * player.getLookAngle().y);
-			int z = (int) (player.getOnPos().getZ()-0.25 + range * player.getLookAngle().z);
+			int x = (int) (player.getEyePosition().x() + range * player.getLookAngle().x);
+			int y = (int) (player.getEyePosition().y() + range * player.getLookAngle().y);
+			int z = (int) (player.getEyePosition().z() + range * player.getLookAngle().z);
 
 			BlockPos blockPos = new BlockPos(x, y, z);
 			if (level.getBlockState(blockPos).isAir()) {

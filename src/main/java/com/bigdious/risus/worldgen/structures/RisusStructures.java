@@ -496,7 +496,8 @@ public class RisusStructures {
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(RIBS_FOSSIL_POOL, new StructureTemplatePool(emptyPool, List.of(
-			Pair.of(StructurePoolElement.single(name("ribs_fossil"), processors.getOrThrow(FOSSIL_FRAGMENTATION)), 1)
+			Pair.of(StructurePoolElement.single(name("ribs_fossil"), processors.getOrThrow(FOSSIL_FRAGMENTATION)), 1),
+			Pair.of(StructurePoolElement.single(name("ribs_fossil_tail"), processors.getOrThrow(FOSSIL_FRAGMENTATION)), 1)
 		), StructureTemplatePool.Projection.RIGID));
 
 		context.register(ALTERATION_SITE_POOL, new StructureTemplatePool(emptyPool, List.of(

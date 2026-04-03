@@ -15,12 +15,13 @@ public class RisusLootTables {
 	public static final ResourceKey<LootTable> FAMILY_TREE = register("family_tree_1");
 	public static final ResourceKey<LootTable> ANGEL_ALTAR = register("angel_altar_1");
 	public static final ResourceKey<LootTable> GREAT_BODY = register("great_body_1");
+	public static final ResourceKey<LootTable> GREAT_BODY_HEART = register("great_body_2");
 	public static final ResourceKey<LootTable> HOLDER_ROOM = register("holder_room");
+	public static final ResourceKey<LootTable> HEX_ROOM = register("hex_room");
 	public static final ResourceKey<LootTable> CENTER_ROOM = register("center_room");
 	public static final ResourceKey<LootTable> SINGER_ROOM = register("singer_room");
 	public static final ResourceKey<LootTable> STALKER_ROOM = register("stalker_room");
 	public static final ResourceKey<LootTable> LICKER_ROOM = register("licker_room");
-	public static final ResourceKey<LootTable> ZOMBIE_ROOM = register("zombie_room");
 	public static final ResourceKey<LootTable> REACTOR = register("reactor");
 	public static final ResourceKey<LootTable> STAIRWELL_FLESH = register("stairwell_flesh");
 	public static final ResourceKey<LootTable> STAIRWELL_REMAINS = register("stairwell_remains");

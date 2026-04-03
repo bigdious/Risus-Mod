@@ -491,7 +491,26 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("ribs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.RIBS_FOSSIL))))
 			.addCriterion("skull", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SKULL_FOSSIL))))
 			.save(consumer, "risus:analysis");
+
+		AdvancementHolder antique = Advancement.Builder.advancement().parent(analysis)
+			.display(
+				RisusItems.MUSIC_DISC_CYCLE.get(),
+				Component.translatable("advancement.risus.antique"),
+				Component.translatable("advancement.risus.antique.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("cycle", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MUSIC_DISC_CYCLE))
+			.addCriterion("regn", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MUSIC_DISC_REGN))
+			.addCriterion("mork", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MUSIC_DISC_MORK))
+			.addCriterion("rak", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.MUSIC_DISC_RAK))
+			.addCriterion("smile", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.SMILE_PATTERN))
+			.addCriterion("rose", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.ROSE_PATTERN))
+			.addCriterion("divinity", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.DIVINITY_PATTERN))
+			.addCriterion("tree", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.TREE_PATTERN))
+			.save(consumer, "risus:antique");
+
 	}
+
+
 
 	private Criterion<PlayerTrigger.TriggerInstance> advancementTrigger(AdvancementHolder advancement) {
 		return this.advancementTrigger(advancement.id().getPath());

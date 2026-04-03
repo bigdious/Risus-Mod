@@ -691,6 +691,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("armory", "Armory", "Obtain all armors and equippables");
 		this.addAdvancement("destroy", "Annihilation", "Kill all Beloved and Offsprings");
 		this.addAdvancement("analysis", "Analysis", "Find all Risus structures");
+		this.addAdvancement("antique", "Antique", "Find all Risus Music Disks and Banner Patterns");
 		this.addAdvancement("hearty", "A Hearty Challenge", "Find a Heart Chamber");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");

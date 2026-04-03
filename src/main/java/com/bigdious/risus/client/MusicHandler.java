@@ -113,7 +113,7 @@ public class MusicHandler {
 				RISUS_MUSIC_PLAYING = true;
 				minecraftClient.getSoundManager().play(STRUCTURE_MUSIC);
 				setMusicVolume(minecraftClient, STRUCTURE_MUSIC, 0.01f);
-				addMusicFade(STRUCTURE_MUSIC, 1500, true, (m) -> {
+				addMusicFade(STRUCTURE_MUSIC, 600, true, (m) -> {
 					m.getSoundManager().stop(SoundEvents.MUSIC_CREATIVE.key().location(), SoundSource.MUSIC);
 					m.getSoundManager().stop(BIOME_MUSIC, SoundSource.MUSIC);
 					m.getSoundManager().stop(SoundEvents.MUSIC_CREATIVE.key().location(), SoundSource.MUSIC);

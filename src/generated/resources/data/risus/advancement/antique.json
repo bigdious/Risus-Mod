@@ -1,0 +1,125 @@
+{
+  "parent": "risus:analysis",
+  "criteria": {
+    "cycle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:music_disc_cycle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "divinity": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:divinity_banner_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mork": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:music_disc_mork"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rak": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:music_disc_rak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "regn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:music_disc_regn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rose": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:rose_banner_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smile": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:smile_banner_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tree": {
+      "conditions": {
+        "items": [
+          {
+            "items": "risus:tree_banner_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.antique.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "risus:music_disc_cycle"
+    },
+    "title": {
+      "translate": "advancement.risus.antique"
+    }
+  },
+  "requirements": [
+    [
+      "cycle"
+    ],
+    [
+      "regn"
+    ],
+    [
+      "mork"
+    ],
+    [
+      "rak"
+    ],
+    [
+      "smile"
+    ],
+    [
+      "rose"
+    ],
+    [
+      "divinity"
+    ],
+    [
+      "tree"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -165,15 +165,15 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:empty",
-          "weight": 10
-        },
-        {
           "type": "minecraft:item",
           "name": "risus:concentration_core"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     }
   ],
   "random_sequence": "risus:church_litter"

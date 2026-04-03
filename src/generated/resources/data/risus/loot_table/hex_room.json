@@ -11,8 +11,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
@@ -26,13 +26,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 3.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:smiling_remains"
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
@@ -41,13 +41,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 3.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:ashen_remains"
+          "name": "minecraft:gold_ingot"
         },
         {
           "type": "minecraft:item",
@@ -56,13 +56,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 20.0,
+                "min": 10.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:spreading_remains"
+          "name": "minecraft:copper_ingot"
         },
         {
           "type": "minecraft:item",
@@ -71,13 +71,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:skin"
+          "name": "risus:burnt_hyphae"
         },
         {
           "type": "minecraft:item",
@@ -86,38 +86,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "risus:hair_follicles"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone_block"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
+                "max": 3.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
@@ -132,27 +102,12 @@
               "count": {
                 "type": "minecraft:uniform",
                 "max": 10.0,
-                "min": 2.0
+                "min": 5.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:burnt_hyphae"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 2.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "risus:veins"
+          "name": "minecraft:redstone"
         },
         {
           "type": "minecraft:item",
@@ -167,43 +122,17 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "risus:stalker_eye"
+          "name": "minecraft:bone"
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "risus:egg_sac"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "risus:eye_bloodshot"
+          "name": "risus:totem_of_unyielding"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 12.0,
-        "min": 6.0
+        "max": 9.0,
+        "min": 3.0
       }
     },
     {
@@ -215,7 +144,15 @@
         },
         {
           "type": "minecraft:item",
-          "name": "risus:flattened_scales_block"
+          "name": "minecraft:golden_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:name_tag"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle"
         },
         {
           "type": "minecraft:item",
@@ -224,22 +161,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "risus:organic_matter_block"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -249,7 +171,18 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_block"
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:diamond"
         }
       ],
       "rolls": 1.0
@@ -279,19 +212,29 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 3
+          "weight": 10
         },
         {
           "type": "minecraft:item",
-          "name": "risus:music_disc_feigr"
+          "name": "risus:music_disc_regn"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "name": "risus:smile_banner_pattern"
+          "name": "risus:killjoy"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "risus:reactor"
+  "random_sequence": "risus:hex_room"
 }

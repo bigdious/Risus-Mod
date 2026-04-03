@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-30T21:31:08.1386807	Registries
+// 1.21.1	2026-04-03T22:18:56.976569	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -122,7 +122,7 @@ cdd97fc948e3e8480ea0e90ba895adcaa7b50783 data/risus/worldgen/template_pool/heart
 7c83aad6d5d1c005e5c6f418acef6333ef4a22aa data/risus/worldgen/template_pool/heart_chamber_rooms.json
 6a7e731c0901c01d660106900d26845eadf63af1 data/risus/worldgen/template_pool/lab.json
 6e151bb221379a6e9d054798aab062caa07ee49f data/risus/worldgen/template_pool/lab_start.json
-9e9fc4b43834f9cec56feeec044bab7f7c810185 data/risus/worldgen/template_pool/ribs_fossil.json
+5ba65f675bc75ac970c7257ff4b9c98c3cea8e61 data/risus/worldgen/template_pool/ribs_fossil.json
 a65a3e9038dd7366ed638a3447041c7a6f90a149 data/risus/worldgen/template_pool/rigid_stuff.json
 e04a52f505b0d57ed0fb418008c1a3babd4336a8 data/risus/worldgen/template_pool/skull_fossil.json
 0eafde2bfc1c205a48c97cfb415f123811c06f81 data/risus/worldgen/template_pool/spawner.json
