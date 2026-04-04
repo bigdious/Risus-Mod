@@ -90,7 +90,7 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 			return ItemInteractionResult.FAIL;
 
 		if (!level.isClientSide()) {
-			if (alteration.getTheItem().isEmpty()) {
+			if (alteration.getTheItem().isEmpty() && !stack.isEmpty()) {
 				alteration.setInputItem(player.getInventory().removeItem(player.getInventory().selected, stack.is(RisusTags.Items.ALTERATION_STACKING_EXCEPTION) ? 1 : stack.getCount()));
 				level.playSound(null, pos, RisusSoundEvents.ITEM_INSERT.get(), SoundSource.BLOCKS);
 			} else {
@@ -101,10 +101,12 @@ public class AlterationCatalystBlock extends BaseEntityBlock implements SimpleMu
 					alteration.setChanged();
 				}
 				ItemEntity item = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), alteration.getTheItem());
+				if (!alteration.getTheItem().isEmpty()) {
+					level.playSound(null, pos, RisusSoundEvents.ITEM_REMOVED.get(), SoundSource.BLOCKS);
+				}
 				level.addFreshEntity(item);
 				alteration.setInputItem(ItemStack.EMPTY);
 				alteration.setChanged();
-				level.playSound(null, pos, RisusSoundEvents.ITEM_REMOVED.get(), SoundSource.BLOCKS);
 			}
 			level.sendBlockUpdated(pos, state, state, 2);
 		}

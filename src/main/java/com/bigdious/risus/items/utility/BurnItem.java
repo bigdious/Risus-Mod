@@ -70,7 +70,6 @@ public class BurnItem extends Item {
 		}
 
 		if (flag) {
-			context.getItemInHand().shrink(1);
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		} else {
 			return InteractionResult.FAIL;

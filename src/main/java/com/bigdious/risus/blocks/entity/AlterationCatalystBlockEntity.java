@@ -182,7 +182,7 @@ public class AlterationCatalystBlockEntity extends BlockEntity implements Worldl
 		}
 		if (te.failedCrafting ) {
 			if (te.failedCounter < 1) {
-				level.playSound(null, pos, SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.BLOCKS, 1.0F, 0.5F);
+				level.playSound(null, pos, RisusSoundEvents.ALTERATION_FAILED.get(), SoundSource.BLOCKS, 1.0F, 0.5F);
 			}
 			if (te.failedCounter++ >= 20) {
 				te.failedCrafting = false;

@@ -59,7 +59,7 @@ public class AlterationParticle extends DustParticleBase<AlterationParticleOptio
 	}
 
 	private void lerpColors(float partialTicks) {
-		float f = ((float) this.age + partialTicks) / ((float) this.lifetime + 1.0F);
+		float f = ((float) this.age/1.75F + partialTicks) / ((float) this.lifetime + 1.0F);
 		Vector3f vector3f = new Vector3f(this.fromColor);
 		vector3f.lerp(this.toColor, f);
 		this.rCol = vector3f.x();

@@ -7,7 +7,7 @@
   "size": 5,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": -3
+    "absolute": -2
   },
   "start_pool": "risus:blood_well",
   "step": "surface_structures",

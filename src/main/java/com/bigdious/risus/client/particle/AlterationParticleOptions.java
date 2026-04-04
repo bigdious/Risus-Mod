@@ -35,12 +35,12 @@ public class AlterationParticleOptions extends ScalableParticleOptionsBase {
 	private final Vector3f fromColor;
 	private final Vector3f toColor;
 
-	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(Vec3.fromRGB24(9868693).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
+	public static final AlterationParticleOptions ALTERATION_FADE = new AlterationParticleOptions(Vec3.fromRGB24(16777215).toVector3f(), Vec3.fromRGB24(11012618).toVector3f(), 1.0F);
 
-	public AlterationParticleOptions(Vector3f p_254199_, Vector3f p_254529_, float p_254178_) {
+	public AlterationParticleOptions(Vector3f fromColor, Vector3f toColor, float p_254178_) {
 		super(p_254178_);
-		this.fromColor = p_254199_;
-		this.toColor = p_254529_;
+		this.fromColor = fromColor;
+		this.toColor = toColor;
 	}
 	public Vector3f getFromColor() {
 		return this.fromColor;

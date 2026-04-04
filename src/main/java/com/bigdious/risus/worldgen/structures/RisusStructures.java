@@ -382,7 +382,7 @@ public class RisusStructures {
 			pools.getOrThrow(BLOOD_WELL_POOL),
 			Optional.empty(),
 			5,
-			ConstantHeight.of(VerticalAnchor.absolute(-3)),
+			ConstantHeight.of(VerticalAnchor.absolute(-2)),
 			false,
 			Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
 			80,
@@ -448,7 +448,7 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.TRIANGULAR, 836475)));
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
-			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 1024321764)));
+			new RandomSpreadStructurePlacement(39, 0, RandomSpreadType.LINEAR, 1024321764)));
 
 		context.register(GRASSY_SITE_SET, new StructureSet(structures.getOrThrow(GRASSY_SITE),
 			new RandomSpreadStructurePlacement(136, 0, RandomSpreadType.LINEAR, 985328795)));
@@ -457,10 +457,10 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(204, 0, RandomSpreadType.LINEAR, 548753487)));
 
 		context.register(BEDROCK_HAND_SET, new StructureSet(structures.getOrThrow(BEDROCK_HAND),
-			new RandomSpreadStructurePlacement(102, 0, RandomSpreadType.TRIANGULAR, 364875348)));
+			new RandomSpreadStructurePlacement(51, 0, RandomSpreadType.TRIANGULAR, 364875348)));
 
 		context.register(FAMILY_TREE_SET, new StructureSet(structures.getOrThrow(FAMILY_TREE),
-			new RandomSpreadStructurePlacement(31, 0, RandomSpreadType.LINEAR, 5297)));
+			new RandomSpreadStructurePlacement(34, 0, RandomSpreadType.LINEAR, 5297)));
 
 		context.register(ANGEL_ALTAR_SET, new StructureSet(structures.getOrThrow(ANGEL_ALTAR),
 			new RandomSpreadStructurePlacement(37, 4, RandomSpreadType.LINEAR, 13414354)));
