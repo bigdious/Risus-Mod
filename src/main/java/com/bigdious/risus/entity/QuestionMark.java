@@ -23,7 +23,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 
 public class QuestionMark extends Monster {
-
+	//I know it extends Monster, but this isn't a creature, it's just done for ease of use. It's a hole in a bubble
 	private boolean isTransient;
 	private int killTimer;
 

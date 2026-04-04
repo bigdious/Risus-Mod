@@ -43,7 +43,7 @@ public class BurnItem extends Item {
 		super.inventoryTick(stack, level, entity, slotId, isSelected);
 	}
 
-	//vanillacopy from FireChargeItem, added crouching
+	//vanillacopy from FireChargeItem, added crouching & removed shrink
 
 	public InteractionResult useOn(UseOnContext context) {
 		Level level = context.getLevel();

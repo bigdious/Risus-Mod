@@ -11,6 +11,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +21,10 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 
 import java.util.EnumSet;
@@ -112,7 +116,7 @@ public class Angel extends Monster {
 		public void tick() {
 			LivingEntity livingentity = this.angel.getTarget();
 			Level level = this.angel.level();
-			if (livingentity != null && this.angel.hasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
+			if (livingentity != null && this.angel.angelHasLineOfSight(livingentity) && level.canSeeSky(livingentity.blockPosition())) {
 				if (this.chargeTime == 1 && this.soundCD<1) {
 					level.playSound(null, livingentity.getOnPos().above(2), RisusSoundEvents.TOLLING_BELL.get() ,SoundSource.HOSTILE, 3, 1);
 					this.soundCD = 29;
@@ -129,8 +133,10 @@ public class Angel extends Monster {
 					this.chargeTime = -40;
 					this.soundCD = 0;
 				}
-			} else if (livingentity == null && this.chargeTime > 0) {
-				--this.chargeTime;
+			} else if (this.chargeTime > 0) {
+				this.angel.setTarget(null);
+				this.chargeTime = 0;
+				this.soundCD = 0;
 			}
 
 			this.angel.setCharging(this.chargeTime > 10);
@@ -164,6 +170,15 @@ public class Angel extends Monster {
 		}
 	}
 
+	public boolean angelHasLineOfSight(Entity entity) {
+		if (entity.level() != this.level()) {
+			return false;
+		} else {
+			Vec3 vec3 = new Vec3(this.getX(), this.getEyeY(), this.getZ());
+			Vec3 vec31 = new Vec3(entity.getX(), entity.getEyeY(), entity.getZ());
+			return vec31.distanceTo(vec3) > this.getAttributeValue(Attributes.FOLLOW_RANGE) ? false : this.level().clip(new ClipContext(vec3, vec31, ClipContext.Block.COLLIDER, net.minecraft.world.level.ClipContext.Fluid.NONE, this)).getType() == HitResult.Type.MISS;
+		}
+	}
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		//keep semi-hardcode until tag issue is confirmed fixed
