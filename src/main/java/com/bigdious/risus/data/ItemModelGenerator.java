@@ -78,7 +78,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		toBlock(RisusBlocks.MIRAGE_SAND.get());
 		toBlock(RisusBlocks.MIRAGE_NETHERRACK.get());
 		toBlock(RisusBlocks.MIRAGE_END_STONE.get());
-		toBlockModel(RisusBlocks.BLOODWEAVE.get(), Risus.prefix("block/bloodweave_core"));
+		toBlockModel(RisusBlocks.BLOODWEAVE.get(), Risus.prefix("block/bloodweave_b2b_item"));
 		toBlock(RisusBlocks.SCAB.get());
 		toBlock(RisusBlocks.COAGULATED_BLOOD_BLOCK.get());
 		toBlock(RisusBlocks.WEAVER_NEST.get());

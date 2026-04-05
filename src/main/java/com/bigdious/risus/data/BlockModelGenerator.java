@@ -59,7 +59,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 			ModelFile smile8 = make2LayerCubeAllSidesSame("block/smiling_remains/8", ResourceLocation.withDefaultNamespace("cutout"), 0, 10 , false)
 				.texture("all", Risus.prefix("block/smiling_remains/8")).texture("all2", Risus.prefix("block/smiling_remains/overlay_8"));
 			return ConfiguredModel.builder()
-				.modelFile(blank).weight(3)
+				.modelFile(blank).weight(10)
 				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile1 : blank).weight(1)
 				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile2 : blank).weight(1)
 				.nextModel().modelFile(state.getValue(RemainsBlock.ACTIVE) ? smile3 : blank).weight(1)

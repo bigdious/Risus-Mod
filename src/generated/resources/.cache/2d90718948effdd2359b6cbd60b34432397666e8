@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-30T22:00:55.0184365	Risus blockstates and models
+// 1.21.1	2026-04-05T22:24:27.7161865	Risus blockstates and models
 e5c85d0ed944b0855db8f51a0f700cda1417a69c assets/risus/blockstates/active_grimstone.json
 6ca3a78d0392af4baa3e5657fe0121c371a1f199 assets/risus/blockstates/alteration_catalyst.json
 3181f132b2d8581651dc4f3957e77b707c68b2a4 assets/risus/blockstates/angel_altar.json
@@ -199,7 +199,7 @@ c8e194a880c0aa1bf7fa24f25e731c77bec269fc assets/risus/blockstates/regen_rose.jso
 9a095252e736dc33a1c6b561c189392b50bd04bd assets/risus/blockstates/rotting_tissue.json
 672a1d812e59b0ea1ccdc5a09e15df60aa6bccbe assets/risus/blockstates/scab.json
 935a899591662bcad8b4f12292cd307dbc964067 assets/risus/blockstates/skin.json
-ca93484e92f11b2546fcb57f945980874b7195ca assets/risus/blockstates/smiling_remains.json
+f1b35570b16a93283c01bbe5408456886f4cf26b assets/risus/blockstates/smiling_remains.json
 2e2f8827ee6e1f4ea510b2778fb3a720e4f00c07 assets/risus/blockstates/stripped_bondknot_log.json
 199cf7d93b6b2023471b9f6e088b7baef45ca166 assets/risus/blockstates/stripped_bondknot_wood.json
 a7b0f809abd7fdcc52c7b32aebd7f54c55cfb903 assets/risus/blockstates/tesseract.json

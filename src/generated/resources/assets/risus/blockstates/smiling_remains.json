@@ -3,7 +3,7 @@
     "active=false": [
       {
         "model": "risus:block/smiling_remains/0",
-        "weight": 3
+        "weight": 10
       },
       {
         "model": "risus:block/smiling_remains/0"
@@ -33,7 +33,7 @@
     "active=true": [
       {
         "model": "risus:block/smiling_remains/0",
-        "weight": 3
+        "weight": 10
       },
       {
         "model": "risus:block/smiling_remains/1"
