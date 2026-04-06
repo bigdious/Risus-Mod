@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "render_type": "minecraft:cutout",
   "textures": {
-    "layer0": "risus:block/ashen_spire_top"
+    "layer0": "risus:item/ashen_spire_item"
   }
 }

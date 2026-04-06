@@ -408,7 +408,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusItems.VEINS);
 		singleTex(RisusBlocks.BIG_CHAIN);
 		generatedRenderType(RisusBlocks.SPREADING_REMAINS.getId().getPath(), "minecraft:translucent", Risus.prefix("item/spreading_remains"));
-		generatedRenderType(RisusBlocks.ASHEN_SPIRE.getId().getPath(), "minecraft:cutout", Risus.prefix("block/ashen_spire_top"));
+		generatedRenderType(RisusBlocks.ASHEN_SPIRE.getId().getPath(), "minecraft:cutout", Risus.prefix("item/ashen_spire_item"));
 		singleTex(RisusBlocks.MEMORY1);
 		singleTex(RisusBlocks.REGEN_ROSE);
 		singleTex(RisusItems.LIGHT_DEVOURER);
