@@ -383,6 +383,14 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("strung", BasicBTrigger.TriggerInstance.createWeavingMechanism())
 			.save(consumer, "risus:strung");
 
+
+		//hidden/book only advancements
+
+		AdvancementHolder fossil = Advancement.Builder.advancement().parent(first)
+			.addCriterion("ribs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.RIBS_FOSSIL))))
+			.addCriterion("skull", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SKULL_FOSSIL))))
+			.save(consumer, "risus:fossil");
+
 		AdvancementHolder lost_will_1 = Advancement.Builder.advancement().parent(first)
 			.addCriterion("lost_will_1", LostWillTrigger.TriggerInstance.readWill(1))
 			.save(consumer, "risus:lost_will_1");

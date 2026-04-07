@@ -13,6 +13,7 @@ public final class RisusCommonConfig {
 	final ModConfigSpec.BooleanValue loverSpreads;
 	final ModConfigSpec.BooleanValue hornsPrioritizeTeams;
 	final ModConfigSpec.BooleanValue hornsUsePotionCharges;
+	final ModConfigSpec.BooleanValue beatingHeartEffects;
 
 	public RisusCommonConfig(ModConfigSpec.Builder builder) {
 		this.spinningSource = builder
@@ -64,5 +65,10 @@ public final class RisusCommonConfig {
 			.translation("config.risus.horns_use_potion_charges")
 			.comment(ConfigComments.HORNS_USE_POTION_CHARGES)
 			.define("hornsUsePotionCharges", false);
+
+		this.beatingHeartEffects = builder
+			.translation("config.risus.beating_heart_effects")
+			.comment(ConfigComments.BEATING_HEART_EFFECTS)
+			.define("beatingHeartEffects", true);
 	}
 }

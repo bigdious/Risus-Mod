@@ -2,6 +2,7 @@ package com.bigdious.risus.blocks.entity;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BeatingHeartBlock;
+import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.init.RisusBlockEntities;
 import com.bigdious.risus.init.RisusMobEffects;
 import com.bigdious.risus.init.RisusSoundEvents;
@@ -40,7 +41,7 @@ public class BeatingHeartBlockEntity extends BlockEntity {
 		if (level.getGameTime() % heart.beatInterval == 0L) {
 			heart.beat();
 			level.playSound(null, pos, RisusSoundEvents.HEARTBEAT.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
-			if (effectType != BeatingHeartBlock.HealthEffectEnum.EMPTY) {
+			if (effectType != BeatingHeartBlock.HealthEffectEnum.EMPTY && RisusConfig.beatingHeartEffects) {
 				Holder<MobEffect> effect = HEALTH_EFFECTS.get(effectType).getFirst();
 				if (effectType== BeatingHeartBlock.HealthEffectEnum.ABSORPTION) {
 					heart.beatInterval = 200;

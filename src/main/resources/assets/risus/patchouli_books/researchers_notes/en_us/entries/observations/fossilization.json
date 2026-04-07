@@ -1,0 +1,20 @@
+{
+  "name": "Fossilization",
+  "icon": "minecraft:writable_book",
+  "category": "risus:observations",
+  "advancement": "risus:fossil",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Normally the process of fossilization consists of a once living being's corpse getting trapped within the earth and, throughout a considerable amount of time, the bones getting slowly replaced with mineral that seeps in through the enveloping sediment. An example of such fossils are the one that can rarely be found below deserts. Some of those are so old that they "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "even contain diamond formations in them. Now, in the case of the Risus, fossils are quite different - to the point where calling them as such is somewhat incorrect. These false fossils are an aggregate of smaller bones and sediment brought together by the Joyplague. This is most visible with Fragmented Fossils, as they have cracks that reveal the small bone pieces inside. For the Risus, Fossils are just one step in the process of turning the ground materials into bone which can then grow"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "living tissue. Great Bodies are a perfect insight into this process: they have a 'Fossil' variant that has an incomplete skeletal structure, with parts of it still being stone. The 'Bone' variant has the structure itself completed, with all the fossil revitalized into bones, but hasn't yet formed tissue. The 'Tissue' variant connects all the bones together with the grown flesh. Lastly, the complete variant includes skin (and even hair on that skin) to fully envelop the entire Great Body. "
+    }
+  ]
+}

@@ -53,5 +53,9 @@ public final class ConfigComments {
 		Default: false
 		When set to true, Horns will have potion charges. They can hold up to three charges of a potion type and cannot be imbibed with a new potion until all charges of the previous one are used up. Disclaimer: Changing this config with an existing world with warhorns may cause some of them to remain infinite uses.""";
 
+	public static final String BEATING_HEART_EFFECTS = """
+
+		Default: true
+		When set to false, it disables the potion effects given by the various types of Beating Hearts. Only worth turning off due to balancing or to avoid performance loss in niche scenarios""";
 
 }

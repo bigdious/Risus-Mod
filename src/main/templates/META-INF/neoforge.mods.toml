@@ -6,10 +6,10 @@ license = "MIT license"
 modId = "risus"
 version = "${mod_version}"
 displayName = "Risus"
-logoFile = "logo.png"
+logoFile = "banner.png"
 logoBlur = false
 authors = "bigdious"
-description = '''A mod to make you smile. =]'''
+description = '''A mod to make you smile =]'''
 itemIcon = "risus:smiling_remains"
 enumExtensions = "META-INF/enumextensions.json"
 

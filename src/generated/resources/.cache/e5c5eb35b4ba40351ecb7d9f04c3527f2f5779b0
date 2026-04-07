@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-03T22:08:30.1674806	Advancements
+// 1.21.1	2026-04-07T19:24:36.1607594	Advancements
 19150bcb72ef4df2fa33529f45d13d0dfdd6f572 data/risus/advancement/analysis.json
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
 139da32d044165dbc9aea4aea74389d8ca105078 data/risus/advancement/antique.json
@@ -15,6 +15,7 @@ b85cf8e41d0631d45c910173165c4b682173a7a6 data/risus/advancement/devour.json
 8499c363e4bcdf8d4538c71c718159ceed30d653 data/risus/advancement/family.json
 a441c4bab1339101d2eece5a428d96a6909b6715 data/risus/advancement/first.json
 8a52146bcd12dbe82b313cf8d38ef21ae9c4bb8b data/risus/advancement/fleshing.json
+e178f8dd88ab8bfdb70d60eaa8d974ca399809ff data/risus/advancement/fossil.json
 7fc2c3eb1d0d6e1de8f42867c71f39e893393972 data/risus/advancement/gluttony.json
 8ab42249142426a11a4980cf08781959a7ba694a data/risus/advancement/great_body.json
 4578da2103c9a2f17a3b4a2234bd93001ff57ddd data/risus/advancement/hearty.json

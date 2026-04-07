@@ -1,9 +1,10 @@
 {
   "risus:unleashed": {
     "criteria": {
-      "strongaxe": "2025-10-02 18:29:47 +0300"
+      "strongaxe": "2025-10-02 18:29:47 +0300",
+      "previous": "2026-04-07 21:54:59 +0300"
     },
-    "done": false
+    "done": true
   },
   "minecraft:recipes/building_blocks/sandstone_slab": {
     "criteria": {
@@ -3489,6 +3490,403 @@
   "risus:recipes/combat/born_to_burn": {
     "criteria": {
       "has_item": "2026-04-03 21:34:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/linear_ritual_block": {
+    "criteria": {
+      "has_item": "2026-04-07 21:39:50 +0300"
+    },
+    "done": true
+  },
+  "risus:antique": {
+    "criteria": {
+      "divinity": "2026-04-07 21:58:15 +0300",
+      "mork": "2026-04-07 21:56:45 +0300",
+      "tree": "2026-04-07 21:58:17 +0300",
+      "rose": "2026-04-07 21:58:18 +0300",
+      "rak": "2026-04-07 21:56:41 +0300",
+      "cycle": "2026-04-07 21:56:46 +0300",
+      "regn": "2026-04-07 21:56:43 +0300",
+      "smile": "2026-04-07 21:58:14 +0300"
+    },
+    "done": true
+  },
+  "risus:robes": {
+    "criteria": {
+      "robess": "2026-04-07 21:44:29 +0300",
+      "skin": "2026-04-07 21:44:22 +0300"
+    },
+    "done": true
+  },
+  "risus:knuckles": {
+    "criteria": {
+      "knuckles": "2026-04-07 21:51:46 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/hairy_skin": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:18 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_wall": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/lime_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:39 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/white_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:59 +0300"
+    },
+    "done": true
+  },
+  "risus:rainbow": {
+    "criteria": {
+      "scythes": "2026-04-07 21:52:39 +0300"
+    },
+    "done": true
+  },
+  "risus:boomstick": {
+    "criteria": {
+      "boomstick": "2026-04-07 21:52:15 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scaleplate_to_budding": {
+    "criteria": {
+      "has_item": "2026-04-07 21:31:46 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/cyan_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:38 +0300"
+    },
+    "done": true
+  },
+  "risus:destroy": {
+    "criteria": {
+      "weaver": "2026-04-07 21:42:26 +0300"
+    },
+    "done": false
+  },
+  "risus:recipes/decorations/joyflame_lantern": {
+    "criteria": {
+      "has_item": "2026-04-07 21:39:51 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/hairy_fleshy_skin": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:18 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/orange_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:40 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/dark_large_gate": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/fleshy_skin": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:18 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_scaleplate": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/hairy_curved_fleshy_skin": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:18 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/black_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:57 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/red_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:40 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/purple_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:36 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/misc/smelt_bloody_sponge": {
+    "criteria": {
+      "has_risus:bloody_sponge": "2026-04-07 21:39:24 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/yellow_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:39 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/dark_trapdoor": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:49 +0300"
+    },
+    "done": true
+  },
+  "risus:tight": {
+    "criteria": {
+      "skins": "2026-04-07 21:44:22 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_budding": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/light_gray_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:59 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/blue_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:36 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/curved_fleshy_skin": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:18 +0300"
+    },
+    "done": true
+  },
+  "risus:armory": {
+    "criteria": {
+      "lucky": "2026-04-07 21:56:00 +0300",
+      "burn": "2026-04-07 21:55:09 +0300",
+      "wretched": "2026-04-07 21:56:01 +0300",
+      "diamond_wings": "2026-04-07 21:48:32 +0300",
+      "rosy": "2026-04-07 21:50:29 +0300",
+      "ivory": "2026-04-07 21:43:26 +0300",
+      "totem": "2026-04-07 21:56:04 +0300",
+      "robes": "2026-04-07 21:44:29 +0300",
+      "threads": "2026-04-07 21:50:25 +0300",
+      "counter": "2026-04-07 21:52:12 +0300"
+    },
+    "done": false
+  },
+  "risus:recipes/building_blocks/pink_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:12 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/eerie_large_gate": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:00 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scaleplate_to_flowering": {
+    "criteria": {
+      "has_item": "2026-04-07 21:31:30 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/gluttony_scales": {
+    "criteria": {
+      "has_item": "2026-04-07 21:31:45 +0300"
+    },
+    "done": true
+  },
+  "risus:potential": {
+    "criteria": {
+      "weakaxe": "2026-04-07 21:54:59 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_stairs": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_flowering": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scaleplate_to_budding": {
+    "criteria": {
+      "has_item": "2026-04-07 21:31:30 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/gray_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:58 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/eerie_trapdoor_from_dark": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:04 +0300"
+    },
+    "done": true
+  },
+  "risus:scythe": {
+    "criteria": {
+      "scythe": "2026-04-07 21:52:35 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/green_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:38 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2026-04-07 21:50:53 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/imitation_scaleplate_to_flowering": {
+    "criteria": {
+      "has_item": "2026-04-07 21:31:46 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/containment_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:37:21 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/hair_unbundleing": {
+    "criteria": {
+      "has_item": "2026-04-07 21:35:15 +0300"
+    },
+    "done": true
+  },
+  "risus:stripper": {
+    "criteria": {
+      "stripper": "2026-04-07 21:51:49 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dark_large_gate_from_small": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/light_blue_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:37 +0300"
+    },
+    "done": true
+  },
+  "risus:arsenal": {
+    "criteria": {
+      "scythes": "2026-04-07 21:52:39 +0300",
+      "knife": "2026-04-07 21:52:13 +0300",
+      "hexhorn": "2026-04-07 21:56:50 +0300",
+      "flamethrower": "2026-04-07 21:43:21 +0300",
+      "boomstick": "2026-04-07 21:52:15 +0300",
+      "axes": "2026-04-07 21:54:59 +0300",
+      "killjoy": "2026-04-07 21:55:04 +0300",
+      "stripper": "2026-04-07 21:51:49 +0300",
+      "boat": "2026-04-07 21:55:03 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/stripped_bondknot_wood": {
+    "criteria": {
+      "has_item": "2026-04-07 21:39:05 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/eerie_gate": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:01 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/magenta_mosaic_glass_pane": {
+    "criteria": {
+      "has_item": "2026-04-07 21:29:13 +0300"
+    },
+    "done": true
+  },
+  "risus:lost_will_4": {
+    "criteria": {
+      "lost_will_4": "2026-04-07 21:58:40 +0300"
+    },
+    "done": true
+  },
+  "risus:lost_will_5": {
+    "criteria": {
+      "lost_will_5": "2026-04-07 21:58:41 +0300"
+    },
+    "done": true
+  },
+  "risus:lost_will_2": {
+    "criteria": {
+      "lost_will_2": "2026-04-07 21:58:39 +0300"
+    },
+    "done": true
+  },
+  "risus:lost_will_3": {
+    "criteria": {
+      "lost_will_3": "2026-04-07 21:58:40 +0300"
+    },
+    "done": true
+  },
+  "risus:lost_will_1": {
+    "criteria": {
+      "lost_will_1": "2026-04-07 21:58:37 +0300"
+    },
+    "done": true
+  },
+  "risus:recipes/building_blocks/unalloyed_scales_block_to_slabs": {
+    "criteria": {
+      "has_item": "2026-04-07 21:30:55 +0300"
+    },
+    "done": true
+  },
+  "risus:warcrimes": {
+    "criteria": {
+      "warcrimes": "2026-04-07 21:55:03 +0300"
     },
     "done": true
   },

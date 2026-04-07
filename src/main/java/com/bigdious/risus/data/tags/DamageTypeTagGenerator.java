@@ -57,6 +57,13 @@ public class DamageTypeTagGenerator extends DamageTypeTagsProvider {
 			RisusDamageTypes.DESTINED_DEATH,
 			RisusDamageTypes.REVENGE
 		);
+		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(
+			RisusDamageTypes.INEXISTENCE,
+			RisusDamageTypes.VAMPIRISM,
+			RisusDamageTypes.PLEASURE,
+			RisusDamageTypes.DESTINED_DEATH,
+			RisusDamageTypes.REVENGE
+		);
 		this.tag(DamageTypeTags.BYPASSES_SHIELD).add(
 			RisusDamageTypes.INEXISTENCE,
 			RisusDamageTypes.VAMPIRISM,
