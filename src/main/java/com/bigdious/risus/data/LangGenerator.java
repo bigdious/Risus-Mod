@@ -711,6 +711,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("filled_map.skull_fossil", "Skull Fossil Explorer Map");
 		this.add("filled_map.great_body", "Great Body Explorer Map");
 		this.add("filled_map.church", "Church Explorer Map");
+		this.add("filled_map.heart_chamber", "Heart Chamber Explorer Map");
 		this.add("filled_map.blood_pool", "Suspicious Blood Pool Explorer Map");
 		this.add("filled_map.flower_field", "Flower Field Explorer Map");
 
