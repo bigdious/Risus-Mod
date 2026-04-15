@@ -584,7 +584,6 @@ public class RisusClientEvents {
 			} else
 			if ((!ModList.get().isLoaded("curios") || !curiosForArm(event.getPlayer())) && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT) != null && event.getPlayer().getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed")) {
 				Minecraft mc = Minecraft.getInstance();
-				LocalPlayer player = mc.player;
 
 				RightHandPlayerModel model = new RightHandPlayerModel(Minecraft.getInstance().getEntityModels().bakeLayer(RisusModelLayers.RIGHT_HAND_OF_GREED));
 				model.rightArmPose = HumanoidModel.ArmPose.EMPTY;

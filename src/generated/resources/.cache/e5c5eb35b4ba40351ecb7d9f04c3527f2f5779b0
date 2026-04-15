@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-07T19:24:36.1607594	Advancements
+// 1.21.1	2026-04-15T23:26:47.1789331	Advancements
 19150bcb72ef4df2fa33529f45d13d0dfdd6f572 data/risus/advancement/analysis.json
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
 139da32d044165dbc9aea4aea74389d8ca105078 data/risus/advancement/antique.json
@@ -34,6 +34,7 @@ fb3876d7180f48a6be866ea9482a8f9e6b1b4c47 data/risus/advancement/lost_will_4.json
 d1c38003543628f4e5eda12c845a5140ca996d55 data/risus/advancement/lost_will_5.json
 6c26d22dbedaaf59290b10dc01083a8eca050ccc data/risus/advancement/mod_book.json
 aeec319b2aa74fde1fab7eed7d4264d3ca558794 data/risus/advancement/parentmode.json
+e0fdfcfabc6e6107454d341ea77ba5861404868e data/risus/advancement/petshaped.json
 c3216a49946d9bda668d55c7c0204d674a47e68a data/risus/advancement/potential.json
 9448a3fd3be75f794c001e3cb7ef4c055db5cdd2 data/risus/advancement/rainbow.json
 bd588ad15fcc72d2ec31880ac52d6ebe0b0e45bd data/risus/advancement/revenge.json

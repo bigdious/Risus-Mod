@@ -398,6 +398,7 @@ public class RisusTab {
 			(parameters, output) -> {
 				output.accept(RisusItems.BONDKNOT_BOAT.get());
 				output.accept(RisusItems.GUTS_BOAT.get());
+				output.accept(RisusItems.HOLDER_BUCKET.get());
 				output.accept(RisusItems.ESSENCE_OF_GLUTTONY.get());
 				output.accept(RisusItems.ESSENCE_OF_MELANCHOLY.get());
 				output.accept(RisusItems.ESSENCE_OF_GREED.get());

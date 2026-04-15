@@ -17,6 +17,14 @@
     {
       "type": "patchouli:spotlight",
       "item": {
+        "item": "risus:holder_bucket"
+      },
+      "link_recipe": true,
+      "text": "On top of enjoying the thrill of stealing, Holders also enjoy being kidnapped. If they aren't holding any items, they can be picked up with an Empty Bucket without much issue, and won't even try getting out. Additionally, they generally don't target those holding Empty Buckets."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
         "item": "risus:hand_of_greed"
       },
       "link_recipe": true,

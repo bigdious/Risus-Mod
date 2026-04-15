@@ -132,6 +132,16 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("previous", this.advancementTrigger(little))
 			.save(consumer, "risus:revenge");
 
+		AdvancementHolder petshaped = Advancement.Builder.advancement().parent(little)
+			.display(
+				RisusItems.HOLDER_BUCKET.get(),
+				Component.translatable("advancement.risus.petshaped"),
+				Component.translatable("advancement.risus.petshaped.desc"), null, AdvancementType.GOAL, true, true, false)
+			.requirements(AdvancementRequirements.Strategy.AND)
+			.addCriterion("petshaped", FilledBucketTrigger.TriggerInstance.filledBucket(ItemPredicate.Builder.item().of(RisusItems.HOLDER_BUCKET)))
+			.addCriterion("previous", this.advancementTrigger(little))
+			.save(consumer, "risus:petshaped");
+
 		AdvancementHolder step = Advancement.Builder.advancement().parent(first)
 			.display(
 				Items.LEATHER_BOOTS,

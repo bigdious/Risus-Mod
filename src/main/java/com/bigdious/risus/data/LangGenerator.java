@@ -278,6 +278,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.GUTS_BOAT, "Bondknot Boat with Gorger Guts");
 		this.addItem(RisusItems.HAIR_FOLLICLES, "Hair Follicles");
 		this.addItem(RisusItems.HAND_OF_GREED, "Hand of Greed");
+		this.addItem(RisusItems.HOLDER_BUCKET, "Holder Bucket");
 		this.addItem(RisusItems.HEXHORN, "Hex Horn");
 		this.addItem(RisusItems.KILLJOY, "Killjoy");
 		this.addItem(RisusItems.LIGHT_DEVOURER, "Light Devourer");
@@ -683,6 +684,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
+		this.addAdvancement("petshaped", "If Not Pet, Why Pet Shaped?", "Kidnap a Holder");
 		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
 		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
 		this.addAdvancement("strung", "Strung To Serve", "Create a Weaving Mechanism");

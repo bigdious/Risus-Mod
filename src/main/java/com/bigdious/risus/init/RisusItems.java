@@ -10,11 +10,17 @@ import com.bigdious.risus.items.utility.*;
 import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.InstrumentTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -42,6 +48,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> CINDERGLEE_SCYTHE = register("cinderglee_scythe", properties -> new ScytheItem(RisusToolMaterials.GLUTTONY, RisusTags.Enchantments.CINDERGLEE_SCYTHE_ALLOWED_ENCHANTS, properties), () -> new Item.Properties().fireResistant().attributes(ScytheItem.createScytheAttributes(RisusToolMaterials.GLUTTONY, 7, -3.4F)).rarity(BLOOD));
 	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 14, -3.6F)).rarity(BLOOD));
 	public static final DeferredItem<Item> BLOOD_BUCKET = register("blood_bucket", properties -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).craftRemainder(Items.BUCKET));
+	public static final DeferredItem<Item> HOLDER_BUCKET = register("holder_bucket", properties -> new HolderBucketItem(RisusEntities.HOLDER.get(), Fluids.EMPTY, SoundEvents.BUCKET_EMPTY, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
 	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(10000));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));

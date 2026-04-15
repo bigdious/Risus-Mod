@@ -4,12 +4,17 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.goals.MonsterFollowOwnerGoal;
 import com.bigdious.risus.init.*;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -17,10 +22,14 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
@@ -29,8 +38,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-public class Holder extends TamableMonster {
+public class Holder extends TamableMonster implements EmptyBucketable {
 	protected static final EntityDataAccessor<Optional<UUID>> DATA_OWNERUUID_ID;
+	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(Holder.class, EntityDataSerializers.BOOLEAN);
 	private static final String TAG_GREED = "GREED";
 	boolean isGreed;
 	private boolean shouldAvoidEntity;
@@ -62,7 +72,7 @@ public class Holder extends TamableMonster {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, false));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class , true, living ->
-			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && (RisusConfig.holdersStealFromMonsters && this.isGreed ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
+			this.getMainHandItem().isEmpty() && !living.getMainHandItem().isEmpty() && !living.getMainHandItem().is(Items.BUCKET) && (RisusConfig.holdersStealFromMonsters && this.isGreed ? !(living.getType().is(RisusTags.Entities.CANT_BE_STOLEN_FROM)) : living instanceof Player)
 		));
 	}
 
@@ -70,7 +80,7 @@ public class Holder extends TamableMonster {
 	public void tick() {
 		if (this.tickCount % 40 == 0){
 			if (this.getTarget() != null) {
-				if (this.getTarget().getMainHandItem().isEmpty()) this.setTarget(null);
+				if (this.getTarget().getMainHandItem().isEmpty() || this.getTarget().getMainHandItem().is(Items.BUCKET)) this.setTarget(null);
 			}
 		}
 		super.tick();
@@ -187,14 +197,13 @@ public class Holder extends TamableMonster {
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putBoolean("AvoidingEntity", this.shouldAvoidEntity);
+		tag.putBoolean("FromBucket", this.fromBucket());
+		tag.putBoolean("FromBucket", this.isGreed);
 		if (this.avoidedEntityUUID != null) {
 			tag.putUUID("AvoidingUUID", this.avoidedEntityUUID);
 		}
 		if (this.OwnerUUID != null) {
 			tag.putUUID("OwnerUUID", this.OwnerUUID);
-		}
-		if (this.isGreed) {
-			tag.putBoolean("GREED", true);
 		}
 	}
 
@@ -202,6 +211,7 @@ public class Holder extends TamableMonster {
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
 		this.shouldAvoidEntity = tag.getBoolean("AvoidingEntity");
+		this.setFromBucket(tag.getBoolean("FromBucket"));
 		if (tag.contains("AvoidingUUID")) {
 			this.avoidedEntityUUID = tag.getUUID("AvoidingUUID");
 		}
@@ -216,6 +226,7 @@ public class Holder extends TamableMonster {
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(DATA_OWNERUUID_ID, Optional.empty());
+		builder.define(FROM_BUCKET, false);
 	}
 
 	static {
@@ -228,5 +239,49 @@ public class Holder extends TamableMonster {
 			this.isGreed = true;
 		}
 
+	}
+	@Override
+	public boolean requiresCustomPersistence() {
+		return super.requiresCustomPersistence() || this.fromBucket();
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return !this.fromBucket() && !this.hasCustomName();
+	}
+
+	@Override
+	public InteractionResult mobInteract(Player player, InteractionHand hand) {
+		return EmptyBucketable.bucketMobPickup(player, hand, this).orElse(super.mobInteract(player, hand));
+	}
+
+	@Override
+	public boolean fromBucket() {
+		return this.entityData.get(FROM_BUCKET);
+	}
+
+	@Override
+	public void setFromBucket(boolean fromBucket) {
+		this.entityData.set(FROM_BUCKET, fromBucket);
+	}
+
+	@Override
+	public void saveToBucketTag(ItemStack stack) {
+		Bucketable.saveDefaultDataToBucketTag(this, stack);
+	}
+
+	@Override
+	public void loadFromBucketTag(CompoundTag tag) {
+		Bucketable.loadDefaultDataFromBucketTag(this, tag);
+	}
+
+	@Override
+	public ItemStack getBucketItemStack() {
+		return new ItemStack(RisusItems.HOLDER_BUCKET.get());
+	}
+
+	@Override
+	public SoundEvent getPickupSound() {
+		return SoundEvents.BUCKET_FILL;
 	}
 }

@@ -1,0 +1,54 @@
+{
+  "parent": "risus:little",
+  "criteria": {
+    "petshaped": {
+      "conditions": {
+        "item": {
+          "items": "risus:holder_bucket"
+        }
+      },
+      "trigger": "minecraft:filled_bucket"
+    },
+    "previous": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "risus:little": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.petshaped.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "risus:holder_bucket"
+    },
+    "title": {
+      "translate": "advancement.risus.petshaped"
+    }
+  },
+  "requirements": [
+    [
+      "petshaped"
+    ],
+    [
+      "previous"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
