@@ -1,10 +1,8 @@
 package com.bigdious.risus.worldgen.structures;
 
-import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusSoundEvents;
 import com.bigdious.risus.init.RisusTags;
 import com.bigdious.risus.network.MusicPacketFromServer;
-import com.bigdious.risus.network.UnyieldingTotemPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.StructureManager;

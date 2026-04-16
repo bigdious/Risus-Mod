@@ -1,5 +1,5 @@
 {
-  "parent": "risus:arsenal",
+  "parent": "risus:challenges",
   "criteria": {
     "burn": {
       "conditions": {

@@ -1,5 +1,5 @@
 {
-  "parent": "risus:destroy",
+  "parent": "risus:challenges",
   "criteria": {
     "bedrock": {
       "conditions": {

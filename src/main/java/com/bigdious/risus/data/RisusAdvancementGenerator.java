@@ -452,7 +452,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("knife", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CARVING_KNIFE))
 			.save(consumer, "risus:arsenal");
 
-		AdvancementHolder armory = Advancement.Builder.advancement().parent(arsenal)
+		AdvancementHolder armory = Advancement.Builder.advancement().parent(challenges)
 			.display(
 				RisusItems.CROWN_OF_BONES.get(),
 				Component.translatable("advancement.risus.armory"),
@@ -471,7 +471,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("burn", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.BORN_TO_BURN))
 			.save(consumer, "risus:armory");
 
-		AdvancementHolder destroy = Advancement.Builder.advancement().parent(armory)
+		AdvancementHolder destroy = Advancement.Builder.advancement().parent(challenges)
 			.display(
 				RisusItems.EMBODIMENT_OF_LANGUISH.get(),
 				Component.translatable("advancement.risus.destroy"),
@@ -488,7 +488,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("hex", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(RisusEntities.HEX.get())))
 			.save(consumer, "risus:destroy");
 
-		AdvancementHolder analysis = Advancement.Builder.advancement().parent(destroy)
+		AdvancementHolder analysis = Advancement.Builder.advancement().parent(challenges)
 			.display(
 				RisusBlocks.TESSERACT.get(),
 				Component.translatable("advancement.risus.analysis"),
@@ -510,7 +510,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("skull", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inStructure(structures.getOrThrow(RisusStructures.SKULL_FOSSIL))))
 			.save(consumer, "risus:analysis");
 
-		AdvancementHolder antique = Advancement.Builder.advancement().parent(analysis)
+		AdvancementHolder antique = Advancement.Builder.advancement().parent(challenges)
 			.display(
 				RisusItems.MUSIC_DISC_CYCLE.get(),
 				Component.translatable("advancement.risus.antique"),

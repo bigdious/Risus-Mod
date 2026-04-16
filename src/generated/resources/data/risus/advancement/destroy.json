@@ -1,5 +1,5 @@
 {
-  "parent": "risus:armory",
+  "parent": "risus:challenges",
   "criteria": {
     "angel": {
       "conditions": {

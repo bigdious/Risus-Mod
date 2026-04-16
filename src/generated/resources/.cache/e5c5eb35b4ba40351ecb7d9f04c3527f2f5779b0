@@ -1,8 +1,8 @@
-// 1.21.1	2026-04-15T23:26:47.1789331	Advancements
-19150bcb72ef4df2fa33529f45d13d0dfdd6f572 data/risus/advancement/analysis.json
+// 1.21.1	2026-04-16T20:23:38.8415947	Advancements
+a11ca6f29bd26dde30d48f8a21d2ad8a8011a20c data/risus/advancement/analysis.json
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
-139da32d044165dbc9aea4aea74389d8ca105078 data/risus/advancement/antique.json
-011a51a05b8361a29814a8a7ca030ea465b503a9 data/risus/advancement/armory.json
+c57435e83cd261b8ca460915abfb10b043458fb7 data/risus/advancement/antique.json
+3faf694af6d4076af557e2a0f7ef703c086a7041 data/risus/advancement/armory.json
 e39604651136e86958e7ab43b00454fe18fce4d7 data/risus/advancement/arsenal.json
 04bc759fe0dc807c7ed82249b11a01fe70104d06 data/risus/advancement/boomstick.json
 c807b6389786163258fecc2e2122fe015c76c3ae data/risus/advancement/challenges.json
@@ -10,7 +10,7 @@ c807b6389786163258fecc2e2122fe015c76c3ae data/risus/advancement/challenges.json
 4790785abff988381beaadc68df2d2ec1a8165a3 data/risus/advancement/cream.json
 e49e3ee6395ffca7361a28a7131d685a47576ef5 data/risus/advancement/crusade.json
 32c6c7c3dbd41f93d8b7b57fee81e4e053cdd4a0 data/risus/advancement/cupid.json
-f007ebe2028964ce86e8b3ac3c82cdc36def11f0 data/risus/advancement/destroy.json
+7a6af0a13d80f272cf349454483ad1b471104e6c data/risus/advancement/destroy.json
 b85cf8e41d0631d45c910173165c4b682173a7a6 data/risus/advancement/devour.json
 8499c363e4bcdf8d4538c71c718159ceed30d653 data/risus/advancement/family.json
 a441c4bab1339101d2eece5a428d96a6909b6715 data/risus/advancement/first.json

@@ -1,5 +1,5 @@
 {
-  "parent": "risus:analysis",
+  "parent": "risus:challenges",
   "criteria": {
     "cycle": {
       "conditions": {

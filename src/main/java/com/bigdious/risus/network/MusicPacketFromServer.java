@@ -24,6 +24,7 @@ public record MusicPacketFromServer (ResourceLocation musicRL, boolean play) imp
 		this(ResourceLocation.STREAM_CODEC.decode(buf), buf.readBoolean());
 	}
 
+
 	@Override
 	public Type<? extends CustomPacketPayload> type() {
 		return TYPE;
@@ -35,9 +36,11 @@ public record MusicPacketFromServer (ResourceLocation musicRL, boolean play) imp
 	}
 
 	public static void handle(MusicPacketFromServer packet, IPayloadContext context) {
-		context.enqueueWork(() -> {
-			MusicHandler.playStopStructureMusic(context.player(), packet.musicRL(), packet.play());
-		});
+		if (context.flow().isClientbound()) {
+			context.enqueueWork(() -> {
+				MusicHandler.playStopStructureMusic(context.player(), packet.musicRL(), packet.play());
+			});
+		}
 	}
 
 }
