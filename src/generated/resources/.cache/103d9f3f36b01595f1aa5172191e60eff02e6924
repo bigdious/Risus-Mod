@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-05T21:48:17.2390522	Registries
+// 1.21.1	2026-05-04T22:00:06.8560989	Registries
 87a5519bf7cd208e1fc9a553fa8cf6d1841c6b5a data/risus/banner_pattern/divinity.json
 dfe5c90b78a67a883a04668c203280897fff8149 data/risus/banner_pattern/rose.json
 93dd303554cb7e64460226a0ce4df8272908c3c6 data/risus/banner_pattern/smile.json
@@ -10,6 +10,7 @@ b3196f48af2d7bcb8ff1ae09675f8f9f47f3738d data/risus/damage_type/agony.json
 fb66e00ba49e543bcffcef3c073930ced882203c data/risus/damage_type/gluttony.json
 7e03f94087233d78a3323888c1592435c507f164 data/risus/damage_type/inexistence.json
 193d0761c472dccd785d5cb42787af7f350e488b data/risus/damage_type/melancholy.json
+cdb77d518a4a088c501706d4e8f07f5dcfe6c762 data/risus/damage_type/mutilation.json
 64fa4e9c0f4f52697ede36b84fc28e6d72f23288 data/risus/damage_type/pleasure.json
 36847bc3660ff319599f3a89ca3ebae8cb76d6c7 data/risus/damage_type/revenge.json
 280e134206536a849551a2b4bdc791e6fc85c7fb data/risus/damage_type/vampirism.json
@@ -103,8 +104,8 @@ d9e0e3cfaf38fcd744c04f0831319d5d2e170746 data/risus/worldgen/structure_set/blood
 146c7e899b844eb0d1dcea213ba7917cdbd8c918 data/risus/worldgen/structure_set/great_body.json
 1257d69ea23bc9cf27b6dee2ea634200aa7603b8 data/risus/worldgen/structure_set/heart_chamber.json
 1f228c66bf13741c97cd8e5be096dfd9d3bf2d61 data/risus/worldgen/structure_set/lab_start.json
-43d80555ea6f9984aed971763b2318748ce206cc data/risus/worldgen/structure_set/ribs_fossil.json
-921282ae6356864cbf8dab7c938105970e198106 data/risus/worldgen/structure_set/skull_fossil.json
+e7e320a94452327aae6580870f9e2b0d5b5627d4 data/risus/worldgen/structure_set/ribs_fossil.json
+771f8349f521397a62a08cfde6eddfefee453d1b data/risus/worldgen/structure_set/skull_fossil.json
 3b1d24eec146d61b4e2ba15957b2bdfd623e934d data/risus/worldgen/template_pool/alteration_site.json
 e2422987b2ceabe6c33140b45cc5bee4552b14c8 data/risus/worldgen/template_pool/angel_altar.json
 8529e567ab78044f6c9880ffd2de203d89eafcdb data/risus/worldgen/template_pool/bedrock_hand.json

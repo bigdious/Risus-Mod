@@ -27,12 +27,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.animal.goat.Goat;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -65,19 +64,59 @@ public class CarvingKnifeItem extends SwordItem {
 	}
 
 	@Override
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+		ItemStack stack = player.getItemInHand(hand);
+		if (player.isCrouching()) {
+			player.hurt(player.damageSources().source(RisusDamageTypes.MUTILATION), 1);
+			if (level instanceof ServerLevel serverLevel) {
+				bleed(serverLevel, player, 6);
+			}
+			stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
+			player.awardStat(Stats.ITEM_USED.get(this));
+			return InteractionResultHolder.success(stack);
+		}
+		return InteractionResultHolder.fail(stack);
+	}
+
+	@Override
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
 		if (!target.isAlive()) {
 			return InteractionResult.PASS;
 		}
+		boolean success = false;
 		if (target instanceof Goat goat && player.level() instanceof ServerLevel) {
 			goat.dropHorn();
 			goat.hurt(player.damageSources().playerAttack(player), 2);
+			if (player.level() instanceof ServerLevel serverLevel) {
+				bleed(serverLevel, goat, 4);
+			}
 			player.level().playSound(null, goat, goat.isScreamingGoat() ? SoundEvents.GOAT_SCREAMING_HORN_BREAK : SoundEvents.GOAT_HORN_BREAK, SoundSource.NEUTRAL, 1.0F, 1.0F);
+			success = true;
+		}
+		if (target instanceof Turtle turtle && player.level() instanceof ServerLevel) {
+			turtle.hurt(player.damageSources().playerAttack(player), 2);turtle.getAttributes().getInstance(Attributes.MAX_HEALTH).setBaseValue(turtle.getAttributes().getInstance(Attributes.MAX_HEALTH).getBaseValue() - 4);
+			if (player.level() instanceof ServerLevel serverLevel) {
+				bleed(serverLevel, turtle, 8);
+			}
+			ItemEntity scute = EntityType.ITEM.create(player.level());
+			scute.setItem(Items.TURTLE_SCUTE.getDefaultInstance());
+			scute.moveTo(turtle.getX(), turtle.getY(), turtle.getZ());
+			player.level().addFreshEntity(scute);
+			player.level().playSound(null, turtle, SoundEvents.TURTLE_HURT, SoundSource.NEUTRAL, 1.0F, 1.0F);
+			success = true;
+		}
+		if (success) {
 			stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
 			player.awardStat(Stats.ITEM_USED.get(this));
 			return InteractionResult.SUCCESS;
 		}
 		return super.interactLivingEntity(stack, player,target, hand);
+	}
+
+	public static void bleed(ServerLevel level, Entity victim, int severity) {
+		for (int i = 0; i < severity; i++) {
+			level.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(RisusBlocks.TISSUE)), victim.getRandomX(0.5), victim.getRandomY(), victim.getRandomZ(0.5), 1, 0, 0.0, 0.0, 0.15);
+		}
 	}
 
 	public InteractionResult useOn(UseOnContext context) {

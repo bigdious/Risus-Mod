@@ -1,5 +1,5 @@
 {
-  "parent": "risus:angel",
+  "parent": "risus:d_authority",
   "criteria": {
     "murder": {
       "conditions": {

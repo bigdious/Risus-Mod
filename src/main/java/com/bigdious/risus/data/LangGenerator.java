@@ -618,6 +618,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addDeathMessage("vampirism", "%1$s got sucked dry");
 		this.addDeathMessage("vampirism.player", "%1$s got sucked dry while trying to escape %2$s");
 		this.addDeathMessage("vampirism.item", "%1$s got sucked dry while trying to escape %2$s");
+		this.addDeathMessage("mutilation", "%1$s chose peace");
+		this.addDeathMessage("mutilation.player", "%1$s chose peace");
+		this.addDeathMessage("mutilation.item", "%1$s chose peace");
 		this.addDeathMessage("revenge", "%1$s neglected their loyal friend");
 		this.addDeathMessage("revenge.player", "%1$s neglected their loyal friend while trying to escape %2$s");
 		this.addDeathMessage("revenge.item", "%1$s neglected their loyal friend while trying to escape %2$s");
@@ -676,7 +679,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("boomstick", "That's A Bad Idea...", "Obtain a Boomstick. Be careful with it...");
 		this.addAdvancement("shave", "Smooth Operator", "Shave some Skin");
 		this.addAdvancement("light_devourer", "False Genesis", "Obtain a Light Devourer that can place Darkness");
-		this.addAdvancement("angel", "Hallowed Grounds", "Trespass onto land protected by an Ophanim.");
+		this.addAdvancement("angel", "Hallowed Grounds", "Trespass onto land protected by an Ophanim");
+		this.addAdvancement("d_authority", "Divine Oppression", "Experience failure by trying to damage a divine being without appropriate weaponry");
 		this.addAdvancement("gluttony", "Gateway To A Corrupted Divinity", "Obtain Gluttonous Scales");
 		this.addAdvancement("lab", "A Simulacrum Of Success", "Approach the recreation of the last experiment");
 		this.addAdvancement("homewrecker", "Homewrecker", "Destroy a Weaver Nest");

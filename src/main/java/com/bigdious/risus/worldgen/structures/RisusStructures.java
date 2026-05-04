@@ -442,10 +442,10 @@ public class RisusStructures {
 			new RandomSpreadStructurePlacement(180, 0, RandomSpreadType.TRIANGULAR, 867534873)));
 
 		context.register(SKULL_FOSSIL_SET, new StructureSet(structures.getOrThrow(SKULL_FOSSIL),
-			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.LINEAR, 3425687)));
+			new RandomSpreadStructurePlacement(143, 0, RandomSpreadType.LINEAR, 3425687)));
 
 		context.register(RIBS_FOSSIL_SET, new StructureSet(structures.getOrThrow(RIBS_FOSSIL),
-			new RandomSpreadStructurePlacement(183, 0, RandomSpreadType.TRIANGULAR, 836475)));
+			new RandomSpreadStructurePlacement(143, 0, RandomSpreadType.TRIANGULAR, 836475)));
 
 		context.register(ALTERATION_SITE_SET, new StructureSet(structures.getOrThrow(ALTERATION_SITE),
 			new RandomSpreadStructurePlacement(39, 0, RandomSpreadType.LINEAR, 1024321764)));

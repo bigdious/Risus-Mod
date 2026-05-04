@@ -1,0 +1,26 @@
+{
+  "parent": "risus:angel",
+  "criteria": {
+    "d_authority": {
+      "trigger": "risus:divine_authority"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.d_authority.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "risus:concentration_core"
+    },
+    "title": {
+      "translate": "advancement.risus.d_authority"
+    }
+  },
+  "requirements": [
+    [
+      "d_authority"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

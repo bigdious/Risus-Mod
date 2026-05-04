@@ -50,5 +50,8 @@ public class BasicBTrigger extends SimpleCriterionTrigger<BasicBTrigger.TriggerI
 		public static Criterion<TriggerInstance> getGood() {
 			return RisusCriterionTriggers.KILLED_BY_DEVOUR.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
+		public static Criterion<TriggerInstance> getJuked() {
+			return RisusCriterionTriggers.DIVINE_AUTHORITY.get().createCriterion(new TriggerInstance(Optional.empty()));
+		}
 	}
 }

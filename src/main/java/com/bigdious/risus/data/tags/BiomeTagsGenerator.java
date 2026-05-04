@@ -102,13 +102,10 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 		;
 
 		tag(RisusTags.Biomes.HAS_FAMILY_TREE).add(
-				Biomes.BADLANDS,
 				Biomes.BAMBOO_JUNGLE,
 				Biomes.BIRCH_FOREST,
 				Biomes.CHERRY_GROVE,
 				Biomes.DARK_FOREST,
-				Biomes.DESERT,
-				Biomes.ERODED_BADLANDS,
 				Biomes.FOREST,
 				Biomes.GROVE,
 				Biomes.ICE_SPIKES,
@@ -132,15 +129,12 @@ public class BiomeTagsGenerator extends BiomeTagsProvider {
 				Biomes.WINDSWEPT_FOREST,
 				Biomes.WINDSWEPT_GRAVELLY_HILLS,
 				Biomes.WINDSWEPT_HILLS,
-				Biomes.WINDSWEPT_SAVANNA,
-				Biomes.WOODED_BADLANDS
+				Biomes.WINDSWEPT_SAVANNA
 			)
 			.addTag(Tags.Biomes.IS_BIRCH_FOREST)
-			.addTag(Tags.Biomes.IS_BADLANDS)
 			.addTag(Tags.Biomes.IS_JUNGLE)
 			.addTag(Tags.Biomes.IS_FOREST)
 			.addTag(Tags.Biomes.IS_OLD_GROWTH)
-			.addTag(Tags.Biomes.IS_DESERT)
 			.addTag(Tags.Biomes.IS_MUSHROOM)
 			.addTag(Tags.Biomes.IS_SWAMP)
 			.addTag(Tags.Biomes.IS_SAVANNA)

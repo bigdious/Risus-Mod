@@ -194,6 +194,10 @@ public class Angel extends Monster {
 
 			))) {
 			return super.hurt(source, this.getMaxHealth()+1);
+		} else {
+			if (source.getEntity() instanceof ServerPlayer sp) {
+				RisusCriterionTriggers.DIVINE_AUTHORITY.get().trigger(sp);
+			}
 		}
 		return false;
 	}

@@ -161,7 +161,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 
 		tag(EntityTypeTags.REDIRECTABLE_PROJECTILE)
 			.add(
-				RisusEntities.EGG_SAC.get()
+				RisusEntities.EGG_SAC.get(),
+				RisusEntities.BLOODSLASH.get()
 			)
 		;
 

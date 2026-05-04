@@ -187,8 +187,15 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("weakaxe", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.UNAWAKENED_VESSEL.get()))
 			.save(consumer, "risus:potential");
 
+		AdvancementHolder d_authority = Advancement.Builder.advancement().parent(angel)
+			.display(
+				RisusItems.CONCENTRATION_CORE.get(),
+				Component.translatable("advancement.risus.d_authority"),
+				Component.translatable("advancement.risus.d_authority.desc"), null, AdvancementType.TASK, true, true, false)
+			.addCriterion("d_authority", BasicBTrigger.TriggerInstance.getJuked())
+			.save(consumer, "risus:d_authority");
 
-		AdvancementHolder crusade = Advancement.Builder.advancement().parent(angel)
+		AdvancementHolder crusade = Advancement.Builder.advancement().parent(d_authority)
 			.display(
 				RisusItems.ESSENCE_OF_SLOTH.get(),
 				Component.translatable("advancement.risus.crusade"),
