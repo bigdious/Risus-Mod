@@ -39,13 +39,13 @@ public class AirPlaceBlockItem extends BlockItem {
 
 			BlockPos blockPos = new BlockPos(x, y, z);
 			if (level.getBlockState(blockPos).isAir() || level.getBlockState(blockPos).canBeReplaced()) {
-				level.setBlock(blockPos, RisusBlocks.TESSERACT.get().defaultBlockState(), 11);
+				level.setBlock(blockPos, this.getBlock().defaultBlockState(), 11);
 				if (!player.isCreative()) {
 					itemstack.consume(1, player);
 				}
 				player.awardStat(Stats.ITEM_USED.get(this));
-				SoundType soundtype = RisusBlocks.TESSERACT.get().defaultBlockState().getSoundType(level, blockPos, player);
-				level.playSound(player, blockPos, this.getPlaceSound(RisusBlocks.TESSERACT.get().defaultBlockState(), level, blockPos, player), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+				SoundType soundtype = this.getBlock().defaultBlockState().getSoundType(level, blockPos, player);
+				level.playSound(player, blockPos, this.getPlaceSound(this.getBlock().defaultBlockState(), level, blockPos, player), SoundSource.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
 				return InteractionResultHolder.consume(itemstack);
 			}
 		}

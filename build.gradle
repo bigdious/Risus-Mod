@@ -108,6 +108,13 @@ repositories {
 	maven {
 		url "https://nexus.resourcefulbees.com/repository/maven-public/"
 	}
+	maven {
+		// modonomicon
+		url "https://dl.cloudsmith.io/public/klikli-dev/mods/maven/"
+		content {
+			includeGroup "com.klikli_dev"
+		}
+	}
 
 }
 
@@ -123,6 +130,9 @@ dependencies {
 	implementation "curse.maven:jade-324717:${project.jade_version}"
 	compileOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}:api"
 	runtimeOnly "vazkii.patchouli:Patchouli:1.21.1-${project.patchouli_version}"
+
+	implementation ("com.klikli_dev:modonomicon-${minecraft_version}-neoforge:${modonomicon_version}"){transitive=false}
+	compileOnly ("com.klikli_dev:modonomicon-${minecraft_version}-common:${modonomicon_version}"){transitive=false}
 
 	runtimeOnly "curse.maven:atlasviewer-633577:6088094"
 }

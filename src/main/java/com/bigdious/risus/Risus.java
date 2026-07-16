@@ -7,6 +7,7 @@ import com.bigdious.risus.compat.curios.CuriosCompat;
 import com.bigdious.risus.config.ConfigSetup;
 import com.bigdious.risus.data.*;
 import com.bigdious.risus.data.loottables.LootGenerator;
+import com.bigdious.risus.data.modonomicon.ResearchersNotesBook;
 import com.bigdious.risus.data.tags.*;
 import com.bigdious.risus.event.RisusEvents;
 import com.bigdious.risus.init.*;
@@ -16,6 +17,9 @@ import com.bigdious.risus.worldgen.features.RisusFeatures;
 import com.bigdious.risus.worldgen.structures.RisusStructures;
 import com.bigdious.risus.worldgen.structures.VillageStructures;
 import com.google.common.reflect.Reflection;
+import com.klikli_dev.modonomicon.api.datagen.LanguageProviderCache;
+import com.klikli_dev.modonomicon.api.datagen.NeoBookProvider;
+import com.klikli_dev.modonomicon.datagen.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -125,10 +129,13 @@ public class Risus {
 		generator.addProvider(isClient, new SpriteReferenceGenerator(packOutput, event.getLookupProvider(), existingFileHelper));
 		generator.addProvider(isClient, new LangGenerator(packOutput));
 
+
 		boolean isServer = event.includeServer();
 		RegistryDataGenerator registryDataGenerator = new RegistryDataGenerator(packOutput, datapackProvider.getRegistryProvider());
 		var lookupProvider = registryDataGenerator.getRegistryProvider();
+		//FUCKER, BE ATTENTIVE FOR THE BELOW
 		generator.addProvider(isServer, registryDataGenerator);
+
 		generator.addProvider(isServer, new RisusAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(isServer, new StructureUpdater("structures", packOutput, existingFileHelper));
 		generator.addProvider(isServer, new LootGenerator(packOutput, lookupProvider));
@@ -145,6 +152,13 @@ public class Risus {
 		generator.addProvider(isServer, new StructureTagGenerator(packOutput, lookupProvider));
 		generator.addProvider(isServer, new FluidTagGenerator(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(isServer, new ItemTagGenerator(packOutput, lookupProvider, blocktags.contentsGetter(), existingFileHelper));
+
+		//MODONOMICON
+
+		var enUsCache = new LanguageProviderCache("en_us");
+		generator.addProvider(isServer, NeoBookProvider.of(event, new ResearchersNotesBook(Risus.MODID, enUsCache)));
+		generator.addProvider(isClient, new EnUsProvider(generator.getPackOutput(), enUsCache));
+		generator.addProvider(isServer, new DemoMultiblockProvider(generator.getPackOutput(), Risus.MODID));
 	}
 
 	private static void loadCuriosCompat(IEventBus bus) {

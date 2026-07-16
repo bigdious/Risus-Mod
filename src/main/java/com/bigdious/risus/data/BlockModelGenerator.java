@@ -650,6 +650,7 @@ public class BlockModelGenerator extends BlockStateProvider {
 		this.getVariantBuilder(block).forAllStates((state) -> {
 			Direction dir = state.getValue(BlockStateProperties.FACING);
 			//look, it works, okey?
+			//wtf did I do here
 			return ConfiguredModel.builder()
 				.modelFile(model)
 				.rotationX(dir == Direction.DOWN ? 180 : (dir.getAxis().isHorizontal() ? 90 : 0))
