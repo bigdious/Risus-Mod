@@ -37,7 +37,7 @@
     "texture_height": 256,
     "texture_width": 256
   },
-  "model": "risus:item/researchers_notes",
+  "model": "risus:researchers_notes",
   "name": "book.risus.researchers_notes.name",
   "page_display_mode": "double_page",
   "read_all_button_y_offset": 0,

@@ -1,5 +1,6 @@
 package com.bigdious.risus.data.modonomicon;
 
+import com.bigdious.risus.data.modonomicon.categories.StructuresCategory;
 import com.klikli_dev.modonomicon.api.datagen.ModonomiconLanguageProvider;
 import com.klikli_dev.modonomicon.api.datagen.SingleBookSubProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookCommandModel;
@@ -31,7 +32,7 @@ public class ResearchersNotesBook extends SingleBookSubProvider {
 			.withAllowedEntry("modonomicon:features/command");
 		this.add(commandEntryLinkCommand.getSuccessMessage(), "You got wheat, because clicking is cool!");
 
-		return book.withModel(ResourceLocation.parse("risus:item/researchers_notes"))
+		return book.withModel(ResourceLocation.fromNamespaceAndPath("risus", "researchers_notes"))
 			.withBookTextOffsetX(5)
 			.withBookTextOffsetY(0) //no top offset
 			.withBookTextOffsetWidth(-5)
@@ -42,12 +43,13 @@ public class ResearchersNotesBook extends SingleBookSubProvider {
 
 	@Override
 	protected void registerDefaultMacros() {
-		//currently no macros
+
 	}
 
 	@Override
 	protected void generateCategories() {
-		//for the two big categories we use the category provider
+
+		var structures = this.add(new StructuresCategory(this).generate());
 		var featuresCategory = this.add(new FeaturesCategory(this).generate());
 		var formattingCategory = this.add(new FormattingCategory(this).generate());
 

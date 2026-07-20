@@ -421,6 +421,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 		singleTex(RisusBlocks.NEURON_HEAD.asItem());
 		singleTex(RisusItems.HAIR_FOLLICLES);
 
+		//for book
+		singleTex("researchers_notes");
+
 
 		//spawn eggs
 		for (DeferredHolder<Item, ?> item : RisusEntities.SPAWN_EGGS.getEntries()) {
