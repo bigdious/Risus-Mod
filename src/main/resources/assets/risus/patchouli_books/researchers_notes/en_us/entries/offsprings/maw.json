@@ -30,51 +30,7 @@
       "link_recipe": true,
       "text": "Gorgers are made up of a mouth and Gorger Guts, as well as Gluttonous Scaleplates protecting their innards. The Scales can be harvested without hurting the Gorger, however, removing the Guts will obviously kill it. The Gorger Guts can be used for storage and their ability to swallow items remains even after the Gorger's death."
     },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:gluttony_scales"
-      },
-      "link_recipe": true,
-      "anchor" : "scale",
-      "text": "Gluttonous Scales are a widely used material, especially for equipment. They can be harvested from the sides of a Gorger using a $(3)Diamond Pickaxe$(). They are also valued for their aesthetic design and therefor cheaper imitations have been designed that use Obsidian. A white version can also be made with some Purifying Paste."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:imitation_scaleplate",
-      "recipe2": "risus:flattened_imitation_scales_block"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:imitation_scales_block_stairs",
-      "recipe2": "risus:imitation_scales_block_slab"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:imitation_scales_block_wall",
-      "recipe2": "risus:flowering_imitation_scaleplate"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:budding_imitation_scaleplate",
-      "recipe2": "risus:unalloyed_scales_block",
-      "anchor": "paste"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:unalloyed_scales_block_stairs",
-      "recipe2": "risus:unalloyed_scales_block_slab"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:unalloyed_scales_block_wall",
-      "recipe2": "risus:unalloyed_scaleplate"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:flowering_unalloyed_scaleplate",
-      "recipe2": "risus:budding_unalloyed_scaleplate"
-    },
+
     {
       "type": "patchouli:text",
       "title": "Addendum",

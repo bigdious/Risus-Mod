@@ -1,0 +1,19 @@
+{
+  "name": "Echo Pearl",
+  "icon": "risus:echo_pearl",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:echo_pearl"
+      },
+      "link_recipe": true,
+      "text": "On its own, the Echo Pearl dropped by $(l:offsprings/singer)$(c)$(o)Singers$() is rather inert, as it even lacks the spacial abilities of a normal Ender Pearl. Its main benefit can be seen when used to enhance the abilities of a $(l:equipment/warhorn)$(c)$(o)Warhorn$() or when creating an $(l:equipment/endless_pearl)$(c)$(o)Endless Pearl$(). Otherwise, it can be disassembled into three Ender Pearls."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:echo_to_pearl"
+    }
+  ]
+}

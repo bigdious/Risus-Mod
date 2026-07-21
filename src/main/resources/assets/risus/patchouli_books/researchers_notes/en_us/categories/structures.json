@@ -1,5 +1,6 @@
 {
   "name": "Structures",
   "description": "The Risus oftentimes clings to abandoned ruins. Other times, it tries to mimic life; to a horrific extent.",
-  "icon": "risus:alteration_catalyst"
+  "icon": "risus:alteration_catalyst",
+  "sortnum": 0
 }

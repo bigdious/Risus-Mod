@@ -1,0 +1,17 @@
+{
+  "name": "Fleshy Spawner",
+  "icon": "risus:fleshy_spawner",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:fleshy_spawner",
+      "link_recipe": true,
+      "text": "In practice, Fleshy Monsters Spawners aren't particularly different from regular Monster Spawners, including the same detection range as well as creature spawning speed and requirements. The main difference is these drop some Tissue when harvested. They appear in structures created by the Risus and can oftentimes contain more"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dangerous monsters, such as Offsprings or Beloved."
+    }
+  ]
+}

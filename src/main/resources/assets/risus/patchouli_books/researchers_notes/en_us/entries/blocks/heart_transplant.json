@@ -1,0 +1,13 @@
+{
+  "name": "Heart Transplant",
+  "icon": "risus:heart_transplant",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:heart_transplant",
+      "link_recipe": true,
+      "text": "Heart Transplants are primarily decorative blocks that form on $(l:structures/family_tree)$(0)$(n)Family Trees$(). They tend to match the number of Ribcages on the tree, pointing to a correlation between them. They are also used by $(l:offsprings/ascetic)$(0)$(n)Ascetics$() for research purposes."
+    }
+  ]
+}

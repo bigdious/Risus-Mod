@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating Memory Core. They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in colonies of nests."
+      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating $(l:materials/memory_core)$(c)$(o)Memory Core$(). They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in $(l:structures/great_body)$(c)$(o)colonies of nests$()."
     },
     {
       "type": "patchouli:entity",
@@ -16,16 +16,11 @@
     {
       "type": "patchouli:spotlight",
       "item": {
-        "item": "risus:memory_core"
+        "item": "risus:weaver_nest"
       },
       "link_recipe": true,
-      "text": "Upon death, they can drop Bones and rarely a Memory Core. These can be consumed as is, to gain experience, or be used to craft a Concentration Core. A Weaver that wanders out of its colony has the capability to create a new Weaver Nest once it has consumed sufficient memories; through the victims it kills. "
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:concentration_core",
-      "anchor": "core",
-      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the capability of hurting divine beings, such as angels."
+      "text": "A Weaver that wanders out of its colony has the ability to create a new Weaver Nest once it has consumed sufficient memories - which can be done through killing sufficient creatures. This process results in the death of the Weaver, as its own body is used to create the nest.",
+      "anchor": "nest"
     },
     {
       "type": "risus:alterationtemplate1",

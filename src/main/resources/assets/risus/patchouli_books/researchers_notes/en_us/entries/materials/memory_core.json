@@ -1,0 +1,21 @@
+{
+  "name": "Memory & Concentration Core",
+  "icon": "risus:memory_core",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:memory_core"
+      },
+      "link_recipe": true,
+      "text": "Upon death, $(l:offsprings/weaver)$(c)$(o)Weavers$() can rarely drop a Memory Core. These can be consumed as is, to gain experience, or be used to craft a Concentration Core. Alternatively, they can also be produced with the use of a $(l:blocks/weaving_mechanism)$(c)$(o)Weaving Mechanism$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:concentration_core",
+      "anchor": "core",
+      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the capability of hurting divine beings, such as angels."
+    }
+  ]
+}

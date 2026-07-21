@@ -1,0 +1,52 @@
+{
+  "name": "Gluttonous Scales",
+  "icon": "risus:gluttony_scales",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:gluttony_scales"
+      },
+      "link_recipe": true,
+      "anchor" : "scale",
+      "text": "Gluttonous Scales are a widely used material, especially for equipment. They can be harvested from the sides of a $(l:offsprings/maw)$(c)$(o)Gorger$() using a $(3)Diamond Pickaxe$(). They are also valued for their aesthetic design and therefor cheaper imitations have been designed that use Obsidian. A white version can also be made with some $(l:materials/lovers_cream)$(c)$(o)Purifying Paste$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scaleplate",
+      "recipe2": "risus:flattened_imitation_scales_block"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scales_block_stairs",
+      "recipe2": "risus:imitation_scales_block_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scales_block_wall",
+      "recipe2": "risus:flowering_imitation_scaleplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:budding_imitation_scaleplate",
+      "recipe2": "risus:unalloyed_scales_block",
+      "anchor": "paste"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unalloyed_scales_block_stairs",
+      "recipe2": "risus:unalloyed_scales_block_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unalloyed_scales_block_wall",
+      "recipe2": "risus:unalloyed_scaleplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:flowering_unalloyed_scaleplate",
+      "recipe2": "risus:budding_unalloyed_scaleplate"
+    }
+  ]
+}

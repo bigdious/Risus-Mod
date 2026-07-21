@@ -1,0 +1,41 @@
+{
+  "name": "Weaving Mechanism",
+  "icon": "risus:weaving_mechanism",
+  "category": "risus:blocks",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:weaving_mechanism"
+      },
+      "link_recipe": true,
+      "text": "The Weaving Mechanism is made by using a $(l:materials/memory_core)$(c)$(o)Memory Core$() on a $(l:offsprings/weaver#nest)$(c)$(o)Weaver Nest$() . This mechanism uses the ability of Weavers to collect experience and weave them into a physical medium to turn nearby Experience Orbs into Memory Cores. These cores act exactly the same as the ones harvested from Weavers and can be consumed to gain experience."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Once the mechanism has collected enough experience, it will begin weaving and shortly create the core. If there is already a core present, it will get ejected at the start of the process. A Redstone signal will stop the weaving process and the collection of Experience Orbs. The mechanism can hold a large amount of experience, roughly equal to the highest level enchantment of an Enchanting Table."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Weaving Mechanism, while somewhat sturdier than a Weaver Nest, is still quite fragile. Silk Touch is required to reliable relocate it, otherwise it will break, returning the Concentration Core used in its creation."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "The Weaving Mechanism was quite a wonderful accidental discovery for me, as I have been searching for a way to store the materialized experience of dead beings for a while. I happened upon it while testing for further applications of the Concentration Core - having learned about the Litter not too long ago - and decided to use it on a Weaver Nest. To my surprise, it immediately reorganized the body of the "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dead Weaver, and by taking the storage role of the original Memory Core, made it capable of creating endless cores. I do realize though that this was not purely coincidence. The probability of not only finding the exact solution to my desires as well as the Concentration Core randomly creating such a perfect and precise mechanism is practically non-existent. To me, it seems much more probable that the Concentration Core is capable of 'listening' to my intentions. This hypothesis is "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "further supported by the fact that I can recreate the Weaving Mechanism several times with different cores. Additionally, the ability to absorb Experience Orbs is not native to Weavers, as they have to directly consume their victims instead. This means that the core not only repurposes the weaver body, but it evolves it too - which is a trait of the plague. All of this could be further proof for my theory that the Concentration Core is a conduit directly connected to "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the Risus - a two way connection, that allows the plague to easily 'listen' too."
+    }
+  ]
+}

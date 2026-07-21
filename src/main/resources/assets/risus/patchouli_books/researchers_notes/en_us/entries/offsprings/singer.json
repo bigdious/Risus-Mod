@@ -9,21 +9,13 @@
     },
     {
       "type": "patchouli:text",
-      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an Echo Pearl, Organic Matter and an Eye of Ender."
+      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an $(l:materials/echo_pearl)$(c)$(o)Echo Pearl$(), Organic Matter and an Eye of Ender."
     },
     {
       "type": "patchouli:entity",
       "entity": "risus:singer",
       "border": "true",
       "text": "Its song is full of passion, yet still feels awful to the ears."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:echo_pearl"
-      },
-      "link_recipe": true,
-      "text": "On its own, the Echo Pearl dropped by Singers is rather inert, as it even lacks the spacial abilities of a normal Ender Pearl. Its main benefit can be seen when used to enhance the abilities of a $(l:equipment/warhorn)$(0)$(n)Warhorn$() or when creating an $(l:equipment/endless_pearl)$(0)$(n)Endless Pearl$(). Otherwise, it can be disassembled into three Ender Pearls."
     },
     {
       "type": "patchouli:text",

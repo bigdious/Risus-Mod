@@ -1,0 +1,15 @@
+{
+  "name": "Lover's Cream",
+  "icon": "risus:lover_cream",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:lover_cream"
+      },
+      "link_recipe": true,
+      "text": "The Lover's Cream that drops upon a $(l:offsprings/lover)$(c)$(o)Lover's$() death is quite the powerful substance. It can be used as is on creatures that can be impregnated to convert them; just like a Lover would. It can also be used as a melding agent in the $(l:equipment/eternal_youth)$(c)$(o)Eternal Youth$(), or mixed with Rose Petals to create a $(l:materials/purifying_paste)$(c)$(o)Purifying Paste$()."
+    }
+  ]
+}

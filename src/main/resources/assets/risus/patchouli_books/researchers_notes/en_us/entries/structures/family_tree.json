@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Family Trees are not actual trees. They bare no leaves nor create saplings. The trunk is nonetheless wood-like and can be used as such. The branches are decorated with Heart Transplants and Ribcages, both features unique to this 'flora'.The Family Trees primarily form by a strong desire of a family to stay together, especially in a circumstance that involves crisis."
+      "text": "Family Trees are not actual trees. They bear no leaves nor create saplings. The trunk is nonetheless wood-like and can be used as such. The trees themselves are decorated with $(l:blocks/heart_transplant)$(c)$(o)Heart Transplants$(), $(l:materials/crystallized_bonds)$(c)$(o)Crystallized Bonds$() and Ribcages; all features unique to this 'flora'. The Family Trees primarily form by a strong desire of a family to stay together, especially when grieving."
     },
     {
       "type": "patchouli:image",
@@ -13,19 +13,6 @@
       "border": "true",
       "title": "Family Tree",
       "text": "A showcase of the power that familial bonds can have."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "risus:crystallized_bond",
-      "link_recipe": true,
-      "text": "Crystallized Bonds are a unique resource that can be found on parts of the trunk and used for the manufacturing of special glass or to create sharp edges for weapons. These are renewable and formed on Popping Bondknot wood, which cannot be removed without losing their ability to generate Crystallized Bonds."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "risus:heart_transplant",
-      "link_recipe": true,
-      "anchor" : "heart",
-      "text": "Heart Transplants are primarily decorative blocks that form on Family Trees. They tend to match the number of ribcages on the tree, pointing to a correlation between them. They are also used by $(l:offsprings/ascetic)$(0)$(n)Ascetics$() for research purposes."
     },
 
     {

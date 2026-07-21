@@ -1,0 +1,21 @@
+{
+  "name": "Mosaic Glass & Lamp",
+  "icon": "risus:blue_mosaic_glass",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "For people who wish for more detailed glass decorations, they can craft together Stained Glass and an Eerie or Dark Fence to create Mosaic Glass. These are available in all sixteen Stained Glass colors and each one has its own unique design. They can also be turned into Mosaic Glass Panes. By adding Glowstone Dust, Mosaic Glass can be turned into opaque Mosaic Lamps."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:white_mosaic_glass",
+      "recipe2": "risus:white_mosaic_lamp"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:white_mosaic_glass_pane",
+      "text": "Thanks to the metal frame, these glass types are sturdy enough to be picked up without Silk Touch."
+    }
+  ]
+}

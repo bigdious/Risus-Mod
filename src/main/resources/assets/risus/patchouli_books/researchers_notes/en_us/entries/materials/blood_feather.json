@@ -1,0 +1,13 @@
+{
+  "name": "Blood Feather",
+  "icon": "risus:blood_feather",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:blood_feather",
+      "link_recipe": true,
+      "text": "Please don't forget about me"
+    }
+  ]
+}

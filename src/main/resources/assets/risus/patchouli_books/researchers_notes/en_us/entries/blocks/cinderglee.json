@@ -1,0 +1,43 @@
+{
+  "name": "Cinderglee",
+  "icon": "risus:joyflame_campfire",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cinderglee is a flame that burns with the very essence of Risus and can be created by setting Remains on fire. Though, saying that it 'burns' is not entirely correct. It does not burn physical matter for fuel. The only thing it can burn is the 'existence' of creatures. Whenever one steps in it, they experience Existential Burn, that - in practice - greatly decreases their max vitality."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:joyflame_torch",
+      "recipe2": "risus:joyflame_lantern"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:joyflame_campfire",
+      "anchor" : "camp",
+      "text": "The fact that it cannot burn physical matter also means that a Cinderglee Campfire cannot actually cook anything, nor release signal smoke. Existential Burn can also not be put out with Water or any other liquid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The only way to recover from Existential Burn is to consume $(l:alteration_blocks/organic_matter)$(0)$(n)Organic Matter$(). This process will reinstate most of the lost 'existence'. It is important to note, however, that this repair of one's 'existence' does not come without risks; even if they may not be obvious at first. Willingly consuming Organic Matter acts as a signal to the Risus: representing a consensual welcome. This does not mean immediate infection, instead it's simply the first step towards Assimilation."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "It is sometimes called the 'Paradox Flame'. Fairly so, after all, it is a fire that seemingly doesn't consume fuel to burn. Of course, in reality, it does burn 'existence'. At least, that's the term I decided to use, but I still am not sure if it's necessarily correct. Hearing that something burns 'existence' is quite confusing, as even understanding what that could be is complicated. Yet, I cannot come up with a better way to describe it.  If "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the Cinderglee touches a living being, it slowly drives it closer and closer to death. It's not like normal fire, in the sense of it burning their body away. It's also not purely decay, as there is no deconstruction involved. Somehow, it burns the living being's very concept, their right to exist in this world. Not the body's right to exist, as that still remains after death, but the actual being's life. Normally, living should be connected to the functioning of the body or in special cases - "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "such as the undead - the presence of an alternate force. Despite that, Cinderglee ignores that correlation and affects the existence of said being's life or undeath directly. At the same time, this disastrous force is completely inert when faced with anything not alive in some form. The only exception being the plague's Remains or Organic Matter. Those burn with the visible 'smoke' that's given off when a living being's existence is burning too. I still lack a concrete answer on why that "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "may be, but my best guess so far is that it might be some sort of purification. That is one of the uses fire has as a tool, and with how Cinderglee works specifically, it would make sense for it to be a 'life purifier'. Although how exactly that benefits the plague is still a question for me... Either way, I have to be careful. A fire that doesn't burn hot or cold is dangerously difficult to avoid, and I have already consumed more Organic Matter than I should have... "
+    }
+  ]
+}

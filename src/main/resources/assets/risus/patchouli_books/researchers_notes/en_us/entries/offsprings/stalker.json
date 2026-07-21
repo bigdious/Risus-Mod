@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Stalker is the beloved version of a Creeper. Through the impregnation, the Creeper's body splits vertically and a giant eye grows forth from that rupture. This process also results in losing its ability to explode, so it will just follow around its target. Proximity to a Stalker is a memetic hazard to people and it causes considerable loss of vision. Fortunately, this is only a temporary effect."
+      "text": "The Stalker is the beloved version of a Creeper. Through the impregnation, the Creeper's body splits vertically and a giant eye grows forth from that rupture. This process also results in losing its ability to explode, so it will just follow around its target. Proximity to a Stalker is a memetic hazard to people and it causes a temporary loss of vision. It can drop a $(l:materials/stalker_eye)$(c)$(o)Stalker Eye$() when killed."
     },
     {
       "type": "patchouli:entity",
@@ -13,24 +13,12 @@
       "border": "true",
       "text": "Even though its eye glows in the dark, it can still be surprisingly stealthy."
     },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:stalker_eye"
-      },
-      "link_recipe": true,
-      "text": "On death, the Stalker can drop Organic Matter, Gunpowder and a Stalker Eye. This eye can be eaten as is or made into an Eye Sandwich to improve the nutrition provided. Upon consumption, it enhances the night vision ability of the person for a limited time. With the Eye Sandwich, the potency of this effect is slightly reduced."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "risus:eye_sandwich",
-      "text": "The bread gives it a crunchy exterior but the eye itself just melts on the tongue after it pops. The insides of the eye may stay together like pudding, but swirling it around a bit with the tongue can loosen up the liquid and then it will slide down the throat easily."
-    },
+
 
     {
       "type": "patchouli:text",
       "title": "Addendum",
-      "text": "There are a couple theories on the behaviours of Creepers. Some say its a sort of territorial plant, which attacks any threats to the environment to protect it. A much more popular theory suggests creepers are actually rather friendly. The reason they explode is simply due to 'anxiety'. If that's the case, the Stalker is a creeper with no anxiety. And as long as the vision loss is dealt with - by wearing an Eye on the head -"
+      "text": "There are a couple theories on the behaviours of Creepers. Some say it's a sort of territorial plant, which attacks any threats to the environment to protect it. A much more popular theory suggests creepers are actually rather friendly. The reason they explode is simply due to 'anxiety'. If that's the case, the Stalker is a creeper with no anxiety. And as long as the vision loss is dealt with - by wearing an Eye on the head -"
     },
     {
       "type": "patchouli:text",

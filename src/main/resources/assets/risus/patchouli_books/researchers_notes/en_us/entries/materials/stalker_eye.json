@@ -1,0 +1,20 @@
+{
+  "name": "Stalker Eye",
+  "icon": "risus:stalker_eye",
+  "category": "risus:materials",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:stalker_eye"
+      },
+      "link_recipe": true,
+      "text": "On death, $(l:offsprings/stalker)$(c)$(o)Stalkers$() can drop a Stalker Eye. This eye can be eaten as is, made into an Eye Sandwich to improve the nutrition provided, or used to create $(l:blocks/eyes)$(c)$(o)Eye blocks$(). Upon consumption, it enhances the night vision ability of the person for a limited time. With the Eye Sandwich, the potency of this effect is slightly reduced."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:eye_sandwich",
+      "text": "The bread gives it a crunchy exterior but the eye itself just melts on the tongue after it pops. The insides of the eye may stay together like pudding, but swirling it around a bit with the tongue can loosen up the liquid and then it will slide down the throat easily."
+    }
+  ]
+}

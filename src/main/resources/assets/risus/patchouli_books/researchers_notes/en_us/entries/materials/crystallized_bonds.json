@@ -1,0 +1,13 @@
+{
+  "name": "Crystallized Bond",
+  "icon": "risus:crystallized_bond",
+  "category": "risus:materials",
+  "pages": [
+{
+  "type": "patchouli:spotlight",
+  "item": "risus:crystallized_bond",
+  "link_recipe": true,
+  "text": "Crystallized Bonds are a unique resource that can be found on $(l:structures/family_tree)$(c)$(o)Family Trees$() and used for the manufacturing of $(l:blocks/glasses)$(c)$(o)special glass$() or to create sharp edges for weapons. These are renewable and formed on Popping Bondknot wood, which cannot be removed without losing their ability to generate Crystallized Bonds."
+}
+    ]
+}

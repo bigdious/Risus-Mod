@@ -1,0 +1,17 @@
+{
+  "name": "Display Notch",
+  "icon": "risus:display_notch",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Display Notches can be altered from Item Frames and Glow Item Frames. These can be placed on any side of a block. Once an item is inserted, there are several ways to manipulate the display: Dyes will change the color of the notch; an Axe can change between the item laying flat or standing; a Pickaxe can change the rotation of the item; a Shovel can change the elevation of it; a Glow Ink Sac will make the item glow; a"
+    },
+    {
+      "type": "risus:alterationtemplate1",
+      "header": "Alteration",
+      "recipe": "risus:alteration/display_notch",
+      "text": "Phantom Membrane will make  the Notch itself immaterial; a Glass block will make the Notch invisible; a Tripwire Hook will lock it, stopping all other interactions; and lastly, being powered by a Redstone signal will cause the item to rotate continuously."
+    }
+  ]
+}

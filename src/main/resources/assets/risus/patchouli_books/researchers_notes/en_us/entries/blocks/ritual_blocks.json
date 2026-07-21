@@ -1,0 +1,19 @@
+{
+  "name": "Ritual Blocks",
+  "icon": "risus:curved_ritual_block",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "risus:alterationtemplate2",
+      "header": "Ritual Blocks",
+      "recipe": "risus:alteration/curved_ritual_block",
+      "recipe2": "risus:alteration/engraved_basalt",
+      "text": "Attained by altering Black Glazed Terracotta, Curved and Linear Ritual Blocks offer a much grander design, ideal for ritualistic needs. Engraved Basalt - which is attained from altering Basalt - can further expand this palette."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:linear_ritual_block",
+      "recipe2": "risus:curved_ritual_block"
+    }
+  ]
+}

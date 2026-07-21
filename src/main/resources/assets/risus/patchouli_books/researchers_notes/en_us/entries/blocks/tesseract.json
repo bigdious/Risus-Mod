@@ -1,0 +1,17 @@
+{
+  "name": "Tesseract",
+  "icon": "risus:tesseract",
+  "category": "risus:blocks",
+  "advancement": "risus:angel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "One of the applications of a Blood Feather is in the creation of a Tesseract. This frame exhibits anomalous gravitational properties, making it so not only can people safely fall onto it - without any pain - but it can also be placed midair without any support. Powering it with a Redstone signal will cause it to deactivate and fall like Sand."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:tesseract",
+      "text": "It can be made with four Feathers, a pair of Gold Ingots, a Phantom Membrane, some Redstone and a Blood Feather."
+    }
+  ]
+}

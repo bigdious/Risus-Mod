@@ -1,5 +1,7 @@
 {
   "name": "Lost Wills",
   "description": "In some cases, Family Trees will contain a Lost Will between their roots or trunks. These are the final thoughts of whoever became part of the tree at its creation. They are oftentimes tragic, and while they may hold some research value, it may be best to avoid reading them, as to evade the emotional toll it takes.",
-  "icon": "risus:lost_will"
+  "icon": "risus:lost_will",
+  "secret": true,
+  "sortnum": 11
 }

@@ -1,0 +1,78 @@
+{
+  "name": "Grimstone",
+  "icon": "risus:grimstone",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Grimstone is a Risus specific stone variant, obtained by altering Blackstone. What sets it apart is its resistance to both Lava and Blood, allowing the possibility to place those fluids too into Stairs, Slabs and Walls made from Grimstone. The Active Grimstone altered from Gilded Blackstone will drop Redstone when mined without Silk Touch."
+    },
+    {
+      "type": "risus:alterationtemplate5",
+      "header": "Alteration",
+      "recipe": "risus:alteration/grimstone",
+      "recipe2": "risus:alteration/active_grimstone",
+      "recipe3": "risus:alteration/polished_grimstone",
+      "recipe4": "risus:alteration/chiseled_grimstone",
+      "recipe5": "risus:alteration/grimstone_bricks"
+    },
+    {
+      "type": "risus:alterationtemplate5",
+      "header": "Alteration",
+      "recipe": "risus:alteration/cracked_grimstone_bricks",
+      "recipe2": "risus:alteration/grimstone_stairs",
+      "recipe3": "risus:alteration/polished_grimstone_stairs",
+      "recipe4": "risus:alteration/grimstone_bricks_stairs",
+      "recipe5": "risus:alteration/grimstone_slab"
+    },
+    {
+      "type": "risus:alterationtemplate5",
+      "header": "Alteration",
+      "recipe": "risus:alteration/polished_grimstone_slab",
+      "recipe2": "risus:alteration/grimstone_bricks_slab",
+      "recipe3": "risus:alteration/grimstone_wall",
+      "recipe4": "risus:alteration/polished_grimstone_wall",
+      "recipe5": "risus:alteration/grimstone_bricks_wall"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:polished_grimstone",
+      "recipe2": "risus:grimstone_bricks"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:chiseled_grimstone",
+      "recipe2": "risus:grimstone_blood_tiles"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_stairs",
+      "recipe2": "risus:polished_grimstone_stairs"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_bricks_stairs",
+      "recipe2": "risus:grimstone_blood_tiles_stairs"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_slab",
+      "recipe2": "risus:polished_grimstone_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_bricks_slab",
+      "recipe2": "risus:grimstone_blood_tiles_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_wall",
+      "recipe2": "risus:polished_grimstone_wall"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:grimstone_bricks_wall",
+      "recipe2": "risus:grimstone_blood_tiles_wall"
+    }
+  ]
+}
