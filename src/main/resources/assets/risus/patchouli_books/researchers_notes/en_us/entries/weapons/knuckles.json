@@ -1,0 +1,22 @@
+{
+  "name": "Knuckledusters",
+  "icon": "risus:toothknocker",
+  "category": "risus:weapons",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Knuckledusters are weapons that inflict a relatively low amount of damage but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:toothknocker",
+      "text": "The Toothknocker can be crafted with Teeth, a Crystallized Bond and plenty of Gluttonous Scales. To bring out its full potential, one has to be held in each hand; then every attack will shatter teeth."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:gold_fist",
+      "text": "The Stripper is unfit for damage output and instead shines in its utility. With every attack, it has a chance to strip away the armor of the enemy monster or to steal an item off the attacked person."
+    }
+  ]
+}

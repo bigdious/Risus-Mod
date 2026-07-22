@@ -1,0 +1,26 @@
+{
+  "name": "Ophanim Wings",
+  "icon": "risus:diamond_tipped_angel_wings",
+  "category": "risus:armors",
+  "advancement": "risus:crusade",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Elytras are a heavily used transportation method, offering not only the ability to glide but to even fly through the use of certain items. Ophanim Wings - created by imbuing an Elytra with a Blood Feather and some Organic matter - are ideal for gliding near endlessly, barely losing durability while doing so. In return, they don't resist to a sudden increase of velocity; losing a considerable amount"
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "minecraft:elytra_to_angel_wings",
+      "text": " of their integrity whenever a firework rocket is fired for a boost. Using a Trident with Riptide will also lightly damage the Ophanim Wings. They can be repaired using Blood Feathers. The wings can also be upgraded further."
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "minecraft:angel_wings_to_diamond_tipped_angel_wings",
+      "text": "By adding a Diamond Block and an additional Blood Feather, the Ophanim Wings can be turned into a stabbing weapon that triggers whenever crouching. Of course, since the structure of the wings themselves is still rather fragile, the resulting damage isn't that high. The attack itself also costs a good"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "amount of durability, based on the amount of enemies hit. Nonetheless, it can be an effective crowd control tool and an 'on-hand' weapon to quickly attack in an unexpected scenario; or simply used in normal combat alongside a main weapon. It's important to note that some skill is required to effectively use it, as the wing attack's direction is based on the body's rotation, not where the user is looking."
+    }
+  ]
+}

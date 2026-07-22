@@ -1,6 +1,6 @@
 {
   "name": "Composer of Tragedy",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "risus:light_devourer",
   "pages": [

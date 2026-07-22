@@ -5,48 +5,14 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Gorger is an immobile creature that uses a trap to ambush prey and can be found pretty much everywhere, even in the sparse expanse of the End. The trap is a simple 3x3 hole, around a dozen blocks deep with itself at the bottom facing upwards. The top is covered by Mirage Blocks that look like the surrounding environment but are not solid and can be fallen through."
+      "text": "The Gorger is an immobile creature that uses a sinkhole trap to ambush prey and can be found pretty much everywhere, even in the sparse expanse of the End. The trap is a simple 3x3 hole, around a dozen blocks deep with the Gorger at the bottom. The top is covered by $(l:blocks/mirage_blocks)$(c)$(o)Mirage Blocks$() that look like the surrounding environment but are not solid and can be fallen through."
     },
     {
       "type": "patchouli:entity",
       "entity": "risus:maw",
       "border": "true",
       "scale": 0.6,
-      "text": "They will swallow anything, from living beings to simple items."
-      },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:mirage_grass_block"
-      },
-      "link_recipe": true,
-      "text": "Mirage blocks come in mostly four varieties: Grass, Sand, Netherrack and Endstone. They can only be harvested with Silk Touch from Gorger Traps. Similarly to Powdered Snow, these blocks can be walked on when wearing Leather or Skin boots. Using maps is a reliable way to differentiate Mirage Blocks, as they do not appear on them."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:maw_guts"
-      },
-      "link_recipe": true,
-      "text": "Gorgers are made up of a mouth and Gorger Guts, as well as Gluttonous Scaleplates protecting their innards. The Scales can be harvested without hurting the Gorger, however, removing the Guts will obviously kill it. The Gorger Guts can be used for storage and their ability to swallow items remains even after the Gorger's death."
-    },
-
-    {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "The first time I came across a Gorger was when I fell into its trap. Fortunately, I managed to not fall directly in its mouth, but that didn't make the situation any less terrifying - being that close to the fangs. In the panic, I even dropped the pickaxe I was holding and that did land in its mouth. While I managed to crawl out, I still needed that pick so out of frustration I just dropped a tnt on it. To my surprise, it actually swallowed it. The"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "explosion was almost fully isolated to its guts which got destroyed, killing it in the process and giving my pick back. Anyway... it is interesting how the Gorger Traps are a regional phenomenon. While they are quite common here, they are basically nonexistent anywhere else I've been in, except the End. That could indicate that there is something in this region specifically causing them to appear."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Additional note: Through further tests, I've come across two interesting behaviors regarding Gorgers. First, Gorger Guts react to a Redstone Signal by tightening up, which is a useful way to turn off their ability to suck items in. Secondly, whenever a Gorger kills something, it will cause it to drop Experience, similarly to what happens when a person does the same. I've already taken advantage of this feature to remove some of the extra specimens of my Weaver breeding area. Now I simply need a more efficient method of storing said experience..."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "simply need a more efficient method of storing said experience..."
-    }
+      "text": "Gorgers are made up of a maw, $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$(), and $(l:materials/gluttonous_scales)$(c)$(o)Gluttonous Scaleplates$(). "
+      }
   ]
 }

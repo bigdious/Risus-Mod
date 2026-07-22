@@ -1,0 +1,15 @@
+{
+  "name": "Mirage Blocks",
+  "icon": "risus:mirage_grass_block",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:mirage_grass_block"
+      },
+      "link_recipe": true,
+      "text": "Mirage blocks come in mostly four varieties: Grass, Sand, Netherrack and Endstone. They can only be harvested with Silk Touch from $(l:offsprings/maw)$(c)$(o)Gorger Traps$(). Similarly to Powdered Snow, these blocks can be walked on when wearing Leather or Skin boots. Using maps is a reliable way to differentiate Mirage Blocks, as they do not appear on them."
+    }
+  ]
+}

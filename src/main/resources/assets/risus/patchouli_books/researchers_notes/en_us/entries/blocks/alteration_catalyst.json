@@ -1,0 +1,18 @@
+{
+  "name": "Alteration Catalyst",
+  "icon": "risus:alteration_catalyst",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:alteration_catalyst",
+      "link_recipe": true,
+      "anchor" : "alteration",
+      "text": "The cornerstone of interacting with the Risus, the Alteration Catalyst allows a person to possibly infect an object or material with it. One must simply place it in the bowl in the middle and witness as the essence pours into it, altering its form and function to better adapt to the new powers within. Unfortunately, Alteration Catalysts seem to be entirely "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "unbreakable, and they also do not react to any attempts of being moved. Therefore - while it can be frustrating - it's necessary to settle near an $(l:structures/alteration_site)$(c)$(o)Alteration Site$() to research with and use the Catalyst. There may be a method to relocate it but I couldn't find one through my testing."
+    }
+  ]
+}

@@ -7,12 +7,13 @@
       "type": "risus:alterationtemplate1",
       "header": "Bondknot",
       "recipe": "minecraft:bondknot_dummy",
-      "text": "Bondknot is a wood type obtained primarily as part of $(l:structures/family_tree)$(0)$(n)Family Trees$() or by altering any Wood in an Alteration Catalyst. Just as any other wood type, it can be crafted into Stairs, Slabs, Fences, and so on. There's also a special Popping Bondknot Log and Wood which can only appear on Family trees and cannot be harvested."
+      "text": "Bondknot is a wood type obtained primarily as part of $(l:structures/family_tree)$(c)$(o)Family Trees$() or by altering any Wood in an Alteration Catalyst. Just as any other wood type, it can be crafted into Stairs, Slabs, Fences, and so on. "
     },
     {
-      "type": "patchouli:crafting",
-      "recipe": "risus:guts_boat",
-      "text": "Bondknot Boats don't work well with Chests, instead they can seat Gorger Guts. This way not only does the boat have more storage space, but it's also capable of sucking up items."
+      "type": "patchouli:spotlight",
+      "item": "risus:popping_bondknot_wood",
+      "link_recipe": true,
+      "text": "There's also a special variant: the Popping Bondknot Wood, which can only appear on Family trees. These cannot be harvested and generate $(l:materials/crystallized_bonds)$(c)$(o)Crystallized Bonds$() on a regular basis."
     }
   ]
 }

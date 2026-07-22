@@ -1,0 +1,72 @@
+{
+  "name": "Scythes",
+  "icon": "risus:soul_scythe",
+  "category": "risus:weapons",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Scythes are often associated with the reaping of souls, and in the case of scythes made from the materials affected by the Risus, that association still holds up, as they prove to be rather lethal weapons. One such scythe can be created using a Concentration Core as the basis with Gluttonous Scales and Crystallized Bonds for the blade. This, however, will only result in an incomplete vessel."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:scythe",
+      "text": "Compared to a sword, a scythe requires considerably more dexterity, making it a rather slow weapon to use. In return, it allows the user to attack at a a higher range, as well as a sweep a larger area."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:scythe"
+      },
+      "text": "The Unlit Vessel, while strong, still has more potential that can be unleashed - with the use of a Scorching Ritual. To build it, you need the following pattern, made with 16 Linear and 12 Curved Ritual Blocks, some Blood in the middle, and above that, a campfire. 12 Fires have to be created in total at the places where the Ritual Blocks point."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Scorching Ritual",
+      "multiblock": {
+        "pattern": [
+          ["           ","           ","           ","           ","           ", "     0     ","           ","           ","           ","           ","           "],
+          ["     F     ","     X     ","    SYE    ","    FXF    ","  SFSYEFE  ", "FZYZYBYZYZF","  WFWYNFN  ","    FXF    ","    WYN    ","     X     ","     F     "]
+        ],
+        "mapping": {
+          "B": "risus:blood_fluid_block",
+          "Z": "risus:linear_ritual_block[axis=z]",
+          "X": "risus:linear_ritual_block[axis=x]",
+          "Y": "risus:linear_ritual_block[axis=y]",
+          "0": "risus:joyflame_campfire",
+          "N": "risus:curved_ritual_block[facing=north]",
+          "W": "risus:curved_ritual_block[facing=west]",
+          "S": "risus:curved_ritual_block[facing=south]",
+          "E": "risus:curved_ritual_block[facing=east]",
+          "F": "risus:joyflame_fire"
+        },
+        "symmetrical": false
+      },
+      "text": "Simply change out the campfire and the fires to the desired type. Do not forget the Blood."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:fire_scythe"
+      },
+      "text": "The Flame Fiend is imbued with pure fire. When using it, not only is the victim set on fire, but they will also experience Flame Frailty, a state during which being on fire will be more painful. Additionally, even enemies who are immune to fire won't be spared, as they get weakened and devoured by the pure flames from within.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:soul_scythe"
+      },
+      "text": "The Soul Scratcher holds the spirit-burning Soul Fire. As such, it is considerably more powerful when wielded against living beings. Unfortunately, this does make it much weaker against enemies without soul, such as the Undead or the Offsprings.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:cinderglee_scythe"
+      },
+      "text": "The Existential Executioner allows you to inflict the $(l:alteration_blocks/cinderglee)$(0)$(n)Existential Burn$() state onto enemies. It's best used against enemies with considerable regeneration or healing capabilities; or to otherwise slowly whittle down a greater target.",
+      "link_recipe": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Weapon Types",
+  "icon": "minecraft:writable_book",
+  "category": "risus:weapons",
+  "sortnum" : -1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are four major categories of weapons that can be made using materials obtained from the Risus. $(br)$(br)First are Heavy Axes, which are more specialized for combat than base axes, at the cost of their normal utilities. They are more unwieldy but can hit harder in return, while retaining their ability to crush shields. Examples include: $(l:weapons/killjoy)$(c)$(o)Killjoy$(), Unawaked Vessel and Crescent Disaster "
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Unawaked Vessel and Crescent Disaster. $(br)$(br)Scythes $(br)$(br)Knuckles $(br)$(br)War Swords"
+    }
+  ]
+}

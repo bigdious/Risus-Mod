@@ -1,0 +1,15 @@
+{
+  "name": "Ad. Alteration Sites",
+  "icon": "minecraft:writable_book",
+  "category": "risus:addenda",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These structures are most fascinating. As with the majority of things that are infected by the joyplague, it's nearly impossible to ascertain the age, as the plague will keep them ruinous but intact. I have two main hypothesis: First, these represent the origin of the plague. In this case, these would be the ancient places where, by unknown and likely horrific methods, the plague was created and spread."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Though this doesn't quite explain why there are so many. Secondly, the Sites could have been made by cultists after the appearance of the plague. Harvesting the near divine powers of the plague would necessitate appropriate conditions and these places seem to achieve exactly that. However, this idea still leaves just as many questions behind. The possibility of both hypothesis being correct is not negligible either. Then come the catalysts, which are simply baffling..."
+    }
+  ]
+}

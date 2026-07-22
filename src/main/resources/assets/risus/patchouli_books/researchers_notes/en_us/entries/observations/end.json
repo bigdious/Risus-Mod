@@ -1,6 +1,6 @@
 {
   "name": "The End",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "minecraft:story/enter_the_end",
   "pages": [

@@ -1,6 +1,6 @@
 {
   "name": "Fragmented World",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "minecraft:story/enter_the_nether",
   "pages": [

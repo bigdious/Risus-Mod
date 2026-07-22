@@ -21,12 +21,6 @@
       "link_recipe": true,
       "text": "A Weaver that wanders out of its colony has the ability to create a new Weaver Nest once it has consumed sufficient memories - which can be done through killing sufficient creatures. This process results in the death of the Weaver, as its own body is used to create the nest.",
       "anchor": "nest"
-    },
-    {
-      "type": "risus:alterationtemplate1",
-      "header": "Bloodweave",
-      "recipe": "risus:alteration/bloodweave",
-      "text": "There are two ways to obtain Bloodweave: one is to alter Cobwebs, and the other is to harvest it whenever a Weaver creates one through killing a creature. Bloodweave connects with itself, forming webs of memories, not unlike a neural system. When pushed By a Piston, the entire web will move. It can also be used to create living mechanisms."
     }
   ]
 }

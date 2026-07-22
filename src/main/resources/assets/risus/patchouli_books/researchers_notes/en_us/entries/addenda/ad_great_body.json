@@ -1,0 +1,15 @@
+{
+  "name": "Ad. Great Bodies",
+  "icon": "minecraft:writable_book",
+  "category": "risus:addenda",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Great Bodies highlight one of the two natures of the joyplague: that of seeking to be alive. Although they are at best horrific caricatures of a human, they can still be recognized as one, which is an achievement of mimicry in itself. I do wonder why exactly part of the Risus is trying to be 'alive', whereas the other part of it is simply maintaining what is already ruined and ashen. Then there's the parts where the two mix"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "most profanely: organic matter and the offsprings, which help the joyplague form an ecosystem or carve itself a part in the existing one... The more I understand of the Risus the more it seems to me like it's nothing more than a means to an end, like a universal tool that works on anything, either through spreading 'life' or by stabilizing degeneration and decay. But what's the goal and who exactly is using it...? Could it actually be a tool with no wielder?"
+    }
+  ]
+}

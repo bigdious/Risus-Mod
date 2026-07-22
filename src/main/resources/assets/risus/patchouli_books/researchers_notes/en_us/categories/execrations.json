@@ -1,5 +1,6 @@
 {
   "name": "Execrations",
   "description": "By throwing an enchanted item into an Alteration Catalyst, some of the Enchantments will get altered into Execrations. These are something akin to 'volatile enchantments', with new effects that either boost the original to the point of being detrimental or completely reverse it. Not all enchantments can be altered.",
-  "icon": "minecraft:enchanted_book"
+  "icon": "minecraft:enchanted_book",
+  "sortnum": 7
 }

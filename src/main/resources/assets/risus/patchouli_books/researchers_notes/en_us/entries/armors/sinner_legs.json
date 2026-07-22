@@ -1,0 +1,19 @@
+{
+  "name": "Sinner's Robe Leggings",
+  "icon": "risus:sinner_robes_leggings",
+  "category": "risus:armors",
+  "advancement": "risus:gluttony",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The leggings can be used either to more comfortably carry around one's notes or - as all other pieces - for the Great Stool ability, which causes a Stool to appear below one's feet."
+    },
+    {
+      "type": "risus:abilitysmithing2",
+      "header": "Researcher's Notes",
+      "recipe": "risus:book_leggings",
+      "header2": "Great Stool",
+      "recipe2": "risus:great_stool_leggings"
+    }
+  ]
+}

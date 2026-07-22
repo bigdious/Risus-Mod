@@ -1,0 +1,16 @@
+{
+  "name": "Killjoy",
+  "icon": "risus:killjoy",
+  "category": "risus:weapons",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:killjoy"
+      },
+      "link_recipe": true,
+      "anchor": "killjoy",
+      "text": "The Killjoy is a $(l:weapons/weapon_types)$(c)$(o)Heavy Axe$() type weapon dropped rarely by $(l:offsprings/hex)$(c)$(o)Hexes$(). It applies the $(l:blocks/blood)$(c)$(o)Bloodclogged$() effect on hit and deals extra damage against Offsprings and the Beloved. It's formed during the impregnation process of the Vex, causing the Iron Sword to be transfigured into this large axe made of hardened metallic blood."
+    }
+  ]
+}

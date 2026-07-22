@@ -1,6 +1,6 @@
 {
   "name": "Immortal Lifelessness",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "risus:lab",
   "pages": [

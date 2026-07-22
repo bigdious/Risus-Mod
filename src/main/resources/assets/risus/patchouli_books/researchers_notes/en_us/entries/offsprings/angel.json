@@ -13,29 +13,12 @@
       "text": "The embodiment of pure apathy tempered by a desire to ward off trespassers."
     },
     {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:blood_feather"
-      },
-      "link_recipe": true,
-      "text": "Blood Ophanims are rare, divine beings, found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter their range with lightning. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a $(l:materials/blood_feather)$(c)$(o)Blood Feather$() upon death."
+      "type": "patchouli:text",
+      "text": "Blood Ophanims are rare, divine beings, found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter their range with lightning. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a $(l:materials/blood_feather)$(c)$(o)Blood Feather$() upon death. It is important to note that despite the immense death they are capable of, Ophanims can be quite easy to survive due to how slothful their behavior is."
     },
     {
       "type": "patchouli:text",
-      "text": "It is important to note that despite the immense death they are capable of, Ophanims can be quite easy to survive due to how slothful their behavior is. They are entirely stationary and will only move when pushed. On top of having a limited range - albeit still quite huge - they will also not target anything they cannot directly see; even if said target would be in range. Lastly, since their attack comes down from the skies, a sufficiently low ceiling will block any and all attempts of"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "an attack from an Ophanim. However, for those who do not know of these strategies, meeting one might seem like coming across an unavoidable force of nature."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "One of the wildest concepts that I have come across during my journey is the idea of angels as avatars of good. The first time I had heard it I took it for a joke, but apparently, it's a story that can be found passed down in certain families throughout generations. The stories mention how angels would be guardians of humanity, or even bestow blessings. It all seems almost impossible to me. Angels, such as Ophanims or"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "the dreaded Seraphims are all living calamities of different scales. Even surviving the encounter with one usually counts as a miracle. However, if I do want to learn the secrets of the world I will have to acknowledge that my preconceived truths may be false. Yet, if the angels of now and the angels of the past are completely opposite to each other, then  what could have caused such a drastic change...?"
+      "text": "They are entirely stationary and will only move when pushed. On top of having a limited range - albeit still quite huge - they will also not target anything they cannot directly see; even if said target would be in range. Lastly, since their attack comes down from the skies, a sufficiently low ceiling will block any and all attempts of said attack. However, for those who do not know of these strategies, meeting one might seem like coming across a force of nature."
     }
   ]
 }

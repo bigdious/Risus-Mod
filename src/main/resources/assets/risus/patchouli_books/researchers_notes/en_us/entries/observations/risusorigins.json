@@ -1,6 +1,6 @@
 {
   "name": "Origins of the Risus",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "minecraft:story/enchant_item",
   "pages": [

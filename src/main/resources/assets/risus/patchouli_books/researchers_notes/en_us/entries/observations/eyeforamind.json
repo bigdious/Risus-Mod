@@ -1,6 +1,6 @@
 {
   "name": "Eye For A Mind",
-  "icon": "minecraft:writable_book",
+  "icon": "minecraft:spyglass",
   "category": "risus:observations",
   "advancement": "minecraft:adventure/trade",
   "pages": [
