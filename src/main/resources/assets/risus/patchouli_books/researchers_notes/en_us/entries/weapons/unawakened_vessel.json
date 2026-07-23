@@ -1,0 +1,17 @@
+{
+  "name": "Unawakened Vessel",
+  "icon": "risus:unawakened_vessel",
+  "category": "risus:weapons",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Unawakened Vessel is a basic $(l:weapons/weapon_types)$(c)$(o)Heavy Axe$() that can be crafted from Gluttonous Scales, a bit of wood, Crystallized Bonds and a Concentration Core. It's a decent weapon and quite effective against shields. More importantly, however, it can be awakened with a $(l:materials/blood_feather)$(c)$(o)Blood Feather$() into a $(l:weapons/crescent_disaster)$(c)$(o)Crescent Disaster$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unawakened_vessel",
+      "text": "As a weapon made with a Concentration Core, it's capable of killing $(l:offsprings/angel)$(c)$(o)divine beings$()."
+    }
+  ]
+}

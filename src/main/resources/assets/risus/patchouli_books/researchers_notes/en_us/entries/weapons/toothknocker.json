@@ -1,0 +1,15 @@
+{
+  "name": "Toothknocker",
+  "icon": "risus:toothknocker",
+  "category": "risus:weapons",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Toothknocker is a $(l:weapons/weapon_types)$(c)$(o)Knuckleduster$() type of weapon crafted with Teeth, a Crystallized Bond and plenty of Gluttonous Scales. It's most effective when using two of them - one in each hand. When doing so, every attack will have increased damage and shatter teeth."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:toothknocker"
+    }
+  ]
+}

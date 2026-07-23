@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Blood Ophanims are rare, divine beings, found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter their range with lightning. They are virtually invincible and can only be harmed with weapons that have a will imbued into them. If killed this way, they drop a $(l:materials/blood_feather)$(c)$(o)Blood Feather$() upon death. It is important to note that despite the immense death they are capable of, Ophanims can be quite easy to survive due to how slothful their behavior is."
+      "text": "Blood Ophanims are rare, divine beings, found at Angel Altars. They are stationary and act as sentinels, striking down on any and all who enter their range with lightning. They are virtually invincible and can only be harmed with $(l:materials/memory_core)$(c)$(o)weapons that have a will imbued into them$(). If killed this way, they drop a $(l:materials/blood_feather)$(c)$(o)Blood Feather$() upon death. It is important to note that despite the immense death they are capable of, Ophanims can be quite easy to survive due to how slothful their behavior is."
     },
     {
       "type": "patchouli:text",

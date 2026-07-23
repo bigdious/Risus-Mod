@@ -15,7 +15,7 @@
       "type": "patchouli:crafting",
       "recipe": "risus:concentration_core",
       "anchor": "core",
-      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the capability of hurting divine beings, such as angels."
+      "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the ability of hurting divine beings, such as $(l:offsprings/angel)$(c)$(o)angels$()."
     }
   ]
 }

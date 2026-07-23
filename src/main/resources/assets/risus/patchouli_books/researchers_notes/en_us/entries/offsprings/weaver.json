@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating $(l:materials/memory_core)$(c)$(o)Memory Core$(). They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can only be found in $(l:structures/great_body)$(c)$(o)colonies of nests$()."
+      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating $(l:materials/memory_core)$(c)$(o)Memory Core$(). They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can mainly be found in $(l:structures/great_body)$(c)$(o)large nests$()."
     },
     {
       "type": "patchouli:entity",

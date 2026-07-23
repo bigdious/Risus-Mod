@@ -1,0 +1,16 @@
+{
+  "name": "Stripper",
+  "icon": "risus:gold_fist",
+  "category": "risus:weapons",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Using a bunch of Gold, some Coagulated Blood and a Hand of Greed on a Toothknocker will result in a Stripper. This $(l:weapons/weapon_types)$(c)$(o)Knuckleduster$() is focused less on combat - even having intentionally weak damage - and is instead designed to allow the user to strip away the armor of an enemy monster or to steal an item off the attacked person with every hit."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:gold_fist",
+      "text": "When enchanting it, it might be better to avoid enchantments that would increase its damage. The more hits the enemy can take from this weapon, the higher the chance for stripping to be successful."
+    }
+  ]
+}

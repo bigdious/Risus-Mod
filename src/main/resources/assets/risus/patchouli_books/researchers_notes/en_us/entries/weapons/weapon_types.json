@@ -11,7 +11,7 @@
 
     {
       "type": "patchouli:text",
-      "text": "Unawaked Vessel and Crescent Disaster. $(br)$(br)Scythes $(br)$(br)Knuckles $(br)$(br)War Swords"
+      "text": "Unawaked Vessel and Crescent Disaster. $(br)$(br)Scythes $(br)$(br)Knuckledusters are weapons that inflict a relatively low amount of damage and have a lower range, but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste. Examples include $(l:weapons/toothknocker)$(c)$(o)Toothknocker$() and $(l:weapons/stripper)$(c)$(o)Stripper$().     $(br)$(br)War Swords - similarly to Heavy Axes - are a larger version of normal swords, boasting of higher damage and increased range, at the price of manoeuvrability. Additionally, they often have one way or another to perform a ranged attack. Examples include: $(l:weapons/thousand_blade)$(c)$(o)Blade of a Thousand$() and Compensatory Sin."
     }
   ]
 }

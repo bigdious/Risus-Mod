@@ -1,0 +1,12 @@
+{
+  "name": "Ad. Crescent Disaster",
+  "icon": "minecraft:writable_book",
+  "category": "risus:addenda",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Addendum",
+      "text": "I may have been exposed to the Risus too much lately. Whenever I wield my 'crescent', a sense of mild anxiety and paranoia takes a hold. Sometimes it feels like the axe moves a little without my input. I swear, I've heard whispers from it before. And I know that a Concentration Core holds a form of primitive will once brought to life, even when embedded in weaponry. Yet, no other willful weapon has made me feel so... afraid."
+    }
+  ]
+}
