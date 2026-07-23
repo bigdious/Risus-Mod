@@ -1,0 +1,17 @@
+{
+  "name": "Unlit Vessel",
+  "icon": "risus:scythe",
+  "category": "risus:weapons",
+  "sortnum" : 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Unlit Vessel is a $(l:weapons/weapon_types)$(c)$(o)Scythe$() type weapon created using a Concentration Core as the basis with Gluttonous Scales and Crystallized Bonds for the blade. By default, it will be crafted in Harvest mode, but can be switched freely as with all other Scythes. While quite a strong weapon as is, the Unlit Vessel can be upgraded into three other scythes using a Scorching Ritual. These are the $(l:weapons/flame_fiend)$(c)$(o)Flame Fiend$(), the $(l:weapons/soul_scratcher)$(c)$(o)Soul$() "
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:scythe",
+      "text": "$(l:weapons/soul_scratcher)$(c)$(o)Scratcher$() and the $(l:weapons/existential_executioner)$(c)$(o)Existential Executioner$(). All three upgrades result in a duller blade, but more than make up for that damage loss with new on-hit effects. Nonetheless, if those benefits aren't good enough, staying with the Unlit Vessel is a viable option."
+    }
+  ]
+}

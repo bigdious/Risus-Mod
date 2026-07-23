@@ -2,6 +2,7 @@
   "name": "Boomstick",
   "icon": "risus:boomstick",
   "category": "risus:weapons",
+  "sortnum" : 10,
   "pages": [
     {
       "type": "patchouli:text",

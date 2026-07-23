@@ -1,0 +1,40 @@
+{
+  "name": "Existential Executioner",
+  "icon": "risus:cinderglee_scythe",
+  "category": "risus:weapons",
+  "sortnum" : 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:cinderglee_scythe"
+      },
+      "link_recipe": true,
+      "text": "The Existential Executioner is made from an $(l:weapons/unlit_vessel)$(c)$(o)Unlit Vessel$() being added to a Scortching Ritual that uses Cinderglee. It allows you to inflict the $(l:blocks/cinderglee)$(c)$(o)Existential Burn$() state onto enemies. It's best used against opponents with considerable regeneration or healing abilities; or to otherwise slowly whittle down a greater target."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Scorching Ritual",
+      "multiblock": {
+        "pattern": [
+          ["           ","           ","           ","           ","           ", "     0     ","           ","           ","           ","           ","           "],
+          ["     F     ","     X     ","    SYE    ","    FXF    ","  SFSYEFE  ", "FZYZYBYZYZF","  WFWYNFN  ","    FXF    ","    WYN    ","     X     ","     F     "]
+        ],
+        "mapping": {
+          "B": "risus:blood_fluid_block",
+          "Z": "risus:linear_ritual_block[axis=z]",
+          "X": "risus:linear_ritual_block[axis=x]",
+          "Y": "risus:linear_ritual_block[axis=y]",
+          "0": "risus:joyflame_campfire",
+          "N": "risus:curved_ritual_block[facing=north]",
+          "W": "risus:curved_ritual_block[facing=west]",
+          "S": "risus:curved_ritual_block[facing=south]",
+          "E": "risus:curved_ritual_block[facing=east]",
+          "F": "risus:joyflame_fire"
+        },
+        "symmetrical": false
+      },
+      "text": "Use the Unlit Vessel on the campfire. Do not forget to place $(l:blocks/blood)$(c)$(o)Blood$() below said campfire."
+    }
+  ]
+}

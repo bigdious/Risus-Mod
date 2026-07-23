@@ -7,7 +7,7 @@
       "type": "patchouli:spotlight",
       "item": "risus:blood_feather",
       "link_recipe": true,
-      "text": "Please don't forget about me"
+      "text": "Blood Feathers are dropped by $(l:offsprings/angel)$(c)$(o)Blood Ophanims$() whenever they are killed. Despite what one may expect, these aren't their actual feathers, and are instead a 'manifestation of their nature'. Therefore, only one can be obtained per Ophanim. It is rather fragile, but its divine potential makes it a useful ingredient for various weapons and tools."
     }
   ]
 }

@@ -2,6 +2,7 @@
   "name": "Toothknocker",
   "icon": "risus:toothknocker",
   "category": "risus:weapons",
+  "sortnum" : 7,
   "pages": [
     {
       "type": "patchouli:text",

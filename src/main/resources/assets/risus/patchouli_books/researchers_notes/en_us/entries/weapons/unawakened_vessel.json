@@ -2,7 +2,7 @@
   "name": "Unawakened Vessel",
   "icon": "risus:unawakened_vessel",
   "category": "risus:weapons",
-  "sortnum": 1,
+  "sortnum": 0,
   "pages": [
     {
       "type": "patchouli:text",

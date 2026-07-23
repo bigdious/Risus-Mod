@@ -2,6 +2,7 @@
   "name": "False Bloodwyrm Head",
   "icon": "risus:bloodwyrm_head_weapon",
   "category": "risus:weapons",
+  "sortnum" : 11,
   "pages": [
     {
       "type": "risus:alterationtemplate1",

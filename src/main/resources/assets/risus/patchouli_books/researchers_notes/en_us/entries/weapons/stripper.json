@@ -2,6 +2,7 @@
   "name": "Stripper",
   "icon": "risus:gold_fist",
   "category": "risus:weapons",
+  "sortnum" : 8,
   "pages": [
     {
       "type": "patchouli:text",

@@ -6,12 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "There are four major categories of weapons that can be made using materials obtained from the Risus. $(br)$(br)First are Heavy Axes, which are more specialized for combat than base axes, at the cost of their normal utilities. They are more unwieldy but can hit harder in return, while retaining their ability to crush shields. Examples include: $(l:weapons/killjoy)$(c)$(o)Killjoy$(), Unawaked Vessel and Crescent Disaster "
+      "text": "There are four major categories of weapons that can be made using materials obtained from the Risus. $(br)$(br)First are Heavy Axes, which are more specialized for combat than base axes, at the cost of their normal utilities. They are more unwieldly but can hit harder in return, while retaining their ability to crush shields. Examples include: $(l:weapons/killjoy)$(c)$(o)Killjoy$(), $(l:weapons/unawakened_vessel)$(c)$(o)Unawaked$()"
     },
-
     {
       "type": "patchouli:text",
-      "text": "Unawaked Vessel and Crescent Disaster. $(br)$(br)Scythes $(br)$(br)Knuckledusters are weapons that inflict a relatively low amount of damage and have a lower range, but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste. Examples include $(l:weapons/toothknocker)$(c)$(o)Toothknocker$() and $(l:weapons/stripper)$(c)$(o)Stripper$().     $(br)$(br)War Swords - similarly to Heavy Axes - are a larger version of normal swords, boasting of higher damage and increased range, at the price of manoeuvrability. Additionally, they often have one way or another to perform a ranged attack. Examples include: $(l:weapons/thousand_blade)$(c)$(o)Blade of a Thousand$() and Compensatory Sin."
+      "text": "$(l:weapons/unawakened_vessel)$(c)$(o)Vessel$() and $(l:weapons/crescent_disaster)$(c)$(o)Crescent Disaster$(). $(br)$(br)Scythes have two modes that can be switched between by using them while crouching: Harvest and Sow. Harvest Scythes have their blade set inwards, only allowing large and slow sweeping movements, hitting multiple enemies at once. When set to Sow, the blade opens forward, making it similar to a spear. This increases the range and the use speed but sacrifices damage and the sweeping ability. Examples include $(l:weapons/unlit_vessel)$(c)$(o)Unlit$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l:weapons/unlit_vessel)$(c)$(o)Vessel$(), $(l:weapons/flame_fiend)$(c)$(o)Flame Fiend$(), $(l:weapons/soul_scratcher)$(c)$(o)Soul Scratcher$() and $(l:weapons/existential_executioner)$(c)$(o)Existential Executioner$().    $(br)$(br)Knuckledusters are weapons that inflict a relatively low amount of damage and have a lower range, but in return are much faster to use. Additionally, they enable the user to easily perform a 'lunge' into the direction they are looking, which can be useful for both offense - to enter close combat - and defense - to retreat in haste. Examples include $(l:weapons/toothknocker)$(c)$(o)Toothknocker$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "and $(l:weapons/stripper)$(c)$(o)Stripper$().     $(br)$(br)War Swords - similarly to Heavy Axes - are a larger version of normal swords, boasting of higher damage and increased range, at the price of manoeuvrability. Additionally, they often have one way or another to perform a ranged attack. Examples include: $(l:weapons/thousand_blade)$(c)$(o)Blade of a Thousand$() and Compensatory Sin. $(br)$(br)There are miscellaneous weapons beyond these four types too."
     }
   ]
 }

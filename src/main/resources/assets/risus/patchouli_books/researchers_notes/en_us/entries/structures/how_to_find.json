@@ -1,0 +1,16 @@
+{
+  "name": "How To Find Structures",
+  "icon": "minecraft:writable_book",
+  "category": "risus:structures",
+  "sortnum": -1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Generally speaking, most ruins, buildings, and such features related to the Risus can be found by just exploring the land. However, this approach quickly proves rather slow, either because of the rarity of certain structures or due to them being hidden, likely underground. Fortunately, $(l:offsprings/ascetic)$(c)$(o)Ascetics$() tend to sell maps to various structures. If you're willing to cough out the money necessary, it's a reliable shortcut to find your goal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "shortcut to find your goal. Do note however, that not only will you need trade with multiple Ascetics to get more types of maps, but that not even Ascetics may be aware of the most niche structures."
+    }
+  ]
+}
