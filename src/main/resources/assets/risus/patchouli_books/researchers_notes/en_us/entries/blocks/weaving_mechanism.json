@@ -19,6 +19,14 @@
     {
       "type": "patchouli:text",
       "text": "The Weaving Mechanism, while somewhat sturdier than a Weaver Nest, is still quite fragile. Silk Touch is required to reliably relocate it. Otherwise, it will break, returning the Concentration Core used in its creation."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/weaving_mechanism",
+        "risus:materials/memory_core",
+        "risus:offsprings/weaver"
+      ]
     }
   ]
 }

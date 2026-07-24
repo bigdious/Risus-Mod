@@ -14,6 +14,15 @@
       "item": "risus:popping_bondknot_wood",
       "link_recipe": true,
       "text": "There's also a special variant: the Popping Bondknot Wood, which can only appear on Family trees. These cannot be harvested and generate $(l:materials/crystallized_bonds)$(c)$(o)Crystallized Bonds$() on a regular basis."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:structures/family_tree",
+        "risus:blocks/gorger_guts",
+        "risus:materials/crystallized_bonds"
+      ]
     }
   ]
 }

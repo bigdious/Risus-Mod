@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Tissue can be altered from raw meat and as a block, it can decay overtime, losing more and more of its mass until it becomes a Bone Wall. This process can be frozen at any stage by using $(l:materials/organic_matter)$(c)$(o)Organic Matter$() on it. Tissue can be crafted with Skin to create Fleshy Skin. Skin can be obtained by altering Leather or Rabbit Hide. "
+      "text": "Tissue can be altered from raw meat and as a block, it can decay overtime, losing more and more of its mass until it becomes a Bone Wall. This process can be frozen at any stage by using $(l:materials/organic_matter)$(c)$(o)Organic Matter$() on it. Tissue can be crafted with Skin to create Fleshy Skin. Skin can be obtained by altering Leather or Rabbit Hide. Skin can be used as a trimming material for customizing armor pieces."
     },
     {
       "type": "risus:alterationtemplate2",
@@ -33,6 +33,13 @@
       "type": "patchouli:smelting",
       "recipe": "risus:smelt_tissue",
       "text": "Tissue can also be smelted into Grilled Tissue and then peeled with an Axe to remove the crispier outer layer. Despite the seemingly large quantity of meat, it is rather airy and bland, making it barely more saturating than a Baked Potato. There will also be a bit of Bone left over after consumption."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:materials/organic_matter"
+      ]
     }
   ]
 }

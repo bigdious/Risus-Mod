@@ -12,6 +12,14 @@
       "entity": "risus:stalker",
       "border": "true",
       "text": "Even though its eye glows in the dark, it can still be surprisingly stealthy."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/lover",
+        "risus:materials/organic_matter",
+        "risus:materials/stalker_eye"
+      ]
     }
   ]
 }

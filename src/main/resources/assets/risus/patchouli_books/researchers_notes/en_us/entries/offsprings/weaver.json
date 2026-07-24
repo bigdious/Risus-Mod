@@ -5,13 +5,21 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Weavers are spider-like creatures with a distinct abdomen consisting of a rotating $(l:materials/memory_core)$(c)$(o)Memory Core$(). They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can mainly be found in $(l:structures/great_body)$(c)$(o)large nests$()."
+      "text": "Weavers are ant-like creatures with a distinct abdomen consisting of a rotating $(l:materials/memory_core)$(c)$(o)Memory Core$(). They use this organ to store the memories they extract from their victims and later weave them into Bloodweave. They will attack any living creature and as a side effect of consuming memories, the target will experience short-term Amnesia. They can mainly be found in $(l:structures/great_body)$(c)$(o)large nests$()."
     },
     {
       "type": "patchouli:entity",
       "entity": "risus:weaver",
       "border": "true",
       "text": "The Amnesia they cause can easily lead the victim into panic and danger."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/memory_core",
+        "risus:structures/great_body",
+        "risus:blocks/weaver_nest"
+      ]
     }
   ]
 }

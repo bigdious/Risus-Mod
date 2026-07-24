@@ -13,7 +13,15 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:big_chain",
-      "text": "Using Organic Matter on them will speed up their growth. Another climbable block is the Big Chain, which can be crafted from seven Iron Ingots and just like a normal Chain, it can be placed in any axis. "
+      "text": "Using $(l:materials/organic_matter)$(c)$(o)Organic Matter$() on them will speed up their growth. Another climbable block is the Big Chain, which can be crafted from seven Iron Ingots and just like a normal Chain, it can be placed in any axis. "
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:materials/organic_matter",
+        "risus:materials/memory_core"
+      ]
     }
   ]
 }

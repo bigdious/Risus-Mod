@@ -11,6 +11,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:ashen_spire",
       "text": "Walking through Ashen Spires can tickle a bit."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/remains"
+      ]
     }
   ]
 }

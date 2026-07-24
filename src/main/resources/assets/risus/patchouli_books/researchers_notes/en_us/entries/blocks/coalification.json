@@ -11,7 +11,14 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:coalification",
-      "text": "The Coalification can be forcefully spread by amassing Remains, Organic Matter and Bone Meal. Since usual monsters don't appear in it, living in land covered by Coalification can be preferred."
+      "text": "The Coalification can be forcefully spread by amassing Remains, Organic Matter and Bone Meal. Since usual monsters don't appear in it, living in land covered by Coalification could be the preferred option."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/organic_matter",
+        "risus:blocks/remains"
+      ]
     }
   ]
 }

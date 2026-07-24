@@ -14,6 +14,18 @@
       "type": "patchouli:crafting",
       "recipe": "risus:linear_ritual_block",
       "recipe2": "risus:curved_ritual_block"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:structures/alteration_site",
+        "risus:tools/litter",
+        "risus:weapons/unlit_vessel",
+        "risus:weapons/flame_fiend",
+        "risus:weapons/soul_scratcher",
+        "risus:weapons/existential_executioner"
+      ]
     }
   ]
 }

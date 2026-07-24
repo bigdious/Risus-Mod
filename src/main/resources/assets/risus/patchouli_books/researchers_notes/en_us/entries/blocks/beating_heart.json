@@ -14,6 +14,15 @@
       },
       "link_recipe": true,
       "text": "Poisonous Potato for $(2)Poison$() and Wither Skull for $(8)Wither$(). When harvesting the heart, using a Silk Touch tool is necessary to keep its type, otherwise it returns to its default, empty state. Wariness is important when using one, as the heart's effect will apply equally to both enemies and allies."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/heart_chambers",
+        "risus:blocks/heart_transplant",
+        "risus:blocks/blood",
+        "risus:weapons/thousand_blade"
+      ]
     }
   ]
 }

@@ -16,6 +16,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:white_mosaic_glass_pane",
       "text": "Thanks to the metal frame, these glass types are sturdy enough to be picked up without Silk Touch."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/eerie_dark"
+      ]
     }
   ]
 }

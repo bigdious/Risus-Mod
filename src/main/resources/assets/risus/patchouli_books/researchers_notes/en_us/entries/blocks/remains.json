@@ -14,6 +14,17 @@
       "recipe2": "risus:alteration/ashen_remains",
       "recipe3": "risus:alteration/spreading_remains",
       "text": "These can be obtained by altering Netherrack, Soul Sand or Soil, and Glow Lichen respectively. They can also serve as fuel in furnaces."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:blocks/coalification",
+        "risus:blocks/cinderglee",
+        "risus:armors/threaders_of_the_firmament",
+        "risus:execrations/proliferation",
+        "risus:execrations/cackling_craze"
+      ]
     }
   ]
 }

@@ -13,6 +13,12 @@
     {
       "type": "patchouli:text",
       "text": "unbreakable, and they also do not react to any attempts of being moved. Therefore - while it can be frustrating - it's necessary to settle near an $(l:structures/alteration_site)$(c)$(o)Alteration Site$() to research with and use the Catalyst. There may be a method to relocate it but I couldn't find one through my testing."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/alteration_site"
+      ]
     }
   ]
 }

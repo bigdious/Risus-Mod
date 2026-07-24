@@ -43,6 +43,13 @@
       "type": "patchouli:crafting",
       "recipe": "risus:full_fossil_stairs",
       "recipe2": "risus:full_fossil_slab"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:materials/organic_matter"
+      ]
     }
   ]
 }

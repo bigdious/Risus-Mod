@@ -1,0 +1,54 @@
+{
+  "name": "Imitation & Unalloyed Scales",
+  "icon": "risus:flattened_imitation_scales_block",
+  "category": "risus:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gluttonous Scales Blocks are pretty highly valued due to their aesthetic design. Therefore, cheaper imitations have been created that use mostly Obsidian. These can also be further changed into a white version with gold highlights by using some $(l:materials/purifying_paste)$(c)$(o)Purifying Paste$() on them. "
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:flattened_imitation_scales_block",
+      "recipe2": "risus:imitation_scaleplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scales_block_stairs",
+      "recipe2": "risus:imitation_scales_block_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:imitation_scales_block_wall",
+      "recipe2": "risus:flowering_imitation_scaleplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:budding_imitation_scaleplate",
+      "recipe2": "risus:unalloyed_scales_block",
+      "anchor": "paste"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unalloyed_scales_block_stairs",
+      "recipe2": "risus:unalloyed_scales_block_slab"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:unalloyed_scales_block_wall",
+      "recipe2": "risus:unalloyed_scaleplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:flowering_unalloyed_scaleplate",
+      "recipe2": "risus:budding_unalloyed_scaleplate"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/purifying_paste",
+        "risus:materials/gluttonous_scales"
+      ]
+    }
+  ]
+}

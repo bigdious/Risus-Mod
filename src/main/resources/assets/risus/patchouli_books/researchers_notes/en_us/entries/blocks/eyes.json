@@ -32,6 +32,15 @@
       "type": "patchouli:crafting",
       "recipe": "risus:eye_bloodshot_glowing",
       "recipe2": "risus:eye_bleached_glowing"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/stalker",
+        "risus:blocks/bondknot",
+        "risus:blocks/tissue_skin_hair",
+        "risus:materials/organic_matter"
+      ]
     }
   ]
 }

@@ -73,6 +73,13 @@
       "type": "patchouli:crafting",
       "recipe": "risus:grimstone_bricks_wall",
       "recipe2": "risus:grimstone_blood_tiles_wall"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:blocks/blood"
+      ]
     }
   ]
 }

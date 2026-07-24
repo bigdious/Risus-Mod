@@ -9,7 +9,15 @@
         "item": "risus:weaver_nest"
       },
       "link_recipe": true,
-      "text": "A $(l:offsprings/weaver)$(c)$(o)Weaver$() that wanders out of its $(l:structures/great_body)$(c)$(o)colony$() has the ability to create a new Weaver Nest once it has consumed sufficient memories - which can be done through killing enough creatures. This process results in the death of the Weaver, as its own body is used to create the nest. The resulting nest will slowly creates Weavers near endlessly."
+      "text": "A $(l:offsprings/weaver)$(c)$(o)Weaver$() that wanders out of its $(l:structures/great_body)$(c)$(o)colony$() has the ability to create a new Weaver Nest once it has consumed sufficient memories - which can be done through killing enough creatures. This process results in the death of the Weaver, as its own body is used to create it. The nest will slowly create Weavers near endlessly."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/weaving_mechanism",
+        "risus:structures/great_body",
+        "risus:offsprings/weaver"
+      ]
     }
   ]
 }

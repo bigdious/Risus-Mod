@@ -14,6 +14,14 @@
     {
       "type": "patchouli:crafting",
       "recipe": "minecraft:echo_to_pearl"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/singer",
+        "risus:tools/warhorn",
+        "risus:tools/endless_pearl"
+      ]
     }
   ]
 }

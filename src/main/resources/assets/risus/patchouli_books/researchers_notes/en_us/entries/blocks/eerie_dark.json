@@ -18,7 +18,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:dark_fence",
-      "text": "In case the user dislikes the Risus motifs on the designs, they can re-craft each decoration into a Dark variant, which lack the smiles."
+      "text": "In case the user dislikes the Risus motifs on the designs, they can re-craft each decoration into Dark variants, which lack the smiles."
     },
     {
       "type": "patchouli:crafting",
@@ -29,6 +29,13 @@
       "type": "patchouli:crafting",
       "recipe": "minecraft:dark_large_gate_from_small",
       "recipe2": "risus:dark_large_gate"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:blocks/bondknot"
+      ]
     }
   ]
 }

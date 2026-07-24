@@ -18,6 +18,13 @@
       "type": "patchouli:crafting",
       "recipe": "risus:containment_glass_pane",
       "recipe2": "risus:bond_glass_pane"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/crystallized_bonds",
+        "risus:blocks/alteration_catalyst"
+      ]
     }
   ]
 }

@@ -12,6 +12,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:tesseract",
       "text": "It can be made with four Feathers, a pair of Gold Ingots, a Phantom Membrane, some Redstone and a Blood Feather."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/blood_feather"
+      ]
     }
   ]
 }

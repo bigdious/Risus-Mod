@@ -14,6 +14,13 @@
       "item": "minecraft:potion[potion_contents={potion:\"risus:mating_frenzy\"}]",
       "link_recipe": true,
       "text": "A Potion of Love will apply the Mating Frenzy effect on any creature that is capable of breeding. It will increase their speed and they'll be in heat. The constant copulation that happens at an unnatural speed will break down the bodies of the victims, meaning that they will breed to death; or until the duration ends."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/alteration_catalyst",
+        "risus:tools/potions"
+      ]
     }
   ]
 }

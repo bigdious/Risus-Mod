@@ -3,11 +3,23 @@
   "icon": "risus:crystallized_bond",
   "category": "risus:materials",
   "pages": [
-{
-  "type": "patchouli:spotlight",
-  "item": "risus:crystallized_bond",
-  "link_recipe": true,
-  "text": "Crystallized Bonds are a unique resource that can be found on $(l:structures/family_tree)$(c)$(o)Family Trees$() and used for the manufacturing of $(l:blocks/glasses)$(c)$(o)special glass$() or to create sharp edges for weapons. These are renewable and formed on $(l:blocks/bondknot)$(c)$(o)Popping Bondknot Wood$(), which cannot be removed without losing their ability to generate Crystallized Bonds."
-}
-    ]
+    {
+      "type": "patchouli:spotlight",
+      "item": "risus:crystallized_bond",
+      "link_recipe": true,
+      "text": "Crystallized Bonds are a unique resource that can be found on $(l:structures/family_tree)$(c)$(o)Family Trees$() and used for the manufacturing of $(l:blocks/glasses)$(c)$(o)special glass$() or to create sharp edges for weapons. These are renewable and formed on $(l:blocks/bondknot)$(c)$(o)Popping Bondknot Wood$(), which cannot be removed without losing their ability to generate Crystallized Bonds."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:structures/family_tree",
+        "risus:blocks/glasses",
+        "risus:blocks/bondknot",
+        "risus:tools/carving_knife",
+        "risus:weapons/toothknocker",
+        "risus:weapons/unawakened_vessel",
+        "risus:weapons/unlit_vessel"
+      ]
+    }
+  ]
 }

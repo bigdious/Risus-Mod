@@ -21,6 +21,17 @@
     {
       "type": "patchouli:text",
       "text": "The only way to recover from Existential Burn is to consume $(l:materials/organic_matter)$(c)$(o)Organic Matter$(). This process will reinstate most of the lost 'existence'. It is important to note, however, that this repair of one's 'existence' does not come without risks; even if they may not be obvious at first. Willingly consuming Organic Matter acts as a signal to the Risus: representing a consensual welcome. This does not mean immediate infection, instead it's simply the first step towards Assimilation."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/alteration_catalyst",
+        "risus:materials/organic_matter",
+        "risus:tools/potions",
+        "risus:weapons/existential_executioner",
+        "risus:execrations/pyromaniac",
+        "risus:execrations/eruption"
+      ]
     }
   ]
 }

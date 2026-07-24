@@ -15,6 +15,13 @@
       "type": "patchouli:crafting",
       "recipe": "risus:guts_boat",
       "text": "The Boat does end up being rather cramped."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/maw",
+        "risus:blocks/bondknot"
+      ]
     }
   ]
 }
