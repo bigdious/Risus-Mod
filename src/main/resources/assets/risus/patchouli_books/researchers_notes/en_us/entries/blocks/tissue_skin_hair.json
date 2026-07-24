@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Tissue can be altered from raw meat and as a block, it can decay overtime, losing more and more of its mass until it becomes a Bone Wall. This process can be frozen at any stage by using Organic Matter on it. Tissue can be crafted with Skin to create Fleshy Skin. Skin can be obtained by altering Leather or Rabbit Hide. "
+      "text": "Tissue can be altered from raw meat and as a block, it can decay overtime, losing more and more of its mass until it becomes a Bone Wall. This process can be frozen at any stage by using $(l:materials/organic_matter)$(c)$(o)Organic Matter$() on it. Tissue can be crafted with Skin to create Fleshy Skin. Skin can be obtained by altering Leather or Rabbit Hide. "
     },
     {
       "type": "risus:alterationtemplate2",

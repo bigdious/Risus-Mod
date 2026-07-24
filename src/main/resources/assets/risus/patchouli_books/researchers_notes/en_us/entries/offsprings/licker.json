@@ -14,7 +14,7 @@
         "item": "risus:egg_sac"
       },
       "link_recipe": true,
-      "text": "which causes the target to be afflicted with both the Weaving and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop Organic Matter, String, Fermented Spider Eye and Egg Sacs which can be thrown at opponents to release the Baby Spiders."
+      "text": "which causes the target to be afflicted with both the Weaving and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop $(l:materials/organic_matter)$(c)$(o)Organic Matter$(), String, Fermented Spider Eye and Egg Sacs, which can be thrown at opponents to release the Baby Spiders."
     },
     {
       "type": "patchouli:entity",
@@ -24,13 +24,11 @@
       "text": "Keeping a good distance is advised, as getting licked even once can domino into death."
     },
     {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "The Licker is a great example of the capabilities the Lover's impregnation holds. Compared to a Spider, the Licker is closer to a mammal than an arachnid. This is because the Risus completely restructures the Spider's insides, growing mammalian organs in it, such as the 'womb' that is created in the Spider head, which is used to incubate baby spiders. It's important to note that while the old Spider head appears dead, the Licker is not fully"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "part of Risus, instead it's still alive and simply using Risus to its own ends. The pure survival instincts of a Spider to consume and breed seem to be enhanced into a joy-driven desire to 'procreate to death'. That's why it seeks out a person and tries to get its attention by licking it, so that it can be killed and release the kin inside. The Pleasure effect applied by the saliva might be intended to have a different outcome but as it is, it's simply deadly to people."
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/lover",
+        "risus:materials/organic_matter"
+      ]
     }
   ]
 }

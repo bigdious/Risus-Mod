@@ -13,6 +13,13 @@
       "border": "true",
       "title": "Small Alteration Site",
       "text": "This is one of the smallest Alteration Sites but it fulfills all basic needs."
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:blocks/alteration_catalyst"
+      ]
+    }
   ]
 }

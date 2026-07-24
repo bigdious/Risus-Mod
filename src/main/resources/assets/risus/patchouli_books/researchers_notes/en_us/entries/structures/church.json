@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Churches are rare and massive buildings dedicated to the worship of the Risus. Inside they feature a hallway leading to a central praying chamber, featuring three $(l:offsprings/angel)$(0)$(n)Blood Ophanims$() as well as an $(l:structures/alteration_site#alteration)$(0)$(n)Alteration Catalyst$(). Behind those there is a hidden entrance to catacombs filled with blood and $(l:offsprings/weaver)$(0)$(n)Weavers$(). The entire building is filled with $(l:offsprings/hex)$(0)$(n)Hexes$() making it extremely dangerous to enter. Adequate weaponry is a must."
+      "text": "Churches are rare and massive buildings dedicated to the worship of the Risus. Inside they feature a hallway leading to a central praying chamber, featuring three $(l:offsprings/angel)$(c)$(o)Blood Ophanims$() as well as an $(l:blocks/alteration_catalyst)$(c)$(o)Alteration Catalyst$(). Behind those there is a hidden entrance to catacombs filled with blood and $(l:offsprings/weaver)$(c)$(o)Weavers$(). The entire building is filled with $(l:offsprings/hex)$(c)$(o)Hexes$() making it extremely dangerous to enter. Adequate weaponry is a must."
     },
     {
       "type": "patchouli:image",
@@ -13,6 +13,16 @@
       "border": "true",
       "title": "Church",
       "text": "Churches tend to tower over their surrounding environment, making them easy to spot."
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:blocks/alteration_catalyst",
+        "risus:offsprings/hex",
+        "risus:offsprings/angel",
+        "risus:offsprings/weaver"
+      ]
+    }
   ]
 }

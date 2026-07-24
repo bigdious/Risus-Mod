@@ -1,0 +1,15 @@
+{
+  "name": "Ad. Skin Armor",
+  "icon": "minecraft:paper",
+  "category": "risus:addenda",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "By spending so much time around the Risus, I've grown capable of stomaching a lot more than what I should really be able to. However, wearing skin armor is something that I just cannot handle. As with most things in Risus, the skin armor is 'alive'. When wearing it, it connects directly to your own skin, doing so even through the fabric of clothes. You become capable of feeling through the armor; that's how it increases vitality."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "And as if being tightly enveloped by fleshy skin wasn't bad enough, it also wiggles a bit sometimes. On top of that, the layer between your skin and the armor slowly becomes sticky and moist. Even just remembering that feeling sends shivers down my spine... "
+    }
+  ]
+}

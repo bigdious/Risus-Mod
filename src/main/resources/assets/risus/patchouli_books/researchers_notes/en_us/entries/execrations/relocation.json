@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Notes",
-      "text": "It enables the use of Gold tools or anything that has low durability, since the relocation will always happen at the maximum level. It's important to note that it will fail if the targeted gear also has Relocation."
+      "text": "It enables the use of Gold tools or anything that has low durability, since the relocation will always happen when used with the maximum level. It's important to note that it will fail if the targeted gear also has Relocation."
     }
   ]
 }

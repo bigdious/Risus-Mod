@@ -1,0 +1,16 @@
+{
+  "name": "Hand Of Greed",
+  "icon": "risus:hand_of_greed",
+  "category": "risus:tools",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": {
+        "item": "risus:hand_of_greed"
+      },
+      "link_recipe": true,
+      "anchor": "hand",
+      "text": "$(l:offsprings/holder)$(c)$(o)Holders$() may rarely drop a Hand Of Greed on death. Whenever held, it will allow the user to interact with and place blocks at a higher range than normal. Unfortunately, it does not affect combat range, as it cannot hold weapons well."
+    }
+  ]
+}

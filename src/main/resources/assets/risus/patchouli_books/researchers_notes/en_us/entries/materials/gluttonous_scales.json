@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "risus:imitation_scaleplate",
+      "recipe": "risus:flattened_scales_block",
       "recipe2": "risus:flattened_imitation_scales_block"
     },
     {

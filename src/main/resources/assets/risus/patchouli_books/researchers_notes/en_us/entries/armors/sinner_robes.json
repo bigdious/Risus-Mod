@@ -11,7 +11,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:stitching_needle",
-      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:equipment/skin_armor)$(0)$(n)Skin Armor$() is needed. After that, four $(l:offsprings/maw#scale)$(0)$(n)Gluttony Scales$() are used for each piece, totaling sixteen. Finally, one Stitching Needle is required per piece."
+      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:armors/skin_armor)$(c)$(o)Skin Armor$() is needed. After that, four $(l:materials/gluttonous_scales)$(c)$(o)Gluttony Scales$() are used for each piece, totaling sixteen. Finally, one Stitching Needle is required per piece."
     },
     {
       "type": "patchouli:smithing",

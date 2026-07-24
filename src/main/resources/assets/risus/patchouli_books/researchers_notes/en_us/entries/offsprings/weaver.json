@@ -12,15 +12,6 @@
       "entity": "risus:weaver",
       "border": "true",
       "text": "The Amnesia they cause can easily lead the victim into panic and danger."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:weaver_nest"
-      },
-      "link_recipe": true,
-      "text": "A Weaver that wanders out of its colony has the ability to create a new Weaver Nest once it has consumed sufficient memories - which can be done through killing sufficient creatures. This process results in the death of the Weaver, as its own body is used to create the nest.",
-      "anchor": "nest"
     }
   ]
 }

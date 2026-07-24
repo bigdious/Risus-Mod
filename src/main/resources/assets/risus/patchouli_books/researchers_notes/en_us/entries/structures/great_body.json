@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Great Bodies are the primary nesting places of $(l:offsprings/weaver)$(c)$(o)Weavers$(). They are formed underground and can be found in three main stages of formation: skeletal, muscly, and pseudo-formed. The Great Body resembles an upside down human lacking limbs and can most easily be found by the end of their spine that sticks out at the surface, from which it's possible to descend down into the skull."
+      "text": "Great Bodies are the primary $(l:blocks/weaver_nest)$(c)$(o)nesting$() places of $(l:offsprings/weaver)$(c)$(o)Weavers$(). They are formed underground and can be found in three main stages of formation: skeletal, muscly, and pseudo-formed. The Great Body resembles an upside down human lacking limbs and can most easily be found by the end of their spine that sticks out at the surface, from which it's possible to descend down into the skull."
     },
     {
       "type": "patchouli:image",
@@ -13,6 +13,14 @@
       "border": "true",
       "title": "Fleshy Great Body",
       "text": "The skull and the heart are the most valuable parts of it."
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:blocks/weaver_nest",
+        "risus:offsprings/weaver"
+      ]
+    }
   ]
 }

@@ -13,6 +13,15 @@
       "border": "true",
       "title": "Family Tree",
       "text": "A showcase of the power that familial bonds can have."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:blocks/bondknot",
+        "risus:blocks/heart_transplant",
+        "risus:materials/crystallized_bonds"
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. They can be destroyed for a piece or two of Organic Matter."
+      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. They can be destroyed for a piece or two of $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and their $(l:tools/hand_of_greed)$(c)$(o)Hand Of Greed$()."
     },
     {
       "type": "patchouli:entity",
@@ -23,26 +23,11 @@
       "text": "On top of enjoying the thrill of stealing, Holders also enjoy being kidnapped. If they aren't holding any items, they can be picked up with an Empty Bucket without much issue, and won't even try getting out. Additionally, they generally don't target those holding Empty Buckets."
     },
     {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:hand_of_greed"
-      },
-      "link_recipe": true,
-      "anchor": "hand",
-      "text": "Rarely, Holders may drop a Hand Of Greed on death. Whenever held, it will allow the user to interact with and place blocks at a higher range than normal. Unfortunately, it does not affect combat range, as it cannot hold weapons well."
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "These little freaks infuriate me to no end sometimes. At first I thought of them as somewhat 'cute' but I quickly realized their true nature. They pop out from the ground wherever there is just a little remnant of the plague and rush toward me to relieve me of the object I am holding. They have ruined many a tests by stealing a crucial object that I was using, and leaving me with only my own wits."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "One such example was when they took my sword as I was dealing with some Weavers. It was an unpleasant experience. Since then I learned that holding Organic Matter causes them to behave weirdly and because of this I make sure I always have some on me. They follow with haste whoever they stole it from until the victim takes it back, all the while behaving rather docile. I do admit, when they act like this, they can be rather adorable..."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Another thing to note is that from what I observed, some Holders are made up of pure GREED, to the point they will even steal from monsters. It can be quite entertaining to watch!"
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:materials/organic_matter",
+        "risus:tools/hand_of_greed"
+      ]
     }
   ]
 }

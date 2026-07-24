@@ -1,0 +1,16 @@
+{
+  "name": "Ivory Crown",
+  "icon": "risus:crown_of_bones",
+  "category": "risus:armors",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Ivory Crown can be made from four Bones, four Horns and a Skeleton Skull. It is designed to be primarily used alongside $(l:tools/warhorn)$(c)$(o)War & Hex Horns$(). With it, horns will have their potion effects boosted by one stage, in return lowering the effects' length from half to a third of the original. Instant effects do not gain this benefit."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "risus:crown_of_bones",
+      "text" : "The Ivory Crown offers very low defenses. However, it can still be enchanted just as any other helmet; as well as trimmed for aesthetic appeal."
+    }
+  ]
+}

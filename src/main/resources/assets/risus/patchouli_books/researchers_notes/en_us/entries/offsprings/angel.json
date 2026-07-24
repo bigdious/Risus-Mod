@@ -19,6 +19,14 @@
     {
       "type": "patchouli:text",
       "text": "They are entirely stationary and will only move when pushed. On top of having a limited range - albeit still quite huge - they will also not target anything they cannot directly see; even if said target would be in range. Lastly, since their attack comes down from the skies, a sufficiently low ceiling will block any and all attempts of said attack. However, for those who do not know of these strategies, meeting one might seem like coming across a force of nature."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/angel_altar",
+        "risus:materials/blood_feather",
+        "risus:materials/memory_core"
+      ]
     }
   ]
 }

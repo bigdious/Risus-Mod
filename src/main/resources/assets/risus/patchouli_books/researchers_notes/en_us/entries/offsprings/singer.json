@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an $(l:materials/echo_pearl)$(c)$(o)Echo Pearl$(), Organic Matter and an Eye of Ender."
+      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an $(l:materials/echo_pearl)$(c)$(o)Echo Pearl$(), $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and an Eye of Ender."
     },
     {
       "type": "patchouli:entity",
@@ -18,13 +18,12 @@
       "text": "Its song is full of passion, yet still feels awful to the ears."
     },
     {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "It's fascinating to see that the true desire of an Enderman is to just get attention - something it can only handle as a Singer, as a simple Enderman can't help but respond with aggression to its own shyness... But what I find even more interesting is the sound-making capabilities of a Singer. Endermen are relatively loud to begin with, but Singers enhance the power behind their voices using their hollow torso and the "
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Echo Pearl inside as a sort of 'echo chamber'. At one time, even I underestimated just how strong their singing was. Using a Lover, I managed to create a Singer near my research lab and placed it into an observation cell. Everything went swimmingly until I took off the Carved Pumpkin, after which it began singing. The vibrations of its voice broke the glass wall of the cell - including the walls of neighbouring cells that had their own specimens inside... It was very chaotic."
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/lover",
+        "risus:materials/organic_matter",
+        "risus:materials/echo_pearl"
+      ]
     }
   ]
 }

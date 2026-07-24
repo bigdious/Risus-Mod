@@ -12,6 +12,14 @@
       "entity": "minecraft:villager{VillagerData:{profession: 'risus:ascetic'}}",
       "border": "true",
       "text": "They are quite stingy."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:structures/family_tree",
+        "risus:blocks/heart_transplant"
+      ]
     }
   ]
 }

@@ -13,6 +13,15 @@
       "border": "true",
       "scale": 0.6,
       "text": "Gorgers are made up of a maw, $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$(), and $(l:materials/gluttonous_scales)$(c)$(o)Gluttonous Scaleplates$(). "
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:blocks/mirage_blocks",
+        "risus:blocks/gorger_guts",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/memory_core"
+      ]
+    }
   ]
 }

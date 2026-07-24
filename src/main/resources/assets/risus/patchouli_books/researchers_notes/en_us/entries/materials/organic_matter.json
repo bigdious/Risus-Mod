@@ -1,7 +1,7 @@
 {
   "name": "Organic Matter",
-  "icon": "risus:organic_matter_block",
-  "category": "risus:blocks",
+  "icon": "risus:organic_matter",
+  "category": "risus:materials",
   "pages": [
     {
       "type": "risus:alterationtemplate1",

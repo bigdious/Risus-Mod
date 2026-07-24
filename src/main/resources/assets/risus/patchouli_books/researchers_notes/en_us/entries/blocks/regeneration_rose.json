@@ -13,16 +13,6 @@
       "type": "patchouli:crafting",
       "recipe": "risus:rose_petal",
       "recipe2": "minecraft:petal_to_sugar"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "The Wither Rose is a fascinating anomaly, as it seems to be the only thing that goes through purification whenever exposed to the Risus, turning into a Regen Rose. This might allude to a relation between the Wither and the Risus - but I don't think that's the case here. I once came across a naturally appearing Regeneration Rose in the wild. There was an entire field of them and in the center, there was a statue of a kneeling"
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "figure with broken chains at their neck, holding another figure. There was no indication of the Risus there; yet the only way to get Regeneration Roses is through alteration. Of course, it could have been man-made too, but I believe that it was something formed by the plague. After all, this pure flower is clearly an exception carved directly into the Risus. Possibly an untainted memory inside of it, given physical shape...?"
     }
   ]
 }

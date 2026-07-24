@@ -13,6 +13,13 @@
       "border": "true",
       "title": "Heart Chamber Center",
       "text": "Due to the challenge they pose, conquering them without a strategy is ill advised."
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:blocks/beating_heart"
+      ]
+    }
   ]
 }

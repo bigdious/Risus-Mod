@@ -11,6 +11,18 @@
     {
       "type": "patchouli:text",
       "text": "shortcut to find your goal. Do note however, that not only will you need trade with multiple Ascetics to get more types of maps, but that not even Ascetics may be aware of the most niche structures."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/ascetic",
+        "risus:structures/alteration_site",
+        "risus:structures/angel_altar",
+        "risus:structures/church",
+        "risus:structures/family_tree",
+        "risus:structures/great_body",
+        "risus:structures/heart_chambers"
+      ]
     }
   ]
 }

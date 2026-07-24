@@ -9,7 +9,7 @@
         "item": "risus:maw_guts"
       },
       "link_recipe": true,
-      "text": "The Gorger Guts obtained from a $(l:offsprings/maw)$(c)$(o)Gorger$() can be used for storage and also includes the ability to suck in items like a Hopper. Additionally, it can be put into a Bondknot Boat, where it will retain both its storage and its item collection capabilities."
+      "text": "The Gorger Guts obtained from a $(l:offsprings/maw)$(c)$(o)Gorger$() can be used for storage and also includes the ability to suck in items like a Hopper. Additionally, it can be put into a Bondknot Boat, where it will retain both its storage and its item collection ability."
     },
     {
       "type": "patchouli:crafting",

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Carving Knife is a simple tool crafted from a Stick, an Iron Ingot and a Crystallized Bond. While it can be used as a Sword in combat - even supporting the same enchantments - it is ill-advised to do so. Instead, it is much more useful for carving off flesh from $(l:alteration_blocks/tissue_skin_hair)$(0)$(n)Tissue$() blocks, tearing scutes off of Turtles or harvesting the horns of a Goat."
+      "text": "The Carving Knife is a simple tool crafted from a Stick, an Iron Ingot and a Crystallized Bond. While it can be used as a Sword in combat - even supporting the same enchantments - it is ill-advised to do so. Instead, it is much more useful for carving off flesh from $(l:blocks/tissue_skin_hair)$(c)$(o)Tissue$() blocks, tearing scutes off of Turtles or harvesting the horns of a Goat."
     },
     {
       "type": "patchouli:crafting",

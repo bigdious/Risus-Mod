@@ -15,6 +15,13 @@
       "border": "true",
       "title": "Circular Angel Altar",
       "text": "The use of a $(6)Totem of Undying$() at the Angel Altar will call down a new Ophanim."
-      }
+      },
+    {
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/how_to_find",
+        "risus:offsprings/angel"
+      ]
+    }
   ]
 }

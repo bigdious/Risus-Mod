@@ -12,16 +12,16 @@
       "entity": "risus:hex",
       "border": "true",
       "offset": "-0.3",
-      "text": "When killed, it has a chance to drop its weapon."
+      "text": "When killed, it has a chance to drop its $(l:weapons/killjoy)$(c)$(o)weapon$()."
     },
     {
-      "type": "patchouli:text",
-      "title": "Addendum",
-      "text": "The Hex is quite fascinating when compared to other offsprings. While its bodily changes are one of the most drastic ones, its behaviour doesn't change. My hypothesis is that this is because Vexes are artificial beings. Their cognitive capabilities are limited to begin with, with their primary task being to follow and protect their summoners. It might simply be that for Vexes the only requirement to reach a form of"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "'heightened happiness' is to be able to stay at their summoner's side for longer."
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:structures/church",
+        "risus:offsprings/lover",
+        "risus:weapons/killjoy",
+        "risus:blocks/blood"
+      ]
     }
   ]
 }
