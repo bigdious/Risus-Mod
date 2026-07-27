@@ -14,7 +14,7 @@
       "images": ["risus:textures/gui/entries/angel_altar.png"],
       "border": "true",
       "title": "Circular Angel Altar",
-      "text": "The use of a $(6)Totem of Undying$() at the Angel Altar will call down a new Ophanim."
+      "text": "The use of a $(e)Totem of Undying$() at the Angel Altar will call down a new Ophanim."
       },
     {
       "type": "patchouli:relations",

@@ -12,6 +12,19 @@
       "type": "patchouli:crafting",
       "recipe": "risus:scythe",
       "text": "$(l:weapons/soul_scratcher)$(c)$(o)Scratcher$() and the $(l:weapons/existential_executioner)$(c)$(o)Existential Executioner$(). All three upgrades result in a duller blade, but more than make up for that damage loss with new on-hit effects. Nonetheless, if those benefits aren't good enough, staying with the Unlit Vessel is a viable option."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/angel",
+        "risus:weapons/flame_fiend",
+        "risus:weapons/soul_scratcher",
+        "risus:weapons/existential_executioner",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/crystallized_bonds",
+        "risus:materials/memory_core",
+        "risus:weapons/weapon_types"
+      ]
     }
   ]
 }

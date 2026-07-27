@@ -5,11 +5,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Purifying Paste is made by mixing Rose Petals and Lover's Cream in a Bowl. The resulting ingredient has the ability to somewhat clean the impurities off of things, even including the removal of the Risus' influence when it's weakly present. As such it is used for $(l:materials/gluttonous_scales#paste)$(c)$(o)Unalloyed Scales$() and to clean items in a Purification Basin"
+      "text": "Purifying Paste is made by mixing Rose Petals and Lover's Cream in a Bowl. The resulting ingredient has the ability to somewhat clean the impurities off of things, even including the removal of the Risus' influence when it's weakly present. As such, it is used for $(l:blocks/imitation_scales)$(c)$(o)Unalloyed Scales$()."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "risus:purifying_paste"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/imitation_scales",
+        "risus:blocks/regeneration_rose",
+        "risus:materials/purifying_paste"
+      ]
     }
   ]
 }

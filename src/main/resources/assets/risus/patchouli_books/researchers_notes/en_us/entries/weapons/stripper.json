@@ -12,6 +12,15 @@
       "type": "patchouli:crafting",
       "recipe": "risus:gold_fist",
       "text": "When enchanting it, it might be better to avoid enchantments that would increase its damage. The more hits the enemy can take from this weapon, the higher the chance for stripping to be successful."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/blood",
+        "risus:tools/hand_of_greed",
+        "risus:weapons/toothknocker",
+        "risus:weapons/weapon_types"
+      ]
     }
   ]
 }

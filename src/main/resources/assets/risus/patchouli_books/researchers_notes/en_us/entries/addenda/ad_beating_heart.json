@@ -5,19 +5,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The heart is the organ that enables the flow of blood within a creature's body. In contrast, the Beating Heart pumps its contents into creatures within the range of its heartbeat. It is seemingly a meta-physical connection; not requiring any sort of physical connection, only proximity. Personally, I find it poetic to a degree: this heart has no body of its own, so it finds home in other's bodies. It could even be medicinal. "
+      "text": "Addendum for $(l:blocks/beating_heart)$(c)$(o)Beating Heart$().$(br)$(br)The heart is the organ that enables the flow of blood within a creature's body. In contrast, the Beating Heart pumps its contents into creatures within the range of its heartbeat. It is seemingly a meta-physical connection; not requiring any sort of physical connection, only proximity. Personally, I find it poetic to a degree: this heart has no "
     },
     {
       "type": "patchouli:text",
-      "text": "Disregarding the states where it is imbued with positive potion effects - even in its basic form it could help out individuals suffering from heart or bloodflow issues. It is a shame they are so limited, as it's one of the few things from the plague that can be dominantly beneficial. That is, at least, if that is how it actually works. It does react to its imbuement for example: negative ones cause it to beat arhythmically, while with positive effects it is a consistent rhythm, sometimes "
+      "text": "body of its own, so it finds home in other's bodies. It could even be medicinal. Disregarding the states where it is imbued with positive potion effects - even in its basic form it could help out individuals suffering from heart or bloodflow issues. It is a shame they are so limited, as it's one of the few things from the plague that can be dominantly beneficial. That is, at least, if that is how it actually works. It does react to its imbuement for example: negative ones cause it to beat"
     },
     {
       "type": "patchouli:text",
-      "text": "even synchronizing when there are multiple present. Yet, at the same time, an Absorption imbued heart severely slows down. It may be because that specific effects puts a large burden onto the heart, but then why isn't the same phenomena present in people affected by Absorption too? I have tested it with multiple individuals, inluding myself, but the pulse did not change for Absorption alone. This points to there being a notable difference to the Beating Heart's functioning "
+      "text": "arrhythmically, while with positive effects it is a consistent rhythm, often even synchronizing when there are multiple present. Yet, at the same time, an Absorption imbued heart severely slows down. It may be because that specific effects puts a large burden onto the heart, but then why isn't the same phenomena present in people affected by Absorption too? I have tested it with multiple individuals, inluding myself, but the pulse did not change for Absorption alone. This "
     },
     {
       "type": "patchouli:text",
-      "text": "compared to a normal heart's (beyond its abnormal abilities)... When it comes to this plague, I have found myself becoming more and more gullible in a sense. Trying to see the good in it and almost disregarding critical details. I can't even tell at this point if I am just being naive or desperately trying to be hopeful."
+      "text": "points to there being a notable difference to the Beating Heart's functioning compared to a normal heart's (beyond its easily observable abnormal abilities)... When it comes to this plague, I have found myself becoming more and more gullible in a sense. Trying to see the good in it and almost disregarding critical details. I can't even tell at this point if I am just being naive or desperately trying to be hopeful."
     }
   ]
 }

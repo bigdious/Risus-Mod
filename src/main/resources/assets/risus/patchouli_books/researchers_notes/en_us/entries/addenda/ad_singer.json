@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "It's fascinating to see that the true desire of an Enderman is to just get attention - something it can only handle as a Singer, as a simple Enderman can't help but respond with aggression to its own shyness... But what I find even more interesting is the sound-making capabilities of a Singer. Endermen are relatively loud to begin with, but Singers enhance the power behind their voices using their hollow torso and the "
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)It's fascinating to see that the true desire of an Enderman is to just get attention - something it can only handle as a Singer, as a simple Enderman can't help but respond with aggression to its own shyness... But what I find even more interesting is the sound-making capabilities of a Singer. Endermen are relatively loud to begin with, but Singers enhance the power behind their voices using their hollow torso and the "
     },
     {
       "type": "patchouli:text",

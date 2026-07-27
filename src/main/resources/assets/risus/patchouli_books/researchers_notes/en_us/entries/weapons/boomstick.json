@@ -11,7 +11,13 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:boomstick",
-      "text": "Armor that strongly resists explosions is necessary to have a chance at survival. Note: Do not let a Zombie or any other mob get hold of a Boomstick. Unlike a Creeper, there will be no windup to the explosion."
+      "text": "Armor that strongly resists explosions is necessary to have a chance at survival. Note: Do not let a Zombie or any other mob get hold of a Boomstick. Unlike with a Creeper, there will be no windup to the explosion."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/gluttonous_scales"
+      ]
     }
   ]
 }

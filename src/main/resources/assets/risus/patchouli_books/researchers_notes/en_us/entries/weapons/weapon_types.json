@@ -18,7 +18,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "and $(l:weapons/stripper)$(c)$(o)Stripper$().     $(br)$(br)War Swords - similarly to Heavy Axes - are a larger version of normal swords, boasting of higher damage and increased range, at the price of manoeuvrability. Additionally, they often have one way or another to perform a ranged attack. Examples include: $(l:weapons/thousand_blade)$(c)$(o)Blade of a Thousand$() and Compensatory Sin. $(br)$(br)There are miscellaneous weapons beyond these four types too."
+      "text": "and $(l:weapons/stripper)$(c)$(o)Stripper$().     $(br)$(br)War Swords - similarly to Heavy Axes - are a larger version of normal swords, boasting of higher damage and increased range, at the price of manoeuvrability. Additionally, they often have one way or another to perform a ranged attack. Examples include: $(l:weapons/thousand_blade)$(c)$(o)Blade of a Thousand$(). $(br)$(br)There are miscellaneous weapons beyond these four types too."
     }
   ]
 }

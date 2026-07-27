@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Throughout my years of research-pilgrimage, I ended up staying the night at numerous villages; far too many to count. And multiple of them were raided during my stay. I helped quite a bit with pushing back the pillagers thanks to my various equipments and that process only got easier once I got this blade. It wasn't intentionally created, it's simply another loot from a cultist that had joined the"
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)Throughout my years of research-pilgrimage, I ended up staying the night at numerous villages; far too many to count. And multiple of them were raided during my stay. I helped quite a bit with pushing back the pillagers thanks to my various equipments and that process only got easier once I got this blade. It wasn't intentionally created, it's simply another loot from a cultist that had joined the"
     },
     {
       "type": "patchouli:text",

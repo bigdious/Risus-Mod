@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "There are a couple theories on the behaviours of Creepers. Some say it's a sort of territorial plant, which attacks any threats to the environment to protect it. A much more popular theory suggests creepers are actually rather friendly. The reason they explode is simply due to 'anxiety'. If that's the case, the Stalker is a creeper with no anxiety. And as long as the vision loss is dealt with - by wearing an Eye on the head -"
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)There are a couple theories on the behaviours of Creepers. Some say it's a sort of territorial plant, which attacks any threats to the environment to protect it. A much more popular theory suggests creepers are actually rather friendly. The reason they explode is simply due to 'anxiety'. If that's the case, the Stalker is a creeper with no anxiety. And as long as the vision loss is dealt with - by wearing an Eye on the head -"
     },
     {
       "type": "patchouli:text",

@@ -11,6 +11,16 @@
     {
       "type": "patchouli:crafting",
       "recipe": "risus:toothknocker"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/tissue_skin_hair",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/crystallized_bonds",
+        "risus:weapons/weapon_types",
+        "risus:weapons/stripper"
+      ]
     }
   ]
 }

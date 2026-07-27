@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "These little freaks infuriate me to no end sometimes. At first I thought of them as somewhat 'cute' but I quickly realized their true nature. They pop out from the ground wherever there is just a little remnant of the plague and rush toward me to relieve me of the object I am holding. They have ruined many a tests by stealing a crucial object that I was using, and leaving me with only my own wits."
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)These little freaks infuriate me to no end sometimes. At first I thought of them as somewhat 'cute' but I quickly realized their true nature. They pop out from the ground wherever there is just a little remnant of the plague and rush toward me to relieve me of the object I am holding. They have ruined many a tests by stealing a crucial object that I was using, and leaving me with only my own wits."
     },
     {
       "type": "patchouli:text",

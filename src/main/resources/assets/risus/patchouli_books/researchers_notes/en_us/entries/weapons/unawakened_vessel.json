@@ -12,6 +12,18 @@
       "type": "patchouli:crafting",
       "recipe": "risus:unawakened_vessel",
       "text": "As a weapon made with a Concentration Core, it's capable of killing $(l:offsprings/angel)$(c)$(o)divine beings$()."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/angel",
+        "risus:materials/blood_feather",
+        "risus:weapons/crescent_disaster",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/crystallized_bonds",
+        "risus:materials/memory_core",
+        "risus:weapons/weapon_types"
+      ]
     }
   ]
 }

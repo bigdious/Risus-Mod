@@ -31,7 +31,11 @@
         "risus:armors/sinner_helmet",
         "risus:armors/sinner_chest",
         "risus:armors/sinner_legs",
-        "risus:armors/sinner_boots"
+        "risus:armors/sinner_boots",
+        "risus:armors/skin_armor",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/organic_matter",
+        "risus:blocks/bloodweave"
       ]
     }
   ]

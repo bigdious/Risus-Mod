@@ -11,6 +11,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:crown_of_bones",
       "text" : "The Ivory Crown offers very low defenses. However, it can still be enchanted just as any other helmet; as well as trimmed for aesthetic appeal."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:tools/warhorn"
+      ]
     }
   ]
 }

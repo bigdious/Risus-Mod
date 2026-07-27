@@ -11,6 +11,20 @@
       "type": "patchouli:crafting",
       "recipe": "risus:born_to_burn",
       "text": "It is best used alongside effects that require to be on fire, such as the $(l:execrations/pyromaniac)$(c)$(o)Pyromania$() and $(l:execrations/eruption)$(c)$(o)Eruption$() Execrations. It is also quite effective at clearing out Powdered Snow if walked into while holding it."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/memory_core",
+        "risus:blocks/climbables",
+        "risus:blocks/weaving_mechanism",
+        "risus:materials/gluttonous_scales",
+        "risus:tools/eternal_youth",
+        "risus:tools/litter",
+        "risus:weapons/thousand_blade",
+        "risus:weapons/unawakened_vessel",
+        "risus:weapons/unlit_vessel"
+      ]
     }
   ]
 }

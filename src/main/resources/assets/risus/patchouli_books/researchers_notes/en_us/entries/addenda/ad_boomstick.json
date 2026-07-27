@@ -5,11 +5,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "What absolute lunatic birthed forth the monstrosity of an idea to create this weapon. The first time I came across a Boomstick was when a cultist ran towards me with the intention of blowing us both up. Thankfully, I had a shield on me and managed to survive the explosion, but it still nearly took my arm off. I understand that the Risus can offer immortality - or even using the pillager's totems would allow the wielder to"
+      "text": "Addendum for $(l:weapons/boomstick)$(c)$(o)Boomstick$().$(br)$(br)What absolute lunatic birthed forth the monstrosity of an idea to create this weapon. The first time I came across a Boomstick was when a cultist ran towards me with the intention of blowing us both up. Thankfully, I had a shield on me and managed to survive the explosion, but it still nearly took my arm off. I understand that the Risus can"
     },
     {
       "type": "patchouli:text",
-      "text": "survive the explosion - but still! I just cannot fathom such a disregard for one's own safety. And as if all this wasn't enough, the Boomstick can be enchanted with Flame, Multishot, Wind Burst or Power. As if you would even need it to be deadlier; or more fiery. Sure, Wind Burst does at least remove the damage from the explosion (not the fire though), but the knock-back from it is still uncontrollable. You'd have to be a madman to truly consider using a Boomstick at all."
+      "text": "offer immortality - or even using the pillager's totems would allow the wielder to survive the explosion - but still! I just cannot fathom such a disregard for one's own safety. And as if all this wasn't enough, the Boomstick can be enchanted to make it more dangerous! As if you would even need it to be deadlier; or more fiery. Sure, Wind Burst does at least remove the damage from the explosion (not the fire though), but the knock-back from it is still uncontrollable. You'd have to be a madman to truly consider using a Boomstick at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "to be a madman to truly consider using a Boomstick at all."
     }
   ]
 }

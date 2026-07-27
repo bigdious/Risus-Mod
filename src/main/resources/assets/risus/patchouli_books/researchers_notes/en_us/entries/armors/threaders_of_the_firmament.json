@@ -10,8 +10,18 @@
     },
     {
       "type": "patchouli:crafting",
+      "title": "",
       "recipe": "risus:threaders_of_the_firmament",
-      "text": "Even the enchantability falls quite short. At most, the boots can accept Unbreaking and Mending. Even so, the mobility the Threads Of The Firmament can provide oftentimes outweighs the disadvantages."
+      "text": "Even the enchantability falls quite short. At most, the boots can accept Unbreaking and Mending. Nonetheless, the mobility the Threads Of The Firmament can provide oftentimes outweighs the disadvantages."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/angel",
+        "risus:blocks/remains",
+        "risus:materials/blood_feather",
+        "risus:armors/skin_armor"
+      ]
     }
   ]
 }

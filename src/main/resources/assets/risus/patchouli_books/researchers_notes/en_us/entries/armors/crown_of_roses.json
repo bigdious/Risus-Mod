@@ -11,6 +11,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:rose_crown",
       "text": "Wearing it can cause an odd feeling of confliction and grief."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/regeneration_rose"
+      ]
     }
   ]
 }

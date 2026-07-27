@@ -1,0 +1,24 @@
+{
+  "name": "Weaponized Ophanim Wings",
+  "icon": "risus:diamond_tipped_angel_wings",
+  "category": "risus:armors",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "By adding a Diamond Block and more Blood Feather, the Ophanim Wings can be smithed into a stabbing weapon that triggers whenever crouching. Of course, since the structure of the wings themselves is still rather fragile, the resulting damage isn't that high. The attack itself also costs a good amount of durability, based on the amount of enemies hit. Nonetheless, it can be an effective crowd "
+    },
+    {
+      "type": "patchouli:smithing",
+      "recipe": "minecraft:angel_wings_to_diamond_tipped_angel_wings",
+      "title": " ",
+      "text": "control tool and an 'on-hand' weapon to quickly attack in an unexpected scenario; or simply used in normal combat alongside a main weapon. It's important to note that some skill is required to effectively use it, as the wing's attack direction is based on the body's rotation, not where the user is looking."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/blood_feather",
+        "risus:armors/angel_wings"
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "I find it to be such a shame that the majority of rituals are only every passed down through cults - mostly in their churches. That's the way I learned about most I know of, such as the Inhabiting or the Scorching Ritual. Rituals offer a fascinating insight into some of the inner workings of the Risus. For example, I was under the impression that Concentration Cores simply gathered and focused the memories stored in the Memory"
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)I find it to be such a shame that the majority of rituals are only every passed down through cults - mostly in their churches. That's the way I learned about most I know of, such as the Inhabiting or the Scorching Ritual. Rituals offer a fascinating insight into some of the inner workings of the Risus. For example, I was under the impression that Concentration Cores simply gathered and focused the memories stored in the Memory"
     },
     {
       "type": "patchouli:text",

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Wither Rose is a fascinating anomaly, as it seems to be the only thing that goes through purification whenever exposed to the Risus, turning into a Regen Rose. This might allude to a relation between the Wither and the Risus - but I don't think that's the case here. I once came across a naturally appearing Regeneration Rose in the wild. There was an entire field of them and in the center, there was a statue of a kneeling"
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)The Wither Rose is a fascinating anomaly, as it seems to be the only thing that goes through purification whenever exposed to the Risus, turning into a Regen Rose. This might allude to a relation between the Wither and the Risus - but I don't think that's the case here. I once came across a naturally appearing Regeneration Rose in the wild. There was an entire field of them and in the center, there was a statue of a kneeling"
     },
     {
       "type": "patchouli:text",

@@ -13,6 +13,22 @@
       "type": "patchouli:crafting",
       "recipe": "risus:organic_matter_block",
       "text": "It can be obtained by altering Rotten Flesh or by harvesting it from Offsprings and the Beloved. It can be used as fuel in a furnace, with an Organic Matter Block smelting around 20 items."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/stalker",
+        "risus:offsprings/singer",
+        "risus:offsprings/licker",
+        "risus:offsprings/holder",
+        "risus:blocks/coalification",
+        "risus:blocks/eyes",
+        "risus:blocks/tissue_skin_hair",
+        "risus:blocks/climbables",
+        "risus:armors/sinner_robes",
+        "risus:armors/angel_wings",
+        "risus:weapons/crescent_disaster"
+      ]
     }
   ]
 }

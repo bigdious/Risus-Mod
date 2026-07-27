@@ -6,11 +6,21 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Smithed from an Unawakened Vessel combined with a Blood Feather, the Crescent Disaster is a $(l:weapons/weapon_types)$(c)$(o)Heavy Axe$() that can also be thrown. When thrown it deals the same damage, and if enchanted with Loyalty, it will return as well, allowing for interesting combos to be done."
+      "text": "Smithed from an Unawakened Vessel combined with a Blood Feather, the Crescent Disaster is a $(l:weapons/weapon_types)$(c)$(o)Heavy Axe$() that deals a bit less damage, but can be thrown. It will return if enchanted with Loyalty. Throwing the axe can also be an effective way to create a small time window for switching to another weapon."
     },
     {
       "type": "patchouli:smithing",
       "recipe": "minecraft:unawakened_to_crescent"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/blood_feather",
+        "risus:materials/organic_matter",
+        "risus:weapons/unlit_vessel",
+        "risus:weapons/weapon_types",
+        "risus:offsprings/angel"
+      ]
     }
   ]
 }

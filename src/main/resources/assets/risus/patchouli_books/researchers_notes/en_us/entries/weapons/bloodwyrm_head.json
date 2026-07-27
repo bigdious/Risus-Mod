@@ -14,6 +14,14 @@
       "type": "patchouli:smithing",
       "recipe": "minecraft:head_to_spewer",
       "text": "The Spewer can spread fire in front of the wielder and can be refueled with Dragon Breath. Additionally, the spray will also inflict the Flame Frailty effect onto the victims, making them considerably more susceptible to fire."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/alteration_catalyst",
+        "risus:materials/blood_feather",
+        "risus:tools/born_to_burn"
+      ]
     }
   ]
 }

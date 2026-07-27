@@ -35,6 +35,17 @@
         "symmetrical": false
       },
       "text": "Use the Unlit Vessel on the campfire. Do not forget to place $(l:blocks/blood)$(c)$(o)Blood$() below said campfire."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/ritual_blocks",
+        "risus:blocks/blood",
+        "risus:blocks/cinderglee",
+        "risus:weapons/unlit_vessel",
+        "risus:weapons/weapon_types",
+        "risus:offsprings/angel"
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Honestly speaking, Lovers are genuinely my favorite. They are great specimens to use for experiments as they can be leashed, they float - meaning they can traverse any type of terrain - and pose virtually no direct danger. They even like flowers! I would definitely prefer keeping a Lover as a pet over any other monster. Even if its looks are horrendous, I can just get used to it with time. No issues!"
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)Honestly speaking, Lovers are genuinely my favorite. They are great specimens to use for experiments as they can be leashed, they float - meaning they can traverse any type of terrain - and pose virtually no direct danger. They even like flowers! I would definitely prefer keeping a Lover as a pet over any other monster. Even if its looks are horrendous, I can just get used to it with time. No issues!"
     },
     {
       "type": "patchouli:text",

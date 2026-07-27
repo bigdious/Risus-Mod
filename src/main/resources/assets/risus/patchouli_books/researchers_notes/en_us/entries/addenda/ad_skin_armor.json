@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "By spending so much time around the Risus, I've grown capable of stomaching a lot more than what I should really be able to. However, wearing skin armor is something that I just cannot handle. As with most things in Risus, the skin armor is 'alive'. When wearing it, it connects directly to your own skin, doing so even through the fabric of clothes. You become capable of feeling through the armor; that's how it increases vitality."
+      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)By spending so much time around the Risus, I've grown capable of stomaching a lot more than what I should really be able to. However, wearing skin armor is something that I just cannot handle. As with most things in Risus, the skin armor is 'alive'. When wearing it, it connects directly to your own skin, doing so even through the fabric of clothes. You become capable of feeling through the armor; that's how it increases vitality."
     },
     {
       "type": "patchouli:text",

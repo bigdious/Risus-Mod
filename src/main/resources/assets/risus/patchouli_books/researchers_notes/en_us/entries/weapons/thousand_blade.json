@@ -21,6 +21,17 @@
       "type": "patchouli:crafting",
       "recipe": "risus:sacrifice_catalyst",
       "text": "While having it in ones' inventory, killing a person will fill it with the victim's blood. Once enough sacrifices have been achieved, the Crucified Heart will swiftly morph into a Blade Of A Thousand."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/beating_heart",
+        "risus:blocks/heart_transplant",
+        "risus:blocks/blood",
+        "risus:materials/memory_core",
+        "risus:weapons/weapon_types",
+        "risus:offsprings/angel"
+      ]
     }
   ]
 }

@@ -16,6 +16,20 @@
       "recipe": "risus:concentration_core",
       "anchor": "core",
       "text": "The Concentration core is a vital component for creating willful weapons. These can express unique abilities and also gain the ability of hurting divine beings, such as $(l:offsprings/angel)$(c)$(o)angels$()."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:offsprings/weaver",
+        "risus:blocks/climbables",
+        "risus:blocks/weaving_mechanism",
+        "risus:materials/gluttonous_scales",
+        "risus:tools/eternal_youth",
+        "risus:tools/litter",
+        "risus:weapons/thousand_blade",
+        "risus:weapons/unawakened_vessel",
+        "risus:weapons/unlit_vessel"
+      ]
     }
   ]
 }
