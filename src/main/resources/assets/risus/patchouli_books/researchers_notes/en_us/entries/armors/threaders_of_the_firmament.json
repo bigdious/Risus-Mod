@@ -2,7 +2,6 @@
   "name": "Threads Of The Firmament",
   "icon": "risus:threaders_of_the_firmament",
   "category": "risus:armors",
-  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:text",

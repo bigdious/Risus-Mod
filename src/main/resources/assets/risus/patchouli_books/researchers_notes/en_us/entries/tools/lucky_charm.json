@@ -17,6 +17,14 @@
       "header": "Wretched Charm",
       "recipe": "risus:alteration/wretched_charm",
       "text": "The Wretched Charm, obtained by altering a Lucky Charm, works in the opposite way: it reduces Luck while enabling effects that have their chance to happen improve with lower luck. The charm can cause attacks to apply negative potion effects, set the enemy aflame, or even bring down lightning. When the user dies, it can cause an explosion."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/alteration_catalyst",
+        "risus:blocks/regeneration_rose",
+        "risus:tools/potions"
+      ]
     }
   ]
 }

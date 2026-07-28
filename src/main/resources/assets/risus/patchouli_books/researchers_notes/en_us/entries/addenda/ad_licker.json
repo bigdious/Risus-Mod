@@ -5,11 +5,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)The Licker is a great example of the capabilities the Lover's impregnation holds. Compared to a Spider, the Licker is closer to a mammal than an arachnid. This is because the Risus completely restructures the Spider's insides, growing mammalian organs in it, such as the 'womb' that is created in the Spider head, which is used to incubate baby spiders. It's important to note that while the old Spider head appears dead, the Licker is not fully"
+      "text": "Addendum for $(l:offsprings/licker)$(c)$(o)Licker$().$(br)$(br)The Licker is a great example of the possibilities the Lover's impregnation holds. Compared to a Spider, the Licker is closer to a mammal than an arachnid. This is because the Risus completely restructures the Spider's insides, growing mammalian organs in it, such as the 'womb' that is created in the Spider head, which is used to incubate baby spiders. It's "
     },
     {
       "type": "patchouli:text",
-      "text": "part of Risus, instead it's still alive and simply using the Risus to its own ends. The pure survival instincts of a Spider to consume and breed seem to be enhanced into a joy-driven desire to 'procreate to death'. That's why it seeks out a person and tries to get its attention by licking it, so that it can be killed and release the kin inside. The Pleasure effect applied by the saliva might be intended to have a different outcome but as it is, it's simply deadly to people."
+      "text": "important to note that while the old Spider head appears dead, the Licker is not fully part of Risus, instead it's still alive and simply using the Risus to its own ends. The pure survival instincts of a Spider to consume and breed seem to be enhanced into a joy-driven desire to 'procreate to death'. That's why it seeks out a person and tries to get its attention by licking it, so that it can be killed and release the kin inside. After all, it was clear to me after a dissection that the malformed"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "'womb' in the Spider head doesn't actually have a way to give birth. So the babies can only leave once the Licker is dead, or at least the skull is split open. The Pleasure effect applied by the saliva might be intended to have a different outcome, but as it is, it's simply deadly to people."
     }
   ]
 }

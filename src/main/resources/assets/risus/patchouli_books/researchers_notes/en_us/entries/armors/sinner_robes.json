@@ -2,7 +2,6 @@
   "name": "Sinner's Robe",
   "icon": "risus:stitching_needle",
   "category": "risus:armors",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",

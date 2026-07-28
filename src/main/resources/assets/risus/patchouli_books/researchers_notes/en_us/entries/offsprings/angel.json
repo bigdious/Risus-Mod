@@ -2,7 +2,6 @@
   "name": "Blood Ophanim",
   "icon": "risus:essence_of_sloth",
   "category": "risus:offsprings",
-  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:entity",

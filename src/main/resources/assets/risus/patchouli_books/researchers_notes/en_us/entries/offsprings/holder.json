@@ -2,7 +2,6 @@
   "name": "Holder",
   "icon": "risus:essence_of_greed",
   "category": "risus:offsprings",
-  "advancement": "risus:little",
   "pages": [
     {
       "type": "patchouli:text",

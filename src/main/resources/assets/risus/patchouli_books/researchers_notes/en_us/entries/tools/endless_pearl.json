@@ -2,7 +2,6 @@
   "name": "Endless Pearl",
   "icon": "risus:endless_pearl",
   "category": "risus:tools",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
@@ -12,6 +11,14 @@
       "type": "patchouli:crafting",
       "recipe": "risus:endless_pearl",
       "text": "With the impurities removed, unlike with an Ender Pearl, using this won't summon Ender Mites. Additionally, the spacial movement is slightly more refined, making it so items that increase Safe Fall Distance will negate the damage too."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/regeneration_rose",
+        "risus:materials/gluttonous_scales",
+        "risus:materials/echo_pearl"
+      ]
     }
   ]
 }

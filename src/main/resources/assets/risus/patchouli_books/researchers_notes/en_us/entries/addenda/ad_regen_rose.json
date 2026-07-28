@@ -5,11 +5,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)The Wither Rose is a fascinating anomaly, as it seems to be the only thing that goes through purification whenever exposed to the Risus, turning into a Regen Rose. This might allude to a relation between the Wither and the Risus - but I don't think that's the case here. I once came across a naturally appearing Regeneration Rose in the wild. There was an entire field of them and in the center, there was a statue of a kneeling"
+      "text": "Addendum for $(l:blocks/regeneration_rose)$(c)$(o)Regeneration Rose$().$(br)$(br)The Wither Rose is a fascinating anomaly, as it seems to be the only thing that goes through purification whenever exposed to the Risus, turning into a Regen Rose. This might allude to a relation between the Wither and the Risus - but I don't think that's the case here. I once came across naturally appearing "
     },
     {
       "type": "patchouli:text",
-      "text": "figure with broken chains at their neck, holding another figure. There was no indication of the Risus there; yet the only way to get Regeneration Roses is through alteration. Of course, it could have been man-made too, but I believe that it was something formed by the plague. After all, this pure flower is clearly an exception carved directly into the Risus. Possibly an untainted memory inside of it, given physical shape...?"
+      "text": "Regeneration Roses in the wild. There was an entire field of them; and in the center there was a statue of a kneeling figure with broken chains at their neck, holding another, more slender figure. There was no indication of the Risus there; yet the only way to get Regeneration Roses is through alteration. Of course, it could have been man-made too, but I believe that it was something formed by the plague. After all, this pure flower is clearly an exception carved directly into the Risus. Possibly an untainted memory inside of it, given physical shape...?"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Possibly an untainted memory inside of it, given physical shape...?"
     }
   ]
 }

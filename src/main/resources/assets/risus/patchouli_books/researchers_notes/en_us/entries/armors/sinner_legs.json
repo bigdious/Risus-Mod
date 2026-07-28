@@ -2,7 +2,6 @@
   "name": "Sinner's Robe Leggings",
   "icon": "risus:sinner_robes_leggings",
   "category": "risus:armors",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)Of all the potions I have ever drank, the Potion of the Copper Age must be the worst. Not because of its effect or anything, but because of its oxidized copper taste. Ugh..."
+      "text": "Addendum for $(l:tools/potions)$(c)$(o)Potions$().$(br)$(br)Of all the potions I have ever drank, the Potion of the Copper Age must be the worst. Not because of its effect or anything, but because of its oxidized copper taste. Ugh..."
     }
   ]
 }

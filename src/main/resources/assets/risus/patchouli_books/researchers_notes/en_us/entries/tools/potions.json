@@ -2,7 +2,6 @@
   "name": "Potions",
   "icon": "minecraft:brewing_stand",
   "category": "risus:tools",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
@@ -19,6 +18,20 @@
     {
       "type": "patchouli:text",
       "text": "Spider Eye, it will turn into a Potion of The Copper Age, with the Verdigris Vehemence effect. This will cause the dead to drop Copper. $(br)$(br) - A $(l:blocks/heart_transplant)$(c)$(o)Heart Transplant$() can be brewed into a Potion of Transfusion, offering a temporary Health Boost."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/memory_core",
+        "risus:blocks/cinderglee",
+        "risus:blocks/blood",
+        "risus:blocks/heart_transplant",
+        "risus:materials/guilty_apple",
+        "risus:tools/lucky_charm",
+        "risus:tools/hand_of_greed",
+        "risus:tools/litter",
+        "risus:weapons/killjoy"
+      ]
     }
   ]
 }

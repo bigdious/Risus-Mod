@@ -5,19 +5,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)The first time I came across a Gorger was when I fell into its trap. Fortunately, I managed to not fall directly in its mouth, but that didn't make the situation any less terrifying - being that close to the fangs. In the panic, I even dropped the pickaxe I was holding and that did land in its mouth. While I managed to crawl out, I still needed that pick so out of frustration I just dropped a tnt on it. To my surprise, it actually swallowed it. The"
+      "text": "Addendum for $(l:offsprings/maw)$(c)$(o)Gorger$().$(br)$(br)The first time I came across a Gorger was when I fell into its trap. Fortunately, I managed to not fall directly in its mouth, but that didn't make the situation any less terrifying - being that close to the fangs. In the panic, I even dropped the pickaxe I was holding and it landed in its mouth. While I managed to crawl out, I still needed that pick so out of"
     },
     {
       "type": "patchouli:text",
-      "text": "explosion was almost fully isolated to its guts which got destroyed, killing it in the process and giving my pick back. Anyway... it is interesting how the Gorger Traps are a regional phenomenon. While they are quite common here, they are basically nonexistent anywhere else I've been in, except the End. That could indicate that there is something in this region specifically causing them to appear."
+      "text": "frustration I just dropped a TNT on it. To my surprise, it actually swallowed it. The explosion was almost fully isolated to its guts which got destroyed, killing it in the process and giving my pick back. Anyway... it is interesting how the Gorger Traps are a regional phenomenon. While they are quite common here, they are basically nonexistent anywhere else in this endless world. That could indicate that there is something in this region specifically causing"
     },
     {
       "type": "patchouli:text",
-      "text": "Additional note: Through further tests, I've come across two interesting behaviors regarding Gorgers. First, Gorger Guts react to a Redstone Signal by tightening up, which is a useful way to turn off their ability to suck items in. Secondly, whenever a Gorger kills something, it will cause it to drop Experience, similarly to what happens when a person does the same. I've already taken advantage of this feature to remove some of the extra specimens of my Weaver breeding area. Now I simply need a more efficient method of storing said experience..."
+      "text": "them to appear. Although, thinking about it more, that's true for the Risus too. While it can very rarely appear basically anywhere, these regions do have a considerably higher density of phenomena related to it. Maybe the land itself remembers something here. $(br)$(br)Additional note: Through further tests, I've come across two interesting behaviors regarding Gorgers. First, Gorger Guts react to a Redstone Signal by tightening"
     },
     {
       "type": "patchouli:text",
-      "text": "simply need a more efficient method of storing said experience..."
+      "text": "up, which is a useful way to turn off their ability to suck items in. Secondly, whenever a Gorger kills something, it will cause it to drop Experience, similarly to what happens when a person does the same. I've already taken advantage of this feature to remove some of the extra specimens of my Weaver breeding area. Now, I simply need a more efficient method of storing said experience..."
     }
   ]
 }

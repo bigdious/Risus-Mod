@@ -2,7 +2,6 @@
   "name": "Counterweight",
   "icon": "risus:counterweight",
   "category": "risus:tools",
-  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:text",
@@ -12,6 +11,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:counterweight",
       "text": "It works exceptionally well when used alongside methods of increasing jump height."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/blood_feather"
+      ]
     }
   ]
 }

@@ -5,11 +5,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)To be honest, I have never used a Totem of Unyielding. I don't have the blind conviction nor the total disregard to my only life that would be necessary to use it. I have used Totems of Undying several times to save myself though - especially when facing raider cultists who have used Unyielding ones. They were monstrous berserkers, some even using Boomsticks in their state. There was a case once when one of these cultists "
+      "text": "Addendum for $(l:tools/totem_of_unyielding)$(c)$(o)Totem Of Unyielding$().$(br)$(br)To be honest, I have never used a Totem of Unyielding. I don't have the blind conviction nor the total disregard to my only life that would be necessary to use it. I have used Totems of Undying several times to save myself though - especially when facing raider cultists who have used Unyielding ones. They were "
     },
     {
       "type": "patchouli:text",
-      "text": "used an Unyielding totem while there was still a great distance between us. Right before he could reach me, the ten seconds passed, and he felt to his knees in front of me... The Destined Death these totems promise you is horrifyingly absolute. Unlike a stab wound to the heart, there isn't even a second or two of fighting or struggling that can be done. It's just a total annihilation of any signs of life..."
+      "text": "monstrous berserkers, some even using Boomsticks in their state. There was a case once when one of these cultists used an Unyielding totem while there was still a great distance between us. Right before he could reach me, the ten seconds passed, and he fell to his knees in front of me... The Destined Death these totems promise you is horrifyingly absolute. Unlike a stab wound to the heart, there isn't even a second or two of fighting or struggling that can be done. It's true annihilation."
     }
   ]
 }

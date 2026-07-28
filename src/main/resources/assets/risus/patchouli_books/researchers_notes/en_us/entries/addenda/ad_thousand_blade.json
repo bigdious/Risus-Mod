@@ -5,15 +5,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/alteration_site)$(c)$(o)Alteration Sites$().$(br)$(br)Throughout my years of research-pilgrimage, I ended up staying the night at numerous villages; far too many to count. And multiple of them were raided during my stay. I helped quite a bit with pushing back the pillagers thanks to my various equipments and that process only got easier once I got this blade. It wasn't intentionally created, it's simply another loot from a cultist that had joined the"
+      "text": "Addendum for $(l:weapons/thousand_blade)$(c)$(o)Blade Of A Thousand$().$(br)$(br)Throughout my years of research-pilgrimage, I ended up staying the night at numerous villages; far too many to count. And multiple of them were raided during my stay. I helped quite a bit with pushing back the pillagers thanks to my various equipments; and that process only got easier once I got "
     },
     {
       "type": "patchouli:text",
-      "text": "raiders; which I ended up using myself. The heart had been plenty filled already when I got hold of it. At first, imagining how many villagers could have been sacrificed into it made me not even consider the idea of using it, even once I completed it out of curiosity through the raiders I've murdered. But then, on a certain night of protecting a village from a raid, there was a scene in front of me: a Vindicator, axe in hand, was right about to strike down the villager that"
+      "text": "this blade. It wasn't intentionally created - it was simply another loot from a cultist that had joined the raiders, which I ended up using myself. The heart had been plenty filled already when I got hold of it. At first, imagining how many people could have been sacrificed into it made me not even consider the idea of using it; even after I inadvertently completed it through the raiders I've murdered. But then, on a certain night of protecting a village from a "
     },
     {
       "type": "patchouli:text",
-      "text": "allowed me to stay the night there. I had met their child earlier as well and they were very sweet. In the moment of that attack, sheer instinct took over me and I pulled it out of my backpack. With that same motion, I swung it down hard enough to send a blood slash forward, cutting in half the Vindicator. The villager survived thanks to my action and from then on I continued using it. All the raids I fought against afterwards had little to no innocent casualties."
+      "text": "raid, there was a scene in front of me: a Vindicator, axe in hand, was right about to strike down the villager that allowed me to stay the night there. I had met their child earlier as well and they were very sweet. In the moment of that attack, sheer instinct took over me and I pulled it out of my backpack. With that same motion, I swung it down hard enough to send a blood slash forward, cutting in half that Vindicator. The villager survived thanks to my action and from then on I continued"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "using it. All the raids I fought against afterwards had little to no innocent casualties."
     }
   ]
 }

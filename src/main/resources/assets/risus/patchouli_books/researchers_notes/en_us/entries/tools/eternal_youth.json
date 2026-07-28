@@ -11,6 +11,13 @@
       "type": "patchouli:crafting",
       "recipe": "risus:eternal_youth",
       "text": "It's quite an arduous process to craft it, as it requires some exotic eggs and animals. Yet, if you don't ever want to let go of your most loyal pets, these exotics are a cheap sacrifice to avoid such a sad future."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/lovers_cream",
+        "risus:offsprings/licker"
+        ]
     }
   ]
 }

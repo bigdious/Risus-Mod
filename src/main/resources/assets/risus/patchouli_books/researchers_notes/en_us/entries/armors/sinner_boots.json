@@ -2,7 +2,6 @@
   "name": "Sinner's Robe Boots",
   "icon": "risus:sinner_robes_boots",
   "category": "risus:armors",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",

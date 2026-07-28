@@ -2,7 +2,6 @@
   "name": "Litter",
   "icon": "risus:litter",
   "category": "risus:tools",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
@@ -28,6 +27,13 @@
         "symmetrical": false
       },
       "text": "To trigger the ritual, use the Concentration Core on the chosen light emitting block."
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/memory_core",
+        "risus:tools/potions"
+      ]
     }
   ]
 }

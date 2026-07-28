@@ -11,6 +11,14 @@
       "type": "patchouli:crafting",
       "recipe": "risus:carving_knife",
       "text": "Tissue blocks that have had Organic Matter applied will not decay after reducing the flesh on them. As for the scutes or horns, harvesting them in such a forceful way will hurt the animal. Additionally, it can be used to carve off one's own flesh if used while crouching... "
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/crystallized_bonds",
+        "risus:materials/organic_matter",
+        "risus:blocks/tissue_skin_hair"
+      ]
     }
   ]
 }

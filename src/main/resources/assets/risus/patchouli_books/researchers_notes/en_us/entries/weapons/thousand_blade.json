@@ -2,7 +2,6 @@
   "name": "Blade Of A Thousand",
   "icon": "risus:thousand_blade",
   "category": "risus:weapons",
-  "advancement": "risus:gluttony",
   "sortnum" : 9,
   "pages": [
     {

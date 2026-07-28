@@ -2,7 +2,6 @@
   "name": "Weaving Mechanism",
   "icon": "risus:weaving_mechanism",
   "category": "risus:blocks",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:spotlight",

@@ -2,7 +2,6 @@
   "name": "Light Devourer",
   "icon": "risus:light_devourer",
   "category": "risus:tools",
-  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",
@@ -12,6 +11,12 @@
       "type": "patchouli:crafting",
       "recipe": "risus:light_devourer",
       "text": "'In darkness, there's a beauty that cannot be found anywhere else. It is the purest form the fear of the unknown can take. A power so great, its potential is nearly infinite...'            -excerpt from the Story of Shadows"
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:materials/gluttonous_scales"
+      ]
     }
   ]
 }

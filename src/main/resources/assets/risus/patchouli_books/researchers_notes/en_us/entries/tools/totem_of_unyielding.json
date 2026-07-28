@@ -11,7 +11,13 @@
     },
     {
       "type": "patchouli:text",
-      "text": "further delayed by continuous uses of Unyielding totems. During those ten seconds the user also experiences a state of near invincibility, on top of increased physical stength and speed. In short, the user becomes berserk. "
+      "text": "further delayed by continuous uses of Unyielding totems. During those ten seconds the user also experiences a state of near invincibility, on top of increased physical stength and speed. In short, the user becomes a dying berserker. "
+    },
+    {
+      "type": "patchouli:relations",
+      "entries": [
+        "risus:blocks/alteration_catalyst"
+      ]
     }
   ]
 }
