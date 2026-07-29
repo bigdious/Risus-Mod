@@ -2,6 +2,7 @@
   "name": "Ad. Great Bodies",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:great_body",
   "pages": [
     {
       "type": "patchouli:text",

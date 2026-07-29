@@ -1,6 +1,7 @@
-package com.bigdious.risus.data;
+package com.bigdious.risus.data.helper;
 
 
+import com.bigdious.risus.data.RisusAdvancementGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.AdvancementProvider;

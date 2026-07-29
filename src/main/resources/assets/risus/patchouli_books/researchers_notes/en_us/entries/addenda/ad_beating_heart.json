@@ -2,6 +2,7 @@
   "name": "Ad. Beating Heart",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:hearty",
   "pages": [
     {
       "type": "patchouli:text",

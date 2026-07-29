@@ -2,6 +2,7 @@
   "name": "Ad. Blood Ophanim",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:angel",
   "pages": [
     {
       "type": "patchouli:text",

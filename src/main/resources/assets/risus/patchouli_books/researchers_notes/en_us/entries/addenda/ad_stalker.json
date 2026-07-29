@@ -2,6 +2,7 @@
   "name": "Ad. Stalker",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

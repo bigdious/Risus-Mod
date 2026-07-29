@@ -2,6 +2,7 @@
   "name": "Ad. Heart Chambers",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:hearty",
   "pages": [
     {
       "type": "patchouli:text",

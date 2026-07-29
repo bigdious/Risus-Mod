@@ -2,6 +2,7 @@
   "name": "Ad. Litter",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:gluttony",
   "pages": [
     {
       "type": "patchouli:text",

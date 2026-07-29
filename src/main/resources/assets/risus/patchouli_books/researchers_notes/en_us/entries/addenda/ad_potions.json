@@ -2,6 +2,7 @@
   "name": "Ad. Potions",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:cupid",
   "pages": [
     {
       "type": "patchouli:text",

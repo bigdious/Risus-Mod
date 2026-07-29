@@ -2,6 +2,7 @@
   "name": "Ad. Skin Armor",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:tight",
   "pages": [
     {
       "type": "patchouli:text",

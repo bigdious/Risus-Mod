@@ -2,6 +2,7 @@
   "name": "Ad. Crescent Disaster",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:unleashed",
   "pages": [
     {
       "type": "patchouli:text",

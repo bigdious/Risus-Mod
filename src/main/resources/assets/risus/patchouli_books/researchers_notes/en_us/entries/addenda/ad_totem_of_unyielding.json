@@ -2,6 +2,7 @@
   "name": "Ad. Totem Of Unyielding",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:crusade",
   "pages": [
     {
       "type": "patchouli:text",

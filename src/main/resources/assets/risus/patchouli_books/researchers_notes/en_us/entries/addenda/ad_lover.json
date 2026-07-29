@@ -2,6 +2,7 @@
   "name": "Ad. Lover",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:cream",
   "pages": [
     {
       "type": "patchouli:text",

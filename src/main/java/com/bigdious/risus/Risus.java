@@ -6,6 +6,7 @@ import com.bigdious.risus.client.event.RisusClientEvents;
 import com.bigdious.risus.compat.curios.CuriosCompat;
 import com.bigdious.risus.config.ConfigSetup;
 import com.bigdious.risus.data.*;
+import com.bigdious.risus.data.helper.RisusAdvancementProvider;
 import com.bigdious.risus.data.loottables.LootGenerator;
 import com.bigdious.risus.data.tags.*;
 import com.bigdious.risus.event.RisusEvents;

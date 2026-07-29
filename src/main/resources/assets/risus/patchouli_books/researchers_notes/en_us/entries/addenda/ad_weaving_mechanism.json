@@ -2,6 +2,7 @@
   "name": "Ad. Weaving Mechanism",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:strung",
   "pages": [
     {
       "type": "patchouli:text",

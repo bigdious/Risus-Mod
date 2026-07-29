@@ -2,6 +2,7 @@
   "name": "Ad. Eternal Youth",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:recipes/tools/eternal_youth",
   "pages": [
     {
       "type": "patchouli:text",

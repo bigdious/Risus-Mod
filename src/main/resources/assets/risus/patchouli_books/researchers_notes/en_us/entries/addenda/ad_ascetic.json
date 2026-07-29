@@ -2,6 +2,7 @@
   "name": "Ad. Ascetic",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "minecraft:adventure/trade",
   "pages": [
     {
       "type": "patchouli:text",

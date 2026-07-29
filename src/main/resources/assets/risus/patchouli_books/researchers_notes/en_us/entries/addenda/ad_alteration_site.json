@@ -2,6 +2,7 @@
   "name": "Ad. Alteration Sites",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:site_zero",
   "pages": [
     {
       "type": "patchouli:text",

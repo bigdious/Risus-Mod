@@ -2,6 +2,7 @@
   "name": "Ad. Hex",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:church",
   "pages": [
     {
       "type": "patchouli:text",

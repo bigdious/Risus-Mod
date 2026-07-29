@@ -2,6 +2,7 @@
   "name": "Ad. Cinderglee",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:recipes/decorations/joyflame_campfire",
   "pages": [
     {
       "type": "patchouli:text",

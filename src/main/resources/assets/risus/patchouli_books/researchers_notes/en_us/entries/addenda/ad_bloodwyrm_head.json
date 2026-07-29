@@ -2,6 +2,7 @@
   "name": "Ad. False Bloodwyrm Head",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "minecraft:end/find_end_city",
   "pages": [
     {
       "type": "patchouli:text",

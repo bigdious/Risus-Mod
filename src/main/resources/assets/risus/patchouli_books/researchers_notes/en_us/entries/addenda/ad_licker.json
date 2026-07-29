@@ -2,6 +2,7 @@
   "name": "Ad. Licker",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:licked",
   "pages": [
     {
       "type": "patchouli:text",

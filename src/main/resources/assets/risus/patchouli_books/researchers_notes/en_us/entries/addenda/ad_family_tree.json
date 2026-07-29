@@ -2,6 +2,7 @@
   "name": "Ad. Family Trees",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:family",
   "pages": [
     {
       "type": "patchouli:text",

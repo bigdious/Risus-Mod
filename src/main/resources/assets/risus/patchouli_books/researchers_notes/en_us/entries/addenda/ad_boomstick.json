@@ -2,6 +2,7 @@
   "name": "Ad. Boomstick",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:boomstick",
   "pages": [
     {
       "type": "patchouli:text",

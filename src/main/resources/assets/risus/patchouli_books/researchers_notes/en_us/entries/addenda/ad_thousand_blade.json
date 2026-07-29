@@ -2,6 +2,7 @@
   "name": "Ad. Blade Of A Thousand",
   "icon": "minecraft:paper",
   "category": "risus:addenda",
+  "advancement": "risus:warcrimes",
   "pages": [
     {
       "type": "patchouli:text",
