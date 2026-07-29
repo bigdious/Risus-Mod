@@ -5,12 +5,15 @@
   "sortnum": 1,
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Crescent Disaster",
+      "link": "$(l:addenda/ad_crescent_disaster)$(f)Addendum",
       "text": "Smithed from an Unawakened Vessel combined with a Blood Feather, the Crescent Disaster is a $(l:weapons/weapon_types)$(c)$(o)Heavy Axe$() that deals a bit less damage, but can be thrown. It will return if enchanted with Loyalty. Throwing the axe can also be an effective way to create a small time window for switching to another weapon."
     },
     {
       "type": "patchouli:smithing",
-      "recipe": "minecraft:unawakened_to_crescent"
+      "recipe": "minecraft:unawakened_to_crescent",
+      "text": "Paranoia and auditory hallucinations are expected consequences of wielding this weapon."
     },
     {
       "type": "patchouli:relations",

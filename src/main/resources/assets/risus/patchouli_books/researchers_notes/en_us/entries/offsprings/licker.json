@@ -4,8 +4,10 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Licker is the beloved version of a Spider. Through the impregnation, the Spider grows additional segments on its legs and because of the internal bodily changes, its abdomen bursts open with a newly formed tongue sticking out. While it can no longer bite, the Licker can use this tongue to lick its target. The saliva on the tongue is a mix of web fluid and some sort of chemical, the combination of"
+      "type": "risus:text",
+      "title": "Licker",
+      "link": "$(l:addenda/ad_licker)$(f)Addendum",
+      "text": "The Licker is the beloved version of a Spider. Through the impregnation, the Spider grows additional segments on its legs and because of the internal bodily changes, its abdomen bursts open with a newly formed tongue sticking out. While it can no longer bite, the Licker can use this tongue to lick its target. The saliva on the tongue is a mix of web fluid with some sort of chemical - this"
     },
     {
       "type": "patchouli:spotlight",
@@ -13,7 +15,7 @@
         "item": "risus:egg_sac"
       },
       "link_recipe": true,
-      "text": "which causes the target to be afflicted with both the Weaving and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop $(l:materials/organic_matter)$(c)$(o)Organic Matter$(), String, Fermented Spider Eye and Egg Sacs, which can be thrown at opponents to release the Baby Spiders."
+      "text": "causing the target to be afflicted with both the Weaving and the Pleasure state. Upon death, the Licker releases all the Baby Spiders incubating in its body and they will attack anything in the proximity. The Licker will also drop $(l:materials/organic_matter)$(c)$(o)Organic Matter$(), String, Fermented Spider Eye and Egg Sacs, which can be thrown at opponents to release the Baby Spiders."
     },
     {
       "type": "patchouli:entity",

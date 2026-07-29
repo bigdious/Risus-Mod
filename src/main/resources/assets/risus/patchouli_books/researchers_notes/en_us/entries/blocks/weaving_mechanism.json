@@ -4,11 +4,10 @@
   "category": "risus:blocks",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:weaving_mechanism"
-      },
-      "link_recipe": true,
+      "type": "risus:spotlight",
+      "item": "risus:weaving_mechanism",
+      "title": "Weaving Mechanism",
+      "link": "$(l:addenda/ad_weaving_mechanism)$(f)Addendum",
       "text": "The Weaving Mechanism is made by using a $(l:materials/memory_core)$(c)$(o)Memory Core$() on a $(l:offsprings/weaver#nest)$(c)$(o)Weaver Nest$() . This mechanism uses the ability of Weavers to collect experience and weave them into a physical medium to turn nearby Experience Orbs into Memory Cores. These cores act exactly the same as the ones harvested from Weavers and can be consumed to gain experience."
     },
     {

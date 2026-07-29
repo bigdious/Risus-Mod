@@ -4,7 +4,9 @@
   "category": "risus:structures",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "link": "$(l:addenda/ad_heart_chamber)$(f)Addendum",
+      "title": "Heart Chambers",
       "text": "Heart Chambers are underground rooms in the Deepslate layer, covered in Tissue and centered around a $(l:blocks/beating_heart)$(c)$(o)Beating Heart$() in the middle. The main chamber features a pool of blood at its bottom and a Lover Spawner. The walkway leads to four additional chambers located at the sides. These rooms can contain various resources and Risus-related creatures."
     },
     {

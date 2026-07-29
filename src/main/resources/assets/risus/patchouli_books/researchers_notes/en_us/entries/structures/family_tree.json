@@ -4,7 +4,9 @@
   "category": "risus:structures",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Family Trees",
+      "link": "$(l:addenda/ad_family_tree)$(f)Addendum",
       "text": "Family Trees are not actual trees. They bear no leaves nor create saplings. The $(l:blocks/bondknot)$(c)$(o)Bondknot$() trunk is nonetheless wood-like and can be used as such. The trees themselves are decorated with $(l:blocks/heart_transplant)$(c)$(o)Heart Transplants$(), Ribcages and $(l:materials/crystallized_bonds)$(c)$(o)Crystallized Bonds$(). The Family Trees primarily form by a strong desire of a family to stay together, especially when grieving."
     },
     {

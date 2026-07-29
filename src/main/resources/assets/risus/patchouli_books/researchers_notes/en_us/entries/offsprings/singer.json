@@ -4,12 +4,14 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Singer is the beloved version of an Enderman. Through the impregnation, the Enderman's body experiences uncontrolled growth: the torso ruptures and forms a mouth, revealing a hollow inside with the center core being a mutated Ender Pearl. Its head increases in size, becoming eight times bigger and splitting the skull. When stimulated, the head opens up, showcasing a brain adorned by "
+      "type": "risus:text",
+      "title": "Singer",
+      "link": "$(l:addenda/ad_singer)$(f)Addendum",
+      "text": "The Singer is the beloved version of an Enderman. Through the impregnation, the Enderman's body experiences uncontrolled growth: the torso ruptures and forms a mouth, revealing a hollow inside with the center core being a mutated Ender Pearl. Its head increases severely in size, splitting the skull. When stimulated, the head opens up, showcasing a brain adorned by an Eye of Ender."
     },
     {
       "type": "patchouli:text",
-      "text": "an Eye of Ender. Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an $(l:materials/echo_pearl)$(c)$(o)Echo Pearl$(), $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and an Eye of Ender."
+      "text": "Following the increase in size, the body becomes too heavy to be held up by the unaffected limbs, therefore Singers are always found sitting. However, they can still teleport. Unlike an Enderman, a Singer is aggravated whenever it spots a person and it will start 'singing'. This does not cause pain; but will cause a headache that induces Nausea and Weakness in the target of the song. Upon death, it can drop an $(l:materials/echo_pearl)$(c)$(o)Echo Pearl$(), $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and an Eye of Ender."
     },
     {
       "type": "patchouli:entity",

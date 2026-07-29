@@ -4,8 +4,10 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Lover is the main way Risus affects non-sentient living creatures. It ignores people and targets creatures such as Creepers or Spiders - even Endermen. Once it touches them with the oozing postules on its body, it forcefully impregnates them with the Risus. This causes a violent reaction, where the victim's body is oftentimes torn open in the process. Drops $(l:materials/lovers_cream)$(c)$(o)Lover's Cream$() when killed."
+      "type": "risus:text",
+      "title": "Lover",
+      "link": "$(l:addenda/ad_lover)$(f)Addendum",
+      "text": "The Lover is the main way Risus affects non-sentient living creatures. It ignores people and targets creatures such as Creepers or Spiders - even Endermen. Once it touches them with the oozing postules on its body, it forcefully impregnates them with the Risus. This causes a violent reaction, where the victim's body is oftentimes torn open in the process. Drops $(l:materials/lovers_cream)$(c)$(o)Lover's Cream$() on death."
     },
     {
       "type": "patchouli:entity",

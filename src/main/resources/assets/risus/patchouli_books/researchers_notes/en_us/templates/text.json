@@ -1,0 +1,39 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "#title",
+      "x": -1,
+      "y": -1,
+      "scale": "1"
+    },
+    {
+      "type": "patchouli:separator",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "x": 0,
+      "y": 22
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/book_inside.png",
+      "width": 52,
+      "height": 20,
+      "u": 460,
+      "v": 0,
+      "texture_width": 512,
+      "x": 65,
+      "y": 140
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#link",
+      "x": 72,
+      "y": 146
+    }
+  ]
+}

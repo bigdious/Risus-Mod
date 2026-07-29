@@ -5,7 +5,8 @@
   "sortnum" : 11,
   "pages": [
     {
-      "type": "risus:alterationtemplate1",
+      "type": "risus:alteration1_ad",
+      "link": "$(l:addenda/ad_bloodwyrm_head)$(f)Addendum",
       "header": "False Bloodwyrm Head",
       "recipe": "risus:alteration/bloodwyrm_head",
       "text": "The Dragon Head commonly found in End Cities can be altered into a False Bloodwyrm Head. This change is primarily visual and offers no specific benefits. To unlock its offensive potential, it has to be combined with a Blood Feather and a Born To Burn in a Smithing Table, transforming it into a False Bloodwyrm Spewer."

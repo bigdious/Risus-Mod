@@ -4,8 +4,10 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. They can be destroyed for a piece or two of $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and their $(l:tools/hand_of_greed)$(c)$(o)Hand Of Greed$()."
+      "type": "risus:text",
+      "title": "Holder",
+      "link": "$(l:addenda/ad_holder)$(f)Addendum",
+      "text": "The Holder is a commonly found critter near Risus structures. They are small and relatively harmless but they come with their own risks. If they aren't holding an object, they will seek out a person and steal the item in their hand, then proceed to run away with it. Hitting the Holder will result in them dropping the held item. They can be destroyed for a piece or two of $(l:materials/organic_matter)$(c)$(o)Organic Matter$() and their $(l:tools/hand_of_greed)$(c)$(o)hand$()."
     },
     {
       "type": "patchouli:entity",

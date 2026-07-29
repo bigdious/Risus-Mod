@@ -4,10 +4,11 @@
   "category": "risus:structures",
   "pages": [
     {
-      "type": "patchouli:spotlight",
+      "type": "risus:spotlight",
       "item": "risus:angel_altar",
-      "link_recipe": true,
-      "text": "Altars are deemed as holy grounds and are most commonly located at high altitudes. At their center there is a divine construct, above which floats a $(l:offsprings/angel)$(c)$(o)Blood Ophanim$(), the weakest type of angel. It will smite down upon all trespassers that come close to the Altar. It should only be approached if the trespasser is equipped with willful weaponry."
+      "title": "Angel Altars",
+      "text": "Altars are deemed as holy grounds and are most commonly located at high altitudes. At their center there is a divine construct, above which floats a $(l:offsprings/angel)$(c)$(o)Blood Ophanim$(), the weakest type of angel. It will smite down all trespassers that come close to the Altar. It should only be approached if the violator is equipped with $(l:materials/memory_core)$(c)$(o)willful weaponry$().",
+      "link": "$(l:addenda/ad_angel_altar)$(f)Addendum"
     },
     {
       "type": "patchouli:image",

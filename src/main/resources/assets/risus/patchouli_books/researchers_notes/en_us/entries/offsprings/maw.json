@@ -4,7 +4,9 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Gorger",
+      "link": "$(l:addenda/ad_gorger)$(f)Addendum",
       "text": "The Gorger is an immobile creature that uses a sinkhole trap to ambush prey and can be found pretty much everywhere, even in the sparse expanse of the End. The trap is a simple 3x3 hole, around a dozen blocks deep with the Gorger at the bottom. The top is covered by $(l:blocks/mirage_blocks)$(c)$(o)Mirage Blocks$() that look like the surrounding environment but are not solid and can be fallen through."
     },
     {

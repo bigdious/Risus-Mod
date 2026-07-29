@@ -5,16 +5,15 @@
   "sortnum" : 9,
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": {
-        "item": "risus:thousand_blade"
-      },
-      "link_recipe": true,
-      "text": "The Blade Of A Thousand is a $(l:weapons/weapon_types)$(c)$(o)War Sword$() made from the blood of a thousand people. By extracting the iron from all that blood, a blunt iron blade of great size is created that can conjure a sharp aura of blood around it. Due to this nature, it's possible to also shoot out this blood as a slash by charging up an attack. This process"
+      "type": "risus:spotlight",
+      "item": "risus:thousand_blade",
+      "title": "Blade Of A Thousand",
+      "link": "$(l:addenda/ad_thousand_blade)$(f)Addendum",
+      "text": "The Blade Of A Thousand is a $(l:weapons/weapon_types)$(c)$(o)War Sword$() made from the blood of a thousand people. By extracting the iron from all that blood, a blunt iron blade of great size is created that can conjure a sharp aura of blood around it. Due to this nature, it's possible to also shoot out this blood as a slash by charging up an attack. This "
     },
     {
       "type": "patchouli:text",
-      "text": "will consume a small amount of the blood and the blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile at least, but nor Flame nor Fire aspect will work. To create of this sword, a Crucified Heart is needed, which requires several items: Coagulated Blood, Heart Transplants, a Beating Heart and a Concentration Core."
+      "text": "process will consume a small amount of the blood and the blade will attempt to replenish this loss with the user's own blood. Additionally, the enchantments of Piercing, Power and Multishot will take effect on the projectile at least, but nor Flame nor Fire aspect will work. To create this sword, a Crucified Heart is needed, which requires several items: Coagulated Blood, Heart Transplants, a Beating Heart and a Concentration Core."
     },
     {
       "type": "patchouli:crafting",

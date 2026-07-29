@@ -4,8 +4,10 @@
   "category": "risus:blocks",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Cinderglee is a flame that burns with the very essence of Risus and can be created by setting Remains on fire. Though, saying that it 'burns' is not entirely correct. It does not burn physical matter for fuel. The only thing it can burn is the 'existence' of creatures. Whenever one steps in it, they experience Existential Burn, that - in practice - greatly decreases their max vitality."
+      "type": "risus:text",
+      "title": "Cinderglee",
+      "link": "$(l:addenda/ad_cinderglee)$(f)Addendum",
+      "text": "Cinderglee is a flame that burns with the very essence of Risus and can be created by setting Remains on fire. Though, saying that it 'burns' is not entirely correct. It does not burn physical matter for fuel. The only thing it can burn is the 'existence' of creatures. Whenever one steps in it, they experience Existential Burn, which greatly decreases their max vitality."
     },
     {
       "type": "patchouli:crafting",

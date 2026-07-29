@@ -4,7 +4,9 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Stalker",
+      "link": "$(l:addenda/ad_stalker)$(f)Addendum",
       "text": "The Stalker is the beloved version of a Creeper. Through the impregnation, the Creeper's body splits vertically and a giant eye grows forth from that rupture. This process also results in losing its ability to explode, so it will just follow around its target. Proximity to a Stalker is a memetic hazard to people and it causes a temporary loss of vision. It can drop a $(l:materials/stalker_eye)$(c)$(o)Stalker Eye$() when killed."
     },
     {

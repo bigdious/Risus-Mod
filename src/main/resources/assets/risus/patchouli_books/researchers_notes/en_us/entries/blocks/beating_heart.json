@@ -4,8 +4,10 @@
   "category": "risus:blocks",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Beating Hearts are a relatively rare block, only found within $(l:structures/heart_chambers)$(c)$(o)Heart Chambers$(). Depending on their type, they beat on varied intervals and apply a health related effect to all creatures and people in their radius. The type can be changed by using the correct item on it: Ghast Tear for $(d)Regeneration$(), $(l:blocks/heart_transplant)$(c)$(o)Heart Transplant$() for $(c)Health Boost$(), Enchanted Golden Apple for $(6)Absorption$(), $(l:blocks/blood)$(c)$(o)Blood Bucket$() for $(4)Bloodclogged$(),"
+      "type": "risus:text",
+      "title": "Beating Heart",
+      "link": "$(l:addenda/ad_beating_heart)$(f)Addendum",
+      "text": "Beating Hearts are a relatively rare block, only found within $(l:structures/heart_chambers)$(c)$(o)Heart Chambers$(). Depending on their type, they beat on varied intervals and apply a health related effect to all creatures and people in their radius. The type can be changed by using the correct item on it: Ghast Tear for $(d)Regeneration$(), $(l:blocks/heart_transplant)$(c)$(o)Heart Transplant$() for $(c)Health Boost$(), Enchanted Golden Apple for $(6)Absorption$(), $(l:blocks/blood)$(c)$(o)Blood Bucket$() for "
     },
     {
       "type": "patchouli:spotlight",
@@ -13,7 +15,7 @@
         "item": "risus:beating_heart"
       },
       "link_recipe": true,
-      "text": "Poisonous Potato for $(2)Poison$() and Wither Skull for $(8)Wither$(). When harvesting the heart, using a Silk Touch tool is necessary to keep its type, otherwise it returns to its default, empty state. Wariness is important when using one, as the heart's effect will apply equally to both enemies and allies."
+      "text": "$(4)Bloodclogged$(), Poisonous Potato for $(2)Poison$() and Wither Skull for $(8)Wither$(). When harvesting the heart, using a Silk Touch tool is necessary to keep its type, otherwise it returns to its default, empty state. Wariness is important when using one, as the heart's effect will apply equally to both enemies and allies."
     },
     {
       "type": "patchouli:relations",

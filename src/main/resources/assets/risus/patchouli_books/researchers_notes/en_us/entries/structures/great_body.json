@@ -4,7 +4,9 @@
   "category": "risus:structures",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "link": "$(l:addenda/ad_great_body)$(f)Addendum",
+      "title": "Great Bodies",
       "text": "Great Bodies are the primary $(l:blocks/weaver_nest)$(c)$(o)nesting$() places of $(l:offsprings/weaver)$(c)$(o)Weavers$(). They are formed underground and can be found in three main stages of formation: skeletal, muscly, and pseudo-formed. The Great Body resembles an upside down human lacking limbs and can most easily be found by the end of their spine that sticks out at the surface, from which it's possible to descend down into the skull."
     },
     {

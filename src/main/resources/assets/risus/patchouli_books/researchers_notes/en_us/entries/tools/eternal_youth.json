@@ -4,8 +4,10 @@
   "category": "risus:tools",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Eternal Youth is a consumable item that - quite simply put - imbues the animal it's used on with a never ending state of immortality as a youngling. If the animal in question is not currently young, it will be reverted to its youth. The immortality given is near absolute; the few ways of killing such an animal is either to lose it to the void or to use a second Eternal Youth on them."
+      "type": "risus:text",
+      "title": "Eternal Youth",
+      "link": "$(l:addenda/ad_eternal_youth)$(f)Addendum",
+      "text": "The Eternal Youth is a consumable item that - quite simply put - imbues the animal it's used on with a never ending state of immortality as a youngling. If the animal in question is not currently young, it will be reverted to its youth. The immortality given is near absolute; the few ways of killing such an animal is either with the Void or using a second Eternal Youth on them."
     },
     {
       "type": "patchouli:crafting",

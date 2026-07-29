@@ -4,8 +4,10 @@
   "category": "risus:tools",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "$(l:materials/memory_core)$(c)$(o)Concentration Cores$() aren't only useful for weaponry - instead, they can be used more creatively too. The Litter is one such example. It's a critter that will follow its user around, leaving behind Light Droppings whenever in dark areas. It can also be picked up. An Inhabiting Ritual is required to create it, which needs a block that constantly emits light, 12 Linear and 4 Curved Ritual Blocks."
+      "type": "risus:text",
+      "title": "Litter",
+      "link": "$(l:addenda/ad_litter)$(f)Addendum",
+      "text": "$(l:materials/memory_core)$(c)$(o)Concentration Cores$() aren't only useful for weaponry - instead, they can be used more creatively too. The Litter is one such example. It's a critter that will follow its user around, leaving behind Light Droppings whenever in dark areas. It can also be picked up. An Inhabiting Ritual is required to create it, which needs a block that emits light, 12 Linear and 4 Curved Ritual Blocks."
     },
     {
       "type": "patchouli:multiblock",

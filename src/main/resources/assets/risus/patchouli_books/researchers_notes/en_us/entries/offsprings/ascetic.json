@@ -4,7 +4,9 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Ascetic",
+      "link": "$(l:addenda/ad_ascetic)$(f)Addendum",
       "text": "Villagers who practice the Ascetic profession trade various Risus materials. They also sell maps to any Risus related structure they have come across or gained information about. They may even be found outside villages, near $(l:structures/family_tree)$(c)$(o)Family Trees$(). They use a $(l:blocks/heart_transplant)$(c)$(o)Heart Transplant$() as their workstation for research."
     },
     {

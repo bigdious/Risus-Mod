@@ -4,7 +4,9 @@
   "category": "risus:armors",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Skin Armor",
+      "link": "$(l:addenda/ad_skin_armor)$(f)Addendum",
       "text": "Skin armor can be attained by altering the individual pieces of a Leather armor set. The amount of protection it gives is even lower than leather. Instead, each piece increases the health of the wearer, with a full set effectively doubling their vitality. Enchanting Skin armor is possible, which makes it a viable alternative to even strong armor sets."
     },
     {

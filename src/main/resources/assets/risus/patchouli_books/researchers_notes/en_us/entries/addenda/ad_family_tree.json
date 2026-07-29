@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Addendum for $(l:structures/family_tree)$(c)$(o)Family Trees$().$(br)$(br)I am still unsure how I truly feel about this plague. On one side, its grotesque look speaks for itself - it's an absolute abomination on existence, something unquestionably unnatural. It basically destroys the current version of whatever it touches and makes it part of the plague. On the other hand... I still can't forget my father's"
+      "text": "Addendum for $(l:structures/family_tree)$(c)$(o)Family Trees$().$(br)$(br)I am still unsure how I truly feel about this plague. On one hand, its grotesque look speaks for itself - it's an absolute abomination on existence, something unquestionably unnatural. It basically destroys the current version of whatever it touches and makes it part of the plague. On the other hand... I still can't forget my father's"
     },
     {
       "type": "patchouli:text",

@@ -1,0 +1,57 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "#title",
+      "x": -1,
+      "y": -1,
+      "scale": "1"
+    },
+    {
+      "type": "patchouli:separator",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#item",
+      "y": 21,
+      "x": 50,
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/crafting.png",
+      "width": 60,
+      "height": 24,
+      "u": 3,
+      "v": 103,
+      "texture_width": 128,
+      "y": 17,
+      "x": 28
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text",
+      "x": 0,
+      "y": 41
+    },
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/book_inside.png",
+      "width": 52,
+      "height": 20,
+      "u": 460,
+      "v": 0,
+      "texture_width": 512,
+      "x": 65,
+      "y": 140
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#link",
+      "x": 72,
+      "y": 146
+    }
+  ]
+}

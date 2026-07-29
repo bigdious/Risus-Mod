@@ -4,7 +4,9 @@
   "category": "risus:offsprings",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "risus:text",
+      "title": "Hex",
+      "link": "$(l:addenda/ad_hex)$(f)Addendum",
       "text": "The Hex is the beloved version of a Vex. Through the impregnation, the Vex's very being transforms, from a near intangible spirit-like lifeform, to one made up of coagulating blood. This new, semi-stable form allows the Hex to survive for a near indefinite duration, unlike the fleeting nature of a Vex. However, this physical body results in the loss of the ability to fly through terrain. "
     },
     {

@@ -4,14 +4,15 @@
   "category": "risus:tools",
   "pages": [
     {
-      "type": "risus:alterationtemplate1",
+      "type": "risus:alteration1_ad",
       "header": "Totem of Unyielding",
       "recipe": "risus:alteration/totem_of_unyielding",
-      "text": "The Totem of Undying can be altered into a Totem of Unyielding. The resulting totem acts similarly to the original, where it activates during the user's death. However, the unyielding one doesn't fully prevent death, instead it delays it by ten seconds. This Destined Death cannot be avoided, not even with an Undying totem, but it can be "
+      "link": "$(l:addenda/ad_totem_of_unyielding)$(f)Addendum",
+      "text": "The Totem of Undying can be altered into a Totem of Unyielding. The resulting totem acts similarly to the original, where it activates during the user's death. However, the unyielding one doesn't fully prevent death, instead it delays it by ten seconds. This Destined Death cannot be avoided, not even with an Undying totem, "
     },
     {
       "type": "patchouli:text",
-      "text": "further delayed by continuous uses of Unyielding totems. During those ten seconds the user also experiences a state of near invincibility, on top of increased physical stength and speed. In short, the user becomes a dying berserker. "
+      "text": "but it can be further delayed by continuous uses of Unyielding totems. During those ten seconds, the user also experiences a state of near invincibility, on top of increased physical strength and speed. In short, the user becomes a berserker on the edge of death. "
     },
     {
       "type": "patchouli:relations",

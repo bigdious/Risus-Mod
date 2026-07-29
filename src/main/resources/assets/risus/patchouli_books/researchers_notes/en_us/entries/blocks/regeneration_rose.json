@@ -4,10 +4,11 @@
   "category": "risus:blocks",
   "pages": [
     {
-      "type": "risus:alterationtemplate1",
+      "type": "risus:alteration1_ad",
       "header": "Regeneration Rose",
       "recipe": "risus:alteration/regen_rose",
-      "text": "By altering a Wither Rose, a Regeneration Rose can be obtained. As its name implies, it applies Regeneration to any creature that touches it. The flower can also be crafted into Rose Petals, which can be consumed for some quick Regeneration or used to make $(l:materials/purifying_paste)$(c)$(o)Purifying Paste$(). The petals can also be turned into White Dye or grinded down into Sugar."
+      "link": "$(l:addenda/ad_regen_rose)$(f)Addendum",
+      "text": "By altering a Wither Rose, a Regeneration Rose can be obtained. As its name implies, it applies Regeneration to any creature that touches it. The flower can also be crafted into Rose Petals, which can be consumed for some quick Regeneration or used to make $(l:materials/purifying_paste)$(c)$(o)Purifying Paste$(). The petals can also be turned into White Dye or Sugar."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,32 @@
+{
+  "include": [
+    {
+      "template": "risus:alterationtemplate1",
+      "as": "al",
+      "using": {
+        "recipe": "#recipe",
+        "header": "#header",
+        "text": "#text"
+      }
+    }
+  ],
+  "components": [
+    {
+      "type": "patchouli:image",
+      "image": "risus:textures/gui/book_inside.png",
+      "width": 52,
+      "height": 20,
+      "u": 460,
+      "v": 0,
+      "texture_width": 512,
+      "x": 65,
+      "y": 140
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#link",
+      "x": 72,
+      "y": 146
+    }
+  ]
+}

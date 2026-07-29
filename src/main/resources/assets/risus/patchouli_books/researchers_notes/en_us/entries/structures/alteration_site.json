@@ -4,8 +4,10 @@
   "category": "risus:structures",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "These structures are centered around one or more Alteration Catalysts and are oftentimes built in a way to express the nature - and what some may call the 'beauty' - of the Risus. They can feature patches of remains, carved symbols, gore and ritual circles. At their center is an $(l:blocks/alteration_catalyst)$(c)$(o)Alteration Catalyst$() which grants someone the ability to imbue materials with the essence of the Risus."
+      "type": "risus:text",
+      "title": "Alteration Sites",
+      "text": "These structures are centered around one or more Alteration Catalysts and are oftentimes built in a way to express the nature - and what some may call the 'beauty' - of the Risus. They can feature patches of remains, carved symbols, gore and ritual circles. At their center is an $(l:blocks/alteration_catalyst)$(c)$(o)Alteration Catalyst$() which grants someone the ability to imbue materials with the essence of the Risus.",
+      "link": "$(l:addenda/ad_alteration_site)$(f)Addendum"
     },
     {
       "type": "patchouli:image",
