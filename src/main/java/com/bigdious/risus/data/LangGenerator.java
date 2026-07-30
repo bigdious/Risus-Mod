@@ -568,6 +568,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.LITTER, "Litter");
 		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
+		this.addEntityType(RisusEntities.THROWN_BOOMSTICK, "Thrown Boomstick");
 
 		this.add("entity.minecraft.villager.risus.ascetic", "Ascetic");
 

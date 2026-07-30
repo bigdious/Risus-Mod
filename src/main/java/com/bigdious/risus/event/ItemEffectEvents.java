@@ -79,7 +79,7 @@ public class ItemEffectEvents {
 		}
 	}
 
-	public static void boomstickLogic(ItemStack boomstick, LivingEntity attacker, LivingEntity explodingEntity) {
+	public static void boomstickLogic(ItemStack boomstick, LivingEntity attacker, Entity explodingEntity) {
 		int powerRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.POWER)) / 2;
 		if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
 			int burstRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST));

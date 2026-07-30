@@ -1,11 +1,11 @@
-// 1.21.1	2026-05-04T21:03:13.9843375	Tags for minecraft:entity_type mod id risus
+// 1.21.1	2026-07-30T09:26:55.3181507	Tags for minecraft:entity_type mod id risus
 2f4b01121522a65f3e8ebd0601757165181873da data/minecraft/tags/entity_type/arthropod.json
 a8bd55836f6d3162adf373734967dfa95c2ea4d5 data/minecraft/tags/entity_type/can_breathe_under_water.json
 b4d32ec6e70edd041b17b879bd92cd93b581b562 data/minecraft/tags/entity_type/fall_damage_immune.json
 6299338c9d1d5c8ff7c552b3c15b17f9c82cde89 data/minecraft/tags/entity_type/frog_food.json
 0aabe91c491a8083165941173c6a7307b1ffe3b6 data/minecraft/tags/entity_type/immune_to_infested.json
 c0d2a6df1c5550584df1d562864fe1d4c98d3f98 data/minecraft/tags/entity_type/immune_to_oozing.json
-93b1c71f19980ea3b288d1721317c00e9ba40e2c data/minecraft/tags/entity_type/impact_projectiles.json
+99a6f1137e5fbda27095e35c218a91a35a8a344a data/minecraft/tags/entity_type/impact_projectiles.json
 a02a5e1ca4d25f24385f3dc8fd3f4a2208173b58 data/minecraft/tags/entity_type/not_scary_for_pufferfish.json
 413e715f3cab3ad4955d0b0addf345fbdcb35cb8 data/minecraft/tags/entity_type/redirectable_projectile.json
 5aaaa22307c0351daa5cd2e96f23a03707070cf9 data/risus/tags/entity_type/beloved.json
@@ -20,5 +20,5 @@ c6328b4935e4975b2fea1156b6537d67b38dca38 data/risus/tags/entity_type/offsprings_
 f3fb71adae613c47cce60bbcc23822f0a6c57347 data/risus/tags/entity_type/people.json
 00e45344a8246a59696ee296a43612ae52e9a6f7 data/risus/tags/entity_type/sensitive_to_hunters.json
 55ba4e50b806aacef9fd467476191218dec02084 data/risus/tags/entity_type/small_maritime_snare_pool.json
-9b47585d99573786d752992d0578918c1a1dac9a data/risus/tags/entity_type/trident_like_projectiles.json
+7872be95949d49ab004680745f917296bb34ab53 data/risus/tags/entity_type/trident_like_projectiles.json
 b0a1184384892236e2048a8c3c4b6d068f1eea9f data/risus/tags/entity_type/youth_banned.json

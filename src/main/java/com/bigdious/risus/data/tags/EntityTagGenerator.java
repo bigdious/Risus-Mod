@@ -124,7 +124,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 		tag(RisusTags.Entities.TRIDENT_LIKE_PROJECTILES)
 			.add(
 				EntityType.TRIDENT,
-				RisusEntities.THROWN_AXE.get()
+				RisusEntities.THROWN_AXE.get(),
+				RisusEntities.THROWN_BOOMSTICK.get()
 			)
 		;
 
@@ -155,7 +156,8 @@ public class EntityTagGenerator extends EntityTypeTagsProvider {
 
 		tag(EntityTypeTags.IMPACT_PROJECTILES)
 			.add(
-				RisusEntities.THROWN_AXE.get()
+				RisusEntities.THROWN_AXE.get(),
+				RisusEntities.THROWN_BOOMSTICK.get()
 			)
 		;
 

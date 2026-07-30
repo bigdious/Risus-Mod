@@ -284,6 +284,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
+		event.registerLayerDefinition(RisusModelLayers.THROWN_BOOMSTICK, ThrownBoomstickModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODSLASH, BloodSlashModel::create);
 		event.registerLayerDefinition(RisusModelLayers.WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.WEAVER_CORE, WeaverModel::create);
@@ -346,6 +347,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);
+		event.registerEntityRenderer(RisusEntities.THROWN_BOOMSTICK.get(), ThrownBoomstickRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODSLASH.get(), BloodSlashRenderer::new);
 		event.registerEntityRenderer(RisusEntities.ENDLESS_PEARL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.BLOODWYRM_BREATH.get(), BloodwyrmBreathEntityRenderer::new);

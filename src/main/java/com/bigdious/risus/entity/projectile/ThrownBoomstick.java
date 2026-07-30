@@ -21,12 +21,14 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
@@ -38,6 +40,7 @@ public class ThrownBoomstick extends AbstractArrow {
 	private static final EntityDataAccessor<Byte> ID_POWER = SynchedEntityData.defineId(ThrownBoomstick.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_WINDBURST = SynchedEntityData.defineId(ThrownBoomstick.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Byte> ID_FLAME = SynchedEntityData.defineId(ThrownBoomstick.class, EntityDataSerializers.BYTE);
+	private static final EntityDataAccessor<Boolean> IS_DRUMSTICK = SynchedEntityData.defineId(ThrownBoomstick.class, EntityDataSerializers.BOOLEAN);
 
 	private boolean dealtDamage;
 	public int clientSideReturnBoomstickTickCount;
@@ -48,6 +51,7 @@ public class ThrownBoomstick extends AbstractArrow {
 
 	public ThrownBoomstick(Level level, LivingEntity owner, ItemStack pPickupItemStack) {
 		super(RisusEntities.THROWN_BOOMSTICK.get(), owner, level, pPickupItemStack, null);
+		this.entityData.set(IS_DRUMSTICK, pPickupItemStack.getHoverName().getString().equalsIgnoreCase("drumstick"));
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(pPickupItemStack));
 		this.entityData.set(ID_POWER, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.POWER))));
 		this.entityData.set(ID_WINDBURST, (byte) pPickupItemStack.getEnchantmentLevel((level.registryAccess().holderOrThrow(Enchantments.WIND_BURST))));
@@ -94,7 +98,6 @@ public class ThrownBoomstick extends AbstractArrow {
 				if (this.clientSideReturnBoomstickTickCount == 0) {
 					this.playSound(RisusSoundEvents.CRESCENT_DISASTER_RETURN.get(), 10.0F, 1.0F);
 				}
-
 				++this.clientSideReturnBoomstickTickCount;
 			}
 		}
@@ -110,6 +113,7 @@ public class ThrownBoomstick extends AbstractArrow {
 	public boolean isFoil() {
 		return this.entityData.get(ID_FOIL);
 	}
+	public boolean isDrumstick() {return this.entityData.get(IS_DRUMSTICK);}
 
 	@Nullable
 	@Override
@@ -121,23 +125,19 @@ public class ThrownBoomstick extends AbstractArrow {
 	protected void onHitEntity(EntityHitResult result) {
 		Entity entity = result.getEntity();
 		Entity entity1 = this.getOwner();
-		DamageSource damagesource = this.damageSources().source(RisusDamageTypes.AXED, entity1 == null ? this : entity1);
 
-		this.dealtDamage = true;
 		if (entity.getType() == EntityType.ENDERMAN) {
 			return;
 		}
 
-		if (entity.hurtMarked && entity instanceof LivingEntity livingEntity) {
-			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), livingEntity, livingEntity);
-				if (entity1 instanceof LivingEntity) {
-					this.doPostHurtEffects(livingEntity);
-				}
-				this.doPostHurtEffects(livingEntity);
+		if (entity instanceof LivingEntity livingEntity && livingEntity.level() instanceof ServerLevel && this.level() instanceof ServerLevel) {
+			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), livingEntity, this);
+			this.doPostHurtEffects(livingEntity);
+			this.shootFromRotation(entity1, (float) this.getRandom().nextIntBetweenInclusive(180, 360), (float) this.getRandom().nextIntBetweenInclusive(0, 360), 0.0F, 1F, 1.0F);
 
 		}
 
-		this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
+//		this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
 		float f1 = 1.0F;
 
 		this.playSound(RisusSoundEvents.CRESCENT_DISASTER_HIT.get(), f1, 1.0F);
@@ -147,12 +147,9 @@ public class ThrownBoomstick extends AbstractArrow {
 	protected boolean tryPickup(Player player) {
 		boolean ret = super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
 
-//		if (ret) {
-//			if (this.random.nextInt(100) < 1) {
-//				//update below to numbers of whispers, check lang file
-//				player.displayClientMessage(Component.translatable("entity.risus.thrown_axe.message"+this.random.nextInt(24)).setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
-//			}
-//		}
+		if (ret & this.entityData.get(ID_LOYALTY) > 0 && this.ownedBy(player)) {
+			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), player, player);
+		}
 		return ret;
 	}
 
@@ -174,6 +171,7 @@ public class ThrownBoomstick extends AbstractArrow {
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
 		super.defineSynchedData(pBuilder);
+		pBuilder.define(IS_DRUMSTICK, false);
 		pBuilder.define(ID_LOYALTY, (byte) 0);
 		pBuilder.define(ID_POWER, (byte) 0);
 		pBuilder.define(ID_WINDBURST, (byte) 0);
