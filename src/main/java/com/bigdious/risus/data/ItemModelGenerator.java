@@ -374,7 +374,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.override().predicate(Risus.prefix("charged"), 1).model(crescentCharged).end()
 			.override().predicate(Risus.prefix("charged"), 1).predicate(Risus.prefix("croissant"), 1).model(croissantCharged).end();
 
-		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick");
+		var drumstick = handheldItem(RisusItems.BOOMSTICK, "_named", getExistingFile(Risus.prefix("item/drumstick_held")), Risus.prefix("item/drumstick"), Risus.prefix("item/drumstick_item"), "drumstick");
+		handheldItem(RisusItems.BOOMSTICK, getExistingFile(Risus.prefix("item/boomstick_held")), Risus.prefix("item/boomstick"), Risus.prefix("item/boomstick_item"), "boomstick")
+			.override().predicate(Risus.prefix("drumstick"), 1).model(drumstick).end();
 
 		var noAnimScythe = handheldItem(RisusItems.SCYTHE,"_noanim", withExistingParent("noanim_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
 		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture")

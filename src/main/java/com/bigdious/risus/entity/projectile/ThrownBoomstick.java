@@ -15,6 +15,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -69,6 +70,10 @@ public class ThrownBoomstick extends AbstractArrow {
 	protected ItemStack getDefaultPickupItem() {
 		return new ItemStack(RisusItems.BOOMSTICK.get());
 	}
+	@Override
+	public boolean displayFireAnimation() {
+		return this.entityData.get(ID_FLAME) > 0 ;
+	}
 
 	@Override
 	public void tick() {
@@ -96,7 +101,7 @@ public class ThrownBoomstick extends AbstractArrow {
 				double d0 = 0.05D * (double) i;
 				this.setDeltaMovement(this.getDeltaMovement().scale(0.95D).add(vec3.normalize().scale(d0)));
 				if (this.clientSideReturnBoomstickTickCount == 0) {
-					this.playSound(RisusSoundEvents.CRESCENT_DISASTER_RETURN.get(), 10.0F, 1.0F);
+					this.playSound(RisusSoundEvents.BOOMSTICK_RETURN.get(), 10.0F, 1.0F);
 				}
 				++this.clientSideReturnBoomstickTickCount;
 			}
@@ -132,15 +137,16 @@ public class ThrownBoomstick extends AbstractArrow {
 
 		if (entity instanceof LivingEntity livingEntity && livingEntity.level() instanceof ServerLevel && this.level() instanceof ServerLevel) {
 			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), livingEntity, this);
+			if (this.isDrumstick()) {
+
+			}
 			this.doPostHurtEffects(livingEntity);
 			this.shootFromRotation(entity1, (float) this.getRandom().nextIntBetweenInclusive(180, 360), (float) this.getRandom().nextIntBetweenInclusive(0, 360), 0.0F, 1F, 1.0F);
 
+			this.playSound(SoundEvents.CHICKEN_HURT, 1.5F, 1.0F);
 		}
 
-//		this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
 		float f1 = 1.0F;
-
-		this.playSound(RisusSoundEvents.CRESCENT_DISASTER_HIT.get(), f1, 1.0F);
 	}
 
 	@Override
@@ -156,7 +162,7 @@ public class ThrownBoomstick extends AbstractArrow {
 
 	@Override
 	protected SoundEvent getDefaultHitGroundSoundEvent() {
-		return RisusSoundEvents.CRESCENT_DISASTER_HIT_GROUND.get();
+		return RisusSoundEvents.BOOMSTICK_HIT_GROUND.get();
 	}
 
 	@Override
@@ -188,6 +194,8 @@ public class ThrownBoomstick extends AbstractArrow {
 		this.entityData.set(ID_POWER, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.POWER))));
 		this.entityData.set(ID_WINDBURST, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST))));
 		this.entityData.set(ID_FLAME, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.FLAME))));
+		this.entityData.set(ID_FOIL, this.getPickupItemStackOrigin().hasFoil());
+		this.entityData.set(IS_DRUMSTICK, this.getPickupItemStackOrigin().getHoverName().getString().equalsIgnoreCase("drumstick"));
 	}
 
 	@Override
@@ -196,9 +204,12 @@ public class ThrownBoomstick extends AbstractArrow {
 		tag.putBoolean("DealtDamage", this.dealtDamage);
 	}
 
-	//let's not have it despawn
 	@Override
 	public void tickDespawn() {
+		int i = this.entityData.get(ID_LOYALTY);
+		if (this.pickup != Pickup.ALLOWED || i <= 0) {
+			super.tickDespawn();
+		}
 	}
 
 	@Override

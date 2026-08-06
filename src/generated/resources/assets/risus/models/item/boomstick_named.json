@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "risus:item/drumstick_item"
+    }
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "firstperson_lefthand": {
+      "parent": "risus:item/drumstick_held",
+      "textures": {
+        "drumstick": "risus:item/drumstick"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "risus:item/drumstick_held",
+      "textures": {
+        "drumstick": "risus:item/drumstick"
+      }
+    },
+    "head": {
+      "parent": "risus:item/drumstick_held",
+      "textures": {
+        "drumstick": "risus:item/drumstick"
+      }
+    },
+    "thirdperson_lefthand": {
+      "parent": "risus:item/drumstick_held",
+      "textures": {
+        "drumstick": "risus:item/drumstick"
+      }
+    },
+    "thirdperson_righthand": {
+      "parent": "risus:item/drumstick_held",
+      "textures": {
+        "drumstick": "risus:item/drumstick"
+      }
+    }
+  }
+}

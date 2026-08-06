@@ -113,6 +113,24 @@
     ],
     "subtitle": "subtitles.risus.entity.blood_slash.whoosh"
   },
+  "entity.boomstick.hit_ground": {
+    "sounds": [
+      "risus:entity/boomstick/hit_ground"
+    ],
+    "subtitle": "subtitles.risus.entity.boomstick.hit_ground"
+  },
+  "entity.boomstick.return": {
+    "sounds": [
+      "risus:entity/boomstick/return"
+    ],
+    "subtitle": "subtitles.risus.entity.boomstick.return"
+  },
+  "entity.boomstick.throw": {
+    "sounds": [
+      "risus:entity/boomstick/throw"
+    ],
+    "subtitle": "subtitles.risus.entity.boomstick.throw"
+  },
   "entity.crescent_disaster.hit": {
     "sounds": [
       {

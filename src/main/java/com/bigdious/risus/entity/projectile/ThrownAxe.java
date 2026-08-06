@@ -232,6 +232,8 @@ public class ThrownAxe extends AbstractArrow {
 		this.entityData.set(ID_SMITE, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.SMITE))));
 		this.entityData.set(ID_ARTHROPODS, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.BANE_OF_ARTHROPODS))));
 		this.entityData.set(ID_FIRE_ASPECT, (byte) this.getPickupItemStackOrigin().getEnchantmentLevel((this.level().registryAccess().holderOrThrow(Enchantments.FIRE_ASPECT))));
+		this.entityData.set(ID_FOIL, this.getPickupItemStackOrigin().hasFoil());
+		this.entityData.set(IS_CROISSANT, this.getPickupItemStackOrigin().getHoverName().getString().equalsIgnoreCase("croissant disaster"));
 	}
 
 	@Override
@@ -240,9 +242,12 @@ public class ThrownAxe extends AbstractArrow {
 		tag.putBoolean("DealtDamage", this.dealtDamage);
 	}
 
-	//let's not have it despawn
 	@Override
 	public void tickDespawn() {
+		int i = this.entityData.get(ID_LOYALTY);
+		if (this.pickup != Pickup.ALLOWED || i <= 0) {
+			super.tickDespawn();
+		}
 	}
 
 	@Override

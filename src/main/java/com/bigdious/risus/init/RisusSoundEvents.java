@@ -45,6 +45,9 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_HIT = register("entity.crescent_disaster.hit");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_HIT_GROUND = register("entity.crescent_disaster.hit_ground");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_RETURN = register("entity.crescent_disaster.return");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BOOMSTICK_RETURN = register("entity.boomstick.return");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BOOMSTICK_THROW = register("entity.boomstick.throw");
+	public static final DeferredHolder<SoundEvent, SoundEvent> BOOMSTICK_HIT_GROUND = register("entity.boomstick.hit_ground");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CRESCENT_DISASTER_THROW = register("entity.crescent_disaster.throw");
 	public static final DeferredHolder<SoundEvent, SoundEvent> BLOOD_SLASH_WHOOSH = register("entity.blood_slash.whoosh");
 	public static final DeferredHolder<SoundEvent, SoundEvent> CHEEKY_LAUGH = register("entity.holder.cheeky_laugh");

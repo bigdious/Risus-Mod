@@ -2,6 +2,7 @@ package com.bigdious.risus.event;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.ThrownAxe;
+import com.bigdious.risus.entity.projectile.ThrownBoomstick;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.util.RisusItemStackUtil;
 import com.bigdious.risus.util.ServerParticleUtils;
@@ -269,6 +270,19 @@ public class ExecrationEvents {
 				if (axe.level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 5; ++i) {
 						serverLevel.sendParticles(ParticleTypes.CRIT, axe.getRandomX(1), axe.getRandomY(), axe.getRandomZ(1F), 1, 0.0F, 0.0F, 0.0F, 0.1);
+					}
+				}
+			}
+		}
+		if ((event.getEntity() instanceof ThrownBoomstick boomstick && boomstick.pickup == AbstractArrow.Pickup.ALLOWED)) {
+			boomstick.life = -10000000;
+			if (boomstick.getPickupItemStackOrigin().has(DataComponents.ENCHANTMENTS) && boomstick.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE)) > 0) {
+				float strength = boomstick.getPickupItemStackOrigin().get(DataComponents.ENCHANTMENTS).getLevel(event.getEntity().registryAccess().holderOrThrow(Execrations.DEFIANCE));
+				boomstick.setDeltaMovement(boomstick.getDeltaMovement().scale(1+strength*0.20));
+				boomstick.setGlowingTag(true);
+				if (boomstick.level() instanceof ServerLevel serverLevel) {
+					for (int i = 0; i < 5; ++i) {
+						serverLevel.sendParticles(ParticleTypes.CRIT, boomstick.getRandomX(1), boomstick.getRandomY(), boomstick.getRandomZ(1F), 1, 0.0F, 0.0F, 0.0F, 0.1);
 					}
 				}
 			}

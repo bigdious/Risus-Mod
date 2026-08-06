@@ -71,7 +71,7 @@ public class BoomstickItem extends Item {
 			int i = this.getUseDuration(stack, entity) - useTicks;
 			if (i >= 10) {
 				Holder<SoundEvent> holder = EnchantmentHelper.pickHighestLevel(stack, EnchantmentEffectComponents.TRIDENT_SOUND)
-					.orElse(RisusSoundEvents.CRESCENT_DISASTER_THROW);
+					.orElse(RisusSoundEvents.BOOMSTICK_THROW);
 				if (!level.isClientSide()) {
 					stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
 					ThrownBoomstick boomstick = new ThrownBoomstick(level, player, stack);

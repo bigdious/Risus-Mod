@@ -28,6 +28,9 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.CHEEKY_LAUGH, "entity/holder/cheeky_laugh", 1, "Holder laughs cheekily");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.TOLLING_BELL, "entity/ophanim/tolling_bell", 1, "Heaven's Gaze sharpens");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.GORGER_BITE, "entity/gorger/bite", 1, "Gorger crushes");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.BOOMSTICK_RETURN, "entity/boomstick/return", 1, "Boomstick returns");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.BOOMSTICK_THROW, "entity/boomstick/throw", 1, "Boomstick flies");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.BOOMSTICK_HIT_GROUND, "entity/boomstick/hit_ground", 1, "Boomstick lands");
 
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.LAUGHTER_ECHOES, "environment/laughter_echoes", 9, "Laughter echoes");
 

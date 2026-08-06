@@ -197,6 +197,10 @@ public class RisusClientEvents {
 					return (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 10.0F > 0.9F ? 1.0F : 0.0F;
 				}
 			});
+
+			ItemProperties.register(RisusItems.BOOMSTICK.get(), Risus.prefix("drumstick"), (stack, level, entity, seed) ->
+				stack.getHoverName().getString().equalsIgnoreCase("drumstick") ? 1.0F : 0.0F);
+
 			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("toot"), (stack, level, entity, i) ->
 				entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 			ItemProperties.register(RisusItems.WARHORN.get(), Risus.prefix("filled"), (stack, level, entity, i) ->
@@ -285,6 +289,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_BOOMSTICK, ThrownBoomstickModel::create);
+		event.registerLayerDefinition(RisusModelLayers.THROWN_DRUMSTICK, ThrownDrumstickModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODSLASH, BloodSlashModel::create);
 		event.registerLayerDefinition(RisusModelLayers.WEAVER, WeaverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.WEAVER_CORE, WeaverModel::create);
