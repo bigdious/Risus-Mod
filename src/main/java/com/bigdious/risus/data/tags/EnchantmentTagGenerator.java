@@ -193,8 +193,8 @@ public class EnchantmentTagGenerator extends EnchantmentTagsProvider {
 			Enchantments.WIND_BURST,
 			Enchantments.MENDING,
 			Execrations.DREAM_EATER,
-			Enchantments.MULTISHOT,
-			Execrations.STAR_RELEASE,
+			Enchantments.LOYALTY,
+			Execrations.DEFIANCE,
 			Enchantments.FLAME,
 			Execrations.DENIAL,
 			Enchantments.VANISHING_CURSE
