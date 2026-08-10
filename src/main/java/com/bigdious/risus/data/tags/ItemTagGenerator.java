@@ -296,6 +296,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,RisusItems.MUSIC_DISC_REGN.get()
 
 		);
+		this.tag(RisusTags.Items.BOOT_UPGRADE).add(
+			RisusItems.LIGHT_DEVOURER.get()
+		);
 
 
 		//curios

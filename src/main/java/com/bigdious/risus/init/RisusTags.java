@@ -101,6 +101,7 @@ public class RisusTags {
 		public static final TagKey<Item> ALTERATION_STACKING_EXCEPTION = create("alteration_stacking_exception");
 		public static final TagKey<Item> GLIDING_WINGS = create("gliding_wings");
 		public static final TagKey<Item> SACRIFICIAL_CATALYST = create("sacrificial_catalyst");
+		public static final TagKey<Item> BOOT_UPGRADE = create("boot_upgrade");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

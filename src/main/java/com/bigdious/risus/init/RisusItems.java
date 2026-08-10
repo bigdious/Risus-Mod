@@ -1,6 +1,7 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
+import com.bigdious.risus.components.item.ArmorUpgradingContent;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
@@ -19,6 +20,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -49,7 +51,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> THOUSAND_BLADE = register("thousand_blade", properties -> new ThousandBladeItem(RisusToolMaterials.GLUTTONY, properties), () -> new Item.Properties().fireResistant().attributes(ThousandBladeItem.createThousandBladeAttributes(RisusToolMaterials.GLUTTONY, 14, -3.6F)).rarity(BLOOD));
 	public static final DeferredItem<Item> BLOOD_BUCKET = register("blood_bucket", properties -> new BucketItem(RisusFluids.SOURCE_BLOOD.get(), properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).craftRemainder(Items.BUCKET));
 	public static final DeferredItem<Item> HOLDER_BUCKET = register("holder_bucket", properties -> new HolderBucketItem(RisusEntities.HOLDER.get(), Fluids.EMPTY, SoundEvents.BUCKET_EMPTY, properties), () -> new Item.Properties().rarity(BLOOD).stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY));
-	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD));
+	public static final DeferredItem<Item> LIGHT_DEVOURER = register("light_devourer", LightDevourerItem::new, () -> new Item.Properties().stacksTo(1).fireResistant().rarity(BLOOD));
 	public static final DeferredItem<Item> ENDLESS_PEARL = register("endless_pearl", EndlessPearlItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(10000));
 	public static final DeferredItem<Item> BLOODWYRM_HEAD_WEAPON = register("bloodwyrm_head_weapon", BloodwyrmHeadItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(1000));
 	public static final DeferredItem<Item> ANGEL_WINGS = register("angel_wings", AngelWingsItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).durability(666));
@@ -76,7 +78,7 @@ public class RisusItems {
 	public static final DeferredItem<ArmorItem> SINNER_ROBES_HELMET = register("sinner_robes_helmet", properties -> new SinnerRobeHelmetItem(RisusArmorMaterials.SINNER_ROBE_HELMET, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(24)).attributes(RisusArmorItem.createSinnerAttributes(ArmorItem.Type.HELMET, 2)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> SINNER_ROBES_CHESTPLATE = register("sinner_robes_chestplate", properties -> new SinnerRobeChestplateItem(RisusArmorMaterials.SINNER_ROBE_CHESTPLATE, ArmorItem.Type.CHESTPLATE, properties), () -> new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(24)).rarity(BLOOD));
 	public static final DeferredItem<ArmorItem> SINNER_ROBES_LEGGINGS = register("sinner_robes_leggings", properties -> new SinnerRobeLeggingsItem(RisusArmorMaterials.SINNER_ROBE_LEGGINGS, ArmorItem.Type.LEGGINGS, properties), () -> new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(24)).attributes(RisusArmorItem.createSinnerAttributes(ArmorItem.Type.LEGGINGS, 4)).rarity(BLOOD));
-	public static final DeferredItem<ArmorItem> SINNER_ROBES_BOOTS = register("sinner_robes_boots", properties -> new SinnerRobeBootsItem(RisusArmorMaterials.SINNER_ROBE_BOOTS, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(24)).attributes(RisusArmorItem.createSinnerAttributes(ArmorItem.Type.BOOTS, 2)).rarity(BLOOD));
+	public static final DeferredItem<ArmorItem> SINNER_ROBES_BOOTS = register("sinner_robes_boots", properties -> new SinnerRobeBootsItem(RisusArmorMaterials.SINNER_ROBE_BOOTS, ArmorItem.Type.BOOTS, properties), () -> new Item.Properties().component(RisusDataComponents.ARMOR_UPGRADING_CONTENT, ArmorUpgradingContent.EMPTY).durability(ArmorItem.Type.BOOTS.getDurability(24)).attributes(RisusArmorItem.createSinnerAttributes(ArmorItem.Type.BOOTS, 2)).rarity(BLOOD));
 
 	//CONSUMABLES
 	public static final FoodProperties GUILTY_FOOD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2F).alwaysEdible().effect(() -> new MobEffectInstance(RisusMobEffects.PLEASURE, 45), 1.0F).build();
