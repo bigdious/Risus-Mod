@@ -20,20 +20,6 @@ public interface RisusCauldronInteractions extends CauldronInteraction {
 		CauldronInteraction.fillBucket(state, world, pos, player, hand, stack, new ItemStack(RisusItems.BLOOD_BUCKET.get()), blockState -> true, SoundEvents.BUCKET_FILL);
 
 	CauldronInteraction.InteractionMap BLOOD = CauldronInteraction.newInteractionMap("blood");
-	CauldronInteraction ABILITY_ITEM = (state, world, pos, player, hand, stack) -> {
-		if (!stack.has(RisusDataComponents.ABILITY_VARIANT)) {
-			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-		} else {
-			if (!world.isClientSide) {
-				stack.remove(RisusDataComponents.ABILITY_VARIANT);
-				player.awardStat(Stats.CLEAN_ARMOR);
-				world.playSound(null, pos, SoundEvents.GENERIC_BURN, SoundSource.BLOCKS);
-				world.setBlock(pos, Blocks.CAULDRON.defaultBlockState(), 11);
-			}
-
-			return ItemInteractionResult.sidedSuccess(world.isClientSide);
-		}
-	};
 
 	static void register() {
 		EMPTY.map().put(RisusItems.BLOOD_BUCKET.get(), FILL_BLOOD);
@@ -43,11 +29,6 @@ public interface RisusCauldronInteractions extends CauldronInteraction {
 		BLOOD.map().put(RisusItems.BLOOD_BUCKET.get(), FILL_BLOOD);
 
 		BLOOD.map().put(Items.BUCKET, EMPTY_BLOOD);
-
-		LAVA.map().put(RisusItems.SINNER_ROBES_HELMET.asItem(), ABILITY_ITEM);
-		LAVA.map().put(RisusItems.SINNER_ROBES_CHESTPLATE.asItem(), ABILITY_ITEM);
-		LAVA.map().put(RisusItems.SINNER_ROBES_LEGGINGS.asItem(), ABILITY_ITEM);
-		LAVA.map().put(RisusItems.SINNER_ROBES_BOOTS.asItem(), ABILITY_ITEM);
 
 		CauldronInteraction.addDefaultInteractions(BLOOD.map());
 	}

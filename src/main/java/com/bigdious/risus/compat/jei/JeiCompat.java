@@ -2,7 +2,6 @@ package com.bigdious.risus.compat.jei;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.compat.AlterationCategory;
-import com.bigdious.risus.data.custom.SmithingUpgradeRecipe;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusRecipes;
@@ -21,27 +20,17 @@ import mezz.jei.api.registration.IVanillaCategoryExtensionRegistration;
 import mezz.jei.common.util.RegistryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SmithingRecipe;
 import net.minecraft.world.item.enchantment.*;
 
 import java.util.*;
 import java.util.stream.IntStream;
-
-import static net.minecraft.world.item.Items.ENCHANTED_BOOK;
 
 @JeiPlugin
 @SuppressWarnings("unused")
@@ -61,10 +50,6 @@ public class JeiCompat implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(RisusBlocks.ALTERATION_CATALYST), AlterationCategory.ALTERATION);
 	}
 
-	@Override
-	public void registerVanillaCategoryExtensions(IVanillaCategoryExtensionRegistration registration) {
-		registration.getSmithingCategory().addExtension(SmithingUpgradeRecipe.class, new SmithingUpgradeExtension());
-	}
 
 	@Override
 	@SuppressWarnings("unchecked")

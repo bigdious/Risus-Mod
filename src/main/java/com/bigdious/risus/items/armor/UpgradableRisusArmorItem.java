@@ -1,6 +1,7 @@
 package com.bigdious.risus.items.armor;
 
 import com.bigdious.risus.components.item.ArmorUpgradingContent;
+import com.bigdious.risus.components.tooltip.ArmorUpgradingTooltipComponent;
 import com.bigdious.risus.init.RisusDataComponents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -36,12 +37,19 @@ public class UpgradableRisusArmorItem extends RisusArmorItem{
 				ArmorUpgradingContent.Mutable armorUpgradingContent$mutable = new ArmorUpgradingContent.Mutable(armorUpgradingContent);
 				if (other.isEmpty()) {
 					ItemStack itemstack = armorUpgradingContent$mutable.remove();
+					if (stack.has(RisusDataComponents.ABILITY_VARIANT)) {
+						stack.remove(RisusDataComponents.ABILITY_VARIANT);
+					}
 					if (itemstack != null) {
 						this.playRemoveOneSound(player);
 						access.set(itemstack);
 					}
 				} else {
+					Item placeholder = other.copy().getItem();
 					if (armorUpgradingContent$mutable.tryInsert(other, acceptedTag())) {
+						if (ArmorUpgradingTooltipComponent.ABILITIES.containsKey(placeholder)) {
+							stack.set(RisusDataComponents.ABILITY_VARIANT, ArmorUpgradingTooltipComponent.ABILITIES.get(placeholder).getFirst());
+						}
 						this.playInsertSound(player);
 					}
 				}

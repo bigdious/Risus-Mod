@@ -21,6 +21,7 @@ import com.bigdious.risus.client.render.player.HandOfGreedLayer;
 import com.bigdious.risus.client.render.player.ThreadWingsLayer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
 import com.bigdious.risus.components.item.WarhornComponent;
+import com.bigdious.risus.components.tooltip.ArmorUpgradingTooltipComponent;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
@@ -133,6 +134,9 @@ public class RisusClientEvents {
 		bus.addListener(EntityRenderersEvent.AddLayers.class, RisusClientEvents::attachRenderLayers);
 		bus.addListener(ColorHandler::registerItemColors);
 		bus.addListener(RisusClientEvents::registerClientReloadListeners);
+		bus.addListener(RegisterClientTooltipComponentFactoriesEvent.class, event -> {
+				event.register(UpgradableRisusArmorItem.Tooltip.class, ArmorUpgradingTooltipComponent::new);
+			});
 
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killScreenWithAmnesia);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::killHandWithAmnesia);

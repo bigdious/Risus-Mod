@@ -4,6 +4,8 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.init.RisusBlocks;
 import com.bigdious.risus.init.RisusItems;
 import com.bigdious.risus.init.RisusTags;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -17,6 +19,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends ItemTagsProvider {
@@ -298,6 +301,56 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 		this.tag(RisusTags.Items.BOOT_UPGRADE).add(
 			RisusItems.LIGHT_DEVOURER.get()
+			,RisusBlocks.BONDKNOT_LOG.get().asItem()
+		);
+		this.tag(RisusTags.Items.LEG_UPGRADE).add(
+			RisusBlocks.BONDKNOT_LOG.get().asItem()
+			,RisusItems.RESEARCHERS_NOTES.get().asItem()
+		);
+		this.tag(RisusTags.Items.CHEST_UPGRADE).add(
+			RisusBlocks.BONDKNOT_LOG.get().asItem()
+			,RisusBlocks.MAW_GUTS.get().asItem()
+			,RisusItems.HAND_OF_GREED.get().asItem()
+		);
+		this.tag(RisusTags.Items.HEAD_UPGRADE).add(
+			RisusBlocks.BONDKNOT_LOG.get().asItem()
+			,Items.CREEPER_HEAD.asItem()
+			,Items.WITHER_SKELETON_SKULL.asItem()
+			,Items.SKELETON_SKULL.asItem()
+			,Items.ZOMBIE_HEAD.asItem()
+			,Items.PIGLIN_HEAD.asItem()
+			,Items.LIME_WOOL.asItem()
+			,Items.BLACK_WOOL.asItem()
+			,Items.LIGHT_GRAY_WOOL.asItem()
+			,Items.YELLOW_WOOL.asItem()
+			,Items.GRAY_WOOL.asItem()
+			,Items.CYAN_WOOL.asItem()
+			,Items.LIGHT_BLUE_WOOL.asItem()
+			,Items.ORANGE_WOOL.asItem()
+			,Items.BLUE_WOOL.asItem()
+			,Items.BROWN_WOOL.asItem()
+			,Items.WHITE_WOOL.asItem()
+			,Items.GREEN_WOOL.asItem()
+			,Items.CARVED_PUMPKIN.asItem()
+			,Items.TERRACOTTA.asItem()
+			,Items.WHITE_TERRACOTTA.asItem()
+			,Items.LIGHT_GRAY_TERRACOTTA.asItem()
+			,Items.BLACK_TERRACOTTA.asItem()
+			,Items.GRAY_TERRACOTTA.asItem()
+			,Items.RED_TERRACOTTA.asItem()
+			,Items.ORANGE_TERRACOTTA.asItem()
+			,Items.YELLOW_TERRACOTTA.asItem()
+			,Items.BROWN_TERRACOTTA.asItem()
+			,RisusBlocks.EYE_BLEACHED.asItem()
+			,RisusBlocks.EYE_BLOODSHOT.asItem()
+			,RisusBlocks.EYE_EMERALD.asItem()
+			,RisusBlocks.EYE_ENDER.asItem()
+			,RisusBlocks.EYE_GOLDEN.asItem()
+			,RisusBlocks.ASHEN_REMAINS.asItem()
+			,RisusBlocks.SMILING_REMAINS.asItem()
+			,Items.SPYGLASS.asItem()
+			,Items.SWEET_BERRIES.asItem()
+			,Items.RABBIT_FOOT.asItem()
 		);
 
 

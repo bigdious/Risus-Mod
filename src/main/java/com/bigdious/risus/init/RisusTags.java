@@ -102,6 +102,9 @@ public class RisusTags {
 		public static final TagKey<Item> GLIDING_WINGS = create("gliding_wings");
 		public static final TagKey<Item> SACRIFICIAL_CATALYST = create("sacrificial_catalyst");
 		public static final TagKey<Item> BOOT_UPGRADE = create("boot_upgrade");
+		public static final TagKey<Item> LEG_UPGRADE = create("leg_upgrade");
+		public static final TagKey<Item> CHEST_UPGRADE = create("chest_upgrade");
+		public static final TagKey<Item> HEAD_UPGRADE = create("head_upgrade");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

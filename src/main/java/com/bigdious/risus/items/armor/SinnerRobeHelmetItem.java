@@ -4,6 +4,7 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.render.RisusSimpleArmorRenderer;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidArmorModel;
@@ -11,6 +12,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,10 +27,16 @@ import java.util.List;
 import java.util.Map;
 
 
-public class SinnerRobeHelmetItem extends RisusArmorItem  {
+public class SinnerRobeHelmetItem extends UpgradableRisusArmorItem  {
 	public SinnerRobeHelmetItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
 	}
+
+	@Override
+	public TagKey<Item> acceptedTag(){
+		return RisusTags.Items.HEAD_UPGRADE;
+	}
+
 	@Override
 	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && layer.texture(false).equals(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/helmet/upgrade_layer_1.png"))){
@@ -36,64 +44,6 @@ public class SinnerRobeHelmetItem extends RisusArmorItem  {
 		}
 		return null;
 	}
-
-	@Override
-	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
-			ChatFormatting color = HELMET_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
-			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
-			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
-			} else if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("spyglass")) {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass_mode").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
-			} else {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_helmet." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
-			}
-		}
-		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
-	}
-
-	public static final Map<String, ChatFormatting> HELMET_ABILITY_COLOR = Map.ofEntries(
-		Map.entry("skeleton", ChatFormatting.WHITE),
-		Map.entry("creeper", ChatFormatting.GREEN),
-		Map.entry("wither_skeleton", ChatFormatting.DARK_GRAY ),
-		Map.entry("zombie", ChatFormatting.DARK_GREEN ),
-		Map.entry("piglin", ChatFormatting.RED ),
-		Map.entry("tuxedo_cat", ChatFormatting.WHITE ),
-		Map.entry("black_cat", ChatFormatting.WHITE ),
-		Map.entry("british_cat", ChatFormatting.WHITE ),
-		Map.entry("calico_cat", ChatFormatting.WHITE ),
-		Map.entry("jellie_cat", ChatFormatting.WHITE ),
-		Map.entry("persian_cat", ChatFormatting.WHITE ),
-		Map.entry("ragdoll_cat", ChatFormatting.WHITE ),
-		Map.entry("orange_cat", ChatFormatting.WHITE ),
-		Map.entry("siamese_cat", ChatFormatting.WHITE ),
-		Map.entry("tabby_cat", ChatFormatting.WHITE ),
-		Map.entry("white_cat", ChatFormatting.WHITE ),
-		Map.entry("audrey_cat", ChatFormatting.WHITE ),
-		Map.entry("pumpkin", ChatFormatting.GOLD ),
-		Map.entry("pale_wolf", ChatFormatting.WHITE ),
-		Map.entry("ashen_wolf", ChatFormatting.WHITE ),
-		Map.entry("black_wolf", ChatFormatting.WHITE ),
-		Map.entry("chestnut_wolf", ChatFormatting.WHITE ),
-		Map.entry("rusty_wolf", ChatFormatting.WHITE ),
-		Map.entry("snowy_wolf", ChatFormatting.WHITE ),
-		Map.entry("spotted_wolf", ChatFormatting.WHITE ),
-		Map.entry("striped_wolf", ChatFormatting.WHITE ),
-		Map.entry("woods_wolf", ChatFormatting.WHITE ),
-		Map.entry("bleached_eye", ChatFormatting.WHITE ),
-		Map.entry("bloodshot_eye", ChatFormatting.DARK_RED ),
-		Map.entry("emerald_eye", ChatFormatting.DARK_GREEN ),
-		Map.entry("ender_eye", ChatFormatting.DARK_BLUE ),
-		Map.entry("golden_eye", ChatFormatting.GOLD ),
-		Map.entry("abyssal_eye", ChatFormatting.DARK_GRAY ),
-		Map.entry("smile", ChatFormatting.DARK_RED ),
-		Map.entry("great_stool", ChatFormatting.DARK_GRAY),
-		Map.entry("spyglass", ChatFormatting.GOLD),
-		Map.entry("fox", ChatFormatting.GOLD),
-		Map.entry("snow_fox", ChatFormatting.WHITE)
-	);
 
 	@Override
 	public boolean isEnderMask(ItemStack stack, Player player, EnderMan endermanEntity) {

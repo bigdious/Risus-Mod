@@ -8,7 +8,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.InstrumentTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -342,51 +341,6 @@ public class RisusTab {
 							output, instruments, RisusItems.HEXHORN.get(), InstrumentTags.GOAT_HORNS, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
 						)
 					);
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "skeleton");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "zombie");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "creeper");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "wither_skeleton");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "piglin");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "spyglass");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "pumpkin");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "great_stool");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "tuxedo_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "black_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "british_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "calico_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "jellie_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "persian_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "ragdoll_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "orange_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "siamese_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "tabby_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "white_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "audrey_cat");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "pale_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "ashen_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "black_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "chestnut_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "rusty_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "snowy_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "spotted_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "striped_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "woods_wolf");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "fox");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "snow_fox");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "bleached_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "bloodshot_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "emerald_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "ender_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "golden_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "abyssal_eye");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_HELMET.get(), "smile");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_CHESTPLATE.get(), "guts");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_CHESTPLATE.get(), "hand_of_greed");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_CHESTPLATE.get(), "great_stool");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_LEGGINGS.get(), "book");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_LEGGINGS.get(), "great_stool");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_BOOTS.get(), "shadow_walker");
-				generateArmorWithAbility(output, RisusItems.SINNER_ROBES_BOOTS.get(), "great_stool");
 
 			}).build());
 
@@ -418,11 +372,5 @@ public class RisusTab {
 					.map(instrumentHolder -> InstrumentItem.create(item, instrumentHolder))
 					.forEach(stack -> output.accept(stack, tabVisibility))
 			);
-	}
-
-	private static void generateArmorWithAbility(CreativeModeTab.Output output, ItemLike item, String ability) {
-		ItemStack stack = new ItemStack(item);
-		stack.set(RisusDataComponents.ABILITY_VARIANT, ability);
-		output.accept(stack);
 	}
 }

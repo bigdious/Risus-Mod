@@ -1,7 +1,6 @@
 package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
-import com.bigdious.risus.data.custom.SmithingUpgradeRecipe;
 import com.bigdious.risus.inventory.recipe.AlterationRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.*;
@@ -16,6 +15,4 @@ public class RisusRecipes {
 	public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<AlterationRecipe>> ALTERATION_SERIALIZER = RECIPE_SERIALIZERS.register("alteration", AlterationRecipe.Serializer::new);
 
 	public static final DeferredHolder<RecipeType<?>, RecipeType<AlterationRecipe>> ALTERATION_RECIPE = RECIPE_TYPES.register("alteration", () -> RecipeType.simple(Risus.prefix("alteration")));
-	public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<SmithingUpgradeRecipe>> SMITHING_UPGRADE_SERIALIZER = RECIPE_SERIALIZERS.register("smithing_upgrade", SmithingUpgradeRecipe.Serializer::new);
-
 }

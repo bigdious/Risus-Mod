@@ -4,17 +4,20 @@ import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.render.RisusSimpleArmorRenderer;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
@@ -22,9 +25,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class SinnerRobeLeggingsItem extends RisusArmorItem{
+public class SinnerRobeLeggingsItem extends UpgradableRisusArmorItem{
 	public SinnerRobeLeggingsItem(Holder<ArmorMaterial> armorMaterial, Type type, Properties properties) {
 		super(armorMaterial, type, properties);
+	}
+
+	@Override
+	public TagKey<Item> acceptedTag(){
+		return RisusTags.Items.LEG_UPGRADE;
 	}
 
 	@Override
@@ -34,28 +42,6 @@ public class SinnerRobeLeggingsItem extends RisusArmorItem{
 		}
 		return null;
 	}
-
-	@Override
-	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
-			ChatFormatting color = LEGGINGS_ABILITY_COLOR.getOrDefault(stack.get(RisusDataComponents.ABILITY_VARIANT), ChatFormatting.GRAY);
-			tooltipComponents.add(Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY));
-			tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings." + stack.get(RisusDataComponents.ABILITY_VARIANT)).withStyle(color));
-			if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("great_stool")) {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
-			} else if (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("book") ){
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings.book.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.researchers_notes_open").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color));
-			} else {
-				tooltipComponents.add(Component.translatable("tooltip.risus.sinner_robes_leggings." + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".desc").withStyle(color));
-			}
-		}
-		super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
-	}
-
-	public static final Map<String, ChatFormatting> LEGGINGS_ABILITY_COLOR = Map.ofEntries(
-		Map.entry("great_stool", ChatFormatting.DARK_GRAY),
-		Map.entry("book", ChatFormatting.WHITE)
-	);
 
 	public static final class ArmorRender extends RisusSimpleArmorRenderer {
 		public ArmorRender() {

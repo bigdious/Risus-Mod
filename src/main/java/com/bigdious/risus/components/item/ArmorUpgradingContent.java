@@ -4,7 +4,9 @@ import com.bigdious.risus.init.RisusTags;
 import com.mojang.serialization.Codec;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.BundleContents;
 
@@ -72,8 +74,8 @@ public class ArmorUpgradingContent implements TooltipComponent {
 		}
 
 
-		public boolean tryInsert(ItemStack stack) {
-			if (this.item.isEmpty() && !stack.isEmpty() && stack.is(RisusTags.Items.BOOT_UPGRADE)) {
+		public boolean tryInsert(ItemStack stack, TagKey<Item> itemtag) {
+			if (this.item.isEmpty() && !stack.isEmpty() && stack.is(itemtag)) {
 				this.item = stack.copyAndClear();
 
 				return true;
