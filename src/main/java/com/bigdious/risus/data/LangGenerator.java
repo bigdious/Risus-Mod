@@ -522,6 +522,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.book.button_press", "Press the %s key to open the book");
 		this.add("tooltip.risus.ability.book.button_press.outline", "[%s]");
 
+		this.add("tooltip.risus.ability.options_hidden", "Hold Shift for viable Items");
+		this.add("tooltip.risus.ability.options_visible", "Below Items can be used:");
+
 		this.add("tooltip.risus.display_notch.hidden", "[Hold Shift for Usages]");
 		this.add("tooltip.risus.display_notch.start", "Once an Item is inserted, you can manipulate it:");
 		this.add("tooltip.risus.display_notch.pickaxe", " - Rotate the item with a Pickaxe");

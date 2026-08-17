@@ -70,8 +70,8 @@ public class UpgradableRisusArmorItem extends RisusArmorItem{
 	public void onDestroyed(ItemEntity itemEntity) {
 		ArmorUpgradingContent armorUpgradingContent = itemEntity.getItem().get(RisusDataComponents.ARMOR_UPGRADING_CONTENT);
 		if (armorUpgradingContent != null) {
-			itemEntity.getItem().set(RisusDataComponents.ARMOR_UPGRADING_CONTENT, ArmorUpgradingContent.EMPTY);
-			itemEntity.level().addFreshEntity(new ItemEntity(itemEntity.level(), itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), armorUpgradingContent.getItem()));
+			itemEntity.getItem().set(RisusDataComponents.ARMOR_UPGRADING_CONTENT, ArmorUpgradingContent.EMPTY_EMPTY);
+			itemEntity.level().addFreshEntity(new ItemEntity(itemEntity.level(), itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), armorUpgradingContent.item()));
 		}
 	}
 

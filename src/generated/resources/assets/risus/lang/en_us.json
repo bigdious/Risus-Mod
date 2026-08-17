@@ -858,6 +858,8 @@
   "tooltip.risus.ability.hand_of_greed.desc": "Increased Block Interaction Range",
   "tooltip.risus.ability.jellie_cat": "Jellie Cat Mask -",
   "tooltip.risus.ability.jellie_cat.desc": "Barely noticed by Phantoms",
+  "tooltip.risus.ability.options_hidden": "Hold Shift for viable Items",
+  "tooltip.risus.ability.options_visible": "Below Items can be used:",
   "tooltip.risus.ability.orange_cat": "Orange Cat Mask -",
   "tooltip.risus.ability.orange_cat.desc": "Barely noticed by Phantoms",
   "tooltip.risus.ability.pale_wolf": "Pale Wolf Mask -",

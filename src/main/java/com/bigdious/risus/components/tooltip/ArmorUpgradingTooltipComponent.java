@@ -7,13 +7,19 @@ import com.bigdious.risus.init.RisusTags;
 import com.bigdious.risus.items.armor.SinnerRobeBootsItem;
 import com.bigdious.risus.items.armor.UpgradableRisusArmorItem;
 import com.mojang.datafixers.util.Pair;
+import com.sun.jna.platform.unix.solaris.LibKstat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
+import net.minecraft.core.Holder;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -21,19 +27,23 @@ import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.event.CaretListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
-	//based off of https://github.com/TeamTwilight/twilightforest/blob/1.21.1/src/main/java/twilightforest/components/item/ItemDisplayContents.java
+	//abomination from ClientBundleTooltip and https://github.com/TeamTwilight/twilightforest/blob/1.21.1/src/main/java/twilightforest/components/item/ItemDisplayTooltipComponent.java
 	private static final ResourceLocation BACKGROUND_SPRITE = ResourceLocation.withDefaultNamespace("container/bundle/background");
 	private static final ResourceLocation SLOT_SPRITE = ResourceLocation.withDefaultNamespace("container/bundle/slot");
 	private static final int SLOT_WIDTH = 18;
 	private static final int SLOT_HEIGHT = 20;
 
 	private final ItemStack contents;
+	private final String origin;
 
 	public ArmorUpgradingTooltipComponent(UpgradableRisusArmorItem.Tooltip tooltip) {
-		this.contents = tooltip.content().getItem();
+		this.contents = tooltip.content().item();
+		this.origin = tooltip.content().origin();
 	}
 
 	@Override
@@ -54,11 +64,38 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		} else {
 			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability + ".desc").withStyle(color), x + 28, y + 19, 120, 11184810);
 		}
-		int k = 0;
+
 		int renderX = x + 4;
 		int renderY = y + 13;
-		this.renderSlot(renderX, renderY, k++, guiGraphics, font);
+		this.renderSlot(renderX, renderY, 0, guiGraphics, font);
 
+		if (Screen.hasShiftDown()) {
+			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.options_visible").withStyle(ChatFormatting.WHITE), x, y + 39, 140, 11184810);
+
+			List<Item> upgrades = BuiltInRegistries.ITEM.getTag(ItemTags.create(ResourceLocation.fromNamespaceAndPath("risus", origin)))
+				.map(holders -> holders.stream().map(Holder::value).toList()).orElseGet(ArrayList::new);
+			int size = upgrades.size();
+			int number = 0;
+			int gridSizeX = Math.max(12, (int)Math.ceil(Math.sqrt((double)size + (double)1.0F)));
+			int gridSizeY = (int)Math.ceil(((double)size + (double)1.0F) / (double)this.gridSizeX());
+			//I just copied this from the bundle. I don't understand it, but I can break it!
+			for(int l = 0; l < gridSizeY; ++l) {
+				for(int i1 = 0; i1 < gridSizeX; ++i1) {
+					int j1 = x + i1 * 18 + 1;
+					int k1 = y + l * 20 + 49;
+					if (number < size) {
+						Item display = upgrades.get(number);
+						this.renderSlots(j1, k1, number, guiGraphics, font, size, display);
+						number++;
+					} else {
+						break;
+					}
+				}
+			}
+
+		} else {
+			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.options_hidden").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC), x, y + 39, 140, 11184810);
+		}
 	}
 
 	private void renderSlot(int x, int y, int itemIndex, GuiGraphics graphics, Font font) {
@@ -68,6 +105,15 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 			ItemStack itemstack = this.contents;
 				graphics.renderItem(itemstack, x + 1, y + 1, itemIndex);
 				graphics.renderItemDecorations(font, itemstack, x + 1, y + 1);
+		}
+	}
+
+	private void renderSlots(int x, int y, int itemIndex, GuiGraphics graphics, Font font, int size, Item item) {
+		graphics.blitSprite(SLOT_SPRITE, x, y, 0, SLOT_WIDTH, SLOT_HEIGHT + 2);
+
+		if (itemIndex < size) {
+			graphics.renderItem(item.getDefaultInstance(), x + 1, y + 1, itemIndex);
+			graphics.renderItemDecorations(font, item.getDefaultInstance(), x + 1, y + 1);
 		}
 	}
 
@@ -89,12 +135,12 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 
 	@Override
 	public int getHeight() {
-		return this.backgroundHeight() + 20;
+		return this.backgroundHeight() + (Screen.hasShiftDown() ? origin == "head_upgrade" ? 115 : 55 : 30);
 	}
 
 	@Override
 	public int getWidth(@NotNull Font font) {
-		return this.backgroundWidth() + 120;
+		return this.backgroundWidth() + (Screen.hasShiftDown() && origin == "head_upgrade" ? 200 : 120);
 	}
 
 	public static final Map<Item, Pair<String, ChatFormatting>> ABILITIES = Map.ofEntries(
