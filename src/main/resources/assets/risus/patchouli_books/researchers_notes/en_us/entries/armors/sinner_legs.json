@@ -4,15 +4,16 @@
   "category": "risus:armors",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The leggings can be used either to more comfortably carry around one's notes or - as all other pieces - for the Great Stool ability, which causes a Stool to appear below one's feet."
+      "type": "patchouli:spotlight",
+      "item": "risus:sinner_robes_leggings",
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Leggings has Abilities that mostly focus on inventory management: These very collection of Research Notes can be comfortably slotted in for an easy method of carry."
     },
     {
-      "type": "risus:abilitysmithing2",
-      "header": "Researcher's Notes",
-      "recipe": "risus:book_leggings",
-      "header2": "Great Stool",
-      "recipe2": "risus:great_stool_leggings"
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:armors/sinner_robes",
+        "risus:blocks/bondknot"
+      ]
     }
   ]
 }

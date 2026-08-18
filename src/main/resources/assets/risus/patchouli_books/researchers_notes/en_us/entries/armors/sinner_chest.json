@@ -4,20 +4,18 @@
   "category": "risus:armors",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The chestplate can have one of three abilities: Gorger Guts - which enlarges the area in which the user can pick up items from; Hand of Greed - which improves the block interaction range of the wearer; and Great Stool - which gives the option to summon a Stool on command below the person."
+      "type": "patchouli:spotlight",
+      "item": "risus:sinner_robes_chestplate",
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Chestplate has few, but very useful utility focused Abilities: $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$() will increase the range from which Items can be picked up, while a $(l:tools/hand_of_greed)$(c)$(o)Hand of Greed$() will increase the Block Interaction Range of the wearer."
     },
     {
-      "type": "risus:abilitysmithing2",
-      "header": "Gorger Guts",
-      "recipe": "risus:guts_chestplate",
-      "header2": "Hand Of Greed",
-      "recipe2": "risus:hand_of_greed_chestplate"
-    },
-    {
-      "type": "risus:abilitysmithing1",
-      "header": "Great Stool",
-      "recipe": "risus:great_stool_chestplate"
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:armors/sinner_robes",
+        "risus:blocks/gorger_guts",
+        "risus:tools/hand_of_greed",
+        "risus:blocks/bondknot"
+      ]
     }
   ]
 }

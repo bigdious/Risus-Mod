@@ -4,139 +4,23 @@
   "category": "risus:armors",
   "pages": [
     {
+      "type": "patchouli:spotlight",
+      "item": "risus:sinner_robes_helmet",
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Helmet supports a high variety of masks based on the item inserted into its Ability Slot, with these being mostly stealth related - with the exception of the Spyglass, which works as goggles with Zoom. The various Wools will result in Cat masks which are effective against Phantoms; Terracotta blocks are Dog masks"
+    },
+    {
       "type": "patchouli:text",
-      "text": "There are several masks that can be added to the helmet, and most of these make the user less visible to certain creatures. The rest are more specific, such as the Eye masks which make one immune to Stalkers. The Piglin and Pumpkin masks will make Piglins and Enderman neutral to the wearer. Spyglass Goggles have a zoom feature and Great Stool summons a stool below the user."
+      "text": "that work against Skeletons; Sweet Berries and Rabbit Feet create effective Fox masks to catch Rabbits with; $(l:blocks/eyes)$(c)$(o)Eye blocks$() offer immunity against $(l:offsprings/stalker)$(c)$(o)Stalkers$(), $(l:blocks/remains)$(c)$(o)Remains$() reduce the visibility against Offsprings of the Risus; and the different Creature Heads increase stealth against their respective creature, with the Piglin Head and the Carved Pumpkin each making Piglins and Endermen neutral. "
     },
     {
-      "type": "risus:abilitysmithing2",
-      "header": "Great Stool",
-      "recipe": "risus:great_stool_helmet",
-      "header2": "Spyglass Goggles",
-      "recipe2": "risus:spyglass_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Piglin Mask",
-      "recipe": "risus:piglin_helmet",
-      "header2": "Pumpkin Mask",
-      "recipe2": "risus:pumpkin_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Golden Eye Mask",
-      "recipe": "risus:golden_eye_helmet",
-      "header2": "Bleached Eye Mask",
-      "recipe2": "risus:bleached_eye_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Emerald Eye Mask",
-      "recipe": "risus:emerald_eye_helmet",
-      "header2": "Ender Eye Mask",
-      "recipe2": "risus:ender_eye_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Bloodshot Eye Mask",
-      "recipe": "risus:bloodshot_eye_helmet",
-      "header2": "Abyssal Eye Mask",
-      "recipe2": "risus:abyssal_eye_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Abyssal Eye Mask",
-      "recipe": "risus:abyssal_eye_helmet",
-      "header2": "Smile Mask",
-      "recipe2": "risus:smile_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Skeleton Mask",
-      "recipe": "risus:skeleton_helmet",
-      "header2": "Creeper Mask",
-      "recipe2": "risus:creeper_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Wither Skeleton Mask",
-      "recipe": "risus:wither_skeleton_helmet",
-      "header2": "Zombie Mask",
-      "recipe2": "risus:zombie_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Orange Cat Mask",
-      "recipe": "risus:orange_cat_helmet",
-      "header2": "Tuxedo Cat Mask",
-      "recipe2": "risus:tuxedo_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Tabby Cat Mask",
-      "recipe": "risus:tabby_cat_helmet",
-      "header2": "Audrey Cat Mask",
-      "recipe2": "risus:audrey_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "White Cat Mask",
-      "recipe": "risus:white_cat_helmet",
-      "header2": "Calico Cat Mask",
-      "recipe2": "risus:calico_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Ragdoll Cat Mask",
-      "recipe": "risus:ragdoll_cat_helmet",
-      "header2": "Siamese Cat Mask",
-      "recipe2": "risus:siamese_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Persian Cat Mask",
-      "recipe": "risus:persian_cat_helmet",
-      "header2": "Shorthair Cat Mask",
-      "recipe2": "risus:british_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Jellie Cat Mask",
-      "recipe": "risus:jellie_cat_helmet",
-      "header2": "Black Cat Mask",
-      "recipe2": "risus:black_cat_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Striped Wolf Mask",
-      "recipe": "risus:striped_wolf_helmet",
-      "header2": "Snowy Wolf Mask",
-      "recipe2": "risus:snowy_wolf_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Black Wolf Mask",
-      "recipe": "risus:black_wolf_helmet",
-      "header2": "Ashen Wolf Mask",
-      "recipe2": "risus:ashen_wolf_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Woods Wolf Mask",
-      "recipe": "risus:woods_wolf_helmet",
-      "header2": "Rusty Wolf Mask",
-      "recipe2": "risus:rusty_wolf_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing2",
-      "header": "Pale Wolf Mask",
-      "recipe": "risus:pale_wolf_helmet",
-      "header2": "Spotted Wolf Mask",
-      "recipe2": "risus:spotted_wolf_helmet"
-    },
-    {
-      "type": "risus:abilitysmithing1",
-      "header": "Chestnut Wolf Mask",
-      "recipe": "risus:chestnut_wolf_helmet"
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:offsprings/stalker",
+        "risus:armors/sinner_robes",
+        "risus:blocks/eyes",
+        "risus:blocks/bondknot",
+        "risus:blocks/remains"
+      ]
     }
   ]
 }

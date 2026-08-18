@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Light Devourer is made up of a case holding a dark mass at its center that swirls and consumes the points of lights floating around it, representing a contained miniature black hole. As a tool, it allows the user to place a 'false' darkness in an area. This Darkness won't allow monsters to appear."
+      "text": "The Light Devourer is made up of a case holding a dark mass at its center that swirls and consumes the points of lights floating around it, representing a contained miniature black hole. As a tool, it allows the user to place a 'false' darkness in an area. This Darkness won't allow monsters to appear inside."
     },
     {
       "type": "patchouli:crafting",

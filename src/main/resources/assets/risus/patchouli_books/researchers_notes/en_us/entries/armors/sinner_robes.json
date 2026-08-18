@@ -5,12 +5,12 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Unlike most armors that can be made from resources found in the world, the Sinner's Robe that can be made from Risus-related materials holds far more potential. On top of decent defensive abilities and a health boosting capability, each piece of the set can have its own 'Unique Ability'. These can vary greatly: from increased stealth against certain creatures; to the ability to walk on darkness."
+      "text": "Compared to armors that can be made from resources found in the world, the Sinner's Robe made from Risus-related materials holds far more potential. On top of decent defensive abilities and a health boosting feature, each piece of the set can have its own 'Ability'. For example, an ability all pieces can have (if a $(l:blocks/bondknot)$(c)$(o)Bondknot Log$() is inserted) is to summon a Great Stool below the wearer."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "risus:stitching_needle",
-      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:armors/skin_armor)$(c)$(o)Skin Armor$() is needed. After that, four $(l:materials/gluttonous_scales)$(c)$(o)Gluttony Scales$() are used for each piece, totaling sixteen. Finally, one Stitching Needle is required per piece."
+      "text": "Making the pieces of the Sinner's Robe is an involved process. First, a full set of $(l:armors/skin_armor)$(c)$(o)Skin Armor$() is needed. After that, four $(l:materials/gluttonous_scales)$(c)$(o)Gluttonous Scales$() are used for each piece, totaling sixteen. Finally, one Stitching Needle is required per piece."
     },
     {
       "type": "patchouli:smithing",
@@ -22,7 +22,7 @@
       "type": "patchouli:smithing",
       "recipe": "minecraft:skin_leggings_to_robes",
       "recipe2": "minecraft:skin_boots_to_robes",
-      "text": "A Cauldron of Water will remove the dye applied, while a Cauldron of Lava will remove the ability."
+      "text": "A Cauldron of Water will remove the dye applied."
     },
     {
       "type": "patchouli:relations",
@@ -34,7 +34,8 @@
         "risus:armors/skin_armor",
         "risus:materials/gluttonous_scales",
         "risus:materials/organic_matter",
-        "risus:blocks/bloodweave"
+        "risus:blocks/bloodweave",
+        "risus:blocks/bondknot"
       ]
     }
   ]

@@ -30,6 +30,7 @@ import javax.swing.event.CaretListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 	//abomination from ClientBundleTooltip and https://github.com/TeamTwilight/twilightforest/blob/1.21.1/src/main/java/twilightforest/components/item/ItemDisplayTooltipComponent.java
@@ -135,12 +136,12 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 
 	@Override
 	public int getHeight() {
-		return this.backgroundHeight() + (Screen.hasShiftDown() ? origin == "head_upgrade" ? 115 : 55 : 30);
+		return this.backgroundHeight() + (Screen.hasShiftDown() ? Objects.equals(origin, "head_upgrade") ? 115 : 55 : 30);
 	}
 
 	@Override
 	public int getWidth(@NotNull Font font) {
-		return this.backgroundWidth() + (Screen.hasShiftDown() && origin == "head_upgrade" ? 200 : 120);
+		return this.backgroundWidth() + (Screen.hasShiftDown() && Objects.equals(origin, "head_upgrade") ? 200 : 120);
 	}
 
 	public static final Map<Item, Pair<String, ChatFormatting>> ABILITIES = Map.ofEntries(

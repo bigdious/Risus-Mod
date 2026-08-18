@@ -4,15 +4,17 @@
   "category": "risus:armors",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The boots have their abilities focus on mobility: Shadow Walker makes the wearer capable of crouching midair in dark areas. This includes the Darkness created with a $(l:equipment/light_devourer)$(0)$(n)Light Devourer$(), everywhere without light under the night sky, or simple unlit caves. The Great Stool lets the user raise themself up with a Stool that comes forth from their soles. "
+      "type": "patchouli:spotlight",
+      "item": "risus:sinner_robes_boots",
+      "text": "The Abilities of the $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Boots are primarily mobility oriented: A $(l:tools/light_devourer)$(c)$(o)Light Devourer$() will allow the wearer to directly walk on Darkness by crouching. This includes both naturally occurring shade and the artificial Darkness placed by a Light Devourer."
     },
     {
-      "type": "risus:abilitysmithing2",
-      "header": "Shadow Walker",
-      "recipe": "risus:shadow_walker_boots",
-      "header2": "Great Stool",
-      "recipe2": "risus:great_stool_boots"
+      "type": "patchouli:relations",
+      "entries" : [
+        "risus:armors/sinner_robes",
+        "risus:tools/light_devourer",
+        "risus:blocks/bondknot"
+      ]
     }
   ]
 }
