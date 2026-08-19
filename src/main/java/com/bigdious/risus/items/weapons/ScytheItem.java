@@ -1,9 +1,12 @@
 package com.bigdious.risus.items.weapons;
 
+import com.bigdious.risus.Risus;
 import com.bigdious.risus.blocks.BaseRotatableBlock;
 import com.bigdious.risus.blocks.entity.RitualBlockEntity;
 import com.bigdious.risus.init.RisusBlocks;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusSoundEvents;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidModel;
@@ -11,10 +14,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -34,6 +42,7 @@ import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -77,8 +86,47 @@ public class ScytheItem extends SwordItem {
 		this.allowedEnchants = allowedEnchants;
 	}
 
-	public static ItemAttributeModifiers createScytheAttributes(Tier tier, int damage, float speed) {
-		return SwordItem.createAttributes(tier, damage, speed);
+
+	@Override
+	public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+		var builder = ItemAttributeModifiers.builder();
+		boolean nobuff = stack.is(RisusItems.SCYTHE);
+		boolean sow = Boolean.TRUE.equals(stack.get(RisusDataComponents.SOWING));
+		if (sow) {
+			builder.add(
+				Attributes.ENTITY_INTERACTION_RANGE,
+				new AttributeModifier(Risus.prefix("range_modifier"), 1, AttributeModifier.Operation.ADD_VALUE),
+				EquipmentSlotGroup.MAINHAND
+			);
+		}
+		builder.add(
+			Attributes.ATTACK_DAMAGE,
+			new AttributeModifier(Risus.prefix("attack_modifier"), nobuff ? (sow ? 4.5 : 10) : (sow ? 3 : 7), AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.MAINHAND
+		);
+		builder.add(
+			Attributes.ATTACK_SPEED,
+			new AttributeModifier(Risus.prefix("attack_speed_modifier"), sow ? -2.8: -3.4, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.MAINHAND
+		);
+		return builder.build();
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+		ItemStack itemstack = player.getItemInHand(hand);
+		if (player.isCrouching() && itemstack.has(RisusDataComponents.SOWING)) {
+			itemstack.set(RisusDataComponents.SOWING, !Boolean.TRUE.equals(itemstack.get(RisusDataComponents.SOWING)));
+			level.playSound(null, player.getOnPos().above(), RisusSoundEvents.SCYTHE_SWITCH.get(), SoundSource.PLAYERS);
+			return InteractionResultHolder.success(itemstack);
+		} else {
+			return InteractionResultHolder.fail(itemstack);
+		}
+	}
+
+	@Override
+	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+		return !Boolean.TRUE.equals(stack.get(RisusDataComponents.SOWING));
 	}
 
 	@Override
@@ -93,7 +141,7 @@ public class ScytheItem extends SwordItem {
 
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-		tooltipComponents.add(Component.translatable("tooltip.risus.scythe").withStyle(ChatFormatting.GRAY));
+		tooltipComponents.add(Component.translatable("tooltip.risus.scythe_" + (Boolean.TRUE.equals(stack.get(RisusDataComponents.SOWING)) ? "sow" : "harvest")).withStyle(ChatFormatting.GRAY));
 	}
 
 	@Override
@@ -115,6 +163,8 @@ public class ScytheItem extends SwordItem {
 		}
 		return InteractionResult.PASS;
 	}
+
+
 	public static class ItemExtensions implements IClientItemExtensions {
 
 		public static final ItemExtensions INSTANCE = new ItemExtensions();

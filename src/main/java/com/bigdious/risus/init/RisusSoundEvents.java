@@ -78,6 +78,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> MISFORTUNE_TRIGGERED = register("item.wretched_charm.fortune_triggered");
 	public static final DeferredHolder<SoundEvent, SoundEvent> IMBIBING = register("item.imbibe");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WING_STAB = register("item.wing_stab");
+	public static final DeferredHolder<SoundEvent, SoundEvent> SCYTHE_SWITCH = register("item.scythe_switch");
 
 
 	private static DeferredHolder<SoundEvent, SoundEvent> register(String name) {

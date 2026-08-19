@@ -424,6 +424,12 @@
     ],
     "subtitle": "subtitles.risus.item.organic_matter.use"
   },
+  "item.scythe_switch": {
+    "sounds": [
+      "risus:item/scythe_switch"
+    ],
+    "subtitle": "subtitles.risus.item.scythe_switch"
+  },
   "item.stripper.strip": {
     "sounds": [
       {

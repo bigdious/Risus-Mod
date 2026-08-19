@@ -81,6 +81,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_INSERT, SoundEvents.ITEM_FRAME_ADD_ITEM, "Item is inserted");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.ITEM_REMOVED, SoundEvents.CHISELED_BOOKSHELF_PICKUP, "Item is removed");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.HEARTBEAT, "block/beating_heart/heartbeat", 1,"Heart beats");
+		this.generateNewSoundWithSubtitle(RisusSoundEvents.SCYTHE_SWITCH, "item/scythe_switch", 1,"Scythe switches modes");
 	}
 
 	public void generateNewSoundWithSubtitle(DeferredHolder<SoundEvent, SoundEvent> event, String baseSoundDirectory, int numberOfSounds, String subtitle) {

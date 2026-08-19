@@ -111,7 +111,7 @@ public class ExecrationEvents {
 		Player player = event.getEntity();
 		Entity victim = event.getTarget();
 		ItemStack stack = event.getEntity().getWeaponItem();
-		if ((stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) || stack.is(RisusTags.Items.SCYTHES)) {
+		if (((stack.has(DataComponents.ENCHANTMENTS) && stack.get(DataComponents.ENCHANTMENTS).getLevel(player.level().registryAccess().holderOrThrow(Execrations.GENOCIDE)) > 0) || stack.is(RisusTags.Items.SCYTHES)) && !Boolean.TRUE.equals(stack.get(RisusDataComponents.SOWING))) {
 			//mostly copy from Player attack()
 			float f = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 			DamageSource damagesource = player.damageSources().playerAttack(player);

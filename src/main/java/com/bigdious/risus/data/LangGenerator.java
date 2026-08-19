@@ -403,7 +403,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.blood_feather", "Obtained from Blood Ophanims.");
 		this.add("tooltip.risus.memory_core", "Uncommonly dropped by Weavers.");
 		this.add("tooltip.risus.lost_will", "Right Click to use.");
-		this.add("tooltip.risus.scythe", "Scythe");
+		this.add("tooltip.risus.scythe_harvest", "Scythe - Harvest");
+		this.add("tooltip.risus.scythe_sow", "Scythe - Sow");
 		this.add("tooltip.risus.heavy_axe", "Heavy Axe");
 		this.add("tooltip.risus.knuckleduster", "Knuckleduster");
 		this.add("tooltip.risus.war_sword", "War Sword");

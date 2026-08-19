@@ -1,6 +1,7 @@
 package com.bigdious.risus;
 
 import com.bigdious.risus.config.RisusConfig;
+import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.AnimationUtils;
@@ -119,7 +120,7 @@ public class RisusEnumExtensions {
 		if (idx == 0)
 			return true; //two handed. Set to false to only pose the hand holding the item
 		return (IArmPoseTransformer) (model, entity, arm) -> {
-			if (!entity.isUsingItem() && RisusConfig.customWeaponAnims) {
+			if (!entity.isUsingItem() && RisusConfig.customWeaponAnims && !Boolean.TRUE.equals(entity.getMainHandItem().get(RisusDataComponents.SOWING))) {
 				ModelPart right = model.rightArm;
 				ModelPart left = model.leftArm;
 				float armRotationWithoutReturn = Mth.lerp(model.attackTime * 4, 0.0F, 1.0F);

@@ -121,9 +121,9 @@ public class ItemEffectEvents {
 		if (entity instanceof LivingEntity attacker) {
 			if (attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 				if (!entity2.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(entity2.getType().is(RisusTags.Entities.OFFSPRING))) {
-					event.setAmount(event.getAmount() + 7);
+					event.setAmount(event.getAmount() + (Boolean.TRUE.equals(attacker.getMainHandItem().get(RisusDataComponents.SOWING)) ? 3.5F : 7F) );
 				} else {
-					event.setAmount(event.getAmount() - 3);
+					event.setAmount(event.getAmount() - (Boolean.TRUE.equals(attacker.getMainHandItem().get(RisusDataComponents.SOWING)) ? 1.5F : 3F));
 				}
 			}
 			if (attacker.getMainHandItem().is(RisusItems.KILLJOY.get())) {

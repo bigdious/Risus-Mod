@@ -7,47 +7,33 @@
     }
   },
   "loader": "neoforge:separate_transforms",
-  "overrides": [
-    {
-      "model": "risus:item/fire_scythe_noanim",
-      "predicate": {
-        "risus:noanim": 1.0
-      }
-    },
-    {
-      "model": "risus:item/fire_scythe_sow",
-      "predicate": {
-        "risus:sow": 1.0
-      }
-    }
-  ],
   "perspectives": {
     "firstperson_lefthand": {
-      "parent": "risus:item/fire_scythe_held",
+      "parent": "risus:item/noanim_fire_scythe_held",
       "textures": {
         "texture": "risus:item/fire_scythe"
       }
     },
     "firstperson_righthand": {
-      "parent": "risus:item/fire_scythe_held",
+      "parent": "risus:item/noanim_fire_scythe_held",
       "textures": {
         "texture": "risus:item/fire_scythe"
       }
     },
     "head": {
-      "parent": "risus:item/fire_scythe_held",
+      "parent": "risus:item/noanim_fire_scythe_held",
       "textures": {
         "texture": "risus:item/fire_scythe"
       }
     },
     "thirdperson_lefthand": {
-      "parent": "risus:item/fire_scythe_held",
+      "parent": "risus:item/noanim_fire_scythe_held",
       "textures": {
         "texture": "risus:item/fire_scythe"
       }
     },
     "thirdperson_righthand": {
-      "parent": "risus:item/fire_scythe_held",
+      "parent": "risus:item/noanim_fire_scythe_held",
       "textures": {
         "texture": "risus:item/fire_scythe"
       }
