@@ -3,7 +3,7 @@
   "base": {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "risus:item/scythe_item"
+      "layer0": "risus:item/scythe_sow_item"
     }
   },
   "loader": "neoforge:separate_transforms",

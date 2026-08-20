@@ -3,7 +3,7 @@
   "base": {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "risus:item/cinderglee_scythe_item"
+      "layer0": "risus:item/cinderglee_scythe_sow_item"
     }
   },
   "loader": "neoforge:separate_transforms",

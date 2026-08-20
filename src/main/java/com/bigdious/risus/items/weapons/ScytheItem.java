@@ -43,6 +43,7 @@ import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.common.util.AttributeUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -95,20 +96,21 @@ public class ScytheItem extends SwordItem {
 		if (sow) {
 			builder.add(
 				Attributes.ENTITY_INTERACTION_RANGE,
-				new AttributeModifier(Risus.prefix("range_modifier"), 1, AttributeModifier.Operation.ADD_VALUE),
+				new AttributeModifier(AttributeUtil.BASE_ENTITY_REACH_ID, 1, AttributeModifier.Operation.ADD_VALUE),
 				EquipmentSlotGroup.MAINHAND
 			);
 		}
 		builder.add(
 			Attributes.ATTACK_DAMAGE,
-			new AttributeModifier(Risus.prefix("attack_modifier"), nobuff ? (sow ? 4.5 : 10) : (sow ? 3 : 7), AttributeModifier.Operation.ADD_VALUE),
+			new AttributeModifier(BASE_ATTACK_DAMAGE_ID, nobuff ? (sow ? 4.5 : 10) : (sow ? 3 : 7), AttributeModifier.Operation.ADD_VALUE),
 			EquipmentSlotGroup.MAINHAND
 		);
 		builder.add(
 			Attributes.ATTACK_SPEED,
-			new AttributeModifier(Risus.prefix("attack_speed_modifier"), sow ? -2.8: -3.4, AttributeModifier.Operation.ADD_VALUE),
+			new AttributeModifier(BASE_ATTACK_SPEED_ID, sow ? -2.8: -3.4, AttributeModifier.Operation.ADD_VALUE),
 			EquipmentSlotGroup.MAINHAND
 		);
+
 		return builder.build();
 	}
 

@@ -54,7 +54,7 @@ public class HandOfGreedLayer<T extends LivingEntity, M extends EntityModel<T>> 
 			if (slim) {poseStack.translate(-0.05,0,0);}
 			VertexConsumer vertexConsumer = buffer.getBuffer(LEFT_RENDER_TYPE);
 			this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
-			if (itemstack2.is(RisusItems.SINNER_ROBES_CHESTPLATE) && (!ModList.get().isLoaded("curios") || !RisusClientEvents.curiosForArm(parent))) {
+			if (((itemstack2.get(RisusDataComponents.ABILITY_VARIANT) != null && itemstack2.get(RisusDataComponents.ABILITY_VARIANT).equals("hand_of_greed"))) && (!ModList.get().isLoaded("curios") || !RisusClientEvents.curiosForArm(parent))) {
 				this.model2.setupArmSize(slim);
 				this.model2.setupAnim(parent, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 				this.model2.prepareMobModel(parent, limbSwing, limbSwingAmount, partialTicks);

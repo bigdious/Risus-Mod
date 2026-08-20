@@ -379,25 +379,25 @@ public class ItemModelGenerator extends ItemModelProvider {
 			.override().predicate(Risus.prefix("drumstick"), 1).model(drumstick).end();
 
 		var noAnimScythe = handheldItem(RisusItems.SCYTHE,"_noanim", withExistingParent("noanim_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
-		var sowScythe = handheldItem(RisusItems.SCYTHE,"_sow", withExistingParent("sow_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture");
+		var sowScythe = handheldItem(RisusItems.SCYTHE,"_sow", withExistingParent("sow_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_sow_item"), "texture");
 		handheldItem(RisusItems.SCYTHE, withExistingParent("scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/scythe"), Risus.prefix("item/scythe_item"), "texture")
 			.override().predicate(Risus.prefix("noanim"), 1).model(noAnimScythe).end()
 			.override().predicate(Risus.prefix("sow"), 1).model(sowScythe).end();
 
 		var noAnimSoulScythe = handheldItem(RisusItems.SOUL_SCYTHE,"_noanim", withExistingParent("noanim_soul_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
-		var sowSoulScythe = handheldItem(RisusItems.SOUL_SCYTHE,"_sow", withExistingParent("noanim_soul_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture");
+		var sowSoulScythe = handheldItem(RisusItems.SOUL_SCYTHE,"_sow", withExistingParent("noanim_soul_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_sow_item"), "texture");
 		handheldItem(RisusItems.SOUL_SCYTHE, withExistingParent("soul_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/soul_scythe"), Risus.prefix("item/soul_scythe_item"), "texture")
 			.override().predicate(Risus.prefix("noanim"), 1).model(noAnimSoulScythe).end()
 			.override().predicate(Risus.prefix("sow"), 1).model(sowSoulScythe).end();
 
 		var noAnimFireScythe = handheldItem(RisusItems.FIRE_SCYTHE, "_noanim",withExistingParent("noanim_fire_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
-		var sowFireScythe = handheldItem(RisusItems.FIRE_SCYTHE, "_sow",withExistingParent("noanim_fire_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture");
+		var sowFireScythe = handheldItem(RisusItems.FIRE_SCYTHE, "_sow",withExistingParent("noanim_fire_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_sow_item"), "texture");
 		handheldItem(RisusItems.FIRE_SCYTHE, withExistingParent("fire_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/fire_scythe"), Risus.prefix("item/fire_scythe_item"), "texture")
 			.override().predicate(Risus.prefix("noanim"), 1).model(noAnimFireScythe).end()
 			.override().predicate(Risus.prefix("sow"), 1).model(sowFireScythe).end();
 
 		var noAnimCindergleeScythe = handheldItem(RisusItems.CINDERGLEE_SCYTHE, "_noanim",withExistingParent("noanim_cinderglee_scythe_held", Risus.prefix("item/template_held_scythe_no_anim")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
-		var sowCindergleeScythe = handheldItem(RisusItems.CINDERGLEE_SCYTHE, "_sow",withExistingParent("noanim_cinderglee_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture");
+		var sowCindergleeScythe = handheldItem(RisusItems.CINDERGLEE_SCYTHE, "_sow",withExistingParent("noanim_cinderglee_scythe_held", Risus.prefix("item/template_held_scythe_sow")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_sow_item"), "texture");
 		handheldItem(RisusItems.CINDERGLEE_SCYTHE, withExistingParent("cinderglee_scythe_held", Risus.prefix("item/template_held_scythe")), Risus.prefix("item/cinderglee_scythe"), Risus.prefix("item/cinderglee_scythe_item"), "texture")
 			.override().predicate(Risus.prefix("noanim"), 1).model(noAnimCindergleeScythe).end()
 			.override().predicate(Risus.prefix("sow"), 1).model(sowCindergleeScythe).end();
