@@ -55,15 +55,21 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 
 		guiGraphics.blitSprite(BACKGROUND_SPRITE, x + 3, y + 12, this.backgroundWidth(), this.backgroundHeight());
 		guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability").withStyle(ChatFormatting.GRAY), x, y, 115, 11184810);
-		guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability).withStyle(color), x + 28, y + 10, 120, 11184810);
-		if (item == Items.SPYGLASS) {
-			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass_mode").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
-		} else if (item == RisusBlocks.BONDKNOT_LOG.asItem()) {
-			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
-		} else if (item == RisusItems.RESEARCHERS_NOTES.get()) {
-			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.book.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.researchers_notes_open").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
+		if (item.getDefaultInstance().is(RisusTags.Items.POCKETABLE)) {
+			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.pocket").withStyle(ChatFormatting.WHITE), x + 28, y + 10, 120, 11184810);
+			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.pocket.desc").withStyle(ChatFormatting.WHITE), x + 28, y + 19, 120, 11184810);
 		} else {
-			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability + ".desc").withStyle(color), x + 28, y + 19, 120, 11184810);
+			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability).withStyle(color), x + 28, y + 10, 120, 11184810);
+
+			if (item == Items.SPYGLASS) {
+				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass_mode").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
+			} else if (item == RisusBlocks.BONDKNOT_LOG.asItem()) {
+				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
+			} else if (item == RisusItems.RESEARCHERS_NOTES.get()) {
+				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.book.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.researchers_notes_open").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
+			} else {
+				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability + ".desc").withStyle(color), x + 28, y + 19, 120, 11184810);
+			}
 		}
 
 		int renderX = x + 4;
@@ -186,6 +192,7 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		Map.entry(RisusBlocks.SMILING_REMAINS.asItem(), Pair.of("smile", ChatFormatting.DARK_RED)),
 		Map.entry(Items.SPYGLASS.asItem(), Pair.of("spyglass", ChatFormatting.GOLD)),
 		Map.entry(Items.SWEET_BERRIES.asItem(), Pair.of("fox", ChatFormatting.GOLD)),
-		Map.entry(Items.RABBIT_FOOT.asItem(), Pair.of("snow_fox", ChatFormatting.WHITE))
+		Map.entry(Items.RABBIT_FOOT.asItem(), Pair.of("snow_fox", ChatFormatting.WHITE)),
+		Map.entry(RisusItems.COUNTERWEIGHT.asItem(), Pair.of("counterweight", ChatFormatting.LIGHT_PURPLE))
 	);
 }

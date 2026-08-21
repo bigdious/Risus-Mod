@@ -1,4 +1,4 @@
-// Made with Blockbench 4.12.5
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -16,8 +16,9 @@ public class sinner_robe_left_boot<T extends Entity> extends EntityModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 0).mirror().addBox(-1.0F, 11.0F, 2.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.6F)).mirror(false)
-		.texOffs(0, 16).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.8F)).mirror(false), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(42, 0).mirror().addBox(-2.5F, 11.0F, -3.0F, 5.0F, 1.0F, 6.0F, new CubeDeformation(0.6F)).mirror(false)
+		.texOffs(0, 16).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.8F)).mirror(false)
+		.texOffs(46, 7).addBox(-2.5F, 9.0F, 1.0F, 5.0F, 1.0F, 2.0F, new CubeDeformation(0.6F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

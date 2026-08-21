@@ -477,8 +477,10 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.hand_of_greed", "Hand of Greed -");
 		this.add("tooltip.risus.ability.book", "Researcher's Notes -");
 		this.add("tooltip.risus.ability.shadow_walker", "Shadow Walker -");
+		this.add("tooltip.risus.ability.counterweight", "Rebalanced -");
+		this.add("tooltip.risus.ability.pocket", "Pocket Mode -");
 
-		this.add("tooltip.risus.ability.default.desc", "No additional effects");
+		this.add("tooltip.risus.ability.default.desc", "Insert a viable Item for Ability");
 		this.add("tooltip.risus.ability.skeleton.desc", "Less noticed by Skeletons");
 		this.add("tooltip.risus.ability.creeper.desc", "Less noticed by Creepers");
 		this.add("tooltip.risus.ability.wither_skeleton.desc", "Less noticed by Wither Skeletons");
@@ -520,6 +522,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.guts.desc", "Increased Pickup Range");
 		this.add("tooltip.risus.ability.hand_of_greed.desc", "Increased Block Interaction Range");
 		this.add("tooltip.risus.ability.shadow_walker.desc", "Turns Darkness solid when crouching");
+		this.add("tooltip.risus.ability.counterweight.desc", "Lowers your gravity");
+		this.add("tooltip.risus.ability.pocket.desc", "Item is stored, no additional effects");
+
 		this.add("tooltip.risus.ability.book.button_press", "Press the %s key to open the book");
 		this.add("tooltip.risus.ability.book.button_press.outline", "[%s]");
 

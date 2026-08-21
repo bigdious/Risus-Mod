@@ -105,6 +105,7 @@ public class RisusTags {
 		public static final TagKey<Item> LEG_UPGRADE = create("leg_upgrade");
 		public static final TagKey<Item> CHEST_UPGRADE = create("chest_upgrade");
 		public static final TagKey<Item> HEAD_UPGRADE = create("head_upgrade");
+		public static final TagKey<Item> POCKETABLE = create("pocketable");
 
 		private static TagKey<Item> create(String name) {
 			return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

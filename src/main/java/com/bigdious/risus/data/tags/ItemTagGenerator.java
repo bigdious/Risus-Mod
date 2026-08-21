@@ -301,11 +301,15 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		);
 		this.tag(RisusTags.Items.BOOT_UPGRADE).add(
 			RisusItems.LIGHT_DEVOURER.get()
+			,RisusItems.COUNTERWEIGHT.get()
 			,RisusBlocks.BONDKNOT_LOG.get().asItem()
 		);
 		this.tag(RisusTags.Items.LEG_UPGRADE).add(
 			RisusBlocks.BONDKNOT_LOG.get().asItem()
 			,RisusItems.RESEARCHERS_NOTES.get().asItem()
+			,Items.BUNDLE.asItem()
+			,Items.SHULKER_BOX.asItem()
+			,Items.ENDER_CHEST.asItem()
 		);
 		this.tag(RisusTags.Items.CHEST_UPGRADE).add(
 			RisusBlocks.BONDKNOT_LOG.get().asItem()
@@ -352,7 +356,29 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,Items.SWEET_BERRIES.asItem()
 			,Items.RABBIT_FOOT.asItem()
 		);
-
+		this.tag(RisusTags.Items.POCKETABLE).add(
+			//don't forget to add to LEG_UPGRADE too so it shows up in list
+			//if there are colored versions too, like Shulker Box, only add default to LEG_UPGRADE to not clog the list
+			Items.BUNDLE.asItem()
+			,Items.SHULKER_BOX.asItem()
+			,Items.WHITE_SHULKER_BOX.asItem()
+			,Items.LIGHT_GRAY_SHULKER_BOX.asItem()
+			,Items.GRAY_SHULKER_BOX.asItem()
+			,Items.BLACK_SHULKER_BOX.asItem()
+			,Items.BROWN_SHULKER_BOX.asItem()
+			,Items.RED_SHULKER_BOX.asItem()
+			,Items.ORANGE_SHULKER_BOX.asItem()
+			,Items.YELLOW_SHULKER_BOX.asItem()
+			,Items.LIME_SHULKER_BOX.asItem()
+			,Items.GREEN_SHULKER_BOX.asItem()
+			,Items.CYAN_SHULKER_BOX.asItem()
+			,Items.BLUE_SHULKER_BOX.asItem()
+			,Items.LIGHT_BLUE_SHULKER_BOX.asItem()
+			,Items.PURPLE_SHULKER_BOX.asItem()
+			,Items.MAGENTA_SHULKER_BOX.asItem()
+			,Items.PINK_SHULKER_BOX.asItem()
+			,Items.ENDER_CHEST.asItem()
+		);
 
 		//curios
 		this.tag(RisusTags.Items.CURIOS_HANDS).add(

@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-13T09:16:32.1279858	Tags for minecraft:item mod id risus
+// 1.21.1	2026-08-21T09:41:37.1509951	Tags for minecraft:item mod id risus
 a410e9aa69094762af5f037814c75a1c4d1413c9 data/curios/tags/item/belt.json
 ee200672c17830ea323ac6342fbc88149feb8c65 data/curios/tags/item/body.json
 0147c7e2049f5e1a179687d6f3ae4fab096657e3 data/curios/tags/item/charm.json
@@ -65,7 +65,7 @@ f10e6d7fd3c75793a78728b9029dcbc4e1709b66 data/risus/tags/item/alteration_stackin
 d917028c3b9d03c4776251d505fa7f48fa8dbf58 data/risus/tags/item/base_tissue.json
 4283d1ff36cf3451f4f8e7db97342fba3157f84a data/risus/tags/item/bondknot_logs.json
 fc698f0e4fb27e126ab66d5454914d4eb1744c45 data/risus/tags/item/bone_block_variation.json
-54a9a111f2e513a82964cd8e26e719755b3b38c2 data/risus/tags/item/boot_upgrade.json
+84a401216984e6a1a60ecb45738820448421323a data/risus/tags/item/boot_upgrade.json
 7e2738fc7493a55fd38c097d808d2bd017afdb4b data/risus/tags/item/chest_upgrade.json
 8c79cc8b251cc60f27a9a722af6f1b61073261ec data/risus/tags/item/enchanted_book_equivalent.json
 5d687e27c85871b9aa5140dfa30f216e42229ff0 data/risus/tags/item/eye.json
@@ -78,9 +78,10 @@ fcaee25805c5033b0e29cbfd01f868e8cf1f2c95 data/risus/tags/item/head_upgrade.json
 9d7fb9833e6aa795be522d192dd8621e7387ee30 data/risus/tags/item/horns.json
 c774c35ad33278c7305413969e3b7bafedb40916 data/risus/tags/item/hurts_angel_wings.json
 e512d0f2a7436b9954275b209b5b54b5e3fa8165 data/risus/tags/item/joyflame_fire_base_blocks.json
-9bda01e2c619bd0ded4921285ed5aa79b3e8945c data/risus/tags/item/leg_upgrade.json
+24483f7e4a41dbab72311238815f909ddeb54312 data/risus/tags/item/leg_upgrade.json
 2d4bb28011449fdf388a6360b5bb48a3fa19941b data/risus/tags/item/lightly_hurts_angel_wings.json
 5fa04fd14d6467f12a8c3e62583842bb92ac210e data/risus/tags/item/perpetuity_blacklist.json
+4e23feea392afd3adc62b47cbd53499e8ca1e480 data/risus/tags/item/pocketable.json
 77d12b0b03e0c64dcca79ec97a2e071ea9be0515 data/risus/tags/item/raw_meat.json
 d01ce38538b0c740521aa4d08ee6d7fb34ebe1a9 data/risus/tags/item/robes.json
 b7920fe808ba8b4fa6dcc29b261c9d22b7a119bc data/risus/tags/item/sacrificial_catalyst.json

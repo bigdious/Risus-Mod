@@ -6,7 +6,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:sinner_robes_leggings",
-      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Leggings has Abilities that mostly focus on inventory management: These very collection of Research Notes can be comfortably slotted in for an easy method of carry."
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Leggings' Ability slot is a bit special. It can be used as a Pocket to hold a storage-related, such as a Bundles, a Shulker Box or an Ender Chest. Additionally, it does still have its own Abilities though, which are primarily storage focused: This very collection of Research Notes can be comfortably slotted in for an easy method of carry."
     },
     {
       "type": "patchouli:relations",

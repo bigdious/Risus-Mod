@@ -3,6 +3,8 @@ package com.bigdious.risus.items.armor;
 import com.bigdious.risus.components.item.ArmorUpgradingContent;
 import com.bigdious.risus.components.tooltip.ArmorUpgradingTooltipComponent;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusItems;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
@@ -46,8 +48,11 @@ public class UpgradableRisusArmorItem extends RisusArmorItem{
 					}
 				} else {
 					Item placeholder = other.copy().getItem();
-					if (armorUpgradingContent$mutable.tryInsert(other, acceptedTag())) {
-						if (ArmorUpgradingTooltipComponent.ABILITIES.containsKey(placeholder)) {
+					TagKey<Item> tag = other.is(RisusTags.Items.POCKETABLE) && stack.is(RisusItems.SINNER_ROBES_LEGGINGS) ? RisusTags.Items.POCKETABLE : acceptedTag();
+					if (armorUpgradingContent$mutable.tryInsert(other, tag)) {
+						if (other.is(RisusTags.Items.POCKETABLE)) {
+							stack.set(RisusDataComponents.ABILITY_VARIANT, "pocket");
+						} else if (ArmorUpgradingTooltipComponent.ABILITIES.containsKey(placeholder)) {
 							stack.set(RisusDataComponents.ABILITY_VARIANT, ArmorUpgradingTooltipComponent.ABILITIES.get(placeholder).getFirst());
 						}
 						this.playInsertSound(player);

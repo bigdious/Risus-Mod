@@ -15,10 +15,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.FastColor;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.SlotAccess;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
@@ -28,6 +27,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -50,6 +50,31 @@ public class SinnerRobeBootsItem extends UpgradableRisusArmorItem {
 			return ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/boots/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".png");
 		}
 		return null;
+	}
+
+	@Override
+	public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+		var builder = ItemAttributeModifiers.builder();
+		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("counterweight")) {
+			builder.add(Attributes.GRAVITY,
+					new AttributeModifier(
+						Risus.prefix("gravity_modifier"),
+						-0.50, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), EquipmentSlotGroup.FEET)
+				.add(Attributes.SAFE_FALL_DISTANCE,
+					new AttributeModifier(
+						Risus.prefix("safe_fall_distance_modifier"),
+						5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.FEET);
+		}
+		builder.add(
+			Attributes.MAX_HEALTH,
+			new AttributeModifier(Risus.prefix("health_modifier"), 2, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.FEET
+		).add(
+			Attributes.ARMOR,
+			new AttributeModifier(Risus.prefix("armor_modifier"), 5, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.FEET
+		);
+		return builder.build();
 	}
 
 	@Override
