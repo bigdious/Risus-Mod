@@ -13,6 +13,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.Util;
 import net.minecraft.advancements.critereon.EntityTypePredicate;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -66,19 +67,6 @@ import java.util.function.Function;
 public class ItemEffectEvents {
 	public static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR;
 
-	public static void explodeStick(LivingIncomingDamageEvent event) {
-		Entity entity = event.getSource().getEntity();
-		if (entity instanceof LivingEntity attacker && event.getSource().getWeaponItem() != null) {
-			if (event.getSource().getWeaponItem().is(RisusItems.BOOMSTICK.get())) {
-				//we explode stick in the attacker's crotch, this way the victim can use shield to defend
-				boomstickLogic(attacker.getMainHandItem(), attacker, attacker);
-
-
-				attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-			}
-		}
-	}
-
 	public static void boomstickLogic(ItemStack boomstick, LivingEntity attacker, Entity explodingEntity) {
 		int powerRadius = boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.POWER)) / 2;
 		if (boomstick.getEnchantmentLevel(attacker.level().registryAccess().holderOrThrow(Enchantments.WIND_BURST)) > 0) {
@@ -104,7 +92,7 @@ public class ItemEffectEvents {
 	public static void handWeapons(LivingDamageEvent.Post event) {
 		Entity entity = event.getSource().getEntity();
 		LivingEntity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker) {
+		if (entity instanceof LivingEntity attacker && event.getSource().getWeaponItem() != null) {
 			if (attacker.getMainHandItem().is(RisusItems.CINDERGLEE_SCYTHE.get())) {
 				entity2.addEffect(new MobEffectInstance(RisusMobEffects.EXBURN, 600, 1, false, false, true));
 			}
@@ -118,7 +106,8 @@ public class ItemEffectEvents {
 	public static void handWeaponDamageEffects(LivingIncomingDamageEvent event) {
 		Entity entity = event.getSource().getEntity();
 		LivingEntity entity2 = event.getEntity();
-		if (entity instanceof LivingEntity attacker) {
+		if (entity instanceof LivingEntity attacker && event.getSource().getWeaponItem() != null) {
+			//soul scythe deals extra damage against living, less against non-living
 			if (attacker.getMainHandItem().is(RisusItems.SOUL_SCYTHE.get())) {
 				if (!entity2.getType().is(EntityTypePredicate.of(EntityTypeTags.SENSITIVE_TO_SMITE).types()) && !(entity2.getType().is(RisusTags.Entities.OFFSPRING))) {
 					event.setAmount(event.getAmount() + (Boolean.TRUE.equals(attacker.getMainHandItem().get(RisusDataComponents.SOWING)) ? 3.5F : 7F) );
@@ -126,12 +115,28 @@ public class ItemEffectEvents {
 					event.setAmount(event.getAmount() - (Boolean.TRUE.equals(attacker.getMainHandItem().get(RisusDataComponents.SOWING)) ? 1.5F : 3F));
 				}
 			}
+			//killjoy applies bloodclogged
 			if (attacker.getMainHandItem().is(RisusItems.KILLJOY.get())) {
 				if (entity2.getType().is(RisusTags.Entities.OFFSPRINGS_AND_BELOVEDS)) {
 					event.setAmount(event.getAmount() + 3);
 				} else {
 					entity2.addEffect(new MobEffectInstance(RisusMobEffects.BLOODCLOGGED, 200, 0, false, false, true));
 				}
+			}
+			//boomstick goes boom
+			if (event.getSource().getWeaponItem().is(RisusItems.BOOMSTICK.get())) {
+				//we explode stick in the attacker's crotch, this way the victim can use shield to defend
+				boomstickLogic(attacker.getMainHandItem(), attacker, attacker);
+				attacker.getMainHandItem().hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+			}
+			//born to burn burns
+			if (event.getSource().getWeaponItem().is(RisusItems.BORN_TO_BURN.get())
+				|| attacker.getItemBySlot(EquipmentSlot.OFFHAND).is(RisusItems.BORN_TO_BURN)
+				|| Risus.curiosSearch(attacker, RisusItems.BORN_TO_BURN.get())
+				|| (attacker.getItemBySlot(EquipmentSlot.CHEST).has(RisusDataComponents.ABILITY_VARIANT)
+				&& (java.util.Objects.equals(attacker.getItemBySlot(EquipmentSlot.CHEST).get(RisusDataComponents.ABILITY_VARIANT), "born_to_burn")))) {
+
+				entity2.igniteForSeconds(10);
 			}
 		}
 	}

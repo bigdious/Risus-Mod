@@ -20,7 +20,8 @@
       "type": "patchouli:relations",
       "entries" : [
         "risus:offsprings/maw",
-        "risus:blocks/bondknot"
+        "risus:blocks/bondknot",
+        "risus:armors/sinner_chest"
       ]
     }
   ]

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Crafting together a Memory Core with a few Campfires and some Blaze Powder results in a fiery wisp often called 'Born To Burn'. It is similar to an artificial being like a Vex, but it is far more basic in its capabilities. All it does is burn endlessly, set on fire any person holding it, and place fire when used while crouching."
+      "text": "Crafting together a Memory Core with a few Campfires and some Blaze Powder results in a fiery wisp often called 'Born To Burn'. It is similar to an artificial being like a Vex, but it is far more basic in its capabilities. It can ignite any person holding it, place fire when used while crouching and make all attacks ignite the enemies."
     },
     {
       "type": "patchouli:crafting",
@@ -16,6 +16,7 @@
       "type": "patchouli:relations",
       "entries": [
         "risus:materials/memory_core",
+        "risus:armors/sinner_chest",
         "risus:blocks/climbables",
         "risus:blocks/weaving_mechanism",
         "risus:materials/gluttonous_scales",

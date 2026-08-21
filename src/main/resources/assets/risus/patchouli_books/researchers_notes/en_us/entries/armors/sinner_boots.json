@@ -6,13 +6,14 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:sinner_robes_boots",
-      "text": "The Abilities of the $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Boots are primarily mobility oriented: A $(l:tools/light_devourer)$(c)$(o)Light Devourer$() will allow the wearer to directly walk on Darkness by crouching. This includes both naturally occurring shade and the artificial Darkness placed by a Light Devourer."
+      "text": "The Abilities of the $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Boots are primarily mobility oriented: A $(l:tools/counterweight)$(c)$(o)Counterweight$() will reduce the wearer's gravity and A $(l:tools/light_devourer)$(c)$(o)Light Devourer$() will allow them to directly walk on Darkness by crouching. This includes both naturally occurring shade and the artificial Darkness placed by a Light Devourer."
     },
     {
       "type": "patchouli:relations",
       "entries" : [
         "risus:armors/sinner_robes",
         "risus:tools/light_devourer",
+        "risus:tools/counterweight",
         "risus:blocks/bondknot"
       ]
     }

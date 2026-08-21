@@ -73,7 +73,6 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::sacrificeAccepted);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::stoolDiesOnDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::explodeStick);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::handWeapons);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::handWeaponDamageEffects);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::hurtWings);

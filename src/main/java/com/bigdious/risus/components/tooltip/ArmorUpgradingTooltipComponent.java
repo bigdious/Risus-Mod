@@ -147,7 +147,7 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 
 	@Override
 	public int getWidth(@NotNull Font font) {
-		return this.backgroundWidth() + (Screen.hasShiftDown() && Objects.equals(origin, "head_upgrade") ? 200 : 120);
+		return this.backgroundWidth() + (Screen.hasShiftDown() && Objects.equals(origin, "head_upgrade") ? 200 : 130);
 	}
 
 	public static final Map<Item, Pair<String, ChatFormatting>> ABILITIES = Map.ofEntries(
@@ -157,7 +157,7 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		Map.entry(RisusItems.HAND_OF_GREED.asItem(), Pair.of("hand_of_greed", ChatFormatting.DARK_GRAY)),
 		Map.entry(RisusItems.RESEARCHERS_NOTES.asItem(), Pair.of("book", ChatFormatting.WHITE)),
 		Map.entry(Items.SKELETON_SKULL.asItem(), Pair.of("skeleton", ChatFormatting.WHITE)),
-		Map.entry(Items.CREEPER_HEAD.asItem(), Pair.of("skeleton", ChatFormatting.GREEN)),
+		Map.entry(Items.CREEPER_HEAD.asItem(), Pair.of("creeper", ChatFormatting.GREEN)),
 		Map.entry(Items.WITHER_SKELETON_SKULL.asItem(), Pair.of("wither_skeleton", ChatFormatting.DARK_GRAY)),
 		Map.entry(Items.ZOMBIE_HEAD.asItem(), Pair.of("zombie", ChatFormatting.DARK_GREEN)),
 		Map.entry(Items.PIGLIN_HEAD.asItem(), Pair.of("piglin", ChatFormatting.RED)),
@@ -193,6 +193,7 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		Map.entry(Items.SPYGLASS.asItem(), Pair.of("spyglass", ChatFormatting.GOLD)),
 		Map.entry(Items.SWEET_BERRIES.asItem(), Pair.of("fox", ChatFormatting.GOLD)),
 		Map.entry(Items.RABBIT_FOOT.asItem(), Pair.of("snow_fox", ChatFormatting.WHITE)),
-		Map.entry(RisusItems.COUNTERWEIGHT.asItem(), Pair.of("counterweight", ChatFormatting.LIGHT_PURPLE))
+		Map.entry(RisusItems.COUNTERWEIGHT.asItem(), Pair.of("counterweight", ChatFormatting.LIGHT_PURPLE)),
+		Map.entry(RisusItems.BORN_TO_BURN.asItem(), Pair.of("born_to_burn", ChatFormatting.GOLD))
 	);
 }

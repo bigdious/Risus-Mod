@@ -15,7 +15,8 @@
     {
       "type": "patchouli:relations",
       "entries": [
-        "risus:materials/blood_feather"
+        "risus:materials/blood_feather",
+        "risus:armors/sinner_boots"
       ]
     }
   ]

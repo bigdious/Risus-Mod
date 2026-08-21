@@ -15,7 +15,8 @@
     {
       "type": "patchouli:relations",
       "entries": [
-        "risus:materials/gluttonous_scales"
+        "risus:materials/gluttonous_scales",
+        "risus:armors/sinner_boots"
       ]
     }
   ]

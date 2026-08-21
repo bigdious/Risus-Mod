@@ -47,13 +47,14 @@ public class UpgradableRisusArmorItem extends RisusArmorItem{
 						access.set(itemstack);
 					}
 				} else {
-					Item placeholder = other.copy().getItem();
+
+					ItemStack placeholder = other.copy();
 					TagKey<Item> tag = other.is(RisusTags.Items.POCKETABLE) && stack.is(RisusItems.SINNER_ROBES_LEGGINGS) ? RisusTags.Items.POCKETABLE : acceptedTag();
 					if (armorUpgradingContent$mutable.tryInsert(other, tag)) {
-						if (other.is(RisusTags.Items.POCKETABLE)) {
+						if (placeholder.is(RisusTags.Items.POCKETABLE)) {
 							stack.set(RisusDataComponents.ABILITY_VARIANT, "pocket");
-						} else if (ArmorUpgradingTooltipComponent.ABILITIES.containsKey(placeholder)) {
-							stack.set(RisusDataComponents.ABILITY_VARIANT, ArmorUpgradingTooltipComponent.ABILITIES.get(placeholder).getFirst());
+						} else if (ArmorUpgradingTooltipComponent.ABILITIES.containsKey(placeholder.getItem())) {
+							stack.set(RisusDataComponents.ABILITY_VARIANT, ArmorUpgradingTooltipComponent.ABILITIES.get(placeholder.getItem()).getFirst());
 						}
 						this.playInsertSound(player);
 					}

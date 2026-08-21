@@ -16,7 +16,8 @@
       "type": "patchouli:relations",
       "entries": [
         "risus:offsprings/holder",
-        "risus:weapons/toothknocker"
+        "risus:weapons/toothknocker",
+        "risus:armors/sinner_chest"
       ]
     }
   ]

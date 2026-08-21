@@ -6,7 +6,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:sinner_robes_chestplate",
-      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Chestplate has few, but very useful utility focused Abilities: $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$() will increase the range from which Items can be picked up, while a $(l:tools/hand_of_greed)$(c)$(o)Hand of Greed$() will increase the Block Interaction Range of the wearer."
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Chestplate has few, but very useful utility and combat Abilities: $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$() will increase the range from which Items can be picked up, while a $(l:tools/hand_of_greed)$(c)$(o)Hand of Greed$() will increase the Block Interaction Range of the wearer. A $(l:tools/born_to_burn)$(c)$(o)Born To Burn$() will set the wearer on fire and makes attacks ignite enemies."
     },
     {
       "type": "patchouli:relations",
@@ -14,6 +14,7 @@
         "risus:armors/sinner_robes",
         "risus:blocks/gorger_guts",
         "risus:tools/hand_of_greed",
+        "risus:tools/born_to_burn",
         "risus:blocks/bondknot"
       ]
     }

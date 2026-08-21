@@ -21,7 +21,8 @@
         "risus:blocks/alteration_catalyst",
         "risus:structures/family_tree",
         "risus:blocks/gorger_guts",
-        "risus:materials/crystallized_bonds"
+        "risus:materials/crystallized_bonds",
+        "risus:armors/sinner_robes"
       ]
     }
   ]

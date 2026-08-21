@@ -39,7 +39,8 @@
         "risus:offsprings/stalker",
         "risus:blocks/bondknot",
         "risus:blocks/tissue_skin_hair",
-        "risus:materials/organic_matter"
+        "risus:materials/organic_matter",
+        "risus:armors/sinner_helmet"
       ]
     }
   ]
