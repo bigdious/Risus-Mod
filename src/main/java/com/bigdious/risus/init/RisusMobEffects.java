@@ -3,6 +3,7 @@ package com.bigdious.risus.init;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.effects.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -25,5 +26,6 @@ public class RisusMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> DESTINED_DEATH = MOB_EFFECTS.register("destined_death", () -> new DestinedDeathEffect(MobEffectCategory.HARMFUL, 0x210000));
 	public static final DeferredHolder<MobEffect, MobEffect> GOLD_RUSH = MOB_EFFECTS.register("gold_rush", () -> new GoldRushEffect(MobEffectCategory.NEUTRAL, 0xf0ab00));
 	public static final DeferredHolder<MobEffect, MobEffect> VERDIGRIS_VEHEMENCE = MOB_EFFECTS.register("verdigris_vehemence", () -> new VerdigrisVehemenceEffect(MobEffectCategory.NEUTRAL, 0x006b58));
-	public static final DeferredHolder<MobEffect, MobEffect> GREATNESS = MOB_EFFECTS.register("greatness", () -> new GreatnessEffect(MobEffectCategory.BENEFICIAL, 0x707070).addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE, Risus.prefix("greatness_kb_res"), 1.0D, AttributeModifier.Operation.ADD_VALUE).addAttributeModifier(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, Risus.prefix("greatness_ex_res"), 1.0D, AttributeModifier.Operation.ADD_VALUE));
+	public static final DeferredHolder<MobEffect, MobEffect> MILKED = MOB_EFFECTS.register("milked", () -> new MilkedEffect(MobEffectCategory.HARMFUL, 0XAFCDEE).addAttributeModifier(Attributes.ATTACK_DAMAGE, Risus.prefix("milked_weak"), -1.0F, AttributeModifier.Operation.ADD_VALUE).addAttributeModifier(Attributes.MOVEMENT_SPEED, Risus.prefix("milked_slow"), -0.05F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
 }

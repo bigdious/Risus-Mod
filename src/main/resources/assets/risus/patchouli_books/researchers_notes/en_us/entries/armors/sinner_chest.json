@@ -6,7 +6,12 @@
     {
       "type": "patchouli:spotlight",
       "item": "risus:sinner_robes_chestplate",
-      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Chestplate has few, but very useful utility and combat Abilities: $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$() will increase the range from which Items can be picked up, while a $(l:tools/hand_of_greed)$(c)$(o)Hand of Greed$() will increase the Block Interaction Range of the wearer. A $(l:tools/born_to_burn)$(c)$(o)Born To Burn$() will set the wearer on fire and makes attacks ignite enemies."
+      "text": "The $(l:armors/sinner_robes)$(c)$(o)Sinner's Robe$() Chestplate has few, but very useful Abilities: $(l:blocks/gorger_guts)$(c)$(o)Gorger Guts$() will increase the range from which Items can be picked up, while a $(l:tools/hand_of_greed)$(c)$(o)Hand of Greed$() will increase the Block Interaction Range of the wearer. A $(l:tools/born_to_burn)$(c)$(o)Born To Burn$() will set the wearer on fire and makes attacks ignite enemies."
+    },
+    {
+      "type": "patchouli:text",
+      "item": "risus:sinner_robes_chestplate",
+      "text": "A Bucket of Milk will result in a chest attachment that lets the wearer drink milk at any time. This container is also automatically refilled by the armor, by absorbing nutrients and proteins from the body. This process weakens the wearer for a bit, and using it repeatedly without rest will cause severe exhaustion that can result in death."
     },
     {
       "type": "patchouli:relations",

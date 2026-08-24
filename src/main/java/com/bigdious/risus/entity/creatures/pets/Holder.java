@@ -41,6 +41,7 @@ import java.util.UUID;
 public class Holder extends TamableMonster implements EmptyBucketable {
 	protected static final EntityDataAccessor<Optional<UUID>> DATA_OWNERUUID_ID;
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(Holder.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> GREED = SynchedEntityData.defineId(Holder.class, EntityDataSerializers.BOOLEAN);
 	private static final String TAG_GREED = "GREED";
 	boolean isGreed;
 	private boolean shouldAvoidEntity;
@@ -198,7 +199,7 @@ public class Holder extends TamableMonster implements EmptyBucketable {
 		super.addAdditionalSaveData(tag);
 		tag.putBoolean("AvoidingEntity", this.shouldAvoidEntity);
 		tag.putBoolean("FromBucket", this.fromBucket());
-		tag.putBoolean("FromBucket", this.isGreed);
+		tag.putBoolean("GREED", this.isGreed);
 		if (this.avoidedEntityUUID != null) {
 			tag.putUUID("AvoidingUUID", this.avoidedEntityUUID);
 		}
@@ -227,6 +228,7 @@ public class Holder extends TamableMonster implements EmptyBucketable {
 		super.defineSynchedData(builder);
 		builder.define(DATA_OWNERUUID_ID, Optional.empty());
 		builder.define(FROM_BUCKET, false);
+		builder.define(GREED, false);
 	}
 
 	static {

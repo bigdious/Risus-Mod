@@ -61,8 +61,11 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		} else {
 			guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability." + ability).withStyle(color), x + 28, y + 10, 120, 11184810);
 
+			//can't switch, not constant
 			if (item == Items.SPYGLASS) {
 				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.spyglass.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.spyglass_mode").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
+			} else if (item == Items.MILK_BUCKET) {
+				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.milk.button_press", Component.translatable("tooltip.risus.spyglass.button_press.outline", Component.keybind("keybind.milk").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
 			} else if (item == RisusBlocks.BONDKNOT_LOG.asItem()) {
 				guiGraphics.drawWordWrap(font, Component.translatable("tooltip.risus.ability.great_stool.button_press", Component.translatable("tooltip.risus.great_stool.button_press.outline", Component.keybind("keybind.summon_greatness").withStyle(ChatFormatting.DARK_RED)).withStyle(ChatFormatting.WHITE)).withStyle(color), x + 28, y + 19, 120, 11184810);
 			} else if (item == RisusItems.RESEARCHERS_NOTES.get()) {
@@ -119,8 +122,8 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		graphics.blitSprite(SLOT_SPRITE, x, y, 0, SLOT_WIDTH, SLOT_HEIGHT + 2);
 
 		if (itemIndex < size) {
-			graphics.renderItem(item.getDefaultInstance(), x + 1, y + 1, itemIndex);
-			graphics.renderItemDecorations(font, item.getDefaultInstance(), x + 1, y + 1);
+			graphics.renderItem(item.getDefaultInstance(), x + 1, y + 2, itemIndex);
+			graphics.renderItemDecorations(font, item.getDefaultInstance(), x + 1, y + 2);
 		}
 	}
 
@@ -194,6 +197,8 @@ public class ArmorUpgradingTooltipComponent implements ClientTooltipComponent {
 		Map.entry(Items.SWEET_BERRIES.asItem(), Pair.of("fox", ChatFormatting.GOLD)),
 		Map.entry(Items.RABBIT_FOOT.asItem(), Pair.of("snow_fox", ChatFormatting.WHITE)),
 		Map.entry(RisusItems.COUNTERWEIGHT.asItem(), Pair.of("counterweight", ChatFormatting.LIGHT_PURPLE)),
-		Map.entry(RisusItems.BORN_TO_BURN.asItem(), Pair.of("born_to_burn", ChatFormatting.GOLD))
+		Map.entry(RisusItems.BORN_TO_BURN.asItem(), Pair.of("born_to_burn", ChatFormatting.GOLD)),
+		//Milkable Autumn
+		Map.entry(Items.MILK_BUCKET.asItem(), Pair.of("milk", ChatFormatting.WHITE))
 	);
 }

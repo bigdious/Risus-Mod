@@ -84,7 +84,7 @@ public class SinnerRobeChestplateItem extends UpgradableRisusArmorItem {
 	public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 		if (stack.get(RisusDataComponents.ABILITY_VARIANT) != null) {
 			return layer.texture(false).equals(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/upgrade_layer_1.png")) ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + ".png") :
-				layer.dyeable() && stack.get(RisusDataComponents.ABILITY_VARIANT).equals("guts") ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + "_dyed.png") : null;
+				layer.dyeable() && (stack.get(RisusDataComponents.ABILITY_VARIANT).equals("guts") || stack.get(RisusDataComponents.ABILITY_VARIANT).equals("milk")) ? ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/models/armor/robe/chestplate/" + stack.get(RisusDataComponents.ABILITY_VARIANT) + "_dyed.png") : null;
 		}
 		return null;
 	}

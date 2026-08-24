@@ -71,7 +71,6 @@ public class RisusEvents {
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addParticles);
 		NeoForge.EVENT_BUS.addListener(ParticleEvents::addEggSack);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::sacrificeAccepted);
-		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::stoolDiesOnDeath);
 		NeoForge.EVENT_BUS.addListener(RisusEvents::welcomePlayer);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::handWeapons);
 		NeoForge.EVENT_BUS.addListener(ItemEffectEvents::handWeaponDamageEffects);
@@ -359,6 +358,5 @@ public class RisusEvents {
 			event.setCanceled(true);
 		}
 	}
-
 
 }

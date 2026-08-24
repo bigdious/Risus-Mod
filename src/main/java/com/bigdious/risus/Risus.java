@@ -106,6 +106,7 @@ public class Risus {
 		registrar.playToServer(OpenBookPacket.TYPE, OpenBookPacket.STREAM_CODEC,(payload, context) -> OpenBookPacket.handle(context));
 		registrar.playToServer(ScopePacket.TYPE, ScopePacket.STREAM_CODEC,(payload, context) -> ScopePacket.handle(context));
 		registrar.playToServer(SummonGreatnessPacket.TYPE, SummonGreatnessPacket.STREAM_CODEC,(payload, context) -> SummonGreatnessPacket.handle(context));
+		registrar.playToServer(DrinkMilkPacket.TYPE, DrinkMilkPacket.STREAM_CODEC,(payload, context) -> DrinkMilkPacket.handle(context));
 		registrar.playToServer(WingAttackPacket.TYPE, WingAttackPacket.STREAM_CODEC, WingAttackPacket::handle);
 		registrar.playToServer(SpyglassModePacket.TYPE, SpyglassModePacket.STREAM_CODEC, (payload, context) -> SpyglassModePacket.handle(context));
 		registrar.playToClient(SyncCommonConfigPacket.TYPE, SyncCommonConfigPacket.STREAM_CODEC, SyncCommonConfigPacket::handle);

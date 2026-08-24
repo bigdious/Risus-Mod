@@ -316,6 +316,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 			,RisusBlocks.MAW_GUTS.get().asItem()
 			,RisusItems.HAND_OF_GREED.get().asItem()
 			,RisusItems.BORN_TO_BURN.get().asItem()
+			,Items.MILK_BUCKET.asItem()
 		);
 		this.tag(RisusTags.Items.HEAD_UPGRADE).add(
 			RisusBlocks.BONDKNOT_LOG.get().asItem()

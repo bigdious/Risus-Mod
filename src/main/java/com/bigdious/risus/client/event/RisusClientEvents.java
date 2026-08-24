@@ -29,10 +29,7 @@ import com.bigdious.risus.items.armor.*;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.items.weapons.ToothknockerItem;
-import com.bigdious.risus.network.OpenBookPacket;
-import com.bigdious.risus.network.ScopePacket;
-import com.bigdious.risus.network.SummonGreatnessPacket;
-import com.bigdious.risus.network.WingAttackPacket;
+import com.bigdious.risus.network.*;
 import com.bigdious.risus.util.RisusSkullType;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.shaders.FogShape;
@@ -42,7 +39,6 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Camera;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Options;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.EntityModel;
@@ -53,7 +49,6 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.particle.SuspendedTownParticle;
-import net.minecraft.client.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.*;
@@ -77,7 +72,6 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;
-import net.neoforged.neoforge.client.settings.KeyMappingLookup;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -87,7 +81,6 @@ import org.lwjgl.glfw.GLFW;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -107,6 +100,12 @@ public class RisusClientEvents {
 		KeyConflictContext.IN_GAME,
 		InputConstants.Type.KEYSYM,
 		GLFW.GLFW_KEY_G,
+		"key.categories.misc");
+	private static final KeyMapping MILK = new KeyMapping(
+		"keybind.milk",
+		KeyConflictContext.IN_GAME,
+		InputConstants.Type.KEYSYM,
+		GLFW.GLFW_KEY_M,
 		"key.categories.misc");
 	private static final KeyMapping SPYGLASS_MODE = new KeyMapping(
 		"keybind.spyglass_mode",
@@ -146,9 +145,9 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::wingAttack);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::clientTick);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
-		NeoForge.EVENT_BUS.addListener(RisusClientEvents::noMovementOnStool);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::spyGlassMode);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::setSpyglassMode);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::drinkMilk);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
 			@Override
@@ -529,6 +528,14 @@ public class RisusClientEvents {
 		}
 	}
 
+	private static void drinkMilk(InputEvent.Key event) {
+		if (event.getAction() == GLFW.GLFW_PRESS && Minecraft.getInstance().player != null) {
+			if (event.getKey() == MILK.getKey().getValue() && MILK.consumeClick()) {
+				PacketDistributor.sendToServer(DrinkMilkPacket.INSTANCE);
+			}
+		}
+	}
+
 ;
 
 //	public static class CheckWhispers {
@@ -556,19 +563,6 @@ public class RisusClientEvents {
 
 		if (!mc.isPaused()) {
 			AnimationRenderHelper.animate();
-		}
-	}
-
-	public static void noMovementOnStool(MovementInputUpdateEvent event) {
-		if (event.getEntity().hasEffect(RisusMobEffects.GREATNESS)) {
-			Input input = event.getInput();
-			input.up = false;
-			input.down = false;
-			input.left = false;
-			input.right = false;
-			input.forwardImpulse = 0;
-			input.leftImpulse = 0;
-			input.jumping = false;
 		}
 	}
 

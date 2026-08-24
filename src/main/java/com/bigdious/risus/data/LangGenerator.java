@@ -480,6 +480,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.counterweight", "Rebalanced -");
 		this.add("tooltip.risus.ability.pocket", "Pocket Mode -");
 		this.add("tooltip.risus.ability.born_to_burn", "Ablaze -");
+		this.add("tooltip.risus.ability.milk", "Milkable -");
 
 		this.add("tooltip.risus.ability.default.desc", "Insert a viable Item to get an Ability");
 		this.add("tooltip.risus.ability.skeleton.desc", "Less noticed by Skeletons");
@@ -526,6 +527,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.counterweight.desc", "Lowers your gravity");
 		this.add("tooltip.risus.ability.pocket.desc", "Item is stored, no additional effects");
 		this.add("tooltip.risus.ability.born_to_burn.desc", "You and your enemies will be ignited");
+		this.add("tooltip.risus.ability.milk.button_press", "Press the %s key to drink Milk");
 
 		this.add("tooltip.risus.ability.book.button_press", "Press the %s key to open the book");
 		this.add("tooltip.risus.ability.book.button_press.outline", "[%s]");
@@ -651,9 +653,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("effect.risus.mating_frenzy.message", "You are incapable of Love");
 		this.addEffect(RisusMobEffects.PLEASURE, "Pleasure");
 		this.addEffect(RisusMobEffects.TOOTHLUSTER, "Toothluster");
-		this.addEffect(RisusMobEffects.GREATNESS, "Greatness");
 		this.addEffect(RisusMobEffects.GOLD_RUSH, "Gold Rush");
 		this.addEffect(RisusMobEffects.VERDIGRIS_VEHEMENCE, "Verdigris Vehemence");
+		this.addEffect(RisusMobEffects.MILKED, "Milked");
 
 		this.addAdvancement("first", "Risus", "The Joyplague");
 		this.addAdvancement("mod_book", "Researcher's Notes", "Alter a book to gain access to lost knowledge");

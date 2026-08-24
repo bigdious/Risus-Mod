@@ -33,10 +33,13 @@ public class ScopePacket implements CustomPacketPayload {
 		if (ctx.flow().isServerbound()) {
 			ctx.enqueueWork(() -> {
 				Player player = ctx.player();
-				if (player.isScoping()) {
-					player.level().playSound(null, player.getOnPos().above(), SoundEvents.SPYGLASS_USE, SoundSource.NEUTRAL);
-				} else {
-					player.level().playSound(null, player.getOnPos().above(), SoundEvents.SPYGLASS_STOP_USING, SoundSource.NEUTRAL);
+				if (player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT) != null && player.getItemBySlot(EquipmentSlot.HEAD).get(RisusDataComponents.ABILITY_VARIANT).equals("spyglass")) {
+					if (player.isScoping()) {
+						player.level().playSound(null, player.getOnPos().above(), SoundEvents.SPYGLASS_USE, SoundSource.NEUTRAL);
+					} else {
+						player.level().playSound(null, player.getOnPos().above(), SoundEvents.SPYGLASS_STOP_USING, SoundSource.NEUTRAL);
+					}
+
 				}
 			});
 		}

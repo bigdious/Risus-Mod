@@ -179,18 +179,6 @@ public class ItemEffectEvents {
 		}
 	}
 
-	public static void stoolDiesOnDeath(LivingDeathEvent event) {
-		Entity entity = event.getEntity();
-		if (entity instanceof Player player && player.hasEffect(RisusMobEffects.GREATNESS)) {
-			player.level().getEntities((Entity) null, new AABB(player.getOnPos()).inflate(1, 10, 1), entity2 -> entity2 instanceof Stool).forEach(entity2 -> {
-				if (entity2 instanceof Stool stool && stool.getOwner() == player) {
-					stool.kill();
-				}
-
-			});
-		}
-	}
-
 	public static void getWaxedRisusStyle(PlayerInteractEvent.RightClickBlock event) {
 		final Map<Block, Block> WAXING_MAP = Map.of(
 			RisusBlocks.COPPER_AMALGAM.get(), RisusBlocks.WAXED_COPPER_AMALGAM.get(),
