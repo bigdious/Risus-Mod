@@ -480,7 +480,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.ability.counterweight", "Rebalanced -");
 		this.add("tooltip.risus.ability.pocket", "Pocket Mode -");
 		this.add("tooltip.risus.ability.born_to_burn", "Ablaze -");
-		this.add("tooltip.risus.ability.milk", "Milkable -");
+		this.add("tooltip.risus.ability.milk", "Milk Tank -");
 
 		this.add("tooltip.risus.ability.default.desc", "Insert a viable Item to get an Ability");
 		this.add("tooltip.risus.ability.skeleton.desc", "Less noticed by Skeletons");
@@ -703,6 +703,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("analysis", "Analysis", "Find all Risus structures");
 		this.addAdvancement("antique", "Antique", "Find all Risus Music Discs and Banner Patterns");
 		this.addAdvancement("hearty", "A Hearty Challenge", "Find a Heart Chamber");
+		this.addAdvancement("collection", "Vainglorious Researcher", "Complete all collection challenges");
+		this.addAdvancement("five_booms", "Can I Get Five Booms?!", "Get five explosions from a single throw of a Loyalty enchanted Boomstick");
+		this.addAdvancement("agony", "Dear Agony", "Deal over 40 damage using the reflection from the Agony Execration");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 

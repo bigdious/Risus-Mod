@@ -31,19 +31,15 @@ public class BasicBTrigger extends SimpleCriterionTrigger<BasicBTrigger.TriggerI
 		public static Criterion<TriggerInstance> breakNest() {
 			return RisusCriterionTriggers.BREAK_WEAVER_NEST.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
-
 		public static Criterion<TriggerInstance> createWeavingMechanism() {
 			return RisusCriterionTriggers.CREATE_WEAVING_MECHANISM.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
-
 		public static Criterion<TriggerInstance> witnessNest() {
 			return RisusCriterionTriggers.WITNESS_WEAVER_NEST.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
-
 		public static Criterion<TriggerInstance> getFooled() {
 			return RisusCriterionTriggers.MIRAGE_TRAP.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
-
 		public static Criterion<TriggerInstance> getSmitten() {
 			return RisusCriterionTriggers.HOLY_GROUNDS.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
@@ -53,5 +49,12 @@ public class BasicBTrigger extends SimpleCriterionTrigger<BasicBTrigger.TriggerI
 		public static Criterion<TriggerInstance> getJuked() {
 			return RisusCriterionTriggers.DIVINE_AUTHORITY.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
+		public static Criterion<TriggerInstance> didWeBoom() {
+			return RisusCriterionTriggers.FIVE_BOOMS.get().createCriterion(new TriggerInstance(Optional.empty()));
+		}
+		public static Criterion<TriggerInstance> agony() {
+			return RisusCriterionTriggers.AGONY.get().createCriterion(new TriggerInstance(Optional.empty()));
+		}
+
 	}
 }

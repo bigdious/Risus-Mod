@@ -1,10 +1,7 @@
 package com.bigdious.risus.entity.projectile;
 
 import com.bigdious.risus.event.ItemEffectEvents;
-import com.bigdious.risus.init.RisusDamageTypes;
-import com.bigdious.risus.init.RisusEntities;
-import com.bigdious.risus.init.RisusItems;
-import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.init.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -45,6 +42,7 @@ public class ThrownBoomstick extends AbstractArrow {
 
 	private boolean dealtDamage;
 	public int clientSideReturnBoomstickTickCount;
+	public int booms;
 
 	public ThrownBoomstick(EntityType<ThrownBoomstick> type, Level level) {
 		super(type, level);
@@ -137,13 +135,14 @@ public class ThrownBoomstick extends AbstractArrow {
 
 		if (entity instanceof LivingEntity livingEntity && livingEntity.level() instanceof ServerLevel && this.level() instanceof ServerLevel) {
 			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), livingEntity, this);
+			this.booms++;
 			if (this.isDrumstick()) {
-
+				this.playSound(SoundEvents.CHICKEN_HURT, 1.5F, 1.0F);
 			}
 			this.doPostHurtEffects(livingEntity);
 			this.shootFromRotation(entity1, (float) this.getRandom().nextIntBetweenInclusive(180, 360), (float) this.getRandom().nextIntBetweenInclusive(0, 360), 0.0F, 1F, 1.0F);
 
-			this.playSound(SoundEvents.CHICKEN_HURT, 1.5F, 1.0F);
+
 		}
 
 		float f1 = 1.0F;
@@ -155,6 +154,9 @@ public class ThrownBoomstick extends AbstractArrow {
 
 		if (ret & this.entityData.get(ID_LOYALTY) > 0 && this.ownedBy(player)) {
 			ItemEffectEvents.boomstickLogic(this.getPickupItemStackOrigin(), player, player);
+			if (booms >=4 && player instanceof ServerPlayer sp) {
+				RisusCriterionTriggers.FIVE_BOOMS.get().trigger(sp);
+			}
 		}
 		return ret;
 	}
@@ -188,6 +190,9 @@ public class ThrownBoomstick extends AbstractArrow {
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
+		if (tag.contains("Booms")) {
+			this.booms = tag.getInt("Booms");
+		}
 
 		this.dealtDamage = tag.getBoolean("DealtDamage");
 		this.entityData.set(ID_LOYALTY, this.getLoyaltyFromItem(this.getPickupItemStackOrigin()));
@@ -202,6 +207,7 @@ public class ThrownBoomstick extends AbstractArrow {
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putBoolean("DealtDamage", this.dealtDamage);
+		tag.putInt("Booms", this.booms);
 	}
 
 	@Override

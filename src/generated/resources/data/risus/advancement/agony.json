@@ -1,0 +1,27 @@
+{
+  "parent": "risus:challenges",
+  "criteria": {
+    "agony": {
+      "trigger": "risus:agony"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.agony.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cactus"
+    },
+    "title": {
+      "translate": "advancement.risus.agony"
+    }
+  },
+  "requirements": [
+    [
+      "agony"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

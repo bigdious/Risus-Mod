@@ -1,5 +1,5 @@
 {
-  "parent": "risus:scythe",
+  "parent": "risus:challenges",
   "criteria": {
     "scythes": {
       "conditions": {
@@ -23,7 +23,6 @@
       "translate": "advancement.risus.rainbow.desc"
     },
     "frame": "challenge",
-    "hidden": true,
     "icon": {
       "count": 1,
       "id": "risus:soul_scythe"

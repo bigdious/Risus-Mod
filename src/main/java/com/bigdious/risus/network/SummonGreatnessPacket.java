@@ -75,11 +75,13 @@ public class SummonGreatnessPacket implements CustomPacketPayload {
 
 
 					}
-				else if (player.getVehicle().getType() == RisusEntities.GREAT_STOOL.get()) {
-					if (!level.getBlockState(player.getOnPos().above(1+(int) (-numberOfStools*1.5))).isSolidRender(level, player.getOnPos().above(1+(int) (-numberOfStools*1.5))) )
-					{
-						player.stopRiding();
-						player.teleportTo(player.getX(), player.getY() - numberOfStools*1.5, player.getZ());
+				else {
+					if (player.getVehicle() != null && player.getVehicle().getType() == RisusEntities.GREAT_STOOL.get()) {
+						if (!level.getBlockState(player.getOnPos().above(1+(int) (-numberOfStools*1.5))).isSolidRender(level, player.getOnPos().above(1+(int) (-numberOfStools*1.5))) )
+						{
+							player.stopRiding();
+							player.teleportTo(player.getX(), player.getY() - numberOfStools*1.5, player.getZ());
+						}
 					}
 				}
 			});

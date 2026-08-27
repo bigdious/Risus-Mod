@@ -1,0 +1,27 @@
+{
+  "parent": "risus:challenges",
+  "criteria": {
+    "boom": {
+      "trigger": "risus:five_booms"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.five_booms.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:tnt"
+    },
+    "title": {
+      "translate": "advancement.risus.five_booms"
+    }
+  },
+  "requirements": [
+    [
+      "boom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
