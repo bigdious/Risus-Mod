@@ -1,26 +1,26 @@
 {
   "parent": "risus:hunt",
   "criteria": {
-    "boom": {
-      "trigger": "risus:five_booms"
+    "carved": {
+      "trigger": "risus:carved"
     }
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.five_booms.desc"
+      "translate": "advancement.risus.desperate.desc"
     },
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "minecraft:tnt"
+      "id": "minecraft:wither_skeleton_skull"
     },
     "title": {
-      "translate": "advancement.risus.five_booms"
+      "translate": "advancement.risus.desperate"
     }
   },
   "requirements": [
     [
-      "boom"
+      "carved"
     ]
   ],
   "sends_telemetry_event": true

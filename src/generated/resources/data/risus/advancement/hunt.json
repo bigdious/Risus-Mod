@@ -1,7 +1,7 @@
 {
   "parent": "risus:challenges",
   "criteria": {
-    "analysis": {
+    "agony": {
       "conditions": {
         "player": [
           {
@@ -11,7 +11,7 @@
               "type_specific": {
                 "type": "minecraft:player",
                 "advancements": {
-                  "risus:analysis": true
+                  "risus:agony": true
                 }
               }
             }
@@ -20,7 +20,7 @@
       },
       "trigger": "minecraft:tick"
     },
-    "antique": {
+    "desperate": {
       "conditions": {
         "player": [
           {
@@ -30,7 +30,7 @@
               "type_specific": {
                 "type": "minecraft:player",
                 "advancements": {
-                  "risus:antique": true
+                  "risus:desperate": true
                 }
               }
             }
@@ -39,7 +39,7 @@
       },
       "trigger": "minecraft:tick"
     },
-    "armory": {
+    "five_booms": {
       "conditions": {
         "player": [
           {
@@ -49,45 +49,7 @@
               "type_specific": {
                 "type": "minecraft:player",
                 "advancements": {
-                  "risus:armory": true
-                }
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:tick"
-    },
-    "arsenal": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type_specific": {
-                "type": "minecraft:player",
-                "advancements": {
-                  "risus:arsenal": true
-                }
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:tick"
-    },
-    "destroy": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type_specific": {
-                "type": "minecraft:player",
-                "advancements": {
-                  "risus:destroy": true
+                  "risus:five_booms": true
                 }
               }
             }
@@ -99,32 +61,26 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.risus.collection.desc"
+      "translate": "advancement.risus.hunt.desc"
     },
     "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "minecraft:writable_book"
+      "id": "minecraft:netherite_sword"
     },
     "title": {
-      "translate": "advancement.risus.collection"
+      "translate": "advancement.risus.hunt"
     }
   },
   "requirements": [
     [
-      "arsenal"
+      "five_booms"
     ],
     [
-      "armory"
+      "agony"
     ],
     [
-      "destroy"
-    ],
-    [
-      "analysis"
-    ],
-    [
-      "antique"
+      "desperate"
     ]
   ],
   "sends_telemetry_event": true

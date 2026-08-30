@@ -436,12 +436,12 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 
 		AdvancementHolder collection = Advancement.Builder.advancement().parent(challenges)
 			.display(
-				Items.CHEST,
+				Items.WRITABLE_BOOK,
 				Component.translatable("advancement.risus.collection"),
 				Component.translatable("advancement.risus.collection.desc"),
 				null,
 				AdvancementType.GOAL,
-				true, true, true)
+				true, true, false)
 			.addCriterion("arsenal", this.advancementTrigger("arsenal"))
 			.addCriterion("armory", this.advancementTrigger("armory"))
 			.addCriterion("destroy", this.advancementTrigger("destroy"))
@@ -540,7 +540,30 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("tree", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.TREE_PATTERN))
 			.save(consumer, "risus:antique");
 
-		AdvancementHolder five_booms = Advancement.Builder.advancement().parent(challenges)
+
+
+		AdvancementHolder rainbow = Advancement.Builder.advancement().parent(scythe)
+			.display(
+				RisusItems.SOUL_SCYTHE.get(),
+				Component.translatable("advancement.risus.rainbow"),
+				Component.translatable("advancement.risus.rainbow.desc"), null, AdvancementType.CHALLENGE, true, true, false)
+			.addCriterion("scythes", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get()))
+			.save(consumer, "risus:rainbow");
+
+		AdvancementHolder hunt = Advancement.Builder.advancement().parent(challenges)
+			.display(
+				Items.NETHERITE_SWORD,
+				Component.translatable("advancement.risus.hunt"),
+				Component.translatable("advancement.risus.hunt.desc"),
+				null,
+				AdvancementType.GOAL,
+				true, true, false)
+			.addCriterion("five_booms", this.advancementTrigger("five_booms"))
+			.addCriterion("agony", this.advancementTrigger("agony"))
+			.addCriterion("desperate", this.advancementTrigger("desperate"))
+			.save(consumer, "risus:hunt");
+
+		AdvancementHolder five_booms = Advancement.Builder.advancement().parent(hunt)
 			.display(
 				Items.TNT,
 				Component.translatable("advancement.risus.five_booms"),
@@ -551,15 +574,7 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("boom", BasicBTrigger.TriggerInstance.didWeBoom())
 			.save(consumer, "risus:five_booms");
 
-		AdvancementHolder rainbow = Advancement.Builder.advancement().parent(challenges)
-			.display(
-				RisusItems.SOUL_SCYTHE.get(),
-				Component.translatable("advancement.risus.rainbow"),
-				Component.translatable("advancement.risus.rainbow.desc"), null, AdvancementType.CHALLENGE, true, true, false)
-			.addCriterion("scythes", InventoryChangeTrigger.TriggerInstance.hasItems(RisusItems.CINDERGLEE_SCYTHE.get(), RisusItems.SOUL_SCYTHE.get(), RisusItems.FIRE_SCYTHE.get()))
-			.save(consumer, "risus:rainbow");
-
-		AdvancementHolder agony = Advancement.Builder.advancement().parent(challenges)
+		AdvancementHolder agony = Advancement.Builder.advancement().parent(hunt)
 			.display(
 				Items.CACTUS,
 				Component.translatable("advancement.risus.agony"),
@@ -570,6 +585,16 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("agony", BasicBTrigger.TriggerInstance.agony())
 			.save(consumer, "risus:agony");
 
+		AdvancementHolder desperate = Advancement.Builder.advancement().parent(hunt)
+			.display(
+				Items.WITHER_SKELETON_SKULL,
+				Component.translatable("advancement.risus.desperate"),
+				Component.translatable("advancement.risus.desperate.desc"),
+				null,
+				AdvancementType.CHALLENGE,
+				true, true, false)
+			.addCriterion("carved", BasicBTrigger.TriggerInstance.carved())
+			.save(consumer, "risus:desperate");
 
 	}
 

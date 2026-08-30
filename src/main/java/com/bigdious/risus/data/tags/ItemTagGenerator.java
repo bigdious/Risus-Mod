@@ -193,7 +193,9 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
 			RisusItems.ANGEL_WINGS.get(),
-			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get()
+			RisusItems.DIAMOND_TIPPED_ANGEL_WINGS.get(),
+			RisusItems.LUCKY_CHARM.get(),
+			RisusItems.WRETCHED_CHARM.get()
 		);
 
 		this.tag(ItemTags.BEE_FOOD).add(

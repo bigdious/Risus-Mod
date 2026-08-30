@@ -692,7 +692,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("knuckles", "Left-Right, Goodnight", "Obtain a Toothknocker. Equip one in each hand for better damage");
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
-		this.addAdvancement("petshaped", "If Not Pet, Why Pet Shaped?", "Kidnap a Holder");
+		this.addAdvancement("petshaped", "If Not Pet, Why Pet Shaped?", "Kidnap a Holder. Don't worry, they enjoy it");
 		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
 		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
 		this.addAdvancement("strung", "Strung To Serve", "Create a Weaving Mechanism");
@@ -703,9 +703,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("analysis", "Analysis", "Find all Risus structures");
 		this.addAdvancement("antique", "Antique", "Find all Risus Music Discs and Banner Patterns");
 		this.addAdvancement("hearty", "A Hearty Challenge", "Find a Heart Chamber");
-		this.addAdvancement("collection", "Vainglorious Researcher", "Complete all collection challenges");
+		this.addAdvancement("collection", "Vainglorious Researcher", "Complete all research challenges");
 		this.addAdvancement("five_booms", "Can I Get Five Booms?!", "Get five explosions from a single throw of a Loyalty enchanted Boomstick");
 		this.addAdvancement("agony", "Dear Agony", "Deal over 40 damage using the reflection from the Agony Execration");
+		this.addAdvancement("hunt", "Prideful Hunter", "Complete all hunting challenges");
+		this.addAdvancement("desperate", "You're THAT Desperate, Huh?", "Carve off a Wither Skeleton Skull with a Carving Knife");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 

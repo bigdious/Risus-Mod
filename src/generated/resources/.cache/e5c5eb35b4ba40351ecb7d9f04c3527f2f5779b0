@@ -1,5 +1,5 @@
-// 1.21.1	2026-08-27T09:43:36.148431	Advancements
-a653d48e5f0fa139943b23539547d3ee4df74da6 data/risus/advancement/agony.json
+// 1.21.1	2026-08-30T22:59:16.219086	Advancements
+57b1b9a0687851b00c02ed7d757abb676a149813 data/risus/advancement/agony.json
 ed88b367cc04c704cdcb04cfdff1dc993338ebd1 data/risus/advancement/analysis.json
 999c34335809c87ed3e9bb6e73c946da303b4fa8 data/risus/advancement/angel.json
 bc1ef26f254f42e11d759a7303ab4861e8ea887f data/risus/advancement/antique.json
@@ -8,16 +8,17 @@ bc1ef26f254f42e11d759a7303ab4861e8ea887f data/risus/advancement/antique.json
 04bc759fe0dc807c7ed82249b11a01fe70104d06 data/risus/advancement/boomstick.json
 c807b6389786163258fecc2e2122fe015c76c3ae data/risus/advancement/challenges.json
 6add49e55ef2a7f8b74d687471245fb60730dcd4 data/risus/advancement/church.json
-f7f811603ece889e036dedb2efd3256a2ef5a397 data/risus/advancement/collection.json
+7ac1adb868ede615f333648a31f77dcd71ca245b data/risus/advancement/collection.json
 4790785abff988381beaadc68df2d2ec1a8165a3 data/risus/advancement/cream.json
 86efdb209de5a713add370745bd5217f835f92a4 data/risus/advancement/crusade.json
 32c6c7c3dbd41f93d8b7b57fee81e4e053cdd4a0 data/risus/advancement/cupid.json
+102e5d186b0be1023e4fd3313779ec10faf7a344 data/risus/advancement/desperate.json
 2cac4dc2e46f62f22c64ecc61e271153015b5efd data/risus/advancement/destroy.json
 b85cf8e41d0631d45c910173165c4b682173a7a6 data/risus/advancement/devour.json
 d228a2a69ae6b1c32f2a4b04ed8ac4d301a2de15 data/risus/advancement/d_authority.json
 8499c363e4bcdf8d4538c71c718159ceed30d653 data/risus/advancement/family.json
 a441c4bab1339101d2eece5a428d96a6909b6715 data/risus/advancement/first.json
-539145b1b81e414d20de44fe7645968ab7c66acd data/risus/advancement/five_booms.json
+4a4900ca92340586539ed655754783f2c3703464 data/risus/advancement/five_booms.json
 8a52146bcd12dbe82b313cf8d38ef21ae9c4bb8b data/risus/advancement/fleshing.json
 e178f8dd88ab8bfdb70d60eaa8d974ca399809ff data/risus/advancement/fossil.json
 7fc2c3eb1d0d6e1de8f42867c71f39e893393972 data/risus/advancement/gluttony.json
@@ -25,6 +26,7 @@ e178f8dd88ab8bfdb70d60eaa8d974ca399809ff data/risus/advancement/fossil.json
 4578da2103c9a2f17a3b4a2234bd93001ff57ddd data/risus/advancement/hearty.json
 9df61ea488c0e43cdd8afaa17dde834b73ddd9dc data/risus/advancement/homewrecker.json
 52540ce1837596b892801d38e5d92cdbdb277a9c data/risus/advancement/hornlove.json
+afaeca2ea64c6e6b638a08631d48b7fd4bbd3858 data/risus/advancement/hunt.json
 5505920bb3c65b003e9c91a48affc6fb71cf2988 data/risus/advancement/irresistible.json
 ba3ea24343a11784fa507b7ad333e61b3e96838e data/risus/advancement/knuckles.json
 22e370e0ff1a6db01916fc1ebcffc1757effe303 data/risus/advancement/lab.json
@@ -40,7 +42,7 @@ d1c38003543628f4e5eda12c845a5140ca996d55 data/risus/advancement/lost_will_5.json
 aeec319b2aa74fde1fab7eed7d4264d3ca558794 data/risus/advancement/parentmode.json
 e0fdfcfabc6e6107454d341ea77ba5861404868e data/risus/advancement/petshaped.json
 c3216a49946d9bda668d55c7c0204d674a47e68a data/risus/advancement/potential.json
-de5fe5a8c13a4f986a76fcaabbe42bdecba85468 data/risus/advancement/rainbow.json
+66fab18823688eb9d1ffac65e6525285e9474c9e data/risus/advancement/rainbow.json
 bd588ad15fcc72d2ec31880ac52d6ebe0b0e45bd data/risus/advancement/revenge.json
 7fc561f2e7babf29623939535355c8498eb50e8c data/risus/advancement/robes.json
 0e55bed123d2d9a7e4895830ade7b85720284bcc data/risus/advancement/satiate.json

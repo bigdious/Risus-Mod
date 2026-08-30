@@ -20,5 +20,6 @@ public class RisusCriterionTriggers {
 	public static final DeferredHolder<CriterionTrigger<?>, BasicBTrigger> DIVINE_AUTHORITY = TRIGGERS.register("divine_authority", BasicBTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, BasicBTrigger> FIVE_BOOMS = TRIGGERS.register("five_booms", BasicBTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, BasicBTrigger> AGONY = TRIGGERS.register("agony", BasicBTrigger::new);
+	public static final DeferredHolder<CriterionTrigger<?>, BasicBTrigger> CARVED = TRIGGERS.register("carved", BasicBTrigger::new);
 	public static final DeferredHolder<CriterionTrigger<?>, LostWillTrigger> LOST_WILL = TRIGGERS.register("lost_will", LostWillTrigger::new);
 }
