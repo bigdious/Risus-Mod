@@ -707,7 +707,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("five_booms", "Can I Get Five Booms?!", "Get five explosions from a single throw of a Loyalty enchanted Boomstick");
 		this.addAdvancement("agony", "Dear Agony", "Deal over 40 damage using the reflection from the Agony Execration");
 		this.addAdvancement("hunt", "Prideful Hunter", "Complete all hunting challenges");
-		this.addAdvancement("desperate", "You're THAT Desperate, Huh?", "Carve off a Wither Skeleton Skull with a Carving Knife");
+		this.addAdvancement("desperate", "You're THAT Desperate, Huh?", "Carve off a Wither Skeleton's Skull with a Carving Knife");
+		this.addAdvancement("truth", "Where The Truth Lies", "Some things are beyond understanding. Even for you, Foreign One.");
+		this.addAdvancement("edge", "Simulated End Of Infinity", "Come across a plagued recreation of a hole in the canvas");
 
 		this.addBiome(RisusBiomes.COALIFICATION, "Coalification");
 

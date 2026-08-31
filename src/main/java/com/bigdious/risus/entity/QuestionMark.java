@@ -1,9 +1,11 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.init.RisusCriterionTriggers;
 import com.bigdious.risus.init.RisusDamageTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -33,9 +35,9 @@ public class QuestionMark extends Monster {
 
 	public static AttributeSupplier.Builder attributes() {
 		return Monster.createMonsterAttributes()
-			.add(Attributes.MAX_HEALTH, 1024.0D)
+			.add(Attributes.MAX_HEALTH, -1.0D)
 			.add(Attributes.MOVEMENT_SPEED, 0.0D)
-			.add(Attributes.ATTACK_DAMAGE, 10.0D);
+			.add(Attributes.ATTACK_DAMAGE, 0.0D);
 	}
 
 	@Override
@@ -139,6 +141,9 @@ public class QuestionMark extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
+		if (source.getEntity() instanceof ServerPlayer sp) {
+			RisusCriterionTriggers.DISCOVER.get().trigger(sp);
+		}
 		return source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && super.hurt(source, amount);
 	}
 

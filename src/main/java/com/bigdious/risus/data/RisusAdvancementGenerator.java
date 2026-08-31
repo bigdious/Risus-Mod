@@ -596,6 +596,28 @@ public class RisusAdvancementGenerator implements AdvancementProvider.Advancemen
 			.addCriterion("carved", BasicBTrigger.TriggerInstance.carved())
 			.save(consumer, "risus:desperate");
 
+		AdvancementHolder truth = Advancement.Builder.advancement().parent(challenges)
+			.display(
+				Items.BARRIER,
+				Component.translatable("advancement.risus.truth"),
+				Component.translatable("advancement.risus.truth.desc"),
+				null,
+				AdvancementType.GOAL,
+				false, false, true)
+			.addCriterion("edge", this.advancementTrigger("edge"))
+			.save(consumer, "risus:truth");
+
+		AdvancementHolder edge = Advancement.Builder.advancement().parent(truth)
+			.display(
+				Items.PAINTING,
+				Component.translatable("advancement.risus.edge"),
+				Component.translatable("advancement.risus.edge.desc"),
+				null,
+				AdvancementType.CHALLENGE,
+				true, true, true)
+			.addCriterion("edge", BasicBTrigger.TriggerInstance.discover())
+			.save(consumer, "risus:edge");
+
 	}
 
 

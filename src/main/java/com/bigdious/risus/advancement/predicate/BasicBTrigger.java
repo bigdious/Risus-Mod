@@ -56,6 +56,7 @@ public class BasicBTrigger extends SimpleCriterionTrigger<BasicBTrigger.TriggerI
 			return RisusCriterionTriggers.AGONY.get().createCriterion(new TriggerInstance(Optional.empty()));
 		}
 		public static Criterion<TriggerInstance> carved() {return RisusCriterionTriggers.CARVED.get().createCriterion(new TriggerInstance(Optional.empty()));}
+		public static Criterion<TriggerInstance> discover() {return RisusCriterionTriggers.DISCOVER.get().createCriterion(new TriggerInstance(Optional.empty()));}
 
 	}
 }

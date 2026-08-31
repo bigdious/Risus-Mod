@@ -1,0 +1,28 @@
+{
+  "parent": "risus:truth",
+  "criteria": {
+    "edge": {
+      "trigger": "risus:discover"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.risus.edge.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:painting"
+    },
+    "title": {
+      "translate": "advancement.risus.edge"
+    }
+  },
+  "requirements": [
+    [
+      "edge"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
