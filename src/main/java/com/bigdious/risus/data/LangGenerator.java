@@ -693,7 +693,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addAdvancement("stripper", "Mine! Mine! Mine!", "Obtain the ability for non-consensual property acquisition");
 		this.addAdvancement("revenge", "Who's Laughing Now, You Little F-?!", "Obtain a Hand of Greed");
 		this.addAdvancement("petshaped", "If Not Pet, Why Pet Shaped?", "Kidnap a Holder. Don't worry, they enjoy it");
-		this.addAdvancement("cream", "WHY WOULD YOU SWALLOW THAT?!", "Drink some Lover's Cream");
+		this.addAdvancement("cream", "Questionable Tastes", "Drink some Lover's Cream");
 		this.addAdvancement("church", "May God's Gaze Reach You", "Go to church");
 		this.addAdvancement("strung", "Strung To Serve", "Create a Weaving Mechanism");
 		this.addAdvancement("challenges", "Risus Challenges", "Prove the results of your research");
