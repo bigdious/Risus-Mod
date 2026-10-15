@@ -8,6 +8,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation ANGEL = register("angel");
 	public static final ModelLayerLocation HEX = register("hex");
 	public static final ModelLayerLocation HOLDER = register("holder");
+	public static final ModelLayerLocation GUTLESS = register("gutless");
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation LICKER = register("licker");
 	public static final ModelLayerLocation BABY_SPIDER = register("baby_spider");

@@ -22,31 +22,44 @@ public class RisusEntities {
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, Risus.MODID);
 	public static final DeferredRegister<Item> SPAWN_EGGS = DeferredRegister.create(Registries.ITEM, Risus.MODID);
 
+	//offsprings
 	public static final DeferredHolder<EntityType<?>, EntityType<Angel>> ANGEL = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "angel"), EntityType.Builder.of(Angel::new, MobCategory.MONSTER).fireImmune().sized(2F, 2.0F), 0x000000, 0x8b0000);
-	public static final DeferredHolder<EntityType<?>, EntityType<RisusBoat>> BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
-	public static final DeferredHolder<EntityType<?>, EntityType<GutsBoat>> GUTS_BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "guts_boat"), EntityType.Builder.<GutsBoat>of(GutsBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
-	public static final DeferredHolder<EntityType<?>, EntityType<BloodwyrmBreathEntity>> BLOODWYRM_BREATH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodwyrm_breath"), EntityType.Builder.<BloodwyrmBreathEntity>of(BloodwyrmBreathEntity::new, MobCategory.MISC).sized(0.1F, 0.1F));
 	public static final DeferredHolder<EntityType<?>, EntityType<Holder>> HOLDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "holder"), EntityType.Builder.of(Holder::new, MobCategory.MONSTER).sized(0.7F, 0.5F), 0x000000, 0x8b0000);
 	public static final DeferredHolder<EntityType<?>, EntityType<Maw>> MAW = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "maw"), EntityType.Builder.of(Maw::new, MobCategory.MONSTER).fireImmune().sized(1.0F, 0.75F), 0x000000, 0xfaefcf);
-	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).fireImmune().sized(3.5F, 4F), 0x000000, 0xffffff);
+	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
+
+	//beloved
+	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x4d36ff);
+	public static final DeferredHolder<EntityType<?>, EntityType<Singer>> SINGER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "singer"), EntityType.Builder.of(Singer::new, MobCategory.MONSTER).sized(1F, 3.0F), 0x000000, 0x13967c);
+	public static final DeferredHolder<EntityType<?>, EntityType<Licker>> LICKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "licker"), EntityType.Builder.of(Licker::new, MobCategory.MONSTER).sized(0.8F, 2F), 0x4f3424, 0xff9494);
+	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x14ff14, 0xffd414);
+	public static final DeferredHolder<EntityType<?>, EntityType<Hex>> HEX = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "hex"), EntityType.Builder.of(Hex::new, MobCategory.MONSTER).fireImmune().sized(0.4F, 0.6F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8), 0x14ff14, 0xffd414);
+
+	//cultist
+	public static final DeferredHolder<EntityType<?>, EntityType<Gutless>> GUTLESS = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "gutless"), EntityType.Builder.of(Gutless::new, MobCategory.MONSTER).fireImmune().sized(0.8F, 1.8F), 0x14ff14, 0xffd414);
+
+	//misc creatures
+	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).fireImmune().sized(0.75F, 1.0F));
+	public static final DeferredHolder<EntityType<?>, EntityType<BabySpider>> BABY_SPIDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "baby_spider"), EntityType.Builder.of(BabySpider::new, MobCategory.MONSTER).sized(0.3F, 0.3F), 0xfcf0f0, 0xfcd2d2);
+
+	//projectiles
+	public static final DeferredHolder<EntityType<?>, EntityType<BloodwyrmBreathEntity>> BLOODWYRM_BREATH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodwyrm_breath"), EntityType.Builder.<BloodwyrmBreathEntity>of(BloodwyrmBreathEntity::new, MobCategory.MISC).sized(0.1F, 0.1F));
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownAxe>> THROWN_AXE = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "thrown_axe"), EntityType.Builder.<ThrownAxe>of(ThrownAxe::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownBoomstick>> THROWN_BOOMSTICK = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "thrown_boomstick"), EntityType.Builder.<ThrownBoomstick>of(ThrownBoomstick::new, MobCategory.MISC).fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<BloodSlash>> BLOODSLASH = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "bloodslash"), EntityType.Builder.<BloodSlash>of(BloodSlash::new, MobCategory.MISC).noSave().fireImmune().sized(0.5F, 0.5F).clientTrackingRange(4).updateInterval(20));
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrownEndlessPearl>> ENDLESS_PEARL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "endless_pearl"), EntityType.Builder.<ThrownEndlessPearl>of(ThrownEndlessPearl::new, MobCategory.MISC).fireImmune().sized(0.4F, 0.4F).clientTrackingRange(4).updateInterval(20));
-	public static final DeferredHolder<EntityType<?>, EntityType<Weaver>> WEAVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "weaver"), EntityType.Builder.of(Weaver::new, MobCategory.MONSTER).sized(0.5F, 0.5F), 0xfaefcf, 0xff3d3d);
-
-	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).fireImmune().sized(0.75F, 1.0F));
-
-
-	public static final DeferredHolder<EntityType<?>, EntityType<Lover>> LOVER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "lover"), EntityType.Builder.of(Lover::new, MobCategory.MONSTER).sized(1F, 1.0F), 0x000000, 0x4d36ff);
-	public static final DeferredHolder<EntityType<?>, EntityType<Singer>> SINGER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "singer"), EntityType.Builder.of(Singer::new, MobCategory.MONSTER).sized(1F, 3.0F), 0x000000, 0x13967c);
-	public static final DeferredHolder<EntityType<?>, EntityType<Licker>> LICKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "licker"), EntityType.Builder.of(Licker::new, MobCategory.MONSTER).sized(0.8F, 2F), 0x4f3424, 0xff9494);
-	public static final DeferredHolder<EntityType<?>, EntityType<BabySpider>> BABY_SPIDER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "baby_spider"), EntityType.Builder.of(BabySpider::new, MobCategory.MONSTER).sized(0.3F, 0.3F), 0xfcf0f0, 0xfcd2d2);
 	public static final DeferredHolder<EntityType<?>, EntityType<EggSac>> EGG_SAC = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "egg_sac"), EntityType.Builder.<EggSac>of(EggSac::new, MobCategory.MISC).sized(0.3F, 0.3F));
-	public static final DeferredHolder<EntityType<?>, EntityType<Stalker>> STALKER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "stalker"), EntityType.Builder.of(Stalker::new, MobCategory.MONSTER).sized(0.6F, 1.8F), 0x14ff14, 0xffd414);
-	public static final DeferredHolder<EntityType<?>, EntityType<Hex>> HEX = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "hex"), EntityType.Builder.of(Hex::new, MobCategory.MONSTER).fireImmune().sized(0.4F, 0.6F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8), 0x14ff14, 0xffd414);
 
+	//whatever is left
+	public static final DeferredHolder<EntityType<?>, EntityType<RisusBoat>> BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
+	public static final DeferredHolder<EntityType<?>, EntityType<GutsBoat>> GUTS_BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "guts_boat"), EntityType.Builder.<GutsBoat>of(GutsBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
+	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).fireImmune().sized(3.5F, 4F), 0x000000, 0xffffff);
 	public static final DeferredHolder<EntityType<?>, EntityType<Stool>> GREAT_STOOL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_stool"), EntityType.Builder.of(Stool::new, MobCategory.MISC).sized(1F, 1.5F));
+
+
+
+
+
 
 	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> registerNoEgg(ResourceLocation id, EntityType.Builder<T> builder) {
 		return ENTITIES.register(id.getPath(), () -> builder.build(id.toString()));

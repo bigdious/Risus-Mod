@@ -294,6 +294,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.BABY_SPIDER, BabySpiderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.HEX, HexModel::createBodyLayer);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
+		event.registerLayerDefinition(RisusModelLayers.GUTLESS, GutlessModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_BOOMSTICK, ThrownBoomstickModel::create);
@@ -357,6 +358,7 @@ public class RisusClientEvents {
 	private static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HEX.get(), HexRenderer::new);
+		event.registerEntityRenderer(RisusEntities.GUTLESS.get(), GutlessRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);

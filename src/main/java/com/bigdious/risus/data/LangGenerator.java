@@ -553,6 +553,7 @@ public class LangGenerator extends RisusLangProvider {
 
 		this.addEntityAndEgg(RisusEntities.ANGEL, "Blood Ophanim");
 		this.addEntityAndEgg(RisusEntities.BABY_SPIDER, "Baby Spider");
+		this.addEntityAndEgg(RisusEntities.GUTLESS, "Gutless");
 		this.addEntityAndEgg(RisusEntities.HEX, "Hex");
 		this.addEntityAndEgg(RisusEntities.HOLDER, "Holder");
 		this.addEntityAndEgg(RisusEntities.LICKER, "Licker");

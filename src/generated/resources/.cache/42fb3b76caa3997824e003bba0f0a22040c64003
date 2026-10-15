@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-31T14:01:51.8400152	Risus Item Models
+// 1.21.1	2026-10-15T21:00:35.6639821	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -195,6 +195,7 @@ ca16698b98389e8547b7c8cbc779b7116598f504 assets/risus/models/item/grimstone_bric
 ad303ac58685ef969d5e334b5dda8de86d4b04f5 assets/risus/models/item/grimstone_stairs.json
 f5d4b7d909df0ad2e0561374cb99014117b07547 assets/risus/models/item/grimstone_wall.json
 07f86c671ae311eaca5c0535214afeb82c2e7d54 assets/risus/models/item/guilty_apple.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/gutless_spawn_egg.json
 33cf0f9b53f2222b48422e5fc5d648be7cc1132f assets/risus/models/item/guts_boat.json
 6b4a421a6f08caec212dc8f739dd3ca9a8678a75 assets/risus/models/item/hairy_curved_fleshy_skin.json
 67e94359f35a511b0b82629402b66c558675d9ec assets/risus/models/item/hairy_fleshy_skin.json

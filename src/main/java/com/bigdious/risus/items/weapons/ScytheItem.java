@@ -127,11 +127,6 @@ public class ScytheItem extends SwordItem {
 	}
 
 	@Override
-	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
-		return !Boolean.TRUE.equals(stack.get(RisusDataComponents.SOWING));
-	}
-
-	@Override
 	public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
 		return enchantment.is(this.allowedEnchants);
 	}
