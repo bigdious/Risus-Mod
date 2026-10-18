@@ -53,8 +53,9 @@ public class RisusEntities {
 	//whatever is left
 	public static final DeferredHolder<EntityType<?>, EntityType<RisusBoat>> BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
 	public static final DeferredHolder<EntityType<?>, EntityType<GutsBoat>> GUTS_BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "guts_boat"), EntityType.Builder.<GutsBoat>of(GutsBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
-	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).fireImmune().sized(3.5F, 4F), 0x000000, 0xffffff);
+	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).fireImmune().sized(3.5F, 4F).eyeHeight(1.75F), 0x000000, 0xffffff);
 	public static final DeferredHolder<EntityType<?>, EntityType<Stool>> GREAT_STOOL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_stool"), EntityType.Builder.of(Stool::new, MobCategory.MISC).sized(1F, 1.5F));
+	public static final DeferredHolder<EntityType<?>, EntityType<RaidCoreEntity>> RUINOUS_STAR = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ruinous_star"), EntityType.Builder.of(RaidCoreEntity::new, MobCategory.MISC).sized(5F, 5F).eyeHeight(2.5F));
 
 
 

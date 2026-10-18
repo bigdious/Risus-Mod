@@ -2,15 +2,12 @@ package com.bigdious.risus.items.armor;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
-import com.bigdious.risus.client.render.RisusSimpleArmorRenderer;
+import com.bigdious.risus.client.render.player.RisusSimpleArmorRenderer;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusTags;
-import com.mojang.datafixers.util.Pair;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.FastColor;
@@ -20,11 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.neoforged.neoforge.common.extensions.IItemStackExtension;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Map;
 
 
 public class SinnerRobeHelmetItem extends UpgradableRisusArmorItem  {

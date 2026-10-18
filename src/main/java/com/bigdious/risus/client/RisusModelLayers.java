@@ -6,8 +6,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class RisusModelLayers {
 	public static final ModelLayerLocation ANGEL = register("angel");
+	public static final ModelLayerLocation ANGEL_FACE = register("angel", "face");
 	public static final ModelLayerLocation HEX = register("hex");
 	public static final ModelLayerLocation HOLDER = register("holder");
+	public static final ModelLayerLocation HOLDER_FACE = register("holder", "face");
 	public static final ModelLayerLocation GUTLESS = register("gutless");
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation LICKER = register("licker");
@@ -20,10 +22,14 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation WEAVER = register("weaver");
 	public static final ModelLayerLocation LOVER = register("lover");
 	public static final ModelLayerLocation SINGER = register("singer");
+	public static final ModelLayerLocation SINGER_EYES = register("singer", "eyes");
 	public static final ModelLayerLocation STALKER = register("stalker");
+	public static final ModelLayerLocation STALKER_EYE = register("stalker", "eye");
 	public static final ModelLayerLocation WEAVER_CORE = register("weaver", "core");
 	public static final ModelLayerLocation MEMORY1 = register("memory1");
 	public static final ModelLayerLocation GREAT_STOOL = register("great_stool");
+	public static final ModelLayerLocation RUINOUS_STAR = register("ruinous_star");
+	public static final ModelLayerLocation RUINOUS_STAR_GLOW = register("ruinous_star", "glow");
 	public static final ModelLayerLocation DEPTH_VASE = register("depth_vase");
 	public static final ModelLayerLocation WEAVING_MECHANISM = register("weaving_mechanism");
 	public static final ModelLayerLocation BEATING_HEART = register("beatong_heart");

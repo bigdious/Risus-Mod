@@ -3,15 +3,16 @@ package com.bigdious.risus.client.render.creature;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.HolderModel;
-import com.bigdious.risus.client.render.layer.HolderFaceLayer;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
@@ -26,7 +27,7 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 	public HolderRenderer(EntityRendererProvider.Context context) {
 		super(context, new HolderModel<>(context.bakeLayer(RisusModelLayers.HOLDER)), 0.0F);
 		this.addLayer(new HolderItemLayer(this, context.getItemInHandRenderer()));
-		this.addLayer(new HolderFaceLayer<>(this));
+		this.addLayer(new HolderFaceLayer(this, context));
 	}
 
 	@Override
@@ -37,6 +38,18 @@ public class HolderRenderer extends MobRenderer<Holder, HolderModel<Holder>> {
 	@Override
 	public ResourceLocation getTextureLocation(Holder holder) {
 		return TEXTURE;
+	}
+
+	public static class HolderFaceLayer extends EyesLayer<Holder, HolderModel<Holder>> {
+
+		public HolderFaceLayer(RenderLayerParent<Holder, HolderModel<Holder>> renderer, EntityRendererProvider.Context manager) {
+			super(renderer);
+			HolderModel<Holder> face = new HolderModel<>(manager.bakeLayer(RisusModelLayers.HOLDER_FACE));
+		}
+		@Override
+		public RenderType renderType() {
+			return RenderType.eyes(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "textures/entity/holder_face.png"));
+		}
 	}
 
 	public static class HolderItemLayer extends ItemInHandLayer<Holder, HolderModel<Holder>> {

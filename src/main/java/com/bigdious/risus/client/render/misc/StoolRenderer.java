@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.misc;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;

@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.projectile;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.entity.projectile.BloodwyrmBreathEntity;

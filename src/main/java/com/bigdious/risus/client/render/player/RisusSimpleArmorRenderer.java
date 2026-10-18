@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.player;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidArmorModel;

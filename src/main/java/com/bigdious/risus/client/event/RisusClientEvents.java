@@ -16,9 +16,19 @@ import com.bigdious.risus.client.render.block.*;
 import com.bigdious.risus.client.render.creature.*;
 import com.bigdious.risus.client.render.item.BeatingHeartItemRenderer;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
+import com.bigdious.risus.client.render.item.RisusSpecialItemRenderer;
+import com.bigdious.risus.client.render.misc.QuestionMarkRenderer;
+import com.bigdious.risus.client.render.misc.RisusBoatRenderer;
+import com.bigdious.risus.client.render.misc.RuinousStarRenderer;
+import com.bigdious.risus.client.render.misc.StoolRenderer;
 import com.bigdious.risus.client.render.player.AngelWingsLayer;
 import com.bigdious.risus.client.render.player.HandOfGreedLayer;
+import com.bigdious.risus.client.render.player.RisusSimpleArmorRenderer;
 import com.bigdious.risus.client.render.player.ThreadWingsLayer;
+import com.bigdious.risus.client.render.projectile.BloodSlashRenderer;
+import com.bigdious.risus.client.render.projectile.BloodwyrmBreathEntityRenderer;
+import com.bigdious.risus.client.render.projectile.ThrownAxeRenderer;
+import com.bigdious.risus.client.render.projectile.ThrownBoomstickRenderer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.components.tooltip.ArmorUpgradingTooltipComponent;
@@ -290,10 +300,12 @@ public class RisusClientEvents {
 			event.registerLayerDefinition(RisusBoatRenderer.createGutsBoatModelName(boatType), GutsBoatModel::createBodyModel);
 		}
 		event.registerLayerDefinition(RisusModelLayers.ANGEL, AngelModel::create);
+		event.registerLayerDefinition(RisusModelLayers.ANGEL_FACE, AngelModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LICKER, LickerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BABY_SPIDER, BabySpiderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.HEX, HexModel::createBodyLayer);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
+		event.registerLayerDefinition(RisusModelLayers.HOLDER_FACE, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.GUTLESS, GutlessModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
@@ -304,11 +316,15 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.WEAVER_CORE, WeaverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.LOVER, LoverModel::create);
 		event.registerLayerDefinition(RisusModelLayers.SINGER, SingerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.SINGER_EYES, SingerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.STALKER, StalkerModel::create);
+		event.registerLayerDefinition(RisusModelLayers.STALKER_EYE, StalkerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, MemoryRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.GREAT_STOOL, StoolModel::create);
+		event.registerLayerDefinition(RisusModelLayers.RUINOUS_STAR, RuinousStarModel::create);
+		event.registerLayerDefinition(RisusModelLayers.RUINOUS_STAR_GLOW, RuinousStarModel::create);
 		event.registerLayerDefinition(RisusModelLayers.DEPTH_VASE, DepthVaseRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.WEAVING_MECHANISM, WeavingMechanismRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.BEATING_HEART, BeatingHeartRenderer::createBaseLayer);
@@ -374,6 +390,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.STALKER.get(), StalkerRenderer::new);
 		event.registerEntityRenderer(RisusEntities.QUESTION_MARK.get(), QuestionMarkRenderer::new);
 		event.registerEntityRenderer(RisusEntities.GREAT_STOOL.get(), StoolRenderer::new);
+		event.registerEntityRenderer(RisusEntities.RUINOUS_STAR.get(), RuinousStarRenderer::new);
 		event.registerEntityRenderer(RisusEntities.EGG_SAC.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RisusEntities.LITTER.get(), LitterRenderer::new);
 

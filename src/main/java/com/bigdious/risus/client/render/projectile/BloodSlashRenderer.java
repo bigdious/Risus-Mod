@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.projectile;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
@@ -14,11 +14,9 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.vehicle.Minecart;
 
 public class BloodSlashRenderer extends EntityRenderer<BloodSlash> {
 	protected static final ResourceLocation SLASH_LOCATION = Risus.prefix("textures/entity/bloodslash.png");

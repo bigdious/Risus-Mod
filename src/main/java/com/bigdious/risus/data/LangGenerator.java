@@ -571,6 +571,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addEntityType(RisusEntities.GUTS_BOAT, "Boat with Gorger Guts");
 		this.addEntityType(RisusEntities.LITTER, "Litter");
 		this.addEntityType(RisusEntities.GREAT_STOOL, "Great Stool");
+		this.addEntityType(RisusEntities.RUINOUS_STAR, "Ruinous Star");
 		this.addEntityType(RisusEntities.THROWN_AXE, "Thrown Crescent Disaster");
 		this.addEntityType(RisusEntities.THROWN_BOOMSTICK, "Thrown Boomstick");
 

@@ -1,11 +1,9 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.projectile;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
-import com.bigdious.risus.client.model.entity.ThrownAxeModel;
 import com.bigdious.risus.client.model.entity.ThrownBoomstickModel;
 import com.bigdious.risus.client.model.entity.ThrownDrumstickModel;
-import com.bigdious.risus.entity.projectile.ThrownAxe;
 import com.bigdious.risus.entity.projectile.ThrownBoomstick;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

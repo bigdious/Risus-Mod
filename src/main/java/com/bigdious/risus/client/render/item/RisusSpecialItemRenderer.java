@@ -1,4 +1,4 @@
-package com.bigdious.risus.client.render;
+package com.bigdious.risus.client.render.item;
 
 import com.bigdious.risus.blocks.BeatingHeartBlock;
 import com.bigdious.risus.blocks.DepthVaseBlock;
