@@ -5,6 +5,8 @@ import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.creatures.*;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
+import com.bigdious.risus.entity.cultists.GreatPreacher;
+import com.bigdious.risus.entity.cultists.Gutless;
 import com.bigdious.risus.entity.projectile.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -36,7 +38,8 @@ public class RisusEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<Hex>> HEX = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "hex"), EntityType.Builder.of(Hex::new, MobCategory.MONSTER).fireImmune().sized(0.4F, 0.6F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8), 0x14ff14, 0xffd414);
 
 	//cultist
-	public static final DeferredHolder<EntityType<?>, EntityType<Gutless>> GUTLESS = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "gutless"), EntityType.Builder.of(Gutless::new, MobCategory.MONSTER).fireImmune().sized(0.8F, 1.8F), 0x14ff14, 0xffd414);
+	public static final DeferredHolder<EntityType<?>, EntityType<Gutless>> GUTLESS = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "gutless"), EntityType.Builder.of(Gutless::new, MobCategory.MONSTER).sized(0.8F, 1.8F), 0x0, 0x0);
+	public static final DeferredHolder<EntityType<?>, EntityType<GreatPreacher>> GREAT_PREACHER = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_preacher"), EntityType.Builder.of(GreatPreacher::new, MobCategory.MONSTER).sized(0.8F, 1.8F), 0x0, 0x0);
 
 	//misc creatures
 	public static final DeferredHolder<EntityType<?>, EntityType<Litter>> LITTER = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "litter"), EntityType.Builder.<Litter>of(Litter::new, MobCategory.MISC).fireImmune().sized(0.75F, 1.0F));
@@ -53,9 +56,9 @@ public class RisusEntities {
 	//whatever is left
 	public static final DeferredHolder<EntityType<?>, EntityType<RisusBoat>> BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "risus_boat"), EntityType.Builder.<RisusBoat>of(RisusBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
 	public static final DeferredHolder<EntityType<?>, EntityType<GutsBoat>> GUTS_BOAT = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "guts_boat"), EntityType.Builder.<GutsBoat>of(GutsBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F));
-	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = register(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MONSTER).fireImmune().sized(3.5F, 4F).eyeHeight(1.75F), 0x000000, 0xffffff);
+	public static final DeferredHolder<EntityType<?>, EntityType<QuestionMark>> QUESTION_MARK = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "question_mark"), EntityType.Builder.of(QuestionMark::new, MobCategory.MISC).fireImmune().sized(4.5F, 4F).eyeHeight(2.35F));
 	public static final DeferredHolder<EntityType<?>, EntityType<Stool>> GREAT_STOOL = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "great_stool"), EntityType.Builder.of(Stool::new, MobCategory.MISC).sized(1F, 1.5F));
-	public static final DeferredHolder<EntityType<?>, EntityType<RaidCoreEntity>> RUINOUS_STAR = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ruinous_star"), EntityType.Builder.of(RaidCoreEntity::new, MobCategory.MISC).sized(5F, 5F).eyeHeight(2.5F));
+	public static final DeferredHolder<EntityType<?>, EntityType<RaidCoreEntity>> RUINOUS_STAR = registerNoEgg(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "ruinous_star"), EntityType.Builder.of(RaidCoreEntity::new, MobCategory.MISC).sized(5F, 7F).eyeHeight(3.35F));
 
 
 

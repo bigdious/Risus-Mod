@@ -7,6 +7,7 @@ import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.creatures.*;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
+import com.bigdious.risus.entity.cultists.Gutless;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusVillagers;
 import com.google.common.collect.Maps;
@@ -37,7 +38,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.saveddata.maps.MapDecorationTypes;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -241,7 +241,6 @@ public class RisusEvents {
 		event.put(RisusEntities.LICKER.get(), Licker.attributes().build());
 		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());
 		event.put(RisusEntities.STALKER.get(), Stalker.attributes().build());
-		event.put(RisusEntities.QUESTION_MARK.get(), QuestionMark.attributes().build());
 		event.put(RisusEntities.LITTER.get(), Litter.createAttributes().build());
 	}
 

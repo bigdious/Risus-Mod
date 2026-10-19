@@ -3,7 +3,7 @@ package com.bigdious.risus.client.render.creature;
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.client.RisusModelLayers;
 import com.bigdious.risus.client.model.entity.GutlessModel;
-import com.bigdious.risus.entity.creatures.Gutless;
+import com.bigdious.risus.entity.cultists.Gutless;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;

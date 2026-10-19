@@ -1,6 +1,5 @@
-package com.bigdious.risus.entity.creatures;
+package com.bigdious.risus.entity.cultists;
 
-import com.bigdious.risus.init.RisusItems;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -20,7 +19,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Vindicator;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raid;

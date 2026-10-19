@@ -1,6 +1,6 @@
 package com.bigdious.risus.client.model.entity;
 
-import com.bigdious.risus.entity.creatures.Gutless;
+import com.bigdious.risus.entity.cultists.Gutless;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.ArmedModel;

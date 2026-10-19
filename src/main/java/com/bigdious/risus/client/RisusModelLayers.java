@@ -15,6 +15,7 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation LICKER = register("licker");
 	public static final ModelLayerLocation BABY_SPIDER = register("baby_spider");
 	public static final ModelLayerLocation QUESTION_MARK = register("question_mark");
+	public static final ModelLayerLocation QUESTION_MARK_INEXISTENCE = register("question_mark", "inexistence");
 	public static final ModelLayerLocation THROWN_AXE = register("thrown_axe");
 	public static final ModelLayerLocation THROWN_BOOMSTICK = register("thrown_boomstick");
 	public static final ModelLayerLocation THROWN_DRUMSTICK = register("thrown_drumstick");

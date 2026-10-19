@@ -1,9 +1,14 @@
 package com.bigdious.risus.entity;
 
+import com.bigdious.risus.entity.creatures.Weaver;
+import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.init.RisusCriterionTriggers;
 import com.bigdious.risus.init.RisusDamageTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -24,36 +29,21 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 
-public class QuestionMark extends Monster {
-	//I know it extends Monster, but this isn't a creature, it's just done for ease of use. It's a hole in a bubble
+import java.util.Optional;
+import java.util.UUID;
+
+public class QuestionMark extends Entity {
+	private static final EntityDataAccessor<Boolean> TRANSIENT = SynchedEntityData.defineId(QuestionMark.class, EntityDataSerializers.BOOLEAN);
 	private boolean isTransient;
 	private int killTimer;
 
-	public QuestionMark(EntityType<? extends Monster> type, Level level) {
+	public QuestionMark(EntityType<?> type, Level level) {
 		super(type, level);
 	}
 
-	public static AttributeSupplier.Builder attributes() {
-		return Monster.createMonsterAttributes()
-			.add(Attributes.MAX_HEALTH, -1.0D)
-			.add(Attributes.MOVEMENT_SPEED, 0.0D)
-			.add(Attributes.ATTACK_DAMAGE, 0.0D);
-	}
-
 	@Override
-	public void aiStep() {
-		super.aiStep();
-		this.setYRot(0.0F);
-		this.yRotO = 0.0F;
-		this.setYHeadRot(0.0F);
-		this.yHeadRotO = 0.0F;
-		this.setYBodyRot(0.0F);
-		this.yBodyRotO = 0.0F;
-	}
-
-	@Override
-	protected void customServerAiStep() {
-		super.customServerAiStep();
+	public void tick() {
+		super.tick();
 		if (this.isTransient && this.getRandom().nextInt(3) > 1) {
 			this.killTimer++;
 		}
@@ -68,26 +58,19 @@ public class QuestionMark extends Monster {
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
-		super.addAdditionalSaveData(tag);
 		tag.putBoolean("transient", this.isTransient);
 		tag.putShort("timer", (short) this.killTimer);
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag tag) {
-		super.readAdditionalSaveData(tag);
 		this.killTimer = tag.getShort("timer");
 		this.isTransient = tag.getBoolean("transient");
 	}
 
 	@Override
-	protected SoundEvent getAmbientSound() {
-		return SoundEvents.AMBIENT_CAVE.value();
-	}
-
-	@Override
-	public int getAmbientSoundInterval() {
-		return 200;
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(TRANSIENT, this.isTransient);
 	}
 
 	@Override
@@ -95,44 +78,12 @@ public class QuestionMark extends Monster {
 		return true;
 	}
 
-	@Override
-	public boolean canBeSeenAsEnemy() {
-		return false;
-	}
 
 	@Override
 	public boolean isPushable() {
 		return false;
 	}
 
-	@Override
-	public void knockback(double x, double y, double z) {
-	}
-
-	@Override
-	public boolean removeWhenFarAway(double dist) {
-		return false;
-	}
-
-	@Override
-	public boolean attackable() {
-		return false;
-	}
-
-	@Override
-	public boolean isAffectedByPotions() {
-		return false;
-	}
-
-	@Override
-	public void playerTouch(Player player) {
-		if (this.getBoundingBox().intersects(player.getBoundingBox()) && this.isAlive()) {
-				if (this.hasLineOfSight(player) && player.hurt(this.damageSources().source(RisusDamageTypes.INEXISTENCE), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
-					// was doEnchantDamageEffects
-					this.doAutoAttackOnTouch(player);
-				}
-			}
-	}
 	@Override
 	public boolean isOnFire() {
 		return false;
@@ -145,11 +96,6 @@ public class QuestionMark extends Monster {
 			RisusCriterionTriggers.DISCOVER.get().trigger(sp);
 		}
 		return source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && super.hurt(source, amount);
-	}
-
-	@Override
-	protected boolean shouldDespawnInPeaceful() {
-		return false;
 	}
 
 	@Override

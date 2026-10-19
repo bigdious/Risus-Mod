@@ -1,5 +1,7 @@
 package com.bigdious.risus.client.render;
 
+import com.bigdious.risus.entity.QuestionMark;
+import com.bigdious.risus.entity.RaidCoreEntity;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -46,9 +48,16 @@ public abstract class MultiLayerBasicEntityRenderer<T extends Entity, M extends 
 		poseStack.pushPose();
 
 		this.model.setupAnim(entity, 0, 0, 0, 0, 0);
-		poseStack.translate(0.0F, 1.501F, 0.0F);
-		poseStack.mulPose(Axis.XP.rotationDegrees(180));
 
+		poseStack.mulPose(Axis.XP.rotationDegrees(180));
+		if (entity instanceof RaidCoreEntity) {
+			poseStack.scale(1.5F,1.5F,1.5F);
+			poseStack.translate(0.0F, -1.701F, 0.0F);
+		}
+		if (entity instanceof QuestionMark) {
+			poseStack.scale(2,2,2);
+			poseStack.translate(0.0F, -1.5F, 0.0F);
+		}
 		float f6 = Mth.lerp(partialTicks, entity.xRotO, entity.getXRot());
 
 		Minecraft minecraft = Minecraft.getInstance();
