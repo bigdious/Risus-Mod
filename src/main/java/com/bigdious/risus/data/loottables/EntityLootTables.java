@@ -30,9 +30,9 @@ public class EntityLootTables extends EntityLootSubProvider {
 		add(RisusEntities.MAW.get(), LootTable.lootTable());
 		add(RisusEntities.LOVER.get(), LootTable.lootTable());
 		add(RisusEntities.BABY_SPIDER.get(), LootTable.lootTable());
-		add(RisusEntities.QUESTION_MARK.get(), LootTable.lootTable());
 		add(RisusEntities.HEX.get(), LootTable.lootTable());
 		add(RisusEntities.GUTLESS.get(), LootTable.lootTable());
+		add(RisusEntities.GREAT_PREACHER.get(), LootTable.lootTable());
 
 		add(RisusEntities.ANGEL.get(),
 			LootTable.lootTable()

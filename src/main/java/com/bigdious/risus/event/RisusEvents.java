@@ -7,6 +7,7 @@ import com.bigdious.risus.entity.*;
 import com.bigdious.risus.entity.creatures.*;
 import com.bigdious.risus.entity.creatures.pets.Holder;
 import com.bigdious.risus.entity.creatures.pets.Litter;
+import com.bigdious.risus.entity.cultists.GreatPreacher;
 import com.bigdious.risus.entity.cultists.Gutless;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.init.RisusVillagers;
@@ -237,6 +238,7 @@ public class RisusEvents {
 		event.put(RisusEntities.WEAVER.get(), Weaver.attributes().build());
 		event.put(RisusEntities.LOVER.get(), Lover.attributes().build());
 		event.put(RisusEntities.GUTLESS.get(), Gutless.attributes().build());
+		event.put(RisusEntities.GREAT_PREACHER.get(), GreatPreacher.attributes().build());
 		event.put(RisusEntities.SINGER.get(), Singer.attributes().build());
 		event.put(RisusEntities.LICKER.get(), Licker.attributes().build());
 		event.put(RisusEntities.BABY_SPIDER.get(), BabySpider.attributes().build());

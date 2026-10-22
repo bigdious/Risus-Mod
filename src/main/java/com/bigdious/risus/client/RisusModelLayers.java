@@ -11,6 +11,8 @@ public class RisusModelLayers {
 	public static final ModelLayerLocation HOLDER = register("holder");
 	public static final ModelLayerLocation HOLDER_FACE = register("holder", "face");
 	public static final ModelLayerLocation GUTLESS = register("gutless");
+	public static final ModelLayerLocation GREAT_PREACHER = register("great_preacher");
+	public static final ModelLayerLocation GREAT_PREACHER_APPENDAGES = register("great_preacher", "appendages");
 	public static final ModelLayerLocation MAW = register("maw");
 	public static final ModelLayerLocation LICKER = register("licker");
 	public static final ModelLayerLocation BABY_SPIDER = register("baby_spider");

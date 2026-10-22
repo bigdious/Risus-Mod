@@ -307,6 +307,8 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.HOLDER, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.HOLDER_FACE, HolderModel::create);
 		event.registerLayerDefinition(RisusModelLayers.GUTLESS, GutlessModel::create);
+		event.registerLayerDefinition(RisusModelLayers.GREAT_PREACHER, GreatPreacherModel::create);
+		event.registerLayerDefinition(RisusModelLayers.GREAT_PREACHER_APPENDAGES, GreatPreacherModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MAW, MawModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_AXE, ThrownAxeModel::create);
 		event.registerLayerDefinition(RisusModelLayers.THROWN_BOOMSTICK, ThrownBoomstickModel::create);
@@ -321,6 +323,7 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.STALKER_EYE, StalkerModel::create);
 		event.registerLayerDefinition(RisusModelLayers.BLOODWYRM_HEAD, BloodWyrmHeadModel::create);
 		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK, QuestionMarkModel::create);
+		event.registerLayerDefinition(RisusModelLayers.QUESTION_MARK_INEXISTENCE, QuestionMarkModel::create);
 		event.registerLayerDefinition(RisusModelLayers.MEMORY1, MemoryRenderer::createBaseLayer);
 		event.registerLayerDefinition(RisusModelLayers.GREAT_STOOL, StoolModel::create);
 		event.registerLayerDefinition(RisusModelLayers.RUINOUS_STAR, RuinousStarModel::create);
@@ -375,6 +378,7 @@ public class RisusClientEvents {
 		event.registerEntityRenderer(RisusEntities.ANGEL.get(), AngelRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HEX.get(), HexRenderer::new);
 		event.registerEntityRenderer(RisusEntities.GUTLESS.get(), GutlessRenderer::new);
+		event.registerEntityRenderer(RisusEntities.GREAT_PREACHER.get(), GreatPreacherRenderer::new);
 		event.registerEntityRenderer(RisusEntities.HOLDER.get(), HolderRenderer::new);
 		event.registerEntityRenderer(RisusEntities.MAW.get(), MawRenderer::new);
 		event.registerEntityRenderer(RisusEntities.THROWN_AXE.get(), ThrownAxeRenderer::new);

@@ -1,4 +1,4 @@
-// 1.21.1	2026-10-15T21:00:35.6639821	Risus Item Models
+// 1.21.1	2026-10-22T19:30:40.3599807	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -177,6 +177,7 @@ a22879083321d8f80168281f323378094723ff48 assets/risus/models/item/full_fossil_st
 4faaaef53ae3d94ee6c9f85ebe22c9768d68d677 assets/risus/models/item/gray_mosaic_glass.json
 c11bb1a409fcf060c5917b4e8fbc83375938ec9b assets/risus/models/item/gray_mosaic_glass_pane.json
 7bac33c62e2aac0b4fe0fb93a45f242dcba250d2 assets/risus/models/item/gray_mosaic_lamp.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/great_preacher_spawn_egg.json
 6c87de6ddd09b4fb89a57e5d769f4c482146401b assets/risus/models/item/green_mosaic_glass.json
 203b03b14e340220e25ecc565215909ae0562bca assets/risus/models/item/green_mosaic_glass_pane.json
 118724ec9c3c890cd14e4ec09ef237f109732c01 assets/risus/models/item/green_mosaic_lamp.json
@@ -287,7 +288,6 @@ d3f2c741cc06d0ad548cf376c6fb344a18e4d320 assets/risus/models/item/purifying_past
 6553b61e63fad281bad7d6c7f85d7eb1f5cce92b assets/risus/models/item/purple_mosaic_glass.json
 95c043a6eabd6c858c01bc00a764c74cc4396153 assets/risus/models/item/purple_mosaic_glass_pane.json
 f169020799d8fe232a5037dd3afa76080abb6a7b assets/risus/models/item/purple_mosaic_lamp.json
-63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/risus/models/item/question_mark_spawn_egg.json
 c51d0f0bfcbb910b1ad048531316609894418ea8 assets/risus/models/item/red_mosaic_glass.json
 d421c2df0a2ebd0e1394a070bfbe1432d0bd9594 assets/risus/models/item/red_mosaic_glass_pane.json
 26c873cb4ec5b89b9b2983cc465b34f0ac5a2746 assets/risus/models/item/red_mosaic_lamp.json

@@ -1,4 +1,4 @@
-package com.bigdious.risus.entity.animations;
+package com.bigdious.risus.client.animations;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.6
+// Made with Blockbench 5.2.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -6,7 +6,7 @@
 public class great_preacher<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "great_preacher"), "main");
-	private final ModelPart body;
+	private final ModelPart Body;
 	private final ModelPart LeftWing;
 	private final ModelPart LeftWingMiddle;
 	private final ModelPart LeftWingBottom;
@@ -15,8 +15,8 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 	private final ModelPart RightWingBottom;
 	private final ModelPart Head;
 	private final ModelPart nose;
-	private final ModelPart leg0;
-	private final ModelPart leg1;
+	private final ModelPart LeftLeg;
+	private final ModelPart RightLeg;
 	private final ModelPart RightArm;
 	private final ModelPart RightGrowthMiddle;
 	private final ModelPart RightGrowthBottom;
@@ -26,9 +26,9 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 	private final ModelPart RightPointer;
 	private final ModelPart RightPointerBottom;
 	private final ModelPart RightMiddle;
-	private final ModelPart RightMiddleBottom2;
+	private final ModelPart RightMiddleBottom;
 	private final ModelPart RightRing;
-	private final ModelPart RightRingBottom3;
+	private final ModelPart RightRingBottom;
 	private final ModelPart LeftArm;
 	private final ModelPart LeftGrowthMiddle;
 	private final ModelPart LeftGrowthBottom;
@@ -38,25 +38,25 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 	private final ModelPart LeftPointer;
 	private final ModelPart LeftPointerBottom;
 	private final ModelPart LeftMiddle;
-	private final ModelPart LeftMiddleBottom2;
+	private final ModelPart LeftMiddleBottom;
 	private final ModelPart LeftRing;
-	private final ModelPart LeftRingBottom3;
+	private final ModelPart LeftRingBottom;
 	private final ModelPart Circle;
 	private final ModelPart Smile;
 
 	public great_preacher(ModelPart root) {
-		this.body = root.getChild("body");
-		this.LeftWing = this.body.getChild("LeftWing");
+		this.Body = root.getChild("Body");
+		this.LeftWing = this.Body.getChild("LeftWing");
 		this.LeftWingMiddle = this.LeftWing.getChild("LeftWingMiddle");
 		this.LeftWingBottom = this.LeftWingMiddle.getChild("LeftWingBottom");
-		this.RightWing = this.body.getChild("RightWing");
+		this.RightWing = this.Body.getChild("RightWing");
 		this.RightWingMiddle = this.RightWing.getChild("RightWingMiddle");
 		this.RightWingBottom = this.RightWingMiddle.getChild("RightWingBottom");
-		this.Head = this.body.getChild("Head");
+		this.Head = this.Body.getChild("Head");
 		this.nose = this.Head.getChild("nose");
-		this.leg0 = this.body.getChild("leg0");
-		this.leg1 = this.body.getChild("leg1");
-		this.RightArm = this.body.getChild("RightArm");
+		this.LeftLeg = this.Body.getChild("LeftLeg");
+		this.RightLeg = this.Body.getChild("RightLeg");
+		this.RightArm = this.Body.getChild("RightArm");
 		this.RightGrowthMiddle = this.RightArm.getChild("RightGrowthMiddle");
 		this.RightGrowthBottom = this.RightGrowthMiddle.getChild("RightGrowthBottom");
 		this.RightPalm = this.RightGrowthBottom.getChild("RightPalm");
@@ -65,10 +65,10 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		this.RightPointer = this.RightPalm.getChild("RightPointer");
 		this.RightPointerBottom = this.RightPointer.getChild("RightPointerBottom");
 		this.RightMiddle = this.RightPalm.getChild("RightMiddle");
-		this.RightMiddleBottom2 = this.RightMiddle.getChild("RightMiddleBottom2");
+		this.RightMiddleBottom = this.RightMiddle.getChild("RightMiddleBottom");
 		this.RightRing = this.RightPalm.getChild("RightRing");
-		this.RightRingBottom3 = this.RightRing.getChild("RightRingBottom3");
-		this.LeftArm = this.body.getChild("LeftArm");
+		this.RightRingBottom = this.RightRing.getChild("RightRingBottom");
+		this.LeftArm = this.Body.getChild("LeftArm");
 		this.LeftGrowthMiddle = this.LeftArm.getChild("LeftGrowthMiddle");
 		this.LeftGrowthBottom = this.LeftGrowthMiddle.getChild("LeftGrowthBottom");
 		this.LeftPalm = this.LeftGrowthBottom.getChild("LeftPalm");
@@ -77,21 +77,21 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		this.LeftPointer = this.LeftPalm.getChild("LeftPointer");
 		this.LeftPointerBottom = this.LeftPointer.getChild("LeftPointerBottom");
 		this.LeftMiddle = this.LeftPalm.getChild("LeftMiddle");
-		this.LeftMiddleBottom2 = this.LeftMiddle.getChild("LeftMiddleBottom2");
+		this.LeftMiddleBottom = this.LeftMiddle.getChild("LeftMiddleBottom");
 		this.LeftRing = this.LeftPalm.getChild("LeftRing");
-		this.LeftRingBottom3 = this.LeftRing.getChild("LeftRingBottom3");
-		this.Circle = this.body.getChild("Circle");
-		this.Smile = this.body.getChild("Smile");
+		this.LeftRingBottom = this.LeftRing.getChild("LeftRingBottom");
+		this.Circle = this.Body.getChild("Circle");
+		this.Smile = this.Body.getChild("Smile");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, new CubeDeformation(0.0F))
+		PartDefinition Body = partdefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 20.0F, 6.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition LeftWing = body.addOrReplaceChild("LeftWing", CubeListBuilder.create().texOffs(20, 24).addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F))
+		PartDefinition LeftWing = Body.addOrReplaceChild("LeftWing", CubeListBuilder.create().texOffs(20, 24).addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F))
 		.texOffs(138, 52).addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, 3.0F, 4.0F, 0.7728F, 0.8393F, 0.1028F));
 
 		PartDefinition LeftWingMiddle = LeftWing.addOrReplaceChild("LeftWingMiddle", CubeListBuilder.create().texOffs(24, 70).addBox(-2.5F, -2.5F, 0.0F, 5.0F, 5.0F, 52.0F, new CubeDeformation(0.0F))
@@ -100,7 +100,7 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		PartDefinition LeftWingBottom = LeftWingMiddle.addOrReplaceChild("LeftWingBottom", CubeListBuilder.create().texOffs(34, 127).addBox(-2.0F, -2.0F, 0.0F, 4.0F, 4.0F, 60.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 72).addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.7393F, 0.7425F, -0.3133F));
 
-		PartDefinition RightWing = body.addOrReplaceChild("RightWing", CubeListBuilder.create().texOffs(20, 24).mirror().addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false)
+		PartDefinition RightWing = Body.addOrReplaceChild("RightWing", CubeListBuilder.create().texOffs(20, 24).mirror().addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false)
 		.texOffs(138, 52).mirror().addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, 3.0F, 4.0F, 0.7728F, -0.8393F, -0.1028F));
 
 		PartDefinition RightWingMiddle = RightWing.addOrReplaceChild("RightWingMiddle", CubeListBuilder.create().texOffs(24, 70).mirror().addBox(-2.5F, -2.5F, 0.0F, 5.0F, 5.0F, 52.0F, new CubeDeformation(0.0F)).mirror(false)
@@ -109,15 +109,15 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		PartDefinition RightWingBottom = RightWingMiddle.addOrReplaceChild("RightWingBottom", CubeListBuilder.create().texOffs(34, 127).mirror().addBox(-2.0F, -2.0F, 0.0F, 4.0F, 4.0F, 60.0F, new CubeDeformation(0.0F)).mirror(false)
 		.texOffs(0, 72).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.7393F, -0.7425F, 0.3133F));
 
-		PartDefinition Head = body.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition Head = Body.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition nose = Head.addOrReplaceChild("nose", CubeListBuilder.create().texOffs(24, 0).addBox(-1.0F, -1.0F, -6.0F, 2.0F, 4.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.0F, 0.0F));
 
-		PartDefinition leg0 = body.addOrReplaceChild("leg0", CubeListBuilder.create().texOffs(0, 22).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 12.0F, 0.0F));
+		PartDefinition LeftLeg = Body.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(0, 22).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 12.0F, 0.0F));
 
-		PartDefinition leg1 = body.addOrReplaceChild("leg1", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(2.0F, 12.0F, 0.0F));
+		PartDefinition RightLeg = Body.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(0, 22).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(2.0F, 12.0F, 0.0F));
 
-		PartDefinition RightArm = body.addOrReplaceChild("RightArm", CubeListBuilder.create().texOffs(40, 46).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.0F, 2.0F, 0.0F, -0.3491F, 0.0F, 0.5672F));
+		PartDefinition RightArm = Body.addOrReplaceChild("RightArm", CubeListBuilder.create().texOffs(40, 46).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-5.0F, 2.0F, 0.0F, -0.3491F, 0.0F, 0.5672F));
 
 		PartDefinition RightGrowthMiddle = RightArm.addOrReplaceChild("RightGrowthMiddle", CubeListBuilder.create().texOffs(0, 93).mirror().addBox(-3.0F, 0.0F, -3.0F, 6.0F, 30.0F, 6.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-1.082F, 9.0531F, -0.0531F, 0.48F, 0.0F, 0.0F));
 
@@ -135,17 +135,17 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition RightMiddle = RightPalm.addOrReplaceChild("RightMiddle", CubeListBuilder.create().texOffs(24, 86).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, -0.3491F));
 
-		PartDefinition RightMiddleBottom2 = RightMiddle.addOrReplaceChild("RightMiddleBottom2", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, -0.5236F));
+		PartDefinition RightMiddleBottom = RightMiddle.addOrReplaceChild("RightMiddleBottom", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, -0.5236F));
 
-		PartDefinition RightMiddleBottom_r1 = RightMiddleBottom2.addOrReplaceChild("RightMiddleBottom_r1", CubeListBuilder.create().texOffs(24, 102).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition RightMiddleBottom_r1 = RightMiddleBottom.addOrReplaceChild("RightMiddleBottom_r1", CubeListBuilder.create().texOffs(24, 102).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
 		PartDefinition RightRing = RightPalm.addOrReplaceChild("RightRing", CubeListBuilder.create().texOffs(24, 86).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 12.0F, 4.0F, 0.1942F, 0.1001F, -0.4702F));
 
-		PartDefinition RightRingBottom3 = RightRing.addOrReplaceChild("RightRingBottom3", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, -0.6109F));
+		PartDefinition RightRingBottom = RightRing.addOrReplaceChild("RightRingBottom", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, -0.6109F));
 
-		PartDefinition RightRingBottom3_r1 = RightRingBottom3.addOrReplaceChild("RightRingBottom3_r1", CubeListBuilder.create().texOffs(24, 102).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition RightRingBottom_r1 = RightRingBottom.addOrReplaceChild("RightRingBottom_r1", CubeListBuilder.create().texOffs(24, 102).mirror().addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition LeftArm = body.addOrReplaceChild("LeftArm", CubeListBuilder.create().texOffs(40, 46).mirror().addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(5.0F, 2.0F, 0.0F, -0.3491F, 0.0F, -0.5672F));
+		PartDefinition LeftArm = Body.addOrReplaceChild("LeftArm", CubeListBuilder.create().texOffs(40, 46).mirror().addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(5.0F, 2.0F, 0.0F, -0.3491F, 0.0F, -0.5672F));
 
 		PartDefinition LeftGrowthMiddle = LeftArm.addOrReplaceChild("LeftGrowthMiddle", CubeListBuilder.create().texOffs(0, 93).addBox(-3.0F, 0.0F, -3.0F, 6.0F, 30.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.082F, 9.0531F, -0.0531F, 0.48F, 0.0F, 0.0F));
 
@@ -165,17 +165,17 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition LeftMiddle = LeftPalm.addOrReplaceChild("LeftMiddle", CubeListBuilder.create().texOffs(24, 86).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.3491F));
 
-		PartDefinition LeftMiddleBottom2 = LeftMiddle.addOrReplaceChild("LeftMiddleBottom2", CubeListBuilder.create().texOffs(24, 102).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.5236F));
+		PartDefinition LeftMiddleBottom = LeftMiddle.addOrReplaceChild("LeftMiddleBottom", CubeListBuilder.create().texOffs(24, 102).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.5236F));
 
 		PartDefinition LeftRing = LeftPalm.addOrReplaceChild("LeftRing", CubeListBuilder.create().texOffs(24, 86).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 12.0F, 4.0F, 0.1942F, -0.1001F, 0.4702F));
 
-		PartDefinition LeftRingBottom3 = LeftRing.addOrReplaceChild("LeftRingBottom3", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.6109F));
+		PartDefinition LeftRingBottom = LeftRing.addOrReplaceChild("LeftRingBottom", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.6109F));
 
-		PartDefinition LeftRingBottom3_r1 = LeftRingBottom3.addOrReplaceChild("LeftRingBottom3_r1", CubeListBuilder.create().texOffs(24, 102).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
+		PartDefinition LeftRingBottom_r1 = LeftRingBottom.addOrReplaceChild("LeftRingBottom_r1", CubeListBuilder.create().texOffs(24, 102).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition Circle = body.addOrReplaceChild("Circle", CubeListBuilder.create().texOffs(72, 0).addBox(-30.0F, -30.0F, 0.0F, 60.0F, 60.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 6.0F, 5.0F));
+		PartDefinition Circle = Body.addOrReplaceChild("Circle", CubeListBuilder.create().texOffs(72, 0).addBox(-30.0F, -30.0F, 0.0F, 60.0F, 60.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 6.0F, 5.0F));
 
-		PartDefinition Smile = body.addOrReplaceChild("Smile", CubeListBuilder.create().texOffs(192, 0).addBox(-10.0F, 7.3625F, -5.1066F, 20.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
+		PartDefinition Smile = Body.addOrReplaceChild("Smile", CubeListBuilder.create().texOffs(192, 0).addBox(-10.0F, 7.3625F, -5.1066F, 20.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
 		.texOffs(192, 8).addBox(-10.0F, -4.6375F, -5.1066F, 20.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
 		.texOffs(192, 32).addBox(-10.5F, -1.1375F, -3.1065F, 21.0F, 9.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -43.3625F, 3.1065F, 0.2182F, 0.0F, 0.0F));
 
@@ -201,6 +201,6 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 }
