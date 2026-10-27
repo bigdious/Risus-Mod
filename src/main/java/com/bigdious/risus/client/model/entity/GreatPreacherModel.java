@@ -1,7 +1,9 @@
 package com.bigdious.risus.client.model.entity;
 
+import com.bigdious.risus.client.animations.GreatPreacherAnimations;
 import com.bigdious.risus.entity.creatures.Angel;
 import com.bigdious.risus.entity.cultists.GreatPreacher;
+import net.minecraft.client.animation.definitions.BatAnimation;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -208,8 +210,8 @@ public class GreatPreacherModel<T extends GreatPreacher> extends HierarchicalMod
 
 
 	@Override
-	public void setupAnim(GreatPreacher gutless, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+	public void setupAnim(GreatPreacher preacher, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.animate(preacher.wingFlapIdleState, GreatPreacherAnimations.wing_flap_idle, ageInTicks, 1.0F);
 	}
 }
 
