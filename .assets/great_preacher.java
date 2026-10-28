@@ -92,22 +92,22 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		.texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 20.0F, 6.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition LeftWing = Body.addOrReplaceChild("LeftWing", CubeListBuilder.create().texOffs(20, 24).addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F))
-		.texOffs(138, 52).addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, 3.0F, 4.0F, 0.7728F, 0.8393F, 0.1028F));
+		.texOffs(138, 52).addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, 3.0F, 4.0F, 1.0161F, 0.8025F, 0.1372F));
 
 		PartDefinition LeftWingMiddle = LeftWing.addOrReplaceChild("LeftWingMiddle", CubeListBuilder.create().texOffs(24, 70).addBox(-2.5F, -2.5F, 0.0F, 5.0F, 5.0F, 52.0F, new CubeDeformation(0.0F))
-		.texOffs(128, 67).addBox(0.0F, -1.0F, -6.0F, 0.0F, 56.0F, 64.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 39.0F, -0.489F, 0.5652F, -0.2432F));
+		.texOffs(128, 67).addBox(0.0F, -1.0F, -6.0F, 0.0F, 56.0F, 64.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 39.0F, -0.4168F, 0.3361F, -0.0995F));
 
 		PartDefinition LeftWingBottom = LeftWingMiddle.addOrReplaceChild("LeftWingBottom", CubeListBuilder.create().texOffs(34, 127).addBox(-2.0F, -2.0F, 0.0F, 4.0F, 4.0F, 60.0F, new CubeDeformation(0.0F))
-		.texOffs(0, 72).addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.7393F, 0.7425F, -0.3133F));
+		.texOffs(0, 72).addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.6515F, 0.3201F, -0.1162F));
 
 		PartDefinition RightWing = Body.addOrReplaceChild("RightWing", CubeListBuilder.create().texOffs(20, 24).mirror().addBox(-3.0F, -3.0F, -1.0F, 6.0F, 6.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false)
-		.texOffs(138, 52).mirror().addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, 3.0F, 4.0F, 0.7728F, -0.8393F, -0.1028F));
+		.texOffs(138, 52).mirror().addBox(0.0F, 3.0F, -1.0F, 0.0F, 39.0F, 40.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-3.0F, 3.0F, 4.0F, 1.0161F, -0.8025F, -0.1372F));
 
 		PartDefinition RightWingMiddle = RightWing.addOrReplaceChild("RightWingMiddle", CubeListBuilder.create().texOffs(24, 70).mirror().addBox(-2.5F, -2.5F, 0.0F, 5.0F, 5.0F, 52.0F, new CubeDeformation(0.0F)).mirror(false)
-		.texOffs(128, 67).mirror().addBox(0.0F, -1.0F, -6.0F, 0.0F, 56.0F, 64.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.0F, 39.0F, -0.489F, -0.5652F, 0.2432F));
+		.texOffs(128, 67).mirror().addBox(0.0F, -1.0F, -6.0F, 0.0F, 56.0F, 64.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.0F, 39.0F, -0.4168F, -0.3361F, 0.0995F));
 
 		PartDefinition RightWingBottom = RightWingMiddle.addOrReplaceChild("RightWingBottom", CubeListBuilder.create().texOffs(34, 127).mirror().addBox(-2.0F, -2.0F, 0.0F, 4.0F, 4.0F, 60.0F, new CubeDeformation(0.0F)).mirror(false)
-		.texOffs(0, 72).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.7393F, -0.7425F, 0.3133F));
+		.texOffs(0, 72).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 56.0F, 128.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.0F, 52.0F, -0.6515F, -0.3201F, 0.1162F));
 
 		PartDefinition Head = Body.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 10.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
