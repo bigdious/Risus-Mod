@@ -43,6 +43,7 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 	private final ModelPart LeftRingBottom;
 	private final ModelPart Circle;
 	private final ModelPart Smile;
+	private final ModelPart Sword;
 
 	public great_preacher(ModelPart root) {
 		this.Body = root.getChild("Body");
@@ -82,6 +83,7 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		this.LeftRingBottom = this.LeftRing.getChild("LeftRingBottom");
 		this.Circle = this.Body.getChild("Circle");
 		this.Smile = this.Body.getChild("Smile");
+		this.Sword = this.Body.getChild("Sword");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -190,6 +192,12 @@ public class great_preacher<T extends Entity> extends EntityModel<T> {
 		PartDefinition LipsLeftTop_r1 = Smile.addOrReplaceChild("LipsLeftTop_r1", CubeListBuilder.create().texOffs(192, 24).addBox(-26.0F, -2.0F, -2.0F, 26.0F, 4.0F, 4.0F, new CubeDeformation(0.01F)), PartPose.offsetAndRotation(-10.0F, -2.6375F, -3.1065F, 0.0718F, 0.3864F, 0.1886F));
 
 		PartDefinition LipsLeftBottom_r1 = Smile.addOrReplaceChild("LipsLeftBottom_r1", CubeListBuilder.create().texOffs(192, 16).addBox(-27.0F, -2.0F, -2.0F, 28.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-10.0F, 9.3625F, -3.1065F, 0.2333F, 0.3189F, 0.6485F));
+
+		PartDefinition Sword = Body.addOrReplaceChild("Sword", CubeListBuilder.create().texOffs(200, 67).addBox(-0.95F, -1.0F, 11.0214F, 2.0F, 2.0F, 10.0F, new CubeDeformation(-0.1F))
+		.texOffs(246, 62).addBox(-0.95F, -7.5F, 9.2214F, 2.0F, 15.0F, 2.0F, new CubeDeformation(-0.1F))
+		.texOffs(194, 49).addBox(-0.55F, -5.5F, -20.5786F, 1.0F, 11.0F, 30.0F, new CubeDeformation(-0.1F)), PartPose.offsetAndRotation(-0.132F, -72.8945F, -9.8905F, -1.5708F, 0.0F, 0.0F));
+
+		PartDefinition Tip_r1 = Sword.addOrReplaceChild("Tip_r1", CubeListBuilder.create().texOffs(227, 63).addBox(-0.5F, -3.0F, -3.0F, 1.0F, 8.0F, 8.0F, new CubeDeformation(-0.11F)), PartPose.offsetAndRotation(-0.05F, 0.0F, -22.0786F, 0.7854F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 256, 256);
 	}
