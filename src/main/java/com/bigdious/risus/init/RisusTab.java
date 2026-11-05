@@ -303,6 +303,7 @@ public class RisusTab {
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
 				output.accept(RisusItems.KILLJOY.get());
+				output.accept(RisusItems.PATTERN_PRINT.get());
 				output.accept(RisusItems.ECHO_PEARL.get());
 				output.accept(RisusItems.ENDLESS_PEARL.get());
 				output.accept(RisusItems.LOVER_CREAM.get());

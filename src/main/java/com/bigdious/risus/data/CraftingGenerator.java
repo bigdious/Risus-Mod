@@ -1030,6 +1030,11 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT.get()))
+			.save(consumer);
+
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.BORN_TO_BURN.get(), 1)
 			.pattern("BCB")
 			.pattern("CMC")

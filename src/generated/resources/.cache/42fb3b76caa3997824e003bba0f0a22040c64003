@@ -1,4 +1,4 @@
-// 1.21.1	2026-10-22T19:30:40.3599807	Risus Item Models
+// 1.21.1	2026-11-05T19:39:42.0548664	Risus Item Models
 749f616b80b65085df8f7a79029a02af9b0e0c88 assets/risus/models/item/active_grimstone.json
 e215730d059359d24f53ef22886aacdb9fcdd5da assets/risus/models/item/alteration_catalyst.json
 27bb4d7cf7b98b0d98b341e745cd7231dea7d0e4 assets/risus/models/item/angel_altar.json
@@ -274,6 +274,7 @@ e8c84998b0211f47ea06201eaaae6715305d9173 assets/risus/models/item/orange_mosaic_
 264aa9e9fc91031d457690b9f89b5b01aea68240 assets/risus/models/item/oxidized_copper_amalgam.json
 772a6e66412fe8abfd7ee07f63ad054e6fb86ad3 assets/risus/models/item/oxidizing_wings.json
 93617b269421363e273d5e68110fd1d2a1787a08 assets/risus/models/item/oxidizing_wings_broken.json
+288f88d1e3b18395fdf4b99dd72597337703a779 assets/risus/models/item/pattern_print.json
 3f03cf417d9b8e185bc9858a596105b8d493d407 assets/risus/models/item/peeled_grilled_tissue.json
 07e295816c0ec9d765313d0a7fd950558659a121 assets/risus/models/item/pink_mosaic_glass.json
 e966b147fb003ca60a32a1b51f0f7b74de297e8c assets/risus/models/item/pink_mosaic_glass_pane.json

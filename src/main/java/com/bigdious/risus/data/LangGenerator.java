@@ -292,6 +292,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.RESEARCHERS_NOTES, "Researcher's Notes");
 		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
+		this.addItem(RisusItems.PATTERN_PRINT, "Pattern Print");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Crucified Heart");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
 		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner's Robe Helmet");
@@ -312,6 +313,9 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.UNAWAKENED_VESSEL, "Unawakened Vessel");
 		this.addItem(RisusItems.WARHORN, "War Horn");
 		this.addItem(RisusItems.WRETCHED_CHARM, "Wretched Charm");
+
+		this.add("item.risus.pattern_print.with_block", "Pattern Print (%s)");
+
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");
 		this.add("item.minecraft.splash_potion.effect.mating_frenzy", "Splash Potion of Love");
@@ -428,6 +432,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.singer", "Singer");
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
+		this.add("tooltip.risus.pattern_print", "Pattern saved");
+
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");
 		this.add("keybind.spyglass_mode", "Toggle Zoom With Spyglass Ability");
