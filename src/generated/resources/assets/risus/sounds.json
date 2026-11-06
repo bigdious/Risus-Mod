@@ -424,6 +424,15 @@
     ],
     "subtitle": "subtitles.risus.item.organic_matter.use"
   },
+  "item.pattern_print.fail": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.dispenser.fail"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.pattern_print.fail"
+  },
   "item.scythe_switch": {
     "sounds": [
       "risus:item/scythe_switch"

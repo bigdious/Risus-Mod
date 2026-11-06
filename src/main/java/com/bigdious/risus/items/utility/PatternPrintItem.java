@@ -1,12 +1,20 @@
 package com.bigdious.risus.items.utility;
 
 import com.bigdious.risus.components.item.PatternPrintComponent;
+import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.RisusDataComponents;
+import com.bigdious.risus.init.RisusSoundEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -14,7 +22,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -32,28 +42,53 @@ public class PatternPrintItem extends Item {
 		Level level = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		ItemStack stack = context.getItemInHand();
-//		BlockPos blockpos1 = blockpos.relative(context.getClickedFace());
+		BlockPos placementPosition = blockpos.relative(context.getClickedFace());
 		if (player.isShiftKeyDown()){
 			stack.set(RisusDataComponents.BLOCK_STATE, level.getBlockState(blockpos));
 			if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) == PatternPrintComponent.EMPTY) {
 				PatternPrintComponent ppComponent = stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT);
 				int range = 3;
-				List<BlockPos> nearbyBlocks = BlockPos.betweenClosedStream(blockpos.getX()-range, blockpos.getY(), blockpos.getZ()-range, blockpos.getX()+range, blockpos.getY()+range*2, blockpos.getZ()+range).toList();
+				List<BlockPos> nearbyBlocks = BlockPos.betweenClosedStream(blockpos.getX()-range, blockpos.getY(), blockpos.getZ()-range, blockpos.getX()+range, blockpos.getY()+range*2, blockpos.getZ()+range).map(BlockPos::immutable).toList();
 				PatternPrintComponent.Mutable ppComponent$mutable = new PatternPrintComponent.Mutable(ppComponent);
 				for (BlockPos pos : nearbyBlocks) {
-					if (stack.get(RisusDataComponents.BLOCK_STATE).getBlock() == level.getBlockState(blockpos).getBlock() && !level.isClientSide()) {
+					if (stack.get(RisusDataComponents.BLOCK_STATE).getBlock() == level.getBlockState(pos).getBlock() && !level.isClientSide()) {
 						//we need relative coordinates, not real coordinates
-						player.sendSystemMessage(Component.literal("we found"));
-						ppComponent$mutable.addPosition(new BlockPos(blockpos.getX()-pos.getX(), blockpos.getY()-pos.getY(), blockpos.getZ()-pos.getZ()));
+						ppComponent$mutable.addPosition(new BlockPos(pos.getX()-blockpos.getX(), pos.getY()-blockpos.getY(), pos.getZ()-blockpos.getZ()));
 						pos.immutable();
 					}
 					stack.set(RisusDataComponents.PATTERN_PRINT_COMPONENT, ppComponent$mutable.toImmutable());
 				}
 			}
 			return InteractionResult.sidedSuccess(level.isClientSide());
-		} else {
+		} else
+			if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) != PatternPrintComponent.EMPTY) {
+				boolean flag = false;
+			for (BlockPos patternPlacePos : stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT).positions()) {
+				//combine the context's placement position with the stored positions to get the placement of blocks for the pattern
+				BlockPos finalPos = new BlockPos(placementPosition.getX()+patternPlacePos.getX(), placementPosition.getY()+patternPlacePos.getY(), placementPosition.getZ()+patternPlacePos.getZ());
+				Block patternBlock = stack.get(RisusDataComponents.BLOCK_STATE).getBlock();
+
+				if (level.getBlockState(finalPos).canBeReplaced() &&
+					(player.getInventory().hasAnyMatching(itemStack -> itemStack.is(patternBlock.asItem())) || player.isCreative())) {
+					level.playSound(player,finalPos ,  patternBlock.getSoundType(patternBlock.defaultBlockState(), level, finalPos, null).getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1);
+					level.setBlock(finalPos, patternBlock.defaultBlockState(), 11);
+					level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
+					player.awardStat(Stats.ITEM_USED.get(patternBlock.asItem()));
+					if (!player.isCreative()) {
+						player.getInventory().getItem(player.getInventory().findSlotMatchingItem(patternBlock.asItem().getDefaultInstance())).shrink(1);
+					}
+					flag = true;
+				}
+			}
+			if (!flag) {
+				level.playSound(player, player.getOnPos().above(), RisusSoundEvents.PP_FAILED.get(), SoundSource.PLAYERS, 1.8F, 1.8F);
+			}
+				return InteractionResult.sidedSuccess(level.isClientSide());
+		}
+		{
 			return InteractionResult.FAIL;
 		}
+
 
 
 
@@ -68,6 +103,22 @@ public class PatternPrintItem extends Item {
 //			return InteractionResult.FAIL;
 //		}
 	}
+
+
+//	@Override
+//	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+//		ItemStack itemstack = player.getItemInHand(hand);
+//		if (!level.isClientSide() && player.isShiftKeyDown() && ) {
+//			EggSac eggSac = new EggSac(level, player);
+//			eggSac.setItem(itemstack);
+//			eggSac.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+//			level.addFreshEntity(eggSac);
+//		}
+//
+//		player.awardStat(Stats.ITEM_USED.get(this));
+//		itemstack.consume(1, player);
+//		return InteractionResultHolder.success(itemstack);
+//	}
 
 	@Override
 	public Component getName(ItemStack stack) {
