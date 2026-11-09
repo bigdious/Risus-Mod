@@ -30,12 +30,14 @@ import com.bigdious.risus.client.render.projectile.BloodwyrmBreathEntityRenderer
 import com.bigdious.risus.client.render.projectile.ThrownAxeRenderer;
 import com.bigdious.risus.client.render.projectile.ThrownBoomstickRenderer;
 import com.bigdious.risus.compat.curios.renderers.HandCuriosRenderer;
+import com.bigdious.risus.components.item.PatternPrintComponent;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.components.tooltip.ArmorUpgradingTooltipComponent;
 import com.bigdious.risus.config.RisusConfig;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.init.*;
 import com.bigdious.risus.items.armor.*;
+import com.bigdious.risus.items.utility.PatternPrintItem;
 import com.bigdious.risus.items.weapons.ScytheItem;
 import com.bigdious.risus.items.weapons.ThousandBladeItem;
 import com.bigdious.risus.items.weapons.ToothknockerItem;
@@ -45,6 +47,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Camera;
 import net.minecraft.client.KeyMapping;
@@ -66,6 +69,8 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -73,6 +78,10 @@ import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -157,6 +166,7 @@ public class RisusClientEvents {
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderHandOfGreed);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::spyGlassMode);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::setSpyglassMode);
+		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderPatternPrintOutlines);
 		NeoForge.EVENT_BUS.addListener(RisusClientEvents::drinkMilk);
 //		NeoForge.EVENT_BUS.addListener(RisusClientEvents::renderExBurning);
 		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {
@@ -635,6 +645,40 @@ public class RisusClientEvents {
 		Player player = event.getPlayer();
 		if (player.getInventory().getArmor(3).has(RisusDataComponents.ABILITY_VARIANT) && Objects.equals(player.getInventory().getArmor(3).get(RisusDataComponents.ABILITY_VARIANT), "spyglass") && isSpyGlassModeActive) {
 			event.setNewFovModifier(0.1F);
+		}
+	}
+
+	private static void renderPatternPrintOutlines(RenderHighlightEvent.Block event) {
+		//inspired from Twilight Forest's ClientGameEvents#renderGiantBlockOutlines
+		BlockPos pos = event.getTarget().getBlockPos();
+		BlockState state = event.getCamera().getEntity().level().getBlockState(pos);
+
+		LocalPlayer player = Minecraft.getInstance().player;
+		if (player != null && player.getMainHandItem().getItem() instanceof PatternPrintItem && player.getMainHandItem().has(RisusDataComponents.PRINT_RANGE)) {
+			event.setCanceled(true);
+			if (!state.isAir() && player.level().getWorldBorder().isWithinBounds(pos)) {
+				VertexConsumer consumer = event.getMultiBufferSource().getBuffer(RenderType.lines());
+				//split mode based on if pattern is saved (has blockstate=is saved)
+				if (player.getMainHandItem().has(RisusDataComponents.BLOCK_STATE)) {
+					for (BlockPos position : player.getMainHandItem().get(RisusDataComponents.PATTERN_PRINT_COMPONENT).positions()) {
+						Direction offset = event.getTarget().getDirection();
+						Vec3 xyz = Vec3.atLowerCornerWithOffset(pos,
+							position.getX()+ (offset.getAxis() == Direction.Axis.X ? offset == Direction.WEST ? -1 : 1 : 0),
+							position.getY()+ (offset.getAxis() == Direction.Axis.Y ? offset == Direction.DOWN ? -1 : 1 : 0),
+							position.getZ()+ (offset.getAxis() == Direction.Axis.Z ? offset == Direction.NORTH ? -1 : 1 : 0)
+						).subtract(event.getCamera().getPosition());
+						LevelRenderer.renderShape(event.getPoseStack(), consumer, Shapes.block(), xyz.x(), xyz.y(), xyz.z(), 0.0F, 0.0F, 0.0F, 0.45F);
+					}
+
+				} else {
+					//range is the size for the outline
+					int range = player.getMainHandItem().getOrDefault(RisusDataComponents.PRINT_RANGE, 0);
+
+					Vec3 xyz = Vec3.atLowerCornerWithOffset(pos, -range, 0, -range).subtract(event.getCamera().getPosition());
+					VoxelShape shape = Shapes.box(0, 0, 0, 1 + 2 * range, 1 + 2 * range, 1 + 2 * range);
+					LevelRenderer.renderShape(event.getPoseStack(), consumer, shape, xyz.x(), xyz.y(), xyz.z(), 0.0F, 0.0F, 0.0F, 0.45F);
+				}
+			}
 		}
 	}
 }

@@ -314,7 +314,8 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.WARHORN, "War Horn");
 		this.addItem(RisusItems.WRETCHED_CHARM, "Wretched Charm");
 
-		this.add("item.risus.pattern_print.with_block", "Pattern Print (%s)");
+		this.add("item.risus.pattern_print.with_range", "Pattern Print %s'");
+		this.add("item.risus.pattern_print.with_range_and_block", "Pattern Print %1$s' (%2$s)");
 
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");

@@ -67,7 +67,7 @@ public class RisusItems {
 	public static final DeferredItem<Item> COUNTERWEIGHT = register("counterweight", CounterweightItem::new, () -> new Item.Properties().fireResistant().attributes(CounterweightItem.createCounterweightAttributes()).rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> BORN_TO_BURN = register("born_to_burn", BurnItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> LOST_WILL = register("lost_will", LostWillItem::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> PATTERN_PRINT = register("pattern_print", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> PATTERN_PRINT = register("pattern_print", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 1).rarity(BLOOD).stacksTo(1));
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));

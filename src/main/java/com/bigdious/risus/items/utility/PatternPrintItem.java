@@ -43,51 +43,53 @@ public class PatternPrintItem extends Item {
 		BlockPos blockpos = context.getClickedPos();
 		ItemStack stack = context.getItemInHand();
 		BlockPos placementPosition = blockpos.relative(context.getClickedFace());
-		if (player.isShiftKeyDown()){
-			stack.set(RisusDataComponents.BLOCK_STATE, level.getBlockState(blockpos));
-			if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) == PatternPrintComponent.EMPTY) {
-				PatternPrintComponent ppComponent = stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT);
-				int range = 3;
-				List<BlockPos> nearbyBlocks = BlockPos.betweenClosedStream(blockpos.getX()-range, blockpos.getY(), blockpos.getZ()-range, blockpos.getX()+range, blockpos.getY()+range*2, blockpos.getZ()+range).map(BlockPos::immutable).toList();
-				PatternPrintComponent.Mutable ppComponent$mutable = new PatternPrintComponent.Mutable(ppComponent);
-				for (BlockPos pos : nearbyBlocks) {
-					if (stack.get(RisusDataComponents.BLOCK_STATE).getBlock() == level.getBlockState(pos).getBlock() && !level.isClientSide()) {
-						//we need relative coordinates, not real coordinates
-						ppComponent$mutable.addPosition(new BlockPos(pos.getX()-blockpos.getX(), pos.getY()-blockpos.getY(), pos.getZ()-blockpos.getZ()));
-						pos.immutable();
+		if (player.getMainHandItem() == stack) {
+			if (player.isShiftKeyDown()) {
+				stack.set(RisusDataComponents.BLOCK_STATE, level.getBlockState(blockpos));
+				if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) == PatternPrintComponent.EMPTY) {
+					PatternPrintComponent ppComponent = stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT);
+					int range = stack.has(RisusDataComponents.PRINT_RANGE) ? stack.get(RisusDataComponents.PRINT_RANGE) : 0;
+					List<BlockPos> nearbyBlocks = BlockPos.betweenClosedStream(blockpos.getX() - range, blockpos.getY(), blockpos.getZ() - range, blockpos.getX() + range, blockpos.getY() + range * 2, blockpos.getZ() + range).map(BlockPos::immutable).toList();
+					PatternPrintComponent.Mutable ppComponent$mutable = new PatternPrintComponent.Mutable(ppComponent);
+					for (BlockPos pos : nearbyBlocks) {
+						if (stack.get(RisusDataComponents.BLOCK_STATE).getBlock() == level.getBlockState(pos).getBlock() && !level.isClientSide()) {
+							//we need relative coordinates, not real coordinates
+							ppComponent$mutable.addPosition(new BlockPos(pos.getX() - blockpos.getX(), pos.getY() - blockpos.getY(), pos.getZ() - blockpos.getZ()));
+							pos.immutable();
+						}
+						stack.set(RisusDataComponents.PATTERN_PRINT_COMPONENT, ppComponent$mutable.toImmutable());
 					}
-					stack.set(RisusDataComponents.PATTERN_PRINT_COMPONENT, ppComponent$mutable.toImmutable());
 				}
-			}
-			return InteractionResult.sidedSuccess(level.isClientSide());
-		} else
-			if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) != PatternPrintComponent.EMPTY) {
-				boolean flag = false;
-			for (BlockPos patternPlacePos : stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT).positions()) {
-				//combine the context's placement position with the stored positions to get the placement of blocks for the pattern
-				BlockPos finalPos = new BlockPos(placementPosition.getX()+patternPlacePos.getX(), placementPosition.getY()+patternPlacePos.getY(), placementPosition.getZ()+patternPlacePos.getZ());
-				Block patternBlock = stack.get(RisusDataComponents.BLOCK_STATE).getBlock();
-
-				if (level.getBlockState(finalPos).canBeReplaced() &&
-					(player.getInventory().hasAnyMatching(itemStack -> itemStack.is(patternBlock.asItem())) || player.isCreative())) {
-					level.playSound(player,finalPos ,  patternBlock.getSoundType(patternBlock.defaultBlockState(), level, finalPos, null).getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1);
-					level.setBlock(finalPos, patternBlock.defaultBlockState(), 11);
-					level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
-					player.awardStat(Stats.ITEM_USED.get(patternBlock.asItem()));
-					if (!player.isCreative()) {
-						player.getInventory().getItem(player.getInventory().findSlotMatchingItem(patternBlock.asItem().getDefaultInstance())).shrink(1);
-					}
-					flag = true;
-				}
-			}
-			if (!flag) {
-				level.playSound(player, player.getOnPos().above(), RisusSoundEvents.PP_FAILED.get(), SoundSource.PLAYERS, 1.8F, 1.8F);
-			}
 				return InteractionResult.sidedSuccess(level.isClientSide());
+			} else if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) != PatternPrintComponent.EMPTY) {
+				boolean flag = false;
+				Block patternBlock = stack.get(RisusDataComponents.BLOCK_STATE).getBlock();
+				for (BlockPos patternPlacePos : stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT).positions()) {
+					//combine the context's placement position with the stored positions to get the placement of blocks for the pattern
+					BlockPos finalPos = new BlockPos(placementPosition.getX() + patternPlacePos.getX(), placementPosition.getY() + patternPlacePos.getY(), placementPosition.getZ() + patternPlacePos.getZ());
+
+
+					if (level.getBlockState(finalPos).canBeReplaced() &&
+						(player.getInventory().hasAnyMatching(itemStack -> itemStack.is(patternBlock.asItem())) || player.isCreative())) {
+						level.setBlock(finalPos, patternBlock.defaultBlockState(), 11);
+						level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
+						player.awardStat(Stats.ITEM_USED.get(patternBlock.asItem()));
+						if (!player.isCreative()) {
+							player.getInventory().getItem(player.getInventory().findSlotMatchingItem(patternBlock.asItem().getDefaultInstance())).shrink(1);
+						}
+						flag = true;
+					}
+				}
+				if (!flag) {
+					level.playSound(player, player.getOnPos().above(), RisusSoundEvents.PP_FAILED.get(), SoundSource.PLAYERS, 1.8F, 1.8F);
+				} else {
+					level.playSound(player, blockpos, patternBlock.getSoundType(patternBlock.defaultBlockState(), level, blockpos, null).getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1);
+				}
+				return InteractionResult.sidedSuccess(level.isClientSide());
+			}
 		}
-		{
-			return InteractionResult.FAIL;
-		}
+		return InteractionResult.FAIL;
+
 
 
 
@@ -123,8 +125,8 @@ public class PatternPrintItem extends Item {
 	@Override
 	public Component getName(ItemStack stack) {
 		return stack.has(RisusDataComponents.BLOCK_STATE)
-			? Component.translatable(this.getDescriptionId() + ".with_block", stack.get(RisusDataComponents.BLOCK_STATE).getBlock().getName())
-			: super.getName(stack);
+			? Component.translatable(this.getDescriptionId() + ".with_range_and_block", stack.get(RisusDataComponents.PRINT_RANGE), stack.get(RisusDataComponents.BLOCK_STATE).getBlock().getName())
+			: Component.translatable(this.getDescriptionId() + ".with_range", stack.get(RisusDataComponents.PRINT_RANGE));
 	}
 
 	@Override
