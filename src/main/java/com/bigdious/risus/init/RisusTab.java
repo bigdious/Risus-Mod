@@ -303,7 +303,6 @@ public class RisusTab {
 				output.accept(RisusItems.SACRIFICE_CATALYST.get());
 				output.accept(RisusItems.THOUSAND_BLADE.get());
 				output.accept(RisusItems.KILLJOY.get());
-				output.accept(RisusItems.PATTERN_PRINT.get());
 				output.accept(RisusItems.ECHO_PEARL.get());
 				output.accept(RisusItems.ENDLESS_PEARL.get());
 				output.accept(RisusItems.LOVER_CREAM.get());
@@ -328,6 +327,11 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
 				output.accept(RisusItems.MUSIC_DISC_CYCLE.get());
+				output.accept(RisusItems.PATTERN_PRINT_1.get());
+				output.accept(RisusItems.PATTERN_PRINT_2.get());
+				output.accept(RisusItems.PATTERN_PRINT_3.get());
+				output.accept(RisusItems.PATTERN_PRINT_4.get());
+				output.accept(RisusItems.PATTERN_PRINT_5.get());
 				parameters.holders()
 					.lookup(Registries.INSTRUMENT)
 					.ifPresent(

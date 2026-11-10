@@ -292,7 +292,11 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.RESEARCHERS_NOTES, "Researcher's Notes");
 		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
-		this.addItem(RisusItems.PATTERN_PRINT, "Pattern Print");
+		this.addItem(RisusItems.PATTERN_PRINT_1, "Pattern Print 3□");
+		this.addItem(RisusItems.PATTERN_PRINT_2, "Pattern Print 5□");
+		this.addItem(RisusItems.PATTERN_PRINT_3, "Pattern Print 7□");
+		this.addItem(RisusItems.PATTERN_PRINT_4, "Pattern Print 9□");
+		this.addItem(RisusItems.PATTERN_PRINT_5, "Pattern Print 11□");
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Crucified Heart");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
 		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner's Robe Helmet");
@@ -314,8 +318,12 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.WARHORN, "War Horn");
 		this.addItem(RisusItems.WRETCHED_CHARM, "Wretched Charm");
 
-		this.add("item.risus.pattern_print.with_range", "Pattern Print %s'");
-		this.add("item.risus.pattern_print.with_range_and_block", "Pattern Print %1$s' (%2$s)");
+
+		this.add("item.risus.pattern_print_1.with_block", "Pattern Print 3□ (%s)");
+		this.add("item.risus.pattern_print_2.with_block", "Pattern Print 5□ (%s)");
+		this.add("item.risus.pattern_print_3.with_block", "Pattern Print 7□ (%s)");
+		this.add("item.risus.pattern_print_4.with_block", "Pattern Print 9□ (%s)");
+		this.add("item.risus.pattern_print_5.with_block", "Pattern Print 11□ (%s)");
 
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");

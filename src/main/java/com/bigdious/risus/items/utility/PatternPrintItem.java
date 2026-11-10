@@ -125,8 +125,8 @@ public class PatternPrintItem extends Item {
 	@Override
 	public Component getName(ItemStack stack) {
 		return stack.has(RisusDataComponents.BLOCK_STATE)
-			? Component.translatable(this.getDescriptionId() + ".with_range_and_block", stack.get(RisusDataComponents.PRINT_RANGE), stack.get(RisusDataComponents.BLOCK_STATE).getBlock().getName())
-			: Component.translatable(this.getDescriptionId() + ".with_range", stack.get(RisusDataComponents.PRINT_RANGE));
+			? Component.translatable(this.getDescriptionId() + ".with_block", stack.get(RisusDataComponents.BLOCK_STATE).getBlock().getName())
+			: super.getName(stack);
 	}
 
 	@Override

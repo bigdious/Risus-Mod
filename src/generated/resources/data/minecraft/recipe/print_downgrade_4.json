@@ -3,11 +3,14 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "risus:pattern_print"
+      "item": "risus:pattern_print_5"
+    },
+    {
+      "item": "minecraft:shears"
     }
   ],
   "result": {
     "count": 1,
-    "id": "risus:pattern_print"
+    "id": "risus:pattern_print_4"
   }
 }

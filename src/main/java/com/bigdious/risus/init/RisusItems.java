@@ -67,7 +67,15 @@ public class RisusItems {
 	public static final DeferredItem<Item> COUNTERWEIGHT = register("counterweight", CounterweightItem::new, () -> new Item.Properties().fireResistant().attributes(CounterweightItem.createCounterweightAttributes()).rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> BORN_TO_BURN = register("born_to_burn", BurnItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> LOST_WILL = register("lost_will", LostWillItem::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-	public static final DeferredItem<Item> PATTERN_PRINT = register("pattern_print", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 1).rarity(BLOOD).stacksTo(1));
+
+	//no red rarity for better readability
+	public static final DeferredItem<Item> PATTERN_PRINT_1 = register("pattern_print_1", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 1).rarity(BLOOD).stacksTo(1));
+	//this is ugly, but its smooth both for crafting and for the average player. Adding a new crafting type just for this is not worth the effort longterm
+	public static final DeferredItem<Item> PATTERN_PRINT_2 = register("pattern_print_2", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 2).rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> PATTERN_PRINT_3 = register("pattern_print_3", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 3).rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> PATTERN_PRINT_4 = register("pattern_print_4", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 4).rarity(BLOOD).stacksTo(1));
+	public static final DeferredItem<Item> PATTERN_PRINT_5 = register("pattern_print_5", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 5).rarity(BLOOD).stacksTo(1));
+
 
 	//ARMORS
 	public static final DeferredItem<ArmorItem> SKIN_HELMET = register("skin_helmet", properties -> new RisusArmorItem(RisusArmorMaterials.SKIN, ArmorItem.Type.HELMET, properties), () -> new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(12)).attributes(RisusArmorItem.createSkinAttributes(ArmorItem.Type.HELMET, 1)).rarity(BLOOD));

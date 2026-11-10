@@ -1030,10 +1030,7 @@ public class CraftingGenerator extends RecipeProvider {
 			.unlockedBy("has_item", has(RisusItems.BLOOD_FEATHER.get()))
 			.save(consumer);
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT.get(), 1)
-			.requires(RisusItems.PATTERN_PRINT.get())
-			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT.get()))
-			.save(consumer);
+
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, RisusItems.BORN_TO_BURN.get(), 1)
 			.pattern("BCB")
@@ -1483,6 +1480,82 @@ public class CraftingGenerator extends RecipeProvider {
 			.requires(RisusItems.ORGANIC_MATTER.get())
 			.unlockedBy("has_item", has(RisusItems.ORGANIC_MATTER.get()))
 			.save(consumer, "adding_hair_to_curved_fleshy_skin");
+
+		//print recipes group
+		//recrafts
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_1.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT_1.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT_1.get()))
+			.save(consumer, "print_recraft_1");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_2.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT_2.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT_1.get()))
+			.save(consumer, "print_recraft_2");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_3.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT_3.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT_1.get()))
+			.save(consumer, "print_recraft_3");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_4.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT_4.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT_1.get()))
+			.save(consumer, "print_recraft_4");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_5.get(), 1)
+			.requires(RisusItems.PATTERN_PRINT_5.get())
+			.unlockedBy("has_item", has(RisusItems.PATTERN_PRINT_1.get()))
+			.save(consumer, "print_recraft_5");
+
+		//creation crafts
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_1.get())
+			.requires(RisusItems.CONCENTRATION_CORE.get())
+			.requires(Items.COPPER_BLOCK)
+			.requires(Items.PAPER)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_2.get())
+			.requires(RisusItems.PATTERN_PRINT_1.get())
+			.requires(Items.PAPER)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_3.get())
+			.requires(RisusItems.PATTERN_PRINT_2.get())
+			.requires(Items.PAPER)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_4.get())
+			.requires(RisusItems.PATTERN_PRINT_3.get())
+			.requires(Items.PAPER)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_5.get())
+			.requires(RisusItems.PATTERN_PRINT_4.get())
+			.requires(Items.PAPER)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer);
+
+		//downgrade crafts
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_1.get())
+			.requires(RisusItems.PATTERN_PRINT_2.get())
+			.requires(Items.SHEARS)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer, "print_downgrade_1");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_2.get())
+			.requires(RisusItems.PATTERN_PRINT_3.get())
+			.requires(Items.SHEARS)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer, "print_downgrade_2");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_3.get())
+			.requires(RisusItems.PATTERN_PRINT_4.get())
+			.requires(Items.SHEARS)
+			.unlockedBy("has_item", has(Items.PAPER))
+			.save(consumer, "print_downgrade_3");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_4.get())
+			.requires(RisusItems.PATTERN_PRINT_5.get())
+			.requires(Items.SHEARS)
+			.unlockedBy("has_item", has(Items.PAPER))
+
+			.save(consumer, "print_downgrade_4");
+
+
 
 
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(RisusBlocks.GRIMSTONE.get()), RecipeCategory.BUILDING_BLOCKS, RisusBlocks.GRIMSTONE_BRICKS, 1)

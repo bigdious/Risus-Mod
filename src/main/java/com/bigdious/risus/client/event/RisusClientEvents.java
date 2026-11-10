@@ -667,7 +667,9 @@ public class RisusClientEvents {
 							position.getY()+ (offset.getAxis() == Direction.Axis.Y ? offset == Direction.DOWN ? -1 : 1 : 0),
 							position.getZ()+ (offset.getAxis() == Direction.Axis.Z ? offset == Direction.NORTH ? -1 : 1 : 0)
 						).subtract(event.getCamera().getPosition());
-						LevelRenderer.renderShape(event.getPoseStack(), consumer, Shapes.block(), xyz.x(), xyz.y(), xyz.z(), 0.0F, 0.0F, 0.0F, 0.45F);
+						//we are double dipping to get a clearer outline
+						LevelRenderer.renderShape(event.getPoseStack(), consumer, Shapes.block(), xyz.x(), xyz.y(), xyz.z(), 1.0F, 1.0F, 1.0F, 0.6F);
+						LevelRenderer.renderShape(event.getPoseStack(), consumer, Shapes.box(0, 0, 0, 0.95, 0.95, 0.95), xyz.x()+0.025, xyz.y()+0.025, xyz.z()+0.025, 0.0F, 0.0F, 0.0F, 0.6F);
 					}
 
 				} else {
@@ -676,7 +678,10 @@ public class RisusClientEvents {
 
 					Vec3 xyz = Vec3.atLowerCornerWithOffset(pos, -range, 0, -range).subtract(event.getCamera().getPosition());
 					VoxelShape shape = Shapes.box(0, 0, 0, 1 + 2 * range, 1 + 2 * range, 1 + 2 * range);
-					LevelRenderer.renderShape(event.getPoseStack(), consumer, shape, xyz.x(), xyz.y(), xyz.z(), 0.0F, 0.0F, 0.0F, 0.45F);
+					VoxelShape shapeInner = Shapes.box(0, 0, 0, 0.95 + 2 * range, 0.95 + 2 * range, 0.95 + 2 * range);
+					LevelRenderer.renderShape(event.getPoseStack(), consumer, shape, xyz.x(), xyz.y(), xyz.z(), 1.0F, 1.0F, 1.0F, 0.6F);
+					LevelRenderer.renderShape(event.getPoseStack(), consumer, shapeInner, xyz.x()+0.025, xyz.y()+0.025, xyz.z()+0.025, 0.0F, 0.0F, 0.0F, 0.6F);
+
 				}
 			}
 		}
