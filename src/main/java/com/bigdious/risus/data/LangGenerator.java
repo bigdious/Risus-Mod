@@ -441,7 +441,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.singer", "Singer");
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
-		this.add("tooltip.risus.pattern_print", "Pattern saved");
+		this.add("tooltip.risus.pattern_print", "Pattern saved with %s position(s)");
 
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");

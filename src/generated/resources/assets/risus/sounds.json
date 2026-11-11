@@ -433,6 +433,15 @@
     ],
     "subtitle": "subtitles.risus.item.pattern_print.fail"
   },
+  "item.pattern_print.rotated": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "item.book.page_turn"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.pattern_print.rotated"
+  },
   "item.scythe_switch": {
     "sounds": [
       "risus:item/scythe_switch"

@@ -8,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -28,12 +29,45 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PatternPrintItem extends Item {
 	public PatternPrintItem(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+		//this is pattern rotation logic
+		ItemStack stack = player.getItemInHand(hand);
+		if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.has(RisusDataComponents.PATTERN_PRINT_COMPONENT)) {
+			PatternPrintComponent ppComponent = stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT);
+			PatternPrintComponent.Mutable ppComponent$mutable = new PatternPrintComponent.Mutable(ppComponent);
+			List<BlockPos> rotatedlist = new ArrayList<>();
+			for (BlockPos pos : ppComponent.positions()) {
+				//we rotate based on positive/negative values of z and x (keeping in mind the 0 cases). Since coordinates are relative, this *should* always be correct
+				//throw a sun at big if not
+				if (Math.signum(pos.getX()) == Math.signum(pos.getZ())) {
+					BlockPos rotatedPos = new BlockPos(-pos.getX(), pos.getY(), pos.getZ());
+					rotatedlist.add(rotatedPos);
+				}
+				else {
+					BlockPos rotatedPos = new BlockPos(
+						pos.getZ() == 0 ? 0 : pos.getX()==0 ? -pos.getZ() : pos.getX(),
+						pos.getY(),
+						pos.getX()==0 ? 0 : pos.getZ()==0 ? pos.getX() : -pos.getZ());
+					rotatedlist.add(rotatedPos);
+				}
+			}
+			ppComponent$mutable.clearPositions();
+			ppComponent$mutable.addList(rotatedlist);
+			stack.set(RisusDataComponents.PATTERN_PRINT_COMPONENT, ppComponent$mutable.toImmutable());
+			level.playSound(player, player.getOnPos().above(), RisusSoundEvents.PP_ROTATED.get(), SoundSource.PLAYERS);
+			return InteractionResultHolder.sidedSuccess(stack, !level.isClientSide());
+		}
+		return InteractionResultHolder.fail(stack);
 	}
 
 	@Override
@@ -85,6 +119,7 @@ public class PatternPrintItem extends Item {
 				} else {
 					level.playSound(player, blockpos, patternBlock.getSoundType(patternBlock.defaultBlockState(), level, blockpos, null).getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1);
 				}
+				player.awardStat(Stats.ITEM_USED.get(this));
 				return InteractionResult.sidedSuccess(level.isClientSide());
 			}
 		}
@@ -132,7 +167,7 @@ public class PatternPrintItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
 		if (stack.has(RisusDataComponents.PATTERN_PRINT_COMPONENT) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) != PatternPrintComponent.EMPTY) {
-			tooltip.add(Component.translatable("tooltip.risus.pattern_print").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("tooltip.risus.pattern_print", stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT).count()).withStyle(ChatFormatting.GRAY));
 		}
 	}
 }

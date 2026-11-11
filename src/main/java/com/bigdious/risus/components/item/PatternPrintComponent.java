@@ -65,6 +65,10 @@ public final class PatternPrintComponent {
 		}
 	}
 
+	public int count(){
+		return this.positions.size();
+	}
+
 	public Iterable<BlockPos> positions() {
 		return this.positions;
 	}
@@ -81,9 +85,14 @@ public final class PatternPrintComponent {
 			return this;
 		}
 
-		public int addPosition(BlockPos pos) {
+		public PatternPrintComponent.Mutable addList(List<BlockPos> pos) {
+			this.positions.addAll(pos);
+			return this;
+		}
+
+		public PatternPrintComponent.Mutable addPosition(BlockPos pos) {
 			this.positions.add(pos);
-			return 1;
+			return this;
 		}
 
 		public PatternPrintComponent toImmutable() {
