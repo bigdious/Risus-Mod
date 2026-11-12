@@ -80,6 +80,7 @@ public class RisusSoundEvents {
 	public static final DeferredHolder<SoundEvent, SoundEvent> WING_STAB = register("item.wing_stab");
 	public static final DeferredHolder<SoundEvent, SoundEvent> SCYTHE_SWITCH = register("item.scythe_switch");
 	public static final DeferredHolder<SoundEvent, SoundEvent> PP_FAILED = register("item.pattern_print.fail");
+	public static final DeferredHolder<SoundEvent, SoundEvent> PP_DENIED = register("item.pattern_print.denied");
 	public static final DeferredHolder<SoundEvent, SoundEvent> PP_ROTATED = register("item.pattern_print.rotated");
 
 

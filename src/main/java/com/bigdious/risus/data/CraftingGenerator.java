@@ -1506,7 +1506,7 @@ public class CraftingGenerator extends RecipeProvider {
 
 		//creation crafts
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_1.get())
-			.requires(RisusItems.CONCENTRATION_CORE.get())
+			.requires(RisusItems.MEMORY_CORE.get())
 			.requires(Items.COPPER_BLOCK)
 			.requires(Items.PAPER)
 			.unlockedBy("has_item", has(Items.PAPER))
@@ -1535,22 +1535,22 @@ public class CraftingGenerator extends RecipeProvider {
 		//downgrade crafts
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_1.get())
 			.requires(RisusItems.PATTERN_PRINT_2.get())
-			.requires(Items.SHEARS)
+			.requires(Items.STONE)
 			.unlockedBy("has_item", has(Items.PAPER))
 			.save(consumer, "print_downgrade_1");
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_2.get())
 			.requires(RisusItems.PATTERN_PRINT_3.get())
-			.requires(Items.SHEARS)
+			.requires(Items.STONE)
 			.unlockedBy("has_item", has(Items.PAPER))
 			.save(consumer, "print_downgrade_2");
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_3.get())
 			.requires(RisusItems.PATTERN_PRINT_4.get())
-			.requires(Items.SHEARS)
+			.requires(Items.STONE)
 			.unlockedBy("has_item", has(Items.PAPER))
 			.save(consumer, "print_downgrade_3");
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, RisusItems.PATTERN_PRINT_4.get())
 			.requires(RisusItems.PATTERN_PRINT_5.get())
-			.requires(Items.SHEARS)
+			.requires(Items.STONE)
 			.unlockedBy("has_item", has(Items.PAPER))
 
 			.save(consumer, "print_downgrade_4");

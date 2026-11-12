@@ -83,6 +83,7 @@ public class SoundDefinitionGenerator extends SoundDefinitionsProvider {
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.HEARTBEAT, "block/beating_heart/heartbeat", 1,"Heart beats");
 		this.generateNewSoundWithSubtitle(RisusSoundEvents.SCYTHE_SWITCH, "item/scythe_switch", 1,"Scythe switches modes");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.PP_FAILED, SoundEvents.DISPENSER_FAIL, "Pattern Print has no blocks to use");
+		this.generateExistingSoundWithSubtitle(RisusSoundEvents.PP_DENIED, SoundEvents.DISPENSER_FAIL, "Block is copyrighted, cannot be printed");
 		this.generateExistingSoundWithSubtitle(RisusSoundEvents.PP_ROTATED, SoundEvents.BOOK_PAGE_TURN, "Pattern rotated");
 	}
 

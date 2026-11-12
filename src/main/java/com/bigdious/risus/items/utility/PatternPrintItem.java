@@ -1,18 +1,15 @@
 package com.bigdious.risus.items.utility;
 
 import com.bigdious.risus.components.item.PatternPrintComponent;
-import com.bigdious.risus.entity.projectile.EggSac;
 import com.bigdious.risus.init.RisusDataComponents;
 import com.bigdious.risus.init.RisusSoundEvents;
+import com.bigdious.risus.init.RisusTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -20,18 +17,25 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static net.minecraft.world.level.block.RotatedPillarBlock.AXIS;
+import static net.minecraft.world.level.block.StairBlock.*;
 
 public class PatternPrintItem extends Item {
 	public PatternPrintItem(Properties properties) {
@@ -79,7 +83,14 @@ public class PatternPrintItem extends Item {
 		BlockPos placementPosition = blockpos.relative(context.getClickedFace());
 		if (player.getMainHandItem() == stack) {
 			if (player.isShiftKeyDown()) {
-				stack.set(RisusDataComponents.BLOCK_STATE, level.getBlockState(blockpos));
+				if (!level.getBlockState(blockpos).hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) && !level.getBlockState(blockpos).is(RisusTags.Blocks.COPYRIGHTED)) {
+					stack.set(RisusDataComponents.BLOCK_STATE, level.getBlockState(blockpos));
+				} else {
+					level.playSound(player, player.getOnPos().above(), RisusSoundEvents.PP_DENIED.get(), SoundSource.PLAYERS, 1.8F, 1.8F);
+					return InteractionResult.sidedSuccess(level.isClientSide());
+				}
+
+
 				if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) == PatternPrintComponent.EMPTY) {
 					PatternPrintComponent ppComponent = stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT);
 					int range = stack.has(RisusDataComponents.PRINT_RANGE) ? stack.get(RisusDataComponents.PRINT_RANGE) : 0;
@@ -90,12 +101,15 @@ public class PatternPrintItem extends Item {
 							//we need relative coordinates, not real coordinates
 							ppComponent$mutable.addPosition(new BlockPos(pos.getX() - blockpos.getX(), pos.getY() - blockpos.getY(), pos.getZ() - blockpos.getZ()));
 							pos.immutable();
+							//wait, is the saved coordinate flipped?
+							//ah fuck it, it works
 						}
 						stack.set(RisusDataComponents.PATTERN_PRINT_COMPONENT, ppComponent$mutable.toImmutable());
 					}
 				}
 				return InteractionResult.sidedSuccess(level.isClientSide());
 			} else if (stack.has(RisusDataComponents.BLOCK_STATE) && stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT) != PatternPrintComponent.EMPTY) {
+
 				boolean flag = false;
 				Block patternBlock = stack.get(RisusDataComponents.BLOCK_STATE).getBlock();
 				for (BlockPos patternPlacePos : stack.get(RisusDataComponents.PATTERN_PRINT_COMPONENT).positions()) {
@@ -105,7 +119,8 @@ public class PatternPrintItem extends Item {
 
 					if (level.getBlockState(finalPos).canBeReplaced() &&
 						(player.getInventory().hasAnyMatching(itemStack -> itemStack.is(patternBlock.asItem())) || player.isCreative())) {
-						level.setBlock(finalPos, patternBlock.defaultBlockState(), 11);
+						BlockState placementState = patternBlock.getStateForPlacement(new BlockPlaceContext(context));
+						level.setBlock(finalPos, placementState == null ? patternBlock.defaultBlockState() : placementState, 11);
 						level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
 						player.awardStat(Stats.ITEM_USED.get(patternBlock.asItem()));
 						if (!player.isCreative()) {
@@ -124,38 +139,7 @@ public class PatternPrintItem extends Item {
 			}
 		}
 		return InteractionResult.FAIL;
-
-
-
-
-
-//		if (DarknessBlock.canBePlacedAt(level, blockpos1, context.getHorizontalDirection())) {
-//			level.playSound(player, blockpos1, RisusSoundEvents.DARKNESS_PLACE.get(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
-//			BlockState blockstate1 = RisusBlocks.DARKNESS.get().defaultBlockState().setValue(DarknessBlock.FLUIDLOGGED, SimpleMultiloggedBlock.MultiloggingEnum.getFromFluid(level.getFluidState(blockpos1).getType()));
-//			level.setBlock(blockpos1, blockstate1, 11);
-//			level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
-//			player.awardStat(Stats.ITEM_USED.get(this));
-//			return InteractionResult.sidedSuccess(level.isClientSide());
-//		} else {
-//			return InteractionResult.FAIL;
-//		}
 	}
-
-
-//	@Override
-//	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-//		ItemStack itemstack = player.getItemInHand(hand);
-//		if (!level.isClientSide() && player.isShiftKeyDown() && ) {
-//			EggSac eggSac = new EggSac(level, player);
-//			eggSac.setItem(itemstack);
-//			eggSac.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-//			level.addFreshEntity(eggSac);
-//		}
-//
-//		player.awardStat(Stats.ITEM_USED.get(this));
-//		itemstack.consume(1, player);
-//		return InteractionResultHolder.success(itemstack);
-//	}
 
 	@Override
 	public Component getName(ItemStack stack) {

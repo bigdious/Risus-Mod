@@ -28,6 +28,7 @@ public class RisusTags {
 		public static final TagKey<Block> PROLIFERABLE_SOILS = create("proliferable_soils");
 		public static final TagKey<Block> PROLIFERABLE_ROCKS = create("proliferable_rocks");
 		public static final TagKey<Block> CARVEABLE_TISSUE = create("carveable_tissue");
+		public static final TagKey<Block> COPYRIGHTED = create("copyrighted");
 
 		private static TagKey<Block> create(String name) {
 			return BlockTags.create(ResourceLocation.fromNamespaceAndPath(Risus.MODID, name));

@@ -838,6 +838,7 @@
   "subtitles.risus.item.light_devourer.place_darkness": "Darkness is born",
   "subtitles.risus.item.lucky_charm.fortune_triggered": "Fortune triggered",
   "subtitles.risus.item.organic_matter.use": "Organic Matter crinkles",
+  "subtitles.risus.item.pattern_print.denied": "Block is copyrighted, cannot be printed",
   "subtitles.risus.item.pattern_print.fail": "Pattern Print has no blocks to use",
   "subtitles.risus.item.pattern_print.rotated": "Pattern rotated",
   "subtitles.risus.item.scythe_switch": "Scythe switches modes",

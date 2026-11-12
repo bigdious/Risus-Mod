@@ -424,6 +424,15 @@
     ],
     "subtitle": "subtitles.risus.item.organic_matter.use"
   },
+  "item.pattern_print.denied": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.dispenser.fail"
+      }
+    ],
+    "subtitle": "subtitles.risus.item.pattern_print.denied"
+  },
   "item.pattern_print.fail": {
     "sounds": [
       {
