@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-10T21:45:25.1670022	Recipes
+// 1.21.1	2026-11-13T20:43:42.3213759	Recipes
 b488a9de4ce4f24bbf62811cc175b45425a9b530 data/minecraft/advancement/recipes/bondknot_dummy.json
 9c6d01772b97b8fdee9a7793b36a8bcb8f46c78b data/minecraft/advancement/recipes/building_blocks/dark_gate_from_fence.json
 a45d2aa4bea1f66677b0fda515974d5fc19f4d61 data/minecraft/advancement/recipes/building_blocks/eerie_gate_from_fence.json
@@ -30,10 +30,6 @@ fcc009505047594dac622207cea0c322e59c56c6 data/minecraft/advancement/recipes/misc
 0a7e79c45dcaa6110204f74b7313516e0c306433 data/minecraft/advancement/recipes/redstone/dark_large_gate_from_small.json
 4a93e35edf3c7db08129ab0f50cd039f2063885f data/minecraft/advancement/recipes/redstone/eerie_large_gate_from_small.json
 7574113f549337daa24ac9e52e2256954b6e45eb data/minecraft/advancement/recipes/tissue_two.json
-47f7a9b5db1fd9f1d4ea69fb145fb50854471ada data/minecraft/advancement/recipes/tools/print_downgrade_1.json
-bb029b39c72480eedf08536bd06a340d911629ee data/minecraft/advancement/recipes/tools/print_downgrade_2.json
-2fa331ff1058e2af9d81ec9bfe531009c366b7bf data/minecraft/advancement/recipes/tools/print_downgrade_3.json
-629c017d3aeb7d6aded9d7e797167608cccbdafb data/minecraft/advancement/recipes/tools/print_downgrade_4.json
 213db6290aaabec3a9aa025ae61a1a898882fc59 data/minecraft/advancement/recipes/tools/print_recraft_1.json
 2336a8d242c630786c9714df801b15ed31baeb82 data/minecraft/advancement/recipes/tools/print_recraft_2.json
 86d541d07d083e5b5b5f3794070805e6623d556a data/minecraft/advancement/recipes/tools/print_recraft_3.json
@@ -64,10 +60,6 @@ e1e28aa6c78de64a2cbaabc04254c815076abec1 data/minecraft/recipe/head_to_spewer.js
 b16c5d261c08fcb7018a0af009436dea6454cd0a data/minecraft/recipe/litter_to_concentration_core.json
 21873dc3a08c6e9c1eeccc4a38c51cc48bf1c8b1 data/minecraft/recipe/petal_to_dye.json
 29cce1758517d4995ffa4e7671b418f7952f91e0 data/minecraft/recipe/petal_to_sugar.json
-24713902a12db4b8faafddea1fe99f6fc92594b6 data/minecraft/recipe/print_downgrade_1.json
-c6cc330aec992bf7299aebcc315e1d8f46091320 data/minecraft/recipe/print_downgrade_2.json
-0deb397090ee25baeec16eada24cd609af3b9475 data/minecraft/recipe/print_downgrade_3.json
-8064d222f80624fdc5edf3f98308c6921b4d64cb data/minecraft/recipe/print_downgrade_4.json
 90e36d786fe875d29182bb29ec47eef16d54169c data/minecraft/recipe/print_recraft_1.json
 da79fc22d19d6e29903fb1d0279eae4468af60ae data/minecraft/recipe/print_recraft_2.json
 87933b9ffa8be2b8b843a78ec05e575959cadb9f data/minecraft/recipe/print_recraft_3.json
@@ -618,7 +610,7 @@ d05b2480fce3c8487541e2620440b02d3d9727dc data/risus/recipe/orange_mosaic_glass.j
 ba5bf2f53e779616b11e122473a07aba74c01e36 data/risus/recipe/orange_mosaic_lamp.json
 548cb3c7c5bfc340b50dc7fec6af7ed7f5e16111 data/risus/recipe/organic_matter.json
 994dcb359b8deb8437356054c46d8849dc79faf1 data/risus/recipe/organic_matter_block.json
-057068531958f985b5f1cf9f763be53e76ce0102 data/risus/recipe/pattern_print_1.json
+52e160ac891dbea52f91e7c555c346e122ef32ef data/risus/recipe/pattern_print_1.json
 0ef07e116a9bd5b200f36b1b14eaf30a038768a5 data/risus/recipe/pattern_print_2.json
 b0760c90fc22f3c0016557b94706ae4059bbfecc data/risus/recipe/pattern_print_3.json
 dbaf454767811b20ddc171db7387045a2216b3cb data/risus/recipe/pattern_print_4.json

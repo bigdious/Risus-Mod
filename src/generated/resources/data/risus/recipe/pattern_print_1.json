@@ -3,7 +3,7 @@
   "category": "equipment",
   "ingredients": [
     {
-      "item": "risus:concentration_core"
+      "item": "risus:memory_core"
     },
     {
       "item": "minecraft:copper_block"

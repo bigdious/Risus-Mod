@@ -16,6 +16,7 @@ import com.bigdious.risus.client.render.block.*;
 import com.bigdious.risus.client.render.creature.*;
 import com.bigdious.risus.client.render.item.BeatingHeartItemRenderer;
 import com.bigdious.risus.client.render.item.LitterItemRenderer;
+import com.bigdious.risus.client.render.item.PatternPrintItemRenderer;
 import com.bigdious.risus.client.render.item.RisusSpecialItemRenderer;
 import com.bigdious.risus.client.render.misc.QuestionMarkRenderer;
 import com.bigdious.risus.client.render.misc.RisusBoatRenderer;
@@ -69,6 +70,7 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -108,6 +110,17 @@ public class RisusClientEvents {
 
 	private static final RenderType MONOLITH_PORTAL = RenderType.create("risus:monolith_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, 256, true, false, RenderType.CompositeState.builder().setShaderState(RenderStateAccessor.getEndPortal()).setTextureState(RenderStateShard.MultiTextureStateShard.builder().add(TheEndPortalRenderer.END_SKY_LOCATION, false, false).add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false).build()).createCompositeState(false));
 	public static boolean isSpyGlassModeActive;
+	public static final ModelResourceLocation PRINT_MODEL_1 =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_1_base"));
+	public static final ModelResourceLocation PRINT_MODEL_2 =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_2_base"));
+	public static final ModelResourceLocation PRINT_MODEL_3 =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_3_base"));
+	public static final ModelResourceLocation PRINT_MODEL_4 =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_4_base"));
+	public static final ModelResourceLocation PRINT_MODEL_5 =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_5_base"));
+	public static final ModelResourceLocation PRINT_MODEL_1_EMPTY =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_1_empty"));
+	public static final ModelResourceLocation PRINT_MODEL_2_EMPTY =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_2_empty"));
+	public static final ModelResourceLocation PRINT_MODEL_3_EMPTY =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_3_empty"));
+	public static final ModelResourceLocation PRINT_MODEL_4_EMPTY =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_4_empty"));
+	public static final ModelResourceLocation PRINT_MODEL_5_EMPTY =  ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Risus.MODID, "item/pattern_print_5_empty"));
+
 	private static final KeyMapping OPEN_BOOK_KEY = new KeyMapping(
 		"keybind.researchers_notes_open",
 		KeyConflictContext.IN_GAME,
@@ -140,6 +153,7 @@ public class RisusClientEvents {
 			event.register(SPYGLASS_MODE);
 		});
 		bus.addListener(RisusClientEvents::clientSetup);
+		bus.addListener(RisusClientEvents::registerModels);
 		bus.addListener(RisusClientEvents::registerParticleFactories);
 		bus.addListener(RisusClientEvents::registerEntityLayers);
 		bus.addListener(RisusClientEvents::registerSkullModel);
@@ -182,7 +196,13 @@ public class RisusClientEvents {
 				return new BeatingHeartItemRenderer();
 			}
 		}, RisusItems.BEATING_HEART.get()));
-	}
+
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {@Override public BlockEntityWithoutLevelRenderer getCustomRenderer() {return new PatternPrintItemRenderer(1, PRINT_MODEL_1, PRINT_MODEL_1_EMPTY);}}, RisusItems.PATTERN_PRINT_1.get()));
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {@Override public BlockEntityWithoutLevelRenderer getCustomRenderer() {return new PatternPrintItemRenderer(2, PRINT_MODEL_2, PRINT_MODEL_2_EMPTY);}}, RisusItems.PATTERN_PRINT_2.get()));
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {@Override public BlockEntityWithoutLevelRenderer getCustomRenderer() {return new PatternPrintItemRenderer(3, PRINT_MODEL_3, PRINT_MODEL_3_EMPTY);}}, RisusItems.PATTERN_PRINT_3.get()));
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {@Override public BlockEntityWithoutLevelRenderer getCustomRenderer() {return new PatternPrintItemRenderer(4, PRINT_MODEL_4, PRINT_MODEL_4_EMPTY);}}, RisusItems.PATTERN_PRINT_4.get()));
+		bus.addListener(RegisterClientExtensionsEvent.class, event -> event.registerItem(new IClientItemExtensions() {@Override public BlockEntityWithoutLevelRenderer getCustomRenderer() {return new PatternPrintItemRenderer(5, PRINT_MODEL_5, PRINT_MODEL_5_EMPTY);}}, RisusItems.PATTERN_PRINT_5.get()));
+}
 
 	private static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(RisusFluids.SOURCE_BLOOD.get(), RenderType.translucent());
@@ -357,6 +377,19 @@ public class RisusClientEvents {
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_LEGGINGS_INNER, () -> LayerDefinition.create(SinnerRobeLeggingsModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_BOOTS_OUTER, () -> LayerDefinition.create(SinnerRobeBootsModel.addPieces(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 		event.registerLayerDefinition(RisusModelLayers.SINNER_ROBES_BOOTS_OUTER, () -> LayerDefinition.create(SinnerRobeBootsModel.addPieces(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32));
+	}
+
+	public static void registerModels(ModelEvent.RegisterAdditional event) {
+		event.register(PRINT_MODEL_1);
+		event.register(PRINT_MODEL_2);
+		event.register(PRINT_MODEL_3);
+		event.register(PRINT_MODEL_4);
+		event.register(PRINT_MODEL_5);
+		event.register(PRINT_MODEL_1_EMPTY);
+		event.register(PRINT_MODEL_2_EMPTY);
+		event.register(PRINT_MODEL_3_EMPTY);
+		event.register(PRINT_MODEL_4_EMPTY);
+		event.register(PRINT_MODEL_5_EMPTY);
 	}
 
 	private static void attachRenderLayers(EntityRenderersEvent.AddLayers event) {
