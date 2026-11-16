@@ -74,6 +74,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
@@ -708,8 +709,9 @@ public class RisusClientEvents {
 				} else {
 					//range is the size for the outline
 					int range = player.getMainHandItem().getOrDefault(RisusDataComponents.PRINT_RANGE, 0);
+					Direction dir = PatternPrintItem.facingDirection(Mth.wrapDegrees(player.getViewYRot(1F)));
 
-					Vec3 xyz = Vec3.atLowerCornerWithOffset(pos, -range, 0, -range).subtract(event.getCamera().getPosition());
+					Vec3 xyz = Vec3.atLowerCornerWithOffset(pos, dir == Direction.WEST ? -(range*2) : dir == Direction.EAST ? 0 : -range, 0, dir == Direction.NORTH ? -(range*2) : dir == Direction.SOUTH ? 0 : -range).subtract(event.getCamera().getPosition());
 					VoxelShape shape = Shapes.box(0, 0, 0, 1 + 2 * range, 1 + 2 * range, 1 + 2 * range);
 					VoxelShape shapeInner = Shapes.box(0, 0, 0, 0.95 + 2 * range, 0.95 + 2 * range, 0.95 + 2 * range);
 					LevelRenderer.renderShape(event.getPoseStack(), consumer, shape, xyz.x(), xyz.y(), xyz.z(), 1.0F, 1.0F, 1.0F, 0.6F);
