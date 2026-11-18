@@ -327,11 +327,6 @@ public class RisusTab {
 				output.accept(RisusItems.MUSIC_DISC_FEIGR.get());
 				output.accept(RisusItems.MUSIC_DISC_MORK.get());
 				output.accept(RisusItems.MUSIC_DISC_CYCLE.get());
-				output.accept(RisusItems.PATTERN_PRINT_1.get());
-				output.accept(RisusItems.PATTERN_PRINT_2.get());
-				output.accept(RisusItems.PATTERN_PRINT_3.get());
-				output.accept(RisusItems.PATTERN_PRINT_4.get());
-				output.accept(RisusItems.PATTERN_PRINT_5.get());
 				parameters.holders()
 					.lookup(Registries.INSTRUMENT)
 					.ifPresent(

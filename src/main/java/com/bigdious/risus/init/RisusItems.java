@@ -2,7 +2,6 @@ package com.bigdious.risus.init;
 
 import com.bigdious.risus.Risus;
 import com.bigdious.risus.components.item.ArmorUpgradingContent;
-import com.bigdious.risus.components.item.PatternPrintComponent;
 import com.bigdious.risus.components.item.WarhornComponent;
 import com.bigdious.risus.entity.RisusBoat;
 import com.bigdious.risus.items.*;
@@ -13,15 +12,12 @@ import com.bigdious.risus.items.weapons.*;
 import com.bigdious.risus.util.RisusToolMaterials;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.InstrumentTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -67,14 +63,6 @@ public class RisusItems {
 	public static final DeferredItem<Item> COUNTERWEIGHT = register("counterweight", CounterweightItem::new, () -> new Item.Properties().fireResistant().attributes(CounterweightItem.createCounterweightAttributes()).rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> BORN_TO_BURN = register("born_to_burn", BurnItem::new, () -> new Item.Properties().fireResistant().rarity(BLOOD).stacksTo(1));
 	public static final DeferredItem<Item> LOST_WILL = register("lost_will", LostWillItem::new, () -> new Item.Properties().rarity(BLOOD).stacksTo(1));
-
-	//no red rarity for better readability
-	public static final DeferredItem<Item> PATTERN_PRINT_1 = register("pattern_print_1", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 1).stacksTo(1));
-	//this is ugly, but its smooth both for crafting and for the average player. Adding a new crafting type just for this is not worth the effort longterm
-	public static final DeferredItem<Item> PATTERN_PRINT_2 = register("pattern_print_2", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 2).stacksTo(1));
-	public static final DeferredItem<Item> PATTERN_PRINT_3 = register("pattern_print_3", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 3).stacksTo(1));
-	public static final DeferredItem<Item> PATTERN_PRINT_4 = register("pattern_print_4", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 4).stacksTo(1));
-	public static final DeferredItem<Item> PATTERN_PRINT_5 = register("pattern_print_5", PatternPrintItem::new, () -> new Item.Properties().component(RisusDataComponents.PATTERN_PRINT_COMPONENT, PatternPrintComponent.EMPTY).component(RisusDataComponents.PRINT_RANGE, 5).stacksTo(1));
 
 
 	//ARMORS

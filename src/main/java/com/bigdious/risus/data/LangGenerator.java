@@ -292,11 +292,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.RESEARCHERS_NOTES, "Researcher's Notes");
 		this.addItem(RisusItems.ROSE_CROWN, "Crown Of Roses");
 		this.addItem(RisusItems.ROSE_PETAL, "Rose Petal");
-		this.addItem(RisusItems.PATTERN_PRINT_1, "Pattern Print 3□");
-		this.addItem(RisusItems.PATTERN_PRINT_2, "Pattern Print 5□");
-		this.addItem(RisusItems.PATTERN_PRINT_3, "Pattern Print 7□");
-		this.addItem(RisusItems.PATTERN_PRINT_4, "Pattern Print 9□");
-		this.addItem(RisusItems.PATTERN_PRINT_5, "Pattern Print 11□");
+
 		this.addItem(RisusItems.SACRIFICE_CATALYST, "Crucified Heart");
 		this.addItem(RisusItems.SCYTHE, "Unlit Vessel");
 		this.addItem(RisusItems.SINNER_ROBES_HELMET, "Sinner's Robe Helmet");
@@ -319,11 +315,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.addItem(RisusItems.WRETCHED_CHARM, "Wretched Charm");
 
 
-		this.add("item.risus.pattern_print_1.with_block", "Pattern Print 3□ (%s)");
-		this.add("item.risus.pattern_print_2.with_block", "Pattern Print 5□ (%s)");
-		this.add("item.risus.pattern_print_3.with_block", "Pattern Print 7□ (%s)");
-		this.add("item.risus.pattern_print_4.with_block", "Pattern Print 9□ (%s)");
-		this.add("item.risus.pattern_print_5.with_block", "Pattern Print 11□ (%s)");
+
 
 
 		this.add("item.minecraft.potion.effect.mating_frenzy", "Potion of Love");
@@ -441,7 +433,7 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.spawnentity.risus.singer", "Singer");
 		this.add("tooltip.risus.spawnentity.risus.stalker", "Stalker");
 		this.add("tooltip.risus.spawnentity.risus.licker", "Licker");
-		this.add("tooltip.risus.pattern_print", "Pattern saved with %s position(s)");
+
 
 		this.add("keybind.researchers_notes_open", "Open Researcher's Notes");
 		this.add("keybind.summon_greatness", "Summon Great Stool");
@@ -562,19 +554,6 @@ public class LangGenerator extends RisusLangProvider {
 		this.add("tooltip.risus.display_notch.signal", " - Make the item continuously rotate by powering it with a Redstone Signal");
 		this.add("tooltip.risus.display_notch.shovel", " - Change the item's elevation using a Shovel");
 		this.add("tooltip.risus.display_notch.redstone_torch", " - Make the item continuously rotate by using a Redstone Torch");
-
-		this.add("tooltip.risus.pattern_print.hidden", "[Hold Shift for Usages]");
-		this.add("tooltip.risus.pattern_print.start", "How to use:");
-		this.add("tooltip.risus.pattern_print.1", "1. Hold item to see selection range");
-		this.add("tooltip.risus.pattern_print.2", "2. Shift-rightclick a block to save it");
-		this.add("tooltip.risus.pattern_print.3", "3. If any other blocks of the same type are present within the selection, their relative position will also be saved");
-		this.add("tooltip.risus.pattern_print.4", "4. Once a pattern is saved, shift-rightclicking a different block will change block type but not pattern");
-		this.add("tooltip.risus.pattern_print.5", "5. Holding the item now shows how the pattern will be placed");
-		this.add("tooltip.risus.pattern_print.6", "6. Right click in air to rotate pattern clockwise");
-		this.add("tooltip.risus.pattern_print.7", "7. Right click on a block to place the pattern");
-		this.add("tooltip.risus.pattern_print.8", "8. Blocks will only be placed if they can be consumed from inventory and placement is not obstructed");
-		this.add("tooltip.risus.pattern_print.9", "9. Continue using the item however you wish");
-		this.add("tooltip.risus.pattern_print.10", "10. Put item into crafting grid at any time to reset saved pattern and block type");
 
 		this.add("lockable_trapdoor.locked", "Locked");
 		this.add("lockable_trapdoor.unlocked", "Unlocked");
